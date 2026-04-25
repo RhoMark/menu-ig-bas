@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.4.1</title>
+<title>Menu IG Bas — V2.4.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7420,7 +7420,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.4.1 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.4.2 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8264,12 +8264,14 @@ function PoolBadge({label, n, min}) {
 // ----- Settings View -------------------------------------------------------
 function SettingsView({state, update, updateProfile}) {
   const p = state.profile;
-  const fileInputRef = useRef(null);
   // pendingImport : null tant qu'aucun fichier n'a été choisi pour import,
   // sinon { payload, fileName }. Utilisé pour afficher le modal de
-  // confirmation. Modal in-app plutôt que confirm() natif car ce dernier
-  // est bloqué par Safari iOS lorsqu'appelé après un FileReader async.
+  // confirmation in-app (Safari iOS bloque silencieusement confirm/alert
+  // appelés après un FileReader async).
   const [pendingImport, setPendingImport] = useState(null);
+  // importStatus : { type: "info" | "error", msg } affiché dans le panneau
+  // Sauvegarde. Remplace les alert() natifs (mêmes blocages iOS).
+  const [importStatus, setImportStatus] = useState(null);
   const addMember = () => {
     const newId = (p.members.at(-1)?.id || 0) + 1;
     updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F"}]});
@@ -8317,26 +8319,43 @@ function SettingsView({state, update, updateProfile}) {
     }
   };
 
-  const triggerImport = () => fileInputRef.current?.click();
   const onImportFile = (e) => {
     const file = e.target.files?.[0];
-    if (!file) return;
+    if (!file) {
+      console.log("[import] aucun fichier sélectionné");
+      return;
+    }
+    console.log("[import] fichier sélectionné:", file.name, "taille:", file.size);
+    setImportStatus({type: "info", msg: `Lecture du fichier « ${file.name} » (${Math.round(file.size/1024)} Ko)…`});
     const reader = new FileReader();
     reader.onload = () => {
       try {
-        const payload = JSON.parse(reader.result);
+        let text = reader.result;
+        console.log("[import] lecture terminée, longueur texte:", text?.length);
+        // Strip BOM UTF-8 si présent (parfois ajouté par Windows / certains éditeurs).
+        if (typeof text === "string" && text.charCodeAt(0) === 0xFEFF) {
+          text = text.slice(1);
+          console.log("[import] BOM UTF-8 retiré");
+        }
+        const payload = JSON.parse(text);
+        console.log("[import] JSON parsé, schema:", payload?.schema, "appVersion:", payload?.appVersion);
         if (payload?.schema !== "menu-ig-bas-export" || !payload.data || payload.data.schema !== 2) {
-          alert("Fichier non valide : ce n'est pas un export Menu IG Bas (schema attendu : V2).");
+          setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Menu IG Bas (V2). Schema détecté : " + (payload?.schema || "absent")});
           return;
         }
-        // On ouvre un modal in-app plutôt qu'un confirm() natif (cf. cause iOS Safari).
+        setImportStatus(null);
         setPendingImport({payload, fileName: file.name});
       } catch (err) {
-        console.error("[import] échec :", err);
-        alert("Échec de la lecture du fichier (JSON invalide ?). Voir la console.");
+        console.error("[import] échec parse:", err);
+        setImportStatus({type: "error", msg: `Lecture impossible : ${err.message || err}`});
       } finally {
         e.target.value = ""; // permet de re-sélectionner le même fichier
       }
+    };
+    reader.onerror = () => {
+      console.error("[import] reader.onerror:", reader.error);
+      setImportStatus({type: "error", msg: `Lecture du fichier impossible (${reader.error?.message || "erreur inconnue"})`});
+      e.target.value = "";
     };
     reader.readAsText(file);
   };
@@ -8346,7 +8365,7 @@ function SettingsView({state, update, updateProfile}) {
       window.location.reload();
     } catch (err) {
       console.error("[import-apply] échec :", err);
-      alert("Échec de l'écriture des données. Voir la console.");
+      setImportStatus({type: "error", msg: `Échec de l'écriture : ${err.message || err}`});
       setPendingImport(null);
     }
   };
@@ -8469,11 +8488,17 @@ function SettingsView({state, update, updateProfile}) {
           <button onClick={exportData} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">
             ⬇️ Exporter mes données
           </button>
-          <button onClick={triggerImport} className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium">
+          {/* Pattern label+input : plus fiable cross-browser que ref.click() (notamment iOS Safari). */}
+          <label className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium cursor-pointer inline-flex items-center">
             ⬆️ Importer depuis un fichier
-          </button>
-          <input ref={fileInputRef} type="file" accept="application/json,.json,*/*" onChange={onImportFile} className="sr-only" aria-hidden="true" tabIndex={-1} />
+            <input type="file" accept="application/json,.json,*/*" onChange={onImportFile} className="sr-only" />
+          </label>
         </div>
+        {importStatus && (
+          <div className={`mt-3 text-sm rounded px-3 py-2 border ${importStatus.type === "error" ? "bg-red-50 border-red-300 text-red-800" : "bg-blue-50 border-blue-300 text-blue-800"}`}>
+            {importStatus.msg}
+          </div>
+        )}
       </div>
 
       <div className="bg-white rounded-lg shadow p-5">
@@ -8588,7 +8613,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.1 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.2 · prototype</p>
     </div>
   );
 }
