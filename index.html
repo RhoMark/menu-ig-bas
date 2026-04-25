@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.4.0</title>
+<title>Menu IG Bas — V2.4.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7420,7 +7420,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.4.0 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.4.1 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8265,6 +8265,11 @@ function PoolBadge({label, n, min}) {
 function SettingsView({state, update, updateProfile}) {
   const p = state.profile;
   const fileInputRef = useRef(null);
+  // pendingImport : null tant qu'aucun fichier n'a été choisi pour import,
+  // sinon { payload, fileName }. Utilisé pour afficher le modal de
+  // confirmation. Modal in-app plutôt que confirm() natif car ce dernier
+  // est bloqué par Safari iOS lorsqu'appelé après un FileReader async.
+  const [pendingImport, setPendingImport] = useState(null);
   const addMember = () => {
     const newId = (p.members.at(-1)?.id || 0) + 1;
     updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F"}]});
@@ -8324,17 +8329,8 @@ function SettingsView({state, update, updateProfile}) {
           alert("Fichier non valide : ce n'est pas un export Menu IG Bas (schema attendu : V2).");
           return;
         }
-        const dateStr = payload.exportedAt?.slice(0, 19).replace("T", " ") || "?";
-        const ok = confirm(
-          `Importer cet export ?\n\n` +
-          `• Date d'export : ${dateStr}\n` +
-          `• Version d'origine : ${payload.appVersion || "?"}\n\n` +
-          `⚠️ Vos données actuelles (profil, menus, notes) seront REMPLACÉES.\n` +
-          `Cette action est irréversible — pensez à exporter d'abord si vous voulez garder l'état actuel.`
-        );
-        if (!ok) return;
-        localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(payload.data));
-        window.location.reload();
+        // On ouvre un modal in-app plutôt qu'un confirm() natif (cf. cause iOS Safari).
+        setPendingImport({payload, fileName: file.name});
       } catch (err) {
         console.error("[import] échec :", err);
         alert("Échec de la lecture du fichier (JSON invalide ?). Voir la console.");
@@ -8344,6 +8340,17 @@ function SettingsView({state, update, updateProfile}) {
     };
     reader.readAsText(file);
   };
+  const confirmImport = () => {
+    try {
+      localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(pendingImport.payload.data));
+      window.location.reload();
+    } catch (err) {
+      console.error("[import-apply] échec :", err);
+      alert("Échec de l'écriture des données. Voir la console.");
+      setPendingImport(null);
+    }
+  };
+  const cancelImport = () => setPendingImport(null);
 
   return (
     <div className="space-y-4 max-w-3xl">
@@ -8465,7 +8472,7 @@ function SettingsView({state, update, updateProfile}) {
           <button onClick={triggerImport} className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium">
             ⬆️ Importer depuis un fichier
           </button>
-          <input ref={fileInputRef} type="file" accept="application/json,.json" onChange={onImportFile} className="hidden" />
+          <input ref={fileInputRef} type="file" accept="application/json,.json,*/*" onChange={onImportFile} className="sr-only" aria-hidden="true" tabIndex={-1} />
         </div>
       </div>
 
@@ -8475,6 +8482,30 @@ function SettingsView({state, update, updateProfile}) {
           Tout effacer et recommencer
         </button>
       </div>
+
+      {pendingImport && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={cancelImport}>
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
+            <h3 className="text-lg font-bold text-slate-800 mb-3">Confirmer l'import</h3>
+            <div className="text-sm text-slate-700 space-y-1 mb-4">
+              <div>📄 Fichier : <span className="font-mono text-xs break-all">{pendingImport.fileName}</span></div>
+              <div>📅 Date d'export : {pendingImport.payload.exportedAt?.slice(0, 19).replace("T", " ") || "?"}</div>
+              <div>🏷️ Version d'origine : {pendingImport.payload.appVersion || "?"}</div>
+            </div>
+            <div className="bg-amber-50 border border-amber-300 rounded p-3 text-sm text-amber-900 mb-4">
+              ⚠️ Vos données actuelles (profil, menus, notes) seront <strong>remplacées</strong>. Action irréversible — pensez à exporter d'abord si vous voulez garder l'état actuel.
+            </div>
+            <div className="flex gap-2 justify-end">
+              <button onClick={cancelImport} className="px-4 py-2 text-slate-700 hover:bg-slate-100 rounded">
+                Annuler
+              </button>
+              <button onClick={confirmImport} className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded font-medium">
+                Confirmer l'import
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -8557,7 +8588,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.1 · prototype</p>
     </div>
   );
 }
