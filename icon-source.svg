@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="96" fill="#059669"/>
+  <text x="256" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="200" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-6">MIG</text>
+  <text x="256" y="430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="56" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="2">menu</text>
+</svg>
