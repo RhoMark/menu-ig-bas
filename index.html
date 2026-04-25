@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.4.2</title>
+<title>Menu IG Bas — V2.4.3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7420,7 +7420,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.4.2 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.4.3 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8319,45 +8319,52 @@ function SettingsView({state, update, updateProfile}) {
     }
   };
 
-  const onImportFile = (e) => {
-    const file = e.target.files?.[0];
+  const onImportFile = async (e) => {
+    const input = e.target;
+    const file = input.files?.[0];
     if (!file) {
       console.log("[import] aucun fichier sélectionné");
       return;
     }
     console.log("[import] fichier sélectionné:", file.name, "taille:", file.size);
     setImportStatus({type: "info", msg: `Lecture du fichier « ${file.name} » (${Math.round(file.size/1024)} Ko)…`});
-    const reader = new FileReader();
-    reader.onload = () => {
-      try {
-        let text = reader.result;
-        console.log("[import] lecture terminée, longueur texte:", text?.length);
-        // Strip BOM UTF-8 si présent (parfois ajouté par Windows / certains éditeurs).
-        if (typeof text === "string" && text.charCodeAt(0) === 0xFEFF) {
-          text = text.slice(1);
-          console.log("[import] BOM UTF-8 retiré");
-        }
-        const payload = JSON.parse(text);
-        console.log("[import] JSON parsé, schema:", payload?.schema, "appVersion:", payload?.appVersion);
-        if (payload?.schema !== "menu-ig-bas-export" || !payload.data || payload.data.schema !== 2) {
-          setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Menu IG Bas (V2). Schema détecté : " + (payload?.schema || "absent")});
-          return;
-        }
-        setImportStatus(null);
-        setPendingImport({payload, fileName: file.name});
-      } catch (err) {
-        console.error("[import] échec parse:", err);
-        setImportStatus({type: "error", msg: `Lecture impossible : ${err.message || err}`});
-      } finally {
-        e.target.value = ""; // permet de re-sélectionner le même fichier
+    try {
+      // file.text() (Promise-based) au lieu de FileReader.readAsText() : sur
+      // iOS Safari, FileReader sur un fichier de l'app Files / iCloud peut
+      // rester pendu sans jamais déclencher onload ni onerror. file.text()
+      // n'a pas ce souci (supporté depuis iOS Safari 13.5).
+      let text;
+      if (typeof file.text === "function") {
+        text = await file.text();
+      } else {
+        // Fallback FileReader pour très vieux browsers.
+        text = await new Promise((resolve, reject) => {
+          const r = new FileReader();
+          r.onload = () => resolve(r.result);
+          r.onerror = () => reject(r.error || new Error("FileReader error"));
+          r.readAsText(file);
+        });
       }
-    };
-    reader.onerror = () => {
-      console.error("[import] reader.onerror:", reader.error);
-      setImportStatus({type: "error", msg: `Lecture du fichier impossible (${reader.error?.message || "erreur inconnue"})`});
-      e.target.value = "";
-    };
-    reader.readAsText(file);
+      console.log("[import] lecture terminée, longueur texte:", text?.length);
+      // Strip BOM UTF-8 si présent (parfois ajouté par Windows / certains éditeurs).
+      if (typeof text === "string" && text.charCodeAt(0) === 0xFEFF) {
+        text = text.slice(1);
+        console.log("[import] BOM UTF-8 retiré");
+      }
+      const payload = JSON.parse(text);
+      console.log("[import] JSON parsé, schema:", payload?.schema, "appVersion:", payload?.appVersion);
+      if (payload?.schema !== "menu-ig-bas-export" || !payload.data || payload.data.schema !== 2) {
+        setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Menu IG Bas (V2). Schema détecté : " + (payload?.schema || "absent")});
+        return;
+      }
+      setImportStatus(null);
+      setPendingImport({payload, fileName: file.name});
+    } catch (err) {
+      console.error("[import] échec:", err);
+      setImportStatus({type: "error", msg: `Lecture impossible : ${err.message || err}`});
+    } finally {
+      if (input) input.value = ""; // permet de re-sélectionner le même fichier
+    }
   };
   const confirmImport = () => {
     try {
@@ -8613,7 +8620,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.2 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.3 · prototype</p>
     </div>
   );
 }
