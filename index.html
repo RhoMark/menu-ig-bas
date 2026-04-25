@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.4.3</title>
+<title>Menu IG Bas — V2.4.4</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7420,7 +7420,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.4.3 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.4.4 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8272,6 +8272,11 @@ function SettingsView({state, update, updateProfile}) {
   // importStatus : { type: "info" | "error", msg } affiché dans le panneau
   // Sauvegarde. Remplace les alert() natifs (mêmes blocages iOS).
   const [importStatus, setImportStatus] = useState(null);
+  // Alternative au file picker : sur PWA iOS standalone, l'input file ne
+  // déclenche pas toujours `change` après sélection. Le textarea de paste
+  // est un fallback 100% fiable (l'utilisateur colle le contenu JSON).
+  const [pasteMode, setPasteMode] = useState(false);
+  const [pasteText, setPasteText] = useState("");
   const addMember = () => {
     const newId = (p.members.at(-1)?.id || 0) + 1;
     updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F"}]});
@@ -8319,6 +8324,32 @@ function SettingsView({state, update, updateProfile}) {
     }
   };
 
+  // Logique commune : valide + parse le texte JSON et déclenche le modal.
+  // Renvoie true si le payload est valide et le modal va s'afficher, false sinon.
+  const processImportText = (rawText, sourceLabel) => {
+    let text = rawText;
+    try {
+      // Strip BOM UTF-8 si présent (Windows / certains éditeurs).
+      if (typeof text === "string" && text.charCodeAt(0) === 0xFEFF) {
+        text = text.slice(1);
+        console.log("[import] BOM UTF-8 retiré");
+      }
+      const payload = JSON.parse(text);
+      console.log("[import] JSON parsé, schema:", payload?.schema, "appVersion:", payload?.appVersion);
+      if (payload?.schema !== "menu-ig-bas-export" || !payload.data || payload.data.schema !== 2) {
+        setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Menu IG Bas (V2). Schema détecté : " + (payload?.schema || "absent")});
+        return false;
+      }
+      setImportStatus(null);
+      setPendingImport({payload, fileName: sourceLabel});
+      return true;
+    } catch (err) {
+      console.error("[import] échec parse:", err);
+      setImportStatus({type: "error", msg: `JSON invalide : ${err.message || err}`});
+      return false;
+    }
+  };
+
   const onImportFile = async (e) => {
     const input = e.target;
     const file = input.files?.[0];
@@ -8331,13 +8362,11 @@ function SettingsView({state, update, updateProfile}) {
     try {
       // file.text() (Promise-based) au lieu de FileReader.readAsText() : sur
       // iOS Safari, FileReader sur un fichier de l'app Files / iCloud peut
-      // rester pendu sans jamais déclencher onload ni onerror. file.text()
-      // n'a pas ce souci (supporté depuis iOS Safari 13.5).
+      // rester pendu sans jamais déclencher onload ni onerror.
       let text;
       if (typeof file.text === "function") {
         text = await file.text();
       } else {
-        // Fallback FileReader pour très vieux browsers.
         text = await new Promise((resolve, reject) => {
           const r = new FileReader();
           r.onload = () => resolve(r.result);
@@ -8346,25 +8375,23 @@ function SettingsView({state, update, updateProfile}) {
         });
       }
       console.log("[import] lecture terminée, longueur texte:", text?.length);
-      // Strip BOM UTF-8 si présent (parfois ajouté par Windows / certains éditeurs).
-      if (typeof text === "string" && text.charCodeAt(0) === 0xFEFF) {
-        text = text.slice(1);
-        console.log("[import] BOM UTF-8 retiré");
-      }
-      const payload = JSON.parse(text);
-      console.log("[import] JSON parsé, schema:", payload?.schema, "appVersion:", payload?.appVersion);
-      if (payload?.schema !== "menu-ig-bas-export" || !payload.data || payload.data.schema !== 2) {
-        setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Menu IG Bas (V2). Schema détecté : " + (payload?.schema || "absent")});
-        return;
-      }
-      setImportStatus(null);
-      setPendingImport({payload, fileName: file.name});
+      processImportText(text, file.name);
     } catch (err) {
-      console.error("[import] échec:", err);
+      console.error("[import] échec lecture fichier:", err);
       setImportStatus({type: "error", msg: `Lecture impossible : ${err.message || err}`});
     } finally {
-      if (input) input.value = ""; // permet de re-sélectionner le même fichier
+      if (input) input.value = "";
     }
+  };
+
+  const handleImportFromPaste = () => {
+    if (!pasteText.trim()) {
+      setImportStatus({type: "error", msg: "La zone de texte est vide."});
+      return;
+    }
+    setImportStatus({type: "info", msg: `Lecture du texte collé (${Math.round(pasteText.length/1024)} Ko)…`});
+    const ok = processImportText(pasteText, "(collé depuis le presse-papier)");
+    if (ok) { setPasteMode(false); setPasteText(""); }
   };
   const confirmImport = () => {
     try {
@@ -8495,12 +8522,38 @@ function SettingsView({state, update, updateProfile}) {
           <button onClick={exportData} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">
             ⬇️ Exporter mes données
           </button>
-          {/* Pattern label+input : plus fiable cross-browser que ref.click() (notamment iOS Safari). */}
+          {/* Pattern label+input : plus fiable que ref.click() (notamment iOS Safari). */}
           <label className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium cursor-pointer inline-flex items-center">
             ⬆️ Importer depuis un fichier
             <input type="file" accept="application/json,.json,*/*" onChange={onImportFile} className="sr-only" />
           </label>
+          <button onClick={() => { setPasteMode(m => !m); setImportStatus(null); }} className="bg-slate-200 hover:bg-slate-300 text-slate-800 px-4 py-2 rounded text-sm font-medium">
+            {pasteMode ? "✕ Annuler" : "📋 Coller du texte"}
+          </button>
         </div>
+        {pasteMode && (
+          <div className="mt-3 space-y-2">
+            <p className="text-xs text-slate-600">
+              Si le bouton « Importer depuis un fichier » ne réagit pas (cas connu sur PWA iOS),
+              ouvrez votre <code className="bg-slate-100 px-1">.json</code> dans un éditeur,
+              copiez tout le contenu, et collez-le ci-dessous.
+            </p>
+            <textarea
+              value={pasteText}
+              onChange={e => setPasteText(e.target.value)}
+              placeholder='Collez ici le contenu JSON, du { au } final…'
+              rows={6}
+              className="w-full border border-slate-300 rounded px-2 py-1 text-xs font-mono"
+            />
+            <button
+              onClick={handleImportFromPaste}
+              disabled={!pasteText.trim()}
+              className="bg-sky-600 hover:bg-sky-700 disabled:bg-slate-300 disabled:cursor-not-allowed text-white px-4 py-2 rounded text-sm font-medium"
+            >
+              Importer ce contenu
+            </button>
+          </div>
+        )}
         {importStatus && (
           <div className={`mt-3 text-sm rounded px-3 py-2 border ${importStatus.type === "error" ? "bg-red-50 border-red-300 text-red-800" : "bg-blue-50 border-blue-300 text-blue-800"}`}>
             {importStatus.msg}
@@ -8620,7 +8673,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.3 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.4 · prototype</p>
     </div>
   );
 }
