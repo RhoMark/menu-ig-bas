@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.4.4</title>
+<title>Menu IG Bas — V2.4.5</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7420,7 +7420,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.4.4 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.4.5 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8393,6 +8393,28 @@ function SettingsView({state, update, updateProfile}) {
     const ok = processImportText(pasteText, "(collé depuis le presse-papier)");
     if (ok) { setPasteMode(false); setPasteText(""); }
   };
+
+  // Lecture du presse-papier via l'API Clipboard moderne. Plus fiable sur
+  // PWA iOS standalone que le long-press → Coller (parfois bloqué silencieusement).
+  // Demande une permission utilisateur au premier appel sur certains browsers.
+  const tryPasteFromClipboard = async () => {
+    if (!navigator.clipboard || typeof navigator.clipboard.readText !== "function") {
+      setImportStatus({type: "error", msg: "Le presse-papier n'est pas accessible sur ce navigateur. Tapez ou collez manuellement dans la zone."});
+      return;
+    }
+    try {
+      const text = await navigator.clipboard.readText();
+      if (!text || !text.trim()) {
+        setImportStatus({type: "error", msg: "Le presse-papier est vide. Copiez d'abord le contenu de votre fichier .json."});
+        return;
+      }
+      setPasteText(text);
+      setImportStatus({type: "info", msg: `Texte collé (${Math.round(text.length/1024)} Ko). Cliquez « Importer ce contenu » pour valider.`});
+    } catch (e) {
+      console.error("[clipboard] échec readText:", e);
+      setImportStatus({type: "error", msg: `Lecture du presse-papier refusée : ${e.message || "permission requise par le navigateur"}.`});
+    }
+  };
   const confirmImport = () => {
     try {
       localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(pendingImport.payload.data));
@@ -8536,12 +8558,28 @@ function SettingsView({state, update, updateProfile}) {
             <p className="text-xs text-slate-600">
               Si le bouton « Importer depuis un fichier » ne réagit pas (cas connu sur PWA iOS),
               ouvrez votre <code className="bg-slate-100 px-1">.json</code> dans un éditeur,
-              copiez tout le contenu, et collez-le ci-dessous.
+              copiez tout le contenu, puis utilisez l'un des deux moyens ci-dessous.
             </p>
+            <button
+              onClick={tryPasteFromClipboard}
+              className="bg-emerald-100 hover:bg-emerald-200 text-emerald-900 px-3 py-1.5 rounded text-xs font-medium border border-emerald-300"
+            >
+              📋 Coller depuis le presse-papier
+            </button>
             <textarea
               value={pasteText}
               onChange={e => setPasteText(e.target.value)}
-              placeholder='Collez ici le contenu JSON, du { au } final…'
+              onPaste={e => {
+                // Capture explicite du paste : sur certains browsers/PWAs, le
+                // contenu collé n'arrive pas dans le state React via onChange,
+                // d'où ce handler manuel.
+                const t = e.clipboardData?.getData("text/plain");
+                if (t) {
+                  e.preventDefault();
+                  setPasteText(t);
+                }
+              }}
+              placeholder='Ou collez ici manuellement (long-press → Coller)…'
               rows={6}
               className="w-full border border-slate-300 rounded px-2 py-1 text-xs font-mono"
             />
@@ -8673,7 +8711,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.4 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.4.5 · prototype</p>
     </div>
   );
 }
