@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.2.0</title>
+<title>Menu IG Bas — V2.3.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7408,7 +7408,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.2.0 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.3.0 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8252,6 +8252,7 @@ function PoolBadge({label, n, min}) {
 // ----- Settings View -------------------------------------------------------
 function SettingsView({state, update, updateProfile}) {
   const p = state.profile;
+  const fileInputRef = useRef(null);
   const addMember = () => {
     const newId = (p.members.at(-1)?.id || 0) + 1;
     updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F"}]});
@@ -8265,6 +8266,71 @@ function SettingsView({state, update, updateProfile}) {
       localStorage.removeItem(STORAGE_KEY_V2);
       window.location.reload();
     }
+  };
+
+  // ----- Export / Import (sync manuelle entre appareils) -----
+  // Sérialise tout le bloc V2 du localStorage dans un JSON téléchargeable, et
+  // permet de le restaurer sur un autre appareil. Format auto-portant : on
+  // inclut un schema ("menu-ig-bas-export") + version d'app pour validation.
+  const exportData = () => {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY_V2);
+      if (!raw) { alert("Aucune donnée à exporter pour l'instant."); return; }
+      const appVersion = (document.title.match(/V(\d+\.\d+\.\d+)/)?.[1]) || "?";
+      const payload = {
+        schema: "menu-ig-bas-export",
+        schemaVersion: 1,
+        exportedAt: new Date().toISOString(),
+        appVersion,
+        data: JSON.parse(raw),
+      };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], {type: "application/json"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      const dateStr = new Date().toISOString().slice(0, 10);
+      a.href = url;
+      a.download = `menu-ig-bas-export-${dateStr}.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    } catch (e) {
+      console.error("[export] échec :", e);
+      alert("Échec de l'export. Voir la console pour le détail.");
+    }
+  };
+
+  const triggerImport = () => fileInputRef.current?.click();
+  const onImportFile = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      try {
+        const payload = JSON.parse(reader.result);
+        if (payload?.schema !== "menu-ig-bas-export" || !payload.data || payload.data.schema !== 2) {
+          alert("Fichier non valide : ce n'est pas un export Menu IG Bas (schema attendu : V2).");
+          return;
+        }
+        const dateStr = payload.exportedAt?.slice(0, 19).replace("T", " ") || "?";
+        const ok = confirm(
+          `Importer cet export ?\n\n` +
+          `• Date d'export : ${dateStr}\n` +
+          `• Version d'origine : ${payload.appVersion || "?"}\n\n` +
+          `⚠️ Vos données actuelles (profil, menus, notes) seront REMPLACÉES.\n` +
+          `Cette action est irréversible — pensez à exporter d'abord si vous voulez garder l'état actuel.`
+        );
+        if (!ok) return;
+        localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(payload.data));
+        window.location.reload();
+      } catch (err) {
+        console.error("[import] échec :", err);
+        alert("Échec de la lecture du fichier (JSON invalide ?). Voir la console.");
+      } finally {
+        e.target.value = ""; // permet de re-sélectionner le même fichier
+      }
+    };
+    reader.readAsText(file);
   };
 
   return (
@@ -8374,6 +8440,24 @@ function SettingsView({state, update, updateProfile}) {
       </div>
 
       <div className="bg-white rounded-lg shadow p-5">
+        <h3 className="font-bold text-slate-800 mb-3">💾 Sauvegarde / restauration</h3>
+        <p className="text-sm text-slate-600 mb-3">
+          Vos données (profil, menus, notes) sont stockées dans ce navigateur uniquement.
+          Pour les transférer sur un autre appareil (iPad, iPhone, ordi…),
+          exportez-les ici en JSON, partagez le fichier (AirDrop, mail…), puis importez sur l'autre appareil.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <button onClick={exportData} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">
+            ⬇️ Exporter mes données
+          </button>
+          <button onClick={triggerImport} className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium">
+            ⬆️ Importer depuis un fichier
+          </button>
+          <input ref={fileInputRef} type="file" accept="application/json,.json" onChange={onImportFile} className="hidden" />
+        </div>
+      </div>
+
+      <div className="bg-white rounded-lg shadow p-5">
         <h3 className="font-bold text-slate-800 mb-3">Zone dangereuse</h3>
         <button onClick={resetAll} className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
           Tout effacer et recommencer
@@ -8461,7 +8545,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.2.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.3.0 · prototype</p>
     </div>
   );
 }
