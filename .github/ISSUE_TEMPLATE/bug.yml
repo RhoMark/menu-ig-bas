@@ -1,0 +1,47 @@
+name: 🐛 Bug
+description: Quelque chose ne fonctionne pas comme prévu
+title: "[Bug] "
+labels:
+  - bug
+  - priorité-moyenne
+body:
+  - type: textarea
+    id: observed
+    attributes:
+      label: Comportement observé
+      description: Que se passe-t-il concrètement ?
+      placeholder: "Quand je clique sur X, l'app affiche Y au lieu de Z..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportement attendu
+      placeholder: "Je m'attendais à ce que..."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Comment reproduire ?
+      description: Étapes précises pour que Claude puisse rejouer le bug
+      placeholder: |
+        1. Aller dans Paramètres
+        2. Cliquer sur Importer
+        3. Choisir le fichier export.json
+        4. ...
+  - type: input
+    id: device
+    attributes:
+      label: Appareil / browser
+      placeholder: "iPhone Safari, Mac Chrome 138, PWA iOS, ordi Brave..."
+  - type: input
+    id: version
+    attributes:
+      label: Version de l'app (footer)
+      placeholder: "V2.5.0"
+  - type: textarea
+    id: notes
+    attributes:
+      label: Détails supplémentaires (facultatif)
+      placeholder: "Capture d'écran, message console, contexte..."

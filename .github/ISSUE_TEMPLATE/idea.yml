@@ -1,0 +1,26 @@
+name: 💡 Idée à creuser
+description: Idée pas encore mûre — à explorer avant de décider quoi en faire
+title: "[Idée] "
+labels:
+  - idée
+  - priorité-basse
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: L'idée en quelques phrases
+      description: Capture brute, pas besoin que ce soit poli
+      placeholder: "Et si on pouvait..."
+    validations:
+      required: true
+  - type: textarea
+    id: trigger
+    attributes:
+      label: Quel est le déclencheur ?
+      description: Qu'est-ce qui t'a fait y penser ? (en utilisant l'app, en réfléchissant, en parlant…)
+      placeholder: "En cuisinant ce soir je me suis rendu compte que..."
+  - type: textarea
+    id: questions
+    attributes:
+      label: Questions ouvertes
+      placeholder: "- Est-ce que ça vaut le coup ?\n- Comment l'intégrer sans casser X ?\n- ..."

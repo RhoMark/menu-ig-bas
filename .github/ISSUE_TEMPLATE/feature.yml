@@ -1,0 +1,33 @@
+name: ✨ Nouvelle fonctionnalité
+description: Ajout ou amélioration concrète à coder
+title: "[Feature] "
+labels:
+  - feature
+  - priorité-moyenne
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Que veux-tu pouvoir faire ?
+      description: Décris la fonctionnalité du point de vue utilisateur
+      placeholder: "En tant qu'utilisateur, je veux pouvoir [X] pour [bénéfice]..."
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Pourquoi c'est utile ?
+      description: Le problème ou le besoin qui justifie cette fonctionnalité
+      placeholder: "Aujourd'hui je dois... ce qui m'oblige à... or je voudrais..."
+    validations:
+      required: true
+  - type: textarea
+    id: ideas
+    attributes:
+      label: Idées d'implémentation (facultatif)
+      placeholder: "Un bouton dans Paramètres, une modale, etc."
+  - type: textarea
+    id: edge_cases
+    attributes:
+      label: Cas limites à considérer (facultatif)
+      placeholder: "Que se passe-t-il si X est vide / si plusieurs Y ?"
