@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.8.0</title>
+<title>Menu IG Bas — V2.8.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7542,12 +7542,24 @@ function getSeason(date) {
 function matchesSeason(recipe, season) {
   return recipe.seasons.includes("all") || recipe.seasons.includes(season);
 }
+// Calcule l'âge d'un membre à partir de birthYear (canonique depuis V2.8.1)
+// avec fallback sur le champ legacy `age` pour les profils créés avant.
+// L'année de naissance est invariante → l'âge se met à jour automatiquement
+// sans intervention de l'utilisateur à chaque anniversaire.
+function memberAge(member) {
+  if (!member) return 0;
+  if (member.birthYear) {
+    const now = new Date().getFullYear();
+    return Math.max(0, now - member.birthYear);
+  }
+  return member.age ?? 0;
+}
 // Échelle d'équivalents adultes révisée — tient compte de l'appétit des ados.
 // Base : 1 = adulte 18-65 ans. Les ados en pleine croissance mangent souvent
 // plus qu'un adulte moyen, d'où le coefficient 1.2 sur 12-17 ans.
 // Référence indicative : ANSES (besoins caloriques par tranche d'âge).
 function adultEquivalent(member) {
-  const a = member.age;
+  const a = memberAge(member);
   if (a <= 3)  return 0.35;  // petit enfant
   if (a <= 7)  return 0.55;  // enfant
   if (a <= 11) return 0.80;  // pré-ado
@@ -7859,7 +7871,7 @@ function emptyHouseholdPreferences() {
 function emptyHousehold(id) {
   return {
     id,
-    members: [{id:1, name:"Adulte 1", age:40, sex:"F", allergies:[]}],
+    members: [{id:1, name:"Adulte 1", birthYear: new Date().getFullYear() - 40, sex:"F", allergies:[]}],
     preferences: emptyHouseholdPreferences(),
     menus: {},
     ratings: {},
@@ -7884,14 +7896,22 @@ function migrateV1toV2(v1) {
   const userId = makeId("u");
   const householdId = makeId("h");
   const prevProfile = v1.profile || {};
-  const {members = [{id:1, name:"Adulte 1", age:40, sex:"F"}], ...prefsFromProfile} = prevProfile;
+  const {members = [{id:1, name:"Adulte 1", birthYear: new Date().getFullYear() - 40, sex:"F"}], ...prefsFromProfile} = prevProfile;
+  // Backfill V2.8.1 : si un membre a `age` mais pas `birthYear`, on déduit
+  // l'année de naissance approximative (à ±1 an près, l'utilisateur peut
+  // affiner). On garde `age` côté donnée pour rétrocompat éventuelle, mais
+  // memberAge() préférera birthYear.
+  const currentYear = new Date().getFullYear();
+  const migratedMembers = members.map(m =>
+    (m.birthYear || !m.age) ? m : {...m, birthYear: currentYear - m.age}
+  );
   return {
     schema: 2,
     users:      { [userId]: { id: userId, name: "Utilisateur", householdId, createdAt: new Date().toISOString() } },
     households: {
       [householdId]: {
         id: householdId,
-        members,
+        members: migratedMembers,
         preferences: { ...emptyHouseholdPreferences(), ...prefsFromProfile },
         menus:    v1.menus        || {},
         ratings:  v1.ratings      || {},
@@ -7957,6 +7977,16 @@ function loadState() {
     if (raw2) {
       const v2 = JSON.parse(raw2);
       if (v2 && v2.schema === 2 && v2.session?.activeHouseholdId && v2.households?.[v2.session.activeHouseholdId]) {
+        // Backfill V2.8.1 : membres antérieurs à birthYear peuvent encore
+        // avoir uniquement `age`. On déduit birthYear à ±1 an près.
+        const currentYear = new Date().getFullYear();
+        Object.values(v2.households).forEach(h => {
+          if (Array.isArray(h.members)) {
+            h.members = h.members.map(m =>
+              (m.birthYear || !m.age) ? m : {...m, birthYear: currentYear - m.age}
+            );
+          }
+        });
         return projectRuntime(v2);
       }
       console.warn("[storage] V2 trouvé mais invalide, fallback sur V1 ou état neuf");
@@ -8483,7 +8513,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.8.0 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.8.1 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8531,7 +8561,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 
   const addMember = () => {
     const newId = (p.members.at(-1)?.id || 0) + 1;
-    updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F"}]});
+    updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, birthYear: new Date().getFullYear() - 30, sex:"F"}]});
   };
   const updateMember = (id, patch) => {
     updateProfile({members: p.members.map(m => m.id === id ? {...m, ...patch} : m)});
@@ -8553,10 +8583,14 @@ function SetupView({state, update, updateProfile, onDone}) {
                 className="border rounded px-2 py-1 w-full" />
             </div>
             <div>
-              <label className="text-xs text-slate-500 block">Âge</label>
-              <input type="number" min="1" max="110" value={m.age}
-                onChange={e=>updateMember(m.id,{age:parseInt(e.target.value)||0})}
-                className="border rounded px-2 py-1 w-20" />
+              <label className="text-xs text-slate-500 block">Année de naissance</label>
+              <div className="flex items-center gap-2">
+                <input type="number" min="1900" max={new Date().getFullYear()} value={m.birthYear || ""}
+                  placeholder="Année"
+                  onChange={e=>updateMember(m.id,{birthYear:parseInt(e.target.value)||0})}
+                  className="border rounded px-2 py-1 w-24" />
+                <span className="text-xs text-slate-500">{memberAge(m)} ans</span>
+              </div>
             </div>
             <div>
               <label className="text-xs text-slate-500 block">Sexe</label>
@@ -8901,7 +8935,7 @@ function AttendanceDialog({day, meal, profile, current, onSave, onClose}) {
             }`}>
               <input type="checkbox" checked={selected.includes(m.id)} onChange={()=>toggle(m.id)} />
               <span className="flex-1 font-medium">{m.name}</span>
-              <span className="text-xs text-slate-500">{m.age} ans · {m.sex}</span>
+              <span className="text-xs text-slate-500">{memberAge(m)} ans · {m.sex}</span>
             </label>
           ))}
         </div>
@@ -9391,7 +9425,7 @@ function SettingsView({state, update, updateProfile}) {
   const [pendingAllergy, setPendingAllergy] = useState(null);
   const addMember = () => {
     const newId = (p.members.at(-1)?.id || 0) + 1;
-    updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F", allergies:[]}]});
+    updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, birthYear: new Date().getFullYear() - 30, sex:"F", allergies:[]}]});
   };
   const updateMember = (id, patch) => updateProfile({members: p.members.map(m => m.id === id ? {...m, ...patch} : m)});
   const removeMember = (id) => { if (p.members.length > 1) updateProfile({members: p.members.filter(m => m.id !== id)}); };
@@ -9579,7 +9613,14 @@ function SettingsView({state, update, updateProfile}) {
             <div key={m.id} className="bg-slate-50 p-3 rounded mb-2 space-y-2">
               <div className="flex flex-wrap gap-2 items-end">
                 <input value={m.name} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
-                <input type="number" value={m.age} onChange={e=>updateMember(m.id,{age:parseInt(e.target.value)||0})} className="border rounded px-2 py-1 w-20" />
+                <div className="flex items-center gap-1">
+                  <input type="number" min="1900" max={new Date().getFullYear()} value={m.birthYear || ""}
+                    placeholder="Année"
+                    title="Année de naissance"
+                    onChange={e=>updateMember(m.id,{birthYear:parseInt(e.target.value)||0})}
+                    className="border rounded px-2 py-1 w-24" />
+                  <span className="text-xs text-slate-500 whitespace-nowrap">{memberAge(m)} ans</span>
+                </div>
                 <select value={m.sex} onChange={e=>updateMember(m.id,{sex:e.target.value})} className="border rounded px-2 py-1">
                   <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
                 </select>
@@ -9899,7 +9940,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.8.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.8.1 · prototype</p>
     </div>
   );
 }
