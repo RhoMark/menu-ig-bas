@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.5.0</title>
+<title>Menu IG Bas — V2.6.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -6986,6 +6986,27 @@ function recipeHasAllergen(recipe, allergens) {
   if (!allergens?.length) return false;
   return recipe.allergens.some(a => allergens.includes(a));
 }
+// Renvoie les allergies effectives à éviter pour un repas donné.
+// Union des `globalAllergies` (foyer) et des `member.allergies` de chaque
+// membre considéré présent. Si `attendees` est null ou vide, on inclut
+// tous les membres (sécurité par défaut : la génération hebdomadaire ne
+// connaît pas l'attendance précise, on exclut large).
+function effectiveAllergies(profile, attendees) {
+  const set = new Set(profile.globalAllergies || []);
+  const members = profile.members || [];
+  const ids = Array.isArray(attendees) ? attendees : null;
+  const present = (ids && ids.length > 0) ? members.filter(m => ids.includes(m.id)) : members;
+  present.forEach(m => (m.allergies || []).forEach(a => set.add(a)));
+  return [...set];
+}
+// Renvoie les membres ayant au moins une allergie qui matche les allergènes
+// de la recette (sert aux indicateurs visuels in-app).
+function membersAllergicTo(profile, recipeAllergens) {
+  if (!recipeAllergens?.length) return [];
+  return (profile.members || []).filter(m =>
+    (m.allergies || []).some(a => recipeAllergens.includes(a))
+  );
+}
 function recipeHasExcluded(recipe, exclusions) {
   if (!exclusions?.length) return false;
   const lcExcl = exclusions.map(e => e.toLowerCase().trim()).filter(Boolean);
@@ -7201,7 +7222,7 @@ function emptyHouseholdPreferences() {
 function emptyHousehold(id) {
   return {
     id,
-    members: [{id:1, name:"Adulte 1", age:40, sex:"F"}],
+    members: [{id:1, name:"Adulte 1", age:40, sex:"F", allergies:[]}],
     preferences: emptyHouseholdPreferences(),
     menus: {},
     ratings: {},
@@ -7463,7 +7484,9 @@ function recentMealSlots(menus, weekStart, mealKey, days = 7) {
 
 function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
   const season = getSeason(weekStart);
-  const allergies = profile.globalAllergies;
+  // Sécurité : on exclut large à la génération hebdo (allergies de TOUS les membres).
+  // L'attendance par repas n'est connue qu'au remplacement manuel slot par slot.
+  const allergies = effectiveAllergies(profile, null);
   const exclusions = profile.globalExclusions;
   const baseFilter = (type) => RECIPES.filter(r =>
     r.type === type &&
@@ -7671,7 +7694,7 @@ function App() {
     let pool = RECIPES.filter(r =>
       r.type === meal &&
       matchesSeason(r, season) &&
-      !recipeHasAllergen(r, state.profile.globalAllergies) &&
+      !recipeHasAllergen(r, effectiveAllergies(state.profile, null)) &&
       !recipeHasExcluded(r, state.profile.globalExclusions) &&
       recipeRespectsEquipment(r, state.profile.equipment) &&
       recipeRespectsTime(r, state.profile.maxPrepMinutes) &&
@@ -7821,7 +7844,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.5.0 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.6.0 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8260,7 +8283,7 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
   const pool = RECIPES.filter(r =>
     r.type === meal &&
     matchesSeason(r, season) &&
-    !recipeHasAllergen(r, profile.globalAllergies) &&
+    !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
     !recipeHasExcluded(r, profile.globalExclusions) &&
     r.id !== currentId
   );
@@ -8340,14 +8363,39 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
           </div>
         </div>
         <div className="p-6 space-y-6">
-          {recipe.allergens?.length > 0 && (
-            <div className="bg-red-50 border border-red-200 p-3 rounded flex gap-2 items-start text-sm">
-              <span>⚠️</span>
-              <div>
-                <p className="font-medium text-red-800">Contient : {recipe.allergens.map(a => dataRef.allergenLabel(a)).join(", ")}</p>
+          {recipe.allergens?.length > 0 && (() => {
+            const concerned = membersAllergicTo(profile, recipe.allergens);
+            const familyHits = (profile.globalAllergies || []).filter(a => recipe.allergens.includes(a));
+            const isCritical = concerned.length > 0 || familyHits.length > 0;
+            return (
+              <div className={`border p-3 rounded text-sm ${isCritical ? "bg-red-100 border-red-500 text-red-900" : "bg-red-50 border-red-200 text-red-800"}`}>
+                <div className="flex gap-2 items-start">
+                  <span className="text-xl leading-none">{isCritical ? "🚫" : "⚠️"}</span>
+                  <div className="flex-1 space-y-1">
+                    <div className="font-semibold">Contient :</div>
+                    <div className="flex flex-wrap gap-1">
+                      {recipe.allergens.map(a => {
+                        const memberHits = concerned.filter(m => (m.allergies || []).includes(a));
+                        const isFamilyHit = familyHits.includes(a);
+                        const isHit = isFamilyHit || memberHits.length > 0;
+                        return (
+                          <span key={a} className={`px-2 py-0.5 rounded text-xs border inline-flex items-center gap-1 ${isHit ? "bg-red-600 text-white border-red-700 font-bold" : "bg-white text-red-700 border-red-300"}`}>
+                            <span>{isHit ? "🚫" : "⚠️"}</span>
+                            <span>{dataRef.allergenLabel(a)}</span>
+                            {memberHits.length > 0 && <span className="italic font-normal text-red-100">— {memberHits.map(m => m.name).join(", ")}</span>}
+                            {isFamilyHit && memberHits.length === 0 && <span className="italic font-normal text-red-100">— famille</span>}
+                          </span>
+                        );
+                      })}
+                    </div>
+                    {isCritical && (
+                      <p className="font-bold mt-2">⚠️ Allergène incompatible avec votre foyer — cette recette ne devrait pas être proposée par la génération.</p>
+                    )}
+                  </div>
+                </div>
               </div>
-            </div>
-          )}
+            );
+          })()}
           <div>
             <h3 className="font-bold text-slate-800 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isPartial ? "text-amber-700 font-medium" : "text-slate-500"}`}>{isPartial
               ? `(pour ${nPresent} présent${nPresent>1?"s":""} sur ${nAll}, soit ${mult.toFixed(1)} équiv. adultes)`
@@ -8603,7 +8651,7 @@ function computePoolSizes(profile, currentWeek) {
   const filter = type => RECIPES.filter(r =>
     r.type === type &&
     matchesSeason(r, season) &&
-    !recipeHasAllergen(r, profile.globalAllergies) &&
+    !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
     !recipeHasExcluded(r, profile.globalExclusions) &&
     recipeRespectsEquipment(r, profile.equipment) &&
     recipeRespectsTime(r, profile.maxPrepMinutes)
@@ -8678,12 +8726,46 @@ function SettingsView({state, update, updateProfile}) {
   // est un fallback 100% fiable (l'utilisateur colle le contenu JSON).
   const [pasteMode, setPasteMode] = useState(false);
   const [pasteText, setPasteText] = useState("");
+  // Modal de confirmation pour la saisie d'une allergie (issue #8). On force
+  // l'utilisateur à confirmer qu'il s'agit bien d'une allergie médicale et pas
+  // d'une simple préférence (qui doit aller dans Exclusions). Évite de bloquer
+  // par erreur des recettes potentiellement bonnes.
+  // Forme : null ou {scope:"global"|"member", allergenId, memberId?, memberName?}.
+  const [pendingAllergy, setPendingAllergy] = useState(null);
   const addMember = () => {
     const newId = (p.members.at(-1)?.id || 0) + 1;
-    updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F"}]});
+    updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, age:30, sex:"F", allergies:[]}]});
   };
   const updateMember = (id, patch) => updateProfile({members: p.members.map(m => m.id === id ? {...m, ...patch} : m)});
   const removeMember = (id) => { if (p.members.length > 1) updateProfile({members: p.members.filter(m => m.id !== id)}); };
+
+  // ----- Allergies : ajout avec confirmation, suppression directe -----
+  const tryAddGlobalAllergy = (allergenId) => {
+    setPendingAllergy({scope: "global", allergenId});
+  };
+  const removeGlobalAllergy = (allergenId) => {
+    updateProfile({globalAllergies: (p.globalAllergies || []).filter(x => x !== allergenId)});
+  };
+  const tryAddMemberAllergy = (memberId, allergenId) => {
+    const member = p.members.find(m => m.id === memberId);
+    setPendingAllergy({scope: "member", memberId, memberName: member?.name || "?", allergenId});
+  };
+  const removeMemberAllergy = (memberId, allergenId) => {
+    const member = p.members.find(m => m.id === memberId);
+    updateMember(memberId, {allergies: (member?.allergies || []).filter(x => x !== allergenId)});
+  };
+  const confirmPendingAllergy = () => {
+    if (!pendingAllergy) return;
+    const {scope, memberId, allergenId} = pendingAllergy;
+    if (scope === "global") {
+      updateProfile({globalAllergies: [...(p.globalAllergies || []), allergenId]});
+    } else if (scope === "member" && memberId) {
+      const member = p.members.find(m => m.id === memberId);
+      updateMember(memberId, {allergies: [...(member?.allergies || []), allergenId]});
+    }
+    setPendingAllergy(null);
+  };
+  const cancelPendingAllergy = () => setPendingAllergy(null);
 
   const resetAll = () => {
     if (confirm("Effacer toutes les données (profil, menus, notes) ?")) {
@@ -8834,16 +8916,39 @@ function SettingsView({state, update, updateProfile}) {
 
       <div className="bg-white rounded-lg shadow p-5">
         <h3 className="font-bold text-slate-800 mb-3">Famille</h3>
-        {p.members.map(m => (
-          <div key={m.id} className="flex flex-wrap gap-2 items-end bg-slate-50 p-3 rounded mb-2">
-            <input value={m.name} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
-            <input type="number" value={m.age} onChange={e=>updateMember(m.id,{age:parseInt(e.target.value)||0})} className="border rounded px-2 py-1 w-20" />
-            <select value={m.sex} onChange={e=>updateMember(m.id,{sex:e.target.value})} className="border rounded px-2 py-1">
-              <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
-            </select>
-            {p.members.length > 1 && <button onClick={()=>removeMember(m.id)} className="text-red-500 text-sm">Retirer</button>}
-          </div>
-        ))}
+        {p.members.map(m => {
+          const memberAllergies = m.allergies || [];
+          return (
+            <div key={m.id} className="bg-slate-50 p-3 rounded mb-2 space-y-2">
+              <div className="flex flex-wrap gap-2 items-end">
+                <input value={m.name} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
+                <input type="number" value={m.age} onChange={e=>updateMember(m.id,{age:parseInt(e.target.value)||0})} className="border rounded px-2 py-1 w-20" />
+                <select value={m.sex} onChange={e=>updateMember(m.id,{sex:e.target.value})} className="border rounded px-2 py-1">
+                  <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
+                </select>
+                {p.members.length > 1 && <button onClick={()=>removeMember(m.id)} className="text-red-500 text-sm">Retirer</button>}
+              </div>
+              <details className="text-sm" open={memberAllergies.length > 0}>
+                <summary className="cursor-pointer text-slate-700">
+                  ⚠️ Allergies / intolérances de {m.name || "ce membre"}
+                  {memberAllergies.length > 0 && <span className="ml-1 text-red-700 font-medium">({memberAllergies.length})</span>}
+                </summary>
+                <div className="mt-2 flex flex-wrap gap-1">
+                  {dataRef.allergens().map(({id: k, label: v}) => {
+                    const active = memberAllergies.includes(k);
+                    return (
+                      <button key={k}
+                        onClick={() => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)}
+                        className={`text-xs px-2 py-1 rounded border ${active ? "bg-red-100 border-red-400 text-red-800 font-medium" : "bg-white border-slate-200 hover:bg-slate-100"}`}>
+                        {active ? "⚠️ " : ""}{v}
+                      </button>
+                    );
+                  })}
+                </div>
+              </details>
+            </div>
+          );
+        })}
         <button onClick={addMember} className="text-emerald-700 text-sm font-medium">+ Ajouter un membre</button>
         <div className="mt-3">
           <label className="text-xs text-slate-500 block">Localisation</label>
@@ -8853,19 +8958,23 @@ function SettingsView({state, update, updateProfile}) {
       </div>
 
       <div className="bg-white rounded-lg shadow p-5">
-        <h3 className="font-bold text-red-800 mb-3">⚠️ Allergies et intolérances</h3>
+        <h3 className="font-bold text-red-800 mb-3">⚠️ Allergies / intolérances de toute la famille</h3>
+        <p className="text-xs text-slate-600 mb-3">
+          Ces allergies s'appliquent à tous les membres. Pour une allergie qui ne concerne qu'une personne, utilise le bloc « Allergies » sous chaque membre dans la section Famille ci-dessus.
+        </p>
         <div className="flex flex-wrap gap-2">
-          {dataRef.allergens().map(({id: k, label: v}) => (
-            <label key={k} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              p.globalAllergies.includes(k) ? "bg-red-100 border-red-400 text-red-800" : "bg-white border-slate-200"
-            }`}>
-              <input type="checkbox" checked={p.globalAllergies.includes(k)}
-                onChange={e => updateProfile({
-                  globalAllergies: e.target.checked ? [...p.globalAllergies, k] : p.globalAllergies.filter(x=>x!==k)
-                })} />
-              {v}
-            </label>
-          ))}
+          {dataRef.allergens().map(({id: k, label: v}) => {
+            const active = p.globalAllergies.includes(k);
+            return (
+              <button key={k} type="button"
+                onClick={() => active ? removeGlobalAllergy(k) : tryAddGlobalAllergy(k)}
+                className={`flex items-center gap-2 px-3 py-2 rounded border ${
+                  active ? "bg-red-100 border-red-400 text-red-800 font-medium" : "bg-white border-slate-200 hover:bg-slate-100"
+                }`}>
+                {active ? "⚠️ " : ""}{v}
+              </button>
+            );
+          })}
         </div>
       </div>
 
@@ -9007,6 +9116,27 @@ function SettingsView({state, update, updateProfile}) {
         </button>
       </div>
 
+      {pendingAllergy && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={cancelPendingAllergy}>
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
+            <h3 className="text-lg font-bold text-red-800 mb-3">⚠️ Confirmer une allergie médicale</h3>
+            <p className="text-sm text-slate-700 mb-3">
+              Vous allez ajouter <strong>{dataRef.allergenLabel(pendingAllergy.allergenId)}</strong>
+              {pendingAllergy.scope === "member"
+                ? <> aux allergies de <strong>{pendingAllergy.memberName}</strong>.</>
+                : <> aux allergies de <strong>toute la famille</strong>.</>}
+            </p>
+            <div className="bg-amber-50 border border-amber-300 rounded p-3 text-sm text-amber-900 mb-4">
+              Confirmez qu'il s'agit bien d'une <strong>allergie ou intolérance médicale</strong>, pas d'une simple préférence (goût, éthique, religion). Pour une simple préférence, utilisez plutôt la rubrique <strong>« Exclusions préférentielles »</strong> ci-dessous : ces ingrédients seront évités, mais pourront être proposés en dernier recours si la base devient trop restreinte.
+            </div>
+            <div className="flex gap-2 justify-end">
+              <button onClick={cancelPendingAllergy} className="px-4 py-2 text-slate-700 hover:bg-slate-100 rounded">Annuler</button>
+              <button onClick={confirmPendingAllergy} className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded font-medium">Oui, c'est une allergie médicale</button>
+            </div>
+          </div>
+        </div>
+      )}
+
       {pendingImport && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={cancelImport}>
           <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
@@ -9112,7 +9242,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.5.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.6.0 · prototype</p>
     </div>
   );
 }
