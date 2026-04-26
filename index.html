@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.7.0</title>
+<title>Menu IG Bas — V2.8.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -507,6 +507,150 @@ if ("serviceWorker" in navigator) {
     {"id":"edamame decortique","label":"Edamame décortiqués","category":"frozen","soldByWeight":true},
     {"id":"framboise ou","label":"Framboises fraîches ou surgelées","category":"frozen","soldByWeight":true},
     {"id":"petit pois ou","label":"Petits pois frais ou surgelés","category":"frozen","soldByWeight":true}
+  ]
+}
+</script>
+
+<!-- ============================================================ -->
+<!-- TABLE GLYCÉMIQUE — IG et glucides par 100 g pour calculer la CG.   -->
+<!-- Source : Harvard 2008 + ANSES Ciqual + Sydney IGI (≈130 entrées).  -->
+<!-- Les ingrédients absents = considérés sans glucides notables.        -->
+<!-- ============================================================ -->
+
+<script type="application/json" id="data-glycemic">
+{
+  "schema": 1,
+  "items": [
+    {"id": "riz basmati complet", "ig": 45, "carbsPer100g": 28},
+    {"id": "riz basmati", "ig": 50, "carbsPer100g": 28},
+    {"id": "riz arborio", "ig": 65, "carbsPer100g": 28},
+    {"id": "riz", "ig": 65, "carbsPer100g": 28},
+    {"id": "quinoa", "ig": 53, "carbsPer100g": 21},
+    {"id": "quinoa rouge", "ig": 53, "carbsPer100g": 21},
+    {"id": "boulgour", "ig": 48, "carbsPer100g": 28},
+    {"id": "semoule de ble", "ig": 65, "carbsPer100g": 25},
+    {"id": "polenta", "ig": 60, "carbsPer100g": 24},
+    {"id": "flocon d'avoine", "ig": 55, "carbsPer100g": 66},
+    {"id": "avoine", "ig": 55, "carbsPer100g": 66},
+    {"id": "tagliatelles fraiches", "ig": 50, "carbsPer100g": 28},
+    {"id": "tagliatelles", "ig": 50, "carbsPer100g": 30},
+    {"id": "spaghetti", "ig": 50, "carbsPer100g": 30},
+    {"id": "pates", "ig": 50, "carbsPer100g": 30},
+    {"id": "penne", "ig": 50, "carbsPer100g": 30},
+    {"id": "gnocchi", "ig": 65, "carbsPer100g": 30},
+    {"id": "riz blanc", "ig": 73, "carbsPer100g": 28},
+    {"id": "pain complet", "ig": 51, "carbsPer100g": 41},
+    {"id": "pain de seigle", "ig": 50, "carbsPer100g": 45},
+    {"id": "pain blanc", "ig": 75, "carbsPer100g": 50},
+    {"id": "tortilla de ble complet", "ig": 50, "carbsPer100g": 50},
+    {"id": "farine de sarrasin", "ig": 40, "carbsPer100g": 65},
+    {"id": "farine de ble", "ig": 75, "carbsPer100g": 75},
+    {"id": "farine de ble complet", "ig": 50, "carbsPer100g": 65},
+    {"id": "poudre d'amande", "ig": 25, "carbsPer100g": 10},
+    {"id": "lentille", "ig": 30, "carbsPer100g": 20},
+    {"id": "lentille verte", "ig": 30, "carbsPer100g": 20},
+    {"id": "lentille verte du puy", "ig": 30, "carbsPer100g": 20},
+    {"id": "lentille corail", "ig": 30, "carbsPer100g": 20},
+    {"id": "pois chiche", "ig": 28, "carbsPer100g": 27},
+    {"id": "pois chiche cuit", "ig": 28, "carbsPer100g": 27},
+    {"id": "haricot blanc", "ig": 35, "carbsPer100g": 22},
+    {"id": "haricot rouge", "ig": 35, "carbsPer100g": 22},
+    {"id": "pomme de terre", "ig": 65, "carbsPer100g": 17},
+    {"id": "pomme de terre a chair ferme", "ig": 62, "carbsPer100g": 17},
+    {"id": "patate douce", "ig": 50, "carbsPer100g": 20},
+    {"id": "betterave", "ig": 65, "carbsPer100g": 8},
+    {"id": "betterave cuite", "ig": 65, "carbsPer100g": 8},
+    {"id": "carotte", "ig": 35, "carbsPer100g": 9},
+    {"id": "carotte nouvelle", "ig": 35, "carbsPer100g": 9},
+    {"id": "petits pois", "ig": 35, "carbsPer100g": 14},
+    {"id": "petit pois", "ig": 35, "carbsPer100g": 14},
+    {"id": "mais", "ig": 60, "carbsPer100g": 19},
+    {"id": "courgette", "ig": 15, "carbsPer100g": 3},
+    {"id": "tomate", "ig": 30, "carbsPer100g": 4},
+    {"id": "tomate concassee", "ig": 35, "carbsPer100g": 5},
+    {"id": "tomates cerises", "ig": 30, "carbsPer100g": 4},
+    {"id": "concombre", "ig": 15, "carbsPer100g": 2},
+    {"id": "poivron", "ig": 15, "carbsPer100g": 6},
+    {"id": "poivron rouge", "ig": 15, "carbsPer100g": 6},
+    {"id": "poivron jaune", "ig": 15, "carbsPer100g": 6},
+    {"id": "epinard", "ig": 15, "carbsPer100g": 3},
+    {"id": "brocoli", "ig": 15, "carbsPer100g": 7},
+    {"id": "chou-fleur", "ig": 15, "carbsPer100g": 5},
+    {"id": "chou kale", "ig": 15, "carbsPer100g": 4},
+    {"id": "champignon", "ig": 15, "carbsPer100g": 3},
+    {"id": "aubergine", "ig": 20, "carbsPer100g": 6},
+    {"id": "asperge", "ig": 15, "carbsPer100g": 4},
+    {"id": "haricot vert", "ig": 30, "carbsPer100g": 7},
+    {"id": "oignon", "ig": 15, "carbsPer100g": 9},
+    {"id": "oignon rouge", "ig": 15, "carbsPer100g": 9},
+    {"id": "oignon nouveau", "ig": 15, "carbsPer100g": 7},
+    {"id": "echalote", "ig": 15, "carbsPer100g": 17},
+    {"id": "fenouil", "ig": 15, "carbsPer100g": 7},
+    {"id": "poireau", "ig": 15, "carbsPer100g": 6},
+    {"id": "endive", "ig": 15, "carbsPer100g": 3},
+    {"id": "radis", "ig": 15, "carbsPer100g": 3},
+    {"id": "pomme", "ig": 38, "carbsPer100g": 14},
+    {"id": "poire", "ig": 38, "carbsPer100g": 12},
+    {"id": "banane", "ig": 51, "carbsPer100g": 23},
+    {"id": "banane mure", "ig": 62, "carbsPer100g": 23},
+    {"id": "orange", "ig": 43, "carbsPer100g": 12},
+    {"id": "citron", "ig": 20, "carbsPer100g": 9},
+    {"id": "citron vert", "ig": 20, "carbsPer100g": 8},
+    {"id": "fraise", "ig": 25, "carbsPer100g": 7},
+    {"id": "framboise", "ig": 25, "carbsPer100g": 5},
+    {"id": "fruit rouge", "ig": 25, "carbsPer100g": 8},
+    {"id": "myrtille", "ig": 53, "carbsPer100g": 14},
+    {"id": "kiwi", "ig": 50, "carbsPer100g": 14},
+    {"id": "ananas", "ig": 59, "carbsPer100g": 13},
+    {"id": "mangue", "ig": 51, "carbsPer100g": 15},
+    {"id": "abricot", "ig": 35, "carbsPer100g": 11},
+    {"id": "peche", "ig": 42, "carbsPer100g": 9},
+    {"id": "prune", "ig": 35, "carbsPer100g": 11},
+    {"id": "raisin", "ig": 53, "carbsPer100g": 17},
+    {"id": "datte", "ig": 50, "carbsPer100g": 75},
+    {"id": "figue", "ig": 35, "carbsPer100g": 18},
+    {"id": "cerise", "ig": 25, "carbsPer100g": 16},
+    {"id": "clementine", "ig": 40, "carbsPer100g": 11},
+    {"id": "fruit de saison", "ig": 40, "carbsPer100g": 12},
+    {"id": "fruit de la passion", "ig": 30, "carbsPer100g": 11},
+    {"id": "miel", "ig": 58, "carbsPer100g": 82},
+    {"id": "sirop d'erable", "ig": 54, "carbsPer100g": 65},
+    {"id": "sucre", "ig": 70, "carbsPer100g": 100},
+    {"id": "cacao non sucre", "ig": 20, "carbsPer100g": 11},
+    {"id": "chocolat noir", "ig": 25, "carbsPer100g": 30},
+    {"id": "compote de pomme", "ig": 35, "carbsPer100g": 12},
+    {"id": "compote sans sucre", "ig": 35, "carbsPer100g": 12},
+    {"id": "lait demi-ecreme", "ig": 30, "carbsPer100g": 5},
+    {"id": "lait entier", "ig": 31, "carbsPer100g": 5},
+    {"id": "lait d'amande", "ig": 25, "carbsPer100g": 1},
+    {"id": "lait de coco", "ig": 40, "carbsPer100g": 3},
+    {"id": "yaourt", "ig": 36, "carbsPer100g": 5},
+    {"id": "yaourt nature", "ig": 36, "carbsPer100g": 5},
+    {"id": "yaourt grec", "ig": 12, "carbsPer100g": 4},
+    {"id": "fromage blanc", "ig": 30, "carbsPer100g": 5},
+    {"id": "ricotta", "ig": 35, "carbsPer100g": 3},
+    {"id": "feta", "ig": 35, "carbsPer100g": 4},
+    {"id": "parmesan rape", "ig": 35, "carbsPer100g": 4},
+    {"id": "mozzarella", "ig": 35, "carbsPer100g": 3},
+    {"id": "amande", "ig": 15, "carbsPer100g": 9},
+    {"id": "amandes effilees", "ig": 15, "carbsPer100g": 9},
+    {"id": "noix", "ig": 15, "carbsPer100g": 14},
+    {"id": "cerneau de noix", "ig": 15, "carbsPer100g": 14},
+    {"id": "noix de cajou", "ig": 22, "carbsPer100g": 30},
+    {"id": "noisette", "ig": 15, "carbsPer100g": 17},
+    {"id": "graine de chia", "ig": 15, "carbsPer100g": 8},
+    {"id": "graine de sesame", "ig": 35, "carbsPer100g": 23},
+    {"id": "graine de courge", "ig": 25, "carbsPer100g": 11},
+    {"id": "graine de tournesol", "ig": 35, "carbsPer100g": 20},
+    {"id": "graine de lin", "ig": 15, "carbsPer100g": 2},
+    {"id": "sauce soja", "ig": 35, "carbsPer100g": 5},
+    {"id": "sauce soja salee", "ig": 35, "carbsPer100g": 5},
+    {"id": "sauce tamari", "ig": 30, "carbsPer100g": 4},
+    {"id": "moutarde", "ig": 35, "carbsPer100g": 4},
+    {"id": "moutarde a l'ancienne", "ig": 35, "carbsPer100g": 4},
+    {"id": "vin blanc sec", "ig": 0, "carbsPer100g": 3},
+    {"id": "vin rouge", "ig": 0, "carbsPer100g": 3},
+    {"id": "jus d'orange", "ig": 50, "carbsPer100g": 10}
   ]
 }
 </script>
@@ -7248,13 +7392,16 @@ const REF = (() => {
   const tags        = loadRefBlock("data-tags",        {items:[]}).items;
   const ingredients = loadRefBlock("data-ingredients", {items:[]}).items;
   const unitsData   = loadRefBlock("data-units",       {items:[], aliases:{}});
+  const glycemic    = loadRefBlock("data-glycemic",    {items:[]}).items;
   const ingredientsById = new Map(ingredients.map(i => [i.id, i]));
   const unitsById       = new Map(unitsData.items.map(u => [u.id, u]));
+  const glycemicById    = new Map(glycemic.map(g => [g.id, g]));
   return {
     categories, allergens, equipment, tags,
     ingredients, ingredientsById,
     units: unitsData.items, unitsById,
     unitAliases: unitsData.aliases,
+    glycemic, glycemicById,
   };
 })();
 const dataRef = {
@@ -7301,6 +7448,40 @@ const dataRef = {
   tagLabel(id) {
     const t = REF.tags.find(t => t.id === id);
     return t ? t.label : id;
+  },
+  // ----- Glycémique (IG / glucides) -----
+  // Cherche l'entrée glycémique pour un nom d'ingrédient. Tente d'abord
+  // le nom canonique direct, puis le nom strippé des préparations.
+  glycemic(canonName) {
+    if (!canonName) return null;
+    const direct = REF.glycemicById.get(canonName);
+    if (direct) return direct;
+    const stripped = stripProducePrep(canonName);
+    if (stripped !== canonName) {
+      const g = REF.glycemicById.get(stripped);
+      if (g) return g;
+    }
+    return null;
+  },
+  // Convertit (qty, unit, name) en grammes. Renvoie null si non convertible.
+  // Stratégie : g/kg/ml/l/cl direct ; "u" via weightPerPiece ; c.à.s/c.à.c
+  // approximations standards ; autres unités discrètes ignorées.
+  qtyToGrams(name, qty, unit) {
+    const u = dataRef.canonicalUnit(unit);
+    if (u === "g")  return qty;
+    if (u === "kg") return qty * 1000;
+    if (u === "ml" || u === "l" || u === "cl") {
+      // Approximation 1 ml ≈ 1 g (vrai pour eau, lait ; ~10% off pour huile)
+      const ml = u === "l" ? qty * 1000 : (u === "cl" ? qty * 10 : qty);
+      return ml;
+    }
+    if (u === "c.à.s") return qty * 15;
+    if (u === "c.à.c") return qty * 5;
+    if (u === "u") {
+      const w = dataRef.produceUnitWeight(canonicalName(name));
+      return w ? qty * w : null;
+    }
+    return null;
   },
 };
 const SEASON_FR = {spring:"Printemps", summer:"Été", autumn:"Automne", winter:"Hiver"};
@@ -7439,6 +7620,44 @@ function recipeRespectsTime(recipe, maxMinutes) {
 function recipeRespectsSkill(recipe, skillLevel) {
   if (!skillLevel || !recipe.diff) return true;
   return recipe.diff <= skillLevel;
+}
+// Calcule l'IG moyen pondéré et la Charge Glycémique (CG) d'une recette
+// pour 1 portion. Méthode :
+//   - pour chaque ingrédient, on essaye d'obtenir (poids en g) + (IG, glucides/100g)
+//   - glucides_g = qty_g × carbsPer100g / 100
+//   - CG = Σ (IG_i × glucides_g_i) / 100
+//   - IG moyen = Σ (IG_i × glucides_g_i) / Σ glucides_g_i
+// Renvoie {ig, cg, carbs, covered, total} ou null si aucune donnée exploitable.
+// `covered` = nombre d'ingrédients avec entrée glycémique trouvée.
+function computeRecipeGlycemic(recipe) {
+  if (!recipe?.ing?.length) return null;
+  let weightedIgSum = 0;
+  let totalCarbs = 0;
+  let covered = 0;
+  for (const [name, qty, unit] of recipe.ing) {
+    const canon = canonicalName(name);
+    const entry = dataRef.glycemic(canon);
+    if (!entry) continue;
+    const grams = dataRef.qtyToGrams(name, qty, unit);
+    if (grams == null || grams <= 0) continue;
+    const carbs_g = grams * entry.carbsPer100g / 100;
+    if (carbs_g <= 0.1) continue; // ingrédient référencé mais qty négligeable
+    weightedIgSum += entry.ig * carbs_g;
+    totalCarbs += carbs_g;
+    covered++;
+  }
+  if (totalCarbs <= 0) return null;
+  const ig = Math.round(weightedIgSum / totalCarbs);
+  const cg = Math.round(weightedIgSum / 100);
+  return {ig, cg, carbs: Math.round(totalCarbs), covered, total: recipe.ing.length};
+}
+// Classe une recette en tier visuel d'après sa CG (charge glycémique par
+// portion). Référence Harvard : ≤10 bas, 11-19 modéré, ≥20 élevé.
+function glycemicTier(cg) {
+  if (cg == null) return "unknown";
+  if (cg <= 10) return "low";
+  if (cg <= 19) return "medium";
+  return "high";
 }
 // Rendu "joli" d'un nombre : fractions unicode pour ¼ ½ ¾ ⅓ ⅔ (tolérance ±0.03),
 // sinon décimal arrondi au 0.1 avec virgule française.
@@ -8264,7 +8483,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.7.0 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.8.0 — prototype local • Données stockées dans votre navigateur
       </footer>
     </div>
   );
@@ -8764,6 +8983,23 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
                 <span>📊 Difficulté {"⭐".repeat(recipe.diff)}</span>
                 <span>🔢 {recipe.kcal} kcal/pers</span>
                 <span>💰 ~{recipe.cost.toFixed(2)}€/pers</span>
+                {(() => {
+                  const gly = computeRecipeGlycemic(recipe);
+                  if (!gly) return null;
+                  const tier = glycemicTier(gly.cg);
+                  const cls = tier === "low" ? "bg-emerald-500 text-white"
+                    : tier === "medium" ? "bg-amber-500 text-white"
+                    : "bg-red-500 text-white";
+                  const label = tier === "low" ? "IG bas ✓"
+                    : tier === "medium" ? "IG modéré"
+                    : "IG élevé ⚠️ ";
+                  return (
+                    <span className={`${cls} px-2 py-0.5 rounded-full font-semibold`}
+                      title={`IG moyen pondéré : ${gly.ig} · Charge glycémique : ${gly.cg} (≤10 bas, 11-19 modéré, ≥20 élevé) · Calculé sur ${gly.covered}/${gly.total} ingrédients référencés (${gly.carbs}g de glucides estimés)`}>
+                      {label} · CG {gly.cg}
+                    </span>
+                  );
+                })()}
               </div>
               {recipeAdvanceInfo(recipe) && (
                 <div className="mt-2 inline-flex items-center gap-2 bg-amber-100 text-amber-900 px-3 py-1.5 rounded-full text-sm font-medium">
@@ -9663,7 +9899,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.7.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.8.0 · prototype</p>
     </div>
   );
 }
