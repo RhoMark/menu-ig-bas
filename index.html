@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.8.1</title>
+<title>Menu IG Bas — V2.9.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7929,6 +7929,9 @@ function projectRuntime(v2) {
   const h = v2.households[ah] || emptyHousehold(ah);
   return {
     onboarded:    !!h.settings?.onboarded,
+    // Consentement RGPD donné une fois et persisté (V2.9.0+).
+    // Si null/undefined → l'app affiche le modal de bienvenue bloquant.
+    consentedAt:  h.settings?.consentedAt || null,
     profile:      { ...h.preferences, members: h.members },
     menus:        h.menus    || {},
     ratings:      h.ratings  || {},
@@ -7965,7 +7968,7 @@ function applyRuntimeToV2(runtime) {
         ratings:      runtime.ratings,
         pantry:       runtime.pantryChecks,
         journal:      runtime.journal,
-        settings:     { ...prevHouse.settings, onboarded: !!runtime.onboarded },
+        settings:     { ...prevHouse.settings, onboarded: !!runtime.onboarded, consentedAt: runtime.consentedAt || null },
       },
     },
     session: runtime._session,
@@ -8332,6 +8335,62 @@ function estimateWeekCost(weekMenu, profile) {
 // COMPONENTS
 // ============================================================================
 
+// Modal de bienvenue affiché au tout premier lancement (RGPD V2.9.0).
+// Bloque l'accès à l'app tant que l'utilisateur n'a pas pris connaissance
+// du modèle « 100 % local, aucun serveur ». Une fois validé, on persiste
+// `consentedAt: <ISO>` dans le household pour ne plus l'afficher.
+function ConsentModal({onConsent}) {
+  return (
+    <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto">
+      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full p-6 my-8">
+        <h2 className="text-2xl font-bold text-emerald-700 mb-2">🥗 Bienvenue sur Menu IG Bas</h2>
+        <p className="text-sm text-slate-600 mb-5">
+          Avant de commencer, voici comment cette app fonctionne. Trois choses simples à savoir.
+        </p>
+
+        <div className="space-y-4 text-sm">
+          <div className="bg-emerald-50 border border-emerald-200 rounded p-3">
+            <div className="font-semibold text-emerald-900 mb-1">🔒 Tes données restent chez toi, point.</div>
+            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
+              <li>Tout est stocké dans <strong>la mémoire de ton navigateur</strong> sur ce device.</li>
+              <li><strong>Aucun serveur</strong>, aucun compte à créer, aucune connexion réseau pour utiliser l'app.</li>
+              <li>Aucun analytics, aucun tracker, aucun cookie tiers, aucun pixel publicitaire.</li>
+              <li>Le code est <strong>open source</strong>, hébergé publiquement sur GitHub.</li>
+            </ul>
+          </div>
+
+          <div className="bg-amber-50 border border-amber-200 rounded p-3">
+            <div className="font-semibold text-amber-900 mb-1">⚠️ Ce que ça implique</div>
+            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
+              <li><strong>Pas de synchronisation</strong> automatique entre tes appareils (une option arrivera plus tard, opt-in).</li>
+              <li>Si tu vides le cache de ton navigateur, <strong>tes données disparaissent</strong>.</li>
+              <li><strong>Fais des exports JSON</strong> régulièrement (Paramètres → Sauvegarde) pour ne rien perdre.</li>
+            </ul>
+          </div>
+
+          <div className="bg-sky-50 border border-sky-200 rounded p-3">
+            <div className="font-semibold text-sky-900 mb-1">📜 Tes droits RGPD sont respectés</div>
+            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
+              <li><strong>Accès</strong> et <strong>rectification</strong> : tu vois et modifies tout dans l'app.</li>
+              <li><strong>Effacement</strong> : un bouton dans Paramètres efface tout en un clic.</li>
+              <li><strong>Portabilité</strong> : un bouton dans Paramètres exporte tout au format JSON lisible.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="text-xs text-slate-500 mt-4">
+          En cliquant ci-dessous, tu confirmes avoir compris ces principes. Tu peux relire ces informations à tout moment dans Paramètres → Données et confidentialité.
+        </p>
+
+        <button onClick={onConsent}
+          className="mt-4 w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 rounded-md">
+          J'ai compris, commencer
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   const [state, setState] = useState(loadState());
   const [currentWeek, setCurrentWeek] = useState(mondayOf(new Date()));
@@ -8453,6 +8512,13 @@ function App() {
     }
   }, [printMode]);
 
+  // Modal de consentement RGPD (V2.9.0) : bloque l'app tant que pas validé.
+  // On le rend en plus du reste pour ne pas dérouter l'utilisateur (pas
+  // d'écran blanc), mais le z-50 backdrop-blur assure le côté bloquant.
+  if (!state.consentedAt) {
+    return <ConsentModal onConsent={() => update({consentedAt: new Date().toISOString()})} />;
+  }
+
   if (printMode === "menu") return <PrintMenuPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} />;
   if (printMode === "shopping") return <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} />;
 
@@ -8513,7 +8579,10 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.8.1 — prototype local • Données stockées dans votre navigateur
+        Menu IG Bas V2.9.0 — prototype local • Données stockées dans votre navigateur ·{" "}
+        <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
+          target="_blank" rel="noopener noreferrer"
+          className="underline hover:text-slate-200">Confidentialité</a>
       </footer>
     </div>
   );
@@ -9808,6 +9877,30 @@ function SettingsView({state, update, updateProfile}) {
       </div>
 
       <div className="bg-white rounded-lg shadow p-5">
+        <h3 className="font-bold text-slate-800 mb-3">🔒 Données et confidentialité</h3>
+        <p className="text-sm text-slate-600 mb-3">
+          Cette app stocke tes données <strong>uniquement dans la mémoire de ton navigateur</strong>, sur ce device.
+          Aucun serveur ne reçoit ni ne stocke quoi que ce soit. Le code est open source et auditable.
+        </p>
+        <div className="text-sm space-y-2 mb-3">
+          <div className="font-semibold text-slate-700">Tes droits RGPD :</div>
+          <ul className="list-disc list-inside text-slate-700 space-y-1 ml-1">
+            <li><strong>Accès &amp; rectification</strong> : toutes tes données sont visibles et modifiables dans cette app (Famille, Allergies, Menus, Notes, etc.).</li>
+            <li><strong>Effacement</strong> : bouton « Tout effacer » ci-dessous (zone dangereuse).</li>
+            <li><strong>Portabilité</strong> : bouton « Exporter » dans la section Sauvegarde plus haut. Format JSON lisible.</li>
+            <li><strong>Pas de profilage</strong>, pas de transmission tierce, pas d'analytics.</li>
+          </ul>
+        </div>
+        <p className="text-xs text-slate-500">
+          {state.consentedAt && <>Consentement initial donné le {new Date(state.consentedAt).toLocaleDateString("fr-FR")}.{" "}</>}
+          Politique complète :{" "}
+          <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
+            target="_blank" rel="noopener noreferrer"
+            className="text-emerald-700 underline">PRIVACY.md sur GitHub</a>.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-lg shadow p-5">
         <h3 className="font-bold text-slate-800 mb-3">Zone dangereuse</h3>
         <button onClick={resetAll} className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
           Tout effacer et recommencer
@@ -9940,7 +10033,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.8.1 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.9.0 · prototype</p>
     </div>
   );
 }
