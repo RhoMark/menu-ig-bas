@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.14.1</title>
+<title>Menu IG Bas — V2.14.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -9923,7 +9923,7 @@ function App({initialState}) {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.14.0 — prototype local • Données stockées dans votre navigateur ·{" "}
+        Menu IG Bas V2.14.2 — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -11144,17 +11144,39 @@ function SettingsView({state, update, updateProfile}) {
   // Sérialise tout le bloc V2 du localStorage dans un JSON téléchargeable, et
   // permet de le restaurer sur un autre appareil. Format auto-portant : on
   // inclut un schema ("menu-ig-bas-export") + version d'app pour validation.
-  const exportData = () => {
+  // V2.14.2 : déchiffre AVANT d'écrire le fichier d'export. Sinon le JSON
+  // contient l'enveloppe chiffrée et devient irrécupérable dès que la clé
+  // AES locale (IndexedDB) disparaît — typiquement sur "Clear site data" ou
+  // changement d'appareil. L'export doit rester portable pour servir de
+  // backup.
+  const exportData = async () => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY_V2);
       if (!raw) { alert("Aucune donnée à exporter pour l'instant."); return; }
+      let dataObj;
+      try { dataObj = JSON.parse(raw); }
+      catch (e) {
+        console.error("[export] localStorage non-JSON :", e);
+        alert("Format de stockage invalide.");
+        return;
+      }
+      if (dataObj?.encrypted) {
+        try {
+          const plaintext = await cryptoStore.decrypt(dataObj);
+          dataObj = JSON.parse(plaintext);
+        } catch (e) {
+          console.error("[export] déchiffrement échoué :", e);
+          alert("Impossible de déchiffrer les données pour l'export (clé locale absente). Export annulé.");
+          return;
+        }
+      }
       const appVersion = (document.title.match(/V(\d+\.\d+\.\d+)/)?.[1]) || "?";
       const payload = {
         schema: "menu-ig-bas-export",
         schemaVersion: 1,
         exportedAt: new Date().toISOString(),
         appVersion,
-        data: JSON.parse(raw),
+        data: dataObj,
       };
       const blob = new Blob([JSON.stringify(payload, null, 2)], {type: "application/json"});
       const url = URL.createObjectURL(blob);
@@ -11184,9 +11206,20 @@ function SettingsView({state, update, updateProfile}) {
       }
       const payload = JSON.parse(text);
       console.log("[import] JSON parsé, schema:", payload?.schema, "appVersion:", payload?.appVersion);
-      if (payload?.schema !== "menu-ig-bas-export" || !payload.data || payload.data.schema !== 2) {
+      // Accepte deux formats : V2 en clair ({schema:2, users, households, session})
+      // ou enveloppe chiffrée legacy V2.10–V2.14.1 ({encrypted, iv, ct}). Cette
+      // dernière n'est restaurable que sur l'appareil d'origine où la clé AES
+      // existe encore dans IndexedDB — on la garde pour permettre la
+      // récupération après un Clear site data partiel (le user a témoigné).
+      const data = payload?.data;
+      const isV2Plain = data?.schema === 2;
+      const isEncryptedV2 = data?.encrypted === true && typeof data?.iv === "string" && typeof data?.ct === "string";
+      if (payload?.schema !== "menu-ig-bas-export" || !data || (!isV2Plain && !isEncryptedV2)) {
         setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Menu IG Bas (V2). Schema détecté : " + (payload?.schema || "absent")});
         return false;
+      }
+      if (isEncryptedV2) {
+        console.info("[import] payload chiffré détecté — sera restauré tel quel et déchiffré au prochain chargement (nécessite la même clé locale)");
       }
       setImportStatus(null);
       setPendingImport({payload, fileName: sourceLabel});
@@ -11666,7 +11699,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.14.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.14.2 · prototype</p>
     </div>
   );
 }
