@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.14.0</title>
+<title>Menu IG Bas — V2.14.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -9936,7 +9936,7 @@ function App({initialState}) {
 function TopBar({view, setView}) {
   const tabs = [
     {key:"menu",     label:"Planning",      icon:"📅"},
-    {key:"month",    label:"Mois",          icon:"🗓️"},
+    {key:"month",    label:"Vue mensuelle", icon:"🗓️"},
     {key:"shopping", label:"Liste courses", icon:"🛒"},
     {key:"library",  label:"Recettes",      icon:"📖"},
     {key:"history",  label:"Historique",    icon:"📊"},
@@ -10794,8 +10794,8 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
       const slot = menu[d] || {};
       const locked = slot.locked || {};
       activeSlots.forEach(m => {
-        if (slot[m.key]) filled++;
-        if (locked[m.key]) locks++;
+        if (slot[m]) filled++;
+        if (locked[m]) locks++;
       });
     });
     const cost = estimateWeekCost(menu, state.profile);
@@ -10814,7 +10814,7 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
     DAYS.forEach(d => {
       const slot = w.menu[d] || {};
       activeSlots.forEach(m => {
-        if (slot[m.key]) { allRecipes.add(slot[m.key]); totalSlotsUsed++; }
+        if (slot[m]) { allRecipes.add(slot[m]); totalSlotsUsed++; }
       });
     });
   });
