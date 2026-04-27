@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.14.2</title>
+<title>Menu IG Bas — V2.14.3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -9640,13 +9640,22 @@ function RecoveryView({onResolved}) {
     try {
       const text = await file.text();
       const data = JSON.parse(text);
-      // Le format d'export contient { schema: 2, users, households, session }
-      // ou directement le runtime sérialisé. On accepte les deux.
-      const v2 = (data && data.schema === 2 && data.households)
-        ? data
-        : (data?.payload?.data?.schema === 2 ? data.payload.data : null);
+      // V2.14.3 : on accepte plusieurs formes
+      //  - export standard : { schema: "menu-ig-bas-export", data: { schema: 2, households, ... } }
+      //  - V2 brut : { schema: 2, households, ... }
+      //  Les exports chiffrés (data.encrypted) ne sont PAS récupérables ici car
+      //  on n'a justement pas la clé d'origine — on tombe en erreur explicite.
+      let v2 = null;
+      if (data?.schema === "menu-ig-bas-export" && data?.data?.schema === 2 && data?.data?.households) {
+        v2 = data.data;
+      } else if (data?.schema === 2 && data?.households) {
+        v2 = data;
+      } else if (data?.schema === "menu-ig-bas-export" && data?.data?.encrypted) {
+        setStatus({type:"error", msg:"Cet export est chiffré et nécessite la clé d'origine, qui a disparu. Utilise un export plus ancien (non chiffré) si tu en as un."});
+        return;
+      }
       if (!v2) {
-        setStatus({type:"error", msg:"Format de fichier non reconnu (besoin d'un export Menu IG Bas)"});
+        setStatus({type:"error", msg:"Format de fichier non reconnu (besoin d'un export Menu IG Bas, format V2 en clair)"});
         return;
       }
       // Re-chiffre avec la nouvelle clé locale (qui sera générée par cryptoStore.encrypt).
@@ -9923,7 +9932,7 @@ function App({initialState}) {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.14.2 — prototype local • Données stockées dans votre navigateur ·{" "}
+        Menu IG Bas V2.14.3 — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -11699,7 +11708,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.14.2 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.14.3 · prototype</p>
     </div>
   );
 }
