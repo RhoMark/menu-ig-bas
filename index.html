@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.17.0</title>
+<title>Menu IG Bas — V2.18.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -10882,7 +10882,7 @@ function App({initialState}) {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 dark:text-slate-500 text-center py-3 text-xs">
-        Menu IG Bas V2.17.0 — prototype local • Données stockées dans votre navigateur ·{" "}
+        Menu IG Bas V2.18.0 — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -11421,25 +11421,74 @@ function AttendanceDialog({day, meal, profile, current, onSave, onClose}) {
   );
 }
 
+// Helper de recherche : minuscules + suppression d'accents pour rendre le filtre
+// indulgent (taper "saumon" matche "Saumon", "saumon" et "saumon fumé"). Mutualisable
+// si on veut harmoniser plus tard avec la barre de recherche de LibraryView.
+function normalizeForSearch(s) {
+  // NFD décompose "é" → "e" + U+0301 (accent aigu combinant). On vire ensuite
+  // toute la plage U+0300..U+036F (combining diacritical marks). Résultat :
+  // recherche tolérante à l'absence d'accents (ex : "saumon fume" matche
+  // "Saumon fumé").
+  return (s || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose}) {
-  const pool = RECIPES.filter(r =>
+  const [query, setQuery] = useState("");
+  const inputRef = useRef(null);
+  // Auto-focus à l'ouverture pour permettre de taper directement sans clic.
+  useEffect(() => { inputRef.current?.focus(); }, []);
+  // Pool de base : type/saison/allergies/exclusions, indépendant de la recherche
+  const basePool = RECIPES.filter(r =>
     r.type === meal &&
     matchesSeason(r, season) &&
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
     !recipeHasExcluded(r, profile.globalExclusions) &&
     r.id !== currentId
   );
+  // Filtre par recherche : nom + tags + ingrédients principaux (premiers 5 pour
+  // éviter de matcher des items mineurs comme "sel" ou "huile d'olive").
+  const q = normalizeForSearch(query.trim());
+  const pool = q.length === 0 ? basePool : basePool.filter(r => {
+    if (normalizeForSearch(r.name).includes(q)) return true;
+    if ((r.tags || []).some(t => normalizeForSearch(t).includes(q))) return true;
+    const ings = (r.ing || []).slice(0, 5);
+    if (ings.some(([name]) => normalizeForSearch(name).includes(q))) return true;
+    return false;
+  });
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 p-5 max-w-lg w-full max-h-[80vh] overflow-auto" onClick={e=>e.stopPropagation()}>
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-lg font-bold">Remplacer — {ALL_MEALS.find(m=>m.key===meal).label} de {day}</h3>
-          <button onClick={onClose} className="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:text-slate-300">✕</button>
+          <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300">✕</button>
+        </div>
+        {/* V2.18.0 — Barre de recherche : filtre par nom, tags ou ingrédient principal */}
+        <div className="relative mb-3">
+          <input
+            ref={inputRef}
+            type="search"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="🔍 Rechercher (nom, ingrédient, tag…)"
+            className="w-full border border-slate-300 dark:border-slate-600 rounded-md px-3 py-2 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+          />
+          {query && (
+            <button
+              type="button"
+              onClick={() => { setQuery(""); inputRef.current?.focus(); }}
+              aria-label="Effacer la recherche"
+              className="absolute right-2 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 text-lg leading-none">
+              ✕
+            </button>
+          )}
+        </div>
+        <div className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+          {pool.length} recette{pool.length > 1 ? "s" : ""} {q && `pour « ${query.trim()} »`} (sur {basePool.length} éligibles)
         </div>
         <div className="space-y-2">
           {pool.map(r => (
             <button key={r.id} onClick={() => onPick(r.id)}
-              className="w-full text-left p-3 bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:bg-emerald-950 hover:border-emerald-300 dark:border-emerald-700 border border-slate-200 dark:border-slate-700 rounded transition">
+              className="w-full text-left p-3 bg-slate-50 dark:bg-slate-700 hover:bg-emerald-50 dark:hover:bg-emerald-950 hover:border-emerald-300 dark:hover:border-emerald-700 border border-slate-200 dark:border-slate-600 rounded transition">
               <p className="font-medium text-slate-800 dark:text-slate-100">
                 {r.name}
                 {recipeAdvanceInfo(r) && (
@@ -11456,7 +11505,14 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
               </p>
             </button>
           ))}
-          {pool.length === 0 && <p className="text-slate-500 dark:text-slate-400 italic text-center py-4">Aucune alternative dans cette saison avec vos contraintes.</p>}
+          {pool.length === 0 && basePool.length === 0 && (
+            <p className="text-slate-500 dark:text-slate-400 italic text-center py-4">Aucune alternative dans cette saison avec vos contraintes.</p>
+          )}
+          {pool.length === 0 && basePool.length > 0 && (
+            <p className="text-slate-500 dark:text-slate-400 italic text-center py-4">
+              Aucune recette ne correspond à « {query.trim()} ». Essaie un autre mot-clé ou efface la recherche.
+            </p>
+          )}
         </div>
       </div>
     </div>
@@ -12706,7 +12762,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas V2.17.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas V2.18.0 · prototype</p>
     </div>
   );
 }
