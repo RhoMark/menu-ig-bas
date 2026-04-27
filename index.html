@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.15.0</title>
+<title>Menu IG Bas — V2.16.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -24,18 +24,57 @@ if ("serviceWorker" in navigator) {
 }
 </script>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+  // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
+  // Configuration Tailwind : on opte pour le mode `class` (toggle manuel)
+  // plutôt que `media` (=prefers-color-scheme strict) pour permettre à
+  // l'utilisateur de forcer un thème indépendamment du système.
+  tailwind.config = { darkMode: 'class' };
+  // Application immédiate du thème AVANT le mount React pour éviter le FOUC
+  // (Flash of Unstyled Content : page blanche apparaît brièvement avant que
+  // React ne charge si on attendait l'init React pour appliquer la classe).
+  // Préférence stockée en localStorage, fallback sur prefers-color-scheme.
+  (function applyTheme() {
+    try {
+      var saved = localStorage.getItem('menu-ig-bas-theme'); // 'light' | 'dark' | null (auto)
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var dark = saved === 'dark' || (!saved && prefersDark);
+      if (dark) document.documentElement.classList.add('dark');
+    } catch (e) { /* localStorage indispo : on reste en clair */ }
+  })();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  /* V2.16.0 — Impression : on force le thème clair quel que soit le mode UI.
+     Les pages PrintMenuPage / PrintShoppingPage ne portent volontairement pas
+     de classes dark: ; ce reset ne sert qu'à neutraliser un éventuel <html
+     class="dark"> qui s'appliquerait à des éléments imprimés. */
   @media print {
     .no-print { display: none !important; }
+    html.dark, html.dark body { background: white !important; color: #000 !important; }
     body { background: white !important; }
+  }
+  /* V2.16.0 — Inputs natifs en mode sombre. La plupart des <input>/<select>/
+     <textarea> du projet n'ont pas de classes bg/text explicites (ils
+     comptent sur les valeurs par défaut du navigateur, blanc sur noir). En
+     mode sombre on remet une couleur cohérente avec les surfaces slate-800. */
+  html.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  html.dark select,
+  html.dark textarea {
+    background-color: rgb(30 41 59); /* slate-800 */
+    color: rgb(241 245 249); /* slate-100 */
+    border-color: rgb(71 85 105); /* slate-600 */
+  }
+  html.dark input::placeholder,
+  html.dark textarea::placeholder {
+    color: rgb(148 163 184); /* slate-400 */
   }
 </style>
 </head>
-<body class="bg-slate-50 min-h-screen">
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 min-h-screen">
 <div id="root">
   <div style="padding:40px;text-align:center;font-family:sans-serif;">
     <p>⏳ Chargement de l'application Menu IG Bas…</p>
@@ -9978,16 +10017,16 @@ function estimateWeekCost(weekMenu, profile) {
 function ConsentModal({onConsent}) {
   return (
     <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full p-6 my-8">
-        <h2 className="text-2xl font-bold text-emerald-700 mb-2">🥗 Bienvenue sur Menu IG Bas</h2>
-        <p className="text-sm text-slate-600 mb-5">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-2xl w-full p-6 my-8">
+        <h2 className="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-2">🥗 Bienvenue sur Menu IG Bas</h2>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mb-5">
           Avant de commencer, voici comment cette app fonctionne. Trois choses simples à savoir.
         </p>
 
         <div className="space-y-4 text-sm">
-          <div className="bg-emerald-50 border border-emerald-200 rounded p-3">
-            <div className="font-semibold text-emerald-900 mb-1">🔒 Tes données restent chez toi, point.</div>
-            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
+          <div className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 rounded p-3">
+            <div className="font-semibold text-emerald-900 dark:text-emerald-100 mb-1">🔒 Tes données restent chez toi, point.</div>
+            <ul className="list-disc list-inside text-slate-700 dark:text-slate-200 space-y-0.5">
               <li>Tout est stocké dans <strong>la mémoire de ton navigateur</strong> sur ce device.</li>
               <li><strong>Aucun serveur</strong>, aucun compte à créer, aucune connexion réseau pour utiliser l'app.</li>
               <li>Aucun analytics, aucun tracker, aucun cookie tiers, aucun pixel publicitaire.</li>
@@ -9995,18 +10034,18 @@ function ConsentModal({onConsent}) {
             </ul>
           </div>
 
-          <div className="bg-amber-50 border border-amber-200 rounded p-3">
-            <div className="font-semibold text-amber-900 mb-1">⚠️ Ce que ça implique</div>
-            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
+          <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3">
+            <div className="font-semibold text-amber-900 dark:text-amber-100 mb-1">⚠️ Ce que ça implique</div>
+            <ul className="list-disc list-inside text-slate-700 dark:text-slate-200 space-y-0.5">
               <li><strong>Pas de synchronisation</strong> automatique entre tes appareils (une option arrivera plus tard, opt-in).</li>
               <li>Si tu vides le cache de ton navigateur, <strong>tes données disparaissent</strong>.</li>
               <li><strong>Fais des exports JSON</strong> régulièrement (Paramètres → Sauvegarde) pour ne rien perdre.</li>
             </ul>
           </div>
 
-          <div className="bg-sky-50 border border-sky-200 rounded p-3">
-            <div className="font-semibold text-sky-900 mb-1">📜 Tes droits RGPD sont respectés</div>
-            <ul className="list-disc list-inside text-slate-700 space-y-0.5">
+          <div className="bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 rounded p-3">
+            <div className="font-semibold text-sky-900 dark:text-sky-100 mb-1">📜 Tes droits RGPD sont respectés</div>
+            <ul className="list-disc list-inside text-slate-700 dark:text-slate-200 space-y-0.5">
               <li><strong>Accès</strong> et <strong>rectification</strong> : tu vois et modifies tout dans l'app.</li>
               <li><strong>Effacement</strong> : un bouton dans Paramètres efface tout en un clic.</li>
               <li><strong>Portabilité</strong> : un bouton dans Paramètres exporte tout au format JSON lisible.</li>
@@ -10014,7 +10053,7 @@ function ConsentModal({onConsent}) {
           </div>
         </div>
 
-        <p className="text-xs text-slate-500 mt-4">
+        <p className="text-xs text-slate-500 dark:text-slate-400 mt-4">
           En cliquant ci-dessous, tu confirmes avoir compris ces principes. Tu peux relire ces informations à tout moment dans Paramètres → Données et confidentialité.
         </p>
 
@@ -10050,10 +10089,10 @@ function AppLoader() {
 
   if (phase === "loading") {
     return (
-      <div className="fixed inset-0 flex items-center justify-center bg-slate-50">
+      <div className="fixed inset-0 flex items-center justify-center bg-slate-50 dark:bg-slate-800">
         <div className="text-center">
           <div className="text-3xl mb-3">🥗</div>
-          <div className="text-slate-600 text-sm">Chargement…</div>
+          <div className="text-slate-600 dark:text-slate-300 text-sm">Chargement…</div>
         </div>
       </div>
     );
@@ -10122,21 +10161,21 @@ function RecoveryView({onResolved}) {
 
   return (
     <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto">
-      <div className="bg-white rounded-lg shadow-xl max-w-xl w-full p-6 my-8">
-        <h2 className="text-xl font-bold text-amber-700 mb-2">🔓 Données chiffrées sans clé</h2>
-        <p className="text-sm text-slate-700 mb-3">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-xl w-full p-6 my-8">
+        <h2 className="text-xl font-bold text-amber-700 dark:text-amber-300 mb-2">🔓 Données chiffrées sans clé</h2>
+        <p className="text-sm text-slate-700 dark:text-slate-200 mb-3">
           Tes données sont présentes dans le navigateur mais <strong>la clé de chiffrement
           n'est plus accessible</strong>. Elles ne peuvent donc pas être lues.
         </p>
-        <p className="text-xs text-slate-500 mb-5">
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-5">
           Cela arrive typiquement après un nettoyage de stockage du navigateur, ou sur Safari iOS
           si l'app n'a pas été ouverte pendant plusieurs jours (politique ITP). Deux options :
         </p>
 
         <div className="space-y-3">
-          <div className="border border-emerald-200 bg-emerald-50 rounded p-3">
-            <div className="font-semibold text-emerald-900 mb-2">📥 Restaurer depuis un export JSON</div>
-            <p className="text-xs text-slate-600 mb-3">
+          <div className="border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950 rounded p-3">
+            <div className="font-semibold text-emerald-900 dark:text-emerald-100 mb-2">📥 Restaurer depuis un export JSON</div>
+            <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
               Si tu as un fichier <code>menu-ig-bas-export-*.json</code> récent, sélectionne-le.
               Tes données seront re-chiffrées avec une nouvelle clé locale.
             </p>
@@ -10148,9 +10187,9 @@ function RecoveryView({onResolved}) {
             </button>
           </div>
 
-          <div className="border border-red-200 bg-red-50 rounded p-3">
-            <div className="font-semibold text-red-900 mb-2">🗑️ Tout réinitialiser</div>
-            <p className="text-xs text-slate-600 mb-3">
+          <div className="border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950 rounded p-3">
+            <div className="font-semibold text-red-900 dark:text-red-100 mb-2">🗑️ Tout réinitialiser</div>
+            <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
               Si tu n'as pas de backup, tu peux repartir à zéro. Toutes les données chiffrées
               seront supprimées définitivement.
             </p>
@@ -10163,9 +10202,9 @@ function RecoveryView({onResolved}) {
 
         {status && (
           <div className={`mt-4 text-sm rounded px-3 py-2 ${
-            status.type === "error" ? "bg-red-100 text-red-800" :
-            status.type === "success" ? "bg-emerald-100 text-emerald-800" :
-            "bg-slate-100 text-slate-700"
+            status.type === "error" ? "bg-red-100 text-red-800 dark:text-red-200" :
+            status.type === "success" ? "bg-emerald-100 text-emerald-800 dark:text-emerald-200" :
+            "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200"
           }`}>{status.msg}</div>
         )}
       </div>
@@ -10369,8 +10408,8 @@ function App({initialState}) {
           onClose={() => setSelectedRecipe(null)}
         />
       )}
-      <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.15.0 — prototype local • Données stockées dans votre navigateur ·{" "}
+      <footer className="no-print bg-slate-900 text-slate-400 dark:text-slate-500 text-center py-3 text-xs">
+        Menu IG Bas V2.16.0 — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -10380,6 +10419,50 @@ function App({initialState}) {
 }
 
 // ----- TopBar --------------------------------------------------------------
+// ----- ThemeToggle (V2.16.0) ------------------------------------------------
+// Cycle 3 états : auto (suit prefers-color-scheme), light (forcé), dark (forcé).
+// Persistance dans un localStorage SÉPARÉ ("menu-ig-bas-theme") — non chiffré
+// car ce n'est pas une donnée santé. Ce stockage à part permet d'appliquer le
+// thème AVANT le déchiffrement du V2 envelope (cf. <script> bootstrap dans
+// <head>) et d'éviter le flash de page blanche au boot.
+const THEME_STORAGE_KEY = "menu-ig-bas-theme";
+function ThemeToggle() {
+  const [theme, setTheme] = useState(() => localStorage.getItem(THEME_STORAGE_KEY) || "auto");
+  // Applique le thème : auto → suit le système, sinon force la classe.
+  useEffect(() => {
+    const root = document.documentElement;
+    let dark;
+    if (theme === "auto") {
+      localStorage.removeItem(THEME_STORAGE_KEY);
+      dark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    } else {
+      localStorage.setItem(THEME_STORAGE_KEY, theme);
+      dark = theme === "dark";
+    }
+    root.classList.toggle("dark", dark);
+  }, [theme]);
+  // En mode auto, on suit les changements système (l'OS bascule à 19h par ex.)
+  useEffect(() => {
+    if (theme !== "auto" || !window.matchMedia) return;
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const handler = (e) => document.documentElement.classList.toggle("dark", e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, [theme]);
+  const cycle = () => setTheme(t => t === "auto" ? "light" : t === "light" ? "dark" : "auto");
+  const icon  = theme === "auto" ? "🌓" : theme === "dark" ? "🌙" : "☀️";
+  const label = theme === "auto" ? "Auto" : theme === "dark" ? "Sombre" : "Clair";
+  return (
+    <button onClick={cycle}
+      title={`Thème : ${label} — clic pour changer`}
+      aria-label={`Thème ${label}`}
+      className="no-print px-3 py-2 rounded-md text-sm font-medium hover:bg-emerald-600/50 transition flex items-center gap-1.5 text-white">
+      <span className="text-base">{icon}</span>
+      <span className="hidden sm:inline">{label}</span>
+    </button>
+  );
+}
+
 function TopBar({view, setView}) {
   const tabs = [
     {key:"menu",     label:"Planning",      icon:"📅"},
@@ -10390,7 +10473,7 @@ function TopBar({view, setView}) {
     {key:"settings", label:"Paramètres",    icon:"⚙️"},
   ];
   return (
-    <header className="no-print bg-gradient-to-r from-emerald-700 to-teal-600 text-white shadow-lg">
+    <header className="no-print bg-gradient-to-r from-emerald-700 to-teal-600 dark:from-emerald-900 dark:to-teal-900 text-white shadow-lg">
       <div className="container mx-auto px-4 py-4 max-w-7xl flex items-center gap-6">
         <div className="flex items-center gap-3">
           <span className="text-3xl">🌿</span>
@@ -10404,12 +10487,13 @@ function TopBar({view, setView}) {
             <button key={t.key}
               onClick={() => setView(t.key)}
               className={`px-3 py-2 rounded-md text-sm font-medium transition ${
-                view === t.key ? "bg-white text-emerald-700 shadow" : "hover:bg-emerald-600/50 text-white"
+                view === t.key ? "bg-white text-emerald-700 dark:text-emerald-300 dark:bg-slate-800 dark:text-emerald-300 shadow" : "hover:bg-emerald-600/50 text-white"
               }`}>
               <span className="mr-1">{t.icon}</span>{t.label}
             </button>
           ))}
         </nav>
+        <ThemeToggle />
       </div>
     </header>
   );
@@ -10435,56 +10519,56 @@ function SetupView({state, update, updateProfile, onDone}) {
   const steps = [
     {title:"La famille", content: (
       <div className="space-y-3">
-        <p className="text-slate-600">Indiquez les membres de la famille. Les quantités des recettes seront ajustées automatiquement selon l'âge.</p>
+        <p className="text-slate-600 dark:text-slate-300">Indiquez les membres de la famille. Les quantités des recettes seront ajustées automatiquement selon l'âge.</p>
         {p.members.map(m => (
-          <div key={m.id} className="flex flex-wrap gap-2 items-end bg-slate-50 p-3 rounded">
+          <div key={m.id} className="flex flex-wrap gap-2 items-end bg-slate-50 dark:bg-slate-800 p-3 rounded">
             <div className="flex-1 min-w-[160px]">
-              <label className="text-xs text-slate-500 block">Prénom</label>
+              <label className="text-xs text-slate-500 dark:text-slate-400 block">Prénom</label>
               <input value={m.name} onChange={e=>updateMember(m.id,{name:e.target.value})}
                 className="border rounded px-2 py-1 w-full" />
             </div>
             <div>
-              <label className="text-xs text-slate-500 block">Année de naissance</label>
+              <label className="text-xs text-slate-500 dark:text-slate-400 block">Année de naissance</label>
               <div className="flex items-center gap-2">
                 <input type="number" min="1900" max={new Date().getFullYear()} value={m.birthYear || ""}
                   placeholder="Année"
                   onChange={e=>updateMember(m.id,{birthYear:parseInt(e.target.value)||0})}
                   className="border rounded px-2 py-1 w-24" />
-                <span className="text-xs text-slate-500">{memberAge(m)} ans</span>
+                <span className="text-xs text-slate-500 dark:text-slate-400">{memberAge(m)} ans</span>
               </div>
             </div>
             <div>
-              <label className="text-xs text-slate-500 block">Sexe</label>
+              <label className="text-xs text-slate-500 dark:text-slate-400 block">Sexe</label>
               <select value={m.sex} onChange={e=>updateMember(m.id,{sex:e.target.value})}
                 className="border rounded px-2 py-1">
                 <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
               </select>
             </div>
             {p.members.length > 1 && (
-              <button onClick={()=>removeMember(m.id)} className="text-red-500 hover:text-red-700 text-sm">Retirer</button>
+              <button onClick={()=>removeMember(m.id)} className="text-red-500 hover:text-red-700 dark:text-red-300 text-sm">Retirer</button>
             )}
           </div>
         ))}
-        <button onClick={addMember} className="text-emerald-700 hover:text-emerald-900 text-sm font-medium">+ Ajouter un membre</button>
+        <button onClick={addMember} className="text-emerald-700 dark:text-emerald-300 hover:text-emerald-900 dark:text-emerald-100 text-sm font-medium">+ Ajouter un membre</button>
         <div className="mt-4">
           <label className="text-sm font-medium block mb-1">Localisation</label>
           <input value={p.location} onChange={e=>updateProfile({location:e.target.value})}
             placeholder="Ex. Lyon, France ou 69002"
             className="border rounded px-3 py-2 w-full" />
-          <p className="text-xs text-slate-500 mt-1">Utilisé pour adapter les ingrédients aux produits disponibles dans votre région.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Utilisé pour adapter les ingrédients aux produits disponibles dans votre région.</p>
         </div>
       </div>
     )},
     {title:"Allergies & intolérances", content: (
       <div className="space-y-3">
-        <div className="bg-red-50 border border-red-200 rounded p-3">
-          <p className="text-red-800 text-sm font-medium">⚠️ Allergies et intolérances — enjeu de sécurité</p>
-          <p className="text-red-700 text-xs mt-1">Les recettes contenant ces éléments seront strictement exclues.</p>
+        <div className="bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded p-3">
+          <p className="text-red-800 dark:text-red-200 text-sm font-medium">⚠️ Allergies et intolérances — enjeu de sécurité</p>
+          <p className="text-red-700 dark:text-red-300 text-xs mt-1">Les recettes contenant ces éléments seront strictement exclues.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {dataRef.allergens().map(({id: k, label: v}) => (
             <label key={k} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              p.globalAllergies.includes(k) ? "bg-red-100 border-red-400 text-red-800" : "bg-white border-slate-200 hover:bg-slate-50"
+              p.globalAllergies.includes(k) ? "bg-red-100 border-red-400 text-red-800 dark:text-red-200" : "bg-white border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:bg-slate-800"
             }`}>
               <input type="checkbox" checked={p.globalAllergies.includes(k)}
                 onChange={e => updateProfile({
@@ -10500,11 +10584,11 @@ function SetupView({state, update, updateProfile, onDone}) {
     )},
     {title:"Exclusions (goûts, préférences)", content: (
       <div className="space-y-3">
-        <div className="bg-amber-50 border border-amber-200 rounded p-3">
-          <p className="text-amber-800 text-sm font-medium">Exclusions préférentielles</p>
-          <p className="text-amber-700 text-xs mt-1">Ingrédients simplement évités par goût ou conviction. Moins prioritaires que les allergies.</p>
+        <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3">
+          <p className="text-amber-800 dark:text-amber-200 text-sm font-medium">Exclusions préférentielles</p>
+          <p className="text-amber-700 dark:text-amber-300 text-xs mt-1">Ingrédients simplement évités par goût ou conviction. Moins prioritaires que les allergies.</p>
         </div>
-        <p className="text-sm text-slate-600">Listez les ingrédients à éviter (un par ligne) :</p>
+        <p className="text-sm text-slate-600 dark:text-slate-300">Listez les ingrédients à éviter (un par ligne) :</p>
         <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
       </div>
     )},
@@ -10515,7 +10599,7 @@ function SetupView({state, update, updateProfile, onDone}) {
           <input type="number" min="0" value={p.budgetWeekly}
             onChange={e=>updateProfile({budgetWeekly: parseInt(e.target.value)||0})}
             className="border rounded px-3 py-2 w-40" />
-          <p className="text-xs text-slate-500 mt-1">Une alerte s'affichera si le menu dépasse ce montant.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Une alerte s'affichera si le menu dépasse ce montant.</p>
         </div>
         <div>
           <label className="text-sm font-medium block mb-1">Temps de préparation max par repas (minutes)</label>
@@ -10528,7 +10612,7 @@ function SetupView({state, update, updateProfile, onDone}) {
           <div className="flex flex-wrap gap-2">
             {dataRef.equipment().map(eq => (
               <label key={eq.id} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-                p.equipment.includes(eq.id) ? "bg-emerald-100 border-emerald-400 text-emerald-800" : "bg-white border-slate-200"
+                p.equipment.includes(eq.id) ? "bg-emerald-100 border-emerald-400 text-emerald-800 dark:text-emerald-200" : "bg-white border-slate-200 dark:border-slate-700"
               }`}>
                 <input type="checkbox" checked={p.equipment.includes(eq.id)}
                   onChange={e => updateProfile({
@@ -10548,23 +10632,23 @@ function SetupView({state, update, updateProfile, onDone}) {
   return (
     <div className="max-w-3xl mx-auto">
       <div className="mb-6">
-        <h2 className="text-2xl font-bold text-slate-800">Bienvenue 👋</h2>
-        <p className="text-slate-600">Quelques minutes pour configurer votre profil familial.</p>
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Bienvenue 👋</h2>
+        <p className="text-slate-600 dark:text-slate-300">Quelques minutes pour configurer votre profil familial.</p>
       </div>
       <div className="flex gap-2 mb-6">
         {steps.map((s, i) => (
-          <div key={i} className={`flex-1 h-2 rounded ${i <= step ? "bg-emerald-500" : "bg-slate-200"}`}></div>
+          <div key={i} className={`flex-1 h-2 rounded ${i <= step ? "bg-emerald-500" : "bg-slate-200 dark:bg-slate-700"}`}></div>
         ))}
       </div>
-      <div className="bg-white rounded-lg shadow p-6">
-        <h3 className="text-lg font-bold text-slate-800 mb-4">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-6">
+        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-4">
           Étape {step+1}/{steps.length} — {steps[step].title}
         </h3>
         {steps[step].content}
         <div className="flex justify-between mt-6">
           <button onClick={()=>setStep(Math.max(0, step-1))}
             disabled={step===0}
-            className="px-4 py-2 text-slate-600 hover:text-slate-800 disabled:opacity-30">
+            className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:text-slate-100 disabled:opacity-30">
             ← Retour
           </button>
           {step < steps.length-1 ? (
@@ -10613,23 +10697,23 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
   return (
     <div className="space-y-4">
       <PoolDiagnostic profile={state.profile} currentWeek={currentWeek} />
-      <div className="bg-white rounded-lg shadow p-4 flex flex-wrap items-center gap-3">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4 flex flex-wrap items-center gap-3">
         <div className="flex items-center gap-2">
-          <button onClick={()=>setCurrentWeek(addDays(currentWeek,-7))} className="px-2 py-1 bg-slate-100 rounded hover:bg-slate-200">←</button>
+          <button onClick={()=>setCurrentWeek(addDays(currentWeek,-7))} className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded hover:bg-slate-200 dark:bg-slate-700">←</button>
           <div>
-            <p className="font-bold text-slate-800">Semaine du {formatShort(currentWeek)} au {formatShort(endOfWeek)}</p>
-            <p className="text-xs text-slate-500">{SEASON_FR[season]} · {state.profile.members.length} personne{state.profile.members.length>1?"s":""}</p>
+            <p className="font-bold text-slate-800 dark:text-slate-100">Semaine du {formatShort(currentWeek)} au {formatShort(endOfWeek)}</p>
+            <p className="text-xs text-slate-500 dark:text-slate-400">{SEASON_FR[season]} · {state.profile.members.length} personne{state.profile.members.length>1?"s":""}</p>
           </div>
-          <button onClick={()=>setCurrentWeek(addDays(currentWeek,7))} className="px-2 py-1 bg-slate-100 rounded hover:bg-slate-200">→</button>
+          <button onClick={()=>setCurrentWeek(addDays(currentWeek,7))} className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded hover:bg-slate-200 dark:bg-slate-700">→</button>
         </div>
         <div className="flex-1"></div>
         <div className="flex flex-col items-end">
           {(() => {
             const tierColors = {
-              under:       "bg-emerald-100 text-emerald-800 border-emerald-300",
-              ok:          "bg-emerald-100 text-emerald-800 border-emerald-300",
-              "soft-over": "bg-amber-100 text-amber-800 border-amber-300",
-              "hard-over": "bg-red-100 text-red-800 border-red-300",
+              under:       "bg-emerald-100 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700",
+              ok:          "bg-emerald-100 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700",
+              "soft-over": "bg-amber-100 text-amber-800 dark:text-amber-200 border-amber-300 dark:border-amber-700",
+              "hard-over": "bg-red-100 text-red-800 dark:text-red-200 border-red-300 dark:border-red-700",
             };
             const tierLabels = {
               under:       "Sous le budget ✓",
@@ -10637,7 +10721,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
               "soft-over": "Légèrement au-dessus (dans la tolérance)",
               "hard-over": "Au-dessus de la tolérance ⚠️ ",
             };
-            const tierClass = budgetTier ? tierColors[budgetTier] : "bg-slate-100 text-slate-700 border-slate-300";
+            const tierClass = budgetTier ? tierColors[budgetTier] : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-600";
             return (
               <div className={`px-3 py-2 rounded-md text-sm border ${tierClass}`}>
                 <div>
@@ -10647,7 +10731,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                 {budgetTier && (
                   <>
                     <div className="text-xs mt-0.5">{tierLabels[budgetTier]}</div>
-                    <div className="mt-1 h-1.5 w-40 bg-slate-200 rounded-full overflow-hidden">
+                    <div className="mt-1 h-1.5 w-40 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
                       <div className={`h-full ${
                         budgetTier === "hard-over" ? "bg-red-500" :
                         budgetTier === "soft-over" ? "bg-amber-500" :
@@ -10660,7 +10744,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
             );
           })()}
           {budgetTier === "hard-over" && (
-            <div className="text-xs text-red-700 mt-1 max-w-xs text-right">
+            <div className="text-xs text-red-700 dark:text-red-300 mt-1 max-w-xs text-right">
               L'optimiseur n'a pas trouvé d'alternative moins chère.
               Augmente la tolérance ou élargis la base de recettes.
             </div>
@@ -10681,8 +10765,8 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
       </div>
 
       {!hasAny && (
-        <div className="bg-white rounded-lg shadow p-12 text-center">
-          <p className="text-slate-600 mb-4">Aucun menu pour cette semaine.</p>
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-12 text-center">
+          <p className="text-slate-600 dark:text-slate-300 mb-4">Aucun menu pour cette semaine.</p>
           <button onClick={() => regenerate({keepLocked:false})}
             className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-md font-medium">
             Générer automatiquement 🎲
@@ -10697,7 +10781,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
             const slot = currentMenu[day] || {};
             const attendance = slot.attendance || {};
             return (
-              <div key={day} className="bg-white rounded-lg shadow overflow-hidden">
+              <div key={day} className="bg-white dark:bg-slate-800 rounded-lg shadow overflow-hidden">
                 <div className="bg-slate-800 text-white px-3 py-2">
                   <p className="font-bold capitalize">{DAYS_SHORT[idx]}</p>
                   <p className="text-xs text-slate-300">{formatShort(date)}</p>
@@ -10717,9 +10801,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const dessertNPresent = dessertAttendees == null ? nAll : dessertAttendees.length;
                     const dessertPartial = dessertAttendees != null && dessertNPresent < nAll;
                     return (
-                      <div key={m.key} className={`border rounded p-2 text-sm ${locked ? "bg-amber-50 border-amber-300" : "bg-slate-50 border-slate-200"}`}>
+                      <div key={m.key} className={`border rounded p-2 text-sm ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
                         <div className="flex items-center justify-between mb-1">
-                          <span className="text-xs font-medium text-slate-500">{m.icon} {m.label}</span>
+                          <span className="text-xs font-medium text-slate-500 dark:text-slate-400">{m.icon} {m.label}</span>
                           <div className="flex gap-1">
                             <button title={partial ? `${nPresent}/${nAll} présents` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:m.key})} className={`text-xs hover:opacity-70 ${partial ? "text-amber-600 font-bold" : ""}`}>👥{partial ? nPresent : ""}</button>
                             <button title="Verrouiller" onClick={()=>toggleLock(day,m.key)} className="text-xs hover:opacity-70">
@@ -10731,7 +10815,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         </div>
                         {recipe ? (
                           <button onClick={() => onSelectRecipe(recipe.id, {day, meal: m.key})}
-                            className="text-left w-full hover:text-emerald-700 font-medium text-slate-800">
+                            className="text-left w-full hover:text-emerald-700 dark:text-emerald-300 font-medium text-slate-800 dark:text-slate-100">
                             <span className="flex items-start gap-1">
                               <span className="flex-1">{recipe.name}</span>
                               {recipeAdvanceInfo(recipe) && (
@@ -10741,19 +10825,19 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 </span>
                               )}
                             </span>
-                            <span className="block text-xs text-slate-500 font-normal mt-0.5">
+                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
                               ⏱ {recipeTimeLabel(recipe)} · {recipe.kcal}kcal
                               {recipeAdvanceInfo(recipe) && (
-                                <span className="ml-1 text-amber-700 font-semibold">· {recipeAdvanceInfo(recipe).shortLabel} avance</span>
+                                <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(recipe).shortLabel} avance</span>
                               )}
                             </span>
                           </button>
                         ) : (
-                          <p className="text-slate-400 italic">—</p>
+                          <p className="text-slate-400 dark:text-slate-500 italic">—</p>
                         )}
                         {/* Sous-panneau dessert attaché à ce repas */}
                         {showDessertHere && (
-                          <div className={`mt-2 pt-2 border-t border-dashed ${dessertLocked ? "border-amber-400" : "border-slate-300"}`}>
+                          <div className={`mt-2 pt-2 border-t border-dashed ${dessertLocked ? "border-amber-400" : "border-slate-300 dark:border-slate-600"}`}>
                             <div className="flex items-center justify-between mb-0.5">
                               <span className="text-[11px] font-medium text-rose-600">🍰 Dessert</span>
                               <div className="flex gap-1">
@@ -10765,7 +10849,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                             </div>
                             {dessertRecipe ? (
                               <button onClick={() => onSelectRecipe(dessertRecipe.id, {day, meal: "dessert"})}
-                                className="text-left w-full hover:text-rose-700 text-xs text-slate-700">
+                                className="text-left w-full hover:text-rose-700 dark:text-rose-300 text-xs text-slate-700 dark:text-slate-200">
                                 <span className="flex items-start gap-1">
                                   <span className="flex-1 font-medium">{dessertRecipe.name}</span>
                                   {recipeAdvanceInfo(dessertRecipe) && (
@@ -10775,15 +10859,15 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                     </span>
                                   )}
                                 </span>
-                                <span className="block text-[11px] text-slate-500 mt-0.5">
+                                <span className="block text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
                                   ⏱ {recipeTimeLabel(dessertRecipe)} · {dessertRecipe.kcal}kcal
                                   {recipeAdvanceInfo(dessertRecipe) && (
-                                    <span className="ml-1 text-amber-700 font-semibold">· {recipeAdvanceInfo(dessertRecipe).shortLabel} avance</span>
+                                    <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(dessertRecipe).shortLabel} avance</span>
                                   )}
                                 </span>
                               </button>
                             ) : (
-                              <p className="text-slate-400 italic text-xs">— aucun dessert</p>
+                              <p className="text-slate-400 dark:text-slate-500 italic text-xs">— aucun dessert</p>
                             )}
                           </div>
                         )}
@@ -10834,27 +10918,27 @@ function AttendanceDialog({day, meal, profile, current, onSave, onClose}) {
   const allMeals = ALL_MEALS.find(m => m.key === meal) || {label:meal, icon:""};
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-white rounded-lg shadow-xl p-5 max-w-md w-full" onClick={e=>e.stopPropagation()}>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-5 max-w-md w-full" onClick={e=>e.stopPropagation()}>
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-lg font-bold">Qui mange ? — {allMeals.icon} {allMeals.label} de {day}</h3>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">✕</button>
+          <button onClick={onClose} className="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:text-slate-300">✕</button>
         </div>
-        <p className="text-xs text-slate-500 mb-3">Décochez les personnes absentes pour ce repas. Les quantités de la liste de courses seront ajustées automatiquement.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">Décochez les personnes absentes pour ce repas. Les quantités de la liste de courses seront ajustées automatiquement.</p>
         <div className="space-y-2">
           {all.map(m => (
             <label key={m.id} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              selected.includes(m.id) ? "bg-emerald-50 border-emerald-300" : "bg-slate-50 border-slate-200 opacity-60"
+              selected.includes(m.id) ? "bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700 opacity-60"
             }`}>
               <input type="checkbox" checked={selected.includes(m.id)} onChange={()=>toggle(m.id)} />
               <span className="flex-1 font-medium">{m.name}</span>
-              <span className="text-xs text-slate-500">{memberAge(m)} ans · {m.sex}</span>
+              <span className="text-xs text-slate-500 dark:text-slate-400">{memberAge(m)} ans · {m.sex}</span>
             </label>
           ))}
         </div>
         <div className="flex justify-between gap-2 mt-4">
-          <button onClick={() => setSelected(all.map(m => m.id))} className="text-xs text-slate-600 hover:text-slate-900 underline">Tous présents</button>
+          <button onClick={() => setSelected(all.map(m => m.id))} className="text-xs text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:text-slate-100 underline">Tous présents</button>
           <div className="flex gap-2">
-            <button onClick={onClose} className="px-4 py-2 text-slate-600">Annuler</button>
+            <button onClick={onClose} className="px-4 py-2 text-slate-600 dark:text-slate-300">Annuler</button>
             <button onClick={() => onSave(selected.length === all.length ? null : selected)}
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium">Enregistrer</button>
           </div>
@@ -10874,16 +10958,16 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
   );
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
-      <div className="bg-white rounded-lg shadow-xl p-5 max-w-lg w-full max-h-[80vh] overflow-auto" onClick={e=>e.stopPropagation()}>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl p-5 max-w-lg w-full max-h-[80vh] overflow-auto" onClick={e=>e.stopPropagation()}>
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-lg font-bold">Remplacer — {ALL_MEALS.find(m=>m.key===meal).label} de {day}</h3>
-          <button onClick={onClose} className="text-slate-400 hover:text-slate-600">✕</button>
+          <button onClick={onClose} className="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:text-slate-300">✕</button>
         </div>
         <div className="space-y-2">
           {pool.map(r => (
             <button key={r.id} onClick={() => onPick(r.id)}
-              className="w-full text-left p-3 bg-slate-50 hover:bg-emerald-50 hover:border-emerald-300 border border-slate-200 rounded transition">
-              <p className="font-medium text-slate-800">
+              className="w-full text-left p-3 bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:bg-emerald-950 hover:border-emerald-300 dark:border-emerald-700 border border-slate-200 dark:border-slate-700 rounded transition">
+              <p className="font-medium text-slate-800 dark:text-slate-100">
                 {r.name}
                 {recipeAdvanceInfo(r) && (
                   <span className="ml-1 text-amber-600" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
@@ -10891,15 +10975,15 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
                   </span>
                 )}
               </p>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-slate-500 dark:text-slate-400">
                 ⏱ {recipeTimeLabel(r)} · {r.kcal}kcal · {recipeEffectiveCost(r).toFixed(2)}€/pers
                 {recipeAdvanceInfo(r) && (
-                  <span className="ml-1 text-amber-700 font-semibold">· {recipeAdvanceInfo(r).shortLabel} avance</span>
+                  <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(r).shortLabel} avance</span>
                 )}
               </p>
             </button>
           ))}
-          {pool.length === 0 && <p className="text-slate-500 italic text-center py-4">Aucune alternative dans cette saison avec vos contraintes.</p>}
+          {pool.length === 0 && <p className="text-slate-500 dark:text-slate-400 italic text-center py-4">Aucune alternative dans cette saison avec vos contraintes.</p>}
         </div>
       </div>
     </div>
@@ -10915,7 +10999,7 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
   const isPartial = hasContext && nPresent < nAll;
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 no-print" onClick={onClose}>
-      <div className="bg-white rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-auto" onClick={e=>e.stopPropagation()}>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-auto" onClick={e=>e.stopPropagation()}>
         <div className="bg-gradient-to-r from-emerald-700 to-teal-600 text-white p-5 rounded-t-lg sticky top-0 z-10">
           <div className="flex justify-between items-start gap-4">
             <div>
@@ -10948,7 +11032,7 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
                 })()}
               </div>
               {recipeAdvanceInfo(recipe) && (
-                <div className="mt-2 inline-flex items-center gap-2 bg-amber-100 text-amber-900 px-3 py-1.5 rounded-full text-sm font-medium">
+                <div className="mt-2 inline-flex items-center gap-2 bg-amber-100 text-amber-900 dark:text-amber-100 px-3 py-1.5 rounded-full text-sm font-medium">
                   <span>{recipeAdvanceInfo(recipe).icon}</span>
                   <span>À commencer {recipeAdvanceInfo(recipe).label} avant le service</span>
                 </div>
@@ -10970,7 +11054,7 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
             const familyHits = (profile.globalAllergies || []).filter(a => recipe.allergens.includes(a));
             const isCritical = concerned.length > 0 || familyHits.length > 0;
             return (
-              <div className={`border p-3 rounded text-sm ${isCritical ? "bg-red-100 border-red-500 text-red-900" : "bg-red-50 border-red-200 text-red-800"}`}>
+              <div className={`border p-3 rounded text-sm ${isCritical ? "bg-red-100 border-red-500 text-red-900 dark:text-red-100" : "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"}`}>
                 <div className="flex gap-2 items-start">
                   <span className="text-xl leading-none">{isCritical ? "🚫" : "⚠️"}</span>
                   <div className="flex-1 space-y-1">
@@ -10981,7 +11065,7 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
                         const isFamilyHit = familyHits.includes(a);
                         const isHit = isFamilyHit || memberHits.length > 0;
                         return (
-                          <span key={a} className={`px-2 py-0.5 rounded text-xs border inline-flex items-center gap-1 ${isHit ? "bg-red-600 text-white border-red-700 font-bold" : "bg-white text-red-700 border-red-300"}`}>
+                          <span key={a} className={`px-2 py-0.5 rounded text-xs border inline-flex items-center gap-1 ${isHit ? "bg-red-600 text-white border-red-700 font-bold" : "bg-white text-red-700 dark:text-red-300 border-red-300 dark:border-red-700"}`}>
                             <span>{isHit ? "🚫" : "⚠️"}</span>
                             <span>{dataRef.allergenLabel(a)}</span>
                             {memberHits.length > 0 && <span className="italic font-normal text-red-100">— {memberHits.map(m => m.name).join(", ")}</span>}
@@ -10999,32 +11083,32 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
             );
           })()}
           <div>
-            <h3 className="font-bold text-slate-800 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isPartial ? "text-amber-700 font-medium" : "text-slate-500"}`}>{isPartial
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{isPartial
               ? `(pour ${nPresent} présent${nPresent>1?"s":""} sur ${nAll}, soit ${mult.toFixed(1)} équiv. adultes)`
               : `(pour la famille, soit ${mult.toFixed(1)} équiv. adultes)`
             }</span></h3>
             <ul className="space-y-1">
               {recipe.ing.map(([name,qty,unit,cat],i) => (
-                <li key={i} className="flex justify-between text-sm border-b border-dashed border-slate-200 py-1">
+                <li key={i} className="flex justify-between text-sm border-b border-dashed border-slate-200 dark:border-slate-700 py-1">
                   <span>{name}</span>
-                  <span className="font-mono text-slate-600">{formatQty(qty*mult, unit, name)}</span>
+                  <span className="font-mono text-slate-600 dark:text-slate-300">{formatQty(qty*mult, unit, name)}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-bold text-slate-800 mb-2">👨‍🍳 Étapes</h3>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">👨‍🍳 Étapes</h3>
             <ol className="space-y-3">
               {recipe.steps.map((s,i) => (
                 <li key={i} className="flex gap-3">
                   <span className="flex-shrink-0 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center">{i+1}</span>
-                  <p className="text-slate-700 leading-relaxed">{s}</p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">{s}</p>
                 </li>
               ))}
             </ol>
           </div>
-          <div className="bg-slate-50 rounded p-4 flex flex-wrap items-center gap-3">
-            <span className="font-medium text-slate-800">Noter cette recette :</span>
+          <div className="bg-slate-50 dark:bg-slate-800 rounded p-4 flex flex-wrap items-center gap-3">
+            <span className="font-medium text-slate-800 dark:text-slate-100">Noter cette recette :</span>
             <div className="flex gap-1">
               {[1,2,3,4,5].map(n => (
                 <button key={n} onClick={() => onRate(n)}
@@ -11033,7 +11117,7 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
                 </button>
               ))}
             </div>
-            {rating && <span className="text-sm text-slate-600">({rating}/5)</span>}
+            {rating && <span className="text-sm text-slate-600 dark:text-slate-300">({rating}/5)</span>}
             {rating === 1 && <span className="text-xs text-red-600">Sera évitée pour les prochains menus</span>}
           </div>
         </div>
@@ -11053,7 +11137,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
   });
   return (
     <div className="space-y-4">
-      <div className="bg-white rounded-lg shadow p-4 flex flex-wrap gap-3 items-center">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4 flex flex-wrap gap-3 items-center">
         <h2 className="text-xl font-bold">📖 Bibliothèque de recettes</h2>
         <div className="flex-1"></div>
         <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="🔍 Rechercher…"
@@ -11069,10 +11153,10 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map(r => (
-          <div key={r.id} className="bg-white rounded-lg shadow hover:shadow-lg transition p-4 cursor-pointer"
+          <div key={r.id} className="bg-white dark:bg-slate-800 rounded-lg shadow hover:shadow-lg transition p-4 cursor-pointer"
             onClick={() => onSelectRecipe(r.id)}>
             <div className="flex justify-between items-start mb-2">
-              <h3 className="font-bold text-slate-800">
+              <h3 className="font-bold text-slate-800 dark:text-slate-100">
                 {r.name}
                 {recipeAdvanceInfo(r) && (
                   <span className="ml-1 text-amber-600" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
@@ -11080,7 +11164,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
                   </span>
                 )}
               </h3>
-              <span className="text-xs bg-slate-100 px-2 py-0.5 rounded">{
+              <span className="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">{
                 r.type === "breakfast" ? "☀️ PD"
                 : r.type === "lunch" ? "🥗 Déj"
                 : r.type === "dinner" ? "🌙 Dîn"
@@ -11089,16 +11173,16 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
                 : r.type
               }</span>
             </div>
-            <div className="flex flex-wrap gap-1 text-xs text-slate-500 mb-2">
+            <div className="flex flex-wrap gap-1 text-xs text-slate-500 dark:text-slate-400 mb-2">
               {r.seasons.includes("all") ? <span>🗓 Toute saison</span> :
                 r.seasons.map(s => <span key={s}>🗓 {SEASON_FR[s]}</span>)}
             </div>
-            <div className="text-xs text-slate-600 space-x-2">
+            <div className="text-xs text-slate-600 dark:text-slate-300 space-x-2">
               <span>⏱ {recipeActiveMinutes(r)}min{recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}</span>
               <span>🔢 {r.kcal}kcal</span>
               <span>💰 {recipeEffectiveCost(r).toFixed(2)}€</span>
               {recipeAdvanceInfo(r) && (
-                <span className="text-amber-700 font-semibold">· {recipeAdvanceInfo(r).shortLabel} avance</span>
+                <span className="text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(r).shortLabel} avance</span>
               )}
             </div>
             <div className="mt-2 flex items-center justify-between">
@@ -11126,29 +11210,29 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
 
   return (
     <div className="space-y-4">
-      <div className="bg-white rounded-lg shadow p-4 flex flex-wrap items-center gap-3">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4 flex flex-wrap items-center gap-3">
         <h2 className="text-xl font-bold">🛒 Liste de courses</h2>
-        <p className="text-sm text-slate-500">
+        <p className="text-sm text-slate-500 dark:text-slate-400">
           Semaine du {formatShort(currentWeek)} · {totalItems} articles
-          {checkedCount > 0 && <span className="ml-2 text-emerald-700">· {checkedCount} déjà coché{checkedCount > 1 ? "s" : ""} (exclus de l'impression)</span>}
+          {checkedCount > 0 && <span className="ml-2 text-emerald-700 dark:text-emerald-300">· {checkedCount} déjà coché{checkedCount > 1 ? "s" : ""} (exclus de l'impression)</span>}
         </p>
         <div className="flex-1"></div>
         <button onClick={onPrint} className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
           🖨️ Imprimer la liste
         </button>
       </div>
-      <p className="text-xs text-slate-500 -mt-2 px-1">
+      <p className="text-xs text-slate-500 dark:text-slate-400 -mt-2 px-1">
         💡 Coche les articles que tu as déjà chez toi : ils seront barrés ici et exclus du PDF imprimé.
       </p>
       {entries.length === 0 ? (
-        <div className="bg-white rounded-lg shadow p-8 text-center text-slate-500">
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-8 text-center text-slate-500 dark:text-slate-400">
           Aucun menu généré cette semaine.
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {entries.map(([cat, list]) => (
-            <div key={cat} className="bg-white rounded-lg shadow p-4">
-              <h3 className="font-bold text-slate-800 mb-3 pb-2 border-b">{dataRef.categoryLabel(cat)}</h3>
+            <div key={cat} className="bg-white dark:bg-slate-800 rounded-lg shadow p-4">
+              <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3 pb-2 border-b">{dataRef.categoryLabel(cat)}</h3>
               <ul className="space-y-1">
                 {list.map((it,i) => {
                   const key = `${it.name}|${it.unit}`;
@@ -11156,8 +11240,8 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
                   return (
                     <li key={i} className="flex items-center gap-2">
                       <input type="checkbox" checked={!!got} onChange={() => onTogglePantry(key)} />
-                      <span className={`flex-1 ${got ? "line-through text-slate-400" : "text-slate-700"}`}>{it.name}</span>
-                      <span className="font-mono text-sm text-slate-600">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
+                      <span className={`flex-1 ${got ? "line-through text-slate-400 dark:text-slate-500" : "text-slate-700 dark:text-slate-200"}`}>{it.name}</span>
+                      <span className="font-mono text-sm text-slate-600 dark:text-slate-300">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
                     </li>
                   );
                 })}
@@ -11176,7 +11260,7 @@ function HistoryView({state, setCurrentWeek, onGo}) {
   const ratedCount = Object.keys(state.ratings).length;
   return (
     <div className="space-y-4">
-      <div className="bg-white rounded-lg shadow p-4">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4">
         <h2 className="text-xl font-bold mb-3">📊 Historique & suivi</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <Stat label="Semaines planifiées" value={weeks.length} />
@@ -11187,17 +11271,17 @@ function HistoryView({state, setCurrentWeek, onGo}) {
           } />
         </div>
       </div>
-      <div className="bg-white rounded-lg shadow p-4">
-        <h3 className="font-bold text-slate-800 mb-3">Semaines passées</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Semaines passées</h3>
         {weeks.length === 0 ? (
-          <p className="text-slate-500 italic">Aucune semaine enregistrée pour le moment.</p>
+          <p className="text-slate-500 dark:text-slate-400 italic">Aucune semaine enregistrée pour le moment.</p>
         ) : (
           <div className="space-y-2">
             {weeks.map(w => {
               const d = new Date(w);
               return (
                 <button key={w} onClick={() => { setCurrentWeek(d); onGo(); }}
-                  className="w-full text-left p-3 bg-slate-50 hover:bg-emerald-50 rounded flex justify-between items-center">
+                  className="w-full text-left p-3 bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:bg-emerald-950 rounded flex justify-between items-center">
                   <span>Semaine du {formatShort(d)}</span>
                   <span className="text-sm text-emerald-600">Voir →</span>
                 </button>
@@ -11211,9 +11295,9 @@ function HistoryView({state, setCurrentWeek, onGo}) {
 }
 function Stat({label, value}) {
   return (
-    <div className="bg-emerald-50 rounded p-3">
-      <p className="text-xs text-emerald-700 uppercase tracking-wide">{label}</p>
-      <p className="text-2xl font-bold text-emerald-900">{value}</p>
+    <div className="bg-emerald-50 dark:bg-emerald-950 rounded p-3">
+      <p className="text-xs text-emerald-700 dark:text-emerald-300 uppercase tracking-wide">{label}</p>
+      <p className="text-2xl font-bold text-emerald-900 dark:text-emerald-100">{value}</p>
     </div>
   );
 }
@@ -11277,10 +11361,10 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
   })();
 
   const tierColors = {
-    under:       "bg-emerald-100 text-emerald-800 border-emerald-300",
-    ok:          "bg-emerald-100 text-emerald-800 border-emerald-300",
-    "soft-over": "bg-amber-100 text-amber-800 border-amber-300",
-    "hard-over": "bg-red-100 text-red-800 border-red-300",
+    under:       "bg-emerald-100 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700",
+    ok:          "bg-emerald-100 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700",
+    "soft-over": "bg-amber-100 text-amber-800 dark:text-amber-200 border-amber-300 dark:border-amber-700",
+    "hard-over": "bg-red-100 text-red-800 dark:text-red-200 border-red-300 dark:border-red-700",
   };
   const tierLabels = {
     under:       "Sous le budget mensuel ✓",
@@ -11315,23 +11399,23 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
   return (
     <div className="space-y-4">
       {/* Header navigation mensuelle */}
-      <div className="bg-white rounded-lg shadow p-4 flex flex-wrap items-center gap-3">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4 flex flex-wrap items-center gap-3">
         <button onClick={() => setCurrentWeek(addDays(currentWeek, -28))}
-          className="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded">← 4 sem.</button>
+          className="px-3 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:bg-slate-700 rounded">← 4 sem.</button>
         <div className="flex-1">
-          <h2 className="text-xl font-bold text-slate-800">🗓️ Vue mensuelle</h2>
-          <p className="text-sm text-slate-500">
+          <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">🗓️ Vue mensuelle</h2>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
             Du {formatShort(currentWeek)} au {formatShort(addDays(currentWeek, 34))}
             {' · '}{monthFmt.format(addDays(currentWeek, 14))}
           </p>
         </div>
         <button onClick={() => setCurrentWeek(addDays(currentWeek, 28))}
-          className="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded">4 sem. →</button>
+          className="px-3 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:bg-slate-700 rounded">4 sem. →</button>
       </div>
 
       {/* Bandeau coût mensuel */}
       {monthlyBudget > 0 && (
-        <div className={`rounded-lg shadow p-4 border ${monthlyTier ? tierColors[monthlyTier] : "bg-slate-100"}`}>
+        <div className={`rounded-lg shadow p-4 border ${monthlyTier ? tierColors[monthlyTier] : "bg-slate-100 dark:bg-slate-700"}`}>
           <div className="flex items-center gap-3 flex-wrap">
             <div className="flex-1">
               <div className="text-sm font-semibold mb-1">{tierLabels[monthlyTier]}</div>
@@ -11354,8 +11438,8 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
 
       {/* Action batch régénération */}
       {emptyCount > 0 && (
-        <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 flex items-center justify-between flex-wrap gap-3">
-          <div className="text-sm text-sky-900">
+        <div className="bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 rounded-lg p-4 flex items-center justify-between flex-wrap gap-3">
+          <div className="text-sm text-sky-900 dark:text-sky-100">
             <strong>{emptyCount} semaine{emptyCount>1?"s":""} vide{emptyCount>1?"s":""}</strong> dans cette vue.
             Tu peux les générer toutes en un clic, l'anti-récurrence reste respectée.
           </div>
@@ -11383,26 +11467,26 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
               className={`text-left bg-white rounded-lg shadow hover:shadow-md transition p-3 border-2 ${
                 isCurrent ? "border-emerald-500" : "border-transparent"
               }`}>
-              <div className="text-xs text-slate-500 mb-1">
+              <div className="text-xs text-slate-500 dark:text-slate-400 mb-1">
                 Semaine {i+1}{isCurrent && " · en cours"}
               </div>
-              <div className="font-semibold text-slate-800 text-sm mb-2">
+              <div className="font-semibold text-slate-800 dark:text-slate-100 text-sm mb-2">
                 {formatShort(w.ws)} → {formatShort(addDays(w.ws, 6))}
               </div>
               {isEmpty ? (
-                <div className="text-slate-400 italic text-sm py-2">Aucun repas planifié</div>
+                <div className="text-slate-400 dark:text-slate-500 italic text-sm py-2">Aucun repas planifié</div>
               ) : (
                 <>
                   <div className={`inline-block px-2 py-0.5 rounded text-xs font-medium mb-2 ${
-                    tier ? tierColors[tier] : "bg-slate-100 text-slate-700"
+                    tier ? tierColors[tier] : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200"
                   }`}>
                     💰 {w.cost.toFixed(2)}€
                   </div>
-                  <div className="text-xs text-slate-600 mb-1">
+                  <div className="text-xs text-slate-600 dark:text-slate-300 mb-1">
                     🍽️ {w.filled} / {slotsPerWeek} repas
                   </div>
                   {w.locks > 0 && (
-                    <div className="text-xs text-slate-600">🔒 {w.locks} verrouillé{w.locks>1?"s":""}</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-300">🔒 {w.locks} verrouillé{w.locks>1?"s":""}</div>
                   )}
                 </>
               )}
@@ -11414,12 +11498,12 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
 
       {/* Hint diversité */}
       {totalSlotsUsed > 0 && (
-        <div className="bg-white rounded-lg shadow p-4 text-sm text-slate-600">
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-4 text-sm text-slate-600 dark:text-slate-300">
           💡 <strong>Astuce diversité :</strong> sur ces 5 semaines, tu utilises{" "}
           <strong>{allRecipes.size} recettes uniques</strong> sur {totalSlotsUsed} repas
           {' '}({totalSlotsUsed > 0 ? Math.round(allRecipes.size/totalSlotsUsed*100) : 0}% de diversité).
           {totalSlotsUsed > 0 && allRecipes.size / totalSlotsUsed < 0.7 && (
-            <span className="text-amber-700"> Tu pourrais varier davantage en régénérant certaines semaines.</span>
+            <span className="text-amber-700 dark:text-amber-300"> Tu pourrais varier davantage en régénérant certaines semaines.</span>
           )}
         </div>
       )}
@@ -11451,7 +11535,7 @@ function ExclusionsTextarea({value, onChange}) {
         placeholder={"champignons\nolives\nmenthe"}
         rows={5}
         className="border rounded px-3 py-2 w-full font-mono text-sm" />
-      <p className="text-xs text-slate-500 mt-1">Un ingrédient par ligne — utilisez Entrée pour aller à la ligne.</p>
+      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Un ingrédient par ligne — utilisez Entrée pour aller à la ligne.</p>
     </>
   );
 }
@@ -11487,11 +11571,11 @@ function PoolDiagnostic({profile, currentWeek}) {
   const pool = useMemo(() => computePoolSizes(profile, currentWeek), [profile, currentWeek]);
   const low = Math.min(pool.lunch, pool.dinner) < 7;
   const tightRotation = !low && (pool.lunch < ROTATION_TARGET_3M || pool.dinner < ROTATION_TARGET_3M);
-  const tone = low ? "bg-amber-50 border-amber-300" : tightRotation ? "bg-sky-50 border-sky-200" : "bg-slate-50 border-slate-200";
+  const tone = low ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : tightRotation ? "bg-sky-50 dark:bg-sky-950 border-sky-200 dark:border-sky-800" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700";
   return (
     <div className={`rounded-lg p-3 text-sm border ${tone}`}>
       <div className="flex flex-wrap items-center gap-3">
-        <span className="font-medium text-slate-700">🎯 Recettes éligibles ({SEASON_FR[pool.season]}) :</span>
+        <span className="font-medium text-slate-700 dark:text-slate-200">🎯 Recettes éligibles ({SEASON_FR[pool.season]}) :</span>
         <PoolBadge label="Petits-déjeuners" n={pool.breakfast} min={3} />
         <PoolBadge label="Déjeuners" n={pool.lunch} min={7} />
         <PoolBadge label="Dîners" n={pool.dinner} min={7} />
@@ -11499,13 +11583,13 @@ function PoolDiagnostic({profile, currentWeek}) {
         {profile.snackEnabled && <PoolBadge label="Goûters" n={pool.snack} min={4} />}
       </div>
       {low && (
-        <p className="mt-2 text-amber-800 text-xs">
+        <p className="mt-2 text-amber-800 dark:text-amber-200 text-xs">
           ⚠️ Votre pool est inférieur à 7 recettes pour au moins un type de repas : des recettes se répéteront dans la semaine.
           Pour élargir le choix : retirez des allergies ou exclusions, ajoutez de l'équipement, ou augmentez le temps max de préparation dans <strong>Paramètres</strong>.
         </p>
       )}
       {tightRotation && (
-        <p className="mt-2 text-sky-800 text-xs">
+        <p className="mt-2 text-sky-800 dark:text-sky-200 text-xs">
           ℹ️ Pour ne jamais répéter une recette pendant 3 mois, la cible est <strong>{ROTATION_TARGET_3M} déjeuners et {ROTATION_TARGET_3M} dîners</strong> éligibles ; vous en avez {pool.lunch} et {pool.dinner}.
           L'algorithme priorise les recettes les plus anciennes lorsqu'il doit en réutiliser une.
         </p>
@@ -11516,7 +11600,7 @@ function PoolDiagnostic({profile, currentWeek}) {
 function PoolBadge({label, n, min}) {
   const ok = n >= min;
   return (
-    <span className={`px-2 py-0.5 rounded text-xs ${ok ? "bg-emerald-100 text-emerald-800" : "bg-red-100 text-red-800"}`}>
+    <span className={`px-2 py-0.5 rounded text-xs ${ok ? "bg-emerald-100 text-emerald-800 dark:text-emerald-200" : "bg-red-100 text-red-800 dark:text-red-200"}`}>
       {label} : <strong>{n}</strong>{!ok && ` (min ${min} conseillé)`}
     </span>
   );
@@ -11759,12 +11843,12 @@ function SettingsView({state, update, updateProfile}) {
     <div className="space-y-4 max-w-3xl">
       <h2 className="text-xl font-bold">⚙️ Paramètres</h2>
 
-      <div className="bg-white rounded-lg shadow p-5">
-        <h3 className="font-bold text-slate-800 mb-3">Famille</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Famille</h3>
         {p.members.map(m => {
           const memberAllergies = m.allergies || [];
           return (
-            <div key={m.id} className="bg-slate-50 p-3 rounded mb-2 space-y-2">
+            <div key={m.id} className="bg-slate-50 dark:bg-slate-800 p-3 rounded mb-2 space-y-2">
               <div className="flex flex-wrap gap-2 items-end">
                 <input value={m.name} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
                 <div className="flex items-center gap-1">
@@ -11773,7 +11857,7 @@ function SettingsView({state, update, updateProfile}) {
                     title="Année de naissance"
                     onChange={e=>updateMember(m.id,{birthYear:parseInt(e.target.value)||0})}
                     className="border rounded px-2 py-1 w-24" />
-                  <span className="text-xs text-slate-500 whitespace-nowrap">{memberAge(m)} ans</span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">{memberAge(m)} ans</span>
                 </div>
                 <select value={m.sex} onChange={e=>updateMember(m.id,{sex:e.target.value})} className="border rounded px-2 py-1">
                   <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
@@ -11781,9 +11865,9 @@ function SettingsView({state, update, updateProfile}) {
                 {p.members.length > 1 && <button onClick={()=>removeMember(m.id)} className="text-red-500 text-sm">Retirer</button>}
               </div>
               <details className="text-sm" open={memberAllergies.length > 0}>
-                <summary className="cursor-pointer text-slate-700">
+                <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
                   ⚠️ Allergies / intolérances de {m.name || "ce membre"}
-                  {memberAllergies.length > 0 && <span className="ml-1 text-red-700 font-medium">({memberAllergies.length})</span>}
+                  {memberAllergies.length > 0 && <span className="ml-1 text-red-700 dark:text-red-300 font-medium">({memberAllergies.length})</span>}
                 </summary>
                 <div className="mt-2 flex flex-wrap gap-1">
                   {dataRef.allergens().map(({id: k, label: v}) => {
@@ -11791,7 +11875,7 @@ function SettingsView({state, update, updateProfile}) {
                     return (
                       <button key={k}
                         onClick={() => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)}
-                        className={`text-xs px-2 py-1 rounded border ${active ? "bg-red-100 border-red-400 text-red-800 font-medium" : "bg-white border-slate-200 hover:bg-slate-100"}`}>
+                        className={`text-xs px-2 py-1 rounded border ${active ? "bg-red-100 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:bg-slate-700"}`}>
                         {active ? "⚠️ " : ""}{v}
                       </button>
                     );
@@ -11801,17 +11885,17 @@ function SettingsView({state, update, updateProfile}) {
             </div>
           );
         })}
-        <button onClick={addMember} className="text-emerald-700 text-sm font-medium">+ Ajouter un membre</button>
+        <button onClick={addMember} className="text-emerald-700 dark:text-emerald-300 text-sm font-medium">+ Ajouter un membre</button>
         <div className="mt-3">
-          <label className="text-xs text-slate-500 block">Localisation</label>
+          <label className="text-xs text-slate-500 dark:text-slate-400 block">Localisation</label>
           <input value={p.location} onChange={e=>updateProfile({location:e.target.value})}
             placeholder="Ex. Lyon, France" className="border rounded px-3 py-2 w-full" />
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5">
-        <h3 className="font-bold text-red-800 mb-3">⚠️ Allergies / intolérances de toute la famille</h3>
-        <p className="text-xs text-slate-600 mb-3">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5">
+        <h3 className="font-bold text-red-800 dark:text-red-200 mb-3">⚠️ Allergies / intolérances de toute la famille</h3>
+        <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
           Ces allergies s'appliquent à tous les membres. Pour une allergie qui ne concerne qu'une personne, utilise le bloc « Allergies » sous chaque membre dans la section Famille ci-dessus.
         </p>
         <div className="flex flex-wrap gap-2">
@@ -11821,7 +11905,7 @@ function SettingsView({state, update, updateProfile}) {
               <button key={k} type="button"
                 onClick={() => active ? removeGlobalAllergy(k) : tryAddGlobalAllergy(k)}
                 className={`flex items-center gap-2 px-3 py-2 rounded border ${
-                  active ? "bg-red-100 border-red-400 text-red-800 font-medium" : "bg-white border-slate-200 hover:bg-slate-100"
+                  active ? "bg-red-100 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:bg-slate-700"
                 }`}>
                 {active ? "⚠️ " : ""}{v}
               </button>
@@ -11830,32 +11914,32 @@ function SettingsView({state, update, updateProfile}) {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5">
-        <h3 className="font-bold text-amber-800 mb-3">Exclusions préférentielles</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5">
+        <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-3">Exclusions préférentielles</h3>
         <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5 space-y-3">
-        <h3 className="font-bold text-slate-800">Repas et rythme</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5 space-y-3">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">Repas et rythme</h3>
         <div>
           <label className="text-sm font-medium block mb-2">Moment du dessert</label>
           <div className="flex gap-2">
             <label className={`flex-1 flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              (p.dessertTime || "dinner") === "lunch" ? "bg-rose-100 border-rose-400 text-rose-800" : "bg-white border-slate-200"
+              (p.dessertTime || "dinner") === "lunch" ? "bg-rose-100 border-rose-400 text-rose-800 dark:text-rose-200" : "bg-white border-slate-200 dark:border-slate-700"
             }`}>
               <input type="radio" checked={(p.dessertTime || "dinner") === "lunch"}
                 onChange={() => updateProfile({dessertTime: "lunch"})} />
               🥗 Au déjeuner
             </label>
             <label className={`flex-1 flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              (p.dessertTime || "dinner") === "dinner" ? "bg-rose-100 border-rose-400 text-rose-800" : "bg-white border-slate-200"
+              (p.dessertTime || "dinner") === "dinner" ? "bg-rose-100 border-rose-400 text-rose-800 dark:text-rose-200" : "bg-white border-slate-200 dark:border-slate-700"
             }`}>
               <input type="radio" checked={(p.dessertTime || "dinner") === "dinner"}
                 onChange={() => updateProfile({dessertTime: "dinner"})} />
               🌙 Au dîner (défaut)
             </label>
           </div>
-          <p className="text-xs text-slate-500 mt-1">Le dessert reste unique dans la journée et apparaît à l'endroit choisi.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Le dessert reste unique dans la journée et apparaît à l'endroit choisi.</p>
         </div>
         <div>
           <label className="flex items-center gap-2 cursor-pointer">
@@ -11863,12 +11947,12 @@ function SettingsView({state, update, updateProfile}) {
               onChange={e => updateProfile({snackEnabled: e.target.checked})} />
             <span className="text-sm font-medium">🍪 Ajouter un goûter chaque jour</span>
           </label>
-          <p className="text-xs text-slate-500 mt-1">Active un slot de goûter entre le déjeuner et le dîner.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Active un slot de goûter entre le déjeuner et le dîner.</p>
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5 space-y-3">
-        <h3 className="font-bold text-slate-800">Contraintes pratiques</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5 space-y-3">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">Contraintes pratiques</h3>
         <div>
           <label className="text-sm block mb-1">Budget hebdomadaire (€)</label>
           <input type="number" value={p.budgetWeekly} onChange={e=>updateProfile({budgetWeekly: parseInt(e.target.value)||0})}
@@ -11877,7 +11961,7 @@ function SettingsView({state, update, updateProfile}) {
         <div>
           <label className="text-sm block mb-1">
             Tolérance budget
-            <span className="text-xs text-slate-500 ml-2">l'optimiseur ne dépassera pas ce seuil</span>
+            <span className="text-xs text-slate-500 dark:text-slate-400 ml-2">l'optimiseur ne dépassera pas ce seuil</span>
           </label>
           <select
             value={p.budgetTolerance ?? 10}
@@ -11900,7 +11984,7 @@ function SettingsView({state, update, updateProfile}) {
           <div className="flex flex-wrap gap-2">
             {dataRef.equipment().map(eq => (
               <label key={eq.id} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-                p.equipment.includes(eq.id) ? "bg-emerald-100 border-emerald-400" : "bg-white border-slate-200"
+                p.equipment.includes(eq.id) ? "bg-emerald-100 border-emerald-400" : "bg-white border-slate-200 dark:border-slate-700"
               }`}>
                 <input type="checkbox" checked={p.equipment.includes(eq.id)}
                   onChange={e=>updateProfile({equipment: e.target.checked ? [...p.equipment, eq.id] : p.equipment.filter(x=>x!==eq.id)})} />
@@ -11911,9 +11995,9 @@ function SettingsView({state, update, updateProfile}) {
         </div>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5">
-        <h3 className="font-bold text-slate-800 mb-3">💾 Sauvegarde / restauration</h3>
-        <p className="text-sm text-slate-600 mb-3">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">💾 Sauvegarde / restauration</h3>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">
           Vos données (profil, menus, notes) sont stockées dans ce navigateur uniquement.
           Pour les transférer sur un autre appareil (iPad, iPhone, ordi…),
           exportez-les ici en JSON, partagez le fichier (AirDrop, mail…), puis importez sur l'autre appareil.
@@ -11927,20 +12011,20 @@ function SettingsView({state, update, updateProfile}) {
             ⬆️ Importer depuis un fichier
             <input type="file" accept="application/json,.json,*/*" onChange={onImportFile} className="sr-only" />
           </label>
-          <button onClick={() => { setPasteMode(m => !m); setImportStatus(null); }} className="bg-slate-200 hover:bg-slate-300 text-slate-800 px-4 py-2 rounded text-sm font-medium">
+          <button onClick={() => { setPasteMode(m => !m); setImportStatus(null); }} className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-slate-100 px-4 py-2 rounded text-sm font-medium">
             {pasteMode ? "✕ Annuler" : "📋 Coller du texte"}
           </button>
         </div>
         {pasteMode && (
           <div className="mt-3 space-y-2">
-            <p className="text-xs text-slate-600">
+            <p className="text-xs text-slate-600 dark:text-slate-300">
               Si le bouton « Importer depuis un fichier » ne réagit pas (cas connu sur PWA iOS),
-              ouvrez votre <code className="bg-slate-100 px-1">.json</code> dans un éditeur,
+              ouvrez votre <code className="bg-slate-100 dark:bg-slate-700 px-1">.json</code> dans un éditeur,
               copiez tout le contenu, puis utilisez l'un des deux moyens ci-dessous.
             </p>
             <button
               onClick={tryPasteFromClipboard}
-              className="bg-emerald-100 hover:bg-emerald-200 text-emerald-900 px-3 py-1.5 rounded text-xs font-medium border border-emerald-300"
+              className="bg-emerald-100 hover:bg-emerald-200 text-emerald-900 dark:text-emerald-100 px-3 py-1.5 rounded text-xs font-medium border border-emerald-300 dark:border-emerald-700"
             >
               📋 Coller depuis le presse-papier
             </button>
@@ -11959,7 +12043,7 @@ function SettingsView({state, update, updateProfile}) {
               }}
               placeholder='Ou collez ici manuellement (long-press → Coller)…'
               rows={6}
-              className="w-full border border-slate-300 rounded px-2 py-1 text-xs font-mono"
+              className="w-full border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-xs font-mono"
             />
             <button
               onClick={handleImportFromPaste}
@@ -11971,50 +12055,50 @@ function SettingsView({state, update, updateProfile}) {
           </div>
         )}
         {importStatus && (
-          <div className={`mt-3 text-sm rounded px-3 py-2 border ${importStatus.type === "error" ? "bg-red-50 border-red-300 text-red-800" : "bg-blue-50 border-blue-300 text-blue-800"}`}>
+          <div className={`mt-3 text-sm rounded px-3 py-2 border ${importStatus.type === "error" ? "bg-red-50 dark:bg-red-950 border-red-300 dark:border-red-700 text-red-800 dark:text-red-200" : "bg-blue-50 border-blue-300 text-blue-800"}`}>
             {importStatus.msg}
           </div>
         )}
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5">
-        <h3 className="font-bold text-slate-800 mb-3">🔒 Données et confidentialité</h3>
-        <p className="text-sm text-slate-600 mb-3">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">🔒 Données et confidentialité</h3>
+        <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">
           Cette app stocke tes données <strong>uniquement dans la mémoire de ton navigateur</strong>, sur ce device.
           Aucun serveur ne reçoit ni ne stocke quoi que ce soit. Le code est open source et auditable.
         </p>
-        <div className="bg-emerald-50 border border-emerald-200 rounded p-3 mb-3 text-xs text-emerald-900">
+        <div className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 rounded p-3 mb-3 text-xs text-emerald-900 dark:text-emerald-100">
           <span className="font-semibold">🔐 Chiffrement actif (depuis V2.10.0)</span> — Tes données sont chiffrées
           au repos avec AES-GCM 256 bits. La clé est stockée dans IndexedDB avec l'attribut
           <code className="px-1">extractable: false</code> : le navigateur garantit qu'elle ne peut jamais
           sortir de ton appareil, même via un script malveillant.
         </div>
-        <div className="bg-amber-50 border border-amber-200 rounded p-3 mb-3 text-xs text-amber-900">
+        <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3 mb-3 text-xs text-amber-900 dark:text-amber-100">
           <span className="font-semibold">⚠️ Conseil important</span> — Si tu effaces le stockage du site, la
           clé est perdue avec. Sur Safari iOS, l'app peut aussi être nettoyée après ~7 jours sans visite (ITP).
           <strong> Fais un export JSON régulièrement</strong> depuis la section Sauvegarde plus haut — c'est
           ton filet de sécurité en cas de pépin.
         </div>
         <div className="text-sm space-y-2 mb-3">
-          <div className="font-semibold text-slate-700">Tes droits RGPD :</div>
-          <ul className="list-disc list-inside text-slate-700 space-y-1 ml-1">
+          <div className="font-semibold text-slate-700 dark:text-slate-200">Tes droits RGPD :</div>
+          <ul className="list-disc list-inside text-slate-700 dark:text-slate-200 space-y-1 ml-1">
             <li><strong>Accès &amp; rectification</strong> : toutes tes données sont visibles et modifiables dans cette app (Famille, Allergies, Menus, Notes, etc.).</li>
             <li><strong>Effacement</strong> : bouton « Tout effacer » ci-dessous (zone dangereuse).</li>
             <li><strong>Portabilité</strong> : bouton « Exporter » dans la section Sauvegarde plus haut. Format JSON lisible.</li>
             <li><strong>Pas de profilage</strong>, pas de transmission tierce, pas d'analytics.</li>
           </ul>
         </div>
-        <p className="text-xs text-slate-500">
+        <p className="text-xs text-slate-500 dark:text-slate-400">
           {state.consentedAt && <>Consentement initial donné le {new Date(state.consentedAt).toLocaleDateString("fr-FR")}.{" "}</>}
           Politique complète :{" "}
           <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
             target="_blank" rel="noopener noreferrer"
-            className="text-emerald-700 underline">PRIVACY.md sur GitHub</a>.
+            className="text-emerald-700 dark:text-emerald-300 underline">PRIVACY.md sur GitHub</a>.
         </p>
       </div>
 
-      <div className="bg-white rounded-lg shadow p-5">
-        <h3 className="font-bold text-slate-800 mb-3">Zone dangereuse</h3>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow p-5">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Zone dangereuse</h3>
         <button onClick={resetAll} className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
           Tout effacer et recommencer
         </button>
@@ -12022,19 +12106,19 @@ function SettingsView({state, update, updateProfile}) {
 
       {pendingAllergy && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={cancelPendingAllergy}>
-          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
-            <h3 className="text-lg font-bold text-red-800 mb-3">⚠️ Confirmer une allergie médicale</h3>
-            <p className="text-sm text-slate-700 mb-3">
+          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
+            <h3 className="text-lg font-bold text-red-800 dark:text-red-200 mb-3">⚠️ Confirmer une allergie médicale</h3>
+            <p className="text-sm text-slate-700 dark:text-slate-200 mb-3">
               Vous allez ajouter <strong>{dataRef.allergenLabel(pendingAllergy.allergenId)}</strong>
               {pendingAllergy.scope === "member"
                 ? <> aux allergies de <strong>{pendingAllergy.memberName}</strong>.</>
                 : <> aux allergies de <strong>toute la famille</strong>.</>}
             </p>
-            <div className="bg-amber-50 border border-amber-300 rounded p-3 text-sm text-amber-900 mb-4">
+            <div className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded p-3 text-sm text-amber-900 dark:text-amber-100 mb-4">
               Confirmez qu'il s'agit bien d'une <strong>allergie ou intolérance médicale</strong>, pas d'une simple préférence (goût, éthique, religion). Pour une simple préférence, utilisez plutôt la rubrique <strong>« Exclusions préférentielles »</strong> ci-dessous : ces ingrédients seront évités, mais pourront être proposés en dernier recours si la base devient trop restreinte.
             </div>
             <div className="flex gap-2 justify-end">
-              <button onClick={cancelPendingAllergy} className="px-4 py-2 text-slate-700 hover:bg-slate-100 rounded">Annuler</button>
+              <button onClick={cancelPendingAllergy} className="px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:bg-slate-700 rounded">Annuler</button>
               <button onClick={confirmPendingAllergy} className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded font-medium">Oui, c'est une allergie médicale</button>
             </div>
           </div>
@@ -12043,18 +12127,18 @@ function SettingsView({state, update, updateProfile}) {
 
       {pendingImport && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={cancelImport}>
-          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
-            <h3 className="text-lg font-bold text-slate-800 mb-3">Confirmer l'import</h3>
-            <div className="text-sm text-slate-700 space-y-1 mb-4">
+          <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
+            <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-3">Confirmer l'import</h3>
+            <div className="text-sm text-slate-700 dark:text-slate-200 space-y-1 mb-4">
               <div>📄 Fichier : <span className="font-mono text-xs break-all">{pendingImport.fileName}</span></div>
               <div>📅 Date d'export : {pendingImport.payload.exportedAt?.slice(0, 19).replace("T", " ") || "?"}</div>
               <div>🏷️ Version d'origine : {pendingImport.payload.appVersion || "?"}</div>
             </div>
-            <div className="bg-amber-50 border border-amber-300 rounded p-3 text-sm text-amber-900 mb-4">
+            <div className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded p-3 text-sm text-amber-900 dark:text-amber-100 mb-4">
               ⚠️ Vos données actuelles (profil, menus, notes) seront <strong>remplacées</strong>. Action irréversible — pensez à exporter d'abord si vous voulez garder l'état actuel.
             </div>
             <div className="flex gap-2 justify-end">
-              <button onClick={cancelImport} className="px-4 py-2 text-slate-700 hover:bg-slate-100 rounded">
+              <button onClick={cancelImport} className="px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:bg-slate-700 rounded">
                 Annuler
               </button>
               <button onClick={confirmImport} className="px-4 py-2 bg-sky-600 hover:bg-sky-700 text-white rounded font-medium">
@@ -12085,18 +12169,21 @@ function PrintMenuPage({weekStart, menu, profile}) {
   if ((profile.dessertTime || "dinner") === "dinner") {
     rows.push({key:"dessert", label:"Dessert", icon:"🍰"});
   }
+  // V2.16.0 : on force bg-white + text-slate-900 sur le wrapper d'impression
+  // pour que la prévisualisation reste lisible même quand l'app est en mode
+  // sombre (sinon le body en bg-slate-900 transparait derrière la table A4).
   return (
-    <div className="p-6 text-[10pt] font-sans">
+    <div className="p-6 text-[10pt] font-sans bg-white text-slate-900">
       <style>{`
         @page { size: A4 landscape; margin: 1cm; }
         body { background: white !important; }
       `}</style>
       <div className="flex justify-between items-end mb-3 border-b-2 border-emerald-700 pb-2">
         <div>
-          <h1 className="text-xl font-bold text-emerald-800">🌿 Menu IG Bas — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
-          <p className="text-xs text-slate-600">{profile.members.length} pers. (≈ {mult.toFixed(1)} adultes équivalents) · {SEASON_FR[getSeason(weekStart)]}</p>
+          <h1 className="text-xl font-bold text-emerald-800 dark:text-emerald-200">🌿 Menu IG Bas — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
+          <p className="text-xs text-slate-600 dark:text-slate-300">{profile.members.length} pers. (≈ {mult.toFixed(1)} adultes équivalents) · {SEASON_FR[getSeason(weekStart)]}</p>
         </div>
-        <div className="text-xs text-slate-500">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
+        <div className="text-xs text-slate-500 dark:text-slate-400">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
       </div>
       <table className="w-full border-collapse">
         <thead>
@@ -12113,32 +12200,32 @@ function PrintMenuPage({weekStart, menu, profile}) {
         <tbody>
           {rows.map(m => (
             <tr key={m.key}>
-              <td className={`border border-slate-300 p-1 font-bold ${m.key === "dessert" ? "bg-rose-50 text-rose-800" : m.key === "snack" ? "bg-amber-50" : "bg-slate-100"}`}>{m.icon} {m.label}</td>
+              <td className={`border border-slate-300 dark:border-slate-600 p-1 font-bold ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950 text-rose-800 dark:text-rose-200" : m.key === "snack" ? "bg-amber-50 dark:bg-amber-950" : "bg-slate-100 dark:bg-slate-700"}`}>{m.icon} {m.label}</td>
               {DAYS.map(d => {
                 const slot = menu[d] || {};
                 const r = RECIPES.find(x => x.id === slot[m.key]);
                 return (
-                  <td key={d} className={`border border-slate-300 p-1 align-top ${m.key === "dessert" ? "bg-rose-50/30" : ""}`}>
+                  <td key={d} className={`border border-slate-300 dark:border-slate-600 p-1 align-top ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950/30" : ""}`}>
                     {r ? (
                       <>
                         <div className="font-medium">
                           {r.name}
                           {recipeAdvanceInfo(r) && (
-                            <span className="ml-1 text-amber-700" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
+                            <span className="ml-1 text-amber-700 dark:text-amber-300" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
                               {recipeAdvanceInfo(r).icon}
                             </span>
                           )}
                         </div>
-                        <div className="text-[8pt] text-slate-500">
+                        <div className="text-[8pt] text-slate-500 dark:text-slate-400">
                           ⏱{recipeActiveMinutes(r)}min
                           {recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}
                           {' · '}{r.kcal}kcal
                           {recipeAdvanceInfo(r) && (
-                            <span className="text-amber-700 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
+                            <span className="text-amber-700 dark:text-amber-300 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
                           )}
                         </div>
                       </>
-                    ) : <span className="text-slate-400 italic">—</span>}
+                    ) : <span className="text-slate-400 dark:text-slate-500 italic">—</span>}
                   </td>
                 );
               })}
@@ -12146,7 +12233,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.15.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas V2.16.0 · prototype</p>
     </div>
   );
 }
@@ -12166,28 +12253,28 @@ function PrintShoppingPage({weekStart, menu, profile, pantryChecks}) {
     if (filtered.length) byCat[cat] = filtered;
   });
   return (
-    <div className="p-6 text-[10pt]">
+    <div className="p-6 text-[10pt] bg-white text-slate-900">
       <style>{`
         @page { size: A4 portrait; margin: 1.2cm; }
         body { background: white !important; }
       `}</style>
       <div className="border-b-2 border-amber-600 pb-2 mb-3">
-        <h1 className="text-xl font-bold text-amber-800">🛒 Liste de courses — Semaine du {formatShort(weekStart)}</h1>
-        <p className="text-xs text-slate-600">
+        <h1 className="text-xl font-bold text-amber-800 dark:text-amber-200">🛒 Liste de courses — Semaine du {formatShort(weekStart)}</h1>
+        <p className="text-xs text-slate-600 dark:text-slate-300">
           {profile.members.length} personne(s) · Imprimé le {new Date().toLocaleDateString("fr-FR")}
-          {skipped > 0 && <span className="ml-2 text-emerald-700">· {skipped} article(s) déjà coché(s) exclu(s)</span>}
+          {skipped > 0 && <span className="ml-2 text-emerald-700 dark:text-emerald-300">· {skipped} article(s) déjà coché(s) exclu(s)</span>}
         </p>
       </div>
       <div className="columns-2 gap-6">
         {Object.entries(byCat).map(([cat, list]) => (
           <div key={cat} className="mb-4 break-inside-avoid">
-            <h2 className="font-bold text-slate-800 border-b border-slate-400 mb-1">{dataRef.categoryLabel(cat)}</h2>
+            <h2 className="font-bold text-slate-800 dark:text-slate-100 border-b border-slate-400 mb-1">{dataRef.categoryLabel(cat)}</h2>
             <ul className="text-[9.5pt]">
               {list.map((it,i) => (
                 <li key={i} className="flex items-baseline gap-2 py-0.5">
                   <span className="inline-block border border-slate-400 w-3 h-3 flex-shrink-0"></span>
                   <span className="flex-1">{it.name}</span>
-                  <span className="font-mono text-slate-700 text-[9pt]">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
+                  <span className="font-mono text-slate-700 dark:text-slate-200 text-[9pt]">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
                 </li>
               ))}
             </ul>
