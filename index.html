@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.13.1</title>
+<title>Menu IG Bas — V2.14.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -9897,6 +9897,15 @@ function App({initialState}) {
         {view === "history" && (
           <HistoryView state={state} setCurrentWeek={setCurrentWeek} onGo={() => setView("menu")} />
         )}
+        {view === "month" && (
+          <MonthView
+            state={state}
+            currentWeek={currentWeek}
+            setCurrentWeek={setCurrentWeek}
+            update={update}
+            onGoToWeek={(w) => { setCurrentWeek(w); setView("menu"); }}
+          />
+        )}
         {view === "settings" && (
           <SettingsView state={state} update={update} updateProfile={updateProfile} />
         )}
@@ -9914,7 +9923,7 @@ function App({initialState}) {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.13.1 — prototype local • Données stockées dans votre navigateur ·{" "}
+        Menu IG Bas V2.14.0 — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -9927,6 +9936,7 @@ function App({initialState}) {
 function TopBar({view, setView}) {
   const tabs = [
     {key:"menu",     label:"Planning",      icon:"📅"},
+    {key:"month",    label:"Mois",          icon:"🗓️"},
     {key:"shopping", label:"Liste courses", icon:"🛒"},
     {key:"library",  label:"Recettes",      icon:"📖"},
     {key:"history",  label:"Historique",    icon:"📊"},
@@ -10761,6 +10771,215 @@ function Stat({label, value}) {
   );
 }
 
+// ----- Vue mensuelle (V2.14.0) ---------------------------------------------
+// Affiche 5 semaines glissantes à partir de currentWeek (ancre) avec :
+// - cartes hebdo (date, coût coloré, repas remplis, verrous)
+// - récap mensuel : coût total, diversité, recettes uniques
+// - action "Régénérer toutes les semaines vides" pour planifier 1 mois en 1 clic
+// Réutilise les helpers existants : addDays, weekKey, estimateWeekCost,
+// generateWeek, getAllActiveSlots, recipeEffectiveCost, etc.
+function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
+  const activeSlots = getAllActiveSlots(state.profile);
+  const slotsPerDay = activeSlots.length;
+  const slotsPerWeek = slotsPerDay * 7;
+  const monthFmt = new Intl.DateTimeFormat("fr-FR", {month: "long", year: "numeric"});
+
+  // Les 5 semaines glissantes à partir de currentWeek (ancre)
+  const weekInfos = [0,1,2,3,4].map(i => {
+    const ws = addDays(currentWeek, i * 7);
+    const wk = weekKey(ws);
+    const menu = state.menus[wk] || {};
+    let filled = 0, locks = 0;
+    DAYS.forEach(d => {
+      const slot = menu[d] || {};
+      const locked = slot.locked || {};
+      activeSlots.forEach(m => {
+        if (slot[m.key]) filled++;
+        if (locked[m.key]) locks++;
+      });
+    });
+    const cost = estimateWeekCost(menu, state.profile);
+    return {ws, wk, menu, cost, filled, locks};
+  });
+
+  const monthlyCost = weekInfos.reduce((s, w) => s + w.cost, 0);
+  const monthlyBudget = (state.profile.budgetWeekly || 0) * 5;
+  const tol = (state.profile.budgetTolerance ?? 10) / 100;
+  const monthlyMax = monthlyBudget * (1 + tol);
+
+  // Diversité : nombre de recettes uniques utilisées sur les 5 semaines
+  const allRecipes = new Set();
+  let totalSlotsUsed = 0;
+  weekInfos.forEach(w => {
+    DAYS.forEach(d => {
+      const slot = w.menu[d] || {};
+      activeSlots.forEach(m => {
+        if (slot[m.key]) { allRecipes.add(slot[m.key]); totalSlotsUsed++; }
+      });
+    });
+  });
+
+  // Bandeau coût mensuel : tier identique à MenuView mais sur 5 semaines
+  const monthlyTier = (() => {
+    if (!monthlyBudget) return null;
+    const ratio = monthlyCost / monthlyBudget;
+    if (ratio <= 0.95) return "under";
+    if (ratio <= 1.05) return "ok";
+    if (ratio <= 1 + tol) return "soft-over";
+    return "hard-over";
+  })();
+
+  const tierColors = {
+    under:       "bg-emerald-100 text-emerald-800 border-emerald-300",
+    ok:          "bg-emerald-100 text-emerald-800 border-emerald-300",
+    "soft-over": "bg-amber-100 text-amber-800 border-amber-300",
+    "hard-over": "bg-red-100 text-red-800 border-red-300",
+  };
+  const tierLabels = {
+    under:       "Sous le budget mensuel ✓",
+    ok:          "Dans le budget mensuel ✓",
+    "soft-over": "Légèrement au-dessus (dans la tolérance)",
+    "hard-over": "Au-dessus de la tolérance ⚠️ ",
+  };
+
+  const regenerateEmpty = () => {
+    update(s => {
+      const newMenus = {...s.menus};
+      let count = 0;
+      weekInfos.forEach(w => {
+        if (w.filled === 0) {
+          newMenus[w.wk] = generateWeek({
+            profile: s.profile,
+            ratings: s.ratings,
+            menus: newMenus,           // utilise les semaines déjà ajoutées pour anti-récurrence
+            weekStart: w.ws,
+            keepLocked: false,
+          });
+          count++;
+        }
+      });
+      console.info(`[month] ${count} semaine(s) vide(s) régénérée(s)`);
+      return {menus: newMenus};
+    });
+  };
+
+  const emptyCount = weekInfos.filter(w => w.filled === 0).length;
+
+  return (
+    <div className="space-y-4">
+      {/* Header navigation mensuelle */}
+      <div className="bg-white rounded-lg shadow p-4 flex flex-wrap items-center gap-3">
+        <button onClick={() => setCurrentWeek(addDays(currentWeek, -28))}
+          className="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded">← 4 sem.</button>
+        <div className="flex-1">
+          <h2 className="text-xl font-bold text-slate-800">🗓️ Vue mensuelle</h2>
+          <p className="text-sm text-slate-500">
+            Du {formatShort(currentWeek)} au {formatShort(addDays(currentWeek, 34))}
+            {' · '}{monthFmt.format(addDays(currentWeek, 14))}
+          </p>
+        </div>
+        <button onClick={() => setCurrentWeek(addDays(currentWeek, 28))}
+          className="px-3 py-2 bg-slate-100 hover:bg-slate-200 rounded">4 sem. →</button>
+      </div>
+
+      {/* Bandeau coût mensuel */}
+      {monthlyBudget > 0 && (
+        <div className={`rounded-lg shadow p-4 border ${monthlyTier ? tierColors[monthlyTier] : "bg-slate-100"}`}>
+          <div className="flex items-center gap-3 flex-wrap">
+            <div className="flex-1">
+              <div className="text-sm font-semibold mb-1">{tierLabels[monthlyTier]}</div>
+              <div className="text-2xl font-bold">{monthlyCost.toFixed(2)} € <span className="text-sm font-normal opacity-75">/ {monthlyBudget.toFixed(0)} € (5 semaines)</span></div>
+              <div className="mt-2 h-2 w-full max-w-md bg-white/60 rounded-full overflow-hidden">
+                <div className={`h-full ${
+                  monthlyTier === "hard-over" ? "bg-red-500" :
+                  monthlyTier === "soft-over" ? "bg-amber-500" : "bg-emerald-500"
+                }`} style={{width: `${Math.min(100, (monthlyCost / monthlyBudget) * 100).toFixed(0)}%`}} />
+              </div>
+            </div>
+            <div className="flex flex-col items-end gap-1">
+              <span className="text-xs uppercase tracking-wide opacity-75">Diversité</span>
+              <span className="text-2xl font-bold">{allRecipes.size}</span>
+              <span className="text-xs opacity-75">recettes sur {totalSlotsUsed} repas</span>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Action batch régénération */}
+      {emptyCount > 0 && (
+        <div className="bg-sky-50 border border-sky-200 rounded-lg p-4 flex items-center justify-between flex-wrap gap-3">
+          <div className="text-sm text-sky-900">
+            <strong>{emptyCount} semaine{emptyCount>1?"s":""} vide{emptyCount>1?"s":""}</strong> dans cette vue.
+            Tu peux les générer toutes en un clic, l'anti-récurrence reste respectée.
+          </div>
+          <button onClick={regenerateEmpty}
+            className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium">
+            🎲 Générer les {emptyCount} semaine{emptyCount>1?"s":""} vide{emptyCount>1?"s":""}
+          </button>
+        </div>
+      )}
+
+      {/* Grille 5 cartes hebdo */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+        {weekInfos.map((w, i) => {
+          const ratio = state.profile.budgetWeekly > 0 ? w.cost / state.profile.budgetWeekly : 0;
+          const tier = !state.profile.budgetWeekly ? null
+            : ratio <= 0.95 ? "under"
+            : ratio <= 1.05 ? "ok"
+            : ratio <= 1 + tol ? "soft-over"
+            : "hard-over";
+          const isEmpty = w.filled === 0;
+          const isCurrent = i === 0;
+          return (
+            <button key={w.wk}
+              onClick={() => onGoToWeek(w.ws)}
+              className={`text-left bg-white rounded-lg shadow hover:shadow-md transition p-3 border-2 ${
+                isCurrent ? "border-emerald-500" : "border-transparent"
+              }`}>
+              <div className="text-xs text-slate-500 mb-1">
+                Semaine {i+1}{isCurrent && " · en cours"}
+              </div>
+              <div className="font-semibold text-slate-800 text-sm mb-2">
+                {formatShort(w.ws)} → {formatShort(addDays(w.ws, 6))}
+              </div>
+              {isEmpty ? (
+                <div className="text-slate-400 italic text-sm py-2">Aucun repas planifié</div>
+              ) : (
+                <>
+                  <div className={`inline-block px-2 py-0.5 rounded text-xs font-medium mb-2 ${
+                    tier ? tierColors[tier] : "bg-slate-100 text-slate-700"
+                  }`}>
+                    💰 {w.cost.toFixed(2)}€
+                  </div>
+                  <div className="text-xs text-slate-600 mb-1">
+                    🍽️ {w.filled} / {slotsPerWeek} repas
+                  </div>
+                  {w.locks > 0 && (
+                    <div className="text-xs text-slate-600">🔒 {w.locks} verrouillé{w.locks>1?"s":""}</div>
+                  )}
+                </>
+              )}
+              <div className="text-xs text-emerald-600 mt-2 font-medium">Voir / Éditer →</div>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* Hint diversité */}
+      {totalSlotsUsed > 0 && (
+        <div className="bg-white rounded-lg shadow p-4 text-sm text-slate-600">
+          💡 <strong>Astuce diversité :</strong> sur ces 5 semaines, tu utilises{" "}
+          <strong>{allRecipes.size} recettes uniques</strong> sur {totalSlotsUsed} repas
+          {' '}({totalSlotsUsed > 0 ? Math.round(allRecipes.size/totalSlotsUsed*100) : 0}% de diversité).
+          {totalSlotsUsed > 0 && allRecipes.size / totalSlotsUsed < 0.7 && (
+            <span className="text-amber-700"> Tu pourrais varier davantage en régénérant certaines semaines.</span>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // Textarea contrôlé pour exclusions : conserve le texte brut (newlines autorisés)
 // et ne nettoie en tableau qu'à chaque changement, sans bloquer la saisie.
 function ExclusionsTextarea({value, onChange}) {
@@ -11447,7 +11666,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.13.1 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.14.0 · prototype</p>
     </div>
   );
 }
