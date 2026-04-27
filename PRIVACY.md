@@ -1,6 +1,6 @@
 # Politique de confidentialité — Menu IG Bas
 
-**Dernière mise à jour : 27 avril 2026 (V2.9.0)**
+**Dernière mise à jour : 27 avril 2026 (V2.10.0)**
 
 Cette page décrit comment l'application **Menu IG Bas** gère tes données. Le principe directeur est simple : **rien ne quitte ton appareil**.
 
@@ -38,7 +38,9 @@ Tes données restent **uniquement sur ton appareil**, dans la mémoire de ton na
 - Si tu utilises plusieurs navigateurs ou appareils, **chacun a ses propres données** (pas de synchronisation automatique).
 - Pour ne rien perdre : utilise le bouton **« Exporter »** dans Paramètres → Sauvegarde régulièrement.
 
-À partir de la **V2.10.0**, le contenu du `localStorage` sera chiffré au repos avec une clé non-extractable (AES-GCM). Aucun changement pour toi côté usage, mais une protection supplémentaire si quelqu'un a un accès brièvement à ton appareil.
+**Depuis la V2.10.0**, le contenu du `localStorage` est **chiffré au repos** avec **AES-GCM 256 bits** et une clé maître non-extractable stockée dans IndexedDB. Le navigateur garantit que la clé ne peut jamais sortir de ton appareil, même via un script malveillant. Aucun changement côté usage : transparent pour toi, mais protection réelle si quelqu'un dump ton stockage.
+
+⚠️ Conséquence importante : si tu effaces le stockage du site (ou si Safari iOS le purge automatiquement après plusieurs jours sans visite), **la clé est perdue avec**. Une option de récupération est proposée à l'écran : importer un export JSON récent ou tout réinitialiser. **Fais un export JSON régulièrement** depuis Paramètres → Sauvegarde — c'est ton filet de sécurité.
 
 ---
 
@@ -66,7 +68,7 @@ Le bouton **« Exporter »** dans Paramètres → Sauvegarde télécharge un fic
 
 - Le code de l'application est **open source** et public sur GitHub : [RhoMark/menu-ig-bas](https://github.com/RhoMark/menu-ig-bas). Tu peux l'auditer, le forker, ou contribuer.
 - Le code est servi via **GitHub Pages** sur HTTPS (certificat valide, signé par Let's Encrypt).
-- À partir de la V2.10.0, les données stockées localement seront chiffrées (AES-GCM avec clé non-extractable en IndexedDB).
+- **Depuis la V2.10.0**, les données stockées localement sont chiffrées AES-GCM 256 avec clé non-extractable en IndexedDB.
 - Aucun cookie. Aucune donnée envoyée par le réseau pendant l'usage.
 
 ---

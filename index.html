@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.9.0</title>
+<title>Menu IG Bas — V2.10.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7929,7 +7929,7 @@ function projectRuntime(v2) {
   const h = v2.households[ah] || emptyHousehold(ah);
   return {
     onboarded:    !!h.settings?.onboarded,
-    // Consentement RGPD donné une fois et persisté (V2.9.0+).
+    // Consentement RGPD donné une fois et persisté (V2.10.0+).
     // Si null/undefined → l'app affiche le modal de bienvenue bloquant.
     consentedAt:  h.settings?.consentedAt || null,
     profile:      { ...h.preferences, members: h.members },
@@ -7974,44 +7974,169 @@ function applyRuntimeToV2(runtime) {
     session: runtime._session,
   };
 }
-function loadState() {
-  try {
-    const raw2 = localStorage.getItem(STORAGE_KEY_V2);
-    if (raw2) {
-      const v2 = JSON.parse(raw2);
+// ============================================================================
+// Module crypto (V2.10.0+) — chiffrement local AES-GCM 256 au repos.
+// ----------------------------------------------------------------------------
+// La clé est générée aléatoirement à la 1re ouverture, stockée dans IndexedDB
+// avec extractable: false (le navigateur garantit qu'elle ne sort jamais de
+// l'origin, même via XSS). Format de l'enveloppe : { encrypted, v, iv, ct }.
+// Cette signature de chiffrement est volontairement la même que celle prévue
+// pour V3.x — seule la dérivation de clé changera (Argon2id du mot de passe).
+// ============================================================================
+const cryptoStore = (() => {
+  const DB_NAME   = "menu-ig-bas-secure";
+  const DB_STORE  = "keys";
+  const KEY_ID    = "master";
+  const TEXT_ENC  = new TextEncoder();
+  const TEXT_DEC  = new TextDecoder();
+
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = () => req.result.createObjectStore(DB_STORE);
+      req.onsuccess = () => resolve(req.result);
+      req.onerror   = () => reject(req.error);
+    });
+  }
+  function idbOp(mode, action) {
+    return openDB().then(db => new Promise((resolve, reject) => {
+      const tx = db.transaction(DB_STORE, mode);
+      const store = tx.objectStore(DB_STORE);
+      const result = action(store);
+      tx.oncomplete = () => resolve(result?.result);
+      tx.onerror    = () => reject(tx.error);
+    }));
+  }
+  const idbGet    = k => idbOp("readonly",  s => s.get(k));
+  const idbSet    = (k,v) => idbOp("readwrite", s => s.put(v, k));
+  const idbDelete = k => idbOp("readwrite", s => s.delete(k));
+
+  function bufToB64(buf) {
+    const bytes = new Uint8Array(buf);
+    let bin = "";
+    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin);
+  }
+  function b64ToBytes(b64) {
+    const bin = atob(b64);
+    const bytes = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+    return bytes;
+  }
+
+  async function getOrCreateKey() {
+    const existing = await idbGet(KEY_ID);
+    if (existing) return existing;
+    const key = await crypto.subtle.generateKey(
+      {name: "AES-GCM", length: 256},
+      false, // extractable: false — la clé ne peut PAS sortir du navigateur
+      ["encrypt", "decrypt"]
+    );
+    await idbSet(KEY_ID, key);
+    console.info("[crypto] Nouvelle clé maître AES-GCM 256 générée");
+    return key;
+  }
+  async function getKeyOnly() {
+    return (await idbGet(KEY_ID)) || null;
+  }
+  async function deleteKey() {
+    await idbDelete(KEY_ID);
+  }
+
+  async function encrypt(plaintext) {
+    const key = await getOrCreateKey();
+    const iv  = crypto.getRandomValues(new Uint8Array(12));
+    const ct  = await crypto.subtle.encrypt({name:"AES-GCM", iv}, key, TEXT_ENC.encode(plaintext));
+    return {encrypted: true, v: 1, iv: bufToB64(iv), ct: bufToB64(ct)};
+  }
+  async function decrypt(envelope) {
+    const key = await getKeyOnly();
+    if (!key) {
+      const err = new Error("CRYPTO_KEY_MISSING");
+      err.code = "CRYPTO_KEY_MISSING";
+      throw err;
+    }
+    const iv = b64ToBytes(envelope.iv);
+    const ct = b64ToBytes(envelope.ct);
+    const pt = await crypto.subtle.decrypt({name:"AES-GCM", iv}, key, ct);
+    return TEXT_DEC.decode(pt);
+  }
+
+  return {encrypt, decrypt, getKeyOnly, deleteKey};
+})();
+
+// ----------------------------------------------------------------------------
+// Backfill sur un objet V2 brut. Mutualisé entre les chemins de chargement.
+// ----------------------------------------------------------------------------
+function applyV2Backfills(v2) {
+  // Backfill V2.8.1 : membres antérieurs à birthYear peuvent encore avoir
+  // uniquement `age`. On déduit birthYear à ±1 an près.
+  const currentYear = new Date().getFullYear();
+  Object.values(v2.households || {}).forEach(h => {
+    if (Array.isArray(h.members)) {
+      h.members = h.members.map(m =>
+        (m.birthYear || !m.age) ? m : {...m, birthYear: currentYear - m.age}
+      );
+    }
+  });
+  return v2;
+}
+
+// ----------------------------------------------------------------------------
+// loadState : async depuis V2.10.0. Lit le blob (chiffré ou non), décrypte si
+// besoin, applique les backfills, renvoie le runtime state. Lève une erreur
+// `CRYPTO_KEY_MISSING` si le blob est chiffré mais la clé absente — capturé
+// par AppLoader pour afficher l'écran de récupération.
+// ----------------------------------------------------------------------------
+async function loadState() {
+  const raw2 = localStorage.getItem(STORAGE_KEY_V2);
+  if (raw2) {
+    let parsed;
+    try { parsed = JSON.parse(raw2); } catch { parsed = null; }
+    if (parsed?.encrypted) {
+      // Format chiffré V2.10.0+ : on déchiffre puis on parse le JSON intérieur.
+      const plaintext = await cryptoStore.decrypt(parsed); // peut throw CRYPTO_KEY_MISSING
+      let v2;
+      try { v2 = JSON.parse(plaintext); }
+      catch (e) { console.error("[storage] payload chiffré illisible :", e); v2 = null; }
       if (v2 && v2.schema === 2 && v2.session?.activeHouseholdId && v2.households?.[v2.session.activeHouseholdId]) {
-        // Backfill V2.8.1 : membres antérieurs à birthYear peuvent encore
-        // avoir uniquement `age`. On déduit birthYear à ±1 an près.
-        const currentYear = new Date().getFullYear();
-        Object.values(v2.households).forEach(h => {
-          if (Array.isArray(h.members)) {
-            h.members = h.members.map(m =>
-              (m.birthYear || !m.age) ? m : {...m, birthYear: currentYear - m.age}
-            );
-          }
-        });
-        return projectRuntime(v2);
+        return projectRuntime(applyV2Backfills(v2));
       }
+      console.warn("[storage] payload chiffré présent mais structure invalide");
+    } else if (parsed && parsed.schema === 2 && parsed.session?.activeHouseholdId && parsed.households?.[parsed.session.activeHouseholdId]) {
+      // Format clair V2.x antérieur : on charge tel quel, le prochain saveState
+      // le ré-écrira en chiffré (migration transparente V2.10).
+      console.info("[storage] format clair détecté — sera chiffré au prochain save (migration V2.10)");
+      return projectRuntime(applyV2Backfills(parsed));
+    } else {
       console.warn("[storage] V2 trouvé mais invalide, fallback sur V1 ou état neuf");
     }
-    const raw1 = localStorage.getItem(STORAGE_KEY_V1);
-    if (raw1) {
+  }
+  const raw1 = localStorage.getItem(STORAGE_KEY_V1);
+  if (raw1) {
+    try {
       const v1 = JSON.parse(raw1);
       const v2 = migrateV1toV2(v1);
-      localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(v2));
-      console.info("[storage] migration V1 → V2 effectuée (V1 conservé en backup)");
-      return projectRuntime(v2);
+      // L'écriture chiffrée se fera au premier saveState, on n'écrit rien ici.
+      console.info("[storage] migration V1 → V2 préparée (chiffrement au prochain save)");
+      return projectRuntime(applyV2Backfills(v2));
+    } catch (e) {
+      console.error("[storage] migration V1 a échoué :", e);
     }
-  } catch (e) {
-    console.error("[storage] loadState a échoué, état neuf :", e);
   }
   return projectRuntime(emptyV2State());
 }
-function saveState(runtime) {
+// ----------------------------------------------------------------------------
+// saveState : async, chiffre systématiquement avant d'écrire dans localStorage.
+// Tous les saveState passés sont fire-and-forget côté React (useEffect ne wait
+// pas la Promise) — c'est OK car le chiffrement prend ~5 ms.
+// ----------------------------------------------------------------------------
+async function saveState(runtime) {
   try {
     if (!runtime || !runtime._session) return;
     const v2 = applyRuntimeToV2(runtime);
-    localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(v2));
+    const envelope = await cryptoStore.encrypt(JSON.stringify(v2));
+    localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(envelope));
   } catch (e) {
     console.error("[storage] saveState a échoué :", e);
   }
@@ -8335,7 +8460,7 @@ function estimateWeekCost(weekMenu, profile) {
 // COMPONENTS
 // ============================================================================
 
-// Modal de bienvenue affiché au tout premier lancement (RGPD V2.9.0).
+// Modal de bienvenue affiché au tout premier lancement (RGPD V2.10.0).
 // Bloque l'accès à l'app tant que l'utilisateur n'a pas pris connaissance
 // du modèle « 100 % local, aucun serveur ». Une fois validé, on persiste
 // `consentedAt: <ISO>` dans le household pour ne plus l'afficher.
@@ -8391,8 +8516,145 @@ function ConsentModal({onConsent}) {
   );
 }
 
-function App() {
-  const [state, setState] = useState(loadState());
+// AppLoader (V2.10.0) : entoure App pour gérer le chargement async (déchiffrement
+// au démarrage). Trois phases : "loading" → "ready" → App, ou "recovery" si la
+// clé maître est absente alors qu'un blob chiffré existe.
+function AppLoader() {
+  const [phase, setPhase] = useState("loading"); // "loading" | "ready" | "recovery"
+  const [initialState, setInitialState] = useState(null);
+
+  useEffect(() => {
+    loadState()
+      .then(s => { setInitialState(s); setPhase("ready"); })
+      .catch(e => {
+        if (e?.code === "CRYPTO_KEY_MISSING") {
+          console.warn("[AppLoader] Clé absente, écran de récupération");
+          setPhase("recovery");
+        } else {
+          console.error("[AppLoader] Échec du chargement :", e);
+          setPhase("recovery"); // fallback générique : on propose les mêmes options
+        }
+      });
+  }, []);
+
+  if (phase === "loading") {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-slate-50">
+        <div className="text-center">
+          <div className="text-3xl mb-3">🥗</div>
+          <div className="text-slate-600 text-sm">Chargement…</div>
+        </div>
+      </div>
+    );
+  }
+  if (phase === "recovery") {
+    return <RecoveryView onResolved={() => window.location.reload()} />;
+  }
+  return <App initialState={initialState} />;
+}
+
+// RecoveryView (V2.10.0) : affiché si on a un blob chiffré dans localStorage
+// mais plus de clé en IndexedDB (cas rare : nettoyage navigateur, ITP Safari
+// sur PWA inutilisée pendant ≥7 jours, réinstallation). Deux chemins propres.
+function RecoveryView({onResolved}) {
+  const fileInputRef = useRef(null);
+  const [status, setStatus] = useState(null); // {type, msg}
+
+  const onFileSelected = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setStatus({type:"info", msg:"Lecture du fichier…"});
+    try {
+      const text = await file.text();
+      const data = JSON.parse(text);
+      // Le format d'export contient { schema: 2, users, households, session }
+      // ou directement le runtime sérialisé. On accepte les deux.
+      const v2 = (data && data.schema === 2 && data.households)
+        ? data
+        : (data?.payload?.data?.schema === 2 ? data.payload.data : null);
+      if (!v2) {
+        setStatus({type:"error", msg:"Format de fichier non reconnu (besoin d'un export Menu IG Bas)"});
+        return;
+      }
+      // Re-chiffre avec la nouvelle clé locale (qui sera générée par cryptoStore.encrypt).
+      const envelope = await cryptoStore.encrypt(JSON.stringify(v2));
+      localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(envelope));
+      setStatus({type:"success", msg:"Import réussi, rechargement…"});
+      setTimeout(onResolved, 800);
+    } catch (e) {
+      console.error("[Recovery] Import échoué :", e);
+      setStatus({type:"error", msg: "Import échoué : " + (e.message || "fichier invalide")});
+    }
+  };
+
+  const onReset = async () => {
+    if (!confirm("Tout effacer définitivement ? Toutes tes données locales seront perdues.")) return;
+    try {
+      localStorage.removeItem(STORAGE_KEY_V2);
+      localStorage.removeItem(STORAGE_KEY_V1);
+      await cryptoStore.deleteKey();
+      onResolved();
+    } catch (e) {
+      console.error("[Recovery] Reset échoué :", e);
+      setStatus({type:"error", msg:"Reset échoué : " + (e.message || "erreur inconnue")});
+    }
+  };
+
+  return (
+    <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto">
+      <div className="bg-white rounded-lg shadow-xl max-w-xl w-full p-6 my-8">
+        <h2 className="text-xl font-bold text-amber-700 mb-2">🔓 Données chiffrées sans clé</h2>
+        <p className="text-sm text-slate-700 mb-3">
+          Tes données sont présentes dans le navigateur mais <strong>la clé de chiffrement
+          n'est plus accessible</strong>. Elles ne peuvent donc pas être lues.
+        </p>
+        <p className="text-xs text-slate-500 mb-5">
+          Cela arrive typiquement après un nettoyage de stockage du navigateur, ou sur Safari iOS
+          si l'app n'a pas été ouverte pendant plusieurs jours (politique ITP). Deux options :
+        </p>
+
+        <div className="space-y-3">
+          <div className="border border-emerald-200 bg-emerald-50 rounded p-3">
+            <div className="font-semibold text-emerald-900 mb-2">📥 Restaurer depuis un export JSON</div>
+            <p className="text-xs text-slate-600 mb-3">
+              Si tu as un fichier <code>menu-ig-bas-export-*.json</code> récent, sélectionne-le.
+              Tes données seront re-chiffrées avec une nouvelle clé locale.
+            </p>
+            <input ref={fileInputRef} type="file" accept=".json,application/json"
+              onChange={onFileSelected} className="hidden" />
+            <button onClick={() => fileInputRef.current?.click()}
+              className="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded">
+              Choisir un fichier JSON…
+            </button>
+          </div>
+
+          <div className="border border-red-200 bg-red-50 rounded p-3">
+            <div className="font-semibold text-red-900 mb-2">🗑️ Tout réinitialiser</div>
+            <p className="text-xs text-slate-600 mb-3">
+              Si tu n'as pas de backup, tu peux repartir à zéro. Toutes les données chiffrées
+              seront supprimées définitivement.
+            </p>
+            <button onClick={onReset}
+              className="bg-red-600 hover:bg-red-700 text-white text-sm font-medium px-4 py-2 rounded">
+              Tout effacer et recommencer
+            </button>
+          </div>
+        </div>
+
+        {status && (
+          <div className={`mt-4 text-sm rounded px-3 py-2 ${
+            status.type === "error" ? "bg-red-100 text-red-800" :
+            status.type === "success" ? "bg-emerald-100 text-emerald-800" :
+            "bg-slate-100 text-slate-700"
+          }`}>{status.msg}</div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function App({initialState}) {
+  const [state, setState] = useState(initialState);
   const [currentWeek, setCurrentWeek] = useState(mondayOf(new Date()));
   const [view, setView] = useState(state.onboarded ? "menu" : "setup");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
@@ -8512,7 +8774,7 @@ function App() {
     }
   }, [printMode]);
 
-  // Modal de consentement RGPD (V2.9.0) : bloque l'app tant que pas validé.
+  // Modal de consentement RGPD (V2.10.0) : bloque l'app tant que pas validé.
   // On le rend en plus du reste pour ne pas dérouter l'utilisateur (pas
   // d'écran blanc), mais le z-50 backdrop-blur assure le côté bloquant.
   if (!state.consentedAt) {
@@ -8579,7 +8841,7 @@ function App() {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.9.0 — prototype local • Données stockées dans votre navigateur ·{" "}
+        Menu IG Bas V2.10.0 — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -9882,6 +10144,18 @@ function SettingsView({state, update, updateProfile}) {
           Cette app stocke tes données <strong>uniquement dans la mémoire de ton navigateur</strong>, sur ce device.
           Aucun serveur ne reçoit ni ne stocke quoi que ce soit. Le code est open source et auditable.
         </p>
+        <div className="bg-emerald-50 border border-emerald-200 rounded p-3 mb-3 text-xs text-emerald-900">
+          <span className="font-semibold">🔐 Chiffrement actif (V2.10.0)</span> — Tes données sont chiffrées
+          au repos avec AES-GCM 256 bits. La clé est stockée dans IndexedDB avec l'attribut
+          <code className="px-1">extractable: false</code> : le navigateur garantit qu'elle ne peut jamais
+          sortir de ton appareil, même via un script malveillant.
+        </div>
+        <div className="bg-amber-50 border border-amber-200 rounded p-3 mb-3 text-xs text-amber-900">
+          <span className="font-semibold">⚠️ Conseil important</span> — Si tu effaces le stockage du site, la
+          clé est perdue avec. Sur Safari iOS, l'app peut aussi être nettoyée après ~7 jours sans visite (ITP).
+          <strong> Fais un export JSON régulièrement</strong> depuis la section Sauvegarde plus haut — c'est
+          ton filet de sécurité en cas de pépin.
+        </div>
         <div className="text-sm space-y-2 mb-3">
           <div className="font-semibold text-slate-700">Tes droits RGPD :</div>
           <ul className="list-disc list-inside text-slate-700 space-y-1 ml-1">
@@ -10033,7 +10307,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.9.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.10.0 · prototype</p>
     </div>
   );
 }
@@ -10086,7 +10360,7 @@ function PrintShoppingPage({weekStart, menu, profile, pantryChecks}) {
 }
 
 // ============================================================================
-ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")).render(<AppLoader />);
 </script>
 </body>
 </html>
