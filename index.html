@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.10.0</title>
+<title>Menu IG Bas — V2.11.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7851,7 +7851,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -7861,6 +7861,9 @@ function emptyHouseholdPreferences() {
     globalAllergies: [],
     globalExclusions: [],
     budgetWeekly: 120,
+    // Tolérance budget en % (V2.11.0) : Strict (0) / 5 / 10 / 15 / 20.
+    // Le menu ne doit pas dépasser budgetWeekly × (1 + budgetTolerance/100).
+    budgetTolerance: 10,
     equipment: ["stove","oven","bowl"],
     maxPrepMinutes: 60,
     skillLevel: 2,
@@ -7929,7 +7932,7 @@ function projectRuntime(v2) {
   const h = v2.households[ah] || emptyHousehold(ah);
   return {
     onboarded:    !!h.settings?.onboarded,
-    // Consentement RGPD donné une fois et persisté (V2.10.0+).
+    // Consentement RGPD donné une fois et persisté (V2.11.0+).
     // Si null/undefined → l'app affiche le modal de bienvenue bloquant.
     consentedAt:  h.settings?.consentedAt || null,
     profile:      { ...h.preferences, members: h.members },
@@ -7975,7 +7978,7 @@ function applyRuntimeToV2(runtime) {
   };
 }
 // ============================================================================
-// Module crypto (V2.10.0+) — chiffrement local AES-GCM 256 au repos.
+// Module crypto (V2.11.0+) — chiffrement local AES-GCM 256 au repos.
 // ----------------------------------------------------------------------------
 // La clé est générée aléatoirement à la 1re ouverture, stockée dans IndexedDB
 // avec extractable: false (le navigateur garantit qu'elle ne sort jamais de
@@ -8083,7 +8086,7 @@ function applyV2Backfills(v2) {
 }
 
 // ----------------------------------------------------------------------------
-// loadState : async depuis V2.10.0. Lit le blob (chiffré ou non), décrypte si
+// loadState : async depuis V2.11.0. Lit le blob (chiffré ou non), décrypte si
 // besoin, applique les backfills, renvoie le runtime state. Lève une erreur
 // `CRYPTO_KEY_MISSING` si le blob est chiffré mais la clé absente — capturé
 // par AppLoader pour afficher l'écran de récupération.
@@ -8094,7 +8097,7 @@ async function loadState() {
     let parsed;
     try { parsed = JSON.parse(raw2); } catch { parsed = null; }
     if (parsed?.encrypted) {
-      // Format chiffré V2.10.0+ : on déchiffre puis on parse le JSON intérieur.
+      // Format chiffré V2.11.0+ : on déchiffre puis on parse le JSON intérieur.
       const plaintext = await cryptoStore.decrypt(parsed); // peut throw CRYPTO_KEY_MISSING
       let v2;
       try { v2 = JSON.parse(plaintext); }
@@ -8377,6 +8380,81 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
 
     days[day] = slot;
   });
+  // Optimisation budget (V2.11.0) : si le coût total dépasse la tolérance,
+  // on remplace itérativement les repas les plus chers par des alternatives
+  // moins chères respectant toutes les contraintes (saison, allergies,
+  // équipement, skill, anti-récurrence). Pure post-traitement, ne change rien
+  // si pas de budget configuré.
+  return optimizeForBudget({days, profile, season, ratings, recentlyUsed});
+}
+
+// optimizeForBudget — algorithme greedy de substitution post-génération.
+// Critère d'arrêt : coût total ≤ budgetWeekly × (1 + budgetTolerance/100),
+// OU plus aucune substitution possible, OU MAX_ITER atteint.
+// À chaque itération, on cherche le swap qui produit la plus grosse économie.
+function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
+  const target = profile.budgetWeekly;
+  if (!target || target <= 0) return days;
+  const tolerance = (profile.budgetTolerance ?? 10) / 100;
+  const maxAllowed = target * (1 + tolerance);
+  const MAX_ITER = 10;
+
+  const allergies  = effectiveAllergies(profile, null);
+  const exclusions = profile.globalExclusions;
+  const baseFilter = (type) => RECIPES.filter(r =>
+    r.type === type &&
+    matchesSeason(r, season) &&
+    !recipeHasAllergen(r, allergies) &&
+    !recipeHasExcluded(r, exclusions) &&
+    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsSkill(r, profile.skillLevel) &&
+    (ratings[r.id] ?? 3) >= 3 &&
+    !recentlyUsed.has(r.id)
+  );
+
+  const ALL_KEYS = ["breakfast","lunch","dinner","snack","dessert"];
+
+  for (let iter = 0; iter < MAX_ITER; iter++) {
+    const cost = estimateWeekCost(days, profile);
+    if (cost <= maxAllowed) return days;
+
+    // Recense les recettes déjà utilisées cette semaine (pour éviter de
+    // dupliquer un plat lors de la substitution).
+    const usedThisWeek = new Set();
+    DAYS.forEach(d => {
+      const s = days[d] || {};
+      ALL_KEYS.forEach(m => { if (s[m]) usedThisWeek.add(s[m]); });
+    });
+
+    let bestSwap = null; // {day, mealKey, newId, saving}
+    for (const day of DAYS) {
+      const slot = days[day] || {};
+      const locked = slot.locked || {};
+      const attendance = slot.attendance || {};
+      for (const mealKey of ALL_KEYS) {
+        if (locked[mealKey]) continue;
+        const oldId = slot[mealKey];
+        if (!oldId) continue;
+        const oldRecipe = RECIPES.find(r => r.id === oldId);
+        if (!oldRecipe) continue;
+        const candidates = baseFilter(mealKey).filter(r =>
+          r.cost < oldRecipe.cost &&
+          r.id !== oldId &&
+          !(usedThisWeek.has(r.id) && r.id !== oldId)
+        );
+        if (candidates.length === 0) continue;
+        const cheapest = candidates.reduce((b, c) => c.cost < b.cost ? c : b);
+        const mealMult = mealEquivalents(profile, attendance[mealKey]);
+        const saving = (oldRecipe.cost - cheapest.cost) * mealMult;
+        if (saving > 0 && (!bestSwap || saving > bestSwap.saving)) {
+          bestSwap = {day, mealKey, newId: cheapest.id, saving};
+        }
+      }
+    }
+    if (!bestSwap) break; // plus rien à substituer
+    days[bestSwap.day][bestSwap.mealKey] = bestSwap.newId;
+  }
   return days;
 }
 
@@ -8460,7 +8538,7 @@ function estimateWeekCost(weekMenu, profile) {
 // COMPONENTS
 // ============================================================================
 
-// Modal de bienvenue affiché au tout premier lancement (RGPD V2.10.0).
+// Modal de bienvenue affiché au tout premier lancement (RGPD V2.11.0).
 // Bloque l'accès à l'app tant que l'utilisateur n'a pas pris connaissance
 // du modèle « 100 % local, aucun serveur ». Une fois validé, on persiste
 // `consentedAt: <ISO>` dans le household pour ne plus l'afficher.
@@ -8516,7 +8594,7 @@ function ConsentModal({onConsent}) {
   );
 }
 
-// AppLoader (V2.10.0) : entoure App pour gérer le chargement async (déchiffrement
+// AppLoader (V2.11.0) : entoure App pour gérer le chargement async (déchiffrement
 // au démarrage). Trois phases : "loading" → "ready" → App, ou "recovery" si la
 // clé maître est absente alors qu'un blob chiffré existe.
 function AppLoader() {
@@ -8553,7 +8631,7 @@ function AppLoader() {
   return <App initialState={initialState} />;
 }
 
-// RecoveryView (V2.10.0) : affiché si on a un blob chiffré dans localStorage
+// RecoveryView (V2.11.0) : affiché si on a un blob chiffré dans localStorage
 // mais plus de clé en IndexedDB (cas rare : nettoyage navigateur, ITP Safari
 // sur PWA inutilisée pendant ≥7 jours, réinstallation). Deux chemins propres.
 function RecoveryView({onResolved}) {
@@ -8774,7 +8852,7 @@ function App({initialState}) {
     }
   }, [printMode]);
 
-  // Modal de consentement RGPD (V2.10.0) : bloque l'app tant que pas validé.
+  // Modal de consentement RGPD (V2.11.0) : bloque l'app tant que pas validé.
   // On le rend en plus du reste pour ne pas dérouter l'utilisateur (pas
   // d'écran blanc), mais le z-50 backdrop-blur assure le côté bloquant.
   if (!state.consentedAt) {
@@ -8841,7 +8919,7 @@ function App({initialState}) {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 text-center py-3 text-xs">
-        Menu IG Bas V2.10.0 — prototype local • Données stockées dans votre navigateur ·{" "}
+        Menu IG Bas V2.11.0 — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -9060,7 +9138,20 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
   const cost = estimateWeekCost(currentMenu, state.profile);
-  const overBudget = state.profile.budgetWeekly > 0 && cost > state.profile.budgetWeekly;
+  // Bandeau budget V2.11.0 : 4 paliers selon le ratio cost/budget vs tolérance.
+  // - "under"   : ≤ 95% du budget (vert clair, économies)
+  // - "ok"      : 95-105% (vert, sur cible)
+  // - "soft-over": 105% - (1+tolerance) (ambre, dans la marge)
+  // - "hard-over": > (1+tolerance) (rouge, l'optimiseur n'a pas trouvé d'alternative)
+  const budgetTier = (() => {
+    if (!state.profile.budgetWeekly || state.profile.budgetWeekly <= 0) return null;
+    const ratio = cost / state.profile.budgetWeekly;
+    const tol  = (state.profile.budgetTolerance ?? 10) / 100;
+    if (ratio <= 0.95) return "under";
+    if (ratio <= 1.05) return "ok";
+    if (ratio <= 1 + tol) return "soft-over";
+    return "hard-over";
+  })();
   const season = getSeason(currentWeek);
   const profileMeals = getMealsForProfile(state.profile);
   const dessertTime = state.profile.dessertTime || "dinner";
@@ -9080,10 +9171,48 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           <button onClick={()=>setCurrentWeek(addDays(currentWeek,7))} className="px-2 py-1 bg-slate-100 rounded hover:bg-slate-200">→</button>
         </div>
         <div className="flex-1"></div>
-        <div className={`px-3 py-2 rounded-md text-sm ${overBudget ? "bg-red-100 text-red-800" : "bg-emerald-100 text-emerald-800"}`}>
-          💰 Coût estimé : <strong>{cost.toFixed(2)} €</strong>
-          {state.profile.budgetWeekly > 0 && <span className="ml-1 opacity-75">/ {state.profile.budgetWeekly} €</span>}
-          {overBudget && <span className="ml-1">⚠️</span>}
+        <div className="flex flex-col items-end">
+          {(() => {
+            const tierColors = {
+              under:       "bg-emerald-100 text-emerald-800 border-emerald-300",
+              ok:          "bg-emerald-100 text-emerald-800 border-emerald-300",
+              "soft-over": "bg-amber-100 text-amber-800 border-amber-300",
+              "hard-over": "bg-red-100 text-red-800 border-red-300",
+            };
+            const tierLabels = {
+              under:       "Sous le budget ✓",
+              ok:          "Pile dans le budget ✓",
+              "soft-over": "Légèrement au-dessus (dans la tolérance)",
+              "hard-over": "Au-dessus de la tolérance ⚠️ ",
+            };
+            const tierClass = budgetTier ? tierColors[budgetTier] : "bg-slate-100 text-slate-700 border-slate-300";
+            return (
+              <div className={`px-3 py-2 rounded-md text-sm border ${tierClass}`}>
+                <div>
+                  💰 <strong>{cost.toFixed(2)} €</strong>
+                  {state.profile.budgetWeekly > 0 && <span className="opacity-75"> / {state.profile.budgetWeekly} €</span>}
+                </div>
+                {budgetTier && (
+                  <>
+                    <div className="text-xs mt-0.5">{tierLabels[budgetTier]}</div>
+                    <div className="mt-1 h-1.5 w-40 bg-slate-200 rounded-full overflow-hidden">
+                      <div className={`h-full ${
+                        budgetTier === "hard-over" ? "bg-red-500" :
+                        budgetTier === "soft-over" ? "bg-amber-500" :
+                        "bg-emerald-500"
+                      }`} style={{width: `${Math.min(100, (cost / state.profile.budgetWeekly) * 100).toFixed(0)}%`}} />
+                    </div>
+                  </>
+                )}
+              </div>
+            );
+          })()}
+          {budgetTier === "hard-over" && (
+            <div className="text-xs text-red-700 mt-1 max-w-xs text-right">
+              L'optimiseur n'a pas trouvé d'alternative moins chère.
+              Augmente la tolérance ou élargis la base de recettes.
+            </div>
+          )}
         </div>
         <button onClick={() => regenerate({keepLocked:true})}
           className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium">
@@ -10052,6 +10181,22 @@ function SettingsView({state, update, updateProfile}) {
             className="border rounded px-3 py-2 w-40" />
         </div>
         <div>
+          <label className="text-sm block mb-1">
+            Tolérance budget
+            <span className="text-xs text-slate-500 ml-2">l'optimiseur ne dépassera pas ce seuil</span>
+          </label>
+          <select
+            value={p.budgetTolerance ?? 10}
+            onChange={e=>updateProfile({budgetTolerance: parseInt(e.target.value)||0})}
+            className="border rounded px-3 py-2 w-56">
+            <option value={0}>Strict (sous le budget)</option>
+            <option value={5}>± 5 %</option>
+            <option value={10}>± 10 %</option>
+            <option value={15}>± 15 %</option>
+            <option value={20}>± 20 %</option>
+          </select>
+        </div>
+        <div>
           <label className="text-sm block mb-1">Temps préparation max / repas (min)</label>
           <input type="number" value={p.maxPrepMinutes} onChange={e=>updateProfile({maxPrepMinutes: parseInt(e.target.value)||60})}
             className="border rounded px-3 py-2 w-40" />
@@ -10145,7 +10290,7 @@ function SettingsView({state, update, updateProfile}) {
           Aucun serveur ne reçoit ni ne stocke quoi que ce soit. Le code est open source et auditable.
         </p>
         <div className="bg-emerald-50 border border-emerald-200 rounded p-3 mb-3 text-xs text-emerald-900">
-          <span className="font-semibold">🔐 Chiffrement actif (V2.10.0)</span> — Tes données sont chiffrées
+          <span className="font-semibold">🔐 Chiffrement actif (depuis V2.10.0)</span> — Tes données sont chiffrées
           au repos avec AES-GCM 256 bits. La clé est stockée dans IndexedDB avec l'attribut
           <code className="px-1">extractable: false</code> : le navigateur garantit qu'elle ne peut jamais
           sortir de ton appareil, même via un script malveillant.
@@ -10307,7 +10452,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.10.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 mt-3 text-center">Menu IG Bas V2.11.0 · prototype</p>
     </div>
   );
 }
