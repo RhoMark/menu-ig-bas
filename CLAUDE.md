@@ -91,6 +91,81 @@ Ces seuils sont des valeurs de départ. Avant production, les valeurs
 définitives doivent être validées avec les sources officielles à jour
 de la zone géographique de la famille.
 
+## Charge glycémique journalière — référence Harvard
+
+L'ANSES, le PNNS, l'EFSA et l'OMS **n'ont pas de seuil quantitatif
+officiel** sur la CG quotidienne. Le projet retient la référence la
+plus citée dans la littérature scientifique internationale (Harvard
+School of Public Health, cohérente avec Glycemic Index Foundation
+Sydney) :
+
+- **CG / jour < 80** : bas (cible)
+- **80 ≤ CG / jour ≤ 120** : modéré (acceptable, à limiter à 2 jours / semaine)
+- **CG / jour > 120** : élevé (à éviter)
+
+Ces seuils complètent les seuils par recette déjà câblés dans le code
+(`glycemicTier()` : ≤ 10 bas, 11-19 modéré, ≥ 20 élevé). Pour qu'une
+journée 5-services tienne sous 80, viser des CG individuelles :
+breakfast 6-9, lunch / dinner 10-12, snack 4-6, dessert < 8.
+
+## Profils santé et adaptation des seuils
+
+La spec V1 §3.4 prévoit la prise en compte de pathologies : diabète T1
+et T2, insulinorésistance, SOPK, grossesse / diabète gestationnel,
+hypertension, dyslipidémies. Le projet ajoute aussi : rééquilibrage,
+prévention cardiovasculaire, sportif endurance, sportif force, sain.
+
+Seuils CG / jour par profil (sources : Harvard, ADA, GIF Sydney,
+Cochrane reviews SOPK, FIGO grossesse) :
+
+| Profil                  | Bas | Modéré  | Élevé   |
+|-------------------------|-----|---------|---------|
+| Diabète T2              | <80 | 80-100  | >100    |
+| Insulinorésistance      | <80 | 80-100  | >100    |
+| SOPK                    | <80 | 80-100  | >100    |
+| Diabète gestationnel    | <80 | 80-100  | >100    |
+| Diabète T1              | <100| 100-130 | >130    |
+| Dyslipidémies           | <100| 100-120 | >120    |
+| Hypertension            | <100| 100-120 | >120    |
+| Rééquilibrage / surpoids| <100| 100-120 | >120    |
+| Prévention cardio       | <100| 100-120 | >120    |
+| Sportif force           | <130| 130-180 | >180    |
+| Sportif endurance       | n/a | n/a     | n/a     |
+| Sain (par défaut)       | <120| 120-150 | >150    |
+
+**Sportif endurance** : seuil CG total non pertinent — le critère est
+le **timing** des glucides (élevé pendant et juste après l'effort,
+modéré sinon). Ce profil est exclu du calcul de seuil familial.
+
+**Hypertension** : la CG est secondaire ; le vrai garde-fou est le
+**sel ≤ 5 g / jour** (OMS). À implémenter en complément du garde-fou
+CG (cf chantier V2.22.0+ enrichissement nutritionnel macros).
+
+**Dyslipidémies** : la CG est secondaire ; le vrai garde-fou est les
+**acides gras saturés < 10 % AET** + **fibres ≥ 25 g / jour**
+(EFSA). Idem, à implémenter en complément.
+
+### Logique foyer — le profil le plus contraignant gagne
+
+```
+seuil_famille_CG = MIN(seuil_CG_par_membre)
+```
+
+Un menu compatible avec le membre le plus contraignant convient
+automatiquement à tous les autres ; l'inverse est faux. Même logique
+que pour les allergènes (déjà en place).
+
+Exemple : foyer 2 adultes (sain × 1, SOPK × 1) + 2 ados (sain × 2)
+→ seuil famille = 80 CG / jour (cf SOPK).
+
+### Limites et évolution
+
+Ces seuils sont des **références de consensus international**, pas
+des normes officielles ANSES / PNNS. À mentionner dans l'UX ("Source :
+Harvard School of Public Health, GIF Sydney") et à laisser
+configurable au niveau du membre pour les cas où un suivi médical
+personnalisé recommande un autre seuil.
+
 ## État technique actuel (V2.6.0)
 
 PWA mono-fichier, démarrage léger pour itérer rapidement sur l'UX et
