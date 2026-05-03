@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.19.2</title>
+<title>Menu IG Bas — V2.20.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -128,6 +128,7 @@ if ("serviceWorker" in navigator) {
     {"id": "blender",         "label": "Mixeur / blender"},
     {"id": "grill",           "label": "Gril / plancha"},
     {"id": "pressure-cooker", "label": "Autocuiseur"},
+    {"id": "air-fryer",       "label": "Air Fryer"},
     {"id": "bowl",            "label": "Saladier / bol"}
   ]
 }
@@ -9212,6 +9213,413 @@ if ("serviceWorker" in navigator) {
         "Arrose du jus de citron vert (évite que les fruits brunissent), ajoute le miel et la vanille. Mélange délicatement.",
         "Cisèle la menthe finement, parsème par-dessus.",
         "Laisse au frais 15 min avant de servir pour que les saveurs s'imprègnent."
+      ]
+    },
+    {
+      "id": "b31",
+      "name": "Smoothie bowl mangue-fruits rouges et graines de chia",
+      "type": "breakfast",
+      "seasons": ["summer"],
+      "prep": 5,
+      "cook": 0,
+      "diff": 1,
+      "cost": 2.5,
+      "kcal": 310,
+      "tags": ["vegetarian", "quick", "no-cook", "kid-friendly"],
+      "eq": ["blender"],
+      "allergens": ["lactose", "nuts"],
+      "ing": [
+        ["Mangue surgelée ou fraîche", 100, "g", "produce"],
+        ["Mélange fruits rouges (frais ou surgelés)", 80, "g", "produce"],
+        ["Yaourt grec nature", 100, "g", "dairy"],
+        ["Graines de chia", 1, "c.à.c", "pantry"],
+        ["Lait d'amande", 50, "ml", "dairy"],
+        ["Amandes effilées", 5, "g", "pantry"],
+        ["Fruits rouges frais (topping)", 30, "g", "produce"]
+      ],
+      "steps": [
+        "Mets la mangue, les fruits rouges (garde 30 g pour le topping), le yaourt grec et le lait d'amande dans le bol du blender.",
+        "Mixe 30 secondes jusqu'à obtenir une texture épaisse type sorbet. Si trop liquide, ajoute un peu de mangue surgelée ; si trop épais, un peu de lait d'amande.",
+        "Verse dans un grand bol.",
+        "Saupoudre les graines de chia.",
+        "Dispose les fruits rouges frais et les amandes effilées par-dessus.",
+        "Mange à la cuillère, c'est plus frais quand c'est juste mixé."
+      ]
+    },
+    {
+      "id": "b32",
+      "name": "Tartine pain complet ricotta-fraise-basilic",
+      "type": "breakfast",
+      "seasons": ["spring", "summer"],
+      "prep": 5,
+      "cook": 0,
+      "diff": 1,
+      "cost": 1.2,
+      "kcal": 220,
+      "tags": ["vegetarian", "quick", "no-cook"],
+      "eq": [],
+      "allergens": ["gluten", "lactose"],
+      "ing": [
+        ["Pain complet", 1, "tranche", "bread"],
+        ["Ricotta", 40, "g", "dairy"],
+        ["Fraises", 60, "g", "produce"],
+        ["Basilic frais", 2, "feuille", "produce"],
+        ["Miel (facultatif)", 1, "c.à.c", "pantry"],
+        ["Poivre noir", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Grille la tranche de pain complet (facultatif, mais ça la rend croustillante).",
+        "Étale la ricotta sur le pain en couche bien régulière.",
+        "Lave les fraises, équeute-les et coupe-les en lamelles fines.",
+        "Dispose les lamelles de fraise sur la ricotta, en les chevauchant légèrement.",
+        "Cisèle les feuilles de basilic et parsème-les sur la tartine.",
+        "Si tu aimes le sucré, ajoute un filet de miel. Sinon une pincée de poivre noir relève le côté frais."
+      ]
+    },
+    {
+      "id": "l89",
+      "name": "Salade fraîche pois chiche-tomates cerises-feta-menthe",
+      "type": "lunch",
+      "seasons": ["summer"],
+      "prep": 10,
+      "cook": 0,
+      "diff": 1,
+      "cost": 2.0,
+      "kcal": 320,
+      "tags": ["vegetarian", "quick", "no-cook", "batch-friendly"],
+      "eq": [],
+      "allergens": ["lactose"],
+      "ing": [
+        ["Pois chiches cuits", 80, "g", "pantry"],
+        ["Tomates cerises", 80, "g", "produce"],
+        ["Feta", 30, "g", "dairy"],
+        ["Concombre", 50, "g", "produce"],
+        ["Menthe fraîche", 1, "c.à.s", "produce"],
+        ["Huile d'olive", 1, "c.à.c", "pantry"],
+        ["Citron (jus)", 0.25, "u", "produce"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Égoutte et rince les pois chiches sous l'eau froide. Verse-les dans un saladier.",
+        "Lave les tomates cerises et coupe-les en deux.",
+        "Coupe le concombre en demi-rondelles fines (pas besoin de l'éplucher si la peau est pas trop épaisse).",
+        "Émiette la feta avec les doigts en gros morceaux.",
+        "Cisèle les feuilles de menthe (= coupe-les en fines lanières).",
+        "Mélange tout doucement dans le saladier (sans écraser la feta).",
+        "Arrose d'huile d'olive et du jus de citron, sale et poivre.",
+        "Mange tout de suite, ou mets au frigo 30 min pour que les saveurs se mélangent (mieux comme ça)."
+      ]
+    },
+    {
+      "id": "l90",
+      "name": "Wrap tortilla complète saumon-avocat-roquette-citron",
+      "type": "lunch",
+      "seasons": ["spring", "summer"],
+      "prep": 10,
+      "cook": 0,
+      "diff": 1,
+      "cost": 2.8,
+      "kcal": 380,
+      "tags": ["quick", "no-cook"],
+      "eq": [],
+      "allergens": ["gluten", "fish", "lactose"],
+      "ing": [
+        ["Tortilla de blé complet", 1, "u", "bread"],
+        ["Saumon fumé", 40, "g", "meat-fish"],
+        ["Avocat", 0.5, "u", "produce"],
+        ["Roquette", 20, "g", "produce"],
+        ["Fromage frais type St-Môret", 30, "g", "dairy"],
+        ["Citron (jus)", 0.25, "u", "produce"],
+        ["Aneth", 1, "c.à.c", "produce"],
+        ["Poivre noir", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Étale le fromage frais sur la tortilla en laissant 2 cm de marge sur les bords (sinon ça va déborder au pliage).",
+        "Coupe l'avocat en lamelles fines, dépose-les en ligne sur le tiers bas de la tortilla.",
+        "Dépose les tranches de saumon fumé sur l'avocat.",
+        "Ajoute la roquette par-dessus.",
+        "Arrose d'un trait de jus de citron, parsème d'aneth ciselé et donne un tour de poivre.",
+        "Roule la tortilla en partant du bas (où sont les ingrédients), serre bien sans écraser.",
+        "Coupe en deux en biais, sers tout de suite."
+      ]
+    },
+    {
+      "id": "l91",
+      "name": "Salade tiède lentilles vertes-haricots verts-vinaigrette moutarde",
+      "type": "lunch",
+      "seasons": ["summer"],
+      "prep": 10,
+      "cook": 25,
+      "diff": 1,
+      "cost": 1.6,
+      "kcal": 360,
+      "tags": ["vegetarian", "vegan", "batch-friendly"],
+      "eq": ["stove"],
+      "allergens": [],
+      "ing": [
+        ["Lentilles vertes", 60, "g", "pantry"],
+        ["Haricots verts", 100, "g", "produce"],
+        ["Échalote", 0.5, "u", "produce"],
+        ["Tomates cerises", 50, "g", "produce"],
+        ["Persil plat", 1, "c.à.s", "produce"],
+        ["Moutarde à l'ancienne", 0.5, "c.à.c", "pantry"],
+        ["Vinaigre balsamique", 1, "c.à.c", "pantry"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Rince les lentilles. Mets-les dans une casserole avec 3 fois leur volume d'eau froide non salée.",
+        "Porte à ébullition, baisse le feu et laisse mijoter 20 à 25 min — elles doivent rester légèrement fermes (al dente).",
+        "Pendant ce temps, équeute les haricots verts (= enlève les bouts).",
+        "5 min avant la fin de cuisson des lentilles, plonge les haricots verts dans une casserole d'eau bouillante salée. Laisse cuire 5-6 min — ils doivent rester croquants.",
+        "Égoutte les lentilles, puis les haricots. Refroidis les haricots sous l'eau froide pour garder leur couleur verte (= blanchir).",
+        "Émince finement l'échalote (= coupe en très petits morceaux). Coupe les tomates cerises en deux.",
+        "Dans un grand bol, fouette la moutarde, le vinaigre balsamique et l'huile d'olive jusqu'à obtenir une vinaigrette homogène.",
+        "Ajoute les lentilles tièdes, les haricots verts, l'échalote et les tomates. Mélange.",
+        "Cisèle le persil, parsème, sale et poivre."
+      ]
+    },
+    {
+      "id": "l92",
+      "name": "Aubergine rôtie au four miso-tahini, lentilles vertes",
+      "type": "lunch",
+      "seasons": ["summer"],
+      "prep": 10,
+      "cook": 35,
+      "diff": 2,
+      "cost": 2.3,
+      "kcal": 410,
+      "tags": ["vegetarian", "vegan", "batch-friendly"],
+      "eq": ["oven", "stove"],
+      "allergens": ["soy", "sesame"],
+      "ing": [
+        ["Aubergine", 0.5, "u", "produce"],
+        ["Lentilles vertes", 60, "g", "pantry"],
+        ["Pâte de miso", 1, "c.à.c", "pantry"],
+        ["Tahini", 1, "c.à.s", "pantry"],
+        ["Citron (jus)", 0.25, "u", "produce"],
+        ["Ail", 0.5, "gousse", "produce"],
+        ["Huile d'olive", 1, "c.à.c", "pantry"],
+        ["Graines de sésame", 0.5, "c.à.c", "pantry"],
+        ["Coriandre", 1, "c.à.s", "produce"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Préchauffe le four à 200°C. Coupe l'aubergine en deux dans la longueur. Avec la pointe d'un couteau, fais des entailles en croisillons dans la chair (sans percer la peau).",
+        "Badigeonne la chair d'huile d'olive, sale et poivre. Pose les moitiés sur une plaque, peau vers le bas.",
+        "Enfourne 30 à 35 min — la chair doit être bien fondante (test : un couteau s'enfonce sans résistance).",
+        "Pendant ce temps, rince les lentilles. Cuis-les dans 3 fois leur volume d'eau froide non salée, 20-25 min, jusqu'à al dente. Égoutte.",
+        "Prépare la sauce : dans un petit bol, mélange le miso, le tahini, le jus de citron et l'ail écrasé. Ajoute 1 c.à.s d'eau chaude pour fluidifier.",
+        "Quand l'aubergine sort du four, nappe-la généreusement de sauce miso-tahini.",
+        "Sers les lentilles à côté, parsème de graines de sésame et de coriandre ciselée."
+      ]
+    },
+    {
+      "id": "d89",
+      "name": "Brochettes poulet citron-herbes à la poêle, taboulé sarrasin",
+      "type": "dinner",
+      "seasons": ["spring", "summer"],
+      "prep": 20,
+      "cook": 15,
+      "diff": 2,
+      "cost": 2.7,
+      "kcal": 480,
+      "tags": ["batch-friendly"],
+      "eq": ["stove", "bowl"],
+      "allergens": [],
+      "ing": [
+        ["Filet de poulet", 120, "g", "meat-fish"],
+        ["Sarrasin", 50, "g", "pantry"],
+        ["Tomate", 0.5, "u", "produce"],
+        ["Concombre", 50, "g", "produce"],
+        ["Persil plat", 1, "c.à.s", "produce"],
+        ["Menthe fraîche", 1, "c.à.s", "produce"],
+        ["Citron (jus)", 0.5, "u", "produce"],
+        ["Ail", 0.5, "gousse", "produce"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Origan", 0.5, "c.à.c", "spices"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Coupe le poulet en cubes de 3 cm environ. Mets-les dans un bol, ajoute la moitié du jus de citron, l'ail écrasé, l'origan, 0,5 c.à.s d'huile, sel et poivre. Mélange et laisse mariner pendant que tu prépares le reste (15 min minimum).",
+        "Fais cuire le sarrasin dans 2,5 fois son volume d'eau salée : porte à ébullition, baisse le feu, couvre et laisse 10-12 min jusqu'à absorption complète.",
+        "Pendant ce temps, coupe la tomate et le concombre en petits dés. Cisèle persil et menthe finement.",
+        "Quand le sarrasin est prêt, étale-le sur une assiette pour qu'il refroidisse plus vite (5 min).",
+        "Mélange le sarrasin tiède avec les dés de tomate, concombre, herbes, le reste du jus de citron et 0,5 c.à.s d'huile d'olive. Réajuste sel et poivre.",
+        "Enfile les cubes de poulet sur des piques (en bois trempés 10 min dans l'eau au préalable, ou en métal).",
+        "Fais chauffer une poêle (ou plancha) à feu vif. Cuis les brochettes 4-5 min de chaque côté en les retournant — le poulet doit être doré et cuit à cœur (jus clair quand on pique).",
+        "Sers les brochettes sur le taboulé sarrasin."
+      ]
+    },
+    {
+      "id": "d90",
+      "name": "Filets de daurade plancha, ratatouille",
+      "type": "dinner",
+      "seasons": ["summer"],
+      "prep": 20,
+      "cook": 35,
+      "diff": 2,
+      "cost": 4.5,
+      "kcal": 410,
+      "tags": ["batch-friendly"],
+      "eq": ["stove", "grill"],
+      "allergens": ["fish"],
+      "ing": [
+        ["Filet de daurade", 130, "g", "meat-fish"],
+        ["Aubergine", 0.3, "u", "produce"],
+        ["Courgette", 0.5, "u", "produce"],
+        ["Poivron rouge", 0.3, "u", "produce"],
+        ["Tomate", 1, "u", "produce"],
+        ["Oignon", 0.3, "u", "produce"],
+        ["Ail", 0.5, "gousse", "produce"],
+        ["Herbes de Provence", 0.5, "c.à.c", "spices"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Citron (jus)", 0.25, "u", "produce"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Coupe l'aubergine, la courgette, le poivron et la tomate en dés de 1,5 cm. Émince l'oignon et l'ail.",
+        "Fais chauffer 0,5 c.à.s d'huile dans une grande poêle ou cocotte. Fais revenir l'oignon 3 min jusqu'à ce qu'il devienne translucide.",
+        "Ajoute l'aubergine et le poivron, fais revenir 5 min en remuant.",
+        "Ajoute la courgette, la tomate, l'ail, les herbes de Provence, sel et poivre. Mélange.",
+        "Couvre et laisse mijoter 25 min à feu doux en remuant de temps en temps. Les légumes doivent être fondants mais pas en bouillie.",
+        "Pendant ce temps, sale et poivre les filets de daurade. Frotte-les avec un peu d'huile d'olive.",
+        "Fais chauffer une plancha (ou poêle bien chaude) à feu vif. Cuis les filets côté peau d'abord, 3-4 min jusqu'à ce que la peau soit croustillante.",
+        "Retourne et cuis 1-2 min de l'autre côté. La chair doit être nacrée (pas vitrée) au cœur.",
+        "Sers la daurade sur la ratatouille, arrose d'un trait de jus de citron."
+      ]
+    },
+    {
+      "id": "d91",
+      "name": "Risotto courgettes-citron-parmesan",
+      "type": "dinner",
+      "seasons": ["summer"],
+      "prep": 10,
+      "cook": 25,
+      "diff": 2,
+      "cost": 2.4,
+      "kcal": 480,
+      "tags": ["vegetarian"],
+      "eq": ["stove"],
+      "allergens": ["lactose"],
+      "ing": [
+        ["Riz complet rond", 70, "g", "pantry"],
+        ["Courgette", 0.7, "u", "produce"],
+        ["Bouillon de légumes", 350, "ml", "pantry"],
+        ["Échalote", 0.5, "u", "produce"],
+        ["Vin blanc sec", 30, "ml", "pantry"],
+        ["Parmesan râpé", 15, "g", "dairy"],
+        ["Citron (zeste + jus)", 0.25, "u", "produce"],
+        ["Huile d'olive", 1, "c.à.c", "pantry"],
+        ["Beurre", 5, "g", "dairy"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Lave et coupe la courgette en petits dés (1 cm). Émince finement l'échalote.",
+        "Fais chauffer le bouillon dans une petite casserole et garde-le frémissant (= au bord du bouillonnement, pas plein bouillon).",
+        "Dans une grande casserole ou sauteuse, fais chauffer l'huile à feu moyen. Fais suer l'échalote 2-3 min sans coloration (= devient translucide).",
+        "Ajoute le riz, remue pendant 1-2 min jusqu'à ce que les grains deviennent légèrement nacrés.",
+        "Verse le vin blanc, remue jusqu'à absorption complète.",
+        "Commence à incorporer le bouillon louche par louche : verse, remue jusqu'à ce qu'il soit absorbé, puis remets une louche. Continue 18-20 min.",
+        "À mi-cuisson (≈ 10 min), ajoute les dés de courgette : ils cuisent dans le risotto.",
+        "À la fin, hors du feu, ajoute le beurre, le parmesan, le zeste de citron râpé fin et 2-3 gouttes de jus de citron. Mélange vigoureusement (= mantécature, ça donne le crémeux).",
+        "Sale, poivre, sers tout de suite — un risotto n'attend pas."
+      ]
+    },
+    {
+      "id": "d92",
+      "name": "Poulet rôti fenouil-tomate-olives, riz basmati",
+      "type": "dinner",
+      "seasons": ["spring", "summer"],
+      "prep": 15,
+      "cook": 40,
+      "diff": 2,
+      "cost": 2.9,
+      "kcal": 520,
+      "tags": ["batch-friendly"],
+      "eq": ["stove", "oven"],
+      "allergens": [],
+      "ing": [
+        ["Haut de cuisse de poulet", 130, "g", "meat-fish"],
+        ["Riz basmati complet", 60, "g", "pantry"],
+        ["Fenouil", 0.5, "u", "produce"],
+        ["Tomate", 1, "u", "produce"],
+        ["Olives noires dénoyautées", 20, "g", "pantry"],
+        ["Ail", 0.5, "gousse", "produce"],
+        ["Citron (jus)", 0.25, "u", "produce"],
+        ["Thym", 0.5, "c.à.c", "spices"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Préchauffe le four à 200°C.",
+        "Lave le fenouil, coupe-le en quartiers (4 morceaux). Coupe la tomate en quartiers aussi.",
+        "Dans un grand plat à four, dispose le poulet, le fenouil, la tomate et les olives. Ajoute l'ail écrasé entier (sans le peler), le thym, le jus de citron, l'huile d'olive, sel et poivre. Mélange tout avec les mains pour bien enrober.",
+        "Enfourne 35-40 min — le poulet doit être doré, le fenouil tendre. Si tu cuisines pour plusieurs jours (batch cooking), prolonge de 5 min pour être sûr.",
+        "Pendant ce temps, rince le riz basmati. Cuis-le dans 1,5 fois son volume d'eau salée : porte à ébullition, baisse le feu, couvre et laisse 18-20 min sans soulever.",
+        "Quand tout est cuit, sers le poulet et les légumes sur le riz, arrose des sucs de cuisson du plat (c'est ce qui donne le goût)."
+      ]
+    },
+    {
+      "id": "s23",
+      "name": "Pois chiches grillés au four épicés (paprika, cumin, ail)",
+      "type": "snack",
+      "seasons": ["all"],
+      "prep": 5,
+      "cook": 35,
+      "diff": 1,
+      "cost": 0.7,
+      "kcal": 180,
+      "tags": ["vegetarian", "vegan", "batch-friendly"],
+      "eq": ["oven"],
+      "allergens": [],
+      "ing": [
+        ["Pois chiches en conserve", 100, "g", "pantry"],
+        ["Paprika", 0.5, "c.à.c", "spices"],
+        ["Cumin moulu", 0.5, "c.à.c", "spices"],
+        ["Ail", 0.25, "gousse", "produce"],
+        ["Huile d'olive", 1, "c.à.c", "pantry"],
+        ["Sel", 0.5, "pincée", "spices"]
+      ],
+      "steps": [
+        "Préchauffe le four à 200°C.",
+        "Égoutte et rince les pois chiches sous l'eau froide. Étale-les sur un torchon propre et tamponne-les pour bien les sécher (plus ils sont secs, plus ils seront croustillants).",
+        "Dans un saladier, mélange les pois chiches avec l'huile d'olive, le paprika, le cumin, l'ail râpé fin et le sel.",
+        "Étale-les en une seule couche sur une plaque recouverte de papier cuisson — pas en tas, sinon ils ne grillent pas.",
+        "Enfourne 30 à 35 min en remuant la plaque à mi-cuisson. Ils doivent être bien dorés et croustillants comme des chips.",
+        "Laisse refroidir 5 min sur la plaque (ils croustillent encore en refroidissant).",
+        "Se garde 3 jours dans une boîte hermétique — parfait pour grignoter au lieu des biscuits salés."
+      ]
+    },
+    {
+      "id": "des36",
+      "name": "Pêches rôties au four miel-thym, yaourt grec et amandes",
+      "type": "dessert",
+      "seasons": ["summer"],
+      "prep": 5,
+      "cook": 20,
+      "diff": 1,
+      "cost": 1.4,
+      "kcal": 200,
+      "tags": ["vegetarian", "kid-friendly"],
+      "eq": ["oven"],
+      "allergens": ["lactose", "nuts"],
+      "ing": [
+        ["Pêche jaune", 1, "u", "produce"],
+        ["Miel", 1, "c.à.c", "pantry"],
+        ["Thym", 0.25, "c.à.c", "spices"],
+        ["Yaourt grec nature", 80, "g", "dairy"],
+        ["Amandes effilées", 5, "g", "pantry"],
+        ["Citron (jus)", 0.1, "u", "produce"]
+      ],
+      "steps": [
+        "Préchauffe le four à 180°C.",
+        "Lave les pêches, coupe-les en deux et enlève le noyau. Pas besoin de les éplucher.",
+        "Dispose les demi-pêches côté coupé vers le haut sur une plaque ou dans un plat. Arrose d'un peu de jus de citron pour qu'elles ne brunissent pas.",
+        "Verse un peu de miel dans le creux du noyau de chaque demi-pêche, parsème de thym effeuillé.",
+        "Enfourne 18-20 min — les pêches doivent être tendres mais garder leur forme (un couteau s'enfonce sans résistance dans la chair).",
+        "Laisse tiédir 5 min.",
+        "Sers chaque demi-pêche avec une cuillerée de yaourt grec à côté et une pincée d'amandes effilées par-dessus."
       ]
     }
   ]
