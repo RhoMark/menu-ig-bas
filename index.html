@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.19.1</title>
+<title>Menu IG Bas — V2.19.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -10941,7 +10941,7 @@ function App({initialState}) {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 dark:text-slate-500 text-center py-3 text-xs">
-        Menu IG Bas V2.18.0 — prototype local • Données stockées dans votre navigateur ·{" "}
+        Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>

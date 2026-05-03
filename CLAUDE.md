@@ -195,6 +195,12 @@ python3 -m http.server 8000
 
 Sinon les utilisateurs gardent l'ancienne version en cache.
 
+**Le footer UI et `appVersion` (logique d'import) lisent la version
+dynamiquement depuis `document.title` — pas de bump manuel à faire**
+(régression réparée en V2.19.2 après 3 oublis successifs).
+Vérification : `grep -nE 'V\d+\.\d+\.\d+' index.html sw.js` doit ne
+matcher que les 2 endroits ci-dessus + des commentaires d'historique.
+
 ## Glossaire métier
 
 - **IG** (Index Glycémique) : 0-100. IG bas ≤ 55.
