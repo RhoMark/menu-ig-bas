@@ -12821,7 +12821,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
           ))}
         </tbody>
       </table>
-      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas V2.18.0 · prototype</p>
+      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} · prototype</p>
     </div>
   );
 }
