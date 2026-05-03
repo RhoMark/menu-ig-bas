@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.18.1</title>
+<title>Menu IG Bas — V2.19.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -9481,6 +9481,45 @@ function mealEquivalents(profile, attendees) {
     .filter(m => attendees.includes(m.id))
     .reduce((s,m) => s + adultEquivalent(m), 0) || 0;
 }
+
+// ---------------------------------------------------------------------------
+// Scaling sub-linéaire des aromates (V2.19.0)
+// ---------------------------------------------------------------------------
+// Les aromates (ail, oignon, échalote, gingembre, herbes, épices, sauces,
+// vinaigres, citron…) ne suivent pas un scaling linéaire avec le nombre de
+// mangeurs : un Dahl pour 8 personnes prend 3-4 gousses d'ail, pas 8.
+// Référence terrain : ≤ 3 gousses + ≤ 2 oignons par 4 portions (cf
+// tâches/leçons.md #12). Application : qty × √mult au lieu de qty × mult.
+// Toutes les entrées de category "spices" sont aromatic by default ; pour
+// les autres catégories, la liste explicite ci-dessous fait foi.
+const NON_SPICES_AROMATICS = new Set([
+  // produce — herbes fraîches + alliacées + agrumes utilisés comme aromate
+  "ail", "aneth", "aneth ou ciboulette", "basilic", "ciboulette",
+  "coriandre", "echalote", "estragon", "feuille de basilic thai",
+  "gingembre", "herbe", "menthe",
+  "oignon", "oignon / ciboule", "oignon nouveau", "oignon nouveaux", "oignon rouge",
+  "persil", "persil plat", "romarin",
+  "citron", "citron vert",
+  // pantry — sauces, vinaigres, condiments concentrés, levures
+  "moutarde", "moutarde a l'ancienne", "pate de miso",
+  "sauce nuoc-mam", "sauce soja", "sauce soja salee",
+  "vinaigre balsamique", "vinaigre blanc", "vinaigre de cidre",
+  "vinaigre de vin", "vinaigre de xere", "vinaigrette maison",
+  "concentre de tomate", "levure chimique",
+]);
+function isAromatic(canonName, category) {
+  if (category === "spices") return true;
+  return NON_SPICES_AROMATICS.has(canonName);
+}
+function scaleQty(baseQty, mult, ingredientName, category) {
+  if (mult <= 0 || !Number.isFinite(mult)) return baseQty;
+  const canon = canonicalName(ingredientName);
+  if (isAromatic(canon, category)) {
+    return baseQty * Math.sqrt(mult);
+  }
+  return baseQty * mult;
+}
+
 function ingredientHasAllergen(ing, allergens) {
   // Very conservative: allergens are declared on recipe level. No fuzzy match.
   return false;
@@ -10454,7 +10493,7 @@ function aggregateShoppingList(weekMenu, profile) {
         if (!agg[key]) {
           agg[key] = {name: displayCanonName(cName), qty: 0, unit: cUnit, category};
         }
-        agg[key].qty += cQty * mult;
+        agg[key].qty += scaleQty(cQty, mult, cName, category);
       });
     });
   });
@@ -11629,7 +11668,7 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
               {recipe.ing.map(([name,qty,unit,cat],i) => (
                 <li key={i} className="flex justify-between text-sm border-b border-dashed border-slate-200 dark:border-slate-700 py-1">
                   <span>{name}</span>
-                  <span className="font-mono text-slate-600 dark:text-slate-300">{formatQty(qty*mult, unit, name)}</span>
+                  <span className="font-mono text-slate-600 dark:text-slate-300">{formatQty(scaleQty(qty, mult, name, cat), unit, name)}</span>
                 </li>
               ))}
             </ul>
