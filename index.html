@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.18.0</title>
+<title>Menu IG Bas — V2.18.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -9634,12 +9634,21 @@ function prettyNumber(qty) {
 // référencé, on affiche "N (≈Xg/pièce)" pour que l'utilisateur voie le poids d'une pièce.
 function formatQty(qty, unit, name) {
   const u = dataRef.canonicalUnit(unit);
+  // Unités discrètes (œuf, gousse, c.à.c, c.à.s, u, pincée…) : arrondi à
+  // l'entier dès que qty ≥ 0,75. Sous ce seuil on garde l'affichage
+  // fractionnaire (½ pomme, ¼ gousse, 0,5 c.à.c…) qui a du sens en cuisine.
+  const isDiscrete = dataRef.isDiscreteUnit(u);
   if (u === "u" && name) {
     const w = dataRef.produceUnitWeight(canonicalName(name));
     if (w) {
-      const total = Math.round(qty * w);
-      return `${prettyNumber(qty)} u (≈${w} g/pièce soit ${total} g)`;
+      const displayQty = qty >= 0.75 ? Math.round(qty) : qty;
+      const display = qty >= 0.75 ? String(displayQty) : prettyNumber(qty);
+      const total = Math.round(displayQty * w);
+      return `${display} u (≈${w} g/pièce soit ${total} g)`;
     }
+  }
+  if (isDiscrete && qty >= 0.75) {
+    return `${Math.round(qty)} ${unit}`;
   }
   const rounded = Math.round(qty * 10) / 10;
   const asStr = Number.isInteger(rounded) ? String(rounded) : String(rounded).replace(".", ",");
