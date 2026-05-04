@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.24.0</title>
+<title>Menu IG Bas — V2.25.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -10490,6 +10490,28 @@ const RECIPES = loadRefBlock("data-recipes", {items: []}).items;
 // ----- Constantes ----------------------------------------------------------
 const DAYS = ["lundi","mardi","mercredi","jeudi","vendredi","samedi","dimanche"];
 const DAYS_SHORT = ["Lun","Mar","Mer","Jeu","Ven","Sam","Dim"];
+// Mapping JS getDay() (0=dimanche..6=samedi) → index dans DAYS (0=lundi..6=dimanche)
+const SHOPPING_DAY_LABELS = {
+  0: "Dimanche", 1: "Lundi", 2: "Mardi", 3: "Mercredi",
+  4: "Jeudi", 5: "Vendredi", 6: "Samedi",
+};
+// Renvoie l'ordre des jours pour l'affichage planning, en commençant par le
+// shoppingDay (jour des courses) du foyer. Pour l'instant utilisé en UI
+// uniquement, le stockage interne reste indexé en lundi-dimanche (V2.25.0
+// minimal — refactor stockage prévu V2.26.0+ si besoin remonté).
+function daysOrderedFor(shoppingDay = 1) {
+  const startIdx = (shoppingDay + 6) % 7;
+  const days = [];
+  const daysShort = [];
+  const offsetDays = [];
+  for (let i = 0; i < 7; i++) {
+    const idx = (startIdx + i) % 7;
+    days.push(DAYS[idx]);
+    daysShort.push(DAYS_SHORT[idx]);
+    offsetDays.push(idx); // offset depuis lundi pour calcul de date
+  }
+  return {days, daysShort, offsetDays};
+}
 const ALL_MEALS = [
   {key:"breakfast", label:"Petit-déjeuner", icon:"☀️"},
   {key:"lunch",     label:"Déjeuner",       icon:"🥗"},
@@ -11215,7 +11237,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -11233,6 +11255,14 @@ function emptyHouseholdPreferences() {
     skillLevel: 2,
     dessertTime: "dinner",
     snackEnabled: false,
+    // shoppingDay (V2.25.0) : jour de référence pour la "semaine de menu",
+    // typiquement le jour des courses. 0=dimanche, 1=lundi, ..., 6=samedi
+    // (convention JavaScript Date.getDay()). Default 1 (lundi) =
+    // comportement historique. Pour l'instant, n'affecte que l'ordre
+    // d'affichage des jours dans le planning. Le stockage interne et les
+    // calculs de fenêtre 7-jours restent alignés sur lundi (à refactorer
+    // en V2.26.0+ si besoin remonté).
+    shoppingDay: 1,
   };
 }
 function emptyHousehold(id) {
@@ -12727,20 +12757,23 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           🩺 {targetLabel}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-7 gap-3">
-          {DAYS.map((day, idx) => {
-            const date = addDays(currentWeek, idx);
-            const slot = currentMenu[day] || {};
-            const attendance = slot.attendance || {};
-            const dayCg = computeDayCg(currentMenu, day, state.profile);
-            const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, cgTarget);
-            const tierClass = tier === "low" ? "bg-emerald-600" : tier === "medium" ? "bg-amber-500" : tier === "high" ? "bg-red-600" : "bg-slate-500";
-            const tierLabel = tier === "low" ? "OK" : tier === "medium" ? "Modéré" : tier === "high" ? "Élevé" : "?";
-            const cgDisplay = dayCg.covered > 0 ? `${dayCg.cg} CG` : "— CG";
-            return (
+          {(() => {
+            const ordered = daysOrderedFor(state.profile.shoppingDay ?? 1);
+            return ordered.days.map((day, displayIdx) => {
+              const offsetIdx = ordered.offsetDays[displayIdx];
+              const date = addDays(currentWeek, offsetIdx);
+              const slot = currentMenu[day] || {};
+              const attendance = slot.attendance || {};
+              const dayCg = computeDayCg(currentMenu, day, state.profile);
+              const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, cgTarget);
+              const tierClass = tier === "low" ? "bg-emerald-600" : tier === "medium" ? "bg-amber-500" : tier === "high" ? "bg-red-600" : "bg-slate-500";
+              const tierLabel = tier === "low" ? "OK" : tier === "medium" ? "Modéré" : tier === "high" ? "Élevé" : "?";
+              const cgDisplay = dayCg.covered > 0 ? `${dayCg.cg} CG` : "— CG";
+              return (
               <div key={day} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
                 <div className="bg-slate-800 text-white px-3 py-2">
                   <div className="flex items-center justify-between">
-                    <p className="font-bold capitalize">{DAYS_SHORT[idx]}</p>
+                    <p className="font-bold capitalize">{ordered.daysShort[displayIdx]}</p>
                     <span className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${cgTarget.low})`}>
                       {cgDisplay}
                     </span>
@@ -12838,7 +12871,8 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                 </div>
               </div>
             );
-          })}
+            });
+          })()}
         </div>
         </>
         );
@@ -13972,6 +14006,18 @@ function SettingsView({state, update, updateProfile}) {
             <span className="text-sm font-medium">🍪 Ajouter un goûter chaque jour</span>
           </label>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Active un slot de goûter entre le déjeuner et le dîner.</p>
+        </div>
+        <div>
+          <label className="text-sm block mb-1">🛒 Jour des courses (= début de semaine de menu)</label>
+          <select value={p.shoppingDay ?? 1}
+            onChange={e => updateProfile({shoppingDay: parseInt(e.target.value, 10)})}
+            className="border rounded px-3 py-2 w-48"
+            title="Détermine le 1er jour affiché dans le planning. Si vous faites vos courses le jeudi, choisissez Jeudi — la vue planning commencera ce jour-là.">
+            {[1,2,3,4,5,6,0].map(d => (
+              <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
+            ))}
+          </select>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">L'ordre d'affichage des jours du planning commence ce jour-là. Le stockage interne des menus reste inchangé.</p>
         </div>
       </div>
 
