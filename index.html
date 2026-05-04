@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.21.0</title>
+<title>Menu IG Bas — V2.21.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -10058,7 +10058,7 @@ const HEALTH_PROFILE_CG_TARGETS = {
   healthy:               {low: 120, medium: 150, high: 150},
 };
 const HEALTH_PROFILE_LABELS = {
-  healthy:              "Sain (par défaut)",
+  healthy:              "Sans contraintes IG/CG",
   diabetic_t2:          "Diabète type 2",
   diabetic_t1:          "Diabète type 1",
   insulin_resistance:   "Insulinorésistance",
@@ -11837,7 +11837,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
         const cgLimitMember = householdCgLimitingMember(state.profile);
         const targetLabel = cgLimitMember
           ? `Cible CG ≤ ${cgTarget.low}/j (${cgLimitMember.name} — ${HEALTH_PROFILE_LABELS[cgLimitMember.healthProfile]})`
-          : `Cible CG ≤ ${cgTarget.low}/j (foyer sain)`;
+          : `Cible CG ≤ ${cgTarget.low}/j (foyer sans contraintes)`;
         return (
         <>
         <div className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 rounded-lg p-2 text-xs text-emerald-800 dark:text-emerald-200 mb-3" title="Charge glycémique cumulée par jour. Référence Harvard School of Public Health. Le seuil du foyer = MIN des seuils par membre (le profil le plus contraignant gagne).">
