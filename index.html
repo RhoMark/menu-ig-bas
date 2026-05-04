@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.22.0</title>
+<title>Menu IG Bas — V2.23.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -11249,70 +11249,107 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
   const dessertsCooldown = recentMealSlots(menus, weekStart, "dessert", 7);
   const snacksCooldown   = recentMealSlots(menus, weekStart, "snack",   7);
 
+  // Garde-fou CG journalier (V2.23.0) : on tente jusqu'à 3 fois la génération
+  // d'une journée si elle dépasse le seuil "high" du foyer. Le seuil dépend du
+  // profil santé du membre le plus contraignant (cf householdCgTarget). Tiers
+  // low / medium / unknown sont acceptés ; seul "high" déclenche un re-roll.
+  // Au-delà de 3 tentatives ou si le pool est trop pauvre, on accepte le
+  // dernier essai (best-effort, l'UI affichera le badge orange/rouge).
+  const cgTarget = householdCgTarget(profile);
+  const CG_MAX_DAY_ATTEMPTS = 3;
+
   DAYS.forEach((day, i) => {
     const prev = existing[day] || {};
     const locked = prev.locked || {};
-    const slot = {locked: {...locked}};
-    // préserver l'attendance existante
-    if (prev.attendance) slot.attendance = prev.attendance;
 
-    // Breakfast: rotation déterministe pour garantir 7 petits-déjs différents si possible
-    if (keepLocked && locked.breakfast && prev.breakfast) {
-      slot.breakfast = prev.breakfast;
-    } else if (breakfasts.length > 0) {
-      slot.breakfast = breakfasts[i % breakfasts.length].id;
-    }
+    let slot = null;
+    let attempt = 0;
+    while (attempt < CG_MAX_DAY_ATTEMPTS) {
+      attempt++;
+      // Snapshot des sets mutables pour pouvoir restorer en cas de re-roll
+      const usedSnapshot     = new Set(usedThisWeek);
+      const dessertsSnapshot = new Set(dessertsCooldown);
+      const snacksSnapshot   = new Set(snacksCooldown);
 
-    // Lunch
-    if (keepLocked && locked.lunch && prev.lunch) {
-      slot.lunch = prev.lunch;
-      usedThisWeek.add(prev.lunch);
-    } else {
-      const picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings});
-      if (picked) { slot.lunch = picked.id; usedThisWeek.add(picked.id); }
-    }
+      slot = {locked: {...locked}};
+      // préserver l'attendance existante
+      if (prev.attendance) slot.attendance = prev.attendance;
 
-    // Dinner — anti-doublon semaine + anti-récurrence 3 mois + pas le même féculent/légumineuse que le lunch du jour
-    if (keepLocked && locked.dinner && prev.dinner) {
-      slot.dinner = prev.dinner;
-      usedThisWeek.add(prev.dinner);
-    } else {
-      let dinnerPool = dinners;
-      const lunchRecipe = slot.lunch ? RECIPES.find(r => r.id === slot.lunch) : null;
-      if (lunchRecipe) {
-        const lunchStaples = recipeStaples(lunchRecipe);
-        if (lunchStaples.size > 0) {
-          const filtered = dinners.filter(r => {
-            const ds = recipeStaples(r);
-            for (const s of lunchStaples) if (ds.has(s)) return false;
-            return true;
-          });
-          // Filtre conservé seulement si ≥ 3 candidats — sinon mieux vaut un doublon staple qu'un slot dégradé.
-          if (filtered.length >= 3) dinnerPool = filtered;
+      // Breakfast: rotation déterministe pour garantir 7 petits-déjs différents si possible
+      if (keepLocked && locked.breakfast && prev.breakfast) {
+        slot.breakfast = prev.breakfast;
+      } else if (breakfasts.length > 0) {
+        slot.breakfast = breakfasts[(i + attempt - 1) % breakfasts.length].id;
+      }
+
+      // Lunch
+      if (keepLocked && locked.lunch && prev.lunch) {
+        slot.lunch = prev.lunch;
+        usedThisWeek.add(prev.lunch);
+      } else {
+        const picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings});
+        if (picked) { slot.lunch = picked.id; usedThisWeek.add(picked.id); }
+      }
+
+      // Dinner — anti-doublon semaine + anti-récurrence 3 mois + pas le même féculent/légumineuse que le lunch du jour
+      if (keepLocked && locked.dinner && prev.dinner) {
+        slot.dinner = prev.dinner;
+        usedThisWeek.add(prev.dinner);
+      } else {
+        let dinnerPool = dinners;
+        const lunchRecipe = slot.lunch ? RECIPES.find(r => r.id === slot.lunch) : null;
+        if (lunchRecipe) {
+          const lunchStaples = recipeStaples(lunchRecipe);
+          if (lunchStaples.size > 0) {
+            const filtered = dinners.filter(r => {
+              const ds = recipeStaples(r);
+              for (const s of lunchStaples) if (ds.has(s)) return false;
+              return true;
+            });
+            // Filtre conservé seulement si ≥ 3 candidats — sinon mieux vaut un doublon staple qu'un slot dégradé.
+            if (filtered.length >= 3) dinnerPool = filtered;
+          }
+        }
+        const picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings});
+        if (picked) { slot.dinner = picked.id; usedThisWeek.add(picked.id); }
+      }
+
+      // Snack (goûter) — anti-doublon sur 8 jours glissants (cf. snacksCooldown)
+      if (profile.snackEnabled) {
+        if (keepLocked && locked.snack && prev.snack) {
+          slot.snack = prev.snack;
+          snacksCooldown.add(prev.snack);
+        } else if (snacks.length > 0) {
+          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings});
+          if (picked) { slot.snack = picked.id; snacksCooldown.add(picked.id); }
         }
       }
-      const picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings});
-      if (picked) { slot.dinner = picked.id; usedThisWeek.add(picked.id); }
-    }
 
-    // Snack (goûter) — anti-doublon sur 8 jours glissants (cf. snacksCooldown)
-    if (profile.snackEnabled) {
-      if (keepLocked && locked.snack && prev.snack) {
-        slot.snack = prev.snack;
-        snacksCooldown.add(prev.snack);
-      } else if (snacks.length > 0) {
-        const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings});
-        if (picked) { slot.snack = picked.id; snacksCooldown.add(picked.id); }
+      // Dessert — 1 par jour, anti-doublon sur 8 jours glissants (cf. dessertsCooldown)
+      if (keepLocked && locked.dessert && prev.dessert) {
+        slot.dessert = prev.dessert;
+        dessertsCooldown.add(prev.dessert);
+      } else if (desserts.length > 0) {
+        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings});
+        if (picked) { slot.dessert = picked.id; dessertsCooldown.add(picked.id); }
       }
-    }
 
-    // Dessert — 1 par jour, anti-doublon sur 8 jours glissants (cf. dessertsCooldown)
-    if (keepLocked && locked.dessert && prev.dessert) {
-      slot.dessert = prev.dessert;
-      dessertsCooldown.add(prev.dessert);
-    } else if (desserts.length > 0) {
-      const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings});
-      if (picked) { slot.dessert = picked.id; dessertsCooldown.add(picked.id); }
+      // Garde-fou CG : calculer le tier de la journée. On accepte tout sauf
+      // "high" (au-dessus du seuil élevé du foyer). On accepte aussi
+      // "unknown" (data-glycemic insuffisante) pour ne pas bloquer.
+      const dayCg = computeDayCg({[day]: slot}, day, profile);
+      const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, cgTarget);
+      if (tier !== "high") break;
+
+      // tier "high" → re-roll. On restaure les sets pour la prochaine tentative.
+      // Les recettes choisies durant cette tentative sont retirées des sets
+      // afin que le re-roll puisse les sélectionner à nouveau pour un autre
+      // jour ou les éviter pour celui-ci si le pickFromPool tire ailleurs.
+      if (attempt < CG_MAX_DAY_ATTEMPTS) {
+        usedThisWeek.clear();     usedSnapshot.forEach(id => usedThisWeek.add(id));
+        dessertsCooldown.clear(); dessertsSnapshot.forEach(id => dessertsCooldown.add(id));
+        snacksCooldown.clear();   snacksSnapshot.forEach(id => snacksCooldown.add(id));
+      }
     }
 
     days[day] = slot;
