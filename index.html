@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.20.1</title>
+<title>Menu IG Bas — V2.21.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -10036,6 +10036,106 @@ function glycemicTier(cg) {
   return "high";
 }
 // ============================================================================
+// Garde-fou CG journalier multi-profils (V2.21.0 — Phase 3)
+// ----------------------------------------------------------------------------
+// Référence : Harvard School of Public Health (consensus international).
+// ANSES/PNNS, EFSA et OMS n'ont pas de seuil quantitatif officiel sur la CG
+// quotidienne. Cf CLAUDE.md projet section "Charge glycémique journalière"
+// et tâches/leçons.md #13.
+// ============================================================================
+const HEALTH_PROFILE_CG_TARGETS = {
+  diabetic_t2:           {low: 80,  medium: 100, high: 100},
+  insulin_resistance:    {low: 80,  medium: 100, high: 100},
+  pcos:                  {low: 80,  medium: 100, high: 100},
+  gestational_diabetes:  {low: 80,  medium: 100, high: 100},
+  diabetic_t1:           {low: 100, medium: 130, high: 130},
+  dyslipidemia:          {low: 100, medium: 120, high: 120},
+  hypertension:          {low: 100, medium: 120, high: 120},
+  rebalancing:           {low: 100, medium: 120, high: 120},
+  cardio_prevention:     {low: 100, medium: 120, high: 120},
+  strength_athlete:      {low: 130, medium: 180, high: 180},
+  endurance_athlete:     null, // CG totale non pertinente — timing > total
+  healthy:               {low: 120, medium: 150, high: 150},
+};
+const HEALTH_PROFILE_LABELS = {
+  healthy:              "Sain (par défaut)",
+  diabetic_t2:          "Diabète type 2",
+  diabetic_t1:          "Diabète type 1",
+  insulin_resistance:   "Insulinorésistance",
+  pcos:                 "SOPK",
+  gestational_diabetes: "Diabète gestationnel",
+  hypertension:         "Hypertension",
+  dyslipidemia:         "Dyslipidémies",
+  rebalancing:          "Rééquilibrage / surpoids",
+  cardio_prevention:    "Prévention cardiovasculaire",
+  strength_athlete:     "Sportif force",
+  endurance_athlete:    "Sportif endurance",
+};
+// Calcule le seuil CG journalier du foyer = MIN des seuils par membre.
+// Le profil le plus contraignant gagne (un menu compatible avec le membre
+// le plus contraignant convient automatiquement à tous les autres).
+// endurance_athlete est exclu du calcul (timing > total). Si tous les
+// membres sont endurance ou aucun membre, retourne le seuil "healthy".
+function householdCgTarget(profile) {
+  if (!profile?.members?.length) return HEALTH_PROFILE_CG_TARGETS.healthy;
+  const targets = profile.members
+    .map(m => HEALTH_PROFILE_CG_TARGETS[m.healthProfile || "healthy"])
+    .filter(t => t !== null);
+  if (targets.length === 0) return HEALTH_PROFILE_CG_TARGETS.healthy;
+  return {
+    low:    Math.min(...targets.map(t => t.low)),
+    medium: Math.min(...targets.map(t => t.medium)),
+    high:   Math.min(...targets.map(t => t.high)),
+  };
+}
+// Identifie le membre le plus contraignant (celui qui fixe le seuil bas
+// du foyer). Utile pour afficher dans l'UI "cible CG : 80 / jour (à
+// cause de Conjointe — SOPK)". Renvoie null si tous "healthy" ou aucun.
+function householdCgLimitingMember(profile) {
+  if (!profile?.members?.length) return null;
+  const target = householdCgTarget(profile);
+  if (!target) return null;
+  // Trouve le 1er membre dont le low correspond au low foyer (et ≠ healthy).
+  for (const m of profile.members) {
+    const t = HEALTH_PROFILE_CG_TARGETS[m.healthProfile || "healthy"];
+    if (t && t.low === target.low && (m.healthProfile && m.healthProfile !== "healthy")) {
+      return m;
+    }
+  }
+  return null;
+}
+// Calcule la CG cumulée d'une journée pour un foyer donné. Somme les CG
+// des recettes assignées aux slots actifs (breakfast + lunch + snack +
+// dinner + dessert). Renvoie {cg, covered, total} : `covered` = nombre
+// de recettes avec CG calculable (data-glycemic + qty exploitable),
+// `total` = nombre de slots actifs ce jour-là.
+function computeDayCg(weekMenu, day, profile) {
+  const slots = getAllActiveSlots(profile);
+  const slot = weekMenu?.[day] || {};
+  let totalCg = 0;
+  let covered = 0;
+  for (const meal of slots) {
+    const rid = slot[meal];
+    if (!rid) continue;
+    const recipe = RECIPES.find(r => r.id === rid);
+    if (!recipe) continue;
+    const g = computeRecipeGlycemic(recipe);
+    if (g?.cg != null) {
+      totalCg += g.cg;
+      covered++;
+    }
+  }
+  return {cg: Math.round(totalCg), covered, total: slots.length};
+}
+// Tier d'une CG journalière par rapport au seuil foyer.
+// Renvoie 'low' / 'medium' / 'high' / 'unknown'.
+function dayCgTier(cgValue, householdTarget) {
+  if (cgValue == null || !householdTarget) return "unknown";
+  if (cgValue <= householdTarget.low) return "low";
+  if (cgValue <= householdTarget.medium) return "medium";
+  return "high";
+}
+// ============================================================================
 // Calcul de coût recette à partir de data-prices (V2.13.0)
 // ----------------------------------------------------------------------------
 // Pour chaque ingrédient : convertir qty → grammes, lookup prix €/100g, sommer.
@@ -10292,7 +10392,7 @@ function emptyHouseholdPreferences() {
 function emptyHousehold(id) {
   return {
     id,
-    members: [{id:1, name:"Adulte 1", birthYear: new Date().getFullYear() - 40, sex:"F", allergies:[]}],
+    members: [{id:1, name:"Adulte 1", birthYear: new Date().getFullYear() - 40, sex:"F", allergies:[], healthProfile:"healthy"}],
     preferences: emptyHouseholdPreferences(),
     menus: {},
     ratings: {},
@@ -11491,6 +11591,17 @@ function SetupView({state, update, updateProfile, onDone}) {
                 <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
               </select>
             </div>
+            <div className="min-w-[200px]">
+              <label className="text-xs text-slate-500 dark:text-slate-400 block" title="Détermine le seuil de charge glycémique (CG) journalière. Le profil le plus contraignant gagne pour le foyer.">
+                Profil santé <span className="text-slate-400">ⓘ</span>
+              </label>
+              <select value={m.healthProfile || "healthy"} onChange={e=>updateMember(m.id,{healthProfile:e.target.value})}
+                className="border rounded px-2 py-1 w-full">
+                {Object.entries(HEALTH_PROFILE_LABELS).map(([key, label]) => (
+                  <option key={key} value={key}>{label}</option>
+                ))}
+              </select>
+            </div>
             {p.members.length > 1 && (
               <button onClick={()=>removeMember(m.id)} className="text-red-500 hover:text-red-700 dark:text-red-300 text-sm">Retirer</button>
             )}
@@ -11721,16 +11832,36 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
         </div>
       )}
 
-      {hasAny && (
+      {hasAny && (() => {
+        const cgTarget = householdCgTarget(state.profile);
+        const cgLimitMember = householdCgLimitingMember(state.profile);
+        const targetLabel = cgLimitMember
+          ? `Cible CG ≤ ${cgTarget.low}/j (${cgLimitMember.name} — ${HEALTH_PROFILE_LABELS[cgLimitMember.healthProfile]})`
+          : `Cible CG ≤ ${cgTarget.low}/j (foyer sain)`;
+        return (
+        <>
+        <div className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 rounded-lg p-2 text-xs text-emerald-800 dark:text-emerald-200 mb-3" title="Charge glycémique cumulée par jour. Référence Harvard School of Public Health. Le seuil du foyer = MIN des seuils par membre (le profil le plus contraignant gagne).">
+          🩺 {targetLabel}
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-7 gap-3">
           {DAYS.map((day, idx) => {
             const date = addDays(currentWeek, idx);
             const slot = currentMenu[day] || {};
             const attendance = slot.attendance || {};
+            const dayCg = computeDayCg(currentMenu, day, state.profile);
+            const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, cgTarget);
+            const tierClass = tier === "low" ? "bg-emerald-600" : tier === "medium" ? "bg-amber-500" : tier === "high" ? "bg-red-600" : "bg-slate-500";
+            const tierLabel = tier === "low" ? "OK" : tier === "medium" ? "Modéré" : tier === "high" ? "Élevé" : "?";
+            const cgDisplay = dayCg.covered > 0 ? `${dayCg.cg} CG` : "— CG";
             return (
               <div key={day} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
                 <div className="bg-slate-800 text-white px-3 py-2">
-                  <p className="font-bold capitalize">{DAYS_SHORT[idx]}</p>
+                  <div className="flex items-center justify-between">
+                    <p className="font-bold capitalize">{DAYS_SHORT[idx]}</p>
+                    <span className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${cgTarget.low})`}>
+                      {cgDisplay}
+                    </span>
+                  </div>
                   <p className="text-xs text-slate-300">{formatShort(date)}</p>
                 </div>
                 <div className="p-2 space-y-2">
@@ -11826,7 +11957,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
             );
           })}
         </div>
-      )}
+        </>
+        );
+      })()}
 
       {replacePanel && (
         <ReplaceDialog
