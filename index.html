@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.21.1</title>
+<title>Menu IG Bas — V2.21.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -12997,6 +12997,11 @@ function SettingsView({state, update, updateProfile}) {
                 </div>
                 <select value={m.sex} onChange={e=>updateMember(m.id,{sex:e.target.value})} className="border rounded px-2 py-1">
                   <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
+                </select>
+                <select value={m.healthProfile || "healthy"} onChange={e=>updateMember(m.id,{healthProfile:e.target.value})} className="border rounded px-2 py-1 min-w-[180px]" title="Profil santé : détermine le seuil de charge glycémique journalière. Pour le foyer, le profil le plus contraignant gagne.">
+                  {Object.entries(HEALTH_PROFILE_LABELS).map(([key, label]) => (
+                    <option key={key} value={key}>{label}</option>
+                  ))}
                 </select>
                 {p.members.length > 1 && <button onClick={()=>removeMember(m.id)} className="text-red-500 text-sm">Retirer</button>}
               </div>
