@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.26.0</title>
+<title>Menu IG Bas — V2.27.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -11159,8 +11159,25 @@ function mondayOf(date) {
   d.setDate(d.getDate() - day);
   return d;
 }
+// V2.27.0 — Renvoie le shoppingDay de la semaine contenant `date`. C'est
+// la "vraie fenêtre glissante" alignée sur le jour des courses du foyer.
+// shoppingDay : convention JS getDay() (0=Sun, 1=Mon, ..., 6=Sat).
+// Default 1 = lundi (= mondayOf, rétrocompat).
+function weekStartOf(date, shoppingDay = 1) {
+  if (shoppingDay === 1) return mondayOf(date);
+  const d = new Date(date); d.setHours(0,0,0,0);
+  const day = (d.getDay() - shoppingDay + 7) % 7;
+  d.setDate(d.getDate() - day);
+  return d;
+}
 function addDays(d, n){ const x = new Date(d); x.setDate(x.getDate()+n); return x; }
-function weekKey(d){ const m = mondayOf(d); return m.toISOString().slice(0,10); }
+// V2.27.0 — weekKey paramétrable. Pour shoppingDay=1 (default), comportement
+// identique à V2.26.0 : clé = lundi ISO de la semaine. Pour autre valeur,
+// clé = jour des courses ISO de la semaine.
+function weekKey(d, shoppingDay = 1){
+  const m = weekStartOf(d, shoppingDay);
+  return m.toISOString().slice(0,10);
+}
 function formatDateFR(d){
   return d.toLocaleDateString("fr-FR", {weekday:"long", day:"numeric", month:"long"});
 }
@@ -12139,7 +12156,10 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
   const snacks     = baseFilter("snack");
 
   const {set: recentlyUsed, lastUsedMap} = recipesUsedInLast3Months(menus, weekStart);
-  const existing = menus[weekKey(weekStart)] || {};
+  const sd = profile?.shoppingDay ?? 1;
+  // V2.27.0 — Lecture rétrocompat : on cherche d'abord la clé du shoppingDay
+  // courant ; si absent, fallback sur l'ancienne clé "lundi" (anciens menus).
+  const existing = menus[weekKey(weekStart, sd)] || (sd !== 1 ? (menus[weekKey(weekStart, 1)] || {}) : {});
 
   const days = {};
   const usedThisWeek = new Set();           // lunch + dinner anti-redondance
@@ -12616,18 +12636,28 @@ function RecoveryView({onResolved}) {
 
 function App({initialState}) {
   const [state, setState] = useState(initialState);
-  const [currentWeek, setCurrentWeek] = useState(mondayOf(new Date()));
+  const [currentWeek, setCurrentWeek] = useState(() => weekStartOf(new Date(), initialState?.profile?.shoppingDay ?? 1));
   const [view, setView] = useState(state.onboarded ? "menu" : "setup");
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [printMode, setPrintMode] = useState(null); // null | "menu" | "shopping"
 
   useEffect(() => { saveState(state); }, [state]);
 
+  // V2.27.0 — Si shoppingDay change, on réaligne currentWeek sur la nouvelle
+  // fenêtre 7-jours pour que la vue planning reflète la nouvelle convention.
+  useEffect(() => {
+    const sd = state.profile?.shoppingDay ?? 1;
+    setCurrentWeek(prev => weekStartOf(prev, sd));
+  }, [state.profile?.shoppingDay]);
+
   const update = (updater) => setState(s => ({...s, ...(typeof updater === "function" ? updater(s) : updater)}));
   const updateProfile = (patch) => update(s => ({profile: {...s.profile, ...patch}}));
 
-  const wk = weekKey(currentWeek);
-  const currentMenu = state.menus[wk] || {};
+  const sd = state.profile?.shoppingDay ?? 1;
+  const wk = weekKey(currentWeek, sd);
+  // V2.27.0 — Lecture rétrocompat : si pas de menu pour la clé shoppingDay
+  // courant, fallback sur l'ancienne clé "lundi" (anciens menus pré-V2.27).
+  const currentMenu = state.menus[wk] || (sd !== 1 ? state.menus[weekKey(currentWeek, 1)] : null) || {};
 
   const regenerate = ({keepLocked = true} = {}) => {
     const days = generateWeek({
@@ -13202,8 +13232,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           {(() => {
             const ordered = daysOrderedFor(state.profile.shoppingDay ?? 1);
             return ordered.days.map((day, displayIdx) => {
-              const offsetIdx = ordered.offsetDays[displayIdx];
-              const date = addDays(currentWeek, offsetIdx);
+              // V2.27.0 — currentWeek est maintenant aligné sur shoppingDay,
+              // donc displayIdx donne directement l'offset jour.
+              const date = addDays(currentWeek, displayIdx);
               const slot = currentMenu[day] || {};
               const attendance = slot.attendance || {};
               const dayCg = computeDayCg(currentMenu, day, state.profile);
@@ -13811,10 +13842,12 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
   const monthFmt = new Intl.DateTimeFormat("fr-FR", {month: "long", year: "numeric"});
 
   // Les 5 semaines glissantes à partir de currentWeek (ancre)
+  const sd = state.profile?.shoppingDay ?? 1;
   const weekInfos = [0,1,2,3,4].map(i => {
     const ws = addDays(currentWeek, i * 7);
-    const wk = weekKey(ws);
-    const menu = state.menus[wk] || {};
+    const wk = weekKey(ws, sd);
+    // Fallback rétrocompat : ancienne clé "lundi" si nouvelle pas trouvée.
+    const menu = state.menus[wk] || (sd !== 1 ? state.menus[weekKey(ws, 1)] : null) || {};
     let filled = 0, locks = 0;
     DAYS.forEach(d => {
       const slot = menu[d] || {};
