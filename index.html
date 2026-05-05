@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.30.0</title>
+<title>Menu IG Bas — V2.31.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -12182,6 +12182,30 @@ function recipeHasExcluded(recipe, exclusions) {
     lcExcl.some(ex => name.toLowerCase().includes(ex))
   );
 }
+// V2.31.0 — Exclusions effectives par foyer (issue #9, spec V1 §2.4.2)
+// = globalExclusions (foyer) ∪ (intersection des member.exclusions des présents)
+// Logique préférentielle (≠ allergies médicales) : on n'exclut un ingrédient
+// que si TOUS les membres présents au repas le veulent éviter (intersection).
+// Si un seul présent ne l'exclut pas, l'ingrédient n'est pas filtré.
+function effectiveExclusions(profile, attendees) {
+  const global = new Set(profile?.globalExclusions || []);
+  if (!profile?.members?.length) return [...global];
+  const ids = Array.isArray(attendees) ? attendees : null;
+  const present = (ids && ids.length > 0)
+    ? profile.members.filter(m => ids.includes(m.id))
+    : profile.members;
+  if (present.length === 0) return [...global];
+  let intersection = null;
+  for (const m of present) {
+    const exc = new Set(m.exclusions || []);
+    if (intersection === null) {
+      intersection = exc;
+    } else {
+      intersection = new Set([...intersection].filter(x => exc.has(x)));
+    }
+  }
+  return [...new Set([...global, ...(intersection || [])])];
+}
 function recipeRespectsEquipment(recipe, availEq) {
   if (!availEq?.length) return true;
   return recipe.eq.every(e => availEq.includes(e));
@@ -12633,7 +12657,7 @@ function emptyHouseholdPreferences() {
 function emptyHousehold(id) {
   return {
     id,
-    members: [{id:1, name:"Adulte 1", birthYear: new Date().getFullYear() - 40, sex:"F", allergies:[], healthProfile:"healthy"}],
+    members: [{id:1, name:"Adulte 1", birthYear: new Date().getFullYear() - 40, sex:"F", allergies:[], exclusions:[], healthProfile:"healthy"}],
     preferences: emptyHouseholdPreferences(),
     menus: {},
     ratings: {},
@@ -13046,7 +13070,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
   // Sécurité : on exclut large à la génération hebdo (allergies de TOUS les membres).
   // L'attendance par repas n'est connue qu'au remplacement manuel slot par slot.
   const allergies = effectiveAllergies(profile, null);
-  const exclusions = profile.globalExclusions;
+  const exclusions = effectiveExclusions(profile, null);
   const baseFilter = (type) => RECIPES.filter(r =>
     r.type === type &&
     matchesSeason(r, season) &&
@@ -13201,7 +13225,7 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
   const MAX_ITER = 10;
 
   const allergies  = effectiveAllergies(profile, null);
-  const exclusions = profile.globalExclusions;
+  const exclusions = effectiveExclusions(profile, null);
   const baseFilter = (type) => RECIPES.filter(r =>
     r.type === type &&
     matchesSeason(r, season) &&
@@ -13583,7 +13607,7 @@ function App({initialState}) {
       r.type === meal &&
       matchesSeason(r, season) &&
       !recipeHasAllergen(r, effectiveAllergies(state.profile, null)) &&
-      !recipeHasExcluded(r, state.profile.globalExclusions) &&
+      !recipeHasExcluded(r, effectiveExclusions(state.profile, null)) &&
       recipeRespectsEquipment(r, state.profile.equipment) &&
       recipeRespectsTime(r, state.profile.maxPrepMinutes) &&
       recipeRespectsSkill(r, state.profile.skillLevel) &&
@@ -14356,7 +14380,7 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
     r.type === meal &&
     matchesSeason(r, season) &&
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
-    !recipeHasExcluded(r, profile.globalExclusions) &&
+    !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
     r.id !== currentId
   );
   // Filtre par recherche : nom + tags + ingrédients principaux (premiers 5 pour
@@ -15018,7 +15042,7 @@ function computePoolSizes(profile, currentWeek) {
     r.type === type &&
     matchesSeason(r, season) &&
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
-    !recipeHasExcluded(r, profile.globalExclusions) &&
+    !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
     recipeRespectsEquipment(r, profile.equipment) &&
     recipeRespectsTime(r, profile.maxPrepMinutes) &&
     recipeRespectsSkill(r, profile.skillLevel)
@@ -15356,6 +15380,16 @@ function SettingsView({state, update, updateProfile}) {
                       </button>
                     );
                   })}
+                </div>
+              </details>
+              <details className="text-sm" open={(m.exclusions || []).length > 0}>
+                <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
+                  🚫 Exclusions préférentielles de {m.name || "ce membre"}
+                  {(m.exclusions || []).length > 0 && <span className="ml-1 text-amber-700 dark:text-amber-300 font-medium">({(m.exclusions || []).length})</span>}
+                </summary>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre préfère éviter (par goût, pas allergique). Une recette est exclue uniquement si <strong>tous les membres présents</strong> au repas excluent l'ingrédient — sinon elle reste proposée.</p>
+                <div className="mt-2">
+                  <ExclusionsTextarea value={m.exclusions || []} onChange={(arr) => updateMember(m.id, {exclusions: arr})} />
                 </div>
               </details>
             </div>
