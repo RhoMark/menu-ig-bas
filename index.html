@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.33.0</title>
+<title>Menu IG Bas — V2.34.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -12544,16 +12544,21 @@ function totalEquivalents(profile) {
   if (!profile.members?.length) return 1;
   return profile.members.reduce((s,m) => s + adultEquivalent(m), 0);
 }
-// Équivalents pour un repas donné, en tenant compte de l'attendance (qui est présent)
+// Équivalents pour un repas donné, en tenant compte de l'attendance (qui est présent).
+// Distinction sémantique (V2.34.0) :
+//   - `attendees == null` (undefined absent du store) → défaut = toute la famille présente.
+//   - `attendees === []` → choix explicite "personne ne mange ce repas à la maison"
+//     (repas pris à l'extérieur). On retourne 0 → la liste de courses, le coût et
+//     le swap budgétaire ignorent ce slot.
 function mealEquivalents(profile, attendees) {
   if (!profile.members?.length) return 1;
-  if (!attendees || !Array.isArray(attendees) || attendees.length === 0) {
-    // attendees non défini = tout le monde présent (défaut)
+  if (attendees == null) {
     return profile.members.reduce((s,m) => s + adultEquivalent(m), 0);
   }
+  if (!Array.isArray(attendees)) return 1;
   return profile.members
     .filter(m => attendees.includes(m.id))
-    .reduce((s,m) => s + adultEquivalent(m), 0) || 0;
+    .reduce((s,m) => s + adultEquivalent(m), 0);
 }
 
 // ---------------------------------------------------------------------------
@@ -14941,10 +14946,14 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
 // ----- Recipe Modal --------------------------------------------------------
 function RecipeModal({recipe, profile, attendees, ratings, recentUsageCount = 0, onRate, onClose}) {
   const hasContext = Array.isArray(attendees);
-  const mult = hasContext ? mealEquivalents(profile, attendees) : totalEquivalents(profile);
   const nAll = profile.members?.length || 0;
   const nPresent = hasContext ? attendees.length : nAll;
-  const isPartial = hasContext && nPresent < nAll;
+  const isExternal = hasContext && nPresent === 0; // V2.34.0 — repas pris à l'extérieur
+  const isPartial = hasContext && nPresent > 0 && nPresent < nAll;
+  // Si repas externe : on affiche les quantités pour la famille complète à titre indicatif
+  // (sinon on aurait des qty × 0 dans toute la fiche, illisible).
+  const mult = isExternal ? totalEquivalents(profile)
+    : hasContext ? mealEquivalents(profile, attendees) : totalEquivalents(profile);
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 no-print" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-slate-200 dark:border-slate-700 max-w-3xl w-full max-h-[90vh] overflow-auto" onClick={e=>e.stopPropagation()}>
@@ -15035,8 +15044,15 @@ function RecipeModal({recipe, profile, attendees, ratings, recentUsageCount = 0,
               </div>
             );
           })()}
+          {isExternal && (
+            <div className="bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 text-sky-800 dark:text-sky-200 text-sm rounded p-3">
+              🌃 <strong>Repas pris à l'extérieur</strong> — ce slot est ignoré dans la liste de courses et le budget de la semaine. Les quantités ci-dessous sont affichées pour la famille à titre indicatif.
+            </div>
+          )}
           <div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{isPartial
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isExternal ? "text-sky-700 dark:text-sky-300 font-medium" : isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{isExternal
+              ? `(famille complète à titre indicatif, soit ${mult.toFixed(1)} équiv. adultes)`
+              : isPartial
               ? `(pour ${nPresent} présent${nPresent>1?"s":""} sur ${nAll}, soit ${mult.toFixed(1)} équiv. adultes)`
               : `(pour la famille, soit ${mult.toFixed(1)} équiv. adultes)`
             }</span></h3>
