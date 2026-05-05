@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.32.0</title>
+<title>Menu IG Bas — V2.33.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -13377,12 +13377,21 @@ async function saveState(runtime) {
 }
 
 // ----- Menu generation -----------------------------------------------------
-// Renvoie la liste des recettes lunch/dinner servies dans les 90 jours précédant
-// `currentWeekStart`, plus une carte `recipeId → timestamp ms de la semaine la plus récente
-// d'utilisation`. La carte sert à départager les recettes lors d'un fallback en
-// privilégiant la plus ancienne (cf. `pickFromPool` niveau 2).
-function recipesUsedInLast3Months(menus, currentWeekStart) {
-  const cutoff = new Date(currentWeekStart); cutoff.setDate(cutoff.getDate() - 90);
+// Renvoie la liste des recettes lunch/dinner servies dans les RECENT_DAYS jours
+// précédant `currentWeekStart`, plus une carte `recipeId → timestamp ms de la
+// semaine la plus récente d'utilisation`. La carte sert à départager les
+// recettes lors d'un fallback en privilégiant la plus ancienne
+// (cf. `pickFromPool` niveau 2).
+//
+// V2.33.0 — fenêtre réduite de 90 → 14 jours pour résoudre la dérive budget
+// (issue #71). En 90 jours × 35 slots/semaine, le pool des recettes
+// "non récentes" se réduisait à ~ 50 recettes (souvent les plus chères /
+// exotiques) → `optimizeForBudget` ne trouvait plus de swap économique.
+// 14 jours = ~ 70 utilisations max → `recentlyUsed` ≈ 35 recettes,
+// laisse 165+ recettes accessibles pour les swaps budget.
+const RECENT_DAYS = 14;
+function recipesUsedRecently(menus, currentWeekStart) {
+  const cutoff = new Date(currentWeekStart); cutoff.setDate(cutoff.getDate() - RECENT_DAYS);
   const set = new Set();
   const lastUsedMap = new Map();
   Object.entries(menus).forEach(([wk, days]) => {
@@ -13404,9 +13413,32 @@ function recipesUsedInLast3Months(menus, currentWeekStart) {
   });
   return {set, lastUsedMap};
 }
+// V2.33.0 — Compte combien de fois une recette a été servie dans les
+// `days` derniers jours (default RECENT_DAYS = 14). Utilisé dans la fiche
+// recette pour informer l'utilisateur "servie X fois ces 15 derniers jours".
+function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
+  if (!recipeId || !menus) return 0;
+  const cutoff = new Date(fromDate); cutoff.setDate(cutoff.getDate() - days);
+  const startBound = cutoff.getTime();
+  const endBound = new Date(fromDate).getTime();
+  let count = 0;
+  const ALL_KEYS = ["breakfast","lunch","dinner","snack","dessert"];
+  Object.entries(menus).forEach(([wk, daysMap]) => {
+    const wkDate = new Date(wk);
+    DAYS.forEach((day, idx) => {
+      const dayDate = new Date(wkDate); dayDate.setDate(wkDate.getDate() + idx);
+      const t = dayDate.getTime();
+      if (t < startBound || t >= endBound) return;
+      const slot = daysMap[day];
+      if (!slot) return;
+      ALL_KEYS.forEach(meal => { if (slot[meal] === recipeId) count++; });
+    });
+  });
+  return count;
+}
 // Sélection en cascade : on essaie d'abord d'éviter à la fois les recettes déjà
 // servies cette semaine (hardAvoid, contrainte dure) et celles servies dans les
-// 3 derniers mois (softAvoid). Si plus aucune recette « fraîche » n'est dispo,
+// 14 derniers jours (softAvoid). Si plus aucune recette « fraîche » n'est dispo,
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
@@ -13535,7 +13567,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
   const desserts   = baseFilter("dessert");
   const snacks     = baseFilter("snack");
 
-  const {set: recentlyUsed, lastUsedMap} = recipesUsedInLast3Months(menus, weekStart);
+  const {set: recentlyUsed, lastUsedMap} = recipesUsedRecently(menus, weekStart);
   const sd = profile?.shoppingDay ?? 1;
   // V2.27.0 — Lecture rétrocompat : on cherche d'abord la clé du shoppingDay
   // courant ; si absent, fallback sur l'ancienne clé "lundi" (anciens menus).
@@ -14096,7 +14128,7 @@ function App({initialState}) {
     }
     const isMain = (meal === "lunch" || meal === "dinner");
     const {set: softAvoid, lastUsedMap} = isMain
-      ? recipesUsedInLast3Months(state.menus, currentWeek)
+      ? recipesUsedRecently(state.menus, currentWeek)
       : {set: new Set(), lastUsedMap: new Map()};
     const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile});
     if (picked) {
@@ -14225,6 +14257,7 @@ function App({initialState}) {
             ? currentMenu[selectedRecipe.day]?.attendance?.[selectedRecipe.meal]
             : undefined}
           ratings={state.ratings}
+          recentUsageCount={countRecipeUsageRecent(state.menus, selectedRecipe.id, new Date())}
           onRate={(score, memberId) => rateRecipe(selectedRecipe.id, score, memberId)}
           onClose={() => setSelectedRecipe(null)}
         />
@@ -14906,7 +14939,7 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
 }
 
 // ----- Recipe Modal --------------------------------------------------------
-function RecipeModal({recipe, profile, attendees, ratings, onRate, onClose}) {
+function RecipeModal({recipe, profile, attendees, ratings, recentUsageCount = 0, onRate, onClose}) {
   const hasContext = Array.isArray(attendees);
   const mult = hasContext ? mealEquivalents(profile, attendees) : totalEquivalents(profile);
   const nAll = profile.members?.length || 0;
@@ -14928,6 +14961,11 @@ function RecipeModal({recipe, profile, attendees, ratings, onRate, onClose}) {
                 <span>📊 Difficulté {"⭐".repeat(recipe.diff)}</span>
                 <span>🔢 {recipe.kcal} kcal/pers</span>
                 <span>💰 ~{recipeEffectiveCost(recipe).toFixed(2)}€/pers</span>
+                {recentUsageCount > 0 && (
+                  <span className="bg-amber-500/90 text-white px-2 py-0.5 rounded-full font-medium" title="Nombre de fois où cette recette a été servie ces 15 derniers jours.">
+                    🔁 {recentUsageCount}× / 15j
+                  </span>
+                )}
                 {(() => {
                   const gly = computeRecipeGlycemic(recipe);
                   if (!gly) return null;
@@ -15505,15 +15543,18 @@ function computePoolSizes(profile, currentWeek) {
   };
 }
 
-// Cible "0 récurrence sur 3 mois" : 13 semaines × 7 jours = 91 plats distincts
-// par catégorie (lunch / dinner). Tant que le pool est en-dessous, l'algo
-// rouvrira progressivement les recettes plus anciennes (cf. `pickFromPool`).
-const ROTATION_TARGET_3M = 91;
+// V2.33.0 — Cible "0 récurrence sur RECENT_DAYS jours" (14 jours par défaut).
+// 14 jours × 7 jours/sem ≈ 14 lunchs et 14 dîners distincts pour ne JAMAIS
+// répéter sur 2 semaines. Au-dessus, l'algo dispose d'une marge (le pool
+// s'élargit puisque les recettes sortent de `recentlyUsed` après 14j).
+// Tant que le pool est en-dessous, l'algo rouvrira progressivement les
+// recettes plus anciennes (cf. `pickFromPool` niveau 2).
+const ROTATION_TARGET_RECENT = 14;
 
 function PoolDiagnostic({profile, currentWeek}) {
   const pool = useMemo(() => computePoolSizes(profile, currentWeek), [profile, currentWeek]);
   const low = Math.min(pool.lunch, pool.dinner) < 7;
-  const tightRotation = !low && (pool.lunch < ROTATION_TARGET_3M || pool.dinner < ROTATION_TARGET_3M);
+  const tightRotation = !low && (pool.lunch < ROTATION_TARGET_RECENT || pool.dinner < ROTATION_TARGET_RECENT);
   const tone = low ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : tightRotation ? "bg-sky-50 dark:bg-sky-950 border-sky-200 dark:border-sky-800" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700";
   return (
     <div className={`rounded-lg p-3 text-sm border ${tone}`}>
@@ -15533,7 +15574,7 @@ function PoolDiagnostic({profile, currentWeek}) {
       )}
       {tightRotation && (
         <p className="mt-2 text-sky-800 dark:text-sky-200 text-xs">
-          ℹ️ Pour ne jamais répéter une recette pendant 3 mois, la cible est <strong>{ROTATION_TARGET_3M} déjeuners et {ROTATION_TARGET_3M} dîners</strong> éligibles ; vous en avez {pool.lunch} et {pool.dinner}.
+          ℹ️ Pour ne jamais répéter une recette pendant 15 jours (V2.33.0), la cible est <strong>{ROTATION_TARGET_RECENT} déjeuners et {ROTATION_TARGET_RECENT} dîners</strong> éligibles ; vous en avez {pool.lunch} et {pool.dinner}.
           L'algorithme priorise les recettes les plus anciennes lorsqu'il doit en réutiliser une.
         </p>
       )}
