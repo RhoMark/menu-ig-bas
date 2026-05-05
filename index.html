@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.28.0</title>
+<title>Menu IG Bas — V2.29.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -11896,6 +11896,39 @@ function dayCgTier(cgValue, householdTarget) {
   return "high";
 }
 // ============================================================================
+// Notation par membre du foyer (V2.29.0 — issue #19)
+// ----------------------------------------------------------------------------
+// Schema : ratings[recipeId] peut être :
+// - un nombre 1..5 (ancien format global, rétrocompat — pré-V2.29)
+// - un objet { [memberId]: 1..5 } (nouveau format par membre)
+// Migration automatique à l'écriture (cf rateRecipe dans App).
+// ============================================================================
+function getMemberRating(ratings, recipeId, memberId) {
+  const r = ratings?.[recipeId];
+  if (r == null) return null;
+  if (typeof r === "number") return r; // ancien format
+  return r[memberId] ?? null;
+}
+// Renvoie la note effective d'une recette pour la génération.
+// = moyenne pondérée par adultEquivalent des membres ayant noté.
+// Default 3 (neutre) si aucun membre n'a noté.
+// Pour l'ancien format global (number), retourne directement la note.
+function getEffectiveRating(ratings, recipeId, profile) {
+  const r = ratings?.[recipeId];
+  if (r == null) return 3;
+  if (typeof r === "number") return r;
+  if (!profile?.members?.length) return 3;
+  let weightSum = 0, weightedRating = 0;
+  for (const m of profile.members) {
+    const score = r[m.id];
+    if (score == null) continue;
+    const weight = adultEquivalent(m);
+    weightSum += weight;
+    weightedRating += score * weight;
+  }
+  return weightSum > 0 ? weightedRating / weightSum : 3;
+}
+// ============================================================================
 // Calcul de coût recette à partir de data-prices (V2.13.0)
 // ----------------------------------------------------------------------------
 // Pour chaque ingrédient : convertir qty → grammes, lookup prix €/100g, sommer.
@@ -12465,17 +12498,17 @@ function recipesUsedInLast3Months(menus, currentWeekStart) {
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}} = {}) {
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null} = {}) {
   if (pool.length === 0) return null;
   // Niveau 1 — recettes ni servies cette semaine, ni servies depuis 3 mois.
   let candidates = pool.filter(r => !hardAvoid.has(r.id) && !softAvoid.has(r.id));
-  if (candidates.length > 0) return weightedPick(candidates, ratings);
+  if (candidates.length > 0) return weightedPick(candidates, ratings, profile);
   // Niveau 2 — fraîches épuisées : on rouvre softAvoid mais on privilégie le plus ancien.
   candidates = pool.filter(r => !hardAvoid.has(r.id));
   if (candidates.length > 0) {
     const sorted = [...candidates].sort(byOldestFirst(lastUsedMap));
     const cutoff = Math.max(1, Math.ceil(sorted.length / 3));
-    return weightedPick(sorted.slice(0, cutoff), ratings);
+    return weightedPick(sorted.slice(0, cutoff), ratings, profile);
   }
   // Niveau 3 — extrême (toutes en hardAvoid) : prendre la plus ancienne du pool entier
   // pour ne pas laisser un slot vide. Ne devrait jamais arriver tant que pool ≥ 7.
@@ -12487,14 +12520,16 @@ function byOldestFirst(lastUsedMap) {
   return (a, b) => (lastUsedMap.get(a.id) ?? 0) - (lastUsedMap.get(b.id) ?? 0);
 }
 
-function weightedPick(list, ratings) {
+function weightedPick(list, ratings, profile) {
+  // V2.29.0 — utilise getEffectiveRating si profile fourni (moyenne pondérée
+  // par adultEquivalent des membres ayant noté). Sinon ancien comportement.
   const weights = list.map(r => {
-    const rating = ratings[r.id];
-    if (rating === 1) return 0.2;
-    if (rating === 2) return 0.6;
-    if (rating === 4) return 1.6;
-    if (rating === 5) return 2.4;
-    return 1.0;
+    const rating = profile ? getEffectiveRating(ratings, r.id, profile) : (ratings[r.id] ?? 3);
+    if (rating <= 1) return 0.2;
+    if (rating < 2.5) return 0.6;
+    if (rating < 3.5) return 1.0;
+    if (rating < 4.5) return 1.6;
+    return 2.4;
   });
   const total = weights.reduce((a,b)=>a+b, 0);
   let roll = Math.random() * total;
@@ -12580,7 +12615,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
     recipeRespectsEquipment(r, profile.equipment) &&
     recipeRespectsTime(r, profile.maxPrepMinutes) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
-    (ratings[r.id] ?? 3) >= 3
+    getEffectiveRating(ratings, r.id, profile) >= 3
   );
   const breakfasts = baseFilter("breakfast");
   const lunches    = baseFilter("lunch");
@@ -12639,7 +12674,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
         slot.lunch = prev.lunch;
         usedThisWeek.add(prev.lunch);
       } else {
-        const picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings});
+        const picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
         if (picked) { slot.lunch = picked.id; usedThisWeek.add(picked.id); }
       }
 
@@ -12662,7 +12697,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
             if (filtered.length >= 3) dinnerPool = filtered;
           }
         }
-        const picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings});
+        const picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
         if (picked) { slot.dinner = picked.id; usedThisWeek.add(picked.id); }
       }
 
@@ -12672,7 +12707,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
           slot.snack = prev.snack;
           snacksCooldown.add(prev.snack);
         } else if (snacks.length > 0) {
-          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings});
+          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile});
           if (picked) { slot.snack = picked.id; snacksCooldown.add(picked.id); }
         }
       }
@@ -12682,7 +12717,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
         slot.dessert = prev.dessert;
         dessertsCooldown.add(prev.dessert);
       } else if (desserts.length > 0) {
-        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings});
+        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile});
         if (picked) { slot.dessert = picked.id; dessertsCooldown.add(picked.id); }
       }
 
@@ -12735,7 +12770,7 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
     recipeRespectsEquipment(r, profile.equipment) &&
     recipeRespectsTime(r, profile.maxPrepMinutes) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
-    (ratings[r.id] ?? 3) >= 3 &&
+    getEffectiveRating(ratings, r.id, profile) >= 3 &&
     !recentlyUsed.has(r.id)
   );
 
@@ -13112,7 +13147,7 @@ function App({initialState}) {
       recipeRespectsEquipment(r, state.profile.equipment) &&
       recipeRespectsTime(r, state.profile.maxPrepMinutes) &&
       recipeRespectsSkill(r, state.profile.skillLevel) &&
-      (state.ratings[r.id] ?? 3) >= 3
+      getEffectiveRating(state.ratings, r.id, state.profile) >= 3
     );
     // avoid current week for same type
     const used = new Set();
@@ -13151,7 +13186,7 @@ function App({initialState}) {
     const {set: softAvoid, lastUsedMap} = isMain
       ? recipesUsedInLast3Months(state.menus, currentWeek)
       : {set: new Set(), lastUsedMap: new Map()};
-    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings});
+    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile});
     if (picked) {
       update(s => ({menus: {...s.menus, [wk]: {...s.menus[wk], [day]: {...(s.menus[wk]?.[day]||{}), [meal]: picked.id}}}}));
     }
@@ -13169,8 +13204,17 @@ function App({initialState}) {
       menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...(s.menus[wk]?.[day]||{}), [meal]: recipeId}}},
     }));
   };
-  const rateRecipe = (rid, score) => {
-    update(s => ({ratings: {...s.ratings, [rid]: score}}));
+  const rateRecipe = (rid, score, memberId) => {
+    // V2.29.0 — si memberId fourni, écrit ratings[rid][memberId] (par membre).
+    // Sinon, ancien comportement (note globale, écrase tout).
+    update(s => {
+      if (memberId == null) {
+        return {ratings: {...s.ratings, [rid]: score}};
+      }
+      const current = s.ratings[rid];
+      const baseObj = (current && typeof current === "object") ? current : {};
+      return {ratings: {...s.ratings, [rid]: {...baseObj, [memberId]: score}}};
+    });
   };
   const togglePantry = (key) => {
     update(s => ({pantryChecks: {...s.pantryChecks, [wk]: {...(s.pantryChecks[wk]||{}), [key]: !s.pantryChecks[wk]?.[key]}}}));
@@ -13268,8 +13312,8 @@ function App({initialState}) {
           attendees={selectedRecipe.day && selectedRecipe.meal
             ? currentMenu[selectedRecipe.day]?.attendance?.[selectedRecipe.meal]
             : undefined}
-          rating={state.ratings[selectedRecipe.id]}
-          onRate={(s) => rateRecipe(selectedRecipe.id, s)}
+          ratings={state.ratings}
+          onRate={(score, memberId) => rateRecipe(selectedRecipe.id, score, memberId)}
           onClose={() => setSelectedRecipe(null)}
         />
       )}
@@ -13950,7 +13994,7 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
 }
 
 // ----- Recipe Modal --------------------------------------------------------
-function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
+function RecipeModal({recipe, profile, attendees, ratings, onRate, onClose}) {
   const hasContext = Array.isArray(attendees);
   const mult = hasContext ? mealEquivalents(profile, attendees) : totalEquivalents(profile);
   const nAll = profile.members?.length || 0;
@@ -14066,18 +14110,36 @@ function RecipeModal({recipe, profile, attendees, rating, onRate, onClose}) {
               ))}
             </ol>
           </div>
-          <div className="bg-slate-50 dark:bg-slate-800 rounded p-4 flex flex-wrap items-center gap-3">
-            <span className="font-medium text-slate-800 dark:text-slate-100">Noter cette recette :</span>
-            <div className="flex gap-1">
-              {[1,2,3,4,5].map(n => (
-                <button key={n} onClick={() => onRate(n)}
-                  className="text-2xl hover:scale-110 transition">
-                  {n <= (rating||0) ? "⭐" : "☆"}
-                </button>
-              ))}
-            </div>
-            {rating && <span className="text-sm text-slate-600 dark:text-slate-300">({rating}/5)</span>}
-            {rating === 1 && <span className="text-xs text-red-600">Sera évitée pour les prochains menus</span>}
+          <div className="bg-slate-50 dark:bg-slate-800 rounded p-4 space-y-2">
+            <span className="font-medium text-slate-800 dark:text-slate-100 block">Notation par membre du foyer</span>
+            {profile.members.map(m => {
+              const memberRating = getMemberRating(ratings, recipe.id, m.id);
+              return (
+                <div key={m.id} className="flex items-center gap-3 flex-wrap">
+                  <span className="text-sm w-24 truncate text-slate-700 dark:text-slate-200">{m.name}</span>
+                  <div className="flex gap-1">
+                    {[1,2,3,4,5].map(n => (
+                      <button key={n} onClick={() => onRate(n, m.id)}
+                        className="text-xl hover:scale-110 transition">
+                        {n <= (memberRating||0) ? "⭐" : "☆"}
+                      </button>
+                    ))}
+                  </div>
+                  {memberRating != null && <span className="text-xs text-slate-600 dark:text-slate-300">({memberRating}/5)</span>}
+                </div>
+              );
+            })}
+            {(() => {
+              const eff = getEffectiveRating(ratings, recipe.id, profile);
+              const noteFmt = eff.toFixed(1);
+              return (
+                <div className="text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center gap-2">
+                  <span>Score effectif (moyenne pondérée par appétit) : <strong>{noteFmt}/5</strong></span>
+                  {eff < 2 && <span className="text-red-600 dark:text-red-400">Sera évitée pour les prochains menus</span>}
+                  {eff < 3 && eff >= 2 && <span className="text-amber-600 dark:text-amber-400">Sera dépriorité dans la génération</span>}
+                </div>
+              );
+            })()}
           </div>
         </div>
       </div>
@@ -14146,9 +14208,13 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
             </div>
             <div className="mt-2 flex items-center justify-between">
               <div>
-                {[1,2,3,4,5].map(n => (
-                  <span key={n} className={n<=(state.ratings[r.id]||0)?"text-amber-400":"text-slate-300"}>⭐</span>
-                ))}
+                {(() => {
+                  const eff = getEffectiveRating(state.ratings, r.id, state.profile);
+                  const isRated = state.ratings[r.id] != null;
+                  return [1,2,3,4,5].map(n => (
+                    <span key={n} className={isRated && n <= Math.round(eff) ? "text-amber-400" : "text-slate-300"}>⭐</span>
+                  ));
+                })()}
               </div>
               {r.allergens.length > 0 && <span className="text-xs text-red-500">⚠️ {r.allergens.length}</span>}
             </div>
@@ -14225,9 +14291,13 @@ function HistoryView({state, setCurrentWeek, onGo}) {
           <Stat label="Semaines planifiées" value={weeks.length} />
           <Stat label="Recettes notées" value={ratedCount} />
           <Stat label="Recettes dans la base" value={RECIPES.length} />
-          <Stat label="Note moyenne" value={
-            ratedCount > 0 ? (Object.values(state.ratings).reduce((a,b)=>a+b,0)/ratedCount).toFixed(1) : "—"
-          } />
+          <Stat label="Note moyenne" value={(() => {
+            // V2.29.0 — calcule la moyenne des effectives ratings (rétrocompat
+            // ancien format global + nouveau format par membre).
+            if (ratedCount === 0) return "—";
+            const sum = Object.keys(state.ratings).reduce((acc, rid) => acc + getEffectiveRating(state.ratings, rid, state.profile), 0);
+            return (sum / ratedCount).toFixed(1);
+          })()} />
         </div>
       </div>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4">
