@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.41.0</title>
+<title>Menu IG Bas — V2.41.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -14613,14 +14613,21 @@ function householdCgLimitingMember(profile) {
 // dinner + dessert). Renvoie {cg, covered, total} : `covered` = nombre
 // de recettes avec CG calculable (data-glycemic + qty exploitable),
 // `total` = nombre de slots actifs ce jour-là.
+// V2.41.1 — Les slots avec `attendance === []` (repas pris à l'extérieur,
+// 0 convive explicite) sont exclus du calcul : la recette n'est pas
+// consommée par le foyer, sa CG ne doit pas peser sur la journée. Cohérent
+// avec V2.34.0 (budget + liste de courses ignorent ces slots).
 function computeDayCg(weekMenu, day, profile) {
   const slots = getAllActiveSlots(profile);
   const slot = weekMenu?.[day] || {};
+  const attendance = slot.attendance || {};
   let totalCg = 0;
   let covered = 0;
   for (const meal of slots) {
     const rid = slot[meal];
     if (!rid) continue;
+    const att = attendance[meal];
+    if (Array.isArray(att) && att.length === 0) continue; // repas extérieur
     const recipe = RECIPES.find(r => r.id === rid);
     if (!recipe) continue;
     const g = computeRecipeGlycemic(recipe);
@@ -17177,13 +17184,17 @@ function computeRecentStats(menus, profile, count = 8) {
     let slotsCount = 0;
     DAYS.forEach(day => {
       const slot = weekMenu[day] || {};
+      const attendance = slot.attendance || {};
       activeSlots.forEach(meal => {
         const rid = slot[meal];
-        if (rid) {
-          uniqueIds.add(rid);
-          slotsCount++;
-          totalUnique.add(rid);
-        }
+        if (!rid) return;
+        // V2.41.1 — exclut les repas pris à l'extérieur (attendance === [])
+        // de la diversité et du compte des slots, cohérent V2.34.0.
+        const att = attendance[meal];
+        if (Array.isArray(att) && att.length === 0) return;
+        uniqueIds.add(rid);
+        slotsCount++;
+        totalUnique.add(rid);
       });
     });
     if (slotsCount === 0) continue; // semaine vide → on ignore
