@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.39.0</title>
+<title>Menu IG Bas — V2.40.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -13639,6 +13639,12 @@ const dataRef = {
   },
   // ----- Équipement de cuisine -----
   equipment() { return REF.equipment; },
+  // ----- Cuisines (V2.39.0+, issue #2) -----
+  cuisines() { return REF.cuisines; },
+  cuisineLabel(id) {
+    const c = REF.cuisinesById?.get(id);
+    return c ? c.label : id;
+  },
   // ----- Unités -----
   canonicalUnit(unit) {
     const u = (unit || "").toString().trim().toLowerCase();
@@ -14397,7 +14403,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -14423,6 +14429,11 @@ function emptyHouseholdPreferences() {
     // calculs de fenêtre 7-jours restent alignés sur lundi (à refactorer
     // en V2.26.0+ si besoin remonté).
     shoppingDay: 1,
+    // V2.40.0 (issue #2) — Cuisines préférées du foyer (max 3, ids dans
+    // data-cuisines, hors "universel"). Vide = pondération neutre. Sinon,
+    // pickFromPool applique un boost ×2 sur les recettes dont
+    // recipe.cuisine ∈ preferredCuisines (cible ~50 % de share).
+    preferredCuisines: [],
   };
 }
 function emptyHousehold(id) {
@@ -14790,13 +14801,21 @@ function byOldestFirst(lastUsedMap) {
 function weightedPick(list, ratings, profile) {
   // V2.29.0 — utilise getEffectiveRating si profile fourni (moyenne pondérée
   // par adultEquivalent des membres ayant noté). Sinon ancien comportement.
+  // V2.40.0 (issue #2) — boost ×2 sur les recettes dont la cuisine est dans
+  // `profile.preferredCuisines` (max 3, hors "universel"). Cible ~50 % de
+  // share de recettes préférées sous distribution uniforme. Boost neutre
+  // (×1) si aucune cuisine sélectionnée.
+  const preferred = new Set(profile?.preferredCuisines || []);
   const weights = list.map(r => {
     const rating = profile ? getEffectiveRating(ratings, r.id, profile) : (ratings[r.id] ?? 3);
-    if (rating <= 1) return 0.2;
-    if (rating < 2.5) return 0.6;
-    if (rating < 3.5) return 1.0;
-    if (rating < 4.5) return 1.6;
-    return 2.4;
+    let w;
+    if (rating <= 1) w = 0.2;
+    else if (rating < 2.5) w = 0.6;
+    else if (rating < 3.5) w = 1.0;
+    else if (rating < 4.5) w = 1.6;
+    else w = 2.4;
+    if (preferred.size > 0 && r.cuisine && preferred.has(r.cuisine)) w *= 2;
+    return w;
   });
   const total = weights.reduce((a,b)=>a+b, 0);
   let roll = Math.random() * total;
@@ -15811,6 +15830,36 @@ function SetupView({state, update, updateProfile, onDone}) {
                 {eq.label}
               </label>
             ))}
+          </div>
+        </div>
+        {/* V2.40.0 (issue #2) — Cuisines préférées dans onboarding (parité avec Settings, leçon #18) */}
+        <div>
+          <label className="text-sm font-medium block mb-2">
+            🌍 Cuisines préférées <span className="text-xs text-slate-500 dark:text-slate-400 font-normal">(facultatif, max 3)</span>
+          </label>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+            Choisis jusqu'à 3 cuisines pour booster leur présence dans les menus. Modifiable plus tard dans Paramètres.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {dataRef.cuisines().filter(c => c.id !== "universel").map(c => {
+              const cur = p.preferredCuisines || [];
+              const selected = cur.includes(c.id);
+              const atMax = cur.length >= 3;
+              const disabled = !selected && atMax;
+              return (
+                <button key={c.id}
+                  type="button"
+                  disabled={disabled}
+                  onClick={() => updateProfile({preferredCuisines: selected ? cur.filter(x => x !== c.id) : [...cur, c.id]})}
+                  className={`px-3 py-2 rounded-md border text-sm transition ${
+                    selected ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200 font-semibold"
+                    : disabled ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
+                    : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                  }`}>
+                  <span className="mr-1">{c.emoji}</span>{c.label}{selected && <span className="ml-1 text-xs">✓</span>}
+                </button>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -17534,6 +17583,49 @@ function SettingsView({state, update, updateProfile}) {
           </select>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">L'ordre d'affichage des jours du planning commence ce jour-là. Le stockage interne des menus reste inchangé.</p>
         </div>
+      </div>
+
+      {/* V2.40.0 (issue #2) — Cuisines préférées : multi-select max 3, hors universel */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">🌍 Cuisines préférées</h3>
+          <span className="text-xs text-slate-500 dark:text-slate-400">
+            {(p.preferredCuisines || []).length}/3 sélectionnée{(p.preferredCuisines || []).length > 1 ? "s" : ""}
+          </span>
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Choisis jusqu'à 3 cuisines préférées du foyer. Les recettes de ces cuisines seront mises en avant lors de la génération (boost ×2, cible ~50 % des plats). Aucune sélection = pondération neutre.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {dataRef.cuisines().filter(c => c.id !== "universel").map(c => {
+            const selected = (p.preferredCuisines || []).includes(c.id);
+            const atMax = (p.preferredCuisines || []).length >= 3;
+            const disabled = !selected && atMax;
+            return (
+              <button key={c.id}
+                disabled={disabled}
+                onClick={() => {
+                  const cur = p.preferredCuisines || [];
+                  const next = selected
+                    ? cur.filter(x => x !== c.id)
+                    : [...cur, c.id];
+                  updateProfile({preferredCuisines: next});
+                }}
+                className={`px-3 py-2 rounded-md border text-sm transition ${
+                  selected ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200 font-semibold"
+                  : disabled ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
+                  : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                }`}
+                title={disabled ? "Maximum 3 cuisines — désélectionne-en une avant d'en ajouter une autre." : (selected ? "Cliquer pour désélectionner" : "Cliquer pour sélectionner")}>
+                <span className="mr-1">{c.emoji}</span>{c.label}
+                {selected && <span className="ml-2 text-xs">✓</span>}
+              </button>
+            );
+          })}
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Les recettes « universel » (sans signature culturelle marquée) gardent toujours une pondération neutre — elles assurent la diversité du fond de pool.
+        </p>
       </div>
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
