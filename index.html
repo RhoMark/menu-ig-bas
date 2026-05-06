@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.36.0</title>
+<title>Menu IG Bas — V2.37.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -15722,10 +15722,93 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
   );
 }
 
+// ----- Tendances : agrégats sur les N dernières semaines (V2.37.0, issue #23)
+// ---------------------------------------------------------------------------
+// Trois statistiques principales :
+//   - Diversité : nombre de recettes uniques sur la fenêtre, et taux de
+//     diversité par semaine (uniques/slots renseignés). Lit aussi
+//     `totalSlots` pour donner le contexte (ex : "76 uniques / 280 slots").
+//   - Budget réel vs cible : moyenne des coûts hebdo réels (estimateWeekCost),
+//     comparée à `profile.budgetWeekly`, en absolu et en delta %.
+//   - CG moyenne quotidienne : moyenne des CG par jour sur tous les jours
+//     "couverts" (≥ 1 ingrédient référencé), comparée au seuil foyer.
+// Renvoie aussi `perWeek[]` pour l'affichage détaillé par semaine.
+function computeRecentStats(menus, profile, count = 8) {
+  const weekKeys = Object.keys(menus).sort().reverse().slice(0, count);
+  const target = profile?.budgetWeekly || 0;
+  const cgTarget = householdCgTarget(profile);
+  const activeSlots = getAllActiveSlots(profile);
+  const totalUnique = new Set();
+  const perWeek = [];
+  let totalSlotsCount = 0;
+  let totalCost = 0;
+  let costSamplesCount = 0;
+  const dayCgValues = [];
+  for (const wk of weekKeys) {
+    const weekMenu = menus[wk];
+    if (!weekMenu) continue;
+    const uniqueIds = new Set();
+    let slotsCount = 0;
+    DAYS.forEach(day => {
+      const slot = weekMenu[day] || {};
+      activeSlots.forEach(meal => {
+        const rid = slot[meal];
+        if (rid) {
+          uniqueIds.add(rid);
+          slotsCount++;
+          totalUnique.add(rid);
+        }
+      });
+    });
+    if (slotsCount === 0) continue; // semaine vide → on ignore
+    totalSlotsCount += slotsCount;
+    const cost = estimateWeekCost(weekMenu, profile);
+    totalCost += cost;
+    costSamplesCount++;
+    const dayCgs = [];
+    DAYS.forEach(day => {
+      const dc = computeDayCg(weekMenu, day, profile);
+      if (dc.covered > 0) {
+        dayCgs.push(dc.cg);
+        dayCgValues.push(dc.cg);
+      }
+    });
+    const weekAvgCg = dayCgs.length > 0
+      ? Math.round(dayCgs.reduce((a, b) => a + b, 0) / dayCgs.length)
+      : null;
+    perWeek.push({
+      wk,
+      weekStart: new Date(wk),
+      slotsCount,
+      uniqueCount: uniqueIds.size,
+      diversityPct: Math.round(uniqueIds.size / slotsCount * 100),
+      cost: Math.round(cost * 100) / 100,
+      costDeltaPct: target > 0 ? Math.round((cost - target) / target * 100) : null,
+      avgDayCg: weekAvgCg,
+    });
+  }
+  const avgCost = costSamplesCount > 0 ? totalCost / costSamplesCount : 0;
+  return {
+    weeksCount: perWeek.length,
+    totalUnique: totalUnique.size,
+    totalSlots: totalSlotsCount,
+    avgCost,
+    targetCost: target,
+    avgCostDeltaPct: target > 0 && costSamplesCount > 0
+      ? Math.round((avgCost - target) / target * 100) : null,
+    avgDayCg: dayCgValues.length > 0
+      ? Math.round(dayCgValues.reduce((a, b) => a + b, 0) / dayCgValues.length)
+      : null,
+    cgTarget,
+    perWeek,
+  };
+}
+
 // ----- History View --------------------------------------------------------
 function HistoryView({state, setCurrentWeek, onGo}) {
   const weeks = Object.keys(state.menus).sort().reverse();
   const ratedCount = Object.keys(state.ratings).length;
+  const stats = computeRecentStats(state.menus, state.profile, 8);
   return (
     <div className="space-y-4">
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4">
@@ -15743,6 +15826,113 @@ function HistoryView({state, setCurrentWeek, onGo}) {
           })()} />
         </div>
       </div>
+      {/* V2.37.0 — Bloc Tendances (issue #23). 8 dernières semaines remplies. */}
+      {stats.weeksCount > 0 && (
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-1">📈 Tendances ({stats.weeksCount} dernière{stats.weeksCount > 1 ? "s" : ""} semaine{stats.weeksCount > 1 ? "s" : ""})</h3>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">Calculé sur les semaines stockées qui contiennent au moins une recette assignée.</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+            {/* Diversité */}
+            <div className="bg-sky-50 dark:bg-sky-950 rounded p-3 border border-sky-100 dark:border-sky-900">
+              <p className="text-xs text-sky-700 dark:text-sky-300 uppercase tracking-wide font-semibold">🎲 Diversité</p>
+              <p className="text-2xl font-bold text-sky-900 dark:text-sky-100 mt-1">
+                {stats.totalUnique} <span className="text-base font-normal text-sky-700 dark:text-sky-300">recettes uniques</span>
+              </p>
+              <p className="text-xs text-sky-700 dark:text-sky-300 mt-1">
+                sur {stats.totalSlots} services planifiés ({Math.round(stats.totalUnique / stats.totalSlots * 100)} % du total)
+              </p>
+            </div>
+            {/* Budget */}
+            <div className={`rounded p-3 border ${
+              stats.targetCost === 0 ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700"
+              : stats.avgCostDeltaPct == null ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700"
+              : Math.abs(stats.avgCostDeltaPct) <= 10 ? "bg-emerald-50 dark:bg-emerald-950 border-emerald-100 dark:border-emerald-900"
+              : stats.avgCostDeltaPct <= 25 ? "bg-amber-50 dark:bg-amber-950 border-amber-100 dark:border-amber-900"
+              : "bg-red-50 dark:bg-red-950 border-red-100 dark:border-red-900"
+            }`}>
+              <p className="text-xs uppercase tracking-wide font-semibold text-slate-700 dark:text-slate-300">💰 Budget moyen</p>
+              <p className="text-2xl font-bold mt-1 text-slate-900 dark:text-slate-100">
+                {stats.avgCost.toFixed(2)} € <span className="text-base font-normal text-slate-600 dark:text-slate-400">/ sem</span>
+              </p>
+              {stats.targetCost > 0 ? (
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                  Cible {stats.targetCost.toFixed(0)} € · <span className={`font-semibold ${
+                    stats.avgCostDeltaPct == null ? ""
+                    : stats.avgCostDeltaPct <= 0 ? "text-emerald-700 dark:text-emerald-300"
+                    : stats.avgCostDeltaPct <= 10 ? "text-emerald-700 dark:text-emerald-300"
+                    : stats.avgCostDeltaPct <= 25 ? "text-amber-700 dark:text-amber-300"
+                    : "text-red-700 dark:text-red-300"
+                  }`}>{stats.avgCostDeltaPct >= 0 ? "+" : ""}{stats.avgCostDeltaPct} %</span>
+                </p>
+              ) : (
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Aucune cible configurée (Paramètres)</p>
+              )}
+            </div>
+            {/* CG moyenne */}
+            <div className={`rounded p-3 border ${
+              stats.avgDayCg == null ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700"
+              : stats.avgDayCg <= stats.cgTarget.low ? "bg-emerald-50 dark:bg-emerald-950 border-emerald-100 dark:border-emerald-900"
+              : stats.avgDayCg <= stats.cgTarget.medium ? "bg-amber-50 dark:bg-amber-950 border-amber-100 dark:border-amber-900"
+              : "bg-red-50 dark:bg-red-950 border-red-100 dark:border-red-900"
+            }`}>
+              <p className="text-xs uppercase tracking-wide font-semibold text-slate-700 dark:text-slate-300">🩺 CG moyenne</p>
+              <p className="text-2xl font-bold mt-1 text-slate-900 dark:text-slate-100">
+                {stats.avgDayCg ?? "—"} <span className="text-base font-normal text-slate-600 dark:text-slate-400">/ jour</span>
+              </p>
+              <p className="text-xs text-slate-600 dark:text-slate-300 mt-1">
+                Cible foyer ≤ {stats.cgTarget.low} · {
+                  stats.avgDayCg == null ? "—"
+                  : stats.avgDayCg <= stats.cgTarget.low ? <span className="text-emerald-700 dark:text-emerald-300 font-semibold">dans la cible ✓</span>
+                  : stats.avgDayCg <= stats.cgTarget.medium ? <span className="text-amber-700 dark:text-amber-300 font-semibold">modéré</span>
+                  : <span className="text-red-700 dark:text-red-300 font-semibold">au-dessus ⚠️</span>
+                }
+              </p>
+            </div>
+          </div>
+          {/* Détail par semaine */}
+          <details className="text-sm">
+            <summary className="cursor-pointer text-slate-700 dark:text-slate-200 font-medium hover:text-slate-900 dark:hover:text-white">
+              Détail par semaine ▾
+            </summary>
+            <div className="mt-2 overflow-x-auto">
+              <table className="w-full text-xs">
+                <thead className="text-slate-500 dark:text-slate-400">
+                  <tr className="border-b border-slate-200 dark:border-slate-700">
+                    <th className="text-left py-1">Semaine du</th>
+                    <th className="text-right py-1">Coût</th>
+                    <th className="text-right py-1">Δ cible</th>
+                    <th className="text-right py-1">CG / j</th>
+                    <th className="text-right py-1">Uniques</th>
+                    <th className="text-right py-1">Slots</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {stats.perWeek.map(w => (
+                    <tr key={w.wk} className="border-b border-slate-100 dark:border-slate-800">
+                      <td className="py-1">{formatShort(w.weekStart)}</td>
+                      <td className="text-right font-mono">{w.cost.toFixed(2)} €</td>
+                      <td className={`text-right font-mono ${
+                        w.costDeltaPct == null ? "text-slate-400"
+                        : Math.abs(w.costDeltaPct) <= 10 ? "text-emerald-700 dark:text-emerald-300"
+                        : w.costDeltaPct <= 25 ? "text-amber-700 dark:text-amber-300"
+                        : "text-red-700 dark:text-red-300"
+                      }`}>{w.costDeltaPct == null ? "—" : `${w.costDeltaPct >= 0 ? "+" : ""}${w.costDeltaPct} %`}</td>
+                      <td className={`text-right font-mono ${
+                        w.avgDayCg == null ? "text-slate-400"
+                        : w.avgDayCg <= stats.cgTarget.low ? "text-emerald-700 dark:text-emerald-300"
+                        : w.avgDayCg <= stats.cgTarget.medium ? "text-amber-700 dark:text-amber-300"
+                        : "text-red-700 dark:text-red-300"
+                      }`}>{w.avgDayCg ?? "—"}</td>
+                      <td className="text-right font-mono">{w.uniqueCount}</td>
+                      <td className="text-right font-mono text-slate-500 dark:text-slate-400">{w.slotsCount}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </details>
+        </div>
+      )}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Semaines passées</h3>
         {weeks.length === 0 ? (
