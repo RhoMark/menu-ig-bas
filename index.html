@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.35.0</title>
+<title>Menu IG Bas — V2.36.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -553,7 +553,13 @@ if ("serviceWorker" in navigator) {
     {"id":"edamame","label":"Edamame surgelés","category":"frozen","soldByWeight":true},
     {"id":"edamame decortique","label":"Edamame décortiqués","category":"frozen","soldByWeight":true},
     {"id":"framboise ou","label":"Framboises fraîches ou surgelées","category":"frozen","soldByWeight":true},
-    {"id":"petit pois ou","label":"Petits pois frais ou surgelés","category":"frozen","soldByWeight":true}
+    {"id":"petit pois ou","label":"Petits pois frais ou surgelés","category":"frozen","soldByWeight":true},
+    {
+      "id": "potiron",
+      "label": "Potiron",
+      "category": "produce",
+      "soldByWeight": true
+    }
   ]
 }
 </script>
@@ -708,7 +714,12 @@ if ("serviceWorker" in navigator) {
     {"id": "tahini", "ig": 25, "carbsPer100g": 13},
     {"id": "pate de miso", "ig": 30, "carbsPer100g": 26},
     {"id": "pignon de pin", "ig": 25, "carbsPer100g": 13},
-    {"id": "avocat", "ig": 10, "carbsPer100g": 2}
+    {"id": "avocat", "ig": 10, "carbsPer100g": 2},
+    {
+      "id": "potiron",
+      "ig": 75,
+      "carbsPer100g": 7
+    }
   ]
 }
 </script>
@@ -856,7 +867,14 @@ if ("serviceWorker" in navigator) {
     {"id": "levure chimique", "price": 3.0, "unit": "100g", "source": "Carrefour Drive Q1 2026 (cross-check INSEE)", "updatedAt": "2026-04", "notes": "Sachets"},
     {"id": "vinaigrette maison", "price": 0.5, "unit": "100g", "source": "Estimation Carrefour/Lidl Q1 2026 (calibré utilisateur ×1.25)", "updatedAt": "2026-04", "notes": "Estimation"},
     {"id": "eau", "price": 0.0, "unit": "100g", "source": "Carrefour Drive Q1 2026 (cross-check INSEE)", "updatedAt": "2026-04", "notes": "Eau du robinet, négligeable"},
-    {"id": "sel", "price": 0.1, "unit": "100g", "source": "INSEE catégorie alimentaire Q1 2026", "updatedAt": "2026-04"}
+    {"id": "sel", "price": 0.1, "unit": "100g", "source": "INSEE catégorie alimentaire Q1 2026", "updatedAt": "2026-04"},
+    {
+      "id": "potiron",
+      "price": 0.3,
+      "unit": "100g",
+      "source": "Picard / Carrefour Drive Q2 2026 (cubes congelés)",
+      "updatedAt": "2026-05"
+    }
   ]
 }
 </script>
@@ -12236,6 +12254,457 @@ if ("serviceWorker" in navigator) {
         "Pour une version 'la veille' parfaite : verse dans un moule rectangulaire, couvre, congèle toute la nuit. Sors 5 min avant de servir pour que la consistance soit crémeuse.",
         "Sers en quenelles avec une cuillère trempée dans l'eau chaude. Décore avec quelques fruits rouges frais.",
         "Bien plus sain qu'une glace industrielle : zéro sucre raffiné, protéines du yaourt grec, antioxydants des fruits rouges."
+      ]
+    },
+    {
+      "id": "b45",
+      "name": "Pancakes flocons d'avoine et potiron",
+      "type": "breakfast",
+      "seasons": ["all"],
+      "prep": 10,
+      "cook": 10,
+      "diff": 2,
+      "cost": 1.1,
+      "kcal": 320,
+      "tags": ["vegetarian", "kid-friendly"],
+      "eq": ["stove", "blender"],
+      "allergens": ["gluten", "lactose", "eggs"],
+      "ing": [
+        ["Potiron", 150, "g", "produce"],
+        ["Flocons d'avoine complets", 60, "g", "pantry"],
+        ["Œuf", 1, "u", "dairy"],
+        ["Lait demi-écrémé (ou boisson d'amande)", 80, "ml", "dairy"],
+        ["Levure chimique", 0.5, "c.à.c", "pantry"],
+        ["Cannelle en poudre", 0.5, "c.à.c", "spices"],
+        ["Huile de coco (ou beurre)", 1, "c.à.c", "pantry"],
+        ["Sirop d'érable", 1, "c.à.s", "pantry"]
+      ],
+      "steps": [
+        "Si tu utilises du potiron surgelé : pose les cubes dans un bol au micro-ondes 5 min à 1000 W. Une fois tiède, jette l'eau qui s'est écoulée au fond.",
+        "Écrase les cubes à la fourchette (ou mixe-les 10 secondes au blender) pour obtenir une purée grossière, type compote épaisse.",
+        "Mixe les flocons d'avoine au blender 30 secondes pour les transformer en une farine grossière (texture sablonneuse — pas une poudre fine).",
+        "Dans un saladier, mélange purée de potiron, œuf, lait, farine d'avoine, levure chimique et cannelle. Tu obtiens une pâte épaisse mais qui s'étale en cuillère.",
+        "Chauffe une poêle antiadhésive avec un peu d'huile de coco (feu moyen — l'huile doit juste fumer légèrement).",
+        "Verse 2-3 c.à.s de pâte par pancake. Cuis 2 min jusqu'à ce que des bulles apparaissent en surface, retourne, encore 1 min sur l'autre face. Les pancakes sont prêts quand ils sont dorés en surface et moelleux dedans.",
+        "Sers tiède arrosé d'un filet de sirop d'érable."
+      ]
+    },
+    {
+      "id": "b46",
+      "name": "Smoothie bowl potiron-amande-cannelle",
+      "type": "breakfast",
+      "seasons": ["all"],
+      "prep": 5,
+      "cook": 0,
+      "diff": 1,
+      "cost": 1.3,
+      "kcal": 290,
+      "tags": ["vegetarian", "vegan", "quick", "no-cook", "kid-friendly"],
+      "eq": ["blender", "bowl"],
+      "allergens": ["nuts"],
+      "ing": [
+        ["Potiron", 150, "g", "produce"],
+        ["Banane", 0.5, "u", "produce"],
+        ["Boisson d'amande", 150, "ml", "dairy"],
+        ["Purée d'amande", 1, "c.à.s", "pantry"],
+        ["Cannelle en poudre", 0.5, "c.à.c", "spices"],
+        ["Flocons d'avoine complets", 20, "g", "pantry"],
+        ["Amandes effilées", 1, "c.à.s", "pantry"]
+      ],
+      "steps": [
+        "Le potiron surgelé en cubes va directement au blender — c'est lui qui va donner la texture froide et dense du bowl. Pas besoin de décongeler.",
+        "Mets dans le blender les cubes de potiron encore congelés, la demi-banane, la boisson d'amande, la purée d'amande et la cannelle.",
+        "Mixe 1 minute jusqu'à obtenir une crème épaisse et lisse, couleur orangée (texture entre yaourt brassé et glace italienne).",
+        "Verse dans un bol large, lisse la surface avec une cuillère.",
+        "Parsème par-dessus les flocons d'avoine et les amandes effilées en bandes parallèles pour faire joli.",
+        "Mange immédiatement à la cuillère."
+      ]
+    },
+    {
+      "id": "l117",
+      "name": "Salade tiède potiron rôti, lentilles vertes et feta",
+      "type": "lunch",
+      "seasons": ["all"],
+      "prep": 10,
+      "cook": 30,
+      "diff": 2,
+      "cost": 2.0,
+      "kcal": 460,
+      "tags": ["vegetarian", "batch-friendly"],
+      "eq": ["oven", "stove"],
+      "allergens": ["lactose"],
+      "ing": [
+        ["Potiron", 250, "g", "produce"],
+        ["Lentilles vertes", 70, "g", "pantry"],
+        ["Feta", 50, "g", "dairy"],
+        ["Roquette", 30, "g", "produce"],
+        ["Oignon rouge", 0.25, "u", "produce"],
+        ["Cumin moulu", 0.5, "c.à.c", "spices"],
+        ["Huile d'olive", 1.5, "c.à.s", "pantry"],
+        ["Vinaigre balsamique", 1, "c.à.c", "pantry"],
+        ["Graines de courge grillées", 1, "c.à.s", "pantry"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C (chaleur tournante).",
+        "Si potiron surgelé : étale les cubes encore gelés sur une plaque garnie de papier cuisson. Pas besoin de décongeler — ils vont rendre leur eau au four et finir par dorer.",
+        "Arrose le potiron de 1 c.à.s d'huile d'olive, saupoudre de cumin, sel et poivre. Mélange bien à la main pour enrober tous les cubes.",
+        "Enfourne 25-30 min en remuant à mi-cuisson. Les cubes doivent être tendres au cœur (vérifie avec la pointe d'un couteau qui s'enfonce facilement) et légèrement caramélisés sur les bords.",
+        "Pendant ce temps, rince les lentilles. Mets-les dans une casserole avec 3 fois leur volume d'eau froide salée. Porte à ébullition puis cuis 20 min à feu moyen — elles doivent rester fermes mais cédant sous la dent. Égoutte.",
+        "Émince finement l'oignon rouge en fines lamelles.",
+        "Dans un saladier, mélange lentilles tièdes, oignon, le reste d'huile d'olive et le vinaigre balsamique.",
+        "Dispose la roquette dans une grande assiette, ajoute le mélange lentilles, le potiron rôti par-dessus, émiette la feta et parsème de graines de courge. Sers tiède."
+      ]
+    },
+    {
+      "id": "l118",
+      "name": "Galettes potiron-quinoa-pois chiches au four",
+      "type": "lunch",
+      "seasons": ["all"],
+      "prep": 20,
+      "cook": 25,
+      "diff": 2,
+      "cost": 1.8,
+      "kcal": 440,
+      "tags": ["vegetarian", "vegan", "batch-friendly"],
+      "eq": ["oven", "stove", "blender"],
+      "allergens": [],
+      "ing": [
+        ["Potiron", 200, "g", "produce"],
+        ["Quinoa", 60, "g", "pantry"],
+        ["Pois chiches cuits (en boîte)", 120, "g", "pantry"],
+        ["Oignon", 0.5, "u", "produce"],
+        ["Ail", 1, "gousse", "produce"],
+        ["Cumin moulu", 1, "c.à.c", "spices"],
+        ["Paprika", 0.5, "c.à.c", "spices"],
+        ["Farine de pois chiche", 2, "c.à.s", "pantry"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Salade verte", 50, "g", "produce"],
+        ["Yaourt grec", 80, "g", "dairy"],
+        ["Citron", 0.5, "u", "produce"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Si potiron surgelé : décongèle les cubes au micro-ondes 5 min à 1000 W. Égoutte l'eau qui s'est écoulée.",
+        "Lance la cuisson du quinoa : dans une casserole, verse-le avec 2 fois son volume d'eau salée. Porte à ébullition, couvre et laisse cuire 12 min à feu doux. Quand il a absorbé toute l'eau et que les petits germes blancs sont visibles, c'est cuit. Réserve.",
+        "Préchauffe le four à 200 °C.",
+        "Égoutte et rince les pois chiches. Émince finement l'oignon. Écrase l'ail.",
+        "Dans un blender, mixe le potiron décongelé, les pois chiches, l'oignon, l'ail, le cumin et le paprika. Tu obtiens une pâte grossière (pas de purée lisse — il faut des morceaux pour la tenue).",
+        "Verse dans un saladier, ajoute le quinoa cuit, la farine de pois chiche, sel et poivre. Mélange. La pâte doit être assez consistante pour former des galettes — si elle est trop molle, ajoute 1 c.à.s de farine.",
+        "Forme 4 galettes d'environ 1.5 cm d'épaisseur (avec les mains humides pour ne pas que ça colle). Pose-les sur une plaque garnie de papier cuisson, badigeonne d'huile d'olive au pinceau.",
+        "Enfourne 20-25 min en retournant à mi-cuisson. Les galettes sont prêtes quand elles sont dorées et fermes au toucher.",
+        "Mélange le yaourt grec avec le jus du demi-citron pour faire une sauce.",
+        "Sers les galettes tièdes avec la salade verte et la sauce yaourt-citron à part."
+      ]
+    },
+    {
+      "id": "l119",
+      "name": "Tartines complètes potiron rôti, chèvre et graines de courge",
+      "type": "lunch",
+      "seasons": ["all"],
+      "prep": 5,
+      "cook": 25,
+      "diff": 1,
+      "cost": 1.9,
+      "kcal": 420,
+      "tags": ["vegetarian", "quick"],
+      "eq": ["oven"],
+      "allergens": ["gluten", "lactose"],
+      "ing": [
+        ["Potiron", 200, "g", "produce"],
+        ["Pain complet (tranche épaisse)", 2, "tranche", "bread"],
+        ["Bûche de chèvre", 60, "g", "dairy"],
+        ["Miel", 1, "c.à.c", "pantry"],
+        ["Graines de courge grillées", 1, "c.à.s", "pantry"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Roquette", 20, "g", "produce"],
+        ["Sel, poivre", 1, "pincée", "spices"],
+        ["Vinaigre balsamique", 1, "c.à.c", "pantry"]
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C.",
+        "Si potiron surgelé : étale les cubes gelés sur une plaque garnie de papier cuisson, sans les décongeler.",
+        "Arrose d'huile d'olive, sale et poivre. Mélange à la main.",
+        "Enfourne 20-25 min en remuant à mi-cuisson. Les cubes doivent être tendres et légèrement dorés sur les bords.",
+        "Toaste les tranches de pain complet 2-3 min au grille-pain ou directement au four sur la fin (la croûte doit croquer mais la mie reste moelleuse).",
+        "Coupe la bûche de chèvre en rondelles de 5 mm d'épaisseur.",
+        "Pose les tranches de chèvre sur les pains chauds, ajoute le potiron rôti par-dessus, drizzle d'un filet de miel et de vinaigre balsamique.",
+        "Termine avec une poignée de roquette et une c.à.s de graines de courge sur chaque tartine."
+      ]
+    },
+    {
+      "id": "l120",
+      "name": "Houmous de potiron rôti, crudités et pita complet",
+      "type": "lunch",
+      "seasons": ["all"],
+      "prep": 10,
+      "cook": 25,
+      "diff": 2,
+      "cost": 1.7,
+      "kcal": 410,
+      "tags": ["vegetarian", "vegan", "batch-friendly"],
+      "eq": ["oven", "blender"],
+      "allergens": ["gluten", "sesame"],
+      "ing": [
+        ["Potiron", 200, "g", "produce"],
+        ["Pois chiches cuits (en boîte)", 120, "g", "pantry"],
+        ["Tahini", 1.5, "c.à.s", "pantry"],
+        ["Citron", 0.5, "u", "produce"],
+        ["Ail", 1, "gousse", "produce"],
+        ["Cumin moulu", 0.5, "c.à.c", "spices"],
+        ["Paprika", 0.25, "c.à.c", "spices"],
+        ["Huile d'olive", 2, "c.à.s", "pantry"],
+        ["Pain pita complet", 1, "u", "bread"],
+        ["Carotte", 1, "u", "produce"],
+        ["Concombre", 0.5, "u", "produce"],
+        ["Radis", 4, "u", "produce"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C.",
+        "Si potiron surgelé : étale les cubes gelés sur une plaque garnie de papier cuisson. Arrose de 1 c.à.s d'huile d'olive, sel, poivre. Mélange à la main.",
+        "Enfourne 20-25 min en remuant à mi-cuisson — les cubes doivent être tendres et caramélisés sur les bords. Laisse tiédir 5 min hors du four.",
+        "Égoutte et rince les pois chiches. Pèle l'ail.",
+        "Dans le blender : potiron rôti tiède, pois chiches, tahini, jus du demi-citron, ail, cumin, paprika, 1 c.à.s d'huile d'olive et 2 c.à.s d'eau.",
+        "Mixe 1-2 min jusqu'à obtenir un houmous lisse et crémeux. Si trop épais, ajoute 1 c.à.s d'eau et re-mixe. Goûte, rectifie en sel/citron.",
+        "Coupe la carotte en bâtonnets, le concombre en rondelles épaisses, les radis en deux.",
+        "Coupe le pita en triangles, fais-les chauffer 2 min au four (pas trop secs, juste tièdes).",
+        "Sers le houmous dans un bol, dépose un filet d'huile d'olive et une pincée de paprika sur le dessus. À côté, les crudités et les triangles de pita pour tremper."
+      ]
+    },
+    {
+      "id": "d117",
+      "name": "Curry pois chiches-potiron au lait de coco",
+      "type": "dinner",
+      "seasons": ["all"],
+      "prep": 10,
+      "cook": 25,
+      "diff": 2,
+      "cost": 2.1,
+      "kcal": 480,
+      "tags": ["vegetarian", "vegan", "batch-friendly"],
+      "eq": ["stove"],
+      "allergens": [],
+      "ing": [
+        ["Potiron", 250, "g", "produce"],
+        ["Pois chiches cuits (en boîte)", 150, "g", "pantry"],
+        ["Lait de coco", 200, "ml", "pantry"],
+        ["Tomate concassée", 200, "g", "pantry"],
+        ["Oignon", 1, "u", "produce"],
+        ["Ail", 2, "gousse", "produce"],
+        ["Gingembre frais", 2, "cm", "produce"],
+        ["Pâte de curry doux", 1, "c.à.s", "spices"],
+        ["Curcuma en poudre", 0.5, "c.à.c", "spices"],
+        ["Coriandre", 1, "c.à.s", "produce"],
+        ["Riz basmati complet", 60, "g", "pantry"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Lance la cuisson du riz basmati complet : dans une casserole, 2 fois son volume d'eau salée, porte à ébullition, baisse à feu doux et couvre 20 min.",
+        "Le potiron surgelé peut aller directement dans la cocotte sans décongeler — la chaleur du curry s'en chargera.",
+        "Émince finement l'oignon. Écrase l'ail. Râpe le gingembre.",
+        "Chauffe l'huile dans une grande cocotte à feu moyen. Ajoute l'oignon et fais-le revenir 4-5 min jusqu'à ce qu'il devienne translucide (presque transparent).",
+        "Ajoute ail, gingembre, pâte de curry et curcuma. Remue 1 min — ça doit sentir fortement les épices.",
+        "Verse les tomates concassées et le potiron (gelé OK). Mélange, couvre et laisse cuire 8 min à feu moyen pour décongeler le potiron.",
+        "Ajoute pois chiches rincés et lait de coco. Sale, poivre. Laisse mijoter 10-12 min à feu doux à découvert — la sauce doit épaissir et le potiron doit être tendre (la pointe d'un couteau s'enfonce sans résistance).",
+        "Cisèle la coriandre fraîche.",
+        "Sers le curry sur le riz, parsème de coriandre fraîche au moment de servir."
+      ]
+    },
+    {
+      "id": "d118",
+      "name": "Gratin potiron-lentilles vertes-tomme",
+      "type": "dinner",
+      "seasons": ["all"],
+      "prep": 15,
+      "cook": 35,
+      "diff": 2,
+      "cost": 2.2,
+      "kcal": 470,
+      "tags": ["vegetarian", "batch-friendly"],
+      "eq": ["oven", "stove"],
+      "allergens": ["lactose"],
+      "ing": [
+        ["Potiron", 300, "g", "produce"],
+        ["Lentilles vertes", 80, "g", "pantry"],
+        ["Tomme légère râpée", 60, "g", "dairy"],
+        ["Crème légère", 100, "ml", "dairy"],
+        ["Oignon", 1, "u", "produce"],
+        ["Ail", 1, "gousse", "produce"],
+        ["Thym", 1, "branche", "spices"],
+        ["Noix de muscade", 1, "pincée", "spices"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Salade verte", 50, "g", "produce"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Rince les lentilles. Mets-les dans une casserole avec 3 fois leur volume d'eau froide non salée. Porte à ébullition puis cuis 20 min à feu moyen — elles doivent rester fermes mais cédant sous la dent. Égoutte et réserve.",
+        "Si potiron surgelé : décongèle 5-6 min au micro-ondes 1000 W. Égoutte l'eau écoulée.",
+        "Préchauffe le four à 200 °C.",
+        "Émince l'oignon. Écrase l'ail.",
+        "Chauffe l'huile dans une poêle, fais revenir l'oignon 4 min jusqu'à transparence. Ajoute l'ail, remue 30 secondes.",
+        "Ajoute les cubes de potiron tiède dans la poêle, le thym, sel et poivre. Cuis 5 min en mélangeant.",
+        "Dans un plat à gratin, mélange lentilles cuites et le contenu de la poêle. Tasse légèrement.",
+        "Verse la crème par-dessus et saupoudre généreusement de muscade râpée.",
+        "Couvre de tomme râpée. Enfourne 20 min — le fromage doit être doré et faire des cloques.",
+        "Sors du four, attends 5 min avant de servir (le gratin se tient mieux). Accompagne d'une salade verte vinaigrée."
+      ]
+    },
+    {
+      "id": "d119",
+      "name": "Chili végé potiron-haricots noirs-maïs",
+      "type": "dinner",
+      "seasons": ["all"],
+      "prep": 10,
+      "cook": 25,
+      "diff": 2,
+      "cost": 1.9,
+      "kcal": 450,
+      "tags": ["vegetarian", "vegan", "batch-friendly", "kid-friendly"],
+      "eq": ["stove"],
+      "allergens": [],
+      "ing": [
+        ["Potiron", 250, "g", "produce"],
+        ["Haricot noir (en boîte)", 150, "g", "pantry"],
+        ["Maïs doux (en boîte)", 100, "g", "pantry"],
+        ["Tomate concassée", 250, "g", "pantry"],
+        ["Oignon rouge", 1, "u", "produce"],
+        ["Ail", 2, "gousse", "produce"],
+        ["Poivron rouge", 0.5, "u", "produce"],
+        ["Cumin moulu", 1, "c.à.c", "spices"],
+        ["Paprika", 1, "c.à.c", "spices"],
+        ["Origan séché", 0.5, "c.à.c", "spices"],
+        ["Concentré de tomate", 1, "c.à.s", "pantry"],
+        ["Riz basmati complet", 60, "g", "pantry"],
+        ["Coriandre", 1, "c.à.s", "produce"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Lance la cuisson du riz basmati complet (2 fois son volume d'eau salée, ébullition puis 20 min à feu doux couvert).",
+        "Émince l'oignon rouge, l'ail et le poivron rouge en petits dés.",
+        "Chauffe l'huile dans une cocotte à feu moyen. Ajoute oignon et poivron, fais revenir 5 min jusqu'à ce que les légumes soient tendres (mais sans trop colorer).",
+        "Ajoute ail, cumin, paprika et origan. Remue 30 secondes — les épices doivent libérer leur odeur.",
+        "Verse les tomates concassées, le concentré de tomate et 100 ml d'eau. Ajoute les cubes de potiron (encore gelés OK). Sale, poivre.",
+        "Couvre et laisse cuire 12 min à feu moyen — le potiron doit être presque tendre.",
+        "Égoutte et rince les haricots noirs et le maïs. Ajoute-les dans la cocotte. Cuis encore 8 min à découvert pour épaissir la sauce. Le potiron doit être bien tendre, le chili légèrement épaissi.",
+        "Cisèle la coriandre fraîche.",
+        "Sers le chili sur le riz, parsème de coriandre."
+      ]
+    },
+    {
+      "id": "d120",
+      "name": "Tajine de poulet au potiron, pois chiches et pruneaux",
+      "type": "dinner",
+      "seasons": ["all"],
+      "prep": 15,
+      "cook": 35,
+      "diff": 2,
+      "cost": 3.2,
+      "kcal": 510,
+      "tags": ["batch-friendly"],
+      "eq": ["stove"],
+      "allergens": [],
+      "ing": [
+        ["Cuisse de poulet", 2, "u", "meat-fish"],
+        ["Potiron", 250, "g", "produce"],
+        ["Pois chiches cuits (en boîte)", 120, "g", "pantry"],
+        ["Pruneaux dénoyautés", 60, "g", "pantry"],
+        ["Oignon", 1, "u", "produce"],
+        ["Ail", 2, "gousse", "produce"],
+        ["Ras el hanout", 2, "c.à.c", "spices"],
+        ["Cannelle en poudre", 0.25, "c.à.c", "spices"],
+        ["Bouillon de légume", 300, "ml", "pantry"],
+        ["Semoule complète", 60, "g", "pantry"],
+        ["Coriandre", 1, "c.à.s", "produce"],
+        ["Amandes effilées", 1, "c.à.s", "pantry"],
+        ["Huile d'olive", 1, "c.à.s", "pantry"],
+        ["Sel, poivre", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Sale et poivre les cuisses de poulet sur les deux faces.",
+        "Chauffe l'huile dans une cocotte à feu moyen-vif. Fais dorer les cuisses 3 min de chaque côté — la peau doit être bien colorée et croustillante. Réserve sur une assiette.",
+        "Émince l'oignon, écrase l'ail.",
+        "Dans la cocotte (sans la nettoyer — les sucs vont parfumer), fais revenir l'oignon 4 min jusqu'à transparence. Ajoute l'ail, remue 30 secondes.",
+        "Ajoute le ras el hanout et la cannelle, remue 30 secondes pour libérer les arômes.",
+        "Remets les cuisses dans la cocotte. Verse le bouillon, ajoute le potiron (gelé OK) et les pruneaux. Couvre et laisse mijoter 25 min à feu doux.",
+        "Pendant ce temps, prépare la semoule : verse-la dans un saladier, recouvre d'eau bouillante salée à hauteur, couvre et laisse gonfler 5 min. Égraine à la fourchette avec 1 c.à.c d'huile d'olive.",
+        "Ajoute les pois chiches rincés dans la cocotte, cuis encore 5 min. Le potiron doit être tendre, le poulet bien cuit (le jus qui sort doit être clair, pas rosé).",
+        "Cisèle la coriandre. Fais griller à sec les amandes effilées 2 min dans une petite poêle (attention, ça brûle vite — remue sans arrêt).",
+        "Sers le tajine sur la semoule, parsème de coriandre et d'amandes grillées."
+      ]
+    },
+    {
+      "id": "s30",
+      "name": "Muffins potiron-noix-cannelle (sucre limité)",
+      "type": "snack",
+      "seasons": ["all"],
+      "prep": 15,
+      "cook": 25,
+      "diff": 2,
+      "cost": 0.7,
+      "kcal": 220,
+      "tags": ["vegetarian", "kid-friendly", "batch-friendly"],
+      "eq": ["oven", "blender"],
+      "allergens": ["gluten", "lactose", "eggs", "nuts"],
+      "ing": [
+        ["Potiron", 200, "g", "produce"],
+        ["Farine T80 (semi-complète)", 120, "g", "pantry"],
+        ["Flocons d'avoine complets", 40, "g", "pantry"],
+        ["Œuf", 2, "u", "dairy"],
+        ["Lait demi-écrémé", 100, "ml", "dairy"],
+        ["Sirop d'érable", 3, "c.à.s", "pantry"],
+        ["Huile de coco fondue (ou neutre)", 3, "c.à.s", "pantry"],
+        ["Cerneaux de noix concassés", 40, "g", "pantry"],
+        ["Cannelle en poudre", 1, "c.à.c", "spices"],
+        ["Levure chimique", 1, "c.à.c", "pantry"],
+        ["Bicarbonate de soude", 0.25, "c.à.c", "pantry"],
+        ["Sel", 1, "pincée", "spices"]
+      ],
+      "steps": [
+        "Si potiron surgelé : décongèle au micro-ondes 5 min à 1000 W. Égoutte. Mixe au blender 30 secondes pour obtenir une purée lisse.",
+        "Préchauffe le four à 180 °C (chaleur tournante). Place 8 caissettes en papier dans un moule à muffins.",
+        "Dans un grand saladier, mélange à la fourchette la purée de potiron, les œufs, le lait, le sirop d'érable et l'huile de coco fondue.",
+        "Dans un autre saladier, mélange farine, flocons d'avoine, levure, bicarbonate, cannelle et sel.",
+        "Verse les ingrédients secs sur les humides. Mélange à la maryse en faisant des mouvements d'incorporation (pas de fouet — sinon les muffins seront caoutchouteux). Tu obtiens une pâte épaisse mais coulante.",
+        "Ajoute les noix concassées, mélange brièvement.",
+        "Répartis la pâte dans les caissettes en remplissant aux 3/4. Saupoudre éventuellement de quelques noix supplémentaires sur le dessus.",
+        "Enfourne 22-25 min — les muffins sont prêts quand un cure-dent enfoncé au centre ressort sec.",
+        "Laisse tiédir 10 min dans le moule avant de démouler. Se garde 3 jours dans une boîte hermétique, ou se congèle 2 mois."
+      ]
+    },
+    {
+      "id": "des43",
+      "name": "Chia pudding potiron-vanille-cannelle",
+      "type": "dessert",
+      "seasons": ["all"],
+      "prep": 10,
+      "cook": 0,
+      "diff": 1,
+      "cost": 1.2,
+      "kcal": 240,
+      "rest": 240,
+      "advance": "4h",
+      "tags": ["vegetarian", "vegan", "no-cook", "batch-friendly"],
+      "eq": ["blender", "bowl"],
+      "allergens": [],
+      "ing": [
+        ["Potiron", 150, "g", "produce"],
+        ["Lait de coco", 200, "ml", "pantry"],
+        ["Graines de chia", 25, "g", "pantry"],
+        ["Sirop d'érable", 1, "c.à.s", "pantry"],
+        ["Cannelle en poudre", 0.5, "c.à.c", "spices"],
+        ["Extrait de vanille", 0.5, "c.à.c", "spices"],
+        ["Gingembre en poudre", 0.25, "c.à.c", "spices"],
+        ["Cerneaux de noix concassés", 1, "c.à.s", "pantry"]
+      ],
+      "steps": [
+        "Si potiron surgelé : décongèle au micro-ondes 5 min à 1000 W. Égoutte l'eau écoulée.",
+        "Mixe au blender potiron tiède, lait de coco, sirop d'érable, cannelle, vanille et gingembre en poudre. Tu obtiens une crème orangée lisse, type yaourt à boire.",
+        "Verse dans un bocal ou bol, ajoute les graines de chia. Mélange à la cuillère pour bien répartir les graines (pas de paquet au fond, sinon il restera dur).",
+        "Couvre et place au frigo minimum 4 heures (idéalement toute la nuit). Les graines vont gonfler et donner une texture épaisse type pudding.",
+        "Au moment de servir, mélange à nouveau (les graines tendent à se déposer). Parsème de noix concassées par-dessus. Sers frais."
       ]
     }
   ]
