@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.43.0</title>
+<title>Menu IG Bas — V2.43.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -15309,9 +15309,15 @@ function recipesUsedRecently(menus, currentWeekStart) {
       const ts = d.getTime();
       DAYS.forEach(day => {
         if (days[day]) {
+          const attendance = days[day].attendance || {};
           ["lunch","dinner"].forEach(m => {
             const id = days[day][m];
             if (!id) return;
+            // V2.43.1 — exclut les repas pris à l'extérieur (attendance===[])
+            // pour autoriser leur re-proposition sans attendre 14 jours : la
+            // recette n'a pas été cuisinée, donc rien à éviter.
+            const att = attendance[m];
+            if (Array.isArray(att) && att.length === 0) return;
             set.add(id);
             const prev = lastUsedMap.get(id);
             if (prev == null || ts > prev) lastUsedMap.set(id, ts);
@@ -15340,7 +15346,14 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
       if (t < startBound || t >= endBound) return;
       const slot = daysMap[day];
       if (!slot) return;
-      ALL_KEYS.forEach(meal => { if (slot[meal] === recipeId) count++; });
+      const attendance = slot.attendance || {};
+      ALL_KEYS.forEach(meal => {
+        if (slot[meal] !== recipeId) return;
+        // V2.43.1 — repas externalisé : ne compte pas (cohérent V2.34.0).
+        const att = attendance[meal];
+        if (Array.isArray(att) && att.length === 0) return;
+        count++;
+      });
     });
   });
   return count;
@@ -15454,8 +15467,14 @@ function recentMealSlots(menus, weekStart, mealKey, days = 7) {
     DAYS.forEach((day, idx) => {
       const dayDate = addDays(wkDate, idx);
       if (dayDate >= cutoff && dayDate < start) {
-        const id = daysMap[day]?.[mealKey];
-        if (id) set.add(id);
+        const slot = daysMap[day];
+        if (!slot) return;
+        const id = slot[mealKey];
+        if (!id) return;
+        // V2.43.1 — exclut les repas externalisés du cooldown (cohérent V2.34.0).
+        const att = (slot.attendance || {})[mealKey];
+        if (Array.isArray(att) && att.length === 0) return;
+        set.add(id);
       }
     });
   });
