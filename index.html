@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.41.1</title>
+<title>Menu IG Bas — V2.42.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -14810,10 +14810,61 @@ function stripProducePrep(canonName) {
   return s || canonName;
 }
 
+// V2.42.0 — Conversion des unités cuillère/pincée vers grammes (épices) ou ml
+// (liquides aromatiques) pour l'agrégation de la liste de courses. Évite la
+// redondance "3 lignes pour le même curry" quand des recettes utilisent
+// c.à.c, c.à.s ou pincée pour un même ingrédient.
+// Conventions culinaires standard : 1 c.à.c = 5 ml ou 2 g, 1 c.à.s = 15 ml ou
+// 6 g, 1 pincée = 0,5 g.
+const SPOON_TO_GRAMS = {"c.à.c": 2, "c.à.s": 6, "pincée": 0.5};
+const SPOON_TO_ML = {"c.à.c": 5, "c.à.s": 15};
+const LIQUID_AROMATIC_KEYS = ["huile", "vinaigre", "sauce", "lait", "jus", "sirop", "miel", "creme"];
+function isLiquidAromatic(canonName) {
+  if (!canonName) return false;
+  return LIQUID_AROMATIC_KEYS.some(k => canonName.includes(k));
+}
+// Renvoie {qty, unit} converti vers une unité de base si applicable, sinon null.
+// Règles : épices c.à.c/c.à.s/pincée → g ; liquides aromatiques c.à.c/c.à.s → ml.
+function unitConvertForAggregation(qty, unit, canonName, category) {
+  if (category === "spices") {
+    const f = SPOON_TO_GRAMS[unit];
+    if (f != null) return {qty: qty * f, unit: "g"};
+  } else if ((category === "pantry" || category === "dairy") && isLiquidAromatic(canonName)) {
+    const f = SPOON_TO_ML[unit];
+    if (f != null) return {qty: qty * f, unit: "ml"};
+  }
+  return null;
+}
+// Renvoie un hint type "≈ 1 c.à.s + 1 c.à.c" pour aider l'utilisateur à doser
+// sans balance/verre doseur. Null si non pertinent (qty trop petite ou trop
+// grande pour qu'une équivalence cuillère soit utile).
+function formatSpoonHint(qty, unit) {
+  if (unit === "g" && qty >= 1.5 && qty < 50) {
+    const cas = Math.floor((qty + 0.0001) / 6);
+    const rest = qty - cas * 6;
+    const cac = Math.round(rest / 2);
+    const parts = [];
+    if (cas > 0) parts.push(`${cas} c.à.s`);
+    if (cac > 0) parts.push(`${cac} c.à.c`);
+    return parts.length ? `≈ ${parts.join(" + ")}` : null;
+  }
+  if (unit === "ml" && qty >= 4 && qty < 100) {
+    const cas = Math.floor((qty + 0.0001) / 15);
+    const rest = qty - cas * 15;
+    const cac = Math.round(rest / 5);
+    const parts = [];
+    if (cas > 0) parts.push(`${cas} c.à.s`);
+    if (cac > 0) parts.push(`${cac} c.à.c`);
+    return parts.length ? `≈ ${parts.join(" + ")}` : null;
+  }
+  return null;
+}
+
 // Format spécifique liste de courses :
 //   - produce en "u" avec poids connu → "N (≈Xg/pièce)" (N arrondi entier sup.)
 //   - produce en "g" (vendu au poids) → arrondi au multiple de 50g (<500) ou 100g (≥500)
 //   - g/ml → kg/L au-delà de 1000
+//   - g/ml < 100 → hint cuillère "(≈ 1 c.à.s + 1 c.à.c)" si pertinent (V2.42.0)
 //   - unités discrètes (u, gousse, tranche...) → entier supérieur (ceil)
 function formatQtyShopping(qty, unit, name, category) {
   const u = dataRef.canonicalUnit(unit);
@@ -14842,6 +14893,20 @@ function formatQtyShopping(qty, unit, name, category) {
     const rounded = Math.round(l * 100) / 100;
     const asStr = Number.isInteger(rounded) ? String(rounded) : String(rounded).replace(".", ",");
     return `${asStr} L`;
+  }
+  // V2.42.0 — Petites quantités en g/ml hors produce : arrondi pratique +
+  // hint cuillère pour éviter de devoir peser pour 5 g de curry.
+  if (u === "g" && category !== "produce") {
+    const rounded = qty >= 100 ? Math.round(qty / 5) * 5 : Math.round(qty * 10) / 10;
+    const asStr = Number.isInteger(rounded) ? String(rounded) : String(rounded).replace(".", ",");
+    const hint = formatSpoonHint(rounded, "g");
+    return hint ? `${asStr} g (${hint})` : `${asStr} g`;
+  }
+  if (u === "ml") {
+    const rounded = qty >= 100 ? Math.round(qty / 5) * 5 : Math.round(qty);
+    const asStr = String(rounded);
+    const hint = formatSpoonHint(rounded, "ml");
+    return hint ? `${asStr} ml (${hint})` : `${asStr} ml`;
   }
   if (dataRef.isDiscreteUnit(u)) {
     const ceiled = Math.ceil(qty - 1e-9); // 1.7 → 2, 4.0 → 4 (tolérance flottants)
@@ -15651,6 +15716,14 @@ function aggregateShoppingList(weekMenu, profile) {
               cUnit = "u";
             }
           }
+        }
+        // V2.42.0 — Conversion vers unité de base (g pour épices, ml pour
+        // liquides aromatiques) afin que c.à.c, c.à.s et pincée d'un même
+        // ingrédient s'agrègent en une seule ligne dans la liste de courses.
+        const conv = unitConvertForAggregation(cQty, cUnit, cName, category);
+        if (conv) {
+          cQty = conv.qty;
+          cUnit = conv.unit;
         }
         // Clé enrichie de la catégorie pour éviter la fusion accidentelle entre
         // des items homonymes de catégories différentes (rare mais possible).
