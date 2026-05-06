@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.34.0</title>
+<title>Menu IG Bas — V2.34.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -14688,12 +14688,14 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const nAll = state.profile.members.length;
                     const nPresent = attendees == null ? nAll : attendees.length;
                     const partial = attendees != null && nPresent < nAll;
+                    const isExternal = attendees != null && nPresent === 0; // V2.34.1 — étiquette "🌃 Repas extérieur"
                     const showDessertHere = m.key === dessertTime; // affiche le dessert sous le bon repas
                     const dessertRecipe = showDessertHere ? RECIPES.find(r => r.id === slot.dessert) : null;
                     const dessertLocked = slot.locked?.dessert;
                     const dessertAttendees = attendance.dessert;
                     const dessertNPresent = dessertAttendees == null ? nAll : dessertAttendees.length;
                     const dessertPartial = dessertAttendees != null && dessertNPresent < nAll;
+                    const dessertIsExternal = dessertAttendees != null && dessertNPresent === 0;
                     return (
                       <div key={m.key} className={`border rounded p-2 text-sm ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
                         <div className="flex items-center justify-between mb-1">
@@ -14725,6 +14727,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(recipe).shortLabel} avance</span>
                               )}
                             </span>
+                            {isExternal && (
+                              <span className="block text-xs text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
+                            )}
                           </button>
                         ) : (
                           <p className="text-slate-400 dark:text-slate-500 italic">—</p>
@@ -14759,6 +14764,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                     <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(dessertRecipe).shortLabel} avance</span>
                                   )}
                                 </span>
+                                {dessertIsExternal && (
+                                  <span className="block text-[11px] text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
+                                )}
                               </button>
                             ) : (
                               <p className="text-slate-400 dark:text-slate-500 italic text-xs">— aucun dessert</p>
