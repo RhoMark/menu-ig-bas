@@ -57,6 +57,31 @@ Rédigées **comme si c'était un adolescent qui cuisine** :
 - Donner des repères visuels concrets (« jusqu'à ce que l'oignon
   devienne translucide »).
 
+### Cuisines (taxonomie V2.39.0+, issue #2)
+8 cuisines fermées dans `data-cuisines` : `francais`, `italien`,
+`mediterraneen`, `asiatique`, `indien`, `mexicain`, `maghrebin`,
+`universel` (= fusion + recettes sans signature culturelle).
+Chaque recette a un champ `cuisine: "<id>"` (singleton).
+
+**Règles de maintenance** (à appliquer à chaque Lot de recettes) :
+
+1. **Tagger toutes les nouvelles recettes** au moment de la rédaction.
+   Le champ `cuisine` est obligatoire. Validation runtime
+   `validateCuisineDistribution` log la distribution au boot.
+2. **Pousser les cuisines sous-représentées** pour préserver
+   l'équilibre, afin qu'aucun utilisateur ne se retrouve avec un pool
+   trop maigre s'il sélectionne une cuisine en préférée. Cible
+   pratique : **≥ 15 recettes par cuisine** (hors universel). Les Lots
+   futurs doivent prioriser les cuisines sous ce seuil avant les
+   cuisines déjà denses.
+3. **Extraction d'une nouvelle cat** : si au sein d'une cuisine
+   existante une sous-catégorie atteint **≥ 15 recettes** clairement
+   identifiables (ex : « vietnamien » au sein d'« asiatique »),
+   proposer l'extraction en cuisine distincte avec re-tagging.
+4. **Universel < 35 %** du catalogue. Au-delà, audit nécessaire :
+   beaucoup de recettes peuvent être taggées avec une cuisine plus
+   précise (la console.warn signale ces déséquilibres).
+
 ## Recommandations nutritionnelles internationales
 
 Les menus générés doivent respecter les **recommandations
