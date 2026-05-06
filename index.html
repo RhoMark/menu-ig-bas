@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.37.0</title>
+<title>Menu IG Bas — V2.37.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -15722,6 +15722,29 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
   );
 }
 
+// V2.37.1 — Helpers pour filtrer les semaines stockées sous un autre
+// shoppingDay (anciennes ancres après changement du paramètre).
+// ---------------------------------------------------------------------------
+// `isCurrentShoppingDayKey(wk, sd)` : on probe une date au milieu de la semaine
+// représentée par wk, on re-calcule `weekKey(probe, sd)` et on compare. Si
+// match, la clé est cohérente avec le shoppingDay courant ; sinon c'est un
+// orphelin d'une ancienne configuration.
+// `weekStartFromKey(wk, sd)` : renvoie le Date du PREMIER JOUR AFFICHÉ de la
+// semaine (= weekStartOf appliqué à une probe interne). Évite le bug de label
+// « Semaine du 3 juin » quand la semaine affichée commence en réalité le
+// vendredi 5 juin (sd=4) : `new Date(wk)` retombe sur la veille à cause du
+// décalage TZ + de l'ancrage shoppingDay.
+function isCurrentShoppingDayKey(wk, shoppingDay) {
+  const probe = new Date(wk);
+  probe.setDate(probe.getDate() + 3); // mid-week, sûr d'être DANS la semaine
+  return weekKey(probe, shoppingDay) === wk;
+}
+function weekStartFromKey(wk, shoppingDay) {
+  const probe = new Date(wk);
+  probe.setDate(probe.getDate() + 3);
+  return weekStartOf(probe, shoppingDay);
+}
+
 // ----- Tendances : agrégats sur les N dernières semaines (V2.37.0, issue #23)
 // ---------------------------------------------------------------------------
 // Trois statistiques principales :
@@ -15736,6 +15759,7 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
 function computeRecentStats(menus, profile, count = 8) {
   const weekKeys = Object.keys(menus).sort().reverse().slice(0, count);
   const target = profile?.budgetWeekly || 0;
+  const sd = profile?.shoppingDay ?? 1;
   const cgTarget = householdCgTarget(profile);
   const activeSlots = getAllActiveSlots(profile);
   const totalUnique = new Set();
@@ -15778,7 +15802,7 @@ function computeRecentStats(menus, profile, count = 8) {
       : null;
     perWeek.push({
       wk,
-      weekStart: new Date(wk),
+      weekStart: weekStartFromKey(wk, sd),
       slotsCount,
       uniqueCount: uniqueIds.size,
       diversityPct: Math.round(uniqueIds.size / slotsCount * 100),
@@ -15806,13 +15830,27 @@ function computeRecentStats(menus, profile, count = 8) {
 
 // ----- History View --------------------------------------------------------
 function HistoryView({state, setCurrentWeek, onGo}) {
-  const weeks = Object.keys(state.menus).sort().reverse();
+  const sd = state.profile?.shoppingDay ?? 1;
   const ratedCount = Object.keys(state.ratings).length;
-  const stats = computeRecentStats(state.menus, state.profile, 8);
+  // V2.37.1 — Filtre les semaines stockées sous une AUTRE valeur de shoppingDay
+  // (vestiges d'une session précédente où HedgeX avait un autre jour de
+  // courses). Pas de suppression : si l'utilisateur rebascule, elles
+  // réapparaîtront. Le filtre s'applique à la liste, aux Tendances, et aux
+  // counters d'en-tête.
+  const allKeys = Object.keys(state.menus);
+  const weeks = allKeys.filter(wk => isCurrentShoppingDayKey(wk, sd)).sort().reverse();
+  const hiddenCount = allKeys.length - weeks.length;
+  const filteredMenus = Object.fromEntries(weeks.map(wk => [wk, state.menus[wk]]));
+  const stats = computeRecentStats(filteredMenus, state.profile, 8);
   return (
     <div className="space-y-4">
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4">
         <h2 className="text-xl font-bold mb-3">📊 Historique & suivi</h2>
+        {hiddenCount > 0 && (
+          <p className="text-xs bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 text-sky-800 dark:text-sky-200 rounded p-2 mb-3">
+            ℹ️ {hiddenCount} semaine{hiddenCount > 1 ? "s" : ""} stockée{hiddenCount > 1 ? "s" : ""} sous un autre jour de courses sont masquée{hiddenCount > 1 ? "s" : ""}. Bascule le paramètre « Jour des courses » pour les voir — aucune donnée n'a été supprimée.
+          </p>
+        )}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           <Stat label="Semaines planifiées" value={weeks.length} />
           <Stat label="Recettes notées" value={ratedCount} />
@@ -15940,7 +15978,10 @@ function HistoryView({state, setCurrentWeek, onGo}) {
         ) : (
           <div className="space-y-2">
             {weeks.map(w => {
-              const d = new Date(w);
+              // V2.37.1 — utilise le canonical weekStart (premier jour affiché)
+              // au lieu de `new Date(wk)` qui retombait sur la veille du
+              // shoppingDay à cause du décalage TZ.
+              const d = weekStartFromKey(w, sd);
               return (
                 <button key={w} onClick={() => { setCurrentWeek(d); onGo(); }}
                   className="w-full text-left p-3 bg-slate-50 dark:bg-slate-800 hover:bg-emerald-50 dark:bg-emerald-950 rounded flex justify-between items-center">
