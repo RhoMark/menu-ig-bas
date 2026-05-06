@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.34.1</title>
+<title>Menu IG Bas — V2.35.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -12258,12 +12258,13 @@ const SHOPPING_DAY_LABELS = {
   0: "Dimanche", 1: "Lundi", 2: "Mardi", 3: "Mercredi",
   4: "Jeudi", 5: "Vendredi", 6: "Samedi",
 };
-// Renvoie l'ordre des jours pour l'affichage planning, en commençant par le
-// shoppingDay (jour des courses) du foyer. Pour l'instant utilisé en UI
-// uniquement, le stockage interne reste indexé en lundi-dimanche (V2.25.0
-// minimal — refactor stockage prévu V2.26.0+ si besoin remonté).
+// V2.35.0 — Renvoie l'ordre des jours pour l'affichage planning, en commençant
+// par le **lendemain** du shoppingDay (jour suivant les courses). Cohérent avec
+// weekStartOf : pour sd=1 (lundi) la planning commence mardi, pour sd=4 (jeudi)
+// elle commence vendredi.
 function daysOrderedFor(shoppingDay = 1) {
-  const startIdx = (shoppingDay + 6) % 7;
+  // shoppingDay+1 (JS getDay) → DAYS index : ((sd+1)+6)%7 = sd%7.
+  const startIdx = shoppingDay % 7;
   const days = [];
   const daysShort = [];
   const offsetDays = [];
@@ -12474,30 +12475,28 @@ function validateRecipeCatalog(recipes, catalog) {
 window.__catalogValidation = validateRecipeCatalog(RECIPES, REF.ingredients);
 
 // ----- Helpers -------------------------------------------------------------
-function mondayOf(date) {
-  const d = new Date(date); d.setHours(0,0,0,0);
-  const day = (d.getDay() + 6) % 7; // 0=Mon
-  d.setDate(d.getDate() - day);
-  return d;
-}
-// V2.27.0 — Renvoie le shoppingDay de la semaine contenant `date`. C'est
-// la "vraie fenêtre glissante" alignée sur le jour des courses du foyer.
+// V2.35.0 — Le début de la "semaine affichée" est le LENDEMAIN du
+// shoppingDay : on ne peut pas cuisiner avec des courses qu'on n'a pas
+// encore faites le matin même. Donc shoppingDay=lundi → semaine affichée
+// mardi → lundi suivant ; shoppingDay=jeudi → vendredi → jeudi suivant.
 // shoppingDay : convention JS getDay() (0=Sun, 1=Mon, ..., 6=Sat).
-// Default 1 = lundi (= mondayOf, rétrocompat).
 function weekStartOf(date, shoppingDay = 1) {
-  if (shoppingDay === 1) return mondayOf(date);
+  const dayAfter = (shoppingDay + 1) % 7;
   const d = new Date(date); d.setHours(0,0,0,0);
-  const day = (d.getDay() - shoppingDay + 7) % 7;
-  d.setDate(d.getDate() - day);
+  const diff = (d.getDay() - dayAfter + 7) % 7;
+  d.setDate(d.getDate() - diff);
   return d;
 }
 function addDays(d, n){ const x = new Date(d); x.setDate(x.getDate()+n); return x; }
-// V2.27.0 — weekKey paramétrable. Pour shoppingDay=1 (default), comportement
-// identique à V2.26.0 : clé = lundi ISO de la semaine. Pour autre valeur,
-// clé = jour des courses ISO de la semaine.
+// V2.35.0 — weekKey reste ancré sur le shoppingDay lui-même (= weekStart - 1
+// jour) pour conserver la rétrocompatibilité avec les menus stockés depuis
+// V2.27.0. Pour sd=1 (lundi), la clé est toujours le lundi ISO ; pour sd=4
+// (jeudi), toujours le jeudi ISO. Aucune migration nécessaire.
 function weekKey(d, shoppingDay = 1){
-  const m = weekStartOf(d, shoppingDay);
-  return m.toISOString().slice(0,10);
+  const start = weekStartOf(d, shoppingDay);
+  const k = new Date(start);
+  k.setDate(k.getDate() - 1);
+  return k.toISOString().slice(0,10);
 }
 function formatDateFR(d){
   return d.toLocaleDateString("fr-FR", {weekday:"long", day:"numeric", month:"long"});
@@ -14659,8 +14658,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           {(() => {
             const ordered = daysOrderedFor(state.profile.shoppingDay ?? 1);
             return ordered.days.map((day, displayIdx) => {
-              // V2.27.0 — currentWeek est maintenant aligné sur shoppingDay,
-              // donc displayIdx donne directement l'offset jour.
+              // V2.35.0 — currentWeek est aligné sur le lendemain du shoppingDay
+              // (= premier jour affiché), donc displayIdx donne directement
+              // l'offset jour.
               const date = addDays(currentWeek, displayIdx);
               const slot = currentMenu[day] || {};
               const attendance = slot.attendance || {};
@@ -16221,9 +16221,9 @@ function PrintMenuPage({weekStart, menu, profile}) {
         <div className="text-xs text-slate-500 dark:text-slate-400">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
       </div>
       {(() => {
-        // V2.27.1 — Itération alignée sur shoppingDay du foyer (cohérent
-        // avec MenuView V2.27.0). weekStart est déjà aligné, donc
-        // addDays(weekStart, i) donne directement la date du i-ème jour.
+        // V2.35.0 — weekStart pointe sur le lendemain du shoppingDay (=
+        // premier jour de la semaine de menus), donc addDays(weekStart, i)
+        // donne directement la date du i-ème jour. Cohérent avec MenuView.
         const orderedPrint = daysOrderedFor(profile?.shoppingDay ?? 1);
         return (
       <table className="w-full border-collapse">
