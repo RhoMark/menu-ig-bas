@@ -57,6 +57,31 @@ Rédigées **comme si c'était un adolescent qui cuisine** :
 - Donner des repères visuels concrets (« jusqu'à ce que l'oignon
   devienne translucide »).
 
+### Dénominations d'ingrédients (V2.43.0+)
+**Règle non négociable** : un ingrédient affiché dans la liste de
+courses doit être **immédiatement actionnable au magasin**, sans
+revenir à la recette pour comprendre ce qu'il faut acheter.
+
+**Termes à toujours qualifier** (jamais de version générique seule
+dans le champ `ing[0]` d'une recette) :
+
+| Générique (interdit) | Préciser parmi |
+|---|---|
+| `Lait` | `Lait demi-écrémé`, `Lait écrémé`, `Lait entier`, `Lait d'amande`, `Lait de coco` |
+| `Riz` | `Riz basmati complet`, `Riz long complet`, `Riz rond complet`, `Riz brun` |
+| `Pâtes` | `Pâtes complètes`, `Pâtes intégrales`, `Pâtes de sarrasin` |
+| `Farine` | `Farine T80 (semi-complète)`, `Farine T110`, `Farine de pois chiche`, `Farine d'épeautre` |
+| `Yaourt` | `Yaourt nature`, `Yaourt grec`, `Yaourt brassé` |
+| `Beurre` | `Beurre doux`, `Beurre demi-sel`, `Beurre clarifié` |
+| `Pain` | `Pain complet`, `Pain au levain`, `Pain de seigle`, `Pain pita complet` |
+| `Sucre` | `Sucre roux`, `Sucre de coco`, `Miel`, `Sirop d'érable` (préférer pour IG bas) |
+| `Huile` | `Huile d'olive`, `Huile de coco`, `Huile de sésame`, `Huile de noix` |
+
+Si une recette tolère plusieurs variantes, l'écrire explicitement :
+`Lait demi-écrémé (ou boisson d'amande)`. La canonicalisation
+(`canonicalName`) supprime les parenthèses pour l'agrégation, mais
+le label affiché conserve l'option pour l'utilisateur.
+
 ### Cuisines (taxonomie V2.39.0+, issue #2)
 8 cuisines fermées dans `data-cuisines` : `francais`, `italien`,
 `mediterraneen`, `asiatique`, `indien`, `mexicain`, `maghrebin`,
