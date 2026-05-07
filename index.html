@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.56.0</title>
+<title>Menu IG Bas — V2.57.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -18631,7 +18631,7 @@ function emptyHousehold(id) {
     ratings: {},
     pantry: {},
     journal: {},
-    settings: { onboarded: false },
+    settings: { onboarded: false, hasSeenTutorial: false },
   };
 }
 function emptyV2State() {
@@ -18683,6 +18683,9 @@ function projectRuntime(v2) {
   const h = v2.households[ah] || emptyHousehold(ah);
   return {
     onboarded:    !!h.settings?.onboarded,
+    // V2.57.0 (issue #84) — Tour onboarding affiché 1× après le setup.
+    // Re-déclenchable via Settings → bouton "Refaire le tutoriel".
+    hasSeenTutorial: !!h.settings?.hasSeenTutorial,
     // Consentement RGPD donné une fois et persisté (V2.11.0+).
     // Si null/undefined → l'app affiche le modal de bienvenue bloquant.
     consentedAt:  h.settings?.consentedAt || null,
@@ -18722,7 +18725,7 @@ function applyRuntimeToV2(runtime) {
         ratings:      runtime.ratings,
         pantry:       runtime.pantryChecks,
         journal:      runtime.journal,
-        settings:     { ...prevHouse.settings, onboarded: !!runtime.onboarded, consentedAt: runtime.consentedAt || null },
+        settings:     { ...prevHouse.settings, onboarded: !!runtime.onboarded, hasSeenTutorial: !!runtime.hasSeenTutorial, consentedAt: runtime.consentedAt || null },
       },
     },
     session: runtime._session,
@@ -19513,6 +19516,142 @@ function estimateWeekCost(weekMenu, profile) {
 // Bloque l'accès à l'app tant que l'utilisateur n'a pas pris connaissance
 // du modèle « 100 % local, aucun serveur ». Une fois validé, on persiste
 // `consentedAt: <ISO>` dans le household pour ne plus l'afficher.
+// ===========================================================================
+// V2.57.0 (issue #84) — Tour onboarding interactif au 1er lancement.
+// Modal centré pleine fenêtre, 10 étapes pédagogiques. Pas d'ancrage DOM
+// (plus robuste : ne casse pas si l'UI évolue). Skippable à tout moment ;
+// re-déclenchable depuis Settings.
+// ===========================================================================
+const TUTORIAL_STEPS = [
+  {
+    emoji: "🥗",
+    title: "Bienvenue sur Menu IG Bas !",
+    body: "Cette app génère automatiquement des menus équilibrés à index glycémique bas pour ton foyer, semaine après semaine. Toutes tes données restent sur ton appareil — aucun serveur, aucun tracking.",
+    highlight: "Tour rapide en 10 étapes (≈ 3 min). Tu peux passer à tout moment et reprendre depuis Paramètres.",
+  },
+  {
+    emoji: "👨‍👩‍👧‍👦",
+    title: "Ajoute ta famille",
+    body: "Renseigne chaque membre du foyer (prénom, année de naissance, sexe). L'âge sert à ajuster les portions automatiquement (un enfant ne mange pas comme un adulte).",
+    highlight: "Tu peux ajouter, modifier ou retirer un membre à tout moment depuis Paramètres → Membres.",
+  },
+  {
+    emoji: "🩺",
+    title: "Profils santé",
+    body: "Pour chaque membre, choisis un profil : sain (par défaut), diabète T1/T2, SOPK, insulinorésistance, hypertension, dyslipidémies, rééquilibrage, prévention cardio, sportif force, sportif endurance.",
+    highlight: "Le foyer adopte automatiquement le profil le plus contraignant. Un menu adapté au membre le plus exigeant convient à tous les autres (logique min, comme pour les allergènes).",
+  },
+  {
+    emoji: "⚠️",
+    title: "Allergènes & exclusions",
+    body: "Définis les allergies par membre OU pour tout le foyer. La vérification est renforcée jusqu'aux ingrédients composés (sauces, mélanges d'épices, préparations).",
+    highlight: "Un membre allergique aux fruits à coque ne verra jamais une recette qui contient des amandes, même cachées dans une sauce.",
+  },
+  {
+    emoji: "🌍",
+    title: "Préférences cuisines",
+    body: "Choisis jusqu'à 3 cuisines préférées (français, italien, méditerranéen, asiatique, indien, mexicain, maghrébin). Les recettes de ces cuisines seront mises en avant (~50 % du menu).",
+    highlight: "Définis aussi tes équipements (four, plancha, blender…), ton budget hebdomadaire, ton niveau de cuisine et le jour de tes courses.",
+  },
+  {
+    emoji: "🍽️",
+    title: "Génère ton menu",
+    body: "L'app crée 7 jours × 5 services (petit-déj / déjeuner / dîner / goûter / dessert) en respectant : profils santé, allergènes, saison, équipement, niveau, budget, anti-récurrence sur 14 jours.",
+    highlight: "Bouton « Générer » sur le planning. Tu peux régénérer à tout moment, verrouiller des slots 🔒 pour qu'ils soient préservés, ou remplacer manuellement.",
+  },
+  {
+    emoji: "📖",
+    title: "Fiche recette & filtres",
+    body: "Clique sur un slot pour ouvrir la recette : ingrédients, étapes (style « ado qui cuisine », gestes définis), badges CG/IG, allergènes, kcal, temps. Note tes recettes (1-5★) — les ≤2★ sont exclues.",
+    highlight: "Bibliothèque consultable indépendamment du menu, avec filtres par cuisine, type, saison, allergie, et tags (batch-friendly, vegetarian, quick…).",
+  },
+  {
+    emoji: "🛒",
+    title: "Liste de courses agrégée",
+    body: "À partir du planning, l'app calcule automatiquement la liste de courses : ingrédients fusionnés par nom canonique, quantités scalées par membre/présence, regroupés par catégorie (épicerie, fruits/légumes, viande/poisson…).",
+    highlight: "Coche les articles déjà chez toi pour les exclure. Bouton « Imprimer » génère un PDF prêt à emporter. Budget total estimé affiché.",
+  },
+  {
+    emoji: "🍱",
+    title: "Mode batch cooking",
+    body: "Active depuis Paramètres pour préparer plusieurs repas en une session le week-end. L'algo privilégie les recettes batch-friendly (préparables à l'avance, conservables 3-4 j).",
+    highlight: "Un badge « 🍱 Batch ON/OFF » sur le planning bascule juste pour la semaine courante. Une page « Préparation [Jour] » apparaît avec to-do séquentielle et estimation du temps total.",
+  },
+  {
+    emoji: "♻️📔",
+    title: "Restes & journal bien-être (optionnel)",
+    body: "Mode restes (Paramètres) : suggère pour le lendemain ou surlendemain une recette qui consomme les restes typiques (poulet rôti, riz cuit, ratatouille…). Journal bien-être (Paramètres) : saisie hebdo de 3 indicateurs (énergie, digestion, sommeil) + notes.",
+    highlight: "Ces 2 modes sont opt-in et désactivés par défaut. Active-les si pertinent pour toi.",
+  },
+];
+
+function OnboardingTour({onComplete, onSkip}) {
+  const [step, setStep] = useState(0);
+  const total = TUTORIAL_STEPS.length;
+  const isLast = step === total - 1;
+  const cur = TUTORIAL_STEPS[step];
+
+  return (
+    <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 max-w-2xl w-full p-6 my-8">
+        <div className="flex items-start justify-between mb-4">
+          <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+            Étape {step + 1} sur {total}
+          </div>
+          <button onClick={onSkip}
+            title="Passer le tutoriel — tu pourras le rejouer depuis Paramètres."
+            className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+            ✕ Passer
+          </button>
+        </div>
+
+        <div className="text-center mb-6">
+          <div className="text-6xl mb-4">{cur.emoji}</div>
+          <h2 className="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-3">{cur.title}</h2>
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed">{cur.body}</p>
+        </div>
+
+        {cur.highlight && (
+          <div className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 rounded p-3 mb-6">
+            <p className="text-sm text-emerald-900 dark:text-emerald-100">
+              <strong>💡 </strong>{cur.highlight}
+            </p>
+          </div>
+        )}
+
+        {/* Progression bar */}
+        <div className="flex gap-1 mb-6">
+          {TUTORIAL_STEPS.map((_, i) => (
+            <div key={i} className={`h-1.5 flex-1 rounded-full transition ${
+              i <= step ? "bg-emerald-500" : "bg-slate-200 dark:bg-slate-700"
+            }`} />
+          ))}
+        </div>
+
+        <div className="flex items-center justify-between gap-2">
+          {step > 0 ? (
+            <button onClick={() => setStep(step - 1)}
+              className="px-4 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 rounded-md text-sm font-medium">
+              ← Précédent
+            </button>
+          ) : <span />}
+          {!isLast ? (
+            <button onClick={() => setStep(step + 1)}
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md text-sm font-medium">
+              Suivant →
+            </button>
+          ) : (
+            <button onClick={onComplete}
+              className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-md text-sm font-semibold">
+              ✓ C'est parti !
+            </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ConsentModal({onConsent}) {
   return (
     <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto">
@@ -19880,6 +20019,19 @@ function App({initialState}) {
   // d'écran blanc), mais le z-50 backdrop-blur assure le côté bloquant.
   if (!state.consentedAt) {
     return <ConsentModal onConsent={() => update({consentedAt: new Date().toISOString()})} />;
+  }
+
+  // V2.57.0 (issue #84) — Tour onboarding affiché 1× après le setup initial.
+  // Conditions : consent OK + setup terminé (onboarded) + pas encore vu.
+  // Re-déclenchable via Settings → bouton "Refaire le tutoriel".
+  const showTutorial = state.onboarded && !state.hasSeenTutorial && view !== "setup";
+  if (showTutorial) {
+    return (
+      <OnboardingTour
+        onComplete={() => update({hasSeenTutorial: true})}
+        onSkip={() => update({hasSeenTutorial: true})}
+      />
+    );
   }
 
   if (printMode === "menu") return <PrintMenuPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} />;
@@ -22727,6 +22879,21 @@ function SettingsView({state, update, updateProfile}) {
             target="_blank" rel="noopener noreferrer"
             className="text-emerald-700 dark:text-emerald-300 underline">PRIVACY.md sur GitHub</a>.
         </p>
+      </div>
+
+      {/* V2.57.0 (issue #84) — Re-déclencher le tutoriel onboarding */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-2">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">🎓 Aide & tutoriel</h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Le tour guidé d'introduction (10 étapes pédagogiques) est affiché une seule fois après la création du foyer. Tu peux le rejouer à tout moment.
+        </p>
+        <button onClick={() => {
+          if (confirm("Rejouer le tour guidé d'introduction (10 étapes) ?")) {
+            update({hasSeenTutorial: false});
+          }
+        }} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">
+          🎓 Refaire le tutoriel
+        </button>
       </div>
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
