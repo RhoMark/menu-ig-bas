@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.59.2</title>
+<title>Menu IG Bas — V2.59.3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20944,7 +20944,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                   (ex : "Buddha bowl quinoa rouge, betterave, halloumi
                                   grillé et épinards"). Le nom complet reste visible au
                                   survol via title=. */}
-                              <span className="flex-1 line-clamp-2 leading-snug">{recipe.name}</span>
+                              <span className="flex-1 line-clamp-3 leading-snug">{recipe.name}</span>
                               {recipeAdvanceInfo(recipe) && (
                                 <span title={`À préparer ${recipeAdvanceInfo(recipe).label}`}
                                       className="text-amber-600 text-sm flex-shrink-0">
@@ -21000,7 +21000,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                             title={dessertRecipeRow.name}
                             className="text-left w-full hover:text-rose-700 dark:hover:text-rose-300 font-medium text-slate-800 dark:text-slate-100">
                             <span className="flex items-start gap-1">
-                              <span className="flex-1 line-clamp-2 leading-snug">{dessertRecipeRow.name}</span>
+                              <span className="flex-1 line-clamp-3 leading-snug">{dessertRecipeRow.name}</span>
                               {recipeAdvanceInfo(dessertRecipeRow) && (
                                 <span title={`À préparer ${recipeAdvanceInfo(dessertRecipeRow).label}`}
                                       className="text-amber-600 text-sm flex-shrink-0">
