@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.59.4</title>
+<title>Menu IG Bas — V2.59.5</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -23335,26 +23335,47 @@ function PrintMenuPage({weekStart, menu, profile}) {
               {orderedPrint.days.map(d => {
                 const slot = menu[d] || {};
                 const r = RECIPES.find(x => x.id === slot[m.key]);
+                // V2.59.5 — Détection présence côté impression. Les slots
+                // externalisés (attendance===[]) doivent être visibles dans
+                // le PDF avec mention "🌃 Repas extérieur" pour que la
+                // famille sache qu'il n'y a rien à préparer ce repas-là.
+                const att = slot.attendance?.[m.key];
+                const nAll = profile.members.length;
+                const isExternal = Array.isArray(att) && att.length === 0;
+                const isPartial = Array.isArray(att) && att.length > 0 && att.length < nAll;
                 return (
-                  <td key={d} className={`border border-slate-300 dark:border-slate-600 p-1 align-top ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950/30" : ""}`}>
+                  <td key={d} className={`border border-slate-300 dark:border-slate-600 p-1 align-top ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950/30" : ""} ${isExternal ? "bg-sky-50 dark:bg-sky-950/30" : ""}`}>
                     {r ? (
                       <>
-                        <div className="font-medium">
+                        <div className={`font-medium ${isExternal ? "line-through text-slate-500 dark:text-slate-400" : ""}`}>
                           {r.name}
-                          {recipeAdvanceInfo(r) && (
+                          {recipeAdvanceInfo(r) && !isExternal && (
                             <span className="ml-1 text-amber-700 dark:text-amber-300" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
                               {recipeAdvanceInfo(r).icon}
                             </span>
                           )}
                         </div>
-                        <div className="text-[8pt] text-slate-500 dark:text-slate-400">
-                          ⏱{recipeActiveMinutes(r)}min
-                          {recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}
-                          {' · '}{r.kcal}kcal
-                          {recipeAdvanceInfo(r) && (
-                            <span className="text-amber-700 dark:text-amber-300 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
-                          )}
-                        </div>
+                        {isExternal ? (
+                          <div className="text-[8pt] text-sky-700 dark:text-sky-300 font-semibold mt-0.5">
+                            🌃 Repas extérieur — rien à préparer
+                          </div>
+                        ) : (
+                          <>
+                            <div className="text-[8pt] text-slate-500 dark:text-slate-400">
+                              ⏱{recipeActiveMinutes(r)}min
+                              {recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}
+                              {' · '}{r.kcal}kcal
+                              {recipeAdvanceInfo(r) && (
+                                <span className="text-amber-700 dark:text-amber-300 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
+                              )}
+                            </div>
+                            {isPartial && (
+                              <div className="text-[8pt] text-amber-700 dark:text-amber-300 font-semibold mt-0.5">
+                                👥 {att.length}/{nAll} présents
+                              </div>
+                            )}
+                          </>
+                        )}
                       </>
                     ) : <span className="text-slate-400 dark:text-slate-500 italic">—</span>}
                   </td>
