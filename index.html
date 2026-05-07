@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.54.1</title>
+<title>Menu IG Bas — V2.54.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -22181,8 +22181,12 @@ function SettingsView({state, update, updateProfile}) {
               const raw = JSON.parse(localStorage.getItem(STORAGE_KEY_V2) || "{}");
               const decrypted = raw.encrypted ? await cryptoStore.decrypt(raw) : JSON.stringify(raw);
               const stateObj = JSON.parse(decrypted);
-              const h = stateObj.households?.[stateObj.activeHouseholdId];
-              if (!h) { alert("Aucun household actif"); return; }
+              const ahId = stateObj.session?.activeHouseholdId || stateObj.activeHouseholdId;
+              const h = stateObj.households?.[ahId];
+              if (!h) {
+                alert("Aucun household trouvé. Structure: " + JSON.stringify(Object.keys(stateObj)) + " / households keys: " + JSON.stringify(Object.keys(stateObj.households || {})) + " / ahId: " + ahId);
+                return;
+              }
               const summary = {};
               for (const [wkk, days] of Object.entries(h.menus || {})) {
                 summary[wkk] = {};
