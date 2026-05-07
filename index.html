@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.47.0</title>
+<title>Menu IG Bas — V2.47.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -19254,7 +19254,10 @@ function SettingsView({state, update, updateProfile}) {
         </div>
       </div>
 
-      {/* V2.47.0 (issue #12) — Mode batch cooking : préparation groupée */}
+      {/* V2.47.0 (issue #12) — Mode batch cooking : préparation groupée
+          V2.47.1 — fix : pas de disabled sur slider/select pour permettre
+          la pré-config avant activation. Ordre jours aligné sur shoppingDay
+          (lundi en premier). Doc inline "Comment ça marche". */}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
         <h3 className="font-bold text-slate-800 dark:text-slate-100">🍱 Mode batch cooking</h3>
         <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -19272,8 +19275,7 @@ function SettingsView({state, update, updateProfile}) {
           <input type="range" min="3" max="7" step="1"
             value={p.batchCookingTarget ?? 5}
             onChange={e => updateProfile({batchCookingTarget: parseInt(e.target.value, 10)})}
-            className="w-48"
-            disabled={!p.batchCookingEnabled} />
+            className="w-48" />
           <span className="ml-3 text-sm font-semibold">{p.batchCookingTarget ?? 5} / 7 jours</span>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
             Au-delà du seuil, les jours restants utilisent le pool normal (variété). Si le sous-pool batch-friendly est trop pauvre pour la saison, l'algo bascule gracieusement sur le pool global.
@@ -19284,14 +19286,29 @@ function SettingsView({state, update, updateProfile}) {
           <select value={p.batchCookingDay ?? 2}
             onChange={e => updateProfile({batchCookingDay: parseInt(e.target.value, 10)})}
             className="border rounded px-3 py-2 w-48"
-            disabled={!p.batchCookingEnabled}
             title="Jour où vous prévoyez de cuisiner les recettes batch. Le lendemain des courses est intuitif, mais le samedi ou dimanche convient aussi.">
-            {[0,1,2,3,4,5,6].map(d => (
+            {[1,2,3,4,5,6,0].map(d => (
               <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
             ))}
           </select>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Conseil : les week-ends (samedi / dimanche) sont les plus courants pour une session batch.</p>
         </div>
+        {/* V2.47.1 — doc inline "Comment ça marche" pour expliquer le flux
+            d'utilisation. Sera repris dans la FAQ globale (issue #84). */}
+        <details className="text-xs text-slate-600 dark:text-slate-300 mt-2">
+          <summary className="cursor-pointer font-medium hover:text-emerald-700 dark:hover:text-emerald-300">📖 Comment ça marche ?</summary>
+          <ol className="list-decimal pl-5 mt-2 space-y-1">
+            <li>Active le toggle ci-dessus pour mettre le mode batch ON par défaut sur toutes les semaines à venir.</li>
+            <li>Choisis ta cible (par ex. 5 jours / 7) : le générateur s'efforcera d'avoir au moins ce nombre de jours avec lunch ET dinner batch-friendly. Les jours restants restent libres pour la variété.</li>
+            <li>Choisis le jour où tu prévois ta session de préparation (typiquement samedi ou dimanche, ou le lendemain des courses).</li>
+            <li>Régénère le menu de la semaine depuis l'écran Planning : les slots concernés afficheront un 🍱.</li>
+            <li>Sur l'écran Planning, le badge <strong>🍱 Batch ON / OFF</strong> en haut permet de basculer le mode juste pour la semaine courante (override sans toucher à la préférence globale).</li>
+            <li><em>Bientôt en V2.48.0 :</em> page <strong>Préparation [Jour]</strong> avec to-do séquentielle des étapes regroupées et estimation du temps total.</li>
+          </ol>
+          <p className="mt-2 italic text-slate-500 dark:text-slate-400">
+            Conseils conservation : 3-4 jours au frigo dans des boîtes hermétiques. Réchauffer doucement (poêle ou micro-ondes 50%). Plats mijotés et soupes se congèlent généralement bien (3 mois max).
+          </p>
+        </details>
       </div>
 
       {/* V2.40.0 (issue #2) — Cuisines préférées : multi-select max 3, hors universel */}
