@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.47.1</title>
+<title>Menu IG Bas — V2.48.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -17570,9 +17570,24 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
 
   const hasAny = DAYS.some(d => currentMenu[d]?.breakfast || currentMenu[d]?.lunch || currentMenu[d]?.dinner);
 
+  // V2.48.0 (issue #12 Phase 2) — État effectif du mode batch pour cette
+  // semaine = override hebdo > préférence globale du foyer.
+  const batchActiveThisWeek = (() => {
+    const wkActive = currentMenu.batchCookingActive;
+    if (typeof wkActive === "boolean") return wkActive;
+    return !!state.profile.batchCookingEnabled;
+  })();
+
   return (
     <div className="space-y-4">
       <PoolDiagnostic profile={state.profile} currentWeek={currentWeek} />
+      {batchActiveThisWeek && (
+        <BatchPreparation
+          currentMenu={currentMenu}
+          profile={state.profile}
+          currentWeek={currentWeek}
+          onSelectRecipe={onSelectRecipe} />
+      )}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4 flex flex-wrap items-center gap-3">
         <div className="flex items-center gap-2">
           <button onClick={()=>setCurrentWeek(addDays(currentWeek,-7))} className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded hover:bg-slate-200 dark:hover:bg-slate-600">←</button>
@@ -18842,6 +18857,146 @@ function computePoolSizes(profile, currentWeek) {
 // Tant que le pool est en-dessous, l'algo rouvrira progressivement les
 // recettes plus anciennes (cf. `pickFromPool` niveau 2).
 const ROTATION_TARGET_RECENT = 14;
+
+// ===========================================================================
+// V2.48.0 (issue #12 Phase 2) — Page "Préparation [Jour]" pour le mode
+// batch cooking. Affichée quand le mode batch est actif pour la semaine
+// courante. Liste les recettes batch-friendly du planning, triées par
+// temps de cuisson décroissant (pour cuisson longue → préparation des
+// autres en parallèle), avec les étapes de chaque recette en to-do
+// (checkbox locale, non persistée). Estimation temps total avec
+// chevauchement simple (longestCook + 70% du total prep).
+// ===========================================================================
+function BatchPreparation({currentMenu, profile, currentWeek, onSelectRecipe}) {
+  const [done, setDone] = useState(() => new Set());
+  const toggleStep = (key) => setDone(prev => {
+    const next = new Set(prev);
+    if (next.has(key)) next.delete(key); else next.add(key);
+    return next;
+  });
+
+  // Récupère toutes les recettes lunch+dinner batch-friendly du planning
+  const batchRecipes = [];
+  DAYS.forEach((day, i) => {
+    ["lunch","dinner"].forEach(meal => {
+      const id = currentMenu[day]?.[meal];
+      if (!id) return;
+      const r = RECIPES.find(x => x.id === id);
+      if (!r) return;
+      if (!(r.tags || []).includes("batch-friendly")) return;
+      batchRecipes.push({...r, _day: day, _meal: meal, _dayIdx: i});
+    });
+  });
+
+  // Date de la session : trouve dans la fenêtre [currentWeek, +6] le jour
+  // qui correspond à profile.batchCookingDay (JS getDay).
+  const batchDay = profile.batchCookingDay ?? 2;
+  let batchDate = null;
+  for (let i = 0; i < 7; i++) {
+    const d = addDays(currentWeek, i);
+    if (d.getDay() === batchDay) { batchDate = d; break; }
+  }
+  const dayLabel = SHOPPING_DAY_LABELS[batchDay];
+
+  // Estimation temps total : on prend la cuisson la plus longue (qui occupe
+  // le four/cocotte) + 70% du total prep restant (chevauchement partiel
+  // pendant les cuissons). Heuristique simple, sous-estime un peu si peu
+  // de cuissons longues.
+  const sortedByCook = [...batchRecipes].sort((a, b) => (b.cook || 0) - (a.cook || 0));
+  const longestCook = sortedByCook[0]?.cook || 0;
+  const totalPrep = batchRecipes.reduce((s, r) => s + (r.prep || 0), 0);
+  const estimatedMin = Math.round(longestCook + totalPrep * 0.7);
+
+  if (batchRecipes.length === 0) {
+    return (
+      <div className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded-lg p-4">
+        <p className="text-sm text-amber-900 dark:text-amber-100">
+          🍱 <strong>Mode batch actif</strong> — mais aucune recette batch-friendly trouvée dans le planning.
+          {" "}Régénère le menu de la semaine pour appliquer le mode batch (cible : ≥{profile.batchCookingTarget ?? 5}/7 jours).
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <details className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded-lg p-4 group">
+      <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-amber-900 dark:text-amber-100">
+        <span className="text-lg">🍱</span>
+        <span>Session de préparation</span>
+        {batchDate && (
+          <span className="font-normal text-sm">
+            — {dayLabel} {formatShort(batchDate)}
+          </span>
+        )}
+        <span className="font-normal text-sm">
+          · {batchRecipes.length} recette{batchRecipes.length > 1 ? "s" : ""}
+        </span>
+        <span className="font-normal text-sm">
+          · ≈ {estimatedMin} min
+        </span>
+        <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 group-open:hidden">▼ Voir la to-do</span>
+        <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 hidden group-open:inline">▲ Replier</span>
+      </summary>
+
+      <div className="mt-3 space-y-3 text-sm">
+        <p className="text-xs text-amber-800 dark:text-amber-200 italic">
+          Ordre conseillé : commence par les recettes à cuisson longue. Pendant qu'elles cuisent, prépare les ingrédients des suivantes (mise en place). Coche chaque étape au fur et à mesure (avancement non sauvegardé : utile en session, pas après refresh).
+        </p>
+
+        <ol className="space-y-4">
+          {sortedByCook.map((r, idx) => {
+            const total = (r.prep || 0) + (r.cook || 0);
+            return (
+              <li key={r.id + "_" + r._day + "_" + r._meal} className="border-t border-amber-200 dark:border-amber-800 pt-3">
+                <div className="flex flex-wrap items-baseline gap-2 mb-1">
+                  <span className="font-bold text-amber-900 dark:text-amber-100">
+                    {idx + 1}.
+                  </span>
+                  <button
+                    onClick={() => onSelectRecipe(r.id, {day: r._day, meal: r._meal})}
+                    className="text-left font-semibold text-emerald-800 dark:text-emerald-200 hover:underline">
+                    {r.name}
+                  </button>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">
+                    ⏱ prep {r.prep || 0}′ · cuisson {r.cook || 0}′ · total {total}′
+                  </span>
+                  <span className="text-xs text-slate-500 dark:text-slate-400 ml-auto">
+                    → {r._day} {r._meal === "lunch" ? "🍴 déj" : "🌙 dîner"}
+                  </span>
+                </div>
+                <ul className="space-y-1 ml-4">
+                  {(r.steps || []).map((step, stepIdx) => {
+                    const key = `${r.id}_${r._day}_${r._meal}_${stepIdx}`;
+                    const isDone = done.has(key);
+                    return (
+                      <li key={stepIdx} className="flex items-start gap-2">
+                        <input type="checkbox"
+                          checked={isDone}
+                          onChange={() => toggleStep(key)}
+                          className="mt-0.5 flex-shrink-0" />
+                        <span className={isDone
+                          ? "text-slate-400 dark:text-slate-500 line-through"
+                          : "text-slate-700 dark:text-slate-200"}>
+                          {step}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </li>
+            );
+          })}
+        </ol>
+
+        <div className="border-t border-amber-300 dark:border-amber-700 pt-3 text-xs text-amber-800 dark:text-amber-200 space-y-1">
+          <p><strong>📦 Conservation :</strong> 3-4 jours au frigo dans des boîtes hermétiques. Étiquette chaque boîte avec le nom de la recette et la date.</p>
+          <p><strong>🔥 Réchauffage :</strong> doucement à la poêle (feu doux, couvert) ou micro-ondes 50 % puissance. Évite les chocs thermiques (= goût altéré + bactéries).</p>
+          <p><strong>❄️ Congélation :</strong> les mijotés, soupes et chilis se congèlent bien (3 mois max). Évite les recettes à base de salade verte ou de poisson cru.</p>
+        </div>
+      </div>
+    </details>
+  );
+}
 
 function PoolDiagnostic({profile, currentWeek}) {
   const pool = useMemo(() => computePoolSizes(profile, currentWeek), [profile, currentWeek]);
