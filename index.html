@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.50.0</title>
+<title>Menu IG Bas — V2.50.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -17080,13 +17080,51 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
       // gracieux sur le pool normal si le sous-pool est épuisé (anti-récurrence).
       const useBatchPool = isBatchActive && i < batchTarget;
 
+      // V2.50.1 (issue #13) — Restes : collecter les producesLeftovers des
+      // jours J-1 et J-2 (uniquement si batch OFF, cohérence avec la
+      // désactivation du composant LeftoverSuggestions). Ces termes
+      // permettront de booster les recettes avec usesLeftovers matchant.
+      const leftoverBoostTerms = [];
+      if (!isBatchActive && profile?.leftoverSuggestionsEnabled !== false) {
+        for (let priorOffset = 1; priorOffset <= 2; priorOffset++) {
+          const priorIdx = i - priorOffset;
+          if (priorIdx < 0) continue;
+          const priorDay = DAYS[priorIdx];
+          const priorSlot = days[priorDay];
+          if (!priorSlot) continue;
+          ["lunch","dinner"].forEach(m => {
+            const id = priorSlot[m];
+            if (!id) return;
+            const r = RECIPES.find(x => x.id === id);
+            if (r && Array.isArray(r.producesLeftovers)) {
+              r.producesLeftovers.forEach(t => {
+                if (!leftoverBoostTerms.includes(t)) leftoverBoostTerms.push(t);
+              });
+            }
+          });
+        }
+      }
+      const matchUsesPool = (pool) =>
+        leftoverBoostTerms.length === 0
+          ? []
+          : pool.filter(r =>
+              Array.isArray(r.usesLeftovers) &&
+              r.usesLeftovers.some(t => leftoverBoostTerms.includes(t))
+            );
+
       // Lunch
       if (keepLocked && locked.lunch && prev.lunch) {
         slot.lunch = prev.lunch;
         usedThisWeek.add(prev.lunch);
       } else {
         let picked = null;
-        if (useBatchPool && lunchesBatch.length > 0) {
+        // V2.50.1 — Priorité 1 : sous-pool usesLeftovers matchant les
+        // produces des jours précédents (chaînage cohérent).
+        const lunchUsesPool = matchUsesPool(lunches);
+        if (lunchUsesPool.length > 0) {
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        }
+        if (!picked && useBatchPool && lunchesBatch.length > 0) {
           picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
         }
         if (!picked) {
@@ -17119,7 +17157,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
           }
         }
         let picked = null;
-        if (useBatchPool && dinnerBatchPool.length > 0) {
+        // V2.50.1 — Priorité 1 : sous-pool usesLeftovers matchant les
+        // produces des jours précédents (intersect avec le filtre staple).
+        const dinnerUsesPool = matchUsesPool(dinnerPool);
+        if (dinnerUsesPool.length > 0) {
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        }
+        if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
           picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
         }
         if (!picked) {
@@ -18112,6 +18156,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           currentWeek={currentWeek}
           profile={state.profile}
           replaceSlot={replaceSlot}
+          toggleLock={toggleLock}
           onSelectRecipe={onSelectRecipe} />
       )}
       {batchActiveThisWeek && (
@@ -19400,7 +19445,7 @@ const ROTATION_TARGET_RECENT = 14;
 // cette semaine, non persisté). Désactivé si batchActiveThisWeek (cohérent :
 // le batch prépare tout d'un coup, pas de "reste du dîner d'hier").
 // ===========================================================================
-function LeftoverSuggestions({state, currentMenu, currentWeek, profile, replaceSlot, onSelectRecipe}) {
+function LeftoverSuggestions({state, currentMenu, currentWeek, profile, replaceSlot, toggleLock, onSelectRecipe}) {
   const [ignored, setIgnored] = useState(() => new Set());
 
   const enabled = profile.leftoverSuggestionsEnabled !== false; // default ON
@@ -19509,9 +19554,16 @@ function LeftoverSuggestions({state, currentMenu, currentWeek, profile, replaceS
               {" "}?
             </p>
             <div className="mt-2 flex gap-2">
-              <button onClick={() => replaceSlot(s.tgtDay, s.tgtMeal, s.suggested.id)}
+              <button onClick={() => {
+                  // V2.50.1 — Apply : remplace le slot ET le verrouille
+                  // pour éviter qu'une régénération suivante l'écrase.
+                  // L'utilisateur peut déverrouiller manuellement si besoin.
+                  replaceSlot(s.tgtDay, s.tgtMeal, s.suggested.id);
+                  const wasLocked = currentMenu[s.tgtDay]?.locked?.[s.tgtMeal];
+                  if (!wasLocked) toggleLock(s.tgtDay, s.tgtMeal);
+                }}
                 className="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-xs font-medium">
-                ✓ Appliquer
+                ✓ Appliquer & verrouiller
               </button>
               <button onClick={() => setIgnored(prev => new Set([...prev, s.key]))}
                 className="px-3 py-1 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 rounded text-xs">
