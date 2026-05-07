@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.58.0</title>
+<title>Menu IG Bas — V2.59.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20920,17 +20920,18 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const dessertPartial = dessertAttendees != null && dessertNPresent < nAll;
                     const dessertIsExternal = dessertAttendees != null && dessertNPresent === 0;
                     return (
-                      <div key={m.key} className={`border rounded p-2 text-sm ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="text-xs font-medium text-slate-500 dark:text-slate-400">{m.icon} {m.label}</span>
-                          <div className="flex gap-1">
-                            <button title={partial ? `${nPresent}/${nAll} présents` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:m.key})} className={`text-xs hover:opacity-70 ${partial ? "text-amber-600 font-bold" : ""}`}>👥{partial ? nPresent : ""}</button>
-                            <button title="Verrouiller" onClick={()=>toggleLock(day,m.key)} className="text-xs hover:opacity-70">
-                              {locked ? "🔒" : "🔓"}
-                            </button>
-                            <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:m.key})} className="text-xs hover:opacity-70">🔀</button>
-                            <button title="Changer aléatoire" onClick={()=>regenerateSlot(day,m.key)} className="text-xs hover:opacity-70">🎲</button>
-                          </div>
+                      <div key={m.key} className={`border rounded p-2 text-sm flex flex-col min-h-[140px] ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+                        {/* V2.59.0 — Header slot en 2 lignes : label seul (ligne 1) puis
+                            boutons d'action (ligne 2). Améliore l'alignement vertical
+                            entre jours et la lisibilité (avant : tout sur 1 ligne flex). */}
+                        <span className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">{m.icon} {m.label}</span>
+                        <div className="flex gap-1.5 mb-2">
+                          <button title={partial ? `${nPresent}/${nAll} présents` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:m.key})} className={`text-xs hover:opacity-70 ${partial ? "text-amber-600 font-bold" : ""}`}>👥{partial ? nPresent : ""}</button>
+                          <button title="Verrouiller" onClick={()=>toggleLock(day,m.key)} className="text-xs hover:opacity-70">
+                            {locked ? "🔒" : "🔓"}
+                          </button>
+                          <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:m.key})} className="text-xs hover:opacity-70">🔀</button>
+                          <button title="Changer aléatoire" onClick={()=>regenerateSlot(day,m.key)} className="text-xs hover:opacity-70">🎲</button>
                         </div>
                         {recipe ? (
                           <button onClick={() => onSelectRecipe(recipe.id, {day, meal: m.key})}
@@ -20963,14 +20964,14 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         {/* Sous-panneau dessert attaché à ce repas */}
                         {showDessertHere && (
                           <div className={`mt-2 pt-2 border-t border-dashed ${dessertLocked ? "border-amber-400" : "border-slate-300 dark:border-slate-600"}`}>
-                            <div className="flex items-center justify-between mb-0.5">
-                              <span className="text-[11px] font-medium text-rose-600">🍰 Dessert</span>
-                              <div className="flex gap-1">
-                                <button title={dessertPartial ? `${dessertNPresent}/${nAll}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartial ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartial ? dessertNPresent : ""}</button>
-                                <button title="Verrouiller" onClick={()=>toggleLock(day,"dessert")} className="text-xs hover:opacity-70">{dessertLocked ? "🔒" : "🔓"}</button>
-                                <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:"dessert"})} className="text-xs hover:opacity-70">🔀</button>
-                                <button title="Changer" onClick={()=>regenerateSlot(day,"dessert")} className="text-xs hover:opacity-70">🎲</button>
-                              </div>
+                            {/* V2.59.0 — Même réorga que le slot principal : label seul,
+                                boutons sur ligne séparée. */}
+                            <span className="block text-[11px] font-medium text-rose-600 mb-1">🍰 Dessert</span>
+                            <div className="flex gap-1.5 mb-1">
+                              <button title={dessertPartial ? `${dessertNPresent}/${nAll}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartial ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartial ? dessertNPresent : ""}</button>
+                              <button title="Verrouiller" onClick={()=>toggleLock(day,"dessert")} className="text-xs hover:opacity-70">{dessertLocked ? "🔒" : "🔓"}</button>
+                              <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:"dessert"})} className="text-xs hover:opacity-70">🔀</button>
+                              <button title="Changer" onClick={()=>regenerateSlot(day,"dessert")} className="text-xs hover:opacity-70">🎲</button>
                             </div>
                             {dessertRecipe ? (
                               <button onClick={() => onSelectRecipe(dessertRecipe.id, {day, meal: "dessert"})}
