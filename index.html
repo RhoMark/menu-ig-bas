@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.59.6</title>
+<title>Menu IG Bas — V2.60.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20920,7 +20920,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const dessertPartial = dessertAttendees != null && dessertNPresent < nAll;
                     const dessertIsExternal = dessertAttendees != null && dessertNPresent === 0;
                     return (
-                      <div key={m.key} className={`border rounded p-2 text-sm flex flex-col min-h-[200px] ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+                      <div key={m.key} className={`border rounded p-2 text-sm flex flex-col min-h-[140px] ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
                         {/* V2.59.0 — Header slot en 2 lignes : label seul (ligne 1) puis
                             boutons d'action (ligne 2). Améliore l'alignement vertical
                             entre jours et la lisibilité (avant : tout sur 1 ligne flex). */}
@@ -20935,16 +20935,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         </div>
                         {recipe ? (
                           <button onClick={() => onSelectRecipe(recipe.id, {day, meal: m.key})}
-                            title={recipe.name}
                             className="text-left w-full hover:text-emerald-700 dark:text-emerald-300 font-medium text-slate-800 dark:text-slate-100">
                             <span className="flex items-start gap-1">
-                              {/* V2.59.2 — line-clamp-2 pour limiter les noms longs à
-                                  2 lignes max (avec ellipsis), évite le décalage vertical
-                                  entre jours quand un nom de recette tient sur 4 lignes
-                                  (ex : "Buddha bowl quinoa rouge, betterave, halloumi
-                                  grillé et épinards"). Le nom complet reste visible au
-                                  survol via title=. */}
-                              <span className="flex-1 line-clamp-3 leading-snug">{recipe.name}</span>
+                              <span className="flex-1">{recipe.name}</span>
                               {recipeAdvanceInfo(recipe) && (
                                 <span title={`À préparer ${recipeAdvanceInfo(recipe).label}`}
                                       className="text-amber-600 text-sm flex-shrink-0">
@@ -20952,11 +20945,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 </span>
                               )}
                             </span>
-                            {/* V2.59.4 — Réservation hauteur fixe pour la ligne
-                                kcal+temps+avance (peut tenir sur 2 lignes selon
-                                contenu) afin de garantir l'alignement vertical
-                                entre slots de jours différents. */}
-                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5 min-h-[32px]">
+                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
                               ⏱ {recipeTimeLabel(recipe)} · {recipe.kcal}kcal
                               {recipeAdvanceInfo(recipe) && (
                                 <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(recipe).shortLabel} avance</span>
@@ -20965,73 +20954,55 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 <span className="ml-1 text-amber-700 dark:text-amber-300" title="Recette batch-friendly : préparable à l'avance, conservable 3-4 jours au frigo.">🍱</span>
                               )}
                             </span>
-                            {/* V2.59.4 — Mention "Repas extérieur" : réserver
-                                toujours 1 ligne (avec espace insécable si absent)
-                                pour ne pas décaler les slots des autres jours. */}
-                            <span className="block text-xs font-semibold mt-0.5 min-h-[18px] text-sky-700 dark:text-sky-300">
-                              {isExternal ? "🌃 Repas extérieur" : " "}
-                            </span>
+                            {isExternal && (
+                              <span className="block text-xs text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
+                            )}
                           </button>
                         ) : (
                           <p className="text-slate-400 dark:text-slate-500 italic">—</p>
+                        )}
+                        {/* Sous-panneau dessert attaché à ce repas */}
+                        {showDessertHere && (
+                          <div className={`mt-2 pt-2 border-t border-dashed ${dessertLocked ? "border-amber-400" : "border-slate-300 dark:border-slate-600"}`}>
+                            {/* V2.59.0 — Même réorga que le slot principal : label seul,
+                                boutons sur ligne séparée. */}
+                            <span className="block text-[11px] font-medium text-rose-600 mb-1">🍰 Dessert</span>
+                            <div className="flex gap-1.5 mb-1">
+                              <button title={dessertPartial ? `${dessertNPresent}/${nAll}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartial ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartial ? dessertNPresent : ""}</button>
+                              <button title="Verrouiller" onClick={()=>toggleLock(day,"dessert")} className="text-xs hover:opacity-70">{dessertLocked ? "🔒" : "🔓"}</button>
+                              <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:"dessert"})} className="text-xs hover:opacity-70">🔀</button>
+                              <button title="Changer" onClick={()=>regenerateSlot(day,"dessert")} className="text-xs hover:opacity-70">🎲</button>
+                            </div>
+                            {dessertRecipe ? (
+                              <button onClick={() => onSelectRecipe(dessertRecipe.id, {day, meal: "dessert"})}
+                                className="text-left w-full hover:text-rose-700 dark:text-rose-300 text-xs text-slate-700 dark:text-slate-200">
+                                <span className="flex items-start gap-1">
+                                  <span className="flex-1 font-medium">{dessertRecipe.name}</span>
+                                  {recipeAdvanceInfo(dessertRecipe) && (
+                                    <span title={`À préparer ${recipeAdvanceInfo(dessertRecipe).label}`}
+                                          className="text-amber-600 flex-shrink-0">
+                                      {recipeAdvanceInfo(dessertRecipe).icon}
+                                    </span>
+                                  )}
+                                </span>
+                                <span className="block text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+                                  ⏱ {recipeTimeLabel(dessertRecipe)} · {dessertRecipe.kcal}kcal
+                                  {recipeAdvanceInfo(dessertRecipe) && (
+                                    <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(dessertRecipe).shortLabel} avance</span>
+                                  )}
+                                </span>
+                                {dessertIsExternal && (
+                                  <span className="block text-[11px] text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
+                                )}
+                              </button>
+                            ) : (
+                              <p className="text-slate-400 dark:text-slate-500 italic text-xs">— aucun dessert</p>
+                            )}
+                          </div>
                         )}
                       </div>
                     );
                   })}
-                  {/* V2.59.1 — Dessert sorti en row séparée (au lieu d'être imbriqué
-                      dans lunch/dinner selon dessertTime). Garantit l'alignement
-                      vertical des slots entre tous les jours, indépendamment de
-                      la mention "X en avance" ou "Repas extérieur" qui faisait
-                      varier la hauteur du slot dîner+dessert. Le rattachement
-                      au repas reste indiqué dans le label : "🍰 Dessert (au dîner)". */}
-                  {(() => {
-                    const dessertRecipeRow = RECIPES.find(r => r.id === slot.dessert);
-                    const dessertLockedRow = slot.locked?.dessert;
-                    const dessertAttRow = attendance.dessert;
-                    const nAllRow = state.profile.members.length;
-                    const dessertNPRow = dessertAttRow == null ? nAllRow : dessertAttRow.length;
-                    const dessertPartRow = dessertAttRow != null && dessertNPRow < nAllRow;
-                    const dessertExtRow = dessertAttRow != null && dessertNPRow === 0;
-                    const dessertAttachLabel = dessertTime === "lunch" ? "(au déj)" : "(au dîner)";
-                    return (
-                      <div className={`border rounded p-2 text-sm flex flex-col min-h-[200px] ${dessertLockedRow ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-rose-50 dark:bg-rose-950 border-rose-200 dark:border-rose-800"}`}>
-                        <span className="text-xs font-medium text-rose-600 dark:text-rose-300 mb-1">🍰 Dessert <span className="font-normal text-slate-500 dark:text-slate-400">{dessertAttachLabel}</span></span>
-                        <div className="flex gap-1.5 mb-2">
-                          <button title={dessertPartRow ? `${dessertNPRow}/${nAllRow}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartRow ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartRow ? dessertNPRow : ""}</button>
-                          <button title="Verrouiller" onClick={()=>toggleLock(day,"dessert")} className="text-xs hover:opacity-70">{dessertLockedRow ? "🔒" : "🔓"}</button>
-                          <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:"dessert"})} className="text-xs hover:opacity-70">🔀</button>
-                          <button title="Changer aléatoire" onClick={()=>regenerateSlot(day,"dessert")} className="text-xs hover:opacity-70">🎲</button>
-                        </div>
-                        {dessertRecipeRow ? (
-                          <button onClick={() => onSelectRecipe(dessertRecipeRow.id, {day, meal: "dessert"})}
-                            title={dessertRecipeRow.name}
-                            className="text-left w-full hover:text-rose-700 dark:hover:text-rose-300 font-medium text-slate-800 dark:text-slate-100">
-                            <span className="flex items-start gap-1">
-                              <span className="flex-1 line-clamp-3 leading-snug">{dessertRecipeRow.name}</span>
-                              {recipeAdvanceInfo(dessertRecipeRow) && (
-                                <span title={`À préparer ${recipeAdvanceInfo(dessertRecipeRow).label}`}
-                                      className="text-amber-600 text-sm flex-shrink-0">
-                                  {recipeAdvanceInfo(dessertRecipeRow).icon}
-                                </span>
-                              )}
-                            </span>
-                            {/* V2.59.4 — Mêmes réservations que le slot principal */}
-                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5 min-h-[32px]">
-                              ⏱ {recipeTimeLabel(dessertRecipeRow)} · {dessertRecipeRow.kcal}kcal
-                              {recipeAdvanceInfo(dessertRecipeRow) && (
-                                <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(dessertRecipeRow).shortLabel} avance</span>
-                              )}
-                            </span>
-                            <span className="block text-xs font-semibold mt-0.5 min-h-[18px] text-sky-700 dark:text-sky-300">
-                              {dessertExtRow ? "🌃 Repas extérieur" : " "}
-                            </span>
-                          </button>
-                        ) : (
-                          <p className="text-slate-400 dark:text-slate-500 italic">—</p>
-                        )}
-                      </div>
-                    );
-                  })()}
                 </div>
               </div>
             );
@@ -23298,22 +23269,17 @@ function PrintMenuPage({weekStart, menu, profile}) {
   // pour que la prévisualisation reste lisible même quand l'app est en mode
   // sombre (sinon le body en bg-slate-900 transparait derrière la table A4).
   return (
-    <div className="p-3 text-[8.5pt] font-sans bg-white text-slate-900">
+    <div className="p-6 text-[10pt] font-sans bg-white text-slate-900">
       <style>{`
-        @page { size: A4 landscape; margin: 0.5cm; }
+        @page { size: A4 landscape; margin: 1cm; }
         body { background: white !important; }
-        /* V2.59.6 — Forcer table-layout fixed pour colonnes uniformes
-           et word-wrap pour ne pas déborder. Cellules avec max-height
-           pour garantir le tenir sur 1 page A4 paysage. */
-        table.menu-print { table-layout: fixed; }
-        table.menu-print td { word-wrap: break-word; overflow-wrap: anywhere; }
       `}</style>
-      <div className="flex justify-between items-end mb-2 border-b-2 border-emerald-700 pb-1">
+      <div className="flex justify-between items-end mb-3 border-b-2 border-emerald-700 pb-2">
         <div>
-          <h1 className="text-base font-bold text-emerald-800">🌿 Menu IG Bas — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
-          <p className="text-[8pt] text-slate-600">{profile.members.length} pers. (≈ {mult.toFixed(1)} adultes éq.) · {SEASON_FR[getSeason(weekStart)]}</p>
+          <h1 className="text-xl font-bold text-emerald-800 dark:text-emerald-200">🌿 Menu IG Bas — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
+          <p className="text-xs text-slate-600 dark:text-slate-300">{profile.members.length} pers. (≈ {mult.toFixed(1)} adultes équivalents) · {SEASON_FR[getSeason(weekStart)]}</p>
         </div>
-        <div className="text-[7pt] text-slate-500">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
+        <div className="text-xs text-slate-500 dark:text-slate-400">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
       </div>
       {(() => {
         // V2.35.0 — weekStart pointe sur le lendemain du shoppingDay (=
@@ -23321,18 +23287,14 @@ function PrintMenuPage({weekStart, menu, profile}) {
         // donne directement la date du i-ème jour. Cohérent avec MenuView.
         const orderedPrint = daysOrderedFor(profile?.shoppingDay ?? 1);
         return (
-      <table className="menu-print w-full border-collapse">
-        <colgroup>
-          <col style={{width: "60px"}} />
-          {orderedPrint.days.map(d => <col key={d} style={{width: "auto"}} />)}
-        </colgroup>
+      <table className="w-full border-collapse">
         <thead>
           <tr className="bg-emerald-700 text-white">
-            <th className="border border-emerald-800 p-1"></th>
+            <th className="border border-emerald-800 p-1 w-[90px]"></th>
             {orderedPrint.days.map((d,i) => (
-              <th key={d} className="border border-emerald-800 p-1 text-[9pt]">
-                <div className="capitalize leading-tight">{d}</div>
-                <div className="text-[7pt] font-normal opacity-80 leading-tight">{formatShort(addDays(weekStart,i))}</div>
+              <th key={d} className="border border-emerald-800 p-1">
+                <div className="capitalize">{d}</div>
+                <div className="text-[8pt] font-normal opacity-80">{formatShort(addDays(weekStart,i))}</div>
               </th>
             ))}
           </tr>
@@ -23340,44 +23302,32 @@ function PrintMenuPage({weekStart, menu, profile}) {
         <tbody>
           {rows.map(m => (
             <tr key={m.key}>
-              <td className={`border border-slate-300 p-1 font-bold text-[8pt] ${m.key === "dessert" ? "bg-rose-50 text-rose-800" : m.key === "snack" ? "bg-amber-50" : "bg-slate-100"}`}>{m.icon} {m.label}</td>
+              <td className={`border border-slate-300 dark:border-slate-600 p-1 font-bold ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950 text-rose-800 dark:text-rose-200" : m.key === "snack" ? "bg-amber-50 dark:bg-amber-950" : "bg-slate-100 dark:bg-slate-700"}`}>{m.icon} {m.label}</td>
               {orderedPrint.days.map(d => {
                 const slot = menu[d] || {};
                 const r = RECIPES.find(x => x.id === slot[m.key]);
-                const att = slot.attendance?.[m.key];
-                const nAll = profile.members.length;
-                const isExternal = Array.isArray(att) && att.length === 0;
-                const isPartial = Array.isArray(att) && att.length > 0 && att.length < nAll;
                 return (
-                  <td key={d} className={`border border-slate-300 p-1 align-top text-[8pt] leading-tight ${m.key === "dessert" ? "bg-rose-50/60" : ""} ${isExternal ? "bg-sky-50" : ""}`}>
+                  <td key={d} className={`border border-slate-300 dark:border-slate-600 p-1 align-top ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950/30" : ""}`}>
                     {r ? (
                       <>
-                        <div className={`font-medium ${isExternal ? "line-through text-slate-500" : ""}`}>
+                        <div className="font-medium">
                           {r.name}
-                          {recipeAdvanceInfo(r) && !isExternal && (
-                            <span className="ml-0.5 text-amber-700" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
+                          {recipeAdvanceInfo(r) && (
+                            <span className="ml-1 text-amber-700 dark:text-amber-300" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
                               {recipeAdvanceInfo(r).icon}
                             </span>
                           )}
                         </div>
-                        {isExternal ? (
-                          <div className="text-[7pt] text-sky-700 font-semibold mt-0.5">
-                            🌃 Extérieur
-                          </div>
-                        ) : (
-                          <div className="text-[7pt] text-slate-500 mt-0.5">
-                            ⏱{recipeActiveMinutes(r)}′
-                            {' · '}{r.kcal}kcal
-                            {recipeAdvanceInfo(r) && (
-                              <span className="text-amber-700 font-bold"> · {recipeAdvanceInfo(r).shortLabel}</span>
-                            )}
-                            {isPartial && (
-                              <span className="text-amber-700 font-bold ml-1">👥{att.length}/{nAll}</span>
-                            )}
-                          </div>
-                        )}
+                        <div className="text-[8pt] text-slate-500 dark:text-slate-400">
+                          ⏱{recipeActiveMinutes(r)}min
+                          {recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}
+                          {' · '}{r.kcal}kcal
+                          {recipeAdvanceInfo(r) && (
+                            <span className="text-amber-700 dark:text-amber-300 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
+                          )}
+                        </div>
                       </>
-                    ) : <span className="text-slate-400 italic">—</span>}
+                    ) : <span className="text-slate-400 dark:text-slate-500 italic">—</span>}
                   </td>
                 );
               })}
@@ -23387,7 +23337,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
       </table>
         );
       })()}
-      <p className="text-[6.5pt] text-slate-500 mt-1 text-center">Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} · prototype</p>
+      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} · prototype</p>
     </div>
   );
 }
