@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.46.0</title>
+<title>Menu IG Bas — V2.47.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -15941,7 +15941,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -15972,6 +15972,20 @@ function emptyHouseholdPreferences() {
     // pickFromPool applique un boost ×2 sur les recettes dont
     // recipe.cuisine ∈ preferredCuisines (cible ~50 % de share).
     preferredCuisines: [],
+    // V2.47.0 (issue #12) — Mode batch cooking : génération qui privilégie
+    // les recettes `batch-friendly` pour permettre une session de
+    // préparation groupée le week-end. 3 paramètres :
+    // - batchCookingEnabled : toggle global du foyer (défaut OFF).
+    //   Override possible par semaine via menus[wk].batchCookingActive.
+    // - batchCookingTarget : nombre de jours batch-friendly cibles sur 7
+    //   (range 3-7, défaut 5). L'algo force ce nombre de slots batch-friendly
+    //   pour lunch ET dinner.
+    // - batchCookingDay : jour de la session batch (0=dim, 1=lun,…,6=sam,
+    //   convention JS Date.getDay()). Défaut = shoppingDay+1 % 7
+    //   (lendemain des courses, intuitif).
+    batchCookingEnabled: false,
+    batchCookingTarget: 5,
+    batchCookingDay: 2,
   };
 }
 function emptyHousehold(id) {
@@ -16471,6 +16485,20 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
   const desserts   = baseFilter("dessert");
   const snacks     = baseFilter("snack");
 
+  // V2.47.0 (issue #12) — Mode batch cooking : sous-pools batch-friendly
+  // pour les `target` premiers jours du planning si le mode est actif
+  // (override hebdo > preference globale).
+  const isBatchActive = (() => {
+    const sd2 = profile?.shoppingDay ?? 1;
+    const wk = weekKey(weekStart, sd2);
+    const weeklyOverride = menus[wk]?.batchCookingActive;
+    if (typeof weeklyOverride === "boolean") return weeklyOverride;
+    return !!profile?.batchCookingEnabled;
+  })();
+  const batchTarget = Math.max(3, Math.min(7, profile?.batchCookingTarget ?? 5));
+  const lunchesBatch = isBatchActive ? lunches.filter(r => (r.tags || []).includes("batch-friendly")) : [];
+  const dinnersBatch = isBatchActive ? dinners.filter(r => (r.tags || []).includes("batch-friendly")) : [];
+
   const {set: recentlyUsed, lastUsedMap} = recipesUsedRecently(menus, weekStart);
   const sd = profile?.shoppingDay ?? 1;
   // V2.27.0 — Lecture rétrocompat : on cherche d'abord la clé du shoppingDay
@@ -16523,12 +16551,23 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
         slot.breakfast = breakfasts[(weekIdx * 7 + i + attempt - 1) % breakfasts.length].id;
       }
 
+      // V2.47.0 (issue #12) — Mode batch cooking : pour les `batchTarget`
+      // premiers jours, on pioche dans le sous-pool batch-friendly. Fallback
+      // gracieux sur le pool normal si le sous-pool est épuisé (anti-récurrence).
+      const useBatchPool = isBatchActive && i < batchTarget;
+
       // Lunch
       if (keepLocked && locked.lunch && prev.lunch) {
         slot.lunch = prev.lunch;
         usedThisWeek.add(prev.lunch);
       } else {
-        const picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        let picked = null;
+        if (useBatchPool && lunchesBatch.length > 0) {
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        }
+        if (!picked) {
+          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        }
         if (picked) { slot.lunch = picked.id; usedThisWeek.add(picked.id); }
       }
 
@@ -16538,20 +16577,30 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
         usedThisWeek.add(prev.dinner);
       } else {
         let dinnerPool = dinners;
+        let dinnerBatchPool = dinnersBatch;
         const lunchRecipe = slot.lunch ? RECIPES.find(r => r.id === slot.lunch) : null;
         if (lunchRecipe) {
           const lunchStaples = recipeStaples(lunchRecipe);
           if (lunchStaples.size > 0) {
-            const filtered = dinners.filter(r => {
+            const stapleFilter = r => {
               const ds = recipeStaples(r);
               for (const s of lunchStaples) if (ds.has(s)) return false;
               return true;
-            });
+            };
+            const filtered = dinners.filter(stapleFilter);
             // Filtre conservé seulement si ≥ 3 candidats — sinon mieux vaut un doublon staple qu'un slot dégradé.
             if (filtered.length >= 3) dinnerPool = filtered;
+            const filteredBatch = dinnersBatch.filter(stapleFilter);
+            if (filteredBatch.length >= 3) dinnerBatchPool = filteredBatch;
           }
         }
-        const picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        let picked = null;
+        if (useBatchPool && dinnerBatchPool.length > 0) {
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        }
+        if (!picked) {
+          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile});
+        }
         if (picked) { slot.dinner = picked.id; usedThisWeek.add(picked.id); }
       }
 
@@ -17066,6 +17115,19 @@ function App({initialState}) {
       menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...(s.menus[wk]?.[day]||{}), [meal]: recipeId}}},
     }));
   };
+  // V2.47.0 (issue #12) — Toggle batch cooking au niveau de la semaine
+  // courante. Override la préférence globale du foyer pour cette semaine.
+  // Le booléen est stocké dans menus[wk].batchCookingActive (clé spéciale,
+  // ignorée par l'itération DAYS).
+  const toggleBatchActiveForWeek = () => {
+    update(s => {
+      const wkObj = s.menus[wk] || {};
+      const cur = typeof wkObj.batchCookingActive === "boolean"
+        ? wkObj.batchCookingActive
+        : !!s.profile.batchCookingEnabled;
+      return {menus: {...s.menus, [wk]: {...wkObj, batchCookingActive: !cur}}};
+    });
+  };
   const rateRecipe = (rid, score, memberId) => {
     // V2.29.0 — si memberId fourni, écrit ratings[rid][memberId] (par membre).
     // Sinon, ancien comportement (note globale, écrase tout).
@@ -17133,6 +17195,7 @@ function App({initialState}) {
             toggleLock={toggleLock}
             replaceSlot={replaceSlot}
             setAttendance={setAttendance}
+            toggleBatchActiveForWeek={toggleBatchActiveForWeek}
             onSelectRecipe={(id, opts) => setSelectedRecipe({id, day: opts?.day, meal: opts?.meal})}
             onPrint={() => setPrintMode("menu")}
             onShopping={() => setView("shopping")}
@@ -17482,7 +17545,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, toggleBatchActiveForWeek}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
@@ -17519,6 +17582,29 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           </div>
           <button onClick={()=>setCurrentWeek(addDays(currentWeek,7))} className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded hover:bg-slate-200 dark:hover:bg-slate-600">→</button>
         </div>
+        {/* V2.47.0 (issue #12) — Toggle batch cooking pour la semaine courante.
+            État effectif = override hebdo > préférence globale du foyer. */}
+        {(() => {
+          const wkActive = currentMenu.batchCookingActive;
+          const isActive = typeof wkActive === "boolean" ? wkActive : !!state.profile.batchCookingEnabled;
+          const target = state.profile.batchCookingTarget ?? 5;
+          const dayLbl = SHOPPING_DAY_LABELS[state.profile.batchCookingDay ?? 2];
+          return (
+            <button onClick={toggleBatchActiveForWeek}
+              className={`px-3 py-2 rounded-md text-xs border transition flex items-center gap-1.5 ${
+                isActive
+                  ? "bg-amber-100 dark:bg-amber-900 border-amber-400 dark:border-amber-600 text-amber-800 dark:text-amber-200 font-semibold"
+                  : "bg-slate-100 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400"
+              }`}
+              title={isActive
+                ? `Mode batch ON cette semaine. Cible : ≥${target}/7 jours batch-friendly. Session prévue ${dayLbl}. Cliquer pour désactiver pour cette semaine.`
+                : "Mode batch OFF cette semaine. Cliquer pour activer (force la pioche dans le sous-pool batch-friendly)."}>
+              <span>🍱</span>
+              <span>Batch {isActive ? "ON" : "OFF"}</span>
+              {isActive && <span className="font-normal opacity-75">· {target}/7</span>}
+            </button>
+          );
+        })()}
         <div className="flex-1"></div>
         <div className="flex flex-col items-end">
           {(() => {
@@ -17669,6 +17755,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                               ⏱ {recipeTimeLabel(recipe)} · {recipe.kcal}kcal
                               {recipeAdvanceInfo(recipe) && (
                                 <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(recipe).shortLabel} avance</span>
+                              )}
+                              {(recipe.tags || []).includes("batch-friendly") && (
+                                <span className="ml-1 text-amber-700 dark:text-amber-300" title="Recette batch-friendly : préparable à l'avance, conservable 3-4 jours au frigo.">🍱</span>
                               )}
                             </span>
                             {isExternal && (
@@ -19162,6 +19251,46 @@ function SettingsView({state, update, updateProfile}) {
             ))}
           </select>
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">L'ordre d'affichage des jours du planning commence ce jour-là. Le stockage interne des menus reste inchangé.</p>
+        </div>
+      </div>
+
+      {/* V2.47.0 (issue #12) — Mode batch cooking : préparation groupée */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">🍱 Mode batch cooking</h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Préparer plusieurs repas en une session le week-end pour gagner du temps en semaine. Quand activé, le générateur privilégie les recettes <em>batch-friendly</em> (préparables à l'avance, conservables 3-4 jours au frigo) sur le nombre de jours choisi. Réglage par défaut du foyer ; chaque semaine peut être basculée individuellement depuis le planning.
+        </p>
+        <div>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={!!p.batchCookingEnabled}
+              onChange={e => updateProfile({batchCookingEnabled: e.target.checked})} />
+            <span className="text-sm font-medium">Activer le mode batch cooking par défaut</span>
+          </label>
+        </div>
+        <div>
+          <label className="text-sm block mb-1">Cible : nombre de jours batch-friendly sur 7</label>
+          <input type="range" min="3" max="7" step="1"
+            value={p.batchCookingTarget ?? 5}
+            onChange={e => updateProfile({batchCookingTarget: parseInt(e.target.value, 10)})}
+            className="w-48"
+            disabled={!p.batchCookingEnabled} />
+          <span className="ml-3 text-sm font-semibold">{p.batchCookingTarget ?? 5} / 7 jours</span>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            Au-delà du seuil, les jours restants utilisent le pool normal (variété). Si le sous-pool batch-friendly est trop pauvre pour la saison, l'algo bascule gracieusement sur le pool global.
+          </p>
+        </div>
+        <div>
+          <label className="text-sm block mb-1">📅 Jour de la session de préparation</label>
+          <select value={p.batchCookingDay ?? 2}
+            onChange={e => updateProfile({batchCookingDay: parseInt(e.target.value, 10)})}
+            className="border rounded px-3 py-2 w-48"
+            disabled={!p.batchCookingEnabled}
+            title="Jour où vous prévoyez de cuisiner les recettes batch. Le lendemain des courses est intuitif, mais le samedi ou dimanche convient aussi.">
+            {[0,1,2,3,4,5,6].map(d => (
+              <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
+            ))}
+          </select>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Conseil : les week-ends (samedi / dimanche) sont les plus courants pour une session batch.</p>
         </div>
       </div>
 
