@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.59.3</title>
+<title>Menu IG Bas — V2.59.4</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20920,7 +20920,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const dessertPartial = dessertAttendees != null && dessertNPresent < nAll;
                     const dessertIsExternal = dessertAttendees != null && dessertNPresent === 0;
                     return (
-                      <div key={m.key} className={`border rounded p-2 text-sm flex flex-col min-h-[140px] ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+                      <div key={m.key} className={`border rounded p-2 text-sm flex flex-col min-h-[200px] ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
                         {/* V2.59.0 — Header slot en 2 lignes : label seul (ligne 1) puis
                             boutons d'action (ligne 2). Améliore l'alignement vertical
                             entre jours et la lisibilité (avant : tout sur 1 ligne flex). */}
@@ -20952,7 +20952,11 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 </span>
                               )}
                             </span>
-                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
+                            {/* V2.59.4 — Réservation hauteur fixe pour la ligne
+                                kcal+temps+avance (peut tenir sur 2 lignes selon
+                                contenu) afin de garantir l'alignement vertical
+                                entre slots de jours différents. */}
+                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5 min-h-[32px]">
                               ⏱ {recipeTimeLabel(recipe)} · {recipe.kcal}kcal
                               {recipeAdvanceInfo(recipe) && (
                                 <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(recipe).shortLabel} avance</span>
@@ -20961,9 +20965,12 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 <span className="ml-1 text-amber-700 dark:text-amber-300" title="Recette batch-friendly : préparable à l'avance, conservable 3-4 jours au frigo.">🍱</span>
                               )}
                             </span>
-                            {isExternal && (
-                              <span className="block text-xs text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
-                            )}
+                            {/* V2.59.4 — Mention "Repas extérieur" : réserver
+                                toujours 1 ligne (avec espace insécable si absent)
+                                pour ne pas décaler les slots des autres jours. */}
+                            <span className="block text-xs font-semibold mt-0.5 min-h-[18px] text-sky-700 dark:text-sky-300">
+                              {isExternal ? "🌃 Repas extérieur" : " "}
+                            </span>
                           </button>
                         ) : (
                           <p className="text-slate-400 dark:text-slate-500 italic">—</p>
@@ -20987,7 +20994,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const dessertExtRow = dessertAttRow != null && dessertNPRow === 0;
                     const dessertAttachLabel = dessertTime === "lunch" ? "(au déj)" : "(au dîner)";
                     return (
-                      <div className={`border rounded p-2 text-sm flex flex-col min-h-[140px] ${dessertLockedRow ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-rose-50 dark:bg-rose-950 border-rose-200 dark:border-rose-800"}`}>
+                      <div className={`border rounded p-2 text-sm flex flex-col min-h-[200px] ${dessertLockedRow ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-rose-50 dark:bg-rose-950 border-rose-200 dark:border-rose-800"}`}>
                         <span className="text-xs font-medium text-rose-600 dark:text-rose-300 mb-1">🍰 Dessert <span className="font-normal text-slate-500 dark:text-slate-400">{dessertAttachLabel}</span></span>
                         <div className="flex gap-1.5 mb-2">
                           <button title={dessertPartRow ? `${dessertNPRow}/${nAllRow}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartRow ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartRow ? dessertNPRow : ""}</button>
@@ -21008,15 +21015,16 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 </span>
                               )}
                             </span>
-                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
+                            {/* V2.59.4 — Mêmes réservations que le slot principal */}
+                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5 min-h-[32px]">
                               ⏱ {recipeTimeLabel(dessertRecipeRow)} · {dessertRecipeRow.kcal}kcal
                               {recipeAdvanceInfo(dessertRecipeRow) && (
                                 <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(dessertRecipeRow).shortLabel} avance</span>
                               )}
                             </span>
-                            {dessertExtRow && (
-                              <span className="block text-xs text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
-                            )}
+                            <span className="block text-xs font-semibold mt-0.5 min-h-[18px] text-sky-700 dark:text-sky-300">
+                              {dessertExtRow ? "🌃 Repas extérieur" : " "}
+                            </span>
                           </button>
                         ) : (
                           <p className="text-slate-400 dark:text-slate-500 italic">—</p>
