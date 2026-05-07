@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.59.5</title>
+<title>Menu IG Bas — V2.59.6</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -23298,17 +23298,22 @@ function PrintMenuPage({weekStart, menu, profile}) {
   // pour que la prévisualisation reste lisible même quand l'app est en mode
   // sombre (sinon le body en bg-slate-900 transparait derrière la table A4).
   return (
-    <div className="p-6 text-[10pt] font-sans bg-white text-slate-900">
+    <div className="p-3 text-[8.5pt] font-sans bg-white text-slate-900">
       <style>{`
-        @page { size: A4 landscape; margin: 1cm; }
+        @page { size: A4 landscape; margin: 0.5cm; }
         body { background: white !important; }
+        /* V2.59.6 — Forcer table-layout fixed pour colonnes uniformes
+           et word-wrap pour ne pas déborder. Cellules avec max-height
+           pour garantir le tenir sur 1 page A4 paysage. */
+        table.menu-print { table-layout: fixed; }
+        table.menu-print td { word-wrap: break-word; overflow-wrap: anywhere; }
       `}</style>
-      <div className="flex justify-between items-end mb-3 border-b-2 border-emerald-700 pb-2">
+      <div className="flex justify-between items-end mb-2 border-b-2 border-emerald-700 pb-1">
         <div>
-          <h1 className="text-xl font-bold text-emerald-800 dark:text-emerald-200">🌿 Menu IG Bas — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
-          <p className="text-xs text-slate-600 dark:text-slate-300">{profile.members.length} pers. (≈ {mult.toFixed(1)} adultes équivalents) · {SEASON_FR[getSeason(weekStart)]}</p>
+          <h1 className="text-base font-bold text-emerald-800">🌿 Menu IG Bas — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
+          <p className="text-[8pt] text-slate-600">{profile.members.length} pers. (≈ {mult.toFixed(1)} adultes éq.) · {SEASON_FR[getSeason(weekStart)]}</p>
         </div>
-        <div className="text-xs text-slate-500 dark:text-slate-400">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
+        <div className="text-[7pt] text-slate-500">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
       </div>
       {(() => {
         // V2.35.0 — weekStart pointe sur le lendemain du shoppingDay (=
@@ -23316,14 +23321,18 @@ function PrintMenuPage({weekStart, menu, profile}) {
         // donne directement la date du i-ème jour. Cohérent avec MenuView.
         const orderedPrint = daysOrderedFor(profile?.shoppingDay ?? 1);
         return (
-      <table className="w-full border-collapse">
+      <table className="menu-print w-full border-collapse">
+        <colgroup>
+          <col style={{width: "60px"}} />
+          {orderedPrint.days.map(d => <col key={d} style={{width: "auto"}} />)}
+        </colgroup>
         <thead>
           <tr className="bg-emerald-700 text-white">
-            <th className="border border-emerald-800 p-1 w-[90px]"></th>
+            <th className="border border-emerald-800 p-1"></th>
             {orderedPrint.days.map((d,i) => (
-              <th key={d} className="border border-emerald-800 p-1">
-                <div className="capitalize">{d}</div>
-                <div className="text-[8pt] font-normal opacity-80">{formatShort(addDays(weekStart,i))}</div>
+              <th key={d} className="border border-emerald-800 p-1 text-[9pt]">
+                <div className="capitalize leading-tight">{d}</div>
+                <div className="text-[7pt] font-normal opacity-80 leading-tight">{formatShort(addDays(weekStart,i))}</div>
               </th>
             ))}
           </tr>
@@ -23331,53 +23340,44 @@ function PrintMenuPage({weekStart, menu, profile}) {
         <tbody>
           {rows.map(m => (
             <tr key={m.key}>
-              <td className={`border border-slate-300 dark:border-slate-600 p-1 font-bold ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950 text-rose-800 dark:text-rose-200" : m.key === "snack" ? "bg-amber-50 dark:bg-amber-950" : "bg-slate-100 dark:bg-slate-700"}`}>{m.icon} {m.label}</td>
+              <td className={`border border-slate-300 p-1 font-bold text-[8pt] ${m.key === "dessert" ? "bg-rose-50 text-rose-800" : m.key === "snack" ? "bg-amber-50" : "bg-slate-100"}`}>{m.icon} {m.label}</td>
               {orderedPrint.days.map(d => {
                 const slot = menu[d] || {};
                 const r = RECIPES.find(x => x.id === slot[m.key]);
-                // V2.59.5 — Détection présence côté impression. Les slots
-                // externalisés (attendance===[]) doivent être visibles dans
-                // le PDF avec mention "🌃 Repas extérieur" pour que la
-                // famille sache qu'il n'y a rien à préparer ce repas-là.
                 const att = slot.attendance?.[m.key];
                 const nAll = profile.members.length;
                 const isExternal = Array.isArray(att) && att.length === 0;
                 const isPartial = Array.isArray(att) && att.length > 0 && att.length < nAll;
                 return (
-                  <td key={d} className={`border border-slate-300 dark:border-slate-600 p-1 align-top ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950/30" : ""} ${isExternal ? "bg-sky-50 dark:bg-sky-950/30" : ""}`}>
+                  <td key={d} className={`border border-slate-300 p-1 align-top text-[8pt] leading-tight ${m.key === "dessert" ? "bg-rose-50/60" : ""} ${isExternal ? "bg-sky-50" : ""}`}>
                     {r ? (
                       <>
-                        <div className={`font-medium ${isExternal ? "line-through text-slate-500 dark:text-slate-400" : ""}`}>
+                        <div className={`font-medium ${isExternal ? "line-through text-slate-500" : ""}`}>
                           {r.name}
                           {recipeAdvanceInfo(r) && !isExternal && (
-                            <span className="ml-1 text-amber-700 dark:text-amber-300" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
+                            <span className="ml-0.5 text-amber-700" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
                               {recipeAdvanceInfo(r).icon}
                             </span>
                           )}
                         </div>
                         {isExternal ? (
-                          <div className="text-[8pt] text-sky-700 dark:text-sky-300 font-semibold mt-0.5">
-                            🌃 Repas extérieur — rien à préparer
+                          <div className="text-[7pt] text-sky-700 font-semibold mt-0.5">
+                            🌃 Extérieur
                           </div>
                         ) : (
-                          <>
-                            <div className="text-[8pt] text-slate-500 dark:text-slate-400">
-                              ⏱{recipeActiveMinutes(r)}min
-                              {recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}
-                              {' · '}{r.kcal}kcal
-                              {recipeAdvanceInfo(r) && (
-                                <span className="text-amber-700 dark:text-amber-300 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
-                              )}
-                            </div>
-                            {isPartial && (
-                              <div className="text-[8pt] text-amber-700 dark:text-amber-300 font-semibold mt-0.5">
-                                👥 {att.length}/{nAll} présents
-                              </div>
+                          <div className="text-[7pt] text-slate-500 mt-0.5">
+                            ⏱{recipeActiveMinutes(r)}′
+                            {' · '}{r.kcal}kcal
+                            {recipeAdvanceInfo(r) && (
+                              <span className="text-amber-700 font-bold"> · {recipeAdvanceInfo(r).shortLabel}</span>
                             )}
-                          </>
+                            {isPartial && (
+                              <span className="text-amber-700 font-bold ml-1">👥{att.length}/{nAll}</span>
+                            )}
+                          </div>
                         )}
                       </>
-                    ) : <span className="text-slate-400 dark:text-slate-500 italic">—</span>}
+                    ) : <span className="text-slate-400 italic">—</span>}
                   </td>
                 );
               })}
@@ -23387,7 +23387,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
       </table>
         );
       })()}
-      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} · prototype</p>
+      <p className="text-[6.5pt] text-slate-500 mt-1 text-center">Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} · prototype</p>
     </div>
   );
 }
