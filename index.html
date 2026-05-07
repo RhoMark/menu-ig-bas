@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.57.0</title>
+<title>Menu IG Bas — V2.58.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -151,6 +151,202 @@ if ("serviceWorker" in navigator) {
     {"id": "no-cook",        "label": "Sans cuisson"},
     {"id": "kid-friendly",   "label": "Enfants"},
     {"id": "batch-friendly", "label": "Batch cooking"}
+  ]
+}
+</script>
+
+<script type="application/json" id="data-faq">
+{
+  "schema": 1,
+  "sections": [
+    {
+      "id": "concepts",
+      "label": "Concepts nutritionnels",
+      "icon": "🍎",
+      "qa": [
+        {
+          "q": "C'est quoi l'IG (Index Glycémique) ?",
+          "a": "L'IG mesure la vitesse à laquelle un aliment fait monter la glycémie (taux de sucre dans le sang) après ingestion. Échelle 0-100. Convention : ≤ 55 = bas, 56-69 = modéré, ≥ 70 = élevé. Plus l'IG est bas, plus l'absorption du sucre est progressive et l'énergie durable. Référence : Glycemic Index Foundation (Sydney) et Harvard School of Public Health."
+        },
+        {
+          "q": "C'est quoi la CG (Charge Glycémique) ?",
+          "a": "La CG = IG × glucides de la portion / 100. Plus pertinente cliniquement que l'IG seul, car elle prend en compte la quantité réelle de glucides consommée. Exemple : la pastèque a un IG élevé (72) mais une CG faible (~4) car peu de glucides par portion. Le projet utilise la CG comme indicateur principal."
+        },
+        {
+          "q": "Quels sont les seuils CG du projet ?",
+          "a": "Par recette : ≤ 10 = bas, 11-19 = modéré, ≥ 20 = élevé. Par jour (5 services) : < 80 = bas (cible), 80-120 = modéré (acceptable, max 2 jours/semaine), > 120 = élevé (à éviter). Source : Harvard School of Public Health, cohérent avec GIF Sydney. Les seuils s'adaptent au profil santé du membre le plus contraignant du foyer."
+        },
+        {
+          "q": "Quelles sources scientifiques sont utilisées ?",
+          "a": "OMS (recos générales), EFSA (Europe), ANSES/PNNS (France), WCRF/AICR (cancer), Harvard School of Public Health, GIF Sydney (référence IG/CG), ADA (American Diabetes Association, Standards of Care 2023 pour les écarts), ESC (cardiologie). Détails complets dans CLAUDE.md du projet sur GitHub."
+        },
+        {
+          "q": "Pourquoi viser un IG bas ?",
+          "a": "Bénéfices documentés : meilleure satiété, énergie plus stable (pas de coup de barre), insulinosensibilité préservée, risque réduit de diabète T2 et de syndrome métabolique. Particulièrement utile pour SOPK, insulinorésistance, prévention cardiovasculaire et rééquilibrage. Pour les sportifs, on adapte selon le timing (glucides élevés pendant/après l'effort)."
+        },
+        {
+          "q": "Différence entre IG bas et régime cétogène ?",
+          "a": "IG bas : on garde des glucides (céréales complètes, légumineuses, fruits) mais on évite les pics. Régime cétogène : on supprime quasi tous les glucides (<50g/jour) pour basculer en cétose. Le projet est IG bas, pas céto. C'est plus durable et compatible avec une famille équilibrée. Si tu veux du céto, ce n'est pas l'app adaptée."
+        }
+      ]
+    },
+    {
+      "id": "profils",
+      "label": "Profils santé",
+      "icon": "🩺",
+      "qa": [
+        {
+          "q": "Quels profils sont disponibles ?",
+          "a": "12 profils : Sain (par défaut), Diabète T1, Diabète T2, SOPK, Insulinorésistance, Diabète gestationnel, Hypertension, Dyslipidémies, Rééquilibrage/surpoids, Prévention cardio, Sportif force, Sportif endurance. Chaque profil a son propre seuil CG/jour (cf. CLAUDE.md)."
+        },
+        {
+          "q": "Comment l'app gère un foyer avec plusieurs profils ?",
+          "a": "Le seuil CG du foyer = MIN des seuils par membre. Logique : un menu compatible avec le membre le plus contraignant convient automatiquement à tous les autres ; l'inverse est faux. Même règle que pour les allergènes. Exemple : foyer 2 adultes (sain × 1, SOPK × 1) + 2 ados (sain × 2) → seuil famille = 80 CG/jour (à cause du SOPK)."
+        },
+        {
+          "q": "Diabète T1, T2, gestationnel : différences ?",
+          "a": "T1 : maladie auto-immune, le pancréas ne produit plus d'insuline (insulinothérapie obligatoire). T2 : insulinorésistance progressive, souvent liée au mode de vie (alimentation, sédentarité). Gestationnel : T2 transitoire pendant la grossesse, disparaît souvent après. Tous bénéficient d'un IG bas mais les seuils CG diffèrent (T2/SOPK/Gestationnel < 80, T1 < 100)."
+        },
+        {
+          "q": "SOPK / insulinorésistance : pourquoi IG bas est crucial ?",
+          "a": "Dans le SOPK et l'IR, les cellules répondent moins bien à l'insuline → le pancréas en produit plus → cycle vicieux qui aggrave les symptômes (kystes ovariens, hirsutisme, fatigue, prise de poids). Réduire l'IG aide à casser ce cycle (revues Cochrane, FIGO). Effet sur 3-6 mois : meilleure régulation hormonale, perte de poids facilitée, fertilité améliorée."
+        },
+        {
+          "q": "Sportif force vs endurance : quelle différence ?",
+          "a": "Sportif force (musculation, crossfit, sports explosifs) : besoins protéiques élevés (1.6-2.2 g/kg), tolérance CG plus large (≤ 130/jour) car la masse musculaire améliore l'insulinosensibilité. Sportif endurance (course longue, vélo, triathlon) : seuil CG total non pertinent — le critère est le timing (glucides élevés pendant/juste après l'effort, modéré sinon). Ce profil est exclu du calcul de seuil familial."
+        }
+      ]
+    },
+    {
+      "id": "allergenes",
+      "label": "Allergènes & intolérances",
+      "icon": "⚠️",
+      "qa": [
+        {
+          "q": "Comment l'app vérifie les allergènes ?",
+          "a": "Vérification renforcée jusqu'aux ingrédients composés : sauces, mélanges d'épices, préparations. Une recette contenant l'allergène ou ses traces potentielles ne sera jamais proposée à un membre allergique. Affichage visuel : pictogramme rouge sur la recette. À la saisie d'un allergène, confirmation explicite demandée pour distinguer allergie médicale et préférence de goût."
+        },
+        {
+          "q": "Différence allergie / intolérance / préférence ?",
+          "a": "Allergie : réaction immunitaire (IgE), peut être grave (choc anaphylactique). Bloque toutes les recettes contenant l'allergène. Intolérance : trouble digestif (lactose, gluten non cœliaque) — stricte aussi mais moins critique. Préférence : exclusion par goût (« je n'aime pas la coriandre ») — l'app filtre les recettes mais sans la sévérité d'une allergie. Les 3 sont gérés mais avec des niveaux de rigueur différents."
+        },
+        {
+          "q": "Que faire si un allergène manque dans la liste ?",
+          "a": "Tu peux ajouter une « exclusion » personnalisée (texte libre) dans Paramètres → Membres → onglet exclusions. L'app exclura les recettes dont les ingrédients contiennent ce mot-clé. Si l'allergène est officiel (parmi les 14 reconnus UE) et manque, signale-le via une issue GitHub — il sera ajouté dans la liste standard."
+        }
+      ]
+    },
+    {
+      "id": "generation",
+      "label": "Génération du menu",
+      "icon": "🍽️",
+      "qa": [
+        {
+          "q": "Pourquoi telle recette n'est jamais proposée ?",
+          "a": "Vérifie : (1) Note attribuée ≥ 3★ — les recettes ≤ 2★ sont exclues automatiquement. (2) Saison — la recette est-elle compatible avec la saison courante ? (3) Allergènes — un membre est-il allergique à un ingrédient ? (4) Équipement — la recette demande-t-elle un four/blender que tu n'as pas coché ? (5) Anti-récurrence 14 jours — récemment proposée. (6) Niveau de cuisine. Si malgré tout absente, ouvre la fiche depuis la Bibliothèque pour voir les filtres bloquants."
+        },
+        {
+          "q": "Anti-récurrence : ça marche comment ?",
+          "a": "Pour lunch et dinner : une recette servie dans les 14 derniers jours ne sera pas re-proposée (sauf si pool insuffisant pour la saison). Pour breakfast : rotation glissante avec offset semaine — sur un pool de 58 breakfasts, 8.3 semaines avant retour au début. Pour snack et dessert : cooldown 7 jours (1 semaine + 1 jour pour couvrir la jonction dimanche → lundi)."
+        },
+        {
+          "q": "Pourquoi voir souvent les mêmes petits-déjs ?",
+          "a": "Bug corrigé en V2.45.0 ! Avant, l'algo prenait toujours les 7 mêmes breakfasts du pool, semaine après semaine. Désormais : rotation glissante avec offset basé sur le numéro de semaine — sur 4 semaines, 60 % du pool couvert ; sur 8 semaines, ~100 %."
+        },
+        {
+          "q": "Externaliser un repas, comment ça marche ?",
+          "a": "Sur un slot du planning, clique sur l'icône 👥 (présence) puis décoche tous les membres → le repas est marqué comme « pris à l'extérieur » (resto, cantine, déj de boulot). L'app : (1) ne facture pas ce repas dans le budget courses, (2) n'inclut pas ses ingrédients dans la liste de courses, (3) autorise la recette à revenir dans la rotation 14 jours plus tôt (puisqu'elle n'a pas été cuisinée)."
+        },
+        {
+          "q": "Mode batch cooking : comment ça fonctionne ?",
+          "a": "Activation via Paramètres → 🍱 Mode batch cooking. Choisis ta cible (3-7 jours batch-friendly) et le jour de session (typiquement samedi ou dimanche). L'algo privilégie les recettes batch-friendly pour les N premiers jours du planning. Une page « Préparation [Jour] » apparaît au sommet du planning avec to-do séquentielle des étapes (cuissons longues d'abord, prép des autres en parallèle), estimation du temps total, et conseils conservation. Sur le planning, badge « 🍱 Batch ON/OFF » pour basculer juste la semaine courante."
+        },
+        {
+          "q": "Mode restes : comment ça fonctionne ?",
+          "a": "Activation via Paramètres → ♻️ Suggestions de recettes utilisant les restes (défaut OFF). Désactivé automatiquement si batch cooking actif (cohérence). Quand un menu contient une recette qui produit des restes typiques (poulet rôti → poulet cuit, ratatouille → ratatouille, etc.), l'app suggère pour le lendemain ou surlendemain une recette qui les consomme. Suggestion non-bloquante : encart en haut du planning avec bouton « Appliquer & verrouiller » (swap le slot) ou « Ignorer »."
+        }
+      ]
+    },
+    {
+      "id": "courses",
+      "label": "Liste de courses",
+      "icon": "🛒",
+      "qa": [
+        {
+          "q": "Comment les ingrédients sont agrégés ?",
+          "a": "Par clé (nom canonique + unité + catégorie). Exemple : « Tomate », « Tomates » et « Tomates mûres » fusionnent vers « tomate » (singulier, descripteurs strippés). Les unités c.à.c, c.à.s, pincée, bouquet, branche, feuille, cm sont converties vers g ou ml selon l'ingrédient (ex : 1 c.à.s d'huile = 15 ml). Les produces avec poids référencé (tomate, courgette…) convergent vers « u » (pièce) pour fusion."
+        },
+        {
+          "q": "Pourquoi mon ingrédient apparaît plusieurs fois ?",
+          "a": "Si tu vois encore des doublons : (1) Vérifie qu'il s'agit bien du même ingrédient — « Coriandre fraîche » et « Coriandre en poudre » sont 2 produits distincts (rayons différents au magasin) et ne fusionnent pas volontairement. (2) Banane fraîche vs Banane congelée idem. (3) Si vrai doublon (même produit, mêmes unités, 2 lignes) : signale-le via issue GitHub avec l'export du menu (Paramètres → Exporter mes données)."
+        },
+        {
+          "q": "Le budget hebdomadaire est-il fiable ?",
+          "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
+        }
+      ]
+    },
+    {
+      "id": "privacy",
+      "label": "Privacy & données",
+      "icon": "🔒",
+      "qa": [
+        {
+          "q": "Mes données sont-elles envoyées sur un serveur ?",
+          "a": "NON. Tout est stocké localement dans ton navigateur (localStorage + IndexedDB), chiffré avec une clé AES-GCM 256 bits non extractible. Aucune connexion réseau pour utiliser l'app, aucun compte à créer, aucun analytics, aucun tracker, aucun cookie tiers. Le code est public sur GitHub (RhoMark/menu-ig-bas). Tu peux vérifier toi-même."
+        },
+        {
+          "q": "Comment exporter mes données ?",
+          "a": "Paramètres → Synchronisation entre appareils → bouton « Exporter mes données ». L'app génère un fichier JSON contenant tout ton state déchiffré (foyer, membres, menus, ratings, journal). Tu peux le partager via AirDrop, mail, USB, etc. Sur l'autre appareil, bouton « Importer depuis un fichier » pour restaurer."
+        },
+        {
+          "q": "Comment effacer mes données ?",
+          "a": "Paramètres → Zone dangereuse → bouton rouge « Tout effacer et recommencer ». Action irréversible : supprime localStorage + IndexedDB pour cet origin. La page se recharge en mode setup initial. Pour effacement partiel (ex : juste le journal ou les ratings), pas d'option dédiée actuellement — passe par export → édit JSON → import."
+        },
+        {
+          "q": "L'app fait-elle du tracking ?",
+          "a": "AUCUN. Pas d'analytics (Google Analytics, Plausible, Matomo, rien). Pas de cookies tiers. Pas de pixel publicitaire. Pas de Service Worker espion. Le seul réseau utilisé est le téléchargement initial du HTML/JS depuis GitHub Pages (CDN statique sans tracking) et le Service Worker qui met en cache les assets pour le mode hors-ligne."
+        }
+      ]
+    },
+    {
+      "id": "pwa",
+      "label": "Mode hors-ligne / PWA",
+      "icon": "📱",
+      "qa": [
+        {
+          "q": "Comment installer l'app sur mon téléphone ?",
+          "a": "iOS (Safari) : ouvre menu-ig-bas dans Safari → bouton Partager → « Sur l'écran d'accueil ». Android (Chrome/Brave) : menu ⋮ → « Installer l'application » ou « Ajouter à l'écran d'accueil ». Desktop (Chrome/Edge/Brave) : icône d'installation 💻 dans la barre d'adresse, ou menu → « Installer Menu IG Bas ». Une fois installée, l'app apparaît comme une vraie app native."
+        },
+        {
+          "q": "Pourquoi l'app fonctionne hors connexion ?",
+          "a": "Service Worker : les assets (HTML, JS, CSS, fonts, recettes) sont mis en cache au premier chargement. Ensuite, l'app peut être ouverte sans réseau. Stratégies : navigation HTML → network-first (récupère les mises à jour si en ligne, fallback cache si offline) ; assets statiques → cache-first (rapide). Tes données restent intactes hors connexion (stockage local)."
+        },
+        {
+          "q": "Comment forcer une mise à jour ?",
+          "a": "Hard reload : Ctrl+Shift+R (Chrome/Brave/Edge) ou Cmd+Shift+R (Mac) ou bouton recharger maintenu enfoncé. Si ça ne suffit pas : vide le cache du navigateur pour cet origin (DevTools → Application → Clear storage). Le numéro de version est affiché en bas de l'app — tu peux comparer avec la dernière sur github.com/RhoMark/menu-ig-bas."
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "label": "À propos",
+      "icon": "ℹ️",
+      "qa": [
+        {
+          "q": "Quel est l'objectif du projet ?",
+          "a": "Permettre aux familles françaises de manger équilibré à index glycémique bas sans charge mentale. L'app génère automatiquement des menus hebdomadaires adaptés (profils santé, allergies, saison, budget, équipement, niveau de cuisine), avec recettes détaillées style « ado qui cuisine » (gestes définis, repères visuels) et liste de courses agrégée. Spécifications complètes dans le repo GitHub."
+        },
+        {
+          "q": "Le code est ouvert ?",
+          "a": "Oui — repo public github.com/RhoMark/menu-ig-bas. Servi via GitHub Pages pour permettre l'installation PWA depuis une URL fixe. Tout le code (front + données + service worker) est lisible. Aucun secret, clé d'API ou identifiant n'est commité. Les données utilisateur ne quittent jamais ton appareil."
+        },
+        {
+          "q": "Comment contribuer ou signaler un bug ?",
+          "a": "GitHub Issues : github.com/RhoMark/menu-ig-bas/issues. Les bugs et idées de features y sont tracés (labels priorité-haute / moyenne / basse, bug, feature, recettes, ux, archi). Tu peux ouvrir une issue avec le contexte (version app, capture d'écran, étapes de reproduction). Pour les recettes : suggérer un nouveau plat ou signaler une erreur (allergène manquant, IG incorrect…) est très utile."
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -20088,6 +20284,9 @@ function App({initialState}) {
             onGoToWeek={(w) => { setCurrentWeek(w); setView("menu"); }}
           />
         )}
+        {view === "faq" && (
+          <FaqView />
+        )}
         {view === "settings" && (
           <SettingsView state={state} update={update} updateProfile={updateProfile} />
         )}
@@ -20160,6 +20359,102 @@ function ThemeToggle() {
   );
 }
 
+// ===========================================================================
+// V2.58.0 (issue #84) — FAQ inline avec recherche full-text.
+// Données dans <script id="data-faq">. 8 sections, ~33 Q/R. Accordion
+// repliable par section + recherche live qui filtre Q et A.
+// ===========================================================================
+function FaqView() {
+  const [query, setQuery] = useState("");
+  const [openSections, setOpenSections] = useState(() => new Set());
+  const faqData = useMemo(() => loadRefBlock("data-faq", {sections: []}), []);
+  const sections = faqData.sections || [];
+
+  const q = query.trim().toLowerCase();
+  const matches = (text) => !q || (text || "").toLowerCase().includes(q);
+
+  // Filter sections : conserve une section si son label, ou n'importe quelle Q/A, contient la query
+  const filtered = sections
+    .map(s => ({
+      ...s,
+      qa: s.qa.filter(qa => matches(qa.q) || matches(qa.a)),
+    }))
+    .filter(s => matches(s.label) || s.qa.length > 0);
+
+  // Si recherche active, on ouvre toutes les sections matchées
+  const isSearchOpen = q.length > 0;
+
+  const toggleSection = (id) => {
+    setOpenSections(prev => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">❓ Aide & FAQ</h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
+          Réponses aux questions fréquentes sur l'app, les concepts nutritionnels, la privacy. Tout est consultable hors-ligne (aucune connexion réseau).
+        </p>
+        <input type="search"
+          value={query}
+          onChange={e => setQuery(e.target.value)}
+          placeholder="Rechercher dans la FAQ (ex: 'allergène', 'batch', 'export')…"
+          className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400" />
+        {q && (
+          <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+            {filtered.reduce((s, sec) => s + sec.qa.length, 0)} résultat{filtered.reduce((s, sec) => s + sec.qa.length, 0) > 1 ? "s" : ""} dans {filtered.length} section{filtered.length > 1 ? "s" : ""}
+          </p>
+        )}
+      </div>
+
+      {filtered.length === 0 && (
+        <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-4 text-sm text-amber-900 dark:text-amber-100">
+          Aucun résultat pour « {query} ». Essaie d'autres mots-clés, ou ouvre une issue GitHub si ta question n'est pas couverte.
+        </div>
+      )}
+
+      {filtered.map(section => {
+        const isOpen = isSearchOpen || openSections.has(section.id);
+        return (
+          <div key={section.id} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+            <button onClick={() => toggleSection(section.id)}
+              className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-slate-50 dark:hover:bg-slate-700/50 transition">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">{section.icon}</span>
+                <h3 className="font-bold text-slate-800 dark:text-slate-100">{section.label}</h3>
+                <span className="text-xs text-slate-500 dark:text-slate-400">
+                  {section.qa.length} question{section.qa.length > 1 ? "s" : ""}
+                </span>
+              </div>
+              <span className="text-slate-400 dark:text-slate-500 text-sm">
+                {isOpen ? "▼" : "▶"}
+              </span>
+            </button>
+            {isOpen && (
+              <div className="px-5 pb-4 space-y-4 border-t border-slate-200 dark:border-slate-700">
+                {section.qa.map((qa, idx) => (
+                  <div key={idx} className="pt-3">
+                    <p className="font-semibold text-slate-800 dark:text-slate-100 mb-1">{qa.q}</p>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed whitespace-pre-line">{qa.a}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        );
+      })}
+
+      <div className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-200 dark:border-emerald-800 rounded-lg p-4 text-sm text-emerald-900 dark:text-emerald-100">
+        💡 Question manquante ? Ouvre une <a href="https://github.com/RhoMark/menu-ig-bas/issues" target="_blank" rel="noopener noreferrer" className="font-semibold underline hover:text-emerald-700 dark:hover:text-emerald-300">issue sur GitHub</a> ou propose une amélioration directement.
+      </div>
+    </div>
+  );
+}
+
 function TopBar({view, setView}) {
   const tabs = [
     {key:"menu",     label:"Planning",      icon:"📅"},
@@ -20167,6 +20462,7 @@ function TopBar({view, setView}) {
     {key:"shopping", label:"Liste courses", icon:"🛒"},
     {key:"library",  label:"Recettes",      icon:"📖"},
     {key:"history",  label:"Historique",    icon:"📊"},
+    {key:"faq",      label:"Aide",          icon:"❓"},
     {key:"settings", label:"Paramètres",    icon:"⚙️"},
   ];
   return (
