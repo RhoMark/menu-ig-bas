@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.51.0</title>
+<title>Menu IG Bas — V2.52.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -16904,7 +16904,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -16955,6 +16955,11 @@ function emptyHouseholdPreferences() {
     // produces un terme de LEFTOVER_TERMS et la suivante peut le consommer.
     // Suggestion non-bloquante (popup avec bouton Appliquer / Ignorer).
     leftoverSuggestionsEnabled: true,
+    // V2.52.0 (issue #24) — Journal bien-être : saisie hebdo de 3 indicateurs
+    // (énergie, digestion, sommeil) + notes libres, stockés dans
+    // household.journal[weekKey]. Désactivé par défaut (opt-in non envahissant).
+    // Afficher / masquer les composants JournalEntry et JournalHistory.
+    journalEnabled: false,
   };
 }
 function emptyHousehold(id) {
@@ -18148,6 +18153,17 @@ function App({initialState}) {
       menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...(s.menus[wk]?.[day]||{}), [meal]: recipeId}}},
     }));
   };
+  // V2.52.0 (issue #24) — Mise à jour d'un champ du journal bien-être
+  // pour la semaine courante. Le journal est stocké dans state.journal
+  // (au niveau du household, pas du menu) avec la même clé que les menus.
+  const setJournalField = (field, value) => {
+    update(s => {
+      const cur = (s.journal && s.journal[wk]) || {};
+      const next = {...cur, [field]: value, updatedAt: new Date().toISOString()};
+      return {journal: {...(s.journal || {}), [wk]: next}};
+    });
+  };
+
   // V2.47.0 (issue #12) — Toggle batch cooking au niveau de la semaine
   // courante. Override la préférence globale du foyer pour cette semaine.
   // Le booléen est stocké dans menus[wk].batchCookingActive (clé spéciale,
@@ -18229,6 +18245,7 @@ function App({initialState}) {
             replaceSlot={replaceSlot}
             setAttendance={setAttendance}
             toggleBatchActiveForWeek={toggleBatchActiveForWeek}
+            setJournalField={setJournalField}
             onSelectRecipe={(id, opts) => setSelectedRecipe({id, day: opts?.day, meal: opts?.meal})}
             onPrint={() => setPrintMode("menu")}
             onShopping={() => setView("shopping")}
@@ -18578,7 +18595,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, toggleBatchActiveForWeek}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
@@ -18611,9 +18628,19 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
     return !!state.profile.batchCookingEnabled;
   })();
 
+  // V2.52.0 (issue #24) — Clé de la semaine courante pour le journal.
+  const journalWeekKey = weekKey(currentWeek, state.profile?.shoppingDay ?? 1);
+  const journalEnabled = !!state.profile.journalEnabled;
+
   return (
     <div className="space-y-4">
       <PoolDiagnostic profile={state.profile} currentWeek={currentWeek} />
+      {journalEnabled && (
+        <JournalEntry state={state} currentWeekKey={journalWeekKey} setJournalField={setJournalField} />
+      )}
+      {journalEnabled && (
+        <JournalHistory state={state} currentWeek={currentWeek} profile={state.profile} />
+      )}
       {!batchActiveThisWeek && (
         <LeftoverSuggestions
           state={state}
@@ -19902,6 +19929,172 @@ function computePoolSizes(profile, currentWeek) {
 const ROTATION_TARGET_RECENT = 14;
 
 // ===========================================================================
+// V2.52.0 (issue #24) — Journal bien-être hebdo.
+// Saisie de 3 sliders 1-5 (énergie, digestion, sommeil) + notes libres,
+// auto-save par champ. Stocké dans state.journal[weekKey].
+// Affiché si profile.journalEnabled === true (défaut OFF, opt-in).
+// ===========================================================================
+function JournalEntry({state, currentWeekKey, setJournalField}) {
+  const entry = (state.journal && state.journal[currentWeekKey]) || {};
+  const energy = entry.energy ?? null;
+  const digestion = entry.digestion ?? null;
+  const sleep = entry.sleep ?? null;
+  const notes = entry.notes ?? "";
+  const updatedAt = entry.updatedAt ? new Date(entry.updatedAt) : null;
+
+  const SCALE = [1, 2, 3, 4, 5];
+  const SCALE_LABELS = {1: "très bas", 2: "bas", 3: "correct", 4: "bon", 5: "très bon"};
+  const COLORS = {
+    1: "bg-red-500 hover:bg-red-600",
+    2: "bg-orange-500 hover:bg-orange-600",
+    3: "bg-amber-500 hover:bg-amber-600",
+    4: "bg-emerald-500 hover:bg-emerald-600",
+    5: "bg-green-600 hover:bg-green-700",
+  };
+
+  const SliderRow = ({label, icon, value, onSet}) => (
+    <div className="space-y-1">
+      <div className="flex items-baseline justify-between">
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-200">{icon} {label}</span>
+        <span className="text-xs text-slate-500 dark:text-slate-400">
+          {value ? `${value}/5 · ${SCALE_LABELS[value]}` : "non renseigné"}
+        </span>
+      </div>
+      <div className="flex gap-1.5">
+        {SCALE.map(n => (
+          <button key={n}
+            onClick={() => onSet(n)}
+            title={`${n}/5 — ${SCALE_LABELS[n]}`}
+            className={`flex-1 py-2 rounded text-xs font-semibold text-white transition ${
+              value === n
+                ? COLORS[n] + " ring-2 ring-offset-2 ring-slate-700 dark:ring-slate-200 dark:ring-offset-slate-800"
+                : "bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
+            }`}>
+            {n}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+
+  return (
+    <details className="bg-violet-50 dark:bg-violet-950 border border-violet-200 dark:border-violet-800 rounded-lg p-4 group">
+      <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-violet-900 dark:text-violet-100">
+        <span className="text-lg">📔</span>
+        <span>Journal bien-être</span>
+        {(energy || digestion || sleep) && (
+          <span className="font-normal text-sm text-violet-700 dark:text-violet-300">
+            · saisi {updatedAt ? `il y a ${Math.max(0, Math.floor((Date.now() - updatedAt.getTime()) / (24*60*60*1000)))}j` : ""}
+          </span>
+        )}
+        <span className="ml-auto text-xs text-violet-700 dark:text-violet-300 group-open:hidden">▼ Saisir</span>
+        <span className="ml-auto text-xs text-violet-700 dark:text-violet-300 hidden group-open:inline">▲ Replier</span>
+      </summary>
+      <div className="mt-4 space-y-4">
+        <p className="text-xs text-violet-800 dark:text-violet-200 italic">
+          Comment t'es-tu senti(e) cette semaine ? Saisie hebdomadaire optionnelle, auto-sauvegardée. Aucune donnée ne quitte ton appareil.
+        </p>
+        <SliderRow label="Énergie" icon="⚡" value={energy} onSet={(n) => setJournalField("energy", n)} />
+        <SliderRow label="Digestion" icon="🌿" value={digestion} onSet={(n) => setJournalField("digestion", n)} />
+        <SliderRow label="Sommeil" icon="🌙" value={sleep} onSet={(n) => setJournalField("sleep", n)} />
+        <div>
+          <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1">📝 Notes (optionnel)</label>
+          <textarea value={notes}
+            onChange={e => setJournalField("notes", e.target.value.slice(0, 500))}
+            placeholder="Ressenti général, événements, ce qui a marché ou pas…"
+            rows={3}
+            className="w-full px-3 py-2 text-sm border border-violet-200 dark:border-violet-800 bg-white dark:bg-slate-800 rounded resize-none focus:outline-none focus:ring-2 focus:ring-violet-400" />
+          <span className="text-xs text-slate-500 dark:text-slate-400">{notes.length}/500</span>
+        </div>
+      </div>
+    </details>
+  );
+}
+
+// V2.52.0 — Vue historique du journal sur les 12 dernières semaines.
+// Affiche sparklines + liste détaillée. Affichée si journalEnabled ET au
+// moins 1 entrée existante.
+function JournalHistory({state, currentWeek, profile}) {
+  const sd = profile?.shoppingDay ?? 1;
+  const journal = state.journal || {};
+
+  // Récupère les 12 dernières semaines (semaines courante + 11 précédentes)
+  const weeks = [];
+  for (let i = 0; i < 12; i++) {
+    const wkDate = addDays(currentWeek, -7 * i);
+    const wkk = weekKey(wkDate, sd);
+    weeks.push({key: wkk, date: wkDate, entry: journal[wkk] || null});
+  }
+  weeks.reverse(); // ancien → récent
+
+  const entriesWithData = weeks.filter(w => w.entry && (w.entry.energy || w.entry.digestion || w.entry.sleep));
+
+  if (entriesWithData.length === 0) return null;
+
+  // Sparkline simple : barres verticales colorées
+  const Sparkline = ({field, color}) => (
+    <div className="flex items-end gap-0.5 h-8">
+      {weeks.map(w => {
+        const v = w.entry?.[field];
+        if (!v) return <div key={w.key} className="flex-1 bg-slate-200 dark:bg-slate-700 rounded-sm" style={{height: "10%", opacity: 0.3}} />;
+        return <div key={w.key} className={`flex-1 ${color} rounded-sm`} style={{height: `${v * 20}%`, minHeight: 4}} title={`${formatShort(w.date)} · ${v}/5`} />;
+      })}
+    </div>
+  );
+
+  return (
+    <details className="bg-violet-50 dark:bg-violet-950 border border-violet-200 dark:border-violet-800 rounded-lg p-4 group">
+      <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-violet-900 dark:text-violet-100">
+        <span className="text-lg">📊</span>
+        <span>Historique journal · {entriesWithData.length} semaine{entriesWithData.length > 1 ? "s" : ""} renseignée{entriesWithData.length > 1 ? "s" : ""}</span>
+        <span className="ml-auto text-xs text-violet-700 dark:text-violet-300 group-open:hidden">▼ Voir</span>
+        <span className="ml-auto text-xs text-violet-700 dark:text-violet-300 hidden group-open:inline">▲ Replier</span>
+      </summary>
+      <div className="mt-4 space-y-3">
+        <p className="text-xs text-violet-800 dark:text-violet-200 italic">
+          12 dernières semaines (de la plus ancienne à la plus récente).
+        </p>
+        <div className="space-y-2 text-xs">
+          <div className="flex items-center gap-3">
+            <span className="w-20 font-medium text-slate-700 dark:text-slate-200">⚡ Énergie</span>
+            <div className="flex-1"><Sparkline field="energy" color="bg-amber-500" /></div>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="w-20 font-medium text-slate-700 dark:text-slate-200">🌿 Digestion</span>
+            <div className="flex-1"><Sparkline field="digestion" color="bg-emerald-500" /></div>
+          </div>
+          <div className="flex items-center gap-3">
+            <span className="w-20 font-medium text-slate-700 dark:text-slate-200">🌙 Sommeil</span>
+            <div className="flex-1"><Sparkline field="sleep" color="bg-indigo-500" /></div>
+          </div>
+        </div>
+        <div className="border-t border-violet-200 dark:border-violet-800 pt-3 space-y-1">
+          {entriesWithData.slice().reverse().map(w => (
+            <div key={w.key} className="text-xs text-slate-700 dark:text-slate-200">
+              <span className="font-medium">Sem du {formatShort(w.date)}</span>
+              {" — "}
+              <span>⚡ {w.entry.energy ?? "–"}/5</span>
+              {" · "}
+              <span>🌿 {w.entry.digestion ?? "–"}/5</span>
+              {" · "}
+              <span>🌙 {w.entry.sleep ?? "–"}/5</span>
+              {w.entry.notes && (
+                <span className="text-slate-500 dark:text-slate-400 italic" title={w.entry.notes}>
+                  {" — \""}{w.entry.notes.length > 60 ? w.entry.notes.slice(0, 60) + "…" : w.entry.notes}{"\""}
+                </span>
+              )}
+            </div>
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-violet-700 dark:text-violet-300 italic">
+          Les corrélations avec la composition des menus seront proposées à terme (informatif, pas un diagnostic médical).
+        </p>
+      </div>
+    </details>
+  );
+}
+
+// ===========================================================================
 // V2.50.0 (issue #13) — Suggestions de réutilisation des restes.
 // Détecte les paires (recette J → recette J+1/J+2) où la recette J
 // produces un terme et la recette J+1/J+2 peut le consommer (usesLeftovers).
@@ -20668,6 +20861,23 @@ function SettingsView({state, update, updateProfile}) {
             Conseils conservation : 3-4 jours au frigo dans des boîtes hermétiques. Réchauffer doucement (poêle ou micro-ondes 50%). Plats mijotés et soupes se congèlent généralement bien (3 mois max).
           </p>
         </details>
+      </div>
+
+      {/* V2.52.0 (issue #24) — Journal bien-être : section dédiée car
+          fonctionnalité indépendante (énergie / digestion / sommeil), opt-in. */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">📔 Journal bien-être</h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Saisie hebdomadaire optionnelle de 3 indicateurs (énergie, digestion, sommeil) + notes libres. Affichée en haut du planning courant si activée. Toutes les données restent sur ton appareil (aucune transmission externe).
+        </p>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" checked={!!p.journalEnabled}
+            onChange={e => updateProfile({journalEnabled: e.target.checked})} />
+          <span className="text-sm font-medium">Activer le journal bien-être</span>
+        </label>
+        <p className="text-xs text-slate-500 dark:text-slate-400 italic">
+          À terme, des corrélations seront proposées entre la composition des menus et le ressenti (informatif, pas un diagnostic médical). Cf. <code className="text-xs">issue #85</code> pour l'intégration future avec Apple Santé / Oura / Polar.
+        </p>
       </div>
 
       {/* V2.40.0 (issue #2) — Cuisines préférées : multi-select max 3, hors universel */}
