@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.44.1</title>
+<title>Menu IG Bas — V2.45.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -15826,11 +15826,11 @@ async function saveState(runtime) {
 }
 
 // ----- Menu generation -----------------------------------------------------
-// Renvoie la liste des recettes lunch/dinner servies dans les RECENT_DAYS jours
-// précédant `currentWeekStart`, plus une carte `recipeId → timestamp ms de la
-// semaine la plus récente d'utilisation`. La carte sert à départager les
-// recettes lors d'un fallback en privilégiant la plus ancienne
-// (cf. `pickFromPool` niveau 2).
+// Renvoie la liste des recettes breakfast/lunch/dinner servies dans les
+// RECENT_DAYS jours précédant `currentWeekStart`, plus une carte
+// `recipeId → timestamp ms de la semaine la plus récente d'utilisation`.
+// La carte sert à départager les recettes lors d'un fallback en privilégiant
+// la plus ancienne (cf. `pickFromPool` niveau 2).
 //
 // V2.33.0 — fenêtre réduite de 90 → 14 jours pour résoudre la dérive budget
 // (issue #71). En 90 jours × 35 slots/semaine, le pool des recettes
@@ -15838,6 +15838,11 @@ async function saveState(runtime) {
 // exotiques) → `optimizeForBudget` ne trouvait plus de swap économique.
 // 14 jours = ~ 70 utilisations max → `recentlyUsed` ≈ 35 recettes,
 // laisse 165+ recettes accessibles pour les swaps budget.
+//
+// V2.45.0 (fix #82) — extension à breakfast pour cohérence avec la
+// rotation glissante des breakfasts (cf. ligne 16089) et pour que
+// countRecipeUsageRecent affiche bien "servie X fois" sur les fiches
+// recette breakfast.
 const RECENT_DAYS = 14;
 function recipesUsedRecently(menus, currentWeekStart) {
   const cutoff = new Date(currentWeekStart); cutoff.setDate(cutoff.getDate() - RECENT_DAYS);
@@ -15850,7 +15855,7 @@ function recipesUsedRecently(menus, currentWeekStart) {
       DAYS.forEach(day => {
         if (days[day]) {
           const attendance = days[day].attendance || {};
-          ["lunch","dinner"].forEach(m => {
+          ["breakfast","lunch","dinner"].forEach(m => {
             const id = days[day][m];
             if (!id) return;
             // V2.43.1 — exclut les repas pris à l'extérieur (attendance===[])
@@ -16082,11 +16087,17 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked}) {
       // préserver l'attendance existante
       if (prev.attendance) slot.attendance = prev.attendance;
 
-      // Breakfast: rotation déterministe pour garantir 7 petits-déjs différents si possible
+      // Breakfast: rotation glissante semaine après semaine.
+      // V2.45.0 (fix #82) — l'ancienne rotation `(i + attempt - 1) % length`
+      // redémarrait à 0 chaque semaine ⇒ toujours les 7 mêmes breakfasts
+      // alors que le pool en contient ~47. On ajoute un offset basé sur
+      // le numéro de semaine pour faire défiler le pool. Avec 47 breakfasts,
+      // on parcourt 6,7 semaines avant de revenir au début.
       if (keepLocked && locked.breakfast && prev.breakfast) {
         slot.breakfast = prev.breakfast;
       } else if (breakfasts.length > 0) {
-        slot.breakfast = breakfasts[(i + attempt - 1) % breakfasts.length].id;
+        const weekIdx = Math.floor(weekStart.getTime() / (7 * 24 * 60 * 60 * 1000));
+        slot.breakfast = breakfasts[(weekIdx * 7 + i + attempt - 1) % breakfasts.length].id;
       }
 
       // Lunch
