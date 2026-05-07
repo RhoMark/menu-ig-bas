@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.54.2</title>
+<title>Menu IG Bas — V2.55.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -338,7 +338,9 @@ if ("serviceWorker" in navigator) {
     {"id":"salade verte pour accompagner","label":"Salade verte pour accompagner","category":"produce","soldByWeight":true},
     {"id":"tomate","label":"Tomate","category":"produce","weightPerPiece":120,"soldByWeight":false},
     {"id":"tomate bien","label":"Tomates bien mûres","category":"produce","soldByWeight":true},
-    {"id":"tomate cerise","label":"Tomates cerises","category":"produce","soldByWeight":true},
+    {"id":"tomate cerise","label":"Tomates cerises","category":"produce","weightPerPiece":10,"soldByWeight":true},
+    {"id":"tomate cocktail","label":"Tomates cocktail","category":"produce","weightPerPiece":15,"soldByWeight":true},
+    {"id":"celeri branche","label":"Céleri branche","category":"produce","weightPerPiece":40,"soldByWeight":true},
     {"id":"tomate de variete ancienne","label":"Tomate variété ancienne","category":"produce","weightPerPiece":200,"soldByWeight":false},
     {"id":"tomate grappe","label":"Tomate grappe","category":"produce","weightPerPiece":120,"soldByWeight":false},
     {"id":"agneau hache","label":"Agneau haché","category":"meat-fish","soldByWeight":true},
@@ -8238,7 +8240,7 @@ if ("serviceWorker" in navigator) {
         ["Graines de chia", 1, "c.à.s", "pantry"],
         ["Flocons d'avoine", 30, "g", "pantry"],
         ["Lait d'amande", 100, "ml", "dairy"],
-        ["Miel", 1, "c.à.c", "spices"]
+        ["Miel", 1, "c.à.c", "pantry"]
       ],
       "steps": [
         "Mixe la banane épluchée avec la moitié des fraises, le yaourt grec et le lait d'amande jusqu'à obtenir une texture lisse et onctueuse.",
@@ -9482,7 +9484,7 @@ if ("serviceWorker" in navigator) {
       "ing": [
         ["Fromage blanc", 200, "g", "dairy"],
         ["Fruits rouges", 80, "g", "produce"],
-        ["Miel", 1, "c.à.c", "spices"],
+        ["Miel", 1, "c.à.c", "pantry"],
         ["Citron (jus)", 0.25, "u", "produce"],
         ["Graines de chia", 1, "c.à.c", "pantry"]
       ],
@@ -9513,7 +9515,7 @@ if ("serviceWorker" in navigator) {
         ["Yaourt grec", 150, "g", "dairy"],
         ["Kiwi", 1, "u", "produce"],
         ["Graines de chia", 2, "c.à.c", "pantry"],
-        ["Miel", 1, "c.à.c", "spices"],
+        ["Miel", 1, "c.à.c", "pantry"],
         ["Citron vert (jus)", 0.25, "u", "produce"],
         ["Menthe fraîche", 0.02, "bouquet", "produce"]
       ],
@@ -9545,7 +9547,7 @@ if ("serviceWorker" in navigator) {
         ["Kiwi", 1, "u", "produce"],
         ["Citron vert (jus)", 0.5, "u", "produce"],
         ["Menthe fraîche", 0.05, "bouquet", "produce"],
-        ["Miel", 0.5, "c.à.c", "spices"],
+        ["Miel", 0.5, "c.à.c", "pantry"],
         ["Vanille en poudre", 1, "pincée", "spices"]
       ],
       "steps": [
@@ -14824,7 +14826,7 @@ if ("serviceWorker" in navigator) {
         ["Citron (jus)", 0.5, "u", "produce"],
         ["Saumon fumé", 40, "g", "meat-fish"],
         ["Aneth frais", 0.05, "bouquet", "produce"],
-        ["Cerneaux de noix", 4, "u", "pantry"],
+        ["Cerneaux de noix", 60, "g", "pantry"],
         ["Miel", 1, "c.à.c", "pantry"],
         ["Fromage de chèvre frais", 30, "g", "dairy"],
         ["Radis roses", 2, "u", "produce"],
@@ -17913,6 +17915,15 @@ function isHerbFresh(canonName) {
 //    (NOUVEAU V2.43.2)
 //  - produce HERBE FRAÎCHE c.à.c/c.à.s/pincée → g via SPOON_TO_GRAMS
 //    (NOUVEAU V2.43.2)
+// V2.55.0 — Racines/rhizomes frais saisis en cm, c.à.c, c.à.s ou g
+// dans les recettes (typiquement le gingembre frais). On les normalise
+// vers g pour fusionner avec les versions épice/poudre du même item.
+const ROOT_FRESH_KEYWORDS = ["gingembre", "curcuma frais", "raifort"];
+const ROOT_CM_TO_G = {default: 5, "gingembre": 5, "gingembre frais": 5, "curcuma frais": 4, "raifort": 8};
+function isFreshRoot(canonName) {
+  if (!canonName) return false;
+  return ROOT_FRESH_KEYWORDS.some(k => canonName.includes(k));
+}
 function unitConvertForAggregation(qty, unit, canonName, category) {
   if (category === "spices") {
     const f = SPOON_TO_GRAMS[unit];
@@ -17921,6 +17932,11 @@ function unitConvertForAggregation(qty, unit, canonName, category) {
     if (isLiquidAromatic(canonName)) {
       const f = SPOON_TO_ML[unit];
       if (f != null) return {qty: qty * f, unit: "ml"};
+      // V2.55.0 — Saisie directe en g d'un liquide aromatique : on
+      // convertit en ml (densité ≈ 1.0 pour huiles/miel/lait/sirop ;
+      // approximation acceptable pour fusion liste de courses) afin
+      // que les saisies hétérogènes g/ml/cuillères convergent vers ml.
+      if (unit === "g") return {qty: qty, unit: "ml"};
     } else {
       // Default pantry/dairy non-liquide : conversion en grammes.
       const f = SPOON_TO_GRAMS[unit];
@@ -17940,6 +17956,15 @@ function unitConvertForAggregation(qty, unit, canonName, category) {
     }
     if (unit === "branche" || unit === "brin") {
       const g = HERB_BRANCHE_G[canonName] ?? HERB_BRANCHE_G.default;
+      return {qty: qty * g, unit: "g"};
+    }
+    const f = SPOON_TO_GRAMS[unit];
+    if (f != null) return {qty: qty * f, unit: "g"};
+  } else if (category === "produce" && isFreshRoot(canonName)) {
+    // V2.55.0 — Gingembre frais (et autres rhizomes) saisis en cm, cuillères
+    // ou g. Tout converger vers g pour fusion.
+    if (unit === "cm") {
+      const g = ROOT_CM_TO_G[canonName] ?? ROOT_CM_TO_G.default;
       return {qty: qty * g, unit: "g"};
     }
     const f = SPOON_TO_GRAMS[unit];
