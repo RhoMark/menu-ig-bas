@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.54.0</title>
+<title>Menu IG Bas — V2.54.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -22171,6 +22171,52 @@ function SettingsView({state, update, updateProfile}) {
           </label>
           <button onClick={() => { setPasteMode(m => !m); setImportStatus(null); }} className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-slate-100 px-4 py-2 rounded text-sm font-medium">
             {pasteMode ? "✕ Annuler" : "📋 Coller du texte"}
+          </button>
+          {/* V2.54.1 — Bouton debug temporaire pour investiguer le bug
+              d'agrégation de la liste de courses (issue HedgeX). Copie
+              uniquement les recipe IDs + attendance, PAS de notes/journal/
+              allergies. À retirer après le diagnostic. */}
+          <button onClick={async () => {
+            try {
+              const raw = JSON.parse(localStorage.getItem(STORAGE_KEY_V2) || "{}");
+              const decrypted = raw.encrypted ? await cryptoStore.decrypt(raw) : JSON.stringify(raw);
+              const stateObj = JSON.parse(decrypted);
+              const h = stateObj.households?.[stateObj.activeHouseholdId];
+              if (!h) { alert("Aucun household actif"); return; }
+              const summary = {};
+              for (const [wkk, days] of Object.entries(h.menus || {})) {
+                summary[wkk] = {};
+                for (const day of DAYS) {
+                  if (days[day]) summary[wkk][day] = {
+                    breakfast: days[day].breakfast,
+                    lunch: days[day].lunch,
+                    dinner: days[day].dinner,
+                    snack: days[day].snack,
+                    dessert: days[day].dessert,
+                    attendance: days[day].attendance,
+                    locked: days[day].locked,
+                  };
+                }
+              }
+              const text = JSON.stringify({
+                menus: summary,
+                members_count: h.members?.length,
+                snack_enabled: h.preferences?.snackEnabled,
+                app_version: document.title.match(/V[\d.]+/)?.[0],
+              }, null, 2);
+              try {
+                await navigator.clipboard.writeText(text);
+                alert("✓ Menus debug copiés dans le presse-papier (recettes IDs uniquement). Colle-le dans Claude.");
+              } catch (clipErr) {
+                // Fallback : afficher dans une textarea modale pour copier manuellement
+                const w = window.open("", "_blank", "width=600,height=400");
+                w.document.body.innerHTML = `<textarea style="width:100%;height:100%;font-family:monospace;font-size:11px">${text.replace(/</g, "&lt;")}</textarea>`;
+              }
+            } catch (e) {
+              alert("Erreur debug: " + e.message);
+            }
+          }} className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded text-sm font-medium">
+            🔧 [Debug] Copier menus
           </button>
         </div>
         {pasteMode && (
