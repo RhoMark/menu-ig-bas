@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.59.0</title>
+<title>Menu IG Bas — V2.59.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20961,48 +20961,61 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         ) : (
                           <p className="text-slate-400 dark:text-slate-500 italic">—</p>
                         )}
-                        {/* Sous-panneau dessert attaché à ce repas */}
-                        {showDessertHere && (
-                          <div className={`mt-2 pt-2 border-t border-dashed ${dessertLocked ? "border-amber-400" : "border-slate-300 dark:border-slate-600"}`}>
-                            {/* V2.59.0 — Même réorga que le slot principal : label seul,
-                                boutons sur ligne séparée. */}
-                            <span className="block text-[11px] font-medium text-rose-600 mb-1">🍰 Dessert</span>
-                            <div className="flex gap-1.5 mb-1">
-                              <button title={dessertPartial ? `${dessertNPresent}/${nAll}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartial ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartial ? dessertNPresent : ""}</button>
-                              <button title="Verrouiller" onClick={()=>toggleLock(day,"dessert")} className="text-xs hover:opacity-70">{dessertLocked ? "🔒" : "🔓"}</button>
-                              <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:"dessert"})} className="text-xs hover:opacity-70">🔀</button>
-                              <button title="Changer" onClick={()=>regenerateSlot(day,"dessert")} className="text-xs hover:opacity-70">🎲</button>
-                            </div>
-                            {dessertRecipe ? (
-                              <button onClick={() => onSelectRecipe(dessertRecipe.id, {day, meal: "dessert"})}
-                                className="text-left w-full hover:text-rose-700 dark:text-rose-300 text-xs text-slate-700 dark:text-slate-200">
-                                <span className="flex items-start gap-1">
-                                  <span className="flex-1 font-medium">{dessertRecipe.name}</span>
-                                  {recipeAdvanceInfo(dessertRecipe) && (
-                                    <span title={`À préparer ${recipeAdvanceInfo(dessertRecipe).label}`}
-                                          className="text-amber-600 flex-shrink-0">
-                                      {recipeAdvanceInfo(dessertRecipe).icon}
-                                    </span>
-                                  )}
-                                </span>
-                                <span className="block text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
-                                  ⏱ {recipeTimeLabel(dessertRecipe)} · {dessertRecipe.kcal}kcal
-                                  {recipeAdvanceInfo(dessertRecipe) && (
-                                    <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(dessertRecipe).shortLabel} avance</span>
-                                  )}
-                                </span>
-                                {dessertIsExternal && (
-                                  <span className="block text-[11px] text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
-                                )}
-                              </button>
-                            ) : (
-                              <p className="text-slate-400 dark:text-slate-500 italic text-xs">— aucun dessert</p>
-                            )}
-                          </div>
-                        )}
                       </div>
                     );
                   })}
+                  {/* V2.59.1 — Dessert sorti en row séparée (au lieu d'être imbriqué
+                      dans lunch/dinner selon dessertTime). Garantit l'alignement
+                      vertical des slots entre tous les jours, indépendamment de
+                      la mention "X en avance" ou "Repas extérieur" qui faisait
+                      varier la hauteur du slot dîner+dessert. Le rattachement
+                      au repas reste indiqué dans le label : "🍰 Dessert (au dîner)". */}
+                  {(() => {
+                    const dessertRecipeRow = RECIPES.find(r => r.id === slot.dessert);
+                    const dessertLockedRow = slot.locked?.dessert;
+                    const dessertAttRow = attendance.dessert;
+                    const nAllRow = state.profile.members.length;
+                    const dessertNPRow = dessertAttRow == null ? nAllRow : dessertAttRow.length;
+                    const dessertPartRow = dessertAttRow != null && dessertNPRow < nAllRow;
+                    const dessertExtRow = dessertAttRow != null && dessertNPRow === 0;
+                    const dessertAttachLabel = dessertTime === "lunch" ? "(au déj)" : "(au dîner)";
+                    return (
+                      <div className={`border rounded p-2 text-sm flex flex-col min-h-[140px] ${dessertLockedRow ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-rose-50 dark:bg-rose-950 border-rose-200 dark:border-rose-800"}`}>
+                        <span className="text-xs font-medium text-rose-600 dark:text-rose-300 mb-1">🍰 Dessert <span className="font-normal text-slate-500 dark:text-slate-400">{dessertAttachLabel}</span></span>
+                        <div className="flex gap-1.5 mb-2">
+                          <button title={dessertPartRow ? `${dessertNPRow}/${nAllRow}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartRow ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartRow ? dessertNPRow : ""}</button>
+                          <button title="Verrouiller" onClick={()=>toggleLock(day,"dessert")} className="text-xs hover:opacity-70">{dessertLockedRow ? "🔒" : "🔓"}</button>
+                          <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:"dessert"})} className="text-xs hover:opacity-70">🔀</button>
+                          <button title="Changer aléatoire" onClick={()=>regenerateSlot(day,"dessert")} className="text-xs hover:opacity-70">🎲</button>
+                        </div>
+                        {dessertRecipeRow ? (
+                          <button onClick={() => onSelectRecipe(dessertRecipeRow.id, {day, meal: "dessert"})}
+                            className="text-left w-full hover:text-rose-700 dark:hover:text-rose-300 font-medium text-slate-800 dark:text-slate-100">
+                            <span className="flex items-start gap-1">
+                              <span className="flex-1">{dessertRecipeRow.name}</span>
+                              {recipeAdvanceInfo(dessertRecipeRow) && (
+                                <span title={`À préparer ${recipeAdvanceInfo(dessertRecipeRow).label}`}
+                                      className="text-amber-600 text-sm flex-shrink-0">
+                                  {recipeAdvanceInfo(dessertRecipeRow).icon}
+                                </span>
+                              )}
+                            </span>
+                            <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
+                              ⏱ {recipeTimeLabel(dessertRecipeRow)} · {dessertRecipeRow.kcal}kcal
+                              {recipeAdvanceInfo(dessertRecipeRow) && (
+                                <span className="ml-1 text-amber-700 dark:text-amber-300 font-semibold">· {recipeAdvanceInfo(dessertRecipeRow).shortLabel} avance</span>
+                              )}
+                            </span>
+                            {dessertExtRow && (
+                              <span className="block text-xs text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
+                            )}
+                          </button>
+                        ) : (
+                          <p className="text-slate-400 dark:text-slate-500 italic">—</p>
+                        )}
+                      </div>
+                    );
+                  })()}
                 </div>
               </div>
             );
