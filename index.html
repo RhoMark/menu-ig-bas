@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.72.0</title>
+<title>Menu IG Bas — V2.72.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -22650,6 +22650,29 @@ function estimateWeekCost(weekMenu, profile) {
   return total;
 }
 
+// V2.61.1 / V2.72.1 (#90) — Ratio de présence sur une semaine, utilisé pour
+// ajuster la cible budget proportionnellement aux slots non externalisés.
+// Pondéré par mealEquivalents (= adultes équivalents présents) pour refléter
+// le poids relatif d'un slot familial vs un slot solo.
+// Returns 1 si pas de profil/slots ou pas d'ajustement nécessaire.
+// Factorisé V2.72.1 pour partage entre MenuView (hebdo) et MonthView (mensuel).
+function weekAttendanceRatio(weekMenu, profile) {
+  if (!profile || !profile.members?.length) return 1;
+  const activeSlots = getAllActiveSlots(profile);
+  if (activeSlots.length === 0) return 1;
+  const fullMult = totalEquivalents(profile);
+  let multActual = 0, multIfFull = 0;
+  DAYS.forEach(day => {
+    const slot = weekMenu[day] || {};
+    const att = slot.attendance || {};
+    activeSlots.forEach(meal => {
+      multActual += mealEquivalents(profile, att[meal]);
+      multIfFull += fullMult;
+    });
+  });
+  return multIfFull > 0 ? multActual / multIfFull : 1;
+}
+
 // V2.69.0 (issue #75) — Classification d'un ingrédient sur les axes nutritionnels
 // surveillés par les recommandations OMS / WCRF / PNNS / EFSA :
 //   egg          : œufs (compter en unités)
@@ -23852,27 +23875,12 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
   const cost = estimateWeekCost(currentMenu, state.profile);
-  // V2.61.1 — Cible budget ajustée au prorata des slots non externalisés.
-  // Si l'utilisateur marque des repas comme extérieurs (attendance===[]), ces
-  // slots ne sont pas dans `cost` (estimateWeekCost les exclut déjà). Il faut
-  // donc aussi réduire la cible pour conserver un ratio cost/cible cohérent.
-  // Pondération : par mealEquivalents (= nb d'adultes équivalents présents),
-  // pour refléter le poids relatif d'un slot familial vs un slot solo.
+  // V2.61.1 / V2.72.1 — Cible budget ajustée au prorata des slots non
+  // externalisés (cf weekAttendanceRatio). Factorisé en helper partagée
+  // avec MonthView (#90).
   const budgetAdjust = (() => {
     if (!state.profile.budgetWeekly || state.profile.budgetWeekly <= 0) return {ratio: 1, target: 0};
-    const allKeys = getAllActiveSlots(state.profile);
-    const fullMult = totalEquivalents(state.profile);
-    let multActual = 0;
-    let multIfFull = 0;
-    DAYS.forEach(d => {
-      const slot = currentMenu[d] || {};
-      const att = slot.attendance || {};
-      allKeys.forEach(k => {
-        multActual += mealEquivalents(state.profile, att[k]);
-        multIfFull += fullMult;
-      });
-    });
-    const ratio = multIfFull > 0 ? multActual / multIfFull : 1;
+    const ratio = weekAttendanceRatio(currentMenu, state.profile);
     return {ratio, target: state.profile.budgetWeekly * ratio};
   })();
   const adjustedBudget = budgetAdjust.target || state.profile.budgetWeekly;
@@ -25160,13 +25168,26 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
       });
     });
     const cost = estimateWeekCost(menu, state.profile);
-    return {ws, wk, menu, cost, filled, locks};
+    // V2.72.1 (#90) — cible budget ajustée par semaine au prorata des slots
+    // non externalisés (cohérent avec la vue hebdo). Si l'utilisateur a marqué
+    // des repas comme extérieurs (attendance===[]), la cible de cette semaine
+    // est réduite proportionnellement.
+    const ratio = weekAttendanceRatio(menu, state.profile);
+    const weekBudget = (state.profile.budgetWeekly || 0) * ratio;
+    return {ws, wk, menu, cost, filled, locks, ratio, weekBudget};
   });
 
   const monthlyCost = weekInfos.reduce((s, w) => s + w.cost, 0);
-  const monthlyBudget = (state.profile.budgetWeekly || 0) * 5;
+  // V2.72.1 (#90) — cumul des cibles ajustées (vs anciennement
+  // budgetWeekly × 5 qui ignorait les ajustements de présence).
+  const monthlyBudget = weekInfos.reduce((s, w) => s + w.weekBudget, 0);
+  const monthlyBudgetFull = (state.profile.budgetWeekly || 0) * 5;
   const tol = (state.profile.budgetTolerance ?? 10) / 100;
   const monthlyMax = monthlyBudget * (1 + tol);
+  // Ratio moyen pondéré pour l'affichage (= monthlyBudget / monthlyBudgetFull
+  // si budgetWeekly > 0, sinon 1)
+  const monthlyAttendanceRatio = monthlyBudgetFull > 0 ? monthlyBudget / monthlyBudgetFull : 1;
+  const hasMonthlyAdjust = monthlyAttendanceRatio < 0.999 && monthlyBudgetFull > 0;
 
   // Diversité : nombre de recettes uniques utilisées sur les 5 semaines
   const allRecipes = new Set();
@@ -25245,12 +25266,24 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
       </div>
 
       {/* Bandeau coût mensuel */}
-      {monthlyBudget > 0 && (
+      {monthlyBudgetFull > 0 && (
         <div className={`rounded-lg shadow p-4 border ${monthlyTier ? tierColors[monthlyTier] : "bg-slate-100 dark:bg-slate-700"}`}>
           <div className="flex items-center gap-3 flex-wrap">
             <div className="flex-1">
               <div className="text-sm font-semibold mb-1">{tierLabels[monthlyTier]}</div>
-              <div className="text-2xl font-bold">{monthlyCost.toFixed(2)} € <span className="text-sm font-normal opacity-75">/ {monthlyBudget.toFixed(0)} € (5 semaines)</span></div>
+              <div className="text-2xl font-bold">
+                {monthlyCost.toFixed(2)} €
+                <span className="text-sm font-normal opacity-75">
+                  {' '}/ {monthlyBudget.toFixed(0)} € (5 semaines)
+                </span>
+              </div>
+              {/* V2.72.1 (#90) — affichage cible ajustée si présence < 100% */}
+              {hasMonthlyAdjust && (
+                <div className="text-xs opacity-75 mt-1"
+                  title={`Cible originale 5 sem. : ${monthlyBudgetFull.toFixed(0)} €. ${Math.round((1-monthlyAttendanceRatio)*100)}% des slots du mois sont externalisés ; la cible totale est réduite proportionnellement (somme des cibles ajustées par semaine).`}>
+                  cible ajustée · {Math.round(monthlyAttendanceRatio*100)} % présence (vs {monthlyBudgetFull.toFixed(0)} € pleine)
+                </div>
+              )}
               <div className="mt-2 h-2 w-full max-w-md bg-white/60 rounded-full overflow-hidden">
                 <div className={`h-full ${
                   monthlyTier === "hard-over" ? "bg-red-500" :
