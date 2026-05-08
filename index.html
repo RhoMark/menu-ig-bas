@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.68.0</title>
+<title>Menu IG Bas — V2.69.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21325,6 +21325,114 @@ function estimateWeekCost(weekMenu, profile) {
   return total;
 }
 
+// V2.69.0 (issue #75) — Classification d'un ingrédient sur les axes nutritionnels
+// surveillés par les recommandations OMS / WCRF / PNNS / EFSA :
+//   egg          : œufs (compter en unités)
+//   redMeat      : viande rouge cuite (sommer en grammes)
+//   charcuterie  : viandes transformées (CIRC cancérogène certain ; limiter)
+//   fishOily     : poisson gras (cible ≥ 1 portion / sem)
+//   fishLean     : poisson maigre / fruits de mer (cible total ≥ 2 / sem avec gras)
+//   legume       : légumineuses (cible ≥ 2 portions / sem)
+// Renvoie null si aucune catégorie ne s'applique.
+// Approche : regex sur canonicalName (qui supprime accents, parenthèses,
+// qualifiants type « cuit », « frais »…). Filet de poulet, dinde, lapin
+// = volaille blanche → null (non comptée en viande rouge).
+function classifyNutritionIngredient(name, category) {
+  const n = canonicalName(name || "");
+  if (!n) return null;
+  // Œufs : "œuf", "oeuf" (canonicalName remplace œ → oe)
+  if (/\boeuf\b/.test(n)) return "egg";
+  // Viande rouge : mammifères (boeuf, veau, porc, agneau, mouton, gibier).
+  // Inclus filets, morceaux nommés (bavette, onglet, gigot, joue, épaule,
+  // saute, mijote). Exclu : volaille, lapin.
+  if (/\b(boeuf|veau|porc|agneau|mouton|gigot|bavette|onglet|joue|carre|carre d agneau|epaule d agneau|filet mignon de porc|sanglier|chevreuil|cerf|biche|gibier|tranche de boeuf)\b/.test(n)) {
+    return "redMeat";
+  }
+  // Charcuterie : transformations carnées salées/fumées.
+  if (/\b(jambon|jambon cru|jambon blanc|bacon|lardon|saucisse|saucisson|chorizo|pancetta|prosciutto|salami|mortadelle|rillette|pate de campagne|andouille|boudin|lard|coppa|bresaola|guanciale|parmesan de jambon|charcuterie)\b/.test(n)) {
+    return "charcuterie";
+  }
+  // Poissons gras (oméga-3 long-chain).
+  if (/\b(saumon|sardine|maquereau|hareng|anchois|truite de mer|truite saumonee|thon)\b/.test(n)) return "fishOily";
+  // Poissons maigres + fruits de mer.
+  if (/\b(morue|cabillaud|lieu|merlu|colin|bar|daurade|dorade|sole|lotte|perche|brochet|sandre|loup|pageot|julienne|raie|carrelet|turbot|congre|roussette|saint pierre|baudroie|eglefin|merlan|julien|fletan|saumonette|truite arc en ciel|poisson)\b/.test(n)) return "fishLean";
+  if (/\b(crevette|gambas|langoustine|homard|crabe|moule|huitre|coquille saint jacques|saint jacques|seiche|encornet|calmar|poulpe|ecrevisse|tourteau|tourteaux)\b/.test(n)) return "fishLean";
+  // Légumineuses : lentilles, pois chiches, haricots secs, fèves, soja, tofu,
+  // edamame, pois cassés. Exclus : haricot vert (= légume), petits pois frais.
+  if (/\b(lentille|lentille corail|lentille verte|lentille beluga|pois chiche|haricot blanc|haricot noir|haricot rouge|haricot azuki|haricot coco|fève|feve|fevedoupin|soja|edamame|tofu|tempeh|pois casse|pois sec|fagiolo|cannellini|borlotti|flageolet|mungo)\b/.test(n)) return "legume";
+  return null;
+}
+
+// V2.69.0 (issue #75) — Agrégats nutritionnels de la semaine + seuils.
+// Sources : OMS (sel, sucres, viande rouge, transformée), WCRF/AICR (red meat
+// 500 g/sem cuit), PNNS (œufs 10/sem, légumineuses 2/sem), EFSA (poisson 2/sem
+// dont 1 gras). Implémentation : niveau 1 — œufs / viande rouge / charcuterie
+// / poisson / légumineuses. Niveau 2 (sel, sucres ajoutés, AGS, AGT) demande
+// l'enrichissement macros (issue #17), reporté.
+function computeWeeklyNutritionTotals(weekMenu, profile) {
+  const activeSlots = getAllActiveSlots(profile);
+  const totals = {
+    eggs: 0,
+    redMeatGrams: 0,
+    charcuterieGrams: 0,
+    fishPortions: 0,
+    fishOilyPortions: 0,
+    legumePortions: 0,
+  };
+  DAYS.forEach(day => {
+    const slot = weekMenu[day] || {};
+    const attendance = slot.attendance || {};
+    activeSlots.forEach(meal => {
+      const rid = slot[meal];
+      if (!rid) return;
+      const att = attendance[meal];
+      if (Array.isArray(att) && att.length === 0) return; // repas extérieur
+      const recipe = RECIPES.find(r => r.id === rid);
+      if (!recipe) return;
+      const mult = mealEquivalents(profile, att);
+      if (mult <= 0) return;
+      let hasFishLean = false, hasFishOily = false, hasLegume = false;
+      (recipe.ing || []).forEach(ing => {
+        const [name, qty, unit, cat] = ing;
+        const cls = classifyNutritionIngredient(name, cat);
+        if (cls === "egg") {
+          // 1 unité = 1 œuf ; en grammes, ~50 g/œuf moyen → division.
+          if (unit === "u") totals.eggs += qty * mult;
+          else if (unit === "g") totals.eggs += (qty / 50) * mult;
+        } else if (cls === "redMeat") {
+          if (unit === "g") totals.redMeatGrams += qty * mult;
+          // Si unité non standard (rare), on ignore (estimation prudente).
+        } else if (cls === "charcuterie") {
+          if (unit === "g") totals.charcuterieGrams += qty * mult;
+        } else if (cls === "fishOily") {
+          hasFishOily = true;
+        } else if (cls === "fishLean") {
+          hasFishLean = true;
+        } else if (cls === "legume") {
+          hasLegume = true;
+        }
+      });
+      if (hasFishOily || hasFishLean) totals.fishPortions += 1;
+      if (hasFishOily) totals.fishOilyPortions += 1;
+      if (hasLegume) totals.legumePortions += 1;
+    });
+  });
+  // Seuils foyer (basés sur totalEquivalents — tous adultes équivalents
+  // partageant le même seuil). Les portions de poisson / légumineuse sont
+  // par foyer (= "le foyer mange du poisson 2 fois cette semaine"), pas
+  // par personne, donc seuil non multiplié.
+  const totalEq = totalEquivalents(profile);
+  const thresholds = {
+    eggsMax: 10 * totalEq,        // 10 / pers / sem (PNNS)
+    redMeatMax: 500 * totalEq,    // 500 g cuit / pers / sem (WCRF/AICR)
+    charcuterieMax: 100 * totalEq, // limite douce ~100 g / pers / sem (CIRC)
+    fishMin: 2,                   // 2 portions / sem (EFSA, foyer)
+    fishOilyMin: 1,               // 1 portion grasse / sem (EFSA)
+    legumeMin: 2,                 // 2 portions / sem (PNNS)
+  };
+  return {totals, thresholds, totalEq};
+}
+
 // ============================================================================
 // COMPONENTS
 // ============================================================================
@@ -22563,6 +22671,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           🛒 Liste de courses
         </button>
       </div>
+
+      {/* V2.69.0 (issue #75) — Bandeau recos nutritionnelles OMS/WCRF/PNNS */}
+      {hasAny && <NutritionBanner currentMenu={currentMenu} profile={state.profile} />}
 
       {!hasAny && (
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-12 text-center">
@@ -24102,6 +24213,106 @@ function JournalHistory({state, currentWeek, profile}) {
 // cette semaine, non persisté). Désactivé si batchActiveThisWeek (cohérent :
 // le batch prépare tout d'un coup, pas de "reste du dîner d'hier").
 // ===========================================================================
+// V2.69.0 (issue #75) — Bandeau recos nutritionnelles OMS / WCRF / PNNS / EFSA.
+// Affiche uniquement les axes en alerte (pas de bruit visuel quand tout va bien).
+// Statut par axe :
+//   ok      : valeur dans la plage cible (vert) — masqué pour ne pas surcharger
+//   warning : valeur proche du seuil (ambre) — affiché
+//   over    : seuil dépassé (rouge) ou minimum non atteint
+// Pour un menu vide ou un foyer sans repas planifié, le composant ne rend rien.
+function NutritionBanner({currentMenu, profile}) {
+  const {totals, thresholds, totalEq} = computeWeeklyNutritionTotals(currentMenu, profile);
+  if (!totalEq || totalEq <= 0) return null;
+  // Détermine les axes à afficher (only alerts/warnings).
+  const items = [];
+  // Œufs (max)
+  if (totals.eggs > thresholds.eggsMax) {
+    items.push({key: "eggs", level: "over", icon: "🥚",
+      label: `Œufs : ${totals.eggs.toFixed(0)} / sem`,
+      detail: `Repère PNNS ≤ 10 / pers / sem (≤ ${thresholds.eggsMax.toFixed(0)} pour le foyer).`});
+  } else if (totals.eggs > thresholds.eggsMax * 0.85) {
+    items.push({key: "eggs", level: "warning", icon: "🥚",
+      label: `Œufs : ${totals.eggs.toFixed(0)} / sem`,
+      detail: `Approche du repère PNNS 10 / pers / sem (foyer ≤ ${thresholds.eggsMax.toFixed(0)}).`});
+  }
+  // Viande rouge (max, en grammes — affiche en kg pour grosses valeurs)
+  const redFmt = totals.redMeatGrams >= 1000 ? `${(totals.redMeatGrams/1000).toFixed(1)} kg` : `${Math.round(totals.redMeatGrams)} g`;
+  const redMaxFmt = thresholds.redMeatMax >= 1000 ? `${(thresholds.redMeatMax/1000).toFixed(1)} kg` : `${Math.round(thresholds.redMeatMax)} g`;
+  if (totals.redMeatGrams > thresholds.redMeatMax) {
+    items.push({key: "red", level: "over", icon: "🥩",
+      label: `Viande rouge : ${redFmt} / sem`,
+      detail: `Repère WCRF/AICR ≤ 500 g cuit / pers / sem (foyer ≤ ${redMaxFmt}). Risque colorectal au-delà.`});
+  } else if (totals.redMeatGrams > thresholds.redMeatMax * 0.85) {
+    items.push({key: "red", level: "warning", icon: "🥩",
+      label: `Viande rouge : ${redFmt} / sem`,
+      detail: `Approche du repère WCRF/AICR 500 g / pers / sem (foyer ≤ ${redMaxFmt}).`});
+  }
+  // Charcuterie (limite douce)
+  if (totals.charcuterieGrams > thresholds.charcuterieMax) {
+    items.push({key: "charc", level: "over", icon: "🥓",
+      label: `Charcuterie : ${Math.round(totals.charcuterieGrams)} g / sem`,
+      detail: `Le CIRC/OMS classe les viandes transformées comme cancérogène certain (groupe 1). À limiter fortement, repère soft ≤ ${Math.round(thresholds.charcuterieMax)} g foyer.`});
+  } else if (totals.charcuterieGrams > 0) {
+    items.push({key: "charc", level: "warning", icon: "🥓",
+      label: `Charcuterie : ${Math.round(totals.charcuterieGrams)} g / sem`,
+      detail: `Présence détectée. Le CIRC/OMS recommande de limiter fortement les viandes transformées.`});
+  }
+  // Poisson (min)
+  if (totals.fishPortions < thresholds.fishMin) {
+    items.push({key: "fish", level: "over", icon: "🐟",
+      label: `Poisson : ${totals.fishPortions} / 2 portions visées`,
+      detail: `Repère EFSA ≥ 2 portions / sem (foyer), dont 1 grasse (oméga-3). Actuellement gras : ${totals.fishOilyPortions}.`});
+  } else if (totals.fishOilyPortions < thresholds.fishOilyMin) {
+    items.push({key: "fishOily", level: "warning", icon: "🐟",
+      label: `Poisson gras : ${totals.fishOilyPortions} / 1 portion visée`,
+      detail: `Repère EFSA ≥ 1 portion grasse / sem (saumon, sardine, maquereau, hareng, anchois, truite, thon).`});
+  }
+  // Légumineuses (min)
+  if (totals.legumePortions < thresholds.legumeMin) {
+    items.push({key: "legume", level: "over", icon: "🫘",
+      label: `Légumineuses : ${totals.legumePortions} / 2 portions visées`,
+      detail: `Repère PNNS ≥ 2 portions / sem (foyer). Lentilles, pois chiches, haricots secs, fèves, soja, tofu, edamame.`});
+  }
+  // Si rien à signaler, retourne null
+  if (items.length === 0) return null;
+  // Tri : "over" avant "warning"
+  items.sort((a, b) => (a.level === "over" ? 0 : 1) - (b.level === "over" ? 0 : 1));
+  return (
+    <details className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-3 no-print">
+      <summary className="cursor-pointer flex items-center gap-2 flex-wrap">
+        <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">🩺 Repères nutritionnels</span>
+        {items.map(it => (
+          <span key={it.key}
+            className={`text-xs px-2 py-0.5 rounded-full font-medium ${
+              it.level === "over"
+                ? "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 border border-red-300 dark:border-red-700"
+                : "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 border border-amber-300 dark:border-amber-700"
+            }`}>
+            {it.icon} {it.label}
+          </span>
+        ))}
+        <span className="text-xs text-slate-400 dark:text-slate-500 ml-auto">détails ▾</span>
+      </summary>
+      <div className="mt-3 space-y-2 text-xs text-slate-600 dark:text-slate-300">
+        {items.map(it => (
+          <div key={it.key} className={`p-2 rounded border ${
+            it.level === "over"
+              ? "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800"
+              : "bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800"
+          }`}>
+            <div className="font-semibold text-slate-800 dark:text-slate-100">{it.icon} {it.label}</div>
+            <div className="mt-0.5">{it.detail}</div>
+          </div>
+        ))}
+        <p className="text-[11px] text-slate-500 dark:text-slate-400 italic mt-1">
+          Sources : OMS, EFSA, ANSES/PNNS, WCRF/AICR. Repères calculés au foyer ({totalEq.toFixed(1)} adultes équivalents). Repas externalisés exclus.
+          Sel et sucres ajoutés non encore mesurés (issue #17 macros — V2 ultérieur).
+        </p>
+      </div>
+    </details>
+  );
+}
+
 function LeftoverSuggestions({state, currentMenu, currentWeek, profile, replaceSlot, toggleLock, onSelectRecipe}) {
   const [ignored, setIgnored] = useState(() => new Set());
 
