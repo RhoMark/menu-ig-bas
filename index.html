@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.61.0</title>
+<title>Menu IG Bas — V2.61.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20731,14 +20731,38 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
   const cost = estimateWeekCost(currentMenu, state.profile);
-  // Bandeau budget V2.11.0 : 4 paliers selon le ratio cost/budget vs tolérance.
-  // - "under"   : ≤ 95% du budget (vert clair, économies)
+  // V2.61.1 — Cible budget ajustée au prorata des slots non externalisés.
+  // Si l'utilisateur marque des repas comme extérieurs (attendance===[]), ces
+  // slots ne sont pas dans `cost` (estimateWeekCost les exclut déjà). Il faut
+  // donc aussi réduire la cible pour conserver un ratio cost/cible cohérent.
+  // Pondération : par mealEquivalents (= nb d'adultes équivalents présents),
+  // pour refléter le poids relatif d'un slot familial vs un slot solo.
+  const budgetAdjust = (() => {
+    if (!state.profile.budgetWeekly || state.profile.budgetWeekly <= 0) return {ratio: 1, target: 0};
+    const allKeys = getAllActiveSlots(state.profile);
+    const fullMult = totalEquivalents(state.profile);
+    let multActual = 0;
+    let multIfFull = 0;
+    DAYS.forEach(d => {
+      const slot = currentMenu[d] || {};
+      const att = slot.attendance || {};
+      allKeys.forEach(k => {
+        multActual += mealEquivalents(state.profile, att[k]);
+        multIfFull += fullMult;
+      });
+    });
+    const ratio = multIfFull > 0 ? multActual / multIfFull : 1;
+    return {ratio, target: state.profile.budgetWeekly * ratio};
+  })();
+  const adjustedBudget = budgetAdjust.target || state.profile.budgetWeekly;
+  // Bandeau budget V2.11.0 : 4 paliers selon le ratio cost/cible_ajustée vs tolérance.
+  // - "under"   : ≤ 95% (vert clair, économies)
   // - "ok"      : 95-105% (vert, sur cible)
   // - "soft-over": 105% - (1+tolerance) (ambre, dans la marge)
   // - "hard-over": > (1+tolerance) (rouge, l'optimiseur n'a pas trouvé d'alternative)
   const budgetTier = (() => {
-    if (!state.profile.budgetWeekly || state.profile.budgetWeekly <= 0) return null;
-    const ratio = cost / state.profile.budgetWeekly;
+    if (!adjustedBudget || adjustedBudget <= 0) return null;
+    const ratio = cost / adjustedBudget;
     const tol  = (state.profile.budgetTolerance ?? 10) / 100;
     if (ratio <= 0.95) return "under";
     if (ratio <= 1.05) return "ok";
@@ -20837,12 +20861,23 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
               "hard-over": "Au-dessus de la tolérance ⚠️ ",
             };
             const tierClass = budgetTier ? tierColors[budgetTier] : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-600";
+            // V2.61.1 — Affichage : cible ajustée (au prorata des slots
+            // non externalisés) à côté de la cible originale si différente.
+            const hasAdjust = budgetAdjust.ratio < 0.999 && state.profile.budgetWeekly > 0;
+            const adjustedDisplay = adjustedBudget.toFixed(0);
             return (
               <div className={`px-3 py-2 rounded-md text-sm border ${tierClass}`}>
                 <div>
                   💰 <strong>{cost.toFixed(2)} €</strong>
-                  {state.profile.budgetWeekly > 0 && <span className="opacity-75"> / {state.profile.budgetWeekly} €</span>}
+                  {state.profile.budgetWeekly > 0 && (
+                    <span className="opacity-75"> / {hasAdjust ? `${adjustedDisplay} €` : `${state.profile.budgetWeekly} €`}</span>
+                  )}
                 </div>
+                {hasAdjust && (
+                  <div className="text-[10px] opacity-75 mt-0.5" title={`Cible originale : ${state.profile.budgetWeekly} €. ${Math.round((1-budgetAdjust.ratio)*100)}% des slots sont externalisés cette semaine, la cible est réduite proportionnellement.`}>
+                    cible ajustée · {Math.round(budgetAdjust.ratio*100)}% présence
+                  </div>
+                )}
                 {budgetTier && (
                   <>
                     <div className="text-xs mt-0.5">{tierLabels[budgetTier]}</div>
@@ -20851,7 +20886,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         budgetTier === "hard-over" ? "bg-red-500" :
                         budgetTier === "soft-over" ? "bg-amber-500" :
                         "bg-emerald-500"
-                      }`} style={{width: `${Math.min(100, (cost / state.profile.budgetWeekly) * 100).toFixed(0)}%`}} />
+                      }`} style={{width: `${Math.min(100, (cost / adjustedBudget) * 100).toFixed(0)}%`}} />
                     </div>
                   </>
                 )}
