@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.73.0</title>
+<title>Menu IG Bas — V2.73.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -26158,71 +26158,110 @@ function JournalHistory({state, currentWeek, profile}) {
 function NutritionBanner({currentMenu, profile}) {
   const {totals, thresholds, totalEq} = computeWeeklyNutritionTotals(currentMenu, profile);
   if (!totalEq || totalEq <= 0) return null;
-  // Détermine les axes à afficher (only alerts/warnings).
+  // V2.73.1 — Affichage de TOUS les axes (HedgeX, 2026-05-08), même quand
+  // c'est OK (vert), pour visibilité totale. Comparaison sur valeurs ARRONDIES
+  // (cohérent avec l'affichage : "44/44" doit afficher warning, pas over,
+  // même si la valeur interne est 44.2 et qu'elle s'arrondit à 44).
+  // Niveaux :
+  //   ok       (vert)  : MAX ≤ 85% threshold OR MIN ≥ threshold OR charc = 0
+  //   warning  (ambre) : MAX 85-100% threshold OR MIN partiel OR charc > 0
+  //   over     (rouge) : MAX > threshold OR MIN nul (loin du seuil)
+  const eggsR = Math.round(totals.eggs);
+  const redR = Math.round(totals.redMeatGrams);
+  const charcR = Math.round(totals.charcuterieGrams);
+  const eggsMaxR = Math.round(thresholds.eggsMax);
+  const redMaxR = Math.round(thresholds.redMeatMax);
+  const charcMaxR = Math.round(thresholds.charcuterieMax);
   const items = [];
   // Œufs (max)
-  if (totals.eggs > thresholds.eggsMax) {
-    items.push({key: "eggs", level: "over", icon: "🥚",
-      label: `Œufs : ${totals.eggs.toFixed(0)} / sem`,
-      detail: `Repère PNNS ≤ 10 / pers / sem (≤ ${thresholds.eggsMax.toFixed(0)} pour le foyer).`});
-  } else if (totals.eggs > thresholds.eggsMax * 0.85) {
-    items.push({key: "eggs", level: "warning", icon: "🥚",
-      label: `Œufs : ${totals.eggs.toFixed(0)} / sem`,
-      detail: `Approche du repère PNNS 10 / pers / sem (foyer ≤ ${thresholds.eggsMax.toFixed(0)}).`});
-  }
-  // Viande rouge (max, en grammes — affiche en kg pour grosses valeurs)
-  const redFmt = totals.redMeatGrams >= 1000 ? `${(totals.redMeatGrams/1000).toFixed(1)} kg` : `${Math.round(totals.redMeatGrams)} g`;
-  const redMaxFmt = thresholds.redMeatMax >= 1000 ? `${(thresholds.redMeatMax/1000).toFixed(1)} kg` : `${Math.round(thresholds.redMeatMax)} g`;
-  if (totals.redMeatGrams > thresholds.redMeatMax) {
-    items.push({key: "red", level: "over", icon: "🥩",
-      label: `Viande rouge : ${redFmt} / sem`,
-      detail: `Repère WCRF/AICR ≤ 500 g cuit / pers / sem (foyer ≤ ${redMaxFmt}). Risque colorectal au-delà.`});
-  } else if (totals.redMeatGrams > thresholds.redMeatMax * 0.85) {
-    items.push({key: "red", level: "warning", icon: "🥩",
-      label: `Viande rouge : ${redFmt} / sem`,
-      detail: `Approche du repère WCRF/AICR 500 g / pers / sem (foyer ≤ ${redMaxFmt}).`});
-  }
-  // Charcuterie (limite douce)
-  if (totals.charcuterieGrams > thresholds.charcuterieMax) {
-    items.push({key: "charc", level: "over", icon: "🥓",
-      label: `Charcuterie : ${Math.round(totals.charcuterieGrams)} g / sem`,
-      detail: `Le CIRC/OMS classe les viandes transformées comme cancérogène certain (groupe 1). À limiter fortement, repère soft ≤ ${Math.round(thresholds.charcuterieMax)} g foyer.`});
-  } else if (totals.charcuterieGrams > 0) {
-    items.push({key: "charc", level: "warning", icon: "🥓",
-      label: `Charcuterie : ${Math.round(totals.charcuterieGrams)} g / sem`,
-      detail: `Présence détectée. Le CIRC/OMS recommande de limiter fortement les viandes transformées.`});
-  }
-  // Poisson (min)
-  if (totals.fishPortions < thresholds.fishMin) {
-    items.push({key: "fish", level: "over", icon: "🐟",
-      label: `Poisson : ${totals.fishPortions} / 2 portions visées`,
-      detail: `Repère EFSA ≥ 2 portions / sem (foyer), dont 1 grasse (oméga-3). Actuellement gras : ${totals.fishOilyPortions}.`});
-  } else if (totals.fishOilyPortions < thresholds.fishOilyMin) {
-    items.push({key: "fishOily", level: "warning", icon: "🐟",
-      label: `Poisson gras : ${totals.fishOilyPortions} / 1 portion visée`,
-      detail: `Repère EFSA ≥ 1 portion grasse / sem (saumon, sardine, maquereau, hareng, anchois, truite, thon).`});
-  }
-  // Légumineuses (min)
-  if (totals.legumePortions < thresholds.legumeMin) {
-    items.push({key: "legume", level: "over", icon: "🫘",
-      label: `Légumineuses : ${totals.legumePortions} / 2 portions visées`,
-      detail: `Repère PNNS ≥ 2 portions / sem (foyer). Lentilles, pois chiches, haricots secs, fèves, soja, tofu, edamame.`});
-  }
-  // Si rien à signaler, retourne null
-  if (items.length === 0) return null;
-  // Tri : "over" avant "warning"
-  items.sort((a, b) => (a.level === "over" ? 0 : 1) - (b.level === "over" ? 0 : 1));
+  items.push((() => {
+    const lvl = eggsR > eggsMaxR ? "over"
+              : eggsR > eggsMaxR * 0.85 ? "warning"
+              : "ok";
+    return {key: "eggs", level: lvl, icon: "🥚",
+      label: `Œufs : ${eggsR} / ${eggsMaxR}`,
+      detail: lvl === "ok" ? `Sous le repère PNNS 10 / pers / sem (foyer ≤ ${eggsMaxR}).`
+            : lvl === "warning" ? `Approche du repère PNNS 10 / pers / sem (foyer ≤ ${eggsMaxR}).`
+            : `Au-dessus du repère PNNS ≤ 10 / pers / sem (foyer ≤ ${eggsMaxR}).`};
+  })());
+  // Viande rouge
+  const redFmt = redR >= 1000 ? `${(redR/1000).toFixed(1)} kg` : `${redR} g`;
+  const redMaxFmt = redMaxR >= 1000 ? `${(redMaxR/1000).toFixed(1)} kg` : `${redMaxR} g`;
+  items.push((() => {
+    const lvl = redR > redMaxR ? "over"
+              : redR > redMaxR * 0.85 ? "warning"
+              : "ok";
+    return {key: "red", level: lvl, icon: "🥩",
+      label: `Viande rouge : ${redFmt} / ${redMaxFmt}`,
+      detail: lvl === "ok" ? `Sous le repère WCRF/AICR 500 g cuit / pers / sem.`
+            : lvl === "warning" ? `Approche du repère WCRF/AICR 500 g / pers / sem (foyer ≤ ${redMaxFmt}).`
+            : `Au-dessus du repère WCRF/AICR. Risque colorectal au-delà.`};
+  })());
+  // Charcuterie (CIRC groupe 1 : idéal = 0)
+  items.push((() => {
+    const lvl = charcR > charcMaxR ? "over"
+              : charcR > 0 ? "warning"
+              : "ok";
+    return {key: "charc", level: lvl, icon: "🥓",
+      label: `Charcuterie : ${charcR} g / ${charcMaxR}`,
+      detail: lvl === "ok" ? `Aucune charcuterie cette semaine ✓ (CIRC/OMS recommande de limiter fortement).`
+            : lvl === "warning" ? `Présence détectée. Le CIRC/OMS classe les viandes transformées en groupe 1 cancérogène certain — à limiter fortement.`
+            : `Au-dessus du repère soft ≤ ${charcMaxR} g foyer. CIRC/OMS recommande de limiter fortement.`};
+  })());
+  // Poisson total (min 2)
+  items.push((() => {
+    const v = totals.fishPortions, t = thresholds.fishMin;
+    const lvl = v >= t ? "ok" : v >= 1 ? "warning" : "over";
+    return {key: "fish", level: lvl, icon: "🐟",
+      label: `Poisson : ${v} / ${t} portions`,
+      detail: lvl === "ok" ? `Repère EFSA ≥ 2 portions / sem atteint ✓ (dont ${totals.fishOilyPortions} gras).`
+            : lvl === "warning" ? `Repère EFSA ≥ 2 portions / sem (foyer). 1 portion sur 2 atteinte. Actuellement gras : ${totals.fishOilyPortions}.`
+            : `Aucune portion de poisson cette semaine. Repère EFSA ≥ 2 portions / sem (dont 1 grasse).`};
+  })());
+  // Poisson gras (min 1)
+  items.push((() => {
+    const v = totals.fishOilyPortions, t = thresholds.fishOilyMin;
+    const lvl = v >= t ? "ok" : "warning";
+    return {key: "fishOily", level: lvl, icon: "🐠",
+      label: `Poisson gras : ${v} / ${t} portion`,
+      detail: lvl === "ok" ? `Repère EFSA ≥ 1 portion grasse / sem atteint ✓.`
+            : `Repère EFSA ≥ 1 portion grasse / sem (saumon, sardine, maquereau, hareng, anchois, truite, thon).`};
+  })());
+  // Légumineuses (min 2)
+  items.push((() => {
+    const v = totals.legumePortions, t = thresholds.legumeMin;
+    const lvl = v >= t ? "ok" : v >= 1 ? "warning" : "over";
+    return {key: "legume", level: lvl, icon: "🫘",
+      label: `Légumineuses : ${v} / ${t} portions`,
+      detail: lvl === "ok" ? `Repère PNNS ≥ 2 portions / sem atteint ✓.`
+            : lvl === "warning" ? `1 portion / 2 visées. Repère PNNS ≥ 2 portions / sem (lentilles, pois chiches, haricots secs, fèves, soja, tofu, edamame).`
+            : `Aucune portion de légumineuses cette semaine. Repère PNNS ≥ 2 portions / sem.`};
+  })());
+  // Tri : over > warning > ok
+  const order = {over: 0, warning: 1, ok: 2};
+  items.sort((a, b) => order[a.level] - order[b.level]);
+  // Couleurs par niveau
+  const pillCls = (level) =>
+    level === "over"
+      ? "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 border border-red-300 dark:border-red-700"
+      : level === "warning"
+      ? "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 border border-amber-300 dark:border-amber-700"
+      : "bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 border border-emerald-300 dark:border-emerald-700";
+  const detailCardCls = (level) =>
+    level === "over"
+      ? "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800"
+      : level === "warning"
+      ? "bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800"
+      : "bg-emerald-50 dark:bg-emerald-950 border-emerald-200 dark:border-emerald-800";
+  // V2.73.1 — `open` par défaut si au moins 1 axe en alerte (warning ou over).
+  // Sinon refermé (tout est OK, l'utilisateur n'a pas besoin de voir les détails).
+  const hasAlert = items.some(it => it.level !== "ok");
   return (
-    <details className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-3 no-print">
+    <details open={hasAlert} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-3 no-print">
       <summary className="cursor-pointer flex items-center gap-2 flex-wrap">
         <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">🩺 Repères nutritionnels</span>
         {items.map(it => (
-          <span key={it.key}
-            className={`text-xs px-2 py-0.5 rounded-full font-medium ${
-              it.level === "over"
-                ? "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 border border-red-300 dark:border-red-700"
-                : "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 border border-amber-300 dark:border-amber-700"
-            }`}>
+          <span key={it.key} className={`text-xs px-2 py-0.5 rounded-full font-medium ${pillCls(it.level)}`}>
             {it.icon} {it.label}
           </span>
         ))}
@@ -26230,11 +26269,7 @@ function NutritionBanner({currentMenu, profile}) {
       </summary>
       <div className="mt-3 space-y-2 text-xs text-slate-600 dark:text-slate-300">
         {items.map(it => (
-          <div key={it.key} className={`p-2 rounded border ${
-            it.level === "over"
-              ? "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800"
-              : "bg-amber-50 dark:bg-amber-950 border-amber-200 dark:border-amber-800"
-          }`}>
+          <div key={it.key} className={`p-2 rounded border ${detailCardCls(it.level)}`}>
             <div className="font-semibold text-slate-800 dark:text-slate-100">{it.icon} {it.label}</div>
             <div className="mt-0.5">{it.detail}</div>
           </div>
