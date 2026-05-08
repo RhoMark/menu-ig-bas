@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.69.0</title>
+<title>Menu IG Bas — V2.69.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21340,6 +21340,11 @@ function estimateWeekCost(weekMenu, profile) {
 function classifyNutritionIngredient(name, category) {
   const n = canonicalName(name || "");
   if (!n) return null;
+  // V2.69.1 — Exception : "lardons de volaille" sont des dés de poulet/dinde
+  // fumés, pas du porc transformé. Pas dans la classification CIRC groupe 1
+  // qui vise les viandes rouges transformées. → ni charcuterie, ni viande
+  // rouge (volaille blanche).
+  if (/\blardon\s*(?:s)?\s*(?:de\s+)?volaille\b/.test(n)) return null;
   // Œufs : "œuf", "oeuf" (canonicalName remplace œ → oe)
   if (/\boeuf\b/.test(n)) return "egg";
   // Viande rouge : mammifères (boeuf, veau, porc, agneau, mouton, gibier).
@@ -21348,7 +21353,8 @@ function classifyNutritionIngredient(name, category) {
   if (/\b(boeuf|veau|porc|agneau|mouton|gigot|bavette|onglet|joue|carre|carre d agneau|epaule d agneau|filet mignon de porc|sanglier|chevreuil|cerf|biche|gibier|tranche de boeuf)\b/.test(n)) {
     return "redMeat";
   }
-  // Charcuterie : transformations carnées salées/fumées.
+  // Charcuterie : transformations carnées salées/fumées (CIRC groupe 1).
+  // Note : "lardons de volaille" est intercepté plus haut et ne tombe pas ici.
   if (/\b(jambon|jambon cru|jambon blanc|bacon|lardon|saucisse|saucisson|chorizo|pancetta|prosciutto|salami|mortadelle|rillette|pate de campagne|andouille|boudin|lard|coppa|bresaola|guanciale|parmesan de jambon|charcuterie)\b/.test(n)) {
     return "charcuterie";
   }
