@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.66.0</title>
+<title>Menu IG Bas — V2.67.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20255,17 +20255,17 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null} = {}) {
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0} = {}) {
   if (pool.length === 0) return null;
   // Niveau 1 — recettes ni servies cette semaine, ni servies depuis 3 mois.
   let candidates = pool.filter(r => !hardAvoid.has(r.id) && !softAvoid.has(r.id));
-  if (candidates.length > 0) return weightedPick(candidates, ratings, profile, favorites);
+  if (candidates.length > 0) return weightedPick(candidates, ratings, profile, favorites, costBias);
   // Niveau 2 — fraîches épuisées : on rouvre softAvoid mais on privilégie le plus ancien.
   candidates = pool.filter(r => !hardAvoid.has(r.id));
   if (candidates.length > 0) {
     const sorted = [...candidates].sort(byOldestFirst(lastUsedMap));
     const cutoff = Math.max(1, Math.ceil(sorted.length / 3));
-    return weightedPick(sorted.slice(0, cutoff), ratings, profile, favorites);
+    return weightedPick(sorted.slice(0, cutoff), ratings, profile, favorites, costBias);
   }
   // Niveau 3 — extrême (toutes en hardAvoid) : prendre la plus ancienne du pool entier
   // pour ne pas laisser un slot vide. Ne devrait jamais arriver tant que pool ≥ 7.
@@ -20277,7 +20277,7 @@ function byOldestFirst(lastUsedMap) {
   return (a, b) => (lastUsedMap.get(a.id) ?? 0) - (lastUsedMap.get(b.id) ?? 0);
 }
 
-function weightedPick(list, ratings, profile, favorites) {
+function weightedPick(list, ratings, profile, favorites, costBias = 0) {
   // V2.29.0 — utilise getEffectiveRating si profile fourni (moyenne pondérée
   // par adultEquivalent des membres ayant noté). Sinon ancien comportement.
   // V2.40.0 (issue #2) — boost ×2 sur les recettes dont la cuisine est dans
@@ -20286,8 +20286,18 @@ function weightedPick(list, ratings, profile, favorites) {
   // (×1) si aucune cuisine sélectionnée.
   // V2.62.0 (issue #20) — boost ×1.3 sur les recettes favorites du foyer.
   // Boost léger pour ne pas saturer (vs ×2 sur cuisine préférée).
+  // V2.67.0 (issue #71) — biais coût `costBias` (0-1.5) appliqué quand le
+  // budget hebdo est serré relativement au catalogue. Calculé dans
+  // generateWeek à partir du ratio (catalog_mean × foyer × slots) / target.
+  // Effet : `w *= (mean_pool_cost / max(0.3, recipe_cost))^costBias`. Le
+  // poolMean est calculé sur la liste reçue (post-filtrage hard/softAvoid),
+  // donc le bias est relatif au pool, pas au catalogue global.
   const preferred = new Set(profile?.preferredCuisines || []);
   const favSet = favorites instanceof Set ? favorites : new Set(Array.isArray(favorites) ? favorites : []);
+  let poolMeanCost = 0;
+  if (costBias > 0 && list.length > 0) {
+    poolMeanCost = list.reduce((s, r) => s + recipeEffectiveCost(r), 0) / list.length;
+  }
   const weights = list.map(r => {
     const rating = profile ? getEffectiveRating(ratings, r.id, profile) : (ratings[r.id] ?? 3);
     let w;
@@ -20298,6 +20308,10 @@ function weightedPick(list, ratings, profile, favorites) {
     else w = 2.4;
     if (preferred.size > 0 && r.cuisine && preferred.has(r.cuisine)) w *= 2;
     if (favSet.has(r.id)) w *= 1.3;
+    if (costBias > 0 && poolMeanCost > 0) {
+      const cost = Math.max(0.3, recipeEffectiveCost(r));
+      w *= Math.pow(poolMeanCost / cost, costBias);
+    }
     return w;
   });
   const total = weights.reduce((a,b)=>a+b, 0);
@@ -20412,6 +20426,30 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   const lunchesBatch = isBatchActive ? lunches.filter(r => (r.tags || []).includes("batch-friendly")) : [];
   const dinnersBatch = isBatchActive ? dinners.filter(r => (r.tags || []).includes("batch-friendly")) : [];
 
+  // V2.67.0 (issue #71) — biais coût en génération si le budget est serré
+  // relativement au catalogue. Sur foyer HedgeX (4.4 adult-eq, 200 €), le
+  // catalogue moyen × foyer × slots ≈ 364 € → ratio 1.82 → costBias ~ 1.0.
+  // Bias appliqué dans weightedPick : pondération inverse au coût relatif au
+  // pool. Effet : décale la distribution vers les recettes moins chères tout
+  // en préservant la diversité (vs filtrage dur qui casse la rotation).
+  // Limites : ratio 1-1.1 → bias 0 (catalogue OK), 1.1-2 → bias 0-1.5,
+  // > 2 → bias plafonné à 1.5 (au-delà il faut élargir le catalogue).
+  const costBias = (() => {
+    const target = profile?.budgetWeekly;
+    if (!target || target <= 0) return 0;
+    const allActivePools = [breakfasts, lunches, dinners];
+    if (profile?.snackEnabled) allActivePools.push(snacks);
+    allActivePools.push(desserts);
+    const allPoolRecipes = allActivePools.flat();
+    if (allPoolRecipes.length === 0) return 0;
+    const meanCost = allPoolRecipes.reduce((s, r) => s + recipeEffectiveCost(r), 0) / allPoolRecipes.length;
+    const slotsPerWeek = allActivePools.length * 7;
+    const foyerMult = totalEquivalents(profile);
+    const projectedCost = meanCost * foyerMult * slotsPerWeek;
+    const ratio = projectedCost / target;
+    if (ratio <= 1.1) return 0;
+    return Math.min(1.5, (ratio - 1.1) * 1.5);
+  })();
   const {set: recentlyUsed, lastUsedMap} = recipesUsedRecently(menus, weekStart);
   const sd = profile?.shoppingDay ?? 1;
   // V2.27.0 — Lecture rétrocompat : on cherche d'abord la clé du shoppingDay
@@ -20511,13 +20549,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (chaînage cohérent).
         const lunchUsesPool = matchUsesPool(lunches);
         if (lunchUsesPool.length > 0) {
-          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites});
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
         }
         if (!picked && useBatchPool && lunchesBatch.length > 0) {
-          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites});
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
         }
         if (!picked) {
-          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites});
+          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
         }
         if (picked) { slot.lunch = picked.id; usedThisWeek.add(picked.id); }
       }
@@ -20550,13 +20588,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (intersect avec le filtre staple).
         const dinnerUsesPool = matchUsesPool(dinnerPool);
         if (dinnerUsesPool.length > 0) {
-          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites});
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
         }
         if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
-          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites});
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
         }
         if (!picked) {
-          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites});
+          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
         }
         if (picked) { slot.dinner = picked.id; usedThisWeek.add(picked.id); }
       }
@@ -20567,7 +20605,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
           slot.snack = prev.snack;
           snacksCooldown.add(prev.snack);
         } else if (snacks.length > 0) {
-          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites});
+          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias});
           if (picked) { slot.snack = picked.id; snacksCooldown.add(picked.id); }
         }
       }
@@ -20577,7 +20615,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         slot.dessert = prev.dessert;
         dessertsCooldown.add(prev.dessert);
       } else if (desserts.length > 0) {
-        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites});
+        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias});
         if (picked) { slot.dessert = picked.id; dessertsCooldown.add(picked.id); }
       }
 
@@ -20618,11 +20656,16 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
   if (!target || target <= 0) return days;
   const tolerance = (profile.budgetTolerance ?? 10) / 100;
   const maxAllowed = target * (1 + tolerance);
-  const MAX_ITER = 10;
+  // V2.67.0 (issue #71) — bump MAX_ITER 10 → 25 + 2 pools de candidats :
+  //   strictPool : exclut recentlyUsed (préserve la rotation 14j)
+  //   relaxedPool : inclut recentlyUsed (utilisé seulement si saving ≥ 5 % du
+  //                 budget, pour ne pas casser la diversité pour un swap mineur)
+  const MAX_ITER = 25;
+  const SAVING_THRESHOLD_RELAX = target * 0.05;
 
   const allergies  = effectiveAllergies(profile, null);
   const exclusions = effectiveExclusions(profile, null);
-  const baseFilter = (type) => RECIPES.filter(r =>
+  const baseFilterStrict = (type) => RECIPES.filter(r =>
     r.type === type &&
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, allergies) &&
@@ -20632,6 +20675,16 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 3 &&
     !recentlyUsed.has(r.id)
+  );
+  const baseFilterRelaxed = (type) => RECIPES.filter(r =>
+    r.type === type &&
+    matchesSeason(r, season, profile) &&
+    !recipeHasAllergen(r, allergies) &&
+    !recipeHasExcluded(r, exclusions) &&
+    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsSkill(r, profile.skillLevel) &&
+    getEffectiveRating(ratings, r.id, profile) >= 3
   );
 
   const ALL_KEYS = ["breakfast","lunch","dinner","snack","dessert"];
@@ -20660,16 +20713,35 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
         const oldRecipe = RECIPES.find(r => r.id === oldId);
         if (!oldRecipe) continue;
         const oldCost = recipeEffectiveCost(oldRecipe);
-        const candidates = baseFilter(mealKey).filter(r =>
+        const mealMult = mealEquivalents(profile, attendance[mealKey]);
+        // 1er essai : pool strict (rotation 14j préservée)
+        let candidates = baseFilterStrict(mealKey).filter(r =>
           recipeEffectiveCost(r) < oldCost &&
           r.id !== oldId &&
-          !(usedThisWeek.has(r.id) && r.id !== oldId)
+          !usedThisWeek.has(r.id)
         );
-        if (candidates.length === 0) continue;
-        const cheapest = candidates.reduce((b, c) => recipeEffectiveCost(c) < recipeEffectiveCost(b) ? c : b);
-        const mealMult = mealEquivalents(profile, attendance[mealKey]);
-        const saving = (oldCost - recipeEffectiveCost(cheapest)) * mealMult;
-        if (saving > 0 && (!bestSwap || saving > bestSwap.saving)) {
+        let cheapest = null;
+        if (candidates.length > 0) {
+          cheapest = candidates.reduce((b, c) => recipeEffectiveCost(c) < recipeEffectiveCost(b) ? c : b);
+        }
+        let saving = cheapest ? (oldCost - recipeEffectiveCost(cheapest)) * mealMult : 0;
+        // 2nd essai : pool élargi (autorise recentlyUsed) seulement si l'économie
+        // est significative (≥ 5 % du target), pour ne pas casser la rotation
+        // pour des swaps mineurs.
+        const relaxedCandidates = baseFilterRelaxed(mealKey).filter(r =>
+          recipeEffectiveCost(r) < oldCost &&
+          r.id !== oldId &&
+          !usedThisWeek.has(r.id)
+        );
+        if (relaxedCandidates.length > 0) {
+          const relaxedCheapest = relaxedCandidates.reduce((b, c) => recipeEffectiveCost(c) < recipeEffectiveCost(b) ? c : b);
+          const relaxedSaving = (oldCost - recipeEffectiveCost(relaxedCheapest)) * mealMult;
+          if (relaxedSaving > saving && relaxedSaving >= SAVING_THRESHOLD_RELAX) {
+            cheapest = relaxedCheapest;
+            saving = relaxedSaving;
+          }
+        }
+        if (cheapest && saving > 0 && (!bestSwap || saving > bestSwap.saving)) {
           bestSwap = {day, mealKey, newId: cheapest.id, saving};
         }
       }
@@ -21191,7 +21263,21 @@ function App({initialState}) {
     const {set: softAvoid, lastUsedMap} = isMain
       ? recipesUsedRecently(state.menus, currentWeek)
       : {set: new Set(), lastUsedMap: new Map()};
-    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile, favorites: state.favorites || []});
+    // V2.67.0 — biais coût aussi sur le remplacement single-slot, calculé
+    // sur le seul pool de ce slot (pas tout le catalogue actif comme dans
+    // generateWeek, suffisant ici).
+    const slotCostBias = (() => {
+      const target = state.profile?.budgetWeekly;
+      if (!target || target <= 0 || pool.length === 0) return 0;
+      const meanCost = pool.reduce((s, r) => s + recipeEffectiveCost(r), 0) / pool.length;
+      const slotsPerWeek = getAllActiveSlots(state.profile).length * 7;
+      const foyerMult = totalEquivalents(state.profile);
+      const projectedCost = meanCost * foyerMult * slotsPerWeek;
+      const ratio = projectedCost / target;
+      if (ratio <= 1.1) return 0;
+      return Math.min(1.5, (ratio - 1.1) * 1.5);
+    })();
+    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile, favorites: state.favorites || [], costBias: slotCostBias});
     if (picked) {
       update(s => ({menus: {...s.menus, [wk]: {...s.menus[wk], [day]: {...(s.menus[wk]?.[day]||{}), [meal]: picked.id}}}}));
     }
