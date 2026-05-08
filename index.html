@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.70.0</title>
+<title>Menu IG Bas — V2.71.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21283,8 +21283,15 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0} = {}) {
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null} = {}) {
   if (pool.length === 0) return null;
+  // V2.71.0 (#75 niveau 2) — pré-filtre nutritionnel sur les seuils MAX
+  // (œufs, viande rouge, charcuterie). Appliqué d'abord ; si le pool filtré
+  // est vide, on tombe sur le pool d'origine (best-effort, le bandeau alertera).
+  if (typeof nutritionFilter === "function") {
+    const filtered = pool.filter(nutritionFilter);
+    if (filtered.length > 0) pool = filtered;
+  }
   // Niveau 1 — recettes ni servies cette semaine, ni servies depuis 3 mois.
   let candidates = pool.filter(r => !hardAvoid.has(r.id) && !softAvoid.has(r.id));
   if (candidates.length > 0) return weightedPick(candidates, ratings, profile, favorites, costBias);
@@ -21491,6 +21498,60 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   const dessertsCooldown = recentMealSlots(menus, weekStart, "dessert", 7);
   const snacksCooldown   = recentMealSlots(menus, weekStart, "snack",   7);
 
+  // V2.71.0 (#75 niveau 2) — Pré-filtrage nutritionnel pendant la génération.
+  // Running totals des axes MAX (œufs, viande rouge, charcuterie). Avant chaque
+  // pickFromPool, on filtre du pool les recettes qui pousseraient au-dessus du
+  // seuil. Si le pool filtré est vide, fallback best-effort sur le pool entier.
+  // Les axes MIN (poisson, légumineuses) sont traités en POST-traitement par
+  // optimizeForNutritionMins, qui swap des slots vers les manquants.
+  const totalEqGen = totalEquivalents(profile);
+  const nutTotals = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0};
+  const nutThresholds = {
+    eggsMax: 10 * totalEqGen,
+    redMeatMax: 500 * totalEqGen,
+    charcuterieMax: 100 * totalEqGen,
+  };
+  // Init nutTotals avec les slots verrouillés (= conservés) pour que le filtre
+  // tienne compte de la contribution déjà engagée. mealMult ici = totalEqGen
+  // (l'attendance n'est pas encore définie sur les nouvelles générations).
+  if (keepLocked) {
+    DAYS.forEach(day => {
+      const prevSlot = existing[day] || {};
+      const lockedMap = prevSlot.locked || {};
+      ["breakfast","lunch","dinner","snack","dessert"].forEach(meal => {
+        if (!lockedMap[meal]) return;
+        const rid = prevSlot[meal];
+        if (!rid) return;
+        const recipe = RECIPES.find(r => r.id === rid);
+        if (!recipe) return;
+        const att = (prevSlot.attendance || {})[meal];
+        const mealMult = mealEquivalents(profile, att);
+        if (mealMult <= 0) return;
+        const c = recipeNutritionContribution(recipe, mealMult);
+        nutTotals.eggs += c.eggs;
+        nutTotals.redMeatGrams += c.redMeatGrams;
+        nutTotals.charcuterieGrams += c.charcuterieGrams;
+      });
+    });
+  }
+  const accrueNutrition = (recipe, mealMult) => {
+    if (!recipe || mealMult <= 0) return;
+    const c = recipeNutritionContribution(recipe, mealMult);
+    nutTotals.eggs += c.eggs;
+    nutTotals.redMeatGrams += c.redMeatGrams;
+    nutTotals.charcuterieGrams += c.charcuterieGrams;
+  };
+  // Closure qui produit un filtre adapté au mealMult d'un slot donné. Tolérance
+  // d'arrondi côté œufs (+0.5) car certaines recettes ont des fractions d'œuf
+  // dans des préparations partagées (cake, frittata familiale).
+  const makeNutritionFilter = (mealMult) => (recipe) => {
+    const c = recipeNutritionContribution(recipe, mealMult);
+    if (nutTotals.eggs + c.eggs > nutThresholds.eggsMax + 0.5) return false;
+    if (nutTotals.redMeatGrams + c.redMeatGrams > nutThresholds.redMeatMax) return false;
+    if (nutTotals.charcuterieGrams + c.charcuterieGrams > nutThresholds.charcuterieMax) return false;
+    return true;
+  };
+
   // Garde-fou CG journalier (V2.23.0) : on tente jusqu'à 3 fois la génération
   // d'une journée si elle dépasse le seuil "high" du foyer. Le seuil dépend du
   // profil santé du membre le plus contraignant (cf householdCgTarget). Tiers
@@ -21512,6 +21573,9 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       const usedSnapshot     = new Set(usedThisWeek);
       const dessertsSnapshot = new Set(dessertsCooldown);
       const snacksSnapshot   = new Set(snacksCooldown);
+      // V2.71.0 (#75 niveau 2) — snapshot des compteurs nutrition pour
+      // pouvoir restorer si la journée est re-roll au CG.
+      const nutSnapshot = {...nutTotals};
 
       slot = {locked: {...locked}};
       // préserver l'attendance existante
@@ -21528,6 +21592,11 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       } else if (breakfasts.length > 0) {
         const weekIdx = Math.floor(weekStart.getTime() / (7 * 24 * 60 * 60 * 1000));
         slot.breakfast = breakfasts[(weekIdx * 7 + i + attempt - 1) % breakfasts.length].id;
+        // V2.71.0 — accrue nutrition du breakfast nouvellement piochée
+        // (les locked sont déjà dans nutTotals via le pré-init).
+        const r = RECIPES.find(rr => rr.id === slot.breakfast);
+        const mm = mealEquivalents(profile, slot.attendance?.breakfast);
+        accrueNutrition(r, mm);
       }
 
       // V2.47.0 (issue #12) — Mode batch cooking : pour les `batchTarget`
@@ -21568,6 +21637,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
             );
 
       // Lunch
+      const lunchMealMult = mealEquivalents(profile, slot.attendance?.lunch);
+      const lunchNutFilter = makeNutritionFilter(lunchMealMult);
       if (keepLocked && locked.lunch && prev.lunch) {
         slot.lunch = prev.lunch;
         usedThisWeek.add(prev.lunch);
@@ -21577,16 +21648,22 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (chaînage cohérent).
         const lunchUsesPool = matchUsesPool(lunches);
         if (lunchUsesPool.length > 0) {
-          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter});
         }
         if (!picked && useBatchPool && lunchesBatch.length > 0) {
-          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter});
         }
         if (!picked) {
-          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
+          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter});
         }
-        if (picked) { slot.lunch = picked.id; usedThisWeek.add(picked.id); }
+        if (picked) {
+          slot.lunch = picked.id;
+          usedThisWeek.add(picked.id);
+          accrueNutrition(picked, lunchMealMult);
+        }
       }
+      // Note V2.71.0 : les slots locked sont déjà comptés en pré-init en
+      // début de generateWeek, on n'accumule pas à nouveau ici.
 
       // Dinner — anti-doublon semaine + anti-récurrence 3 mois + pas le même féculent/légumineuse que le lunch du jour
       if (keepLocked && locked.dinner && prev.dinner) {
@@ -21611,20 +21688,26 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
             if (filteredBatch.length >= 3) dinnerBatchPool = filteredBatch;
           }
         }
+        const dinnerMealMult = mealEquivalents(profile, slot.attendance?.dinner);
+        const dinnerNutFilter = makeNutritionFilter(dinnerMealMult);
         let picked = null;
         // V2.50.1 — Priorité 1 : sous-pool usesLeftovers matchant les
         // produces des jours précédents (intersect avec le filtre staple).
         const dinnerUsesPool = matchUsesPool(dinnerPool);
         if (dinnerUsesPool.length > 0) {
-          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter});
         }
         if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
-          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter});
         }
         if (!picked) {
-          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias});
+          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter});
         }
-        if (picked) { slot.dinner = picked.id; usedThisWeek.add(picked.id); }
+        if (picked) {
+          slot.dinner = picked.id;
+          usedThisWeek.add(picked.id);
+          accrueNutrition(picked, dinnerMealMult);
+        }
       }
 
       // Snack (goûter) — anti-doublon sur 8 jours glissants (cf. snacksCooldown)
@@ -21633,8 +21716,14 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
           slot.snack = prev.snack;
           snacksCooldown.add(prev.snack);
         } else if (snacks.length > 0) {
-          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias});
-          if (picked) { slot.snack = picked.id; snacksCooldown.add(picked.id); }
+          const snackMealMult = mealEquivalents(profile, slot.attendance?.snack);
+          const snackNutFilter = makeNutritionFilter(snackMealMult);
+          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias, nutritionFilter: snackNutFilter});
+          if (picked) {
+            slot.snack = picked.id;
+            snacksCooldown.add(picked.id);
+            accrueNutrition(picked, snackMealMult);
+          }
         }
       }
 
@@ -21643,8 +21732,14 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         slot.dessert = prev.dessert;
         dessertsCooldown.add(prev.dessert);
       } else if (desserts.length > 0) {
-        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias});
-        if (picked) { slot.dessert = picked.id; dessertsCooldown.add(picked.id); }
+        const dessertMealMult = mealEquivalents(profile, slot.attendance?.dessert);
+        const dessertNutFilter = makeNutritionFilter(dessertMealMult);
+        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias, nutritionFilter: dessertNutFilter});
+        if (picked) {
+          slot.dessert = picked.id;
+          dessertsCooldown.add(picked.id);
+          accrueNutrition(picked, dessertMealMult);
+        }
       }
 
       // Garde-fou CG : calculer le tier de la journée. On accepte tout sauf
@@ -21662,6 +21757,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         usedThisWeek.clear();     usedSnapshot.forEach(id => usedThisWeek.add(id));
         dessertsCooldown.clear(); dessertsSnapshot.forEach(id => dessertsCooldown.add(id));
         snacksCooldown.clear();   snacksSnapshot.forEach(id => snacksCooldown.add(id));
+        // V2.71.0 — restore nutTotals au snapshot d'avant la tentative
+        Object.assign(nutTotals, nutSnapshot);
       }
     }
 
@@ -21672,7 +21769,12 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   // moins chères respectant toutes les contraintes (saison, allergies,
   // équipement, skill, anti-récurrence). Pure post-traitement, ne change rien
   // si pas de budget configuré.
-  return optimizeForBudget({days, profile, season, ratings, recentlyUsed});
+  let result = optimizeForBudget({days, profile, season, ratings, recentlyUsed});
+  // V2.71.0 (#75 niveau 2) — post-traitement : swap pour atteindre les MIN
+  // (poisson 2/sem, gras 1/sem, légumineuses 2/sem). Pas de garantie, juste
+  // best-effort en restant sous les MAX et hors slots verrouillés.
+  result = optimizeForNutritionMins({days: result, profile, season, ratings, recentlyUsed});
+  return result;
 }
 
 // optimizeForBudget — algorithme greedy de substitution post-génération.
@@ -21776,6 +21878,147 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
     }
     if (!bestSwap) break; // plus rien à substituer
     days[bestSwap.day][bestSwap.mealKey] = bestSwap.newId;
+  }
+  return days;
+}
+
+// V2.71.0 (#75 niveau 2) — Swap post-génération pour atteindre les seuils MIN
+// nutrition : poisson ≥ 2 portions / sem, dont 1 grasse, légumineuses ≥ 2.
+// Algorithme greedy par cible :
+//   1. Calculer les totaux courants
+//   2. Pour chaque MIN non atteint, parcourir les slots non verrouillés et
+//      pas déjà couvrants ; chercher dans le pool une recette qui apporte
+//      la propriété manquante ET respecte les MAX (œufs, viande rouge,
+//      charcuterie). Faire le swap, mettre à jour les totaux.
+//   3. S'arrêter quand toutes les MIN sont atteintes ou aucun swap possible.
+// Note : on échange en priorité les slots dont la recette d'origine n'a
+// AUCUNE des 3 propriétés (poisson, légumineuse) pour ne pas perdre une
+// portion existante en gagnant une autre (ex : éviter de remplacer une
+// recette légumineuse par du poisson si on a besoin d'une légumineuse).
+function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}) {
+  if (!profile || !profile.members?.length) return days;
+  const allergies  = effectiveAllergies(profile, null);
+  const exclusions = effectiveExclusions(profile, null);
+  // Pool de candidats par type, filtré sur tous les critères durs (sauf rating
+  // qui est softé : on accepte ≥ 2.5 pour élargir le pool de remplacement).
+  const baseFilter = (type) => RECIPES.filter(r =>
+    r.type === type &&
+    matchesSeason(r, season, profile) &&
+    !recipeHasAllergen(r, allergies) &&
+    !recipeHasExcluded(r, exclusions) &&
+    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsSkill(r, profile.skillLevel) &&
+    getEffectiveRating(ratings, r.id, profile) >= 2.5
+  );
+  const totalEq = totalEquivalents(profile);
+  const eggsMax = 10 * totalEq;
+  const redMeatMax = 500 * totalEq;
+  const charcuterieMax = 100 * totalEq;
+  const ALL_KEYS = ["breakfast","lunch","dinner","snack","dessert"];
+  // 5 cibles MIN possibles (foyer) :
+  const MIN_TARGETS = [
+    {key: "fishOily",      need: 1, predicate: (c) => c.hasFishOily},
+    {key: "fishAny",       need: 2, predicate: (c) => c.hasFishOily || c.hasFishLean},
+    {key: "legume",        need: 2, predicate: (c) => c.hasLegume},
+  ];
+  // Helper : recalcule totaux courants pour la semaine
+  const recompute = () => {
+    const t = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0,
+               fishOily: 0, fishLean: 0, legume: 0};
+    DAYS.forEach(day => {
+      const slot = days[day] || {};
+      const att = slot.attendance || {};
+      ALL_KEYS.forEach(meal => {
+        const rid = slot[meal];
+        if (!rid) return;
+        const a = att[meal];
+        if (Array.isArray(a) && a.length === 0) return;
+        const recipe = RECIPES.find(r => r.id === rid);
+        if (!recipe) return;
+        const mm = mealEquivalents(profile, a);
+        if (mm <= 0) return;
+        const c = recipeNutritionContribution(recipe, mm);
+        t.eggs += c.eggs;
+        t.redMeatGrams += c.redMeatGrams;
+        t.charcuterieGrams += c.charcuterieGrams;
+        if (c.hasFishOily) t.fishOily++;
+        if (c.hasFishLean) t.fishLean++;
+        if (c.hasLegume) t.legume++;
+      });
+    });
+    return t;
+  };
+  let totals = recompute();
+  // Boucle de swap : max 6 tentatives totales (suffit pour 3 MIN avec marges).
+  const MAX_NUT_SWAPS = 6;
+  for (let it = 0; it < MAX_NUT_SWAPS; it++) {
+    // Identifier le manque le plus criant (proportion need vs current)
+    let target = null;
+    if (totals.fishOily < 1) target = MIN_TARGETS[0];
+    else if (totals.fishOily + totals.fishLean < 2) target = MIN_TARGETS[1];
+    else if (totals.legume < 2) target = MIN_TARGETS[2];
+    if (!target) break; // tous les MIN atteints
+    let bestSwap = null;
+    for (const day of DAYS) {
+      const slot = days[day] || {};
+      const locked = slot.locked || {};
+      const att = slot.attendance || {};
+      for (const mealKey of ALL_KEYS) {
+        if (locked[mealKey]) continue;
+        const oldId = slot[mealKey];
+        if (!oldId) continue;
+        const oldRecipe = RECIPES.find(r => r.id === oldId);
+        if (!oldRecipe) continue;
+        const a = att[mealKey];
+        if (Array.isArray(a) && a.length === 0) continue;
+        const mm = mealEquivalents(profile, a);
+        if (mm <= 0) continue;
+        const oldContrib = recipeNutritionContribution(oldRecipe, mm);
+        // Si l'ancienne recette couvre déjà cette cible, swap inutile (on
+        // perdrait la couverture pour la regagner).
+        if (target.predicate(oldContrib)) continue;
+        // Si elle couvre une autre MIN dont on a aussi besoin, ne pas la perdre.
+        if (target.key !== "legume" && oldContrib.hasLegume && totals.legume <= 2) continue;
+        if (target.key !== "fishOily" && oldContrib.hasFishOily && totals.fishOily <= 1) continue;
+        if (target.key !== "fishAny" && (oldContrib.hasFishOily || oldContrib.hasFishLean) && totals.fishOily + totals.fishLean <= 2) continue;
+        // Chercher un candidat cible dans le pool du même type.
+        const candidates = baseFilter(mealKey).filter(r =>
+          r.id !== oldId &&
+          target.predicate(recipeNutritionContribution(r, 1))
+        );
+        if (candidates.length === 0) continue;
+        // Évaluer chaque candidat : check qu'il ne pousse pas un MAX.
+        for (const cand of candidates) {
+          const candContrib = recipeNutritionContribution(cand, mm);
+          const projEggs = totals.eggs - oldContrib.eggs + candContrib.eggs;
+          const projRed  = totals.redMeatGrams - oldContrib.redMeatGrams + candContrib.redMeatGrams;
+          const projCharc = totals.charcuterieGrams - oldContrib.charcuterieGrams + candContrib.charcuterieGrams;
+          if (projEggs > eggsMax + 0.5) continue;
+          if (projRed > redMeatMax) continue;
+          if (projCharc > charcuterieMax) continue;
+          // OK, swap candidat valide. On prend le 1er trouvé (greedy). On
+          // pourrait ranker par cost ou diversité, à itérer si besoin.
+          bestSwap = {day, mealKey, oldId, newId: cand.id, oldContrib, candContrib};
+          break;
+        }
+        if (bestSwap) break;
+      }
+      if (bestSwap) break;
+    }
+    if (!bestSwap) break; // pas de swap possible pour cette cible
+    // Appliquer le swap
+    days[bestSwap.day][bestSwap.mealKey] = bestSwap.newId;
+    // Mettre à jour les totaux
+    totals.eggs += bestSwap.candContrib.eggs - bestSwap.oldContrib.eggs;
+    totals.redMeatGrams += bestSwap.candContrib.redMeatGrams - bestSwap.oldContrib.redMeatGrams;
+    totals.charcuterieGrams += bestSwap.candContrib.charcuterieGrams - bestSwap.oldContrib.charcuterieGrams;
+    if (bestSwap.oldContrib.hasFishOily) totals.fishOily--;
+    if (bestSwap.candContrib.hasFishOily) totals.fishOily++;
+    if (bestSwap.oldContrib.hasFishLean) totals.fishLean--;
+    if (bestSwap.candContrib.hasFishLean) totals.fishLean++;
+    if (bestSwap.oldContrib.hasLegume) totals.legume--;
+    if (bestSwap.candContrib.hasLegume) totals.legume++;
   }
   return days;
 }
@@ -21906,6 +22149,38 @@ function classifyNutritionIngredient(name, category) {
   // edamame, pois cassés. Exclus : haricot vert (= légume), petits pois frais.
   if (/\b(lentille|lentille corail|lentille verte|lentille beluga|pois chiche|haricot blanc|haricot noir|haricot rouge|haricot azuki|haricot coco|fève|feve|fevedoupin|soja|edamame|tofu|tempeh|pois casse|pois sec|fagiolo|cannellini|borlotti|flageolet|mungo)\b/.test(n)) return "legume";
   return null;
+}
+
+// V2.71.0 (issue #75 niveau 2) — Contribution nutritionnelle d'une recette
+// pour un mealMult donné. Utilisé par le pré-filtre génération.
+// Renvoie un objet plat additionable :
+//   {eggs (unités), redMeatGrams, charcuterieGrams,
+//    hasFishLean, hasFishOily, hasLegume}
+// Les champs `has*` sont booléens (= 1 portion par recette servie, pas par
+// ingrédient ; cohérent avec computeWeeklyNutritionTotals).
+function recipeNutritionContribution(recipe, mealMult) {
+  const c = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0,
+             hasFishLean: false, hasFishOily: false, hasLegume: false};
+  if (!recipe || mealMult <= 0) return c;
+  (recipe.ing || []).forEach(ing => {
+    const [name, qty, unit] = ing;
+    const cls = classifyNutritionIngredient(name);
+    if (cls === "egg") {
+      if (unit === "u") c.eggs += qty * mealMult;
+      else if (unit === "g") c.eggs += (qty / 50) * mealMult;
+    } else if (cls === "redMeat" && unit === "g") {
+      c.redMeatGrams += qty * mealMult;
+    } else if (cls === "charcuterie" && unit === "g") {
+      c.charcuterieGrams += qty * mealMult;
+    } else if (cls === "fishOily") {
+      c.hasFishOily = true;
+    } else if (cls === "fishLean") {
+      c.hasFishLean = true;
+    } else if (cls === "legume") {
+      c.hasLegume = true;
+    }
+  });
+  return c;
 }
 
 // V2.69.0 (issue #75) — Agrégats nutritionnels de la semaine + seuils.
