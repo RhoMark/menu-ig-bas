@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.71.0</title>
+<title>Menu IG Bas — V2.71.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21544,8 +21544,21 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   // Closure qui produit un filtre adapté au mealMult d'un slot donné. Tolérance
   // d'arrondi côté œufs (+0.5) car certaines recettes ont des fractions d'œuf
   // dans des préparations partagées (cake, frittata familiale).
+  // V2.71.1 — DOUBLE garde-fou pour empêcher les recettes mono-œufs très
+  // chargées (frittata 6, tortilla 6, quiche 4, mini-bricks 8) de saturer
+  // le budget hebdo en un seul slot :
+  //   1. Cap par slot : aucune recette ne peut contribuer > 30 % du seuil
+  //      hebdo en une seule pioche. Pour œufs/foyer 4.4 : 13.2 max/slot.
+  //   2. Cap cumulé : la projection (running + cand) ne doit pas dépasser
+  //      le seuil hebdo. Comportement V2.71.0 préservé.
+  const SLOT_CAP_RATIO = 0.30;
   const makeNutritionFilter = (mealMult) => (recipe) => {
     const c = recipeNutritionContribution(recipe, mealMult);
+    // 1) Cap par slot
+    if (c.eggs > nutThresholds.eggsMax * SLOT_CAP_RATIO) return false;
+    if (c.redMeatGrams > nutThresholds.redMeatMax * SLOT_CAP_RATIO) return false;
+    if (c.charcuterieGrams > nutThresholds.charcuterieMax * SLOT_CAP_RATIO) return false;
+    // 2) Cap cumulé (projection running totals + candidat)
     if (nutTotals.eggs + c.eggs > nutThresholds.eggsMax + 0.5) return false;
     if (nutTotals.redMeatGrams + c.redMeatGrams > nutThresholds.redMeatMax) return false;
     if (nutTotals.charcuterieGrams + c.charcuterieGrams > nutThresholds.charcuterieMax) return false;
@@ -21591,12 +21604,22 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         slot.breakfast = prev.breakfast;
       } else if (breakfasts.length > 0) {
         const weekIdx = Math.floor(weekStart.getTime() / (7 * 24 * 60 * 60 * 1000));
-        slot.breakfast = breakfasts[(weekIdx * 7 + i + attempt - 1) % breakfasts.length].id;
-        // V2.71.0 — accrue nutrition du breakfast nouvellement piochée
-        // (les locked sont déjà dans nutTotals via le pré-init).
-        const r = RECIPES.find(rr => rr.id === slot.breakfast);
-        const mm = mealEquivalents(profile, slot.attendance?.breakfast);
-        accrueNutrition(r, mm);
+        const startIdx = (weekIdx * 7 + i + attempt - 1) % breakfasts.length;
+        // V2.71.1 — Filtre nutritionnel sur le breakfast aussi : on respecte
+        // la rotation V2.45.0 mais on saute les indices dont la recette
+        // pousserait au-dessus du cap (slot ou cumulé). Si tout le pool est
+        // déjà au-dessus, fallback rotation pure (best-effort).
+        const bfMm = mealEquivalents(profile, slot.attendance?.breakfast);
+        const bfFilter = makeNutritionFilter(bfMm);
+        let chosen = null;
+        for (let k = 0; k < breakfasts.length; k++) {
+          const cand = breakfasts[(startIdx + k) % breakfasts.length];
+          if (bfFilter(cand)) { chosen = cand; break; }
+        }
+        if (!chosen) chosen = breakfasts[startIdx];
+        slot.breakfast = chosen.id;
+        // accrue nutrition (les locked sont déjà dans nutTotals via le pré-init)
+        accrueNutrition(chosen, bfMm);
       }
 
       // V2.47.0 (issue #12) — Mode batch cooking : pour les `batchTarget`
