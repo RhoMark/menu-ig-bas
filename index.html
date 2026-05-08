@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.60.0</title>
+<title>Menu IG Bas — V2.61.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -20198,6 +20198,28 @@ function App({initialState}) {
       return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, attendance: nextAtt}}}};
     });
   };
+  // V2.61.0 (issue #88) — Toggle "toute la journée à l'extérieur" pour
+  // un jour donné. Fait l'update en 1 seul setState (batch) au lieu de
+  // 5 appels setAttendance successifs (1 par slot). Comportement :
+  // - Si tous les slots actifs du jour ont déjà attendance===[], on
+  //   restaure (delete attendance[meal] = retour à toute la famille)
+  // - Sinon, on met attendance===[] sur tous les slots (= externalisé)
+  const toggleDayExternal = (day) => {
+    update(s => {
+      const daySlot = s.menus[wk]?.[day] || {};
+      const prevAtt = daySlot.attendance || {};
+      const allKeys = getAllActiveSlots(s.profile);
+      const isAllExternal = allKeys.every(k => Array.isArray(prevAtt[k]) && prevAtt[k].length === 0);
+      const nextAtt = {};
+      if (!isAllExternal) {
+        // Mettre tous les slots à [] (externalisés)
+        allKeys.forEach(k => { nextAtt[k] = []; });
+      }
+      // Si déjà tous externalisés, on laisse nextAtt vide (= reset à
+      // attendance: undefined sur tous les slots = toute la famille)
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, attendance: nextAtt}}}};
+    });
+  };
 
   // Print trigger
   useEffect(() => {
@@ -20252,6 +20274,7 @@ function App({initialState}) {
             toggleLock={toggleLock}
             replaceSlot={replaceSlot}
             setAttendance={setAttendance}
+            toggleDayExternal={toggleDayExternal}
             toggleBatchActiveForWeek={toggleBatchActiveForWeek}
             setJournalField={setJournalField}
             onSelectRecipe={(id, opts) => setSelectedRecipe({id, day: opts?.day, meal: opts?.meal})}
@@ -20703,7 +20726,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
@@ -20892,11 +20915,24 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
               const tierClass = tier === "low" ? "bg-emerald-600" : tier === "medium" ? "bg-amber-500" : tier === "high" ? "bg-red-600" : "bg-slate-500";
               const tierLabel = tier === "low" ? "OK" : tier === "medium" ? "Modéré" : tier === "high" ? "Élevé" : "?";
               const cgDisplay = dayCg.covered > 0 ? `${dayCg.cg} CG` : "— CG";
+              // V2.61.0 (issue #88) — Détection "tout le jour externalisé" pour
+              // affichage du bouton 🌃 et son état toggle.
+              const allMealKeys = getAllActiveSlots(state.profile);
+              const isAllExternal = allMealKeys.every(k => Array.isArray(attendance[k]) && attendance[k].length === 0);
               return (
-              <div key={day} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
+              <div key={day} className={`bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden ${isAllExternal ? "opacity-60" : ""}`}>
                 <div className="bg-slate-800 text-white px-3 py-2">
                   <div className="flex items-center justify-between">
-                    <p className="font-bold capitalize">{ordered.daysShort[displayIdx]}</p>
+                    <div className="flex items-center gap-2">
+                      <p className="font-bold capitalize">{ordered.daysShort[displayIdx]}</p>
+                      <button onClick={() => toggleDayExternal(day)}
+                        title={isAllExternal
+                          ? "Restaurer la présence sur toute la journée (tous les repas redeviennent à préparer)"
+                          : "Marquer toute la journée comme repas pris à l'extérieur (rien à préparer, exclu des courses et du budget)"}
+                        className={`text-base transition ${isAllExternal ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
+                        🌃
+                      </button>
+                    </div>
                     <span className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${cgTarget.low})`}>
                       {cgDisplay}
                     </span>
