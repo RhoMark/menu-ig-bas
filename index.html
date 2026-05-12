@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.77.2</title>
+<title>Menu IG Bas — V2.77.3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -25157,39 +25157,43 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                   <p className="text-xs text-slate-300">{formatShort(date)}</p>
                 </div>
                 <div className="p-2 space-y-2">
-                  {/* V2.76.0 (#80) — Apéro card (sec : avant dinner, dînatoire : remplace dinner) */}
-                  {slotApero(slot) && (() => {
-                    const apero = slot.apero;
-                    const aperoRecipes = apero.recipeIds.map(id => RECIPES.find(r => r.id === id)).filter(Boolean);
-                    const aperoGuestN = totalGuestCount(apero.guests);
-                    const isDinatoire = apero.mode === "dinatoire";
-                    return (
-                      <div className={`border rounded p-2 text-sm flex flex-col ${isDinatoire ? "bg-fuchsia-50 dark:bg-fuchsia-950 border-fuchsia-300 dark:border-fuchsia-700" : "bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700"}`}>
-                        <span className="text-xs font-medium text-rose-700 dark:text-rose-300 mb-1">
-                          🥂 Apéro {isDinatoire ? "dînatoire" : "sec"} {apero.note && <span className="font-normal italic">· {apero.note}</span>}
-                        </span>
-                        <div className="flex gap-1.5 mb-1 flex-wrap">
-                          <button title="Éditer invités / mode" onClick={()=>setAperoPanel({day})} className="text-xs hover:opacity-70">✏️</button>
-                          <button title="Régénérer les amuses-bouches" onClick={()=>regenerateSlotApero(day)} className="text-xs hover:opacity-70">🎲</button>
-                          <button title="Supprimer l'apéro" onClick={()=>{ if (confirm("Supprimer l'apéro de ce jour ?")) clearSlotApero(day); }} className="text-xs hover:opacity-70">🗑️</button>
-                          {aperoGuestN > 0 && <span className="text-xs text-fuchsia-700 dark:text-fuchsia-300 font-bold">🎉 +{aperoGuestN}</span>}
-                        </div>
-                        <ul className="text-xs space-y-0.5">
-                          {aperoRecipes.map(r => (
-                            <li key={r.id}>
-                              <button onClick={() => onSelectRecipe(r.id, {day, meal: "snack"})}
-                                className="text-left hover:text-rose-800 dark:hover:text-rose-200 text-slate-700 dark:text-slate-200">
-                                • {r.name}
-                              </button>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    );
-                  })()}
+                  {/* V2.76.0 (#80) — Card apéro réutilisable, placée à la position du dinner
+                      (dînatoire = à la place du dinner ; sec = juste avant le dinner). */}
+                  {(() => { return null; })()}
                   {profileMeals.map(m => {
-                    // V2.76.0 (#80) — Apéro dînatoire masque le dîner
-                    if (m.key === "dinner" && slotIsDinatoire(slot)) return null;
+                    // V2.77.3 (#80) — Card apéro rendue au niveau du dinner (cohérence visuelle)
+                    const aperoHere = m.key === "dinner" && slotApero(slot);
+                    const aperoCard = aperoHere ? (() => {
+                      const apero = slot.apero;
+                      const aperoRecipes = apero.recipeIds.map(id => RECIPES.find(r => r.id === id)).filter(Boolean);
+                      const aperoGuestN = totalGuestCount(apero.guests);
+                      const isDinatoire = apero.mode === "dinatoire";
+                      return (
+                        <div key={`apero-${day}`} className={`border rounded p-2 text-sm flex flex-col ${isDinatoire ? "bg-fuchsia-50 dark:bg-fuchsia-950 border-fuchsia-300 dark:border-fuchsia-700" : "bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700"}`}>
+                          <span className="text-xs font-medium text-rose-700 dark:text-rose-300 mb-1">
+                            🥂 Apéro {isDinatoire ? "dînatoire" : "sec"} {apero.note && <span className="font-normal italic">· {apero.note}</span>}
+                          </span>
+                          <div className="flex gap-1.5 mb-1 flex-wrap">
+                            <button title="Éditer invités / mode" onClick={()=>setAperoPanel({day})} className="text-xs hover:opacity-70">✏️</button>
+                            <button title="Régénérer les amuses-bouches" onClick={()=>regenerateSlotApero(day)} className="text-xs hover:opacity-70">🎲</button>
+                            <button title="Supprimer l'apéro" onClick={()=>{ if (confirm("Supprimer l'apéro de ce jour ?")) clearSlotApero(day); }} className="text-xs hover:opacity-70">🗑️</button>
+                            {aperoGuestN > 0 && <span className="text-xs text-fuchsia-700 dark:text-fuchsia-300 font-bold">🎉 +{aperoGuestN}</span>}
+                          </div>
+                          <ul className="text-xs space-y-0.5">
+                            {aperoRecipes.map(r => (
+                              <li key={r.id}>
+                                <button onClick={() => onSelectRecipe(r.id, {day, meal: "snack"})}
+                                  className="text-left hover:text-rose-800 dark:hover:text-rose-200 text-slate-700 dark:text-slate-200">
+                                  • {r.name}
+                                </button>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      );
+                    })() : null;
+                    // Apéro dînatoire : remplace entièrement le slot dinner
+                    if (m.key === "dinner" && slotIsDinatoire(slot)) return aperoCard;
                     const recipe = RECIPES.find(r => r.id === slot[m.key]);
                     const locked = slot.locked?.[m.key];
                     const attendees = attendance[m.key];
@@ -25208,11 +25212,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const dessertNPresent = dessertAttendees == null ? nAll : dessertAttendees.length;
                     const dessertPartial = dessertAttendees != null && dessertNPresent < nAll;
                     const dessertIsExternal = dessertAttendees != null && dessertNPresent === 0;
-                    return (
-                      <div key={m.key} className={`border rounded p-2 text-sm flex flex-col min-h-[140px] ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
-                        {/* V2.59.0 — Header slot en 2 lignes : label seul (ligne 1) puis
-                            boutons d'action (ligne 2). Améliore l'alignement vertical
-                            entre jours et la lisibilité (avant : tout sur 1 ligne flex). */}
+                    // V2.77.3 (#80) — Apéro sec : rendu au-dessus du dinner (pas en haut du jour)
+                    const slotJsx = (
+                      <div className={`border rounded p-2 text-sm flex flex-col min-h-[140px] ${locked ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
                         <span className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">{m.icon} {m.label}</span>
                         <div className="flex gap-1.5 mb-2 flex-wrap">
                           <button title={partial ? `${nPresent}/${nAll} présents` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:m.key})} className={`text-xs hover:opacity-70 ${partial ? "text-amber-600 font-bold" : ""}`}>👥{partial ? nPresent : ""}</button>
@@ -25370,6 +25372,13 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                           </div>
                         )}
                       </div>
+                    );
+                    // V2.77.3 (#80) — Mode sec : rend la card apéro au-dessus du dinner
+                    return (
+                      <React.Fragment key={m.key}>
+                        {m.key === "dinner" && slot.apero?.mode === "sec" && aperoCard}
+                        {slotJsx}
+                      </React.Fragment>
                     );
                   })}
                 </div>
