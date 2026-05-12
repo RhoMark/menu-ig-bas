@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.80.0</title>
+<title>Menu IG Bas — V2.80.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -342,8 +342,39 @@ if ("serviceWorker" in navigator) {
       ]
     },
     {
+      "id": "pictogrammes",
+      "label": "Légende des pictogrammes",
+      "icon": "🔣",
+      "qa": [
+        {
+          "q": "Pictogrammes du planning (case d'un repas)",
+          "a": "👥 présence / qui mange — clic ouvre la fenêtre pour décocher les absents. 🎉 invités ponctuels — adulte/ado/enfant/petit enfant avec scaling auto. 🥂 apéro (sec en plus du repas, ou dînatoire/déjeunatoire qui remplace). 🍾 mode fête (entrée + plat + dessert, compensation glycémique J-1/J+1). 🔒/🔓 verrouillage de la case (la régénération ne change pas). 🔀 remplacer cette recette (ouvre la liste filtrée). 🎲 piocher aléatoirement une autre recette du même type. 🌃 marquer tout le jour comme repas à l'extérieur (resto, cantine)."
+        },
+        {
+          "q": "Pictogrammes types de repas",
+          "a": "☀️ petit-déjeuner. 🥗 déjeuner. 🌙 dîner. 🍪 goûter (optionnel). 🍰 dessert (optionnel, attaché au déjeuner ou au dîner selon préférence). 🥗 / 🍽️ / 🍰 sont aussi utilisés dans la card du mode fête pour distinguer entrée / plat / dessert."
+        },
+        {
+          "q": "Pictogrammes du bandeau nutrition",
+          "a": "🩺 repères nutritionnels OMS/PNNS/WCRF/EFSA. 🥚 œufs hebdo (cible PNNS ≤ 10 par personne et par semaine). 🥩 viande rouge hebdo (cible WCRF/AICR ≤ 500 g cuit par personne et par semaine). 🥓 charcuterie hebdo (CIRC groupe 1, à limiter fortement). 🐟 poisson total hebdo (cible EFSA ≥ 2 portions par semaine). 🐠 poisson gras hebdo (cible ≥ 1 portion par semaine pour les oméga-3). 🫘 légumineuses hebdo (cible PNNS ≥ 2 portions par semaine)."
+        },
+        {
+          "q": "Pictogrammes du bandeau budget et historique",
+          "a": "💰 coût estimé / cible budget. * astérisque rose : événements spéciaux (invités, apéro, fête) ajustent le coût. ⭐ / ☆ favori (étoile pleine = favori du foyer, augmente la probabilité de pioche). 📊 historique. 🛒 jour des courses / liste de courses agrégée. 🖨️ imprimer le menu."
+        },
+        {
+          "q": "Pictogrammes du modal recette (fiche détaillée)",
+          "a": "⏱ temps de préparation actif. 🔥 temps de cuisson. ❄️ repos passif (frigo, marinade, prise au froid). ⏰ délai d'avance minimum requis (ex : 3h à l'avance) ou 🌙 la veille. 📊 niveau de difficulté (étoiles 1 à 3). 🔢 calories par portion. 🗓 saison(s) où la recette est proposée. ⚠️ hors saison (en rouge orangé) si la recette ne correspond pas à la saison courante mais le filtre saisonnier est désactivé. 🍱 recette préparable à l'avance (batch-friendly, conservable 3-4 jours)."
+        },
+        {
+          "q": "Pictogrammes de navigation et vues",
+          "a": "📅 / 🗓️ vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘️ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %)."
+        }
+      ]
+    },
+    {
       "id": "privacy",
-      "label": "Privacy & données",
+      "label": "Confidentialité & données",
       "icon": "🔒",
       "qa": [
         {
@@ -58635,7 +58666,7 @@ function ThemeToggle() {
 
 // ===========================================================================
 // V2.58.0 (issue #84) — FAQ inline avec recherche full-text.
-// Données dans <script id="data-faq">. 9 sections, ~45 Q/R. Accordion
+// Données dans <script id="data-faq">. 10 sections, ~51 Q/R. Accordion
 // repliable par section + recherche live qui filtre Q et A.
 // ===========================================================================
 function FaqView() {
