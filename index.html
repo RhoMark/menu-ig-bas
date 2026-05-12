@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.78.0</title>
+<title>Menu IG Bas — V2.79.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -54362,20 +54362,27 @@ function computeDayCg(weekMenu, day, profile) {
   const slots = getAllActiveSlots(profile);
   const slot = weekMenu?.[day] || {};
   const attendance = slot.attendance || {};
+  // V2.78.x (#81 V2) — Récolte les recettes festives structurées (2 ou 3)
+  const feastObj = slotFeastObj(slot);
+  const feastIsV2 = feastObj && feastObj.services >= 2;
   let totalCg = 0;
   let covered = 0;
+  const addRecipe = (rid) => {
+    if (!rid) return;
+    const recipe = RECIPES.find(r => r.id === rid);
+    if (!recipe) return;
+    const g = computeRecipeGlycemic(recipe);
+    if (g?.cg != null) { totalCg += g.cg; covered++; }
+  };
   for (const meal of slots) {
-    const rid = slot[meal];
-    if (!rid) continue;
     const att = attendance[meal];
     if (Array.isArray(att) && att.length === 0) continue; // repas extérieur
-    const recipe = RECIPES.find(r => r.id === rid);
-    if (!recipe) continue;
-    const g = computeRecipeGlycemic(recipe);
-    if (g?.cg != null) {
-      totalCg += g.cg;
-      covered++;
+    // V2.78.x (#81 V2) — Mode fête V2 : agrège les CG des 2/3 plats festifs
+    if (feastIsV2 && feastObj.meal === meal) {
+      [feastObj.entryId, feastObj.mainId, feastObj.dessertId].forEach(addRecipe);
+      continue;
     }
+    addRecipe(slot[meal]);
   }
   return {cg: Math.round(totalCg), covered, total: slots.length};
 }
@@ -54388,20 +54395,28 @@ function dayCgTier(cgValue, householdTarget) {
   return "high";
 }
 
-// V2.77.0 (issue #81 Module Réception) — Mode fête + compensation glycémique.
-// slot.feast vaut "dinner" ou "lunch" pour indiquer sur quel meal le mode
-// fête est actif. Legacy : `true` est interprété comme "dinner" (V2.77.0
-// initial). Le seuil CG est plus tolérant ce jour-là. Les jours J-1 et
-// J+1 d'un festif voient leur seuil CG cible réduit de 15 % (compensation,
-// ADA 2023 Standards of Care, écarts ponctuels).
-// V1 minimaliste : 1 plat festif principal sur le meal choisi (lunch ou
-// dinner). Entrée + dessert structurés viendra quand le pool sera enrichi.
+// V2.77.0 → V2.78.x (issue #81 Module Réception) — Mode fête + compensation glycémique.
+// Le seuil CG est plus tolérant ce jour-là. Les jours J-1 et J+1 d'un festif
+// voient leur seuil CG cible réduit de 15 % (compensation, ADA 2023 Standards
+// of Care, écarts ponctuels).
+//
+// Format slot.feast (3 versions historiques, lecture rétro-compatible) :
+//   V2.77.0 initial   : `true`                                    → legacy = dinner, 1 plat
+//   V2.77.2           : `"lunch"` | `"dinner"`                    → 1 plat sur lunch/dinner
+//   V2.78.x (cible)   : `{meal, services, entryId, mainId, dessertId}` → 2 ou 3 services structurés
+//
+// Migration : pas de réécriture au load (lazy reading). Les helpers
+// `slotFeastObj()` ci-dessous renvoient toujours un objet structuré normalisé
+// même pour les formats legacy. La migration en écriture se fait au prochain
+// appel de `setSlotFeast` / `regenerateFeastPart` (via FeastEditorDialog).
 const FEAST_COMPENSATION_FACTOR = 0.85; // −15 %
-// V2.77.2 — Helper qui résout slot.feast → "dinner" | "lunch" | null
+// V2.77.2 / V2.78.x — Helper qui résout slot.feast → "dinner" | "lunch" | null
 function slotFeastMeal(slot) {
   const v = slot?.feast;
+  if (!v) return null;
   if (v === "dinner" || v === "lunch") return v;
   if (v === true) return "dinner"; // legacy V2.77.0
+  if (typeof v === "object" && (v.meal === "lunch" || v.meal === "dinner")) return v.meal;
   return null;
 }
 function slotIsFeast(slot) {
@@ -54410,6 +54425,37 @@ function slotIsFeast(slot) {
 function slotIsFeastOnMeal(slot, meal) {
   return slotFeastMeal(slot) === meal;
 }
+// V2.78.x (#81 V2) — Normalise slot.feast vers un objet structuré pour la
+// lecture. Renvoie {meal, services, entryId, mainId, dessertId} même pour
+// les formats legacy (V1 → services:1, mainId = slot[meal], entry/dessert null).
+function slotFeastObj(slot) {
+  const meal = slotFeastMeal(slot);
+  if (!meal) return null;
+  const v = slot?.feast;
+  if (typeof v === "object") {
+    return {
+      meal: v.meal,
+      services: v.services ?? (v.entryId ? 3 : 2),
+      entryId: v.entryId ?? null,
+      mainId: v.mainId ?? null,
+      dessertId: v.dessertId ?? null,
+    };
+  }
+  // Legacy V1 : 1 plat seulement (entrée + dessert absents)
+  return {
+    meal,
+    services: 1,            // sentinelle « legacy V1, à compléter »
+    entryId: null,
+    mainId: slot[meal] || null,
+    dessertId: null,
+  };
+}
+// V2.78.x — Helpers d'accès direct aux ids des composantes festives
+function slotFeastMain(slot)    { return slotFeastObj(slot)?.mainId    ?? null; }
+function slotFeastEntry(slot)   { return slotFeastObj(slot)?.entryId   ?? null; }
+function slotFeastDessert(slot) { return slotFeastObj(slot)?.dessertId ?? null; }
+function slotFeastServices(slot){ return slotFeastObj(slot)?.services  ?? 0; }
+function slotFeastIsLegacyV1(slot) { return slotFeastObj(slot)?.services === 1; }
 function dayHasFeast(weekMenu, day) {
   return slotIsFeast(weekMenu?.[day]);
 }
@@ -55729,6 +55775,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // V2.77.4 (#80) — Si apéro déjeunatoire (dinatoire + meal lunch), pas de lunch
       if (slotIsAperoDinatoireOnMeal(prev, "lunch")) {
         // pas de lunch ce jour (remplacé par l'apéro déjeunatoire)
+      } else if ((slotFeastObj(prev)?.services >= 2) && slotFeastObj(prev)?.meal === "lunch") {
+        // V2.78.x (#81 V2) — Mode fête structuré : les plats sont dans slot.feast, pas de lunch standard
       } else if (keepLocked && locked.lunch && prev.lunch) {
         slot.lunch = prev.lunch;
         usedThisWeek.add(prev.lunch);
@@ -55759,6 +55807,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // V2.76.0 / V2.77.4 (#80) — Si apéro dînatoire ce jour (meal=dinner ou legacy sans meal), on ne pioche pas de dinner
       if (slotIsAperoDinatoireOnMeal(prev, "dinner")) {
         // pas de dinner ce jour
+      } else if ((slotFeastObj(prev)?.services >= 2) && slotFeastObj(prev)?.meal === "dinner") {
+        // V2.78.x (#81 V2) — Mode fête structuré : les plats sont dans slot.feast, pas de dinner standard
       } else if (keepLocked && locked.dinner && prev.dinner) {
         slot.dinner = prev.dinner;
         usedThisWeek.add(prev.dinner);
@@ -56156,9 +56206,23 @@ function aggregateShoppingList(weekMenu, profile) {
     const slot = weekMenu[day] || {};
     const attendance = slot.attendance || {};
     const slotGuests = slot.guests || {};
+    // V2.78.x (#81 V2) — Mode fête structuré sur ce slot : itère 2 ou 3 recettes festives
+    const feastObj = slotFeastObj(slot);
+    const feastIsV2 = feastObj && feastObj.services >= 2;
     activeSlots.forEach(meal => {
       // V2.76.0 / V2.77.4 (#80) — Apéro dînatoire/déjeunatoire saute le meal remplacé
       if (slotIsAperoDinatoireOnMeal(slot, meal)) return;
+      // V2.78.x (#81 V2) — Mode fête V2 : on remplace le slot[meal] par les recettes festives
+      if (feastIsV2 && feastObj.meal === meal) {
+        const attendees = attendance[meal];
+        const feastGuests = slot.feast?.guests; // V2.78
+        const mult = mealEquivalents(profile, attendees, feastGuests, guestRatios);
+        [feastObj.entryId, feastObj.mainId, feastObj.dessertId].filter(Boolean).forEach(rid => {
+          const recipe = RECIPES.find(r => r.id === rid);
+          addRecipeToAgg(recipe, mult);
+        });
+        return;
+      }
       const rid = slot[meal];
       if (!rid) return;
       const recipe = RECIPES.find(r => r.id === rid);
@@ -56196,9 +56260,22 @@ function estimateWeekCost(weekMenu, profile) {
     const slot = weekMenu[day] || {};
     const attendance = slot.attendance || {};
     const slotGuests = slot.guests || {};
+    const feastObj = slotFeastObj(slot);
+    const feastIsV2 = feastObj && feastObj.services >= 2;
     activeSlots.forEach(meal => {
-      // V2.76.0 / V2.77.4 — Apéro dinatoire/déjeunatoire saute le meal remplacé
       if (slotIsAperoDinatoireOnMeal(slot, meal)) return;
+      // V2.78.x (#81 V2) — Coût du repas festif structuré (2 ou 3 recettes)
+      if (feastIsV2 && feastObj.meal === meal) {
+        const attendees = attendance[meal];
+        const feastGuests = slot.feast?.guests;
+        const mult = mealEquivalents(profile, attendees, feastGuests, guestRatios);
+        if (mult <= 0) return;
+        [feastObj.entryId, feastObj.mainId, feastObj.dessertId].filter(Boolean).forEach(rid => {
+          const r = RECIPES.find(rr => rr.id === rid);
+          if (r) total += recipeEffectiveCost(r) * mult;
+        });
+        return;
+      }
       const rid = slot[meal];
       if (!rid) return;
       const recipe = RECIPES.find(r => r.id === rid);
@@ -56329,11 +56406,19 @@ function weekAttendanceRatio(weekMenu, profile) {
     const slot = weekMenu[day] || {};
     const att = slot.attendance || {};
     const slotGuests = slot.guests || {};
+    const feastObj = slotFeastObj(slot);
+    const feastIsV2 = feastObj && feastObj.services >= 2;
     activeSlots.forEach(meal => {
       if (slotIsAperoDinatoireOnMeal(slot, meal)) {
         // V2.77.4 — L'apéro dînatoire/déjeunatoire remplace ce meal —
         // multIfFull compte quand même (un repas aurait été prévu),
         // multActual reflète l'apéro ci-dessous.
+        multIfFull += fullMult;
+        return;
+      }
+      // V2.78.x (#81 V2) — Mode fête V2 : utilise les invités stockés sur slot.feast
+      if (feastIsV2 && feastObj.meal === meal) {
+        multActual += mealEquivalents(profile, att[meal], slot.feast?.guests, guestRatios);
         multIfFull += fullMult;
         return;
       }
@@ -57108,24 +57193,34 @@ function App({initialState}) {
     });
   };
 
-  // V2.77.0 (issue #81 Module Réception) — Mode fête sur le slot lunch ou dinner.
-  // Active : pioche une recette festive (tag "festif") du pool et la met
-  // dans slot[meal] ; slot.feast = meal. La compensation CG J-1/J+1 est
-  // gérée à l'affichage (dayCgTargetWithFeast).
-  const pickFeastMeal = (meal) => {
+  // V2.77.0 → V2.78.x (issue #81 V2) — Mode fête structuré entrée+plat+dessert.
+  // pickFeastPart(kind, hostMeal, excludeIds) : pioche dans le pool festif
+  //   - kind = "entry"   → r.type === "snack"            (entrée légère festive)
+  //   - kind = "main"    → r.type === hostMeal (lunch|dinner) (plat festif)
+  //   - kind = "dessert" → r.type === "dessert"          (dessert festif)
+  // Filtres saison/allergies/exclusions/cuisines préférées appliqués.
+  // excludeIds : ids déjà piochés pour ce slot (évite de tirer la même
+  // recette en entrée ET en plat par exemple, peu probable mais propre).
+  const pickFeastPart = (kind, hostMeal, excludeIds = new Set()) => {
     const profile = state.profile;
     const season = getSeason(currentWeek);
+    const typeFilter = kind === "entry" ? "snack"
+                     : kind === "dessert" ? "dessert"
+                     : hostMeal; // "main" → lunch ou dinner
     const pool = RECIPES.filter(r =>
       (r.tags || []).includes("festif") &&
-      r.type === meal &&
+      r.type === typeFilter &&
+      !excludeIds.has(r.id) &&
       matchesSeason(r, season, profile) &&
       !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
       !recipeHasExcluded(r, effectiveExclusions(profile, null))
     );
     if (pool.length === 0) return null;
     const {set: softAvoid, lastUsedMap} = recipesUsedRecently(state.menus, currentWeek);
-    return pickFromPool(pool, {softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
+    return pickFromPool(pool, {hardAvoid: excludeIds, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
   };
+  // V2.77.0 legacy — conservé pour compat appels existants (kind="main")
+  const pickFeastMeal = (meal) => pickFeastPart("main", meal);
   // V2.77.2 — Reproduit la logique cœur de regenerateSlot pour pioche standard,
   // utilisé par disableSlotFeast pour revenir à un meal non-festif après
   // désactivation du mode fête (sinon le slot garde la recette festive piochée).
@@ -57153,59 +57248,117 @@ function App({initialState}) {
     const {set: softAvoid, lastUsedMap} = recipesUsedRecently(state.menus, currentWeek);
     return pickFromPool(pool, {hardAvoid: usedThisWeek, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
   };
-  const enableSlotFeast = (day, meal) => {
+  // V2.78.x (issue #81 V2) — Activation mode fête structuré.
+  // params : day, meal (lunch|dinner), services (2|3), optionnel guests/note.
+  // Pioche :
+  //   - 1 plat principal (type === meal, tag festif)
+  //   - 1 dessert (type === dessert, tag festif)
+  //   - 1 entrée si services === 3 (type === snack, tag festif)
+  // Stocke slot.feast = {meal, services, entryId, mainId, dessertId}.
+  // Le slot[meal] standard est supprimé (remplacé par le plat festif).
+  const enableSlotFeast = (day, meal, services = 3, guestsArr = [], note = "") => {
     if (meal !== "lunch" && meal !== "dinner") return;
+    if (services !== 2 && services !== 3) services = 3;
     const wkSlots = state.menus[wk] || {};
-    // Un seul slot festif par jour : si l'autre meal est déjà festif, on demande
-    const existingFeastMeal = slotFeastMeal(wkSlots[day]);
+    const dayPre = wkSlots[day] || {};
+    // Un seul slot festif par jour : si l'autre meal est déjà festif, refus
+    const existingFeastMeal = slotFeastMeal(dayPre);
     if (existingFeastMeal && existingFeastMeal !== meal) {
       alert(`${existingFeastMeal === "lunch" ? "Le déjeuner" : "Le dîner"} de ce jour est déjà en mode fête. Désactivez-le d'abord.`);
       return;
     }
-    // Warning si déjà 2+ jours festifs cette semaine
-    const feastDays = DAYS.filter(d => slotIsFeast(wkSlots[d])).length;
-    if (feastDays >= 2 && !slotIsFeast(wkSlots[day])) {
-      if (!confirm(`Déjà ${feastDays} jour${feastDays > 1 ? "s" : ""} festif${feastDays > 1 ? "s" : ""} cette semaine. La science recommande max 2/semaine pour la tolérance glycémique. Continuer quand même ?`)) return;
-    }
-    const picked = pickFeastMeal(meal);
-    if (!picked) {
-      alert(`Pool festif vide pour ${meal === "lunch" ? "déjeuner" : "dîner"} en cette saison/profil.`);
+    // Refus si apéro dinatoire/déjeunatoire sur le même meal
+    if (slotIsAperoDinatoireOnMeal(dayPre, meal)) {
+      alert(`Le ${meal === "lunch" ? "déjeuner" : "dîner"} de ce jour est en apéro ${meal === "lunch" ? "déjeunatoire" : "dînatoire"}. Supprimez-le d'abord.`);
       return;
     }
+    // Warning si déjà 2+ jours festifs cette semaine
+    const feastDays = DAYS.filter(d => slotIsFeast(wkSlots[d])).length;
+    if (feastDays >= 2 && !slotIsFeast(dayPre)) {
+      if (!confirm(`Déjà ${feastDays} jour${feastDays > 1 ? "s" : ""} festif${feastDays > 1 ? "s" : ""} cette semaine. La science recommande max 2/semaine pour la tolérance glycémique. Continuer quand même ?`)) return;
+    }
+    // Pioche les 3 (ou 2) recettes en évitant les doublons
+    const picked = new Set();
+    const mainRec = pickFeastPart("main", meal, picked);
+    if (!mainRec) { alert(`Pool festif vide pour ${meal === "lunch" ? "déjeuner" : "dîner"}.`); return; }
+    picked.add(mainRec.id);
+    const dessertRec = pickFeastPart("dessert", meal, picked);
+    if (!dessertRec) { alert("Pool festif dessert vide pour cette saison."); return; }
+    picked.add(dessertRec.id);
+    let entryRec = null;
+    if (services === 3) {
+      entryRec = pickFeastPart("entry", meal, picked);
+      if (!entryRec) { alert("Pool festif entrée vide pour cette saison."); return; }
+      picked.add(entryRec.id);
+    }
     update(s => {
-      const daySlot = s.menus[wk]?.[day] || {};
-      // Si apéro dînatoire, on ne peut pas avoir fête sur dinner en même temps
-      const nextSlot = {...daySlot, [meal]: picked.id, feast: meal};
-      if (slotIsAperoDinatoireOnMeal(daySlot, meal)) delete nextSlot.apero;
-      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
+      const slot = s.menus[wk]?.[day] || {};
+      const next = {...slot};
+      // Remplace le slot[meal] standard (sera lu via slotFeastMain désormais)
+      delete next[meal];
+      const validGuests = Array.isArray(guestsArr) ? guestsArr.filter(g => g.count > 0) : [];
+      next.feast = {
+        meal,
+        services,
+        entryId: entryRec ? entryRec.id : null,
+        mainId: mainRec.id,
+        dessertId: dessertRec.id,
+        guests: validGuests,
+        note: (note || "").trim().slice(0, 50),
+      };
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: next}}};
     });
   };
-  // V2.77.2 — Désactivation : re-pioche un meal standard à la place de la
-  // recette festive (sinon le slot garderait la recette festive piochée à
-  // l'activation, ce qui n'est pas le retour à l'état antérieur attendu).
+  // V2.77.2 / V2.78.x — Désactivation : re-pioche un meal standard à la place
+  // du plat festif (sinon le slot resterait vide). Compatible legacy V1
+  // (slot.feast === "lunch"|"dinner") : la recette festive piochée à
+  // l'activation est remplacée par un meal standard.
   const disableSlotFeast = (day) => {
     const wkSlots = state.menus[wk] || {};
     const daySlot = wkSlots[day] || {};
     const feastMeal = slotFeastMeal(daySlot);
     if (!feastMeal) return;
-    const currentId = daySlot[feastMeal];
-    const replacement = pickStandardMeal(day, feastMeal, currentId);
+    const currentMainId = slotFeastMain(daySlot);
+    const replacement = pickStandardMeal(day, feastMeal, currentMainId);
     update(s => {
       const slot = s.menus[wk]?.[day] || {};
-      const nextSlot = {...slot};
-      delete nextSlot.feast;
-      if (replacement) nextSlot[feastMeal] = replacement.id;
-      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
+      const next = {...slot};
+      delete next.feast;
+      if (replacement) next[feastMeal] = replacement.id;
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: next}}};
     });
   };
-  const regenerateFeastMeal = (day, meal) => {
-    const picked = pickFeastMeal(meal);
+  // V2.78.x — Régénération d'une partie du repas festif (entrée, plat, dessert).
+  // kind ∈ {"entry","main","dessert"}. Compatible legacy V1 (string) : si
+  // appelé en kind="main" sur un slot legacy, on garde le format V1.
+  const regenerateFeastPart = (day, kind) => {
+    const wkSlots = state.menus[wk] || {};
+    const daySlot = wkSlots[day] || {};
+    const feastObj = slotFeastObj(daySlot);
+    if (!feastObj) return;
+    const meal = feastObj.meal;
+    // Évite la recette qu'on remplace + les 2 autres déjà piochées
+    const exclude = new Set([feastObj.entryId, feastObj.mainId, feastObj.dessertId].filter(Boolean));
+    const picked = pickFeastPart(kind, meal, exclude);
     if (!picked) return;
     update(s => {
-      const daySlot = s.menus[wk]?.[day] || {};
-      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, [meal]: picked.id}}}};
+      const slot = s.menus[wk]?.[day] || {};
+      const cur = typeof slot.feast === "object" ? slot.feast : null;
+      const next = {...slot};
+      if (cur) {
+        // V2.78.x — slot.feast est un objet, on met à jour la partie demandée
+        const field = kind === "entry" ? "entryId" : kind === "dessert" ? "dessertId" : "mainId";
+        next.feast = {...cur, [field]: picked.id};
+      } else {
+        // Legacy V1 : seul kind="main" a du sens, on garde le format string
+        // mais on stocke le nouvel id dans slot[meal]
+        if (kind === "main") next[meal] = picked.id;
+      }
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: next}}};
     });
   };
+  // Compat appelants V1 (V2.77.x) : redirige vers regenerateFeastPart("main")
+  const regenerateFeastMeal = (day, _meal) => regenerateFeastPart(day, "main");
   // V2.62.0 (issue #20) — Toggle favori (étoile) sur une recette.
   // Stocké au niveau du foyer (pas par membre, V1).
   const toggleFavorite = (recipeId) => {
@@ -57760,6 +57913,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
   const [aperoPanel, setAperoPanel] = useState(null); // V2.76.0 (#80) {day}
+  const [feastPanel, setFeastPanel] = useState(null); // V2.78.x (#81 V2) {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
   const cost = estimateWeekCost(currentMenu, state.profile);
   // V2.61.1 / V2.72.1 — Cible budget ajustée au prorata des slots non
@@ -58066,6 +58220,46 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     })() : null;
                     // Apéro dînatoire/déjeunatoire : remplace entièrement le meal hôte
                     if (slotIsAperoDinatoireOnMeal(slot, m.key)) return aperoCard;
+                    // V2.78.x (#81 V2) — Mode fête structuré : remplace le slot par 3 sous-cards
+                    const feastObj = slotFeastObj(slot);
+                    if (feastObj && feastObj.meal === m.key && feastObj.services >= 2) {
+                      const entryR = feastObj.entryId ? RECIPES.find(r => r.id === feastObj.entryId) : null;
+                      const mainR = feastObj.mainId ? RECIPES.find(r => r.id === feastObj.mainId) : null;
+                      const dessertR = feastObj.dessertId ? RECIPES.find(r => r.id === feastObj.dessertId) : null;
+                      const feastGuestN = totalGuestCount(slot.feast?.guests);
+                      const feastNote = slot.feast?.note;
+                      const subCard = (kind, icon, label, rec) => rec ? (
+                        <div className="border-t border-rose-200 dark:border-rose-800 pt-1.5 mt-1.5 first:border-t-0 first:pt-0 first:mt-0">
+                          <div className="flex items-center justify-between gap-1">
+                            <span className="text-[10px] font-semibold text-rose-700 dark:text-rose-300">{icon} {label}</span>
+                            <button title={`Repiocher ${label.toLowerCase()}`} onClick={() => regenerateFeastPart(day, kind)} className="text-[10px] hover:opacity-70">🎲</button>
+                          </div>
+                          <button onClick={() => onSelectRecipe(rec.id, {day, meal: m.key})}
+                            className="text-left w-full hover:text-rose-800 dark:hover:text-rose-200 text-slate-800 dark:text-slate-100 text-xs font-medium">
+                            {rec.name}
+                          </button>
+                          <div className="text-[10px] text-slate-500 dark:text-slate-400">⏱ {recipeTimeLabel(rec)} · {rec.kcal}kcal</div>
+                        </div>
+                      ) : null;
+                      return (
+                        <div key={m.key} className="border rounded p-2 text-sm flex flex-col bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700">
+                          <div className="flex items-center justify-between mb-1">
+                            <span className="text-xs font-bold text-rose-700 dark:text-rose-300">🍾 Fête {m.key === "lunch" ? "(midi)" : "(soir)"} · {feastObj.services} services</span>
+                          </div>
+                          <div className="flex gap-1.5 mb-2 flex-wrap">
+                            <button title={partial ? `${nPresent}/${nAll} présents` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:m.key})} className={`text-xs hover:opacity-70 ${partial ? "text-amber-600 font-bold" : ""}`}>👥{partial ? nPresent : ""}</button>
+                            <button title="Désactiver le mode fête (retour à un repas standard, compensation J-1/J+1 annulée)"
+                              onClick={() => disableSlotFeast(day)}
+                              className="text-xs text-rose-600 dark:text-rose-400 font-bold hover:opacity-70">🍾</button>
+                            {feastGuestN > 0 && <span className="text-xs text-fuchsia-700 dark:text-fuchsia-300 font-bold">🎉 +{feastGuestN}</span>}
+                          </div>
+                          {feastNote && <div className="text-[11px] italic text-rose-700 dark:text-rose-300 mb-1">{feastNote}</div>}
+                          {subCard("entry", "🥗", "Entrée", entryR)}
+                          {subCard("main", "🍽️", "Plat", mainR)}
+                          {subCard("dessert", "🍰", "Dessert", dessertR)}
+                        </div>
+                      );
+                    }
                     const recipe = RECIPES.find(r => r.id === slot[m.key]);
                     const locked = slot.locked?.[m.key];
                     const attendees = attendance[m.key];
@@ -58104,7 +58298,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                               disabled={isExternal}
                               className={`text-xs hover:opacity-70 ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>🥂</button>
                           )}
-                          {/* V2.77.0 / V2.77.2 (#81) — Toggle mode fête sur lunch ou dinner */}
+                          {/* V2.77.0 / V2.78.x (#81 V2) — Toggle mode fête : ouvre le dialog pour choisir 2/3 services */}
                           {(m.key === "lunch" || m.key === "dinner") && !slotApero(slot) && (() => {
                             const isFeastHere = slotIsFeastOnMeal(slot, m.key);
                             const otherFeastMeal = slotFeastMeal(slot);
@@ -58113,10 +58307,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                               ? "Désactiver le mode fête (le repas reviendra à un choix standard, compensation CG J-1/J+1 annulée)"
                               : otherFeastBlocks
                                 ? `Mode fête déjà actif sur le ${otherFeastMeal === "lunch" ? "déjeuner" : "dîner"} de ce jour`
-                                : "Activer le mode fête : repas festif du pool, compensation glycémique automatique sur J-1 et J+1 (-15% cible CG, ADA 2023)";
+                                : "Activer le mode fête : entrée + plat + dessert festifs, compensation glycémique automatique sur J-1 et J+1 (-15% cible CG, ADA 2023)";
                             return (
                               <button title={title}
-                                onClick={() => isFeastHere ? disableSlotFeast(day) : enableSlotFeast(day, m.key)}
+                                onClick={() => isFeastHere ? disableSlotFeast(day) : setFeastPanel({day, meal: m.key})}
                                 disabled={isExternal || otherFeastBlocks}
                                 className={`text-xs hover:opacity-70 ${isFeastHere ? "text-rose-600 dark:text-rose-400 font-bold" : ""} ${(isExternal || otherFeastBlocks) ? "opacity-30 cursor-not-allowed" : ""}`}>🍾</button>
                             );
@@ -58307,6 +58501,16 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           currentApero={currentMenu[aperoPanel.day]?.apero}
           onSave={(mode, meal, guests, note) => { setSlotApero(aperoPanel.day, mode, meal, guests, note); setAperoPanel(null); }}
           onClose={() => setAperoPanel(null)}
+        />
+      )}
+      {/* V2.78.x (issue #81 V2) — Modal mode fête structuré */}
+      {feastPanel && (
+        <FeastEditorDialog
+          day={feastPanel.day}
+          meal={feastPanel.meal}
+          profile={state.profile}
+          onSave={(meal, services, guests, note) => { enableSlotFeast(feastPanel.day, meal, services, guests, note); setFeastPanel(null); }}
+          onClose={() => setFeastPanel(null)}
         />
       )}
     </div>
@@ -58547,6 +58751,116 @@ function AperoEditorDialog({day, meal, profile, currentApero, onSave, onClose}) 
           <button onClick={save}
             className={`px-4 py-2 rounded-md text-sm font-medium text-white ${mode === "dinatoire" ? "bg-fuchsia-600 hover:bg-fuchsia-700" : "bg-rose-600 hover:bg-rose-700"}`}>
             {currentApero ? "Mettre à jour" : "Créer l'apéro"}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// V2.78.x (issue #81 V2) — Dialog de création/édition mode fête structuré.
+// Choix meal (lunch/dinner), services (2 ou 3 — l'utilisateur tranche à chaque
+// activation), invités (réutilise GUEST_TYPES), note libre. À la validation
+// onSave(meal, services, guests, note) déclenche la pioche des 2/3 recettes.
+function FeastEditorDialog({day, meal, profile, onSave, onClose}) {
+  const initialMeal = (meal === "lunch" || meal === "dinner") ? meal : "dinner";
+  const [selectedMeal, setSelectedMeal] = useState(initialMeal);
+  const [services, setServices] = useState(3);
+  const buildInitial = () => GUEST_TYPES.map(t => ({type: t.key, count: 0}));
+  const [guests, setGuests] = useState(buildInitial);
+  const [note, setNote] = useState("");
+  const ratios = profile.guestRatios || defaultGuestRatios();
+  const update = (typeKey, newCount) => {
+    setGuests(prev => prev.map(g => g.type === typeKey
+      ? {...g, count: Math.max(0, Math.min(20, newCount))}
+      : g));
+  };
+  const total = guests.reduce((s, g) => s + g.count, 0);
+  const equivAdulte = (profile.members?.reduce((s,m)=>s+adultEquivalent(m),0) || 0)
+    + guests.reduce((s, g) => s + g.count * (ratios[g.type] ?? 0), 0);
+  const save = () => {
+    onSave(selectedMeal, services, guests.filter(g => g.count > 0), note);
+  };
+  const mealLabel = selectedMeal === "lunch" ? "déjeuner" : "dîner";
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 p-5 max-w-md w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-lg font-bold">🍾 Mode fête — {day}</h3>
+          <button onClick={onClose} className="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">✕</button>
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">
+          Le {mealLabel} sera un repas festif structuré. La cible CG du jour est relâchée (+25 %)
+          et les jours J-1 / J+1 sont compensés (−15 %, ADA 2023).
+        </p>
+        {/* Choix du meal hôte */}
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 font-semibold">Sur quel repas ?</p>
+        <div className="flex gap-2 mb-3">
+          <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "lunch" ? "bg-amber-50 dark:bg-amber-950 border-amber-400 dark:border-amber-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+            <input type="radio" name="feastMeal" checked={selectedMeal === "lunch"} onChange={() => setSelectedMeal("lunch")} />
+            <span className="text-sm font-medium">☀️ Déjeuner</span>
+          </label>
+          <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "dinner" ? "bg-indigo-50 dark:bg-indigo-950 border-indigo-400 dark:border-indigo-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+            <input type="radio" name="feastMeal" checked={selectedMeal === "dinner"} onChange={() => setSelectedMeal("dinner")} />
+            <span className="text-sm font-medium">🌙 Dîner</span>
+          </label>
+        </div>
+        {/* Choix du nombre de services */}
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 font-semibold">Combien de services ?</p>
+        <div className="space-y-2 mb-4">
+          <label className={`flex items-start gap-2 px-3 py-2 rounded border cursor-pointer ${services === 2 ? "bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+            <input type="radio" name="feastServices" checked={services === 2} onChange={() => setServices(2)} className="mt-1" />
+            <div className="flex-1">
+              <div className="font-medium">🍽️ 2 services — plat + dessert</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">Formule simple, repas familial festif.</div>
+            </div>
+          </label>
+          <label className={`flex items-start gap-2 px-3 py-2 rounded border cursor-pointer ${services === 3 ? "bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+            <input type="radio" name="feastServices" checked={services === 3} onChange={() => setServices(3)} className="mt-1" />
+            <div className="flex-1">
+              <div className="font-medium">🥗 3 services — entrée + plat + dessert</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">Repas complet pour grandes occasions.</div>
+            </div>
+          </label>
+        </div>
+        {/* Invités */}
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 font-semibold">Invités</p>
+        <div className="space-y-2">
+          {GUEST_TYPES.map(t => {
+            const row = guests.find(g => g.type === t.key);
+            const ratio = ratios[t.key] ?? t.defaultRatio;
+            return (
+              <div key={t.key} className="flex items-center gap-3 px-3 py-2 rounded border bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700">
+                <span className="text-xl">{t.icon}</span>
+                <div className="flex-1">
+                  <div className="font-medium text-sm">{t.label}</div>
+                  <div className="text-[10px] text-slate-500 dark:text-slate-400">× {ratio.toFixed(2)}</div>
+                </div>
+                <button onClick={() => update(t.key, row.count - 1)} disabled={row.count === 0}
+                  className="w-7 h-7 rounded bg-slate-200 dark:bg-slate-700 disabled:opacity-30 hover:bg-slate-300 dark:hover:bg-slate-600 font-bold">−</button>
+                <span className="w-7 text-center font-bold">{row.count}</span>
+                <button onClick={() => update(t.key, row.count + 1)} disabled={row.count >= 20}
+                  className="w-7 h-7 rounded bg-slate-200 dark:bg-slate-700 disabled:opacity-30 hover:bg-slate-300 dark:hover:bg-slate-600 font-bold">+</button>
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-3">
+          <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1">Note (optionnel, max 50)</label>
+          <input type="text" maxLength={50} value={note} onChange={e => setNote(e.target.value)}
+            placeholder='ex : "Anniversaire Théo", "Repas de famille"'
+            className="w-full px-3 py-2 text-sm rounded border bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 focus:outline-none focus:border-rose-500"/>
+        </div>
+        <div className="mt-3 p-2 rounded bg-rose-50 dark:bg-rose-950 border border-rose-200 dark:border-rose-800 text-xs">
+          <strong>{profile.members?.length || 0}</strong> membre{(profile.members?.length || 0) > 1 ? "s" : ""}
+          {total > 0 && <> + <strong>{total}</strong> invité{total > 1 ? "s" : ""}</>}
+          {" · équivalent "}<strong>{equivAdulte.toFixed(1)}</strong> portion{equivAdulte > 1 ? "s" : ""} adulte
+        </div>
+        <div className="flex justify-end gap-2 mt-4">
+          <button onClick={onClose} className="px-4 py-2 text-slate-600 dark:text-slate-300">Annuler</button>
+          <button onClick={save}
+            className="px-4 py-2 rounded-md text-sm font-medium text-white bg-rose-600 hover:bg-rose-700">
+            🍾 Activer la fête
           </button>
         </div>
       </div>
