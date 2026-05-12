@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.74.4</title>
+<title>Menu IG Bas — V2.75.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21201,6 +21201,36 @@ function recipeIsOutOfSeason(recipe, season) {
   if (!recipe || !recipe.seasons) return false;
   return !(recipe.seasons.includes("all") || recipe.seasons.includes(season));
 }
+// V2.75.0 (issue #79 Module Réception) — Invités ponctuels.
+// 4 catégories d'invités avec ratio portion (équivalent adulte) cohérent
+// avec adultEquivalent() : adulte 1.0, ado 1.2 (pic appétit), enfant 0.55,
+// petit enfant 0.35. Le ratio est paramétrable par foyer (les goûts varient,
+// certains enfants mangent comme un adulte). Stocké dans preferences.guestRatios.
+const GUEST_TYPES = [
+  {key: "adulte",      label: "Adulte",       icon: "🧑", defaultRatio: 1.00},
+  {key: "ado",         label: "Adolescent",   icon: "🧒", defaultRatio: 1.20},
+  {key: "enfant",      label: "Enfant",       icon: "👶", defaultRatio: 0.55},
+  {key: "petitEnfant", label: "Petit enfant", icon: "🍼", defaultRatio: 0.35},
+];
+function defaultGuestRatios() {
+  return Object.fromEntries(GUEST_TYPES.map(t => [t.key, t.defaultRatio]));
+}
+// Calcule l'équivalent-adulte total des invités d'un slot.
+// guests : tableau [{type:"adulte", count:2}, ...] (vide ou null = 0)
+// ratios : objet {adulte:1.0, ado:1.2, ...} (fallback defaults si absent)
+function guestEquivalents(guests, ratios) {
+  if (!Array.isArray(guests) || guests.length === 0) return 0;
+  const r = ratios || defaultGuestRatios();
+  return guests.reduce((s, g) => s + (g.count || 0) * (r[g.type] ?? 0), 0);
+}
+function totalGuestCount(guests) {
+  if (!Array.isArray(guests)) return 0;
+  return guests.reduce((s, g) => s + (g.count || 0), 0);
+}
+function hasGuests(guests) {
+  return totalGuestCount(guests) > 0;
+}
+
 // Calcule l'âge d'un membre à partir de birthYear (canonique depuis V2.8.1)
 // avec fallback sur le champ legacy `age` pour les profils créés avant.
 // L'année de naissance est invariante → l'âge se met à jour automatiquement
@@ -21235,16 +21265,28 @@ function totalEquivalents(profile) {
 //   - `attendees == null` (undefined absent du store) → défaut = toute la famille présente.
 //   - `attendees === []` → choix explicite "personne ne mange ce repas à la maison"
 //     (repas pris à l'extérieur). On retourne 0 → la liste de courses, le coût et
-//     le swap budgétaire ignorent ce slot.
-function mealEquivalents(profile, attendees) {
-  if (!profile.members?.length) return 1;
+//     le swap budgétaire ignorent ce slot. Les invités du slot sont aussi ignorés
+//     (un repas extérieur ne reçoit pas d'invités à la maison — sémantique propre).
+// V2.75.0 (#79) — Étendu avec invités ponctuels :
+//   - guests : tableau du slot.guests[meal] (vide/null = pas d'invités)
+//   - guestRatios : profile.guestRatios (fallback defaults). Les invités
+//     s'ajoutent au mult au-dessus de la famille présente.
+function mealEquivalents(profile, attendees, guests, guestRatios) {
+  // Repas extérieur : on ignore tout (famille absente + invités absents)
+  if (Array.isArray(attendees) && attendees.length === 0) return 0;
+  let base = 0;
   if (attendees == null) {
-    return profile.members.reduce((s,m) => s + adultEquivalent(m), 0);
+    base = profile.members?.reduce((s,m) => s + adultEquivalent(m), 0) ?? 0;
+  } else if (Array.isArray(attendees)) {
+    base = profile.members?.filter(m => attendees.includes(m.id))
+      .reduce((s,m) => s + adultEquivalent(m), 0) ?? 0;
+  } else {
+    base = profile.members?.length ? 0 : 1;
   }
-  if (!Array.isArray(attendees)) return 1;
-  return profile.members
-    .filter(m => attendees.includes(m.id))
-    .reduce((s,m) => s + adultEquivalent(m), 0);
+  const guestPortions = guestEquivalents(guests, guestRatios);
+  // Fallback : si pas de membres ni invités, retourner 1 (legacy)
+  if (base === 0 && guestPortions === 0 && (!profile.members?.length)) return 1;
+  return base + guestPortions;
 }
 
 // ---------------------------------------------------------------------------
@@ -21937,7 +21979,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -22000,6 +22042,12 @@ function emptyHouseholdPreferences() {
     // avec un badge ⚠️ saisonnalité affiché sur leurs cartes / fiche
     // pour informer l'utilisateur du choix qu'il fait.
     includeOutOfSeason: false,
+    // V2.75.0 (issue #79 Module Réception) — Ratios portion des 4 catégories
+    // d'invités ponctuels. Cohérent avec adultEquivalent() : adulte 1.0,
+    // ado 1.2 (pic appétit), enfant 0.55, petit enfant 0.35. Paramétrable
+    // dans SettingsView car les goûts varient (certains enfants mangent
+    // comme un adulte, certains ados sont moins gourmands).
+    guestRatios: defaultGuestRatios(),
   };
 }
 function emptyHousehold(id) {
@@ -23156,17 +23204,22 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
 function aggregateShoppingList(weekMenu, profile) {
   const activeSlots = getAllActiveSlots(profile); // inclut dessert + snack si activé
   const agg = {}; // key = `${lcName}|${unit}` → {name, qty, unit, category}
+  // V2.75.0 (#79) — Invités ponctuels : lecture ratios foyer + slot.guests
+  const guestRatios = profile.guestRatios || defaultGuestRatios();
   DAYS.forEach(day => {
     const slot = weekMenu[day] || {};
     const attendance = slot.attendance || {};
+    const slotGuests = slot.guests || {};
     activeSlots.forEach(meal => {
       const rid = slot[meal];
       if (!rid) return;
       const recipe = RECIPES.find(r => r.id === rid);
       if (!recipe) return;
       // Multiplicateur par repas basé sur l'attendance (défaut = toute la famille)
+      // + invités ponctuels du slot (V2.75.0)
       const attendees = attendance[meal]; // peut être undefined
-      const mult = mealEquivalents(profile, attendees);
+      const guests = slotGuests[meal];    // peut être undefined
+      const mult = mealEquivalents(profile, attendees, guests, guestRatios);
       if (mult <= 0) return; // personne présent → on n'ajoute rien
       recipe.ing.forEach(([name, qty, unit, category]) => {
         // Canonicalisation pour fusionner Avocat/Avocat mûr/Avocats, et gousse/gousses, etc.
@@ -23219,21 +23272,51 @@ function aggregateShoppingList(weekMenu, profile) {
 function estimateWeekCost(weekMenu, profile) {
   const activeSlots = getAllActiveSlots(profile);
   let total = 0;
+  const guestRatios = profile.guestRatios || defaultGuestRatios();
   DAYS.forEach(day => {
     const slot = weekMenu[day] || {};
     const attendance = slot.attendance || {};
+    const slotGuests = slot.guests || {};
     activeSlots.forEach(meal => {
       const rid = slot[meal];
       if (!rid) return;
       const recipe = RECIPES.find(r => r.id === rid);
       if (!recipe) return;
       const attendees = attendance[meal];
-      const mult = mealEquivalents(profile, attendees);
+      const guests = slotGuests[meal];
+      const mult = mealEquivalents(profile, attendees, guests, guestRatios);
       if (mult <= 0) return;
       total += recipeEffectiveCost(recipe) * mult;
     });
   });
   return total;
+}
+
+// V2.75.0 (#79) — Collecte les événements d'invités d'une semaine pour
+// l'affichage de l'astérisque budget. Retourne un tableau d'objets
+// {day, meal, count, types, note} pour chaque slot avec ≥ 1 invité.
+function collectGuestEvents(weekMenu, profile) {
+  const events = [];
+  if (!weekMenu) return events;
+  const activeSlots = getAllActiveSlots(profile);
+  DAYS.forEach(day => {
+    const slot = weekMenu[day] || {};
+    const slotGuests = slot.guests || {};
+    const slotNotes = slot.guestNote || {};
+    activeSlots.forEach(meal => {
+      const guests = slotGuests[meal];
+      const count = totalGuestCount(guests);
+      if (count > 0) {
+        events.push({
+          day, meal,
+          count,
+          guests: guests, // array original
+          note: slotNotes[meal] || "",
+        });
+      }
+    });
+  });
+  return events;
 }
 
 // V2.61.1 / V2.72.1 (#90) — Ratio de présence sur une semaine, utilisé pour
@@ -23247,12 +23330,16 @@ function weekAttendanceRatio(weekMenu, profile) {
   const activeSlots = getAllActiveSlots(profile);
   if (activeSlots.length === 0) return 1;
   const fullMult = totalEquivalents(profile);
+  const guestRatios = profile.guestRatios || defaultGuestRatios();
   let multActual = 0, multIfFull = 0;
   DAYS.forEach(day => {
     const slot = weekMenu[day] || {};
     const att = slot.attendance || {};
+    const slotGuests = slot.guests || {};
     activeSlots.forEach(meal => {
-      multActual += mealEquivalents(profile, att[meal]);
+      // V2.75.0 (#79) — Inclure les invités dans le multActual
+      // pour que le budget cible soit ajusté à la hausse si on accueille.
+      multActual += mealEquivalents(profile, att[meal], slotGuests[meal], guestRatios);
       multIfFull += fullMult;
     });
   });
@@ -23914,6 +24001,28 @@ function App({initialState}) {
       return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, attendance: nextAtt}}}};
     });
   };
+  // V2.75.0 (issue #79 Module Réception) — Set invités ponctuels d'un slot.
+  // guests : tableau [{type, count}, ...] (vide/null = retire les invités)
+  // note : texte libre optionnel (max 50 chars, voir GuestEditorDialog)
+  const setSlotGuests = (day, meal, guests, note) => {
+    update(s => {
+      const daySlot = s.menus[wk]?.[day] || {};
+      const prevGuests = daySlot.guests || {};
+      const prevNotes = daySlot.guestNote || {};
+      const nextGuests = {...prevGuests};
+      const nextNotes = {...prevNotes};
+      const validGuests = Array.isArray(guests) ? guests.filter(g => g.count > 0) : [];
+      if (validGuests.length === 0) {
+        delete nextGuests[meal];
+        delete nextNotes[meal];
+      } else {
+        nextGuests[meal] = validGuests;
+        if (note && note.trim()) nextNotes[meal] = note.trim().slice(0, 50);
+        else delete nextNotes[meal];
+      }
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, guests: nextGuests, guestNote: nextNotes}}}};
+    });
+  };
   // V2.62.0 (issue #20) — Toggle favori (étoile) sur une recette.
   // Stocké au niveau du foyer (pas par membre, V1).
   const toggleFavorite = (recipeId) => {
@@ -24001,6 +24110,7 @@ function App({initialState}) {
             toggleLock={toggleLock}
             replaceSlot={replaceSlot}
             setAttendance={setAttendance}
+            setSlotGuests={setSlotGuests}
             toggleDayExternal={toggleDayExternal}
             toggleBatchActiveForWeek={toggleBatchActiveForWeek}
             setJournalField={setJournalField}
@@ -24456,9 +24566,10 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
+  const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
   const endOfWeek = addDays(currentWeek, 6);
   const cost = estimateWeekCost(currentMenu, state.profile);
   // V2.61.1 / V2.72.1 — Cible budget ajustée au prorata des slots non
@@ -24580,10 +24691,14 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
             // non externalisés) à côté de la cible originale si différente.
             const hasAdjust = budgetAdjust.ratio < 0.999 && state.profile.budgetWeekly > 0;
             const adjustedDisplay = adjustedBudget.toFixed(0);
+            // V2.75.0 (#79) — Événements invités cette semaine pour astérisque budget
+            const guestEvents = collectGuestEvents(currentMenu, state.profile);
+            const hasGuestEvents = guestEvents.length > 0;
             return (
               <div className={`px-3 py-2 rounded-md text-sm border ${tierClass}`}>
                 <div>
                   💰 <strong>{cost.toFixed(2)} €</strong>
+                  {hasGuestEvents && <span className="text-fuchsia-600 dark:text-fuchsia-400 font-bold" title="Coût ajusté pour les invités ponctuels">*</span>}
                   {state.profile.budgetWeekly > 0 && (
                     <span className="opacity-75"> / {hasAdjust ? `${adjustedDisplay} €` : `${state.profile.budgetWeekly} €`}</span>
                   )}
@@ -24604,6 +24719,19 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                       }`} style={{width: `${Math.min(100, (cost / adjustedBudget) * 100).toFixed(0)}%`}} />
                     </div>
                   </>
+                )}
+                {/* V2.75.0 (#79) — Détail des événements invités sous la ligne budget */}
+                {hasGuestEvents && (
+                  <div className="text-[10px] opacity-75 mt-1 pt-1 border-t border-current/20">
+                    {guestEvents.map((ev, i) => {
+                      const mealInfo = ALL_MEALS.find(m => m.key === ev.meal) || {label: ev.meal};
+                      return (
+                        <div key={i}>
+                          * {ev.note ? `${ev.note} ` : ""}({ev.day} {mealInfo.label.toLowerCase()}, +{ev.count} invité{ev.count > 1 ? "s" : ""})
+                        </div>
+                      );
+                    })}
+                  </div>
                 )}
               </div>
             );
@@ -24701,6 +24829,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     const nPresent = attendees == null ? nAll : attendees.length;
                     const partial = attendees != null && nPresent < nAll;
                     const isExternal = attendees != null && nPresent === 0; // V2.34.1 — étiquette "🌃 Repas extérieur"
+                    // V2.75.0 (#79) — Invités ponctuels sur ce slot
+                    const slotGuestsForMeal = slot.guests?.[m.key];
+                    const slotGuestNote = slot.guestNote?.[m.key];
+                    const guestN = totalGuestCount(slotGuestsForMeal);
                     const showDessertHere = m.key === dessertTime; // affiche le dessert sous le bon repas
                     const dessertRecipe = showDessertHere ? RECIPES.find(r => r.id === slot.dessert) : null;
                     const dessertLocked = slot.locked?.dessert;
@@ -24714,8 +24846,15 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                             boutons d'action (ligne 2). Améliore l'alignement vertical
                             entre jours et la lisibilité (avant : tout sur 1 ligne flex). */}
                         <span className="text-xs font-medium text-slate-500 dark:text-slate-400 mb-1">{m.icon} {m.label}</span>
-                        <div className="flex gap-1.5 mb-2">
+                        <div className="flex gap-1.5 mb-2 flex-wrap">
                           <button title={partial ? `${nPresent}/${nAll} présents` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:m.key})} className={`text-xs hover:opacity-70 ${partial ? "text-amber-600 font-bold" : ""}`}>👥{partial ? nPresent : ""}</button>
+                          {/* V2.75.0 (#79) — Bouton invités ponctuels (badge "+N" si présents) */}
+                          <button title={guestN > 0 ? `${guestN} invité${guestN>1?"s":""} ponctuel${guestN>1?"s":""} — clic pour éditer` : "Ajouter des invités ponctuels"}
+                            onClick={()=>setGuestPanel({day, meal:m.key})}
+                            disabled={isExternal}
+                            className={`text-xs hover:opacity-70 ${guestN > 0 ? "text-fuchsia-600 dark:text-fuchsia-400 font-bold" : ""} ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>
+                            🎉{guestN > 0 ? `+${guestN}` : ""}
+                          </button>
                           <button title="Verrouiller" onClick={()=>toggleLock(day,m.key)} className="text-xs hover:opacity-70">
                             {locked ? "🔒" : "🔓"}
                           </button>
@@ -24751,6 +24890,13 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                             {isExternal && (
                               <span className="block text-xs text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
                             )}
+                            {/* V2.75.0 (#79) — Badge invités + note sous la recette */}
+                            {guestN > 0 && (
+                              <span className="block text-xs text-fuchsia-700 dark:text-fuchsia-300 font-semibold mt-0.5">
+                                🎉 +{guestN} invité{guestN > 1 ? "s" : ""}
+                                {slotGuestNote && <span className="font-normal italic"> · {slotGuestNote}</span>}
+                              </span>
+                            )}
                           </button>
                         ) : (
                           <p className="text-slate-400 dark:text-slate-500 italic">—</p>
@@ -24761,8 +24907,21 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                             {/* V2.59.0 — Même réorga que le slot principal : label seul,
                                 boutons sur ligne séparée. */}
                             <span className="block text-[11px] font-medium text-rose-600 mb-1">🍰 Dessert</span>
-                            <div className="flex gap-1.5 mb-1">
+                            <div className="flex gap-1.5 mb-1 flex-wrap">
                               <button title={dessertPartial ? `${dessertNPresent}/${nAll}` : "Présence (tous)"} onClick={()=>setAttendancePanel({day, meal:"dessert"})} className={`text-xs hover:opacity-70 ${dessertPartial ? "text-amber-600 font-bold" : ""}`}>👥{dessertPartial ? dessertNPresent : ""}</button>
+                              {/* V2.75.0 (#79) — Bouton invités dessert */}
+                              {(() => {
+                                const dGuests = slot.guests?.dessert;
+                                const dGuestN = totalGuestCount(dGuests);
+                                return (
+                                  <button title={dGuestN > 0 ? `${dGuestN} invité${dGuestN>1?"s":""}` : "Ajouter des invités"}
+                                    onClick={()=>setGuestPanel({day, meal:"dessert"})}
+                                    disabled={dessertIsExternal}
+                                    className={`text-xs hover:opacity-70 ${dGuestN > 0 ? "text-fuchsia-600 dark:text-fuchsia-400 font-bold" : ""} ${dessertIsExternal ? "opacity-30 cursor-not-allowed" : ""}`}>
+                                    🎉{dGuestN > 0 ? `+${dGuestN}` : ""}
+                                  </button>
+                                );
+                              })()}
                               <button title="Verrouiller" onClick={()=>toggleLock(day,"dessert")} className="text-xs hover:opacity-70">{dessertLocked ? "🔒" : "🔓"}</button>
                               <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:"dessert"})} className="text-xs hover:opacity-70">🔀</button>
                               <button title="Changer" onClick={()=>regenerateSlot(day,"dessert")} className="text-xs hover:opacity-70">🎲</button>
@@ -24793,6 +24952,18 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 {dessertIsExternal && (
                                   <span className="block text-[11px] text-sky-700 dark:text-sky-300 font-semibold mt-0.5">🌃 Repas extérieur</span>
                                 )}
+                                {/* V2.75.0 (#79) — Badge invités dessert */}
+                                {(() => {
+                                  const dGuests = slot.guests?.dessert;
+                                  const dGuestN = totalGuestCount(dGuests);
+                                  const dNote = slot.guestNote?.dessert;
+                                  return dGuestN > 0 ? (
+                                    <span className="block text-[11px] text-fuchsia-700 dark:text-fuchsia-300 font-semibold mt-0.5">
+                                      🎉 +{dGuestN}
+                                      {dNote && <span className="font-normal italic"> · {dNote}</span>}
+                                    </span>
+                                  ) : null;
+                                })()}
                               </button>
                             ) : (
                               <p className="text-slate-400 dark:text-slate-500 italic text-xs">— aucun dessert</p>
@@ -24831,6 +25002,18 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           current={currentMenu[attendancePanel.day]?.attendance?.[attendancePanel.meal]}
           onSave={(ids) => { setAttendance(attendancePanel.day, attendancePanel.meal, ids); setAttendancePanel(null); }}
           onClose={() => setAttendancePanel(null)}
+        />
+      )}
+      {/* V2.75.0 (issue #79) — Modal édition invités ponctuels */}
+      {guestPanel && (
+        <GuestEditorDialog
+          day={guestPanel.day}
+          meal={guestPanel.meal}
+          profile={state.profile}
+          currentGuests={currentMenu[guestPanel.day]?.guests?.[guestPanel.meal]}
+          currentNote={currentMenu[guestPanel.day]?.guestNote?.[guestPanel.meal]}
+          onSave={(guests, note) => { setSlotGuests(guestPanel.day, guestPanel.meal, guests, note); setGuestPanel(null); }}
+          onClose={() => setGuestPanel(null)}
         />
       )}
     </div>
@@ -24872,6 +25055,96 @@ function AttendanceDialog({day, meal, profile, current, onSave, onClose}) {
             <button onClick={onClose} className="px-4 py-2 text-slate-600 dark:text-slate-300">Annuler</button>
             <button onClick={() => onSave(selected.length === all.length ? null : selected)}
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium">Enregistrer</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// V2.75.0 (issue #79 Module Réception) — Dialogue d'édition des invités
+// ponctuels pour un slot donné. 4 catégories (adulte/ado/enfant/petit enfant)
+// avec spinner numérique 0-20 + note optionnelle 50 chars max.
+function GuestEditorDialog({day, meal, profile, currentGuests, currentNote, onSave, onClose}) {
+  // Initialise un état complet : 1 ligne par catégorie, count = current ou 0
+  const buildInitial = () => GUEST_TYPES.map(t => {
+    const found = Array.isArray(currentGuests) ? currentGuests.find(g => g.type === t.key) : null;
+    return {type: t.key, count: found ? (found.count || 0) : 0};
+  });
+  const [guests, setGuests] = useState(buildInitial);
+  const [note, setNote] = useState(currentNote || "");
+  const allMeals = ALL_MEALS.find(m => m.key === meal) || {label: meal, icon: ""};
+  const ratios = profile.guestRatios || defaultGuestRatios();
+  const update = (typeKey, newCount) => {
+    setGuests(prev => prev.map(g => g.type === typeKey
+      ? {...g, count: Math.max(0, Math.min(20, newCount))}
+      : g));
+  };
+  const total = guests.reduce((s, g) => s + g.count, 0);
+  const equivAdulte = guests.reduce((s, g) => s + g.count * (ratios[g.type] ?? 0), 0);
+  const save = () => {
+    const filtered = guests.filter(g => g.count > 0);
+    onSave(filtered, note);
+  };
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 p-5 max-w-md w-full" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-lg font-bold">🎉 Invités — {allMeals.icon} {allMeals.label} de {day}</h3>
+          <button onClick={onClose} className="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">✕</button>
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">
+          Ajoutez les invités par catégorie. Les quantités d'ingrédients et le budget
+          seront automatiquement ajustés.
+        </p>
+        <div className="space-y-2">
+          {GUEST_TYPES.map(t => {
+            const row = guests.find(g => g.type === t.key);
+            const ratio = ratios[t.key] ?? t.defaultRatio;
+            return (
+              <div key={t.key} className="flex items-center gap-3 px-3 py-2 rounded border bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700">
+                <span className="text-2xl">{t.icon}</span>
+                <div className="flex-1">
+                  <div className="font-medium">{t.label}</div>
+                  <div className="text-[11px] text-slate-500 dark:text-slate-400">× {ratio.toFixed(2)} portion adulte</div>
+                </div>
+                <button onClick={() => update(t.key, row.count - 1)}
+                  disabled={row.count === 0}
+                  className="w-8 h-8 rounded bg-slate-200 dark:bg-slate-700 disabled:opacity-30 hover:bg-slate-300 dark:hover:bg-slate-600 font-bold">−</button>
+                <span className="w-8 text-center font-bold text-lg">{row.count}</span>
+                <button onClick={() => update(t.key, row.count + 1)}
+                  disabled={row.count >= 20}
+                  className="w-8 h-8 rounded bg-slate-200 dark:bg-slate-700 disabled:opacity-30 hover:bg-slate-300 dark:hover:bg-slate-600 font-bold">+</button>
+              </div>
+            );
+          })}
+        </div>
+        <div className="mt-3">
+          <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1">
+            Note (optionnel, max 50 caractères)
+          </label>
+          <input type="text" maxLength={50} value={note}
+            onChange={e => setNote(e.target.value)}
+            placeholder='ex : "Anniv Théo", "Dîner famille"'
+            className="w-full px-3 py-2 text-sm rounded border bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 focus:outline-none focus:border-fuchsia-500"/>
+        </div>
+        {total > 0 && (
+          <div className="mt-3 p-2 rounded bg-fuchsia-50 dark:bg-fuchsia-950 border border-fuchsia-200 dark:border-fuchsia-800 text-xs">
+            <strong>{total}</strong> invité{total > 1 ? "s" : ""} ·
+            équivalent <strong>{equivAdulte.toFixed(2)}</strong> portion{equivAdulte > 1 ? "s" : ""} adulte
+          </div>
+        )}
+        <div className="flex justify-between gap-2 mt-4">
+          <button onClick={() => { setGuests(GUEST_TYPES.map(t => ({type: t.key, count: 0}))); setNote(""); }}
+            className="text-xs text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 underline">
+            Tout effacer
+          </button>
+          <div className="flex gap-2">
+            <button onClick={onClose} className="px-4 py-2 text-slate-600 dark:text-slate-300">Annuler</button>
+            <button onClick={save}
+              className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white px-4 py-2 rounded-md text-sm font-medium">
+              Enregistrer
+            </button>
           </div>
         </div>
       </div>
@@ -27205,6 +27478,42 @@ function SettingsView({state, update, updateProfile}) {
               </label>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* V2.75.0 (#79) — Section Ratios invités */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">🎉 Ratios portion invités</h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Quand vous ajoutez des invités ponctuels sur un repas (icône 🎉 sur les slots),
+          les quantités d'ingrédients et le budget sont ajustés selon ces ratios.
+          Modifiez-les si vos invités habituels mangent plus ou moins.
+          Référence : 1.00 = portion adulte standard.
+        </p>
+        <div className="space-y-2">
+          {GUEST_TYPES.map(t => {
+            const ratios = p.guestRatios || defaultGuestRatios();
+            const val = ratios[t.key] ?? t.defaultRatio;
+            return (
+              <div key={t.key} className="flex items-center gap-3">
+                <span className="text-xl">{t.icon}</span>
+                <label className="flex-1 text-sm">{t.label}</label>
+                <input type="number" step="0.05" min="0" max="2"
+                  value={val}
+                  onChange={e => {
+                    const v = parseFloat(e.target.value);
+                    if (isNaN(v) || v < 0) return;
+                    updateProfile({guestRatios: {...(p.guestRatios || defaultGuestRatios()), [t.key]: Math.min(2, v)}});
+                  }}
+                  className="border rounded px-2 py-1 w-24 text-right" />
+                <button
+                  onClick={() => updateProfile({guestRatios: {...(p.guestRatios || defaultGuestRatios()), [t.key]: t.defaultRatio}})}
+                  className="text-xs text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 underline">
+                  Défaut ({t.defaultRatio.toFixed(2)})
+                </button>
+              </div>
+            );
+          })}
         </div>
       </div>
 
