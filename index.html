@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.76.0</title>
+<title>Menu IG Bas — V2.77.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21547,6 +21547,56 @@ function dayCgTier(cgValue, householdTarget) {
   if (cgValue <= householdTarget.medium) return "medium";
   return "high";
 }
+
+// V2.77.0 (issue #81 Module Réception) — Mode fête + compensation glycémique.
+// slot.feast === true : le dinner du jour est un repas festif (recette
+// du pool tag "festif"). Le seuil CG est plus tolérant ce jour-là.
+// Les jours J-1 et J+1 d'un festif voient leur seuil CG cible réduit
+// de 15 % (compensation, ADA 2023 Standards of Care, écarts ponctuels).
+// V1 minimaliste : 1 plat festif principal sur dinner. L'entrée + dessert
+// structurés sera ajouté quand le pool festif sera enrichi (V2).
+const FEAST_COMPENSATION_FACTOR = 0.85; // −15 %
+function slotIsFeast(slot) {
+  return slot?.feast === true;
+}
+function dayHasFeast(weekMenu, day) {
+  return slotIsFeast(weekMenu?.[day]);
+}
+function isCompensationDay(weekMenu, day) {
+  if (!weekMenu) return false;
+  const idx = DAYS.indexOf(day);
+  if (idx === -1) return false;
+  // Vérifier voisins J-1 et J+1 dans la même semaine (pas de mémoire cross-semaine V1)
+  for (const off of [-1, 1]) {
+    const adj = DAYS[idx + off];
+    if (adj && dayHasFeast(weekMenu, adj)) return true;
+  }
+  return false;
+}
+function compensatedCgTarget(target) {
+  if (!target) return target;
+  return {
+    low: Math.round(target.low * FEAST_COMPENSATION_FACTOR),
+    medium: Math.round(target.medium * FEAST_COMPENSATION_FACTOR),
+  };
+}
+// Sur un jour festif, on relaxe la cible CG (le repas festif consomme la marge).
+// Sur un jour de compensation (J-1/J+1), on serre la cible.
+// Sinon : cible normale du foyer.
+function dayCgTargetWithFeast(weekMenu, day, baseTarget) {
+  if (!baseTarget) return baseTarget;
+  if (dayHasFeast(weekMenu, day)) {
+    // Seuil festif = +25 % temporaire (tolère le repas festif)
+    return {
+      low: Math.round(baseTarget.low * 1.25),
+      medium: Math.round(baseTarget.medium * 1.25),
+    };
+  }
+  if (isCompensationDay(weekMenu, day)) {
+    return compensatedCgTarget(baseTarget);
+  }
+  return baseTarget;
+}
 // ============================================================================
 // Notation par membre du foyer (V2.29.0 — issue #19)
 // ----------------------------------------------------------------------------
@@ -22754,6 +22804,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // V2.76.0 (#80) — Préserver l'apéro du jour (sec ou dînatoire).
       // Si l'apéro est dînatoire, le dinner sera ignoré ci-dessous.
       if (prev.apero) slot.apero = prev.apero;
+      // V2.77.0 (#81) — Préserver le mode fête du jour.
+      if (prev.feast) slot.feast = prev.feast;
 
       // Breakfast: rotation glissante semaine après semaine.
       // V2.45.0 (fix #82) — l'ancienne rotation `(i + attempt - 1) % length`
@@ -24174,6 +24226,61 @@ function App({initialState}) {
       return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...slot, apero: {...slot.apero, recipeIds: newIds}}}}};
     });
   };
+
+  // V2.77.0 (issue #81 Module Réception) — Mode fête sur le slot dinner.
+  // Active : pioche une recette festive (tag "festif") du pool et la met
+  // dans slot.dinner ; slot.feast = true. La compensation CG J-1/J+1 est
+  // gérée à l'affichage (dayCgTargetWithFeast).
+  const pickFeastDinner = (day) => {
+    const profile = state.profile;
+    const season = getSeason(currentWeek);
+    const pool = RECIPES.filter(r =>
+      (r.tags || []).includes("festif") &&
+      r.type === "dinner" &&
+      matchesSeason(r, season, profile) &&
+      !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
+      !recipeHasExcluded(r, effectiveExclusions(profile, null))
+    );
+    if (pool.length === 0) return null;
+    const {set: softAvoid, lastUsedMap} = recipesUsedRecently(state.menus, currentWeek);
+    return pickFromPool(pool, {softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
+  };
+  const enableSlotFeast = (day) => {
+    // Compte le nombre de jours festifs cette semaine (warning si déjà 2+)
+    const wkSlots = state.menus[wk] || {};
+    const feastDays = DAYS.filter(d => slotIsFeast(wkSlots[d])).length;
+    if (feastDays >= 2) {
+      if (!confirm(`Déjà ${feastDays} jour${feastDays > 1 ? "s" : ""} festif${feastDays > 1 ? "s" : ""} cette semaine. La science recommande max 2/semaine pour la tolérance glycémique. Continuer quand même ?`)) return;
+    }
+    const picked = pickFeastDinner(day);
+    if (!picked) {
+      alert("Pool festif vide pour cette saison/profil.");
+      return;
+    }
+    update(s => {
+      const daySlot = s.menus[wk]?.[day] || {};
+      // Si apéro dînatoire, on ne peut pas avoir fête en même temps
+      const nextSlot = {...daySlot, dinner: picked.id, feast: true};
+      if (slotIsDinatoire(daySlot)) delete nextSlot.apero;
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
+    });
+  };
+  const disableSlotFeast = (day) => {
+    update(s => {
+      const daySlot = s.menus[wk]?.[day] || {};
+      const nextSlot = {...daySlot, feast: false};
+      delete nextSlot.feast;
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
+    });
+  };
+  const regenerateFeastDinner = (day) => {
+    const picked = pickFeastDinner(day);
+    if (!picked) return;
+    update(s => {
+      const daySlot = s.menus[wk]?.[day] || {};
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, dinner: picked.id}}}};
+    });
+  };
   // V2.62.0 (issue #20) — Toggle favori (étoile) sur une recette.
   // Stocké au niveau du foyer (pas par membre, V1).
   const toggleFavorite = (recipeId) => {
@@ -24265,6 +24372,9 @@ function App({initialState}) {
             setSlotApero={setSlotApero}
             clearSlotApero={clearSlotApero}
             regenerateSlotApero={regenerateSlotApero}
+            enableSlotFeast={enableSlotFeast}
+            disableSlotFeast={disableSlotFeast}
+            regenerateFeastDinner={regenerateFeastDinner}
             toggleDayExternal={toggleDayExternal}
             toggleBatchActiveForWeek={toggleBatchActiveForWeek}
             setJournalField={setJournalField}
@@ -24720,7 +24830,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastDinner, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
@@ -24956,7 +25066,11 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
               const slot = currentMenu[day] || {};
               const attendance = slot.attendance || {};
               const dayCg = computeDayCg(currentMenu, day, state.profile);
-              const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, cgTarget);
+              // V2.77.0 (#81) — Seuil ajusté si jour festif (+25%) ou compensation J-1/J+1 (-15%)
+              const adjustedCgTarget = dayCgTargetWithFeast(currentMenu, day, cgTarget);
+              const isFeastDay = dayHasFeast(currentMenu, day);
+              const isCompDay = !isFeastDay && isCompensationDay(currentMenu, day);
+              const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, adjustedCgTarget);
               const tierClass = tier === "low" ? "bg-emerald-600" : tier === "medium" ? "bg-amber-500" : tier === "high" ? "bg-red-600" : "bg-slate-500";
               const tierLabel = tier === "low" ? "OK" : tier === "medium" ? "Modéré" : tier === "high" ? "Élevé" : "?";
               const cgDisplay = dayCg.covered > 0 ? `${dayCg.cg} CG` : "— CG";
@@ -24977,8 +25091,11 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         className={`text-base transition ${isAllExternal ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
                         🌃
                       </button>
+                      {/* V2.77.0 (#81) — Indicateurs jour festif / compensation */}
+                      {isFeastDay && <span title="Repas festif aujourd'hui (cible CG relâchée temporairement, +25%)" className="text-base">🍾</span>}
+                      {isCompDay && <span title={`Compensation glycémique (J±1 d'un repas festif). Cible CG réduite à ${adjustedCgTarget.low}/j (vs ${cgTarget.low}/j normal). Référence : ADA 2023.`} className="text-base">↘️</span>}
                     </div>
-                    <span className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${cgTarget.low})`}>
+                    <span className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${adjustedCgTarget.low}${isFeastDay ? " — festif" : isCompDay ? " — compensation" : ""})`}>
                       {cgDisplay}
                     </span>
                   </div>
@@ -25052,16 +25169,25 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                             🎉{guestN > 0 ? `+${guestN}` : ""}
                           </button>
                           {/* V2.76.0 (#80) — Bouton apéro (uniquement sur le slot dinner) */}
-                          {m.key === "dinner" && !slotApero(slot) && (
+                          {m.key === "dinner" && !slotApero(slot) && !slotIsFeast(slot) && (
                             <button title="Ajouter un apéro (sec ou dînatoire)" onClick={()=>setAperoPanel({day})}
                               disabled={isExternal}
                               className={`text-xs hover:opacity-70 ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>🥂</button>
+                          )}
+                          {/* V2.77.0 (#81) — Toggle mode fête sur dinner */}
+                          {m.key === "dinner" && !slotApero(slot) && (
+                            <button title={slotIsFeast(slot) ? "Désactiver le mode fête (compensation CG J-1/J+1 annulée)" : "Activer le mode fête : repas festif du pool, compensation glycémique automatique sur J-1 et J+1 (-15% cible CG, ADA 2023)"}
+                              onClick={() => slotIsFeast(slot) ? disableSlotFeast(day) : enableSlotFeast(day)}
+                              disabled={isExternal}
+                              className={`text-xs hover:opacity-70 ${slotIsFeast(slot) ? "text-rose-600 dark:text-rose-400 font-bold" : ""} ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>🍾</button>
                           )}
                           <button title="Verrouiller" onClick={()=>toggleLock(day,m.key)} className="text-xs hover:opacity-70">
                             {locked ? "🔒" : "🔓"}
                           </button>
                           <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:m.key})} className="text-xs hover:opacity-70">🔀</button>
-                          <button title="Changer aléatoire" onClick={()=>regenerateSlot(day,m.key)} className="text-xs hover:opacity-70">🎲</button>
+                          <button title={slotIsFeast(slot) && m.key === "dinner" ? "Repiocher dans le pool festif" : "Changer aléatoire"}
+                            onClick={() => slotIsFeast(slot) && m.key === "dinner" ? regenerateFeastDinner(day) : regenerateSlot(day, m.key)}
+                            className="text-xs hover:opacity-70">🎲</button>
                         </div>
                         {recipe ? (
                           <button onClick={() => onSelectRecipe(recipe.id, {day, meal: m.key})}
@@ -25097,6 +25223,12 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                               <span className="block text-xs text-fuchsia-700 dark:text-fuchsia-300 font-semibold mt-0.5">
                                 🎉 +{guestN} invité{guestN > 1 ? "s" : ""}
                                 {slotGuestNote && <span className="font-normal italic"> · {slotGuestNote}</span>}
+                              </span>
+                            )}
+                            {/* V2.77.0 (#81) — Badge repas festif sur dinner */}
+                            {m.key === "dinner" && slotIsFeast(slot) && (
+                              <span className="block text-xs text-rose-700 dark:text-rose-300 font-semibold mt-0.5">
+                                🍾 Repas festif
                               </span>
                             )}
                           </button>
