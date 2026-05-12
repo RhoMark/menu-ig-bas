@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.82.1</title>
+<title>Menu IG Bas — V2.82.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -59172,10 +59172,16 @@ function computeWeeklyMacros(weekMenu, profile) {
   const avgF = sumF / daysCovered;
   const avgC = sumC / daysCovered;
   const avgKcal = sumKcal / daysCovered;
-  // Cibles : OMS/EFSA pour adulte, pondérées par adultEquivalent du foyer
-  const adultEq = profile?.members?.reduce((s,m) => s + adultEquivalent(m), 0) || 1;
-  // Protéines : 0.83 g/kg/jour * ~70 kg moyen = ~58 g pour adulte de référence
-  const proteinTarget = Math.round(58 * adultEq);
+  // V2.82.2 — Cibles OMS/EFSA exprimées PAR PORTION (= par adulte équivalent).
+  // Les valeurs `avgP/F/C` sont des sommes "par portion" (computeRecipeMacros
+  // retourne par portion, computeDayMacros somme sans pondérer par
+  // mealEquivalents). La comparaison doit donc se faire par adulte, pas
+  // pour le foyer entier (sinon un foyer de 4 verrait sa cible × 4 mais sa
+  // valeur observée restée par-portion → carence apparente fictive).
+  //
+  // Protéines : ANSES/OMS 0.83 g/kg/j × 70 kg adulte de référence = 58 g/j.
+  // On peut affiner si profil sportif (cf. issue #76 V2 : 1.6-2.2 g/kg).
+  const proteinTarget = 58;
   // Lipides : 20-35 % AET ; on prend 30 % comme milieu de cible
   const fatTargetKcal = avgKcal * 0.30;
   const fatTarget = Math.round(fatTargetKcal / 9);
