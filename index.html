@@ -596,7 +596,8 @@ if ("serviceWorker" in navigator) {
       "id": "betterave",
       "label": "Betterave cuite",
       "category": "produce",
-      "soldByWeight": true
+      "soldByWeight": true,
+      "weightPerPiece": 200
     },
     {
       "id": "betterave sous vide",
@@ -880,7 +881,8 @@ if ("serviceWorker" in navigator) {
       "id": "grenade",
       "label": "Grenade",
       "category": "produce",
-      "soldByWeight": true
+      "soldByWeight": true,
+      "weightPerPiece": 250
     },
     {
       "id": "haricot vert",
@@ -1544,7 +1546,8 @@ if ("serviceWorker" in navigator) {
       "id": "burrata",
       "label": "Burrata",
       "category": "dairy",
-      "soldByWeight": true
+      "soldByWeight": true,
+      "weightPerPiece": 125
     },
     {
       "id": "chevre",
@@ -2163,7 +2166,8 @@ if ("serviceWorker" in navigator) {
       "id": "olive noire",
       "label": "Olives noires",
       "category": "pantry",
-      "soldByWeight": true
+      "soldByWeight": true,
+      "weightPerPiece": 4
     },
     {
       "id": "olive noire denoyautee",
@@ -2711,6 +2715,69 @@ if ("serviceWorker" in navigator) {
       "label": "Potiron",
       "category": "produce",
       "soldByWeight": true
+    },
+    {
+      "id": "tortilla de ble complet",
+      "label": "Tortilla de blé complet",
+      "category": "bread",
+      "weightPerPiece": 60,
+      "soldByWeight": false
+    },
+    {
+      "id": "pain pita complet",
+      "label": "Pain pita complet",
+      "category": "bread",
+      "weightPerPiece": 60,
+      "soldByWeight": false
+    },
+    {
+      "id": "feuille de brick",
+      "label": "Feuille de brick",
+      "category": "bread",
+      "weightPerPiece": 15,
+      "soldByWeight": false
+    },
+    {
+      "id": "feuille de pate filo",
+      "label": "Feuille de pâte filo",
+      "category": "bread",
+      "weightPerPiece": 12,
+      "soldByWeight": false
+    },
+    {
+      "id": "sardine fraiche",
+      "label": "Sardine fraîche",
+      "category": "meat-fish",
+      "weightPerPiece": 80,
+      "soldByWeight": false
+    },
+    {
+      "id": "anchois a l'huile",
+      "label": "Anchois à l'huile",
+      "category": "meat-fish",
+      "weightPerPiece": 5,
+      "soldByWeight": false
+    },
+    {
+      "id": "tortilla complete",
+      "label": "Tortilla complète",
+      "category": "bread",
+      "weightPerPiece": 60,
+      "soldByWeight": false
+    },
+    {
+      "id": "cardamome",
+      "label": "Cardamome (gousse)",
+      "category": "spices",
+      "weightPerPiece": 0.3,
+      "soldByWeight": false
+    },
+    {
+      "id": "algue nori",
+      "label": "Feuille de nori",
+      "category": "pantry",
+      "weightPerPiece": 3,
+      "soldByWeight": false
     }
   ]
 }
@@ -60443,6 +60510,18 @@ const dataRef = {
       const w = dataRef.produceUnitWeight(canonicalName(name));
       return w ? qty * w : null;
     }
+    // V2.82.4 (#17) — Conversions supplémentaires (sinon macros ignorent ces
+    // ingrédients : 1059 occurrences listées pré-fix, dont sel/herbes/ail).
+    const canon = canonicalName(name);
+    if (u === "pincée")   return qty * 0.5;          // sel, poivre, fleur de sel, piment, muscade
+    if (u === "gousse")   return qty * 4;            // ail : 1 gousse ≈ 4 g
+    if (u === "bouquet")  return qty * (HERB_BOUQUET_G[canon] ?? HERB_BOUQUET_G.default);
+    if (u === "branche")  return qty * (HERB_BRANCHE_G[canon] ?? HERB_BRANCHE_G.default);
+    if (u === "feuille")  return qty * (HERB_FEUILLE_G[canon] ?? HERB_FEUILLE_G.default);
+    if (u === "cm")       return qty * 5;            // gingembre frais : 1 cm ≈ 5 g
+    if (u === "tranche")  return qty * 30;           // tranche standard pain ≈ 30 g
+    if (u === "étoile")   return qty * 0.5;          // anis étoilé
+    if (u === "œuf")      return qty * 55;           // dans recettes : équivalent unité œuf
     return null;
   },
 };
