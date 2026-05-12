@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.73.1</title>
+<title>Menu IG Bas — V2.74.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21621,7 +21621,25 @@ function canonicalName(name) {
   //  - Ajouté `moulu/moulue/moulus/moulues` : pour merger « Cumin » et
   //    « Cumin moulu » qui sont le même item shopping (épice = poudre par
   //    défaut). Idem coriandre, gingembre.
-  const descriptors = /\b(mur|mure|murs|mures|frais|fraiche|fraiches|congele|congelee|congeles|congelees|surgele|surgelee|surgeles|surgelees|sec|seche|secs|seches|cuit|cuite|cuits|cuites|en boite|en boites|en bocal|degoutte|degouttee|egoutte|egouttee|nature|moulu|moulue|moulus|moulues|bio|jeune|nouveau|nouvelle|grosse|gros|petite|petit|fume|fumee|fumes|fumees)\b/g;
+  // V2.74.0 — Retiré 7 familles de qualifiers porteurs de sens shopping
+  // (rayons distincts au magasin) :
+  //  - `fume*` : Saumon fumé ≠ Saumon frais, Magret fumé ≠ Magret frais,
+  //    Paprika fumé (pimentón ahumado) ≠ Paprika doux, Tofu fumé ≠ Tofu.
+  //  - `frais*` : Gingembre frais (rayon légumes) ≠ Gingembre moulu (épices),
+  //    Thym/Basilic/Romarin/Aneth frais (botte herbes) ≠ séchés (pot épices),
+  //    Saumon frais ≠ Saumon fumé, Thon frais (steak) ≠ Thon en boîte.
+  //  - `sec/seche*` : Abricots secs (épicerie sucrée) ≠ Abricots frais,
+  //    Raisins secs ≠ Raisins frais, herbes séchées ≠ fraîches.
+  //  - `congele*/surgele*` : Banane congelée ≠ Banane fraîche, Fraises/
+  //    Mangue surgelées (rayon surgelés) ≠ fraîches.
+  //  - `en boite*/en bocal` : Thon en boîte au naturel ≠ Thon frais,
+  //    Tomates en boîte ≠ Tomates fraîches.
+  //  - `nature` : Yaourt nature ≠ aromatisé, Thon au naturel ≠ Thon à l'huile.
+  // Restent strippés : mur (mûr, pas d'impact rayon), cuit (en pratique nos
+  // recettes utilisent toujours les variantes cuites pour les légumineuses
+  // — pois chiches/haricots — qui se trouvent au même rayon), egoutte (action
+  // de prépa), moulu, bio, taille (gros/petit/jeune).
+  const descriptors = /\b(mur|mure|murs|mures|cuit|cuite|cuits|cuites|degoutte|degouttee|egoutte|egouttee|moulu|moulue|moulus|moulues|bio|jeune|nouveau|nouvelle|grosse|gros|petite|petit)\b/g;
   n = n.replace(descriptors, " ");
   // collapse spaces
   n = n.replace(/\s+/g, " ").trim();
