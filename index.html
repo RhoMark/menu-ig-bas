@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.77.4</title>
+<title>Menu IG Bas — V2.77.5</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -283,6 +283,61 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Le budget hebdomadaire est-il fiable ?",
           "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
+        }
+      ]
+    },
+    {
+      "id": "reception",
+      "label": "Module Réception (invités, apéro, fête)",
+      "icon": "🎉",
+      "qa": [
+        {
+          "q": "C'est quoi le Module Réception ?",
+          "a": "Trois features pour gérer les repas où tu reçois : (1) Invités ponctuels 🎉 — ajoute des convives sur un repas, les portions/budget sont ajustés automatiquement. (2) Apéro 🥂 — sec (3-5 amuses-bouches en plus du repas) ou dînatoire/déjeunatoire (8-10 finger food qui remplacent le repas). (3) Mode fête 🍾 — repas festif avec compensation glycémique automatique sur les jours adjacents (J-1 et J+1)."
+        },
+        {
+          "q": "Invités ponctuels 🎉 — comment ça marche ?",
+          "a": "Sur chaque slot du planning, le bouton 🎉 ouvre un éditeur avec 4 catégories : adulte (×1.0), adolescent (×1.2), enfant (×0.55), petit enfant (×0.35). Les quantités d'ingrédients dans la liste de courses et le budget cible sont ajustés selon l'équivalent-adulte total. Tu peux ajouter une note (« Anniv Théo », « Famille »). Le bouton est désactivé sur un repas marqué « extérieur »."
+        },
+        {
+          "q": "Pourquoi les ratios sont paramétrables ?",
+          "a": "Les ratios par défaut sont des moyennes (1.20 pour les ados car pic d'appétit ANSES). Mais les goûts varient : certains ados mangent moins, certains petits enfants énormément, certains adultes peu. Dans Paramètres → « 🎉 Ratios portion invités », tu ajustes par catégorie selon tes invités habituels. Bouton « Défaut » pour revenir aux valeurs initiales."
+        },
+        {
+          "q": "Apéro 🥂 — sec ou dînatoire/déjeunatoire ?",
+          "a": "Apéro sec : 3-5 amuses-bouches en plus du repas — pour des invités de passage avant le déjeuner ou le dîner. Apéro dînatoire (soir) ou déjeunatoire (midi) : 8-10 finger food qui remplacent entièrement le repas — tu reçois pour la soirée/le midi et tout le monde grignote. Choisis le meal hôte (☀️ déjeuner / 🌙 dîner) et le mode dans l'éditeur."
+        },
+        {
+          "q": "Pool de recettes apéro — d'où viennent-elles ?",
+          "a": "12 recettes taguées « apero-sec » (verrines, bâtonnets crudités-houmous, brochettes melon-jambon, etc.) et 12 taguées « apero-dinatoire » (mini-quiches, falafels au four, verrines guacamole-saumon, etc.). La sélection respecte saisonnalité, allergies, cuisines préférées et anti-récurrence. Bouton 🎲 pour repiocher si la sélection ne plaît pas."
+        },
+        {
+          "q": "Mode fête 🍾 — sur quel repas ?",
+          "a": "Activable sur déjeuner ET dîner (un seul des deux par jour). Le bouton 🍾 pioche une recette du pool festif (17 recettes type viandes en croûte, magret, gigot, bourguignon allégé). Le slot redevient standard si tu désactives (clic 🍾) : un nouveau repas standard est automatiquement piocheé, et la compensation CG J-1/J+1 disparaît. Bouton 🎲 sur slot festif → repioche dans le pool festif uniquement."
+        },
+        {
+          "q": "Compensation glycémique J-1/J+1 ↘️ — c'est quoi ?",
+          "a": "Quand un jour est marqué festif 🍾, l'app applique automatiquement deux ajustements : (1) Le seuil CG du jour festif est relâché à +25 % (le repas festif consomme cette marge). (2) Les jours J-1 et J+1 voient leur seuil CG réduit de 15 % (badge ↘️ sur le header du jour). Référence : ADA 2023 Standards of Care, tolérance des écarts ponctuels. Pas de mémoire cross-semaine en V1 (un festif le dimanche ne compense pas le lundi suivant)."
+        },
+        {
+          "q": "Maximum 2 jours festifs par semaine ?",
+          "a": "L'app affiche un warning si tu actives un 3ᵉ jour festif dans la même semaine — recommandation scientifique pour préserver la tolérance glycémique du foyer. Tu peux contourner le warning si nécessaire (anniversaire + fête de famille la même semaine), mais c'est exceptionnel."
+        },
+        {
+          "q": "ReplaceDialog 🔀 sur un repas festif — pourquoi filtré ?",
+          "a": "Quand le mode fête est actif sur un slot, le bouton 🔀 Remplacer ouvre une liste limitée aux 17 recettes festives uniquement (bandeau rose 🍾 en tête). Cohérence : tu restes dans le pool festif tant que le mode fête est activé. Pour voir toutes les recettes : désactive le mode fête d'abord (clic 🍾)."
+        },
+        {
+          "q": "Astérisque budget *  — qu'est-ce que ça signale ?",
+          "a": "Une astérisque rose à côté du budget hebdo signale qu'au moins un événement spécial (invités ponctuels, apéro ou fête) ajuste le coût total. Le détail s'affiche en pied de bandeau : « * Anniv Théo (samedi soir, +6 invités) », « * 🥂 Apéro déjeunatoire (dimanche midi) », etc. Sans astérisque, le budget reflète uniquement la semaine standard du foyer."
+        },
+        {
+          "q": "Combinaisons interdites ?",
+          "a": "Mode fête 🍾 + Apéro 🥂 sur le même meal du même jour = bloqué (l'un remplacerait l'autre). Si tu essaies, message d'erreur explicite. Apéro dînatoire + dîner standard sur le même jour = automatique : l'apéro remplace le dîner (slot.dinner supprimé). Apéro sec + dîner festif = autorisé (apéro avant le dîner). Mode fête déjeuner + mode fête dîner le même jour = bloqué (un seul slot festif/jour)."
+        },
+        {
+          "q": "Mes invités modifient-ils les seuils santé du foyer ?",
+          "a": "Non — par design. Le seuil CG du foyer reste celui du membre le plus contraignant (logique du min). Les invités ajoutent seulement du volume (portions, budget), pas de contrainte santé. Si un invité a une allergie ou un profil santé spécifique, c'est hors périmètre V1 — l'utilisateur reste responsable d'adapter manuellement."
         }
       ]
     },
@@ -24573,7 +24628,7 @@ function ThemeToggle() {
 
 // ===========================================================================
 // V2.58.0 (issue #84) — FAQ inline avec recherche full-text.
-// Données dans <script id="data-faq">. 8 sections, ~33 Q/R. Accordion
+// Données dans <script id="data-faq">. 9 sections, ~45 Q/R. Accordion
 // repliable par section + recherche live qui filtre Q et A.
 // ===========================================================================
 function FaqView() {
