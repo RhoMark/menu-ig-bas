@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.77.5</title>
+<title>Menu IG Bas — V2.77.6</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -247,23 +247,23 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Anti-récurrence : ça marche comment ?",
-          "a": "Pour lunch et dinner : une recette servie dans les 14 derniers jours ne sera pas re-proposée (sauf si pool insuffisant pour la saison). Pour breakfast : rotation glissante avec offset semaine — sur un pool de 58 breakfasts, 8.3 semaines avant retour au début. Pour snack et dessert : cooldown 7 jours (1 semaine + 1 jour pour couvrir la jonction dimanche → lundi)."
+          "a": "Pour déjeuner et dîner : une recette servie dans les 14 derniers jours ne sera pas re-proposée (sauf si ensemble insuffisant pour la saison). Pour petit-déjeuner : rotation glissante avec décalage hebdomadaire — sur un catalogue de 58 petits-déjeuners, 8.3 semaines avant retour au début. Pour goûter et dessert : délai d'attente 7 jours (1 semaine + 1 jour pour couvrir la jonction dimanche → lundi)."
         },
         {
           "q": "Pourquoi voir souvent les mêmes petits-déjs ?",
-          "a": "Bug corrigé en V2.45.0 ! Avant, l'algo prenait toujours les 7 mêmes breakfasts du pool, semaine après semaine. Désormais : rotation glissante avec offset basé sur le numéro de semaine — sur 4 semaines, 60 % du pool couvert ; sur 8 semaines, ~100 %."
+          "a": "Bug corrigé en V2.45.0 ! Avant, l'algorithme prenait toujours les 7 mêmes petits-déjeuners du catalogue, semaine après semaine. Désormais : rotation glissante avec décalage basé sur le numéro de semaine — sur 4 semaines, 60 % du catalogue couvert ; sur 8 semaines, ~100 %."
         },
         {
           "q": "Externaliser un repas, comment ça marche ?",
-          "a": "Sur un slot du planning, clique sur l'icône 👥 (présence) puis décoche tous les membres → le repas est marqué comme « pris à l'extérieur » (resto, cantine, déj de boulot). L'app : (1) ne facture pas ce repas dans le budget courses, (2) n'inclut pas ses ingrédients dans la liste de courses, (3) autorise la recette à revenir dans la rotation 14 jours plus tôt (puisqu'elle n'a pas été cuisinée)."
+          "a": "Sur un case du planning, clique sur l'icône 👥 (présence) puis décoche tous les membres → le repas est marqué comme « pris à l'extérieur » (resto, cantine, déjeuner au travail). L'app : (1) ne facture pas ce repas dans le budget courses, (2) n'inclut pas ses ingrédients dans la liste de courses, (3) autorise la recette à revenir dans la rotation 14 jours plus tôt (puisqu'elle n'a pas été cuisinée)."
         },
         {
-          "q": "Mode batch cooking : comment ça fonctionne ?",
-          "a": "Activation via Paramètres → 🍱 Mode batch cooking. Choisis ta cible (3-7 jours batch-friendly) et le jour de session (typiquement samedi ou dimanche). L'algo privilégie les recettes batch-friendly pour les N premiers jours du planning. Une page « Préparation [Jour] » apparaît au sommet du planning avec to-do séquentielle des étapes (cuissons longues d'abord, prép des autres en parallèle), estimation du temps total, et conseils conservation. Sur le planning, badge « 🍱 Batch ON/OFF » pour basculer juste la semaine courante."
+          "q": "Mode préparation groupée (préparation groupée) : comment ça fonctionne ?",
+          "a": "Activation via Paramètres → 🍱 Mode préparation groupée (préparation groupée). Choisis ta cible (3-7 jours préparables à l'avance) et le jour de session (typiquement samedi ou dimanche). L'algorithme privilégie les recettes préparables à l'avance pour les N premiers jours du planning. Une page « Préparation [Jour] » apparaît au sommet du planning avec liste séquentielle des étapes (cuissons longues d'abord, prép des autres en parallèle), estimation du temps total, et conseils conservation. Sur le planning, badge « 🍱 Batch activé/désactivé » pour basculer juste la semaine courante."
         },
         {
           "q": "Mode restes : comment ça fonctionne ?",
-          "a": "Activation via Paramètres → ♻️ Suggestions de recettes utilisant les restes (défaut OFF). Désactivé automatiquement si batch cooking actif (cohérence). Quand un menu contient une recette qui produit des restes typiques (poulet rôti → poulet cuit, ratatouille → ratatouille, etc.), l'app suggère pour le lendemain ou surlendemain une recette qui les consomme. Suggestion non-bloquante : encart en haut du planning avec bouton « Appliquer & verrouiller » (swap le slot) ou « Ignorer »."
+          "a": "Activation via Paramètres → ♻️ Suggestions de recettes utilisant les restes (défaut OFF). Désactivé automatiquement si préparation groupée actif (cohérence). Quand un menu contient une recette qui produit des restes typiques (poulet rôti → poulet cuit, ratatouille → ratatouille, etc.), l'app suggère pour le lendemain ou surlendemain une recette qui les consomme. Suggestion non-bloquante : encadré en haut du planning avec bouton « Appliquer & verrouiller » (remplacement la case) ou « Ignorer »."
         }
       ]
     },
@@ -293,11 +293,11 @@ if ("serviceWorker" in navigator) {
       "qa": [
         {
           "q": "C'est quoi le Module Réception ?",
-          "a": "Trois features pour gérer les repas où tu reçois : (1) Invités ponctuels 🎉 — ajoute des convives sur un repas, les portions/budget sont ajustés automatiquement. (2) Apéro 🥂 — sec (3-5 amuses-bouches en plus du repas) ou dînatoire/déjeunatoire (8-10 finger food qui remplacent le repas). (3) Mode fête 🍾 — repas festif avec compensation glycémique automatique sur les jours adjacents (J-1 et J+1)."
+          "a": "Trois fonctionnalités pour gérer les repas où tu reçois : (1) Invités ponctuels 🎉 — ajoute des convives sur un repas, les portions/budget sont ajustés automatiquement. (2) Apéro 🥂 — sec (3-5 amuses-bouches en plus du repas) ou dînatoire/déjeunatoire (8-10 bouchées-apéritives qui remplacent le repas). (3) Mode fête 🍾 — repas festif avec compensation glycémique automatique sur les jours adjacents (J-1 et J+1)."
         },
         {
           "q": "Invités ponctuels 🎉 — comment ça marche ?",
-          "a": "Sur chaque slot du planning, le bouton 🎉 ouvre un éditeur avec 4 catégories : adulte (×1.0), adolescent (×1.2), enfant (×0.55), petit enfant (×0.35). Les quantités d'ingrédients dans la liste de courses et le budget cible sont ajustés selon l'équivalent-adulte total. Tu peux ajouter une note (« Anniv Théo », « Famille »). Le bouton est désactivé sur un repas marqué « extérieur »."
+          "a": "Sur chaque case du planning, le bouton 🎉 ouvre un éditeur avec 4 catégories : adulte (×1.0), adolescent (×1.2), enfant (×0.55), petit enfant (×0.35). Les quantités d'ingrédients dans la liste de courses et le budget cible sont ajustés selon l'équivalent-adulte total. Tu peux ajouter une note (« Anniv Théo », « Famille »). Le bouton est désactivé sur un repas marqué « extérieur »."
         },
         {
           "q": "Pourquoi les ratios sont paramétrables ?",
@@ -305,15 +305,15 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Apéro 🥂 — sec ou dînatoire/déjeunatoire ?",
-          "a": "Apéro sec : 3-5 amuses-bouches en plus du repas — pour des invités de passage avant le déjeuner ou le dîner. Apéro dînatoire (soir) ou déjeunatoire (midi) : 8-10 finger food qui remplacent entièrement le repas — tu reçois pour la soirée/le midi et tout le monde grignote. Choisis le meal hôte (☀️ déjeuner / 🌙 dîner) et le mode dans l'éditeur."
+          "a": "Apéro sec : 3-5 amuses-bouches en plus du repas — pour des invités de passage avant le déjeuner ou le dîner. Apéro dînatoire (soir) ou déjeunatoire (midi) : 8-10 bouchées-apéritives qui remplacent entièrement le repas — tu reçois pour la soirée/le midi et tout le monde grignote. Choisis le repas hôte (☀️ déjeuner / 🌙 dîner) et le mode dans l'éditeur."
         },
         {
-          "q": "Pool de recettes apéro — d'où viennent-elles ?",
+          "q": "Ensemble de recettes apéro — d'où viennent-elles ?",
           "a": "12 recettes taguées « apero-sec » (verrines, bâtonnets crudités-houmous, brochettes melon-jambon, etc.) et 12 taguées « apero-dinatoire » (mini-quiches, falafels au four, verrines guacamole-saumon, etc.). La sélection respecte saisonnalité, allergies, cuisines préférées et anti-récurrence. Bouton 🎲 pour repiocher si la sélection ne plaît pas."
         },
         {
           "q": "Mode fête 🍾 — sur quel repas ?",
-          "a": "Activable sur déjeuner ET dîner (un seul des deux par jour). Le bouton 🍾 pioche une recette du pool festif (17 recettes type viandes en croûte, magret, gigot, bourguignon allégé). Le slot redevient standard si tu désactives (clic 🍾) : un nouveau repas standard est automatiquement piocheé, et la compensation CG J-1/J+1 disparaît. Bouton 🎲 sur slot festif → repioche dans le pool festif uniquement."
+          "a": "Activable sur déjeuner ET dîner (un seul des deux par jour). Le bouton 🍾 pioche une recette de la sélection festive (17 recettes type viandes en croûte, magret, gigot, bourguignon allégé). La case redevient standard si tu désactives (clic 🍾) : un nouveau repas standard est automatiquement pioché, et la compensation CG J-1/J+1 disparaît. Bouton 🎲 sur case festive → repioche dans la sélection festive uniquement."
         },
         {
           "q": "Compensation glycémique J-1/J+1 ↘️ — c'est quoi ?",
@@ -321,11 +321,11 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Maximum 2 jours festifs par semaine ?",
-          "a": "L'app affiche un warning si tu actives un 3ᵉ jour festif dans la même semaine — recommandation scientifique pour préserver la tolérance glycémique du foyer. Tu peux contourner le warning si nécessaire (anniversaire + fête de famille la même semaine), mais c'est exceptionnel."
+          "a": "L'app affiche un avertissement si tu actives un 3ᵉ jour festif dans la même semaine — recommandation scientifique pour préserver la tolérance glycémique du foyer. Tu peux contourner le avertissement si nécessaire (anniversaire + fête de famille la même semaine), mais c'est exceptionnel."
         },
         {
-          "q": "ReplaceDialog 🔀 sur un repas festif — pourquoi filtré ?",
-          "a": "Quand le mode fête est actif sur un slot, le bouton 🔀 Remplacer ouvre une liste limitée aux 17 recettes festives uniquement (bandeau rose 🍾 en tête). Cohérence : tu restes dans le pool festif tant que le mode fête est activé. Pour voir toutes les recettes : désactive le mode fête d'abord (clic 🍾)."
+          "q": "fenêtre Remplacer 🔀 sur un repas festif — pourquoi filtré ?",
+          "a": "Quand le mode fête est actif sur une case, le bouton 🔀 Remplacer ouvre une liste limitée aux 17 recettes festives uniquement (bandeau rose 🍾 en tête). Cohérence : tu restes dans la sélection festive tant que le mode fête est activé. Pour voir toutes les recettes : désactive le mode fête d'abord (clic 🍾)."
         },
         {
           "q": "Astérisque budget *  — qu'est-ce que ça signale ?",
@@ -333,7 +333,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Combinaisons interdites ?",
-          "a": "Mode fête 🍾 + Apéro 🥂 sur le même meal du même jour = bloqué (l'un remplacerait l'autre). Si tu essaies, message d'erreur explicite. Apéro dînatoire + dîner standard sur le même jour = automatique : l'apéro remplace le dîner (slot.dinner supprimé). Apéro sec + dîner festif = autorisé (apéro avant le dîner). Mode fête déjeuner + mode fête dîner le même jour = bloqué (un seul slot festif/jour)."
+          "a": "Mode fête 🍾 + Apéro 🥂 sur le même repas du même jour = bloqué (l'un remplacerait l'autre). Si tu essaies, message d'erreur explicite. Apéro dînatoire + dîner standard sur le même jour = automatique : l'apéro remplace le dîner (case dîner supprimé). Apéro sec + dîner festif = autorisé (apéro avant le dîner). Mode fête déjeuner + mode fête dîner le même jour = bloqué (une seule case festive/jour)."
         },
         {
           "q": "Mes invités modifient-ils les seuils santé du foyer ?",
@@ -348,19 +348,19 @@ if ("serviceWorker" in navigator) {
       "qa": [
         {
           "q": "Mes données sont-elles envoyées sur un serveur ?",
-          "a": "NON. Tout est stocké localement dans ton navigateur (localStorage + IndexedDB), chiffré avec une clé AES-GCM 256 bits non extractible. Aucune connexion réseau pour utiliser l'app, aucun compte à créer, aucun analytics, aucun tracker, aucun cookie tiers. Le code est public sur GitHub (RhoMark/menu-ig-bas). Tu peux vérifier toi-même."
+          "a": "NON. Tout est stocké localement dans ton navigateur (localStorage + IndexedDB), chiffré avec une clé AES-GCM 256 bits non extractible. Aucune connexion réseau pour utiliser l'app, aucun compte à créer, aucun suivi statistique, aucun traqueur, aucun cookie tiers. Le code est public sur GitHub (RhoMark/menu-ig-bas). Tu peux vérifier toi-même."
         },
         {
           "q": "Comment exporter mes données ?",
-          "a": "Paramètres → Synchronisation entre appareils → bouton « Exporter mes données ». L'app génère un fichier JSON contenant tout ton state déchiffré (foyer, membres, menus, ratings, journal). Tu peux le partager via AirDrop, mail, USB, etc. Sur l'autre appareil, bouton « Importer depuis un fichier » pour restaurer."
+          "a": "Paramètres → Synchronisation entre appareils → bouton « Exporter mes données ». L'app génère un fichier JSON contenant tout tes données déchiffré (foyer, membres, menus, notes, journal). Tu peux le partager via AirDrop, mail, USB, etc. Sur l'autre appareil, bouton « Importer depuis un fichier » pour restaurer."
         },
         {
           "q": "Comment effacer mes données ?",
-          "a": "Paramètres → Zone dangereuse → bouton rouge « Tout effacer et recommencer ». Action irréversible : supprime localStorage + IndexedDB pour cet origin. La page se recharge en mode setup initial. Pour effacement partiel (ex : juste le journal ou les ratings), pas d'option dédiée actuellement — passe par export → édit JSON → import."
+          "a": "Paramètres → Zone dangereuse → bouton rouge « Tout effacer et recommencer ». Action irréversible : supprime localStorage + IndexedDB pour cet origin. La page se recharge en mode setup initial. Pour effacement partiel (ex : juste le journal ou les notes), pas d'option dédiée actuellement — passe par export → édit JSON → import."
         },
         {
-          "q": "L'app fait-elle du tracking ?",
-          "a": "AUCUN. Pas d'analytics (Google Analytics, Plausible, Matomo, rien). Pas de cookies tiers. Pas de pixel publicitaire. Pas de Service Worker espion. Le seul réseau utilisé est le téléchargement initial du HTML/JS depuis GitHub Pages (CDN statique sans tracking) et le Service Worker qui met en cache les assets pour le mode hors-ligne."
+          "q": "L'app fait-elle du traçage ?",
+          "a": "AUCUN. Pas d'outil de mesure d'audience (Google Analytics, Plausible, Matomo, rien). Pas de cookies tiers. Pas de pixel publicitaire. Pas de Service Worker espion. Le seul réseau utilisé est le téléchargement initial du HTML/JS depuis GitHub Pages (CDN statique sans traçage) et le Service Worker qui met en cache les assets pour le mode hors-ligne."
         }
       ]
     },
@@ -375,11 +375,11 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pourquoi l'app fonctionne hors connexion ?",
-          "a": "Service Worker : les assets (HTML, JS, CSS, fonts, recettes) sont mis en cache au premier chargement. Ensuite, l'app peut être ouverte sans réseau. Stratégies : navigation HTML → network-first (récupère les mises à jour si en ligne, fallback cache si offline) ; assets statiques → cache-first (rapide). Tes données restent intactes hors connexion (stockage local)."
+          "a": "Service Worker : les assets (HTML, JS, CSS, fonts, recettes) sont mis en cache au premier chargement. Ensuite, l'app peut être ouverte sans réseau. Stratégies : navigation HTML → réseau d'abord (récupère les mises à jour si en ligne, repli sur le cache si hors connexion) ; assets statiques → cache d'abord (rapide). Tes données restent intactes hors connexion (stockage local)."
         },
         {
           "q": "Comment forcer une mise à jour ?",
-          "a": "Hard reload : Ctrl+Shift+R (Chrome/Brave/Edge) ou Cmd+Shift+R (Mac) ou bouton recharger maintenu enfoncé. Si ça ne suffit pas : vide le cache du navigateur pour cet origin (DevTools → Application → Clear storage). Le numéro de version est affiché en bas de l'app — tu peux comparer avec la dernière sur github.com/RhoMark/menu-ig-bas."
+          "a": "Rechargement forcé : Ctrl+Shift+R (Chrome/Brave/Edge) ou Cmd+Shift+R (Mac) ou bouton recharger maintenu enfoncé. Si ça ne suffit pas : vide le cache du navigateur pour cet origin (Outils développeur → Application → Effacer les données du site). Le numéro de version est affiché en bas de l'app — tu peux comparer avec la dernière sur github.com/RhoMark/menu-ig-bas."
         }
       ]
     },
@@ -390,15 +390,15 @@ if ("serviceWorker" in navigator) {
       "qa": [
         {
           "q": "Quel est l'objectif du projet ?",
-          "a": "Permettre aux familles françaises de manger équilibré à index glycémique bas sans charge mentale. L'app génère automatiquement des menus hebdomadaires adaptés (profils santé, allergies, saison, budget, équipement, niveau de cuisine), avec recettes détaillées style « ado qui cuisine » (gestes définis, repères visuels) et liste de courses agrégée. Spécifications complètes dans le repo GitHub."
+          "a": "Permettre aux familles françaises de manger équilibré à index glycémique bas sans charge mentale. L'app génère automatiquement des menus hebdomadaires adaptés (profils santé, allergies, saison, budget, équipement, niveau de cuisine), avec recettes détaillées style « ado qui cuisine » (gestes définis, repères visuels) et liste de courses agrégée. Spécifications complètes dans le dépôt GitHub."
         },
         {
           "q": "Le code est ouvert ?",
-          "a": "Oui — repo public github.com/RhoMark/menu-ig-bas. Servi via GitHub Pages pour permettre l'installation PWA depuis une URL fixe. Tout le code (front + données + service worker) est lisible. Aucun secret, clé d'API ou identifiant n'est commité. Les données utilisateur ne quittent jamais ton appareil."
+          "a": "Oui — dépôt public github.com/RhoMark/menu-ig-bas. Servi via GitHub Pages pour permettre l'installation PWA depuis une URL fixe. Tout le code (front + données + service worker) est lisible. Aucun secret, clé d'API ou identifiant n'est commité. Les données utilisateur ne quittent jamais ton appareil."
         },
         {
           "q": "Comment contribuer ou signaler un bug ?",
-          "a": "GitHub Issues : github.com/RhoMark/menu-ig-bas/issues. Les bugs et idées de features y sont tracés (labels priorité-haute / moyenne / basse, bug, feature, recettes, ux, archi). Tu peux ouvrir une issue avec le contexte (version app, capture d'écran, étapes de reproduction). Pour les recettes : suggérer un nouveau plat ou signaler une erreur (allergène manquant, IG incorrect…) est très utile."
+          "a": "GitHub Issues : github.com/RhoMark/menu-ig-bas/issues. Les bugs et idées de fonctionnalités y sont tracés (étiquettes priorité-haute / moyenne / basse, bug, fonctionnalité, recettes, ux, archi). Tu peux ouvrir une issue avec le contexte (version app, capture d'écran, étapes de reproduction). Pour les recettes : suggérer un nouveau plat ou signaler une erreur (allergène manquant, IG incorrect…) est très utile."
         }
       ]
     }
