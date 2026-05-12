@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.82.0</title>
+<title>Menu IG Bas — V2.82.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -64278,11 +64278,21 @@ function computeRecentStats(menus, profile, count = 8) {
     totalCost += cost;
     costSamplesCount++;
     const dayCgs = [];
+    // V2.82.2 (#17) — Macros agrégées sur la semaine
+    let weekP = 0, weekF = 0, weekC = 0, weekKcal = 0, weekMacroDays = 0;
     DAYS.forEach(day => {
       const dc = computeDayCg(weekMenu, day, profile);
       if (dc.covered > 0) {
         dayCgs.push(dc.cg);
         dayCgValues.push(dc.cg);
+      }
+      const dm = computeDayMacros(weekMenu, day, profile);
+      if (dm.covered > 0) {
+        weekP += dm.protein;
+        weekF += dm.fat;
+        weekC += dm.carbs;
+        weekKcal += dm.kcal;
+        weekMacroDays++;
       }
     });
     const weekAvgCg = dayCgs.length > 0
@@ -64297,6 +64307,11 @@ function computeRecentStats(menus, profile, count = 8) {
       cost: Math.round(cost * 100) / 100,
       costDeltaPct: target > 0 ? Math.round((cost - target) / target * 100) : null,
       avgDayCg: weekAvgCg,
+      // V2.82.2 — Macros moyennes quotidiennes de la semaine
+      avgDayProtein: weekMacroDays > 0 ? Math.round(weekP / weekMacroDays * 10) / 10 : null,
+      avgDayFat: weekMacroDays > 0 ? Math.round(weekF / weekMacroDays * 10) / 10 : null,
+      avgDayCarbs: weekMacroDays > 0 ? Math.round(weekC / weekMacroDays * 10) / 10 : null,
+      avgDayKcal: weekMacroDays > 0 ? Math.round(weekKcal / weekMacroDays) : null,
     });
   }
   const avgCost = costSamplesCount > 0 ? totalCost / costSamplesCount : 0;
@@ -64305,6 +64320,20 @@ function computeRecentStats(menus, profile, count = 8) {
     .sort((a, b) => b.count - a.count)
     .slice(0, 10);
   const dietaryTotal = dietaryCounts.meat + dietaryCounts.fish + dietaryCounts.vegetarian + dietaryCounts.vegan;
+  // V2.82.2 (#17) — Moyennes macros sur l'ensemble de la fenêtre
+  const weeksWithMacros = perWeek.filter(w => w.avgDayProtein != null);
+  const avgDayProteinGlobal = weeksWithMacros.length > 0
+    ? Math.round(weeksWithMacros.reduce((s, w) => s + w.avgDayProtein, 0) / weeksWithMacros.length * 10) / 10
+    : null;
+  const avgDayFatGlobal = weeksWithMacros.length > 0
+    ? Math.round(weeksWithMacros.reduce((s, w) => s + w.avgDayFat, 0) / weeksWithMacros.length * 10) / 10
+    : null;
+  const avgDayCarbsGlobal = weeksWithMacros.length > 0
+    ? Math.round(weeksWithMacros.reduce((s, w) => s + w.avgDayCarbs, 0) / weeksWithMacros.length * 10) / 10
+    : null;
+  const avgDayKcalGlobal = weeksWithMacros.length > 0
+    ? Math.round(weeksWithMacros.reduce((s, w) => s + w.avgDayKcal, 0) / weeksWithMacros.length)
+    : null;
   return {
     weeksCount: perWeek.length,
     totalUnique: totalUnique.size,
@@ -64317,6 +64346,10 @@ function computeRecentStats(menus, profile, count = 8) {
       ? Math.round(dayCgValues.reduce((a, b) => a + b, 0) / dayCgValues.length)
       : null,
     cgTarget,
+    avgDayProtein: avgDayProteinGlobal,
+    avgDayFat: avgDayFatGlobal,
+    avgDayCarbs: avgDayCarbsGlobal,
+    avgDayKcal: avgDayKcalGlobal,
     perWeek,
     topIngredients,
     dietaryCounts,
@@ -64423,6 +64456,41 @@ function HistoryView({state, setCurrentWeek, onGo}) {
               </p>
             </div>
           </div>
+          {/* V2.82.2 (#17) — Macros moyennes quotidiennes sur la fenêtre */}
+          {stats.avgDayProtein != null && (
+            <div className="mb-4">
+              <p className="text-xs uppercase tracking-wide font-semibold text-slate-700 dark:text-slate-300 mb-2">🍱 Macros moyennes / jour</p>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div className="rounded p-3 border bg-blue-50 dark:bg-blue-950 border-blue-100 dark:border-blue-900">
+                  <p className="text-[10px] uppercase tracking-wide font-semibold text-blue-700 dark:text-blue-300">💪 Protéines</p>
+                  <p className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
+                    {stats.avgDayProtein} <span className="text-sm font-normal text-slate-600 dark:text-slate-400">g/j</span>
+                  </p>
+                </div>
+                <div className="rounded p-3 border bg-amber-50 dark:bg-amber-950 border-amber-100 dark:border-amber-900">
+                  <p className="text-[10px] uppercase tracking-wide font-semibold text-amber-700 dark:text-amber-300">🥑 Lipides</p>
+                  <p className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
+                    {stats.avgDayFat} <span className="text-sm font-normal text-slate-600 dark:text-slate-400">g/j</span>
+                  </p>
+                </div>
+                <div className="rounded p-3 border bg-emerald-50 dark:bg-emerald-950 border-emerald-100 dark:border-emerald-900">
+                  <p className="text-[10px] uppercase tracking-wide font-semibold text-emerald-700 dark:text-emerald-300">🌾 Glucides</p>
+                  <p className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
+                    {stats.avgDayCarbs} <span className="text-sm font-normal text-slate-600 dark:text-slate-400">g/j</span>
+                  </p>
+                </div>
+                <div className="rounded p-3 border bg-slate-100 dark:bg-slate-900 border-slate-200 dark:border-slate-700">
+                  <p className="text-[10px] uppercase tracking-wide font-semibold text-slate-700 dark:text-slate-300">🔢 Apport</p>
+                  <p className="text-xl font-bold mt-1 text-slate-900 dark:text-slate-100">
+                    {stats.avgDayKcal} <span className="text-sm font-normal text-slate-600 dark:text-slate-400">kcal/j</span>
+                  </p>
+                </div>
+              </div>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 italic mt-1">
+                Calculé sur les ingrédients (Ciqual ±10-15 %). Cibles OMS/EFSA dans le bandeau 🩺 du planning.
+              </p>
+            </div>
+          )}
           {/* V2.64.0 — Répartition viande / poisson / végé / vegan */}
           {stats.dietaryTotal > 0 && (
             <div className="mb-4">
@@ -65128,6 +65196,55 @@ function NutritionBanner({currentMenu, profile}) {
             : lvl === "warning" ? `1 portion / 2 visées. Repère PNNS ≥ 2 portions / sem (lentilles, pois chiches, haricots secs, fèves, soja, tofu, edamame).`
             : `Aucune portion de légumineuses cette semaine. Repère PNNS ≥ 2 portions / sem.`};
   })());
+  // V2.82.1 (#17) — Macros (protéines / lipides / glucides) moyennes quotidiennes.
+  // Cibles OMS/EFSA pondérées par adultEquivalent foyer.
+  const macros = computeWeeklyMacros(currentMenu, profile);
+  if (macros) {
+    // Protéines : cible 0.83 g/kg/j (adulte standard ~70 kg = 58 g). Tier :
+    //   ok       : ≥ 90 % cible
+    //   warning  : 70-90 % OU > 130 % (excès)
+    //   over     : < 70 % (carence) OU > 150 % (très excès, risque rein)
+    items.push((() => {
+      const v = macros.avgDayProtein, t = macros.targets.protein;
+      const pct = t > 0 ? v / t * 100 : 100;
+      const lvl = (pct >= 90 && pct <= 130) ? "ok"
+                : (pct >= 70 && pct <= 150) ? "warning"
+                : "over";
+      return {key: "macroP", level: lvl, icon: "💪",
+        label: `Protéines : ${v} / ${t} g·j`,
+        detail: lvl === "ok" ? `Cible atteinte ✓ (OMS 0.83 g/kg/j, foyer ${t} g/j).`
+              : pct < 70 ? `Carence protéique (< 70 % cible). Risque musculaire à terme.`
+              : pct > 150 ? `Excès (> 150 % cible). Modérer la viande / poisson, surveiller la fonction rénale.`
+              : pct < 90 ? `Sous-couverture (${Math.round(pct)} % cible). Ajouter légumineuses, œufs, poisson.`
+              : `Au-delà de la cible (${Math.round(pct)} %). Acceptable ponctuellement.`};
+    })());
+    // Lipides : cible 20-35 % AET (OMS). Atwater : 1g L = 9 kcal.
+    items.push((() => {
+      const pct = macros.fatPctAet;
+      const lvl = (pct >= 20 && pct <= 35) ? "ok"
+                : (pct >= 15 && pct <= 40) ? "warning"
+                : "over";
+      return {key: "macroF", level: lvl, icon: "🥑",
+        label: `Lipides : ${macros.avgDayFat} g·j · ${pct}% AET`,
+        detail: lvl === "ok" ? `Cible OMS 20-35 % AET atteinte ✓.`
+              : pct < 15 ? `Apport lipidique trop bas (< 15 % AET). Risque carence vitamines liposolubles (A, D, E, K) et oméga-3.`
+              : pct > 40 ? `Apport lipidique élevé (> 40 % AET). Vérifier les acides gras saturés (issue #75 V3).`
+              : `Hors cible OMS 20-35 % AET (${pct} %). À surveiller sur la durée.`};
+    })());
+    // Glucides : cible 45-55 % AET (OMS).
+    items.push((() => {
+      const pct = macros.carbsPctAet;
+      const lvl = (pct >= 45 && pct <= 55) ? "ok"
+                : (pct >= 40 && pct <= 60) ? "warning"
+                : "over";
+      return {key: "macroC", level: lvl, icon: "🌾",
+        label: `Glucides : ${macros.avgDayCarbs} g·j · ${pct}% AET`,
+        detail: lvl === "ok" ? `Cible OMS 45-55 % AET atteinte ✓.`
+              : pct < 40 ? `Apport glucidique bas (< 40 % AET). Régime hypoglucidique — surveille l'énergie / cétose si non voulu.`
+              : pct > 60 ? `Apport glucidique élevé (> 60 % AET). Privilégier IG bas et fibres.`
+              : `Hors cible OMS 45-55 % AET (${pct} %). Acceptable si IG bas dominant.`};
+    })());
+  }
   // Tri : over > warning > ok
   const order = {over: 0, warning: 1, ok: 2};
   items.sort((a, b) => order[a.level] - order[b.level]);
@@ -65167,7 +65284,7 @@ function NutritionBanner({currentMenu, profile}) {
         ))}
         <p className="text-[11px] text-slate-500 dark:text-slate-400 italic mt-1">
           Sources : OMS, EFSA, ANSES/PNNS, WCRF/AICR. Repères calculés au foyer ({totalEq.toFixed(1)} adultes équivalents). Repas externalisés exclus.
-          Sel et sucres ajoutés non encore mesurés (issue #17 macros — V2 ultérieur).
+          Macros calculés depuis ingrédients (Atwater, précision Ciqual ±10-15 %). Sel et sucres ajoutés non encore mesurés (issue #75 V3 ultérieur).
         </p>
       </div>
     </details>
