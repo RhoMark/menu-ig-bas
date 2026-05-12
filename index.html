@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.80.1</title>
+<title>Menu IG Bas — V2.80.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -58046,7 +58046,11 @@ function App({initialState}) {
   const wk = weekKey(currentWeek, sd);
   // V2.27.0 — Lecture rétrocompat : si pas de menu pour la clé shoppingDay
   // courant, fallback sur l'ancienne clé "lundi" (anciens menus pré-V2.27).
-  const currentMenu = state.menus[wk] || (sd !== 1 ? state.menus[weekKey(currentWeek, 1)] : null) || {};
+  const wkLegacy = sd !== 1 ? weekKey(currentWeek, 1) : null;
+  const legacyMenu = wkLegacy ? state.menus[wkLegacy] : null;
+  const currentMenu = state.menus[wk] || legacyMenu || {};
+  // V2.80.2 (#65) — Indicateur "menu en mode fallback" pour bandeau d'avertissement
+  const isShoppingDayFallback = !state.menus[wk] && !!legacyMenu;
 
   const regenerate = ({keepLocked = true} = {}) => {
     const days = generateWeek({
@@ -58541,6 +58545,7 @@ function App({initialState}) {
             currentWeek={currentWeek}
             setCurrentWeek={setCurrentWeek}
             currentMenu={currentMenu}
+            isShoppingDayFallback={isShoppingDayFallback}
             regenerate={regenerate}
             regenerateSlot={regenerateSlot}
             toggleLock={toggleLock}
@@ -59008,7 +59013,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
@@ -59059,6 +59064,23 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
 
   return (
     <div className="space-y-4">
+      {/* V2.80.2 (#65) — Bandeau d'avertissement si menu chargé via fallback rétrocompat shoppingDay */}
+      {isShoppingDayFallback && (
+        <div className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded-md p-3 flex items-start gap-2">
+          <span className="text-2xl flex-shrink-0">⚠️</span>
+          <div className="flex-1">
+            <p className="text-sm text-amber-900 dark:text-amber-100">
+              <strong>Menu en mode rétrocompat.</strong> Ce menu a été généré pour une fenêtre lundi-dimanche.
+              Régénère la semaine pour aligner le contenu sur ton jour des courses actuel
+              ({SHOPPING_DAY_LABELS[state.profile?.shoppingDay ?? 1]}).
+            </p>
+          </div>
+          <button onClick={() => regenerate({keepLocked: false})}
+            className="bg-amber-600 hover:bg-amber-700 text-white px-3 py-1.5 rounded text-xs font-medium flex-shrink-0">
+            🔄 Régénérer
+          </button>
+        </div>
+      )}
       <PoolDiagnostic profile={state.profile} currentWeek={currentWeek} />
       {journalEnabled && (
         <JournalEntry state={state} currentWeekKey={journalWeekKey} setJournalField={setJournalField} />
