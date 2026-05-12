@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.77.1</title>
+<title>Menu IG Bas — V2.77.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21549,15 +21549,26 @@ function dayCgTier(cgValue, householdTarget) {
 }
 
 // V2.77.0 (issue #81 Module Réception) — Mode fête + compensation glycémique.
-// slot.feast === true : le dinner du jour est un repas festif (recette
-// du pool tag "festif"). Le seuil CG est plus tolérant ce jour-là.
-// Les jours J-1 et J+1 d'un festif voient leur seuil CG cible réduit
-// de 15 % (compensation, ADA 2023 Standards of Care, écarts ponctuels).
-// V1 minimaliste : 1 plat festif principal sur dinner. L'entrée + dessert
-// structurés sera ajouté quand le pool festif sera enrichi (V2).
+// slot.feast vaut "dinner" ou "lunch" pour indiquer sur quel meal le mode
+// fête est actif. Legacy : `true` est interprété comme "dinner" (V2.77.0
+// initial). Le seuil CG est plus tolérant ce jour-là. Les jours J-1 et
+// J+1 d'un festif voient leur seuil CG cible réduit de 15 % (compensation,
+// ADA 2023 Standards of Care, écarts ponctuels).
+// V1 minimaliste : 1 plat festif principal sur le meal choisi (lunch ou
+// dinner). Entrée + dessert structurés viendra quand le pool sera enrichi.
 const FEAST_COMPENSATION_FACTOR = 0.85; // −15 %
+// V2.77.2 — Helper qui résout slot.feast → "dinner" | "lunch" | null
+function slotFeastMeal(slot) {
+  const v = slot?.feast;
+  if (v === "dinner" || v === "lunch") return v;
+  if (v === true) return "dinner"; // legacy V2.77.0
+  return null;
+}
 function slotIsFeast(slot) {
-  return slot?.feast === true;
+  return slotFeastMeal(slot) !== null;
+}
+function slotIsFeastOnMeal(slot, meal) {
+  return slotFeastMeal(slot) === meal;
 }
 function dayHasFeast(weekMenu, day) {
   return slotIsFeast(weekMenu?.[day]);
@@ -24227,16 +24238,16 @@ function App({initialState}) {
     });
   };
 
-  // V2.77.0 (issue #81 Module Réception) — Mode fête sur le slot dinner.
+  // V2.77.0 (issue #81 Module Réception) — Mode fête sur le slot lunch ou dinner.
   // Active : pioche une recette festive (tag "festif") du pool et la met
-  // dans slot.dinner ; slot.feast = true. La compensation CG J-1/J+1 est
+  // dans slot[meal] ; slot.feast = meal. La compensation CG J-1/J+1 est
   // gérée à l'affichage (dayCgTargetWithFeast).
-  const pickFeastDinner = (day) => {
+  const pickFeastMeal = (meal) => {
     const profile = state.profile;
     const season = getSeason(currentWeek);
     const pool = RECIPES.filter(r =>
       (r.tags || []).includes("festif") &&
-      r.type === "dinner" &&
+      r.type === meal &&
       matchesSeason(r, season, profile) &&
       !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
       !recipeHasExcluded(r, effectiveExclusions(profile, null))
@@ -24245,40 +24256,84 @@ function App({initialState}) {
     const {set: softAvoid, lastUsedMap} = recipesUsedRecently(state.menus, currentWeek);
     return pickFromPool(pool, {softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
   };
-  const enableSlotFeast = (day) => {
-    // Compte le nombre de jours festifs cette semaine (warning si déjà 2+)
+  // V2.77.2 — Reproduit la logique cœur de regenerateSlot pour pioche standard,
+  // utilisé par disableSlotFeast pour revenir à un meal non-festif après
+  // désactivation du mode fête (sinon le slot garde la recette festive piochée).
+  const pickStandardMeal = (day, meal, excludeId = null) => {
+    const profile = state.profile;
+    const season = getSeason(currentWeek);
+    let pool = RECIPES.filter(r =>
+      r.type === meal &&
+      matchesSeason(r, season, profile) &&
+      !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
+      !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
+      recipeRespectsEquipment(r, profile.equipment) &&
+      recipeRespectsTime(r, profile.maxPrepMinutes) &&
+      recipeRespectsSkill(r, profile.skillLevel) &&
+      getEffectiveRating(state.ratings, r.id, profile) >= 3 &&
+      r.id !== excludeId
+    );
+    if (pool.length === 0) return null;
+    const usedThisWeek = new Set();
+    DAYS.forEach(d => {
+      const slot = state.menus[wk]?.[d] || {};
+      if (slot.lunch && (d !== day || meal !== "lunch")) usedThisWeek.add(slot.lunch);
+      if (slot.dinner && (d !== day || meal !== "dinner")) usedThisWeek.add(slot.dinner);
+    });
+    const {set: softAvoid, lastUsedMap} = recipesUsedRecently(state.menus, currentWeek);
+    return pickFromPool(pool, {hardAvoid: usedThisWeek, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
+  };
+  const enableSlotFeast = (day, meal) => {
+    if (meal !== "lunch" && meal !== "dinner") return;
     const wkSlots = state.menus[wk] || {};
+    // Un seul slot festif par jour : si l'autre meal est déjà festif, on demande
+    const existingFeastMeal = slotFeastMeal(wkSlots[day]);
+    if (existingFeastMeal && existingFeastMeal !== meal) {
+      alert(`${existingFeastMeal === "lunch" ? "Le déjeuner" : "Le dîner"} de ce jour est déjà en mode fête. Désactivez-le d'abord.`);
+      return;
+    }
+    // Warning si déjà 2+ jours festifs cette semaine
     const feastDays = DAYS.filter(d => slotIsFeast(wkSlots[d])).length;
-    if (feastDays >= 2) {
+    if (feastDays >= 2 && !slotIsFeast(wkSlots[day])) {
       if (!confirm(`Déjà ${feastDays} jour${feastDays > 1 ? "s" : ""} festif${feastDays > 1 ? "s" : ""} cette semaine. La science recommande max 2/semaine pour la tolérance glycémique. Continuer quand même ?`)) return;
     }
-    const picked = pickFeastDinner(day);
+    const picked = pickFeastMeal(meal);
     if (!picked) {
-      alert("Pool festif vide pour cette saison/profil.");
+      alert(`Pool festif vide pour ${meal === "lunch" ? "déjeuner" : "dîner"} en cette saison/profil.`);
       return;
     }
     update(s => {
       const daySlot = s.menus[wk]?.[day] || {};
-      // Si apéro dînatoire, on ne peut pas avoir fête en même temps
-      const nextSlot = {...daySlot, dinner: picked.id, feast: true};
-      if (slotIsDinatoire(daySlot)) delete nextSlot.apero;
+      // Si apéro dînatoire, on ne peut pas avoir fête sur dinner en même temps
+      const nextSlot = {...daySlot, [meal]: picked.id, feast: meal};
+      if (meal === "dinner" && slotIsDinatoire(daySlot)) delete nextSlot.apero;
       return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
     });
   };
+  // V2.77.2 — Désactivation : re-pioche un meal standard à la place de la
+  // recette festive (sinon le slot garderait la recette festive piochée à
+  // l'activation, ce qui n'est pas le retour à l'état antérieur attendu).
   const disableSlotFeast = (day) => {
+    const wkSlots = state.menus[wk] || {};
+    const daySlot = wkSlots[day] || {};
+    const feastMeal = slotFeastMeal(daySlot);
+    if (!feastMeal) return;
+    const currentId = daySlot[feastMeal];
+    const replacement = pickStandardMeal(day, feastMeal, currentId);
     update(s => {
-      const daySlot = s.menus[wk]?.[day] || {};
-      const nextSlot = {...daySlot, feast: false};
+      const slot = s.menus[wk]?.[day] || {};
+      const nextSlot = {...slot};
       delete nextSlot.feast;
+      if (replacement) nextSlot[feastMeal] = replacement.id;
       return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
     });
   };
-  const regenerateFeastDinner = (day) => {
-    const picked = pickFeastDinner(day);
+  const regenerateFeastMeal = (day, meal) => {
+    const picked = pickFeastMeal(meal);
     if (!picked) return;
     update(s => {
       const daySlot = s.menus[wk]?.[day] || {};
-      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, dinner: picked.id}}}};
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, [meal]: picked.id}}}};
     });
   };
   // V2.62.0 (issue #20) — Toggle favori (étoile) sur une recette.
@@ -24374,7 +24429,7 @@ function App({initialState}) {
             regenerateSlotApero={regenerateSlotApero}
             enableSlotFeast={enableSlotFeast}
             disableSlotFeast={disableSlotFeast}
-            regenerateFeastDinner={regenerateFeastDinner}
+            regenerateFeastMeal={regenerateFeastMeal}
             toggleDayExternal={toggleDayExternal}
             toggleBatchActiveForWeek={toggleBatchActiveForWeek}
             setJournalField={setJournalField}
@@ -24830,7 +24885,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastDinner, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
@@ -25174,19 +25229,29 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                               disabled={isExternal}
                               className={`text-xs hover:opacity-70 ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>🥂</button>
                           )}
-                          {/* V2.77.0 (#81) — Toggle mode fête sur dinner */}
-                          {m.key === "dinner" && !slotApero(slot) && (
-                            <button title={slotIsFeast(slot) ? "Désactiver le mode fête (compensation CG J-1/J+1 annulée)" : "Activer le mode fête : repas festif du pool, compensation glycémique automatique sur J-1 et J+1 (-15% cible CG, ADA 2023)"}
-                              onClick={() => slotIsFeast(slot) ? disableSlotFeast(day) : enableSlotFeast(day)}
-                              disabled={isExternal}
-                              className={`text-xs hover:opacity-70 ${slotIsFeast(slot) ? "text-rose-600 dark:text-rose-400 font-bold" : ""} ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>🍾</button>
-                          )}
+                          {/* V2.77.0 / V2.77.2 (#81) — Toggle mode fête sur lunch ou dinner */}
+                          {(m.key === "lunch" || m.key === "dinner") && !slotApero(slot) && (() => {
+                            const isFeastHere = slotIsFeastOnMeal(slot, m.key);
+                            const otherFeastMeal = slotFeastMeal(slot);
+                            const otherFeastBlocks = otherFeastMeal && otherFeastMeal !== m.key;
+                            const title = isFeastHere
+                              ? "Désactiver le mode fête (le repas reviendra à un choix standard, compensation CG J-1/J+1 annulée)"
+                              : otherFeastBlocks
+                                ? `Mode fête déjà actif sur le ${otherFeastMeal === "lunch" ? "déjeuner" : "dîner"} de ce jour`
+                                : "Activer le mode fête : repas festif du pool, compensation glycémique automatique sur J-1 et J+1 (-15% cible CG, ADA 2023)";
+                            return (
+                              <button title={title}
+                                onClick={() => isFeastHere ? disableSlotFeast(day) : enableSlotFeast(day, m.key)}
+                                disabled={isExternal || otherFeastBlocks}
+                                className={`text-xs hover:opacity-70 ${isFeastHere ? "text-rose-600 dark:text-rose-400 font-bold" : ""} ${(isExternal || otherFeastBlocks) ? "opacity-30 cursor-not-allowed" : ""}`}>🍾</button>
+                            );
+                          })()}
                           <button title="Verrouiller" onClick={()=>toggleLock(day,m.key)} className="text-xs hover:opacity-70">
                             {locked ? "🔒" : "🔓"}
                           </button>
                           <button title="Remplacer" onClick={()=>setReplacePanel({day, meal:m.key})} className="text-xs hover:opacity-70">🔀</button>
-                          <button title={slotIsFeast(slot) && m.key === "dinner" ? "Repiocher dans le pool festif" : "Changer aléatoire"}
-                            onClick={() => slotIsFeast(slot) && m.key === "dinner" ? regenerateFeastDinner(day) : regenerateSlot(day, m.key)}
+                          <button title={slotIsFeastOnMeal(slot, m.key) ? "Repiocher dans le pool festif" : "Changer aléatoire"}
+                            onClick={() => slotIsFeastOnMeal(slot, m.key) ? regenerateFeastMeal(day, m.key) : regenerateSlot(day, m.key)}
                             className="text-xs hover:opacity-70">🎲</button>
                         </div>
                         {recipe ? (
@@ -25225,8 +25290,8 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                                 {slotGuestNote && <span className="font-normal italic"> · {slotGuestNote}</span>}
                               </span>
                             )}
-                            {/* V2.77.0 (#81) — Badge repas festif sur dinner */}
-                            {m.key === "dinner" && slotIsFeast(slot) && (
+                            {/* V2.77.0 / V2.77.2 (#81) — Badge repas festif sur lunch ou dinner */}
+                            {slotIsFeastOnMeal(slot, m.key) && (
                               <span className="block text-xs text-rose-700 dark:text-rose-300 font-semibold mt-0.5">
                                 🍾 Repas festif
                               </span>
@@ -25324,7 +25389,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           season={season}
           profile={state.profile}
           currentId={currentMenu[replacePanel.day]?.[replacePanel.meal]}
-          feastMode={slotIsFeast(currentMenu[replacePanel.day]) && (replacePanel.meal === "dinner" || replacePanel.meal === "lunch")}
+          feastMode={slotIsFeastOnMeal(currentMenu[replacePanel.day], replacePanel.meal)}
           onPick={(id) => { replaceSlot(replacePanel.day, replacePanel.meal, id); setReplacePanel(null); }}
           onClose={() => setReplacePanel(null)}
         />
