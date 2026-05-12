@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.77.0</title>
+<title>Menu IG Bas — V2.77.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -25324,6 +25324,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           season={season}
           profile={state.profile}
           currentId={currentMenu[replacePanel.day]?.[replacePanel.meal]}
+          feastMode={slotIsFeast(currentMenu[replacePanel.day]) && (replacePanel.meal === "dinner" || replacePanel.meal === "lunch")}
           onPick={(id) => { replaceSlot(replacePanel.day, replacePanel.meal, id); setReplacePanel(null); }}
           onClose={() => setReplacePanel(null)}
         />
@@ -25596,14 +25597,17 @@ function normalizeForSearch(s) {
   return (s || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
-function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose}) {
+function ReplaceDialog({day, meal, season, profile, currentId, feastMode, onPick, onClose}) {
   const [query, setQuery] = useState("");
   const inputRef = useRef(null);
   // Auto-focus à l'ouverture pour permettre de taper directement sans clic.
   useEffect(() => { inputRef.current?.focus(); }, []);
-  // Pool de base : type/saison/allergies/exclusions, indépendant de la recherche
+  // Pool de base : type/saison/allergies/exclusions, indépendant de la recherche.
+  // V2.77.1 (#81) — En mode fête, restreint au tag "festif" pour cohérence
+  // avec le toggle 🍾 (l'utilisateur reste dans la sélection festive).
   const basePool = RECIPES.filter(r =>
     r.type === meal &&
+    (!feastMode || (r.tags || []).includes("festif")) &&
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
     !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
@@ -25626,6 +25630,12 @@ function ReplaceDialog({day, meal, season, profile, currentId, onPick, onClose})
           <h3 className="text-lg font-bold">Remplacer — {ALL_MEALS.find(m=>m.key===meal).label} de {day}</h3>
           <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300">✕</button>
         </div>
+        {/* V2.77.1 (#81) — Bandeau mode fête : restriction au pool festif */}
+        {feastMode && (
+          <div className="mb-3 p-2 rounded border bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700 text-xs text-rose-800 dark:text-rose-200">
+            🍾 <strong>Mode fête actif</strong> — uniquement les {ALL_MEALS.find(m=>m.key===meal)?.label.toLowerCase()}s de fête (tag festif). Désactivez le mode fête sur ce slot (bouton 🍾) pour voir toutes les recettes.
+          </div>
+        )}
         {/* V2.18.0 — Barre de recherche : filtre par nom, tags ou ingrédient principal */}
         <div className="relative mb-3">
           <input
