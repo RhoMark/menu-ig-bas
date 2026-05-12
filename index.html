@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.77.3</title>
+<title>Menu IG Bas — V2.77.4</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -22886,7 +22886,10 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // Lunch
       const lunchMealMult = mealEquivalents(profile, slot.attendance?.lunch);
       const lunchNutFilter = makeNutritionFilter(lunchMealMult);
-      if (keepLocked && locked.lunch && prev.lunch) {
+      // V2.77.4 (#80) — Si apéro déjeunatoire (dinatoire + meal lunch), pas de lunch
+      if (slotIsAperoDinatoireOnMeal(prev, "lunch")) {
+        // pas de lunch ce jour (remplacé par l'apéro déjeunatoire)
+      } else if (keepLocked && locked.lunch && prev.lunch) {
         slot.lunch = prev.lunch;
         usedThisWeek.add(prev.lunch);
       } else {
@@ -22913,8 +22916,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // début de generateWeek, on n'accumule pas à nouveau ici.
 
       // Dinner — anti-doublon semaine + anti-récurrence 3 mois + pas le même féculent/légumineuse que le lunch du jour
-      // V2.76.0 (#80) — Si apéro dînatoire ce jour, on ne pioche pas de dinner (remplacé par l'apéro)
-      if (prev.apero?.mode === "dinatoire") {
+      // V2.76.0 / V2.77.4 (#80) — Si apéro dînatoire ce jour (meal=dinner ou legacy sans meal), on ne pioche pas de dinner
+      if (slotIsAperoDinatoireOnMeal(prev, "dinner")) {
         // pas de dinner ce jour
       } else if (keepLocked && locked.dinner && prev.dinner) {
         slot.dinner = prev.dinner;
@@ -23313,10 +23316,9 @@ function aggregateShoppingList(weekMenu, profile) {
     const slot = weekMenu[day] || {};
     const attendance = slot.attendance || {};
     const slotGuests = slot.guests || {};
-    const isDinatoire = slotIsDinatoire(slot);
     activeSlots.forEach(meal => {
-      // V2.76.0 (#80) — Si apéro dînatoire, on saute le dinner (remplacé)
-      if (meal === "dinner" && isDinatoire) return;
+      // V2.76.0 / V2.77.4 (#80) — Apéro dînatoire/déjeunatoire saute le meal remplacé
+      if (slotIsAperoDinatoireOnMeal(slot, meal)) return;
       const rid = slot[meal];
       if (!rid) return;
       const recipe = RECIPES.find(r => r.id === rid);
@@ -23354,10 +23356,9 @@ function estimateWeekCost(weekMenu, profile) {
     const slot = weekMenu[day] || {};
     const attendance = slot.attendance || {};
     const slotGuests = slot.guests || {};
-    const isDinatoire = slotIsDinatoire(slot);
     activeSlots.forEach(meal => {
-      // V2.76.0 (#80) — Apéro dînatoire remplace le dîner
-      if (meal === "dinner" && isDinatoire) return;
+      // V2.76.0 / V2.77.4 — Apéro dinatoire/déjeunatoire saute le meal remplacé
+      if (slotIsAperoDinatoireOnMeal(slot, meal)) return;
       const rid = slot[meal];
       if (!rid) return;
       const recipe = RECIPES.find(r => r.id === rid);
@@ -23384,24 +23385,42 @@ function estimateWeekCost(weekMenu, profile) {
 }
 
 // V2.76.0 (issue #80 Module Réception) — Apéro sec / dînatoire.
-// L'apéro est stocké en slot.apero (singleton par jour). 2 modes :
-//   - "sec"       : 3-5 amuses-bouches en plus du dîner (tag apero-sec)
-//   - "dinatoire" : 8-10 finger food qui remplacent le dîner (tag apero-dinatoire)
-//                   Quand mode === dinatoire, slot.dinner est mis à null.
-// L'attendance et la présence familiale sont héritées du dinner pour
-// simplicité (modifiables via le bouton 👥 du slot dinner).
+// V2.77.4 — Étendu pour supporter aussi le déjeuner (apéro déjeunatoire).
+// L'apéro est stocké en slot.apero (singleton par jour). Champs :
+//   - meal : "lunch" | "dinner" (sur quel repas) — défaut "dinner" si absent (legacy)
+//   - mode : "sec" (en plus) | "dinatoire" (remplace le meal)
+//             Quand mode === dinatoire + meal lunch → label "déjeunatoire"
+//             Quand mode === dinatoire + meal dinner → label "dînatoire"
+//   - recipeIds : ids des amuses-bouches piochés
+//   - guests / note : invités ponctuels et note libre
+// L'attendance est héritée du meal correspondant (modifiable via 👥).
 const APERO_DEFAULT_COUNT = {sec: 4, dinatoire: 8};
 function isAperoMode(mode) { return mode === "sec" || mode === "dinatoire"; }
 function slotApero(slot) {
   return slot?.apero?.recipeIds?.length ? slot.apero : null;
 }
-function slotIsDinatoire(slot) {
-  return slot?.apero?.mode === "dinatoire";
+// V2.77.4 — Meal sur lequel l'apéro est posé (fallback "dinner" pour legacy)
+function aperoMealOf(slot) {
+  const apero = slotApero(slot);
+  if (!apero) return null;
+  return apero.meal === "lunch" ? "lunch" : "dinner";
 }
-// Multiplicateur portion d'un apéro (présence dinner + invités apéro).
+// V2.77.4 — True si apéro dinatoire pose un remplacement sur ce meal précis
+function slotIsAperoDinatoireOnMeal(slot, meal) {
+  const apero = slotApero(slot);
+  return apero?.mode === "dinatoire" && aperoMealOf(slot) === meal;
+}
+// Label localisé : "déjeunatoire" si lunch + dinatoire, sinon "dînatoire" ou "sec"
+function aperoLabel(apero) {
+  if (!apero) return "";
+  if (apero.mode === "sec") return "sec";
+  return apero.meal === "lunch" ? "déjeunatoire" : "dînatoire";
+}
+// Multiplicateur portion d'un apéro (présence du meal hôte + invités apéro).
 function aperoMealMult(slot, profile, guestRatios) {
   if (!slotApero(slot)) return 0;
-  const aperoAtt = slot.attendance?.dinner; // héritée du dinner
+  const hostMeal = aperoMealOf(slot);
+  const aperoAtt = slot.attendance?.[hostMeal]; // héritée du meal hôte
   return mealEquivalents(profile, aperoAtt, slot.apero.guests, guestRatios);
 }
 function collectAperoEvents(weekMenu, profile) {
@@ -23414,6 +23433,8 @@ function collectAperoEvents(weekMenu, profile) {
       events.push({
         day,
         mode: apero.mode,
+        meal: aperoMealOf(slot), // V2.77.4 — lunch ou dinner
+        label: aperoLabel(apero), // sec / dînatoire / déjeunatoire
         guests: apero.guests,
         guestCount: totalGuestCount(apero.guests),
         note: apero.note || "",
@@ -23468,11 +23489,11 @@ function weekAttendanceRatio(weekMenu, profile) {
     const slot = weekMenu[day] || {};
     const att = slot.attendance || {};
     const slotGuests = slot.guests || {};
-    const isDinatoire = slotIsDinatoire(slot);
     activeSlots.forEach(meal => {
-      if (meal === "dinner" && isDinatoire) {
-        // L'apéro dînatoire remplace le dîner — multIfFull compte quand même
-        // (un dîner aurait été prévu), multActual reflète l'apéro ci-dessous.
+      if (slotIsAperoDinatoireOnMeal(slot, meal)) {
+        // V2.77.4 — L'apéro dînatoire/déjeunatoire remplace ce meal —
+        // multIfFull compte quand même (un repas aurait été prévu),
+        // multActual reflète l'apéro ci-dessous.
         multIfFull += fullMult;
         return;
       }
@@ -24194,8 +24215,16 @@ function App({initialState}) {
     }
     return picked;
   };
-  const setSlotApero = (day, mode, guests, note) => {
+  const setSlotApero = (day, mode, meal, guests, note) => {
     if (!isAperoMode(mode)) return;
+    const targetMeal = (meal === "lunch" || meal === "dinner") ? meal : "dinner";
+    // V2.77.4 — Conflit avec mode fête : refuser si meal cible déjà festif
+    const wkSlots = state.menus[wk] || {};
+    const daySlotPre = wkSlots[day] || {};
+    if (slotFeastMeal && slotFeastMeal(daySlotPre) === targetMeal) {
+      alert(`Le ${targetMeal === "lunch" ? "déjeuner" : "dîner"} de ce jour est en mode fête. Désactivez-le d'abord (bouton 🍾) pour ajouter un apéro à sa place.`);
+      return;
+    }
     const count = APERO_DEFAULT_COUNT[mode] || 4;
     const recipeIds = pickAperoRecipes(mode, count, day);
     if (recipeIds.length === 0) {
@@ -24206,14 +24235,15 @@ function App({initialState}) {
     update(s => {
       const daySlot = s.menus[wk]?.[day] || {};
       const apero = {
+        meal: targetMeal,
         mode,
         recipeIds,
         guests: validGuests,
         note: (note || "").trim().slice(0, 50),
       };
       const nextSlot = {...daySlot, apero};
-      // Apéro dînatoire : supprime slot.dinner (remplacé)
-      if (mode === "dinatoire") delete nextSlot.dinner;
+      // V2.77.4 — Apéro dînatoire/déjeunatoire : supprime le meal hôte (remplacé)
+      if (mode === "dinatoire") delete nextSlot[targetMeal];
       return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
     });
   };
@@ -24306,7 +24336,7 @@ function App({initialState}) {
       const daySlot = s.menus[wk]?.[day] || {};
       // Si apéro dînatoire, on ne peut pas avoir fête sur dinner en même temps
       const nextSlot = {...daySlot, [meal]: picked.id, feast: meal};
-      if (meal === "dinner" && slotIsDinatoire(daySlot)) delete nextSlot.apero;
+      if (slotIsAperoDinatoireOnMeal(daySlot, meal)) delete nextSlot.apero;
       return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: nextSlot}}};
     });
   };
@@ -25057,7 +25087,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                     })}
                     {aperoEvents.map((ev, i) => (
                       <div key={`a${i}`}>
-                        * 🥂 Apéro {ev.mode === "dinatoire" ? "dînatoire" : "sec"} {ev.note ? `"${ev.note}" ` : ""}({ev.day}{ev.guestCount > 0 ? `, +${ev.guestCount} invité${ev.guestCount > 1 ? "s" : ""}` : ""})
+                        * 🥂 Apéro {ev.label} {ev.note ? `"${ev.note}" ` : ""}({ev.day} {ev.meal === "lunch" ? "midi" : "soir"}{ev.guestCount > 0 ? `, +${ev.guestCount} invité${ev.guestCount > 1 ? "s" : ""}` : ""})
                       </div>
                     ))}
                   </div>
@@ -25161,20 +25191,22 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                       (dînatoire = à la place du dinner ; sec = juste avant le dinner). */}
                   {(() => { return null; })()}
                   {profileMeals.map(m => {
-                    // V2.77.3 (#80) — Card apéro rendue au niveau du dinner (cohérence visuelle)
-                    const aperoHere = m.key === "dinner" && slotApero(slot);
+                    // V2.77.3 / V2.77.4 (#80) — Card apéro rendue à la position du meal hôte (lunch ou dinner)
+                    const aperoHostMeal = aperoMealOf(slot);
+                    const aperoHere = aperoHostMeal === m.key;
                     const aperoCard = aperoHere ? (() => {
                       const apero = slot.apero;
                       const aperoRecipes = apero.recipeIds.map(id => RECIPES.find(r => r.id === id)).filter(Boolean);
                       const aperoGuestN = totalGuestCount(apero.guests);
                       const isDinatoire = apero.mode === "dinatoire";
+                      const label = aperoLabel(apero);
                       return (
                         <div key={`apero-${day}`} className={`border rounded p-2 text-sm flex flex-col ${isDinatoire ? "bg-fuchsia-50 dark:bg-fuchsia-950 border-fuchsia-300 dark:border-fuchsia-700" : "bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700"}`}>
                           <span className="text-xs font-medium text-rose-700 dark:text-rose-300 mb-1">
-                            🥂 Apéro {isDinatoire ? "dînatoire" : "sec"} {apero.note && <span className="font-normal italic">· {apero.note}</span>}
+                            🥂 Apéro {label} {apero.note && <span className="font-normal italic">· {apero.note}</span>}
                           </span>
                           <div className="flex gap-1.5 mb-1 flex-wrap">
-                            <button title="Éditer invités / mode" onClick={()=>setAperoPanel({day})} className="text-xs hover:opacity-70">✏️</button>
+                            <button title="Éditer invités / mode" onClick={()=>setAperoPanel({day, meal: aperoHostMeal})} className="text-xs hover:opacity-70">✏️</button>
                             <button title="Régénérer les amuses-bouches" onClick={()=>regenerateSlotApero(day)} className="text-xs hover:opacity-70">🎲</button>
                             <button title="Supprimer l'apéro" onClick={()=>{ if (confirm("Supprimer l'apéro de ce jour ?")) clearSlotApero(day); }} className="text-xs hover:opacity-70">🗑️</button>
                             {aperoGuestN > 0 && <span className="text-xs text-fuchsia-700 dark:text-fuchsia-300 font-bold">🎉 +{aperoGuestN}</span>}
@@ -25192,8 +25224,8 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         </div>
                       );
                     })() : null;
-                    // Apéro dînatoire : remplace entièrement le slot dinner
-                    if (m.key === "dinner" && slotIsDinatoire(slot)) return aperoCard;
+                    // Apéro dînatoire/déjeunatoire : remplace entièrement le meal hôte
+                    if (slotIsAperoDinatoireOnMeal(slot, m.key)) return aperoCard;
                     const recipe = RECIPES.find(r => r.id === slot[m.key]);
                     const locked = slot.locked?.[m.key];
                     const attendees = attendance[m.key];
@@ -25225,9 +25257,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                             className={`text-xs hover:opacity-70 ${guestN > 0 ? "text-fuchsia-600 dark:text-fuchsia-400 font-bold" : ""} ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>
                             🎉{guestN > 0 ? `+${guestN}` : ""}
                           </button>
-                          {/* V2.76.0 (#80) — Bouton apéro (uniquement sur le slot dinner) */}
-                          {m.key === "dinner" && !slotApero(slot) && !slotIsFeast(slot) && (
-                            <button title="Ajouter un apéro (sec ou dînatoire)" onClick={()=>setAperoPanel({day})}
+                          {/* V2.76.0 / V2.77.4 (#80) — Bouton apéro sur lunch ou dinner */}
+                          {(m.key === "lunch" || m.key === "dinner") && !slotApero(slot) && !slotIsFeastOnMeal(slot, m.key) && (
+                            <button title={`Ajouter un apéro (sec ou ${m.key === "lunch" ? "déjeunatoire" : "dînatoire"})`}
+                              onClick={()=>setAperoPanel({day, meal: m.key})}
                               disabled={isExternal}
                               className={`text-xs hover:opacity-70 ${isExternal ? "opacity-30 cursor-not-allowed" : ""}`}>🥂</button>
                           )}
@@ -25373,10 +25406,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
                         )}
                       </div>
                     );
-                    // V2.77.3 (#80) — Mode sec : rend la card apéro au-dessus du dinner
+                    // V2.77.3 / V2.77.4 (#80) — Mode sec : card apéro au-dessus du meal hôte
                     return (
                       <React.Fragment key={m.key}>
-                        {m.key === "dinner" && slot.apero?.mode === "sec" && aperoCard}
+                        {aperoHere && slot.apero?.mode === "sec" && aperoCard}
                         {slotJsx}
                       </React.Fragment>
                     );
@@ -25425,13 +25458,14 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, regenerate, 
           onClose={() => setGuestPanel(null)}
         />
       )}
-      {/* V2.76.0 (issue #80) — Modal édition apéro */}
+      {/* V2.76.0 / V2.77.4 (issue #80) — Modal édition apéro (avec choix meal) */}
       {aperoPanel && (
         <AperoEditorDialog
           day={aperoPanel.day}
+          meal={aperoPanel.meal}
           profile={state.profile}
           currentApero={currentMenu[aperoPanel.day]?.apero}
-          onSave={(mode, guests, note) => { setSlotApero(aperoPanel.day, mode, guests, note); setAperoPanel(null); }}
+          onSave={(mode, meal, guests, note) => { setSlotApero(aperoPanel.day, mode, meal, guests, note); setAperoPanel(null); }}
           onClose={() => setAperoPanel(null)}
         />
       )}
@@ -25573,7 +25607,11 @@ function GuestEditorDialog({day, meal, profile, currentGuests, currentNote, onSa
 
 // V2.76.0 (issue #80 Module Réception) — Dialogue de création/édition d'apéro.
 // Choix du mode (sec / dînatoire), nb d'invités par catégorie, note optionnelle.
-function AperoEditorDialog({day, profile, currentApero, onSave, onClose}) {
+function AperoEditorDialog({day, meal, profile, currentApero, onSave, onClose}) {
+  // V2.77.4 — Meal initial : prop > apéro existant > "dinner" par défaut
+  const initialMeal = (meal === "lunch" || meal === "dinner") ? meal
+    : (currentApero?.meal === "lunch" ? "lunch" : "dinner");
+  const [selectedMeal, setSelectedMeal] = useState(initialMeal);
   const [mode, setMode] = useState(currentApero?.mode || "sec");
   const buildInitial = () => GUEST_TYPES.map(t => {
     const found = Array.isArray(currentApero?.guests) ? currentApero.guests.find(g => g.type === t.key) : null;
@@ -25591,8 +25629,11 @@ function AperoEditorDialog({day, profile, currentApero, onSave, onClose}) {
   const equivAdulte = (profile.members?.reduce((s,m)=>s+adultEquivalent(m),0) || 0)
     + guests.reduce((s, g) => s + g.count * (ratios[g.type] ?? 0), 0);
   const save = () => {
-    onSave(mode, guests.filter(g => g.count > 0), note);
+    onSave(mode, selectedMeal, guests.filter(g => g.count > 0), note);
   };
+  // V2.77.4 — Label dinatoire selon meal : "déjeunatoire" pour lunch, "dînatoire" pour dinner
+  const dinatoireLabel = selectedMeal === "lunch" ? "déjeunatoire" : "dînatoire";
+  const mealLabel = selectedMeal === "lunch" ? "déjeuner" : "dîner";
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 p-5 max-w-md w-full" onClick={e => e.stopPropagation()}>
@@ -25600,19 +25641,32 @@ function AperoEditorDialog({day, profile, currentApero, onSave, onClose}) {
           <h3 className="text-lg font-bold">🥂 Apéro — {day}</h3>
           <button onClick={onClose} className="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">✕</button>
         </div>
+        {/* V2.77.4 — Choix du meal hôte */}
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 font-semibold">Sur quel repas ?</p>
+        <div className="flex gap-2 mb-3">
+          <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "lunch" ? "bg-amber-50 dark:bg-amber-950 border-amber-400 dark:border-amber-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+            <input type="radio" name="aperoMeal" checked={selectedMeal === "lunch"} onChange={() => setSelectedMeal("lunch")} />
+            <span className="text-sm font-medium">☀️ Déjeuner</span>
+          </label>
+          <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "dinner" ? "bg-indigo-50 dark:bg-indigo-950 border-indigo-400 dark:border-indigo-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+            <input type="radio" name="aperoMeal" checked={selectedMeal === "dinner"} onChange={() => setSelectedMeal("dinner")} />
+            <span className="text-sm font-medium">🌙 Dîner</span>
+          </label>
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 font-semibold">Type d'apéro</p>
         <div className="space-y-2 mb-4">
           <label className={`flex items-start gap-2 px-3 py-2 rounded border cursor-pointer ${mode === "sec" ? "bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
             <input type="radio" name="aperoMode" checked={mode === "sec"} onChange={() => setMode("sec")} className="mt-1" />
             <div className="flex-1">
               <div className="font-medium">Apéro sec</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400">3-5 amuses-bouches en plus du dîner. Pour des invités de passage.</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">3-5 amuses-bouches en plus du {mealLabel}. Pour des invités de passage.</div>
             </div>
           </label>
           <label className={`flex items-start gap-2 px-3 py-2 rounded border cursor-pointer ${mode === "dinatoire" ? "bg-fuchsia-50 dark:bg-fuchsia-950 border-fuchsia-300 dark:border-fuchsia-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
             <input type="radio" name="aperoMode" checked={mode === "dinatoire"} onChange={() => setMode("dinatoire")} className="mt-1" />
             <div className="flex-1">
-              <div className="font-medium">Apéro dînatoire</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400">8-10 finger food qui remplacent le dîner. ⚠️ Le slot dîner sera supprimé.</div>
+              <div className="font-medium">Apéro {dinatoireLabel}</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">8-10 finger food qui remplacent le {mealLabel}. ⚠️ Le slot {mealLabel} sera supprimé.</div>
             </div>
           </label>
         </div>
