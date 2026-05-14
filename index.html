@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.86.1</title>
+<title>Menu IG Bas — V2.86.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -71,7 +71,9 @@ if ("serviceWorker" in navigator) {
         var b = document.createElement('div');
         b.id = 'tailwind-blocked-banner';
         b.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#dc2626;color:white;padding:14px 18px;font-family:system-ui,sans-serif;font-size:14px;line-height:1.5;box-shadow:0 2px 10px rgba(0,0,0,0.4);';
-        b.innerHTML = "⚠️ <strong>Le CSS de l'application est bloqué par un bloqueur de pub.</strong><br>Désactivez AdGuard / uBlock Origin / Brave Shield pour ce site, puis rechargez la page (Ctrl+Shift+R)." +
+        b.innerHTML = "⚠️ <strong>Le CSS de l'application est bloqué.</strong><br>" +
+          "Cause : un bloqueur de pub système (AdGuard app/DNS, NextDNS, Pi-hole, pare-feu) ou navigateur (uBlock Origin, Brave Shield, AdGuard extension) bloque <code style=\"background:rgba(255,255,255,0.2);padding:1px 5px;border-radius:3px;\">cdn.tailwindcss.com</code>. " +
+          "<strong>Action :</strong> ajoute ce domaine à ta liste blanche (whitelist) dans l'app AdGuard / au niveau DNS, puis recharge (Ctrl+Shift+R)." +
           " <button onclick=\"this.parentElement.remove()\" style=\"margin-left:12px;background:white;color:#dc2626;border:none;padding:5px 12px;border-radius:4px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:13px;\">Fermer</button>";
         document.body.appendChild(b);
       } catch (e) { /* silencieux : si erreur DOM, on ne fait rien */ }
@@ -493,7 +495,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Le design a disparu / l'app s'affiche en HTML brut, pourquoi ?",
-          "a": "Cause la plus fréquente : un bloqueur de publicité (AdGuard, uBlock Origin, Brave Shield strict, NextDNS, Pi-hole…) ou un pare-feu corporate bloque le CDN Tailwind (cdn.tailwindcss.com) qui fournit le CSS de l'app. Sans CSS, tout s'affiche en HTML brut (fonts par défaut, pas de couleurs ni mise en page). Solution : désactive le bloqueur pour ce site, ou ajoute cdn.tailwindcss.com en liste blanche, puis Ctrl+Shift+R. L'app détecte automatiquement ce blocage depuis V2.86.1 et affiche un bandeau rouge en haut de la page si elle reste sans CSS plus d'1,5 seconde."
+          "a": "Cause : un bloqueur bloque le CDN Tailwind (cdn.tailwindcss.com) qui fournit le CSS de l'app. Sans CSS, tout s'affiche en HTML brut. Les bloqueurs concernés peuvent être au niveau navigateur (uBlock Origin, Brave Shield strict, extension AdGuard) ou au niveau système / réseau (application AdGuard, AdGuard DNS, NextDNS, Pi-hole, pare-feu corporate). ⚠️ Attention : désactiver l'extension navigateur ne suffit pas si tu as aussi AdGuard application ou un filtrage DNS. Solution : ajoute `cdn.tailwindcss.com` à la liste blanche (whitelist) de TOUS tes bloqueurs actifs, puis Ctrl+Shift+R. L'app détecte automatiquement ce blocage depuis V2.86.1 et affiche un bandeau rouge en haut. Fix structurel à venir (issue #94) : bundler Tailwind localement pour supprimer la dépendance CDN."
         }
       ]
     },
