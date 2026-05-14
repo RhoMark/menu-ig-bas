@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.85.1</title>
+<title>Menu IG Bas — V2.85.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -66332,7 +66332,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                         title={isAllExternal
                           ? "Restaurer la présence sur toute la journée (tous les repas redeviennent à préparer)"
                           : "Marquer toute la journée comme repas pris à l'extérieur (rien à préparer, exclu des courses et du budget)"}
-                        className={`text-base transition ${isAllExternal ? "opacity-100" : "opacity-50 hover:opacity-100"}`}>
+                        className={`text-base transition ${isAllExternal ? "opacity-100" : "opacity-75 hover:opacity-100"}`}>
                         🌃
                       </button>
                       {/* V2.77.0 (#81) — Indicateurs jour festif / compensation */}
@@ -66350,7 +66350,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                       {!compPhase && (
                         <button onClick={() => setCompetitionPanel({day})}
                           title="Marquer ce jour comme jour de compétition (modulation J-3 à J+2 automatique)"
-                          className="text-base opacity-30 hover:opacity-100 transition">
+                          className="text-base opacity-75 hover:opacity-100 transition">
                           🏆
                         </button>
                       )}
