@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.84.0</title>
+<title>Menu IG Bas — V2.85.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -62119,6 +62119,102 @@ function isPreCompetitionFriendly(recipe) {
   }
   return true;
 }
+// V2.85.0 (#76 L3) — Module compétition. Permet de marquer un jour
+// comme "jour de compé" et de moduler automatiquement les jours J-3 à J+2.
+// Sources : ACSM/AND/DC 2016, IOC Consensus 2018, Burke LM Sports Nutrition.
+//
+// slot.competitionEvent = {
+//   type: "endurance" | "force" | "intermittent" | "combat",
+//   durationMin: int,           // durée prévue de l'épreuve
+//   note: string,               // ex : "Marathon Paris", "Tournoi tennis"
+// }
+//
+// Phases (J = jour de compé) :
+//   J-3 à J-1 (carb-load) : uniquement si type=endurance ET durationMin >= 90
+//   J0 (compe)             : tout type
+//   J+1 à J+2 (recovery)   : tout type
+//
+const COMPETITION_TYPES = [
+  {key: "endurance",    label: "Endurance",    icon: "🏃",
+    desc: "Course, vélo, natation, triathlon, ski de fond — effort continu > 30 min"},
+  {key: "intermittent", label: "Intermittent", icon: "🎾",
+    desc: "Tennis, padel, squash, sports collectifs, crossfit — efforts répétés"},
+  {key: "force",        label: "Force / explosif", icon: "🏋️",
+    desc: "Haltérophilie, sprint, sports de saut, lancer — effort court intense"},
+  {key: "combat",       label: "Combat / catégorie de poids", icon: "🥊",
+    desc: "Boxe, judo, MMA, lutte — gestion poids + récupération post-pesée"},
+];
+function isCompetitionType(t) {
+  return COMPETITION_TYPES.some(ct => ct.key === t);
+}
+function slotCompetition(slot) {
+  const e = slot?.competitionEvent;
+  if (!e || !isCompetitionType(e.type)) return null;
+  return e;
+}
+function dayHasCompetition(weekMenu, day) {
+  const slot = weekMenu?.[day] || {};
+  return slotCompetition(slot) !== null;
+}
+// Récupère le jour de compé le plus proche dans la fenêtre [J-3, J+2].
+// Renvoie {event, eventDay, dayOffset, phase} ou null si rien.
+// Phase :
+//   "carb-load"          si dayOffset ∈ [-3,-1] ET event.type=endurance ET durationMin≥90
+//   "pre-compe-eve"      si dayOffset ∈ [-3,-1] ET hors endurance long (recos textuelles légères)
+//   "compe"              si dayOffset == 0
+//   "recovery-immediate" si dayOffset == 1
+//   "recovery-late"      si dayOffset == 2
+function competitionPhaseForDay(weekMenu, day) {
+  if (!weekMenu) return null;
+  const idx = DAYS.indexOf(day);
+  if (idx === -1) return null;
+  // Cherche un événement compé dans [J-2, J+3] de notre jour (= notre jour est
+  // dans la fenêtre [event-3, event+2] de cet event)
+  for (let off = -3; off <= 2; off++) {
+    // pour notre jour à indice idx, on regarde si un event existe à l'offset (-off)
+    const eventIdx = idx + (-off);
+    const eventDay = DAYS[eventIdx];
+    if (!eventDay) continue;
+    const eventSlot = weekMenu[eventDay] || {};
+    const event = slotCompetition(eventSlot);
+    if (!event) continue;
+    // Notre jour est à offset `off` par rapport à l'event (off ∈ [-3, +2])
+    let phase;
+    if (off === 0) phase = "compe";
+    else if (off === 1) phase = "recovery-immediate";
+    else if (off === 2) phase = "recovery-late";
+    else if (off <= -1 && off >= -3) {
+      // Carb-load uniquement endurance long
+      if (event.type === "endurance" && (event.durationMin || 0) >= 90) phase = "carb-load";
+      else phase = "pre-compe-eve";
+    }
+    return {event, eventDay, dayOffset: off, phase};
+  }
+  return null;
+}
+// Label localisé d'une phase pour l'UI
+function competitionPhaseLabel(phase) {
+  switch (phase) {
+    case "carb-load":          return "Carb-load (J-3 à J-1)";
+    case "pre-compe-eve":      return "Veille de compé";
+    case "compe":              return "Jour de compé";
+    case "recovery-immediate": return "Récupération J+1";
+    case "recovery-late":      return "Récupération J+2";
+    default:                   return null;
+  }
+}
+// Icône courte pour le header du jour
+function competitionPhaseIcon(phase) {
+  switch (phase) {
+    case "carb-load":          return "↗️";  // augmentation glucides
+    case "pre-compe-eve":      return "📋";  // pré-compé léger
+    case "compe":              return "🏆";  // jour J
+    case "recovery-immediate": return "🔋";  // recharge immédiate
+    case "recovery-late":      return "🔋";  // recharge tardive
+    default:                   return null;
+  }
+}
+
 // V2.84.1 (#76 L2) — Ratio protéine g/kg/jour par profil santé.
 // Sources : ANSES (sédentaires), ACSM/AND/DC 2016 (endurance), Bangsbo
 // (intermittent), ISSN (force). Valeurs au milieu des fourchettes.
@@ -63635,6 +63731,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       if (prev.apero) slot.apero = prev.apero;
       // V2.77.0 (#81) — Préserver le mode fête du jour.
       if (prev.feast) slot.feast = prev.feast;
+      // V2.85.0 (#76 L3) — Préserver l'événement compétition du jour
+      if (prev.competitionEvent) slot.competitionEvent = prev.competitionEvent;
 
       // Breakfast: rotation glissante semaine après semaine.
       // V2.45.0 (fix #82) — l'ancienne rotation `(i + attempt - 1) % length`
@@ -64907,6 +65005,15 @@ function App({initialState}) {
       recipeRespectsSkill(r, state.profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, state.profile) >= 3
     );
+    // V2.85.0 (#76 L3) — Filtre pré-compé : si ce jour est J-1 ou J0 d'une compé,
+    // restreindre au pool isPreCompetitionFriendly (digestion rapide).
+    // Best-effort : si le pool filtré est vide, on retombe sur le pool d'origine.
+    const wkMenu = state.menus[wk] || {};
+    const compP = competitionPhaseForDay(wkMenu, day);
+    if (compP && (compP.phase === "pre-compe-eve" || compP.phase === "compe")) {
+      const filtered = pool.filter(isPreCompetitionFriendly);
+      if (filtered.length > 0) pool = filtered;
+    }
     // avoid current week for same type
     const used = new Set();
     DAYS.forEach(d => {
@@ -65295,6 +65402,31 @@ function App({initialState}) {
   };
   // Compat appelants V1 (V2.77.x) : redirige vers regenerateFeastPart("main")
   const regenerateFeastMeal = (day, _meal) => regenerateFeastPart(day, "main");
+
+  // V2.85.0 (#76 L3) — Module compétition.
+  // Stocke un événement compé sur un jour. Phases (J-3 à J+2) calculées
+  // à la lecture via competitionPhaseForDay() — pas de pré-calcul stocké.
+  const setCompetitionEvent = (day, type, durationMin, note) => {
+    if (!isCompetitionType(type)) return;
+    update(s => {
+      const daySlot = s.menus[wk]?.[day] || {};
+      const event = {
+        type,
+        durationMin: Math.max(0, Math.min(600, durationMin || 0)),
+        note: (note || "").trim().slice(0, 50),
+      };
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: {...daySlot, competitionEvent: event}}}};
+    });
+  };
+  const clearCompetitionEvent = (day) => {
+    update(s => {
+      const daySlot = s.menus[wk]?.[day] || {};
+      const next = {...daySlot};
+      delete next.competitionEvent;
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: next}}};
+    });
+  };
+
   // V2.62.0 (issue #20) — Toggle favori (étoile) sur une recette.
   // Stocké au niveau du foyer (pas par membre, V1).
   const toggleFavorite = (recipeId) => {
@@ -65386,6 +65518,8 @@ function App({initialState}) {
             setSlotGuests={setSlotGuests}
             setSlotApero={setSlotApero}
             clearSlotApero={clearSlotApero}
+            setCompetitionEvent={setCompetitionEvent}
+            clearCompetitionEvent={clearCompetitionEvent}
             regenerateSlotApero={regenerateSlotApero}
             enableSlotFeast={enableSlotFeast}
             disableSlotFeast={disableSlotFeast}
@@ -65845,12 +65979,13 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, setCompetitionEvent, clearCompetitionEvent, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
   const [aperoPanel, setAperoPanel] = useState(null); // V2.76.0 (#80) {day}
   const [feastPanel, setFeastPanel] = useState(null); // V2.78.x (#81 V2) {day, meal}
+  const [competitionPanel, setCompetitionPanel] = useState(null); // V2.85.0 (#76 L3) {day}
   const endOfWeek = addDays(currentWeek, 6);
   const cost = estimateWeekCost(currentMenu, state.profile);
   // V2.61.1 / V2.72.1 — Cible budget ajustée au prorata des slots non
@@ -66103,6 +66238,8 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
               const adjustedCgTarget = dayCgTargetWithFeast(currentMenu, day, cgTarget);
               const isFeastDay = dayHasFeast(currentMenu, day);
               const isCompDay = !isFeastDay && isCompensationDay(currentMenu, day);
+              // V2.85.0 (#76 L3) — Phase compétition du jour (si dans fenêtre J-3..J+2)
+              const compPhase = competitionPhaseForDay(currentMenu, day);
               const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, adjustedCgTarget);
               const tierClass = tier === "low" ? "bg-emerald-600" : tier === "medium" ? "bg-amber-500" : tier === "high" ? "bg-red-600" : "bg-slate-500";
               const tierLabel = tier === "low" ? "OK" : tier === "medium" ? "Modéré" : tier === "high" ? "Élevé" : "?";
@@ -66127,6 +66264,22 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                       {/* V2.77.0 (#81) — Indicateurs jour festif / compensation */}
                       {isFeastDay && <span title="Repas festif aujourd'hui (cible CG relâchée temporairement, +25%)" className="text-base">🍾</span>}
                       {isCompDay && <span title={`Compensation glycémique (J±1 d'un repas festif). Cible CG réduite à ${adjustedCgTarget.low}/j (vs ${cgTarget.low}/j normal). Référence : ADA 2023.`} className="text-base">↘️</span>}
+                      {/* V2.85.0 (#76 L3) — Badge phase compétition (si dans la fenêtre J-3..J+2) */}
+                      {compPhase && (
+                        <button onClick={() => setCompetitionPanel({day: compPhase.eventDay})}
+                          title={`${competitionPhaseLabel(compPhase.phase)} — ${compPhase.event.note || COMPETITION_TYPES.find(t => t.key === compPhase.event.type)?.label || ""} (clic pour éditer)`}
+                          className="text-base hover:opacity-70">
+                          {competitionPhaseIcon(compPhase.phase)}
+                        </button>
+                      )}
+                      {/* V2.85.0 (#76 L3) — Bouton "+ Compé" si aucune compé sur ce jour ni dans sa fenêtre */}
+                      {!compPhase && (
+                        <button onClick={() => setCompetitionPanel({day})}
+                          title="Marquer ce jour comme jour de compétition (modulation J-3 à J+2 automatique)"
+                          className="text-base opacity-30 hover:opacity-100 transition">
+                          🏆
+                        </button>
+                      )}
                     </div>
                     <span className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${adjustedCgTarget.low}${isFeastDay ? " — festif" : isCompDay ? " — compensation" : ""})`}>
                       {cgDisplay}
@@ -66465,6 +66618,16 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
           profile={state.profile}
           onSave={(meal, services, guests, note) => { enableSlotFeast(feastPanel.day, meal, services, guests, note); setFeastPanel(null); }}
           onClose={() => setFeastPanel(null)}
+        />
+      )}
+      {/* V2.85.0 (#76 L3) — Modal édition compétition */}
+      {competitionPanel && (
+        <CompetitionEditorDialog
+          day={competitionPanel.day}
+          currentEvent={currentMenu[competitionPanel.day]?.competitionEvent}
+          onSave={(type, durationMin, note) => { setCompetitionEvent(competitionPanel.day, type, durationMin, note); setCompetitionPanel(null); }}
+          onClear={() => { clearCompetitionEvent(competitionPanel.day); setCompetitionPanel(null); }}
+          onClose={() => setCompetitionPanel(null)}
         />
       )}
     </div>
@@ -66816,6 +66979,86 @@ function FeastEditorDialog({day, meal, profile, onSave, onClose}) {
             className="px-4 py-2 rounded-md text-sm font-medium text-white bg-rose-600 hover:bg-rose-700">
             🍾 Activer la fête
           </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// V2.85.0 (issue #76 L3) — Dialog d'édition d'un événement compétition.
+// Choix type (endurance/intermittent/force/combat), durée prévue, note.
+// Sources des recos affichées : ACSM 2016, IOC 2018, Burke LM.
+function CompetitionEditorDialog({day, currentEvent, onSave, onClear, onClose}) {
+  const [type, setType] = useState(currentEvent?.type || "intermittent");
+  const [durationMin, setDurationMin] = useState(currentEvent?.durationMin || 60);
+  const [note, setNote] = useState(currentEvent?.note || "");
+  const save = () => onSave(type, durationMin, note);
+  const isEndurance = type === "endurance";
+  const willCarbLoad = isEndurance && durationMin >= 90;
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 p-5 max-w-md w-full max-h-[90vh] overflow-y-auto" onClick={e => e.stopPropagation()}>
+        <div className="flex justify-between items-center mb-3">
+          <h3 className="text-lg font-bold">🏆 Jour de compétition — {day}</h3>
+          <button onClick={onClose} className="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300">✕</button>
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">
+          Marque ce jour comme jour de compétition. Les jours J-3 à J+2 seront automatiquement
+          adaptés (carb-load, repas pré-compé, récupération) selon le type et la durée. Sources : ACSM/AND/DC 2016, IOC Consensus 2018.
+        </p>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 font-semibold">Type de compétition</p>
+        <div className="space-y-2 mb-3">
+          {COMPETITION_TYPES.map(ct => (
+            <label key={ct.key} className={`flex items-start gap-2 px-3 py-2 rounded border cursor-pointer ${type === ct.key ? "bg-amber-50 dark:bg-amber-950 border-amber-400 dark:border-amber-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
+              <input type="radio" name="compType" checked={type === ct.key} onChange={() => setType(ct.key)} className="mt-1" />
+              <div className="flex-1">
+                <div className="font-medium text-sm">{ct.icon} {ct.label}</div>
+                <div className="text-[11px] text-slate-500 dark:text-slate-400">{ct.desc}</div>
+              </div>
+            </label>
+          ))}
+        </div>
+        <div className="mb-3">
+          <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1">
+            Durée prévue (minutes)
+          </label>
+          <input type="number" min="0" max="600" step="5" value={durationMin}
+            onChange={e => setDurationMin(parseInt(e.target.value) || 0)}
+            className="w-full px-3 py-2 text-sm rounded border bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 focus:outline-none focus:border-amber-500"/>
+          <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
+            {willCarbLoad ? "↗️ Carb-load automatique J-3 à J-1 (endurance ≥ 90 min)." : "Pas de carb-load (réservé endurance ≥ 90 min)."}
+          </p>
+        </div>
+        <div className="mb-3">
+          <label className="block text-xs font-medium text-slate-600 dark:text-slate-400 mb-1">Note (optionnel, max 50)</label>
+          <input type="text" maxLength={50} value={note}
+            onChange={e => setNote(e.target.value)}
+            placeholder='ex : "Marathon Paris", "Tournoi padel"'
+            className="w-full px-3 py-2 text-sm rounded border bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 focus:outline-none focus:border-amber-500"/>
+        </div>
+        <div className="p-2 rounded bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 text-xs">
+          <strong>Modulation auto J-3 à J+2 :</strong>
+          <ul className="mt-1 ml-3 list-disc">
+            {willCarbLoad && <li>J-3 à J-1 : carb-load (↗️ glucides 8-12 g/kg/j)</li>}
+            <li>Veille (J-1) : repas léger, peu fibres / lipides</li>
+            <li>Jour J : repas pré-compé 3-4 h avant, filtré low-fibres</li>
+            <li>J+1 à J+2 : récupération (🔋 ratio glucides:protéines 3:1)</li>
+            {type === "combat" && <li>Post-pesée : 1-1.2 L eau + 1 g/kg glucides + sodium</li>}
+          </ul>
+        </div>
+        <div className="flex justify-between gap-2 mt-4">
+          {currentEvent ? (
+            <button onClick={onClear} className="px-4 py-2 text-red-600 hover:bg-red-50 dark:hover:bg-red-950 rounded text-sm font-medium">
+              🗑️ Supprimer
+            </button>
+          ) : <span />}
+          <div className="flex gap-2">
+            <button onClick={onClose} className="px-4 py-2 text-slate-600 dark:text-slate-300">Annuler</button>
+            <button onClick={save}
+              className="px-4 py-2 rounded-md text-sm font-medium text-white bg-amber-600 hover:bg-amber-700">
+              {currentEvent ? "Mettre à jour" : "🏆 Activer"}
+            </button>
+          </div>
         </div>
       </div>
     </div>
