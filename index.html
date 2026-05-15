@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.0</title>
+<title>Menu IG Bas — V2.99.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -316,6 +316,10 @@ if ("serviceWorker" in navigator) {
           "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
         },
         {
+          "q": "Pourquoi mon budget est systématiquement dépassé ?",
+          "a": "Depuis V2.99.1 (issue #71), si le badge budget est en rouge (« hard-over »), un encadré 💡 « Pourquoi ce dépassement ? » apparaît sous le bandeau et te donne 4 pistes d'action : (1) augmenter le budget si réaliste vu la taille de ton foyer (l'app affiche le coût moyen projeté du catalogue) ; (2) ajouter en ⭐ favoris tes recettes peu chères (boost ×1.3 à la pioche) ; (3) vérifier que tes filtres (équipement, niveau, temps de prep) ne sont pas trop restrictifs — un pool étroit force l'algo à piocher dans des recettes plus chères ; (4) activer 🥬 Paramètres → Privilégier ingrédients locaux (exclut les recettes d'épicerie spécialisée souvent plus chères). **Cause racine documentée** : pour un foyer 4-5 adulte-eq avec budget < 250 € et un catalogue dont la médiane de coût est ~3 €/portion, le pool est fondamentalement trop cher. L'optimiseur post-génération V2.99.1 (50 itérations, costBias jusqu'à ×3, seuil relax 2 %) fait son maximum mais ne crée pas de recettes ex nihilo."
+        },
+        {
           "q": "Comment éviter les recettes avec des ingrédients introuvables près de chez moi ?",
           "a": "Active dans Paramètres → 🌍 Privilégier les ingrédients locaux / grande surface (issue #3, V2.97.0). Une fois activé, l'algo pénalise (×0.3) les recettes qui nécessitent une épicerie spécialisée — ~22 recettes du catalogue contiennent au moins 2 ingrédients qu'on ne trouve pas en supermarché français standard : tomatille mexicaine (épicerie sud-am), paneer indien et chaat masala (épicerie indienne), citron confit beldi (épicerie orientale), miso et algues (épicerie japonaise), ras-el-hanout, sumac, feuille de curry, fenugrec, mirin… Ce n'est pas un filtre dur (les recettes restent disponibles en bibliothèque pour ceux qui ont une épicerie accessible) — l'algo nudge juste vers des plats faisables avec ce qu'on trouve facilement. Désactivé par défaut. À adapter selon ton lieu de vie : grande ville parisienne / lyonnaise = laisser OFF, petite ville en zone rurale = activer."
         },
@@ -516,7 +520,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Le design a disparu / l'app s'affiche en HTML brut, pourquoi ?",
-          "a": "Cause : un bloqueur bloque le CDN Tailwind (cdn.tailwindcss.com) qui fournit le CSS de l'app. Sans CSS, tout s'affiche en HTML brut. Les bloqueurs concernés peuvent être au niveau navigateur (uBlock Origin, Brave Shield strict, extension AdGuard) ou au niveau système / réseau (application AdGuard, AdGuard DNS, NextDNS, Pi-hole, pare-feu corporate). ⚠️ Attention : désactiver l'extension navigateur ne suffit pas si tu as aussi AdGuard application ou un filtrage DNS. Solution : ajoute `cdn.tailwindcss.com` à la liste blanche (whitelist) de TOUS tes bloqueurs actifs, puis Ctrl+Shift+R. L'app détecte automatiquement ce blocage depuis V2.86.1 et affiche un bandeau rouge en haut. Fix structurel à venir (issue #94) : bundler Tailwind localement pour supprimer la dépendance CDN."
+          "a": "Depuis V2.87.0 (issue #94), Tailwind est bundlé localement (`tailwind.css` servi par GitHub Pages directement) — plus aucune dépendance à un CDN externe, le scénario AdBlock historique est éliminé. Si tu vois encore ce problème, 3 causes possibles : (1) `tailwind.css` 404 — incident de déploiement GitHub Pages, rare ; (2) cache Service Worker corrompu après une mise à jour de l'app — solution : Ctrl+Shift+R, puis si ça ne suffit pas, Outils développeur (F12) → Application → Effacer les données du site → recharger ; (3) téléchargement initial bancal hors-ligne — reconnecte-toi à Internet et recharge. Le détecteur V2.86.1+ affiche un bandeau rouge avec ces instructions si le CSS manque. NB : utilisateurs des versions antérieures à V2.87.0 mises en cache peuvent encore voir l'ancien message AdBlock — un Ctrl+Shift+R force le passage à la version actuelle bundlée."
         }
       ]
     },
@@ -72863,6 +72867,11 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   // en préservant la diversité (vs filtrage dur qui casse la rotation).
   // Limites : ratio 1-1.1 → bias 0 (catalogue OK), 1.1-2 → bias 0-1.5,
   // > 2 → bias plafonné à 1.5 (au-delà il faut élargir le catalogue).
+  // V2.99.1 (#71 fix) — costBias cap relevé 1.5 → 3.0 et formule plus agressive.
+  // Diagnostic : foyer 4.4 adult-eq + budget 200€ → ratio projeté 1.82. Avec
+  // cap 1.5, le boost vers le bas du quartile n'était pas suffisant et le pool
+  // restait dominé par les recettes ≥3€/portion. Cap 3.0 permet de forcer la
+  // queue quand ratio ≥ 2.0 (catalogue fondamentalement trop cher pour le foyer).
   const costBias = (() => {
     const target = profile?.budgetWeekly;
     if (!target || target <= 0) return 0;
@@ -72877,7 +72886,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     const projectedCost = meanCost * foyerMult * slotsPerWeek;
     const ratio = projectedCost / target;
     if (ratio <= 1.1) return 0;
-    return Math.min(1.5, (ratio - 1.1) * 1.5);
+    // Formule V2.99.1 : ratio 1.1 → 0, 1.5 → 0.8, 2.0 → 1.8, 2.5+ → 3.0 cap.
+    return Math.min(3.0, (ratio - 1.1) * 2.0);
   })();
   const {set: recentlyUsed, lastUsedMap} = recipesUsedRecently(menus, weekStart);
   const sd = profile?.shoppingDay ?? 1;
@@ -73224,12 +73234,18 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
   if (!target || target <= 0) return days;
   const tolerance = (profile.budgetTolerance ?? 10) / 100;
   const maxAllowed = target * (1 + tolerance);
-  // V2.67.0 (issue #71) — bump MAX_ITER 10 → 25 + 2 pools de candidats :
+  // V2.99.1 (#71 fix) — bump MAX_ITER 25 → 50 + seuil relax abaissé 5 % → 2 %.
+  // Diagnostic foyer 4.4 eq + 200€ : saving moyen par swap ~ 8€, besoin de
+  // ~130€ de gain ≈ 16 swaps → 25 iter suffisaient en théorie, mais la
+  // condition `relaxedSaving ≥ 5 % du budget` (10€) éliminait la queue de
+  // swaps mineurs nécessaires pour boucler. Seuil relax 2 % (4€) permet
+  // davantage de petits swaps cumulés.
+  // V2.67.0 (issue #71) — pools de candidats :
   //   strictPool : exclut recentlyUsed (préserve la rotation 14j)
-  //   relaxedPool : inclut recentlyUsed (utilisé seulement si saving ≥ 5 % du
-  //                 budget, pour ne pas casser la diversité pour un swap mineur)
-  const MAX_ITER = 25;
-  const SAVING_THRESHOLD_RELAX = target * 0.05;
+  //   relaxedPool : inclut recentlyUsed (utilisé seulement si saving ≥ seuil
+  //                 du budget, pour ne pas casser la diversité pour un swap mineur)
+  const MAX_ITER = 50;
+  const SAVING_THRESHOLD_RELAX = target * 0.02;
 
   const allergies  = effectiveAllergies(profile, null);
   const exclusions = effectiveExclusions(profile, null);
@@ -73688,6 +73704,24 @@ function aggregateShoppingList(weekMenu, profile) {
   Object.values(byCat).forEach(list => list.sort((a,b) => a.name.localeCompare(b.name, "fr")));
   return byCat;
 }
+// V2.99.1 (#71 fix) — Estime le coût hebdo moyen projeté du catalogue pour
+// un profil donné. Sert au bandeau "Pourquoi ce dépassement ?" et au check
+// budget-vs-catalogue de generateWeek. Calcul : pour chaque type de slot
+// actif, moyenne du coût × foyerMult × 7 jours, sommé.
+function estimateProjectedCatalogCost(profile) {
+  if (!profile) return 0;
+  const activeSlots = getAllActiveSlots(profile);
+  const foyerMult = totalEquivalents(profile);
+  let total = 0;
+  activeSlots.forEach(meal => {
+    const pool = RECIPES.filter(r => r.type === meal);
+    if (pool.length === 0) return;
+    const meanCost = pool.reduce((s, r) => s + recipeEffectiveCost(r), 0) / pool.length;
+    total += meanCost * foyerMult * 7;
+  });
+  return total;
+}
+
 function estimateWeekCost(weekMenu, profile) {
   const activeSlots = getAllActiveSlots(profile);
   let total = 0;
@@ -75659,6 +75693,24 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                         "bg-emerald-500"
                       }`} style={{width: `${Math.min(100, (cost / adjustedBudget) * 100).toFixed(0)}%`}} />
                     </div>
+                    {/* V2.99.1 (#71 fix) — Aide contextuelle quand l'optimiseur
+                        n'a pas trouvé de moyen de descendre sous la tolérance.
+                        3 pistes : augmenter le budget, ajouter favoris peu chers,
+                        élargir les filtres trop restrictifs. */}
+                    {budgetTier === "hard-over" && (
+                      <details className="text-[10px] opacity-90 mt-1">
+                        <summary className="cursor-pointer underline">💡 Pourquoi ce dépassement ?</summary>
+                        <div className="mt-1 leading-snug">
+                          Pour un foyer de {totalEquivalents(state.profile).toFixed(1)} adulte-équiv., le catalogue actuel projette en moyenne {Math.round(estimateProjectedCatalogCost(state.profile))} €/semaine. Pour respecter ton budget ({state.profile.budgetWeekly} €) :
+                          <ul className="list-disc ml-4 mt-1">
+                            <li>augmente le budget si réaliste</li>
+                            <li>ajoute en ⭐ favoris des recettes peu chères (boost ×1.3)</li>
+                            <li>vérifie tes filtres (équipement, niveau, temps) — trop restrictifs = pool dominé par recettes chères</li>
+                            <li>active 🥬 Privilégier ingrédients locaux (exclut épicerie spécialisée souvent chère)</li>
+                          </ul>
+                        </div>
+                      </details>
+                    )}
                   </>
                 )}
                 {/* V2.75.0 (#79) + V2.76.0 (#80) — Détail des événements invités et apéros */}
