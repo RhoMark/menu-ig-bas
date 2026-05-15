@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.95.0</title>
+<title>Menu IG Bas — V2.96.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -314,6 +314,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Le budget hebdomadaire est-il fiable ?",
           "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
+        },
+        {
+          "q": "Que sont les suggestions de substitutions économiques ?",
+          "a": "Depuis V2.96.0 (issue #15), si le coût estimé de la semaine dépasse ton budget de plus de 5 %, un encadré 💰 vert apparaît en haut de la liste de courses avec jusqu'à 5 substitutions d'ingrédients à valeur nutritionnelle équivalente mais moins chers. Exemples : Saumon → Maquereau (mêmes oméga-3, −50 %), Quinoa → Sarrasin (mêmes protéines complètes IG bas, −40 %), Bœuf haché → Lentilles + champignons (protéines végétales, −80 %, version végétarisée), Mascarpone → Yaourt grec + crème (texture crémeuse, plus de protéines), Pignons → Graines de courge grillées (même croquant, −85 %). Les suggestions sont **statiques** (pas adaptatives) : on calcule l'économie sur la base de la quantité réelle de ton menu × prix au 100g. À toi de juger ensuite si la substitution convient au plat (un risotto au safran ne se remplace pas par curcuma). Tu peux modifier la recette manuellement après régénération si tu veux appliquer."
         },
         {
           "q": "Pourquoi les seuils CG sont différents pour le déjeuner et le dîner ?",
@@ -70756,6 +70760,85 @@ function inferSubgroup(name, category) {
   return null; // → bucket "Divers" en fin de catégorie
 }
 
+// V2.96.0 (issue #15) — Substitutions d'ingrédients à valeur nutritionnelle
+// équivalente mais moins coûteux. Statique, audit manuel par paire. Le
+// modèle volontairement conservateur : on ne substitue que si l'ingrédient
+// de remplacement est objectivement moins cher ET garde le bénéfice nutritionnel
+// principal (oméga-3, protéines, fibres, micronutriment dominant).
+// Format : {fromRe, toLabel, rationale, savingsPctPer100g, category}
+// `savingsPctPer100g` est l'économie en % du prix au 100g (estimation),
+// calculée lors de la suggestion sur la vraie data-prices.
+const INGREDIENT_SUBSTITUTIONS = [
+  // Poissons gras — oméga-3
+  {fromRe: /\bsaumon( frais)?\b/i, toLabel: "Maquereau frais",   toCanon: "maquereau", rationale: "Même densité d'oméga-3 (EPA + DHA), goût plus marqué", category: "oméga-3"},
+  {fromRe: /\bsaumon( frais)?\b/i, toLabel: "Sardines fraîches", toCanon: "sardine",   rationale: "Plus riche en oméga-3 que le saumon, petits poissons donc faible accumulation métaux lourds", category: "oméga-3"},
+  {fromRe: /\bcrevettes?\b/i,      toLabel: "Cabillaud",         toCanon: "cabillaud", rationale: "Protéines maigres équivalentes, plus économique", category: "protéines"},
+  // Protéines végétales pour végétariser
+  {fromRe: /\bboeuf hach[eé]\b/i,  toLabel: "Lentilles vertes cuites + champignons", toCanon: "lentilles vertes", rationale: "Substitut végétal complet (protéines + fer + fibres), version chili / bolognaise / hachis", category: "protéines"},
+  {fromRe: /\bpoulet\b/i,          toLabel: "Tofu ferme mariné", toCanon: "tofu",      rationale: "Protéines végétales complètes, marinade compense le goût", category: "protéines"},
+  // Céréales / pseudo-céréales
+  {fromRe: /\bquinoa\b/i,          toLabel: "Sarrasin (kasha)",  toCanon: "sarrasin",  rationale: "Protéines complètes IG bas (~40), souvent moins cher que le quinoa", category: "féculents complets"},
+  {fromRe: /\briz basmati( complet)?\b/i, toLabel: "Riz long complet", toCanon: "riz long complet", rationale: "Même profil glycémique IG bas, parfois moins cher selon les marques", category: "féculents complets"},
+  // Oléagineux
+  {fromRe: /\bamandes?\b/i,        toLabel: "Graines de tournesol", toCanon: "graines de tournesol", rationale: "Oléagineux comparable (gras mono-insaturés + vitamine E), 60% moins cher", category: "oléagineux"},
+  {fromRe: /\bpignons?\b/i,        toLabel: "Graines de courge grillées", toCanon: "graines de courge", rationale: "Texture croquante, gras et magnésium équivalents, 85% moins cher", category: "oléagineux"},
+  {fromRe: /\bnoix de cajou\b/i,   toLabel: "Cacahuètes non salées", toCanon: "cacahuetes", rationale: "Protéines + magnésium équivalents, 70% moins cher (attention allergie arachide)", category: "oléagineux"},
+  // Fromages
+  {fromRe: /\bparmesan\b/i,        toLabel: "Comté râpé",        toCanon: "comte",     rationale: "Fromage à pâte dure très parfumé, calcium + protéines, ~30% moins cher", category: "fromages"},
+  {fromRe: /\bmascarpone\b/i,      toLabel: "Yaourt grec + crème", toCanon: "yaourt grec", rationale: "Texture crémeuse équivalente pour panna cotta / cheesecake, protéines plus, gras moins", category: "fromages crémeux"},
+  {fromRe: /\bricotta\b/i,         toLabel: "Cottage cheese (faisselle)", toCanon: "fromage blanc", rationale: "Texture caillée comparable, protéines plus", category: "fromages crémeux"},
+  // Herbes & épices
+  {fromRe: /\bbasilic frais\b/i,   toLabel: "Basilic du potager (si tu en as)", toCanon: "basilic", rationale: "Zéro coût si tu cultives en pot ; sinon basilic séché en dépannage (3× moins parfumé)", category: "herbes"},
+  {fromRe: /\bsafran\b/i,          toLabel: "Curcuma + une pointe de paprika", toCanon: "curcuma", rationale: "Couleur jaune-orangé similaire, antioxydants curcumine. Goût différent (terre vs floral) mais acceptable hors plat signature au safran", category: "épices"},
+  // Légumes / fruits
+  {fromRe: /\bmangue\b/i,          toLabel: "Abricots frais ou pêche", toCanon: "abricot", rationale: "Fruits jaunes-orangés bêta-carotène, plus économiques en saison (juin-août)", category: "fruits"},
+  {fromRe: /\bavocat\b/i,          toLabel: "Houmous ou tahini", toCanon: "houmous", rationale: "Crémeux + bons gras, plus économique. Le houmous remplace en tartine, le tahini en sauce", category: "bons gras"},
+];
+
+// V2.96.0 (#15) — Suggère N substitutions économiques pour une liste de courses.
+// Retourne array trié par savings décroissants, max 5 items.
+function suggestBudgetSubstitutions(byCat, profile, actualCost, target) {
+  if (!target || target <= 0 || actualCost <= target * 1.05) return []; // <5% de dépassement = OK
+  const flat = [];
+  Object.entries(byCat).forEach(([cat, list]) => {
+    list.forEach(it => flat.push({...it, category: cat}));
+  });
+  const suggestions = [];
+  const seen = new Set();
+  for (const sub of INGREDIENT_SUBSTITUTIONS) {
+    const matching = flat.filter(it => sub.fromRe.test(it.name) && !seen.has(it.name));
+    if (!matching.length) continue;
+    for (const it of matching) {
+      seen.add(it.name);
+      // Estimation savings : prix /100g de l'ingrédient actuel vs substitut
+      const canonFrom = canonicalName(it.name);
+      const pFrom = dataRef.price(canonFrom);
+      const pTo = dataRef.price(sub.toCanon);
+      if (!pFrom || !pTo) continue;
+      // qty effective en grammes : approximation simple
+      let grams = 0;
+      if (it.unit === "g") grams = it.qty;
+      else if (it.unit === "kg") grams = it.qty * 1000;
+      else if (it.unit === "u") grams = it.qty * 100; // fallback
+      else continue;
+      const costFrom = grams / 100 * pFrom.price;
+      const costTo   = grams / 100 * pTo.price;
+      const savings  = costFrom - costTo;
+      if (savings < 0.30) continue; // <30 cts, pas la peine de suggérer
+      suggestions.push({
+        from: it.name,
+        to: sub.toLabel,
+        rationale: sub.rationale,
+        category: sub.category,
+        savings: Math.round(savings * 100) / 100,
+        qty: it.qty,
+        unit: it.unit,
+      });
+    }
+  }
+  return suggestions.sort((a, b) => b.savings - a.savings).slice(0, 5);
+}
+
 function aggregateShoppingList(weekMenu, profile) {
   const activeSlots = getAllActiveSlots(profile); // inclut dessert + snack si activé
   const agg = {}; // key = `${lcName}|${unit}` → {name, qty, unit, category}
@@ -74191,6 +74274,24 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
   // V2.92.0 (#93) — Toggle sous-groupes (défaut ON). Persisté dans profile
   // pour cohérence multi-vue (ShoppingView + PrintShoppingPage).
   const useSubgroups = profile?.shoppingSubgroups !== false;
+  // V2.96.0 (#15) — Suggestions de substitution si dépassement budget >5%.
+  const menuCost = useMemo(() => {
+    let total = 0;
+    DAYS.forEach(d => {
+      const slot = currentMenu[d]; if (!slot) return;
+      ["breakfast","lunch","dinner","snack","dessert"].forEach(m => {
+        const id = slot[m]; if (!id) return;
+        const rec = RECIPES.find(r => r.id === id); if (!rec) return;
+        const mealMult = mealEquivalents(profile, slot.attendance?.[m]);
+        total += recipeEffectiveCost(rec) * mealMult;
+      });
+    });
+    return total;
+  }, [currentMenu, profile]);
+  const substitutions = useMemo(
+    () => suggestBudgetSubstitutions(byCat, profile, menuCost, profile?.budgetWeekly),
+    [byCat, profile, menuCost]
+  );
 
   return (
     <div className="space-y-4">
@@ -74214,6 +74315,36 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
         💡 Coche les articles que tu as déjà chez toi : ils seront barrés ici et exclus du PDF imprimé.
         Sous-groupes par rayon (épices, fromages, féculents…) {useSubgroups ? "activés" : "désactivés"} — modifiable dans Paramètres.
       </p>
+      {/* V2.96.0 (#15) — Suggestions de substitutions économiques si over budget */}
+      {substitutions.length > 0 && (
+        <details className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 rounded-lg p-4 group">
+          <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-emerald-900 dark:text-emerald-100">
+            <span className="text-lg">💰</span>
+            <span>Économies possibles — {substitutions.length} substitution{substitutions.length > 1 ? "s" : ""} suggérée{substitutions.length > 1 ? "s" : ""}</span>
+            <span className="ml-auto text-xs text-emerald-700 dark:text-emerald-300 group-open:hidden">▼ Voir</span>
+            <span className="ml-auto text-xs text-emerald-700 dark:text-emerald-300 hidden group-open:inline">▲ Replier</span>
+          </summary>
+          <div className="mt-3 text-sm text-slate-800 dark:text-slate-100 space-y-2">
+            <p className="text-xs text-slate-600 dark:text-slate-300">
+              Le coût estimé de cette semaine ({menuCost.toFixed(2)}€) dépasse ton budget ({profile?.budgetWeekly}€). Voici des substituts à valeur nutritionnelle équivalente :
+            </p>
+            <ul className="space-y-2 text-sm">
+              {substitutions.map((s, i) => (
+                <li key={i} className="border-l-2 border-emerald-400 dark:border-emerald-600 pl-3">
+                  <div>
+                    <strong>« {s.from} »</strong> → <strong className="text-emerald-700 dark:text-emerald-300">{s.to}</strong>
+                    {" "}<span className="text-emerald-700 dark:text-emerald-300 font-semibold">(−{s.savings.toFixed(2)}€)</span>
+                  </div>
+                  <div className="text-xs text-slate-600 dark:text-slate-300 italic">{s.rationale} · catégorie : {s.category}</div>
+                </li>
+              ))}
+            </ul>
+            <p className="text-xs text-slate-500 dark:text-slate-400 italic">
+              Suggestions statiques basées sur l'équivalence nutritionnelle principale. À toi de juger si ça convient à ton menu (goût, plat signature…). Tu peux modifier ta recette manuellement après régénération si tu veux appliquer la substitution.
+            </p>
+          </div>
+        </details>
+      )}
       {entries.length === 0 ? (
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-8 text-center text-slate-500 dark:text-slate-400">
           Aucun menu généré cette semaine.
