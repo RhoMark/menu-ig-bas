@@ -154,9 +154,25 @@ Sydney) :
 - **CG / jour > 120** : élevé (à éviter)
 
 Ces seuils complètent les seuils par recette déjà câblés dans le code
-(`glycemicTier()` : ≤ 10 bas, 11-19 modéré, ≥ 20 élevé). Pour qu'une
-journée 5-services tienne sous 80, viser des CG individuelles :
-breakfast 6-9, lunch / dinner 10-12, snack 4-6, dessert < 8.
+(`glycemicTier()` : ≤ 10 bas, 11-19 modéré, ≥ 20 élevé).
+
+**V2.95.0 (issue #83) — Seuils CG circadiens par repas.** La sensibilité
+à l'insuline diminue en soirée (Stenvers et al, Diabetologia 2019 ;
+Morris et al, Diabetes Care 2015). Pour qu'une journée 5-services tienne
+sous 80 tout en respectant le rythme circadien, viser des CG :
+
+| Repas      | CG cible | Variation vs avant |
+|------------|----------|---------------------|
+| Breakfast  | 6-9      | inchangé            |
+| Lunch      | **12-14** | +20 % (sensibilité optimale midi) |
+| Dinner     | **8-10**  | −17 % (sensibilité réduite soir) |
+| Snack      | 4-6      | inchangé            |
+| Dessert    | < 8      | inchangé            |
+
+`glycemicTierForMeal(cg, mealType)` applique ces seuils repas-spécifiques.
+L'algo `pickFromPool` boost (×1.3) les recettes "low" du tier-meal et
+pénalise (×0.5) les "high". **Skip** pour les profils sportif endurance
+et sportif force (timing prime sur seuil).
 
 ## Profils santé et adaptation des seuils
 

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.94.0</title>
+<title>Menu IG Bas — V2.95.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -314,6 +314,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Le budget hebdomadaire est-il fiable ?",
           "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
+        },
+        {
+          "q": "Pourquoi les seuils CG sont différents pour le déjeuner et le dîner ?",
+          "a": "Depuis V2.95.0 (issue #83), l'algorithme applique un **rythme circadien glycémique** : la sensibilité à l'insuline est meilleure le matin/midi et baisse en fin de journée. Un même repas glucidique provoque donc une réponse glycémique plus forte le soir. Sources : Stenvers et al, Diabetologia 2019 ; Morris et al, Diabetes Care 2015. Les seuils CG par repas sont désormais : breakfast 6-9 (inchangé), déjeuner ≤14 (relâché, +20%), dîner ≤10 (resserré, −17%), goûter 4-6 (inchangé), dessert <8 (inchangé). Mécanique : l'algo ne filtre pas dur (le pool reste plein) mais boost les recettes CG-conformes à leur repas (×1.3) et pénalise légèrement les CG hautes pour ce repas (×0.5). Pas d'application sur les profils sportif endurance ou force (pour qui le timing prévaut sur le seuil). Le badge CG sur la fiche recette montre maintenant les 2 tiers (lunch/dinner) en tooltip."
         },
         {
           "q": "À quoi servent les sous-groupes dans la liste de courses ?",
@@ -68415,6 +68419,41 @@ function glycemicTier(cg) {
   if (cg <= 19) return "medium";
   return "high";
 }
+// V2.95.0 (issue #83) — Seuils CG par repas selon le rythme circadien
+// glycémique. La sensibilité à l'insuline diminue en soirée (Stenvers et
+// al, Diabetologia 2019 ; Morris et al, Diabetes Care 2015) : un même
+// repas glucidique provoque une réponse glycémique plus forte le soir.
+// → on relâche lunch (+20%) et on resserre dinner (-17%) par rapport
+// aux seuils historiques 10-12.
+//   breakfast : 6-9     (inchangé — réveil = pic d'insuline, glucides OK)
+//   lunch     : 12-14   (relâché — sensibilité optimale midi)
+//   dinner    : 8-10    (resserré — circadien)
+//   snack     : 4-6     (inchangé)
+//   dessert   : <8      (inchangé — règle par recette)
+// Profils exemptés : sportifs endurance (timing prévaut sur seuil),
+// sportifs force (pas de différenciation lunch/dinner).
+const CG_TIERS_BY_MEAL = {
+  breakfast: {low: 9, medium: 19},
+  lunch:     {low: 14, medium: 19},
+  dinner:    {low: 10, medium: 19},
+  snack:     {low: 6, medium: 12},
+  dessert:   {low: 8, medium: 15},
+};
+function glycemicTierForMeal(cg, mealType) {
+  if (cg == null) return "unknown";
+  const t = CG_TIERS_BY_MEAL[mealType] || {low: 10, medium: 19};
+  if (cg <= t.low) return "low";
+  if (cg <= t.medium) return "medium";
+  return "high";
+}
+// Skip la différenciation circadienne pour ces profils (cf. issue #83 + CLAUDE.md).
+function profileSkipsCircadianCg(profile) {
+  if (!profile?.members?.length) return false;
+  return profile.members.some(m =>
+    m.healthProfile === "sportif_endurance" ||
+    m.healthProfile === "sportif_force"
+  );
+}
 
 // V2.82.0 (issue #17) — Macros par portion calculées auto depuis ingrédients.
 // Symétrie avec computeRecipeGlycemic : on parse recipe.ing, on convertit
@@ -69858,7 +69897,7 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null} = {}) {
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null} = {}) {
   if (pool.length === 0) return null;
   // V2.71.0 (#75 niveau 2) — pré-filtre nutritionnel sur les seuils MAX
   // (œufs, viande rouge, charcuterie). Appliqué d'abord ; si le pool filtré
@@ -69869,13 +69908,13 @@ function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastU
   }
   // Niveau 1 — recettes ni servies cette semaine, ni servies depuis 3 mois.
   let candidates = pool.filter(r => !hardAvoid.has(r.id) && !softAvoid.has(r.id));
-  if (candidates.length > 0) return weightedPick(candidates, ratings, profile, favorites, costBias);
+  if (candidates.length > 0) return weightedPick(candidates, ratings, profile, favorites, costBias, mealType);
   // Niveau 2 — fraîches épuisées : on rouvre softAvoid mais on privilégie le plus ancien.
   candidates = pool.filter(r => !hardAvoid.has(r.id));
   if (candidates.length > 0) {
     const sorted = [...candidates].sort(byOldestFirst(lastUsedMap));
     const cutoff = Math.max(1, Math.ceil(sorted.length / 3));
-    return weightedPick(sorted.slice(0, cutoff), ratings, profile, favorites, costBias);
+    return weightedPick(sorted.slice(0, cutoff), ratings, profile, favorites, costBias, mealType);
   }
   // Niveau 3 — extrême (toutes en hardAvoid) : prendre la plus ancienne du pool entier
   // pour ne pas laisser un slot vide. Ne devrait jamais arriver tant que pool ≥ 7.
@@ -69887,7 +69926,7 @@ function byOldestFirst(lastUsedMap) {
   return (a, b) => (lastUsedMap.get(a.id) ?? 0) - (lastUsedMap.get(b.id) ?? 0);
 }
 
-function weightedPick(list, ratings, profile, favorites, costBias = 0) {
+function weightedPick(list, ratings, profile, favorites, costBias = 0, mealType = null) {
   // V2.29.0 — utilise getEffectiveRating si profile fourni (moyenne pondérée
   // par adultEquivalent des membres ayant noté). Sinon ancien comportement.
   // V2.40.0 (issue #2) — boost ×2 sur les recettes dont la cuisine est dans
@@ -69921,6 +69960,18 @@ function weightedPick(list, ratings, profile, favorites, costBias = 0) {
     if (costBias > 0 && poolMeanCost > 0) {
       const cost = Math.max(0.3, recipeEffectiveCost(r));
       w *= Math.pow(poolMeanCost / cost, costBias);
+    }
+    // V2.95.0 (#83) — Boost circadien CG : favorise les recettes dont la CG
+    // tombe dans le tier "low" du repas concerné (lunch ≤14, dinner ≤10).
+    // Pénalise légèrement le tier "high". Skip pour les sportifs (cf. CLAUDE.md
+    // profileSkipsCircadianCg → endurance & force exemptés).
+    if (mealType && !profileSkipsCircadianCg(profile)) {
+      const g = computeRecipeGlycemic(r);
+      if (g && g.cg != null) {
+        const tier = glycemicTierForMeal(g.cg, mealType);
+        if (tier === "low") w *= 1.3;        // boost recettes "conformes" au tier circadien
+        else if (tier === "high") w *= 0.5;  // pénalité douce, pas exclusion
+      }
     }
     return w;
   });
@@ -70262,13 +70313,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (chaînage cohérent).
         const lunchUsesPool = matchUsesPool(lunches);
         if (lunchUsesPool.length > 0) {
-          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter});
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch"});
         }
         if (!picked && useBatchPool && lunchesBatch.length > 0) {
-          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter});
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch"});
         }
         if (!picked) {
-          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter});
+          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch"});
         }
         if (picked) {
           slot.lunch = picked.id;
@@ -70314,13 +70365,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (intersect avec le filtre staple).
         const dinnerUsesPool = matchUsesPool(dinnerPool);
         if (dinnerUsesPool.length > 0) {
-          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter});
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner"});
         }
         if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
-          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter});
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner"});
         }
         if (!picked) {
-          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter});
+          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner"});
         }
         if (picked) {
           slot.dinner = picked.id;
@@ -71809,7 +71860,7 @@ function App({initialState}) {
       if (slot.dinner && (d !== day || meal !== "dinner")) usedThisWeek.add(slot.dinner);
     });
     const {set: softAvoid, lastUsedMap} = recipesUsedRecently(state.menus, currentWeek);
-    return pickFromPool(pool, {hardAvoid: usedThisWeek, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
+    return pickFromPool(pool, {hardAvoid: usedThisWeek, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites, mealType: meal});
   };
   // V2.78.x (issue #81 V2) — Activation mode fête structuré.
   // params : day, meal (lunch|dinner), services (2|3), optionnel guests/note.
@@ -73850,9 +73901,15 @@ function RecipeModal({recipe, profile, season = null, attendees, ratings, recent
                   const label = tier === "low" ? "IG bas ✓"
                     : tier === "medium" ? "IG modéré"
                     : "IG élevé ⚠️ ";
+                  // V2.95.0 (#83) — En tooltip, montre aussi le tier circadien
+                  // par repas (lunch ≤14 / dinner ≤10).
+                  const lunchTier = glycemicTierForMeal(gly.cg, "lunch");
+                  const dinnerTier = glycemicTierForMeal(gly.cg, "dinner");
+                  const lunchOk = lunchTier === "low" ? "✓" : lunchTier === "medium" ? "~" : "✗";
+                  const dinnerOk = dinnerTier === "low" ? "✓" : dinnerTier === "medium" ? "~" : "✗";
                   return (
                     <span className={`${cls} px-2 py-0.5 rounded-full font-semibold`}
-                      title={`IG moyen pondéré : ${gly.ig} · Charge glycémique : ${gly.cg} (≤10 bas, 11-19 modéré, ≥20 élevé) · Calculé sur ${gly.covered}/${gly.total} ingrédients référencés (${gly.carbs}g de glucides estimés)`}>
+                      title={`IG moyen pondéré : ${gly.ig} · CG : ${gly.cg} (≤10 bas, 11-19 modéré, ≥20 élevé Harvard)\nCirca­dien : déjeuner ≤14 ${lunchOk} / dîner ≤10 ${dinnerOk} (sensibilité insuline plus haute le midi)\nCalculé sur ${gly.covered}/${gly.total} ingrédients (${gly.carbs}g glucides estimés)`}>
                       {label} · CG {gly.cg}
                     </span>
                   );
