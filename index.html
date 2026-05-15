@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.91.0</title>
+<title>Menu IG Bas — V2.92.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -314,6 +314,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Le budget hebdomadaire est-il fiable ?",
           "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
+        },
+        {
+          "q": "Pourquoi une recette contient un ingrédient que j'ai exclu ?",
+          "a": "Si le badge ⚠️🚫 apparaît sur une recette, c'est que l'algorithme a appliqué le fallback exclusions (issue #10). Cas typique : tes exclusions sont si nombreuses qu'il restait moins de 3 recettes éligibles pour ce repas dans la saison. Plutôt que de laisser la case vide, l'app a pioché quand même et te signale la situation. Une bannière apparaît en haut du planning listant les conflits. Solution : assouplis tes exclusions (Paramètres → Membres → Exclusions) ou enrichis ton catalogue. ⚠️ Important : les ALLERGIES médicales ne sont jamais relâchées — seules les préférences de goût (exclusions) peuvent l'être."
         },
         {
           "q": "Comment exporter le menu ou la liste de courses en PDF ?",
@@ -66518,6 +66522,19 @@ function recipeHasExcluded(recipe, exclusions) {
     lcExcl.some(ex => name.toLowerCase().includes(ex))
   );
 }
+// V2.92.0 (issue #10) — Retourne la liste des ingrédients d'une recette qui
+// matchent une exclusion (sert au badge ⚠️ et à la bannière fallback).
+// Retourne [] si aucun conflit.
+function recipeExclusionConflicts(recipe, exclusions) {
+  if (!recipe || !exclusions?.length) return [];
+  const lcExcl = exclusions.map(e => e.toLowerCase().trim()).filter(Boolean);
+  const conflicts = new Set();
+  recipe.ing.forEach(([name]) => {
+    const lc = name.toLowerCase();
+    lcExcl.forEach(ex => { if (lc.includes(ex)) conflicts.add(ex); });
+  });
+  return [...conflicts];
+}
 // V2.31.0 — Exclusions effectives par foyer (issue #9, spec V1 §2.4.2)
 // = globalExclusions (foyer) ∪ (intersection des member.exclusions des présents)
 // Logique préférentielle (≠ allergies médicales) : on n'exclut un ingrédient
@@ -69889,17 +69906,29 @@ function App({initialState}) {
   const pickStandardMeal = (day, meal, excludeId = null) => {
     const profile = state.profile;
     const season = getSeason(currentWeek);
-    let pool = RECIPES.filter(r =>
+    // V2.92.0 (issue #10) — filtres "durs" qui ne peuvent JAMAIS être relâchés.
+    // Allergies = sécurité médicale, équipement/temps/compétence = pratique,
+    // saison = cohérence, rating ≥ 3 = qualité. Le seul filtre relâchable
+    // est `exclusions` (préférence ≠ allergie médicale, cf. effectiveExclusions).
+    const passHardFilters = (r) =>
       r.type === meal &&
       matchesSeason(r, season, profile) &&
       !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
-      !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
       recipeRespectsEquipment(r, profile.equipment) &&
       recipeRespectsTime(r, profile.maxPrepMinutes) &&
       recipeRespectsSkill(r, profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, profile) >= 3 &&
-      r.id !== excludeId
-    );
+      r.id !== excludeId;
+    const exclusions = effectiveExclusions(profile, null);
+    let pool = RECIPES.filter(r => passHardFilters(r) && !recipeHasExcluded(r, exclusions));
+    // Fallback issue #10 : si <3 recettes éligibles après application des
+    // exclusions, on relâche les exclusions (filtres durs restent en place).
+    // La recette pioché aura recipeExclusionConflicts() non-vide → badge ⚠️
+    // sur la slot + bannière de tête expliquant la situation à l'utilisateur.
+    if (pool.length < 3) {
+      const fallbackPool = RECIPES.filter(passHardFilters);
+      if (fallbackPool.length > pool.length) pool = fallbackPool;
+    }
     if (pool.length === 0) return null;
     const usedThisWeek = new Set();
     DAYS.forEach(d => {
@@ -70912,6 +70941,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
       {/* V2.69.0 (issue #75) — Bandeau recos nutritionnelles OMS/WCRF/PNNS */}
       {hasAny && <NutritionBanner currentMenu={currentMenu} profile={state.profile} />}
 
+      {/* V2.92.0 (issue #10) — Bannière fallback exclusions */}
+      {hasAny && <ExclusionFallbackBanner currentMenu={currentMenu} profile={state.profile} />}
+
       {!hasAny && (
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-12 text-center">
           <p className="text-slate-600 dark:text-slate-300 mb-4">Aucun menu pour cette semaine.</p>
@@ -71156,6 +71188,17 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                                 <span title={`Hors saison (${SEASON_FR[season]} en cours).`}
                                       className="text-amber-600 text-sm flex-shrink-0">⚠️</span>
                               )}
+                              {/* V2.92.0 (#10) — Badge ⚠️ exclusion (fallback : pool éligible <3) */}
+                              {(() => {
+                                if (m.key !== "lunch" && m.key !== "dinner") return null;
+                                const excl = effectiveExclusions(state.profile, null);
+                                const conflicts = recipeExclusionConflicts(recipe, excl);
+                                if (conflicts.length === 0) return null;
+                                return (
+                                  <span title={`Cette recette contient un ingrédient exclus : ${conflicts.join(", ")}.\nL'algo a relâché les exclusions car le pool éligible était <3 recettes.`}
+                                        className="text-orange-600 dark:text-orange-400 text-sm flex-shrink-0 font-bold">⚠️🚫</span>
+                                );
+                              })()}
                             </span>
                             <span className="block text-xs text-slate-500 dark:text-slate-400 font-normal mt-0.5">
                               ⏱ {recipeTimeLabel(recipe)} · {recipe.kcal}kcal
@@ -73212,6 +73255,61 @@ function JournalHistory({state, currentWeek, profile}) {
 //   warning : valeur proche du seuil (ambre) — affiché
 //   over    : seuil dépassé (rouge) ou minimum non atteint
 // Pour un menu vide ou un foyer sans repas planifié, le composant ne rend rien.
+// V2.92.0 (issue #10) — Bannière affichée quand au moins une slot active
+// contient une recette qui viole les exclusions préférentielles du foyer.
+// Cas typique : exclusions trop nombreuses → pool éligible < 3, pickStandardMeal
+// a relâché les exclusions (cf. fallback dans pickStandardMeal). On le détecte
+// au render en re-vérifiant les conflits sur le menu courant.
+function ExclusionFallbackBanner({currentMenu, profile}) {
+  const exclusions = effectiveExclusions(profile, null);
+  if (!exclusions.length) return null;
+  const conflicts = [];
+  DAYS.forEach(day => {
+    const slot = currentMenu[day]; if (!slot) return;
+    ["lunch","dinner"].forEach(meal => {
+      const id = slot[meal]; if (!id) return;
+      const rec = RECIPES.find(r => r.id === id); if (!rec) return;
+      const conflictIngredients = recipeExclusionConflicts(rec, exclusions);
+      if (conflictIngredients.length) {
+        conflicts.push({day, meal, recipe: rec, ingredients: conflictIngredients});
+      }
+    });
+  });
+  if (conflicts.length === 0) return null;
+  const uniqueIngredients = [...new Set(conflicts.flatMap(c => c.ingredients))];
+  return (
+    <details className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded-lg p-4 group">
+      <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-amber-900 dark:text-amber-100">
+        <span className="text-lg">⚠️</span>
+        <span>Tes exclusions ont rendu impossible la génération sans elles cette semaine</span>
+        <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 group-open:hidden">▼ Détails</span>
+        <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 hidden group-open:inline">▲ Replier</span>
+      </summary>
+      <div className="mt-3 text-sm text-slate-800 dark:text-slate-100 space-y-2">
+        <p>
+          Pour {conflicts.length} repas, le pool de recettes éligibles est trop maigre après application
+          de tes exclusions (<em>{uniqueIngredients.join(", ")}</em>). L'algo a pioché quand même, mais
+          la ou les recettes contiennent ces ingrédients exclus — elles sont marquées d'un badge <span className="font-mono">⚠️ exclusion</span> sur le planning.
+        </p>
+        <ul className="list-disc pl-5 text-xs space-y-1">
+          {conflicts.slice(0, 6).map(c => (
+            <li key={`${c.day}_${c.meal}`}>
+              <strong className="capitalize">{c.day} {c.meal === "lunch" ? "midi" : "soir"}</strong> — «{" "}
+              {c.recipe.name} » contient : {c.ingredients.join(", ")}
+            </li>
+          ))}
+          {conflicts.length > 6 && <li className="text-slate-500">… et {conflicts.length - 6} autre{conflicts.length - 6 > 1 ? "s" : ""}</li>}
+        </ul>
+        <p className="text-xs text-slate-600 dark:text-slate-300 italic">
+          Conseil : assouplis tes exclusions (Paramètres → Membres → Exclusions) ou enrichis ton catalogue.
+          Note : les <strong>allergies</strong> médicales ne sont jamais relâchées — ce fallback ne concerne
+          que les <strong>préférences</strong> de goût.
+        </p>
+      </div>
+    </details>
+  );
+}
+
 function NutritionBanner({currentMenu, profile}) {
   const {totals, thresholds, totalEq} = computeWeeklyNutritionTotals(currentMenu, profile);
   if (!totalEq || totalEq <= 0) return null;
