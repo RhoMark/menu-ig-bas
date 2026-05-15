@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.90.0</title>
+<title>Menu IG Bas — V2.91.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -314,6 +314,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Le budget hebdomadaire est-il fiable ?",
           "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
+        },
+        {
+          "q": "Comment exporter le menu ou la liste de courses en PDF ?",
+          "a": "Deux modes : (1) bouton 🖨️ « Imprimer » → ouvre le dialogue d'impression du navigateur ; tu peux y choisir « Enregistrer au format PDF » comme imprimante (option disponible sur tous les navigateurs et OS). (2) bouton 📄 « PDF » → téléchargement direct sans dialogue, fichier daté automatiquement (ex : menu-2026-05-15.pdf, liste-courses-2026-05-15.pdf). La 1re utilisation télécharge la bibliothèque html2pdf (~900 Ko, bundle local, pas de CDN) ; ensuite c'est instantané grâce au cache hors-ligne. Tout reste 100 % local : aucune donnée n'est envoyée nulle part."
         }
       ]
     },
@@ -438,7 +442,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pictogrammes du bandeau budget et historique",
-          "a": "💰 coût estimé / cible budget. * astérisque rose : événements spéciaux (invités, apéro, fête) ajustent le coût. ⭐ / ☆ favori (étoile pleine = favori du foyer, augmente la probabilité de pioche). 📊 historique. 🛒 jour des courses / liste de courses agrégée. 🖨️ imprimer le menu."
+          "a": "💰 coût estimé / cible budget. * astérisque rose : événements spéciaux (invités, apéro, fête) ajustent le coût. ⭐ / ☆ favori (étoile pleine = favori du foyer, augmente la probabilité de pioche). 📊 historique. 🛒 jour des courses / liste de courses agrégée. 🖨️ imprimer le menu (dialogue navigateur). 📄 télécharger en PDF (fichier daté, sans dialogue)."
         },
         {
           "q": "Pictogrammes du modal recette (fiche détaillée)",
@@ -69287,7 +69291,7 @@ const TUTORIAL_STEPS = [
     emoji: "🛒",
     title: "Liste de courses agrégée",
     body: "À partir du planning, l'app calcule automatiquement la liste de courses : ingrédients fusionnés par nom canonique, quantités scalées par membre/présence, regroupés par catégorie (épicerie, fruits/légumes, viande/poisson…).",
-    highlight: "Coche les articles déjà chez toi pour les exclure. Bouton « Imprimer » génère un PDF prêt à emporter. Budget total estimé affiché.",
+    highlight: "Coche les articles déjà chez toi pour les exclure. Boutons 🖨️ « Imprimer » (dialogue navigateur) ou 📄 « PDF » (téléchargement direct, fichier daté). Budget total estimé affiché.",
   },
   {
     emoji: "🍱",
@@ -70087,6 +70091,71 @@ function App({initialState}) {
     }
   }, [printMode]);
 
+  // V2.91.0 (issue #22) — Export PDF dédié via html2pdf.js bundlé localement
+  // (906 KB lazy-loaded au 1er clic, mis en cache SW pour les suivants).
+  // Le mode "pdf-menu" / "pdf-shopping" rend la même PrintMenuPage /
+  // PrintShoppingPage que l'impression, puis capture le DOM en PDF.
+  // Fichier daté : menu-2026-05-15.pdf / liste-courses-2026-05-15.pdf.
+  const [pdfMode, setPdfMode] = useState(null); // null | "menu" | "shopping"
+  const [pdfBusy, setPdfBusy] = useState(false);
+  useEffect(() => {
+    if (!pdfMode) return;
+    let cancelled = false;
+    const html = document.documentElement;
+    const wasDark = html.classList.contains("dark");
+    const generate = async () => {
+      setPdfBusy(true);
+      // V2.91.0 — force light mode pendant la capture pour que les classes
+      // dark: ne s'appliquent pas (sinon le PDF est en sombre, illisible imprimé).
+      if (wasDark) html.classList.remove("dark");
+      try {
+        // Lazy-load html2pdf au 1er usage (cache SW après).
+        if (typeof window.html2pdf === "undefined") {
+          await new Promise((resolve, reject) => {
+            const s = document.createElement("script");
+            s.src = "html2pdf.bundle.min.js";
+            s.onload = resolve;
+            s.onerror = () => reject(new Error("html2pdf load failed"));
+            document.head.appendChild(s);
+          });
+        }
+        // Attend un tick pour laisser React rendre la PrintMenuPage/PrintShoppingPage
+        // et le retrait de .dark se propager dans les styles.
+        await new Promise(r => setTimeout(r, 400));
+        if (cancelled) return;
+        const root = document.querySelector(".print-page");
+        if (!root) throw new Error("print-page introuvable");
+        const wkDate = currentWeek instanceof Date ? currentWeek : new Date(currentWeek);
+        const wkYmd = wkDate.toISOString().slice(0, 10);
+        const filename = pdfMode === "menu"
+          ? `menu-${wkYmd}.pdf`
+          : `liste-courses-${wkYmd}.pdf`;
+        // Orientation A4 selon le contenu (menu = paysage, liste = portrait).
+        const orientation = pdfMode === "menu" ? "landscape" : "portrait";
+        await window.html2pdf().set({
+          filename,
+          margin: [10, 10, 10, 10],
+          image: {type: "jpeg", quality: 0.92},
+          html2canvas: {scale: 2, useCORS: false, logging: false, backgroundColor: "#ffffff"},
+          jsPDF: {unit: "mm", format: "a4", orientation},
+          pagebreak: {mode: ["css", "legacy"]},
+        }).from(root).save();
+      } catch (e) {
+        console.error("[pdf] export failed", e);
+        alert("Échec de l'export PDF : " + (e.message || "erreur inconnue") + "\nL'impression standard reste disponible.");
+      } finally {
+        // Restaure le dark mode si initialement actif.
+        if (wasDark) html.classList.add("dark");
+        if (!cancelled) {
+          setPdfBusy(false);
+          setPdfMode(null);
+        }
+      }
+    };
+    generate();
+    return () => { cancelled = true; };
+  }, [pdfMode, currentWeek]);
+
   // Modal de consentement RGPD (V2.11.0) : bloque l'app tant que pas validé.
   // On le rend en plus du reste pour ne pas dérouter l'utilisateur (pas
   // d'écran blanc), mais le z-50 backdrop-blur assure le côté bloquant.
@@ -70109,6 +70178,23 @@ function App({initialState}) {
 
   if (printMode === "menu") return <PrintMenuPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} />;
   if (printMode === "shopping") return <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} />;
+
+  // V2.91.0 (#22) — Pendant la génération PDF, on rend la même page que
+  // l'impression mais sans déclencher window.print(). html2pdf capture le
+  // .print-page racine, génère le PDF en arrière-plan, déclenche le
+  // téléchargement, puis pdfMode revient à null (effect ci-dessus).
+  if (pdfMode === "menu") return (
+    <>
+      <PrintMenuPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} />
+      <PdfGeneratingOverlay />
+    </>
+  );
+  if (pdfMode === "shopping") return (
+    <>
+      <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} />
+      <PdfGeneratingOverlay />
+    </>
+  );
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -70144,6 +70230,8 @@ function App({initialState}) {
             setJournalField={setJournalField}
             onSelectRecipe={(id, opts) => setSelectedRecipe({id, day: opts?.day, meal: opts?.meal})}
             onPrint={() => setPrintMode("menu")}
+            onPdf={() => setPdfMode("menu")}
+            pdfBusy={pdfBusy}
             onShopping={() => setView("shopping")}
           />
         )}
@@ -70158,6 +70246,8 @@ function App({initialState}) {
             pantryChecks={state.pantryChecks[wk]||{}}
             onTogglePantry={togglePantry}
             onPrint={() => setPrintMode("shopping")}
+            onPdf={() => setPdfMode("shopping")}
+            pdfBusy={pdfBusy}
           />
         )}
         {view === "history" && (
@@ -70594,7 +70684,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, setCompetitionEvent, clearCompetitionEvent, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onPdf, pdfBusy, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, setCompetitionEvent, clearCompetitionEvent, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
@@ -70807,6 +70897,11 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
         <button onClick={onPrint}
           className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
           🖨️ Imprimer
+        </button>
+        <button onClick={onPdf} disabled={pdfBusy}
+          className="bg-rose-600 hover:bg-rose-700 disabled:bg-slate-400 disabled:cursor-wait text-white px-4 py-2 rounded-md text-sm font-medium"
+          title="Télécharger le menu de la semaine en PDF (.pdf)">
+          {pdfBusy ? "⏳ PDF…" : "📄 PDF"}
         </button>
         <button onClick={onShopping}
           className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-md text-sm font-medium">
@@ -72093,7 +72188,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
 }
 
 // ----- Shopping View -------------------------------------------------------
-function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onTogglePantry, onPrint}) {
+function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onTogglePantry, onPrint, onPdf, pdfBusy}) {
   const byCat = useMemo(() => aggregateShoppingList(currentMenu, profile), [currentMenu, profile]);
   const entries = Object.entries(byCat);
   const totalItems = entries.reduce((s, [,list]) => s + list.length, 0);
@@ -72111,6 +72206,11 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
         <div className="flex-1"></div>
         <button onClick={onPrint} className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
           🖨️ Imprimer la liste
+        </button>
+        <button onClick={onPdf} disabled={pdfBusy}
+          className="bg-rose-600 hover:bg-rose-700 disabled:bg-slate-400 disabled:cursor-wait text-white px-4 py-2 rounded-md text-sm font-medium"
+          title="Télécharger la liste de courses en PDF (.pdf)">
+          {pdfBusy ? "⏳ PDF…" : "📄 PDF"}
         </button>
       </div>
       <p className="text-xs text-slate-500 dark:text-slate-400 -mt-2 px-1">
@@ -74506,6 +74606,19 @@ function SettingsView({state, update, updateProfile}) {
   );
 }
 
+// V2.91.0 (#22) — Overlay fixé pendant la génération PDF. Volontairement
+// `position: fixed` + `print:hidden` pour qu'il ne soit pas capté par
+// html2canvas (qui ne snapshot que le contenu .print-page).
+function PdfGeneratingOverlay() {
+  return (
+    <div className="fixed bottom-4 right-4 z-50 bg-emerald-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 text-sm print:hidden"
+         style={{position: "fixed"}}>
+      <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+      <span>Génération du PDF en cours…</span>
+    </div>
+  );
+}
+
 // ----- Print: Menu A4 paysage -----------------------------------------------
 function PrintMenuPage({weekStart, menu, profile}) {
   const mult = totalEquivalents(profile);
@@ -74527,7 +74640,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
   // pour que la prévisualisation reste lisible même quand l'app est en mode
   // sombre (sinon le body en bg-slate-900 transparait derrière la table A4).
   return (
-    <div className="p-6 text-[10pt] font-sans bg-white text-slate-900">
+    <div className="print-page p-6 text-[10pt] font-sans bg-white text-slate-900">
       <style>{`
         @page { size: A4 landscape; margin: 1cm; }
         body { background: white !important; }
@@ -74615,7 +74728,7 @@ function PrintShoppingPage({weekStart, menu, profile, pantryChecks}) {
     if (filtered.length) byCat[cat] = filtered;
   });
   return (
-    <div className="p-6 text-[10pt] bg-white text-slate-900">
+    <div className="print-page p-6 text-[10pt] bg-white text-slate-900">
       <style>{`
         @page { size: A4 portrait; margin: 1.2cm; }
         body { background: white !important; }
