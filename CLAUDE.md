@@ -238,6 +238,27 @@ python3 -m http.server 8000
 ```
 ⚠️ Service Worker actif uniquement en HTTPS ou sur `localhost`.
 
+### Tailwind CSS — rebuild après changement de classes (V2.87.0, issue #94)
+Tailwind est bundlé localement (`tailwind.css`), plus de dépendance CDN.
+Quand on **ajoute / supprime des classes Tailwind** dans `index.html`, il
+faut rebuild le CSS sinon les nouvelles classes n'auront pas d'effet :
+```bash
+npx tailwindcss -i ./tailwind-input.css -o ./tailwind.css --minify
+```
+Le scan se base sur `content: ["./index.html"]` (cf. `tailwind.config.js`).
+**Commiter `tailwind.css` à chaque rebuild** — c'est ce fichier que les
+utilisateurs reçoivent via GitHub Pages.
+
+Si tu utilises uniquement des classes déjà présentes ailleurs dans le
+fichier (cas le plus fréquent), pas besoin de rebuild — elles sont déjà
+incluses.
+
+`node_modules/` est ignoré via `.gitignore`. Pour cloner et builder :
+```bash
+npm install
+npx tailwindcss -i ./tailwind-input.css -o ./tailwind.css --minify
+```
+
 ### Versionnage — à bumper ENSEMBLE
 À chaque release modifiant des ressources critiques :
 - `<title>` dans `index.html`

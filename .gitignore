@@ -22,3 +22,9 @@
 # --- Notes locales Claude Code (ne jamais publier) ---
 CLAUDE.local.md
 tâches/
+
+# --- Node / npm (V2.87.0 issue #94) ---
+# tailwindcss CLI installé localement via npm. node_modules pèse lourd
+# (~50 MB) et est généré à la demande via `npm install`. Le fichier
+# package-lock.json est gardé (reproductibilité).
+node_modules/

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.86.2</title>
+<title>Menu IG Bas — V2.87.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -23,13 +23,15 @@ if ("serviceWorker" in navigator) {
   });
 }
 </script>
-<script src="https://cdn.tailwindcss.com"></script>
+<!-- V2.87.0 (issue #94) — Tailwind CSS bundlé localement, plus aucune
+     dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
+     tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
+     procédure rebuild après changement de classes dans index.html). -->
+<link rel="stylesheet" href="tailwind.css">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
-  // Configuration Tailwind : on opte pour le mode `class` (toggle manuel)
-  // plutôt que `media` (=prefers-color-scheme strict) pour permettre à
-  // l'utilisateur de forcer un thème indépendamment du système.
-  tailwind.config = { darkMode: 'class' };
+  // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
+  // tailwind.config.js, pas besoin de tailwind.config inline (V2.87.0+).
   // Application immédiate du thème AVANT le mount React pour éviter le FOUC
   // (Flash of Unstyled Content : page blanche apparaît brièvement avant que
   // React ne charge si on attendait l'init React pour appliquer la classe).
@@ -47,15 +49,11 @@ if ("serviceWorker" in navigator) {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
 <script>
-  // V2.86.1 — Détection Tailwind CDN bloqué (AdGuard, uBlock, Brave Shield,
-  // firewall corporate, etc.). Si Tailwind ne s'applique pas, on affiche un
-  // bandeau rouge visible avec instructions pour que l'utilisateur comprenne
-  // pourquoi le design est "cassé" (sinon il pense que l'app est buguée).
-  //
-  // Test : on crée un élément avec la classe Tailwind `.hidden` et on vérifie
-  // que le style `display: none` est appliqué. Si non → Tailwind absent.
-  // Le bandeau est stylé en CSS inline (= ne dépend pas de Tailwind lui-même).
-  // Test différé de 1.5s pour laisser le temps au CDN de charger en async.
+  // V2.87.0 (issue #94) — Détecteur CSS Tailwind manquant : depuis cette
+  // version, Tailwind est bundlé localement (tailwind.css), plus de
+  // dépendance CDN. Le détecteur reste comme garde-fou ultime (cas où
+  // tailwind.css est introuvable, 404, ou corrompu dans le cache SW).
+  // Test : applique la classe `.hidden` et vérifie `display: none`.
   window.addEventListener('load', function () {
     setTimeout(function () {
       try {
@@ -66,14 +64,13 @@ if ("serviceWorker" in navigator) {
         var ok = window.getComputedStyle(test).display === 'none';
         document.body.removeChild(test);
         if (ok) return;
-        // Tailwind bloqué → bandeau visible
         if (document.getElementById('tailwind-blocked-banner')) return;
         var b = document.createElement('div');
         b.id = 'tailwind-blocked-banner';
         b.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#dc2626;color:white;padding:14px 18px;font-family:system-ui,sans-serif;font-size:14px;line-height:1.5;box-shadow:0 2px 10px rgba(0,0,0,0.4);';
-        b.innerHTML = "⚠️ <strong>Le CSS de l'application est bloqué.</strong><br>" +
-          "Cause : un bloqueur de pub système (AdGuard app/DNS, NextDNS, Pi-hole, pare-feu) ou navigateur (uBlock Origin, Brave Shield, AdGuard extension) bloque <code style=\"background:rgba(255,255,255,0.2);padding:1px 5px;border-radius:3px;\">cdn.tailwindcss.com</code>. " +
-          "<strong>Action :</strong> ajoute ce domaine à ta liste blanche (whitelist) dans l'app AdGuard / au niveau DNS, puis recharge (Ctrl+Shift+R)." +
+        b.innerHTML = "⚠️ <strong>Le CSS de l'application n'a pas chargé.</strong><br>" +
+          "Cause possible : <code style=\"background:rgba(255,255,255,0.2);padding:1px 5px;border-radius:3px;\">tailwind.css</code> introuvable (404) ou corrompu dans le cache. " +
+          "<strong>Action :</strong> vide le cache (Outils développeur → Application → Effacer les données) puis recharge (Ctrl+Shift+R)." +
           " <button onclick=\"this.parentElement.remove()\" style=\"margin-left:12px;background:white;color:#dc2626;border:none;padding:5px 12px;border-radius:4px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:13px;\">Fermer</button>";
         document.body.appendChild(b);
       } catch (e) { /* silencieux : si erreur DOM, on ne fait rien */ }

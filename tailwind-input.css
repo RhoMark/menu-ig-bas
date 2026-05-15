@@ -1,0 +1,7 @@
+/* Tailwind input file — compile en tailwind.css via :
+ *   npx tailwindcss -i ./tailwind-input.css -o ./tailwind.css --minify
+ * Voir CLAUDE.md pour la procédure complète.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

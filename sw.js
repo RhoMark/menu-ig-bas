@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.86.2";
+const CACHE_VERSION = "menu-ig-bas-v2.87.0";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -23,10 +23,14 @@ const CRITICAL_ASSETS = [
   "./apple-touch-icon.png",
   "./icon-192.png",
   "./icon-512.png",
+  // V2.87.0 (issue #94) — Tailwind CSS bundlé localement (était CDN avant).
+  "./tailwind.css",
 ];
 
 const CDN_ASSETS = [
-  "https://cdn.tailwindcss.com",
+  // V2.87.0 — cdn.tailwindcss.com retiré : Tailwind est désormais servi
+  // localement (tailwind.css) → plus aucun problème de blocage par AdGuard
+  // app/DNS, uBlock, Brave Shield, pare-feu corporate.
   "https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js",
   "https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js",
   "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js",
