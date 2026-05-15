@@ -259,6 +259,12 @@ npm install
 npx tailwindcss -i ./tailwind-input.css -o ./tailwind.css --minify
 ```
 
+**⚠️ `.nojekyll` à la racine est obligatoire** depuis V2.87.0 : GitHub
+Pages en mode "Deploy from branch" / build_type legacy détecte
+`package.json` et tente un build Jekyll qui échoue (startup_failure).
+`.nojekyll` désactive Jekyll → site servi tel quel (statique). À ne
+jamais supprimer.
+
 ### Versionnage — à bumper ENSEMBLE
 À chaque release modifiant des ressources critiques :
 - `<title>` dans `index.html`
