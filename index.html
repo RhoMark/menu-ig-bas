@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.96.0</title>
+<title>Menu IG Bas — V2.97.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -314,6 +314,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Le budget hebdomadaire est-il fiable ?",
           "a": "Estimation basée sur des prix moyens fixes par ingrédient. Précision : ±15-20 % selon les saisons, les promotions, et le marché vs supermarché. Pour ajustement, modifie le budget cible et la tolérance dans Paramètres. Si l'optimiseur n'arrive pas à tenir le budget : élargis la tolérance ou ajoute des recettes économiques en bibliothèque."
+        },
+        {
+          "q": "Comment éviter les recettes avec des ingrédients introuvables près de chez moi ?",
+          "a": "Active dans Paramètres → 🌍 Privilégier les ingrédients locaux / grande surface (issue #3, V2.97.0). Une fois activé, l'algo pénalise (×0.3) les recettes qui nécessitent une épicerie spécialisée — ~22 recettes du catalogue contiennent au moins 2 ingrédients qu'on ne trouve pas en supermarché français standard : tomatille mexicaine (épicerie sud-am), paneer indien et chaat masala (épicerie indienne), citron confit beldi (épicerie orientale), miso et algues (épicerie japonaise), ras-el-hanout, sumac, feuille de curry, fenugrec, mirin… Ce n'est pas un filtre dur (les recettes restent disponibles en bibliothèque pour ceux qui ont une épicerie accessible) — l'algo nudge juste vers des plats faisables avec ce qu'on trouve facilement. Désactivé par défaut. À adapter selon ton lieu de vie : grande ville parisienne / lyonnaise = laisser OFF, petite ville en zone rurale = activer."
         },
         {
           "q": "Que sont les suggestions de substitutions économiques ?",
@@ -7390,7 +7394,8 @@ if ("serviceWorker" in navigator) {
       "kcal": 380,
       "tags": [
         "vegetarian",
-        "quick"
+        "quick",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -28026,7 +28031,8 @@ if ("serviceWorker" in navigator) {
       "tags": [
         "vegetarian",
         "vegan",
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "oven",
@@ -32719,7 +32725,8 @@ if ("serviceWorker" in navigator) {
       "cost": 2.5,
       "kcal": 420,
       "tags": [
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -48889,7 +48896,8 @@ if ("serviceWorker" in navigator) {
       "kcal": 510,
       "tags": [
         "vegetarian",
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -49428,7 +49436,8 @@ if ("serviceWorker" in navigator) {
       "kcal": 540,
       "tags": [
         "vegetarian",
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "pan",
@@ -49909,7 +49918,8 @@ if ("serviceWorker" in navigator) {
       "tags": [
         "vegetarian",
         "light",
-        "quick"
+        "quick",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -52526,7 +52536,8 @@ if ("serviceWorker" in navigator) {
         "vegetarian",
         "quick",
         "batch-friendly",
-        "light"
+        "light",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -54139,7 +54150,8 @@ if ("serviceWorker" in navigator) {
       "tags": [
         "vegan",
         "vegetarian",
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -64645,7 +64657,8 @@ if ("serviceWorker" in navigator) {
       "cost": 4.5,
       "kcal": 420,
       "tags": [
-        "quick"
+        "quick",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove",
@@ -64771,7 +64784,8 @@ if ("serviceWorker" in navigator) {
       "cost": 4.2,
       "kcal": 510,
       "tags": [
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "oven",
@@ -65150,7 +65164,9 @@ if ("serviceWorker" in navigator) {
       "diff": 2,
       "cost": 4.0,
       "kcal": 500,
-      "tags": [],
+      "tags": [
+        "epicerie-specialisee"
+      ],
       "eq": [
         "grill",
         "stove"
@@ -65586,7 +65602,8 @@ if ("serviceWorker" in navigator) {
         "vegan",
         "batch-friendly",
         "no-cook",
-        "quick"
+        "quick",
+        "epicerie-specialisee"
       ],
       "eq": [
         "bowl"
@@ -65715,7 +65732,9 @@ if ("serviceWorker" in navigator) {
       "diff": 2,
       "cost": 5.5,
       "kcal": 540,
-      "tags": [],
+      "tags": [
+        "epicerie-specialisee"
+      ],
       "eq": [
         "stove",
         "oven"
@@ -66176,7 +66195,8 @@ if ("serviceWorker" in navigator) {
       "cost": 3.2,
       "kcal": 440,
       "tags": [
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove",
@@ -66307,7 +66327,9 @@ if ("serviceWorker" in navigator) {
       "diff": 2,
       "cost": 4.0,
       "kcal": 410,
-      "tags": [],
+      "tags": [
+        "epicerie-specialisee"
+      ],
       "eq": [
         "oven",
         "stove"
@@ -66446,7 +66468,8 @@ if ("serviceWorker" in navigator) {
       "cost": 4.5,
       "kcal": 560,
       "tags": [
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "oven",
@@ -66593,7 +66616,8 @@ if ("serviceWorker" in navigator) {
         "vegetarian",
         "vegan",
         "batch-friendly",
-        "quick"
+        "quick",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -66881,7 +66905,8 @@ if ("serviceWorker" in navigator) {
       "cost": 4.0,
       "kcal": 510,
       "tags": [
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -67033,7 +67058,8 @@ if ("serviceWorker" in navigator) {
       "cost": 5.5,
       "kcal": 580,
       "tags": [
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove"
@@ -67351,7 +67377,8 @@ if ("serviceWorker" in navigator) {
       "cost": 4.0,
       "kcal": 530,
       "tags": [
-        "vegetarian"
+        "vegetarian",
+        "epicerie-specialisee"
       ],
       "eq": [
         "oven",
@@ -67515,7 +67542,8 @@ if ("serviceWorker" in navigator) {
       "cost": 4.0,
       "kcal": 510,
       "tags": [
-        "batch-friendly"
+        "batch-friendly",
+        "epicerie-specialisee"
       ],
       "eq": [
         "stove",
@@ -67677,7 +67705,9 @@ if ("serviceWorker" in navigator) {
       "diff": 2,
       "cost": 4.5,
       "kcal": 460,
-      "tags": [],
+      "tags": [
+        "epicerie-specialisee"
+      ],
       "eq": [
         "stove"
       ],
@@ -69436,7 +69466,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -69512,6 +69542,14 @@ function emptyHouseholdPreferences() {
     // Default ON ; toggle dans SettingsView pour user qui préfère la
     // flat list alphabétique historique.
     shoppingSubgroups: true,
+    // V2.97.0 (issue #3) — Filtrage géographique simplifié : si ON, l'algo
+    // pénalise (×0.3) les recettes taggées `epicerie-specialisee` (= contiennent
+    // ≥2 ingrédients non trouvables en grande surface française standard,
+    // comme tomatille, paneer, citron confit, chaat masala, etc.).
+    // Pas un filtre dur — l'utilisateur garde accès aux recettes en bibliothèque,
+    // mais elles seront rarement piochées par l'algo.
+    // Default OFF : pas de pénalité, comportement historique.
+    preferCommonIngredients: false,
   };
 }
 function emptyHousehold(id) {
@@ -69976,6 +70014,12 @@ function weightedPick(list, ratings, profile, favorites, costBias = 0, mealType 
         if (tier === "low") w *= 1.3;        // boost recettes "conformes" au tier circadien
         else if (tier === "high") w *= 0.5;  // pénalité douce, pas exclusion
       }
+    }
+    // V2.97.0 (#3) — Pénalité épicerie spécialisée si profile.preferCommonIngredients
+    // est ON. Concerne les recettes avec ≥2 ingrédients non trouvables en grande
+    // surface française standard (tomatille, paneer, citron confit, chaat masala…).
+    if (profile?.preferCommonIngredients && (r.tags || []).includes("epicerie-specialisee")) {
+      w *= 0.3;
     }
     return w;
   });
@@ -76390,6 +76434,20 @@ function SettingsView({state, update, updateProfile}) {
               <span className="text-sm font-medium">🏷️ Sous-groupes dans la liste de courses</span>
               <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                 Au sein de chaque catégorie (légumes, viandes, épicerie…), regroupe les articles par rayon : <em>herbes fraîches</em>, <em>alliacées</em>, <em>légumes-racines</em>, <em>légumes-fruits</em>, <em>poissons gras</em> vs <em>maigres</em>, <em>fromages</em> vs <em>yaourts</em>, <em>féculents secs</em>, etc. Pratique pour faire les courses dans l'ordre des rayons. Désactive pour revenir à une liste plate alphabétique par catégorie.
+              </span>
+            </span>
+          </label>
+        </div>
+        {/* V2.97.0 (issue #3) — Toggle filtre ingrédients locaux / épicerie commune */}
+        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
+          <label className="flex items-start gap-2 cursor-pointer">
+            <input type="checkbox" checked={!!p.preferCommonIngredients}
+              onChange={e => updateProfile({preferCommonIngredients: e.target.checked})}
+              className="mt-1" />
+            <span>
+              <span className="text-sm font-medium">🌍 Privilégier les ingrédients locaux / grande surface</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Pénalise (×0.3 sur la pondération de pioche) les recettes qui nécessitent une épicerie spécialisée — celles taggées <em>epicerie-specialisee</em> (~22 recettes avec ≥2 ingrédients non trouvables en grande surface française standard : tomatille mexicaine, paneer indien, citron confit, chaat masala, miso, ras-el-hanout, sumac, feuille de curry, etc.). Pas un filtre dur : ces recettes restent accessibles en bibliothèque, mais l'algo les évite à la génération. Désactivé par défaut — active si tu n'as pas d'épicerie internationale à proximité.
               </span>
             </span>
           </label>
