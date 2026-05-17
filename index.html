@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.1</title>
+<title>Menu IG Bas — V2.99.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -322,6 +322,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Comment éviter les recettes avec des ingrédients introuvables près de chez moi ?",
           "a": "Active dans Paramètres → 🌍 Privilégier les ingrédients locaux / grande surface (issue #3, V2.97.0). Une fois activé, l'algo pénalise (×0.3) les recettes qui nécessitent une épicerie spécialisée — ~22 recettes du catalogue contiennent au moins 2 ingrédients qu'on ne trouve pas en supermarché français standard : tomatille mexicaine (épicerie sud-am), paneer indien et chaat masala (épicerie indienne), citron confit beldi (épicerie orientale), miso et algues (épicerie japonaise), ras-el-hanout, sumac, feuille de curry, fenugrec, mirin… Ce n'est pas un filtre dur (les recettes restent disponibles en bibliothèque pour ceux qui ont une épicerie accessible) — l'algo nudge juste vers des plats faisables avec ce qu'on trouve facilement. Désactivé par défaut. À adapter selon ton lieu de vie : grande ville parisienne / lyonnaise = laisser OFF, petite ville en zone rurale = activer."
+        },
+        {
+          "q": "À quoi sert le temps de préparation différent semaine et weekend ?",
+          "a": "Depuis V2.99.2, tu peux fixer deux durées de préparation max distinctes (Paramètres → Temps de préparation max) : une pour la **semaine** (lun-ven, défaut 45 min) et une pour le **weekend** (sam-dim, défaut 90 min). Cas d'usage typique : les actifs (35h+) n'ont pas le temps de mijoter le mardi soir, mais peuvent passer 1h30 en cuisine le samedi pour un tajine, un risotto ou un batch cooking. L'algo de génération applique automatiquement la bonne contrainte selon le jour : les recettes longues (>45 min) ne seront proposées que les samedis/dimanches, tandis que les recettes rapides (<45 min) sont disponibles tous les jours. Si tu mets la même valeur partout, l'app fonctionne comme avant la V2.99.2."
         },
         {
           "q": "Que sont les suggestions de substitutions économiques ?",
@@ -71132,6 +71136,26 @@ function recipeRespectsTime(recipe, maxMinutes) {
   if (!maxMinutes) return true;
   return (recipe.prep + recipe.cook) <= maxMinutes;
 }
+// V2.99.2 — Durée de prep différenciée semaine / weekend.
+// Cas d'usage : actifs (35h+) ont peu de temps lundi-vendredi (typique
+// 30-45 min) mais peuvent passer 60-120 min en cuisine samedi/dimanche
+// (batch cooking, plats mijotés, fête famille).
+// Convention DAYS = ["lundi",...,"dimanche"], donc weekend = ["samedi","dimanche"].
+function isWeekendDay(day) {
+  return day === "samedi" || day === "dimanche";
+}
+// effectiveMaxPrep — retourne la cap temps appliquée pour un jour donné.
+// Fallback rétrocompat : si maxPrepMinutesWeekend non défini, utilise
+// maxPrepMinutes (= comportement V2.99.1 et antérieur).
+// Pour les contextes hors-planning (LibraryView, Settings preview), passer
+// `day = null` → on prend MAX(week, weekend) pour ne pas masquer des recettes
+// que l'utilisateur PEUT faire le weekend.
+function effectiveMaxPrep(profile, day) {
+  const week = profile?.maxPrepMinutes ?? 60;
+  const we = profile?.maxPrepMinutesWeekend ?? week;
+  if (day == null) return Math.max(week, we);
+  return isWeekendDay(day) ? we : week;
+}
 // Niveau culinaire (1 débutant, 2 intermédiaire, 3 confirmé).
 // Une recette de difficulté `diff` n'est éligible que si le foyer maîtrise
 // au moins ce niveau (skillLevel ≥ diff). Tolérant si l'un des deux manque.
@@ -72190,7 +72214,7 @@ function recipeTimeLabel(recipe) {
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","maxPrepMinutesWeekend","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -72204,7 +72228,12 @@ function emptyHouseholdPreferences() {
     // Le menu ne doit pas dépasser budgetWeekly × (1 + budgetTolerance/100).
     budgetTolerance: 10,
     equipment: ["stove","oven","bowl"],
-    maxPrepMinutes: 60,
+    maxPrepMinutes: 45,
+    // V2.99.2 — Cap temps de prep différencié semaine vs weekend.
+    // Cas d'usage : actifs ont peu de temps lun-ven (default 45 min),
+    // mais peuvent cuisiner plus longtemps sam-dim (default 90 min).
+    // Si non défini (anciens foyers), fallback sur maxPrepMinutes.
+    maxPrepMinutesWeekend: 90,
     skillLevel: 2,
     dessertTime: "dinner",
     snackEnabled: false,
@@ -72663,8 +72692,17 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null} = {}) {
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null, day = null} = {}) {
   if (pool.length === 0) return null;
+  // V2.99.2 — Filtre temps de prep par jour si `day` fourni.
+  // Permet d'appliquer maxPrepMinutesWeekend (sam/dim) vs maxPrepMinutes
+  // (lun-ven). Best-effort : si le pool filtré est vide, on retombe sur
+  // le pool d'origine (mieux qu'un slot vide).
+  if (day != null && profile) {
+    const cap = effectiveMaxPrep(profile, day);
+    const filtered = pool.filter(r => (r.prep + r.cook) <= cap);
+    if (filtered.length > 0) pool = filtered;
+  }
   // V2.71.0 (#75 niveau 2) — pré-filtre nutritionnel sur les seuils MAX
   // (œufs, viande rouge, charcuterie). Appliqué d'abord ; si le pool filtré
   // est vide, on tombe sur le pool d'origine (best-effort, le bandeau alertera).
@@ -72835,7 +72873,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
     recipeRespectsEquipment(r, profile.equipment) &&
-    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 3
   );
@@ -73091,13 +73129,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (chaînage cohérent).
         const lunchUsesPool = matchUsesPool(lunches);
         if (lunchUsesPool.length > 0) {
-          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch"});
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day});
         }
         if (!picked && useBatchPool && lunchesBatch.length > 0) {
-          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch"});
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day});
         }
         if (!picked) {
-          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch"});
+          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day});
         }
         if (picked) {
           slot.lunch = picked.id;
@@ -73143,13 +73181,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (intersect avec le filtre staple).
         const dinnerUsesPool = matchUsesPool(dinnerPool);
         if (dinnerUsesPool.length > 0) {
-          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner"});
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day});
         }
         if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
-          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner"});
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day});
         }
         if (!picked) {
-          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner"});
+          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day});
         }
         if (picked) {
           slot.dinner = picked.id;
@@ -73166,7 +73204,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         } else if (snacks.length > 0) {
           const snackMealMult = mealEquivalents(profile, slot.attendance?.snack);
           const snackNutFilter = makeNutritionFilter(snackMealMult);
-          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias, nutritionFilter: snackNutFilter});
+          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias, nutritionFilter: snackNutFilter, day});
           if (picked) {
             slot.snack = picked.id;
             snacksCooldown.add(picked.id);
@@ -73182,7 +73220,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       } else if (desserts.length > 0) {
         const dessertMealMult = mealEquivalents(profile, slot.attendance?.dessert);
         const dessertNutFilter = makeNutritionFilter(dessertMealMult);
-        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias, nutritionFilter: dessertNutFilter});
+        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias, nutritionFilter: dessertNutFilter, day});
         if (picked) {
           slot.dessert = picked.id;
           dessertsCooldown.add(picked.id);
@@ -73255,7 +73293,7 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
     recipeRespectsEquipment(r, profile.equipment) &&
-    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 3 &&
     !recentlyUsed.has(r.id)
@@ -73266,7 +73304,7 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
     recipeRespectsEquipment(r, profile.equipment) &&
-    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 3
   );
@@ -73361,7 +73399,7 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
     recipeRespectsEquipment(r, profile.equipment) &&
-    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 2.5
   );
@@ -74441,7 +74479,7 @@ function App({initialState}) {
       !recipeHasAllergen(r, effectiveAllergies(state.profile, null)) &&
       !recipeHasExcluded(r, effectiveExclusions(state.profile, null)) &&
       recipeRespectsEquipment(r, state.profile.equipment) &&
-      recipeRespectsTime(r, state.profile.maxPrepMinutes) &&
+      recipeRespectsTime(r, effectiveMaxPrep(state.profile, null)) &&
       recipeRespectsSkill(r, state.profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, state.profile) >= 3
     );
@@ -74505,7 +74543,7 @@ function App({initialState}) {
       if (ratio <= 1.1) return 0;
       return Math.min(1.5, (ratio - 1.1) * 1.5);
     })();
-    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile, favorites: state.favorites || [], costBias: slotCostBias});
+    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile, favorites: state.favorites || [], costBias: slotCostBias, day});
     if (picked) {
       update(s => ({menus: {...s.menus, [wk]: {...s.menus[wk], [day]: {...(s.menus[wk]?.[day]||{}), [meal]: picked.id}}}}));
     }
@@ -74616,7 +74654,7 @@ function App({initialState}) {
     const picked = [];
     const maxN = Math.min(count, pool.length);
     for (let i = 0; i < maxN; i++) {
-      const r = pickFromPool(pool, {hardAvoid, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites});
+      const r = pickFromPool(pool, {hardAvoid, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites, day});
       if (!r) break;
       picked.push(r.id);
       hardAvoid.add(r.id);
@@ -74719,7 +74757,7 @@ function App({initialState}) {
       matchesSeason(r, season, profile) &&
       !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
       recipeRespectsEquipment(r, profile.equipment) &&
-      recipeRespectsTime(r, profile.maxPrepMinutes) &&
+      recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
       recipeRespectsSkill(r, profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, profile) >= 3 &&
       r.id !== excludeId;
@@ -74741,7 +74779,7 @@ function App({initialState}) {
       if (slot.dinner && (d !== day || meal !== "dinner")) usedThisWeek.add(slot.dinner);
     });
     const {set: softAvoid, lastUsedMap} = recipesUsedRecently(state.menus, currentWeek);
-    return pickFromPool(pool, {hardAvoid: usedThisWeek, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites, mealType: meal});
+    return pickFromPool(pool, {hardAvoid: usedThisWeek, softAvoid, lastUsedMap, profile, ratings: state.ratings, favorites: state.favorites, mealType: meal, day});
   };
   // V2.78.x (issue #81 V2) — Activation mode fête structuré.
   // params : day, meal (lunch|dinner), services (2|3), optionnel guests/note.
@@ -75420,10 +75458,24 @@ function SetupView({state, update, updateProfile, onDone}) {
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Une alerte s'affichera si le menu dépasse ce montant.</p>
         </div>
         <div>
-          <label className="text-sm font-medium block mb-1">Temps de préparation max par repas (minutes)</label>
-          <input type="number" min="10" max="180" step="5" value={p.maxPrepMinutes}
-            onChange={e=>updateProfile({maxPrepMinutes: parseInt(e.target.value)||60})}
-            className="border rounded px-3 py-2 w-40" />
+          <label className="text-sm font-medium block mb-2">⏱ Temps de préparation max par repas (minutes)</label>
+          <div className="flex flex-wrap gap-4 items-end">
+            <div>
+              <label className="text-xs text-slate-500 dark:text-slate-400 block mb-1">Semaine (lundi-vendredi)</label>
+              <input type="number" min="10" max="180" step="5" value={p.maxPrepMinutes}
+                onChange={e=>updateProfile({maxPrepMinutes: parseInt(e.target.value)||45})}
+                className="border rounded px-3 py-2 w-32" />
+            </div>
+            <div>
+              <label className="text-xs text-slate-500 dark:text-slate-400 block mb-1">Weekend (samedi-dimanche)</label>
+              <input type="number" min="10" max="240" step="5" value={p.maxPrepMinutesWeekend ?? p.maxPrepMinutes ?? 90}
+                onChange={e=>updateProfile({maxPrepMinutesWeekend: parseInt(e.target.value)||90})}
+                className="border rounded px-3 py-2 w-32" />
+            </div>
+          </div>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            En semaine les actifs ont peu de temps (45 min typique). Le weekend permet plus de cuisine (plats mijotés, batch, recettes familiales). Si tu mets la même valeur partout, l'app fonctionne comme avant.
+          </p>
         </div>
         <div>
           <label className="text-sm font-medium block mb-2">Équipement disponible</label>
@@ -77980,7 +78032,7 @@ function computePoolSizes(profile, currentWeek) {
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
     !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
     recipeRespectsEquipment(r, profile.equipment) &&
-    recipeRespectsTime(r, profile.maxPrepMinutes) &&
+    recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel)
   ).length;
   return {
@@ -78433,7 +78485,7 @@ function LeftoverSuggestions({state, currentMenu, currentWeek, profile, replaceS
       !recipeHasAllergen(r, allergies) &&
       !recipeHasExcluded(r, exclusions) &&
       recipeRespectsEquipment(r, profile.equipment) &&
-      recipeRespectsTime(r, profile.maxPrepMinutes) &&
+      recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
       recipeRespectsSkill(r, profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, profile) >= 3
     );
@@ -79327,8 +79379,18 @@ function SettingsView({state, update, updateProfile}) {
         </div>
         <div>
           <label className="text-sm block mb-1">Temps préparation max / repas (min)</label>
-          <input type="number" value={p.maxPrepMinutes} onChange={e=>updateProfile({maxPrepMinutes: parseInt(e.target.value)||60})}
-            className="border rounded px-3 py-2 w-40" />
+          <div className="flex gap-3 items-end">
+            <div>
+              <span className="text-xs text-slate-500 dark:text-slate-400 block">Semaine</span>
+              <input type="number" value={p.maxPrepMinutes} onChange={e=>updateProfile({maxPrepMinutes: parseInt(e.target.value)||45})}
+                className="border rounded px-3 py-2 w-28" />
+            </div>
+            <div>
+              <span className="text-xs text-slate-500 dark:text-slate-400 block">Weekend</span>
+              <input type="number" value={p.maxPrepMinutesWeekend ?? p.maxPrepMinutes ?? 90} onChange={e=>updateProfile({maxPrepMinutesWeekend: parseInt(e.target.value)||90})}
+                className="border rounded px-3 py-2 w-28" />
+            </div>
+          </div>
         </div>
         <div>
           <label className="text-sm block mb-2">Équipement</label>
