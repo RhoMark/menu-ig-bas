@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.31</title>
+<title>Menu IG Bas — V2.99.32</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -86497,16 +86497,18 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // V2.71.0 (#75 niveau 2) — snapshot des compteurs nutrition pour
       // pouvoir restorer si la journée est re-roll au CG.
       const nutSnapshot = {...nutTotals};
-      // V2.99.30 → V2.99.31 — Tracker du CG consommé dans la journée pour
-      // réallocation dynamique du budget entre repas successifs.
-      // V2.99.31 fix : le 2e attempt est DURCI (× 0.85) plutôt que relâché.
-      // Logique : si le 1er attempt à budget normal a échoué (dayCgTier=high),
-      // c'est qu'une recette a pris trop de CG. Le 2e attempt force un budget
-      // plus serré pour éliminer les candidats high-CG via le filtre. C'est
-      // le pendant du resserrement du fallback dans pickFromPool (× 1.4 max).
+      // V2.99.30 → V2.99.32 — Tracker du CG consommé dans la journée + budget
+      // ajusté selon mode fête/compensation J-1/J+1.
+      // V2.99.32 fix : avant, cgBudgetDay était calculé UNE FOIS hors boucle,
+      // ignorant la compensation glycémique fête (+25%) et J-1/J+1 (-15%).
+      // Désormais on appelle dayCgTargetWithFeast(days, day, cgTarget) qui
+      // retourne le seuil ajusté pour ce jour précis.
+      // V2.99.31 : 2e attempt durci (× 0.85) pour exclure plus de high-CG.
       let cgConsumedThisDay = 0;
+      const adjustedCgTarget = cgTarget ? dayCgTargetWithFeast(days, day, cgTarget) : null;
+      const cgBudgetDayAdjusted = adjustedCgTarget?.medium ?? null;
       const cgRelaxFactor = attempt === 1 ? 1.0 : 0.85;
-      const cgBudgetThisDay = cgBudgetDay != null ? cgBudgetDay * cgRelaxFactor : null;
+      const cgBudgetThisDay = cgBudgetDayAdjusted != null ? cgBudgetDayAdjusted * cgRelaxFactor : null;
       // Helper local : récupère la CG d'une recette (ou null si non calculable)
       const recipeCg = (r) => {
         if (!r) return null;
@@ -86776,8 +86778,10 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // Garde-fou CG : calculer le tier de la journée. On accepte tout sauf
       // "high" (au-dessus du seuil élevé du foyer). On accepte aussi
       // "unknown" (data-glycemic insuffisante) pour ne pas bloquer.
+      // V2.99.32 — Utilise adjustedCgTarget pour cohérence avec le budget
+      // utilisé au pick (mode fête +25% / compensation J-1/J+1 -15%).
       const dayCg = computeDayCg({[day]: slot}, day, profile);
-      const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, cgTarget);
+      const tier = dayCgTier(dayCg.covered > 0 ? dayCg.cg : null, adjustedCgTarget || cgTarget);
       if (tier !== "high") break;
 
       // tier "high" → re-roll. On restaure les sets pour la prochaine tentative.
