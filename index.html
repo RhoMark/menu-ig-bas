@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.13</title>
+<title>Menu IG Bas — V2.99.14</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82153,11 +82153,21 @@ function glycemicTierForMeal(cg, mealType) {
   return "high";
 }
 // Skip la différenciation circadienne pour ces profils (cf. issue #83 + CLAUDE.md).
+// V2.99.14 — Fix bug nommage : les profils sportifs ont été renommés
+// `endurance_athlete` / `strength_athlete` / `intermittent_athlete` mais cette
+// fonction testait encore les anciens noms `sportif_endurance` / `sportif_force`
+// → la logique skip-circadien ne s'appliquait jamais. Les sportifs subissaient
+// donc les seuils CG circadiens par repas (cf. V2.95.0) à tort, alors qu'ils
+// devraient prioriser le timing des glucides sur le total. Régression
+// silencieuse depuis le rename. On ajoute aussi intermittent_athlete pour
+// cohérence (le pool sports collectifs/raquettes a aussi des contraintes
+// timing fortes).
 function profileSkipsCircadianCg(profile) {
   if (!profile?.members?.length) return false;
   return profile.members.some(m =>
-    m.healthProfile === "sportif_endurance" ||
-    m.healthProfile === "sportif_force"
+    m.healthProfile === "endurance_athlete" ||
+    m.healthProfile === "strength_athlete" ||
+    m.healthProfile === "intermittent_athlete"
   );
 }
 
