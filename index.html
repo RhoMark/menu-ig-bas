@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.17</title>
+<title>Menu IG Bas — V2.99.18</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -81877,15 +81877,46 @@ const dataRef = {
     return t ? t.label : id;
   },
   // ----- Glycémique (IG / glucides) -----
-  // Cherche l'entrée glycémique pour un nom d'ingrédient. Tente d'abord
-  // le nom canonique direct, puis le nom strippé des préparations.
+  // Cherche l'entrée glycémique pour un nom d'ingrédient. Tente plusieurs
+  // niveaux de fallback : direct, prep strippée, qualifiers strippés
+  // (V2.99.18), premier mot (V2.99.18). Permet à "boulgour complet",
+  // "tomate ferme", "amandes" de retomber sur "boulgour", "tomate",
+  // "amande" sans qu'on duplique toutes les variantes en base.
   glycemic(canonName) {
     if (!canonName) return null;
+    // Niveau 1 : direct
     const direct = REF.glycemicById.get(canonName);
     if (direct) return direct;
+    // Niveau 2 : strip prep (râpée, hachée, etc.)
     const stripped = stripProducePrep(canonName);
     if (stripped !== canonName) {
       const g = REF.glycemicById.get(stripped);
+      if (g) return g;
+    }
+    // Niveau 3 (V2.99.18) : strip qualifiers nutritionnellement neutres.
+    // "boulgour complet" → "boulgour" (même nutri à 1g/100g près),
+    // "pomme verte" → "pomme", "creme liquide legere" → "creme liquide".
+    // La règle V2.43.2 garde ces qualifiers pour la liste de courses (rayons
+    // distincts) mais pour la nutrition on retombe sur la base.
+    const noQualifier = stripped
+      .replace(/\s+(complet|complete|complets|completes|vert|verte|verts|vertes|rouge|rouges|jaune|jaunes|rose|roses|mur|mure|murs|mures|frais|fraiche|sec|seche|leger|legere|legers|legeres|doux|douce|ferme|fermes|nature|denoyaute|denoyautee|denoyautes|denoyautees|grille|grillee|grilles|grillees|grillage|cuit|cuite|cuits|cuites|fume|fumee|fumes|fumees)$/g, "")
+      .replace(/\s+(complet|complete|complets|completes|vert|verte|verts|vertes|rouge|rouges|jaune|jaunes|rose|roses|mur|mure|murs|mures|frais|fraiche|sec|seche|leger|legere|legers|legeres|doux|douce|ferme|fermes|nature|denoyaute|denoyautee|denoyautes|denoyautees|grille|grillee|grilles|grillees|grillage|cuit|cuite|cuits|cuites|fume|fumee|fumes|fumees)$/g, "")
+      .trim();
+    if (noQualifier && noQualifier !== stripped) {
+      const g = REF.glycemicById.get(noQualifier);
+      if (g) return g;
+      // Pluriel naïf : "amandes" → "amande", "fraises" → "fraise"
+      if (noQualifier.endsWith("s") && noQualifier.length > 3) {
+        const sing = noQualifier.slice(0, -1);
+        const g2 = REF.glycemicById.get(sing);
+        if (g2) return g2;
+      }
+    }
+    // Niveau 4 (V2.99.18) : pluriel naïf direct sur stripped.
+    // "amandes" → "amande", "graines de chia" → reste (pas concerné).
+    if (stripped.endsWith("s") && stripped.length > 3) {
+      const sing = stripped.slice(0, -1);
+      const g = REF.glycemicById.get(sing);
       if (g) return g;
     }
     return null;
@@ -82386,16 +82417,55 @@ function profileSkipsCircadianCg(profile) {
 // Symétrie avec computeRecipeGlycemic : on parse recipe.ing, on convertit
 // qty → grammes, on somme protein/fat/carbs/kcal depuis data-glycemic
 // (proteinPer100g + fatPer100g enrichis V2.82.0).
+// V2.99.18 — Liste d'ingrédients nutritionnellement négligeables : ils
+// sont en quantité dérisoire (1 pincée, 1 feuille, glaçons, eau aromatique)
+// et leur absence de data-glycemic ne doit PAS pénaliser le ratio covered/
+// total de la recette. Sans ce skip, des recettes par ailleurs bien
+// couvertes (yaourt + fruits + amandes) tombaient en "couverture partielle"
+// à cause d'une feuille de laurier ou de glaçons.
+const NEGLIGIBLE_NUTRI_KEYWORDS = [
+  "glacon", "glace pile",
+  "eau", "eau de rose", "eau de fleur d'oranger", "eau froide",
+  "eau bouillante", "eau chaude", "eau tiede",
+  "feuille de laurier", "laurier",
+  "herbes de provence", "bouquet garni",
+  "clou de girofle", "girofle",
+  "piment d'espelette", "piment doux", "piment vert", "piment rouge",
+  "piment", "piment jalapeno",
+  "petale de rose", "petale", "fleur",
+  "colorant", "extrait",
+  "vanille", "vanille en gousse", "gousse de vanille",
+  "feuille de gelatine", "gelatine",
+  "agar-agar", "bicarbonate de sodium", "bicarbonate",
+  "sel", "fleur de sel", "sel fin", "sel noir kala namak",
+  "poivre", "poivre noir", "poivre blanc",
+];
+function isNutriNegligible(canonName) {
+  if (!canonName) return false;
+  // Exact match privilégié
+  if (NEGLIGIBLE_NUTRI_KEYWORDS.includes(canonName)) return true;
+  // Match partiel pour les variantes (ex : "feuille de laurier sechee")
+  return NEGLIGIBLE_NUTRI_KEYWORDS.some(k =>
+    k.length >= 5 && canonName.includes(k)
+  );
+}
+
 // kcal calculé via formule de Atwater : 4 kcal/g protéines + 4 kcal/g glucides
 // + 9 kcal/g lipides. Si l'ingrédient n'est pas dans data-glycemic, on l'ignore
 // (covered/total signale la couverture pour debug). Renvoie null si aucun
 // ingrédient référencé n'a de qty exploitable.
+// V2.99.18 — Les ingrédients négligeables (glaçons, sel, herbes de garniture)
+// sont skippés sans pénaliser le ratio de couverture.
 function computeRecipeMacros(recipe) {
   if (!recipe?.ing?.length) return null;
   let totalP = 0, totalF = 0, totalC = 0;
   let covered = 0;
+  let countable = 0; // ingrédients non négligeables (vrai dénominateur)
   for (const [name, qty, unit] of recipe.ing) {
     const canon = canonicalName(name);
+    // Skip silencieux des négligeables (n'incrémente ni covered ni countable)
+    if (isNutriNegligible(canon)) continue;
+    countable++;
     const entry = dataRef.glycemic(canon);
     if (!entry) continue;
     if (entry.proteinPer100g == null || entry.fatPer100g == null) continue;
@@ -82415,7 +82485,7 @@ function computeRecipeMacros(recipe) {
     carbs: Math.round(totalC * 10) / 10,
     kcal: kcalCalc,
     covered,
-    total: recipe.ing.length,
+    total: countable, // V2.99.18 : exclut les négligeables du dénominateur
   };
 }
 // recipeKcal : récupère kcal d'une recette. Priorité au `recipe.kcal` saisi
