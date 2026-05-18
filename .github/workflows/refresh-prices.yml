@@ -1,0 +1,108 @@
+# refresh-prices — audit mensuel automatique de la fraîcheur de data-prices
+#
+# Tourne le 1er de chaque mois à 8h UTC. Lance scripts/refresh-prices.py
+# qui audite l'âge des entrées et l'écart de coefficient inflation. Si
+# refresh recommandé, ouvre automatiquement une issue GitHub avec le
+# rapport pour que HedgeX puisse valider/actionner.
+#
+# Pas d'update automatique du code : c'est une alerte, pas un agent.
+# Les chiffres exacts (prix Open Prices à jour, indice INSEE alimentaire
+# mensuel) sont à intégrer manuellement par HedgeX/Claude en session.
+
+name: Refresh prices audit
+
+on:
+  schedule:
+    # 1er du mois à 8h UTC (10h Paris hiver, 11h Paris été)
+    - cron: '0 8 1 * *'
+  workflow_dispatch:  # Permet de déclencher à la main
+
+permissions:
+  issues: write   # pour pouvoir ouvrir l'issue d'alerte
+  contents: read
+
+jobs:
+  audit:
+    name: Audit fraîcheur data-prices
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run refresh-prices audit
+        id: audit
+        run: python3 scripts/refresh-prices.py --gh-output
+        continue-on-error: true
+
+      - name: Open issue if refresh needed
+        if: steps.audit.outputs.needs_refresh == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const median = '${{ steps.audit.outputs.median_age }}';
+            const pctOver9 = '${{ steps.audit.outputs.pct_over_9mo }}';
+            const factorTh = '${{ steps.audit.outputs.theoretical_factor }}';
+            const factorNow = '${{ steps.audit.outputs.current_factor }}';
+            const actions = '${{ steps.audit.outputs.actions }}';
+
+            const body = `## Audit automatique mensuel data-prices
+
+            Audit du ${new Date().toISOString().slice(0, 10)} (GH Actions cron).
+
+            **État actuel** :
+            - Âge médian des prix : ${median} mois
+            - % entrées >9 mois : ${pctOver9} %
+            - Facteur inflation câblé : ${factorNow}
+            - Facteur inflation théorique : ${factorTh}
+
+            **Actions recommandées** :
+            ${actions.split(' ; ').map(a => '- ' + a).join('\n')}
+
+            ## Sources à vérifier manuellement
+
+            1. **Open Prices** (https://prices.openfoodfacts.org) — refresh des prix médians sur les ~30 ingrédients courants
+            2. **INSEE indice CPI alimentaire** (https://www.insee.fr/fr/statistiques/serie/001763852) — mise à jour du coefficient FOOD_INFLATION_FACTOR_2023_TO_NOW
+            3. **Carrefour Drive** — sondage ponctuel sur les items spécifiques (produits AOP, surgelés)
+
+            ## Comment résoudre
+
+            En session Claude Code :
+            \`\`\`
+            "Reprendre l'audit refresh-prices et appliquer les ajustements"
+            \`\`\`
+
+            Cette issue se ferme automatiquement quand le commit suivant aura un updatedAt récent sur la majorité des entrées.
+
+            ---
+            🤖 Générée automatiquement par .github/workflows/refresh-prices.yml`;
+
+            const title = `📅 Refresh prices recommandé (audit ${new Date().toISOString().slice(0, 7)})`;
+
+            // Cherche les issues ouvertes du même type pour éviter doublons
+            const existing = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'data-prices-audit'
+            });
+            if (existing.data.length > 0) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.data[0].number,
+                body: `### Audit du ${new Date().toISOString().slice(0, 10)}\n\n${body}`
+              });
+            } else {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['data-prices-audit', 'priorité-moyenne']
+              });
+            }

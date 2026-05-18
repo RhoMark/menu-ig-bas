@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.35</title>
+<title>Menu IG Bas — V2.99.36</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -93016,11 +93016,31 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                     <span className="opacity-75"> / {hasAdjust ? `${adjustedDisplay} €` : `${state.profile.budgetWeekly} €`}</span>
                   )}
                 </div>
-                {/* V2.99.35 — Note discrète sur l'origine des prix */}
-                <div className="text-[10px] opacity-70 italic mt-0.5"
-                  title="Coûts calculés à partir de prix médians français Q1 2026 (sources : Open Prices, Carrefour Drive, INSEE). Date des données : avril 2026. Estimation, peut varier selon ton magasin habituel.">
-                  estimé* sur prix Open Prices / Carrefour Drive Q1 2026
-                </div>
+                {/* V2.99.35 / V2.99.36 — Note prix + badge âge auto */}
+                {(() => {
+                  let mostRecent = null;
+                  for (const p of REF.prices) {
+                    if (!p.updatedAt) continue;
+                    const d = new Date((p.updatedAt + (p.updatedAt.length === 7 ? "-01" : "")));
+                    if (!isNaN(d) && (!mostRecent || d > mostRecent)) mostRecent = d;
+                  }
+                  let ageMonths = null;
+                  if (mostRecent) {
+                    const now = new Date();
+                    ageMonths = (now.getFullYear() - mostRecent.getFullYear()) * 12
+                              + (now.getMonth() - mostRecent.getMonth());
+                  }
+                  const stale = ageMonths !== null && ageMonths > 6;
+                  return (
+                    <div className={`text-[10px] italic mt-0.5 ${stale ? "text-amber-700 dark:text-amber-400 font-semibold" : "opacity-70"}`}
+                      title={stale
+                        ? `Prix datés (${ageMonths} mois). Un audit mensuel GitHub Actions ouvre une issue automatique pour proposer la mise à jour.`
+                        : "Coûts calculés sur prix médians français Q1 2026 (sources : Open Prices, Carrefour Drive, INSEE). Date des données : avril 2026."}>
+                      {stale && "⚠️ "}estimé* sur prix Open Prices / Carrefour Drive Q1 2026
+                      {stale && ` — ${ageMonths} mois`}
+                    </div>
+                  );
+                })()}
                 {hasAdjust && (
                   <div className="text-[10px] opacity-75 mt-0.5" title={`Cible originale : ${state.profile.budgetWeekly} €. ${Math.round((1-budgetAdjust.ratio)*100)}% des slots sont externalisés cette semaine, la cible est réduite proportionnellement.`}>
                     cible ajustée · {Math.round(budgetAdjust.ratio*100)}% présence
