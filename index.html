@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.26</title>
+<title>Menu IG Bas — V2.99.27</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -7034,6 +7034,90 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 14.0,
       "proteinPer100g": 0.3,
       "fatPer100g": 0.2
+    },
+    {
+      "id": "cacahuete",
+      "ig": 14,
+      "carbsPer100g": 16.0,
+      "proteinPer100g": 26.0,
+      "fatPer100g": 49.0
+    },
+    {
+      "id": "tomatillo",
+      "ig": 15,
+      "carbsPer100g": 6.0,
+      "proteinPer100g": 1.0,
+      "fatPer100g": 1.0
+    },
+    {
+      "id": "pomme de terre nouvelle",
+      "ig": 57,
+      "carbsPer100g": 17.0,
+      "proteinPer100g": 2.0,
+      "fatPer100g": 0.1
+    },
+    {
+      "id": "haricot",
+      "ig": 35,
+      "carbsPer100g": 23.0,
+      "proteinPer100g": 8.7,
+      "fatPer100g": 0.5
+    },
+    {
+      "id": "graine de moutarde",
+      "ig": 0,
+      "carbsPer100g": 28.0,
+      "proteinPer100g": 27.0,
+      "fatPer100g": 36.0
+    },
+    {
+      "id": "feuille",
+      "ig": 0,
+      "carbsPer100g": 3.0,
+      "proteinPer100g": 2.0,
+      "fatPer100g": 0.5
+    },
+    {
+      "id": "tomatille fraiche",
+      "ig": 15,
+      "carbsPer100g": 6.0,
+      "proteinPer100g": 1.0,
+      "fatPer100g": 1.0
+    },
+    {
+      "id": "cuisse",
+      "ig": 0,
+      "carbsPer100g": 0.0,
+      "proteinPer100g": 19.0,
+      "fatPer100g": 11.0
+    },
+    {
+      "id": "filet",
+      "ig": 0,
+      "carbsPer100g": 0.0,
+      "proteinPer100g": 22.0,
+      "fatPer100g": 3.0
+    },
+    {
+      "id": "lait",
+      "ig": 31,
+      "carbsPer100g": 4.8,
+      "proteinPer100g": 3.4,
+      "fatPer100g": 1.5
+    },
+    {
+      "id": "olive",
+      "ig": 15,
+      "carbsPer100g": 5.0,
+      "proteinPer100g": 0.9,
+      "fatPer100g": 11.0
+    },
+    {
+      "id": "huile",
+      "ig": 0,
+      "carbsPer100g": 0.0,
+      "proteinPer100g": 0.0,
+      "fatPer100g": 100.0
     }
   ]
 }
@@ -83309,8 +83393,32 @@ const dataRef = {
     if (next !== nq) { nq = next; const g = tryLookup(nq); if (g) return g; }
     next = nq.replace(QUAL, "").trim();
     if (next !== nq) { nq = next; const g = tryLookup(nq); if (g) return g; }
+    // V2.99.27 — strip "desossee" (épaule d'agneau désossée)
+    next = nq.replace(/\s+(desosse|desossee|desosses|desossees)$/, "").trim();
+    if (next !== nq) { nq = next; const g = tryLookup(nq); if (g) return g; }
     next = nq.replace(QUAL, "").trim();
     if (next !== nq) { nq = next; const g = tryLookup(nq); if (g) return g; }
+    // V2.99.27 — Pluriel multi-mots : "pommes de terre" → "pomme de terre",
+    // "tomatillos" → "tomatillo". Strip "s" sur le premier mot seulement.
+    const mwPlural = stripped.replace(/^(\S+)s\b/, "$1");
+    if (mwPlural !== stripped) {
+      const g = REF.glycemicById.get(mwPlural);
+      if (g) return g;
+    }
+    // V2.99.27 — Dernière chance : strip dernier mot (variété/qualifier
+    // niche). "poire conference" → "poire", "thon a l'huile d'olive" →
+    // "thon". Conservateur : seulement si le nom a ≥2 mots et le 1er fait
+    // ≥4 caractères (évite "lait coco" → "lait" qui perdrait l'info coco).
+    const words = stripped.split(/\s+/);
+    if (words.length >= 2 && words[0].length >= 4) {
+      const firstWord = words[0];
+      const g = REF.glycemicById.get(firstWord);
+      if (g) return g;
+      if (firstWord.endsWith("s") && firstWord.length > 3) {
+        const g2 = REF.glycemicById.get(firstWord.slice(0, -1));
+        if (g2) return g2;
+      }
+    }
     // Pluriel direct dernier recours
     if (stripped.endsWith("s") && stripped.length > 3) {
       const g = REF.glycemicById.get(stripped.slice(0, -1));
