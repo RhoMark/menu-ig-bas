@@ -281,6 +281,49 @@ Pages en mode "Deploy from branch" / build_type legacy détecte
 `.nojekyll` désactive Jekyll → site servi tel quel (statique). À ne
 jamais supprimer.
 
+### Workflow blindé pour les nouveaux Lots de recettes (V2.99.19+)
+
+**OBLIGATOIRE pour tout ajout de Lot.** Aucun raccourci. Empêche la
+situation "sportif" où des bugs allergens/dénominations/couverture nutri
+sont découverts ex-post par audit.
+
+```bash
+# 1. Génération du skeleton
+python3 scripts/recipe-template.py --lot 65 --cells "italien/snack:2"
+
+# 2. Rédaction dans /tmp/lot65-recipes.py
+
+# 3. Lint pre-flight (BLOQUANT, 12 checks)
+python3 scripts/lint-new-recipes.py /tmp/lot65-recipes.py --varname LOT65
+
+# 4. Auto-enrichissement data-glycemic si ingrédients manquants
+python3 scripts/auto-enrich-glycemic.py /tmp/lot65-recipes.py --apply
+
+# 5. Re-lint
+python3 scripts/lint-new-recipes.py /tmp/lot65-recipes.py --varname LOT65
+
+# 6. Injection + bump + commit
+python3 /tmp/inject-lot.py lot65-recipes LOT65
+bash scripts/bump-version.sh --auto patch
+echo "<count>" > .expected-recipe-count
+python3 scripts/validate-recipe-data.py
+git commit && git push  # pre-commit hook verrouille
+```
+
+12 checks bloquants/warning par lint :
+1. Schéma JSON (vocabulary fermé)
+2. IDs uniques + syntaxe (b/l/d/s/des + nombre)
+3. Cellule cible respectée
+4. Dénominations qualifiées (V2.43.0+)
+5. Allergens auto-déduits (saumon → fish, lait coco ≠ lactose)
+6. Tags cohérents (vegan + fish = erreur, quick avec prep>30 = erreur)
+7. CG estimée par recette (warning > seuil, bloque si >2×)
+8. Couverture data-glycemic ≥ 80%
+9. Macros minimales pour boost protéique sportif
+10. rest/advance cohérents
+11. Doublons (Jaccard ingrédients vs catalogue, alerte >70%)
+12. Saisonnalité (info si saison à venir absente)
+
 ### Versionnage — à bumper ENSEMBLE
 À chaque release modifiant des ressources critiques :
 - `<title>` dans `index.html`
