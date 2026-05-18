@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.37</title>
+<title>Menu IG Bas — V2.99.38</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -90138,15 +90138,17 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   // Les axes MIN (poisson, légumineuses) sont traités en POST-traitement par
   // optimizeForNutritionMins, qui swap des slots vers les manquants.
   const totalEqGen = totalEquivalents(profile);
-  const nutTotals = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0, addedSugarsGrams: 0};
+  const nutTotals = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0, addedSugarsGrams: 0, saltGrams: 0};
   const nutThresholds = {
     eggsMax: 10 * totalEqGen,
     redMeatMax: 500 * totalEqGen,
     charcuterieMax: 100 * totalEqGen,
-    // V2.99.37 (#75 L3a) — Sucres ajoutés. Idéal OMS 5 % AET = 25 g/jour.
-    // Limite stricte OMS 10 % AET = 50 g/jour. On utilise la limite stricte
-    // comme cap dur (pré-filtre), l'idéal est juste affichée à l'UI.
+    // V2.99.37 (#75 L3a) — Sucres ajoutés. Limite stricte OMS 10 % AET = 50 g/j
+    // utilisée comme cap dur. L'idéal 25 g/j est juste affiché à l'UI.
     addedSugarsMax: 50 * 7 * totalEqGen,
+    // V2.99.38 (#75 L3b) — Sel. Limite OMS 5 g/j utilisée comme cap dur.
+    // PNNS idéal 3 g/j juste affiché à l'UI.
+    saltMax: 5 * 7 * totalEqGen,
   };
   // Init nutTotals avec les slots verrouillés (= conservés) pour que le filtre
   // tienne compte de la contribution déjà engagée. mealMult ici = totalEqGen
@@ -90169,6 +90171,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         nutTotals.redMeatGrams += c.redMeatGrams;
         nutTotals.charcuterieGrams += c.charcuterieGrams;
         nutTotals.addedSugarsGrams += c.addedSugarsGrams;
+        nutTotals.saltGrams += c.saltGrams;
       });
     });
   }
@@ -90179,6 +90182,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     nutTotals.redMeatGrams += c.redMeatGrams;
     nutTotals.charcuterieGrams += c.charcuterieGrams;
     nutTotals.addedSugarsGrams += c.addedSugarsGrams;
+    nutTotals.saltGrams += c.saltGrams;
   };
   // Closure qui produit un filtre adapté au mealMult d'un slot donné. Tolérance
   // d'arrondi côté œufs (+0.5) car certaines recettes ont des fractions d'œuf
@@ -90199,12 +90203,16 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     if (c.charcuterieGrams > nutThresholds.charcuterieMax * SLOT_CAP_RATIO) return false;
     // V2.99.37 (#75 L3a) — Cap par slot sucres ajoutés (30 % du cap hebdo)
     if (c.addedSugarsGrams > nutThresholds.addedSugarsMax * SLOT_CAP_RATIO) return false;
+    // V2.99.38 (#75 L3b) — Cap par slot sel (30 % du cap hebdo OMS 5g/jour)
+    if (c.saltGrams > nutThresholds.saltMax * SLOT_CAP_RATIO) return false;
     // 2) Cap cumulé (projection running totals + candidat)
     if (nutTotals.eggs + c.eggs > nutThresholds.eggsMax + 0.5) return false;
     if (nutTotals.redMeatGrams + c.redMeatGrams > nutThresholds.redMeatMax) return false;
     if (nutTotals.charcuterieGrams + c.charcuterieGrams > nutThresholds.charcuterieMax) return false;
     // V2.99.37 (#75 L3a) — Cap cumulé sucres ajoutés (limite stricte OMS 10 % AET)
     if (nutTotals.addedSugarsGrams + c.addedSugarsGrams > nutThresholds.addedSugarsMax) return false;
+    // V2.99.38 (#75 L3b) — Cap cumulé sel (limite OMS 5 g/jour)
+    if (nutTotals.saltGrams + c.saltGrams > nutThresholds.saltMax) return false;
     return true;
   };
 
@@ -91326,6 +91334,65 @@ function addedSugarsContributionFromIng(name, qty, unit) {
   return 0;
 }
 
+// V2.99.38 (issue #75 niveau 3b) — Sel (NaCl).
+// Liste blanche par regex avec teneur en sel (g NaCl / 100g d'ingrédient).
+// Sources : tables CIQUAL ANSES 2020. Approche heuristique par buckets car
+// l'enrichissement complet sodiumPer100g exhaustif demanderait ~600 entrées
+// manuelles. Marge ±20 % par ingrédient, mais agrégation hebdo exploitable
+// comme garde-fou OMS.
+//
+// Seuil OMS 2012 : ≤ 5 g/jour/adulte (HTA, cardio).
+// PNNS idéal France 2024 : ≤ 3 g/jour.
+const SODIUM_PATTERNS = [
+  { regex: /\b(fleur de sel|sel marin|sel rose|sel noir kala namak|gros sel|sel fin)\b/, ratio: 1.00 },
+  { regex: /\bsel\b/,                                                  ratio: 1.00 },
+  { regex: /\bbouillon\b/,                                             ratio: 0.50 }, // cube concentré
+  { regex: /\bnuoc[ -]?mam\b/,                                         ratio: 0.18 },
+  { regex: /\bsauce soja\b/,                                           ratio: 0.14 },
+  { regex: /\b(miso|miso blanc|miso rouge)\b/,                         ratio: 0.12 },
+  { regex: /\banchois\b/,                                              ratio: 0.12 },
+  { regex: /\b(harissa|gochujang|sriracha|pate de piment|tikka masala|ras el hanout|melange tandoori)\b/, ratio: 0.05 },
+  { regex: /\bolive\b/,                                                ratio: 0.05 },
+  { regex: /\b(prosciutto|jambon cru|saucisson|chorizo|pancetta|coppa|bresaola|salami|pate de campagne|mortadelle)\b/, ratio: 0.045 },
+  { regex: /\b(parmesan|pecorino|roquefort|gorgonzola|bleu)\b/,        ratio: 0.035 },
+  { regex: /\b(bacon|lardon|saucisse|merguez|chipolata|andouille|boudin)\b/, ratio: 0.04 },
+  { regex: /\b(saumon fume|truite fumee)\b/,                           ratio: 0.030 },
+  { regex: /\b(feta|halloumi)\b/,                                      ratio: 0.030 },
+  { regex: /\b(cornichon|capres|pickles)\b/,                           ratio: 0.025 },
+  { regex: /\b(jambon blanc|jambon)\b/,                                ratio: 0.025 },
+  { regex: /\b(brie|crottin|chevre fermier|labneh)\b/,                 ratio: 0.020 },
+  { regex: /\b(comte|emmental|cheddar|tomme|gruyere|raclette|reblochon)\b/, ratio: 0.015 },
+  { regex: /\bbeurre demi[ -]sel\b/,                                   ratio: 0.014 },
+  { regex: /\b(pain|pita|tortilla|feuille de brick|pate filo|galette|chapati|naan|brioche|gressins|biscotte)\b/, ratio: 0.013 },
+  { regex: /\b(thon en boite|thon naturel|sardine en boite|maquereau en boite)\b/, ratio: 0.012 },
+  { regex: /\b(haricots? (noirs|blancs|rouges)? cuits|pois chiches? cuits)\b/, ratio: 0.005 }, // boîte
+  { regex: /\b(mozzarella|burrata|ricotta|fromage frais|chevre frais|mascarpone)\b/, ratio: 0.004 },
+];
+function saltContributionFromIng(name, qty, unit) {
+  const n = canonicalName(name || "");
+  if (!n || qty == null || qty <= 0) return 0;
+  let grams;
+  switch ((unit || "").toLowerCase()) {
+    case "g":      grams = qty; break;
+    case "kg":     grams = qty * 1000; break;
+    case "ml":     grams = qty; break;
+    case "l":      grams = qty * 1000; break;
+    case "c.à.s":
+    case "cas":
+    case "c.a.s":  grams = qty * 15; break;
+    case "c.à.c":
+    case "cac":
+    case "c.a.c":  grams = qty * 5; break;
+    case "pincée":
+    case "pincee": grams = qty * 1; break;
+    default:       return 0;
+  }
+  for (const p of SODIUM_PATTERNS) {
+    if (p.regex.test(n)) return grams * p.ratio;
+  }
+  return 0;
+}
+
 // V2.71.0 (issue #75 niveau 2) — Contribution nutritionnelle d'une recette
 // pour un mealMult donné. Utilisé par le pré-filtre génération.
 // Renvoie un objet plat additionable :
@@ -91335,7 +91402,7 @@ function addedSugarsContributionFromIng(name, qty, unit) {
 // ingrédient ; cohérent avec computeWeeklyNutritionTotals).
 function recipeNutritionContribution(recipe, mealMult) {
   const c = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0,
-             addedSugarsGrams: 0,
+             addedSugarsGrams: 0, saltGrams: 0,
              hasFishLean: false, hasFishOily: false, hasLegume: false};
   if (!recipe || mealMult <= 0) return c;
   (recipe.ing || []).forEach(ing => {
@@ -91356,8 +91423,9 @@ function recipeNutritionContribution(recipe, mealMult) {
       c.hasLegume = true;
     }
     // V2.99.37 (#75 L3a) — Sucres ajoutés (lookup indépendant du classify).
-    // Une recette peut avoir plusieurs ingrédients sucrants ; on les somme.
     c.addedSugarsGrams += addedSugarsContributionFromIng(name, qty, unit) * mealMult;
+    // V2.99.38 (#75 L3b) — Sel (lookup indépendant du classify).
+    c.saltGrams += saltContributionFromIng(name, qty, unit) * mealMult;
   });
   return c;
 }
@@ -91375,6 +91443,7 @@ function computeWeeklyNutritionTotals(weekMenu, profile) {
     redMeatGrams: 0,
     charcuterieGrams: 0,
     addedSugarsGrams: 0,         // V2.99.37 (#75 L3a)
+    saltGrams: 0,                // V2.99.38 (#75 L3b)
     fishPortions: 0,
     fishOilyPortions: 0,
     legumePortions: 0,
@@ -91413,6 +91482,8 @@ function computeWeeklyNutritionTotals(weekMenu, profile) {
         }
         // V2.99.37 — Sucres ajoutés (independent du classify ci-dessus)
         totals.addedSugarsGrams += addedSugarsContributionFromIng(name, qty, unit) * mult;
+        // V2.99.38 — Sel (independent du classify)
+        totals.saltGrams += saltContributionFromIng(name, qty, unit) * mult;
       });
       if (hasFishOily || hasFishLean) totals.fishPortions += 1;
       if (hasFishOily) totals.fishOilyPortions += 1;
@@ -91430,6 +91501,8 @@ function computeWeeklyNutritionTotals(weekMenu, profile) {
     charcuterieMax: 100 * totalEq,        // limite douce ~100 g / pers / sem (CIRC)
     addedSugarsTarget: 25 * 7 * totalEq,  // 25 g/jour idéal OMS (< 5 % AET) × 7 j × foyer
     addedSugarsMax: 50 * 7 * totalEq,     // 50 g/jour limite stricte OMS (< 10 % AET)
+    saltTarget: 3 * 7 * totalEq,          // 3 g/jour idéal PNNS France 2024 × 7 × foyer
+    saltMax: 5 * 7 * totalEq,             // 5 g/jour limite OMS 2012 × 7 × foyer
     fishMin: 2,                           // 2 portions / sem (EFSA, foyer)
     fishOilyMin: 1,                       // 1 portion grasse / sem (EFSA)
     legumeMin: 2,                         // 2 portions / sem (PNNS)
@@ -95760,6 +95833,21 @@ function NutritionBanner({currentMenu, profile}) {
       detail: lvl === "ok" ? `Sous l'idéal OMS < 5 % AET (~25 g/j/adulte). ${perDay} g/jour/adulte moyen.`
             : lvl === "warning" ? `Entre l'idéal (${target} g) et la limite stricte OMS (${max} g, < 10 % AET). ${perDay} g/jour/adulte moyen — réduire desserts/sirops/miel.`
             : `Au-dessus de la limite stricte OMS < 10 % AET. ${perDay} g/jour/adulte moyen. Risque insulinique et caries — privilégier fruits frais aux sucres ajoutés.`};
+  })());
+  // V2.99.38 (#75 L3b) — Sel (PNNS idéal 3 g/j/adulte ; OMS limite 5 g/j).
+  items.push((() => {
+    const v = Math.round(totals.saltGrams * 10) / 10;  // arrondi 1 décimale
+    const target = Math.round(thresholds.saltTarget * 10) / 10;
+    const max = Math.round(thresholds.saltMax * 10) / 10;
+    const lvl = v <= target ? "ok"
+              : v <= max ? "warning"
+              : "over";
+    const perDay = totalEquivalents(profile) > 0 ? (v / 7 / totalEquivalents(profile)).toFixed(1) : "0";
+    return {key: "salt", level: lvl, icon: "🧂",
+      label: `Sel : ${v} g / ${target} g (idéal)`,
+      detail: lvl === "ok" ? `Sous l'idéal PNNS ≤ 3 g/j/adulte. ${perDay} g/jour/adulte moyen.`
+            : lvl === "warning" ? `Entre l'idéal PNNS (${target} g) et la limite OMS (${max} g, ≤ 5 g/j). ${perDay} g/jour/adulte moyen — réduire charcuteries, fromages affinés, sauces salées (soja, miso, anchois).`
+            : `Au-dessus de la limite OMS 5 g/j (≈ 87 % des Français aussi). ${perDay} g/jour/adulte moyen. Risque HTA et cardiovasculaire — privilégier herbes/épices à la place du sel, limiter les charcuteries et fromages affinés.`};
   })());
   // V2.82.1 (#17) — Macros (protéines / lipides / glucides) moyennes quotidiennes.
   // Cibles OMS/EFSA pondérées par adultEquivalent foyer.
