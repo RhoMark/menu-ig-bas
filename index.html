@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.36</title>
+<title>Menu IG Bas — V2.99.37</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -90138,11 +90138,15 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   // Les axes MIN (poisson, légumineuses) sont traités en POST-traitement par
   // optimizeForNutritionMins, qui swap des slots vers les manquants.
   const totalEqGen = totalEquivalents(profile);
-  const nutTotals = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0};
+  const nutTotals = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0, addedSugarsGrams: 0};
   const nutThresholds = {
     eggsMax: 10 * totalEqGen,
     redMeatMax: 500 * totalEqGen,
     charcuterieMax: 100 * totalEqGen,
+    // V2.99.37 (#75 L3a) — Sucres ajoutés. Idéal OMS 5 % AET = 25 g/jour.
+    // Limite stricte OMS 10 % AET = 50 g/jour. On utilise la limite stricte
+    // comme cap dur (pré-filtre), l'idéal est juste affichée à l'UI.
+    addedSugarsMax: 50 * 7 * totalEqGen,
   };
   // Init nutTotals avec les slots verrouillés (= conservés) pour que le filtre
   // tienne compte de la contribution déjà engagée. mealMult ici = totalEqGen
@@ -90164,6 +90168,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         nutTotals.eggs += c.eggs;
         nutTotals.redMeatGrams += c.redMeatGrams;
         nutTotals.charcuterieGrams += c.charcuterieGrams;
+        nutTotals.addedSugarsGrams += c.addedSugarsGrams;
       });
     });
   }
@@ -90173,6 +90178,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     nutTotals.eggs += c.eggs;
     nutTotals.redMeatGrams += c.redMeatGrams;
     nutTotals.charcuterieGrams += c.charcuterieGrams;
+    nutTotals.addedSugarsGrams += c.addedSugarsGrams;
   };
   // Closure qui produit un filtre adapté au mealMult d'un slot donné. Tolérance
   // d'arrondi côté œufs (+0.5) car certaines recettes ont des fractions d'œuf
@@ -90191,10 +90197,14 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     if (c.eggs > nutThresholds.eggsMax * SLOT_CAP_RATIO) return false;
     if (c.redMeatGrams > nutThresholds.redMeatMax * SLOT_CAP_RATIO) return false;
     if (c.charcuterieGrams > nutThresholds.charcuterieMax * SLOT_CAP_RATIO) return false;
+    // V2.99.37 (#75 L3a) — Cap par slot sucres ajoutés (30 % du cap hebdo)
+    if (c.addedSugarsGrams > nutThresholds.addedSugarsMax * SLOT_CAP_RATIO) return false;
     // 2) Cap cumulé (projection running totals + candidat)
     if (nutTotals.eggs + c.eggs > nutThresholds.eggsMax + 0.5) return false;
     if (nutTotals.redMeatGrams + c.redMeatGrams > nutThresholds.redMeatMax) return false;
     if (nutTotals.charcuterieGrams + c.charcuterieGrams > nutThresholds.charcuterieMax) return false;
+    // V2.99.37 (#75 L3a) — Cap cumulé sucres ajoutés (limite stricte OMS 10 % AET)
+    if (nutTotals.addedSugarsGrams + c.addedSugarsGrams > nutThresholds.addedSugarsMax) return false;
     return true;
   };
 
@@ -91273,6 +91283,49 @@ function classifyNutritionIngredient(name, category) {
   return null;
 }
 
+// V2.99.37 (issue #75 niveau 3a) — Sucres ajoutés.
+// Liste blanche d'ingrédients sucrants explicites avec leur teneur en
+// sucres "ajoutés" (g/100g). Sources : tables CIQUAL ANSES + USDA.
+// Ne compte PAS les sucres naturels des fruits (qui sont OK dans un menu
+// IG bas). Compte uniquement les sucres ajoutés au sens OMS.
+// Seuil OMS 2015 : < 10 % AET, idéal < 5 % AET (≈ 25 g/jour/adulte 2000 kcal).
+const ADDED_SUGAR_PATTERNS = [
+  { regex: /\b(sucre|cassonade|muscovado|sucre de coco|sucre roux|sucre glace|sucre vanille)\b/, ratio: 1.00 },
+  { regex: /\bmiel\b/,                                                       ratio: 0.82 },
+  { regex: /\bsirop\b/,                                                      ratio: 0.65 },
+  { regex: /\bmelass[ea]?\b|\bmelasse de grenade\b/,                         ratio: 0.65 },
+  { regex: /\bconfiture\b|\bgelee\b|\bmarmelade\b/,                          ratio: 0.50 },
+  { regex: /\bpate a tartiner|nutella\b/,                                    ratio: 0.55 },
+  { regex: /\bpepites? de chocolat\b|\bchocolat (blanc|au lait)\b/,          ratio: 0.50 },
+  { regex: /\bchocolat noir 70\b/,                                           ratio: 0.30 },
+  { regex: /\bspeculoos\b|\bbiscuit\b/,                                      ratio: 0.30 },
+];
+function addedSugarsContributionFromIng(name, qty, unit) {
+  const n = canonicalName(name || "");
+  if (!n || qty == null || qty <= 0) return 0;
+  // Conversion d'unité en grammes (simplifié pour les ingrédients sucrants)
+  let grams;
+  switch ((unit || "").toLowerCase()) {
+    case "g":      grams = qty; break;
+    case "kg":     grams = qty * 1000; break;
+    case "ml":     grams = qty; break;                  // liquides ≈ 1 g/ml
+    case "l":      grams = qty * 1000; break;
+    case "c.à.s":
+    case "cas":
+    case "c.a.s":  grams = qty * 15; break;
+    case "c.à.c":
+    case "cac":
+    case "c.a.c":  grams = qty * 5; break;
+    case "pincée":
+    case "pincee": grams = qty * 1; break;
+    default:       return 0;                            // unités non comptées
+  }
+  for (const p of ADDED_SUGAR_PATTERNS) {
+    if (p.regex.test(n)) return grams * p.ratio;
+  }
+  return 0;
+}
+
 // V2.71.0 (issue #75 niveau 2) — Contribution nutritionnelle d'une recette
 // pour un mealMult donné. Utilisé par le pré-filtre génération.
 // Renvoie un objet plat additionable :
@@ -91282,6 +91335,7 @@ function classifyNutritionIngredient(name, category) {
 // ingrédient ; cohérent avec computeWeeklyNutritionTotals).
 function recipeNutritionContribution(recipe, mealMult) {
   const c = {eggs: 0, redMeatGrams: 0, charcuterieGrams: 0,
+             addedSugarsGrams: 0,
              hasFishLean: false, hasFishOily: false, hasLegume: false};
   if (!recipe || mealMult <= 0) return c;
   (recipe.ing || []).forEach(ing => {
@@ -91301,6 +91355,9 @@ function recipeNutritionContribution(recipe, mealMult) {
     } else if (cls === "legume") {
       c.hasLegume = true;
     }
+    // V2.99.37 (#75 L3a) — Sucres ajoutés (lookup indépendant du classify).
+    // Une recette peut avoir plusieurs ingrédients sucrants ; on les somme.
+    c.addedSugarsGrams += addedSugarsContributionFromIng(name, qty, unit) * mealMult;
   });
   return c;
 }
@@ -91317,6 +91374,7 @@ function computeWeeklyNutritionTotals(weekMenu, profile) {
     eggs: 0,
     redMeatGrams: 0,
     charcuterieGrams: 0,
+    addedSugarsGrams: 0,         // V2.99.37 (#75 L3a)
     fishPortions: 0,
     fishOilyPortions: 0,
     legumePortions: 0,
@@ -91353,6 +91411,8 @@ function computeWeeklyNutritionTotals(weekMenu, profile) {
         } else if (cls === "legume") {
           hasLegume = true;
         }
+        // V2.99.37 — Sucres ajoutés (independent du classify ci-dessus)
+        totals.addedSugarsGrams += addedSugarsContributionFromIng(name, qty, unit) * mult;
       });
       if (hasFishOily || hasFishLean) totals.fishPortions += 1;
       if (hasFishOily) totals.fishOilyPortions += 1;
@@ -91365,12 +91425,14 @@ function computeWeeklyNutritionTotals(weekMenu, profile) {
   // par personne, donc seuil non multiplié.
   const totalEq = totalEquivalents(profile);
   const thresholds = {
-    eggsMax: 10 * totalEq,        // 10 / pers / sem (PNNS)
-    redMeatMax: 500 * totalEq,    // 500 g cuit / pers / sem (WCRF/AICR)
-    charcuterieMax: 100 * totalEq, // limite douce ~100 g / pers / sem (CIRC)
-    fishMin: 2,                   // 2 portions / sem (EFSA, foyer)
-    fishOilyMin: 1,               // 1 portion grasse / sem (EFSA)
-    legumeMin: 2,                 // 2 portions / sem (PNNS)
+    eggsMax: 10 * totalEq,                // 10 / pers / sem (PNNS)
+    redMeatMax: 500 * totalEq,            // 500 g cuit / pers / sem (WCRF/AICR)
+    charcuterieMax: 100 * totalEq,        // limite douce ~100 g / pers / sem (CIRC)
+    addedSugarsTarget: 25 * 7 * totalEq,  // 25 g/jour idéal OMS (< 5 % AET) × 7 j × foyer
+    addedSugarsMax: 50 * 7 * totalEq,     // 50 g/jour limite stricte OMS (< 10 % AET)
+    fishMin: 2,                           // 2 portions / sem (EFSA, foyer)
+    fishOilyMin: 1,                       // 1 portion grasse / sem (EFSA)
+    legumeMin: 2,                         // 2 portions / sem (PNNS)
   };
   return {totals, thresholds, totalEq};
 }
@@ -95682,6 +95744,22 @@ function NutritionBanner({currentMenu, profile}) {
       detail: lvl === "ok" ? `Repère PNNS ≥ 2 portions / sem atteint ✓.`
             : lvl === "warning" ? `1 portion / 2 visées. Repère PNNS ≥ 2 portions / sem (lentilles, pois chiches, haricots secs, fèves, soja, tofu, edamame).`
             : `Aucune portion de légumineuses cette semaine. Repère PNNS ≥ 2 portions / sem.`};
+  })());
+  // V2.99.37 (#75 L3a) — Sucres ajoutés (idéal OMS 5 % AET = 25 g/j/adulte ;
+  // limite stricte 10 % AET = 50 g/j/adulte ; pondéré par foyer).
+  items.push((() => {
+    const v = Math.round(totals.addedSugarsGrams);
+    const target = Math.round(thresholds.addedSugarsTarget);
+    const max = Math.round(thresholds.addedSugarsMax);
+    const lvl = v <= target ? "ok"
+              : v <= max ? "warning"
+              : "over";
+    const perDay = totalEquivalents(profile) > 0 ? Math.round(v / 7 / totalEquivalents(profile)) : 0;
+    return {key: "addedSugars", level: lvl, icon: "🍬",
+      label: `Sucres ajoutés : ${v} g / ${target} g (idéal)`,
+      detail: lvl === "ok" ? `Sous l'idéal OMS < 5 % AET (~25 g/j/adulte). ${perDay} g/jour/adulte moyen.`
+            : lvl === "warning" ? `Entre l'idéal (${target} g) et la limite stricte OMS (${max} g, < 10 % AET). ${perDay} g/jour/adulte moyen — réduire desserts/sirops/miel.`
+            : `Au-dessus de la limite stricte OMS < 10 % AET. ${perDay} g/jour/adulte moyen. Risque insulinique et caries — privilégier fruits frais aux sucres ajoutés.`};
   })());
   // V2.82.1 (#17) — Macros (protéines / lipides / glucides) moyennes quotidiennes.
   // Cibles OMS/EFSA pondérées par adultEquivalent foyer.
