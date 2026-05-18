@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.12</title>
+<title>Menu IG Bas — V2.99.13</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -83986,15 +83986,30 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // la rotation V2.45.0 mais on saute les indices dont la recette
         // pousserait au-dessus du cap (slot ou cumulé). Si tout le pool est
         // déjà au-dessus, fallback rotation pure (best-effort).
+        // V2.99.13 — Anti-récurrence intra-semaine sur breakfast (alignement
+        // sur lunch/dinner). Sans cela, quand le filtre nutritionnel élimine
+        // plusieurs candidats consécutifs, plusieurs jours retombent sur la
+        // même recette (bug observé semaine 22-28 mai 2026 : "Smoothie bowl"
+        // sorti 3 fois, "Baghrir" 2 fois consécutifs).
         const bfMm = mealEquivalents(profile, slot.attendance?.breakfast);
         const bfFilter = makeNutritionFilter(bfMm);
         let chosen = null;
         for (let k = 0; k < breakfasts.length; k++) {
           const cand = breakfasts[(startIdx + k) % breakfasts.length];
-          if (bfFilter(cand)) { chosen = cand; break; }
+          if (bfFilter(cand) && !usedThisWeek.has(cand.id)) { chosen = cand; break; }
         }
+        // Fallback 1 : si tout le pool filtré est déjà consommé cette semaine,
+        // on relâche l'anti-récurrence mais on garde le filtre nutritionnel.
+        if (!chosen) {
+          for (let k = 0; k < breakfasts.length; k++) {
+            const cand = breakfasts[(startIdx + k) % breakfasts.length];
+            if (bfFilter(cand)) { chosen = cand; break; }
+          }
+        }
+        // Fallback 2 : rotation pure (cas dégénéré).
         if (!chosen) chosen = breakfasts[startIdx];
         slot.breakfast = chosen.id;
+        usedThisWeek.add(chosen.id);
         // accrue nutrition (les locked sont déjà dans nutTotals via le pré-init)
         accrueNutrition(chosen, bfMm);
       }
