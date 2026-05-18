@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.14</title>
+<title>Menu IG Bas — V2.99.15</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82152,6 +82152,14 @@ function glycemicTierForMeal(cg, mealType) {
   if (cg <= t.medium) return "medium";
   return "high";
 }
+// V2.99.15 — Helper centralisé pour les foyers sportifs. Évite la duplication
+// entre profileSkipsCircadianCg et les KPI/messages contextualisés sportifs.
+const ATHLETE_PROFILES = new Set(["endurance_athlete", "strength_athlete", "intermittent_athlete"]);
+function isAthleteHousehold(profile) {
+  if (!profile?.members?.length) return false;
+  return profile.members.some(m => ATHLETE_PROFILES.has(m.healthProfile));
+}
+
 // Skip la différenciation circadienne pour ces profils (cf. issue #83 + CLAUDE.md).
 // V2.99.14 — Fix bug nommage : les profils sportifs ont été renommés
 // `endurance_athlete` / `strength_athlete` / `intermittent_athlete` mais cette
@@ -82159,16 +82167,9 @@ function glycemicTierForMeal(cg, mealType) {
 // → la logique skip-circadien ne s'appliquait jamais. Les sportifs subissaient
 // donc les seuils CG circadiens par repas (cf. V2.95.0) à tort, alors qu'ils
 // devraient prioriser le timing des glucides sur le total. Régression
-// silencieuse depuis le rename. On ajoute aussi intermittent_athlete pour
-// cohérence (le pool sports collectifs/raquettes a aussi des contraintes
-// timing fortes).
+// silencieuse depuis le rename.
 function profileSkipsCircadianCg(profile) {
-  if (!profile?.members?.length) return false;
-  return profile.members.some(m =>
-    m.healthProfile === "endurance_athlete" ||
-    m.healthProfile === "strength_athlete" ||
-    m.healthProfile === "intermittent_athlete"
-  );
+  return isAthleteHousehold(profile);
 }
 
 // V2.82.0 (issue #17) — Macros par portion calculées auto depuis ingrédients.
@@ -89335,12 +89336,24 @@ function NutritionBanner({currentMenu, profile}) {
       const lvl = (pct >= 90 && pct <= 130) ? "ok"
                 : (pct >= 70 && pct <= 150) ? "warning"
                 : "over";
+      // V2.99.15 — Messages contextualisés foyer sportif. La cible protéique
+      // est déjà calculée par proteinRatioForProfile (1.3-1.8 g/kg/j pour
+      // sportifs vs 0.83 sédentaire) mais les messages génériques de carence
+      // sous-estimaient l'enjeu pour les sportifs (perte de masse musculaire,
+      // récupération dégradée). On personnalise.
+      const athlete = isAthleteHousehold(profile);
+      const sourceLabel = athlete ? `cible sportive ${t} g/j (ratio profil)`
+                                  : `OMS 0.83 g/kg/j, foyer ${t} g/j`;
       return {key: "macroP", level: lvl, icon: "💪",
         label: `Protéines : ${v} / ${t} g·j`,
-        detail: lvl === "ok" ? `Cible atteinte ✓ (OMS 0.83 g/kg/j, foyer ${t} g/j).`
-              : pct < 70 ? `Carence protéique (< 70 % cible). Risque musculaire à terme.`
+        detail: lvl === "ok" ? `Cible atteinte ✓ (${sourceLabel}).`
+              : pct < 70 ? (athlete
+                  ? `Carence critique pour sportif (${Math.round(pct)} % cible). Perte de masse musculaire et récupération dégradée à court terme. Booster systématiquement chaque repas : œufs au petit-déj, viande/poisson/légumineuses au déjeuner ET dîner, yaourt grec / oléagineux en collation.`
+                  : `Carence protéique (< 70 % cible). Risque musculaire à terme.`)
               : pct > 150 ? `Excès (> 150 % cible). Modérer la viande / poisson, surveiller la fonction rénale.`
-              : pct < 90 ? `Sous-couverture (${Math.round(pct)} % cible). Ajouter légumineuses, œufs, poisson.`
+              : pct < 90 ? (athlete
+                  ? `Sous-couverture sportive (${Math.round(pct)} % cible). Renforcer : œufs / yaourt grec au petit-déj, oléagineux en snack, poisson gras 2×/sem, légumineuses 2-3×/sem.`
+                  : `Sous-couverture (${Math.round(pct)} % cible). Ajouter légumineuses, œufs, poisson.`)
               : `Au-delà de la cible (${Math.round(pct)} %). Acceptable ponctuellement.`};
     })());
     // Lipides : cible 20-35 % AET (OMS). Atwater : 1g L = 9 kcal.
