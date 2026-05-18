@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.11</title>
+<title>Menu IG Bas — V2.99.12</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -295,6 +295,18 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Mode restes : comment ça fonctionne ?",
           "a": "Activation via Paramètres → ♻️ Suggestions de recettes utilisant les restes (défaut OFF). Désactivé automatiquement si préparation groupée actif (cohérence). Quand un menu contient une recette qui produit des restes typiques (poulet rôti → poulet cuit, ratatouille → ratatouille, etc.), l'app suggère pour le lendemain ou surlendemain une recette qui les consomme. Suggestion non-bloquante : encadré en haut du planning avec bouton « Appliquer & verrouiller » (remplacement la case) ou « Ignorer »."
+        },
+        {
+          "q": "Combien de recettes contient le catalogue ?",
+          "a": "775 recettes au 18 mai 2026 (V2.99.11), réparties entre 5 types de repas (petit-déjeuner, déjeuner, dîner, snack, dessert) et 8 cuisines (française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, universelle). Le catalogue s'enrichit régulièrement par lots de 12 recettes, en priorisant l'équilibre des cuisines et la saisonnalité (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet). Toutes les recettes respectent l'objectif IG bas (CG ≤ 8 sur snacks/desserts, ≤ 12 sur déjeuner/dîner) et utilisent des dénominations qualifiées (pas de \"Lait\" seul, on précise demi-écrémé, amande, coco, etc.)."
+        },
+        {
+          "q": "Quelles cuisines sont couvertes et comment sont-elles équilibrées ?",
+          "a": "8 cuisines fermées : française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, et universelle (fusion + recettes sans signature culturelle). L'équilibre cible ≥ 12 recettes par croisement cuisine × type pour qu'un utilisateur qui sélectionne une cuisine en préférée ait toujours un pool suffisamment varié. Au 18 mai 2026, toutes les cellules sont ≥ 12 (la plupart à 14+). La cuisine \"universelle\" reste la plus dense (170 recettes) pour les profils sans préférence culturelle marquée."
+        },
+        {
+          "q": "Le catalogue est-il mis à jour régulièrement ?",
+          "a": "Oui. Le projet ajoute des recettes en \"Lots\" (typiquement 12 recettes par Lot) priorisant : (1) les cellules cuisine × type sous la cible 12, (2) la saisonnalité à venir (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet), (3) les occasions festives (apéros, brunchs, fêtes de famille — tag `festif`). Les versions mineures (V2.x.y → V2.x.(y+1)) correspondent souvent à un Lot. L'historique complet est dans le dépôt GitHub. À noter : un filtre de validation strict (`scripts/validate-recipe-data.py`) garantit la cohérence du schéma à chaque ajout."
         }
       ]
     },
