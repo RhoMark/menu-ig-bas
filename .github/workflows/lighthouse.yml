@@ -1,0 +1,67 @@
+# Lighthouse CI — détection régression performance V3
+#
+# Run Lighthouse mobile + desktop sur l'URL GitHub Pages après chaque
+# déploiement. Compare aux seuils définis dans .lighthouserc.json.
+#
+# CRITIQUE pour V3.0 : la refonte design (1A-1I) ajoute photos catalogue
+# (~50 × 100 KB), Lucide icons (~210 KB), fonts woff2 (~150 KB). Sans
+# ce filet, on découvrirait les régressions perf après deploy en prod.
+
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  schedule:
+    # Run hebdomadaire mardi 8h UTC (vérifie pas de dérive lente)
+    - cron: '0 8 * * 2'
+
+jobs:
+  lighthouse:
+    name: Lighthouse mobile + desktop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Wait for GitHub Pages deploy
+        if: github.event_name == 'push'
+        run: |
+          echo "Attendre 120s pour laisser GH Pages publier le commit"
+          sleep 120
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.13
+
+      - name: Run Lighthouse desktop
+        run: lhci autorun --config=.lighthouserc.json
+        continue-on-error: true
+
+      - name: Run Lighthouse mobile
+        run: |
+          # Override config preset pour mobile
+          cp .lighthouserc.json .lighthouserc-mobile.json
+          python3 -c "
+          import json
+          with open('.lighthouserc-mobile.json') as f:
+              cfg = json.load(f)
+          cfg['ci']['collect']['settings']['preset'] = 'mobile'
+          with open('.lighthouserc-mobile.json', 'w') as f:
+              json.dump(cfg, f, indent=2)
+          "
+          lhci autorun --config=.lighthouserc-mobile.json
+        continue-on-error: true
+
+      - name: Upload Lighthouse reports artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-reports
+          path: .lighthouseci/
+          retention-days: 30

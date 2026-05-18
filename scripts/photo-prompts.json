@@ -1,0 +1,33 @@
+{
+  "_comment": "Configuration prompts pour generate-photos.py (DALL-E 3 / Flux)",
+  "_doc": "Prompt unifié construit par concaténation : {recipe_name} + base_style + ratio + per_cuisine_modifier",
+  "base_style": "professional food photography, natural daylight, top-down or 45° angle, rustic wooden table, fresh herbs garnish, low-glycemic style, ultra-realistic, shallow depth of field, vibrant colors, magazine quality",
+  "aspect_ratio_default": "1:1 square aspect ratio",
+  "aspect_ratio_alternatives": {
+    "modal_hero": "16:9 horizontal landscape",
+    "library_card": "1:1 square aspect ratio"
+  },
+  "per_cuisine_modifiers": {
+    "francais": ", elegant French bistro presentation",
+    "italien": ", Italian rustic trattoria style, olive oil drizzle",
+    "mediterraneen": ", Mediterranean coastal style, lemon and herbs",
+    "asiatique": ", Asian fusion presentation, chopsticks on the side",
+    "indien": ", Indian thali style with copper utensils, warm spices visible",
+    "mexicain": ", Mexican vibrant colors, fresh lime and cilantro",
+    "maghrebin": ", North African tagine style, warm terracotta colors",
+    "universel": ", neutral elegant plating"
+  },
+  "negative_prompts": "no plastic, no fast food, no garish colors, no text overlays, no logos, no people, no hands",
+  "api_settings": {
+    "model": "dall-e-3",
+    "quality": "standard",
+    "size": "1024x1024",
+    "estimated_cost_eur": 0.04
+  },
+  "webp_settings": {
+    "quality": 82,
+    "target_width": 1280,
+    "target_height": 720,
+    "format": "webp"
+  }
+}

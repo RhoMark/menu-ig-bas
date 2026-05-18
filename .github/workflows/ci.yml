@@ -1,0 +1,133 @@
+# CI Menu IG Bas — validation à chaque push/PR
+#
+# Validations exécutées :
+#   1. JSON parse des 4 blocs (data-recipes, data-faq, data-ingredients, data-glycemic)
+#   2. Size check (index.html < 5 MB, sw.js < 50 KB)
+#   3. Cohérence <title> ↔ CACHE_VERSION
+#   4. Validation schéma recettes (scripts/validate-recipe-data.py)
+#   5. HTML basique (DOCTYPE, pas de TODO_BEFORE_RELEASE)
+#   6. Comptage recettes ≥ baseline
+#
+# Coût : 0 € (GitHub Actions free tier, repos publics)
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate index.html + data
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # ── 1. JSON validation × 4 blocs ────────────────────────────────
+      - name: Validate JSON blocks
+        run: |
+          python3 - <<'PYEOF'
+          import re, json, sys
+          with open("index.html", encoding="utf-8") as f:
+              c = f.read()
+          errors = 0
+          for sid in ["data-recipes", "data-faq", "data-ingredients", "data-glycemic"]:
+              m = re.search(r'<script type="application/json" id="' + sid + r'">\s*(.*?)\s*</script>', c, re.DOTALL)
+              if not m:
+                  print(f"❌ Block {sid} introuvable")
+                  errors += 1
+                  continue
+              try:
+                  data = json.loads(m.group(1))
+                  print(f"✅ {sid} parse OK ({len(str(data))} chars)")
+              except Exception as e:
+                  print(f"❌ {sid} JSON cassé : {e}")
+                  errors += 1
+          sys.exit(errors)
+          PYEOF
+
+      # ── 2. Size check ───────────────────────────────────────────────
+      - name: Size check
+        run: |
+          INDEX_SIZE=$(wc -c < index.html)
+          SW_SIZE=$(wc -c < sw.js)
+          echo "index.html : $INDEX_SIZE bytes"
+          echo "sw.js      : $SW_SIZE bytes"
+          if [ "$INDEX_SIZE" -gt 5242880 ]; then
+            echo "❌ index.html > 5 MB"
+            exit 1
+          fi
+          if [ "$SW_SIZE" -gt 51200 ]; then
+            echo "❌ sw.js > 50 KB"
+            exit 1
+          fi
+          echo "✅ Tailles dans les limites"
+
+      # ── 3. Version cohérence title ↔ CACHE_VERSION ─────────────────
+      - name: Version coherence
+        run: |
+          TITLE_VER=$(grep -oE '<title>Menu IG Bas — V[0-9]+\.[0-9]+\.[0-9]+</title>' index.html | grep -oE 'V[0-9]+\.[0-9]+\.[0-9]+' | sed 's/^V//')
+          CACHE_VER=$(grep -oE 'CACHE_VERSION = "menu-ig-bas-v[0-9]+\.[0-9]+\.[0-9]+"' sw.js | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+' | sed 's/^v//')
+          echo "title  : V$TITLE_VER"
+          echo "cache  : v$CACHE_VER"
+          if [ -z "$TITLE_VER" ] || [ -z "$CACHE_VER" ]; then
+            echo "❌ Versions non parsées"
+            exit 1
+          fi
+          if [ "$TITLE_VER" != "$CACHE_VER" ]; then
+            echo "❌ Désync title (V$TITLE_VER) vs sw.js (v$CACHE_VER)"
+            echo "   → Utiliser ./scripts/bump-version.sh pour bumper ensemble"
+            exit 1
+          fi
+          echo "✅ Version cohérente V$TITLE_VER"
+
+      # ── 4. Schéma recettes ──────────────────────────────────────────
+      - name: Validate recipe schema
+        run: python3 scripts/validate-recipe-data.py
+
+      # ── 5. HTML basique ─────────────────────────────────────────────
+      - name: HTML basic checks
+        run: |
+          if ! head -5 index.html | grep -q '<!DOCTYPE html>'; then
+            echo "❌ <!DOCTYPE html> manquant"
+            exit 1
+          fi
+          if grep -q 'TODO_BEFORE_RELEASE' index.html; then
+            echo "❌ TODO_BEFORE_RELEASE trouvé dans index.html"
+            grep -n 'TODO_BEFORE_RELEASE' index.html
+            exit 1
+          fi
+          echo "✅ HTML basiques OK"
+
+      # ── 6. Comptage recettes ≥ baseline ─────────────────────────────
+      - name: Recipe count check
+        run: |
+          COUNT=$(python3 -c "
+          import re, json
+          with open('index.html', encoding='utf-8') as f:
+              c = f.read()
+          m = re.search(r'<script type=\"application/json\" id=\"data-recipes\">\s*(.*?)\s*</script>', c, re.DOTALL)
+          data = json.loads(m.group(1))
+          print(len(data['items']))
+          ")
+          echo "Recipe count : $COUNT"
+          if [ -f .expected-recipe-count ]; then
+            EXPECTED=$(cat .expected-recipe-count | tr -d '[:space:]')
+            if [ "$COUNT" -lt "$EXPECTED" ]; then
+              echo "❌ Comptage baissé : $COUNT < $EXPECTED (baseline)"
+              echo "   → Si suppression volontaire, update .expected-recipe-count"
+              exit 1
+            fi
+            echo "✅ Comptage OK : $COUNT (baseline $EXPECTED)"
+          else
+            echo "ℹ️ .expected-recipe-count absent (pas de baseline encore)"
+          fi
