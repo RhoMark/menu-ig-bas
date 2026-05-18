@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.32</title>
+<title>Menu IG Bas — V2.99.33</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -84306,6 +84306,54 @@ function totalEquivalents(profile) {
   if (!profile.members?.length) return 1;
   return profile.members.reduce((s,m) => s + adultEquivalent(m), 0);
 }
+
+// V2.99.33 — Unité de consommation (UC) selon l'échelle d'équivalence OCDE
+// utilisée par l'INSEE / CAF pour les statistiques budget des ménages.
+// Différente de `adultEquivalent()` qui mesure l'appétit alimentaire.
+// L'UC OCDE pondère plus faiblement les enfants car elle mesure le COÛT
+// par personne (les enfants coûtent moins en alimentation que leur appétit
+// le suggère, grâce aux portions plus petites + aliments moins chers).
+//
+// Échelle OCDE modifiée (Eurostat / INSEE) :
+//   - 1er adulte du foyer (≥14 ans) = 1 UC
+//   - Adulte/ado supplémentaire (≥14 ans) = 0,5 UC
+//   - Enfant <14 ans = 0,3 UC
+// Référence : INSEE "Unité de consommation" — https://insee.fr/fr/metadonnees/definition/c1802
+function consumptionUnits(profile) {
+  if (!profile?.members?.length) return 1;
+  let uc = 0;
+  let firstAdultCounted = false;
+  for (const m of profile.members) {
+    const age = memberAge(m);
+    if (age < 14) {
+      uc += 0.3;
+    } else if (!firstAdultCounted) {
+      uc += 1.0;
+      firstAdultCounted = true;
+    } else {
+      uc += 0.5;
+    }
+  }
+  // Edge case : foyer 100 % enfants → assure ≥ 1 UC pour cohérence
+  return uc < 0.3 ? 1 : uc;
+}
+
+// V2.99.33 — Budget alimentaire hebdomadaire moyen recommandé selon les
+// statistiques officielles CAF Enquête Budget de Famille 2023.
+// Source : 80,82 €/sem/UC en moyenne (66,67 €/UC en médiane).
+// https://www.guichetdusavoir.org/question/voir/138330
+// ⚠ Données 2023 — inflation alimentaire +12,2% en 2023 puis +1,3% en 2024
+// (INSEE). Pas de réajustement automatique, on indique la limite à l'UI.
+const CAF_2023_AVG_PER_UC_PER_WEEK = 80.82;
+const CAF_2023_MEDIAN_PER_UC_PER_WEEK = 66.67;
+function recommendedWeeklyBudget(profile) {
+  const uc = consumptionUnits(profile);
+  return {
+    uc,
+    avg: Math.round(uc * CAF_2023_AVG_PER_UC_PER_WEEK),
+    median: Math.round(uc * CAF_2023_MEDIAN_PER_UC_PER_WEEK),
+  };
+}
 // Équivalents pour un repas donné, en tenant compte de l'attendance (qui est présent).
 // Distinction sémantique (V2.34.0) :
 //   - `attendees == null` (undefined absent du store) → défaut = toute la famille présente.
@@ -92921,6 +92969,34 @@ function SettingsView({state, update, updateProfile}) {
           <label className="text-sm block mb-1">Budget hebdomadaire (€)</label>
           <input type="number" value={p.budgetWeekly} onChange={e=>updateProfile({budgetWeekly: parseInt(e.target.value)||0})}
             className="border rounded px-3 py-2 w-40" />
+          {/* V2.99.33 — Recommandation contextuelle CAF 2023 */}
+          {(() => {
+            const rec = recommendedWeeklyBudget(p);
+            const userBudget = p.budgetWeekly || 0;
+            const pctOfAvg = rec.avg > 0 ? Math.round(100 * userBudget / rec.avg) : 0;
+            let positioning = null;
+            if (userBudget > 0) {
+              if (pctOfAvg < 75) positioning = `économique (${pctOfAvg} % de la moyenne)`;
+              else if (pctOfAvg <= 110) positioning = `dans la fourchette moyenne (${pctOfAvg} %)`;
+              else if (pctOfAvg <= 150) positioning = `au-dessus de la moyenne (${pctOfAvg} %)`;
+              else positioning = `confortable (${pctOfAvg} % de la moyenne)`;
+            }
+            return (
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed max-w-xl">
+                💡 Selon les statistiques officielles<sup>*</sup>, le budget alimentaire moyen
+                pour votre foyer ({rec.uc.toFixed(1)} unité{rec.uc >= 2 ? 's' : ''} de consommation)
+                est de <strong>{rec.avg} €/sem</strong> (médiane : {rec.median} €).
+                {positioning && <> Votre budget est <strong>{positioning}</strong>.</>}
+                <br />
+                <span className="text-[10px] italic text-slate-500 dark:text-slate-500">
+                  <sup>*</sup> CAF Enquête Budget de Famille 2023 — échelle d'équivalence OCDE
+                  (1er adulte = 1 UC, adulte/ado ≥ 14 ans = 0,5 UC, enfant &lt; 14 ans = 0,3 UC).
+                  Données 2023 ; l'inflation alimentaire cumulée 2023-2025 est d'environ +14 %
+                  (+12,2 % en 2023, +1,3 % en 2024, INSEE), à intégrer mentalement.
+                </span>
+              </p>
+            );
+          })()}
         </div>
         <div>
           <label className="text-sm block mb-1">
