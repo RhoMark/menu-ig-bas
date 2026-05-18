@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.38</title>
+<title>Menu IG Bas — V2.99.39</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -91311,6 +91311,10 @@ const ADDED_SUGAR_PATTERNS = [
 function addedSugarsContributionFromIng(name, qty, unit) {
   const n = canonicalName(name || "");
   if (!n || qty == null || qty <= 0) return 0;
+  // V2.99.39 — Exclure les ingrédients "non sucrés" / "sans sucre" qui
+  // matchaient `\bsucre\b` alors qu'ils contiennent 0 sucre ajouté.
+  // Ex : "cacao en poudre non sucré" → canonical "cacao non sucre".
+  if (/\bnon sucre\b|\bsans sucre\b|\bsans sucre ajoute\b/.test(n)) return 0;
   // Conversion d'unité en grammes (simplifié pour les ingrédients sucrants)
   let grams;
   switch ((unit || "").toLowerCase()) {
@@ -91334,45 +91338,49 @@ function addedSugarsContributionFromIng(name, qty, unit) {
   return 0;
 }
 
-// V2.99.38 (issue #75 niveau 3b) — Sel (NaCl).
+// V2.99.38 / V2.99.39 (issue #75 niveau 3b) — Sel (NaCl).
 // Liste blanche par regex avec teneur en sel (g NaCl / 100g d'ingrédient).
-// Sources : tables CIQUAL ANSES 2020. Approche heuristique par buckets car
-// l'enrichissement complet sodiumPer100g exhaustif demanderait ~600 entrées
-// manuelles. Marge ±20 % par ingrédient, mais agrégation hebdo exploitable
-// comme garde-fou OMS.
+// Sources : tables CIQUAL ANSES 2020.
 //
-// Seuil OMS 2012 : ≤ 5 g/jour/adulte (HTA, cardio).
-// PNNS idéal France 2024 : ≤ 3 g/jour.
+// V2.99.39 — fix bugs critiques détectés sur cas réel (semaine 1930 g) :
+// 1. "olive" matchait aussi "huile d'olive" (canonical → "huile d olive")
+//    → 50ml d'huile × 0.05 = 2.5g sel imaginaire par recette. Fix : test
+//    négatif explicite si "huile d olive" présent.
+// 2. "bouillon" appliquait ratio 50 % (cube concentré) au bouillon liquide
+//    reconstitué (250-500 ml par recette) → 125-250 g sel imaginaire ! Fix :
+//    branche conditionnelle selon l'unité (ml/l → 0.5 %, autre → 50 %).
+//
+// Seuil OMS 2012 : ≤ 5 g/jour/adulte. PNNS idéal France 2024 : ≤ 3 g/jour.
+// V2.99.39 — Patterns avec `s?` partout pour matcher singulier ET pluriel.
 const SODIUM_PATTERNS = [
   { regex: /\b(fleur de sel|sel marin|sel rose|sel noir kala namak|gros sel|sel fin)\b/, ratio: 1.00 },
-  { regex: /\bsel\b/,                                                  ratio: 1.00 },
-  { regex: /\bbouillon\b/,                                             ratio: 0.50 }, // cube concentré
+  { regex: /\bsels?\b/,                                                ratio: 1.00 },
   { regex: /\bnuoc[ -]?mam\b/,                                         ratio: 0.18 },
   { regex: /\bsauce soja\b/,                                           ratio: 0.14 },
   { regex: /\b(miso|miso blanc|miso rouge)\b/,                         ratio: 0.12 },
   { regex: /\banchois\b/,                                              ratio: 0.12 },
   { regex: /\b(harissa|gochujang|sriracha|pate de piment|tikka masala|ras el hanout|melange tandoori)\b/, ratio: 0.05 },
-  { regex: /\bolive\b/,                                                ratio: 0.05 },
-  { regex: /\b(prosciutto|jambon cru|saucisson|chorizo|pancetta|coppa|bresaola|salami|pate de campagne|mortadelle)\b/, ratio: 0.045 },
+  { regex: /\b(prosciutto|jambon cru|saucissons?|chorizo|pancetta|coppa|bresaola|salami|pate de campagne|mortadelle)\b/, ratio: 0.045 },
   { regex: /\b(parmesan|pecorino|roquefort|gorgonzola|bleu)\b/,        ratio: 0.035 },
-  { regex: /\b(bacon|lardon|saucisse|merguez|chipolata|andouille|boudin)\b/, ratio: 0.04 },
+  { regex: /\b(bacon|lardons?|saucisses?|merguez|chipolatas?|andouille|boudin)\b/, ratio: 0.04 },
   { regex: /\b(saumon fume|truite fumee)\b/,                           ratio: 0.030 },
   { regex: /\b(feta|halloumi)\b/,                                      ratio: 0.030 },
-  { regex: /\b(cornichon|capres|pickles)\b/,                           ratio: 0.025 },
+  { regex: /\b(cornichons?|capres|pickles)\b/,                         ratio: 0.025 },
   { regex: /\b(jambon blanc|jambon)\b/,                                ratio: 0.025 },
   { regex: /\b(brie|crottin|chevre fermier|labneh)\b/,                 ratio: 0.020 },
   { regex: /\b(comte|emmental|cheddar|tomme|gruyere|raclette|reblochon)\b/, ratio: 0.015 },
   { regex: /\bbeurre demi[ -]sel\b/,                                   ratio: 0.014 },
-  { regex: /\b(pain|pita|tortilla|feuille de brick|pate filo|galette|chapati|naan|brioche|gressins|biscotte)\b/, ratio: 0.013 },
-  { regex: /\b(thon en boite|thon naturel|sardine en boite|maquereau en boite)\b/, ratio: 0.012 },
+  { regex: /\b(pains?|pita|tortillas?|feuille de brick|pate filo|galettes?|chapati|naan|brioche|gressins|biscottes?)\b/, ratio: 0.013 },
+  { regex: /\b(thon en boite|thon naturel|sardines? en boite|maquereau en boite)\b/, ratio: 0.012 },
   { regex: /\b(haricots? (noirs|blancs|rouges)? cuits|pois chiches? cuits)\b/, ratio: 0.005 }, // boîte
   { regex: /\b(mozzarella|burrata|ricotta|fromage frais|chevre frais|mascarpone)\b/, ratio: 0.004 },
 ];
 function saltContributionFromIng(name, qty, unit) {
   const n = canonicalName(name || "");
   if (!n || qty == null || qty <= 0) return 0;
+  const u = (unit || "").toLowerCase();
   let grams;
-  switch ((unit || "").toLowerCase()) {
+  switch (u) {
     case "g":      grams = qty; break;
     case "kg":     grams = qty * 1000; break;
     case "ml":     grams = qty; break;
@@ -91386,6 +91394,18 @@ function saltContributionFromIng(name, qty, unit) {
     case "pincée":
     case "pincee": grams = qty * 1; break;
     default:       return 0;
+  }
+  // V2.99.39 bug fix 1 — "olive" matche aussi "olives" (pluriel) MAIS PAS
+  // "huile d olive" (canonical de "huile d'olive"). L'huile contient ~0 g sel.
+  if (/\bolives?\b/.test(n)) {
+    if (/huile d olive/.test(n)) return 0;
+    return grams * 0.05;
+  }
+  // V2.99.39 bug fix 2 — "bouillon" : ratio dépend de l'unité.
+  // Cube concentré (qty en g) : 50 % sel. Liquide reconstitué (ml/l) : 0,5 %.
+  if (/\bbouillons?\b/.test(n)) {
+    if (u === "ml" || u === "l") return grams * 0.005;
+    return grams * 0.50;
   }
   for (const p of SODIUM_PATTERNS) {
     if (p.regex.test(n)) return grams * p.ratio;
