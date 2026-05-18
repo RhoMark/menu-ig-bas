@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.29</title>
+<title>Menu IG Bas — V2.99.30</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -85051,6 +85051,48 @@ function dayCgTier(cgValue, householdTarget) {
   return "high";
 }
 
+// V2.99.30 — Allocation CG par repas pour filtre HARD AVANT pick.
+// Cf. discussion 2026-05-18 (foyer 2×T2 ne pouvait pas générer un planning
+// <80 CG/j) : le design pré-V2.99.30 vérifiait la CG en POST-pick journalier
+// puis re-rollait la journée entière, sans contrainte amont par repas. Le
+// boost circadien dans weightedPick était stochastique (×1.3/×0.5), pas
+// bloquant. Pour les foyers stricts (T2/SOPK/Insulin/Gestationnel : cible
+// 80/100), l'algo acceptait des combinaisons légales selon ses règles
+// internes mais dépassant le cap foyer.
+//
+// V2.99.30 inverse la logique : on alloue un budget CG par repas
+// proportionnel à la cible foyer ET à l'ordre stratégique des picks
+// (breakfast → dinner → lunch → dessert → snack), puis on FILTRE le pool
+// AVANT le weightedPick. La CG devient une contrainte HARD, plus un
+// garde-fou ex-post.
+//
+// L'ordre breakfast → dinner → lunch → dessert → snack reflète la
+// physiologie : sensibilité insuline minimale le soir (dinner contraint
+// tôt), maximale le midi (lunch absorbe le résidu).
+//
+// `cgConsumedSoFar` permet la réallocation dynamique : si breakfast a
+// consommé moins que son alloc, le surplus profite aux repas suivants.
+//
+// Retour `Infinity` si profil n'a pas de cap CG (endurance_athlete).
+const MEAL_CG_WEIGHTS = {
+  breakfast: 15,
+  dinner:    25,
+  lunch:     30,
+  dessert:   20,
+  snack:     10,
+};
+const MEAL_PICK_ORDER = ["breakfast", "dinner", "lunch", "dessert", "snack"];
+function mealCgMax(cgBudgetDay, mealType, cgConsumedSoFar) {
+  if (cgBudgetDay == null || cgBudgetDay <= 0) return Infinity;
+  const idx = MEAL_PICK_ORDER.indexOf(mealType);
+  if (idx < 0) return Infinity;
+  const remainingMeals = MEAL_PICK_ORDER.slice(idx);
+  const remainingWeight = remainingMeals.reduce((s, m) => s + MEAL_CG_WEIGHTS[m], 0);
+  const remainingBudget = Math.max(0, cgBudgetDay - cgConsumedSoFar);
+  if (remainingWeight === 0) return Infinity;
+  return remainingBudget * (MEAL_CG_WEIGHTS[mealType] / remainingWeight);
+}
+
 // V2.77.0 → V2.78.x (issue #81 Module Réception) — Mode fête + compensation glycémique.
 // Le seuil CG est plus tolérant ce jour-là. Les jours J-1 et J+1 d'un festif
 // voient leur seuil CG cible réduit de 15 % (compensation, ADA 2023 Standards
@@ -86060,7 +86102,7 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null, day = null} = {}) {
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null, day = null, cgMax = Infinity} = {}) {
   if (pool.length === 0) return null;
   // V2.99.2 — Filtre temps de prep par jour si `day` fourni.
   // Permet d'appliquer maxPrepMinutesWeekend (sam/dim) vs maxPrepMinutes
@@ -86076,6 +86118,38 @@ function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastU
   // est vide, on tombe sur le pool d'origine (best-effort, le bandeau alertera).
   if (typeof nutritionFilter === "function") {
     const filtered = pool.filter(nutritionFilter);
+    if (filtered.length > 0) pool = filtered;
+  }
+  // V2.99.30 — Filtre HARD CG par repas (cf. mealCgMax). Inverse le design
+  // pré-V2.99.30 qui vérifiait la CG en post-pick journalier (re-roll).
+  // Maintenant la CG est une contrainte amont. Best-effort gradué :
+  //   1. Pool filtré strict (recette.cg ≤ cgMax)
+  //   2. Si vide : relax × 1.3 (recette.cg ≤ cgMax × 1.3)
+  //   3. Si toujours vide : relax × 1.7
+  //   4. Sinon : pool d'origine (l'algo accept best-effort, l'UI alertera)
+  // Les recettes sans CG calculable (data-glycemic incomplet) passent
+  // (comportement neutre, pas de pénalité aveugle).
+  if (cgMax !== Infinity && cgMax > 0) {
+    const cgOf = (r) => {
+      const g = computeRecipeGlycemic(r);
+      return (g && g.cg != null) ? g.cg : null;
+    };
+    let filtered = pool.filter(r => {
+      const cg = cgOf(r);
+      return cg == null || cg <= cgMax;
+    });
+    if (filtered.length === 0) {
+      filtered = pool.filter(r => {
+        const cg = cgOf(r);
+        return cg == null || cg <= cgMax * 1.3;
+      });
+    }
+    if (filtered.length === 0) {
+      filtered = pool.filter(r => {
+        const cg = cgOf(r);
+        return cg == null || cg <= cgMax * 1.7;
+      });
+    }
     if (filtered.length > 0) pool = filtered;
   }
   // Niveau 1 — recettes ni servies cette semaine, ni servies depuis 3 mois.
@@ -86392,14 +86466,26 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     return true;
   };
 
-  // Garde-fou CG journalier (V2.23.0) : on tente jusqu'à 3 fois la génération
-  // d'une journée si elle dépasse le seuil "high" du foyer. Le seuil dépend du
-  // profil santé du membre le plus contraignant (cf householdCgTarget). Tiers
-  // low / medium / unknown sont acceptés ; seul "high" déclenche un re-roll.
-  // Au-delà de 3 tentatives ou si le pool est trop pauvre, on accepte le
-  // dernier essai (best-effort, l'UI affichera le badge orange/rouge).
+  // Garde-fou CG journalier — V2.99.30 refonte.
+  // ANCIEN DESIGN (V2.23.0 → V2.99.29) : ex-post + re-roll x3
+  //   On générait toute la journée puis on vérifiait dayCgTier. Si "high",
+  //   on restaurait les snapshots et on repickait tout (3 tentatives).
+  //   Problèmes : (1) re-rolls aveugles sans capitaliser sur ce qui marchait
+  //   (2) boost circadien dans weightedPick stochastique ×1.3/×0.5 mais
+  //   pas bloquant (3) pas de contrainte amont par repas ⇒ foyer T2 strict
+  //   ne pouvait pas obtenir un planning <80 CG/j en pratique.
+  //
+  // NOUVEAU DESIGN (V2.99.30) : hard filter par repas avec budget proportionnel
+  //   1. cgBudgetDay = cgTarget.medium (seuil de tolérance foyer)
+  //   2. À chaque pick, calcul de cgMaxPerMeal proportionnel + dynamique
+  //      (réalloc selon ce qui a déjà été consommé)
+  //   3. pickFromPool filtre HARD le pool sur recette.cg ≤ cgMaxPerMeal
+  //      (fallback gradué ×1.3 → ×1.7 → pool d'origine si vide)
+  //   4. Re-roll réduit à 2 attempts (filet de sécurité, plus principal)
+  //   5. Sportifs (cgTarget = null) : cgMaxPerMeal = Infinity (skip filter)
   const cgTarget = householdCgTarget(profile);
-  const CG_MAX_DAY_ATTEMPTS = 3;
+  const cgBudgetDay = cgTarget?.medium ?? null;  // null pour endurance_athlete
+  const CG_MAX_DAY_ATTEMPTS = 2;
 
   DAYS.forEach((day, i) => {
     const prev = existing[day] || {};
@@ -86416,6 +86502,19 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       // V2.71.0 (#75 niveau 2) — snapshot des compteurs nutrition pour
       // pouvoir restorer si la journée est re-roll au CG.
       const nutSnapshot = {...nutTotals};
+      // V2.99.30 — Tracker du CG consommé dans la journée pour réallocation
+      // dynamique du budget entre repas successifs. Si attempt > 1 (re-roll),
+      // on relax le budget de +20 % pour augmenter les chances de trouver
+      // une combinaison viable (le 1er attempt strict a échoué).
+      let cgConsumedThisDay = 0;
+      const cgRelaxFactor = attempt === 1 ? 1.0 : 1.2;
+      const cgBudgetThisDay = cgBudgetDay != null ? cgBudgetDay * cgRelaxFactor : null;
+      // Helper local : récupère la CG d'une recette (ou null si non calculable)
+      const recipeCg = (r) => {
+        if (!r) return null;
+        const g = computeRecipeGlycemic(r);
+        return (g && g.cg != null) ? g.cg : null;
+      };
 
       slot = {locked: {...locked}};
       // préserver l'attendance existante
@@ -86454,25 +86553,56 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // sorti 3 fois, "Baghrir" 2 fois consécutifs).
         const bfMm = mealEquivalents(profile, slot.attendance?.breakfast);
         const bfFilter = makeNutritionFilter(bfMm);
+        // V2.99.30 — Filtre CG sur breakfast aussi : aligne sur lunch/dinner.
+        // L'ancienne rotation glissante ne tenait pas compte de la CG ⇒ breakfasts
+        // à 18 CG pouvaient consommer 22 % du budget T2 strict (80) sans contrôle.
+        const bfCgMax = mealCgMax(cgBudgetThisDay, "breakfast", cgConsumedThisDay);
+        const cgOk = (cand) => {
+          if (bfCgMax === Infinity) return true;
+          const cg = recipeCg(cand);
+          return cg == null || cg <= bfCgMax;
+        };
+        const cgOkRelaxed = (cand, factor) => {
+          if (bfCgMax === Infinity) return true;
+          const cg = recipeCg(cand);
+          return cg == null || cg <= bfCgMax * factor;
+        };
         let chosen = null;
+        // Niveau 1 : filtre nutri + anti-récurrence + CG strict
         for (let k = 0; k < breakfasts.length; k++) {
           const cand = breakfasts[(startIdx + k) % breakfasts.length];
-          if (bfFilter(cand) && !usedThisWeek.has(cand.id)) { chosen = cand; break; }
+          if (bfFilter(cand) && !usedThisWeek.has(cand.id) && cgOk(cand)) { chosen = cand; break; }
         }
-        // Fallback 1 : si tout le pool filtré est déjà consommé cette semaine,
-        // on relâche l'anti-récurrence mais on garde le filtre nutritionnel.
+        // Niveau 2 : relax CG × 1.3
+        if (!chosen) {
+          for (let k = 0; k < breakfasts.length; k++) {
+            const cand = breakfasts[(startIdx + k) % breakfasts.length];
+            if (bfFilter(cand) && !usedThisWeek.has(cand.id) && cgOkRelaxed(cand, 1.3)) { chosen = cand; break; }
+          }
+        }
+        // Niveau 3 : relâche l'anti-récurrence mais garde nutri + CG relax × 1.5
+        if (!chosen) {
+          for (let k = 0; k < breakfasts.length; k++) {
+            const cand = breakfasts[(startIdx + k) % breakfasts.length];
+            if (bfFilter(cand) && cgOkRelaxed(cand, 1.5)) { chosen = cand; break; }
+          }
+        }
+        // Niveau 4 : nutri seul (rotation pure CG-libre)
         if (!chosen) {
           for (let k = 0; k < breakfasts.length; k++) {
             const cand = breakfasts[(startIdx + k) % breakfasts.length];
             if (bfFilter(cand)) { chosen = cand; break; }
           }
         }
-        // Fallback 2 : rotation pure (cas dégénéré).
+        // Niveau 5 : cas dégénéré
         if (!chosen) chosen = breakfasts[startIdx];
         slot.breakfast = chosen.id;
         usedThisWeek.add(chosen.id);
         // accrue nutrition (les locked sont déjà dans nutTotals via le pré-init)
         accrueNutrition(chosen, bfMm);
+        // V2.99.30 — Tracker CG consommée
+        const cgConsumed = recipeCg(chosen);
+        if (cgConsumed != null) cgConsumedThisDay += cgConsumed;
       }
 
       // V2.47.0 (issue #12) — Mode batch cooking : pour les `batchTarget`
@@ -86524,23 +86654,28 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         slot.lunch = prev.lunch;
         usedThisWeek.add(prev.lunch);
       } else {
+        // V2.99.30 — cgMax adaptatif au profil + budget restant après breakfast
+        const lunchCgMax = mealCgMax(cgBudgetThisDay, "lunch", cgConsumedThisDay);
         let picked = null;
         // V2.50.1 — Priorité 1 : sous-pool usesLeftovers matchant les
         // produces des jours précédents (chaînage cohérent).
         const lunchUsesPool = matchUsesPool(lunches);
         if (lunchUsesPool.length > 0) {
-          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day});
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax});
         }
         if (!picked && useBatchPool && lunchesBatch.length > 0) {
-          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day});
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax});
         }
         if (!picked) {
-          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day});
+          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax});
         }
         if (picked) {
           slot.lunch = picked.id;
           usedThisWeek.add(picked.id);
           accrueNutrition(picked, lunchMealMult);
+          // V2.99.30 — Tracker CG
+          const cgC = recipeCg(picked);
+          if (cgC != null) cgConsumedThisDay += cgC;
         }
       }
       // Note V2.71.0 : les slots locked sont déjà comptés en pré-init en
@@ -86576,23 +86711,29 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         }
         const dinnerMealMult = mealEquivalents(profile, slot.attendance?.dinner);
         const dinnerNutFilter = makeNutritionFilter(dinnerMealMult);
+        // V2.99.30 — cgMax adaptatif. Dinner pioche après lunch dans l'ordre
+        // actuel ; sa physiologie soir (sensibilité insuline réduite) justifie
+        // une allocation plus stricte mais on respecte l'ordre code.
+        const dinnerCgMax = mealCgMax(cgBudgetThisDay, "dinner", cgConsumedThisDay);
         let picked = null;
         // V2.50.1 — Priorité 1 : sous-pool usesLeftovers matchant les
         // produces des jours précédents (intersect avec le filtre staple).
         const dinnerUsesPool = matchUsesPool(dinnerPool);
         if (dinnerUsesPool.length > 0) {
-          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day});
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax});
         }
         if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
-          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day});
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax});
         }
         if (!picked) {
-          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day});
+          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax});
         }
         if (picked) {
           slot.dinner = picked.id;
           usedThisWeek.add(picked.id);
           accrueNutrition(picked, dinnerMealMult);
+          const cgC = recipeCg(picked);
+          if (cgC != null) cgConsumedThisDay += cgC;
         }
       }
 
@@ -86604,11 +86745,14 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         } else if (snacks.length > 0) {
           const snackMealMult = mealEquivalents(profile, slot.attendance?.snack);
           const snackNutFilter = makeNutritionFilter(snackMealMult);
-          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias, nutritionFilter: snackNutFilter, day});
+          const snackCgMax = mealCgMax(cgBudgetThisDay, "snack", cgConsumedThisDay);
+          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias, nutritionFilter: snackNutFilter, mealType: "snack", day, cgMax: snackCgMax});
           if (picked) {
             slot.snack = picked.id;
             snacksCooldown.add(picked.id);
             accrueNutrition(picked, snackMealMult);
+            const cgC = recipeCg(picked);
+            if (cgC != null) cgConsumedThisDay += cgC;
           }
         }
       }
@@ -86620,11 +86764,14 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       } else if (desserts.length > 0) {
         const dessertMealMult = mealEquivalents(profile, slot.attendance?.dessert);
         const dessertNutFilter = makeNutritionFilter(dessertMealMult);
-        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias, nutritionFilter: dessertNutFilter, day});
+        const dessertCgMax = mealCgMax(cgBudgetThisDay, "dessert", cgConsumedThisDay);
+        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias, nutritionFilter: dessertNutFilter, mealType: "dessert", day, cgMax: dessertCgMax});
         if (picked) {
           slot.dessert = picked.id;
           dessertsCooldown.add(picked.id);
           accrueNutrition(picked, dessertMealMult);
+          const cgC = recipeCg(picked);
+          if (cgC != null) cgConsumedThisDay += cgC;
         }
       }
 
