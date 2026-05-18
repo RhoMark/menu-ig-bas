@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.15</title>
+<title>Menu IG Bas — V2.99.16</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -83717,6 +83717,23 @@ function weightedPick(list, ratings, profile, favorites, costBias = 0, mealType 
     // surface française standard (tomatille, paneer, citron confit, chaat masala…).
     if (profile?.preferCommonIngredients && (r.tags || []).includes("epicerie-specialisee")) {
       w *= 0.3;
+    }
+    // V2.99.16 — Boost protéique pour foyer sportif. Sans ce levier, l'algo
+    // pouvait sortir un menu IG-conforme mais protéiné-déficitaire pour un
+    // foyer avec sportif force/endurance (cible 1.3-1.8 g/kg/j vs 0.83
+    // sédentaire). Le KPI dashboard signalait la carence mais trop tard.
+    // On boost à la génération sur lunch/dinner uniquement (petit-déj/snack/
+    // dessert ont leurs propres logiques + contributions plus faibles à la
+    // cible). Seuils protéines/portion : 20g+ riche (steak, légumineuses bien
+    // dosées), 12-20g standard, <8g pauvre. Si macros null (ingrédients non
+    // couverts par data-glycemic), comportement neutre = pas de pénalité.
+    if (mealType && (mealType === "lunch" || mealType === "dinner") && isAthleteHousehold(profile)) {
+      const macros = computeRecipeMacros(r);
+      if (macros) {
+        if (macros.protein >= 20)      w *= 1.5;
+        else if (macros.protein >= 12) w *= 1.2;
+        else if (macros.protein < 8)   w *= 0.7;
+      }
     }
     return w;
   });
