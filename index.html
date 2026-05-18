@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.39</title>
+<title>Menu IG Bas — V2.99.40</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -91328,8 +91328,9 @@ function addedSugarsContributionFromIng(name, qty, unit) {
     case "c.à.c":
     case "cac":
     case "c.a.c":  grams = qty * 5; break;
+    // V2.99.40 — Pincée recalibrée à 0,5 g (convention culinaire FR).
     case "pincée":
-    case "pincee": grams = qty * 1; break;
+    case "pincee": grams = qty * 0.5; break;
     default:       return 0;                            // unités non comptées
   }
   for (const p of ADDED_SUGAR_PATTERNS) {
@@ -91391,8 +91392,10 @@ function saltContributionFromIng(name, qty, unit) {
     case "c.à.c":
     case "cac":
     case "c.a.c":  grams = qty * 5; break;
+    // V2.99.40 — Pincée recalibrée à 0,5 g (convention culinaire FR).
+    // Auparavant 1 g (sur-estimation × 2 = +25-50 g de sel/sem sur ~35 pincées).
     case "pincée":
-    case "pincee": grams = qty * 1; break;
+    case "pincee": grams = qty * 0.5; break;
     default:       return 0;
   }
   // V2.99.39 bug fix 1 — "olive" matche aussi "olives" (pluriel) MAIS PAS
@@ -95855,8 +95858,11 @@ function NutritionBanner({currentMenu, profile}) {
             : `Au-dessus de la limite stricte OMS < 10 % AET. ${perDay} g/jour/adulte moyen. Risque insulinique et caries — privilégier fruits frais aux sucres ajoutés.`};
   })());
   // V2.99.38 (#75 L3b) — Sel (PNNS idéal 3 g/j/adulte ; OMS limite 5 g/j).
+  // V2.99.40 — Message contextualisé : moyenne France ANSES 9-10 g/j adulte
+  // (87 % de la population dépasse OMS 5 g/j). Donc dépasser 3 g/j est
+  // "normal au regard de la moyenne" mais visons mieux.
   items.push((() => {
-    const v = Math.round(totals.saltGrams * 10) / 10;  // arrondi 1 décimale
+    const v = Math.round(totals.saltGrams * 10) / 10;
     const target = Math.round(thresholds.saltTarget * 10) / 10;
     const max = Math.round(thresholds.saltMax * 10) / 10;
     const lvl = v <= target ? "ok"
@@ -95865,9 +95871,9 @@ function NutritionBanner({currentMenu, profile}) {
     const perDay = totalEquivalents(profile) > 0 ? (v / 7 / totalEquivalents(profile)).toFixed(1) : "0";
     return {key: "salt", level: lvl, icon: "🧂",
       label: `Sel : ${v} g / ${target} g (idéal)`,
-      detail: lvl === "ok" ? `Sous l'idéal PNNS ≤ 3 g/j/adulte. ${perDay} g/jour/adulte moyen.`
-            : lvl === "warning" ? `Entre l'idéal PNNS (${target} g) et la limite OMS (${max} g, ≤ 5 g/j). ${perDay} g/jour/adulte moyen — réduire charcuteries, fromages affinés, sauces salées (soja, miso, anchois).`
-            : `Au-dessus de la limite OMS 5 g/j (≈ 87 % des Français aussi). ${perDay} g/jour/adulte moyen. Risque HTA et cardiovasculaire — privilégier herbes/épices à la place du sel, limiter les charcuteries et fromages affinés.`};
+      detail: lvl === "ok" ? `Sous l'idéal PNNS ≤ 3 g/j/adulte (${perDay} g/j adulte moyen). Excellent — moyenne FR : 9-10 g/j.`
+            : lvl === "warning" ? `${perDay} g/j/adulte. Sous la limite OMS (${max/7/(totalEquivalents(profile)||1)} g/j) mais au-dessus de l'idéal PNNS (3 g/j). Moyenne FR : 9-10 g/j, donc tu fais déjà mieux. Pour viser PNNS idéal : réduire sauces salées (soja, miso), charcuteries, fromages affinés.`
+            : `${perDay} g/j/adulte — au-dessus de la limite OMS 5 g/j. Risque HTA et cardiovasculaire — privilégier herbes/épices à la place du sel, limiter charcuteries et fromages affinés. (À titre indicatif, la moyenne française est à 9-10 g/j, donc ce score reste meilleur que la majorité.)`};
   })());
   // V2.82.1 (#17) — Macros (protéines / lipides / glucides) moyennes quotidiennes.
   // Cibles OMS/EFSA pondérées par adultEquivalent foyer.
