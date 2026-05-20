@@ -51,6 +51,11 @@ VALID_CUISINES = {"francais", "italien", "mediterraneen", "asiatique",
                   "indien", "mexicain", "maghrebin", "universel"}
 VALID_SEASONS = {"spring", "summer", "autumn", "winter"}
 VALID_DIFFICULTIES = {1, 2, 3}
+# Doivent rester alignés avec validate-recipe-data.py (ALLOWED_EQUIPMENT / ALLOWED_ALLERGENS)
+VALID_EQUIPMENT = {"stove", "oven", "blender", "bowl", "pan", "grill",
+                   "cast-iron", "steamer", "pressure-cooker", "microwave"}
+VALID_ALLERGENS = {"lactose", "gluten", "nuts", "eggs", "fish", "sesame",
+                   "soy", "shellfish", "mustard", "egg"}
 
 # Champs obligatoires
 REQUIRED_FIELDS = ["id", "name", "type", "cuisine", "seasons", "prep", "cook",
@@ -240,6 +245,12 @@ def check_schema(recipe, report):
     seasons = recipe.get("seasons", [])
     if not isinstance(seasons, list) or not all(s in VALID_SEASONS for s in seasons):
         report.err(rid, f"seasons invalide : {seasons!r}")
+    for e in recipe.get("eq", []):
+        if e not in VALID_EQUIPMENT:
+            report.err(rid, f"eq invalide : {e!r} (attendu parmi {sorted(VALID_EQUIPMENT)})")
+    for a in recipe.get("allergens", []):
+        if a not in VALID_ALLERGENS:
+            report.err(rid, f"allergen invalide : {a!r} (attendu parmi {sorted(VALID_ALLERGENS)})")
     if recipe.get("prep", 0) + recipe.get("cook", 0) <= 0:
         report.err(rid, f"prep+cook doit être > 0")
     ing = recipe.get("ing", [])
