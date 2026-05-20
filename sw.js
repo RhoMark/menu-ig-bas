@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.99.48";
+const CACHE_VERSION = "menu-ig-bas-v2.99.49";
 
 const CRITICAL_ASSETS = [
   "./",
