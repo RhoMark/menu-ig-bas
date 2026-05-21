@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.59</title>
+<title>Menu IG Bas — V2.99.60</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -113300,40 +113300,18 @@ function computeWeeklyNutritionTotals(weekMenu, profile) {
 // `consentedAt: <ISO>` dans le household pour ne plus l'afficher.
 // ===========================================================================
 // V2.57.0 (issue #84) — Tour onboarding interactif au 1er lancement.
-// Modal centré pleine fenêtre, 10 étapes pédagogiques. Pas d'ancrage DOM
-// (plus robuste : ne casse pas si l'UI évolue). Skippable à tout moment ;
-// re-déclenchable depuis Settings.
+// V2.99.60 (retour beta) — Le tour s'affiche APRÈS le setup, donc on ne
+// re-explique plus les étapes de config (famille, profils, allergènes,
+// cuisines) déjà faites dans SetupView : redondance signalée par un beta-
+// testeur. Il ne reste que l'intro recadrée + la découverte des fonctions
+// (génération, recette, courses, batch, restes). Compteur dynamique.
 // ===========================================================================
 const TUTORIAL_STEPS = [
   {
-    emoji: "🥗",
-    title: "Bienvenue sur Menu IG Bas !",
-    body: "Cette app génère automatiquement des menus équilibrés à index glycémique bas pour ton foyer, semaine après semaine. Toutes tes données restent sur ton appareil — aucun serveur, aucun tracking.",
-    highlight: "Tour rapide en 10 étapes (≈ 3 min). Tu peux passer à tout moment et reprendre depuis Paramètres.",
-  },
-  {
-    emoji: "👨‍👩‍👧‍👦",
-    title: "Ajoute ta famille",
-    body: "Renseigne chaque membre du foyer (prénom, année de naissance, sexe). L'âge sert à ajuster les portions automatiquement (un enfant ne mange pas comme un adulte).",
-    highlight: "Tu peux ajouter, modifier ou retirer un membre à tout moment depuis Paramètres → Membres.",
-  },
-  {
-    emoji: "🩺",
-    title: "Profils santé",
-    body: "Pour chaque membre, choisis un profil : sain (par défaut), diabète T1/T2, SOPK, insulinorésistance, hypertension, dyslipidémies, rééquilibrage, prévention cardio, sportif force, sportif endurance.",
-    highlight: "Le foyer adopte automatiquement le profil le plus contraignant. Un menu adapté au membre le plus exigeant convient à tous les autres (logique min, comme pour les allergènes).",
-  },
-  {
-    emoji: "⚠️",
-    title: "Allergènes & exclusions",
-    body: "Définis les allergies par membre OU pour tout le foyer. La vérification est renforcée jusqu'aux ingrédients composés (sauces, mélanges d'épices, préparations).",
-    highlight: "Un membre allergique aux fruits à coque ne verra jamais une recette qui contient des amandes, même cachées dans une sauce.",
-  },
-  {
-    emoji: "🌍",
-    title: "Préférences cuisines",
-    body: "Choisis jusqu'à 3 cuisines préférées (français, italien, méditerranéen, asiatique, indien, mexicain, maghrébin). Les recettes de ces cuisines seront mises en avant (~50 % du menu).",
-    highlight: "Définis aussi tes équipements (four, plancha, blender…), ton budget hebdomadaire, ton niveau de cuisine et le jour de tes courses.",
+    emoji: "✅",
+    title: "Profil configuré, place à la cuisine !",
+    body: "Ton foyer est paramétré (famille, profils santé, allergènes, préférences). Voici un tour express des fonctions clés pour bien démarrer. Toutes tes données restent sur ton appareil — aucun serveur, aucun tracking.",
+    highlight: "Tour rapide en 6 étapes (≈ 2 min). Tu peux passer à tout moment et reprendre depuis Paramètres.",
   },
   {
     emoji: "🍽️",
@@ -114618,9 +114596,9 @@ function SetupView({state, update, updateProfile, onDone}) {
     )},
     {title:"Allergies & intolérances", content: (
       <div className="space-y-3">
-        <div className="bg-red-50 dark:bg-red-950 border border-red-200 dark:border-red-800 rounded p-3">
-          <p className="text-red-800 dark:text-red-200 text-sm font-medium">⚠️ Allergies et intolérances — enjeu de sécurité</p>
-          <p className="text-red-700 dark:text-red-300 text-xs mt-1">Les recettes contenant ces éléments seront strictement exclues.</p>
+        <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3">
+          <p className="text-amber-900 dark:text-amber-100 text-sm font-medium">⚠️ Allergies et intolérances — enjeu de sécurité</p>
+          <p className="text-amber-800 dark:text-amber-200 text-xs mt-1">Étape facultative : ne coche que si nécessaire. Les allergènes sélectionnés passent en rouge et les recettes les contenant seront strictement exclues.</p>
         </div>
         <div className="flex flex-wrap gap-2">
           {dataRef.allergens().map(({id: k, label: v}) => (
@@ -114641,9 +114619,9 @@ function SetupView({state, update, updateProfile, onDone}) {
     )},
     {title:"Exclusions (goûts, préférences)", content: (
       <div className="space-y-3">
-        <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3">
-          <p className="text-amber-800 dark:text-amber-200 text-sm font-medium">Exclusions préférentielles</p>
-          <p className="text-amber-700 dark:text-amber-300 text-xs mt-1">Ingrédients simplement évités par goût ou conviction. Moins prioritaires que les allergies.</p>
+        <div className="bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded p-3">
+          <p className="text-slate-700 dark:text-slate-200 text-sm font-medium">Exclusions préférentielles</p>
+          <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">Ingrédients simplement évités par goût ou conviction. Moins prioritaires que les allergies.</p>
         </div>
         <p className="text-sm text-slate-600 dark:text-slate-300">Listez les ingrédients à éviter (un par ligne) :</p>
         <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
@@ -118871,10 +118849,10 @@ function SettingsView({state, update, updateProfile}) {
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-2">
         <h3 className="font-bold text-slate-800 dark:text-slate-100">🎓 Aide & tutoriel</h3>
         <p className="text-xs text-slate-500 dark:text-slate-400">
-          Le tour guidé d'introduction (10 étapes pédagogiques) est affiché une seule fois après la création du foyer. Tu peux le rejouer à tout moment.
+          Le tour guidé d'introduction (6 étapes pédagogiques) est affiché une seule fois après la création du foyer. Tu peux le rejouer à tout moment.
         </p>
         <button onClick={() => {
-          if (confirm("Rejouer le tour guidé d'introduction (10 étapes) ?")) {
+          if (confirm("Rejouer le tour guidé d'introduction (6 étapes) ?")) {
             update({hasSeenTutorial: false});
           }
         }} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">
