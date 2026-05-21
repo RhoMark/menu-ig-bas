@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.60</title>
+<title>Menu IG Bas — V2.99.61</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -333,7 +333,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment éviter les recettes avec des ingrédients introuvables près de chez moi ?",
-          "a": "Active dans Paramètres → 🌍 Privilégier les ingrédients locaux / grande surface (issue #3, V2.97.0). Une fois activé, l'algo pénalise (×0.3) les recettes qui nécessitent une épicerie spécialisée — ~22 recettes du catalogue contiennent au moins 2 ingrédients qu'on ne trouve pas en supermarché français standard : tomatille mexicaine (épicerie sud-am), paneer indien et chaat masala (épicerie indienne), citron confit beldi (épicerie orientale), miso et algues (épicerie japonaise), ras-el-hanout, sumac, feuille de curry, fenugrec, mirin… Ce n'est pas un filtre dur (les recettes restent disponibles en bibliothèque pour ceux qui ont une épicerie accessible) — l'algo nudge juste vers des plats faisables avec ce qu'on trouve facilement. Désactivé par défaut. À adapter selon ton lieu de vie : grande ville parisienne / lyonnaise = laisser OFF, petite ville en zone rurale = activer."
+          "a": "Active dans Paramètres → 🌍 Privilégier les ingrédients locaux / grande surface (issue #3, V2.97.0). Une fois activé, l'algo pénalise (×0.3) les recettes qui nécessitent une épicerie spécialisée — ~22 recettes du catalogue contiennent au moins 2 ingrédients qu'on ne trouve pas en supermarché français standard : tomatille mexicaine (épicerie sud-am), paneer indien et chaat masala (épicerie indienne), citron confit beldi (épicerie orientale), miso et algues (épicerie japonaise), ras el-hanout, sumac, feuille de curry, fenugrec, mirin… Ce n'est pas un filtre dur (les recettes restent disponibles en bibliothèque pour ceux qui ont une épicerie accessible) — l'algo nudge juste vers des plats faisables avec ce qu'on trouve facilement. Désactivé par défaut. À adapter selon ton lieu de vie : grande ville parisienne / lyonnaise = laisser OFF, petite ville en zone rurale = activer."
         },
         {
           "q": "À quoi sert le temps de préparation différent semaine et weekend ?",
@@ -2467,12 +2467,6 @@ if ("serviceWorker" in navigator) {
       "soldByWeight": false
     },
     {
-      "id": "tahin",
-      "label": "Tahin",
-      "category": "pantry",
-      "soldByWeight": false
-    },
-    {
       "id": "tahini",
       "label": "Tahini",
       "category": "pantry",
@@ -3878,13 +3872,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 30,
       "proteinPer100g": 7.0,
       "fatPer100g": 42.0
-    },
-    {
-      "id": "tahin",
-      "ig": 25,
-      "carbsPer100g": 13,
-      "proteinPer100g": 17.0,
-      "fatPer100g": 50.0
     },
     {
       "id": "tahini",
@@ -7289,13 +7276,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 6.0
     },
     {
-      "id": "za'atar",
-      "ig": 0,
-      "carbsPer100g": 42.0,
-      "proteinPer100g": 15.0,
-      "fatPer100g": 15.0
-    },
-    {
       "id": "zaatar",
       "ig": 0,
       "carbsPer100g": 42.0,
@@ -7322,13 +7302,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 20.0,
       "proteinPer100g": 4.0,
       "fatPer100g": 11.0
-    },
-    {
-      "id": "ras-el-hanout",
-      "ig": 0,
-      "carbsPer100g": 49.0,
-      "proteinPer100g": 11.0,
-      "fatPer100g": 10.0
     },
     {
       "id": "rhubarbe",
@@ -9036,13 +9009,6 @@ if ("serviceWorker" in navigator) {
       "updatedAt": "2026-05"
     },
     {
-      "id": "za'atar",
-      "price": 4.5,
-      "unit": "100g",
-      "source": "Estimation Q1 2026",
-      "updatedAt": "2026-05"
-    },
-    {
       "id": "zaatar",
       "price": 4.5,
       "unit": "100g",
@@ -9250,13 +9216,6 @@ if ("serviceWorker" in navigator) {
       "price": 3.5,
       "unit": "100g",
       "source": "Carrefour Drive Q1 2026",
-      "updatedAt": "2026-05"
-    },
-    {
-      "id": "tahin",
-      "price": 1.5,
-      "unit": "100g",
-      "source": "Open Prices, médiane FR Q1 2026",
       "updatedAt": "2026-05"
     },
     {
@@ -16044,7 +16003,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Tahin",
+          "Tahini",
           1,
           "c.à.s",
           "pantry"
@@ -16072,7 +16031,7 @@ if ("serviceWorker" in navigator) {
         "Cuis les nouilles soba 5 minutes dans de l'eau bouillante. Égoutte, rince à l'eau froide.",
         "Pendant ce temps, cuis les edamame 3 min dans de l'eau bouillante salée. Égoutte.",
         "Coupe concombre et carotte en allumettes fines.",
-        "Dans un bol, fouette tahin, sauce soja, huile de sésame, jus de citron vert et 1 c.à.s d'eau chaude.",
+        "Dans un bol, fouette tahini, sauce soja, huile de sésame, jus de citron vert et 1 c.à.s d'eau chaude.",
         "Dans un saladier, mélange nouilles, edamame, concombre, carotte et la sauce.",
         "Parsème de graines de sésame et coriandre ciselée."
       ]
@@ -19643,7 +19602,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "s5",
-      "name": "Galettes de riz complètes tahin-miel",
+      "name": "Galettes de riz complètes tahini-miel",
       "type": "snack",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -19671,7 +19630,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Tahin",
+          "Tahini",
           1,
           "c.à.s",
           "pantry"
@@ -19684,7 +19643,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Tartine les galettes de tahin.",
+        "Tartine les galettes de tahini.",
         "Ajoute un tout petit filet de miel."
       ]
     },
@@ -42610,7 +42569,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Ras el hanout",
+          "Ras el-hanout",
           2,
           "c.à.c",
           "spices"
@@ -42663,7 +42622,7 @@ if ("serviceWorker" in navigator) {
         "Chauffe l'huile dans une cocotte à feu moyen-vif. Fais dorer les cuisses 3 min de chaque côté — la peau doit être bien colorée et croustillante. Réserve sur une assiette.",
         "Émince l'oignon, écrase l'ail.",
         "Dans la cocotte (sans la nettoyer — les sucs vont parfumer), fais revenir l'oignon 4 min jusqu'à transparence. Ajoute l'ail, remue 30 secondes.",
-        "Ajoute le ras el hanout et la cannelle, remue 30 secondes pour libérer les arômes.",
+        "Ajoute le ras el-hanout et la cannelle, remue 30 secondes pour libérer les arômes.",
         "Remets les cuisses dans la cocotte. Verse le bouillon, ajoute le potiron (gelé OK) et les pruneaux. Couvre et laisse mijoter 25 min à feu doux.",
         "Pendant ce temps, prépare la semoule : verse-la dans un saladier, recouvre d'eau bouillante salée à hauteur, couvre et laisse gonfler 5 min. Égraine à la fourchette avec 1 c.à.c d'huile d'olive.",
         "Ajoute les pois chiches rincés dans la cocotte, cuis encore 5 min. Le potiron doit être tendre, le poulet bien cuit (le jus qui sort doit être clair, pas rosé).",
@@ -44653,7 +44612,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Ras el hanout",
+          "Ras el-hanout",
           1,
           "c.à.c",
           "spices"
@@ -44692,7 +44651,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Émince finement l'oignon.",
         "Dans une cocotte, chauffe l'huile à feu moyen. Pose les cuisses de poulet côté peau, dore 3 min. Retourne, dore encore 2 min. Réserve sur une assiette.",
-        "Dans la cocotte, fais revenir l'oignon 4 min jusqu'à transparence. Ajoute ras el hanout et 0.5 c.à.c de cannelle. Remue 30 secondes.",
+        "Dans la cocotte, fais revenir l'oignon 4 min jusqu'à transparence. Ajoute ras el-hanout et 0.5 c.à.c de cannelle. Remue 30 secondes.",
         "Remets les cuisses, verse le bouillon. Couvre et laisse mijoter 25 min à feu doux — le poulet doit se détacher facilement de l'os.",
         "Pendant ce temps, fais griller les amandes effilées à sec dans une petite poêle 2-3 min en remuant sans arrêt (attention ça brûle vite). Réserve.",
         "Sors le poulet de la cocotte. Désosse-le et effiloche la chair à la main (jette les os et la peau). Remets le poulet effiloché dans la cocotte avec son jus.",
@@ -45506,7 +45465,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Ras el hanout",
+          "Ras el-hanout",
           1,
           "c.à.c",
           "spices"
@@ -45540,7 +45499,7 @@ if ("serviceWorker" in navigator) {
         "Rince le quinoa 30 secondes sous l'eau froide pour enlever l'amertume. Égoutte.",
         "Coupe carotte, navet et courgette en cubes de 2 cm. Émince l'oignon et coupe la tomate en dés.",
         "Dans une casserole moyenne, fais chauffer l'huile d'olive sur feu moyen. Ajoute l'oignon et fais-le revenir 3 min jusqu'à ce qu'il devienne translucide.",
-        "Ajoute carotte et navet, remue 2 min. Saupoudre ras el hanout et cumin, mélange 30 secondes pour libérer les arômes (ça doit sentir fort).",
+        "Ajoute carotte et navet, remue 2 min. Saupoudre ras el-hanout et cumin, mélange 30 secondes pour libérer les arômes (ça doit sentir fort).",
         "Ajoute tomate, courgette, pois chiches rincés et bouillon. Porte à frémissement, baisse à feu doux et couvre. Laisse mijoter 15 min : les légumes doivent être tendres au couteau.",
         "Pendant ce temps, cuis le quinoa : dans une autre casserole, mets-le avec 2 fois son volume d'eau salée. Porte à ébullition, baisse, couvre et laisse 12 min jusqu'à ce que les grains soient gonflés et translucides.",
         "Sale et poivre les légumes. Sers le quinoa dans une assiette creuse, dépose les légumes dessus avec leur jus. Saupoudre de coriandre ciselée."
@@ -48034,7 +47993,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b48",
-      "name": "Avocado toast pain de seigle, œuf brouillé et ciboulette",
+      "name": "Toast à l'avocat pain de seigle, œuf brouillé et ciboulette",
       "type": "breakfast",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -55056,7 +55015,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Ras el hanout",
+          "Ras el-hanout",
           1,
           "c.à.c",
           "spices"
@@ -55109,7 +55068,7 @@ if ("serviceWorker" in navigator) {
         "Coupe la courgette en demi-rondelles épaisses (sans l'éplucher). Coupe le poivron en quartiers. Coupe le céleri branche en bâtonnets de 4 cm. Coupe la tomate en 8.",
         "Émince oignon et ail.",
         "Dans une grande cocotte, chauffe l'huile à feu moyen. Fais revenir oignon + ail 4 min jusqu'à translucide.",
-        "Ajoute ras el hanout, cumin, paprika. Remue 30 sec : ça doit embaumer.",
+        "Ajoute ras el-hanout, cumin, paprika. Remue 30 sec : ça doit embaumer.",
         "Ajoute concentré de tomate, remue 1 min (ça caramélise un peu, c'est ce qu'on veut).",
         "Ajoute carotte + navet + céleri. Verse le bouillon et porte à ébullition. Couvre, baisse à feu moyen-doux. Cuis 15 min.",
         "Ajoute courgette, poivron, tomate, pois chiches et harissa. Remets le couvercle. Cuis 12 min : les légumes doivent être tendres mais encore tenir leur forme.",
@@ -58853,7 +58812,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b62",
-      "name": "Tartines houmous, tomate cerise et za'atar",
+      "name": "Tartines houmous, tomate cerise et zaatar",
       "type": "breakfast",
       "cuisine": "universel",
       "seasons": [
@@ -58910,7 +58869,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Za'atar (ou origan + sumac + sésame)",
+          "Zaatar (ou origan + sumac + sésame)",
           0.5,
           "c.à.c",
           "spices"
@@ -58946,7 +58905,7 @@ if ("serviceWorker" in navigator) {
         "Égoutte les pois chiches (en topping additionnel pour la double protéine, en plus de l'houmous lui-même).",
         "Étale généreusement l'houmous sur les tartines tièdes (pas brûlantes : il fondrait).",
         "Dispose en couronne tomates cerises, concombre, pois chiches.",
-        "Arrose d'un filet d'huile d'olive + jus de citron, parsème de za'atar généreusement (= mélange thym sauvage + sumac + sésame, signature levantine).",
+        "Arrose d'un filet d'huile d'olive + jus de citron, parsème de zaatar généreusement (= mélange thym sauvage + sumac + sésame, signature levantine).",
         "Termine par persil ciselé + sel + poivre du moulin.",
         "Mange immédiatement, idéalement avec un bol de yaourt grec + miel à côté ou une salade de fruits frais.",
         "Petit-déjeuner salé style méditerranéen oriental : tient toute la matinée grâce aux protéines + fibres des pois chiches."
@@ -71232,7 +71191,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "d191",
-      "name": "Brochettes de poulet ras-el-hanout, salade fattouche",
+      "name": "Brochettes de poulet ras el-hanout, salade fattouche",
       "type": "dinner",
       "cuisine": "maghrebin",
       "seasons": [
@@ -71335,7 +71294,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Ras-el-hanout",
+          "Ras el-hanout",
           2,
           "c.à.c",
           "spices"
@@ -71366,7 +71325,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Prépare la marinade : dans un bol, mélange le yaourt, 2 c.à.s d'huile, le ras-el-hanout, le cumin, l'ail écrasé, le jus d'1 citron, sel, poivre.",
+        "Prépare la marinade : dans un bol, mélange le yaourt, 2 c.à.s d'huile, le ras el-hanout, le cumin, l'ail écrasé, le jus d'1 citron, sel, poivre.",
         "Coupe le filet de poulet en cubes de 2,5 cm. Mélange dans la marinade, couvre et laisse reposer 30 min minimum au frais (jusqu'à 2 h si tu peux).",
         "Prépare la salade fattouche pendant la marinade. Coupe le pain pita en triangles de 3 cm. Étale sur une plaque, arrose d'1 c.à.s d'huile, saupoudre d'1/2 c.à.c de sumac. Enfourne à 180 °C pendant 8-10 min jusqu'à doré et croustillant. Laisse refroidir.",
         "Coupe les tomates en quartiers en retirant les graines, puis en gros morceaux. Coupe le concombre en demi-rondelles. Tranche les radis en lamelles. Émince finement l'oignon rouge.",
@@ -80331,7 +80290,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Tahin (purée de sésame)",
+          "Tahini (purée de sésame)",
           2,
           "c.à.s",
           "pantry"
@@ -80381,7 +80340,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Rince les pois chiches sous l'eau froide, égoutte.",
-        "Dans le blender, mixe les pois chiches + betterave coupée en cubes + tahin + ail + jus du citron + 1 c.à.s huile d'olive + cumin + sel + 3 c.à.s d'eau froide jusqu'à crème lisse rose vif (1-2 min).",
+        "Dans le blender, mixe les pois chiches + betterave coupée en cubes + tahini + ail + jus du citron + 1 c.à.s huile d'olive + cumin + sel + 3 c.à.s d'eau froide jusqu'à crème lisse rose vif (1-2 min).",
         "Goûte, ajuste sel/citron/cumin.",
         "Coupe chaque pita en 6 triangles, fais-les griller à la poêle sèche 2-3 min de chaque côté jusqu'à coloration dorée et croquant.",
         "Verse le houmous betterave dans un bol de service. Arrose du reste d'huile d'olive, saupoudre de persil ciselé et d'une pincée de cumin.",
@@ -80496,7 +80455,7 @@ if ("serviceWorker" in navigator) {
         "Ajoute la farine de pois chiche, mixe 10 sec. Le mélange doit former une pâte malléable. Laisse reposer 15 min au frais.",
         "Forme 16 boulettes plates de 4 cm de diamètre. Pose sur la plaque, badigeonne le dessus d'huile d'olive.",
         "Enfourne 12 min, retourne délicatement, badigeonne l'autre face, cuis 10-13 min de plus. Les falafels doivent être bien dorés croustillants.",
-        "Sers avec une sauce yaourt-tahin-citron, des crudités, du pain pita. Recette d'origine égypto-levantine adoptée dans tout le Maghreb. Riche en protéines végétales, fibres, antioxydants."
+        "Sers avec une sauce yaourt-tahini-citron, des crudités, du pain pita. Recette d'origine égypto-levantine adoptée dans tout le Maghreb. Riche en protéines végétales, fibres, antioxydants."
       ]
     },
     {
@@ -85445,7 +85404,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b127",
-      "name": "Avocado toast pain au maïs et œuf miroir style mexicain",
+      "name": "Toast à l'avocat pain au maïs et œuf miroir style mexicain",
       "type": "breakfast",
       "cuisine": "mexicain",
       "seasons": [
@@ -86123,7 +86082,7 @@ if ("serviceWorker" in navigator) {
         "Laisse reposer 15 min au frais.",
         "Forme 16 boulettes plates de 4 cm. Pose sur la plaque, badigeonne d'huile d'olive.",
         "Enfourne 12 min, retourne, badigeonne, cuis 10 min de plus.",
-        "Sers chaud avec quartiers de citron, sauce yaourt-tahin-citron, salade. Variante maghrébine du falafel avec ajout d'épinards (signature Tunis-Sfax)."
+        "Sers chaud avec quartiers de citron, sauce yaourt-tahini-citron, salade. Variante maghrébine du falafel avec ajout d'épinards (signature Tunis-Sfax)."
       ]
     },
     {
@@ -87530,7 +87489,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Pâte de sésame noir (ou tahin classique + cacao)",
+          "Pâte de sésame noir (ou tahini classique + cacao)",
           4,
           "c.à.s",
           "pantry"
@@ -110816,6 +110775,11 @@ function canonicalName(name) {
   n = n.replace(/œ/g, "oe").replace(/æ/g, "ae");
   // strip accents
   n = n.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  // V2.99.61 — neutralise apostrophes et tirets pour l'agrégation panier :
+  // « za'atar » = « zaatar », « ras el-hanout » = « ras el hanout ». Appliqué
+  // uniformément → aucun risque de fusion erronée, élimine cette classe de doublons.
+  n = n.replace(/['’ʼ‘]/g, "");
+  n = n.replace(/-/g, " ");
   // remove parenthetical content : "Citron (jus)" → "Citron"
   n = n.replace(/\s*\([^)]*\)\s*/g, " ");
   // remove tail descriptors after comma : "Citron, jus" → "Citron"
@@ -118521,7 +118485,7 @@ function SettingsView({state, update, updateProfile}) {
             <span>
               <span className="text-sm font-medium">🌍 Privilégier les ingrédients locaux / grande surface</span>
               <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Pénalise (×0.3 sur la pondération de pioche) les recettes qui nécessitent une épicerie spécialisée — celles taggées <em>epicerie-specialisee</em> (~22 recettes avec ≥2 ingrédients non trouvables en grande surface française standard : tomatille mexicaine, paneer indien, citron confit, chaat masala, miso, ras-el-hanout, sumac, feuille de curry, etc.). Pas un filtre dur : ces recettes restent accessibles en bibliothèque, mais l'algo les évite à la génération. Désactivé par défaut — active si tu n'as pas d'épicerie internationale à proximité.
+                Pénalise (×0.3 sur la pondération de pioche) les recettes qui nécessitent une épicerie spécialisée — celles taggées <em>epicerie-specialisee</em> (~22 recettes avec ≥2 ingrédients non trouvables en grande surface française standard : tomatille mexicaine, paneer indien, citron confit, chaat masala, miso, ras el-hanout, sumac, feuille de curry, etc.). Pas un filtre dur : ces recettes restent accessibles en bibliothèque, mais l'algo les évite à la génération. Désactivé par défaut — active si tu n'as pas d'épicerie internationale à proximité.
               </span>
             </span>
           </label>
