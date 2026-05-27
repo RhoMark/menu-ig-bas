@@ -57,6 +57,23 @@ VALID_EQUIPMENT = {"stove", "oven", "blender", "bowl", "pan", "grill",
 VALID_ALLERGENS = {"lactose", "gluten", "nuts", "eggs", "fish", "sesame",
                    "soy", "shellfish", "mustard", "egg"}
 
+# V2.99.63 — Fractions hardcodées dans les steps (retour HedgeX 2026-05-26).
+# Pattern bug : step dit « le demi-œuf battu » alors que la liste d'ingrédients
+# scalée pour la famille affiche par ex. 2 œufs (cf. d99). La step ne suit pas
+# le scaling. WARN level : peut aussi être un split intra-recette légitime
+# (« la moitié pour la garniture, le reste pour la sauce ») → à juger à l'œil.
+HARDCODED_FRACTION_NOUNS = (
+    r"o?euf|œuf|citron|orange|pomme|tomate|oignon|tranche|gousse|carotte|"
+    r"courgette|aubergine|poivron|concombre|avocat|mangue|melon|banane|"
+    r"pasteque|pastèque|ananas|kiwi|ail|fenouil|navet|radis|panais"
+)
+HARDCODED_FRACTION_RE = re.compile(
+    r"\b(?:demi[- ]|moitié\s+de\s+l[' ’]|½\s*|1/2\s+|¼\s*|1/4\s+|quart\s+(?:de|d[' ’]\s*))"
+    r"(?:du?\s+|d[' ’]\s*)?"
+    rf"({HARDCODED_FRACTION_NOUNS})s?\b",
+    flags=re.IGNORECASE
+)
+
 # Champs obligatoires
 REQUIRED_FIELDS = ["id", "name", "type", "cuisine", "seasons", "prep", "cook",
                    "diff", "cost", "kcal", "tags", "eq", "allergens", "ing", "steps"]
@@ -461,6 +478,23 @@ def check_seasonality(recipes, report):
             report.info(rid, f"seasons ne contient pas la saison à venir ({upcoming}). "
                              f"Vérifier intention.")
 
+def check_step_hardcoded_fractions(recipes, report):
+    """V2.99.63 — Détecte 'demi-œuf' / 'moitié de l'oignon' / '½ tranche'
+    dans les steps : chiffres bruts de la recette de base qui ne suivent
+    pas le scaling famille (cf. d99 « le demi-œuf battu » alors que la liste
+    affiche par ex. 2 œufs). WARN, pas erreur : peut être un split intra-
+    recette légitime (à juger à l'œil)."""
+    for r in recipes:
+        rid = r.get("id", "?")
+        for i, step in enumerate(r.get("steps", []) or [], 1):
+            for m in HARDCODED_FRACTION_RE.finditer(step):
+                noun = m.group(1).lower()
+                report.warn(rid,
+                    f"step {i} : « {m.group(0)} » — fraction hardcodée. "
+                    f"Préfère « le/les {noun} » (référence à la liste scalée). "
+                    f"Si c'est un split intra-recette légitime, ignore.")
+                break  # un seul flag par step pour éviter le bruit
+
 # ────────────────────────── PRINT REPORT ──────────────────────────
 def print_report(report, lot, all_missing):
     print(f"\n{BOLD}━━━ Rapport lint pour {len(lot)} recettes ━━━{RESET}")
@@ -534,6 +568,7 @@ def main():
     check_rest_advance(lot, report)
     check_doublons(lot, existing_recipes, report)
     check_seasonality(lot, report)
+    check_step_hardcoded_fractions(lot, report)
 
     exit_code = print_report(report, lot, all_missing)
     sys.exit(exit_code)
