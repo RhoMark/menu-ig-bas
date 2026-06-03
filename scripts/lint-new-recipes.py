@@ -447,6 +447,25 @@ def check_rest_advance(recipes, report):
         if rest is not None and rest >= 120 and not r.get("advance"):
             report.err(rid, f"rest={rest} min ≥120 mais champ `advance` manquant")
 
+# V2.99.x — Unités d'ingrédients pièges (retour HedgeX 2026-06-03).
+# Certains ingrédients ont un `weightPerPiece` = pièce vendue (tête, botte) alors
+# que la recette en utilise une sous-unité. Ex : "Ail" en "u" = 1 tête (100 g) →
+# une recette affichait 400 g d'ail. La bonne unité est "gousse" (≈4 g).
+FORBIDDEN_INGREDIENT_UNITS = {
+    "Ail": ({"u"}, "gousse"),   # ail : jamais en tête, toujours en gousse
+}
+def check_ingredient_units(recipes, report):
+    for r in recipes:
+        rid = r.get("id", "?")
+        for ing in r.get("ing", []):
+            if not isinstance(ing, list) or len(ing) < 3:
+                continue
+            name, unit = ing[0], ing[2]
+            rule = FORBIDDEN_INGREDIENT_UNITS.get(name)
+            if rule and unit in rule[0]:
+                report.err(rid, f"« {name} » mesuré en \"{unit}\" interdit "
+                                f"(pièce vendue, surdosage) → utiliser \"{rule[1]}\"")
+
 def check_doublons(recipes, existing_recipes, report):
     for r in recipes:
         rid = r.get("id", "?")
@@ -566,6 +585,7 @@ def main():
     check_cg_threshold(lot, glyc_map, report)
     check_glycemic_coverage(lot, glyc_map, report, all_missing)
     check_rest_advance(lot, report)
+    check_ingredient_units(lot, report)
     check_doublons(lot, existing_recipes, report)
     check_seasonality(lot, report)
     check_step_hardcoded_fractions(lot, report)
