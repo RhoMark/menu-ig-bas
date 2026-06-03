@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.72</title>
+<title>Menu IG Bas — V2.99.73</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -2921,6 +2921,10 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
+    { "id": "raisins secs", "ig": 65, "carbsPer100g": 75, "proteinPer100g": 3.0, "fatPer100g": 0.5 },
+    { "id": "vin blanc moelleux", "ig": 0, "carbsPer100g": 5, "proteinPer100g": 0.0, "fatPer100g": 0.0 },
+    { "id": "fruits rouges surgeles", "ig": 25, "carbsPer100g": 10, "proteinPer100g": 1.0, "fatPer100g": 0.3 },
+    { "id": "fecule de riz", "ig": 90, "carbsPer100g": 85, "proteinPer100g": 0.5, "fatPer100g": 0.1 },
     {
       "id": "puree de sesame",
       "ig": 40,
@@ -8100,6 +8104,13 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 22.0,
       "proteinPer100g": 8.3,
       "fatPer100g": 0.4
+    },
+    {
+      "id": "farine de chataigne",
+      "ig": 65,
+      "carbsPer100g": 78.0,
+      "proteinPer100g": 6.0,
+      "fatPer100g": 3.0
     }
   ]
 }
@@ -117740,6 +117751,800 @@ if ("serviceWorker" in navigator) {
         "Préchauffe le four à 200°C. Dans un plat, alterne une couche de lamelles de butternut et une couche de lentilles.",
         "Émiette le chèvre sur le dessus, arrose d'un filet d'huile d'olive.",
         "Enfourne 30 min, jusqu'à ce que la butternut soit tendre (la pointe d'un couteau s'enfonce) et le chèvre doré. Sers chaud."
+      ]
+    },
+    {
+      "id": "des178",
+      "name": "Pere al vino rosso (poires pochées au vin rouge épicé)",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 30,
+      "diff": 1,
+      "cost": 1.2,
+      "kcal": 150,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Poire",
+          250,
+          "g",
+          "produce"
+        ],
+        [
+          "Vin rouge",
+          150,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Miel",
+          12,
+          "g",
+          "pantry"
+        ],
+        [
+          "Cannelle (bâton)",
+          1,
+          "g",
+          "spices"
+        ],
+        [
+          "Anis étoilé",
+          0.5,
+          "g",
+          "spices"
+        ],
+        [
+          "Orange",
+          20,
+          "ml",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Épluche les poires en gardant la queue (c'est plus joli) et retire le cœur par le dessous avec une petite cuillère.",
+        "Dans une casserole, verse le vin rouge, le miel, le jus d'orange, la cannelle et l'anis étoilé. Porte à frémissement.",
+        "Dépose les poires couchées, couvre à moitié et laisse pocher 25 min en les retournant à mi-cuisson : elles s'imprègnent et prennent une jolie couleur grenat.",
+        "Retire les poires. Fais réduire le jus 5 min à feu vif jusqu'à ce qu'il devienne sirupeux.",
+        "Nappe les poires du sirop épicé. Se mange tiède ou froid."
+      ]
+    },
+    {
+      "id": "des179",
+      "name": "Budino al cioccolato fondente (flan léger chocolat noir)",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 10,
+      "diff": 1,
+      "cost": 1.1,
+      "kcal": 170,
+      "tags": [
+        "vegetarian"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Lait demi-écrémé",
+          250,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Chocolat noir 70%",
+          30,
+          "g",
+          "pantry"
+        ],
+        [
+          "Fécule de maïs",
+          18,
+          "g",
+          "pantry"
+        ],
+        [
+          "Sirop d'érable",
+          10,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Cacao non sucré",
+          4,
+          "g",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Délaye la fécule de maïs dans un peu de lait froid prélevé sur le total (pour éviter les grumeaux).",
+        "Fais chauffer le reste du lait avec le cacao et le sirop d'érable jusqu'à frémissement.",
+        "Hors du feu, ajoute le chocolat noir cassé en morceaux et remue jusqu'à ce qu'il fonde.",
+        "Reverse la fécule délayée, remets sur feu doux et fouette 2-3 min : le budino épaissit comme une crème.",
+        "Répartis dans des ramequins et laisse prendre au frais au moins 2h."
+      ]
+    },
+    {
+      "id": "des180",
+      "name": "Castagnaccio (gâteau de farine de châtaigne, romarin et noix)",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 30,
+      "diff": 1,
+      "cost": 1.3,
+      "kcal": 190,
+      "tags": [
+        "vegetarian",
+        "vegan"
+      ],
+      "eq": [
+        "oven"
+      ],
+      "allergens": [
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Farine de châtaigne",
+          70,
+          "g",
+          "pantry"
+        ],
+        [
+          "Cerneaux de noix",
+          15,
+          "g",
+          "produce"
+        ],
+        [
+          "Raisins secs",
+          15,
+          "g",
+          "produce"
+        ],
+        [
+          "Romarin frais",
+          1,
+          "g",
+          "produce"
+        ],
+        [
+          "Huile d'olive",
+          10,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Eau",
+          130,
+          "ml",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 190°C. Fais tremper les raisins secs 10 min dans de l'eau tiède, puis égoutte-les.",
+        "Dans un saladier, délaye la farine de châtaigne avec l'eau et l'huile d'olive jusqu'à obtenir une pâte fluide, sans grumeaux (la farine de châtaigne est naturellement sucrée, pas besoin d'ajouter du sucre).",
+        "Verse dans un petit moule huilé. Parsème de noix concassées, de raisins et de quelques aiguilles de romarin (le mariage romarin-châtaigne est la signature toscane).",
+        "Enfourne 25 à 30 min : le dessus craquelle, c'est le signe que c'est cuit.",
+        "Laisse tiédir avant de couper. Se mange en fine part."
+      ]
+    },
+    {
+      "id": "des181",
+      "name": "Zabaione léger aux fruits rouges",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 10,
+      "diff": 2,
+      "cost": 1.4,
+      "kcal": 160,
+      "tags": [
+        "vegetarian"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "eggs"
+      ],
+      "ing": [
+        [
+          "Jaune d'œuf",
+          2,
+          "u",
+          "dairy"
+        ],
+        [
+          "Vin blanc moelleux",
+          40,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Sirop d'érable",
+          12,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Fruits rouges surgelés",
+          120,
+          "g",
+          "frozen"
+        ]
+      ],
+      "steps": [
+        "Fais décongeler les fruits rouges et répartis-les au fond des verrines.",
+        "Dans un cul-de-poule, fouette les jaunes d'œuf avec le sirop d'érable et le vin blanc.",
+        "Place le cul-de-poule sur une casserole d'eau frémissante (bain-marie, le fond ne touche pas l'eau).",
+        "Fouette sans arrêt 6 à 8 min : le mélange triple de volume et devient une mousse aérienne et nappante. Ne pas surchauffer (les œufs coaguleraient).",
+        "Verse le zabaione mousseux sur les fruits rouges et sers aussitôt, tiède."
+      ]
+    },
+    {
+      "id": "des182",
+      "name": "Mela al forno (pomme au four farcie amandes-cannelle)",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 35,
+      "diff": 1,
+      "cost": 1.0,
+      "kcal": 160,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "batch-friendly"
+      ],
+      "eq": [
+        "oven"
+      ],
+      "allergens": [
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Pomme",
+          250,
+          "g",
+          "produce"
+        ],
+        [
+          "Amandes effilées",
+          15,
+          "g",
+          "produce"
+        ],
+        [
+          "Raisins secs",
+          12,
+          "g",
+          "produce"
+        ],
+        [
+          "Miel",
+          10,
+          "g",
+          "pantry"
+        ],
+        [
+          "Cannelle moulue",
+          1,
+          "g",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 180°C. Lave les pommes, retire le cœur sans percer le fond (creuse un puits).",
+        "Mélange les amandes effilées, les raisins secs, le miel et la cannelle.",
+        "Garnis le creux des pommes de ce mélange.",
+        "Dépose dans un plat avec un fond d'eau (2 c.à.s) et enfourne 30 à 35 min, jusqu'à ce que les pommes soient fondantes (la peau se fripe).",
+        "Arrose du jus de cuisson et sers tiède."
+      ]
+    },
+    {
+      "id": "des183",
+      "name": "Clafoutis poires-amandes (farine T80)",
+      "type": "dessert",
+      "cuisine": "francais",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 35,
+      "diff": 2,
+      "cost": 1.3,
+      "kcal": 200,
+      "tags": [
+        "vegetarian"
+      ],
+      "eq": [
+        "oven"
+      ],
+      "allergens": [
+        "eggs",
+        "lactose",
+        "gluten",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Poire",
+          200,
+          "g",
+          "produce"
+        ],
+        [
+          "Œuf",
+          2,
+          "u",
+          "dairy"
+        ],
+        [
+          "Lait demi-écrémé",
+          150,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Farine T80 (semi-complète)",
+          40,
+          "g",
+          "pantry"
+        ],
+        [
+          "Poudre d'amande",
+          25,
+          "g",
+          "produce"
+        ],
+        [
+          "Sirop d'érable",
+          12,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Vanille",
+          1,
+          "g",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 180°C. Épluche les poires et coupe-les en quartiers, dispose-les dans un moule légèrement huilé.",
+        "Dans un saladier, fouette les œufs avec le sirop d'érable et la vanille.",
+        "Ajoute la farine et la poudre d'amande, mélange, puis verse le lait petit à petit jusqu'à obtenir une pâte fluide sans grumeaux.",
+        "Verse l'appareil sur les poires.",
+        "Enfourne 35 min : le clafoutis est pris quand il est doré et juste tremblotant au centre. Laisse tiédir avant de servir."
+      ]
+    },
+    {
+      "id": "des184",
+      "name": "Compote poire-coing à la vanille (sans sucre ajouté)",
+      "type": "dessert",
+      "cuisine": "francais",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 25,
+      "diff": 1,
+      "cost": 1.0,
+      "kcal": 110,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "batch-friendly",
+        "light"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Poire",
+          200,
+          "g",
+          "produce"
+        ],
+        [
+          "Coing",
+          150,
+          "g",
+          "produce"
+        ],
+        [
+          "Vanille",
+          1,
+          "g",
+          "spices"
+        ],
+        [
+          "Jus de citron",
+          10,
+          "ml",
+          "produce"
+        ],
+        [
+          "Eau",
+          80,
+          "ml",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Épluche le coing et la poire, retire les cœurs et coupe-les en petits dés (le coing est dur, fais des dés plus petits).",
+        "Mets-les dans une casserole avec l'eau, le jus de citron et la vanille fendue.",
+        "Couvre et laisse cuire 20 à 25 min à feu doux, jusqu'à ce que le coing soit tendre (il cuit plus lentement que la poire).",
+        "Écrase à la fourchette pour une compote rustique, ou mixe pour une texture lisse.",
+        "Le coing apporte un parfum naturellement sucré : pas besoin d'ajouter du sucre. Se mange tiède ou froid."
+      ]
+    },
+    {
+      "id": "des185",
+      "name": "Crumble poire-chocolat aux flocons d'avoine",
+      "type": "dessert",
+      "cuisine": "universel",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 25,
+      "diff": 1,
+      "cost": 1.2,
+      "kcal": 220,
+      "tags": [
+        "vegetarian"
+      ],
+      "eq": [
+        "oven"
+      ],
+      "allergens": [
+        "gluten",
+        "lactose",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Poire",
+          250,
+          "g",
+          "produce"
+        ],
+        [
+          "Flocons d'avoine",
+          40,
+          "g",
+          "pantry"
+        ],
+        [
+          "Chocolat noir 70%",
+          20,
+          "g",
+          "pantry"
+        ],
+        [
+          "Beurre doux",
+          15,
+          "g",
+          "dairy"
+        ],
+        [
+          "Poudre d'amande",
+          15,
+          "g",
+          "produce"
+        ],
+        [
+          "Cannelle moulue",
+          1,
+          "g",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 190°C. Épluche les poires, coupe-les en dés et répartis-les dans un plat. Parsème du chocolat noir concassé.",
+        "Prépare la pâte à crumble : du bout des doigts, mélange les flocons d'avoine, la poudre d'amande, le beurre mou et la cannelle jusqu'à obtenir une texture sableuse.",
+        "Émiette ce mélange sur les poires.",
+        "Enfourne 22 à 25 min, jusqu'à ce que le dessus soit doré et croustillant.",
+        "Sers tiède (le chocolat est fondant)."
+      ]
+    },
+    {
+      "id": "des186",
+      "name": "Yaourt grec, poires rôties et noix",
+      "type": "dessert",
+      "cuisine": "universel",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 20,
+      "diff": 1,
+      "cost": 1.2,
+      "kcal": 190,
+      "tags": [
+        "vegetarian",
+        "batch-friendly"
+      ],
+      "eq": [
+        "oven"
+      ],
+      "allergens": [
+        "lactose",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Poire",
+          200,
+          "g",
+          "produce"
+        ],
+        [
+          "Yaourt grec",
+          120,
+          "g",
+          "dairy"
+        ],
+        [
+          "Cerneaux de noix",
+          15,
+          "g",
+          "produce"
+        ],
+        [
+          "Miel",
+          8,
+          "g",
+          "pantry"
+        ],
+        [
+          "Cannelle moulue",
+          1,
+          "g",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 190°C. Coupe les poires en quartiers, dépose-les dans un plat, saupoudre de cannelle.",
+        "Enfourne 18 à 20 min, jusqu'à ce qu'elles soient tendres et légèrement dorées.",
+        "Concasse les noix et torréfie-les 3 min à sec dans une poêle.",
+        "Répartis le yaourt grec dans les coupes, dépose les poires rôties tièdes dessus.",
+        "Arrose d'un filet de miel et parsème de noix. Sers aussitôt (chaud-froid)."
+      ]
+    },
+    {
+      "id": "des187",
+      "name": "Salade d'oranges à la cannelle et aux dattes",
+      "type": "dessert",
+      "cuisine": "mediterraneen",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 0,
+      "diff": 1,
+      "cost": 1.1,
+      "kcal": 140,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "no-cook",
+        "light"
+      ],
+      "eq": [
+        "bowl"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Orange",
+          300,
+          "g",
+          "produce"
+        ],
+        [
+          "Dattes",
+          20,
+          "g",
+          "produce"
+        ],
+        [
+          "Cannelle moulue",
+          1,
+          "g",
+          "spices"
+        ],
+        [
+          "Fleur d'oranger (eau)",
+          5,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Amandes effilées",
+          10,
+          "g",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Pèle les oranges à vif : coupe les deux extrémités, puis retire la peau et la membrane blanche en suivant la courbe du fruit avec un couteau.",
+        "Coupe les oranges en fines rondelles et dispose-les en rosace dans les assiettes.",
+        "Dénoyaute et coupe les dattes en petits morceaux, répartis-les sur les oranges.",
+        "Saupoudre de cannelle et arrose d'un peu d'eau de fleur d'oranger (très parfumée, quelques gouttes suffisent).",
+        "Parsème d'amandes effilées et place 15 min au frais avant de servir."
+      ]
+    },
+    {
+      "id": "des188",
+      "name": "Kheer léger (riz au lait indien à la cardamome)",
+      "type": "dessert",
+      "cuisine": "indien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 5,
+      "cook": 35,
+      "diff": 1,
+      "cost": 1.0,
+      "kcal": 180,
+      "tags": [
+        "vegetarian",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Riz rond complet",
+          35,
+          "g",
+          "pantry"
+        ],
+        [
+          "Lait demi-écrémé",
+          300,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Cardamome moulue",
+          1,
+          "g",
+          "spices"
+        ],
+        [
+          "Sirop d'érable",
+          10,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Amandes effilées",
+          10,
+          "g",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Rince le riz. Mets-le dans une casserole avec le lait et la cardamome.",
+        "Porte à frémissement puis baisse à feu très doux. Laisse cuire 30 min en remuant souvent (pour que ça n'attache pas) : le riz éclate et le lait épaissit en crème.",
+        "Ajoute le sirop d'érable en fin de cuisson (moins que le sucre traditionnel du kheer).",
+        "Fais torréfier les amandes effilées 2 min à sec.",
+        "Sers le kheer tiède ou froid, parsemé d'amandes."
+      ]
+    },
+    {
+      "id": "des189",
+      "name": "Mhalbi léger (crème de riz à la fleur d'oranger)",
+      "type": "dessert",
+      "cuisine": "maghrebin",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 5,
+      "cook": 15,
+      "diff": 1,
+      "cost": 0.9,
+      "kcal": 160,
+      "tags": [
+        "vegetarian",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Lait demi-écrémé",
+          300,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Fécule de riz",
+          25,
+          "g",
+          "pantry"
+        ],
+        [
+          "Fleur d'oranger (eau)",
+          8,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Sirop d'érable",
+          10,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Cannelle moulue",
+          0.5,
+          "g",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Délaye la fécule de riz dans un peu de lait froid prélevé sur le total, jusqu'à obtenir un mélange lisse.",
+        "Fais chauffer le reste du lait avec le sirop d'érable jusqu'à frémissement.",
+        "Verse la fécule délayée en fouettant, et continue de fouetter 4-5 min à feu doux : la crème épaissit.",
+        "Hors du feu, parfume avec l'eau de fleur d'oranger.",
+        "Répartis dans des coupes, saupoudre d'un voile de cannelle et place au frais au moins 2h. Sers froid."
       ]
     }
   ]
