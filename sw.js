@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.99.77";
+const CACHE_VERSION = "menu-ig-bas-v2.99.78";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -52,8 +52,22 @@ self.addEventListener("install", (event) => {
         console.warn("[sw] CDN cache miss:", url, e);
       }
     }));
-    await self.skipWaiting();
+    // V3.0 Phase 0.7 (D1) — PLUS de skipWaiting() automatique ici. Un swap
+    // silencieux en pleine session est dangereux pour une refonte majeure
+    // (perte du contexte d'édition, état React réinitialisé sans prévenir).
+    // Le nouveau SW reste donc en "waiting" jusqu'à ce que la PAGE le décide :
+    // elle affiche une bannière « Nouvelle version — Recharger » et n'envoie
+    // SKIP_WAITING (ci-dessous) que sur action explicite de l'utilisateur.
   })());
+});
+
+// V3.0 Phase 0.7 (D1) — La page demande l'activation immédiate du SW en
+// attente (clic sur « Recharger »). On NE touche JAMAIS localStorage /
+// IndexedDB : skipWaiting ne fait qu'activer la nouvelle version du cache.
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener("activate", (event) => {

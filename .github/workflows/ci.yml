@@ -32,6 +32,11 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       # ── 1. JSON validation × 4 blocs ────────────────────────────────
       - name: Validate JSON blocks
         run: |
@@ -93,6 +98,10 @@ jobs:
       # ── 4. Schéma recettes ──────────────────────────────────────────
       - name: Validate recipe schema
         run: python3 scripts/validate-recipe-data.py
+
+      # ── 4bis. Migration user-data zéro perte (Phase 0.7 B4) ──────────
+      - name: Migration safety (zero data loss)
+        run: node scripts/test-migration.mjs
 
       # ── 5. HTML basique ─────────────────────────────────────────────
       - name: HTML basic checks

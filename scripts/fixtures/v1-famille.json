@@ -1,0 +1,33 @@
+{
+  "profile": {
+    "members": [
+      {"id": 1, "name": "Adulte 1", "birthYear": 1986, "sex": "F", "allergies": ["lactose"], "exclusions": [], "healthProfile": "sopk"},
+      {"id": 2, "name": "Adulte 2", "birthYear": 1984, "sex": "M", "allergies": [], "exclusions": ["porc"], "healthProfile": "healthy"},
+      {"id": 3, "name": "Ado 1", "birthYear": 2010, "sex": "M", "allergies": ["nuts"], "exclusions": [], "healthProfile": "healthy"}
+    ],
+    "location": "Bretagne",
+    "globalAllergies": ["lactose"],
+    "budgetWeekly": 140,
+    "skillLevel": 2,
+    "snackEnabled": true,
+    "preferredCuisines": ["italien", "mediterraneen"]
+  },
+  "menus": {
+    "2026-W10": {"lundi": {"lunch": "l5", "dinner": "d12"}},
+    "2026-W11": {"mardi": {"lunch": "l8", "dinner": "d3"}},
+    "2026-W12": {"mercredi": {"lunch": "l20", "dinner": "d44"}}
+  },
+  "ratings": {
+    "l5": {"1": 4, "2": 5},
+    "d12": {"1": 3},
+    "l8": {"2": 5, "3": 4}
+  },
+  "pantryChecks": {
+    "2026-W10": {"Huile d'olive": true, "Sel": true}
+  },
+  "journal": {
+    "2026-W10": {"energie": 4, "digestion": 5, "sommeil": 3, "notes": "Bonne semaine"},
+    "2026-W11": {"energie": 3, "digestion": 4, "sommeil": 4, "notes": ""}
+  },
+  "onboarded": true
+}

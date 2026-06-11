@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.77</title>
+<title>Menu IG Bas — V2.99.78</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -14,9 +14,64 @@
 <!-- Service Worker : permet le mode hors-ligne (HTTPS uniquement) -->
 <script>
 if ("serviceWorker" in navigator) {
+  // V3.0 Phase 0.7 (D1) — Bannière de mise à jour NON intrusive.
+  // Avant : le SW faisait skipWaiting() → l'app pouvait se faire remplacer en
+  // pleine session (dangereux pour la refonte V3). Maintenant : quand une
+  // nouvelle version est prête mais "en attente", on affiche une bannière et
+  // c'est l'UTILISATEUR qui déclenche le rechargement. On ne purge JAMAIS les
+  // données locales (localStorage / IndexedDB).
+  var swReloading = false;
+  function showUpdateBanner(waitingWorker) {
+    if (document.getElementById("sw-update-banner")) return; // déjà affichée
+    var bar = document.createElement("div");
+    bar.id = "sw-update-banner";
+    bar.setAttribute("role", "status");
+    bar.style.cssText = "position:fixed;left:0;right:0;bottom:0;z-index:2147483647;" +
+      "background:#0f766e;color:#fff;padding:10px 14px;display:flex;gap:12px;" +
+      "align-items:center;justify-content:center;font:14px/1.4 system-ui,sans-serif;" +
+      "box-shadow:0 -2px 12px rgba(0,0,0,.25)";
+    var txt = document.createElement("span");
+    txt.textContent = "Une nouvelle version est disponible.";
+    var btn = document.createElement("button");
+    btn.textContent = "Recharger";
+    btn.style.cssText = "background:#fff;color:#0f766e;border:0;border-radius:6px;" +
+      "padding:6px 14px;font-weight:600;cursor:pointer";
+    btn.onclick = function () {
+      btn.disabled = true; btn.textContent = "Mise à jour…";
+      if (waitingWorker) waitingWorker.postMessage({type: "SKIP_WAITING"});
+    };
+    var later = document.createElement("button");
+    later.textContent = "Plus tard";
+    later.style.cssText = "background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);" +
+      "border-radius:6px;padding:6px 12px;cursor:pointer";
+    later.onclick = function () { bar.remove(); };
+    bar.appendChild(txt); bar.appendChild(btn); bar.appendChild(later);
+    document.body.appendChild(bar);
+  }
+  // Quand le SW en attente s'active (après SKIP_WAITING), recharger une fois.
+  navigator.serviceWorker.addEventListener("controllerchange", function () {
+    if (swReloading) return;
+    swReloading = true;
+    window.location.reload();
+  });
   window.addEventListener("load", () => {
     navigator.serviceWorker.register("sw.js").then(reg => {
       console.log("[SW] enregistré, scope:", reg.scope);
+      // Cas 1 : un worker est déjà en attente au chargement.
+      if (reg.waiting && navigator.serviceWorker.controller) {
+        showUpdateBanner(reg.waiting);
+      }
+      // Cas 2 : une mise à jour est trouvée pendant la session.
+      reg.addEventListener("updatefound", () => {
+        const nw = reg.installing;
+        if (!nw) return;
+        nw.addEventListener("statechange", () => {
+          // installed + un controller existant = vraie mise à jour (pas 1re install).
+          if (nw.state === "installed" && navigator.serviceWorker.controller) {
+            showUpdateBanner(reg.waiting || nw);
+          }
+        });
+      });
     }).catch(err => {
       console.warn("[SW] échec d'enregistrement:", err);
     });
@@ -43,6 +98,22 @@ if ("serviceWorker" in navigator) {
       var dark = saved === 'dark' || (!saved && prefersDark);
       if (dark) document.documentElement.classList.add('dark');
     } catch (e) { /* localStorage indispo : on reste en clair */ }
+  })();
+
+  // V3.0 Phase 0.7 (C1/C2) — Harnais shadow mode de la future interface V3.
+  // Le flag vit en localStorage ('menu-ig-bas-v3ui'), DÉFAUT OFF pour tous les
+  // installs existants → la refonte V3 (à venir) naîtra gated derrière ce flag,
+  // invisible aux beta testeurs. HedgeX peut l'activer pour son SEUL navigateur
+  // via ?ui=v3 (et revenir via ?ui=classic) pour dogfooder sur la prod réelle.
+  // Lu ici, AVANT React, pour être disponible dès le premier rendu.
+  (function resolveV3UI() {
+    try {
+      var KEY = 'menu-ig-bas-v3ui';
+      var ui = new URLSearchParams(window.location.search).get('ui');
+      if (ui === 'v3') localStorage.setItem(KEY, 'on');
+      else if (ui === 'classic') localStorage.removeItem(KEY);
+      window.__V3_UI = localStorage.getItem(KEY) === 'on';
+    } catch (e) { window.__V3_UI = false; }
   })();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js"></script>
@@ -122143,6 +122214,15 @@ function recipeTimeLabel(recipe) {
 // Migration V1 → V2 : automatique au chargement. V1 est conservé en backup.
 const STORAGE_KEY_V1 = "menu-ig-bas-v1";
 const STORAGE_KEY_V2 = "menu-ig-bas-v2";
+// V3.0 Phase 0.7 — Schéma user-data le plus récent que CE build sait lire ET
+// écrire. Garde anti-downgrade (B3) : si on charge des données d'un `schema`
+// SUPÉRIEUR (course de cache : un appareil a déjà la V-suivante), on passe en
+// LECTURE SEULE plutôt que d'écraser/tronquer des données plus récentes.
+// À incrémenter en MÊME TEMPS qu'on introduit une migration vers un schéma N+1.
+const SUPPORTED_SCHEMA = 2;
+// Snapshots automatiques pré-migration (B1) : clé `menu-ig-bas-backup-<from>-<ISO>`.
+const BACKUP_KEY_PREFIX = "menu-ig-bas-backup-";
+const BACKUP_KEEP = 3; // on ne conserve que les 3 plus récents
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
 const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","maxPrepMinutesWeekend","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients"];
 function makeId(prefix) {
@@ -122475,10 +122555,18 @@ async function loadState() {
       let v2;
       try { v2 = JSON.parse(plaintext); }
       catch (e) { console.error("[storage] payload chiffré illisible :", e); v2 = null; }
+      // V3.0 Phase 0.7 (B3) — Garde anti-downgrade : données d'un schéma plus
+      // récent que ce build → NE PAS écraser, basculer en lecture seule.
+      if (v2 && typeof v2.schema === "number" && v2.schema > SUPPORTED_SCHEMA) {
+        const err = new Error("SCHEMA_TOO_NEW"); err.code = "SCHEMA_TOO_NEW"; throw err;
+      }
       if (v2 && v2.schema === 2 && v2.session?.activeHouseholdId && v2.households?.[v2.session.activeHouseholdId]) {
         return projectRuntime(applyV2Backfills(v2));
       }
       console.warn("[storage] payload chiffré présent mais structure invalide");
+    } else if (parsed && typeof parsed.schema === "number" && parsed.schema > SUPPORTED_SCHEMA) {
+      // Format clair d'un schéma plus récent (course de cache) — lecture seule.
+      const err = new Error("SCHEMA_TOO_NEW"); err.code = "SCHEMA_TOO_NEW"; throw err;
     } else if (parsed && parsed.schema === 2 && parsed.session?.activeHouseholdId && parsed.households?.[parsed.session.activeHouseholdId]) {
       // Format clair V2.x antérieur : on charge tel quel, le prochain saveState
       // le ré-écrira en chiffré (migration transparente V2.10).
@@ -122491,6 +122579,11 @@ async function loadState() {
   const raw1 = localStorage.getItem(STORAGE_KEY_V1);
   if (raw1) {
     try {
+      // V3.0 Phase 0.7 (B1) — Snapshot AVANT de transformer le schéma. V1 est
+      // déjà conservé en clé séparée, mais on passe par le mécanisme générique
+      // pour que le réflexe (et la restauration UI) couvrent toutes les futures
+      // migrations (V2→V3…) de façon uniforme.
+      snapshotBeforeMigration(1);
       const v1 = JSON.parse(raw1);
       const v2 = migrateV1toV2(v1);
       // L'écriture chiffrée se fera au premier saveState, on n'écrit rien ici.
@@ -122516,6 +122609,88 @@ async function saveState(runtime) {
   } catch (e) {
     console.error("[storage] saveState a échoué :", e);
   }
+}
+
+// ----------------------------------------------------------------------------
+// V3.0 Phase 0.7 (B1) — Snapshots automatiques avant migration de schéma.
+// Personne ne sauvegarde manuellement → avant toute réécriture destructive du
+// schéma, on copie l'état courant (l'enveloppe telle quelle, chiffrée ou non)
+// dans une clé horodatée, et on ne garde que les BACKUP_KEEP plus récents.
+// Restaurable depuis Réglages. Généralise le réflexe « V1 gardé en backup ».
+// ----------------------------------------------------------------------------
+function listBackupKeys() {
+  const out = [];
+  try {
+    for (let i = 0; i < localStorage.length; i++) {
+      const k = localStorage.key(i);
+      if (k && k.startsWith(BACKUP_KEY_PREFIX)) out.push(k);
+    }
+  } catch (e) { /* localStorage indispo */ }
+  // L'ISO en suffixe trie lexicographiquement = chronologiquement.
+  return out.sort().reverse();
+}
+function pruneBackups() {
+  listBackupKeys().slice(BACKUP_KEEP).forEach(k => {
+    try { localStorage.removeItem(k); } catch (e) { /* noop */ }
+  });
+}
+function snapshotBeforeMigration(fromSchema) {
+  try {
+    // On photographie la clé active V2 si présente, sinon la V1 (1re migration).
+    const raw = localStorage.getItem(STORAGE_KEY_V2) || localStorage.getItem(STORAGE_KEY_V1);
+    if (!raw) return null; // install neuf : rien à sauvegarder
+    const iso = new Date().toISOString().replace(/[:.]/g, "-");
+    const key = `${BACKUP_KEY_PREFIX}${fromSchema}-${iso}`;
+    localStorage.setItem(key, raw);
+    pruneBackups();
+    console.info("[storage] snapshot pré-migration créé :", key);
+    return key;
+  } catch (e) {
+    console.error("[storage] snapshot pré-migration échoué :", e);
+    return null;
+  }
+}
+// Métadonnées affichables d'un backup (sans déchiffrer le contenu).
+function backupMeta(key) {
+  // Format : menu-ig-bas-backup-<fromSchema>-<ISO-avec-tirets>
+  const rest = key.slice(BACKUP_KEY_PREFIX.length);
+  const dash = rest.indexOf("-");
+  const fromSchema = rest.slice(0, dash);
+  const isoMangled = rest.slice(dash + 1); // ex 2026-06-11T08-30-00-000Z
+  let when = isoMangled;
+  // Re-transforme en ISO lisible : on remet ':' dans l'heure.
+  const m = isoMangled.match(/^(\d{4}-\d{2}-\d{2})T(\d{2})-(\d{2})-(\d{2})/);
+  if (m) when = `${m[1]} ${m[2]}:${m[3]}:${m[4]}`;
+  return { key, fromSchema, when };
+}
+function restoreBackup(key) {
+  const raw = localStorage.getItem(key);
+  if (!raw) throw new Error("Sauvegarde introuvable : " + key);
+  // On détecte la cible : une enveloppe V2 (chiffrée ou claire schema:2) va dans
+  // la clé V2 ; un état V1 brut va dans la clé V1. Le prochain loadState relit.
+  let target = STORAGE_KEY_V2;
+  try {
+    const parsed = JSON.parse(raw);
+    const isV2 = parsed?.encrypted === true || parsed?.schema === 2;
+    if (!isV2) target = STORAGE_KEY_V1;
+  } catch (e) { /* illisible : on tente V2 par défaut */ }
+  localStorage.setItem(target, raw);
+}
+
+// ----------------------------------------------------------------------------
+// V3.0 Phase 0.7 (C1/C2) — Lecture/écriture du flag interface V3 (shadow mode).
+// Défaut OFF. Toute future UI V3 doit être gated par isV3UI(). Aujourd'hui, pas
+// d'UI V3 → le flag ne fait qu'exposer l'opt-in + l'escape hatch dans Réglages.
+// ----------------------------------------------------------------------------
+const V3UI_KEY = "menu-ig-bas-v3ui";
+function isV3UI() {
+  try { return localStorage.getItem(V3UI_KEY) === "on"; } catch (e) { return false; }
+}
+function setV3UI(on) {
+  try {
+    if (on) localStorage.setItem(V3UI_KEY, "on");
+    else localStorage.removeItem(V3UI_KEY);
+  } catch (e) { /* noop */ }
 }
 
 // ----- Menu generation -----------------------------------------------------
@@ -124547,18 +124722,112 @@ function ConsentModal({onConsent}) {
   );
 }
 
+// V3.0 Phase 0.7 (B1) — Carte « Sauvegardes automatiques » dans Réglages.
+// Liste les snapshots pré-migration et permet d'en restaurer un. Composant
+// autonome (gère son propre state) pour ne pas toucher aux hooks de SettingsView.
+function BackupRestoreCard() {
+  const [keys, setKeys] = useState(() => listBackupKeys());
+  const [msg, setMsg] = useState(null);
+  const onRestore = (key) => {
+    if (!window.confirm("Restaurer cette sauvegarde ? Tes données actuelles seront remplacées par celles de la sauvegarde, puis l'app se rechargera.")) return;
+    try {
+      restoreBackup(key);
+      setMsg({type: "ok", txt: "Sauvegarde restaurée. Rechargement…"});
+      setTimeout(() => window.location.reload(), 700);
+    } catch (e) {
+      setMsg({type: "err", txt: "Échec de la restauration : " + (e.message || e)});
+    }
+  };
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
+      <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">🔄 Sauvegardes automatiques</h3>
+      <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">
+        Avant chaque mise à jour majeure du <strong>format</strong> de tes données, l'app en crée
+        automatiquement une copie de secours (les 3 plus récentes sont conservées). Si une mise à jour
+        se passait mal, tu peux revenir à l'état d'avant ici. Ces copies restent <strong>uniquement sur cet appareil</strong>.
+      </p>
+      {keys.length === 0 ? (
+        <p className="text-sm text-slate-500 dark:text-slate-400 italic">
+          Aucune sauvegarde automatique pour l'instant (aucune migration de format n'a encore eu lieu sur cet appareil).
+        </p>
+      ) : (
+        <ul className="space-y-2">
+          {keys.map(k => {
+            const m = backupMeta(k);
+            return (
+              <li key={k} className="flex items-center justify-between gap-3 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded px-3 py-2">
+                <span className="text-sm text-slate-700 dark:text-slate-200">
+                  📅 {m.when} <span className="text-xs text-slate-500 dark:text-slate-400">(format {m.fromSchema})</span>
+                </span>
+                <button onClick={() => onRestore(k)}
+                  className="bg-amber-600 hover:bg-amber-700 text-white px-3 py-1.5 rounded text-xs font-medium">
+                  Restaurer
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+      {msg && (
+        <div className={`mt-3 text-sm rounded px-3 py-2 border ${msg.type === "err" ? "bg-red-50 dark:bg-red-950 border-red-300 dark:border-red-700 text-red-800 dark:text-red-200" : "bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200"}`}>
+          {msg.txt}
+        </div>
+      )}
+    </div>
+  );
+}
+
+// V3.0 Phase 0.7 (C2) — Carte « Interface (beta) » : opt-in V3 + escape hatch.
+// Le flag est OFF par défaut. Aujourd'hui aucune UI V3 n'existe encore : la
+// carte sert à valider le harnais (activer/désactiver + bascule au rechargement).
+function V3UICard() {
+  const on = isV3UI();
+  const toggle = () => { setV3UI(!on); window.location.reload(); };
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
+      <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">🧪 Interface (beta)</h3>
+      <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">
+        Une nouvelle interface est en préparation. Tu pourras bientôt l'essayer en avant-première.
+        L'interrupteur est déjà en place&nbsp;; l'habillage arrivera progressivement, sans rien
+        changer à tes données. Tu pourras revenir à l'interface classique à tout moment.
+      </p>
+      {on ? (
+        <div className="space-y-3">
+          <div className="bg-teal-50 dark:bg-teal-950 border border-teal-300 dark:border-teal-700 rounded px-3 py-2 text-sm text-teal-800 dark:text-teal-200 font-medium">
+            ✨ Interface V3 (beta) <strong>active</strong> sur cet appareil.
+          </div>
+          <button onClick={toggle}
+            className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-slate-100 px-4 py-2 rounded text-sm font-medium">
+            ← Revenir à l'interface classique
+          </button>
+        </div>
+      ) : (
+        <button onClick={toggle}
+          className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded text-sm font-medium">
+          ✨ Essayer la nouvelle interface (beta)
+        </button>
+      )}
+    </div>
+  );
+}
+
 // AppLoader (V2.11.0) : entoure App pour gérer le chargement async (déchiffrement
 // au démarrage). Trois phases : "loading" → "ready" → App, ou "recovery" si la
 // clé maître est absente alors qu'un blob chiffré existe.
 function AppLoader() {
-  const [phase, setPhase] = useState("loading"); // "loading" | "ready" | "recovery"
+  const [phase, setPhase] = useState("loading"); // "loading" | "ready" | "recovery" | "too_new"
   const [initialState, setInitialState] = useState(null);
 
   useEffect(() => {
     loadState()
       .then(s => { setInitialState(s); setPhase("ready"); })
       .catch(e => {
-        if (e?.code === "CRYPTO_KEY_MISSING") {
+        if (e?.code === "SCHEMA_TOO_NEW") {
+          // V3.0 Phase 0.7 (B3) — données plus récentes que ce build : on NE
+          // monte PAS <App> → aucun saveState possible → zéro écrasement.
+          console.warn("[AppLoader] Données d'un schéma plus récent, lecture seule");
+          setPhase("too_new");
+        } else if (e?.code === "CRYPTO_KEY_MISSING") {
           console.warn("[AppLoader] Clé absente, écran de récupération");
           setPhase("recovery");
         } else {
@@ -124568,6 +124837,25 @@ function AppLoader() {
       });
   }, []);
 
+  if (phase === "too_new") {
+    return (
+      <div className="fixed inset-0 flex items-center justify-center bg-slate-50 dark:bg-slate-800 p-6">
+        <div className="max-w-md text-center bg-white dark:bg-slate-900 rounded-xl shadow p-6 border border-slate-200 dark:border-slate-700">
+          <div className="text-4xl mb-3">🆕</div>
+          <h1 className="text-lg font-bold text-slate-800 dark:text-slate-100 mb-2">Données plus récentes détectées</h1>
+          <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
+            Un de tes appareils a déjà une version plus récente de l'application.
+            Pour éviter d'abîmer tes données, cette version ne les modifiera pas.
+            Recharge pour récupérer la dernière version.
+          </p>
+          <button onClick={() => window.location.reload()}
+            className="px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-700 text-white font-semibold">
+            Recharger
+          </button>
+        </div>
+      </div>
+    );
+  }
   if (phase === "loading") {
     return (
       <div className="fixed inset-0 flex items-center justify-center bg-slate-50 dark:bg-slate-800">
@@ -129897,6 +130185,10 @@ function SettingsView({state, update, updateProfile}) {
           </div>
         )}
       </div>
+
+      {/* V3.0 Phase 0.7 — Restauration des snapshots auto (B1) + opt-in UI V3 (C2). */}
+      <BackupRestoreCard />
+      <V3UICard />
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">🔒 Données et confidentialité</h3>
