@@ -26,21 +26,13 @@ import json
 import argparse
 from pathlib import Path
 
-# ── Vocabulaires clos (cf. CLAUDE.md V2.43.0+) ────────────────────────────
+import vocab  # source unique des vocabulaires fermés (cf. scripts/vocab.py)
 
-ALLOWED_TYPES = {"breakfast", "lunch", "dinner", "snack", "dessert"}
-ALLOWED_CUISINES = {"francais", "italien", "mediterraneen", "asiatique",
-                    "indien", "mexicain", "maghrebin", "universel"}
-ALLOWED_SEASONS = {"spring", "summer", "autumn", "winter", "all"}
-ALLOWED_TAGS = {"vegetarian", "vegan", "batch-friendly", "quick", "no-cook",
-                "kid-friendly", "festif", "light", "apero-sec",
-                "apero-dinatoire", "epicerie-specialisee"}
-ALLOWED_EQUIPMENT = {"stove", "oven", "blender", "bowl", "pan", "grill",
-                     "cast-iron", "steamer", "pressure-cooker", "microwave"}
-ALLOWED_ALLERGENS = {"lactose", "gluten", "nuts", "eggs", "fish", "sesame",
-                     "soy", "shellfish", "mustard"}
-ALLOWED_CATEGORIES = {"produce", "pantry", "spices", "dairy", "meat-fish",
-                      "bread", "frozen"}
+# Les vocabulaires clos (types, cuisines, seasons, tags, eq, allergens,
+# categories) viennent de `vocab.load(index_path)` dans main() — allergens /
+# categories / cuisines sont DÉRIVÉS de index.html (UI = source de vérité),
+# les autres sont définis une seule fois dans vocab.py. Plus aucune copie
+# codée en dur ici (cf. bug allergène V2.99.76).
 
 # ── Dénominations qualifiées (CLAUDE.md, règle non-négociable) ────────────
 
@@ -93,8 +85,8 @@ def normalize_ing_name(name):
     return n
 
 
-def validate_recipe(r):
-    """Retourne (errors[], warnings[]) pour une recette."""
+def validate_recipe(r, V):
+    """Retourne (errors[], warnings[]) pour une recette. `V` = vocab.Vocab résolu."""
     errors = []
     warnings = []
 
@@ -109,21 +101,21 @@ def validate_recipe(r):
         return errors, warnings
 
     # ── 2. Vocabulary clos ─────────────────────────────────────────────
-    if r["type"] not in ALLOWED_TYPES:
+    if r["type"] not in V.types:
         errors.append(f"type invalide '{r['type']}'")
-    if r["cuisine"] not in ALLOWED_CUISINES:
+    if r["cuisine"] not in V.cuisines:
         errors.append(f"cuisine invalide '{r['cuisine']}'")
     for s in r.get("seasons", []):
-        if s not in ALLOWED_SEASONS:
+        if s not in V.seasons:
             errors.append(f"season invalide '{s}'")
     for t in r.get("tags", []):
-        if t not in ALLOWED_TAGS:
+        if t not in V.tags:
             errors.append(f"tag invalide '{t}'")
     for e in r.get("eq", []):
-        if e not in ALLOWED_EQUIPMENT:
+        if e not in V.equipment:
             errors.append(f"eq invalide '{e}'")
     for a in r.get("allergens", []):
-        if a not in ALLOWED_ALLERGENS:
+        if a not in V.allergens:
             errors.append(f"allergen invalide '{a}'")
 
     # ── 3. Cohérence sémantique ────────────────────────────────────────
@@ -160,7 +152,7 @@ def validate_recipe(r):
             errors.append(f"ing[{i}].qty invalide ({qty})")
         if not isinstance(unit, str):
             errors.append(f"ing[{i}].unit pas string")
-        if cat not in ALLOWED_CATEGORIES:
+        if cat not in V.categories:
             errors.append(f"ing[{i}].category '{cat}' invalide")
 
     # ── 5. Dénominations qualifiées (CLAUDE.md règle critique) ─────────
@@ -211,6 +203,7 @@ def main():
 
     try:
         recipes = extract_recipes(index_path)
+        V = vocab.load(index_path)  # allergens/categories/cuisines dérivés de CE index.html
     except Exception as e:
         print(f"❌ Extraction échouée : {e}", file=sys.stderr)
         sys.exit(2)
@@ -227,7 +220,7 @@ def main():
     total_warnings = 0
 
     for r in recipes:
-        errors, warnings = validate_recipe(r)
+        errors, warnings = validate_recipe(r, V)
         if errors or warnings:
             all_results.append({
                 "id": r.get("id", "?"),

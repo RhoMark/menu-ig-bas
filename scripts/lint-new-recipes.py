@@ -46,16 +46,17 @@ BOLD = "\033[1m"
 DIM = "\033[2m"
 
 # ────────────────────────── RÉFÉRENCE ──────────────────────────
-VALID_TYPES = {"breakfast", "lunch", "dinner", "snack", "dessert"}
-VALID_CUISINES = {"francais", "italien", "mediterraneen", "asiatique",
-                  "indien", "mexicain", "maghrebin", "universel"}
-VALID_SEASONS = {"spring", "summer", "autumn", "winter"}
-VALID_DIFFICULTIES = {1, 2, 3}
-# Doivent rester alignés avec validate-recipe-data.py (ALLOWED_EQUIPMENT / ALLOWED_ALLERGENS)
-VALID_EQUIPMENT = {"stove", "oven", "blender", "bowl", "pan", "grill",
-                   "cast-iron", "steamer", "pressure-cooker", "microwave"}
-VALID_ALLERGENS = {"lactose", "gluten", "nuts", "eggs", "fish", "sesame",
-                   "soy", "shellfish", "mustard"}
+# Source UNIQUE des vocabulaires fermés : scripts/vocab.py. Partagé avec
+# validate-recipe-data.py → impossible de diverger (cf. bug allergène V2.99.76).
+# allergens / cuisines sont DÉRIVÉS de index.html (UI = source de vérité).
+import vocab
+VALID_TYPES = vocab.TYPES
+VALID_CUISINES = vocab.cuisines()
+VALID_SEASONS = vocab.SEASONS            # inclut "all" (recette toutes saisons)
+VALID_SEASONS_CONCRETE = vocab.SEASONS_CONCRETE
+VALID_DIFFICULTIES = vocab.DIFFICULTIES
+VALID_EQUIPMENT = vocab.EQUIPMENT
+VALID_ALLERGENS = vocab.allergens()
 
 # V2.99.63 — Fractions hardcodées dans les steps (retour HedgeX 2026-05-26).
 # Pattern bug : step dit « le demi-œuf battu » alors que la liste d'ingrédients
@@ -493,7 +494,7 @@ def check_seasonality(recipes, report):
     for r in recipes:
         rid = r.get("id", "?")
         seasons = r.get("seasons", [])
-        if upcoming not in seasons and seasons != list(VALID_SEASONS) and len(seasons) < 4:
+        if upcoming not in seasons and "all" not in seasons and len(seasons) < 4:
             report.info(rid, f"seasons ne contient pas la saison à venir ({upcoming}). "
                              f"Vérifier intention.")
 
