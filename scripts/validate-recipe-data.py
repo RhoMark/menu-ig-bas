@@ -38,7 +38,7 @@ ALLOWED_TAGS = {"vegetarian", "vegan", "batch-friendly", "quick", "no-cook",
 ALLOWED_EQUIPMENT = {"stove", "oven", "blender", "bowl", "pan", "grill",
                      "cast-iron", "steamer", "pressure-cooker", "microwave"}
 ALLOWED_ALLERGENS = {"lactose", "gluten", "nuts", "eggs", "fish", "sesame",
-                     "soy", "shellfish", "mustard", "egg"}
+                     "soy", "shellfish", "mustard"}
 ALLOWED_CATEGORIES = {"produce", "pantry", "spices", "dairy", "meat-fish",
                       "bread", "frozen"}
 

@@ -55,7 +55,7 @@ VALID_DIFFICULTIES = {1, 2, 3}
 VALID_EQUIPMENT = {"stove", "oven", "blender", "bowl", "pan", "grill",
                    "cast-iron", "steamer", "pressure-cooker", "microwave"}
 VALID_ALLERGENS = {"lactose", "gluten", "nuts", "eggs", "fish", "sesame",
-                   "soy", "shellfish", "mustard", "egg"}
+                   "soy", "shellfish", "mustard"}
 
 # V2.99.63 — Fractions hardcodées dans les steps (retour HedgeX 2026-05-26).
 # Pattern bug : step dit « le demi-œuf battu » alors que la liste d'ingrédients
