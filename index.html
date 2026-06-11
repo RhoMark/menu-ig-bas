@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.76</title>
+<title>Menu IG Bas — V2.99.77</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -120892,10 +120892,6 @@ function scaleQty(baseQty, mult, ingredientName, category) {
   return baseQty * mult;
 }
 
-function ingredientHasAllergen(ing, allergens) {
-  // Very conservative: allergens are declared on recipe level. No fuzzy match.
-  return false;
-}
 function recipeHasAllergen(recipe, allergens) {
   if (!allergens?.length) return false;
   return recipe.allergens.some(a => allergens.includes(a));
