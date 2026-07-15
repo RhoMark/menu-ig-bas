@@ -361,6 +361,30 @@ def check_allergens_consistency(recipes, report):
                 example = triggers[0]
                 report.err(rid, f"allergen manquant : `{allergen}` (déclenché par '{example}')")
 
+def _is_egg(name):
+    # Même logique que le fix data V2.99.80 : œuf/oeuf mais pas bœuf ni cœur.
+    low = name.lower()
+    if "bœuf" in low or "boeuf" in low or "cœur" in low or "coeur" in low:
+        return False
+    return "œuf" in low or "oeuf" in low
+
+def check_ingredient_category(recipes, report):
+    # V2.99.80 — Garde-fou rayon. La clé d'agrégation de la liste de courses
+    # est `nom|unité|catégorie` : un même ingrédient réparti sur 2 catégories
+    # apparaît sur 2 lignes (2 rayons). L'œuf taggé `produce` tombait dans
+    # « Divers / 🥬 Fruits et légumes » au lieu de « Œufs et substituts »
+    # (`dairy`) → œuf affiché 2 fois. Il doit TOUJOURS être en `dairy`.
+    for r in recipes:
+        rid = r.get("id", "?")
+        for ing_entry in r.get("ing", []):
+            if not ing_entry or len(ing_entry) < 4:
+                continue
+            name, category = ing_entry[0], ing_entry[3]
+            if _is_egg(name) and category != "dairy":
+                report.err(rid, f"œuf mal catégorisé : '{name}' en `{category}` → "
+                                f"doit être `dairy` (« 🥚 Œufs, produits laitiers et "
+                                f"tofu »), sinon dédoublé dans la liste de courses")
+
 def check_tags_consistency(recipes, report):
     for r in recipes:
         rid = r.get("id", "?")
@@ -575,13 +599,14 @@ def main():
     report = Report()
     all_missing = {}
 
-    # 12 checks
+    # 13 checks
     for r in lot:
         check_schema(r, report)
     check_ids_format(lot, existing_recipes, report)
     check_cell(lot, args.cell, report)
     check_generic_names(lot, report)
     check_allergens_consistency(lot, report)
+    check_ingredient_category(lot, report)
     check_tags_consistency(lot, report)
     check_cg_threshold(lot, glyc_map, report)
     check_glycemic_coverage(lot, glyc_map, report, all_missing)

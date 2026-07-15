@@ -293,7 +293,7 @@ python3 scripts/recipe-template.py --lot 65 --cells "italien/snack:2"
 
 # 2. Rédaction dans /tmp/lot65-recipes.py
 
-# 3. Lint pre-flight (BLOQUANT, 12 checks)
+# 3. Lint pre-flight (BLOQUANT, 13 checks)
 python3 scripts/lint-new-recipes.py /tmp/lot65-recipes.py --varname LOT65
 
 # 4. Auto-enrichissement data-glycemic si ingrédients manquants
@@ -310,19 +310,21 @@ python3 scripts/validate-recipe-data.py
 git commit && git push  # pre-commit hook verrouille
 ```
 
-12 checks bloquants/warning par lint :
+13 checks bloquants/warning par lint :
 1. Schéma JSON (vocabulary fermé)
 2. IDs uniques + syntaxe (b/l/d/s/des + nombre)
 3. Cellule cible respectée
 4. Dénominations qualifiées (V2.43.0+)
 5. Allergens auto-déduits (saumon → fish, lait coco ≠ lactose)
-6. Tags cohérents (vegan + fish = erreur, quick avec prep>30 = erreur)
-7. CG estimée par recette (warning > seuil, bloque si >2×)
-8. Couverture data-glycemic ≥ 80%
-9. Macros minimales pour boost protéique sportif
-10. rest/advance cohérents
-11. Doublons (Jaccard ingrédients vs catalogue, alerte >70%)
-12. Saisonnalité (info si saison à venir absente)
+6. Catégorie rayon cohérente (V2.99.80 : œuf → `dairy`, jamais `produce`,
+   sinon dédoublé dans la liste de courses car clé = nom|unité|catégorie)
+7. Tags cohérents (vegan + fish = erreur, quick avec prep>30 = erreur)
+8. CG estimée par recette (warning > seuil, bloque si >2×)
+9. Couverture data-glycemic ≥ 80%
+10. Macros minimales pour boost protéique sportif
+11. rest/advance cohérents
+12. Doublons (Jaccard ingrédients vs catalogue, alerte >70%)
+13. Saisonnalité (info si saison à venir absente)
 
 ### Versionnage — à bumper ENSEMBLE
 À chaque release modifiant des ressources critiques :
