@@ -1,20 +1,20 @@
 // Service Worker — Menu IG Bas
 // -----------------------------
 // Permet à l'app de fonctionner hors-ligne (et de se charger très vite en
-// ligne) en mettant en cache index.html, le manifest, les icônes, et les
-// dépendances CDN (Tailwind, React, Babel).
+// ligne) en mettant en cache index.html, le manifest, les icônes, et TOUTES
+// les dépendances runtime (Tailwind, React, ReactDOM, Babel) — désormais
+// servies localement (vendor/), plus aucune dépendance CDN (Phase 2·L / S0).
 //
 // Stratégies :
 // - Navigation (HTML) → network-first : on essaie le réseau pour récupérer
 //   une version à jour de l'app ; fallback cache si offline.
-// - Assets statiques (icônes, manifest, JSON) → cache-first : on sert depuis
-//   le cache si présent (rapide), sinon on télécharge et on cache.
-// - CDN externes → cache-first avec opaque responses (mode no-cors).
+// - Assets statiques (icônes, manifest, JSON, vendor/) → cache-first : on sert
+//   depuis le cache si présent (rapide), sinon on télécharge et on cache.
 //
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.99.81";
+const CACHE_VERSION = "menu-ig-bas-v2.99.82";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -25,16 +25,18 @@ const CRITICAL_ASSETS = [
   "./icon-512.png",
   // V2.87.0 (issue #94) — Tailwind CSS bundlé localement (était CDN avant).
   "./tailwind.css",
+  // V3.0 Phase 2·L (S0) — React/ReactDOM/Babel vendorisés en local (étaient
+  // sur cdnjs, en best-effort dans CDN_ASSETS). Désormais CRITIQUES : mis en
+  // cache dès l'install → l'app boote 100% hors-ligne au 1er lancement, plus
+  // aucune requête réseau externe.
+  "./vendor/react.production.min.js",
+  "./vendor/react-dom.production.min.js",
+  "./vendor/babel.min.js",
 ];
 
-const CDN_ASSETS = [
-  // V2.87.0 — cdn.tailwindcss.com retiré : Tailwind est désormais servi
-  // localement (tailwind.css) → plus aucun problème de blocage par AdGuard
-  // app/DNS, uBlock, Brave Shield, pare-feu corporate.
-  "https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.production.min.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.production.min.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js",
-];
+// V3.0 Phase 2·L (S0) — Plus aucune dépendance CDN runtime. React/Babel/Tailwind
+// sont tous servis localement. Bloc conservé vide pour documenter l'historique.
+const CDN_ASSETS = [];
 
 self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
