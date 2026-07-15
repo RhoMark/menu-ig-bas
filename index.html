@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.80</title>
+<title>Menu IG Bas — V2.99.81</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -422,6 +422,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "À quoi servent les sous-groupes dans la liste de courses ?",
           "a": "Au sein de chaque catégorie shopping (🥬 Fruits et légumes, 🥩 Viandes et poissons, etc.), les articles sont regroupés par rayon plus fin : « Herbes fraîches » vs « Alliacées » vs « Légumes-racines » vs « Légumes-fruits » vs « Fruits frais », « Poissons gras » vs « Poissons maigres » vs « Fruits de mer », « Yaourts » vs « Fromages » vs « Tofu et dérivés végé », « Féculents secs » vs « Huiles et vinaigres » vs « Oléagineux et graines », « Épices » vs « Herbes séchées » vs « Sel/poivre/basique », etc. C'est utile pour faire les courses dans l'ordre des rayons. Activable / désactivable dans Paramètres → 🏷️ Sous-groupes (défaut ON). L'inférence est automatique par règle (pas de tag manuel sur chaque ingrédient). Les articles non identifiés tombent dans un sous-groupe « Divers » en fin de catégorie."
+        },
+        {
+          "q": "Comment ajouter à la main un produit hors recettes (hygiène, entretien…) ?",
+          "a": "Dans la Liste de courses, une zone « ✍️ Mes ajouts » te laisse noter en texte libre tout ce qui n'est pas dans les recettes (dentifrice, lessive, croquettes du chat, pharmacie…) : une ligne = un article. Ces ajouts s'impriment avec la liste et apparaissent dans le PDF exporté → tu n'as qu'UNE seule liste au magasin, plus besoin d'un deuxième support. Les ajouts sont propres à chaque semaine (ils repartent à zéro la semaine suivante, une fois les produits achetés) et restent 100 % en local sur ton appareil, chiffrés comme le reste de tes données."
         },
         {
           "q": "Pourquoi une recette contient un ingrédient que j'ai exclu ?",
@@ -122821,6 +122825,10 @@ function emptyHousehold(id) {
     menus: {},
     ratings: {},
     pantry: {},
+    // V2.99.81 (issue #98) — Ajouts manuels à la liste de courses, par
+    // semaine : { [weekKey]: "texte libre multi-lignes" }. Pour noter des
+    // produits hors recettes (hygiène, entretien…) et n'avoir qu'UNE liste.
+    manualItems: {},
     journal: {},
     // V2.62.0 (issue #20) — Favoris au niveau du foyer (un set de
     // recipe IDs). Boost ×1.3 dans pickFromPool. Filtrable en
@@ -122865,6 +122873,7 @@ function migrateV1toV2(v1) {
         menus:    v1.menus        || {},
         ratings:  v1.ratings      || {},
         pantry:   v1.pantryChecks || {},
+        manualItems: v1.manualItems || {},
         journal:  v1.journal      || {},
         settings: { onboarded: !!v1.onboarded },
       }
@@ -122888,6 +122897,8 @@ function projectRuntime(v2) {
     menus:        h.menus    || {},
     ratings:      h.ratings  || {},
     pantryChecks: h.pantry   || {},
+    // V2.99.81 (#97) — backfill lecture : états V2 antérieurs n'ont pas le champ.
+    manualItems:  h.manualItems || {},
     journal:      h.journal  || {},
     favorites:    h.favorites || [],
     // Données multi-tenant brutes — préfixées `_` pour signaler qu'elles
@@ -122920,6 +122931,7 @@ function applyRuntimeToV2(runtime) {
         menus:        runtime.menus,
         ratings:      runtime.ratings,
         pantry:       runtime.pantryChecks,
+        manualItems:  runtime.manualItems || {},
         journal:      runtime.journal,
         favorites:    runtime.favorites || [],
         settings:     { ...prevHouse.settings, onboarded: !!runtime.onboarded, hasSeenTutorial: !!runtime.hasSeenTutorial, consentedAt: runtime.consentedAt || null },
@@ -125654,6 +125666,12 @@ function App({initialState}) {
   const togglePantry = (key) => {
     update(s => ({pantryChecks: {...s.pantryChecks, [wk]: {...(s.pantryChecks[wk]||{}), [key]: !s.pantryChecks[wk]?.[key]}}}));
   };
+  // V2.99.81 (#97) — Ajouts manuels de la liste de courses (texte libre par
+  // semaine). Écrit state.manualItems[wk] ; persiste comme le reste (chiffré,
+  // 100% local). Apparaît dans l'écran ET dans le PDF/impression.
+  const setManualItems = (text) => {
+    update(s => ({manualItems: {...s.manualItems, [wk]: text}}));
+  };
   // Présence par repas : ids = null → reset (tous présents), sinon liste d'ids
   const setAttendance = (day, meal, ids) => {
     update(s => {
@@ -126102,7 +126120,7 @@ function App({initialState}) {
   }
 
   if (printMode === "menu") return <PrintMenuPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} />;
-  if (printMode === "shopping") return <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} />;
+  if (printMode === "shopping") return <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} manualItems={state.manualItems[wk]||""} />;
 
   // V2.91.0 (#22) — Pendant la génération PDF, on rend la même page que
   // l'impression mais sans déclencher window.print(). html2pdf capture le
@@ -126116,7 +126134,7 @@ function App({initialState}) {
   );
   if (pdfMode === "shopping") return (
     <>
-      <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} />
+      <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} manualItems={state.manualItems[wk]||""} />
       <PdfGeneratingOverlay />
     </>
   );
@@ -126170,6 +126188,8 @@ function App({initialState}) {
             profile={state.profile}
             pantryChecks={state.pantryChecks[wk]||{}}
             onTogglePantry={togglePantry}
+            manualItems={state.manualItems[wk]||""}
+            onManualChange={setManualItems}
             onPrint={() => setPrintMode("shopping")}
             onPdf={() => setPdfMode("shopping")}
             pdfBusy={pdfBusy}
@@ -128212,12 +128232,14 @@ function groupItemsBySubgroup(category, items) {
   return [...buckets.values()].sort((a, b) => a.order - b.order);
 }
 
-function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onTogglePantry, onPrint, onPdf, pdfBusy}) {
+function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onTogglePantry, manualItems, onManualChange, onPrint, onPdf, pdfBusy}) {
   const byCat = useMemo(() => aggregateShoppingList(currentMenu, profile), [currentMenu, profile]);
   const entries = Object.entries(byCat);
   const totalItems = entries.reduce((s, [,list]) => s + list.length, 0);
   const checkedCount = entries.reduce((s, [,list]) =>
     s + list.filter(it => pantryChecks[`${it.name}|${it.unit}`]).length, 0);
+  // V2.99.81 (#97) — Nb de lignes non vides dans les ajouts manuels (badge).
+  const manualLineCount = (manualItems || "").split("\n").filter(l => l.trim()).length;
   // V2.92.0 (#93) — Toggle sous-groupes (défaut ON). Persisté dans profile
   // pour cohérence multi-vue (ShoppingView + PrintShoppingPage).
   const useSubgroups = profile?.shoppingSubgroups !== false;
@@ -128344,6 +128366,30 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
           })}
         </div>
       )}
+      {/* V2.99.81 (#97) — Ajouts manuels : produits hors recettes (hygiène,
+          entretien…) pour n'avoir qu'UNE seule liste au magasin. Par semaine,
+          persisté localement (chiffré), repris dans le PDF / l'impression. */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4">
+        <div className="flex flex-wrap items-center gap-2 mb-2">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">✍️ Mes ajouts</h3>
+          {manualLineCount > 0 && (
+            <span className="text-xs bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-0.5 rounded-full">
+              {manualLineCount} ligne{manualLineCount > 1 ? "s" : ""}
+            </span>
+          )}
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
+          Produits hors recettes que tu ne veux pas oublier (hygiène, entretien, animalerie…).
+          Une ligne = un article. Ils s'ajoutent à la liste imprimée / au PDF de cette semaine.
+        </p>
+        <textarea
+          value={manualItems}
+          onChange={(e) => onManualChange(e.target.value)}
+          rows={4}
+          placeholder={"Dentifrice\nSacs congélation\nCroquettes chat"}
+          className="w-full rounded-md border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 text-sm p-2 font-mono resize-y focus:outline-none focus:ring-2 focus:ring-teal-500"
+        />
+      </div>
     </div>
   );
 }
@@ -130988,7 +131034,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
 
 // ----- Print: Shopping list ------------------------------------------------
 // On exclut les articles déjà cochés (« j'ai dans le placard ») de l'impression.
-function PrintShoppingPage({weekStart, menu, profile, pantryChecks}) {
+function PrintShoppingPage({weekStart, menu, profile, pantryChecks, manualItems}) {
   const byCatRaw = aggregateShoppingList(menu, profile);
   let skipped = 0;
   const byCat = {};
@@ -131052,6 +131098,21 @@ function PrintShoppingPage({weekStart, menu, profile, pantryChecks}) {
           );
         })}
       </div>
+      {/* V2.99.81 (#97) — Ajouts manuels (hors recettes) repris dans le PDF /
+          l'impression : une ligne saisie = un article coché à la main. */}
+      {(manualItems || "").split("\n").map(l => l.trim()).filter(Boolean).length > 0 && (
+        <div className="mt-2 break-inside-avoid">
+          <h2 className="font-bold text-slate-800 border-b border-slate-400 mb-1">✍️ Mes ajouts</h2>
+          <ul className="text-[9.5pt] columns-2 gap-6">
+            {(manualItems || "").split("\n").map(l => l.trim()).filter(Boolean).map((line, i) => (
+              <li key={i} className="flex items-baseline gap-2 py-0.5 break-inside-avoid">
+                <span className="inline-block border border-slate-400 w-3 h-3 flex-shrink-0"></span>
+                <span className="flex-1">{line}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

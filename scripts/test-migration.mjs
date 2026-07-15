@@ -102,6 +102,7 @@ function countersV1(v1) {
     ratings: Object.keys(v1.ratings || {}).length,
     journal: Object.keys(v1.journal || {}).length,
     pantry: Object.keys(v1.pantryChecks || {}).length,
+    manualItems: Object.keys(v1.manualItems || {}).length,
     onboarded: !!v1.onboarded,
   };
 }
@@ -112,6 +113,7 @@ function countersRuntime(rt) {
     ratings: Object.keys(rt.ratings || {}).length,
     journal: Object.keys(rt.journal || {}).length,
     pantry: Object.keys(rt.pantryChecks || {}).length,
+    manualItems: Object.keys(rt.manualItems || {}).length,
     onboarded: !!rt.onboarded,
   };
 }
@@ -155,7 +157,7 @@ function main() {
       console.error(`❌ ${f} : perte de données sur ${diffs.join(", ")}`);
       diffs.forEach(k => console.error(`     ${k}: V1=${before[k]} → runtime=${after[k]}`));
     } else {
-      console.log(`✅ ${f} : zéro perte (membres ${after.members}, semaines ${after.menuWeeks}, notes ${after.ratings}, journal ${after.journal}, garde-manger ${after.pantry})`);
+      console.log(`✅ ${f} : zéro perte (membres ${after.members}, semaines ${after.menuWeeks}, notes ${after.ratings}, journal ${after.journal}, garde-manger ${after.pantry}, ajouts ${after.manualItems})`);
     }
   }
 
