@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.99.82</title>
+<title>Menu IG Bas — V2.100.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -373,6 +373,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Mode restes : comment ça fonctionne ?",
           "a": "Activation via Paramètres → ♻️ Suggestions de recettes utilisant les restes (défaut OFF). Désactivé automatiquement si préparation groupée actif (cohérence). Quand un menu contient une recette qui produit des restes typiques (poulet rôti → poulet cuit, ratatouille → ratatouille, etc.), l'app suggère pour le lendemain ou surlendemain une recette qui les consomme. Suggestion non-bloquante : encadré en haut du planning avec bouton « Appliquer & verrouiller » (remplacement la case) ou « Ignorer »."
+        },
+        {
+          "q": "Je pars en vacances / camping avec juste un réchaud : comment adapter les menus ?",
+          "a": "Active Paramètres → ⛺ Mode vacances / camping (cuisine limitée). Le générateur se limite alors aux recettes réalisables avec un réchaud à gaz + un saladier (il ignore four, micro-ondes, robot, plancha…) et met en avant les recettes sans cuisson (salades composées, assiettes froides) pratiques par forte chaleur. Le catalogue contient largement de quoi tenir plusieurs semaines dans ce mode, réparties sur les 8 cuisines. Ton équipement habituel du foyer est conservé et revient automatiquement dès que tu désactives le mode au retour. Astuce : un réchaud n'a souvent qu'un feu — certaines recettes se font alors « en deux temps » (cuire, réserver, réchauffer)."
         },
         {
           "q": "Combien de recettes contient le catalogue ?",
@@ -121544,6 +121548,20 @@ function recipeRespectsEquipment(recipe, availEq) {
   if (!availEq?.length) return true;
   return recipe.eq.every(e => availEq.includes(e));
 }
+// V3.0 (issue #98) — Mode « Vacances / camping – cuisine limitée ». Quand
+// profile.campingMode est ON, la génération n'utilise plus l'équipement réel
+// du foyer mais un ensemble réduit « réchaud à gaz + saladier » = le matériel
+// réaliste en camping (un feu, pas de four / micro-ondes / robot / plancha).
+// On réutilise tel quel recipeRespectsEquipment (recipe.eq ⊆ set) : il suffit
+// de lui passer cet ensemble via ce helper partout où la génération filtre le
+// matériel. Le champ `equipment` du foyer reste intact (on le restaure en
+// désactivant le mode). Complément soft : boost des recettes `no-cook` dans
+// weightedPick (fortes chaleurs / panne de gaz).
+const CAMPING_EQUIPMENT = ["stove", "bowl"];
+function effectiveEquipment(profile) {
+  if (profile?.campingMode) return CAMPING_EQUIPMENT;
+  return profile?.equipment || [];
+}
 function recipeRespectsTime(recipe, maxMinutes) {
   if (!maxMinutes) return true;
   return (recipe.prep + recipe.cook) <= maxMinutes;
@@ -122732,7 +122750,7 @@ const SUPPORTED_SCHEMA = 2;
 const BACKUP_KEY_PREFIX = "menu-ig-bas-backup-";
 const BACKUP_KEEP = 3; // on ne conserve que les 3 plus récents
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","maxPrepMinutesWeekend","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","maxPrepMinutesWeekend","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients","campingMode"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -122821,6 +122839,14 @@ function emptyHouseholdPreferences() {
     // mais elles seront rarement piochées par l'algo.
     // Default OFF : pas de pénalité, comportement historique.
     preferCommonIngredients: false,
+    // V3.0 (issue #98) — Mode « Vacances / camping – cuisine limitée ».
+    // Si ON : la génération ignore l'équipement réel du foyer et se limite
+    // aux recettes réalisables au réchaud à gaz (eq ⊆ {stove, bowl}), et
+    // booste les recettes `no-cook` (fortes chaleurs / panne de gaz). Le
+    // champ `equipment` est conservé et restauré en désactivant le mode.
+    // Default OFF : comportement historique (équipement du foyer). Pensé
+    // comme un toggle temporaire à activer le temps des vacances.
+    campingMode: false,
   };
 }
 function emptyHousehold(id) {
@@ -123439,6 +123465,15 @@ function weightedPick(list, ratings, profile, favorites, costBias = 0, mealType 
     if (profile?.preferCommonIngredients && (r.tags || []).includes("epicerie-specialisee")) {
       w *= 0.3;
     }
+    // V3.0 (issue #98) — Mode camping : boost des recettes sans cuisson.
+    // La restriction matériel (eq ⊆ {stove, bowl}) est déjà appliquée en
+    // amont par baseFilter via effectiveEquipment. Ici on privilégie en plus
+    // les recettes `no-cook` (salades composées, assiettes froides) pour les
+    // journées de forte chaleur ou en cas de panne de gaz. Boost modéré (×1.6)
+    // pour surfacer sans écraser les plats chauds au réchaud.
+    if (profile?.campingMode && (r.tags || []).includes("no-cook")) {
+      w *= 1.6;
+    }
     // V2.99.16 — Boost protéique pour foyer sportif. Sans ce levier, l'algo
     // pouvait sortir un menu IG-conforme mais protéiné-déficitaire pour un
     // foyer avec sportif force/endurance (cible 1.3-1.8 g/kg/j vs 0.83
@@ -123586,7 +123621,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
-    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsEquipment(r, effectiveEquipment(profile)) &&
     recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 3
@@ -124127,7 +124162,7 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
-    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsEquipment(r, effectiveEquipment(profile)) &&
     recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 3 &&
@@ -124138,7 +124173,7 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
-    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsEquipment(r, effectiveEquipment(profile)) &&
     recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 3
@@ -124233,7 +124268,7 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, allergies) &&
     !recipeHasExcluded(r, exclusions) &&
-    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsEquipment(r, effectiveEquipment(profile)) &&
     recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 2.5
@@ -125544,7 +125579,7 @@ function App({initialState}) {
       matchesSeason(r, season, state.profile) &&
       !recipeHasAllergen(r, effectiveAllergies(state.profile, null)) &&
       !recipeHasExcluded(r, effectiveExclusions(state.profile, null)) &&
-      recipeRespectsEquipment(r, state.profile.equipment) &&
+      recipeRespectsEquipment(r, effectiveEquipment(state.profile)) &&
       recipeRespectsTime(r, effectiveMaxPrep(state.profile, null)) &&
       recipeRespectsSkill(r, state.profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, state.profile) >= 3
@@ -125834,7 +125869,7 @@ function App({initialState}) {
       r.type === meal &&
       matchesSeason(r, season, profile) &&
       !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
-      recipeRespectsEquipment(r, profile.equipment) &&
+      recipeRespectsEquipment(r, effectiveEquipment(profile)) &&
       recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
       recipeRespectsSkill(r, profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, profile) >= 3 &&
@@ -129162,7 +129197,7 @@ function computePoolSizes(profile, currentWeek) {
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
     !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
-    recipeRespectsEquipment(r, profile.equipment) &&
+    recipeRespectsEquipment(r, effectiveEquipment(profile)) &&
     recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
     recipeRespectsSkill(r, profile.skillLevel)
   ).length;
@@ -129661,7 +129696,7 @@ function LeftoverSuggestions({state, currentMenu, currentWeek, profile, replaceS
       matchesSeason(r, season, profile) &&
       !recipeHasAllergen(r, allergies) &&
       !recipeHasExcluded(r, exclusions) &&
-      recipeRespectsEquipment(r, profile.equipment) &&
+      recipeRespectsEquipment(r, effectiveEquipment(profile)) &&
       recipeRespectsTime(r, effectiveMaxPrep(profile, null)) &&
       recipeRespectsSkill(r, profile.skillLevel) &&
       getEffectiveRating(state.ratings, r.id, profile) >= 3
@@ -130597,8 +130632,22 @@ function SettingsView({state, update, updateProfile}) {
             </div>
           </div>
         </div>
+        {/* V3.0 (issue #98) — Mode Vacances / camping (cuisine limitée) */}
         <div>
-          <label className="text-sm block mb-2">Équipement</label>
+          <label className="flex items-start gap-2 cursor-pointer">
+            <input type="checkbox" checked={!!p.campingMode}
+              onChange={e => updateProfile({campingMode: e.target.checked})}
+              className="mt-1" />
+            <span>
+              <span className="text-sm font-medium">⛺ Mode vacances / camping (cuisine limitée)</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                À activer quand tu pars avec des moyens de cuisson réduits (un réchaud à gaz, pas de four). Le générateur se limite alors aux recettes réalisables au <strong>réchaud + saladier</strong> et met en avant les recettes <strong>sans cuisson</strong> pour les fortes chaleurs. Ton équipement habituel est conservé et revient dès que tu désactives le mode.
+              </span>
+            </span>
+          </label>
+        </div>
+        <div className={p.campingMode ? "opacity-50 pointer-events-none" : ""}>
+          <label className="text-sm block mb-2">Équipement{p.campingMode ? " — ignoré en mode camping (réchaud + saladier)" : ""}</label>
           <div className="flex flex-wrap gap-2">
             {dataRef.equipment().map(eq => (
               <label key={eq.id} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
