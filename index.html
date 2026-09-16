@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.101.0</title>
+<title>Menu IG Bas — V2.101.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -377,6 +377,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Je pars en vacances / camping avec juste un réchaud : comment adapter les menus ?",
           "a": "Active Paramètres → ⛺ Mode vacances / camping (cuisine limitée). Le générateur se limite alors aux recettes réalisables avec un réchaud à gaz + un saladier (il ignore four, micro-ondes, robot, plancha…) et met en avant les recettes sans cuisson (salades composées, assiettes froides) pratiques par forte chaleur. Le catalogue contient largement de quoi tenir plusieurs semaines dans ce mode, réparties sur les 8 cuisines. Ton équipement habituel du foyer est conservé et revient automatiquement dès que tu désactives le mode au retour. Astuce : un réchaud n'a souvent qu'un feu — certaines recettes se font alors « en deux temps » (cuire, réserver, réchauffer)."
+        },
+        {
+          "q": "Comment chercher une recette par plusieurs ingrédients à la fois ?",
+          "a": "Dans la barre de recherche de la Bibliothèque (et dans la fenêtre « Remplacer » d'un repas), utilise le signe + pour cumuler des critères : « noix + poire » n'affiche que les recettes contenant à la fois de la noix ET de la poire. Chaque mot-clé est cherché dans le nom, les tags et les ingrédients principaux de la recette, sans tenir compte des majuscules ni des accents (« saumon » trouve « Saumon fumé »). Tu peux enchaîner autant de critères que tu veux (« tomate + basilic + mozzarella »). Sans le +, la recherche fonctionne comme avant avec un seul mot-clé."
         },
         {
           "q": "Combien de recettes contient le catalogue ?",
@@ -133464,6 +133468,25 @@ function normalizeForSearch(s) {
   return (s || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
+// V2.101.1 (issue #99) \u2014 Recherche recette multi-crit\u00e8res. Les mots-cl\u00e9s
+// s\u00e9par\u00e9s par \u00ab + \u00bb sont combin\u00e9s en ET : "noix + poire" ne remonte que les
+// recettes qui matchent noix ET poire. Chaque crit\u00e8re est cherch\u00e9 dans le nom,
+// les tags et les 5 premiers ingr\u00e9dients (on borne \u00e0 5 pour \u00e9viter de matcher
+// des items mineurs omnipr\u00e9sents comme \u00ab sel \u00bb ou \u00ab huile d'olive \u00bb). Sans
+// \u00ab + \u00bb, comportement mono-crit\u00e8re classique (une seule sous-cha\u00eene). Insensible
+// casse/accents via normalizeForSearch. R\u00e9utilis\u00e9 par la Biblioth\u00e8que ET la
+// modale \u00ab Remplacer \u00bb (source unique).
+function recipeMatchesSearch(recipe, query) {
+  const terms = (query || "").split("+").map(t => normalizeForSearch(t.trim())).filter(Boolean);
+  if (terms.length === 0) return true;
+  const haystack = [
+    normalizeForSearch(recipe.name),
+    ...(recipe.tags || []).map(normalizeForSearch),
+    ...(recipe.ing || []).slice(0, 5).map(([name]) => normalizeForSearch(name)),
+  ];
+  return terms.every(term => haystack.some(h => h.includes(term)));
+}
+
 function ReplaceDialog({day, meal, season, profile, currentId, feastMode, onPick, onClose}) {
   const [query, setQuery] = useState("");
   const inputRef = useRef(null);
@@ -133480,16 +133503,10 @@ function ReplaceDialog({day, meal, season, profile, currentId, feastMode, onPick
     !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
     r.id !== currentId
   );
-  // Filtre par recherche : nom + tags + ingrédients principaux (premiers 5 pour
-  // éviter de matcher des items mineurs comme "sel" ou "huile d'olive").
-  const q = normalizeForSearch(query.trim());
-  const pool = q.length === 0 ? basePool : basePool.filter(r => {
-    if (normalizeForSearch(r.name).includes(q)) return true;
-    if ((r.tags || []).some(t => normalizeForSearch(t).includes(q))) return true;
-    const ings = (r.ing || []).slice(0, 5);
-    if (ings.some(([name]) => normalizeForSearch(name).includes(q))) return true;
-    return false;
-  });
+  // Filtre par recherche : délégué au helper partagé recipeMatchesSearch
+  // (multi-critères « + » : "tomate + basilic". Voir sa définition). Source
+  // unique avec la Bibliothèque.
+  const pool = basePool.filter(r => recipeMatchesSearch(r, query));
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 p-5 max-w-lg w-full max-h-[80vh] overflow-auto" onClick={e=>e.stopPropagation()}>
@@ -133510,7 +133527,7 @@ function ReplaceDialog({day, meal, season, profile, currentId, feastMode, onPick
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="🔍 Rechercher (nom, ingrédient, tag…)"
+            placeholder="🔍 Rechercher (nom, ingrédient, tag — « + » pour cumuler)"
             className="w-full border border-slate-300 dark:border-slate-600 rounded-md px-3 py-2 pr-8 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
           {query && (
@@ -133778,7 +133795,9 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
   const currentSeason = getSeason(new Date());
   const filtered = RECIPES.filter(r => {
     if (filter !== "all" && r.type !== filter) return false;
-    if (query && !r.name.toLowerCase().includes(query.toLowerCase())) return false;
+    // V2.101.1 (#99) — Recherche multi-critères : nom + tags + ingrédients,
+    // avec « + » = ET (ex : "noix + poire"). Cf. recipeMatchesSearch.
+    if (!recipeMatchesSearch(r, query)) return false;
     if (favOnly && !favSet.has(r.id)) return false;
     return true;
   });
@@ -133787,8 +133806,9 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4 flex flex-wrap gap-3 items-center">
         <h2 className="text-xl font-bold">📖 Bibliothèque de recettes</h2>
         <div className="flex-1"></div>
-        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="🔍 Rechercher…"
-          className="border rounded px-3 py-2" />
+        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="🔍 Rechercher (nom, ingrédient — ex : noix + poire)"
+          title="Astuce : cumulez des ingrédients avec « + ». Ex : noix + poire ne montre que les recettes contenant les deux."
+          className="border rounded px-3 py-2 min-w-[16rem]" />
         {/* V2.62.0 (issue #20) — Filtre favoris */}
         <button onClick={() => setFavOnly(f => !f)}
           title={favOnly ? "Désactiver le filtre favoris" : `Afficher uniquement les ${favSet.size} favori${favSet.size > 1 ? "s" : ""}`}
