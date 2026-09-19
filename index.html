@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.101.3</title>
+<title>Menu IG Bas — V2.101.4</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -132772,7 +132772,13 @@ function App({initialState}) {
     // Évite la recette qu'on remplace + les 2 autres déjà piochées
     const exclude = new Set([feastObj.entryId, feastObj.mainId, feastObj.dessertId].filter(Boolean));
     const picked = pickFeastPart(kind, meal, exclude);
-    if (!picked) return;
+    if (!picked) {
+      // V2.101.4 — Feedback au lieu d'un no-op silencieux quand le pool festif
+      // de cette part est épuisé pour la saison (le 🎲 « ne faisait rien »).
+      const lbl = kind === "entry" ? "l'entrée" : kind === "dessert" ? "le dessert" : "le plat";
+      alert(`Aucune autre recette festive disponible pour ${lbl} à cette saison.`);
+      return;
+    }
     update(s => {
       const slot = s.menus[wk]?.[day] || {};
       const cur = typeof slot.feast === "object" ? slot.feast : null;
@@ -132791,6 +132797,18 @@ function App({initialState}) {
   };
   // Compat appelants V1 (V2.77.x) : redirige vers regenerateFeastPart("main")
   const regenerateFeastMeal = (day, _meal) => regenerateFeastPart(day, "main");
+  // V2.101.4 — Remplacement MANUEL d'une part festive (entrée/plat/dessert) :
+  // écrit le bon champ de l'objet feast avec la recette choisie dans la liste.
+  const replaceFeastPart = (day, kind, id) => {
+    update(s => {
+      const slot = s.menus[wk]?.[day] || {};
+      const cur = typeof slot.feast === "object" ? slot.feast : null;
+      if (!cur) return {};
+      const field = kind === "entry" ? "entryId" : kind === "dessert" ? "dessertId" : "mainId";
+      const next = {...slot, feast: {...cur, [field]: id}};
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk]||{}), [day]: next}}};
+    });
+  };
 
   // V2.85.0 (#76 L3) — Module compétition.
   // Stocke un événement compé sur un jour. Phases (J-3 à J+2) calculées
@@ -132995,6 +133013,8 @@ function App({initialState}) {
             enableSlotFeast={enableSlotFeast}
             disableSlotFeast={disableSlotFeast}
             regenerateFeastMeal={regenerateFeastMeal}
+            regenerateFeastPart={regenerateFeastPart}
+            replaceFeastPart={replaceFeastPart}
             toggleDayExternal={toggleDayExternal}
             toggleBatchActiveForWeek={toggleBatchActiveForWeek}
             setJournalField={setJournalField}
@@ -133470,7 +133490,7 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
-function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onPdf, pdfBusy, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, setCompetitionEvent, clearCompetitionEvent, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
+function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onPdf, pdfBusy, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, regenerateFeastPart, replaceFeastPart, setCompetitionEvent, clearCompetitionEvent, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
@@ -133881,7 +133901,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                         <div className="border-t border-rose-200 dark:border-rose-800 pt-1.5 mt-1.5 first:border-t-0 first:pt-0 first:mt-0">
                           <div className="flex items-center justify-between gap-1">
                             <span className="text-[10px] font-semibold text-rose-700 dark:text-rose-300">{icon} {label}</span>
-                            <button title={`Repiocher ${label.toLowerCase()}`} onClick={() => regenerateFeastPart(day, kind)} className="text-[10px] hover:opacity-70">🎲</button>
+                            <span className="flex items-center gap-1.5">
+                              <button title={`Choisir ${label.toLowerCase()} de fête dans la liste`} onClick={() => setReplacePanel({day, meal: m.key, feastKind: kind, poolType: kind === "entry" ? "snack" : kind === "dessert" ? "dessert" : m.key, currentId: rec.id})} className="text-[10px] hover:opacity-70">🔀</button>
+                              <button title={`Repiocher ${label.toLowerCase()} au hasard`} onClick={() => regenerateFeastPart(day, kind)} className="text-[10px] hover:opacity-70">🎲</button>
+                            </span>
                           </div>
                           <button onClick={() => onSelectRecipe(rec.id, {day, meal: m.key})}
                             className="text-left w-full hover:text-rose-800 dark:hover:text-rose-200 text-slate-800 dark:text-slate-100 text-xs font-medium">
@@ -134122,11 +134145,16 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
         <ReplaceDialog
           day={replacePanel.day}
           meal={replacePanel.meal}
+          poolType={replacePanel.poolType}
           season={season}
           profile={state.profile}
-          currentId={currentMenu[replacePanel.day]?.[replacePanel.meal]}
-          feastMode={slotIsFeastOnMeal(currentMenu[replacePanel.day], replacePanel.meal)}
-          onPick={(id) => { replaceSlot(replacePanel.day, replacePanel.meal, id); setReplacePanel(null); }}
+          currentId={replacePanel.feastKind ? replacePanel.currentId : currentMenu[replacePanel.day]?.[replacePanel.meal]}
+          feastMode={replacePanel.feastKind ? true : slotIsFeastOnMeal(currentMenu[replacePanel.day], replacePanel.meal)}
+          onPick={(id) => {
+            if (replacePanel.feastKind) replaceFeastPart(replacePanel.day, replacePanel.feastKind, id);
+            else replaceSlot(replacePanel.day, replacePanel.meal, id);
+            setReplacePanel(null);
+          }}
           onClose={() => setReplacePanel(null)}
         />
       )}
@@ -134648,7 +134676,7 @@ function recipeMatchesSearch(recipe, query) {
   return terms.every(term => haystack.some(h => h.includes(term)));
 }
 
-function ReplaceDialog({day, meal, season, profile, currentId, feastMode, onPick, onClose}) {
+function ReplaceDialog({day, meal, poolType, season, profile, currentId, feastMode, onPick, onClose}) {
   const [query, setQuery] = useState("");
   const inputRef = useRef(null);
   // Auto-focus à l'ouverture pour permettre de taper directement sans clic.
@@ -134657,7 +134685,9 @@ function ReplaceDialog({day, meal, season, profile, currentId, feastMode, onPick
   // V2.77.1 (#81) — En mode fête, restreint au tag "festif" pour cohérence
   // avec le toggle 🍾 (l'utilisateur reste dans la sélection festive).
   const basePool = RECIPES.filter(r =>
-    r.type === meal &&
+    // V2.101.4 — poolType permet de filtrer sur le type d'une PART festive
+    // (entrée = snack, dessert = dessert) différent du repas hôte (lunch/dinner).
+    r.type === (poolType || meal) &&
     (!feastMode || (r.tags || []).includes("festif")) &&
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
