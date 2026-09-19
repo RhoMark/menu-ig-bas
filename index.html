@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.101.4</title>
+<title>Menu IG Bas — V2.101.5</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -498,7 +498,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "fenêtre Remplacer 🔀 sur un repas festif — pourquoi filtré ?",
-          "a": "Quand le mode fête est actif sur une case, le bouton 🔀 Remplacer ouvre une liste limitée aux 17 recettes festives uniquement (bandeau rose 🍾 en tête). Cohérence : tu restes dans la sélection festive tant que le mode fête est activé. Pour voir toutes les recettes : désactive le mode fête d'abord (clic 🍾)."
+          "a": "Quand le mode fête est actif, chaque part (🥗 entrée, 🍽️ plat, 🍰 dessert) a son propre bouton 🔀 Remplacer qui ouvre la liste festive du bon type (entrées festives, plats festifs, desserts festifs), et un 🎲 pour repiocher au hasard. Cohérence : tu restes dans la sélection festive. Exception pratique pour le 🍰 dessert : une case « Inclure aussi les desserts non festifs » permet de finir sur une note plus légère (un dessert normal) sans quitter le mode fête. Pour tout voir sur l'entrée/le plat : désactive le mode fête d'abord (clic 🍾)."
         },
         {
           "q": "Astérisque budget *  — qu'est-ce que ça signale ?",
@@ -134678,17 +134678,26 @@ function recipeMatchesSearch(recipe, query) {
 
 function ReplaceDialog({day, meal, poolType, season, profile, currentId, feastMode, onPick, onClose}) {
   const [query, setQuery] = useState("");
+  const [includeNonFeast, setIncludeNonFeast] = useState(false);
   const inputRef = useRef(null);
   // Auto-focus à l'ouverture pour permettre de taper directement sans clic.
   useEffect(() => { inputRef.current?.focus(); }, []);
+  // V2.101.5 (#100) — effectiveType = type réel du pool (pour une PART festive :
+  // dessert = "dessert", entrée = "snack"). Un DESSERT de fête peut donner accès
+  // aux desserts NON festifs via un toggle (finir sur une note plus légère),
+  // tout en gardant les desserts festifs par défaut. On ne relâche PAS pour
+  // l'entrée/le plat (cohérence du repas de fête).
+  const effectiveType = poolType || meal;
+  const dessertEscape = feastMode && effectiveType === "dessert";
+  const restrictFeast = feastMode && !(dessertEscape && includeNonFeast);
   // Pool de base : type/saison/allergies/exclusions, indépendant de la recherche.
   // V2.77.1 (#81) — En mode fête, restreint au tag "festif" pour cohérence
   // avec le toggle 🍾 (l'utilisateur reste dans la sélection festive).
   const basePool = RECIPES.filter(r =>
     // V2.101.4 — poolType permet de filtrer sur le type d'une PART festive
     // (entrée = snack, dessert = dessert) différent du repas hôte (lunch/dinner).
-    r.type === (poolType || meal) &&
-    (!feastMode || (r.tags || []).includes("festif")) &&
+    r.type === effectiveType &&
+    (!restrictFeast || (r.tags || []).includes("festif")) &&
     matchesSeason(r, season, profile) &&
     !recipeHasAllergen(r, effectiveAllergies(profile, null)) &&
     !recipeHasExcluded(r, effectiveExclusions(profile, null)) &&
@@ -134706,10 +134715,17 @@ function ReplaceDialog({day, meal, poolType, season, profile, currentId, feastMo
           <button onClick={onClose} className="text-slate-400 hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300">✕</button>
         </div>
         {/* V2.77.1 (#81) — Bandeau mode fête : restriction au pool festif */}
-        {feastMode && (
+        {restrictFeast && (
           <div className="mb-3 p-2 rounded border bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700 text-xs text-rose-800 dark:text-rose-200">
-            🍾 <strong>Mode fête actif</strong> — uniquement les {ALL_MEALS.find(m=>m.key===meal)?.label.toLowerCase()}s de fête (tag festif). Désactivez le mode fête sur ce slot (bouton 🍾) pour voir toutes les recettes.
+            🍾 <strong>Mode fête actif</strong> — {ALL_MEALS.find(m=>m.key===effectiveType)?.label?.toLowerCase() || "recette"}s de fête (tag festif){dessertEscape ? "" : ". Désactivez le mode fête sur ce slot (bouton 🍾) pour voir toutes les recettes."}
           </div>
+        )}
+        {/* V2.101.5 (#100) — Un dessert de fête peut piocher dans les desserts normaux */}
+        {dessertEscape && (
+          <label className="mb-3 flex items-center gap-2 text-xs cursor-pointer text-slate-600 dark:text-slate-300">
+            <input type="checkbox" checked={includeNonFeast} onChange={e => setIncludeNonFeast(e.target.checked)} />
+            <span>🍰 Inclure aussi les desserts <strong>non festifs</strong> (finir sur une note plus légère)</span>
+          </label>
         )}
         {/* V2.18.0 — Barre de recherche : filtre par nom, tags ou ingrédient principal */}
         <div className="relative mb-3">
