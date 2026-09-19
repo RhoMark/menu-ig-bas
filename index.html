@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.101.1</title>
+<title>Menu IG Bas — V2.101.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -133541,7 +133541,7 @@ function ReplaceDialog({day, meal, season, profile, currentId, feastMode, onPick
           )}
         </div>
         <div className="text-xs text-slate-500 dark:text-slate-400 mb-2">
-          {pool.length} recette{pool.length > 1 ? "s" : ""} {q && `pour « ${query.trim()} »`} (sur {basePool.length} éligibles)
+          {pool.length} recette{pool.length > 1 ? "s" : ""} {query.trim() && `pour « ${query.trim()} »`} (sur {basePool.length} éligibles)
         </div>
         <div className="space-y-2">
           {pool.map(r => (
