@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.101.5</title>
+<title>Menu IG Bas — V2.101.6</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -133069,6 +133069,12 @@ function App({initialState}) {
           attendees={selectedRecipe.day && selectedRecipe.meal
             ? currentMenu[selectedRecipe.day]?.attendance?.[selectedRecipe.meal]
             : undefined}
+          guests={selectedRecipe.day && selectedRecipe.meal
+            ? (slotIsFeastOnMeal(currentMenu[selectedRecipe.day], selectedRecipe.meal)
+                ? currentMenu[selectedRecipe.day]?.feast?.guests
+                : currentMenu[selectedRecipe.day]?.guests?.[selectedRecipe.meal])
+            : undefined}
+          guestRatios={state.profile.guestRatios}
           ratings={state.ratings}
           recentUsageCount={countRecipeUsageRecent(state.menus, selectedRecipe.id, new Date())}
           onRate={(score, memberId) => rateRecipe(selectedRecipe.id, score, memberId)}
@@ -134785,7 +134791,7 @@ function ReplaceDialog({day, meal, poolType, season, profile, currentId, feastMo
 }
 
 // ----- Recipe Modal --------------------------------------------------------
-function RecipeModal({recipe, profile, season = null, attendees, ratings, recentUsageCount = 0, onRate, onClose, isFavorite = false, onToggleFavorite = null}) {
+function RecipeModal({recipe, profile, season = null, attendees, guests = null, guestRatios = null, ratings, recentUsageCount = 0, onRate, onClose, isFavorite = false, onToggleFavorite = null}) {
   const hasContext = Array.isArray(attendees);
   const nAll = profile.members?.length || 0;
   const nPresent = hasContext ? attendees.length : nAll;
@@ -134793,8 +134799,12 @@ function RecipeModal({recipe, profile, season = null, attendees, ratings, recent
   const isPartial = hasContext && nPresent > 0 && nPresent < nAll;
   // Si repas externe : on affiche les quantités pour la famille complète à titre indicatif
   // (sinon on aurait des qty × 0 dans toute la fiche, illisible).
+  // V2.101.6 (#100) — Inclut les invités du slot (fête ou normal) dans l'échelle
+  // des quantités affichées. Avant, mealEquivalents était appelé sans guests →
+  // la fiche recette ignorait les invités (les quantités ne bougeaient pas).
   const mult = isExternal ? totalEquivalents(profile)
-    : hasContext ? mealEquivalents(profile, attendees) : totalEquivalents(profile);
+    : hasContext ? mealEquivalents(profile, attendees, guests, guestRatios) : totalEquivalents(profile);
+  const guestN = isExternal ? 0 : totalGuestCount(guests); // invités inclus dans mult (sauf repas extérieur)
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 no-print" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-slate-200 dark:border-slate-700 max-w-3xl w-full max-h-[90vh] overflow-auto" onClick={e=>e.stopPropagation()}>
@@ -134930,8 +134940,8 @@ function RecipeModal({recipe, profile, season = null, attendees, ratings, recent
             <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isExternal ? "text-sky-700 dark:text-sky-300 font-medium" : isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{isExternal
               ? `(famille complète à titre indicatif, soit ${mult.toFixed(1)} équiv. adultes)`
               : isPartial
-              ? `(pour ${nPresent} présent${nPresent>1?"s":""} sur ${nAll}, soit ${mult.toFixed(1)} équiv. adultes)`
-              : `(pour la famille, soit ${mult.toFixed(1)} équiv. adultes)`
+              ? `(pour ${nPresent} présent${nPresent>1?"s":""} sur ${nAll}${guestN>0?` + ${guestN} invité${guestN>1?"s":""}`:""}, soit ${mult.toFixed(1)} équiv. adultes)`
+              : `(pour la famille${guestN>0?` + ${guestN} invité${guestN>1?"s":""}`:""}, soit ${mult.toFixed(1)} équiv. adultes)`
             }</span></h3>
             <ul className="space-y-1">
               {recipe.ing.map(([name,qty,unit,cat],i) => (
