@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.101.6</title>
+<title>Menu IG Bas — V2.101.7</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -134802,9 +134802,17 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
   // V2.101.6 (#100) — Inclut les invités du slot (fête ou normal) dans l'échelle
   // des quantités affichées. Avant, mealEquivalents était appelé sans guests →
   // la fiche recette ignorait les invités (les quantités ne bougeaient pas).
+  const guestN = isExternal ? 0 : totalGuestCount(guests);
+  // V2.101.7 — Inclure les invités même SANS attendance explicite (cas courant :
+  // tout le monde présent par défaut). Avant, quand l'attendance n'était pas
+  // définie (hasContext=false), on tombait sur totalEquivalents(profile) qui
+  // IGNORE les invités → les quantités ne changeaient pas quand on ajoutait des
+  // invités (le libellé « +N invités » s'affichait pourtant, d'où l'incohérence).
+  // mealEquivalents(profile, null|undefined, guests) = famille complète + invités.
   const mult = isExternal ? totalEquivalents(profile)
-    : hasContext ? mealEquivalents(profile, attendees, guests, guestRatios) : totalEquivalents(profile);
-  const guestN = isExternal ? 0 : totalGuestCount(guests); // invités inclus dans mult (sauf repas extérieur)
+    : (hasContext || guestN > 0)
+      ? mealEquivalents(profile, attendees, guests, guestRatios)
+      : totalEquivalents(profile);
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 no-print" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-slate-200 dark:border-slate-700 max-w-3xl w-full max-h-[90vh] overflow-auto" onClick={e=>e.stopPropagation()}>
@@ -137908,27 +137916,54 @@ function PrintMenuPage({weekStart, menu, profile}) {
               <td className={`border border-slate-300 dark:border-slate-600 p-1 font-bold ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950 text-rose-800 dark:text-rose-200" : m.key === "snack" ? "bg-amber-50 dark:bg-amber-950" : "bg-slate-100 dark:bg-slate-700"}`}>{m.icon} {m.label}</td>
               {orderedPrint.days.map(d => {
                 const slot = menu[d] || {};
-                const r = RECIPES.find(x => x.id === slot[m.key]);
+                // V2.101.7 — Rendu des repas de FÊTE dans le menu imprimé. Les
+                // recettes festives vivent dans slot.feast (entrée/plat/dessert),
+                // pas dans slot[meal] : l'ancien code affichait donc "—" pour un
+                // repas de fête. On affiche aussi le nombre d'invités du slot
+                // (fête ou repas normal) pour que le papier reflète les convives.
+                const feastObj = slotFeastObj(slot);
+                let cellRecipes = [];
+                let feastMark = false;
+                let guestN = 0;
+                if (feastObj && feastObj.services >= 2 && feastObj.meal === m.key) {
+                  cellRecipes = [feastObj.entryId, feastObj.mainId].filter(Boolean).map(id => RECIPES.find(x => x.id === id)).filter(Boolean);
+                  feastMark = true; guestN = totalGuestCount(feastObj.guests);
+                } else if (feastObj && feastObj.services >= 2 && m.key === "dessert" && feastObj.dessertId) {
+                  cellRecipes = [RECIPES.find(x => x.id === feastObj.dessertId)].filter(Boolean);
+                  feastMark = true; guestN = totalGuestCount(feastObj.guests);
+                } else {
+                  const r = RECIPES.find(x => x.id === slot[m.key]);
+                  if (r) { cellRecipes = [r]; guestN = totalGuestCount(slot.guests?.[m.key]); }
+                }
                 return (
-                  <td key={d} className={`border border-slate-300 dark:border-slate-600 p-1 align-top ${m.key === "dessert" ? "bg-rose-50 dark:bg-rose-950/30" : ""}`}>
-                    {r ? (
+                  <td key={d} className={`border border-slate-300 dark:border-slate-600 p-1 align-top ${(feastMark || m.key === "dessert") ? "bg-rose-50 dark:bg-rose-950/30" : ""}`}>
+                    {cellRecipes.length > 0 ? (
                       <>
-                        <div className="font-medium">
-                          {r.name}
-                          {recipeAdvanceInfo(r) && (
-                            <span className="ml-1 text-amber-700 dark:text-amber-300" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
-                              {recipeAdvanceInfo(r).icon}
-                            </span>
-                          )}
-                        </div>
-                        <div className="text-[8pt] text-slate-500 dark:text-slate-400">
-                          ⏱{recipeActiveMinutes(r)}min
-                          {recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}
-                          {' · '}{r.kcal}kcal
-                          {recipeAdvanceInfo(r) && (
-                            <span className="text-amber-700 dark:text-amber-300 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
-                          )}
-                        </div>
+                        {(feastMark || guestN > 0) && (
+                          <div className="text-[8pt] font-bold text-rose-700 dark:text-rose-300 mb-1">
+                            {feastMark ? "🍾 Fête" : ""}{guestN > 0 ? `${feastMark ? " · " : ""}👥 +${guestN} invité${guestN>1?"s":""}` : ""}
+                          </div>
+                        )}
+                        {cellRecipes.map((r, ri) => (
+                          <div key={ri} className={ri > 0 ? "mt-1 pt-1 border-t border-dashed border-slate-200 dark:border-slate-700" : ""}>
+                            <div className="font-medium">
+                              {r.name}
+                              {recipeAdvanceInfo(r) && (
+                                <span className="ml-1 text-amber-700 dark:text-amber-300" title={`À préparer ${recipeAdvanceInfo(r).label}`}>
+                                  {recipeAdvanceInfo(r).icon}
+                                </span>
+                              )}
+                            </div>
+                            <div className="text-[8pt] text-slate-500 dark:text-slate-400">
+                              ⏱{recipeActiveMinutes(r)}min
+                              {recipeRestMinutes(r) > 0 && ` +${recipeRestMinutes(r)>=60?Math.round(recipeRestMinutes(r)/60*10)/10+'h':recipeRestMinutes(r)+'min'} repos`}
+                              {' · '}{r.kcal}kcal
+                              {recipeAdvanceInfo(r) && (
+                                <span className="text-amber-700 dark:text-amber-300 font-bold"> · {recipeAdvanceInfo(r).shortLabel} avance</span>
+                              )}
+                            </div>
+                          </div>
+                        ))}
                       </>
                     ) : <span className="text-slate-400 dark:text-slate-500 italic">—</span>}
                   </td>
