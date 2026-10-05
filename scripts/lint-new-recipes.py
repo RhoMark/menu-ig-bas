@@ -329,6 +329,12 @@ def check_allergens_consistency(recipes, report):
     GLUTEN_FREE_FLOURS = re.compile(r'\b(semoule|farine|pâtes?|pates?)\s+(de\s+|d\')?(ma[iï]s|riz|sarrasin|pois\s+chiche|chataigne|châtaigne|coco|amande|manioc|tapioca|millet|teff|quinoa|sorgho|mochiko|lentille)\b')
     # "Riz gluant" : le nom contient "gluant" mais c'est juste sticky, pas gluten
     STICKY_RICE = re.compile(r'\briz\s+gluant\b')
+    # "Tortilla de maïs" = SANS gluten (masa de maïs nixtamalisé), malgré le
+    # mot-clé "tortilla" de la liste gluten (qui vise les tortillas de BLÉ).
+    # Aligne le linter sur la réalité ET sur la convention du catalogue
+    # (s89/s97/s98/s104 : "Tortilla de maïs" → allergens []). NE PAS étendre à
+    # "tortilla de blé" ni "tortilla" seule (celles-là contiennent du gluten).
+    CORN_TORTILLA = re.compile(r'tortilla\s+(de\s+|d\')?ma[iï]s')
 
     for r in recipes:
         rid = r.get("id", "?")
@@ -351,6 +357,8 @@ def check_allergens_consistency(recipes, report):
                                 continue  # semoule/farine de maïs/riz/sarrasin = sans gluten
                             if STICKY_RICE.search(ing_name):
                                 continue  # "riz gluant" = sticky, pas gluten
+                            if CORN_TORTILLA.search(ing_name):
+                                continue  # tortilla de maïs = sans gluten
                         if allergen == "shellfish" and kw == "moule" and "moule" not in ing_name.split():
                             continue  # éviter de matcher "moelleux"
                         detected.setdefault(allergen, []).append(ing_entry[0])
