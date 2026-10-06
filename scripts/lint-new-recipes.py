@@ -335,6 +335,12 @@ def check_allergens_consistency(recipes, report):
     # (s89/s97/s98/s104 : "Tortilla de maïs" → allergens []). NE PAS étendre à
     # "tortilla de blé" ni "tortilla" seule (celles-là contiennent du gluten).
     CORN_TORTILLA = re.compile(r'tortilla\s+(de\s+|d\')?ma[iï]s')
+    # "Noix de Saint-Jacques / de veau / de pétoncle / de jambon" = PAS un fruit
+    # à coque, malgré le mot "noix" de la liste nuts. Convention du catalogue
+    # (s53/d152 : "Noix de Saint-Jacques" → pas de tag nuts). On NE touche PAS à
+    # "noix de coco/cajou/pécan/grenoble", "cerneaux de noix", "huile de noix",
+    # qui restent nuts.
+    NON_NUT_NOIX = re.compile(r'noix\s+de\s+(saint-jacques|st-jacques|st\s+jacques|p[ée]toncle|veau|jambon|joue)')
 
     for r in recipes:
         rid = r.get("id", "?")
@@ -359,6 +365,8 @@ def check_allergens_consistency(recipes, report):
                                 continue  # "riz gluant" = sticky, pas gluten
                             if CORN_TORTILLA.search(ing_name):
                                 continue  # tortilla de maïs = sans gluten
+                        if allergen == "nuts" and kw == "noix" and NON_NUT_NOIX.search(ing_name):
+                            continue  # "noix de Saint-Jacques/veau/pétoncle" = pas un fruit à coque
                         if allergen == "shellfish" and kw == "moule" and "moule" not in ing_name.split():
                             continue  # éviter de matcher "moelleux"
                         detected.setdefault(allergen, []).append(ing_entry[0])
