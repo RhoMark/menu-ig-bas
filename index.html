@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.107.1</title>
+<title>Menu IG Bas — V2.107.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -155108,10 +155108,25 @@ const REF = (() => {
   const unitsData   = loadRefBlock("data-units",       {items:[], aliases:{}});
   const glycemic    = loadRefBlock("data-glycemic",    {items:[]}).items;
   const prices      = loadRefBlock("data-prices",      {items:[]}).items;
-  const ingredientsById = new Map(ingredients.map(i => [i.id, i]));
+  // V2.107.2 — Index doublement indexé : id brut ET canonicalName(id).
+  // Depuis V2.99.61, canonicalName retire apostrophes et tirets (« huile
+  // d'olive » → « huile dolive »), mais les id des tables les gardent → la
+  // recherche directe échouait et retombait sur le 1er mot (« beurre
+  // d'amande » lu comme « beurre », « lait d'amande » comme lait de vache,
+  // « huile d'olive » sans prix). L'id brut reste prioritaire en cas de
+  // collision (1er arrivé gagne pour les alias canoniques).
+  const byIdAndCanon = (arr) => {
+    const m = new Map(arr.map(x => [x.id, x]));
+    for (const x of arr) {
+      const k = canonicalName(x.id);
+      if (!m.has(k)) m.set(k, x);
+    }
+    return m;
+  };
+  const ingredientsById = byIdAndCanon(ingredients);
   const unitsById       = new Map(unitsData.items.map(u => [u.id, u]));
-  const glycemicById    = new Map(glycemic.map(g => [g.id, g]));
-  const pricesById      = new Map(prices.map(p => [p.id, p]));
+  const glycemicById    = byIdAndCanon(glycemic);
+  const pricesById      = byIdAndCanon(prices);
   const cuisinesById    = new Map(cuisines.map(c => [c.id, c]));
   return {
     categories, allergens, equipment, tags, cuisines, cuisinesById,

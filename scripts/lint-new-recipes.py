@@ -325,6 +325,10 @@ def check_allergens_consistency(recipes, report):
     # V2.99.19 — Détection allergens fine, ingrédient par ingrédient (pas
     # concat global) pour éviter les faux positifs ("lait de coco" ≠ lactose).
     NON_LACTOSE_MILKS = re.compile(r"\blait\s+(de\s+|d')?(coco|amande|soja|avoine|riz|noisette|noix|chanvre|epeautre|épeautre)\b")
+    # "Beurre d'amande / de cacahuète", "crème de marrons / de coco" = purées
+    # végétales, PAS du laitier malgré les mots-clés beurre/crème. Les vrais
+    # allergènes (nuts, peanut…) restent détectés par leurs propres mots-clés.
+    NON_DAIRY_SPREADS = re.compile(r"\b(beurre|cr[èe]me)\s+(de\s+|d')(amandes?|cacahu[èe]tes?|noisettes?|noix\s+de\s+cajou|cajou|pistaches?|s[ée]same|coco|marrons?|ch[âa]taignes?)\b")
     # "Semoule/farine de maïs/riz/sarrasin" = sans gluten malgré le mot semoule/farine
     GLUTEN_FREE_FLOURS = re.compile(r'\b(semoule|farine|pâtes?|pates?)\s+(de\s+|d\')?(ma[iï]s|riz|sarrasin|pois\s+chiche|chataigne|châtaigne|coco|amande|manioc|tapioca|millet|teff|quinoa|sorgho|mochiko|lentille)\b')
     # "Riz gluant" : le nom contient "gluant" mais c'est juste sticky, pas gluten
@@ -358,6 +362,8 @@ def check_allergens_consistency(recipes, report):
                         # Exceptions fines
                         if allergen == "lactose" and NON_LACTOSE_MILKS.search(ing_name):
                             continue  # lait végétal, pas lactose
+                        if allergen == "lactose" and NON_DAIRY_SPREADS.search(ing_name):
+                            continue  # beurre d'amande, crème de marrons… = pas laitier
                         if allergen == "gluten":
                             if GLUTEN_FREE_FLOURS.search(ing_name):
                                 continue  # semoule/farine de maïs/riz/sarrasin = sans gluten
