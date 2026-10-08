@@ -23,6 +23,11 @@
 CLAUDE.local.md
 tâches/
 
+# --- Serveur local auto-hébergé (Phase 2·L) — NE JAMAIS PUBLIER ---
+# Contient la clé privée du certificat mkcert, l'IP LAN interne, le webroot
+# (symlinks), la config Caddy/systemd. Topologie réseau perso = privé.
+server/
+
 # --- Node / npm (V2.87.0 issue #94) ---
 # tailwindcss CLI installé localement via npm. node_modules pèse lourd
 # (~50 MB) et est généré à la demande via `npm install`. Le fichier

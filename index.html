@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.107.0</title>
+<title>Menu IG Bas — V2.107.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -296,6 +296,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Différence entre IG bas et régime cétogène ?",
           "a": "IG bas : on garde des glucides (céréales complètes, légumineuses, fruits) mais on évite les pics. Régime cétogène : on supprime quasi tous les glucides (<50g/jour) pour basculer en cétose. Le projet est IG bas, pas céto. C'est plus durable et compatible avec une famille équilibrée. Si tu veux du céto, ce n'est pas l'app adaptée."
+        },
+        {
+          "q": "Pourquoi le skyr est-il proposé à la place du yaourt grec ?",
+          "a": "Depuis V2.107.1, la plupart des recettes froides indiquent « Skyr (ou yaourt grec) ». Le skyr (laitage islandais égoutté, à base de lait écrémé) est presque sans matière grasse et un peu plus riche en protéines : dans notre table nutritionnelle, ~11 g de protéines et ~0,2 g de lipides pour 100 g, contre ~9 g et ~5 g pour un yaourt grec (valeurs indicatives, elles varient selon la marque — lis l'étiquette). Moins de graisses saturées, plus de satiété, même IG très bas (~11-12) : c'est cohérent avec les repères EFSA/OMS (acides gras saturés < 10 % de l'énergie). Le yaourt grec reste un très bon choix et tu peux l'utiliser à la place, à poids égal : dans la liste de courses, l'ingrédient apparaît sous le nom « Skyr » (l'alternative entre parenthèses ne change pas la quantité). Exception : les plats où le laitage est chauffé (currys, marinades tandoori cuites, sauces mijotées, gâteaux) gardent le yaourt grec, car le skyr, trop maigre, a tendance à trancher (former des grumeaux) à la cuisson. Côté prix, le skyr est en général un peu plus cher que le yaourt grec. Allergie : les deux contiennent du lactose et des protéines de lait."
         }
       ]
     },
@@ -1966,6 +1970,12 @@ if ("serviceWorker" in navigator) {
     {
       "id": "yaourt grec",
       "label": "Yaourt grec nature",
+      "category": "dairy",
+      "soldByWeight": true
+    },
+    {
+      "id": "skyr",
+      "label": "Skyr nature",
       "category": "dairy",
       "soldByWeight": true
     },
@@ -12189,7 +12199,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "ing": [
         [
@@ -12579,7 +12590,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b7",
-      "name": "Yaourt grec, muesli maison et fruits",
+      "name": "Skyr, muesli maison et fruits",
       "type": "breakfast",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -12604,7 +12615,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -12641,7 +12652,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Verse le yaourt grec dans un bol.",
+        "Verse le skyr dans un bol.",
         "Dans un autre petit bol, mélange les flocons d'avoine, les noisettes et les graines de lin. C'est ton muesli express.",
         "Lave et coupe le fruit en morceaux.",
         "Dispose le muesli et les morceaux de fruit sur le yaourt. Arrose d'un trait de miel."
@@ -12854,7 +12865,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "usesLeftovers": [
         "poulet cuit"
@@ -15293,7 +15305,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -17717,7 +17729,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "ing": [
         [
@@ -18711,7 +18724,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des3",
-      "name": "Yaourt grec, miel, noix",
+      "name": "Skyr, miel, noix",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -18734,7 +18747,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           125,
           "g",
           "dairy"
@@ -18753,7 +18766,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Verse le yaourt grec dans une coupelle.",
+        "Verse le skyr dans une coupelle.",
         "Ajoute un filet de miel.",
         "Parsème de noix concassées."
       ]
@@ -20033,7 +20046,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "s3",
-      "name": "Yaourt grec aux amandes et baies",
+      "name": "Skyr aux amandes et baies",
       "type": "snack",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -20056,7 +20069,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -21034,7 +21047,9 @@ if ("serviceWorker" in navigator) {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "usesLeftovers": [
         "poulet cuit"
       ],
@@ -21070,7 +21085,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           1,
           "c.à.s",
           "dairy"
@@ -21091,7 +21106,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe le poulet en lanières, poêle-le 4-5 min avec sel et poivre.",
         "Râpe la carotte. Coupe l'avocat en lamelles.",
-        "Étale la galette, tartine de yaourt grec citronné.",
+        "Étale la galette, tartine de skyr citronné.",
         "Dispose salade, carotte, avocat et poulet. Roule serré, coupe en deux."
       ]
     },
@@ -22407,7 +22422,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "ing": [
         [
@@ -22725,7 +22741,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des25",
-      "name": "Poêlée de pêches au thym et yaourt grec",
+      "name": "Poêlée de pêches au thym et skyr",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -22767,7 +22783,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -22783,7 +22799,7 @@ if ("serviceWorker" in navigator) {
         "Coupe la pêche en quartiers (avec ou sans peau).",
         "Fais fondre le beurre dans une poêle. Dépose les pêches, le miel, le thym.",
         "Caramélise 5-7 min en retournant délicatement.",
-        "Sers tiède avec une cuillère de yaourt grec frais."
+        "Sers tiède avec une cuillère de skyr frais."
       ]
     },
     {
@@ -22955,7 +22971,8 @@ if ("serviceWorker" in navigator) {
         "blender"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
@@ -24446,7 +24463,9 @@ if ("serviceWorker" in navigator) {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Haricots blancs en conserve",
@@ -25060,7 +25079,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "lactose"
       ],
       "ing": [
         [
@@ -25300,7 +25320,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -25790,7 +25810,8 @@ if ("serviceWorker" in navigator) {
         "oven"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
@@ -25995,7 +26016,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des33",
-      "name": "Mousse légère à la pêche et yaourt grec",
+      "name": "Mousse légère à la pêche et skyr",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -26026,7 +26047,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -26053,7 +26074,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Pèle les pêches (plonge-les 30 sec dans l'eau bouillante pour les peler facilement).",
         "Mixe les pêches avec le miel et le citron.",
-        "Incorpore délicatement le yaourt grec et la vanille.",
+        "Incorpore délicatement le skyr et la vanille.",
         "Verse dans des verrines, réfrigère au moins 1 heure. Sers bien frais."
       ]
     },
@@ -29090,7 +29111,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "producesLeftovers": [
         "poulet cuit"
@@ -30594,7 +30616,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -30631,7 +30653,7 @@ if ("serviceWorker" in navigator) {
         "Hors du feu, ajoute la menthe ciselée et le jus de citron.",
         "Mixe au mixeur plongeant jusqu'à obtenir une soupe lisse.",
         "Laisse refroidir, puis place au frigo au moins 1 h.",
-        "Au moment de servir, ajoute le yaourt grec, mélange. Rectifie sel et poivre. Décore d'une feuille de menthe."
+        "Au moment de servir, ajoute le skyr, mélange. Rectifie sel et poivre. Décore d'une feuille de menthe."
       ]
     },
     {
@@ -30674,7 +30696,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -30705,7 +30727,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mixe la banane épluchée avec la moitié des fraises, le yaourt grec et le lait d'amande jusqu'à obtenir une texture lisse et onctueuse.",
+        "Mixe la banane épluchée avec la moitié des fraises, le skyr et le lait d'amande jusqu'à obtenir une texture lisse et onctueuse.",
         "Verse dans un bol large.",
         "Coupe les fraises restantes en deux ou en lamelles, dispose-les sur le smoothie.",
         "Parsème de flocons d'avoine et de graines de chia.",
@@ -31320,7 +31342,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           50,
           "g",
           "dairy"
@@ -31353,7 +31375,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe le filet de poulet en lanières d'environ 1 cm d'épaisseur. Sale, poivre.",
         "Fais chauffer l'huile d'olive dans une poêle à feu moyen-vif. Cuis les lanières 6 à 8 min en remuant régulièrement, jusqu'à ce qu'elles soient bien dorées et fermes au toucher (plus de rose à l'intérieur).",
-        "Pendant ce temps, prépare la sauce : dans un petit bol, mélange le yaourt grec, le jus de citron et l'ail écrasé (passe la gousse au presse-ail ou hache-la très fin). Sale légèrement.",
+        "Pendant ce temps, prépare la sauce : dans un petit bol, mélange le skyr, le jus de citron et l'ail écrasé (passe la gousse au presse-ail ou hache-la très fin). Sale légèrement.",
         "Coupe l'avocat en deux, retire le noyau, prélève la chair à la cuillère et coupe en lamelles. Coupe la tomate en rondelles.",
         "Pose la tortilla à plat. Étale 2 c.à.s de sauce yaourt au centre, sur une bande d'environ 8 cm de large.",
         "Dispose dessus la salade, les lamelles d'avocat, les rondelles de tomate, et le poulet tiède.",
@@ -32099,7 +32121,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           400,
           "g",
           "dairy"
@@ -32143,7 +32165,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Lave les concombres. Garde environ 1/4 de concombre de côté pour la garniture finale, coupe le reste en gros morceaux (pas besoin d'éplucher si la peau est fine, sinon épluche en laissant 2-3 lanières pour la couleur).",
-        "Mets les concombres dans le mixeur avec le yaourt grec, l'ail (épluché), la menthe (sans les grosses tiges), l'aneth, le jus de citron, le sel et le poivre.",
+        "Mets les concombres dans le mixeur avec le skyr, l'ail (épluché), la menthe (sans les grosses tiges), l'aneth, le jus de citron, le sel et le poivre.",
         "Mixe 1 min jusqu'à obtenir une texture lisse. Si c'est trop épais, ajoute un peu d'eau froide ou de lait demi-écrémé.",
         "Goûte et ajuste : plus d'ail si tu aimes ça relevé, plus de citron pour la fraîcheur, plus de sel.",
         "Verse dans un grand bol, couvre et mets au frigo au moins 1 h.",
@@ -32166,7 +32188,6 @@ if ("serviceWorker" in navigator) {
       "cost": 2.7,
       "kcal": 550,
       "tags": [
-        "vegan",
         "kid-friendly"
       ],
       "eq": [
@@ -32175,7 +32196,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "gluten",
-        "sesame"
+        "sesame",
+        "lactose"
       ],
       "ing": [
         [
@@ -32245,7 +32267,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -32277,7 +32299,7 @@ if ("serviceWorker" in navigator) {
         "Forme 8 boulettes de la taille d'une grosse noix, aplatis-les légèrement en galettes.",
         "Pose-les sur une plaque recouverte de papier sulfurisé. Badigeonne-les d'huile d'olive avec un pinceau (ou les doigts).",
         "Enfourne 15 à 18 min en les retournant à mi-cuisson — elles doivent être bien dorées sur les deux faces.",
-        "Pendant ce temps, prépare la sauce : mélange le yaourt grec, le jus de citron, sel et poivre.",
+        "Pendant ce temps, prépare la sauce : mélange le skyr, le jus de citron, sel et poivre.",
         "Coupe la tomate en rondelles fines. Coupe le concombre en demi-rondelles.",
         "Réchauffe les tortillas 30 secondes au four (ou 5 sec à la poêle de chaque côté) pour qu'elles soient souples.",
         "Pose la tortilla à plat. Étale 1 c.à.s de sauce yaourt au centre. Dispose la salade, les rondelles de tomate, le concombre, et 4 falafels écrasés à la fourchette par wrap.",
@@ -33971,7 +33993,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "s22",
-      "name": "Verrine yaourt grec, kiwi et graines de chia",
+      "name": "Verrine skyr, kiwi et graines de chia",
       "type": "snack",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -33995,7 +34017,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -34032,7 +34054,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mélange le yaourt grec avec le miel et 1 c.à.c de graines de chia. Laisse reposer 10 min — les graines vont gonfler légèrement.",
+        "Mélange le skyr avec le miel et 1 c.à.c de graines de chia. Laisse reposer 10 min — les graines vont gonfler légèrement.",
         "Pèle le kiwi, coupe-le en petits dés. Arrose d'un peu de jus de citron vert.",
         "Dans une verrine : couche de yaourt, couche de kiwi, couche de yaourt.",
         "Termine par les graines de chia restantes et quelques feuilles de menthe ciselées."
@@ -34053,7 +34075,6 @@ if ("serviceWorker" in navigator) {
       "cost": 1.7,
       "kcal": 150,
       "tags": [
-        "vegan",
         "vegetarian",
         "quick",
         "no-cook"
@@ -34161,7 +34182,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -34192,7 +34213,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mets la mangue, les fruits rouges (garde 30 g pour le topping), le yaourt grec et le lait d'amande dans le bol du blender.",
+        "Mets la mangue, les fruits rouges (garde 30 g pour le topping), le skyr et le lait d'amande dans le bol du blender.",
         "Mixe 30 secondes jusqu'à obtenir une texture épaisse type sorbet. Si trop liquide, ajoute un peu de mangue surgelée ; si trop épais, un peu de lait d'amande.",
         "Verse dans un grand bol.",
         "Saupoudre les graines de chia.",
@@ -35109,7 +35130,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des36",
-      "name": "Pêches rôties au four miel-thym, yaourt grec et amandes",
+      "name": "Pêches rôties au four miel-thym, skyr et amandes",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -35151,7 +35172,7 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -35176,12 +35197,12 @@ if ("serviceWorker" in navigator) {
         "Verse un peu de miel dans le creux du noyau de chaque demi-pêche, parsème de thym effeuillé.",
         "Enfourne 18-20 min — les pêches doivent être tendres mais garder leur forme (un couteau s'enfonce sans résistance dans la chair).",
         "Laisse tiédir 5 min.",
-        "Sers chaque demi-pêche avec une cuillerée de yaourt grec à côté et une pincée d'amandes effilées par-dessus."
+        "Sers chaque demi-pêche avec une cuillerée de skyr à côté et une pincée d'amandes effilées par-dessus."
       ]
     },
     {
       "id": "b33",
-      "name": "Muesli avoine-pomme-yaourt grec préparé la veille",
+      "name": "Muesli avoine-pomme-skyr préparé la veille",
       "type": "breakfast",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -35214,7 +35235,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -35257,7 +35278,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "La veille au soir : dans un bocal en verre (ou un grand bol couvert), mélange les flocons d'avoine, le yaourt grec et le lait d'amande.",
+        "La veille au soir : dans un bocal en verre (ou un grand bol couvert), mélange les flocons d'avoine, le skyr et le lait d'amande.",
         "Ajoute la pomme râpée (garde la peau, c'est là qu'il y a le plus de fibres) et la cannelle. Mélange bien.",
         "Couvre et mets au frigo toute la nuit (8 h minimum). L'avoine va boire le liquide et devenir crémeuse, comme un porridge froid.",
         "Le matin : sors le bocal, ajoute les graines de chia et les cerneaux de noix concassés.",
@@ -35679,7 +35700,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -35718,7 +35739,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe le filet de poulet en lanières de 1 cm. Sale, poivre.",
         "Fais chauffer 0,5 c.à.s d'huile dans une poêle à feu vif. Saisis les lanières de poulet 4-5 min en remuant — elles doivent être dorées et cuites à cœur (jus clair quand on pique).",
-        "Pendant ce temps, prépare la sauce : dans un petit bol, mélange le yaourt grec, le jus de citron, l'ail râpé fin, l'aneth ciselé, sel et poivre.",
+        "Pendant ce temps, prépare la sauce : dans un petit bol, mélange le skyr, le jus de citron, l'ail râpé fin, l'aneth ciselé, sel et poivre.",
         "Coupe l'avocat en lamelles fines.",
         "Sur la tortilla, étale 2 c.à.s de sauce yaourt en laissant 2 cm de marge sur les bords (sinon ça déborde au pliage).",
         "Dispose en ligne sur le tiers bas : la roquette, l'avocat, les lanières de poulet.",
@@ -36127,7 +36148,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "s24",
-      "name": "Verrine yaourt grec-myrtilles-graines de tournesol",
+      "name": "Verrine skyr-myrtilles-graines de tournesol",
       "type": "snack",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -36151,7 +36172,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -36176,7 +36197,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Verse la moitié du yaourt grec dans une verrine ou un bol.",
+        "Verse la moitié du skyr dans une verrine ou un bol.",
         "Ajoute la moitié des myrtilles.",
         "Recouvre avec le reste du yaourt.",
         "Termine avec les myrtilles restantes et les graines de tournesol.",
@@ -36200,7 +36221,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 70,
       "tags": [
         "vegetarian",
-        "vegan",
         "quick",
         "no-cook"
       ],
@@ -36673,7 +36693,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           20,
           "g",
           "dairy"
@@ -36699,7 +36719,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Si les falafels sont au frigo, réchauffe-les 2 min à la poêle ou 1 min au micro-ondes (selon ce que tu as). Coupe-les en deux.",
-        "Prépare la sauce : dans un bol, mélange le yaourt grec, le jus de citron, le cumin, sel et poivre.",
+        "Prépare la sauce : dans un bol, mélange le skyr, le jus de citron, le cumin, sel et poivre.",
         "Coupe le concombre en demi-rondelles fines, la tomate en petits dés.",
         "Sur la tortilla, étale le houmous en laissant 2 cm de marge sur les bords (sinon ça déborde au pliage).",
         "Dispose en ligne sur le tiers bas : roquette, concombre, tomate, falafels, graines de grenade.",
@@ -37289,7 +37309,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des38",
-      "name": "Pannacotta yaourt grec-vanille, coulis de fraises",
+      "name": "Pannacotta skyr-vanille, coulis de fraises",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -37316,7 +37336,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -37362,7 +37382,7 @@ if ("serviceWorker" in navigator) {
         "Dans une petite casserole, verse le lait demi-écrémé. Saupoudre l'agar-agar et fouette pour bien dissoudre.",
         "Porte à ébullition en remuant. Laisse bouillir exactement 1 min — c'est le temps que l'agar-agar s'active (pas moins, sinon il ne prendra pas).",
         "Hors du feu, ajoute le miel et la vanille liquide. Mélange.",
-        "Laisse tiédir 5 min, puis incorpore le yaourt grec en fouettant doucement (pas d'incorporation à chaud, ça déphase).",
+        "Laisse tiédir 5 min, puis incorpore le skyr en fouettant doucement (pas d'incorporation à chaud, ça déphase).",
         "Verse dans 1 verrine ou ramequin. Couvre et mets au frigo 4 h minimum (idéalement toute la nuit).",
         "Pendant ce temps (ou le lendemain), prépare le coulis : mets les fraises lavées et équeutées dans le blender avec le jus de citron. Mixe jusqu'à obtenir un coulis lisse. Pas besoin d'ajouter du sucre, les fraises mûres suffisent.",
         "Au moment de servir, démoule la pannacotta sur une assiette (passe rapidement le ramequin sous l'eau chaude pour faciliter le démoulage). Nappe de coulis de fraises."
@@ -37543,7 +37563,7 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -37564,7 +37584,7 @@ if ("serviceWorker" in navigator) {
         "Étale sur une plaque recouverte de papier cuisson en une couche fine et régulière.",
         "Enfourne 20-25 min en remuant à mi-cuisson — le granola doit être doré uniformément (attention, ça brûle vite après 22 min).",
         "Laisse refroidir COMPLÈTEMENT sur la plaque (15 min) — c'est là que le granola devient croustillant en figeant.",
-        "Pour servir : verse le yaourt grec dans un bol, ajoute le granola, dépose les fruits de saison par-dessus."
+        "Pour servir : verse le skyr dans un bol, ajoute le granola, dépose les fruits de saison par-dessus."
       ]
     },
     {
@@ -37932,7 +37952,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -37963,7 +37983,7 @@ if ("serviceWorker" in navigator) {
         "Mélange à la fourchette, forme une galette ronde de la taille du pain. Saupoudre la semoule fine sur les 2 faces (panure légère).",
         "Fais chauffer 0,5 c.à.s d'huile dans une poêle à feu vif. Saisis la galette de cabillaud 2 min de chaque côté pour la dorer.",
         "Termine 5-6 min au four à 200°C pour cuire à cœur (la chair doit s'effeuiller à la fourchette).",
-        "Pendant ce temps, prépare la sauce : mélange yaourt grec, sauce soja, reste de jus de citron, sel et poivre.",
+        "Pendant ce temps, prépare la sauce : mélange skyr, sauce soja, reste de jus de citron, sel et poivre.",
         "Coupe la tomate en rondelles. Grille légèrement le pain complet.",
         "Monte le burger : pain, sauce yaourt, roquette, rondelles de tomate, galette de cabillaud, refermer.",
         "Sers tout de suite."
@@ -37984,7 +38004,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 420,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
@@ -38856,7 +38875,7 @@ if ("serviceWorker" in navigator) {
           "meat-fish"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           40,
           "g",
           "dairy"
@@ -38918,7 +38937,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Coupe le filet de poulet en lanières de 1 cm. Sale, poivre, saupoudre d'origan.",
-        "Pour le tzatziki : râpe la moitié du concombre à la grosse râpe, presse-le dans un torchon pour extraire l'eau. Mélange dans un bol avec le yaourt grec, l'ail râpé fin, la menthe ciselée, sel et poivre.",
+        "Pour le tzatziki : râpe la moitié du concombre à la grosse râpe, presse-le dans un torchon pour extraire l'eau. Mélange dans un bol avec le skyr, l'ail râpé fin, la menthe ciselée, sel et poivre.",
         "Coupe l'autre moitié du concombre en rondelles fines. Coupe la tomate en quartiers.",
         "Fais chauffer 0,5 c.à.s d'huile dans une poêle à feu vif. Saisis les lanières de poulet 4-5 min en remuant — elles doivent être dorées et cuites à cœur.",
         "Réchauffe le pain pita 1 min à la poêle ou 30 sec au micro-ondes — il doit être souple pour ne pas se casser.",
@@ -39549,7 +39568,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 280,
       "tags": [
         "vegetarian",
-        "vegan",
         "no-cook",
         "batch-friendly"
       ],
@@ -39742,7 +39760,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -39763,7 +39781,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Lave les pêches et abricots. Coupe-les en quartiers (enlève le noyau).",
         "Coupe le fruit de la passion en deux, récupère la pulpe à la cuillère.",
-        "Mets dans le blender : pêche, abricots, pulpe de passion, yaourt grec, lait et miel.",
+        "Mets dans le blender : pêche, abricots, pulpe de passion, skyr, lait et miel.",
         "Mixe 30 sec à pleine vitesse jusqu'à obtenir une texture lisse.",
         "Si trop épais, allonge avec un peu de lait. Goûte et ajuste le miel selon la maturité des fruits.",
         "Sers immédiatement dans un grand verre, parfait pour les matins d'été chauds."
@@ -39824,7 +39842,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -39875,7 +39893,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe le filet de poulet en lanières de 1 cm. Sale, poivre.",
         "Fais chauffer 0,5 c.à.s d'huile dans une poêle à feu vif. Saisis le poulet 5 min en remuant — bien doré et cuit à cœur (jus clair).",
-        "Pendant ce temps, prépare la sauce César revisitée (sans crème ni mayo) : dans un bol, fouette le yaourt grec, le jaune d'œuf, la moutarde, le jus de citron, l'ail râpé fin et l'anchois écrasé (si tu utilises). Sale légèrement.",
+        "Pendant ce temps, prépare la sauce César revisitée (sans crème ni mayo) : dans un bol, fouette le skyr, le jaune d'œuf, la moutarde, le jus de citron, l'ail râpé fin et l'anchois écrasé (si tu utilises). Sale légèrement.",
         "Lave la salade romaine et coupe-la en grosses lanières.",
         "Émiette grossièrement les crackers sarrasin pour faire des croûtons croquants.",
         "Dans un grand saladier, mélange la salade avec la sauce César.",
@@ -40733,7 +40751,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 130,
       "tags": [
         "vegetarian",
-        "vegan",
         "no-cook"
       ],
       "eq": [],
@@ -40827,7 +40844,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           60,
           "g",
           "dairy"
@@ -40865,7 +40882,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Astuce : congèle la banane et la moitié des fruits rouges 1 h avant pour avoir une texture sorbet bien froide (signature açaï bowl).",
-        "Mets dans le blender : banane (gardée surgelée si possible), 50 g de fruits rouges, yaourt grec et lait d'amande.",
+        "Mets dans le blender : banane (gardée surgelée si possible), 50 g de fruits rouges, skyr et lait d'amande.",
         "Mixe 30 sec à pleine vitesse jusqu'à obtenir une texture épaisse type sorbet. Si trop liquide, ajoute des fruits surgelés.",
         "Verse dans un grand bol creux.",
         "Garnis en motifs : flocons d'avoine, amandes effilées, fruits rouges restants, graines de chia.",
@@ -41837,7 +41854,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -41869,12 +41886,12 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Astuce : utilise des fruits rouges déjà surgelés — ça texture immédiatement le yaourt en glace sans passage long au congélateur.",
-        "Dans le blender, mets : yaourt grec, fruits rouges (surgelés idéalement), miel, jus de citron, vanille.",
+        "Dans le blender, mets : skyr, fruits rouges (surgelés idéalement), miel, jus de citron, vanille.",
         "Mixe 30 sec à pleine vitesse jusqu'à obtenir une texture épaisse et crémeuse de glace artisanale.",
         "Si pas assez ferme, verse dans un récipient et mets au congélateur 1-2 h en mélangeant à la fourchette toutes les 30 min (technique 'glace minute').",
         "Pour une version 'la veille' parfaite : verse dans un moule rectangulaire, couvre, congèle toute la nuit. Sors 5 min avant de servir pour que la consistance soit crémeuse.",
         "Sers en quenelles avec une cuillère trempée dans l'eau chaude. Décore avec quelques fruits rouges frais.",
-        "Bien plus sain qu'une glace industrielle : zéro sucre raffiné, protéines du yaourt grec, antioxydants des fruits rouges."
+        "Bien plus sain qu'une glace industrielle : zéro sucre raffiné, protéines du skyr, antioxydants des fruits rouges."
       ]
     },
     {
@@ -42155,7 +42172,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 440,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
@@ -42163,7 +42179,9 @@ if ("serviceWorker" in navigator) {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Potiron",
@@ -42226,7 +42244,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -42253,7 +42271,7 @@ if ("serviceWorker" in navigator) {
         "Verse dans un saladier, ajoute le quinoa cuit, la farine de pois chiche, sel et poivre. Mélange. La pâte doit être assez consistante pour former des galettes — si elle est trop molle, ajoute 1 c.à.s de farine.",
         "Forme 4 galettes d'environ 1.5 cm d'épaisseur (avec les mains humides pour ne pas que ça colle). Pose-les sur une plaque garnie de papier cuisson, badigeonne d'huile d'olive au pinceau.",
         "Enfourne 20-25 min en retournant à mi-cuisson. Les galettes sont prêtes quand elles sont dorées et fermes au toucher.",
-        "Mélange le yaourt grec avec le jus du demi-citron pour faire une sauce.",
+        "Mélange le skyr avec le jus du demi-citron pour faire une sauce.",
         "Sers les galettes tièdes avec la salade verte et la sauce yaourt-citron à part."
       ]
     },
@@ -43131,7 +43149,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b47",
-      "name": "Bowl yaourt grec, fraises et granola maison",
+      "name": "Bowl skyr, fraises et granola maison",
       "type": "breakfast",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -43159,7 +43177,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -43205,7 +43223,7 @@ if ("serviceWorker" in navigator) {
         "Sors les fraises 10 minutes avant pour les réchauffer un peu (elles sont plus parfumées à température ambiante).",
         "Lave les fraises sous un filet d'eau froide, équeute-les (enlève le pédoncule vert) et coupe-les en quartiers.",
         "Dans un bol moyen, mélange à sec flocons d'avoine, amandes effilées, chia et cannelle — c'est ton mini-granola.",
-        "Verse le yaourt grec dans un grand bol, étale-le bien à la cuillère pour faire un fond uniforme.",
+        "Verse le skyr dans un grand bol, étale-le bien à la cuillère pour faire un fond uniforme.",
         "Dépose les fraises sur la moitié du bol, le mini-granola sur l'autre moitié pour un visuel propre. Termine par un filet de miel sur le dessus.",
         "Mange à la cuillère en attrapant un peu de chaque côté à chaque fois — le contraste fraises fraîches / granola croquant fait toute la recette."
       ]
@@ -43739,7 +43757,7 @@ if ("serviceWorker" in navigator) {
           "meat-fish"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -43815,7 +43833,7 @@ if ("serviceWorker" in navigator) {
         "Si piques en bois, mets-les à tremper 10 min dans l'eau froide.",
         "Coupe l'agneau en cubes de 3 cm de côté (réguliers pour cuisson uniforme).",
         "Marinade : dans un bol, mélange 1 c.à.s d'huile d'olive, cumin, paprika, coriandre, 1 gousse d'ail écrasée, jus du demi-citron, sel, poivre. Ajoute les cubes d'agneau, mélange à la main pour bien enrober. Laisse mariner 15 min minimum (ou jusqu'à 4h au frigo).",
-        "Tzatziki : râpe le demi-concombre avec une râpe à gros trous. Mets-le dans une passoire avec une bonne pincée de sel, laisse dégorger 10 min, presse à la main pour évacuer l'eau. Cisèle la menthe. Écrase l'autre gousse d'ail. Mélange avec le yaourt grec, sel, poivre, 1 c.à.s d'huile d'olive.",
+        "Tzatziki : râpe le demi-concombre avec une râpe à gros trous. Mets-le dans une passoire avec une bonne pincée de sel, laisse dégorger 10 min, presse à la main pour évacuer l'eau. Cisèle la menthe. Écrase l'autre gousse d'ail. Mélange avec le skyr, sel, poivre, 1 c.à.s d'huile d'olive.",
         "Enfile les cubes d'agneau sur les piques (5 cubes par brochette, espacés d'1 cm pour laisser passer la chaleur).",
         "Préchauffe le grill bien chaud. Cuis les brochettes 2-3 min de chaque côté pour avoir l'extérieur grillé et l'intérieur rosé. 4 min de chaque côté pour bien cuit. L'agneau cuit vite, ne pas trop cuire sinon ça devient sec.",
         "Coupe le pita en deux et fais-le tiédir 1 min sur le grill.",
@@ -44128,7 +44146,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des44",
-      "name": "Pêches grillées au miel-thym, yaourt grec",
+      "name": "Pêches grillées au miel-thym, skyr",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -44158,7 +44176,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -44187,7 +44205,7 @@ if ("serviceWorker" in navigator) {
         "Préchauffe le grill (ou une poêle-grill) à feu moyen.",
         "Pose les demi-pêches côté chair sur le grill. Cuis 3-4 min sans bouger pour avoir de belles marques de grill — la chaleur fait caraméliser les sucres naturels du fruit. Retourne côté peau encore 2 min pour les chauffer à cœur.",
         "Pendant ce temps, fais griller à sec les amandes effilées 1-2 min dans une petite poêle (remue sans arrêt — ça brûle vite).",
-        "Sers les demi-pêches dans des coupes ou bols, ajoute 1 c.à.s de yaourt grec à côté ou sur le dessus, drizzle de miel, parsème de thym effeuillé et d'amandes grillées. Mange tiède."
+        "Sers les demi-pêches dans des coupes ou bols, ajoute 1 c.à.s de skyr à côté ou sur le dessus, drizzle de miel, parsème de thym effeuillé et d'amandes grillées. Mange tiède."
       ]
     },
     {
@@ -45252,7 +45270,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -45315,7 +45333,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Marinade poisson : dans un plat creux, mélange jus d'un demi-citron vert, ail écrasé, cumin, paprika, piment, huile d'olive, sel, poivre. Plonge le filet de cabillaud dedans 10 min (pas plus, sinon l'acide commence à le « cuire »).",
         "Slaw chou-carotte : émince le chou rouge le plus finement possible (couteau bien aiguisé ou mandoline). Râpe la carotte avec une râpe à gros trous. Émince très finement l'oignon rouge.",
-        "Sauce yaourt-citron : mélange yaourt grec avec jus du second demi-citron vert, sel, poivre.",
+        "Sauce yaourt-citron : mélange skyr avec jus du second demi-citron vert, sel, poivre.",
         "Mélange chou + carotte + oignon avec 1 c.à.s de la sauce yaourt-citron, et 1 c.à.s de coriandre cisélée. Le slaw est prêt.",
         "Préchauffe le grill bien chaud. Pose le filet de cabillaud (sors-le de la marinade en l'égouttant). Cuis 3-4 min de chaque côté selon épaisseur — la chair doit s'effeuiller à la fourchette mais rester nacrée et juteuse au cœur.",
         "Émince le poisson en gros morceaux à la fourchette directement sur la planche.",
@@ -45411,7 +45429,7 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -45453,7 +45471,7 @@ if ("serviceWorker" in navigator) {
         "Garnis chaque tortilla d'une portion de poulet, roule serré et pose la jointure dessous dans un plat à gratin légèrement huilé.",
         "Nappe le reste de sauce verte sur les enchiladas roulées. Saupoudre de mozzarella râpée.",
         "Enfourne 15-20 min — le fromage doit être doré et faire des cloques.",
-        "Sors du four, laisse reposer 3 min. Mélange le yaourt grec avec sel et poivre. Sers les enchiladas avec un trait de yaourt grec par-dessus et la coriandre fraîche restante."
+        "Sors du four, laisse reposer 3 min. Mélange le skyr avec sel et poivre. Sers les enchiladas avec un trait de skyr par-dessus et la coriandre fraîche restante."
       ]
     },
     {
@@ -45572,7 +45590,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           60,
           "g",
           "dairy"
@@ -45600,7 +45618,7 @@ if ("serviceWorker" in navigator) {
         "Verse tomates concassées et bouillon. Sale, poivre. Porte à ébullition puis baisse à feu moyen 12 min — le poulet doit être cuit (couper un cube : la chair est blanche partout).",
         "Ajoute haricots noirs rincés et maïs. Cuis encore 3 min pour les chauffer.",
         "Cisèle la coriandre. Coupe l'avocat en dés.",
-        "Sers la soupe dans des bols. Garnis avec lanières de tortillas grillées, dés d'avocat, 1 c.à.s de yaourt grec par bol et coriandre fraîche. Ajoute un quart de citron vert à presser au moment de manger."
+        "Sers la soupe dans des bols. Garnis avec lanières de tortillas grillées, dés d'avocat, 1 c.à.s de skyr par bol et coriandre fraîche. Ajoute un quart de citron vert à presser au moment de manger."
       ]
     },
     {
@@ -46873,7 +46891,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -46925,7 +46943,7 @@ if ("serviceWorker" in navigator) {
         "Cuis l'œuf dur : eau froide salée, ébullition, 9 min à frémissement. Plonge ensuite dans l'eau glacée 5 min, écale et coupe en quartiers. Réserve.",
         "Lave le concombre, coupe-le en deux dans le sens de la longueur, retire les graines à la cuillère (sinon la soupe sera trop liquide). Garde une lamelle pour la déco.",
         "Coupe le concombre en morceaux grossiers et mets-les dans un blender (ou bol avec mixeur plongeant).",
-        "Ajoute le yaourt grec, l'aneth (garde quelques brins pour la déco), la menthe, l'ail dégermé, le jus de citron, l'huile d'olive, sel et poivre.",
+        "Ajoute le skyr, l'aneth (garde quelques brins pour la déco), la menthe, l'ail dégermé, le jus de citron, l'huile d'olive, sel et poivre.",
         "Mixe 30 secondes jusqu'à obtenir une texture lisse mais pas trop liquide. Si trop épais, ajoute 2-3 c.à.s d'eau glacée.",
         "Place 30 min minimum au frigo (idéalement 1h) — la soupe doit être servie bien froide, c'est tout l'intérêt.",
         "Sers dans des bols. Dépose les quartiers d'œuf dur au centre, quelques brins d'aneth, et la lamelle de concombre réservée. Un trait d'huile d'olive pour finir."
@@ -46953,7 +46971,8 @@ if ("serviceWorker" in navigator) {
         "oven"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "lactose"
       ],
       "ing": [
         [
@@ -48059,7 +48078,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -48096,7 +48115,7 @@ if ("serviceWorker" in navigator) {
         "Pendant ce temps, prépare l'œuf poché. Porte une casserole d'eau (large, pas trop pleine) à frémissement avec le vinaigre. Casse l'œuf dans une petite tasse.",
         "Crée un tourbillon dans l'eau avec une cuillère, verse l'œuf au centre. Cuis 3 min sans toucher : blanc pris, jaune coulant. Sors avec une écumoire, pose sur papier absorbant.",
         "Garde quelques feuilles de menthe pour la déco. Mixe le velouté avec le reste de la menthe au mixeur plongeant directement dans la casserole : texture lisse, vert intense.",
-        "Ajoute le yaourt grec et mixe encore 5 sec pour incorporer. Sale, poivre, goûte.",
+        "Ajoute le skyr et mixe encore 5 sec pour incorporer. Sale, poivre, goûte.",
         "Verse le velouté dans un bol creux. Pose l'œuf poché au centre. Parsème des feuilles de menthe réservées. Trait d'huile d'olive et tour de poivre pour finir."
       ]
     },
@@ -48618,7 +48637,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 280,
       "tags": [
         "vegetarian",
-        "vegan",
         "quick"
       ],
       "eq": [
@@ -48886,7 +48904,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -48922,7 +48940,7 @@ if ("serviceWorker" in navigator) {
         "Émince finement l'échalote (très fin, sinon ça domine).",
         "Dans un bol, mélange dés de saumon, échalote, jus de citron jaune, la moitié de l'aneth ciselé, sel et poivre. Laisse mariner 10 min au frais (le saumon va légèrement opacifier — c'est la marinade au citron, pas une cuisson).",
         "Pendant ce temps, ouvre l'avocat, retire le noyau. Mets la chair dans un autre bol.",
-        "Ajoute jus de citron vert, yaourt grec, sel, poivre. Mixe au mixeur plongeant 30 sec : texture mousseuse, lisse (pas une purée brute, mais aérée).",
+        "Ajoute jus de citron vert, skyr, sel, poivre. Mixe au mixeur plongeant 30 sec : texture mousseuse, lisse (pas une purée brute, mais aérée).",
         "Égoutte légèrement la marinade du saumon (sinon les verrines coulent).",
         "Dans 4 verrines de 60 ml, dépose à la cuillère ou à la poche à douille la mousse d'avocat (1/3 de la verrine). Ajoute le saumon mariné par-dessus. Termine par un brin d'aneth.",
         "Réserve au frais 15 min minimum avant de servir (les saveurs se mélangent)."
@@ -48946,7 +48964,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 320,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly",
         "apero-dinatoire"
       ],
@@ -48955,7 +48972,8 @@ if ("serviceWorker" in navigator) {
         "bowl"
       ],
       "allergens": [
-        "sesame"
+        "sesame",
+        "lactose"
       ],
       "ing": [
         [
@@ -49019,7 +49037,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -49051,7 +49069,7 @@ if ("serviceWorker" in navigator) {
         "Forme 12 boules de la taille d'une noix (compresse bien dans tes mains pour qu'elles tiennent).",
         "Dépose les falafels sur une plaque recouverte de papier sulfurisé. Badigeonne chaque falafel d'huile d'olive au pinceau.",
         "Enfourne 20-25 min en retournant à mi-cuisson : ils doivent être bien dorés à l'extérieur (pas brûlés). Si pas assez colorés, mets sous le grill 2 min.",
-        "Pendant ce temps, sauce yaourt-tahini : dans un bol, mélange yaourt grec, tahini, jus de citron, 1 c.à.s d'eau froide, sel, poivre. Texture lisse et coulante.",
+        "Pendant ce temps, sauce yaourt-tahini : dans un bol, mélange skyr, tahini, jus de citron, 1 c.à.s d'eau froide, sel, poivre. Texture lisse et coulante.",
         "Sers les falafels chauds avec la sauce dans un ramequin à part. Tu peux les manger directement à la main, en piquant la sauce."
       ]
     },
@@ -49077,7 +49095,9 @@ if ("serviceWorker" in navigator) {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Magret de canard (1 magret pour 2 portions)",
@@ -49306,7 +49326,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "lactose"
       ],
       "ing": [
         [
@@ -49993,7 +50014,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           1,
           "c.à.s",
           "dairy"
@@ -50034,7 +50055,7 @@ if ("serviceWorker" in navigator) {
         "Avec une cuillère parisienne (cuillère à melon) ou la pointe d'un petit couteau, évide délicatement l'intérieur des tomates : retire pulpe et pépins. Pose-les retournées sur du papier absorbant pendant que tu prépares la farce (elles vont s'égoutter, ça évite que la farce devienne aqueuse).",
         "Égoutte le thon. Mets-le dans un bol et émiette-le à la fourchette (texture fine, pas en blocs).",
         "Hache grossièrement les câpres au couteau (sinon elles roulent au moment de farcir). Cisèle l'aneth.",
-        "Dans le bol du thon, ajoute yaourt grec, mayonnaise, câpres, aneth, jus de citron, sel et poivre. Mélange jusqu'à obtenir une farce homogène mais avec un peu de texture.",
+        "Dans le bol du thon, ajoute skyr, mayonnaise, câpres, aneth, jus de citron, sel et poivre. Mélange jusqu'à obtenir une farce homogène mais avec un peu de texture.",
         "À l'aide d'une petite cuillère ou d'une poche à douille, farcis chaque tomate généreusement (la farce doit dépasser un peu pour le côté gourmand).",
         "Décore d'un brin d'aneth sur chaque tomate. Sers frais dans l'heure (sinon les tomates rendent leur eau)."
       ]
@@ -50860,7 +50881,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 80,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
@@ -51242,7 +51262,9 @@ if ("serviceWorker" in navigator) {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Asperges vertes (fines)",
@@ -51333,7 +51355,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           50,
           "g",
           "dairy"
@@ -51373,7 +51395,7 @@ if ("serviceWorker" in navigator) {
         "Lave le concombre. Coupe-le en rondelles de 1 cm d'épaisseur (ni trop fines, sinon elles plient sous la mousse, ni trop épaisses).",
         "Pose les rondelles sur du papier absorbant, sale légèrement, laisse reposer 5 min (dégorge l'eau, évite que la mousse coule). Tamponne ensuite avec papier absorbant.",
         "Égoutte le thon. Mets-le dans un bol et émiette à la fourchette (texture fine).",
-        "Ajoute yaourt grec, mayonnaise, jus et zeste de citron, ciboulette ciselée (garde quelques brins pour la déco), aneth ciselé, sel léger (le thon et la mayo en apportent), poivre.",
+        "Ajoute skyr, mayonnaise, jus et zeste de citron, ciboulette ciselée (garde quelques brins pour la déco), aneth ciselé, sel léger (le thon et la mayo en apportent), poivre.",
         "Mélange à la fourchette pour obtenir une texture mousseuse mais qui se tient (pas liquide). Si trop épais, ajoute 1 c.à.c de yaourt.",
         "À l'aide d'une poche à douille (ou 2 cuillères à café pour un côté rustique), dépose une noix de mousse au centre de chaque rondelle de concombre.",
         "Décore d'un brin de ciboulette ou d'aneth sur chaque bouchée. Sers frais immédiatement (les rondelles ramollissent au bout de 30 min)."
@@ -51706,7 +51728,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -51770,7 +51792,7 @@ if ("serviceWorker" in navigator) {
         "Préchauffe le four à 180°C (chaleur tournante).",
         "Râpe la courgette au gros côté de la râpe. Mets dans une passoire avec une pincée de sel, laisse dégorger 10 min, presse fermement avec les mains pour retirer l'eau (sinon les muffins seront détrempés).",
         "Coupe le poivron rouge en très petits dés.",
-        "Dans un saladier, casse les œufs. Bats avec yaourt grec, huile d'olive.",
+        "Dans un saladier, casse les œufs. Bats avec skyr, huile d'olive.",
         "Ajoute farine et levure en pluie en fouettant pour éviter les grumeaux. Texture homogène.",
         "Incorpore courgette pressée, dés de poivron, feta émiettée, origan, persil ciselé, sel et poivre. Mélange à la spatule (pas trop, juste pour répartir).",
         "Verse dans 8-10 moules à muffins en silicone (ou avec caissettes papier). Remplis aux 3/4.",
@@ -53439,7 +53461,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des50",
-      "name": "Panna cotta légère yaourt grec et coulis de fruits rouges",
+      "name": "Panna cotta légère skyr et coulis de fruits rouges",
       "type": "dessert",
       "cuisine": "italien",
       "seasons": [
@@ -53465,7 +53487,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -53523,7 +53545,7 @@ if ("serviceWorker" in navigator) {
         "Plonge les feuilles de gélatine dans un bol d'eau froide 5 min pour les ramollir.",
         "Pendant ce temps, dans une petite casserole, chauffe le lait à feu doux avec la vanille (NE PAS faire bouillir, juste 50-60°C).",
         "Hors du feu, ajoute les feuilles de gélatine essorées (presse-les entre tes mains pour retirer l'eau). Remue jusqu'à dissolution complète.",
-        "Dans un saladier, mélange yaourt grec et miel à la fourchette pour bien dissoudre le miel.",
+        "Dans un saladier, mélange skyr et miel à la fourchette pour bien dissoudre le miel.",
         "Verse le lait tiède (avec gélatine) sur le yaourt en filet, en fouettant doucement pour homogénéiser.",
         "Verse dans 4 verrines ou ramequins individuels. Place au frigo 4 h minimum (idéalement une nuit) pour que la panna cotta prenne.",
         "Coulis : dans un blender, mixe 80g de fraises et toutes les framboises avec le jus de citron. Passe au tamis si tu veux retirer les pépins (optionnel).",
@@ -53728,7 +53750,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 110,
       "tags": [
         "vegetarian",
-        "vegan",
         "quick"
       ],
       "eq": [
@@ -53792,7 +53813,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b55",
-      "name": "Yaourt grec, fruits secs, miel et graines",
+      "name": "Skyr, fruits secs, miel et graines",
       "type": "breakfast",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -53819,7 +53840,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -53876,7 +53897,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe les abricots secs et les figues séchées en petits dés (taille bouchée).",
         "Concasse grossièrement amandes et noix au couteau (en 4-5 morceaux par fruit).",
-        "Dans un grand bol creux, verse le yaourt grec.",
+        "Dans un grand bol creux, verse le skyr.",
         "Dispose en couronne autour : abricots, figues, amandes, noix, graines de tournesol et de courge — chaque ingrédient sur une zone visible (effet visuel coloré).",
         "Saupoudre de cannelle au centre.",
         "Termine par un trait de miel en spirale par-dessus l'ensemble.",
@@ -54283,7 +54304,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -54301,7 +54322,7 @@ if ("serviceWorker" in navigator) {
         "Coupe la tomate en dés, émince finement l'oignon rouge, ciselle la coriandre.",
         "Coupe l'avocat en deux, retire le noyau, sors la chair à la cuillère et coupe-la en cubes.",
         "Dans un bol, mélange tomate, oignon rouge, coriandre, jus de citron vert (1/2). Sale légèrement (pico de gallo express).",
-        "Compose le bowl : quinoa au fond, haricots noirs à un endroit, pico de gallo à un autre, avocat en cubes, maïs si tu veux. Pose une cuillère de yaourt grec dessus.",
+        "Compose le bowl : quinoa au fond, haricots noirs à un endroit, pico de gallo à un autre, avocat en cubes, maïs si tu veux. Pose une cuillère de skyr dessus.",
         "Termine avec un trait de jus de citron vert restant et un peu de coriandre."
       ]
     },
@@ -55555,7 +55576,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "gluten",
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
@@ -56402,7 +56424,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -56452,7 +56474,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Sors la mangue du congélo 2 min avant pour qu'elle soit mixable mais encore très froide (c'est ce qui donne la texture sorbet du smoothie bowl).",
-        "Dans un blender, mets mangue + demi-banane + yaourt grec + lait d'amande. Mixe 30-45 sec : tu cherches une texture épaisse, qui tient à la cuillère renversée. Si trop liquide ajoute 1 c.à.s de yaourt ; si trop solide pour mixer, ajoute 1 c.à.s de lait.",
+        "Dans un blender, mets mangue + demi-banane + skyr + lait d'amande. Mixe 30-45 sec : tu cherches une texture épaisse, qui tient à la cuillère renversée. Si trop liquide ajoute 1 c.à.s de yaourt ; si trop solide pour mixer, ajoute 1 c.à.s de lait.",
         "Verse dans un bol large peu profond (le contraste avec les toppings est plus visuel qu'un bol haut).",
         "Coupe le fruit de la passion en deux et verse la pulpe avec ses graines au centre.",
         "Dispose en cercles autour : myrtilles, amandes effilées, flocons de coco, granola.",
@@ -57332,7 +57354,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -57383,7 +57405,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Lave et équeute les fraises. Garde 4-5 belles pour la déco. Écrase grossièrement le reste à la fourchette dans un bol avec 1 c.à.c de sirop d'érable + le jus de citron + 3-4 feuilles de basilic ciselées finement. Laisse macérer 10 min : les fraises rendent leur jus.",
         "Sépare le blanc du jaune dans deux bols différents (le blanc dans un bol bien sec).",
-        "Dans le bol du jaune, ajoute mascarpone + yaourt grec + 1 c.à.c de sirop d'érable + vanille. Fouette 1 min : tu obtiens une crème lisse, plus légère qu'un tiramisu classique grâce au yaourt.",
+        "Dans le bol du jaune, ajoute mascarpone + skyr + 1 c.à.c de sirop d'érable + vanille. Fouette 1 min : tu obtiens une crème lisse, plus légère qu'un tiramisu classique grâce au yaourt.",
         "Bats le blanc en neige ferme (3 min au fouet électrique) : tu peux retourner le bol sans qu'il bouge.",
         "Incorpore le blanc à la crème en deux fois, en soulevant délicatement à la maryse de bas en haut. Garde l'air, c'est ce qui rend léger.",
         "Tape les boudoirs à plat sur le plan : casse-les en 2-3 morceaux (pour un tiramisu en verrines).",
@@ -58013,7 +58035,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "gluten",
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
@@ -58398,7 +58421,6 @@ if ("serviceWorker" in navigator) {
       "cost": 1.5,
       "kcal": 410,
       "tags": [
-        "vegan",
         "vegetarian",
         "batch-friendly"
       ],
@@ -58406,7 +58428,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "ing": [
         [
@@ -60331,7 +60354,6 @@ if ("serviceWorker" in navigator) {
       "cost": 2.4,
       "kcal": 510,
       "tags": [
-        "vegan",
         "vegetarian",
         "batch-friendly"
       ],
@@ -60487,7 +60509,6 @@ if ("serviceWorker" in navigator) {
       "cost": 1.8,
       "kcal": 470,
       "tags": [
-        "vegan",
         "vegetarian",
         "batch-friendly",
         "epicerie-specialisee"
@@ -60495,7 +60516,9 @@ if ("serviceWorker" in navigator) {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -60649,7 +60672,9 @@ if ("serviceWorker" in navigator) {
         "pan",
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Filet de poulet",
@@ -60736,7 +60761,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -60760,7 +60785,7 @@ if ("serviceWorker" in navigator) {
         "Égoutte et rince les haricots noirs.",
         "Coupe la laitue en lanières, les tomates cerises en deux, le poivron en petits dés, l'oignon rouge en demi-rondelles fines.",
         "Dans la même poêle, à feu moyen-vif, chauffe le reste d'huile. Saute le poulet mariné 6-7 min en remuant : il doit être doré et bien cuit (chair blanche au centre).",
-        "Prépare la sauce : mélange yaourt grec + jus restant du lime + sel + poivre + 1 c.à.s d'eau. Texture : nappante.",
+        "Prépare la sauce : mélange skyr + jus restant du lime + sel + poivre + 1 c.à.s d'eau. Texture : nappante.",
         "Coupe l'avocat en cubes (juste avant le service pour éviter qu'il noircisse).",
         "Dresse en grand bowl : lit de laitue, dispose en quartiers visuellement séparés haricots noirs / maïs grillé / tomates cerises / poivron / oignon rouge / avocat.",
         "Pose le poulet tiède au centre. Arrose de sauce yaourt-lime, parsème de coriandre ciselée.",
@@ -60824,7 +60849,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           60,
           "g",
           "dairy"
@@ -60902,7 +60927,7 @@ if ("serviceWorker" in navigator) {
         "Dans un plat à gratin, étale 2 c.à.s de sauce verde au fond. Dispose les morceaux de galettes en couche, garniture poulet-haricots par-dessus, autre couche de galettes, reste de sauce.",
         "Recouvre de mozzarella râpée. Enfourne 15-18 min : le fromage doit être doré et bouillonner.",
         "Sors, laisse reposer 3 min (la sauce s'épaissit en refroidissant un peu).",
-        "Sers : 2 portions par assiette, nappées de yaourt grec + reste de coriandre fraîche + jus de lime au moment de manger.",
+        "Sers : 2 portions par assiette, nappées de skyr + reste de coriandre fraîche + jus de lime au moment de manger.",
         "Astuce batch : la sauce verde se conserve 5 jours au frigo, 3 mois congelée. Tu peux faire 2x la sauce et utiliser l'autre moitié pour un autre dîner enchiladas plus tard."
       ]
     },
@@ -62042,7 +62067,6 @@ if ("serviceWorker" in navigator) {
       "cost": 1.6,
       "kcal": 340,
       "tags": [
-        "vegan",
         "vegetarian",
         "batch-friendly"
       ],
@@ -62051,7 +62075,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "nuts",
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "ing": [
         [
@@ -62109,7 +62134,7 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Yaourt grec (pour servir)",
+          "Skyr (ou yaourt grec, pour servir)",
           100,
           "g",
           "dairy"
@@ -62131,7 +62156,7 @@ if ("serviceWorker" in navigator) {
         "Sors la plaque, ajoute les cranberries séchées (ne les cuis pas, elles deviendraient des cailloux). Mélange.",
         "Laisse refroidir COMPLÈTEMENT sur la plaque 30 min : c'est en refroidissant que la granola devient croustillante (les agglomérats se forment).",
         "Casse les gros morceaux à la main, transvase en bocal hermétique : se conserve 3 semaines à T° ambiante.",
-        "Au moment de servir : 50g de granola dans un bol, recouvre de yaourt grec + myrtilles fraîches.",
+        "Au moment de servir : 50g de granola dans un bol, recouvre de skyr + myrtilles fraîches.",
         "Astuce batch : double les quantités (1 plaque = ~10 portions). Le ROI est imbattable : 3 € le bocal de 500g vs 6-8 € en magasin pour les bonnes versions sans sucre raffiné."
       ]
     },
@@ -62424,7 +62449,6 @@ if ("serviceWorker" in navigator) {
       "cost": 2.0,
       "kcal": 510,
       "tags": [
-        "vegan",
         "vegetarian",
         "batch-friendly"
       ],
@@ -62962,7 +62986,9 @@ if ("serviceWorker" in navigator) {
         "pan",
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Filet de poulet",
@@ -63043,7 +63069,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -63082,7 +63108,7 @@ if ("serviceWorker" in navigator) {
         "Dans une poêle bien chaude, fais sauter le poulet mariné 6-7 min : il doit être doré et bien cuit (chair blanche).",
         "Mélange dans un bol le riz brun cuit avec un trait du reste d'huile + 1 c.à.s de jus de lime + sel + coriandre.",
         "Dresse en bowl : riz au fond, dispose en couronnes visuellement séparées : haricots noirs / maïs grillé / tomate / oignon rouge / avocat / poulet doré.",
-        "Au centre, verse 2 c.à.s de salsa verde + 1 c.à.s de yaourt grec.",
+        "Au centre, verse 2 c.à.s de salsa verde + 1 c.à.s de skyr.",
         "Parsème généreusement de coriandre fraîche. Quartier de lime à presser au moment de manger.",
         "Mange en mélangeant pour que chaque bouchée ait riz + protéines + légumes + sauce. C'est l'essence du burrito bowl mexicain modernisé : aussi complet et savoureux qu'un wrap, sans la tortilla raffinée.",
         "Astuce batch : double poulet + riz + salsa verde, conserve 3 jours frigo. Avocat + coriandre à la minute."
@@ -63110,7 +63136,9 @@ if ("serviceWorker" in navigator) {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Filet de poulet (ou hauts de cuisses désossés)",
@@ -63209,7 +63237,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -63237,7 +63265,7 @@ if ("serviceWorker" in navigator) {
         "Ajoute les tomates concassées + bouillon. Cuis 10 min en écrasant les tomates : la sauce épaissit.",
         "Ajoute le poulet effiloché. Mijote 10 min à feu doux : le poulet absorbe la sauce, devient tendre-fondant. Goûte, ajuste sel-poivre.",
         "Coupe l'avocat en cubes au moment de servir.",
-        "Dresse : riz noir d'un côté, tinga par-dessus. À côté : monticule de chou rouge mariné, cubes d'avocat, 1 c.à.s de yaourt grec, quartier de lime.",
+        "Dresse : riz noir d'un côté, tinga par-dessus. À côté : monticule de chou rouge mariné, cubes d'avocat, 1 c.à.s de skyr, quartier de lime.",
         "Parsème généreusement de coriandre fraîche.",
         "Mange en alternant tinga + riz + chou + avocat à chaque cuillerée : la combo umami chipotle + acidité chou rose + crémeux avocat est mémorable. La tinga maison vs version restaurant : 1/3 du sodium et 0 sucre raffiné.",
         "Astuce batch : la tinga effilochée se conserve 3 jours frigo, congèle 2 mois. Excellente farce pour wraps ou bowls le lendemain."
@@ -63902,7 +63930,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "s65",
-      "name": "Soupe froide concombre-yaourt grec-aneth, croûtons sarrasin",
+      "name": "Soupe froide concombre-skyr-aneth, croûtons sarrasin",
       "type": "snack",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -63933,7 +63961,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -63984,7 +64012,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Lave le concombre. Coupe-le en deux dans le sens de la longueur. À la cuillère, retire les graines centrales (elles rendent la soupe amère). Coupe la chair en morceaux grossiers.",
         "Épluche la demi-gousse d'ail, retire le germe vert au centre (= la petite pousse, plus digeste sans).",
-        "Dans le blender, mets : les morceaux de concombre, le yaourt grec, l'ail, le jus du demi-citron, 1 c.à.s d'huile d'olive, sel, poivre. Garde 4 belles branches d'aneth pour la déco, mets le reste dans le blender.",
+        "Dans le blender, mets : les morceaux de concombre, le skyr, l'ail, le jus du demi-citron, 1 c.à.s d'huile d'olive, sel, poivre. Garde 4 belles branches d'aneth pour la déco, mets le reste dans le blender.",
         "Mixe 1 minute à pleine puissance jusqu'à obtenir une soupe lisse et homogène, vert pâle. Goûte : ajuste le sel et le citron si besoin (le yaourt absorbe le sel).",
         "Verse dans un saladier, couvre et place au frigo minimum 1 heure (idéalement 2h). La soupe doit être bien froide pour révéler ses saveurs.",
         "Pendant ce temps, prépare les croûtons. Coupe le pain au levain en cubes de 1 cm. Dans une poêle, à feu moyen, chauffe 1 c.à.s d'huile d'olive. Quand elle frémit, ajoute les cubes de pain.",
@@ -64236,7 +64264,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des62",
-      "name": "Verrines mascarpone-yaourt grec, framboises et amandes",
+      "name": "Verrines mascarpone-skyr, framboises et amandes",
       "type": "dessert",
       "cuisine": "italien",
       "seasons": [
@@ -64271,7 +64299,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           120,
           "g",
           "dairy"
@@ -64306,7 +64334,7 @@ if ("serviceWorker" in navigator) {
         "Dans une poêle sèche, à feu moyen, fais torréfier les amandes effilées 2-3 minutes en remuant constamment : elles doivent devenir dorées et dégager une odeur de noisette grillée. Attention, ça brûle vite. Retire-les dès qu'elles colorent. Réserve sur une assiette pour qu'elles refroidissent.",
         "Si tu utilises des framboises surgelées : décongèle-les 10 min à température ambiante. Pour les fraîches : lave-les délicatement, sèche-les.",
         "Sépare 12 belles framboises (3 par verrine) pour la déco. Écrase les autres à la fourchette dans un bol — pas en purée, garde des morceaux.",
-        "Dans un autre grand bol, mélange le mascarpone, le yaourt grec, le sirop d'érable et la vanille. Fouette au fouet manuel 1 minute jusqu'à obtenir une crème lisse, brillante et homogène.",
+        "Dans un autre grand bol, mélange le mascarpone, le skyr, le sirop d'érable et la vanille. Fouette au fouet manuel 1 minute jusqu'à obtenir une crème lisse, brillante et homogène.",
         "Dans 4 verrines (ou petits verres) : verse au fond 1 c.à.s de framboises écrasées. Couvre de 2 c.à.s de crème mascarpone-yaourt. Recommence : framboises écrasées, crème.",
         "Termine par une couche de crème bien lisse sur le dessus, à 1 cm du bord (laisse de la place pour la déco).",
         "Place au frigo minimum 1 heure (les saveurs se mélangent et la crème prend de la tenue).",
@@ -64786,7 +64814,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 290,
       "tags": [
         "vegetarian",
-        "vegan",
         "quick"
       ],
       "eq": [
@@ -64990,7 +65017,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -65028,7 +65055,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau plat. Quadrille la peau, retourne en hérisson, récupère les cubes à la base. Tu peux aussi gratter le noyau pour récupérer la chair restante.",
-        "Dans le blender, mets : la chair de la mangue, le yaourt grec, la cardamome, le sirop d'érable, le jus du quart de citron vert, les glaçons.",
+        "Dans le blender, mets : la chair de la mangue, le skyr, la cardamome, le sirop d'érable, le jus du quart de citron vert, les glaçons.",
         "Mixe 30 secondes à pleine puissance jusqu'à obtenir une boisson lisse, onctueuse et orangée. Si trop épais, ajoute 2-3 cuillères d'eau froide et re-mixe.",
         "Goûte : la cardamome doit être présente mais discrète (parfumée, pas envahissante). Ajuste avec un peu plus de sirop si la mangue est acidulée.",
         "Verse dans 2 verres hauts. Optionnel : râpe un peu de zeste de citron vert sur le dessus pour la couleur.",
@@ -65349,7 +65376,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -65395,11 +65422,11 @@ if ("serviceWorker" in navigator) {
         "Sors les dattes du frigo si elles y étaient (elles seront plus faciles à couper à température ambiante).",
         "Dans une petite poêle sèche, à feu moyen, fais torréfier les amandes effilées 2 minutes en remuant. Elles doivent dorer et embaumer. Ajoute les pistaches concassées grossièrement et les graines de sésame, 30 secondes de plus. Réserve.",
         "Dénoyaute les dattes : entaille chacune sur la longueur, écarte légèrement, retire le noyau central avec la pointe du couteau. Coupe en petits dés de 5 mm.",
-        "Dans un bol, mélange le yaourt grec avec l'eau de fleur d'oranger et la cannelle. Goûte : la fleur d'oranger doit être présente mais discrète (parfum élégant, pas envahissant). Si tu trouves ça fade, ajoute encore 0.5 c.à.c.",
+        "Dans un bol, mélange le skyr avec l'eau de fleur d'oranger et la cannelle. Goûte : la fleur d'oranger doit être présente mais discrète (parfum élégant, pas envahissant). Si tu trouves ça fade, ajoute encore 0.5 c.à.c.",
         "Verse le yaourt parfumé dans 2 bols. Répartis les dés de dattes sur le dessus en demi-cercle.",
         "Parsème généreusement le mélange amandes-pistaches-sésame torréfiées sur le yaourt.",
         "Termine par une petite pincée de cannelle saupoudrée sur l'ensemble.",
-        "Sers immédiatement. C'est un petit-déjeuner d'inspiration marocaine traditionnel — riche en protéines (yaourt grec), bons gras (oléagineux), sucre naturel des dattes (IG modéré mais portion contrôlée), et la fleur d'oranger donne ce parfum si caractéristique des desserts du Maghreb."
+        "Sers immédiatement. C'est un petit-déjeuner d'inspiration marocaine traditionnel — riche en protéines (skyr), bons gras (oléagineux), sucre naturel des dattes (IG modéré mais portion contrôlée), et la fleur d'oranger donne ce parfum si caractéristique des desserts du Maghreb."
       ]
     },
     {
@@ -65638,7 +65665,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -65677,9 +65704,9 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Épluche la banane et le kiwi. Coupe-les en rondelles. Garde 3 rondelles de kiwi et 3 rondelles de banane pour la déco.",
         "Lave les épinards, sèche-les rapidement (un peu d'eau résiduelle est ok pour le blender).",
-        "Dans le blender, mets : le reste de la banane et du kiwi, les épinards, le yaourt grec, le lait d'amande, le matcha et le sirop d'érable.",
+        "Dans le blender, mets : le reste de la banane et du kiwi, les épinards, le skyr, le lait d'amande, le matcha et le sirop d'érable.",
         "Mixe 30-45 secondes à pleine puissance jusqu'à obtenir une texture lisse, vert clair, épaisse comme un yaourt fluide (= pas une boisson, vraiment un smoothie bowl).",
-        "Si trop épais, ajoute 2-3 c.à.s de lait d'amande supplémentaire et re-mixe. Si trop liquide, ajoute 2 c.à.s de yaourt grec ou de banane congelée.",
+        "Si trop épais, ajoute 2-3 c.à.s de lait d'amande supplémentaire et re-mixe. Si trop liquide, ajoute 2 c.à.s de skyr ou de banane congelée.",
         "Verse dans 1 grand bol. La surface doit être bien lisse.",
         "Décoration façon Japon : dispose les rondelles de banane et kiwi en cercle, parsème les graines de chia au centre, et les amandes effilées sur le bord.",
         "Mange immédiatement à la cuillère, comme une glace healthy. Le matcha apporte un coup de boost (caféine douce, L-théanine apaisante), les épinards bourrent de minéraux, et les graines de chia ajoutent des oméga-3."
@@ -65984,7 +66011,6 @@ if ("serviceWorker" in navigator) {
       "cost": 1.6,
       "kcal": 220,
       "tags": [
-        "vegan",
         "vegetarian",
         "no-cook"
       ],
@@ -65992,7 +66018,9 @@ if ("serviceWorker" in navigator) {
         "blender",
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Pois chiches cuits (en boîte)",
@@ -66037,7 +66065,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -66075,7 +66103,7 @@ if ("serviceWorker" in navigator) {
         "Coupe la tomate en petits dés de 5 mm (retire les graines liquides pour pas détremper). Pareil pour le concombre (garde la peau pour le croquant). Émince très finement le demi-oignon rouge.",
         "Ajoute ces 3 légumes aux pois chiches. Saupoudre le cumin moulu, le piment d'Espelette et une pincée de sel. Mélange.",
         "Arrose du jus du demi-citron vert restant. Mélange à nouveau.",
-        "Dressage : verse dans 4 petits bols ou verrines. Pose 1 belle cuillère de yaourt grec au centre. Verse par-dessus 1 cuillère du chutney vert.",
+        "Dressage : verse dans 4 petits bols ou verrines. Pose 1 belle cuillère de skyr au centre. Verse par-dessus 1 cuillère du chutney vert.",
         "Cisèle finement le reste de coriandre, parsème sur le dessus. Optionnel : pour une touche encore plus authentique, ajoute quelques pop chips de sarrasin écrasés pour le croquant.",
         "Sers immédiatement. C'est l'apéro de rue indien typique — explosion de saveurs (acide, épicé, frais, herbacé), pour réveiller les papilles. Riche en fibres et protéines végétales (~16 g de protéines par 200 g de pois chiches)."
       ]
@@ -66205,7 +66233,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -66250,10 +66278,10 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau plat. Récupère la chair à la cuillère. Garde 4-5 cubes pour la déco.",
         "Lave les fraises, équeute-les. Garde 3 fraises pour la déco (coupées en deux), mets le reste dans le blender.",
-        "Dans le blender : la mangue (sauf déco), les fraises, le yaourt grec, le lait d'amande, le jus du demi-citron vert et la pincée de piment d'Espelette.",
+        "Dans le blender : la mangue (sauf déco), les fraises, le skyr, le lait d'amande, le jus du demi-citron vert et la pincée de piment d'Espelette.",
         "Mixe 30-45 secondes à pleine puissance jusqu'à obtenir une texture lisse, rose-orangée, épaisse comme une glace en train de fondre.",
         "Goûte : le piment doit chauffer subtilement, pas piquer. Si tu trouves ça trop doux, ajoute encore une mini-pincée. La combinaison fruit sucré + chaud est très mexicaine (cf. la « tajín » saupoudrée sur les fruits dans la rue à Mexico).",
-        "Si trop épais, ajoute 2 c.à.s de lait d'amande supplémentaire. Si trop liquide, 1 c.à.s de yaourt grec ou banane congelée (option).",
+        "Si trop épais, ajoute 2 c.à.s de lait d'amande supplémentaire. Si trop liquide, 1 c.à.s de skyr ou banane congelée (option).",
         "Verse dans 1 grand bol. Surface bien lisse.",
         "Dressage : dispose les cubes de mangue et les demi-fraises en rosace. Parsème les graines de chia au centre, la noix de coco râpée en cercle.",
         "Concasse grossièrement les pistaches au couteau et saupoudre sur le tout. Le combo fraise rouge + mangue orange + pistache verte + coco blanche, c'est festif et plein de couleurs.",
@@ -67251,7 +67279,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -67296,7 +67324,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Sors le yaourt et le lait du frigo. Dans un petit bol, fais infuser le safran : verse 1 c.à.s de lait chaud dessus, laisse reposer 5 minutes. Le lait devient jaune doré, intensément parfumé.",
         "Prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau plat. Quadrille la peau (sans transpercer), retourne en hérisson, récupère les cubes à la base.",
-        "Dans le blender, mets : les cubes de mangue, le yaourt grec, le reste du lait demi-écrémé, le lait au safran (avec les filaments), la cardamome, l'eau de rose et les glaçons.",
+        "Dans le blender, mets : les cubes de mangue, le skyr, le reste du lait demi-écrémé, le lait au safran (avec les filaments), la cardamome, l'eau de rose et les glaçons.",
         "Mixe 45 secondes à pleine puissance jusqu'à obtenir une boisson épaisse, onctueuse, jaune-orange vif. Si trop épais, ajoute 2-3 c.à.s d'eau froide. Si trop liquide, ajoute 1-2 cubes de glace ou de mangue congelée.",
         "Goûte : ça doit être parfumé en couches (mangue dominante, puis cardamome qui chauffe, puis rose en finale). Si tu trouves fade, ajoute encore une mini-pincée de cardamome.",
         "Verse dans 2 grands verres ou 4 petits. Concasse grossièrement les pistaches au couteau.",
@@ -67833,7 +67861,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "gluten",
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
@@ -67919,7 +67948,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 320,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
@@ -67927,7 +67955,8 @@ if ("serviceWorker" in navigator) {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
@@ -67973,7 +68002,7 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -67995,7 +68024,7 @@ if ("serviceWorker" in navigator) {
         "Enfourne 20-25 min. À mi-cuisson (12 min), remue à la spatule pour homogénéiser la cuisson. Surveille à la fin : doit être doré, pas brun foncé.",
         "Sors du four. Laisse refroidir 30 min sur la plaque sans toucher — le granola durcit en refroidissant et forme des clusters croustillants.",
         "Conservation : dans un bocal hermétique, 3 semaines.",
-        "Au moment du petit-déjeuner : dans un bol, dépose le yaourt grec, parsème 4-5 c.à.s de granola, ajoute les fruits rouges sur le dessus. C'est l'équivalent italien du petit-déjeuner « yogurt e cereali » qu'on retrouve dans les cafés de Milan."
+        "Au moment du petit-déjeuner : dans un bol, dépose le skyr, parsème 4-5 c.à.s de granola, ajoute les fruits rouges sur le dessus. C'est l'équivalent italien du petit-déjeuner « yogurt e cereali » qu'on retrouve dans les cafés de Milan."
       ]
     },
     {
@@ -68335,14 +68364,15 @@ if ("serviceWorker" in navigator) {
       "cost": 1.5,
       "kcal": 270,
       "tags": [
-        "vegan",
         "vegetarian"
       ],
       "eq": [
         "steamer",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Quinoa",
@@ -68357,7 +68387,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -68406,7 +68436,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Rince le quinoa et le sarrasin à l'eau froide. Égoutte. Mets-les dans le blender avec le yaourt grec, l'eau et le sel.",
+        "Rince le quinoa et le sarrasin à l'eau froide. Égoutte. Mets-les dans le blender avec le skyr, l'eau et le sel.",
         "Mixe 1-2 minutes à pleine puissance jusqu'à obtenir une pâte épaisse, lisse, blanche-beige (= consistance pâte à crêpes épaisse).",
         "Verse dans un saladier, couvre d'un torchon propre. Laisse reposer 1 heure à température ambiante (= les céréales s'hydratent et la fermentation légère commence à se développer).",
         "Pendant ce temps, prépare le chutney : lave la coriandre, garde 3 branches pour la déco. Dans le blender (sans rincer), mets le reste de coriandre, le jus du demi-citron vert, le gingembre râpé, le piment d'Espelette, 1 c.à.c d'huile d'olive et 2 c.à.s d'eau. Mixe jusqu'à obtenir une pâte verte fluide.",
@@ -70461,8 +70491,7 @@ if ("serviceWorker" in navigator) {
       "cost": 2.2,
       "kcal": 350,
       "tags": [
-        "vegetarian",
-        "vegan"
+        "vegetarian"
       ],
       "eq": [
         "oven",
@@ -70470,7 +70499,8 @@ if ("serviceWorker" in navigator) {
         "bowl"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "lactose"
       ],
       "ing": [
         [
@@ -71511,7 +71541,8 @@ if ("serviceWorker" in navigator) {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "rest": 30,
       "advance": "30 min mariné",
@@ -73570,13 +73601,14 @@ if ("serviceWorker" in navigator) {
       "kcal": 480,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "ing": [
         [
           "Haricots rouges cuits (boîte)",
@@ -75087,7 +75119,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -75169,7 +75201,7 @@ if ("serviceWorker" in navigator) {
         "Ajoute l'ail, le gingembre, le cumin moulu, le curcuma, la coriandre moulue, le piment d'Espelette. Remue 30 sec — les épices libèrent leur arôme.",
         "Ajoute les dés de tomate, cuis 4 min en écrasant.",
         "Ajoute les lentilles corail rincées et 400 ml d'eau bouillante. Sale. Mijote 15-18 min à feu doux — les lentilles fondent en purée jaune crémeuse (signature du dal).",
-        "Prépare la raïta : râpe le concombre (peau lavée). Presse dans un torchon. Mélange avec le yaourt grec, la menthe ciselée, sel, poivre.",
+        "Prépare la raïta : râpe le concombre (peau lavée). Presse dans un torchon. Mélange avec le skyr, la menthe ciselée, sel, poivre.",
         "Dressage dans 2 grands bols : sépare en 3 sections — jeera rice (un tiers), dal jaune au milieu (un tiers), raïta sur le côté (un tiers). Parsème de coriandre fraîche au centre, ajoute 2 quartiers de citron sur le bord.",
         "Le « jeera » signifie cumin en hindi, et « jeera rice » est l'accompagnement riz le plus simple et populaire en Inde du Nord. Le dal de lentilles corail (« masoor dal ») est ultra-rapide (15 min, pas de trempage). Le combo dal + riz est la base nutritionnelle complète de l'Inde rurale. Riche en protéines végétales complètes (combo céréale + légumineuse), fibres, fer non-hémique (potentialisé par vit C du citron)."
       ]
@@ -75212,7 +75244,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -75302,12 +75334,12 @@ if ("serviceWorker" in navigator) {
         "Étale sur une plaque tapissée de papier cuisson. Enfourne 18-20 min en retournant à mi-cuisson — les cubes doivent être bien dorés et fondants.",
         "Pendant ce temps, égoutte et rince les pois chiches. Sèche-les. Mélange avec 1/2 c.à.s d'huile, le garam masala, sel.",
         "Quand l'aubergine est prête, étale les pois chiches sur la même plaque (place-les sur les bords pour le dernier 8-10 min) ou utilise une seconde plaque — ils doivent être croquants.",
-        "Prépare la sauce yaourt : mélange le yaourt grec avec la coriandre moulue, le reste de piment d'Espelette, sel, poivre, jus du demi-citron vert.",
+        "Prépare la sauce yaourt : mélange le skyr avec la coriandre moulue, le reste de piment d'Espelette, sel, poivre, jus du demi-citron vert.",
         "Coupe les tomates cerises en deux. Émince finement l'oignon rouge.",
         "Égrène la grenade : coupe en deux, tape la peau avec une cuillère au-dessus d'un bol pour faire tomber les graines (technique magique — toutes les graines tombent en 30 sec). Ou utilise des graines préparées (rayon fruits exotiques).",
         "Cisèle généreusement la coriandre et la menthe.",
         "Dressage dans 2 grandes assiettes : étale la sauce yaourt en lit. Pose au centre l'aubergine rôtie, les pois chiches grillés croquants. Parsème de grenade (couleur rouge éclatant), tomate cerise, oignon rouge, herbes fraîches. Arrose d'1/2 c.à.s d'huile et du jus de l'autre demi-citron vert.",
-        "Le chaat est la street food indienne — mot qui signifie « lécher » à cause des saveurs explosives (aigre, sucré, piquant, salé). La grenade apporte le côté sucré-acidulé et le craquant. L'aubergine rôtie remplace ici la pomme de terre traditionnelle pour une CG plus basse. Riche en protéines (pois chiches, yaourt grec), fibres, antioxydants (anthocyanes de grenade, polyphénols de l'aubergine), vitamine C."
+        "Le chaat est la street food indienne — mot qui signifie « lécher » à cause des saveurs explosives (aigre, sucré, piquant, salé). La grenade apporte le côté sucré-acidulé et le craquant. L'aubergine rôtie remplace ici la pomme de terre traditionnelle pour une CG plus basse. Riche en protéines (pois chiches, skyr), fibres, antioxydants (anthocyanes de grenade, polyphénols de l'aubergine), vitamine C."
       ]
     },
     {
@@ -75816,7 +75848,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b89",
-      "name": "Bowl yaourt grec, chia, mangue et noix de coco râpée",
+      "name": "Bowl skyr, chia, mangue et noix de coco râpée",
       "type": "breakfast",
       "cuisine": "indien",
       "seasons": [
@@ -75843,7 +75875,7 @@ if ("serviceWorker" in navigator) {
       "advance": "4 h (ou veille)",
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           250,
           "g",
           "dairy"
@@ -75895,9 +75927,9 @@ if ("serviceWorker" in navigator) {
         "Dans un bol, mélange les graines de chia avec le lait, le sirop d'érable et la cardamome. Mélange bien au fouet pour éviter les grumeaux (le chia gonfle vite, donc fouetter dès le début).",
         "Couvre et place au frigo 4 h minimum (idéal : la veille au soir pour le lendemain matin). Le chia absorbe le lait et forme un pudding type tapioca.",
         "Au moment de servir, coupe la mangue en cubes de 1 cm (technique : tranche de part et d'autre du noyau, cubes dans la peau, raclage cuillère).",
-        "Mélange la chia au lait avec le yaourt grec pour obtenir une crème onctueuse.",
+        "Mélange la chia au lait avec le skyr pour obtenir une crème onctueuse.",
         "Dressage dans 2 bols : verse la crème yaourt-chia. Pose les cubes de mangue par-dessus. Parsème de noix de coco râpée. Râpe le zeste du demi-citron vert au-dessus puis presse un filet de jus.",
-        "Sers immédiatement. Ce bowl reprend l'esprit lassi indien (yaourt + mangue + cardamome) en format épais. Le chia (originaire d'Amérique mais maintenant intégré aux superfoods world wide) apporte une texture pudding + 6g de fibres par portion. Riche en protéines (yaourt grec), bons gras (chia, coco), oméga-3 ALA, fibres, vitamine C (citron vert), bêta-carotène (mangue)."
+        "Sers immédiatement. Ce bowl reprend l'esprit lassi indien (yaourt + mangue + cardamome) en format épais. Le chia (originaire d'Amérique mais maintenant intégré aux superfoods world wide) apporte une texture pudding + 6g de fibres par portion. Riche en protéines (skyr), bons gras (chia, coco), oméga-3 ALA, fibres, vitamine C (citron vert), bêta-carotène (mangue)."
       ]
     },
     {
@@ -76435,7 +76467,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b95",
-      "name": "Yaourt grec aux oranges, fleur d'oranger et pistaches",
+      "name": "Skyr aux oranges, fleur d'oranger et pistaches",
       "type": "breakfast",
       "cuisine": "maghrebin",
       "seasons": [
@@ -76463,7 +76495,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           250,
           "g",
           "dairy"
@@ -76509,9 +76541,9 @@ if ("serviceWorker" in navigator) {
         "Épluche les oranges à vif (technique : coupe le sommet et la base, pose à plat, descends le couteau le long de la chair en suivant la courbe pour enlever toute la peau blanche).",
         "Détaille en suprêmes (passe le couteau entre chaque membrane pour libérer les quartiers de chair). Récupère le jus dans un bol.",
         "Hache grossièrement les pistaches. Cisèle les feuilles de menthe.",
-        "Dans un bol, mélange le yaourt grec avec l'eau de fleur d'oranger, le miel, la cannelle, et le jus d'orange récupéré (~2 c.à.s).",
+        "Dans un bol, mélange le skyr avec l'eau de fleur d'oranger, le miel, la cannelle, et le jus d'orange récupéré (~2 c.à.s).",
         "Dressage dans 2 grands bols : verse le yaourt parfumé. Arrange les suprêmes d'orange en éventail au-dessus. Parsème de pistaches hachées et de menthe ciselée.",
-        "Sers immédiatement. Ce breakfast est inspiré de la « salade d'oranges marocaine » classique (oranges + eau de fleur d'oranger + cannelle), version yaourt pour booster les protéines et tenir jusqu'à midi. L'eau de fleur d'oranger est l'arôme signature des desserts maghrébins. Riche en protéines (yaourt grec = 2× plus de protéines qu'un yaourt classique), vitamine C massive (2 oranges), bons gras (pistaches), antioxydants."
+        "Sers immédiatement. Ce breakfast est inspiré de la « salade d'oranges marocaine » classique (oranges + eau de fleur d'oranger + cannelle), version yaourt pour booster les protéines et tenir jusqu'à midi. L'eau de fleur d'oranger est l'arôme signature des desserts maghrébins. Riche en protéines (skyr = 2× plus de protéines qu'un yaourt classique), vitamine C massive (2 oranges), bons gras (pistaches), antioxydants."
       ]
     },
     {
@@ -76634,7 +76666,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b97",
-      "name": "Bowl yaourt grec, grenade, miel et pistaches (méditerranéen)",
+      "name": "Bowl skyr, grenade, miel et pistaches (méditerranéen)",
       "type": "breakfast",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -76661,7 +76693,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           250,
           "g",
           "dairy"
@@ -76701,14 +76733,14 @@ if ("serviceWorker" in navigator) {
         "Égrène la grenade : coupe en deux, tiens une moitié au-dessus d'un bol côté coupé vers le bas, tape la peau avec une cuillère — les graines tombent en quelques secondes.",
         "Hache grossièrement les pistaches.",
         "Cisèle les feuilles de menthe.",
-        "Dans un bol, mélange le yaourt grec avec le miel et le zeste râpé du quart de citron (technique : râpe seulement la partie colorée, pas la partie blanche amère).",
+        "Dans un bol, mélange le skyr avec le miel et le zeste râpé du quart de citron (technique : râpe seulement la partie colorée, pas la partie blanche amère).",
         "Dressage dans 2 bols : verse le yaourt au miel. Couronne de graines de grenade (couleur rubis éclatante), parsème de pistaches hachées et de menthe ciselée.",
-        "Sers immédiatement. Ce bowl est inspiré de la cuisine grecque/levantine ancestrale (yaourt + miel = combo millénaire), avec la grenade qui apporte la fraîcheur, l'acidulé et le côté ancestral (fruit présent dans tous les textes anciens méditerranéens). La grenade est de saison automne-hiver-début printemps. Riche en protéines (yaourt grec), antioxydants exceptionnels (anthocyanes de grenade, polyphénols pistache), bons gras (pistaches), calcium."
+        "Sers immédiatement. Ce bowl est inspiré de la cuisine grecque/levantine ancestrale (yaourt + miel = combo millénaire), avec la grenade qui apporte la fraîcheur, l'acidulé et le côté ancestral (fruit présent dans tous les textes anciens méditerranéens). La grenade est de saison automne-hiver-début printemps. Riche en protéines (skyr), antioxydants exceptionnels (anthocyanes de grenade, polyphénols pistache), bons gras (pistaches), calcium."
       ]
     },
     {
       "id": "b98",
-      "name": "Pancakes de sarrasin aux myrtilles et yaourt grec",
+      "name": "Pancakes de sarrasin aux myrtilles et skyr",
       "type": "breakfast",
       "cuisine": "universel",
       "seasons": [
@@ -76756,7 +76788,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -76801,8 +76833,8 @@ if ("serviceWorker" in navigator) {
         "Pose 4-5 myrtilles sur chaque pancake en pressant légèrement. Cuis 2 min jusqu'à ce que la surface fasse des bulles et les bords commencent à sécher.",
         "Retourne avec une spatule. Cuis 1-2 min de l'autre côté — les pancakes doivent être bien dorés et fermes.",
         "Répète avec le reste de pâte (tu obtiens 6 pancakes au total, soit 3 par personne). Garde au chaud sur une assiette couverte.",
-        "Dressage : empile 3 pancakes par assiette. Verse une cuillère de yaourt grec sur le dessus, parsème du reste de myrtilles fraîches, arrose d'un filet de sirop d'érable. Saupoudre d'un peu de cannelle.",
-        "Le sarrasin (kasha) est un pseudo-céréale sans gluten, IG ~45, riche en protéines complètes. Avec les myrtilles (saison été), c'est un breakfast pour sportifs ou amateurs de petits-déjs nourrissants. Riche en protéines (sarrasin, œuf, yaourt grec), fibres, antioxydants (anthocyanes des myrtilles parmi les plus puissants), magnésium."
+        "Dressage : empile 3 pancakes par assiette. Verse une cuillère de skyr sur le dessus, parsème du reste de myrtilles fraîches, arrose d'un filet de sirop d'érable. Saupoudre d'un peu de cannelle.",
+        "Le sarrasin (kasha) est un pseudo-céréale sans gluten, IG ~45, riche en protéines complètes. Avec les myrtilles (saison été), c'est un breakfast pour sportifs ou amateurs de petits-déjs nourrissants. Riche en protéines (sarrasin, œuf, skyr), fibres, antioxydants (anthocyanes des myrtilles parmi les plus puissants), magnésium."
       ]
     },
     {
@@ -77719,7 +77751,7 @@ if ("serviceWorker" in navigator) {
       "advance": "1 h au frais",
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           400,
           "g",
           "dairy"
@@ -77762,15 +77794,15 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Égoutte le yaourt grec : place-le dans un torchon propre au-dessus d'un saladier, laisse égoutter 30 min au frais (élimine 1/4 du petit-lait, le shrikhand devient ultra-onctueux). Si tu n'as pas le temps, utilise le yaourt grec tel quel.",
+        "Égoutte le skyr : place-le dans un torchon propre au-dessus d'un saladier, laisse égoutter 30 min au frais (élimine 1/4 du petit-lait, le shrikhand devient ultra-onctueux). Si tu n'as pas le temps, utilise le skyr tel quel.",
         "Pendant ce temps, prépare le safran : émiette 1 pincée de filaments dans 1 c.à.s d'eau tiède. Laisse infuser 10 min — l'eau devient orange-doré profond.",
         "Hache grossièrement les pistaches (garde quelques entières pour la déco).",
-        "Dans un saladier, mélange le yaourt grec égoutté avec le sirop d'érable, la cardamome, l'eau de safran (filaments inclus), l'eau de rose si tu en utilises. Mélange doucement jusqu'à couleur homogène jaune-doré.",
+        "Dans un saladier, mélange le skyr égoutté avec le sirop d'érable, la cardamome, l'eau de safran (filaments inclus), l'eau de rose si tu en utilises. Mélange doucement jusqu'à couleur homogène jaune-doré.",
         "Ajoute la moitié des pistaches hachées dans le mélange. Mélange.",
         "Verse dans 4 ramequins individuels. Couvre et réfrigère 1 h minimum (idéal : préparer le matin pour le soir, le goût se développe).",
         "Au moment de servir, fais légèrement griller les amandes effilées dans une poêle sèche 1 min. Réserve.",
         "Dressage : sors les shrikhand du frigo. Parsème généreusement du reste de pistaches hachées + amandes effilées dorées + quelques pistaches entières + une nouvelle pincée de cardamome.",
-        "Le shrikhand est un dessert ancestral de l'Inde de l'Ouest (Maharashtra, Gujarat), traditionnellement servi avec des puri (pains plats frits). Cette version allégée utilise du yaourt grec moderne (raccourci pratique vs chakka traditionnel = yaourt fait-maison égoutté 12h). Sucre minimal (1 c.à.s pour 4 portions). Riche en protéines (yaourt grec, 2× plus que yaourt classique), calcium, antioxydants (safran, cardamome), bons gras (pistaches, amandes)."
+        "Le shrikhand est un dessert ancestral de l'Inde de l'Ouest (Maharashtra, Gujarat), traditionnellement servi avec des puri (pains plats frits). Cette version allégée utilise du skyr moderne (raccourci pratique vs chakka traditionnel = yaourt fait-maison égoutté 12h). Sucre minimal (1 c.à.s pour 4 portions). Riche en protéines (skyr, 2× plus que yaourt classique), calcium, antioxydants (safran, cardamome), bons gras (pistaches, amandes)."
       ]
     },
     {
@@ -77805,7 +77837,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -77850,7 +77882,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe la mangue : tranche de chaque côté du noyau plat, récupère la chair en cubes (technique 'hérisson' inversé : incisions en croisillon dans la chair, retourne la peau, racle).",
         "Réserve quelques petits cubes de mangue pour la déco. Mets le reste dans le blender.",
-        "Ajoute le yaourt grec, le lait, la cardamome, l'eau de rose. Mixe 30 sec en boisson lisse et onctueuse.",
+        "Ajoute le skyr, le lait, la cardamome, l'eau de rose. Mixe 30 sec en boisson lisse et onctueuse.",
         "Ajoute les glaçons. Mixe 20 sec supplémentaires (le lassi doit devenir épais, mousseux, très froid). Goûte et ajuste la cardamome ou l'eau de rose si besoin.",
         "Hache grossièrement les pistaches.",
         "Verse dans 4 grands verres. Décore chaque verre avec : les cubes de mangue réservés, des pistaches hachées, quelques pétales de rose si tu en as.",
@@ -78866,7 +78898,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           3,
           "c.à.s",
           "dairy"
@@ -78933,7 +78965,7 @@ if ("serviceWorker" in navigator) {
         "Hors du feu, ajoute l'ail haché finement + une bonne pincée de sel. Mélange.",
         "Verse le maïs grillé dans un saladier, laisse tiédir 5 min.",
         "Émince finement l'oignon rouge. Cisèle la coriandre (garde quelques feuilles entières pour la déco).",
-        "Prépare la sauce dans un petit bol : yaourt grec + crème fraîche + jus d'un citron vert + 1/2 c.à.c de piment d'Espelette + paprika fumé + 1/2 c.à.c de sel.",
+        "Prépare la sauce dans un petit bol : skyr + crème fraîche + jus d'un citron vert + 1/2 c.à.c de piment d'Espelette + paprika fumé + 1/2 c.à.c de sel.",
         "Mélange le maïs tiède + oignon rouge + coriandre + sauce. Goûte, ajuste sel ou citron.",
         "Dressage festif : sers dans des bols ou gobelets façon street food. Saupoudre généreusement de feta émiettée par-dessus. Pincée supplémentaire de piment d'Espelette + zeste de citron vert râpé. Ajoute des quartiers de citron vert pour presser à table.",
         "Sers immédiatement (tiède). Les esquites (de 'elote' = maïs) sont LE street snack n°1 au Mexique, vendus dans les gobelets en plastique dans les rues de Mexico, Oaxaca, Puebla. Version festive parfaite pour BBQ d'été, fiesta, cinco de mayo. Riche en fibres (maïs entier), antioxydants (zéaxanthine, lutéine du maïs), probiotiques (yaourt), vitamine C (citron vert)."
@@ -80402,7 +80434,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           250,
           "g",
           "dairy"
@@ -80441,7 +80473,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Pèle les mangues, retire la chair autour du noyau plat. Tu dois obtenir ~400 g de chair.",
         "Garde quelques petits cubes de mangue (~2 c.à.s) pour mettre dans les moules à paletas. Mets le reste dans le blender.",
-        "Ajoute au blender : yaourt grec + 1,5 c.à.s sirop d'érable + jus du citron vert + zeste râpé d'1/2 citron vert + vanille + pincée de sel.",
+        "Ajoute au blender : skyr + 1,5 c.à.s sirop d'érable + jus du citron vert + zeste râpé d'1/2 citron vert + vanille + pincée de sel.",
         "Mixe 30-40 sec jusqu'à obtenir un mélange parfaitement lisse et homogène (orange-jaune crémeux).",
         "Goûte : doit être franchement mangue, légèrement acide, à peine sucré (la maturité de la mangue apporte le sucre principal). Ajoute 1/2 c.à.s de sirop si trop acide.",
         "Verse le mélange dans 8 moules à paletas (ou moules à esquimaux). Au milieu de chaque moule, ajoute quelques cubes de mangue réservés et une pincée de graines de chia.",
@@ -80449,7 +80481,7 @@ if ("serviceWorker" in navigator) {
         "Mets au congélateur 6 h minimum (idéalement toute la nuit) jusqu'à congélation complète.",
         "Pour démouler : passe rapidement le moule sous l'eau tiède 5-10 sec, tire doucement sur le bâton — la paleta se libère.",
         "Sers immédiatement (sortie du congel, à manger dans les 10-15 min). Si tu veux préparer à l'avance : démoule et stocke dans un sac congel jusqu'à 1 mois.",
-        "Les paletas sont les sorbets sur bâton emblématiques du Mexique (paletas, à différencier des popsicles industriels = plein de sucre artificiel). On les trouve à Mexico, Puebla, Oaxaca avec des dizaines de parfums frais. Cette version mangue-yaourt-chia est inspirée des paletas de Tierra Caliente (versions crémeuses au lait/yaourt). Festif pour BBQ, fiesta enfants, été. CG basse (~5), 140 kcal. Riche en bêta-carotène massif (mangue), probiotiques (yaourt grec), oméga-3 (chia), fibres, vitamine C."
+        "Les paletas sont les sorbets sur bâton emblématiques du Mexique (paletas, à différencier des popsicles industriels = plein de sucre artificiel). On les trouve à Mexico, Puebla, Oaxaca avec des dizaines de parfums frais. Cette version mangue-yaourt-chia est inspirée des paletas de Tierra Caliente (versions crémeuses au lait/yaourt). Festif pour BBQ, fiesta enfants, été. CG basse (~5), 140 kcal. Riche en bêta-carotène massif (mangue), probiotiques (skyr), oméga-3 (chia), fibres, vitamine C."
       ]
     },
     {
@@ -81383,13 +81415,14 @@ if ("serviceWorker" in navigator) {
       "kcal": 280,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "lactose"
+      ],
       "rest": 720,
       "advance": "12 h de fermentation",
       "ing": [
@@ -81817,7 +81850,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "eggs",
-        "gluten"
+        "gluten",
+        "lactose"
       ],
       "ing": [
         [
@@ -81982,7 +82016,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           4,
           "c.à.s",
           "dairy"
@@ -82017,7 +82051,7 @@ if ("serviceWorker" in navigator) {
         "Pendant ce temps, prépare la salsa verde : coupe les tomatilles (ou tomates vertes) en quartiers. Cuis-les avec l'oignon coupé + ail + piment vert + 100 ml d'eau 8 min à couvert. Mixe avec coriandre + sel + cumin + jus du citron vert.",
         "Dans une grande poêle, verse la salsa verde, porte à frémissement. Ajoute les chips de tortilla, mélange délicatement pour les enrober. Cuis 1-2 min (technique : les tortillas doivent ramollir au contact de la sauce mais garder un peu de tenue).",
         "Pendant ce temps, cuis les œufs au plat dans une autre poêle huilée 3-4 min.",
-        "Dressage : répartis les chilaquiles dans 4 assiettes. Pose 1 œuf au plat par assiette. Garnis chaque assiette de feta émiettée, 1 c.à.s de yaourt grec, coriandre fraîche.",
+        "Dressage : répartis les chilaquiles dans 4 assiettes. Pose 1 œuf au plat par assiette. Garnis chaque assiette de feta émiettée, 1 c.à.s de skyr, coriandre fraîche.",
         "Sers immédiatement. Petit-déj iconique du Mexique central, idéal lendemain de fête (rumeur : c'était le remède hangover des aztèques !). Riche en protéines, fibres, lycopène."
       ]
     },
@@ -82046,7 +82080,8 @@ if ("serviceWorker" in navigator) {
       "allergens": [
         "gluten",
         "nuts",
-        "eggs"
+        "eggs",
+        "lactose"
       ],
       "ing": [
         [
@@ -82336,7 +82371,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           300,
           "g",
           "dairy"
@@ -82375,7 +82410,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Pèle les mangues, récupère la chair (~400 g). Mets-la dans le blender.",
         "Ouvre les gousses de cardamome, récupère les graines, écrase-les finement.",
-        "Ajoute au blender : yaourt grec + sirop d'érable + cardamome + jus du citron vert + eau de rose si tu en mets.",
+        "Ajoute au blender : skyr + sirop d'érable + cardamome + jus du citron vert + eau de rose si tu en mets.",
         "Mixe 30 sec jusqu'à crème lisse orange.",
         "Concasse les pistaches au couteau.",
         "Verse le mélange dans 8 moules à popsicles. Dépose 1 pincée de pistaches concassées dans chaque moule. Plante un bâton.",
@@ -82409,7 +82444,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "gluten",
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
@@ -82961,7 +82997,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des106",
-      "name": "Yaourt grec aux pistaches, miel et figues fraîches",
+      "name": "Skyr aux pistaches, miel et figues fraîches",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -82988,7 +83024,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           400,
           "g",
           "dairy"
@@ -83033,10 +83069,10 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe les figues fraîches en quartiers (laisse la peau, elle est mangeable).",
         "Concasse grossièrement les pistaches au couteau.",
-        "Dans 4 coupes ou verrines, dépose le yaourt grec (100 g par coupe).",
+        "Dans 4 coupes ou verrines, dépose le skyr (100 g par coupe).",
         "Garnis chaque coupe avec 1 figue en quartiers + 1/2 c.à.s de miel filé + 1 c.à.c de pistaches concassées + 1 mini pincée de cannelle + 1 zeste de citron râpé fin.",
         "Décore d'une feuille de menthe ciselée. Sers immédiatement à température ambiante.",
-        "Dessert grec/levantin emblématique : combinaison ancestrale yaourt-miel-figues-noix. Riche en protéines (yaourt grec), antioxydants, calcium."
+        "Dessert grec/levantin emblématique : combinaison ancestrale yaourt-miel-figues-noix. Riche en protéines (skyr), antioxydants, calcium."
       ]
     },
     {
@@ -83629,7 +83665,8 @@ if ("serviceWorker" in navigator) {
       "allergens": [
         "gluten",
         "fish",
-        "eggs"
+        "eggs",
+        "lactose"
       ],
       "rest": 90,
       "advance": "1h30 de levée",
@@ -84090,12 +84127,6 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Œuf (facultatif pour version vegan)",
-          1,
-          "u",
-          "dairy"
-        ],
-        [
           "Persil frais",
           1,
           "bouquet",
@@ -84132,8 +84163,8 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Farine de pois chiche (lie)",
-          2,
+          "Farine de pois chiche (liant)",
+          3,
           "c.à.s",
           "pantry"
         ],
@@ -84160,10 +84191,10 @@ if ("serviceWorker" in navigator) {
         "Cuis les pommes de terre épluchées coupées en gros morceaux à l'eau bouillante salée 15 min. Égoutte, écrase grossièrement à la fourchette (purée rustique).",
         "Préchauffe le four à 220 °C. Tapisse une plaque de papier cuisson.",
         "Hache finement persil + coriandre + ail.",
-        "Mélange la purée tiède avec : herbes + cumin + curcuma + paprika + sel + œuf battu (si version œuf) + farine de pois chiche.",
+        "Mélange la purée tiède avec : herbes + cumin + curcuma + paprika + sel + farine de pois chiche. La farine remplace l'œuf : elle sert de « liant » (elle colle la pâte pour que les galettes se tiennent). Si la pâte s'effrite quand tu formes une boule, ajoute 1 c.à.s d'eau.",
         "Forme 12 galettes plates de 6 cm de diamètre. Pose sur la plaque, badigeonne le dessus d'huile d'olive.",
         "Enfourne 12 min, retourne, badigeonne l'autre face, cuis 10-13 min de plus. Les maakouda doivent être bien dorés croustillants.",
-        "Sers chaud avec quartiers de citron à presser + harissa pour les amateurs. Snack typique des marchés algériens et marocains, version four (vs friture traditionnelle) plus saine. Riche en fibres, protéines végétales (avec œuf ou pois chiche)."
+        "Sers chaud avec quartiers de citron à presser + harissa pour les amateurs. Snack typique des marchés algériens et marocains, version four (vs friture traditionnelle) plus saine. Riche en fibres, protéines végétales (pois chiche)."
       ]
     },
     {
@@ -84387,7 +84418,8 @@ if ("serviceWorker" in navigator) {
       ],
       "allergens": [
         "gluten",
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "rest": 30,
       "advance": "30 min de repos",
@@ -85535,7 +85567,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -85578,7 +85610,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Dans le blender, mixe : banane congelée + épinards + lait d'amande + beurre d'amande + yaourt grec + vanille + chia jusqu'à smoothie épais et vert pâle (1-2 min).",
+        "Dans le blender, mixe : banane congelée + épinards + lait d'amande + beurre d'amande + skyr + vanille + chia jusqu'à smoothie épais et vert pâle (1-2 min).",
         "Goûte : ajoute sirop d'érable si pas assez sucré (bananes très mûres = sucre suffisant).",
         "Verse dans 2 grands bols. La texture doit être épaisse (cuillerable, pas buvable) — sinon ajoute plus de banane congelée.",
         "Dressage : sur chaque smoothie bowl, dépose en rangs distincts : 2 c.à.s de granola, 1/2 banane en rondelles, 1/2 des myrtilles.",
@@ -86388,7 +86420,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des113",
-      "name": "Pannacotta yaourt grec-citron et coulis fraises-basilic",
+      "name": "Pannacotta skyr-citron et coulis fraises-basilic",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -86416,7 +86448,7 @@ if ("serviceWorker" in navigator) {
       "advance": "4 h au frais",
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           300,
           "g",
           "dairy"
@@ -86474,10 +86506,10 @@ if ("serviceWorker" in navigator) {
         "Trempe les feuilles de gélatine dans l'eau froide 10 min.",
         "Dans une casserole, chauffe la crème à frémissement avec 1 c.à.s sirop d'érable + vanille + zeste de citron râpé. Coupe le feu.",
         "Essore les feuilles de gélatine entre tes mains. Ajoute-les dans la crème chaude, fouette pour dissoudre. Laisse tiédir 10 min.",
-        "Fouette le yaourt grec avec le jus du citron + 1 c.à.s sirop d'érable. Incorpore la crème tiède en mélangeant à la spatule.",
+        "Fouette le skyr avec le jus du citron + 1 c.à.s sirop d'érable. Incorpore la crème tiède en mélangeant à la spatule.",
         "Verse dans 4 verrines. Réfrigère 4 h minimum.",
         "Coulis : équeute les fraises (garde 4 pour la déco). Mixe le reste avec 3-4 feuilles de basilic + 1/2 c.à.c sucre roux + 1 c.à.s eau jusqu'à coulis lisse.",
-        "Au moment de servir : verse 2 c.à.s de coulis sur chaque pannacotta. Décore avec 1 fraise coupée en éventail + feuille de basilic + pistaches hachées. Dessert italien classique revisité avec yaourt grec (plus de protéines, moins de calories que tout-crème)."
+        "Au moment de servir : verse 2 c.à.s de coulis sur chaque pannacotta. Décore avec 1 fraise coupée en éventail + feuille de basilic + pistaches hachées. Dessert italien classique revisité avec skyr (plus de protéines, moins de calories que tout-crème)."
       ]
     },
     {
@@ -86931,7 +86963,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b130",
-      "name": "Cantucci aux amandes-anis et yaourt grec (petit-déj toscan)",
+      "name": "Cantucci aux amandes-anis et skyr (petit-déj toscan)",
       "type": "breakfast",
       "cuisine": "italien",
       "seasons": [
@@ -87008,7 +87040,7 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Yaourt grec (pour servir)",
+          "Skyr (ou yaourt grec, pour servir)",
           400,
           "g",
           "dairy"
@@ -87029,7 +87061,7 @@ if ("serviceWorker" in navigator) {
         "Pose sur la plaque, enfourne 25 min jusqu'à doré ferme.",
         "Sors, laisse tiédir 10 min. Coupe en tranches en biais de 1,5 cm d'épaisseur (technique cantucci : double cuisson).",
         "Repose les tranches à plat sur la plaque, enfourne 8-10 min de plus, en retournant à mi-cuisson, jusqu'à doré sec (consistance biscuit).",
-        "Sers chaque portion : 100 g de yaourt grec dans un bol + 3-4 cantucci à tremper + 1/2 c.à.s de miel d'acacia filé sur le yaourt. Cantucci traditionnels de Prato (Toscane), trempés dans le vin santo ou (version brunch) dans le yaourt. Excellent batch (3 semaines en boîte hermétique)."
+        "Sers chaque portion : 100 g de skyr dans un bol + 3-4 cantucci à tremper + 1/2 c.à.s de miel d'acacia filé sur le yaourt. Cantucci traditionnels de Prato (Toscane), trempés dans le vin santo ou (version brunch) dans le yaourt. Excellent batch (3 semaines en boîte hermétique)."
       ]
     },
     {
@@ -87068,7 +87100,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -87117,7 +87149,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mélange mascarpone + yaourt grec + sirop d'érable + vanille jusqu'à crémeux.",
+        "Mélange mascarpone + skyr + sirop d'érable + vanille jusqu'à crémeux.",
         "Équeute et coupe les fraises en quartiers.",
         "Concasse les pistaches au couteau.",
         "Trempe rapidement les biscuits cuillère dans le café froid (3 sec par face — sinon ils se cassent). Si pas de café, saute cette étape.",
@@ -87446,7 +87478,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b135",
-      "name": "Pancakes japonais soufflés au yaourt grec (extra moelleux)",
+      "name": "Pancakes japonais soufflés au skyr (extra moelleux)",
       "type": "breakfast",
       "cuisine": "asiatique",
       "seasons": [
@@ -87481,7 +87513,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -87543,7 +87575,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Sépare les blancs et jaunes d'œufs. Place les blancs au frais (technique : blancs froids montent mieux).",
-        "Dans un saladier, fouette les jaunes + yaourt grec + lait + 1 c.à.s sirop érable + vanille. Ajoute farine + levure + sel tamisés, fouette jusqu'à pâte lisse.",
+        "Dans un saladier, fouette les jaunes + skyr + lait + 1 c.à.s sirop érable + vanille. Ajoute farine + levure + sel tamisés, fouette jusqu'à pâte lisse.",
         "Monte les blancs en neige avec une pincée de sel. Quand ils commencent à mousser, ajoute 1 c.à.s sirop érable. Continue jusqu'à pics fermes et brillants (meringue).",
         "Incorpore 1/3 des blancs à la pâte pour détendre. Incorpore le reste très délicatement à la spatule en soulevant (technique : ne casse pas l'air des blancs, c'est ce qui rend les pancakes 'soufflés').",
         "Chauffe une poêle anti-adhésive à feu TRÈS doux avec un peu de beurre. Verse de gros tas de pâte (4 par fournée) en formant des dômes hauts (5 cm de haut). Couvre la poêle. Cuis 5-6 min à feu doux.",
@@ -88504,7 +88536,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -88549,11 +88581,11 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Lave et équeute les fraises. Réserve 4 belles fraises pour la déco. Coupe le reste en petits dés de 5 mm (pas trop fins, on veut sentir la texture).",
         "Place les dés de fraises dans un bol, ajoute 4 feuilles de basilic ciselées finement, jus du demi-citron, 1/2 c.à.s de sirop d'érable. Laisse macérer 5 min (les fraises libèrent leur jus parfumé).",
-        "Dans un autre bol, fouette la ricotta avec le yaourt grec + 1/2 c.à.s de sirop d'érable + vanille + 1/2 c.à.c de zeste de citron râpé jusqu'à crème lisse et aérée.",
+        "Dans un autre bol, fouette la ricotta avec le skyr + 1/2 c.à.s de sirop d'érable + vanille + 1/2 c.à.c de zeste de citron râpé jusqu'à crème lisse et aérée.",
         "Fais légèrement griller les amandes effilées à sec dans une poêle 1-2 min en remuant. Réserve.",
         "Dressage en 4 verrines (verres à dessert ou ramekins) : alterne couches → 1 c.à.s crème ricotta au fond, 1 c.à.s fraises macérées, 1 c.à.s crème ricotta, 1 c.à.s fraises.",
         "Termine avec des amandes effilées dorées + 1 fraise entière coupée en éventail + feuille de basilic entière pour la déco.",
-        "Sers immédiatement (le basilic perd ses arômes à l'air, ne pas préparer trop en avance) ou réfrigère 30 min avant. Dessert méditerranéen frais et léger, classique italo-provençal. Le basilic+fraise = combo de chefs étoilés (Pic, Robuchon). Riche en protéines (ricotta + yaourt grec), vitamine C massive (fraises = 60 mg/100 g), bons gras (amandes), peu de sucre ajouté (1 c.à.s pour 4 portions)."
+        "Sers immédiatement (le basilic perd ses arômes à l'air, ne pas préparer trop en avance) ou réfrigère 30 min avant. Dessert méditerranéen frais et léger, classique italo-provençal. Le basilic+fraise = combo de chefs étoilés (Pic, Robuchon). Riche en protéines (ricotta + skyr), vitamine C massive (fraises = 60 mg/100 g), bons gras (amandes), peu de sucre ajouté (1 c.à.s pour 4 portions)."
       ]
     },
     {
@@ -89270,7 +89302,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -89307,7 +89339,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Verser le yaourt grec dans une étamine (ou un torchon propre) au-dessus d'un bol, laisser égoutter 4h au frais (texture crémeuse épaisse).",
+        "Verser le skyr dans une étamine (ou un torchon propre) au-dessus d'un bol, laisser égoutter 4h au frais (texture crémeuse épaisse).",
         "Pendant ce temps, infuser le safran dans 1 cuillère à soupe d'eau tiède 10 min (couleur jaune dorée).",
         "Éplucher la mangue, retirer le noyau, mixer la chair au mixeur plongeant en purée lisse.",
         "Mélanger dans un bol le yaourt égoutté, la purée de mangue, le sirop d'érable, la cardamome et le safran infusé.",
@@ -91119,7 +91151,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b145",
-      "name": "Bowl yaourt grec grenade pistache miel",
+      "name": "Bowl skyr grenade pistache miel",
       "type": "breakfast",
       "cuisine": "italien",
       "seasons": [
@@ -91146,7 +91178,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -91192,7 +91224,7 @@ if ("serviceWorker" in navigator) {
         "Couper la grenade en deux, tenir une moitié au-dessus d'un bol côté coupé vers le bas.",
         "Taper fermement sur la peau avec le dos d'une cuillère : les grains tombent dans le bol (méthode efficace, pas de couteau).",
         "Trier rapidement pour retirer les éventuels morceaux de membrane blanche (amers).",
-        "Verser le yaourt grec dans 2 bols, lisser le dessus à la cuillère.",
+        "Verser le skyr dans 2 bols, lisser le dessus à la cuillère.",
         "Râper le zeste du quart de citron par-dessus (zeste de citron + yaourt = combo italien classique du sud).",
         "Disposer les grains de grenade en couronne sur le yaourt.",
         "Concasser grossièrement les pistaches au couteau, les parsemer au centre.",
@@ -91534,7 +91566,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -91583,7 +91615,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mélanger dans un grand bol le yaourt grec, le mascarpone, le sirop d'érable et la vanille jusqu'à obtenir une crème homogène lisse.",
+        "Mélanger dans un grand bol le skyr, le mascarpone, le sirop d'érable et la vanille jusqu'à obtenir une crème homogène lisse.",
         "Émietter grossièrement les amaretti à la main (garder de la texture).",
         "Couper les fraises en petits dés, écraser légèrement la moitié des framboises à la fourchette dans un bol.",
         "Ajouter le jus du quart de citron à la purée de framboises.",
@@ -91734,7 +91766,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -91783,7 +91815,7 @@ if ("serviceWorker" in navigator) {
         "Pendant ce temps, faire griller les amandes effilées 2-3 minutes à sec dans une petite poêle (couleur dorée).",
         "Peler l'orange à vif (retirer la peau blanche), détacher les quartiers en suprêmes.",
         "Aérer la semoule à la fourchette : les grains doivent être séparés et moelleux.",
-        "Répartir dans 2 bols, déposer une cuillère de yaourt grec sur le côté, disposer les suprêmes d'orange.",
+        "Répartir dans 2 bols, déposer une cuillère de skyr sur le côté, disposer les suprêmes d'orange.",
         "Parsemer d'amandes grillées, saupoudrer de cannelle et finir par un filet de miel d'acacia."
       ]
     },
@@ -93535,7 +93567,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -93578,7 +93610,7 @@ if ("serviceWorker" in navigator) {
         "Tamiser la farine T80 et la levure chimique sur les jaunes blanchis, ajouter le zeste de citron râpé, mélanger délicatement à la spatule.",
         "Incorporer les blancs en neige en 3 fois en soulevant la pâte (pas remuer).",
         "Verser dans le moule, enfourner 18-20 minutes : la lame d'un couteau plantée doit ressortir sèche.",
-        "Pendant ce temps, mélanger dans un bol le lait demi-écrémé, le lait d'amande, le yaourt grec, 10g de sirop d'érable et la cannelle (c'est le mélange 'tres leches').",
+        "Pendant ce temps, mélanger dans un bol le lait demi-écrémé, le lait d'amande, le skyr, 10g de sirop d'érable et la cannelle (c'est le mélange 'tres leches').",
         "Sortir le gâteau, le démouler tiède dans un plat creux. Piquer toute la surface à la fourchette (trous profonds).",
         "Verser doucement le mélange tres leches en plusieurs fois en laissant absorber entre chaque ajout (le gâteau boit le liquide).",
         "Couvrir et placer 4h minimum au frigo (mieux : une nuit).",
@@ -93778,7 +93810,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           300,
           "g",
           "dairy"
@@ -93821,7 +93853,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mélanger dans un bol le yaourt grec, le sirop d'érable, la moitié de la cannelle, la vanille et le jus du quart de citron jusqu'à obtenir un mélange homogène.",
+        "Mélanger dans un bol le skyr, le sirop d'érable, la moitié de la cannelle, la vanille et le jus du quart de citron jusqu'à obtenir un mélange homogène.",
         "Verser dans un récipient large à fond plat (plat à gratin métallique idéal).",
         "Placer au congélateur 1h, puis sortir et gratter à la fourchette pour casser les cristaux.",
         "Remettre 1h, gratter à nouveau. Répéter une fois (total 3h, texture glace italienne onctueuse).",
@@ -98302,7 +98334,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des148",
-      "name": "Poires pochées épices yaourt grec",
+      "name": "Poires pochées épices skyr",
       "type": "dessert",
       "cuisine": "francais",
       "seasons": [
@@ -98334,7 +98366,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -98383,7 +98415,7 @@ if ("serviceWorker" in navigator) {
         "Pocher à feu doux 20-25 minutes en les retournant à mi-cuisson : les poires sont tendres et translucides (une pointe de couteau s'enfonce sans résistance).",
         "Retirer les poires délicatement, laisser réduire le jus de pochage 5 minutes à feu vif (il devient sirupeux).",
         "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Dresser : une cuillère de yaourt grec dans chaque assiette, déposer les demi-poires par-dessus.",
+        "Dresser : une cuillère de skyr dans chaque assiette, déposer les demi-poires par-dessus.",
         "Napper d'un peu de sirop de pochage réduit, parsemer d'amandes effilées grillées. Servir tiède ou frais."
       ]
     },
@@ -99552,7 +99584,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -99595,7 +99627,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "La veille au soir, mélanger dans un bocal les flocons d'avoine, le yaourt grec, le lait d'amande, les graines de chia et l'eau de fleur d'oranger.",
+        "La veille au soir, mélanger dans un bocal les flocons d'avoine, le skyr, le lait d'amande, les graines de chia et l'eau de fleur d'oranger.",
         "Couper la moitié de la pêche en petits dés, l'ajouter au mélange.",
         "Fermer le bocal et placer au frigo toute la nuit (8h minimum) : les flocons et le chia gonflent, texture crémeuse.",
         "Le matin, sortir le bocal et mélanger.",
@@ -99645,7 +99677,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -99683,7 +99715,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Laver les framboises (en garder quelques-unes pour la déco). Couper la pêche en morceaux (garder 2-3 lamelles).",
-        "Mettre les framboises, la pêche, le yaourt grec, le lait d'amande et le miel dans le blender.",
+        "Mettre les framboises, la pêche, le skyr, le lait d'amande et le miel dans le blender.",
         "Mixer 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, lisser le dessus à la cuillère.",
         "Disposer les framboises et lamelles de pêche réservées en couronne.",
@@ -99885,7 +99917,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -99934,7 +99966,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Verser le yaourt grec dans une étamine au-dessus d'un bol, laisser égoutter 2h au frais (texture épaisse, base du shrikhand).",
+        "Verser le skyr dans une étamine au-dessus d'un bol, laisser égoutter 2h au frais (texture épaisse, base du shrikhand).",
         "Infuser le safran dans 1 cuillère à café d'eau tiède 10 minutes (couleur jaune dorée).",
         "Éplucher la mangue, en mixer la moitié en purée, couper l'autre moitié en dés.",
         "Mélanger le yaourt égoutté avec la purée de mangue, le safran infusé, la cardamome et le sirop d'érable (texture crémeuse jaune).",
@@ -100241,7 +100273,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           250,
           "g",
           "dairy"
@@ -100278,7 +100310,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mélanger le yaourt grec avec le sirop d'érable et la vanille.",
+        "Mélanger le skyr avec le sirop d'érable et la vanille.",
         "Verser dans un récipient plat, placer au congélateur 3h en grattant à la fourchette toutes les heures (texture glace onctueuse).",
         "Préparer 2 expressos bien serrés et chauds, les laisser tiédir 2 minutes (pas brûlants).",
         "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
@@ -100476,7 +100508,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -100525,7 +100557,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Verser le yaourt grec dans une étamine avec une pincée de sel, laisser égoutter 2h au frais (on obtient le labneh, un fromage frais épais).",
+        "Verser le skyr dans une étamine avec une pincée de sel, laisser égoutter 2h au frais (on obtient le labneh, un fromage frais épais).",
         "Couper le concombre en très petits dés (5 mm), le saler légèrement et laisser dégorger 10 minutes, puis presser.",
         "Mélanger le labneh avec l'ail écrasé, le jus du demi-citron et la moitié de la menthe ciselée.",
         "Incorporer les dés de concombre.",
@@ -100661,7 +100693,7 @@ if ("serviceWorker" in navigator) {
           "meat-fish"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           50,
           "g",
           "dairy"
@@ -100705,7 +100737,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Couper le rôti de veau cuit froid en fines tranches, puis en bouchées de 3 cm.",
-        "Préparer la sauce tonnato : mettre le thon égoutté, le yaourt grec, la moitié des câpres, le jaune d'œuf dur, le jus du demi-citron et l'huile d'olive dans le blender.",
+        "Préparer la sauce tonnato : mettre le thon égoutté, le skyr, la moitié des câpres, le jaune d'œuf dur, le jus du demi-citron et l'huile d'olive dans le blender.",
         "Mixer jusqu'à obtenir une sauce lisse et crémeuse (texture mayonnaise allégée).",
         "Goûter et poivrer (pas de sel, le thon et les câpres salent).",
         "Disposer les bouchées de veau sur un plat de service.",
@@ -101526,7 +101558,6 @@ if ("serviceWorker" in navigator) {
       "cost": 1.6,
       "kcal": 130,
       "tags": [
-        "vegan",
         "vegetarian",
         "quick",
         "no-cook",
@@ -101628,7 +101659,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           250,
           "g",
           "dairy"
@@ -101660,7 +101691,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Équeuter les fraises (en garder 2-3 pour la déco), les mixer au blender avec le basilic, le jus du demi-citron et le sirop d'érable.",
-        "Ajouter le yaourt grec, mixer 10 secondes juste pour homogénéiser (texture crème rose).",
+        "Ajouter le skyr, mixer 10 secondes juste pour homogénéiser (texture crème rose).",
         "Verser dans un récipient large à fond plat, placer au congélateur.",
         "Gratter à la fourchette toutes les 45 minutes pendant 3h (3-4 grattages) : on obtient une texture frozen yogurt onctueuse, sans cristaux durs.",
         "Au moment de servir, former des boules à la cuillère à glace.",
@@ -101681,7 +101712,6 @@ if ("serviceWorker" in navigator) {
       "cost": 1.7,
       "kcal": 110,
       "tags": [
-        "vegan",
         "vegetarian",
         "quick",
         "no-cook",
@@ -102468,7 +102498,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "b177",
-      "name": "Bowl yaourt grec abricots rôtis amande miel",
+      "name": "Bowl skyr abricots rôtis amande miel",
       "type": "breakfast",
       "cuisine": "italien",
       "seasons": [
@@ -102499,7 +102529,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           180,
           "g",
           "dairy"
@@ -102541,7 +102571,7 @@ if ("serviceWorker" in navigator) {
         "Arroser de la moitié du miel et parsemer de quelques aiguilles de romarin.",
         "Enfourner 12 minutes : les abricots deviennent fondants et légèrement caramélisés.",
         "Pendant ce temps, faire griller les amandes effilées et les flocons d'avoine 3 minutes à sec dans une poêle.",
-        "Mélanger le yaourt grec avec la vanille et le reste du miel.",
+        "Mélanger le skyr avec la vanille et le reste du miel.",
         "Répartir le yaourt dans 2 bols, déposer les abricots rôtis tièdes.",
         "Parsemer du mélange amandes-avoine grillé. Servir tiède ou frais — le contraste yaourt froid / abricots tièdes est délicieux."
       ]
@@ -102671,7 +102701,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -102709,7 +102739,7 @@ if ("serviceWorker" in navigator) {
       ],
       "steps": [
         "Retirer la peau et les pépins du melon, couper la chair en cubes (en garder quelques-uns pour la déco).",
-        "Mettre le melon, le yaourt grec, la menthe et le jus du demi-citron vert dans le blender.",
+        "Mettre le melon, le skyr, la menthe et le jus du demi-citron vert dans le blender.",
         "Mixer 30 secondes : texture épaisse et onctueuse (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, lisser le dessus.",
         "Disposer les cubes de melon réservés.",
@@ -103803,7 +103833,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           120,
           "g",
           "dairy"
@@ -103842,7 +103872,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Couper la rhubarbe en tronçons, la cuire 8 minutes dans une casserole avec le sirop d'érable et 2 cuillères à soupe d'eau (elle se défait en compote). Laisser refroidir.",
         "Équeuter les fraises (garder 2-3 pour la déco).",
-        "Mettre la compote de rhubarbe refroidie, les fraises, le yaourt grec et la vanille dans le blender.",
+        "Mettre la compote de rhubarbe refroidie, les fraises, le skyr et la vanille dans le blender.",
         "Mixer 30 secondes : texture épaisse rose (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, lisser le dessus.",
         "Faire griller les amandes effilées et les flocons d'avoine 3 minutes à sec.",
@@ -104675,7 +104705,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des167",
-      "name": "Compote rhubarbe fraise vanille yaourt grec",
+      "name": "Compote rhubarbe fraise vanille skyr",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -104713,7 +104743,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -104750,7 +104780,7 @@ if ("serviceWorker" in navigator) {
         "Ajouter les fraises coupées en quartiers, prolonger 2 minutes hors du feu (elles confisent légèrement sans se défaire totalement).",
         "Laisser tiédir puis placer 30 minutes au frais.",
         "Faire griller les amandes effilées 2 minutes à sec.",
-        "Répartir le yaourt grec dans 2 verrines, ajouter la compote rhubarbe-fraise.",
+        "Répartir le skyr dans 2 verrines, ajouter la compote rhubarbe-fraise.",
         "Parsemer d'amandes effilées grillées. Servir frais — l'acidité de la rhubarbe équilibre la douceur des fraises."
       ]
     },
@@ -105884,7 +105914,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -105919,7 +105949,7 @@ if ("serviceWorker" in navigator) {
         "Attendre 5 minutes, fouetter à nouveau (évite que le chia se prenne en bloc).",
         "Couvrir et placer au frigo toute la nuit (le chia gonfle et fige).",
         "Le matin, écraser légèrement la moitié des myrtilles à la fourchette avec le jus du demi-citron (coulis rustique).",
-        "Mélanger le chia pudding avec le yaourt grec pour le rendre plus crémeux.",
+        "Mélanger le chia pudding avec le skyr pour le rendre plus crémeux.",
         "Répartir dans 2 verres, alterner avec le coulis de myrtilles et les myrtilles entières.",
         "Faire griller les amandes effilées 2 minutes à sec, en parsemer le dessus. Servir frais."
       ]
@@ -106815,7 +106845,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -106855,7 +106885,7 @@ if ("serviceWorker" in navigator) {
         "Préparer les kefta : mélanger l'agneau haché avec l'oignon râpé, le persil et la moitié de la coriandre ciselés, le cumin, le paprika, la cannelle et 1 g de sel.",
         "Pétrir 2 minutes (la viande devient homogène et collante, gage de brochettes qui se tiennent).",
         "Façonner la viande en boudins allongés autour des pics à brochette (mains humides). Laisser raffermir 20 minutes au frais.",
-        "Préparer le tzatziki : râper le concombre, presser pour retirer l'eau, mélanger avec le yaourt grec, l'ail écrasé, la menthe ciselée, le jus du demi-citron et 0,5 g de sel.",
+        "Préparer le tzatziki : râper le concombre, presser pour retirer l'eau, mélanger avec le skyr, l'ail écrasé, la menthe ciselée, le jus du demi-citron et 0,5 g de sel.",
         "Faire chauffer le grill (ou poêle-gril) à feu vif.",
         "Griller les brochettes 10-12 minutes en les retournant régulièrement (dorées dehors, juste cuites dedans).",
         "Dresser les brochettes, parsemer du reste de coriandre.",
@@ -107609,7 +107639,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -107672,7 +107702,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter, laisser refroidir.",
         "Pocher le blanc de poulet 12-15 minutes dans une casserole d'eau frémissante salée (cuit à cœur, moelleux). Égoutter, laisser tiédir puis effilocher ou couper en cubes.",
-        "Préparer la sauce coronation : mélanger le yaourt grec, le curry en poudre, la moitié de la mangue mixée en purée, le jus du demi-citron vert et le sel.",
+        "Préparer la sauce coronation : mélanger le skyr, le curry en poudre, la moitié de la mangue mixée en purée, le jus du demi-citron vert et le sel.",
         "Mélanger le poulet avec la sauce coronation, laisser 30 minutes au frais (il s'imprègne).",
         "Faire griller les amandes effilées 2 minutes à sec.",
         "Couper le reste de mangue en dés, émincer l'oignon rouge.",
@@ -108729,7 +108759,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -108788,7 +108818,7 @@ if ("serviceWorker" in navigator) {
         "Couper les carottes en bâtonnets. Égoutter et sécher les pois chiches.",
         "Mélanger carottes et pois chiches avec 8 ml d'huile, le cumin, le paprika et 0,5 g de sel.",
         "Étaler sur une plaque, enfourner 22-25 minutes en remuant à mi-cuisson (carottes tendres, pois chiches croustillants).",
-        "Préparer la sauce yaourt : mélanger le yaourt grec, l'ail écrasé, le jus d'un demi-citron et une pincée de sel.",
+        "Préparer la sauce yaourt : mélanger le skyr, l'ail écrasé, le jus d'un demi-citron et une pincée de sel.",
         "Étaler la sauce yaourt au fond de 2 assiettes.",
         "Déposer les carottes et pois chiches rôtis encore tièdes par-dessus.",
         "Presser le jus du demi-citron restant, arroser du reste d'huile, parsemer de menthe et coriandre. Servir tiède — le contraste chaud-froid carottes rôties / yaourt frais."
@@ -108938,7 +108968,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -108999,7 +109029,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Mettre la chair d'avocat, le concombre épluché en morceaux, le yaourt grec, le bouillon froid, le jus d'un citron vert, l'ail, la moitié de la coriandre, le sel et l'huile dans le blender.",
+        "Mettre la chair d'avocat, le concombre épluché en morceaux, le skyr, le bouillon froid, le jus d'un citron vert, l'ail, la moitié de la coriandre, le sel et l'huile dans le blender.",
         "Mixer 1 minute jusqu'à obtenir un velouté parfaitement lisse et vert pâle.",
         "Goûter et ajuster (jus de citron, sel) selon préférence.",
         "Placer 1h au frigo pour servir bien glacé (la soupe froide se sert très fraîche).",
@@ -117986,7 +118016,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 150,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
@@ -118245,7 +118274,6 @@ if ("serviceWorker" in navigator) {
       "kcal": 160,
       "tags": [
         "vegetarian",
-        "vegan",
         "batch-friendly"
       ],
       "eq": [
@@ -118509,7 +118537,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des186",
-      "name": "Yaourt grec, poires rôties et noix",
+      "name": "Skyr, poires rôties et noix",
       "type": "dessert",
       "cuisine": "universel",
       "seasons": [
@@ -118540,7 +118568,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           120,
           "g",
           "dairy"
@@ -118568,7 +118596,7 @@ if ("serviceWorker" in navigator) {
         "Préchauffe le four à 190°C. Coupe les poires en quartiers, dépose-les dans un plat, saupoudre de cannelle.",
         "Enfourne 18 à 20 min, jusqu'à ce qu'elles soient tendres et légèrement dorées.",
         "Concasse les noix et torréfie-les 3 min à sec dans une poêle.",
-        "Répartis le yaourt grec dans les coupes, dépose les poires rôties tièdes dessus.",
+        "Répartis le skyr dans les coupes, dépose les poires rôties tièdes dessus.",
         "Arrose d'un filet de miel et parsème de noix. Sers aussitôt (chaud-froid)."
       ]
     },
@@ -120835,7 +120863,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des190",
-      "name": "Cerises rôties au miel et thym sur yaourt grec",
+      "name": "Cerises rôties au miel et thym sur skyr",
       "type": "dessert",
       "cuisine": "francais",
       "seasons": [
@@ -120883,7 +120911,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           200,
           "g",
           "dairy"
@@ -120901,7 +120929,7 @@ if ("serviceWorker" in navigator) {
         "Arrose-les du miel et du jus de citron, parsème de thym, puis mélange pour bien les enrober.",
         "Enfourne 15 à 18 minutes : les cerises doivent être tendres et avoir rendu un joli jus sirupeux. Laisse tiédir 5 minutes.",
         "Pendant ce temps, fais dorer les amandes effilées à sec dans une poêle 2 minutes à feu moyen, en surveillant pour qu'elles ne brûlent pas.",
-        "Répartis le yaourt grec dans deux coupes, dépose les cerises rôties tièdes et leur jus par-dessus, puis parsème d'amandes grillées."
+        "Répartis le skyr dans deux coupes, dépose les cerises rôties tièdes et leur jus par-dessus, puis parsème d'amandes grillées."
       ]
     },
     {
@@ -121129,7 +121157,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           60,
           "g",
           "dairy"
@@ -121162,7 +121190,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Plonge le filet de poulet dans une casserole d'eau frémissante salée. Laisse pocher 12 minutes à petit feu (l'eau tremble sans bouillir) : la chair doit être blanche à cœur, plus rosée.",
         "Égoutte le poulet et laisse-le tiédir 5 minutes, puis coupe-le en cubes de 1,5 cm.",
-        "Prépare la sauce : dans un saladier, mélange le yaourt grec, la moutarde, le jus de citron, du sel et du poivre.",
+        "Prépare la sauce : dans un saladier, mélange le skyr, la moutarde, le jus de citron, du sel et du poivre.",
         "Lave la pomme et coupe-la en petits dés (garde la peau, elle apporte des fibres). Arrose-la aussitôt d'un peu du jus de citron pour qu'elle ne noircisse pas.",
         "Coupe le céleri branche en fines demi-lunes après avoir retiré les gros fils avec un économe. Concasse les noix.",
         "Verse le poulet, la pomme, le céleri et les noix dans la sauce. Mélange bien pour tout enrober.",
@@ -121956,7 +121984,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des193",
-      "name": "Prunes rôties au miel et thym, yaourt grec et noix",
+      "name": "Prunes rôties au miel et thym, skyr et noix",
       "type": "dessert",
       "cuisine": "universel",
       "seasons": [
@@ -121999,7 +122027,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -122017,7 +122045,7 @@ if ("serviceWorker" in navigator) {
         "Répartis le miel sur les prunes (un tout petit filet sur chaque moitié) et effeuille le thym par-dessus.",
         "Enfourne 18-20 minutes : les prunes sont prêtes quand elles sont fondantes et légèrement caramélisées sur les bords, en rendant un peu de jus.",
         "Pendant ce temps, concasse grossièrement les cerneaux de noix et fais-les griller à sec 2 minutes dans une poêle pour révéler leur goût (surveille, ça brûle vite).",
-        "Verse le yaourt grec dans une coupe. Dépose les prunes rôties tièdes dessus avec leur jus.",
+        "Verse le skyr dans une coupe. Dépose les prunes rôties tièdes dessus avec leur jus.",
         "Parsème de noix grillées et sers aussitôt, quand le contraste tiède/froid est le meilleur."
       ]
     },
@@ -123067,7 +123095,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des195",
-      "name": "Yaourt grec, clémentine et éclats de noix au miel",
+      "name": "Skyr, clémentine et éclats de noix au miel",
       "type": "dessert",
       "cuisine": "universel",
       "seasons": [
@@ -123092,7 +123120,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           120,
           "g",
           "dairy"
@@ -123125,7 +123153,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Épluche la clémentine et sépare les quartiers. Coupe chaque quartier en deux ou trois morceaux.",
         "Concasse grossièrement les cerneaux de noix avec un couteau.",
-        "Répartis le yaourt grec dans deux petits bols ou verrines.",
+        "Répartis le skyr dans deux petits bols ou verrines.",
         "Dispose les morceaux de clémentine sur le yaourt.",
         "Parsème d'éclats de noix concassées.",
         "Arrose d'un filet de miel en le faisant couler en fin filet à l'aide d'une petite cuillère.",
@@ -124255,7 +124283,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           60,
           "g",
           "dairy"
@@ -124274,7 +124302,7 @@ if ("serviceWorker" in navigator) {
         "Porte à frémissement et laisse infuser 5 minutes.",
         "Dépose les demi-poires dans le sirop épicé, couvre et laisse pocher 15-18 minutes jusqu'à ce qu'une pointe de couteau s'enfonce facilement dans la chair.",
         "Retire les poires et fais réduire le liquide de cuisson 3-4 minutes à feu vif jusqu'à ce qu'il devienne légèrement sirupeux, puis ajoute le sirop d'érable.",
-        "Mélange le yaourt grec avec la moitié des pistaches concassées.",
+        "Mélange le skyr avec la moitié des pistaches concassées.",
         "Dresse chaque demi-poire tiède avec une cuillère de yaourt à la pistache, nappe d'un filet de sirop épicé réduit et parsème du reste de pistaches."
       ]
     },
@@ -125109,7 +125137,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -125153,7 +125181,7 @@ if ("serviceWorker" in navigator) {
         "Pendant ce temps, écrase grossièrement l'avocat à la fourchette avec un peu de jus de citron vert, sel et poivre.",
         "Réchauffe les tortillas de maïs quelques secondes de chaque côté dans une poêle sèche.",
         "Dresse l'assiette : tortillas de maïs, chou émincé, morceaux de cabillaud, avocat écrasé.",
-        "Termine avec une cuillère de yaourt grec et de la coriandre ciselée. Sers aussitôt."
+        "Termine avec une cuillère de skyr et de la coriandre ciselée. Sers aussitôt."
       ]
     },
     {
@@ -128812,7 +128840,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des203",
-      "name": "Mousse de yaourt grec au miel, grenade et pistaches",
+      "name": "Mousse de skyr au miel, grenade et pistaches",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -128838,7 +128866,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           100,
           "g",
           "dairy"
@@ -128869,7 +128897,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Dans un bol, fouette le yaourt grec avec le miel et l'eau de fleur d'oranger jusqu'à ce que le mélange soit lisse et mousseux.",
+        "Dans un bol, fouette le skyr avec le miel et l'eau de fleur d'oranger jusqu'à ce que le mélange soit lisse et mousseux.",
         "Coupe la grenade en deux. Au-dessus d'un bol, tape le dos de chaque moitié avec une cuillère pour faire tomber les grains (ça évite d'en mettre partout).",
         "Répartis la mousse de yaourt dans deux verres ou coupes.",
         "Parsème généreusement de grains de grenade et de pistaches concassées.",
@@ -130002,7 +130030,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des205",
-      "name": "Poêlée de pommes et coings à la cannelle, yaourt grec",
+      "name": "Poêlée de pommes et coings à la cannelle, skyr",
       "type": "dessert",
       "cuisine": "universel",
       "seasons": [
@@ -130056,7 +130084,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -130070,7 +130098,7 @@ if ("serviceWorker" in navigator) {
         "Ajoute les dés de pomme et la cannelle, poursuis la cuisson 6-7 minutes, jusqu'à ce que les fruits soient tendres mais gardent un peu de tenue (ils ne doivent pas se transformer en compote).",
         "Vérifie la cuisson en piquant un morceau de coing avec la pointe d'un couteau : il doit s'enfoncer sans résistance.",
         "Répartis la poêlée tiède dans une coupelle.",
-        "Ajoute une belle cuillère de yaourt grec par-dessus et sers aussitôt."
+        "Ajoute une belle cuillère de skyr par-dessus et sers aussitôt."
       ]
     },
     {
@@ -131217,7 +131245,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des207",
-      "name": "Shrikhand (yaourt grec égoutté à la cardamome, safran et pistaches)",
+      "name": "Shrikhand (skyr égoutté à la cardamome, safran et pistaches)",
       "type": "dessert",
       "cuisine": "indien",
       "seasons": [
@@ -131242,7 +131270,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           120,
           "g",
           "dairy"
@@ -131279,7 +131307,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Verse le yaourt grec dans une passoire tapissée d'un linge propre, au-dessus d'un bol. Laisse-le égoutter 2 heures au frais : il perd son eau et devient très épais (c'est la texture du shrikhand).",
+        "Verse le skyr dans une passoire tapissée d'un linge propre, au-dessus d'un bol. Laisse-le égoutter 2 heures au frais : il perd son eau et devient très épais (c'est la texture du shrikhand).",
         "Fais tiédir la cuillère de lait, ajoute les filaments de safran et laisse infuser 5 minutes : le lait devient doré et parfumé.",
         "Dans un bol, mélange le yaourt égoutté avec le miel, la cardamome et le lait safrané. Fouette jusqu'à obtenir une crème lisse.",
         "Place au frais 30 minutes pour que les saveurs se développent.",
@@ -136191,7 +136219,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           120,
           "g",
           "dairy"
@@ -136244,7 +136272,7 @@ if ("serviceWorker" in navigator) {
         "Dans une casserole, réchauffe les pois chiches avec un tout petit fond d'eau, 5 minutes à feu doux, puis égoutte à nouveau et réserve au chaud.",
         "Coupe le pain pita complet en morceaux grossiers (environ 2 cm). Dans une poêle sèche, sans matière grasse, à feu moyen, fais-le griller 3-4 minutes en remuant souvent, jusqu'à ce qu'il devienne bien doré et croustillant comme des chips.",
         "Dans une petite poêle, fais toaster les pignons de pin à sec, à feu doux, 2 minutes en remuant sans arrêt : surveille bien, ils passent du doré au noir en quelques secondes.",
-        "Dans un bol, mélange le yaourt grec, l'ail écrasé et le jus de citron. Sale légèrement.",
+        "Dans un bol, mélange le skyr, l'ail écrasé et le jus de citron. Sale légèrement.",
         "Dans une assiette creuse, dispose d'abord le pain pita grillé au fond, puis les pois chiches chauds par-dessus.",
         "Nappe généreusement de la sauce au yaourt, arrose du reste d'huile d'olive, parsème de pignons toastés et saupoudre de paprika doux.",
         "Sers immédiatement, tant que le pain pita est encore croustillant : il se ramollit vite au contact du yaourt."
@@ -136928,7 +136956,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des217",
-      "name": "Yaourt grec, figues séchées pochées à la cannelle et amandes",
+      "name": "Skyr, figues séchées pochées à la cannelle et amandes",
       "type": "dessert",
       "cuisine": "universel",
       "seasons": [
@@ -136955,7 +136983,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           150,
           "g",
           "dairy"
@@ -136984,7 +137012,7 @@ if ("serviceWorker" in navigator) {
         "Coupe les figues séchées en quartiers, ajoute-les dans l'eau chaude. Baisse le feu et laisse pocher à tout petits frémissements 8-10 minutes, jusqu'à ce qu'elles gonflent légèrement et deviennent moelleuses (elles doivent s'écraser facilement entre les doigts).",
         "Retire le bâton de cannelle. Égoutte les figues et laisse-les tiédir 5 minutes.",
         "Dans une petite poêle sèche, fais toaster les amandes effilées à feu doux 2 minutes en remuant souvent, jusqu'à ce qu'elles soient dorées et parfumées : surveille bien, elles brûlent vite.",
-        "Verse le yaourt grec dans un bol ou une verrine.",
+        "Verse le skyr dans un bol ou une verrine.",
         "Dépose les quartiers de figues tiédies par-dessus.",
         "Parsème des amandes toastées.",
         "Sers tiède ou frais, selon ta préférence."
@@ -138246,7 +138274,7 @@ if ("serviceWorker" in navigator) {
           "meat-fish"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           40,
           "g",
           "dairy"
@@ -138292,7 +138320,7 @@ if ("serviceWorker" in navigator) {
         "Dans une casserole, porte à frémissement (de petites bulles, pas une grosse ébullition) de l'eau salée avec un peu de poivre en grains. Dépose la pièce de veau entière et laisse-la pocher 15 min à feu doux : la viande doit rester légèrement rosée au centre, pas sèche.",
         "Égoutte la viande et laisse-la refroidir complètement à température ambiante, puis enveloppe-la bien serrée dans du film alimentaire. Mets-la au réfrigérateur au moins 8h (idéalement la veille) : le froid raffermit la viande pour pouvoir la trancher très finement ensuite.",
         "Pendant que la viande refroidit, prépare la sauce : égoutte bien le thon au naturel pour retirer le maximum d'eau (presse-le dans une passoire avec le dos d'une cuillère).",
-        "Dans un bol, écrase le thon à la fourchette avec le yaourt grec jusqu'à obtenir une texture crémeuse mais encore un peu grumeleuse (pas totalement lisse, pour garder du caractère).",
+        "Dans un bol, écrase le thon à la fourchette avec le skyr jusqu'à obtenir une texture crémeuse mais encore un peu grumeleuse (pas totalement lisse, pour garder du caractère).",
         "Ajoute les câpres égouttées, le jus de citron et l'huile d'olive. Mélange bien et rectifie le sel et le poivre.",
         "Une fois la viande bien froide, tranche-la en lamelles aussi fines que possible avec un couteau bien aiguisé.",
         "Dresse les tranches de veau côte à côte sur une assiette plate, sans les superposer.",
@@ -140735,7 +140763,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           30,
           "g",
           "dairy"
@@ -140769,7 +140797,7 @@ if ("serviceWorker" in navigator) {
         "Si besoin, décortiquer les crevettes cuites et vérifier que les bulots sont bien décoquillés.",
         "Dans un bol, fouetter le jaune d'œuf avec la moutarde de Dijon jusqu'à ce que le mélange blanchisse légèrement.",
         "Verser l'huile d'olive en tout petit filet tout en fouettant énergiquement sans arrêter, jusqu'à ce que la mayonnaise épaississe comme une crème lisse et brillante.",
-        "Incorporer le yaourt grec et le jus de citron pour alléger la mayonnaise, puis saler et poivrer.",
+        "Incorporer le skyr et le jus de citron pour alléger la mayonnaise, puis saler et poivrer.",
         "Disposer la salade (roquette, mâche) au fond d'une assiette ou d'un plateau, puis répartir harmonieusement les crevettes et les bulots.",
         "Servir la mayonnaise allégée au citron à part, dans un petit ramequin, pour que chacun se serve selon son goût."
       ]
@@ -143026,7 +143054,7 @@ if ("serviceWorker" in navigator) {
           "meat-fish"
         ],
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           60,
           "g",
           "dairy"
@@ -143089,7 +143117,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Coupe le filet de porc en cubes réguliers de 3 cm environ.",
         "Dans un bol, mélange la moitié de l'huile d'olive, l'origan, l'ail écrasé, le jus de citron, le sel et le poivre. Enrobe les cubes de porc de cette marinade et laisse reposer 30 minutes au frais.",
-        "Pendant ce temps, prépare le tzatziki : râpe le concombre (en garder une partie pour la salade), presse-le fermement dans un torchon propre pour en extraire l'eau. Mélange-le avec le yaourt grec, l'ail restant écrasé et l'aneth ciselé.",
+        "Pendant ce temps, prépare le tzatziki : râpe le concombre (en garder une partie pour la salade), presse-le fermement dans un torchon propre pour en extraire l'eau. Mélange-le avec le skyr, l'ail restant écrasé et l'aneth ciselé.",
         "Coupe le reste du concombre et la tomate en petits dés, émince l'oignon rouge très finement. Mélange dans un bol avec le reste de l'huile d'olive et une pincée de sel : c'est ta salade.",
         "Enfile les cubes de porc marinés sur des piques à brochette (trempe les piques en bois 10 minutes dans l'eau avant, pour qu'ils ne brûlent pas).",
         "Fais chauffer le grill ou une poêle-gril à feu vif.",
@@ -143506,7 +143534,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des232",
-      "name": "Yaourt grec, fraises et pistaches au miel",
+      "name": "Skyr, fraises et pistaches au miel",
       "type": "dessert",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -143532,7 +143560,7 @@ if ("serviceWorker" in navigator) {
       ],
       "ing": [
         [
-          "Yaourt grec",
+          "Skyr (ou yaourt grec)",
           120,
           "g",
           "dairy"
@@ -143565,7 +143593,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Lave les fraises, retire les queues vertes, puis coupe-les en quartiers.",
         "Concasse grossièrement les pistaches non salées avec le plat d'un couteau.",
-        "Dépose le yaourt grec dans une coupelle ou une verrine.",
+        "Dépose le skyr dans une coupelle ou une verrine.",
         "Dispose les quartiers de fraises par-dessus.",
         "Arrose d'un filet de miel (fais-le tiédir 5 secondes au micro-ondes s'il est trop épais pour couler facilement).",
         "Parsème des pistaches concassées et de quelques feuilles de menthe ciselées. Sers immédiatement."
@@ -143887,7 +143915,7 @@ if ("serviceWorker" in navigator) {
           "pantry"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -143920,7 +143948,7 @@ if ("serviceWorker" in navigator) {
       "steps": [
         "Rince les lentilles germées sous l'eau froide dans une passoire, égoutte-les bien.",
         "Coupe le concombre et la tomate en petits dés réguliers. Émince l'oignon rouge très finement.",
-        "Dans un petit bol, mélange le yaourt grec nature avec le curcuma jusqu'à obtenir une couleur bien jaune et homogène.",
+        "Dans un petit bol, mélange le skyr avec le curcuma jusqu'à obtenir une couleur bien jaune et homogène.",
         "Chauffe l'huile de coco dans une petite poêle à feu moyen. Ajoute les graines de moutarde : elles doivent crépiter et sauter après quelques secondes (baisse le feu si ça fume, c'est le signal qu'elles sont prêtes).",
         "Hors du feu, verse aussitôt les graines de moutarde grillées, avec leur huile, sur le yaourt au curcuma. Mélange.",
         "Dans un grand bol, mélange les lentilles germées, le concombre, la tomate et l'oignon rouge. Ajoute la sauce au yaourt et mélange bien pour tout enrober.",
@@ -145811,7 +145839,7 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "des237",
-      "name": "Pêches rôties au miel, romarin et yaourt grec",
+      "name": "Pêches rôties au miel, romarin et skyr",
       "type": "dessert",
       "cuisine": "universel",
       "seasons": [
@@ -145852,7 +145880,7 @@ if ("serviceWorker" in navigator) {
           "produce"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           80,
           "g",
           "dairy"
@@ -145876,8 +145904,8 @@ if ("serviceWorker" in navigator) {
         "Dépose les deux moitiés de pêche, côté coupé vers le haut, dans un petit plat allant au four.",
         "Arrose chaque moitié d'un peu de miel et d'un filet d'huile d'olive, puis dépose la branche de romarin frais sur le dessus.",
         "Enfourne 15-18 minutes, jusqu'à ce que la pêche soit tendre et légèrement caramélisée sur les bords (vérifie avec la pointe d'un couteau).",
-        "Pendant la cuisson, mélange le yaourt grec nature avec le jus de citron dans un petit bol.",
-        "Retire les pêches rôties du four, laisse tiédir 2 minutes, retire la branche de romarin cuite (elle a juste parfumé, on ne la mange pas) et nappe de yaourt grec citronné avant de servir."
+        "Pendant la cuisson, mélange le skyr avec le jus de citron dans un petit bol.",
+        "Retire les pêches rôties du four, laisse tiédir 2 minutes, retire la branche de romarin cuite (elle a juste parfumé, on ne la mange pas) et nappe de skyr citronné avant de servir."
       ]
     },
     {
@@ -147292,7 +147320,7 @@ if ("serviceWorker" in navigator) {
           "spices"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           60,
           "g",
           "dairy"
@@ -147346,7 +147374,7 @@ if ("serviceWorker" in navigator) {
         "Sale légèrement et débarrasse-les dans une assiette tapissée de papier absorbant pour enlever l'excès d'huile. Laisse tiédir.",
         "Pendant ce temps, coupe l'oignon rouge en tout petits dés et la tomate en dés de taille similaire. Égrène la grenade au-dessus d'un bol (coupe-la en deux et tape le dos avec une cuillère pour détacher les graines, en retirant la membrane blanche amère).",
         "Dans un petit bol, détends la pâte de tamarin avec un peu d'eau tiède pour obtenir une sauce fluide et légèrement acidulée.",
-        "Dans un autre bol, mélange le yaourt grec nature avec le jus de citron vert, pour l'assouplir et le rafraîchir.",
+        "Dans un autre bol, mélange le skyr avec le jus de citron vert, pour l'assouplir et le rafraîchir.",
         "Dans les assiettes de service, dépose les pois chiches croustillants encore tièdes, puis répartis l'oignon rouge, la tomate et la grenade par-dessus.",
         "Nappe de yaourt citronné et de sauce tamarin en filets croisés, puis parsème de coriandre fraîche ciselée. Sers immédiatement, tant que les pois chiches sont encore croustillants."
       ]
@@ -154616,7 +154644,7 @@ if ("serviceWorker" in navigator) {
           "dairy"
         ],
         [
-          "Yaourt grec nature",
+          "Skyr (ou yaourt grec)",
           40,
           "g",
           "dairy"
@@ -154665,7 +154693,7 @@ if ("serviceWorker" in navigator) {
         ]
       ],
       "steps": [
-        "Sors le fromage blanc et le yaourt grec du frigo. Dans un bol, mélange-les à la cuillère avec le sirop d'érable et la vanille en poudre, jusqu'à obtenir une crème bien lisse et homogène.",
+        "Sors le fromage blanc et le skyr du frigo. Dans un bol, mélange-les à la cuillère avec le sirop d'érable et la vanille en poudre, jusqu'à obtenir une crème bien lisse et homogène.",
         "Lave les fraises, retire les queues (= les petites tiges vertes) avec la pointe d'un couteau, puis coupe-les en petits dés d'environ 1 cm. Garde quelques fruits rouges entiers de côté pour la déco finale.",
         "Arrose tous les fruits rouges coupés avec le jus de citron : ça les empêche de noircir et relève leur goût.",
         "Émiette le biscuit cuillère en petites miettes grossières avec les doigts (pas besoin d'outil) : ce sera une toute fine base croquante, pas une couche épaisse.",

@@ -114,7 +114,7 @@ ALLERGEN_TRIGGERS = {
                   "moule", "coquillage", "calamar", "calamars", "encornet", "poulpe",
                   "seiche", "noix de saint-jacques", "saint-jacques"],
     "eggs": ["œuf", "oeuf", "jaune d'œuf", "blanc d'œuf", "jaune d'oeuf", "blanc d'oeuf"],
-    "lactose": ["lait", "yaourt", "fromage", "crème", "creme", "beurre", "mascarpone",
+    "lactose": ["lait", "yaourt", "skyr", "fromage", "crème", "creme", "beurre", "mascarpone",
                 "ricotta", "feta", "parmesan", "comté", "comte", "mozzarella", "burrata",
                 "chèvre", "chevre", "brebis", "emmental", "gruyère", "gruyere",
                 "cheddar", "manchego"],
