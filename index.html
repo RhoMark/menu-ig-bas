@@ -321,7 +321,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment l'app gère un foyer avec plusieurs profils ?",
-          "a": "Le seuil CG du foyer = MIN des seuils par membre. Logique : un menu compatible avec le membre le plus contraignant convient automatiquement à tous les autres ; l'inverse est faux. Même règle que pour les allergènes. Exemple : foyer 2 adultes (sain × 1, SOPK × 1) + 2 ados (sain × 2) → seuil famille = 80 CG/jour (à cause du SOPK)."
+          "a": "Le seuil CG du foyer = MIN des seuils par membre. Logique : un menu compatible avec le membre le plus contraignant convient automatiquement à tous les autres ; l'inverse est faux. Même règle que pour les allergènes. Exemple : foyer 2 adultes (sain × 1, SOPK × 1) + 2 ados (sain × 2) → seuil famille = 80 CG/jour (à cause du SOPK). Pour les goûts, la logique est inverse et volontairement souple : une exclusion préférentielle n'écarte une recette que si TOUS les membres l'excluent, et un « ❤️ J'aime » favorise une recette d'autant plus que de membres l'aiment (Paramètres → Membres), sans jamais passer devant les allergies ni les repères nutritionnels."
         },
         {
           "q": "Diabète T1, T2, gestationnel : différences ?",
@@ -363,7 +363,7 @@ if ("serviceWorker" in navigator) {
       "qa": [
         {
           "q": "Pourquoi telle recette n'est jamais proposée ?",
-          "a": "Vérifie : (1) Note attribuée ≥ 3★ — les recettes ≤ 2★ sont exclues automatiquement. (2) Saison — la recette est-elle compatible avec la saison courante ? (3) Allergènes — un membre est-il allergique à un ingrédient ? (4) Équipement — la recette demande-t-elle un four/blender que tu n'as pas coché ? (5) Anti-récurrence 14 jours — récemment proposée. (6) Niveau de cuisine. Si malgré tout absente, ouvre la fiche depuis la Bibliothèque pour voir les filtres bloquants."
+          "a": "Vérifie : (1) Note attribuée ≥ 3★ — les recettes ≤ 2★ sont exclues automatiquement. (2) Saison — la recette est-elle compatible avec la saison courante ? (3) Allergènes — un membre est-il allergique à un ingrédient ? (4) Équipement — la recette demande-t-elle un four/blender que tu n'as pas coché ? (5) Anti-récurrence 14 jours — récemment proposée. (6) Niveau de cuisine. (7) Exclusions préférentielles — tous les membres excluent-ils un de ses ingrédients ? (8) Repères nutritionnels — la semaine a-t-elle déjà atteint le plafond de viande rouge, d'œufs ou de charcuterie ? À l'inverse, un « ❤️ J'aime » rend une recette plus probable mais ne la garantit pas. Si malgré tout absente, ouvre la fiche depuis la Bibliothèque pour voir les filtres bloquants."
         },
         {
           "q": "Anti-récurrence : ça marche comment ?",
@@ -395,7 +395,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Combien de recettes contient le catalogue ?",
-          "a": "775 recettes au 18 mai 2026 (V2.99.11), réparties entre 5 types de repas (petit-déjeuner, déjeuner, dîner, snack, dessert) et 8 cuisines (française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, universelle). Le catalogue s'enrichit régulièrement par lots de 12 recettes, en priorisant l'équilibre des cuisines et la saisonnalité (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet). Toutes les recettes respectent l'objectif IG bas (CG ≤ 8 sur snacks/desserts, ≤ 12 sur déjeuner/dîner) et utilisent des dénominations qualifiées (pas de \"Lait\" seul, on précise demi-écrémé, amande, coco, etc.)."
+          "a": "1500 recettes au 13 octobre 2026 (V2.109.0) : 439 déjeuners, 426 dîners, 253 desserts, 192 goûters/en-cas et 190 petits-déjeuners, dont 248 recettes de fête. Elles couvrent 8 cuisines (française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, universelle) et les 4 saisons. Le catalogue s'enrichit régulièrement par lots, en priorisant l'équilibre des cuisines et la saisonnalité (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet). Chaque nouvelle recette passe un contrôle automatique (allergènes, dénominations qualifiées — pas de « Lait » seul, on précise demi-écrémé, amande, coco… —, doublons, charge glycémique plafonnée par type de repas) ; la CG de chaque recette est affichée sur sa fiche."
         },
         {
           "q": "Quelles cuisines sont couvertes et comment sont-elles équilibrées ?",
@@ -603,11 +603,11 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pictogrammes du modal recette (fiche détaillée)",
-          "a": "⏱ temps de préparation actif. 🔥 temps de cuisson. ❄️ repos passif (frigo, marinade, prise au froid). ⏰ délai d'avance minimum requis (ex : 3h à l'avance) ou 🌙 la veille. 📊 niveau de difficulté (étoiles 1 à 3). 🔢 calories par portion. 🗓 saison(s) où la recette est proposée. ⚠️ hors saison (en rouge orangé) si la recette ne correspond pas à la saison courante mais le filtre saisonnier est désactivé. 🍱 recette préparable à l'avance (batch-friendly, conservable 3-4 jours)."
+          "a": "⏱ temps de préparation actif. 🔥 temps de cuisson. ❄️ repos passif (frigo, marinade, prise au froid). ⏰ délai d'avance minimum requis (ex : 3h à l'avance) ou 🌙 la veille. 📊 niveau de difficulté (étoiles 1 à 3). 🔢 calories par portion. 🗓 saison(s) où la recette est proposée. ⚠️ hors saison (en rouge orangé) si la recette ne correspond pas à la saison courante mais le filtre saisonnier est désactivé. 🍱 recette préparable à l'avance (batch-friendly, conservable 3-4 jours). 🖨️ imprimer la fiche (ou « Enregistrer en PDF » depuis la fenêtre d'impression). 📄 télécharger directement la fiche en PDF. ❤️ badge « Prénom ❤️ ingrédient » : un membre aime un ingrédient de cette recette (affiché à l'écran seulement, jamais imprimé)."
         },
         {
           "q": "Pictogrammes de navigation et vues",
-          "a": "📅 / 🗓️ vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘️ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %)."
+          "a": "📅 / 🗓️ vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘️ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %). ⭐ filtre favoris de la bibliothèque. 💚 filtre « Ce qu'on aime » : uniquement les recettes contenant un ingrédient aimé par un membre (visible dès qu'un « J'aime » est renseigné)."
         }
       ]
     },
@@ -159381,8 +159381,8 @@ const TUTORIAL_STEPS = [
   {
     emoji: "📖",
     title: "Fiche recette & filtres",
-    body: "Clique sur un slot pour ouvrir la recette : ingrédients, étapes (style « ado qui cuisine », gestes définis), badges CG/IG, allergènes, kcal, temps. Note tes recettes (1-5★) — les ≤2★ sont exclues.",
-    highlight: "Bibliothèque consultable indépendamment du menu, avec filtres par cuisine, type, saison, allergie, et tags (batch-friendly, vegetarian, quick…).",
+    body: "Clique sur un slot pour ouvrir la recette : ingrédients, étapes (style « ado qui cuisine », gestes définis), badges CG/IG, allergènes, kcal, temps. Note tes recettes (1-5★) — les ≤2★ sont exclues. Imprime-la (🖨️) ou télécharge-la en PDF (📄).",
+    highlight: "Dis aussi ce que chacun aime (Paramètres → Membres → ❤️) : ces recettes reviennent plus souvent. Bibliothèque consultable indépendamment du menu, avec filtres (type, favoris ⭐, « 💚 Ce qu'on aime ») et recherche multi-ingrédients (noix + poire).",
   },
   {
     emoji: "🛒",
