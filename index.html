@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.107.2</title>
+<title>Menu IG Bas — V2.108.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -160,7 +160,14 @@ if ("serviceWorker" in navigator) {
      Les pages PrintMenuPage / PrintShoppingPage ne portent volontairement pas
      de classes dark: ; ce reset ne sert qu'à neutraliser un éventuel <html
      class="dark"> qui s'appliquerait à des éléments imprimés. */
+  /* V2.108.0 — Fiche recette (portail enfant de <body>) : hors écran en
+     temps normal (mais rendue, pour html2pdf), seule visible à l'impression.
+     :has() garantit qu'un éventuel body.printing-recipe orphelin (afterprint
+     non reçu) ne masque jamais l'impression du menu ou de la liste. */
+  .recipe-print-root { position: fixed; left: -10000px; top: 0; width: 190mm; }
   @media print {
+    body.printing-recipe:has(> .recipe-print-root) > *:not(.recipe-print-root) { display: none !important; }
+    body.printing-recipe .recipe-print-root { position: static; width: auto; }
     .no-print { display: none !important; }
     html.dark, html.dark body { background: white !important; color: #000 !important; }
     body { background: white !important; }
@@ -452,6 +459,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Comment exporter le menu ou la liste de courses en PDF ?",
           "a": "Deux modes : (1) bouton 🖨️ « Imprimer » → ouvre le dialogue d'impression du navigateur ; tu peux y choisir « Enregistrer au format PDF » comme imprimante (option disponible sur tous les navigateurs et OS). (2) bouton 📄 « PDF » → téléchargement direct sans dialogue, fichier daté automatiquement (ex : menu-2026-05-15.pdf, liste-courses-2026-05-15.pdf). La 1re utilisation télécharge la bibliothèque html2pdf (~900 Ko, bundle local, pas de CDN) ; ensuite c'est instantané grâce au cache hors-ligne. Tout reste 100 % local : aucune donnée n'est envoyée nulle part."
+        },
+        {
+          "q": "Comment imprimer une recette ou l'enregistrer en PDF ?",
+          "a": "Depuis V2.108.0, ouvre la fiche d'une recette : deux boutons apparaissent en haut à droite, à côté de ✕. 🖨️ ouvre la fenêtre d'impression de ton appareil avec une fiche A4 propre (sur iPhone/iPad et Mac, cette fenêtre propose aussi « Enregistrer en PDF » ou « Partager »). 📄 télécharge directement un fichier PDF nommé d'après la recette. La fiche contient : temps, difficulté, kcal, CG, les allergènes présents, les ingrédients avec des cases à cocher, et les étapes numérotées. Les quantités sont celles affichées dans la fiche au moment de l'export : si tu l'ouvres depuis ton menu, elles tiennent compte des présents et des invités de ce repas ; depuis la bibliothèque, elles sont calculées pour toute la famille. Confidentialité : le PDF liste les allergènes de la recette mais jamais les prénoms des membres concernés, pour que tu puisses le partager sans exposer de données de santé. Le fichier est généré entièrement sur ton appareil, rien n'est envoyé sur Internet."
         },
         {
           "q": "D'où viennent les prix utilisés pour calculer le coût des recettes ?",
@@ -160271,15 +160282,7 @@ function App({initialState}) {
       if (wasDark) html.classList.remove("dark");
       try {
         // Lazy-load html2pdf au 1er usage (cache SW après).
-        if (typeof window.html2pdf === "undefined") {
-          await new Promise((resolve, reject) => {
-            const s = document.createElement("script");
-            s.src = "html2pdf.bundle.min.js";
-            s.onload = resolve;
-            s.onerror = () => reject(new Error("html2pdf load failed"));
-            document.head.appendChild(s);
-          });
-        }
+        await loadHtml2Pdf();
         // Attend un tick pour laisser React rendre la PrintMenuPage/PrintShoppingPage
         // et le retrait de .dark se propager dans les styles.
         await new Promise(r => setTimeout(r, 400));
@@ -162163,6 +162166,83 @@ function ReplaceDialog({day, meal, poolType, season, profile, currentId, feastMo
   );
 }
 
+// V2.108.0 — Lazy-load html2pdf (partagé menu / liste / fiche recette).
+// 906 KB chargés au 1er export seulement, puis servis par le cache SW.
+function loadHtml2Pdf() {
+  if (typeof window.html2pdf !== "undefined") return Promise.resolve();
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = "html2pdf.bundle.min.js";
+    s.onload = resolve;
+    s.onerror = () => reject(new Error("html2pdf load failed"));
+    document.head.appendChild(s);
+  });
+}
+
+// V2.108.0 — Fiche recette imprimable / exportable PDF (A4 portrait).
+// Styles inline (pas de classes dark:) → rendu identique à l'écran, à
+// l'impression et dans html2canvas, quel que soit le thème de l'app.
+// Privacy : liste les allergènes de la recette mais JAMAIS les noms des
+// membres concernés (le PDF peut être partagé hors de l'appareil).
+function RecipePrintSheet({recipe, mult, qtyLabel}) {
+  const gly = computeRecipeGlycemic(recipe);
+  const macros = computeRecipeMacros(recipe);
+  const advance = recipeAdvanceInfo(recipe);
+  const ink = "#0f172a", muted = "#475569", green = "#047857";
+  const meta = [
+    `⏱ Préparation ${recipe.prep} min`,
+    `🔥 Cuisson ${recipe.cook} min`,
+    recipe.rest > 0 ? `❄️ Repos ${recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10} h` : `${recipe.rest} min`}` : null,
+    `📊 Difficulté ${"★".repeat(recipe.diff)}${"☆".repeat(Math.max(0, 3 - recipe.diff))}`,
+    `🔢 ${recipeKcal(recipe)} kcal/pers`,
+    gly ? `📈 CG ${gly.cg} (${glycemicTier(gly.cg) === "low" ? "bas" : glycemicTier(gly.cg) === "medium" ? "modéré" : "élevé"})` : null,
+    macros ? `P ${macros.protein} g · L ${macros.fat} g · G ${macros.carbs} g` : null,
+  ].filter(Boolean);
+  return (
+    <div className="recipe-print-sheet" style={{background: "#fff", color: ink, padding: "8mm", fontSize: "11pt", lineHeight: 1.45, fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif"}}>
+      <div style={{borderBottom: `2px solid ${green}`, paddingBottom: "3mm", marginBottom: "4mm"}}>
+        <h1 style={{fontSize: "18pt", fontWeight: 700, color: green, margin: 0}}>{recipe.name}</h1>
+        <p style={{fontSize: "9.5pt", color: muted, margin: "2mm 0 0"}}>{meta.join("  ·  ")}</p>
+        {advance && (
+          <p style={{fontSize: "10pt", color: "#92400e", fontWeight: 600, margin: "2mm 0 0"}}>{advance.icon} À commencer {advance.label} avant le service</p>
+        )}
+      </div>
+      {recipe.allergens?.length > 0 && (
+        <div style={{border: "1.5px solid #dc2626", background: "#fef2f2", color: "#991b1b", borderRadius: "2mm", padding: "2mm 3mm", marginBottom: "4mm", fontWeight: 600}}>
+          ⚠️ Contient : {recipe.allergens.map(a => dataRef.allergenLabel(a)).join(", ")}
+        </div>
+      )}
+      <h2 style={{fontSize: "13pt", fontWeight: 700, margin: "0 0 1.5mm"}}>
+        🧺 Ingrédients <span style={{fontSize: "9pt", fontWeight: 400, color: muted}}>{qtyLabel}</span>
+      </h2>
+      <table style={{width: "100%", borderCollapse: "collapse", marginBottom: "5mm"}}>
+        <tbody>
+          {recipe.ing.map(([name, qty, unit, cat], i) => (
+            <tr key={i} style={{borderBottom: "1px dashed #cbd5e1", breakInside: "avoid"}}>
+              <td style={{padding: "1mm 0"}}>☐ {name}</td>
+              <td style={{padding: "1mm 0", textAlign: "right", whiteSpace: "nowrap", fontFamily: "ui-monospace, monospace", color: muted}}>
+                {formatQty(scaleQty(qty, mult, name, cat), unit, name)}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <h2 style={{fontSize: "13pt", fontWeight: 700, margin: "0 0 1.5mm"}}>👨‍🍳 Étapes</h2>
+      <ol style={{margin: 0, paddingLeft: 0, listStyle: "none"}}>
+        {recipe.steps.map((s, i) => (
+          <li key={i} style={{display: "flex", gap: "3mm", marginBottom: "2.5mm", breakInside: "avoid", pageBreakInside: "avoid"}}>
+            <span style={{flexShrink: 0, width: "6.5mm", height: "6.5mm", borderRadius: "50%", background: green, color: "#fff", fontWeight: 700, fontSize: "9.5pt", display: "flex", alignItems: "center", justifyContent: "center"}}>{i + 1}</span>
+            <span>{s}</span>
+          </li>
+        ))}
+      </ol>
+      <p style={{marginTop: "6mm", paddingTop: "2mm", borderTop: "1px solid #e2e8f0", fontSize: "8pt", color: "#94a3b8"}}>
+        🌿 {document.title} · imprimé le {new Date().toLocaleDateString("fr-FR")} · CG : référence Harvard School of Public Health / GIF Sydney
+      </p>
+    </div>
+  );
+}
+
 // ----- Recipe Modal --------------------------------------------------------
 function RecipeModal({recipe, profile, season = null, attendees, guests = null, guestRatios = null, ratings, recentUsageCount = 0, onRate, onClose, isFavorite = false, onToggleFavorite = null}) {
   const hasContext = Array.isArray(attendees);
@@ -162186,7 +162266,67 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
     : (hasContext || guestN > 0)
       ? mealEquivalents(profile, attendees, guests, guestRatios)
       : totalEquivalents(profile);
+  const qtyLabel = isExternal
+    ? `(famille complète à titre indicatif, soit ${mult.toFixed(1)} équiv. adultes)`
+    : isPartial
+    ? `(pour ${nPresent} présent${nPresent>1?"s":""} sur ${nAll}${guestN>0?` + ${guestN} invité${guestN>1?"s":""}`:""}, soit ${mult.toFixed(1)} équiv. adultes)`
+    : `(pour la famille${guestN>0?` + ${guestN} invité${guestN>1?"s":""}`:""}, soit ${mult.toFixed(1)} équiv. adultes)`;
+  // V2.108.0 — Export fiche recette : "print" (dialogue d'impression natif,
+  // qui propose aussi « Enregistrer en PDF ») ou "pdf" (fichier direct via
+  // html2pdf). La fiche est rendue par portail en enfant direct de <body>,
+  // hors écran ; en impression, le CSS `body.printing-recipe` masque tout
+  // le reste. Les quantités imprimées = celles affichées (mult du slot).
+  const [exportMode, setExportMode] = useState(null); // null | "print" | "pdf"
+  const sheetRootRef = useRef(null);
+  useEffect(() => {
+    if (!exportMode) return;
+    let cancelled = false;
+    const body = document.body;
+    if (exportMode === "print") {
+      const done = () => {
+        body.classList.remove("printing-recipe");
+        window.removeEventListener("afterprint", done);
+        if (!cancelled) setExportMode(null);
+      };
+      body.classList.add("printing-recipe");
+      window.addEventListener("afterprint", done);
+      const t = setTimeout(() => window.print(), 150);
+      return () => { cancelled = true; clearTimeout(t); window.removeEventListener("afterprint", done); body.classList.remove("printing-recipe"); };
+    }
+    (async () => {
+      try {
+        await loadHtml2Pdf();
+        await new Promise(r => setTimeout(r, 150));
+        const el = sheetRootRef.current?.querySelector(".recipe-print-sheet");
+        if (cancelled || !el) return;
+        const slug = canonicalName(recipe.name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || recipe.id;
+        await window.html2pdf().set({
+          filename: `recette-${slug}.pdf`,
+          margin: [10, 10, 10, 10],
+          image: {type: "jpeg", quality: 0.92},
+          html2canvas: {scale: 2, useCORS: false, logging: false, backgroundColor: "#ffffff"},
+          jsPDF: {unit: "mm", format: "a4", orientation: "portrait"},
+          pagebreak: {mode: ["css", "legacy"], avoid: ["li", "tr"]},
+        }).from(el).save();
+      } catch (e) {
+        console.error("[pdf] export recette failed", e);
+        alert("Échec de l'export PDF : " + (e.message || "erreur inconnue") + "\nL'impression (🖨️) reste disponible, avec l'option « Enregistrer en PDF ».");
+      } finally {
+        if (!cancelled) setExportMode(null);
+      }
+    })();
+    return () => { cancelled = true; };
+  }, [exportMode]);
   return (
+    <>
+    {exportMode && ReactDOM.createPortal(
+      <div className="recipe-print-root" ref={sheetRootRef}>
+        <style>{`@page { size: A4 portrait; margin: 1cm; }`}</style>
+        <RecipePrintSheet recipe={recipe} mult={mult} qtyLabel={qtyLabel} />
+      </div>,
+      document.body
+    )}
+    {exportMode === "pdf" && <PdfGeneratingOverlay />}
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 no-print" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-slate-200 dark:border-slate-700 max-w-3xl w-full max-h-[90vh] overflow-auto" onClick={e=>e.stopPropagation()}>
         <div className="bg-gradient-to-r from-emerald-700 to-teal-600 text-white p-5 rounded-t-lg sticky top-0 z-10">
@@ -162274,6 +162414,15 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                   {isFavorite ? "⭐" : "☆"}
                 </button>
               )}
+              {/* V2.108.0 — Imprimer / exporter la fiche recette */}
+              <button onClick={() => setExportMode("print")} disabled={!!exportMode}
+                title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
+                aria-label="Imprimer la recette"
+                className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">🖨️</button>
+              <button onClick={() => setExportMode("pdf")} disabled={!!exportMode}
+                title="Télécharger la recette en PDF (quantités de ce repas)"
+                aria-label="Télécharger la recette en PDF"
+                className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">📄</button>
               <button onClick={onClose} className="text-white/80 hover:text-white text-2xl">✕</button>
             </div>
           </div>
@@ -162318,12 +162467,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             </div>
           )}
           <div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isExternal ? "text-sky-700 dark:text-sky-300 font-medium" : isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{isExternal
-              ? `(famille complète à titre indicatif, soit ${mult.toFixed(1)} équiv. adultes)`
-              : isPartial
-              ? `(pour ${nPresent} présent${nPresent>1?"s":""} sur ${nAll}${guestN>0?` + ${guestN} invité${guestN>1?"s":""}`:""}, soit ${mult.toFixed(1)} équiv. adultes)`
-              : `(pour la famille${guestN>0?` + ${guestN} invité${guestN>1?"s":""}`:""}, soit ${mult.toFixed(1)} équiv. adultes)`
-            }</span></h3>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isExternal ? "text-sky-700 dark:text-sky-300 font-medium" : isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{qtyLabel}</span></h3>
             <ul className="space-y-1">
               {recipe.ing.map(([name,qty,unit,cat],i) => (
                 <li key={i} className="flex justify-between text-sm border-b border-dashed border-slate-200 dark:border-slate-700 py-1">
@@ -162378,6 +162522,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
         </div>
       </div>
     </div>
+    </>
   );
 }
 
