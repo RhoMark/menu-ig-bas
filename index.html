@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.108.0</title>
+<title>Menu IG Bas — V2.109.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -404,6 +404,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Le catalogue est-il mis à jour régulièrement ?",
           "a": "Oui. Le projet ajoute des recettes en \"Lots\" (typiquement 12 recettes par Lot) priorisant : (1) les cellules cuisine × type sous la cible 12, (2) la saisonnalité à venir (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet), (3) les occasions festives (apéros, brunchs, fêtes de famille — tag `festif`). Les versions mineures (V2.x.y → V2.x.(y+1)) correspondent souvent à un Lot. L'historique complet est dans le dépôt GitHub. À noter : un filtre de validation strict (`scripts/validate-recipe-data.py`) garantit la cohérence du schéma à chaque ajout."
+        },
+        {
+          "q": "Comment dire à l'app ce que ma famille aime ?",
+          "a": "Depuis V2.109.0, dans Paramètres → Membres, chaque membre a une rubrique « ❤️ Ce que … aime » : ajoute jusqu'à 10 ingrédients (saumon, lentilles, potiron…), avec suggestions automatiques. Les recettes qui en contiennent sont favorisées dans les menus, d'autant plus que plusieurs membres les aiment — mais jamais imposées : l'effet est volontairement doux et plafonné pour qu'au plus ~1 repas sur 3 en profite (variété garantie). Les « j'aime » ne passent jamais devant les allergies, les exclusions, les repères nutritionnels (viande rouge ≤ 500 g/pers/sem, œufs…), la charge glycémique ni la saison. « Pomme » ne déclenche pas « pomme de terre » ; « saumon » reconnaît « pavé de saumon » ou « saumon fumé ». Dans la bibliothèque, le bouton « 💚 Ce qu'on aime » filtre ces recettes, et la fiche recette indique qui aime quoi (à l'écran seulement : l'impression et le PDF n'affichent aucun prénom)."
         }
       ]
     },
@@ -155714,6 +155718,46 @@ function effectiveExclusions(profile, attendees) {
   }
   return [...new Set([...global, ...(intersection || [])])];
 }
+// V2.109.0 (issue #100) — Préférences positives « ❤️ J'aime » par membre.
+// member.likes = libellés d'ingrédients saisis (max LIKES_MAX). Effet = BOOST
+// DOUX en génération (weightedPick), jamais un filtre : allergies, exclusions,
+// plafonds nutritionnels, CG et saison sont appliqués en amont et gagnent
+// toujours. Matching sur canonicalName, par mot entier :
+//   « saumon » ✓ « Pavé de saumon », « Saumon fumé », « Saumon (ou truite) »
+//   « pomme »  ✗ « Pomme de terre » (le mot suivant « de/du/des » = autre aliment)
+const LIKES_MAX = 10;
+function likeMatchesIngredient(likeCanon, ingCanon) {
+  if (!likeCanon || !ingCanon) return false;
+  if (ingCanon === likeCanon) return true;
+  if (ingCanon.startsWith(likeCanon + " ")) {
+    const next = ingCanon.slice(likeCanon.length + 1).split(" ")[0];
+    return !["de", "du", "des", "a", "au", "aux"].includes(next);
+  }
+  // Complément de nom : « pavé de saumon », « purée de potiron ».
+  return (" " + ingCanon + " ").includes(" de " + likeCanon + " ");
+}
+const _recipeCanonIngCache = new WeakMap();
+function recipeCanonIngredients(recipe) {
+  let c = _recipeCanonIngCache.get(recipe);
+  if (!c) { c = recipe.ing.map(([name]) => canonicalName(name)); _recipeCanonIngCache.set(recipe, c); }
+  return c;
+}
+// Retourne [{member, likes:[libellés matchés]}] pour les membres qui aiment
+// au moins un ingrédient de la recette. [] si aucun like dans le foyer.
+function recipeLikedBy(recipe, profile) {
+  const members = profile?.members || [];
+  if (!recipe || !members.some(m => m.likes?.length)) return [];
+  const ings = recipeCanonIngredients(recipe);
+  const out = [];
+  for (const m of members) {
+    const hits = (m.likes || []).filter(l => {
+      const lc = canonicalName(l);
+      return ings.some(ic => likeMatchesIngredient(lc, ic));
+    });
+    if (hits.length) out.push({member: m, likes: hits});
+  }
+  return out;
+}
 function recipeRespectsEquipment(recipe, availEq) {
   if (!availEq?.length) return true;
   return recipe.eq.every(e => availEq.includes(e));
@@ -157509,7 +157553,14 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
 // on choisit la plus ancienne hors-hardAvoid plutôt que de tirer au hasard
 // dans tout le pool — ce qui évitait l'ancien bug "même recette que la semaine
 // précédente alors que d'autres dormaient depuis 2 mois".
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null, day = null, cgMax = Infinity, avoidSimilarTo = []} = {}) {
+// V2.109.0 — `strict` : pour les SOUS-POOLS prioritaires (restes à
+// utiliser, batch-friendly) qui ont un repli sur le pool principal. En mode
+// strict, aucun repli best-effort : si rien ne respecte nutrition / CG /
+// anti-doublon semaine, on renvoie null et l'appelant tente le pool suivant.
+// Sans ça, un sous-pool d'1 recette (ex. hachis « bœuf cuit » en restes)
+// était servi quoi qu'il arrive → plat en double dans la semaine et
+// plafond viande rouge dépassé (2-3 % des semaines, mesuré).
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null, day = null, cgMax = Infinity, avoidSimilarTo = [], strict = false} = {}) {
   if (pool.length === 0) return null;
   // V2.99.2 — Filtre temps de prep par jour si `day` fourni.
   // Permet d'appliquer maxPrepMinutesWeekend (sam/dim) vs maxPrepMinutes
@@ -157526,6 +157577,7 @@ function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastU
   if (typeof nutritionFilter === "function") {
     const filtered = pool.filter(nutritionFilter);
     if (filtered.length > 0) pool = filtered;
+    else if (strict) return null;
   }
   // V2.99.30 / V2.99.31 — Filtre HARD CG par repas (cf. mealCgMax).
   // V2.99.31 resserre le fallback (× 1.2 puis × 1.4 max au lieu de × 1.7)
@@ -157553,6 +157605,7 @@ function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastU
       });
     }
     if (filtered.length > 0) pool = filtered;
+    else if (strict) return null;
   }
   // V2.99.x — Anti-jumeaux intra-journée : écarte les plats trop similaires
   // (nom ou ingrédients) à ceux déjà placés ce jour. Souple : seulement si ≥3
@@ -157565,6 +157618,12 @@ function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastU
   // Niveau 1 — recettes ni servies cette semaine, ni servies depuis 3 mois.
   let candidates = pool.filter(r => !hardAvoid.has(r.id) && !softAvoid.has(r.id));
   if (candidates.length > 0) return weightedPick(candidates, ratings, profile, favorites, costBias, mealType);
+  if (strict) {
+    // Sous-pool : on tolère le retour d'une recette « récente » (softAvoid)
+    // mais jamais un doublon dans la semaine (hardAvoid).
+    candidates = pool.filter(r => !hardAvoid.has(r.id));
+    return candidates.length > 0 ? weightedPick(candidates, ratings, profile, favorites, costBias, mealType) : null;
+  }
   // Niveau 2 — fraîches épuisées : on rouvre softAvoid mais on privilégie le plus ancien.
   candidates = pool.filter(r => !hardAvoid.has(r.id));
   if (candidates.length > 0) {
@@ -157603,6 +157662,22 @@ function weightedPick(list, ratings, profile, favorites, costBias = 0, mealType 
   if (costBias > 0 && list.length > 0) {
     poolMeanCost = list.reduce((s, r) => s + recipeEffectiveCost(r), 0) / list.length;
   }
+  // V2.109.0 (#100) — Boost « ❤️ J'aime ». likeShare(r) = part des membres du
+  // foyer qui aiment ≥1 ingrédient de r (même granularité foyer que les
+  // exclusions en génération). Boost max auto-limité par la prévalence p des
+  // recettes « aimées » dans la liste : bMax = min(1.5, (1-p)/(2p)) garantit
+  // que leur probabilité de tirage reste ≤ 1/3 par slot (anti-monotonie) —
+  // et vaut ≤ 1 (aucun boost) si elles sont déjà ≥ 1/3 du pool.
+  const nMembers = profile?.members?.length || 0;
+  const likeShare = new Map();
+  if (nMembers > 0 && profile.members.some(m => m.likes?.length)) {
+    list.forEach(r => {
+      const n = recipeLikedBy(r, profile).length;
+      if (n > 0) likeShare.set(r.id, n / nMembers);
+    });
+  }
+  const likedP = list.length ? likeShare.size / list.length : 0;
+  const likeBMax = likedP > 0 ? Math.max(1, Math.min(1.5, (1 - likedP) / (2 * likedP))) : 1;
   const weights = list.map(r => {
     const rating = profile ? getEffectiveRating(ratings, r.id, profile) : (ratings[r.id] ?? 3);
     let w;
@@ -157613,6 +157688,7 @@ function weightedPick(list, ratings, profile, favorites, costBias = 0, mealType 
     else w = 2.4;
     if (preferred.size > 0 && r.cuisine && preferred.has(r.cuisine)) w *= 2;
     if (favSet.has(r.id)) w *= 1.3;
+    if (likeShare.has(r.id)) w *= 1 + (likeBMax - 1) * likeShare.get(r.id);
     if (costBias > 0 && poolMeanCost > 0) {
       const cost = Math.max(0.3, recipeEffectiveCost(r));
       w *= Math.pow(poolMeanCost / cost, costBias);
@@ -158152,10 +158228,10 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (chaînage cohérent).
         const lunchUsesPool = matchUsesPool(lunches);
         if (lunchUsesPool.length > 0) {
-          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday()});
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday(), strict: true});
         }
         if (!picked && useBatchPool && lunchesBatch.length > 0) {
-          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday()});
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday(), strict: true});
         }
         if (!picked) {
           picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday()});
@@ -158211,10 +158287,10 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (intersect avec le filtre staple).
         const dinnerUsesPool = matchUsesPool(dinnerPool);
         if (dinnerUsesPool.length > 0) {
-          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday()});
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday(), strict: true});
         }
         if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
-          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday()});
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday(), strict: true});
         }
         if (!picked) {
           picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday()});
@@ -158491,6 +158567,9 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
     else if (totals.fishOily + totals.fishLean < 2) target = MIN_TARGETS[1];
     else if (totals.legume < 2) target = MIN_TARGETS[2];
     if (!target) break; // tous les MIN atteints
+    // V2.109.0 — Anti-doublon : ne jamais introduire une recette déjà au menu.
+    const usedIds = new Set();
+    DAYS.forEach(d => ALL_KEYS.forEach(m => { const id = days[d]?.[m]; if (id) usedIds.add(id); }));
     let bestSwap = null;
     for (const day of DAYS) {
       const slot = days[day] || {};
@@ -158517,6 +158596,7 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
         // Chercher un candidat cible dans le pool du même type.
         const candidates = baseFilter(mealKey).filter(r =>
           r.id !== oldId &&
+          !usedIds.has(r.id) &&
           target.predicate(recipeNutritionContribution(r, 1))
         );
         if (candidates.length === 0) continue;
@@ -162428,6 +162508,21 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
           </div>
         </div>
         <div className="p-6 space-y-6">
+          {/* V2.109.0 (#100) — Qui aime quoi dans cette recette (écran
+              uniquement : la fiche imprimée/PDF n'affiche jamais de prénoms). */}
+          {(() => {
+            const liked = recipeLikedBy(recipe, profile);
+            if (!liked.length) return null;
+            return (
+              <div className="flex flex-wrap gap-1 text-sm">
+                {liked.map(({member, likes}) => (
+                  <span key={member.id} className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200">
+                    {member.name} ❤️ {likes.join(", ")}
+                  </span>
+                ))}
+              </div>
+            );
+          })()}
           {recipe.allergens?.length > 0 && (() => {
             const concerned = membersAllergicTo(profile, recipe.allergens);
             const familyHits = (profile.globalAllergies || []).filter(a => recipe.allergens.includes(a));
@@ -162531,6 +162626,9 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
   const [filter, setFilter] = useState("all");
   const [query, setQuery] = useState("");
   const [favOnly, setFavOnly] = useState(false);
+  // V2.109.0 (#100) — Filtre « 💚 Avec ce qu'on aime » (affiché si ≥1 like).
+  const [likedOnly, setLikedOnly] = useState(false);
+  const hasLikes = (state.profile?.members || []).some(m => m.likes?.length);
   const favSet = new Set(state.favorites || []);
   // V2.65.0 (issue #4) — Saison courante (basée sur aujourd'hui pour la
   // bibliothèque, vs currentWeek dans le planning). Sert à afficher le
@@ -162542,6 +162640,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
     // avec « + » = ET (ex : "noix + poire"). Cf. recipeMatchesSearch.
     if (!recipeMatchesSearch(r, query)) return false;
     if (favOnly && !favSet.has(r.id)) return false;
+    if (likedOnly && hasLikes && recipeLikedBy(r, state.profile).length === 0) return false;
     return true;
   });
   return (
@@ -162562,6 +162661,17 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
           }`}>
           {favOnly ? "⭐" : "☆"} Favoris {favSet.size > 0 && <span className="opacity-75">({favSet.size})</span>}
         </button>
+        {hasLikes && (
+          <button onClick={() => setLikedOnly(f => !f)}
+            title={likedOnly ? "Afficher toutes les recettes" : "Uniquement les recettes avec un ingrédient aimé par un membre du foyer"}
+            className={`border rounded px-3 py-2 text-sm font-medium transition ${
+              likedOnly
+                ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200"
+                : "border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
+            }`}>
+            💚 Ce qu'on aime
+          </button>
+        )}
         <select value={filter} onChange={e=>setFilter(e.target.value)} className="border rounded px-3 py-2">
           <option value="all">Tous les types</option>
           <option value="breakfast">Petits-déjeuners</option>
@@ -163570,6 +163680,46 @@ function ExclusionsTextarea({value, onChange}) {
         className="border rounded px-3 py-2 w-full font-mono text-sm" />
       <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Un ingrédient par ligne — utilisez Entrée pour aller à la ligne.</p>
     </>
+  );
+}
+
+// V2.109.0 (#100) — Saisie des « ❤️ J'aime » d'un membre : puces + champ avec
+// autocomplétion native (<datalist>) sur les libellés de data-ingredients.
+// Saisie libre acceptée (ex. « potiron » même s'il n'est pas en table).
+function LikesEditor({value, onChange, memberId}) {
+  const [draft, setDraft] = useState("");
+  const listId = `likes-dl-${memberId}`;
+  const full = value.length >= LIKES_MAX;
+  const add = () => {
+    const v = draft.trim();
+    if (!v || full) return;
+    const c = canonicalName(v);
+    if (!value.some(x => canonicalName(x) === c)) onChange([...value, v]);
+    setDraft("");
+  };
+  return (
+    <div>
+      <div className="flex flex-wrap gap-1">
+        {value.map(l => (
+          <span key={l} className="text-xs px-2 py-1 rounded border bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200 inline-flex items-center gap-1">
+            ❤️ {l}
+            <button onClick={() => onChange(value.filter(x => x !== l))} aria-label={`Retirer ${l}`} className="opacity-60 hover:opacity-100">✕</button>
+          </span>
+        ))}
+      </div>
+      <div className="flex gap-2 mt-2">
+        <input value={draft} onChange={e => setDraft(e.target.value)} list={listId} disabled={full}
+          onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); add(); } }}
+          placeholder={full ? `Maximum ${LIKES_MAX} atteint` : "Ex. saumon, lentilles, potiron…"}
+          className="border rounded px-3 py-2 flex-1 text-sm" />
+        <button onClick={add} disabled={full || !draft.trim()}
+          className="text-sm px-3 py-2 rounded bg-emerald-600 text-white disabled:opacity-40">Ajouter</button>
+      </div>
+      <datalist id={listId}>
+        {REF.ingredients.map(i => <option key={i.id} value={i.label} />)}
+      </datalist>
+      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{value.length}/{LIKES_MAX} — ces ingrédients sont un peu plus souvent proposés, sans jamais passer devant les allergies, les exclusions ni les repères nutritionnels.</p>
+    </div>
   );
 }
 
@@ -164691,6 +164841,16 @@ function SettingsView({state, update, updateProfile}) {
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre préfère éviter (par goût, pas allergique). Une recette est exclue uniquement si <strong>tous les membres présents</strong> au repas excluent l'ingrédient — sinon elle reste proposée.</p>
                 <div className="mt-2">
                   <ExclusionsTextarea value={m.exclusions || []} onChange={(arr) => updateMember(m.id, {exclusions: arr})} />
+                </div>
+              </details>
+              <details className="text-sm" open={(m.likes || []).length > 0}>
+                <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
+                  ❤️ Ce que {m.name || "ce membre"} aime
+                  {(m.likes || []).length > 0 && <span className="ml-1 text-emerald-700 dark:text-emerald-300 font-medium">({(m.likes || []).length})</span>}
+                </summary>
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre adore. Les recettes qui en contiennent sont <strong>favorisées</strong> dans les menus (plus le foyer est nombreux à aimer, plus l'effet est marqué), sans jamais être imposées : au plus ~1 repas sur 3 en profite, pour garder de la variété.</p>
+                <div className="mt-2">
+                  <LikesEditor memberId={m.id} value={m.likes || []} onChange={(arr) => updateMember(m.id, {likes: arr})} />
                 </div>
               </details>
             </div>
