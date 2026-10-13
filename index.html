@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.109.0</title>
+<title>Menu IG Bas — V2.110.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -368,6 +368,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Anti-récurrence : ça marche comment ?",
           "a": "Pour déjeuner et dîner : une recette servie dans les 14 derniers jours ne sera pas re-proposée (sauf si ensemble insuffisant pour la saison). Pour petit-déjeuner : rotation glissante avec décalage hebdomadaire — sur un catalogue de 58 petits-déjeuners, 8.3 semaines avant retour au début. Pour goûter et dessert : délai d'attente 7 jours (1 semaine + 1 jour pour couvrir la jonction dimanche → lundi)."
+        },
+        {
+          "q": "Pourquoi l'app évite deux recettes « cousines » dans la même semaine ?",
+          "a": "Deux recettes différentes peuvent être le même plat à vos yeux : un « Tiramisu IG bas au fromage blanc » le jeudi et un « Tiramisu allégé express » le samedi, ou deux compotes de pommes. Depuis la V2.110.0, l'app range chaque plat dans une « famille » d'après le début de son nom (tiramisu, taboulé, crumble, panna cotta…) et le plat cité après « façon » (« panna cotta façon tiramisu » compte comme un tiramisu). Quand le nom commence par un ingrédient, le mot suivant précise la famille : « salade de lentilles » et « salade de fruits » restent distinctes. Règle : un plat signature apparaît au plus une fois par semaine. Les familles très présentes dans la saison (les soupes en hiver, par exemple) gardent un quota plus large, proportionnel à leur place dans le catalogue. Les plats (déjeuner + dîner) et les sucrés (dessert + goûter) sont comptés séparément. La règle est souple : si vos contraintes (allergies, profil santé, saison) laissent trop peu de choix, l'app préfère un « cousin » à une case vide. Elle s'applique à la génération de la semaine, au bouton « Échanger » et aux ajustements budget / nutrition."
         },
         {
           "q": "Pourquoi voir souvent les mêmes petits-déjs ?",
@@ -157560,7 +157564,7 @@ function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
 // Sans ça, un sous-pool d'1 recette (ex. hachis « bœuf cuit » en restes)
 // était servi quoi qu'il arrive → plat en double dans la semaine et
 // plafond viande rouge dépassé (2-3 % des semaines, mesuré).
-function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null, day = null, cgMax = Infinity, avoidSimilarTo = [], strict = false} = {}) {
+function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastUsedMap = new Map(), ratings = {}, profile = null, favorites = null, costBias = 0, nutritionFilter = null, mealType = null, day = null, cgMax = Infinity, avoidSimilarTo = [], familySaturated = null, strict = false} = {}) {
   if (pool.length === 0) return null;
   // V2.99.2 — Filtre temps de prep par jour si `day` fourni.
   // Permet d'appliquer maxPrepMinutesWeekend (sam/dim) vs maxPrepMinutes
@@ -157614,6 +157618,17 @@ function pickFromPool(pool, {hardAvoid = new Set(), softAvoid = new Set(), lastU
   if (avoidSimilarTo && avoidSimilarTo.length > 0) {
     const filtered = pool.filter(r => !avoidSimilarTo.some(o => recipeSimilarity(r, o) >= SIMILAR_DAY_THRESHOLD));
     if (filtered.length >= 3) pool = filtered;
+  }
+  // V2.110.0 — Anti-jumeaux semaine (cf. makeDishFamilyGuard) : même règle
+  // souple (≥3 candidats). Un sous-pool strict (restes, batch) n'a pas de
+  // seuil : s'il ne reste que des jumeaux, on rend la main au pool principal.
+  if (typeof familySaturated === "function") {
+    const filtered = pool.filter(r => !familySaturated(r));
+    if (filtered.length >= 3) pool = filtered;
+    else if (strict) {
+      if (filtered.length === 0) return null;
+      pool = filtered;
+    }
   }
   // Niveau 1 — recettes ni servies cette semaine, ni servies depuis 3 mois.
   let candidates = pool.filter(r => !hardAvoid.has(r.id) && !softAvoid.has(r.id));
@@ -157830,6 +157845,101 @@ function recipeSimilarity(a, b) {
   );
 }
 
+// V2.110.0 — Anti-jumeaux SEMAINE par « famille de plat ». Deux tiramisus
+// aux noms et ingrédients différents (fromage blanc vs mascarpone-fraises)
+// passent sous le seuil de similarité ci-dessus, mais restent le même plat
+// perçu. Famille = mot-tête du nom (« tiramisu », « taboulé », « crumble ») +
+// le plat cité après « façon » (« panna cotta façon tiramisu »). Si le mot-tête
+// est un ingrédient (« Salade de lentilles », « Pavé de saumon »), on garde
+// aussi le mot suivant, sinon toutes les salades formeraient une seule famille.
+const DISH_SKIP_WORDS = new Set(["verrine", "mini", "bouchee"]);
+const DISH_ALIASES = {tagine: "tajine", daurade: "dorade"};
+const DISH_STOPWORDS = new Set(["aux","au","et","de","des","du","la","le","les","en","sauce","maison","four","express","facon","style","sans","avec","une","un","ou","pour","sur","leger","legere","allege","allegee"]);
+let dishIngredientHeads = null;
+function dishWords(text) {
+  return canonicalName(text.replace(/['’]/g, " ").replace(/panna cotta/gi, "pannacotta"))
+    .split(/[\s—:\/]+/)
+    .map(w => DISH_ALIASES[w] || w)
+    .filter(w => w.length > 2 && !DISH_STOPWORDS.has(w));
+}
+const dishFamiliesCache = new WeakMap();
+function recipeDishFamilies(r) {
+  if (dishFamiliesCache.has(r)) return dishFamiliesCache.get(r);
+  if (!dishIngredientHeads) {
+    dishIngredientHeads = new Set();
+    [...REF.ingredients, ...REF.glycemic].forEach(x => {
+      const h = canonicalName(x.id).split(" ")[0];
+      if (h) dishIngredientHeads.add(h);
+    });
+  }
+  const out = new Set();
+  const w = dishWords(r.name || "");
+  while (w.length && DISH_SKIP_WORDS.has(w[0])) w.shift();
+  if (w.length) out.add(dishIngredientHeads.has(w[0]) && w[1] ? w[0] + " " + w[1] : w[0]);
+  const raw = (r.name || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+  for (const m of raw.matchAll(/\bfacon ([a-z]+(?: cotta)?)/g)) {
+    const f = dishWords(m[1])[0];
+    if (f && !dishIngredientHeads.has(f)) out.add(f);
+  }
+  dishFamiliesCache.set(r, out);
+  return out;
+}
+function dishGroupOf(type) {
+  if (type === "lunch" || type === "dinner") return "main";
+  if (type === "dessert" || type === "snack") return "sweet";
+  return null;
+}
+// Plats de la semaine (hors petit-déjeuner, qui a sa propre rotation), en
+// sautant éventuellement la case qu'on est en train de (re)choisir.
+let recipesByIdForDish = null;
+function placedRecipesOfWeek(days, skip = null) {
+  if (!recipesByIdForDish) recipesByIdForDish = new Map(RECIPES.map(r => [r.id, r]));
+  const out = [];
+  Object.entries(days || {}).forEach(([d, s]) => ["lunch","dinner","snack","dessert"].forEach(m => {
+    if (skip && skip.day === d && skip.meal === m) return;
+    const r = s?.[m] ? recipesByIdForDish.get(s[m]) : null;
+    if (r) out.push(r);
+  }));
+  return out;
+}
+// Quotas hebdo par famille, calculés une fois par génération. Quota = 1 pour
+// un plat signature ; une famille fréquente dans les pools de la saison (soupe
+// en hiver, salade de fruits en été) garde un quota proportionnel à sa part :
+// round(2 × part × créneaux), pour ne pas assécher la génération. Plats
+// (déjeuner + dîner) et sucrés (dessert + goûter) sont comptés à part.
+function dishFamilyQuotas(pools, profile) {
+  const groups = {
+    main:  {types: ["lunch", "dinner"],  slots: 14},
+    sweet: {types: ["dessert", "snack"], slots: 7 + (profile?.snackEnabled ? 7 : 0)},
+  };
+  const quotas = {};
+  for (const [g, def] of Object.entries(groups)) {
+    const pool = def.types.flatMap(t => pools[t] || []);
+    const share = new Map();
+    pool.forEach(r => recipeDishFamilies(r).forEach(f => share.set(f, (share.get(f) || 0) + 1)));
+    const n = Math.max(1, pool.length);
+    quotas[g] = (f) => Math.max(1, Math.round(2 * (share.get(f) || 0) / n * def.slots));
+  }
+  return quotas;
+}
+// Prédicat « cette recette ajouterait une famille déjà à son quota parmi les
+// plats placés cette semaine ».
+function makeDishFamilyGuard(placed, quotas) {
+  const count = new Map();
+  placed.forEach(r => {
+    const g = dishGroupOf(r.type);
+    if (g) recipeDishFamilies(r).forEach(f => count.set(g + ":" + f, (count.get(g + ":" + f) || 0) + 1));
+  });
+  return (r) => {
+    const g = dishGroupOf(r.type);
+    if (!g || !quotas[g]) return false;
+    for (const f of recipeDishFamilies(r)) {
+      if ((count.get(g + ":" + f) || 0) >= quotas[g](f)) return true;
+    }
+    return false;
+  };
+}
+
 // Renvoie les IDs servis dans le slot `mealKey` au cours des `days` jours
 // précédant `weekStart`. Sert à empêcher qu'un goûter (ou dessert) du dimanche
 // réapparaisse le lundi de la semaine suivante.
@@ -157889,6 +157999,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     return !!profile?.batchCookingEnabled;
   })();
   const batchTarget = Math.max(3, Math.min(7, profile?.batchCookingTarget ?? 5));
+  // V2.110.0 — quotas anti-jumeaux semaine (cf. dishFamilyQuotas).
+  const familyQuotas = dishFamilyQuotas({lunch: lunches, dinner: dinners, dessert: desserts, snack: snacks}, profile);
   const lunchesBatch = isBatchActive ? lunches.filter(r => (r.tags || []).includes("batch-friendly")) : [];
   const dinnersBatch = isBatchActive ? dinners.filter(r => (r.tags || []).includes("batch-friendly")) : [];
 
@@ -158208,6 +158320,8 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
       const placedToday = () => ["breakfast","lunch","dinner","snack","dessert"]
         .map(m => slot[m]).filter(Boolean)
         .map(id => RECIPES.find(r => r.id === id)).filter(Boolean);
+      // V2.110.0 — Anti-jumeaux semaine : jours déjà construits + journée en cours.
+      const weekFamilyGuard = () => makeDishFamilyGuard(placedRecipesOfWeek({...days, [day]: slot}), familyQuotas);
 
       // Lunch
       const lunchMealMult = mealEquivalents(profile, slot.attendance?.lunch);
@@ -158228,13 +158342,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (chaînage cohérent).
         const lunchUsesPool = matchUsesPool(lunches);
         if (lunchUsesPool.length > 0) {
-          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday(), strict: true});
+          picked = pickFromPool(lunchUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard(), strict: true});
         }
         if (!picked && useBatchPool && lunchesBatch.length > 0) {
-          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday(), strict: true});
+          picked = pickFromPool(lunchesBatch, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard(), strict: true});
         }
         if (!picked) {
-          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday()});
+          picked = pickFromPool(lunches, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: lunchNutFilter, mealType: "lunch", day, cgMax: lunchCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard()});
         }
         if (picked) {
           slot.lunch = picked.id;
@@ -158287,13 +158401,13 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         // produces des jours précédents (intersect avec le filtre staple).
         const dinnerUsesPool = matchUsesPool(dinnerPool);
         if (dinnerUsesPool.length > 0) {
-          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday(), strict: true});
+          picked = pickFromPool(dinnerUsesPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard(), strict: true});
         }
         if (!picked && useBatchPool && dinnerBatchPool.length > 0) {
-          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday(), strict: true});
+          picked = pickFromPool(dinnerBatchPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard(), strict: true});
         }
         if (!picked) {
-          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday()});
+          picked = pickFromPool(dinnerPool, {hardAvoid: usedThisWeek, softAvoid: recentlyUsed, lastUsedMap, ratings, profile, favorites, costBias, nutritionFilter: dinnerNutFilter, mealType: "dinner", day, cgMax: dinnerCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard()});
         }
         if (picked) {
           slot.dinner = picked.id;
@@ -158313,7 +158427,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
           const snackMealMult = mealEquivalents(profile, slot.attendance?.snack);
           const snackNutFilter = makeNutritionFilter(snackMealMult);
           const snackCgMax = mealCgMax(cgBudgetThisDay, "snack", cgConsumedThisDay);
-          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias, nutritionFilter: snackNutFilter, mealType: "snack", day, cgMax: snackCgMax, avoidSimilarTo: placedToday()});
+          const picked = pickFromPool(snacks, {hardAvoid: snacksCooldown, ratings, profile, favorites, costBias, nutritionFilter: snackNutFilter, mealType: "snack", day, cgMax: snackCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard()});
           if (picked) {
             slot.snack = picked.id;
             snacksCooldown.add(picked.id);
@@ -158332,7 +158446,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
         const dessertMealMult = mealEquivalents(profile, slot.attendance?.dessert);
         const dessertNutFilter = makeNutritionFilter(dessertMealMult);
         const dessertCgMax = mealCgMax(cgBudgetThisDay, "dessert", cgConsumedThisDay);
-        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias, nutritionFilter: dessertNutFilter, mealType: "dessert", day, cgMax: dessertCgMax, avoidSimilarTo: placedToday()});
+        const picked = pickFromPool(desserts, {hardAvoid: dessertsCooldown, ratings, profile, favorites, costBias, nutritionFilter: dessertNutFilter, mealType: "dessert", day, cgMax: dessertCgMax, avoidSimilarTo: placedToday(), familySaturated: weekFamilyGuard()});
         if (picked) {
           slot.dessert = picked.id;
           dessertsCooldown.add(picked.id);
@@ -158426,6 +158540,8 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
   );
 
   const ALL_KEYS = ["breakfast","lunch","dinner","snack","dessert"];
+  // V2.110.0 — les swaps budget ne réintroduisent pas de jumeau de semaine.
+  const famQuotas = dishFamilyQuotas({lunch: baseFilterRelaxed("lunch"), dinner: baseFilterRelaxed("dinner"), dessert: baseFilterRelaxed("dessert"), snack: baseFilterRelaxed("snack")}, profile);
 
   for (let iter = 0; iter < MAX_ITER; iter++) {
     const cost = estimateWeekCost(days, profile);
@@ -158452,11 +158568,13 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
         if (!oldRecipe) continue;
         const oldCost = recipeEffectiveCost(oldRecipe);
         const mealMult = mealEquivalents(profile, attendance[mealKey]);
+        const twin = makeDishFamilyGuard(placedRecipesOfWeek(days, {day, meal: mealKey}), famQuotas);
         // 1er essai : pool strict (rotation 14j préservée)
         let candidates = baseFilterStrict(mealKey).filter(r =>
           recipeEffectiveCost(r) < oldCost &&
           r.id !== oldId &&
-          !usedThisWeek.has(r.id)
+          !usedThisWeek.has(r.id) &&
+          !twin(r)
         );
         let cheapest = null;
         if (candidates.length > 0) {
@@ -158469,7 +158587,8 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
         const relaxedCandidates = baseFilterRelaxed(mealKey).filter(r =>
           recipeEffectiveCost(r) < oldCost &&
           r.id !== oldId &&
-          !usedThisWeek.has(r.id)
+          !usedThisWeek.has(r.id) &&
+          !twin(r)
         );
         if (relaxedCandidates.length > 0) {
           const relaxedCheapest = relaxedCandidates.reduce((b, c) => recipeEffectiveCost(c) < recipeEffectiveCost(b) ? c : b);
@@ -158519,6 +158638,7 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
     recipeRespectsSkill(r, profile.skillLevel) &&
     getEffectiveRating(ratings, r.id, profile) >= 2.5
   );
+  const famQuotas = dishFamilyQuotas({lunch: baseFilter("lunch"), dinner: baseFilter("dinner"), dessert: baseFilter("dessert"), snack: baseFilter("snack")}, profile);
   const totalEq = totalEquivalents(profile);
   const eggsMax = 10 * totalEq;
   const redMeatMax = 500 * totalEq;
@@ -158594,9 +158714,11 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
         if (target.key !== "fishOily" && oldContrib.hasFishOily && totals.fishOily <= 1) continue;
         if (target.key !== "fishAny" && (oldContrib.hasFishOily || oldContrib.hasFishLean) && totals.fishOily + totals.fishLean <= 2) continue;
         // Chercher un candidat cible dans le pool du même type.
+        const twin = makeDishFamilyGuard(placedRecipesOfWeek(days, {day, meal: mealKey}), famQuotas);
         const candidates = baseFilter(mealKey).filter(r =>
           r.id !== oldId &&
           !usedIds.has(r.id) &&
+          !twin(r) &&
           target.predicate(recipeNutritionContribution(r, 1))
         );
         if (candidates.length === 0) continue;
@@ -159900,7 +160022,9 @@ function App({initialState}) {
       .filter(m => m !== meal)
       .map(m => currentMenu[day]?.[m]).filter(Boolean)
       .map(id => RECIPES.find(r => r.id === id)).filter(Boolean);
-    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile, favorites: state.favorites || [], costBias: slotCostBias, day, avoidSimilarTo: placedSameDay});
+    const picked = pickFromPool(pool, {hardAvoid: used, softAvoid, lastUsedMap, ratings: state.ratings, profile: state.profile, favorites: state.favorites || [], costBias: slotCostBias, day, avoidSimilarTo: placedSameDay,
+      // V2.110.0 — pas de 2ᵉ tiramisu de la semaine via « Échanger » non plus.
+      familySaturated: makeDishFamilyGuard(placedRecipesOfWeek(currentMenu, {day, meal}), dishFamilyQuotas({[meal]: pool}, state.profile))});
     if (picked) {
       update(s => ({menus: {...s.menus, [wk]: {...s.menus[wk], [day]: {...(s.menus[wk]?.[day]||{}), [meal]: picked.id}}}}));
     }
