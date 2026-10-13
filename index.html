@@ -367,7 +367,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Anti-récurrence : ça marche comment ?",
-          "a": "Pour déjeuner et dîner : une recette servie dans les 14 derniers jours ne sera pas re-proposée (sauf si ensemble insuffisant pour la saison). Pour petit-déjeuner : rotation glissante avec décalage hebdomadaire — sur un catalogue de 58 petits-déjeuners, 8.3 semaines avant retour au début. Pour goûter et dessert : délai d'attente 7 jours (1 semaine + 1 jour pour couvrir la jonction dimanche → lundi)."
+          "a": "Pour déjeuner et dîner : une recette servie dans les 14 jours avant la semaine, ou déjà prévue dans les 14 jours après (si tu régénères une semaine alors que la suivante est planifiée), ne sera pas re-proposée, sauf si le choix est insuffisant pour la saison. L'ajustement budget peut exceptionnellement reprendre une recette servie il y a 8 à 14 jours si elle fait nettement baisser le coût, jamais une recette servie à moins de 7 jours. Correctif V2.110.0 : avant, les dates des jours étaient mal calculées quand les courses ne tombent pas le lundi, et la fenêtre réelle ne couvrait que la semaine précédente. Pour petit-déjeuner : rotation glissante avec décalage hebdomadaire — sur un catalogue de 58 petits-déjeuners, 8.3 semaines avant retour au début. Pour goûter et dessert : délai d'attente 7 jours (1 semaine + 1 jour pour couvrir la jonction dimanche → lundi)."
         },
         {
           "q": "Pourquoi l'app évite deux recettes « cousines » dans la même semaine ?",
@@ -157492,62 +157492,73 @@ const LEFTOVER_TERMS = [
   "légumes rôtis", "ratatouille", "soupe de légumes",
   "bouillon maison", "pesto maison",
 ];
-function recipesUsedRecently(menus, currentWeekStart) {
-  const cutoff = new Date(currentWeekStart); cutoff.setDate(cutoff.getDate() - RECENT_DAYS);
+// V2.110.0 — Date RÉELLE d'un jour de menu stocké. Deux pièges :
+// (1) weekKey passe par toISOString (UTC) → en France la clé tombe 1 à 2
+// jours AVANT le début de semaine ; (2) la semaine commence le lendemain du
+// jour de courses, donc « lundi » n'est pas clé + 0. L'ancien calcul
+// (clé + index) datait mal les jours : la fenêtre « 14 jours » ne couvrait en
+// pratique que la semaine précédente, et le délai desserts 7 jours ratait
+// des jours. Même correctif que weekStartFromKey (V2.37.1), qui n'avait été
+// appliqué qu'aux libellés. Le jour de courses se déduit du début de semaine.
+function shoppingDayOfWeekStart(weekStart) {
+  return (new Date(weekStart).getDay() + 6) % 7;
+}
+function menuDayDate(wk, dayIdx, shoppingDay) {
+  const ws = weekStartFromKey(wk, shoppingDay);
+  const jsDay = (dayIdx + 1) % 7;
+  return addDays(ws, (jsDay - ws.getDay() + 7) % 7);
+}
+// Parcourt les cases de menu dont la date réelle tombe dans `windows`
+// ([début, fin[ en dates), hors repas pris à l'extérieur.
+function forEachMenuSlotIn(menus, shoppingDay, windows, meals, fn) {
+  Object.entries(menus || {}).forEach(([wk, daysMap]) => {
+    if (!daysMap || typeof daysMap !== "object") return;
+    DAYS.forEach((day, idx) => {
+      const slot = daysMap[day];
+      if (!slot) return;
+      const t = menuDayDate(wk, idx, shoppingDay).getTime();
+      if (!windows.some(([from, to]) => t >= from.getTime() && t < to.getTime())) return;
+      const attendance = slot.attendance || {};
+      meals.forEach(m => {
+        const id = slot[m];
+        if (!id) return;
+        // V2.43.1 — exclut les repas pris à l'extérieur (attendance===[])
+        // pour autoriser leur re-proposition : la recette n'a pas été cuisinée.
+        const att = attendance[m];
+        if (Array.isArray(att) && att.length === 0) return;
+        fn(id, t);
+      });
+    });
+  });
+}
+// Anti-récurrence déjeuner/dîner/petit-déj : 14 jours AVANT la semaine ET
+// 14 jours APRÈS (V2.110.0) — régénérer une semaine passée ou courante ne
+// doit pas reprendre un plat déjà planifié la semaine suivante.
+function recipesUsedRecently(menus, currentWeekStart, days = RECENT_DAYS) {
+  const ws = new Date(currentWeekStart); ws.setHours(0,0,0,0);
+  const sd = shoppingDayOfWeekStart(ws);
   const set = new Set();
   const lastUsedMap = new Map();
-  Object.entries(menus).forEach(([wk, days]) => {
-    const d = new Date(wk);
-    if (d >= cutoff && d < new Date(currentWeekStart)) {
-      const ts = d.getTime();
-      DAYS.forEach(day => {
-        if (days[day]) {
-          const attendance = days[day].attendance || {};
-          ["breakfast","lunch","dinner"].forEach(m => {
-            const id = days[day][m];
-            if (!id) return;
-            // V2.43.1 — exclut les repas pris à l'extérieur (attendance===[])
-            // pour autoriser leur re-proposition sans attendre 14 jours : la
-            // recette n'a pas été cuisinée, donc rien à éviter.
-            const att = attendance[m];
-            if (Array.isArray(att) && att.length === 0) return;
-            set.add(id);
-            const prev = lastUsedMap.get(id);
-            if (prev == null || ts > prev) lastUsedMap.set(id, ts);
-          });
-        }
-      });
-    }
+  const windows = [[addDays(ws, -days), ws], [addDays(ws, 7), addDays(ws, 7 + days)]];
+  forEachMenuSlotIn(menus, sd, windows, ["breakfast","lunch","dinner"], (id, t) => {
+    set.add(id);
+    // lastUsedMap sert à « la plus ancienne d'abord » : une date future compte
+    // comme très récente (on l'évite autant qu'une servie hier).
+    const ts = t >= ws.getTime() ? ws.getTime() : t;
+    const prev = lastUsedMap.get(id);
+    if (prev == null || ts > prev) lastUsedMap.set(id, ts);
   });
   return {set, lastUsedMap};
 }
 // V2.33.0 — Compte combien de fois une recette a été servie dans les
 // `days` derniers jours (default RECENT_DAYS = 14). Utilisé dans la fiche
 // recette pour informer l'utilisateur "servie X fois ces 15 derniers jours".
-function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS) {
+function countRecipeUsageRecent(menus, recipeId, fromDate, days = RECENT_DAYS, shoppingDay = 1) {
   if (!recipeId || !menus) return 0;
-  const cutoff = new Date(fromDate); cutoff.setDate(cutoff.getDate() - days);
-  const startBound = cutoff.getTime();
-  const endBound = new Date(fromDate).getTime();
+  const end = new Date(fromDate);
   let count = 0;
-  const ALL_KEYS = ["breakfast","lunch","dinner","snack","dessert"];
-  Object.entries(menus).forEach(([wk, daysMap]) => {
-    const wkDate = new Date(wk);
-    DAYS.forEach((day, idx) => {
-      const dayDate = new Date(wkDate); dayDate.setDate(wkDate.getDate() + idx);
-      const t = dayDate.getTime();
-      if (t < startBound || t >= endBound) return;
-      const slot = daysMap[day];
-      if (!slot) return;
-      const attendance = slot.attendance || {};
-      ALL_KEYS.forEach(meal => {
-        if (slot[meal] !== recipeId) return;
-        // V2.43.1 — repas externalisé : ne compte pas (cohérent V2.34.0).
-        const att = attendance[meal];
-        if (Array.isArray(att) && att.length === 0) return;
-        count++;
-      });
-    });
+  forEachMenuSlotIn(menus, shoppingDay, [[addDays(end, -days), end]], ["breakfast","lunch","dinner","snack","dessert"], (id) => {
+    if (id === recipeId) count++;
   });
   return count;
 }
@@ -157944,25 +157955,13 @@ function makeDishFamilyGuard(placed, quotas) {
 // précédant `weekStart`. Sert à empêcher qu'un goûter (ou dessert) du dimanche
 // réapparaisse le lundi de la semaine suivante.
 function recentMealSlots(menus, weekStart, mealKey, days = 7) {
-  const start = new Date(weekStart);
-  const cutoff = new Date(weekStart); cutoff.setDate(cutoff.getDate() - days);
+  // V2.110.0 — dates réelles (cf. menuDayDate) + symétrique : les `days`
+  // jours avant la semaine et les `days` jours après.
+  const ws = new Date(weekStart); ws.setHours(0,0,0,0);
   const set = new Set();
-  Object.entries(menus).forEach(([wk, daysMap]) => {
-    const wkDate = new Date(wk);
-    DAYS.forEach((day, idx) => {
-      const dayDate = addDays(wkDate, idx);
-      if (dayDate >= cutoff && dayDate < start) {
-        const slot = daysMap[day];
-        if (!slot) return;
-        const id = slot[mealKey];
-        if (!id) return;
-        // V2.43.1 — exclut les repas externalisés du cooldown (cohérent V2.34.0).
-        const att = (slot.attendance || {})[mealKey];
-        if (Array.isArray(att) && att.length === 0) return;
-        set.add(id);
-      }
-    });
-  });
+  forEachMenuSlotIn(menus, shoppingDayOfWeekStart(ws),
+    [[addDays(ws, -days), ws], [addDays(ws, 7), addDays(ws, 7 + days)]],
+    [mealKey], (id) => set.add(id));
   return set;
 }
 
@@ -158035,6 +158034,9 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
     return Math.min(3.0, (ratio - 1.1) * 2.0);
   })();
   const {set: recentlyUsed, lastUsedMap} = recipesUsedRecently(menus, weekStart);
+  // V2.110.0 — plats servis à ±7 jours : jamais réintroduits, même par le
+  // swap budget « élargi » (qui ramenait les recettes bon marché en boucle).
+  const nearlyUsed = recipesUsedRecently(menus, weekStart, 7).set;
   const sd = profile?.shoppingDay ?? 1;
   // V2.27.0 — Lecture rétrocompat : on cherche d'abord la clé du shoppingDay
   // courant ; si absent, fallback sur l'ancienne clé "lundi" (anciens menus).
@@ -158485,7 +158487,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
   // moins chères respectant toutes les contraintes (saison, allergies,
   // équipement, skill, anti-récurrence). Pure post-traitement, ne change rien
   // si pas de budget configuré.
-  let result = optimizeForBudget({days, profile, season, ratings, recentlyUsed});
+  let result = optimizeForBudget({days, profile, season, ratings, recentlyUsed, nearlyUsed});
   // V2.71.0 (#75 niveau 2) — post-traitement : swap pour atteindre les MIN
   // (poisson 2/sem, gras 1/sem, légumineuses 2/sem). Pas de garantie, juste
   // best-effort en restant sous les MAX et hors slots verrouillés.
@@ -158497,7 +158499,7 @@ function generateWeek({profile, ratings, menus, weekStart, keepLocked, favorites
 // Critère d'arrêt : coût total ≤ budgetWeekly × (1 + budgetTolerance/100),
 // OU plus aucune substitution possible, OU MAX_ITER atteint.
 // À chaque itération, on cherche le swap qui produit la plus grosse économie.
-function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
+function optimizeForBudget({days, profile, season, ratings, recentlyUsed, nearlyUsed = new Set()}) {
   const target = profile.budgetWeekly;
   if (!target || target <= 0) return days;
   const tolerance = (profile.budgetTolerance ?? 10) / 100;
@@ -158588,6 +158590,7 @@ function optimizeForBudget({days, profile, season, ratings, recentlyUsed}) {
           recipeEffectiveCost(r) < oldCost &&
           r.id !== oldId &&
           !usedThisWeek.has(r.id) &&
+          !nearlyUsed.has(r.id) &&
           !twin(r)
         );
         if (relaxedCandidates.length > 0) {
@@ -158715,12 +158718,16 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
         if (target.key !== "fishAny" && (oldContrib.hasFishOily || oldContrib.hasFishLean) && totals.fishOily + totals.fishLean <= 2) continue;
         // Chercher un candidat cible dans le pool du même type.
         const twin = makeDishFamilyGuard(placedRecipesOfWeek(days, {day, meal: mealKey}), famQuotas);
-        const candidates = baseFilter(mealKey).filter(r =>
+        let candidates = baseFilter(mealKey).filter(r =>
           r.id !== oldId &&
           !usedIds.has(r.id) &&
           !twin(r) &&
           target.predicate(recipeNutritionContribution(r, 1))
         );
+        // V2.110.0 — préférer une recette hors rotation 14 j (avant, ce swap
+        // ramenait la même légumineuse d'une semaine sur l'autre).
+        const fresh = candidates.filter(r => !recentlyUsed?.has(r.id));
+        if (fresh.length > 0) candidates = fresh;
         if (candidates.length === 0) continue;
         // Évaluer chaque candidat : check qu'il ne pousse pas un MAX.
         for (const cand of candidates) {
@@ -160656,7 +160663,7 @@ function App({initialState}) {
             : undefined}
           guestRatios={state.profile.guestRatios}
           ratings={state.ratings}
-          recentUsageCount={countRecipeUsageRecent(state.menus, selectedRecipe.id, new Date())}
+          recentUsageCount={countRecipeUsageRecent(state.menus, selectedRecipe.id, new Date(), RECENT_DAYS, state.profile?.shoppingDay ?? 1)}
           onRate={(score, memberId) => rateRecipe(selectedRecipe.id, score, memberId)}
           onClose={() => setSelectedRecipe(null)}
           isFavorite={(state.favorites || []).includes(selectedRecipe.id)}
