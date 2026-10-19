@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.110.0</title>
+<title>Menu IG Bas — V2.110.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -399,7 +399,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Combien de recettes contient le catalogue ?",
-          "a": "1500 recettes au 13 octobre 2026 (V2.109.0) : 439 déjeuners, 426 dîners, 253 desserts, 192 goûters/en-cas et 190 petits-déjeuners, dont 248 recettes de fête. Elles couvrent 8 cuisines (française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, universelle) et les 4 saisons. Le catalogue s'enrichit régulièrement par lots, en priorisant l'équilibre des cuisines et la saisonnalité (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet). Chaque nouvelle recette passe un contrôle automatique (allergènes, dénominations qualifiées — pas de « Lait » seul, on précise demi-écrémé, amande, coco… —, doublons, charge glycémique plafonnée par type de repas) ; la CG de chaque recette est affichée sur sa fiche."
+          "a": "1501 recettes au 19 octobre 2026 (V2.110.1) : 439 déjeuners, 427 dîners, 253 desserts, 192 goûters/en-cas et 190 petits-déjeuners, dont 249 recettes de fête. Elles couvrent 8 cuisines (française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, universelle) et les 4 saisons. Le catalogue s'enrichit régulièrement par lots, en priorisant l'équilibre des cuisines et la saisonnalité (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet). Chaque nouvelle recette passe un contrôle automatique (allergènes, dénominations qualifiées — pas de « Lait » seul, on précise demi-écrémé, amande, coco… —, doublons, charge glycémique plafonnée par type de repas) ; la CG de chaque recette est affichée sur sa fiche."
         },
         {
           "q": "Quelles cuisines sont couvertes et comment sont-elles équilibrées ?",
@@ -3040,6 +3040,9 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
+    { "id": "fromage a raclette", "ig": 0, "carbsPer100g": 0.5, "proteinPer100g": 25.0, "fatPer100g": 29.6 },
+    { "id": "viande des grisons", "ig": 0, "carbsPer100g": 0.6, "proteinPer100g": 37.4, "fatPer100g": 5.5 },
+    { "id": "truite fumee", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 23.4, "fatPer100g": 8.7 },
     { "id": "airelles fraiches", "ig": 25, "carbsPer100g": 12, "proteinPer100g": 0.4, "fatPer100g": 0.1 },
     { "id": "blanc de chapon", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 23.0, "fatPer100g": 3.0 },
     { "id": "blancs d'oeufs", "ig": 0, "carbsPer100g": 1, "proteinPer100g": 11.0, "fatPer100g": 0.2 },
@@ -155028,6 +155031,165 @@ if ("serviceWorker" in navigator) {
         "Pendant la cuisson, prélève le zeste du citron vert avec une râpe fine (seulement la peau verte parfumée, pas la partie blanche amère), puis presse le jus.",
         "Sors les tranches d'ananas du four, laisse-les tiédir 5 minutes, puis dispose-les en rosace sur une assiette froide, comme un vrai carpaccio.",
         "Arrose du jus de citron vert, parsème du zeste et des feuilles de menthe fraîche ciselées (= coupées en très fines lanières avec un couteau). Sers immédiatement, tiède ou à température ambiante."
+      ]
+    },
+    {
+      "id": "d428",
+      "name": "Raclette de fête IG bas : légumes rôtis, viande des Grisons et truite fumée",
+      "type": "dinner",
+      "cuisine": "francais",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 35,
+      "cook": 45,
+      "rest": 720,
+      "advance": "Pommes de terre cuites la veille, 12h au frais",
+      "diff": 2,
+      "cost": 7.5,
+      "kcal": 760,
+      "tags": [
+        "festif",
+        "kid-friendly"
+      ],
+      "eq": [
+        "stove",
+        "oven",
+        "grill"
+      ],
+      "allergens": [
+        "lactose",
+        "fish",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Pomme de terre à chair ferme (Charlotte, Amandine)",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Potimarron",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Endive",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Champignons de Paris",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Poire Conférence (ou pomme du verger)",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Salade verte (mâche ou frisée)",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Fromage à raclette (au lait cru)",
+          80,
+          "g",
+          "dairy"
+        ],
+        [
+          "Bûche de chèvre",
+          30,
+          "g",
+          "dairy"
+        ],
+        [
+          "Viande des Grisons",
+          20,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Jambon blanc (sans nitrites)",
+          30,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Truite fumée",
+          30,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Cornichons",
+          25,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon grelot (au vinaigre)",
+          25,
+          "g",
+          "pantry"
+        ],
+        [
+          "Cerneaux de noix",
+          8,
+          "g",
+          "pantry"
+        ],
+        [
+          "Huile de noix",
+          5,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Huile d'olive",
+          5,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Vinaigre de cidre",
+          5,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "La veille : lave les pommes de terre sans les éplucher (la peau ralentit la digestion de l'amidon). Mets-les dans une casserole d'eau froide salée, porte à ébullition et laisse cuire 15 à 20 minutes. Elles sont prêtes quand la pointe d'un couteau entre en sentant encore une petite résistance au centre : ne les cuis pas jusqu'à ce qu'elles s'écrasent.",
+        "Égoutte-les, laisse-les refroidir sur le plan de travail, puis range-les au réfrigérateur dans une boîte fermée jusqu'au lendemain. En refroidissant, une partie de leur amidon devient « résistant » : il se digère plus lentement et fait moins monter la glycémie, même une fois réchauffé.",
+        "Le jour J, préchauffe le four à 200 °C. Lave le potimarron (pas besoin de l'éplucher, sa peau devient fondante à la cuisson), coupe-le en deux, retire les graines avec une cuillère, puis taille-le en quartiers d'un doigt d'épaisseur.",
+        "Coupe les endives en deux dans la longueur. Pose potimarron et endives sur une plaque recouverte de papier cuisson, arrose d'huile d'olive, saupoudre de thym et de poivre, et enfourne 25 à 30 minutes : c'est prêt quand les bords sont dorés et que le potimarron se perce facilement au couteau.",
+        "Pendant ce temps, essuie les champignons avec un papier humide (ne les passe pas sous l'eau, ils se gorgeraient d'eau) et coupe-les en lamelles. Fais-les dorer 6 à 8 minutes dans une poêle chaude sans matière grasse, jusqu'à ce que l'eau qu'ils rendent se soit évaporée et qu'ils soient bien dorés.",
+        "Sors les fromages du réfrigérateur 30 minutes avant de passer à table : ils fondront mieux. Coupe le fromage à raclette en tranches et la bûche de chèvre en rondelles. Coupe la poire en fines lamelles (garde la peau).",
+        "Dispose sur un grand plat la viande des Grisons, le jambon blanc et la truite fumée en petites portions, à côté des cornichons et des oignons grelots. Le plateau est volontairement modeste : la charcuterie accompagne, ce sont les légumes qui font le volume.",
+        "Juste avant le repas, coupe les pommes de terre froides en deux et réchauffe-les 10 minutes sur le dessus de l'appareil à raclette (ou au four avec les légumes, les 10 dernières minutes).",
+        "Prépare la vinaigrette dans un bol : mélange l'huile de noix et le vinaigre de cidre avec un peu de poivre, puis assaisonne la salade et parsème les cerneaux de noix. Servez la salade EN PREMIER, avant la raclette : les fibres et le vinaigre pris au début du repas ralentissent l'absorption des glucides qui suivent.",
+        "Allume l'appareil à raclette. Chacun fait fondre son fromage dans sa coupelle 2 à 4 minutes, jusqu'à ce qu'il bouillonne et dore légèrement, puis le fait glisser sur les légumes rôtis, les champignons ou les pommes de terre. Essaie la version verger : quelques lamelles de poire recouvertes d'une rondelle de chèvre, passées sous le grill de l'appareil."
       ]
     }
   ]
