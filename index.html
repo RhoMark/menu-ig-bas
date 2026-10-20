@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.111.1</title>
+<title>Menu IG Bas — V2.112.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -157573,7 +157573,26 @@ const householdCrypto = (() => {
     return raw;
   }
 
-  return {newHid, newKey, seal, open, inviteString, parseInvite, recoveryCode, parseRecoveryCode, toB64url, fromB64url};
+  // ── S4 — aides d'authentification serveur (pures) ──
+  const hex = buf => [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+  // joinSecret = HKDF(clé de foyer, "mijoterie-join") : prouve au serveur qu'on
+  // a scanné le QR, sans lui révéler la clé (HKDF à sens unique). Le serveur ne
+  // garde que sha256(joinSecret).
+  async function joinSecret(rawKey) {
+    const ikm = await crypto.subtle.importKey("raw", rawKey, "HKDF", false, ["deriveBits"]);
+    const bits = await crypto.subtle.deriveBits({name: "HKDF", hash: "SHA-256",
+      salt: enc.encode("mijoterie-join-v1"), info: enc.encode("join")}, ikm, 256);
+    return toB64url(new Uint8Array(bits));
+  }
+  async function joinVerifier(secretB64) { return hex(await crypto.subtle.digest("SHA-256", fromB64url(secretB64))); }
+  async function deviceIdOf(rawPub) { return toB64url(new Uint8Array(await crypto.subtle.digest("SHA-256", rawPub))).slice(0, 22); }
+  // Chaîne signée par l'appareil — identique côté serveur (sync-server/server.mjs).
+  async function signingString(method, path, ts, bodyText) {
+    return `${method}\n${path}\n${ts}\n${hex(await crypto.subtle.digest("SHA-256", enc.encode(bodyText || "")))}`;
+  }
+
+  return {newHid, newKey, seal, open, inviteString, parseInvite, recoveryCode, parseRecoveryCode, toB64url, fromB64url,
+    joinSecret, joinVerifier, deviceIdOf, signingString};
 })();
 // @@household-crypto:end
 
@@ -160157,6 +160176,99 @@ function QrScanner({onResult, onCancel}) {
   );
 }
 
+// ============================================================================
+// V3.0 Phase 2·L (S4) — Clé d'appareil + transport « serveur maison ».
+// Paire ECDSA P-256 propre à CET appareil : privée NON extractible (IndexedDB),
+// publique = son « badge » auprès du serveur (spec Q-F). Elle signe chaque
+// requête ; le serveur (sync-server/server.mjs) vérifie, applique 8 appareils
+// max + approbation admin, et ne stocke que des données chiffrées.
+// ============================================================================
+const deviceKeys = (() => {
+  function idb(mode, fn) {
+    return new Promise((resolve, reject) => {
+      const r = indexedDB.open("menu-ig-bas-secure", 1);
+      r.onupgradeneeded = () => r.result.createObjectStore("keys");
+      r.onerror = () => reject(r.error);
+      r.onsuccess = () => {
+        const tx = r.result.transaction("keys", mode);
+        const req = fn(tx.objectStore("keys"));
+        tx.oncomplete = () => resolve(req?.result);
+        tx.onerror = () => reject(tx.error);
+      };
+    });
+  }
+  let cache = null;
+  async function get() {
+    if (cache) return cache;
+    let kp = await idb("readonly", s => s.get("device"));
+    if (!kp) {
+      kp = await crypto.subtle.generateKey({name: "ECDSA", namedCurve: "P-256"}, false, ["sign", "verify"]);
+      await idb("readwrite", s => s.put(kp, "device"));
+    }
+    const raw = new Uint8Array(await crypto.subtle.exportKey("raw", kp.publicKey));
+    cache = {kp, pub: householdCrypto.toB64url(raw), id: await householdCrypto.deviceIdOf(raw)};
+    return cache;
+  }
+  return {get};
+})();
+
+// Contrat SyncTransport (commun au futur SupabaseTransport, Phase 2) :
+//   createHousehold(hid, labelCt, joinVerifier) · join(joinSecret, labelCt)
+//   me(hid) · listDevices(hid) · approve(hid, id) · remove(hid, id)
+//   pull(hid, sinceVersion) → {version, envelope|unchanged} · push(hid, baseVersion, envelope) → {version}
+function createLocalHomeTransport(base = "/api/v1") {
+  let lastTs = 0;
+  async function call(method, path, body) {
+    const dev = await deviceKeys.get();
+    const text = body === undefined ? "" : JSON.stringify(body);
+    const ts = Math.max(Date.now(), lastTs + 1); lastTs = ts;
+    const sig = new Uint8Array(await crypto.subtle.sign({name: "ECDSA", hash: "SHA-256"}, dev.kp.privateKey,
+      new TextEncoder().encode(await householdCrypto.signingString(method, base + path, ts, text))));
+    let res;
+    try {
+      res = await fetch(base + path, {method, body: text || undefined, cache: "no-store",
+        headers: {"Content-Type": "application/json", "X-Mij-Device": dev.id, "X-Mij-Ts": String(ts), "X-Mij-Sig": householdCrypto.toB64url(sig)}});
+    } catch (e) { const err = new Error("OFFLINE"); err.code = "OFFLINE"; throw err; }
+    let data = {};
+    try { data = await res.json(); } catch (e) { data = {}; }
+    if (!res.ok) { const err = new Error(data.error || `HTTP_${res.status}`); err.code = data.error || `HTTP_${res.status}`; err.status = res.status; throw err; }
+    return data;
+  }
+  const withPub = async (path, fields) => call("POST", path, {pubkey: (await deviceKeys.get()).pub, ...fields});
+  return {
+    createHousehold: (hid, labelCt, joinVerifier) => withPub("/households", {hid, labelCt, joinVerifier}),
+    join: (joinSecret, labelCt) => withPub("/join", {joinSecret, labelCt}),
+    me: hid => call("GET", `/households/${hid}/me`),
+    listDevices: hid => call("GET", `/households/${hid}/devices`),
+    approve: (hid, id) => call("POST", `/households/${hid}/devices/${id}/approve`),
+    remove: (hid, id) => call("DELETE", `/households/${hid}/devices/${id}`),
+    pull: (hid, since) => call("GET", `/households/${hid}/blob${since ? `?since=${since}` : ""}`),
+    push: (hid, baseVersion, envelope) => call("PUT", `/households/${hid}/blob`, {baseVersion, envelope}),
+  };
+}
+const homeTransport = createLocalHomeTransport();
+const SYNC_ERRORS = {
+  OFFLINE: "Serveur maison injoignable : es-tu bien sur le WiFi de la maison ?",
+  HTTP_502: "Le serveur de synchro du mini-PC ne répond pas (service arrêté ?).",
+  HTTP_404: "Serveur de synchro absent à cette adresse (ouvre l'app via https://mijoterie.local).",
+  DEVICE_LIMIT: "Ce foyer a déjà 8 appareils : retires-en un avant d'en ajouter.",
+  NOT_APPROVED: "Cet appareil attend encore l'approbation de l'administrateur.",
+  UNKNOWN_DEVICE: "Cet appareil n'est pas (ou plus) inscrit sur le serveur maison.",
+  ADMIN_ONLY: "Seul l'appareil administrateur peut faire ça.",
+  JOIN_DENIED: "Ce QR / code ne correspond à aucun foyer inscrit sur le serveur maison.",
+  CONFLICT: "Le serveur a une version plus récente : fais d'abord « Recevoir » (la fusion automatique arrive à l'étape suivante).",
+  CLOCK_SKEW: "L'heure de cet appareil est décalée de plus de 2 minutes : corrige-la puis réessaie.",
+  LAST_ADMIN: "Impossible de retirer le dernier appareil administrateur.",
+};
+const syncErrorText = e => SYNC_ERRORS[e?.code] || `Erreur serveur maison : ${e?.code || e?.message || e}`;
+function guessDeviceLabel() {
+  const ua = navigator.userAgent;
+  if (/iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return "iPad";
+  if (/iPhone/.test(ua)) return "iPhone";
+  if (/Android/.test(ua)) return "Téléphone Android";
+  return "Ordinateur";
+}
+
 function FoyerLabCard({state, update}) {
   const ah = state._session?.activeHouseholdId;
   const rawHouse = state._households?.[ah] || {};
@@ -160170,6 +160282,11 @@ function FoyerLabCard({state, update}) {
   const [join, setJoin] = useState(null); // {step, rawKey, hid, house, envHid}
   const [codeInput, setCodeInput] = useState("");
   const [scanning, setScanning] = useState(false);
+  const [labelInput, setLabelInput] = useState(() => guessDeviceLabel());
+  const [devices, setDevices] = useState(null); // liste serveur (labels déchiffrés)
+  const [busy, setBusy] = useState(false);
+  const uid = state._session?.activeUserId;
+  const srv = me.device?.server?.hid && me.device.server.hid === meta?.hid ? me.device.server : null;
 
   useEffect(() => {
     let alive = true;
@@ -160256,13 +160373,114 @@ function FoyerLabCard({state, update}) {
       const uid = v2.session.activeUserId;
       v2.households[house.id] = house; // les autres foyers éventuels restent intacts
       v2.users = {...v2.users, [uid]: {...v2.users[uid], householdId: house.id,
-        device: {deviceId: v2.users[uid]?.device?.deviceId || makeId("dev"), mode, boundMemberId: mode === "personal" ? memberId : null}}};
+        device: {deviceId: v2.users[uid]?.device?.deviceId || makeId("dev"), mode, boundMemberId: mode === "personal" ? memberId : null,
+          ...(join.server ? {server: join.server} : {})}}};
       v2.session = {...v2.session, activeHouseholdId: house.id};
       update(() => projectRuntime(v2));
       setJoin(null);
       say("ok", `Foyer rejoint : ${house.members.length} membre(s), ${Object.keys(house.menus || {}).length} semaine(s) de menus.`);
     } catch (e) { say("err", "Échec : " + (e.message || e)); }
   };
+
+  // ── S4 — Serveur maison ──
+  const LABEL_HID = "hh_libelle_appareil_v1"; // AAD fixe : le libellé est scellé avant de connaître le hid (jonction par code)
+  const sealLabel = async (rawKey, label) => JSON.stringify(await householdCrypto.seal({label: String(label || "").slice(0, 60)}, LABEL_HID, rawKey));
+  const setServer = (patch) => update(s => {
+    const u = s._users[uid] || {};
+    const dev = u.device || {deviceId: makeId("dev"), mode: "personal", boundMemberId: null};
+    return {_users: {...s._users, [uid]: {...u, device: {...dev, server: {...(dev.server || {}), ...patch}}}}};
+  });
+  const run = async (fn) => { setBusy(true); setMsg(null); try { await fn(); } catch (e) { say("err", syncErrorText(e)); } finally { setBusy(false); } };
+
+  const activateServer = () => run(async () => {
+    const raw = await householdKeyStore.get(meta.hid);
+    const secret = await householdCrypto.joinSecret(raw);
+    const labelCt = await sealLabel(raw, labelInput);
+    let r;
+    try { r = await homeTransport.createHousehold(meta.hid, labelCt, await householdCrypto.joinVerifier(secret)); }
+    catch (e) {
+      if (e.code !== "HOUSEHOLD_EXISTS") throw e;
+      r = await homeTransport.join(secret, labelCt); // foyer déjà inscrit par un autre appareil
+    }
+    setServer({hid: meta.hid, deviceId: r.deviceId, isAdmin: !!r.isAdmin, approved: !!r.approved, version: 0});
+    if (!r.approved) { say("ok", "Demande envoyée : l'appareil administrateur doit l'approuver."); return; }
+    const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw);
+    const p = await homeTransport.push(meta.hid, 0, env);
+    setServer({version: p.version});
+    say("ok", `Serveur maison activé : foyer envoyé (version ${p.version}). Le serveur ne peut pas le lire.`);
+  });
+  const pushNow = () => run(async () => {
+    const raw = await householdKeyStore.get(meta.hid);
+    const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw);
+    const p = await homeTransport.push(meta.hid, srv.version || 0, env);
+    setServer({version: p.version});
+    say("ok", `Foyer envoyé au serveur maison (version ${p.version}).`);
+  });
+  const pullNow = () => run(async () => {
+    const r = await homeTransport.pull(meta.hid, srv.version || 0);
+    if (r.unchanged) { say("ok", `Déjà à jour (version ${r.version}).`); return; }
+    if (!r.envelope) { say("ok", "Rien sur le serveur pour l'instant : fais « Envoyer » depuis un appareil à jour."); return; }
+    const raw = await householdKeyStore.get(meta.hid);
+    const house = await householdCrypto.open(r.envelope, raw);
+    house.syncMeta = {...(house.syncMeta || {}), hid: meta.hid};
+    snapshotBeforeMigration(2);
+    const v2 = applyRuntimeToV2(state);
+    v2.households[house.id] = house;
+    const u = v2.users[uid];
+    v2.users = {...v2.users, [uid]: {...u, householdId: house.id, device: {...u.device, server: {...u.device.server, version: r.version}}}};
+    v2.session = {...v2.session, activeHouseholdId: house.id};
+    update(() => projectRuntime(v2));
+    say("ok", `Foyer reçu (version ${r.version}) : ${house.members.length} membre(s), ${Object.keys(house.menus || {}).length} semaine(s) de menus.`);
+  });
+  const checkApproval = () => run(async () => {
+    const r = await homeTransport.me(meta.hid);
+    setServer({approved: !!r.approved, isAdmin: !!r.isAdmin});
+    say("ok", r.approved ? "Appareil approuvé ✅ Tu peux « Recevoir » le foyer." : "Toujours en attente d'approbation.");
+  });
+  const loadDevices = () => run(async () => {
+    const raw = await householdKeyStore.get(meta.hid);
+    const r = await homeTransport.listDevices(meta.hid);
+    const list = await Promise.all(r.devices.map(async d => {
+      let label = "(sans nom)";
+      try { if (d.labelCt) label = (await householdCrypto.open(JSON.parse(d.labelCt), raw)).label || label; } catch (e) { label = "(libellé illisible)"; }
+      return {...d, label};
+    }));
+    setDevices({list, max: r.max});
+  });
+  const approveDevice = id => run(async () => { await homeTransport.approve(meta.hid, id); await loadDevices(); });
+  const removeDevice = id => run(async () => { await homeTransport.remove(meta.hid, id); await loadDevices(); });
+
+  // Jonction via le serveur (remplace le fichier) : demande → attente d'approbation → réception.
+  const requestServerJoin = () => run(async () => {
+    const secret = await householdCrypto.joinSecret(join.rawKey);
+    const r = await homeTransport.join(secret, await sealLabel(join.rawKey, labelInput));
+    if (join.hid && r.hid !== join.hid) throw new Error("Le serveur a répondu pour un autre foyer que le QR scanné.");
+    setJoin(j => ({...j, step: "pending", serverHid: r.hid, deviceId: r.deviceId}));
+    if (r.approved) await fetchJoinedHousehold(r.hid, r.deviceId);
+    else say("ok", "Demande envoyée ✅ Sur l'appareil administrateur : Foyer partagé → « Appareils » → Approuver.");
+  });
+  const fetchJoinedHousehold = async (hid, deviceId) => {
+    const r = await homeTransport.pull(hid, 0);
+    if (!r.envelope) throw new Error("Approuvé, mais aucun foyer n'a encore été envoyé au serveur.");
+    const house = await householdCrypto.open(r.envelope, join.rawKey);
+    if (!house || !Array.isArray(house.members) || !house.id) throw new Error("Contenu du foyer invalide.");
+    house.syncMeta = {...(house.syncMeta || {}), hid};
+    setJoin(j => ({...j, step: "who", house, envHid: hid, sealedAt: r.envelope.sealedAt,
+      server: {hid, deviceId, isAdmin: false, approved: true, version: r.version}}));
+    setMsg(null);
+  };
+  // Pendant l'attente, on vérifie toutes les 5 s si l'admin a approuvé.
+  useEffect(() => {
+    if (join?.step !== "pending" || !join.serverHid) return;
+    let alive = true;
+    const t = setInterval(async () => {
+      try {
+        const r = await homeTransport.me(join.serverHid);
+        if (alive && r.approved) { clearInterval(t); await fetchJoinedHousehold(join.serverHid, join.deviceId); }
+      } catch (e) { /* hors WiFi : on réessaiera */ }
+    }, 5000);
+    return () => { alive = false; clearInterval(t); };
+  }, [join?.step, join?.serverHid]);
 
   const btn = "px-4 py-2 rounded text-sm font-medium";
   const btnMain = `bg-emerald-600 hover:bg-emerald-700 text-white ${btn}`;
@@ -160307,6 +160525,61 @@ function FoyerLabCard({state, update}) {
               <button onClick={() => setInvite(null)} className={btnAlt}>Masquer</button>
             </div>
           )}
+
+          <div className="border-t border-slate-200 dark:border-slate-700 pt-3 space-y-2">
+            <p className="text-sm font-medium text-slate-700 dark:text-slate-200">☁️ Serveur maison (mini-PC)</p>
+            {!srv && (
+              <>
+                <p className="text-sm text-slate-600 dark:text-slate-300">
+                  Le serveur de la maison garde le foyer <strong>chiffré</strong> (il ne peut pas le lire) pour que les autres appareils le récupèrent sans fichier.
+                </p>
+                <div className="flex flex-wrap gap-2 items-center">
+                  <input value={labelInput} onChange={e => setLabelInput(e.target.value)} placeholder="Nom de cet appareil"
+                    className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm flex-1" />
+                  <button onClick={activateServer} disabled={busy} className={btnMain}>☁️ Activer le serveur maison</button>
+                </div>
+              </>
+            )}
+            {srv && !srv.approved && (
+              <div className="flex flex-wrap gap-2 items-center">
+                <p className="text-sm text-amber-800 dark:text-amber-200">⏳ En attente d'approbation par l'appareil administrateur.</p>
+                <button onClick={checkApproval} disabled={busy} className={btnAlt}>Vérifier</button>
+              </div>
+            )}
+            {srv && srv.approved && (
+              <>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  Inscrit sur le serveur{srv.isAdmin ? " · appareil administrateur" : ""} · version locale {srv.version || 0}. Synchro manuelle pour l'instant (automatique à l'étape suivante).
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <button onClick={pushNow} disabled={busy} className={btnMain}>⬆️ Envoyer</button>
+                  <button onClick={pullNow} disabled={busy} className={btnAlt}>⬇️ Recevoir</button>
+                  <button onClick={loadDevices} disabled={busy} className={btnAlt}>📱 Appareils</button>
+                </div>
+              </>
+            )}
+            {devices && (
+              <div className="space-y-1">
+                <p className="text-xs text-slate-500 dark:text-slate-400">{devices.list.length} / {devices.max} appareils</p>
+                <ul className="space-y-1">
+                  {devices.list.map(d => (
+                    <li key={d.deviceId} className="flex flex-wrap items-center justify-between gap-2 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded px-3 py-2">
+                      <span className="text-sm text-slate-700 dark:text-slate-200">
+                        {d.label}{d.deviceId === srv?.deviceId ? " (cet appareil)" : ""}{d.isAdmin ? " · admin" : ""}
+                        {!d.approved && <strong className="text-amber-800 dark:text-amber-200"> · en attente</strong>}
+                      </span>
+                      {srv?.isAdmin && d.deviceId !== srv.deviceId && (
+                        <span className="flex gap-2">
+                          {!d.approved && <button onClick={() => approveDevice(d.deviceId)} disabled={busy} className={btnMain}>Approuver</button>}
+                          <button onClick={() => removeDevice(d.deviceId)} disabled={busy} className={btnAlt}>Retirer</button>
+                        </span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
       )}
 
@@ -160347,11 +160620,25 @@ function FoyerLabCard({state, update}) {
         {scanning && <QrScanner onResult={onScan} onCancel={() => setScanning(false)} />}
         {join?.step === "file" && (
           <div className="space-y-2">
-            <p className="text-sm text-emerald-800 dark:text-emerald-200">✅ Clé du foyer reçue. Choisis maintenant le fichier foyer chiffré (foyer-mijoterie-….json).</p>
-            <label className={`${btnMain} cursor-pointer inline-flex items-center`}>
+            <p className="text-sm text-emerald-800 dark:text-emerald-200">✅ Clé du foyer reçue. Récupère maintenant le foyer :</p>
+            <div className="flex flex-wrap gap-2 items-center">
+              <input value={labelInput} onChange={e => setLabelInput(e.target.value)} placeholder="Nom de cet appareil"
+                className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm flex-1" />
+              <button onClick={requestServerJoin} disabled={busy} className={btnMain}>☁️ Demander l'accès au serveur maison</button>
+            </div>
+            <p className="text-xs text-slate-500 dark:text-slate-400">ou, en secours, avec le fichier foyer chiffré (foyer-mijoterie-….json) :</p>
+            <label className={`${btnAlt} cursor-pointer inline-flex items-center`}>
               📂 Choisir le fichier foyer
               <input type="file" accept={jsonFileAccept()} onChange={onFoyerFile} className="sr-only" />
             </label>
+            <div><button onClick={() => setJoin(null)} className={btnAlt}>Annuler</button></div>
+          </div>
+        )}
+        {join?.step === "pending" && (
+          <div className="space-y-2">
+            <p className="text-sm text-amber-800 dark:text-amber-200">
+              ⏳ Demande envoyée. Sur l'appareil administrateur : 🏠 Foyer partagé → 📱 Appareils → <strong>Approuver</strong>. Cette page se met à jour toute seule.
+            </p>
             <div><button onClick={() => setJoin(null)} className={btnAlt}>Annuler</button></div>
           </div>
         )}

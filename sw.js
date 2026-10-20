@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.111.1";
+const CACHE_VERSION = "menu-ig-bas-v2.112.0";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -84,6 +84,9 @@ self.addEventListener("fetch", (event) => {
   const req = event.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
+  // V3.0 Phase 2·L (S4) — API du serveur de synchro maison : JAMAIS en cache
+  // (réponses signées, propres à l'instant ; un cache servirait un vieux foyer).
+  if (url.origin === self.location.origin && url.pathname.includes("/api/")) return;
 
   // Navigation HTML → network-first (récupère les mises à jour, fallback offline).
   const isNavigation = req.mode === "navigate" ||

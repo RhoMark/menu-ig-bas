@@ -35,7 +35,8 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          # 22 : node:sqlite intégré (serveur de synchro maison, Phase 2·L S4)
+          node-version: "22"
 
       # ── 1. JSON validation × 4 blocs ────────────────────────────────
       - name: Validate JSON blocks
@@ -105,6 +106,9 @@ jobs:
 
       - name: Household crypto (clé de foyer, Phase 2·L S3)
         run: node scripts/test-household-crypto.mjs
+
+      - name: Sync server (serveur maison aveugle, Phase 2·L S4)
+        run: node --disable-warning=ExperimentalWarning scripts/test-sync-server.mjs
 
       # ── 5. HTML basique ─────────────────────────────────────────────
       - name: HTML basic checks
