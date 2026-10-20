@@ -103,6 +103,9 @@ jobs:
       - name: Migration safety (zero data loss)
         run: node scripts/test-migration.mjs
 
+      - name: Household crypto (clé de foyer, Phase 2·L S3)
+        run: node scripts/test-household-crypto.mjs
+
       # ── 5. HTML basique ─────────────────────────────────────────────
       - name: HTML basic checks
         run: |

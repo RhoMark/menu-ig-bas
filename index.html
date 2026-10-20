@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.110.3</title>
+<title>Menu IG Bas — V2.111.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -114,6 +114,19 @@ if ("serviceWorker" in navigator) {
       else if (ui === 'classic') localStorage.removeItem(KEY);
       window.__V3_UI = localStorage.getItem(KEY) === 'on';
     } catch (e) { window.__V3_UI = false; }
+  })();
+
+  // V3.0 Phase 2·L (S3) — Flag labo « Foyer partagé » (clé de foyer + fichier
+  // foyer chiffré). DÉFAUT OFF : invisible aux beta testeurs (shadow mode).
+  // Activation pour un seul navigateur : ?sync=lab ; retour : ?sync=off.
+  (function resolveSyncLab() {
+    try {
+      var KEY = 'menu-ig-bas-synclab';
+      var s = new URLSearchParams(window.location.search).get('sync');
+      if (s === 'lab') localStorage.setItem(KEY, 'on');
+      else if (s === 'off') localStorage.removeItem(KEY);
+      window.__SYNC_LAB = localStorage.getItem(KEY) === 'on';
+    } catch (e) { window.__SYNC_LAB = false; }
   })();
 </script>
 <!-- V3.0 Phase 2·L (S0) — React/ReactDOM/Babel VENDORISÉS en local (étaient sur
@@ -626,7 +639,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment exporter mes données ?",
-          "a": "Paramètres → Synchronisation entre appareils → bouton « Exporter mes données ». L'app génère un fichier JSON contenant tout tes données déchiffré (foyer, membres, menus, notes, journal). Tu peux le partager via AirDrop, mail, USB, etc. Sur l'autre appareil, bouton « Importer depuis un fichier » pour restaurer."
+          "a": "Paramètres → section « 💾 Sauvegarde / restauration » → bouton « Exporter mes données ». L'app génère un fichier JSON contenant toutes tes données en clair (foyer, membres, allergies, menus, notes, journal) : transfère-le de préférence par câble USB ou en local (AirDrop, KDE Connect) plutôt que par une messagerie, et supprime-le une fois l'import fait. Sur l'autre appareil, même section, bouton « Importer depuis un fichier » pour restaurer."
         },
         {
           "q": "Comment effacer mes données ?",
@@ -157443,6 +157456,163 @@ const cryptoStore = (() => {
   return {encrypt, decrypt, getKeyOnly, deleteKey};
 })();
 
+// ============================================================================
+// V3.0 Phase 2·L (S3) — Clé de foyer + fichier foyer chiffré (labo, gated
+// window.__SYNC_LAB). DISTINCTE de la clé maître au repos (cryptoStore) :
+// - clé maître = propre à CET appareil, non extractible, chiffre localStorage ;
+// - clé de foyer = PARTAGÉE entre les appareils de la famille (QR / code de
+//   secours, jamais via un serveur — INV-2), chiffre le « blob » du foyer.
+// Le serveur (S4) ne verra que `hid` (opaque, aléatoire) + l'enveloppe.
+// Enveloppe : {format:"mijoterie-foyer", v:1, hid, iv, ct, sealedAt} ; AES-GCM
+// 256 avec AAD = hid → un blob ne peut pas être « recollé » sur un autre foyer.
+// Bloc PUR (aucun accès stockage) → testé en Node : scripts/test-household-crypto.mjs
+// ============================================================================
+// @@household-crypto:start
+const householdCrypto = (() => {
+  const FORMAT = "mijoterie-foyer";
+  const INVITE_PREFIX = "mijoterie:1:";
+  const B32 = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"; // Crockford (sans I, L, O, U)
+  const enc = new TextEncoder();
+  const dec = new TextDecoder();
+
+  function fail(code, msg) { const e = new Error(msg || code); e.code = code; return e; }
+  function toB64url(bytes) {
+    let bin = "";
+    for (let i = 0; i < bytes.length; i++) bin += String.fromCharCode(bytes[i]);
+    return btoa(bin).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  }
+  function fromB64url(s) {
+    const b64 = s.replace(/-/g, "+").replace(/_/g, "/") + "===".slice((s.length + 3) % 4);
+    const bin = atob(b64);
+    const out = new Uint8Array(bin.length);
+    for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+    return out;
+  }
+  function toB32(bytes) {
+    let bits = 0, value = 0, out = "";
+    for (const b of bytes) {
+      value = (value << 8) | b; bits += 8;
+      while (bits >= 5) { out += B32[(value >>> (bits - 5)) & 31]; bits -= 5; }
+    }
+    if (bits > 0) out += B32[(value << (5 - bits)) & 31];
+    return out;
+  }
+  function fromB32(s, nBytes) {
+    let bits = 0, value = 0;
+    const out = [];
+    for (const ch of s) {
+      const v = B32.indexOf(ch);
+      if (v < 0) throw fail("CODE_INVALID", "Caractère invalide dans le code");
+      value = ((value << 5) | v) & 0xffffff; bits += 5;
+      if (bits >= 8) { out.push((value >>> (bits - 8)) & 255); bits -= 8; }
+    }
+    if (out.length < nBytes) throw fail("CODE_INVALID", "Code trop court");
+    return new Uint8Array(out.slice(0, nBytes));
+  }
+  const aad = hid => enc.encode(`${FORMAT}|v1|${hid}`);
+  const importKey = raw => crypto.subtle.importKey("raw", raw, {name: "AES-GCM"}, false, ["encrypt", "decrypt"]);
+
+  function newHid() { return "hh_" + toB64url(crypto.getRandomValues(new Uint8Array(16))); }
+  function newKey() { return crypto.getRandomValues(new Uint8Array(32)); }
+
+  async function seal(household, hid, rawKey) {
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const ct = new Uint8Array(await crypto.subtle.encrypt(
+      {name: "AES-GCM", iv, additionalData: aad(hid)}, await importKey(rawKey),
+      enc.encode(JSON.stringify(household))));
+    return {format: FORMAT, v: 1, hid, iv: toB64url(iv), ct: toB64url(ct), sealedAt: new Date().toISOString()};
+  }
+  async function open(envelope, rawKey) {
+    if (!envelope || envelope.format !== FORMAT || envelope.v !== 1 || typeof envelope.hid !== "string"
+        || typeof envelope.iv !== "string" || typeof envelope.ct !== "string") {
+      throw fail("FORMAT", "Ce fichier n'est pas un fichier foyer Mijoterie");
+    }
+    let pt;
+    try {
+      pt = await crypto.subtle.decrypt({name: "AES-GCM", iv: fromB64url(envelope.iv), additionalData: aad(envelope.hid)},
+        await importKey(rawKey), fromB64url(envelope.ct));
+    } catch (e) {
+      throw fail("WRONG_KEY", "Ce code ne correspond pas à ce fichier foyer (ou le fichier a été modifié)");
+    }
+    return JSON.parse(dec.decode(pt));
+  }
+
+  // Invitation QR : « mijoterie:1:<hid>:<clé base64url> » (~90 caractères).
+  function inviteString(hid, rawKey) { return `${INVITE_PREFIX}${hid}:${toB64url(rawKey)}`; }
+  function parseInvite(str) {
+    const s = String(str || "").trim();
+    if (!s.startsWith(INVITE_PREFIX)) throw fail("INVITE_INVALID", "Ce QR code n'est pas une invitation Mijoterie");
+    const [hid, k] = s.slice(INVITE_PREFIX.length).split(":");
+    const raw = k ? fromB64url(k) : null;
+    if (!/^hh_[A-Za-z0-9_-]{16,}$/.test(hid || "") || !raw || raw.length !== 32) {
+      throw fail("INVITE_INVALID", "Invitation incomplète ou abîmée");
+    }
+    return {hid, rawKey: raw};
+  }
+
+  // Code de secours (saisie manuelle) : clé 32 o + 2 o de contrôle (SHA-256)
+  // en base32 Crockford = 55 caractères, groupés par 5. Une faute de frappe
+  // est détectée par le contrôle AVANT toute tentative de déchiffrement.
+  async function checksum(rawKey) {
+    return new Uint8Array(await crypto.subtle.digest("SHA-256", rawKey)).slice(0, 2);
+  }
+  async function recoveryCode(rawKey) {
+    const all = new Uint8Array(34);
+    all.set(rawKey, 0); all.set(await checksum(rawKey), 32);
+    return toB32(all).match(/.{1,5}/g).join("-");
+  }
+  async function parseRecoveryCode(str) {
+    const norm = String(str || "").toUpperCase()
+      .replace(/[\s-]/g, "").replace(/O/g, "0").replace(/[IL]/g, "1");
+    if (norm.length !== 55) throw fail("CODE_INVALID", `Le code doit contenir 55 caractères (${norm.length} saisis)`);
+    const all = fromB32(norm, 34);
+    const raw = all.slice(0, 32);
+    const sum = await checksum(raw);
+    if (sum[0] !== all[32] || sum[1] !== all[33]) throw fail("CODE_TYPO", "Code incorrect : vérifie chaque caractère");
+    return raw;
+  }
+
+  return {newHid, newKey, seal, open, inviteString, parseInvite, recoveryCode, parseRecoveryCode, toB64url, fromB64url};
+})();
+// @@household-crypto:end
+
+// Clés de foyer détenues par CET appareil : {[hid]: clé base64url}, stockées
+// chiffrées par la clé maître non extractible (jamais en clair au repos) et
+// HORS de l'état exporté (l'export JSON en clair ne contient donc pas la clé).
+const householdKeyStore = (() => {
+  const LS_KEY = "menu-ig-bas-hhkeys";
+  async function readAll() {
+    const raw = localStorage.getItem(LS_KEY);
+    if (!raw) return {};
+    try { return JSON.parse(await cryptoStore.decrypt(JSON.parse(raw))); }
+    catch (e) { console.error("[foyer] trousseau illisible :", e); return {}; }
+  }
+  async function get(hid) {
+    const all = await readAll();
+    return all[hid] ? householdCrypto.fromB64url(all[hid]) : null;
+  }
+  async function put(hid, rawKey) {
+    const all = await readAll();
+    all[hid] = householdCrypto.toB64url(rawKey);
+    localStorage.setItem(LS_KEY, JSON.stringify(await cryptoStore.encrypt(JSON.stringify(all))));
+  }
+  return {get, put};
+})();
+
+// Rôle d'un membre (S3) : calculé, jamais forcé sur les foyers non partagés →
+// aucune migration de données pour les beta testeurs (shadow mode). Le
+// fondateur est fixé à la création de la clé de foyer (household.syncMeta).
+function memberRole(household, member) {
+  if (member?.role) return member.role;
+  return member && household?.syncMeta?.founderMemberId === member.id ? "admin" : "member";
+}
+// 1er adulte (≥ 18 ans) du foyer = admin fondateur par défaut ; sinon 1er membre.
+function defaultFounderId(members) {
+  const y = new Date().getFullYear();
+  const adult = (members || []).find(m => m.birthYear && y - m.birthYear >= 18);
+  return (adult || (members || [])[0] || {}).id ?? null;
+}
+
 // ----------------------------------------------------------------------------
 // Backfill sur un objet V2 brut. Mutualisé entre les chemins de chargement.
 // ----------------------------------------------------------------------------
@@ -159869,6 +160039,349 @@ function BackupRestoreCard() {
   );
 }
 
+// ============================================================================
+// V3.0 Phase 2·L (S3) — Carte labo « Foyer partagé » (gated window.__SYNC_LAB).
+// Créer la clé de foyer → l'inviter (QR + code de secours) → transporter le
+// foyer dans un FICHIER CHIFFRÉ (en attendant le serveur maison, S4) →
+// rejoindre sur un autre appareil + « Qui es-tu ? ». Rien n'est envoyé où que
+// ce soit : le fichier se transmet à la main (câble, KDE Connect…).
+// ============================================================================
+let labTaps = [];
+function labTap() {
+  const now = Date.now();
+  labTaps = labTaps.filter(t => now - t < 3000).concat(now);
+  if (labTaps.length < 5) return;
+  labTaps = [];
+  try {
+    const KEY = "menu-ig-bas-synclab";
+    if (localStorage.getItem(KEY) === "on") localStorage.removeItem(KEY); else localStorage.setItem(KEY, "on");
+  } catch (e) { return; }
+  window.location.reload();
+}
+function loadVendorScript(src, globalName) {
+  if (window[globalName]) return Promise.resolve(window[globalName]);
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.src = src;
+    s.onload = () => window[globalName] ? resolve(window[globalName]) : reject(new Error(globalName + " absent"));
+    s.onerror = () => reject(new Error(src + " introuvable"));
+    document.head.appendChild(s);
+  });
+}
+// Même logique que l'import JSON : sur Android, le joker « tout type » ouvre la
+// galerie photos de Chrome au lieu des fichiers (cf. V2.110.3).
+const jsonFileAccept = () => /Android/i.test(navigator.userAgent)
+  ? ".json,application/json,text/plain,application/octet-stream" : "application/json,.json,*/*";
+
+function QrCodeSvg({text, size = 240}) {
+  const [qr, setQr] = useState(null);
+  const [err, setErr] = useState(null);
+  useEffect(() => {
+    let alive = true;
+    loadVendorScript("vendor/qrcode-generator.js", "qrcode").then(qrcode => {
+      const q = qrcode(0, "M"); q.addData(text); q.make();
+      if (alive) setQr(q);
+    }).catch(e => alive && setErr(e.message));
+    return () => { alive = false; };
+  }, [text]);
+  if (err) return <p className="text-sm text-red-700 dark:text-red-300">QR indisponible ({err}) — utilise le code de secours.</p>;
+  if (!qr) return <p className="text-sm text-slate-500">Génération du QR…</p>;
+  const n = qr.getModuleCount(), m = 4, cells = [];
+  for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (qr.isDark(r, c)) cells.push(`M${c + m} ${r + m}h1v1h-1z`);
+  return (
+    <svg viewBox={`0 0 ${n + 2 * m} ${n + 2 * m}`} width={size} height={size} role="img" aria-label="QR code d'invitation au foyer"
+      style={{background: "#ffffff", shapeRendering: "crispEdges", maxWidth: "100%", height: "auto"}}>
+      <path d={cells.join("")} fill="#000000" />
+    </svg>
+  );
+}
+
+function QrScanner({onResult, onCancel}) {
+  const videoRef = useRef(null);
+  const [err, setErr] = useState(null);
+  useEffect(() => {
+    let stream = null, stopped = false, raf = 0;
+    const canvas = document.createElement("canvas");
+    (async () => {
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({video: {facingMode: "environment"}, audio: false});
+        if (stopped) return;
+        const v = videoRef.current;
+        v.srcObject = stream; await v.play();
+        let detector = null;
+        if ("BarcodeDetector" in window) {
+          try {
+            const formats = await window.BarcodeDetector.getSupportedFormats();
+            if (formats.includes("qr_code")) detector = new window.BarcodeDetector({formats: ["qr_code"]});
+          } catch (e) { detector = null; }
+        }
+        const jsQR = detector ? null : await loadVendorScript("vendor/jsQR.js", "jsQR");
+        const tick = async () => {
+          if (stopped) return;
+          if (v.readyState >= 2 && v.videoWidth) {
+            let found = null;
+            if (detector) {
+              const codes = await detector.detect(v).catch(() => []);
+              found = codes[0]?.rawValue || null;
+            } else {
+              canvas.width = v.videoWidth; canvas.height = v.videoHeight;
+              const ctx = canvas.getContext("2d", {willReadFrequently: true});
+              ctx.drawImage(v, 0, 0);
+              const img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+              found = jsQR(img.data, img.width, img.height, {inversionAttempts: "dontInvert"})?.data || null;
+            }
+            if (found && !stopped) { stopped = true; onResult(found); return; }
+          }
+          raf = requestAnimationFrame(tick);
+        };
+        tick();
+      } catch (e) {
+        setErr(e?.name === "NotAllowedError"
+          ? "Accès à la caméra refusé. Autorise-le dans les réglages du navigateur, ou saisis le code de secours."
+          : "Caméra indisponible (" + (e?.message || e) + "). Saisis le code de secours.");
+      }
+    })();
+    return () => { stopped = true; cancelAnimationFrame(raf); stream?.getTracks().forEach(t => t.stop()); };
+  }, []);
+  return (
+    <div className="space-y-2">
+      {err ? <p className="text-sm text-red-700 dark:text-red-300">{err}</p> : (
+        <video ref={videoRef} playsInline muted aria-label="Caméra : vise le QR code du foyer"
+          style={{width: "100%", maxWidth: 320, borderRadius: 8, background: "#000"}} />
+      )}
+      <button onClick={onCancel} className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-slate-100 px-3 py-1.5 rounded text-xs font-medium">
+        Annuler
+      </button>
+    </div>
+  );
+}
+
+function FoyerLabCard({state, update}) {
+  const ah = state._session?.activeHouseholdId;
+  const rawHouse = state._households?.[ah] || {};
+  const meta = rawHouse.syncMeta || null;
+  const members = state.profile?.members || [];
+  const me = state._users?.[state._session?.activeUserId] || {};
+  const [hasKey, setHasKey] = useState(null);
+  const [founderId, setFounderId] = useState(() => defaultFounderId(members));
+  const [invite, setInvite] = useState(null); // {qr, code}
+  const [msg, setMsg] = useState(null);
+  const [join, setJoin] = useState(null); // {step, rawKey, hid, house, envHid}
+  const [codeInput, setCodeInput] = useState("");
+  const [scanning, setScanning] = useState(false);
+
+  useEffect(() => {
+    let alive = true;
+    if (!meta?.hid) { setHasKey(false); return; }
+    householdKeyStore.get(meta.hid).then(k => alive && setHasKey(!!k)).catch(() => alive && setHasKey(false));
+    return () => { alive = false; };
+  }, [meta?.hid]);
+  // Masquage auto de l'invitation : le QR / code ouvre TOUTES les données du foyer.
+  useEffect(() => {
+    if (!invite) return;
+    const t = setTimeout(() => setInvite(null), 120000);
+    return () => clearTimeout(t);
+  }, [invite]);
+
+  const say = (type, txt) => setMsg({type, txt});
+  const currentHousehold = () => applyRuntimeToV2(state).households[ah];
+
+  const createFoyer = async () => {
+    try {
+      snapshotBeforeMigration(2);
+      const hid = householdCrypto.newHid();
+      await householdKeyStore.put(hid, householdCrypto.newKey());
+      const syncMeta = {hid, createdAt: new Date().toISOString(), founderMemberId: founderId};
+      const uid = state._session.activeUserId;
+      update(s => ({
+        _households: {...s._households, [ah]: {...s._households[ah], syncMeta}},
+        // L'appareil fondateur = appareil personnel de l'admin.
+        _users: {...s._users, [uid]: {...s._users[uid], device: {deviceId: s._users[uid]?.device?.deviceId || makeId("dev"), mode: "personal", boundMemberId: founderId}}},
+      }));
+      setHasKey(true);
+      say("ok", "Foyer partagé créé. Tu peux maintenant inviter un autre appareil.");
+    } catch (e) { say("err", "Échec de la création : " + (e.message || e)); }
+  };
+  const showInvite = async () => {
+    try {
+      const raw = await householdKeyStore.get(meta.hid);
+      setInvite({qr: householdCrypto.inviteString(meta.hid, raw), code: await householdCrypto.recoveryCode(raw)});
+    } catch (e) { say("err", "Invitation impossible : " + (e.message || e)); }
+  };
+  const exportFoyer = async () => {
+    try {
+      const raw = await householdKeyStore.get(meta.hid);
+      const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw);
+      const blob = new Blob([JSON.stringify(env)], {type: "application/json"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url; a.download = `foyer-mijoterie-${new Date().toISOString().slice(0, 10)}.json`;
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      say("ok", "Fichier foyer chiffré créé. Illisible sans le code du foyer : tu peux le transférer par câble ou KDE Connect.");
+    } catch (e) { say("err", "Échec de l'export : " + (e.message || e)); }
+  };
+
+  // ── Rejoindre ──
+  const gotKey = (rawKey, hid = null) => { setScanning(false); setJoin({step: "file", rawKey, hid}); setMsg(null); };
+  const onScan = (text) => {
+    try { const {hid, rawKey} = householdCrypto.parseInvite(text); gotKey(rawKey, hid); }
+    catch (e) { setScanning(false); say("err", e.message); }
+  };
+  const onCode = async () => {
+    try { gotKey(await householdCrypto.parseRecoveryCode(codeInput)); setCodeInput(""); }
+    catch (e) { say("err", e.message); }
+  };
+  const onFoyerFile = async (e) => {
+    const file = e.target.files?.[0];
+    e.target.value = "";
+    if (!file) return;
+    try {
+      const env = JSON.parse(await file.text());
+      if (join.hid && env.hid !== join.hid) throw new Error("Ce fichier appartient à un autre foyer que le QR scanné.");
+      const house = await householdCrypto.open(env, join.rawKey);
+      if (!house || !Array.isArray(house.members) || !house.id) throw new Error("Contenu du foyer invalide.");
+      house.syncMeta = {...(house.syncMeta || {}), hid: env.hid};
+      setJoin({...join, step: "who", house, envHid: env.hid, sealedAt: env.sealedAt});
+      setMsg(null);
+    } catch (err) { say("err", err.message || String(err)); }
+  };
+  const confirmJoin = async (memberId, mode) => {
+    try {
+      snapshotBeforeMigration(2);
+      const {house, envHid, rawKey} = join;
+      await householdKeyStore.put(envHid, rawKey);
+      const v2 = applyRuntimeToV2(state);
+      const uid = v2.session.activeUserId;
+      v2.households[house.id] = house; // les autres foyers éventuels restent intacts
+      v2.users = {...v2.users, [uid]: {...v2.users[uid], householdId: house.id,
+        device: {deviceId: v2.users[uid]?.device?.deviceId || makeId("dev"), mode, boundMemberId: mode === "personal" ? memberId : null}}};
+      v2.session = {...v2.session, activeHouseholdId: house.id};
+      update(() => projectRuntime(v2));
+      setJoin(null);
+      say("ok", `Foyer rejoint : ${house.members.length} membre(s), ${Object.keys(house.menus || {}).length} semaine(s) de menus.`);
+    } catch (e) { say("err", "Échec : " + (e.message || e)); }
+  };
+
+  const btn = "px-4 py-2 rounded text-sm font-medium";
+  const btnMain = `bg-emerald-600 hover:bg-emerald-700 text-white ${btn}`;
+  const btnAlt = `bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-slate-100 ${btn}`;
+  const roleLabel = r => r === "admin" ? "Admin" : r === "coadmin" ? "Co-admin" : "Membre";
+  const device = me.device;
+  const deviceMember = members.find(m => m.id === device?.boundMemberId);
+
+  return (
+    <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
+      <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-1">🏠 Foyer partagé (labo)</h3>
+      <p className="text-xs text-slate-500 dark:text-slate-400 mb-3">
+        Fonction en test, visible seulement sur cet appareil (désactiver : ajoute <code>?sync=off</code> à l'adresse).
+      </p>
+
+      {meta?.hid && hasKey && (
+        <div className="space-y-3 mb-4">
+          <ul className="space-y-1">
+            {members.map(m => (
+              <li key={m.id} className="text-sm text-slate-700 dark:text-slate-200">
+                {m.name} — <strong>{roleLabel(memberRole(rawHouse, m))}</strong>
+              </li>
+            ))}
+          </ul>
+          {device && (
+            <p className="text-sm text-slate-600 dark:text-slate-300">
+              📱 Cet appareil : {device.mode === "shared" ? "appareil partagé (famille)" : `personnel — ${deviceMember?.name || "membre inconnu"}`}
+            </p>
+          )}
+          <div className="flex flex-wrap gap-2">
+            <button onClick={showInvite} className={btnMain}>📲 Inviter un appareil</button>
+            <button onClick={exportFoyer} className={btnAlt}>🔒 Exporter le fichier foyer chiffré</button>
+          </div>
+          {invite && (
+            <div className="border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950 rounded p-3 space-y-2">
+              <p className="text-sm text-amber-900 dark:text-amber-100 font-medium">
+                ⚠️ Ce QR code et ce code ouvrent TOUTES les données du foyer (allergies, santé). Ne les montre qu'à un appareil de la famille, ne les photographie pas, ne les envoie pas. Masquage automatique dans 2 minutes.
+              </p>
+              <QrCodeSvg text={invite.qr} />
+              <p className="text-xs text-slate-600 dark:text-slate-300">Code de secours (si la caméra ne marche pas) :</p>
+              <p className="font-mono text-sm break-all text-slate-800 dark:text-slate-100 select-all">{invite.code}</p>
+              <button onClick={() => setInvite(null)} className={btnAlt}>Masquer</button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {meta?.hid && hasKey === false && (
+        <p className="text-sm text-amber-800 dark:text-amber-200 mb-3">
+          Ce foyer est partagé mais la clé du foyer n'est pas sur cet appareil. Utilise « Rejoindre un foyer » ci-dessous.
+        </p>
+      )}
+
+      {!meta?.hid && !join && (
+        <div className="space-y-2 mb-4">
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            Créer la clé du foyer sur l'appareil principal. Qui est l'administrateur (gère membres et allergies) ?
+          </p>
+          <select value={founderId ?? ""} onChange={e => setFounderId(Number(e.target.value))}
+            className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm">
+            {members.map(m => <option key={m.id} value={m.id}>{m.name}</option>)}
+          </select>
+          <div><button onClick={createFoyer} className={btnMain}>🔑 Créer le foyer partagé</button></div>
+        </div>
+      )}
+
+      <div className="border-t border-slate-200 dark:border-slate-700 pt-3 space-y-2">
+        {!join && !scanning && (
+          <>
+            <p className="text-sm font-medium text-slate-700 dark:text-slate-200">Rejoindre un foyer existant</p>
+            <div className="flex flex-wrap gap-2">
+              <button onClick={() => { setScanning(true); setMsg(null); }} className={btnAlt}>📷 Scanner le QR code</button>
+            </div>
+            <div className="flex flex-wrap gap-2 items-center">
+              <input value={codeInput} onChange={e => setCodeInput(e.target.value)} placeholder="ou saisis le code de secours"
+                autoCapitalize="characters" autoComplete="off" spellCheck={false}
+                className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm font-mono flex-1" />
+              <button onClick={onCode} disabled={!codeInput.trim()} className={btnAlt}>Valider le code</button>
+            </div>
+          </>
+        )}
+        {scanning && <QrScanner onResult={onScan} onCancel={() => setScanning(false)} />}
+        {join?.step === "file" && (
+          <div className="space-y-2">
+            <p className="text-sm text-emerald-800 dark:text-emerald-200">✅ Clé du foyer reçue. Choisis maintenant le fichier foyer chiffré (foyer-mijoterie-….json).</p>
+            <label className={`${btnMain} cursor-pointer inline-flex items-center`}>
+              📂 Choisir le fichier foyer
+              <input type="file" accept={jsonFileAccept()} onChange={onFoyerFile} className="sr-only" />
+            </label>
+            <div><button onClick={() => setJoin(null)} className={btnAlt}>Annuler</button></div>
+          </div>
+        )}
+        {join?.step === "who" && (
+          <div className="space-y-2">
+            <p className="text-sm text-slate-700 dark:text-slate-200">
+              Foyer déchiffré : <strong>{join.house.members.length} membre(s)</strong>, {Object.keys(join.house.menus || {}).length} semaine(s) de menus
+              {join.sealedAt ? ` (fichier du ${join.sealedAt.slice(0, 10)})` : ""}.
+              ⚠️ Il remplacera sur cet appareil la version actuelle de ce foyer (une copie de secours est faite avant).
+            </p>
+            <p className="text-sm font-medium text-slate-700 dark:text-slate-200">Qui es-tu ?</p>
+            <div className="flex flex-wrap gap-2">
+              {join.house.members.map(m => (
+                <button key={m.id} onClick={() => confirmJoin(m.id, "personal")} className={btnMain}>{m.name}</button>
+              ))}
+              <button onClick={() => confirmJoin(null, "shared")} className={btnAlt}>👨‍👩‍👧 Appareil partagé (famille)</button>
+            </div>
+            <div><button onClick={() => setJoin(null)} className={btnAlt}>Annuler</button></div>
+          </div>
+        )}
+      </div>
+
+      {msg && (
+        <div className={`mt-3 text-sm rounded px-3 py-2 border ${msg.type === "err" ? "bg-red-50 dark:bg-red-950 border-red-300 dark:border-red-700 text-red-800 dark:text-red-200" : "bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200"}`}>
+          {msg.txt}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // V3.0 Phase 0.7 (C2) — Carte « Interface (beta) » : opt-in V3 + escape hatch.
 // Le flag est OFF par défaut. Aujourd'hui aucune UI V3 n'existe encore : la
 // carte sert à valider le harnais (activer/désactiver + bascule au rechargement).
@@ -160832,7 +161345,9 @@ function App({initialState}) {
         />
       )}
       <footer className="no-print bg-slate-900 text-slate-400 dark:text-slate-500 text-center py-3 text-xs">
-        Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} — prototype local • Données stockées dans votre navigateur ·{" "}
+        {/* S3 — 5 touches rapides sur la version = bascule du labo « Foyer partagé »
+            (indispensable sur une app iPhone installée : pas de barre d'adresse pour ?sync=lab). */}
+        <span onClick={labTap}>Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""}</span> — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className="underline hover:text-slate-200">Confidentialité</a>
@@ -165658,6 +166173,7 @@ function SettingsView({state, update, updateProfile}) {
 
       {/* V3.0 Phase 0.7 — Restauration des snapshots auto (B1) + opt-in UI V3 (C2). */}
       <BackupRestoreCard />
+      {window.__SYNC_LAB && <FoyerLabCard state={state} update={update} />}
       <V3UICard />
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
