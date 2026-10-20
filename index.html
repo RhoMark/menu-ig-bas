@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.110.1</title>
+<title>Menu IG Bas — V2.110.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -466,7 +466,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment exporter le menu ou la liste de courses en PDF ?",
-          "a": "Deux modes : (1) bouton 🖨️ « Imprimer » → ouvre le dialogue d'impression du navigateur ; tu peux y choisir « Enregistrer au format PDF » comme imprimante (option disponible sur tous les navigateurs et OS). (2) bouton 📄 « PDF » → téléchargement direct sans dialogue, fichier daté automatiquement (ex : menu-2026-05-15.pdf, liste-courses-2026-05-15.pdf). La 1re utilisation télécharge la bibliothèque html2pdf (~900 Ko, bundle local, pas de CDN) ; ensuite c'est instantané grâce au cache hors-ligne. Tout reste 100 % local : aucune donnée n'est envoyée nulle part."
+          "a": "Deux modes : (1) bouton 🖨️ « Imprimer » → ouvre le dialogue d'impression du navigateur ; tu peux y choisir « Enregistrer au format PDF » comme imprimante (option disponible sur tous les navigateurs et OS). (2) bouton 📄 « PDF » → téléchargement direct sans dialogue, fichier daté automatiquement (ex : menu-2026-05-15.pdf, liste-courses-2026-05-15.pdf). La 1re utilisation télécharge la bibliothèque html2pdf (~900 Ko, bundle local, pas de CDN) ; ensuite c'est instantané grâce au cache hors-ligne. Tout reste 100 % local : aucune donnée n'est envoyée nulle part. Sur iPhone / iPad : une fois le dialogue d'impression fermé, la page A4 reste affichée — touche l'écran pour revenir à l'app (iOS rend la main avant d'avoir fini de préparer l'impression, l'app attend donc ton retour)."
         },
         {
           "q": "Comment imprimer une recette ou l'enregistrer en PDF ?",
@@ -155045,7 +155045,7 @@ if ("serviceWorker" in navigator) {
       "prep": 35,
       "cook": 45,
       "rest": 720,
-      "advance": "Pommes de terre cuites la veille, 12h au frais",
+      "advance": "veille",
       "diff": 2,
       "cost": 7.5,
       "kcal": 760,
@@ -160626,14 +160626,13 @@ function App({initialState}) {
   };
 
   // Print trigger
+  // V2.110.2 — La page imprimable reste affichée jusqu'au retour de
+  // l'utilisateur (cf. printThenOnReturn : iOS rend la main avant d'imprimer).
   useEffect(() => {
-    if (printMode) {
-      const timer = setTimeout(() => {
-        window.print();
-        setPrintMode(null);
-      }, 300);
-      return () => clearTimeout(timer);
-    }
+    if (!printMode) return;
+    let stop = null;
+    const timer = setTimeout(() => { stop = printThenOnReturn(() => setPrintMode(null)); }, 300);
+    return () => { clearTimeout(timer); stop?.(); };
   }, [printMode]);
 
   // V2.91.0 (issue #22) — Export PDF dédié via html2pdf.js bundlé localement
@@ -160673,7 +160672,7 @@ function App({initialState}) {
           filename,
           margin: [10, 10, 10, 10],
           image: {type: "jpeg", quality: 0.92},
-          html2canvas: {scale: 2, useCORS: false, logging: false, backgroundColor: "#ffffff"},
+          html2canvas: pdfCanvasOptions(root),
           jsPDF: {unit: "mm", format: "a4", orientation},
           pagebreak: {mode: ["css", "legacy"]},
         }).from(root).save();
@@ -160713,8 +160712,8 @@ function App({initialState}) {
     );
   }
 
-  if (printMode === "menu") return <PrintMenuPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} />;
-  if (printMode === "shopping") return <PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} manualItems={state.manualItems[wk]||""} />;
+  if (printMode === "menu") return <><PrintMenuPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} /><PrintReturnHint /></>;
+  if (printMode === "shopping") return <><PrintShoppingPage weekStart={currentWeek} menu={currentMenu} profile={state.profile} pantryChecks={state.pantryChecks[wk]||{}} manualItems={state.manualItems[wk]||""} /><PrintReturnHint /></>;
 
   // V2.91.0 (#22) — Pendant la génération PDF, on rend la même page que
   // l'impression mais sans déclencher window.print(). html2pdf capture le
@@ -162552,6 +162551,42 @@ function loadHtml2Pdf() {
   });
 }
 
+// V2.110.2 — Options html2canvas communes aux exports PDF.
+// scrollX/scrollY = 0 : html2pdf capture un conteneur fixé en haut de
+// l'écran, mais html2canvas décale par défaut la capture du défilement de
+// la page → PDF blanc dès que la page est scrollée (quasi systématique sur
+// iPhone, où le planning est long). Échelle plafonnée : Safari iOS renvoie
+// un canvas vide sans erreur au-delà de sa limite de surface (~16,7 Mpx,
+// valeur couramment citée, dépend de l'appareil).
+function pdfCanvasOptions(el) {
+  const w = Math.max(el?.scrollWidth || 0, 1100);
+  const h = Math.max(el?.scrollHeight || 0, 800);
+  const scale = Math.max(0.75, Math.min(2, Math.sqrt(16e6 / (w * h))));
+  return {scale, useCORS: false, logging: false, backgroundColor: "#ffffff", scrollX: 0, scrollY: 0};
+}
+
+// V2.110.2 — Impression compatible iPhone / iPad. Sur iOS, window.print()
+// rend la main tout de suite et `afterprint` part AVANT la fermeture du
+// dialogue (bug WebKit #245171) : démonter la page imprimable à ce moment-là
+// faisait imprimer le planning ou des pages blanches. La vue d'impression
+// reste donc montée jusqu'à la prochaine interaction avec la page (le
+// dialogue système bloque les touches tant qu'il est ouvert). Renvoie une
+// fonction d'annulation.
+function printThenOnReturn(onReturn) {
+  window.print();
+  const handler = () => { cleanup(); onReturn(); };
+  const cleanup = () => {
+    clearTimeout(armTimer);
+    window.removeEventListener("pointerdown", handler, true);
+    window.removeEventListener("keydown", handler, true);
+  };
+  const armTimer = setTimeout(() => {
+    window.addEventListener("pointerdown", handler, true);
+    window.addEventListener("keydown", handler, true);
+  }, 500);
+  return cleanup;
+}
+
 // V2.108.0 — Fiche recette imprimable / exportable PDF (A4 portrait).
 // Styles inline (pas de classes dark:) → rendu identique à l'écran, à
 // l'impression et dans html2canvas, quel que soit le thème de l'app.
@@ -162656,15 +162691,12 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
     let cancelled = false;
     const body = document.body;
     if (exportMode === "print") {
-      const done = () => {
-        body.classList.remove("printing-recipe");
-        window.removeEventListener("afterprint", done);
-        if (!cancelled) setExportMode(null);
-      };
+      // V2.110.2 — Plus d'`afterprint` : sur iOS il part avant l'impression
+      // et démontait la fiche (→ planning ou pages blanches imprimés).
       body.classList.add("printing-recipe");
-      window.addEventListener("afterprint", done);
-      const t = setTimeout(() => window.print(), 150);
-      return () => { cancelled = true; clearTimeout(t); window.removeEventListener("afterprint", done); body.classList.remove("printing-recipe"); };
+      let stop = null;
+      const t = setTimeout(() => { stop = printThenOnReturn(() => { if (!cancelled) setExportMode(null); }); }, 150);
+      return () => { cancelled = true; clearTimeout(t); stop?.(); body.classList.remove("printing-recipe"); };
     }
     (async () => {
       try {
@@ -162677,7 +162709,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
           filename: `recette-${slug}.pdf`,
           margin: [10, 10, 10, 10],
           image: {type: "jpeg", quality: 0.92},
-          html2canvas: {scale: 2, useCORS: false, logging: false, backgroundColor: "#ffffff"},
+          html2canvas: pdfCanvasOptions(el),
           jsPDF: {unit: "mm", format: "a4", orientation: "portrait"},
           pagebreak: {mode: ["css", "legacy"], avoid: ["li", "tr"]},
         }).from(el).save();
@@ -165826,6 +165858,17 @@ function PdfGeneratingOverlay() {
          style={{position: "fixed"}}>
       <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
       <span>Génération du PDF en cours…</span>
+    </div>
+  );
+}
+
+// V2.110.2 — Après le dialogue d'impression (iOS surtout), la page A4 reste
+// affichée : on indique comment revenir (cf. printThenOnReturn).
+function PrintReturnHint() {
+  return (
+    <div className="fixed bottom-4 z-50 bg-slate-800 text-white px-4 py-3 rounded-lg shadow-lg text-sm no-print"
+         style={{position: "fixed", left: "50%", transform: "translateX(-50%)", whiteSpace: "nowrap"}}>
+      ← Touche l'écran pour revenir à l'app
     </div>
   );
 }
