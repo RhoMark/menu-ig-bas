@@ -168,6 +168,61 @@ await check("rétention : max 3 versions, purge > 30 j sauf la dernière", async
   assert.deepEqual(db.prepare("SELECT version FROM blobs WHERE hid = ? ORDER BY version").all(hid).map(r => r.version), [7]);
   db.close();
 });
+// ── S5 — rotation de la clé de foyer après retrait d'un appareil ──
+const ecdh = async () => {
+  const kp = await crypto.subtle.generateKey({ name: "ECDH", namedCurve: "P-256" }, false, ["deriveBits"]);
+  return { kp, pub: hc.toB64url(new Uint8Array(await crypto.subtle.exportKey("raw", kp.publicKey))) };
+};
+const hid2 = hc.newHid(), k1 = hc.newKey(), s1 = await hc.joinSecret(k1);
+const A2 = await newDevice(), B2 = await newDevice(), C2 = await newDevice();
+const [eA, eB, eC] = [await ecdh(), await ecdh(), await ecdh()];
+await check("rotation : préparation (A admin, B et C approuvés, clés ECDH enregistrées)", async () => {
+  assert.equal((await call(A2, "POST", "/api/v1/households", { hid: hid2, pubkey: A2.pub, joinVerifier: await hc.joinVerifier(s1), ecdhPub: eA.pub })).status, 201);
+  assert.equal((await call(B2, "POST", "/api/v1/join", { pubkey: B2.pub, joinSecret: s1, ecdhPub: eB.pub })).status, 202);
+  assert.equal((await call(C2, "POST", "/api/v1/join", { pubkey: C2.pub, joinSecret: s1 })).status, 202);
+  assert.equal((await call(C2, "PUT", `/api/v1/households/${hid2}/me/ecdh`, { ecdhPub: eC.pub })).status, 200);
+  for (const d of [B2, C2]) assert.equal((await call(A2, "POST", `/api/v1/households/${hid2}/devices/${d.id}/approve`)).status, 200);
+  assert.equal((await call(A2, "PUT", `/api/v1/households/${hid2}/blob`, { baseVersion: 0, envelope: await hc.seal(household, hid2, k1) })).status, 200);
+  const list = await call(A2, "GET", `/api/v1/households/${hid2}/devices`);
+  assert.ok(list.body.devices.every(d => d.ecdhPub));
+});
+const k2 = hc.newKey(), s2 = await hc.joinSecret(k2);
+await check("rotation par un non-admin → 403", async () => {
+  const r = await call(B2, "POST", `/api/v1/households/${hid2}/rotate`, { epoch: 1, joinVerifier: await hc.joinVerifier(s2), wraps: [], baseVersion: 1, envelope: await hc.seal(household, hid2, k2, 1) });
+  assert.equal(r.status, 403);
+});
+await check("A retire C puis fait tourner la clé (époque 1)", async () => {
+  assert.equal((await call(A2, "DELETE", `/api/v1/households/${hid2}/devices/${C2.id}`)).status, 200);
+  const wraps = [];
+  for (const [d, e] of [[A2, eA], [B2, eB]]) wraps.push({ deviceId: d.id, ...(await hc.wrapKey(eA.kp.privateKey, e.pub, k2, hid2, 1, d.id)) });
+  const labelB = JSON.stringify(await hc.seal({ label: "iPhone de Barnabé" }, "hh_libelle_appareil_v1", k2));
+  const r = await call(A2, "POST", `/api/v1/households/${hid2}/rotate`, { epoch: 1, joinVerifier: await hc.joinVerifier(s2), wraps,
+    labels: [{ deviceId: B2.id, labelCt: labelB }], baseVersion: 1, envelope: await hc.seal(household, hid2, k2, 1) });
+  assert.equal(r.status, 200); assert.equal(r.body.epoch, 1); assert.equal(r.body.version, 2);
+  const list = await call(A2, "GET", `/api/v1/households/${hid2}/devices`);
+  const lb = list.body.devices.find(d => d.deviceId === B2.id).labelCt;
+  assert.equal((await hc.open(JSON.parse(lb), k2)).label, "iPhone de Barnabé"); // libellé rescellé, lisible avec la nouvelle clé
+});
+await check("B envoie avec l'ancienne clé → 409 KEY_ROTATED", async () => {
+  const r = await call(B2, "PUT", `/api/v1/households/${hid2}/blob`, { baseVersion: 2, envelope: await hc.seal(household, hid2, k1) });
+  assert.equal(r.status, 409); assert.equal(r.body.error, "KEY_ROTATED");
+});
+await check("B récupère son emballage → nouvelle clé → lit le foyer", async () => {
+  const w = await call(B2, "GET", `/api/v1/households/${hid2}/keywrap`);
+  assert.equal(w.status, 200); assert.equal(w.body.epoch, 1);
+  const key = await hc.unwrapKey(eB.kp.privateKey, w.body.fromEcdhPub, w.body.wrap, hid2, 1, B2.id);
+  const blob = await call(B2, "GET", `/api/v1/households/${hid2}/blob`);
+  assert.equal(blob.body.envelope.epoch, 1);
+  assert.deepEqual(await hc.open(blob.body.envelope, key), household);
+  await assert.rejects(() => hc.open(blob.body.envelope, k1)); // l'ancienne clé ne lit plus rien
+});
+await check("C retiré : plus d'accès ; l'ancien QR ne permet plus de rejoindre", async () => {
+  assert.equal((await call(C2, "GET", `/api/v1/households/${hid2}/keywrap`)).status, 403);
+  const D = await newDevice();
+  assert.equal((await call(D, "POST", "/api/v1/join", { pubkey: D.pub, joinSecret: s1 })).body.error, "JOIN_DENIED");
+  assert.equal((await call(D, "POST", "/api/v1/join", { pubkey: D.pub, joinSecret: s2 })).status, 202);
+});
+
 await check("base serveur aveugle : aucun prénom / allergie / menu / libellé en clair", async () => {
   const db = new DatabaseSync(dbPath);
   const dump = JSON.stringify([...["households", "devices", "blobs"].flatMap(t => db.prepare(`SELECT * FROM ${t}`).all())]);

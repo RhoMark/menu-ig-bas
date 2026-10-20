@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.112.0</title>
+<title>Menu IG Bas — V2.113.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -157510,18 +157510,21 @@ const householdCrypto = (() => {
     if (out.length < nBytes) throw fail("CODE_INVALID", "Code trop court");
     return new Uint8Array(out.slice(0, nBytes));
   }
-  const aad = hid => enc.encode(`${FORMAT}|v1|${hid}`);
+  // S5 : l'époque de la clé (incrémentée à chaque rotation) fait partie de
+  // l'AAD → une enveloppe ne peut pas être « rétrogradée » d'époque. Époque 0
+  // (foyers S3/S4) = AAD historique inchangée.
+  const aad = (hid, epoch) => enc.encode(`${FORMAT}|v1|${hid}` + (epoch ? `|e${epoch}` : ""));
   const importKey = raw => crypto.subtle.importKey("raw", raw, {name: "AES-GCM"}, false, ["encrypt", "decrypt"]);
 
   function newHid() { return "hh_" + toB64url(crypto.getRandomValues(new Uint8Array(16))); }
   function newKey() { return crypto.getRandomValues(new Uint8Array(32)); }
 
-  async function seal(household, hid, rawKey) {
+  async function seal(household, hid, rawKey, epoch = 0) {
     const iv = crypto.getRandomValues(new Uint8Array(12));
     const ct = new Uint8Array(await crypto.subtle.encrypt(
-      {name: "AES-GCM", iv, additionalData: aad(hid)}, await importKey(rawKey),
+      {name: "AES-GCM", iv, additionalData: aad(hid, epoch)}, await importKey(rawKey),
       enc.encode(JSON.stringify(household))));
-    return {format: FORMAT, v: 1, hid, iv: toB64url(iv), ct: toB64url(ct), sealedAt: new Date().toISOString()};
+    return {format: FORMAT, v: 1, hid, ...(epoch ? {epoch} : {}), iv: toB64url(iv), ct: toB64url(ct), sealedAt: new Date().toISOString()};
   }
   async function open(envelope, rawKey) {
     if (!envelope || envelope.format !== FORMAT || envelope.v !== 1 || typeof envelope.hid !== "string"
@@ -157530,7 +157533,7 @@ const householdCrypto = (() => {
     }
     let pt;
     try {
-      pt = await crypto.subtle.decrypt({name: "AES-GCM", iv: fromB64url(envelope.iv), additionalData: aad(envelope.hid)},
+      pt = await crypto.subtle.decrypt({name: "AES-GCM", iv: fromB64url(envelope.iv), additionalData: aad(envelope.hid, envelope.epoch || 0)},
         await importKey(rawKey), fromB64url(envelope.ct));
     } catch (e) {
       throw fail("WRONG_KEY", "Ce code ne correspond pas à ce fichier foyer (ou le fichier a été modifié)");
@@ -157591,8 +157594,95 @@ const householdCrypto = (() => {
     return `${method}\n${path}\n${ts}\n${hex(await crypto.subtle.digest("SHA-256", enc.encode(bodyText || "")))}`;
   }
 
+  // ── S5 — Emballage de la clé de foyer pour un appareil (rotation) ──
+  // ECDH P-256 (ma clé privée × clé publique de l'autre appareil) → HKDF lié
+  // au contexte « hid|époque|appareil cible » → AES-GCM. Seuls l'émetteur et
+  // l'appareil cible peuvent dériver la clé d'emballage ; le serveur, non.
+  async function wrapKeyFor(myEcdhPriv, peerPubB64, ctx) {
+    const peer = await crypto.subtle.importKey("raw", fromB64url(peerPubB64), {name: "ECDH", namedCurve: "P-256"}, false, []);
+    const bits = await crypto.subtle.deriveBits({name: "ECDH", public: peer}, myEcdhPriv, 256);
+    const hk = await crypto.subtle.importKey("raw", bits, "HKDF", false, ["deriveKey"]);
+    return crypto.subtle.deriveKey({name: "HKDF", hash: "SHA-256", salt: enc.encode("mijoterie-wrap-v1"), info: enc.encode(ctx)},
+      hk, {name: "AES-GCM", length: 256}, false, ["encrypt", "decrypt"]);
+  }
+  const wrapCtx = (hid, epoch, targetDeviceId) => `${hid}|${epoch}|${targetDeviceId}`;
+  async function wrapKey(myEcdhPriv, peerPubB64, rawKey, hid, epoch, targetDeviceId) {
+    const k = await wrapKeyFor(myEcdhPriv, peerPubB64, wrapCtx(hid, epoch, targetDeviceId));
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const ct = new Uint8Array(await crypto.subtle.encrypt({name: "AES-GCM", iv}, k, rawKey));
+    return {iv: toB64url(iv), ct: toB64url(ct)};
+  }
+  async function unwrapKey(myEcdhPriv, senderPubB64, wrap, hid, epoch, myDeviceId) {
+    const k = await wrapKeyFor(myEcdhPriv, senderPubB64, wrapCtx(hid, epoch, myDeviceId));
+    try {
+      return new Uint8Array(await crypto.subtle.decrypt({name: "AES-GCM", iv: fromB64url(wrap.iv)}, k, fromB64url(wrap.ct)));
+    } catch (e) { throw fail("UNWRAP_FAILED", "Nouvelle clé du foyer illisible pour cet appareil"); }
+  }
+
+  // ── S5 — Fusion 3 voies du foyer (base = dernier état synchronisé) ──
+  // Règles : ce qu'un seul côté a modifié est gardé ; objets fusionnés clé par
+  // clé ; tableaux d'objets à `id` (membres…) fusionnés par id ; tableaux de
+  // valeurs simples (allergies, favoris…) fusionnés comme des ensembles (ajouts
+  // des deux côtés gardés, suppression appliquée seulement si l'autre côté n'a
+  // pas changé l'élément) ; même valeur modifiée des deux côtés → la version
+  // locale (la plus récente envoyée) gagne, et le conflit est compté.
+  function stable(v) {
+    if (Array.isArray(v)) return "[" + v.map(stable).join(",") + "]";
+    if (v && typeof v === "object") return "{" + Object.keys(v).sort().map(k => JSON.stringify(k) + ":" + stable(v[k])).join(",") + "}";
+    return JSON.stringify(v === undefined ? null : v);
+  }
+  const same = (a, b) => stable(a) === stable(b);
+  const isObj = v => v && typeof v === "object" && !Array.isArray(v);
+  const hasId = arr => arr.length > 0 && arr.every(x => isObj(x) && (typeof x.id === "number" || typeof x.id === "string"));
+  function merge3(base, local, remote, path, conflicts) {
+    if (same(local, remote)) return local;
+    if (base !== undefined && same(base, local)) return remote;
+    if (base !== undefined && same(base, remote)) return local;
+    if (isObj(local) && isObj(remote)) {
+      const b = isObj(base) ? base : {};
+      const out = {};
+      for (const k of new Set([...Object.keys(local), ...Object.keys(remote)])) {
+        const inL = k in local, inR = k in remote, inB = k in b;
+        if (inL && inR) out[k] = merge3(inB ? b[k] : undefined, local[k], remote[k], path + "." + k, conflicts);
+        else if (inL) { if (!(inB && same(b[k], local[k]))) out[k] = local[k]; } // supprimé à distance sans modif locale → supprimé
+        else { if (!(inB && same(b[k], remote[k]))) out[k] = remote[k]; }
+      }
+      return out;
+    }
+    if (Array.isArray(local) && Array.isArray(remote)) {
+      const b = Array.isArray(base) ? base : [];
+      if ((hasId(local) || local.length === 0) && (hasId(remote) || remote.length === 0) && (hasId(local) || hasId(remote))) {
+        const byId = arr => new Map(arr.map(x => [String(x.id), x]));
+        const L = byId(local), R = byId(remote), B = byId(b.filter(isObj));
+        const ids = [...L.keys(), ...[...R.keys()].filter(id => !L.has(id))];
+        const out = [];
+        for (const id of ids) {
+          const l = L.get(id), r = R.get(id), bb = B.get(id);
+          if (l && r) out.push(merge3(bb, l, r, `${path}[${id}]`, conflicts));
+          else if (l) { if (!(bb && same(bb, l))) out.push(l); }
+          else { if (!(bb && same(bb, r))) out.push(r); }
+        }
+        return out;
+      }
+      if ([...local, ...remote].every(x => x === null || typeof x !== "object")) {
+        const has = (arr, x) => arr.some(y => same(y, x));
+        const keepL = local.filter(x => has(remote, x) || !has(b, x));
+        const addR = remote.filter(x => !has(local, x) && !has(b, x));
+        return [...keepL, ...addR];
+      }
+    }
+    conflicts.push(path);
+    return local;
+  }
+  function mergeHousehold(base, local, remote) {
+    const conflicts = [];
+    if (!remote) return {merged: local, conflicts};
+    if (!base) return {merged: remote, conflicts}; // 1re synchro : le foyer partagé fait foi
+    return {merged: merge3(base, local, remote, "foyer", conflicts), conflicts};
+  }
+
   return {newHid, newKey, seal, open, inviteString, parseInvite, recoveryCode, parseRecoveryCode, toB64url, fromB64url,
-    joinSecret, joinVerifier, deviceIdOf, signingString};
+    joinSecret, joinVerifier, deviceIdOf, signingString, wrapKey, unwrapKey, mergeHousehold, same, stable};
 })();
 // @@household-crypto:end
 
@@ -157607,17 +157697,29 @@ const householdKeyStore = (() => {
     try { return JSON.parse(await cryptoStore.decrypt(JSON.parse(raw))); }
     catch (e) { console.error("[foyer] trousseau illisible :", e); return {}; }
   }
+  // Entrée : "clé base64url" (S3/S4, époque 0) ou {k, e} (S5, après rotation).
+  const entry = v => typeof v === "string" ? {k: v, e: 0} : v;
   async function get(hid) {
-    const all = await readAll();
-    return all[hid] ? householdCrypto.fromB64url(all[hid]) : null;
+    const v = (await readAll())[hid];
+    return v ? householdCrypto.fromB64url(entry(v).k) : null;
   }
-  async function put(hid, rawKey) {
+  async function getEpoch(hid) {
+    const v = (await readAll())[hid];
+    return v ? (entry(v).e || 0) : 0;
+  }
+  async function put(hid, rawKey, epoch = 0) {
     const all = await readAll();
-    all[hid] = householdCrypto.toB64url(rawKey);
+    all[hid] = {k: householdCrypto.toB64url(rawKey), e: epoch};
     localStorage.setItem(LS_KEY, JSON.stringify(await cryptoStore.encrypt(JSON.stringify(all))));
   }
-  return {get, put};
+  return {get, getEpoch, put};
 })();
+// S5 — Dernier état synchronisé (« base » de la fusion 3 voies) : l'enveloppe
+// telle qu'envoyée / reçue, donc déjà chiffrée par la clé de foyer.
+const syncBaseStore = {
+  get(hid) { try { return JSON.parse(localStorage.getItem("menu-ig-bas-syncbase-" + hid) || "null"); } catch (e) { return null; } },
+  set(hid, env) { try { localStorage.setItem("menu-ig-bas-syncbase-" + hid, JSON.stringify(env)); } catch (e) { /* quota : la prochaine synchro repartira sans base */ } },
+};
 
 // Rôle d'un membre (S3) : calculé, jamais forcé sur les foyers non partagés →
 // aucune migration de données pour les beta testeurs (shadow mode). Le
@@ -160205,8 +160307,17 @@ const deviceKeys = (() => {
       kp = await crypto.subtle.generateKey({name: "ECDSA", namedCurve: "P-256"}, false, ["sign", "verify"]);
       await idb("readwrite", s => s.put(kp, "device"));
     }
+    // S5 — 2ᵉ paire (ECDH P-256, privée non extractible) : reçoit la nouvelle
+    // clé de foyer « emballée » par l'admin lors d'une rotation.
+    let ek = await idb("readonly", s => s.get("device-ecdh"));
+    if (!ek) {
+      ek = await crypto.subtle.generateKey({name: "ECDH", namedCurve: "P-256"}, false, ["deriveBits"]);
+      await idb("readwrite", s => s.put(ek, "device-ecdh"));
+    }
     const raw = new Uint8Array(await crypto.subtle.exportKey("raw", kp.publicKey));
-    cache = {kp, pub: householdCrypto.toB64url(raw), id: await householdCrypto.deviceIdOf(raw)};
+    const eraw = new Uint8Array(await crypto.subtle.exportKey("raw", ek.publicKey));
+    cache = {kp, pub: householdCrypto.toB64url(raw), id: await householdCrypto.deviceIdOf(raw),
+      ecdh: ek, ecdhPub: householdCrypto.toB64url(eraw)};
     return cache;
   }
   return {get};
@@ -160234,11 +160345,17 @@ function createLocalHomeTransport(base = "/api/v1") {
     if (!res.ok) { const err = new Error(data.error || `HTTP_${res.status}`); err.code = data.error || `HTTP_${res.status}`; err.status = res.status; throw err; }
     return data;
   }
-  const withPub = async (path, fields) => call("POST", path, {pubkey: (await deviceKeys.get()).pub, ...fields});
+  const withPub = async (path, fields) => {
+    const d = await deviceKeys.get();
+    return call("POST", path, {pubkey: d.pub, ecdhPub: d.ecdhPub, ...fields});
+  };
   return {
     createHousehold: (hid, labelCt, joinVerifier) => withPub("/households", {hid, labelCt, joinVerifier}),
     join: (joinSecret, labelCt) => withPub("/join", {joinSecret, labelCt}),
     me: hid => call("GET", `/households/${hid}/me`),
+    setEcdh: async hid => call("PUT", `/households/${hid}/me/ecdh`, {ecdhPub: (await deviceKeys.get()).ecdhPub}),
+    keywrap: hid => call("GET", `/households/${hid}/keywrap`),
+    rotate: (hid, body) => call("POST", `/households/${hid}/rotate`, body),
     listDevices: hid => call("GET", `/households/${hid}/devices`),
     approve: (hid, id) => call("POST", `/households/${hid}/devices/${id}/approve`),
     remove: (hid, id) => call("DELETE", `/households/${hid}/devices/${id}`),
@@ -160258,6 +160375,9 @@ const SYNC_ERRORS = {
   JOIN_DENIED: "Ce QR / code ne correspond à aucun foyer inscrit sur le serveur maison.",
   CONFLICT: "Le serveur a une version plus récente : fais d'abord « Recevoir » (la fusion automatique arrive à l'étape suivante).",
   CLOCK_SKEW: "L'heure de cet appareil est décalée de plus de 2 minutes : corrige-la puis réessaie.",
+  KEY_ROTATED: "La clé du foyer vient de changer : nouvelle synchro en cours.",
+  NO_WRAP: "La clé du foyer a changé et cet appareil n'a pas reçu la nouvelle : rescanne le QR du foyer.",
+  UNWRAP_FAILED: "Nouvelle clé du foyer illisible pour cet appareil : rescanne le QR du foyer.",
   LAST_ADMIN: "Impossible de retirer le dernier appareil administrateur.",
 };
 const syncErrorText = e => SYNC_ERRORS[e?.code] || `Erreur serveur maison : ${e?.code || e?.message || e}`;
@@ -160267,6 +160387,174 @@ function guessDeviceLabel() {
   if (/iPhone/.test(ua)) return "iPhone";
   if (/Android/.test(ua)) return "Téléphone Android";
   return "Ordinateur";
+}
+
+// ============================================================================
+// V3.0 Phase 2·L (S5) — Moteur de synchro automatique (labo).
+// Un « cycle » : tirer le foyer du serveur → fusion 3 voies avec la version
+// locale (base = dernier état synchronisé) → appliquer localement → renvoyer
+// si besoin. Déclenché à l'ouverture, au retour au premier plan, au retour du
+// réseau, toutes les 30 s, et 2,5 s après une modification du foyer. Hors
+// WiFi : l'app continue sur ses données locales ; l'envoi se refait au retour.
+// ============================================================================
+const homeSyncStatus = (() => {
+  let value = {state: "idle"};
+  const subs = new Set();
+  return {
+    get: () => value,
+    set(v) { value = {...value, ...v}; subs.forEach(f => f(value)); },
+    subscribe(f) { subs.add(f); return () => subs.delete(f); },
+  };
+})();
+let homeSyncKick = () => {};
+const householdHash = house => (house ? householdCrypto.stable(house) : "");
+
+function homeSyncContext(st) {
+  const ah = st._session?.activeHouseholdId;
+  const uid = st._session?.activeUserId;
+  const hid = st._households?.[ah]?.syncMeta?.hid;
+  const srv = st._users?.[uid]?.device?.server;
+  const active = !!(window.__SYNC_LAB && hid && srv?.hid === hid && srv?.approved);
+  return {ah, uid, hid, srv, active};
+}
+const patchServer = (update, uid, patch) => update(s => {
+  const u = s._users[uid] || {};
+  return {_users: {...s._users, [uid]: {...u, device: {...(u.device || {}), server: {...(u.device?.server || {}), ...patch}}}}};
+});
+
+async function homeSyncCycle(getState, update) {
+  const st0 = getState();
+  const {ah, uid, hid, srv, active} = homeSyncContext(st0);
+  if (!active) return {skipped: true};
+  let key = await householdKeyStore.get(hid);
+  if (!key) return {skipped: true};
+  let epoch = await householdKeyStore.getEpoch(hid);
+  const dev = await deviceKeys.get();
+  if (!srv.ecdh) { await homeTransport.setEcdh(hid); patchServer(update, uid, {ecdh: true}); }
+
+  const local = applyRuntimeToV2(st0).households[ah];
+  const baseEnv = syncBaseStore.get(hid);
+  let base = null;
+  if (baseEnv) { try { base = await householdCrypto.open(baseEnv, key); } catch (e) { base = null; } }
+
+  const r = await homeTransport.pull(hid, srv.version || 0);
+  if ((r.epoch || 0) > epoch) {
+    // Rotation faite par l'admin : on récupère NOTRE emballage de la nouvelle clé.
+    const w = await homeTransport.keywrap(hid);
+    const newKey = await householdCrypto.unwrapKey(dev.ecdh.privateKey, w.fromEcdhPub, w.wrap, hid, w.epoch, dev.id);
+    if (base) syncBaseStore.set(hid, await householdCrypto.seal(base, hid, newKey, w.epoch)); // base gardée lisible
+    await householdKeyStore.put(hid, newKey, w.epoch);
+    key = newKey; epoch = w.epoch;
+  }
+  let remote = base, remoteVersion = srv.version || 0, remoteEnv = baseEnv;
+  if (!r.unchanged) {
+    if (r.envelope) { remote = await householdCrypto.open(r.envelope, key); remoteVersion = r.version; remoteEnv = r.envelope; }
+    else { remote = null; remoteVersion = 0; remoteEnv = null; }
+  }
+  const {merged, conflicts} = householdCrypto.mergeHousehold(base, local, remote);
+  merged.syncMeta = {...(merged.syncMeta || {}), hid};
+
+  // L'utilisateur a modifié pendant le cycle → on n'écrase rien, on recommence.
+  if (!householdCrypto.same(applyRuntimeToV2(getState()).households[ah], local)) return {retry: true};
+  const pulled = !householdCrypto.same(merged, local);
+  if (pulled) {
+    snapshotBeforeMigration(2);
+    const v2 = applyRuntimeToV2(getState());
+    v2.households[ah] = merged;
+    update(() => projectRuntime(v2));
+  }
+  let version = remoteVersion, env = remoteEnv, pushed = false;
+  if (!remote || !householdCrypto.same(merged, remote)) {
+    env = await householdCrypto.seal(merged, hid, key, epoch);
+    try { version = (await homeTransport.push(hid, remoteVersion, env)).version; pushed = true; }
+    catch (e) { if (e.code === "CONFLICT" || e.code === "KEY_ROTATED") return {retry: true}; throw e; }
+  }
+  if (env) syncBaseStore.set(hid, env);
+  patchServer(update, uid, {version, epoch});
+  return {ok: true, pulled, pushed, conflicts: conflicts.length, hash: householdHash(merged)};
+}
+
+function useHomeSync(state, update) {
+  const ref = useRef(state);
+  ref.current = state;
+  const running = useRef(false), again = useRef(false), lastHash = useRef(null);
+  const {active, ah} = homeSyncContext(state);
+  const run = async () => {
+    if (!homeSyncContext(ref.current).active) return;
+    if (running.current) { again.current = true; return; }
+    running.current = true;
+    homeSyncStatus.set({state: "syncing"});
+    try {
+      let res = {retry: true};
+      for (let i = 0; i < 3 && res.retry; i++) res = await homeSyncCycle(() => ref.current, update);
+      if (res.ok) {
+        lastHash.current = res.hash;
+        homeSyncStatus.set({state: "ok", at: Date.now(), error: null,
+          info: res.conflicts ? `${res.conflicts} modification(s) simultanée(s) : la plus récente a été gardée.` : null});
+      } else if (res.retry) homeSyncStatus.set({state: "pending", error: null});
+    } catch (e) {
+      homeSyncStatus.set({state: e.code === "OFFLINE" || e.code === "HTTP_502" ? "offline" : "error", error: syncErrorText(e)});
+    } finally {
+      running.current = false;
+      if (again.current) { again.current = false; setTimeout(run, 300); }
+    }
+  };
+  homeSyncKick = run;
+  // Déclencheurs : ouverture, premier plan, retour réseau, toutes les 30 s.
+  useEffect(() => {
+    if (!active) return;
+    run();
+    const onVis = () => { if (document.visibilityState === "visible") run(); };
+    const t = setInterval(run, 30000);
+    document.addEventListener("visibilitychange", onVis);
+    window.addEventListener("online", run);
+    return () => { clearInterval(t); document.removeEventListener("visibilitychange", onVis); window.removeEventListener("online", run); };
+  }, [active, ah]);
+  // Modification du foyer → envoi 2,5 s plus tard (regroupe les frappes).
+  useEffect(() => {
+    if (!active) return;
+    const t = setTimeout(() => {
+      const h = householdHash(applyRuntimeToV2(ref.current).households[ah]);
+      if (h !== lastHash.current) { homeSyncStatus.set({state: "pending"}); run(); }
+    }, 2500);
+    return () => clearTimeout(t);
+  }, [state]);
+}
+
+// S5 — Rotation de la clé du foyer (admin), après le retrait d'un appareil :
+// nouvelle clé + époque, emballée pour chaque appareil restant, nouveau QR.
+async function rotateHouseholdKey(getState, update) {
+  const st = getState();
+  const {ah, uid, hid} = homeSyncContext(st);
+  const dev = await deviceKeys.get();
+  const list = await homeTransport.listDevices(hid);
+  const epoch = (list.epoch || 0) + 1;
+  const k1 = await householdKeyStore.get(hid);
+  const k2 = householdCrypto.newKey();
+  const wraps = [], labels = [];
+  let missing = 0;
+  for (const d of list.devices) {
+    const pub = d.deviceId === dev.id ? dev.ecdhPub : d.ecdhPub;
+    if (!pub) missing++;
+    else wraps.push({deviceId: d.deviceId, ...(await householdCrypto.wrapKey(dev.ecdh.privateKey, pub, k2, hid, epoch, d.deviceId))});
+    // Les libellés (« iPhone de Papa ») étaient scellés avec l'ancienne clé : on les rescelle.
+    try {
+      if (d.labelCt) {
+        const {label} = await householdCrypto.open(JSON.parse(d.labelCt), k1);
+        labels.push({deviceId: d.deviceId, labelCt: JSON.stringify(await householdCrypto.seal({label}, "hh_libelle_appareil_v1", k2))});
+      }
+    } catch (e) { /* libellé déjà illisible : laissé tel quel */ }
+  }
+  if (!list.devices.some(d => d.deviceId === dev.id && d.ecdhPub)) await homeTransport.setEcdh(hid);
+  const cur = await homeTransport.pull(hid, 0);
+  const house = applyRuntimeToV2(getState()).households[ah];
+  const env = await householdCrypto.seal(house, hid, k2, epoch);
+  const res = await homeTransport.rotate(hid, {epoch, joinVerifier: await householdCrypto.joinVerifier(await householdCrypto.joinSecret(k2)),
+    wraps, labels, baseVersion: cur.version || 0, envelope: env});
+  await householdKeyStore.put(hid, k2, epoch);
+  syncBaseStore.set(hid, env);
+  patchServer(update, uid, {version: res.version, epoch, ecdh: true});
+  return {epoch, missing};
 }
 
 function FoyerLabCard({state, update}) {
@@ -160287,6 +160575,10 @@ function FoyerLabCard({state, update}) {
   const [busy, setBusy] = useState(false);
   const uid = state._session?.activeUserId;
   const srv = me.device?.server?.hid && me.device.server.hid === meta?.hid ? me.device.server : null;
+  const [sync, setSync] = useState(() => homeSyncStatus.get());
+  useEffect(() => homeSyncStatus.subscribe(setSync), []);
+  const [, setTick] = useState(0); // rafraîchit « il y a X s »
+  useEffect(() => { const t = setInterval(() => setTick(x => x + 1), 10000); return () => clearInterval(t); }, []);
 
   useEffect(() => {
     let alive = true;
@@ -160329,7 +160621,7 @@ function FoyerLabCard({state, update}) {
   const exportFoyer = async () => {
     try {
       const raw = await householdKeyStore.get(meta.hid);
-      const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw);
+      const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw, await householdKeyStore.getEpoch(meta.hid));
       const blob = new Blob([JSON.stringify(env)], {type: "application/json"});
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
@@ -160360,7 +160652,7 @@ function FoyerLabCard({state, update}) {
       const house = await householdCrypto.open(env, join.rawKey);
       if (!house || !Array.isArray(house.members) || !house.id) throw new Error("Contenu du foyer invalide.");
       house.syncMeta = {...(house.syncMeta || {}), hid: env.hid};
-      setJoin({...join, step: "who", house, envHid: env.hid, sealedAt: env.sealedAt});
+      setJoin({...join, step: "who", house, envHid: env.hid, sealedAt: env.sealedAt, epoch: env.epoch || 0});
       setMsg(null);
     } catch (err) { say("err", err.message || String(err)); }
   };
@@ -160368,7 +160660,8 @@ function FoyerLabCard({state, update}) {
     try {
       snapshotBeforeMigration(2);
       const {house, envHid, rawKey} = join;
-      await householdKeyStore.put(envHid, rawKey);
+      await householdKeyStore.put(envHid, rawKey, join.epoch || 0);
+      if (join.env) syncBaseStore.set(envHid, join.env); // base de fusion = foyer reçu du serveur
       const v2 = applyRuntimeToV2(state);
       const uid = v2.session.activeUserId;
       v2.households[house.id] = house; // les autres foyers éventuels restent intacts
@@ -160402,40 +160695,23 @@ function FoyerLabCard({state, update}) {
       if (e.code !== "HOUSEHOLD_EXISTS") throw e;
       r = await homeTransport.join(secret, labelCt); // foyer déjà inscrit par un autre appareil
     }
-    setServer({hid: meta.hid, deviceId: r.deviceId, isAdmin: !!r.isAdmin, approved: !!r.approved, version: 0});
+    // Foyer déjà inscrit par un autre appareil (cas d'un appareil qui avait la clé via S3) :
+    // pas de « base » locale → au 1er cycle, le foyer du serveur fera foi.
+    setServer({hid: meta.hid, deviceId: r.deviceId, isAdmin: !!r.isAdmin, approved: !!r.approved, version: 0, ecdh: true});
     if (!r.approved) { say("ok", "Demande envoyée : l'appareil administrateur doit l'approuver."); return; }
-    const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw);
-    const p = await homeTransport.push(meta.hid, 0, env);
-    setServer({version: p.version});
-    say("ok", `Serveur maison activé : foyer envoyé (version ${p.version}). Le serveur ne peut pas le lire.`);
+    if (r.isAdmin) {
+      const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw, await householdKeyStore.getEpoch(meta.hid));
+      const p = await homeTransport.push(meta.hid, 0, env);
+      syncBaseStore.set(meta.hid, env);
+      setServer({version: p.version});
+      say("ok", `Serveur maison activé : foyer envoyé (version ${p.version}). Le serveur ne peut pas le lire. La synchro est maintenant automatique.`);
+    }
   });
-  const pushNow = () => run(async () => {
-    const raw = await householdKeyStore.get(meta.hid);
-    const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw);
-    const p = await homeTransport.push(meta.hid, srv.version || 0, env);
-    setServer({version: p.version});
-    say("ok", `Foyer envoyé au serveur maison (version ${p.version}).`);
-  });
-  const pullNow = () => run(async () => {
-    const r = await homeTransport.pull(meta.hid, srv.version || 0);
-    if (r.unchanged) { say("ok", `Déjà à jour (version ${r.version}).`); return; }
-    if (!r.envelope) { say("ok", "Rien sur le serveur pour l'instant : fais « Envoyer » depuis un appareil à jour."); return; }
-    const raw = await householdKeyStore.get(meta.hid);
-    const house = await householdCrypto.open(r.envelope, raw);
-    house.syncMeta = {...(house.syncMeta || {}), hid: meta.hid};
-    snapshotBeforeMigration(2);
-    const v2 = applyRuntimeToV2(state);
-    v2.households[house.id] = house;
-    const u = v2.users[uid];
-    v2.users = {...v2.users, [uid]: {...u, householdId: house.id, device: {...u.device, server: {...u.device.server, version: r.version}}}};
-    v2.session = {...v2.session, activeHouseholdId: house.id};
-    update(() => projectRuntime(v2));
-    say("ok", `Foyer reçu (version ${r.version}) : ${house.members.length} membre(s), ${Object.keys(house.menus || {}).length} semaine(s) de menus.`);
-  });
+  const syncNow = () => { setMsg(null); homeSyncKick(); };
   const checkApproval = () => run(async () => {
     const r = await homeTransport.me(meta.hid);
     setServer({approved: !!r.approved, isAdmin: !!r.isAdmin});
-    say("ok", r.approved ? "Appareil approuvé ✅ Tu peux « Recevoir » le foyer." : "Toujours en attente d'approbation.");
+    say("ok", r.approved ? "Appareil approuvé ✅ Le foyer va se synchroniser automatiquement." : "Toujours en attente d'approbation.");
   });
   const loadDevices = () => run(async () => {
     const raw = await householdKeyStore.get(meta.hid);
@@ -160448,7 +160724,15 @@ function FoyerLabCard({state, update}) {
     setDevices({list, max: r.max});
   });
   const approveDevice = id => run(async () => { await homeTransport.approve(meta.hid, id); await loadDevices(); });
-  const removeDevice = id => run(async () => { await homeTransport.remove(meta.hid, id); await loadDevices(); });
+  // Retirer un appareil = lui couper le serveur PUIS changer la clé du foyer
+  // (sinon il pourrait encore lire avec l'ancienne clé). Anciens QR invalidés.
+  const removeDevice = id => run(async () => {
+    await homeTransport.remove(meta.hid, id);
+    const r = await rotateHouseholdKey(() => state, update);
+    await loadDevices();
+    say("ok", `Appareil retiré. Clé du foyer changée (n° ${r.epoch}) : les anciens QR et codes ne fonctionnent plus.`
+      + (r.missing ? ` ${r.missing} appareil(s) sans clé de réception devront rescanner le nouveau QR.` : ""));
+  });
 
   // Jonction via le serveur (remplace le fichier) : demande → attente d'approbation → réception.
   const requestServerJoin = () => run(async () => {
@@ -160465,8 +160749,8 @@ function FoyerLabCard({state, update}) {
     const house = await householdCrypto.open(r.envelope, join.rawKey);
     if (!house || !Array.isArray(house.members) || !house.id) throw new Error("Contenu du foyer invalide.");
     house.syncMeta = {...(house.syncMeta || {}), hid};
-    setJoin(j => ({...j, step: "who", house, envHid: hid, sealedAt: r.envelope.sealedAt,
-      server: {hid, deviceId, isAdmin: false, approved: true, version: r.version}}));
+    setJoin(j => ({...j, step: "who", house, envHid: hid, sealedAt: r.envelope.sealedAt, env: r.envelope, epoch: r.envelope.epoch || 0,
+      server: {hid, deviceId, isAdmin: false, approved: true, version: r.version, ecdh: true}}));
     setMsg(null);
   };
   // Pendant l'attente, on vérifie toutes les 5 s si l'admin a approuvé.
@@ -160548,12 +160832,20 @@ function FoyerLabCard({state, update}) {
             )}
             {srv && srv.approved && (
               <>
+                <p className="text-sm text-slate-700 dark:text-slate-200" aria-live="polite">
+                  {sync.state === "syncing" ? "🔄 Synchronisation…"
+                    : sync.state === "pending" ? "⏳ Modifications en attente d'envoi…"
+                    : sync.state === "offline" ? "📴 Hors du WiFi de la maison : tes modifications sont gardées et partiront au retour."
+                    : sync.state === "error" ? `⚠️ ${sync.error}`
+                    : sync.state === "ok" ? `☁️ Synchronisé ${sync.at ? `il y a ${Math.max(0, Math.round((Date.now() - sync.at) / 1000))} s` : ""}`
+                    : "☁️ Synchro automatique activée"}
+                </p>
+                {sync.info && <p className="text-xs text-amber-800 dark:text-amber-200">{sync.info}</p>}
                 <p className="text-xs text-slate-500 dark:text-slate-400">
-                  Inscrit sur le serveur{srv.isAdmin ? " · appareil administrateur" : ""} · version locale {srv.version || 0}. Synchro manuelle pour l'instant (automatique à l'étape suivante).
+                  Inscrit sur le serveur{srv.isAdmin ? " · appareil administrateur" : ""} · version {srv.version || 0}{srv.epoch ? ` · clé n° ${srv.epoch}` : ""}.
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  <button onClick={pushNow} disabled={busy} className={btnMain}>⬆️ Envoyer</button>
-                  <button onClick={pullNow} disabled={busy} className={btnAlt}>⬇️ Recevoir</button>
+                  <button onClick={syncNow} disabled={busy || sync.state === "syncing"} className={btnAlt}>🔄 Synchroniser maintenant</button>
                   <button onClick={loadDevices} disabled={busy} className={btnAlt}>📱 Appareils</button>
                 </div>
               </>
@@ -160892,6 +161184,8 @@ function App({initialState}) {
 
   const update = (updater) => setState(s => ({...s, ...(typeof updater === "function" ? updater(s) : updater)}));
   const updateProfile = (patch) => update(s => ({profile: {...s.profile, ...patch}}));
+  // V3.0 Phase 2·L (S5) — synchro automatique avec le serveur maison (labo, inactif sinon).
+  useHomeSync(state, update);
 
   const sd = state.profile?.shoppingDay ?? 1;
   const wk = weekKey(currentWeek, sd);

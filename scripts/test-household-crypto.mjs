@@ -93,6 +93,76 @@ await check("2 scellements du même foyer → IV différents", async () => {
   assert.notEqual(env2.iv, env.iv);
 });
 
+// ── S5 — époque dans l'AAD ──
+await check("époque 2 : ouverture OK ; époque falsifiée → WRONG_KEY", async () => {
+  const e2 = await hc.seal(household, hid, keyA, 2);
+  assert.equal(e2.epoch, 2);
+  assert.deepEqual(await hc.open(e2, keyA), household);
+  await rejects(() => hc.open({...e2, epoch: 1}, keyA), "WRONG_KEY");
+  await rejects(() => hc.open({...e2, epoch: undefined}, keyA), "WRONG_KEY");
+});
+
+// ── S5 — emballage de clé (rotation) ──
+const ecdh = () => crypto.subtle.generateKey({name: "ECDH", namedCurve: "P-256"}, false, ["deriveBits"]);
+const pubB64 = async kp => hc.toB64url(new Uint8Array(await crypto.subtle.exportKey("raw", kp.publicKey)));
+await check("rotation : l'admin emballe la nouvelle clé, B la déballe", async () => {
+  const admin = await ecdh(), devB = await ecdh();
+  const k2 = hc.newKey();
+  const wrap = await hc.wrapKey(admin.privateKey, await pubB64(devB), k2, hid, 1, "devB");
+  assert.deepEqual(await hc.unwrapKey(devB.privateKey, await pubB64(admin), wrap, hid, 1, "devB"), k2);
+});
+await check("rotation : un autre appareil (ou mauvais contexte) ne peut pas déballer", async () => {
+  const admin = await ecdh(), devB = await ecdh(), devC = await ecdh();
+  const wrap = await hc.wrapKey(admin.privateKey, await pubB64(devB), hc.newKey(), hid, 1, "devB");
+  const adminPub = await pubB64(admin);
+  await rejects(() => hc.unwrapKey(devC.privateKey, adminPub, wrap, hid, 1, "devB"), "UNWRAP_FAILED");
+  await rejects(() => hc.unwrapKey(devB.privateKey, adminPub, wrap, hid, 2, "devB"), "UNWRAP_FAILED");
+});
+
+// ── S5 — fusion 3 voies ──
+const M = (b, l, r) => hc.mergeHousehold(b, l, r);
+const fam = (allergiesA, extra = {}) => ({members: [{id: 1, name: "Zéphyrine", allergies: allergiesA}, {id: 2, name: "Barnabé", allergies: []}], favorites: ["a"], menus: {w1: {mon: "x"}}, ...extra});
+await check("fusion : favoris ajoutés des deux côtés → tous gardés", () => {
+  const {merged} = M(fam([]), fam([], {favorites: ["a", "b"]}), fam([], {favorites: ["a", "c"]}));
+  assert.deepEqual(merged.favorites, ["a", "b", "c"]);
+});
+await check("fusion : allergie ajoutée sur 2 appareils pour 2 membres → les deux gardées", () => {
+  const l = fam(["peanuts"]); const r = fam([]); r.members[1].allergies = ["gluten"];
+  const {merged, conflicts} = M(fam([]), l, r);
+  assert.deepEqual(merged.members[0].allergies, ["peanuts"]);
+  assert.deepEqual(merged.members[1].allergies, ["gluten"]);
+  assert.equal(conflicts.length, 0);
+});
+await check("fusion : suppression d'allergie par l'admin + ajout ailleurs → suppression respectée", () => {
+  const {merged} = M(fam(["peanuts"]), fam([]), fam(["peanuts", "fish"]));
+  assert.deepEqual(merged.members[0].allergies, ["fish"]);
+});
+await check("fusion : semaine ajoutée ici + semaine modifiée là-bas → les deux", () => {
+  const l = fam([], {menus: {w1: {mon: "x"}, w2: {tue: "y"}}});
+  const r = fam([], {menus: {w1: {mon: "z"}}});
+  assert.deepEqual(M(fam([]), l, r).merged.menus, {w1: {mon: "z"}, w2: {tue: "y"}});
+});
+await check("fusion : membre retiré à distance, non modifié ici → retiré", () => {
+  const r = fam([]); r.members = [r.members[0]];
+  assert.equal(M(fam([]), fam([]), r).merged.members.length, 1);
+});
+await check("fusion : membre retiré à distance mais modifié ici → conservé", () => {
+  const l = fam([]); l.members[1].allergies = ["eggs"];
+  const r = fam([]); r.members = [r.members[0]];
+  const {merged} = M(fam([]), l, r);
+  assert.deepEqual(merged.members.find(m => m.id === 2)?.allergies, ["eggs"]);
+});
+await check("fusion : même champ modifié des deux côtés → local gagne + conflit compté", () => {
+  const l = fam([]); l.members[0].name = "Zéph";
+  const r = fam([]); r.members[0].name = "Zézé";
+  const {merged, conflicts} = M(fam([]), l, r);
+  assert.equal(merged.members[0].name, "Zéph"); assert.equal(conflicts.length, 1);
+});
+await check("fusion : sans base (1re synchro) → le foyer partagé fait foi ; sans distant → local", () => {
+  assert.equal(M(null, fam(["x"]), fam([])).merged.members[0].allergies.length, 0);
+  assert.equal(M(null, fam(["x"]), null).merged.members[0].allergies[0], "x");
+});
+
 console.log("━".repeat(28));
 if (process.exitCode) { console.error("❌ householdCrypto : échec"); process.exit(1); }
 console.log(`✅ householdCrypto : ${ok} vérifications OK`);

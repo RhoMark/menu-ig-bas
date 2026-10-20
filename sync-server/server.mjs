@@ -76,7 +76,15 @@ function openDb(path) {
       hid TEXT NOT NULL, version INTEGER NOT NULL, envelope TEXT NOT NULL,
       byte_size INTEGER NOT NULL, updated_at INTEGER NOT NULL, by_device TEXT NOT NULL,
       PRIMARY KEY (hid, version));
+    CREATE TABLE IF NOT EXISTS key_wraps (
+      hid TEXT NOT NULL, device_id TEXT NOT NULL, epoch INTEGER NOT NULL, from_device TEXT NOT NULL,
+      wrap TEXT NOT NULL, PRIMARY KEY (hid, device_id));
   `);
+  // S5 — colonnes ajoutées (bases S4 existantes) : époque de clé + clé ECDH d'appareil.
+  for (const sql of ["ALTER TABLE households ADD COLUMN epoch INTEGER NOT NULL DEFAULT 0",
+                     "ALTER TABLE devices ADD COLUMN ecdh_pub TEXT"]) {
+    try { db.exec(sql); } catch { /* colonne déjà présente */ }
+  }
   return db;
 }
 
@@ -87,10 +95,16 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
     householdByVerifier: db.prepare("SELECT * FROM households WHERE join_verifier = ?"),
     insertHousehold: db.prepare("INSERT INTO households (hid, join_verifier, created_at) VALUES (?, ?, ?)"),
     device: db.prepare("SELECT * FROM devices WHERE hid = ? AND device_id = ?"),
-    devices: db.prepare("SELECT device_id, label_ct, is_admin, approved, created_at, last_seen FROM devices WHERE hid = ? ORDER BY created_at"),
+    devices: db.prepare("SELECT device_id, label_ct, is_admin, approved, created_at, last_seen, ecdh_pub FROM devices WHERE hid = ? ORDER BY created_at"),
+    setEcdh: db.prepare("UPDATE devices SET ecdh_pub = ? WHERE hid = ? AND device_id = ?"),
+    setLabel: db.prepare("UPDATE devices SET label_ct = ? WHERE hid = ? AND device_id = ?"),
+    rotateHousehold: db.prepare("UPDATE households SET epoch = ?, join_verifier = ? WHERE hid = ?"),
+    deleteWraps: db.prepare("DELETE FROM key_wraps WHERE hid = ?"),
+    insertWrap: db.prepare("INSERT INTO key_wraps (hid, device_id, epoch, from_device, wrap) VALUES (?, ?, ?, ?, ?)"),
+    wrapFor: db.prepare("SELECT * FROM key_wraps WHERE hid = ? AND device_id = ?"),
     countDevices: db.prepare("SELECT COUNT(*) AS n FROM devices WHERE hid = ?"),
     countAdmins: db.prepare("SELECT COUNT(*) AS n FROM devices WHERE hid = ? AND is_admin = 1 AND approved = 1"),
-    insertDevice: db.prepare("INSERT INTO devices (hid, device_id, pubkey, label_ct, is_admin, approved, created_at, last_seen, last_ts) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)"),
+    insertDevice: db.prepare("INSERT INTO devices (hid, device_id, pubkey, label_ct, is_admin, approved, created_at, last_seen, last_ts, ecdh_pub) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"),
     touchDevice: db.prepare("UPDATE devices SET last_ts = ?, last_seen = ? WHERE hid = ? AND device_id = ?"),
     approveDevice: db.prepare("UPDATE devices SET approved = 1 WHERE hid = ? AND device_id = ?"),
     deleteDevice: db.prepare("DELETE FROM devices WHERE hid = ? AND device_id = ?"),
@@ -134,6 +148,18 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
   const parseJson = buf => { try { return JSON.parse(buf.toString("utf8") || "{}"); } catch { bad(400, "JSON_INVALID"); } };
   const isHid = s => typeof s === "string" && /^hh_[A-Za-z0-9_-]{16,64}$/.test(s);
   const isB64 = (s, max = 4096) => typeof s === "string" && s.length <= max && /^[A-Za-z0-9_-]+$/.test(s);
+  const ecdhOrNull = v => (isB64(v, 200) ? v : null);
+  const envEpoch = env => Number(env?.epoch || 0);
+  // Enveloppe foyer valide ET de l'époque de clé courante (sinon clé périmée → 409 KEY_ROTATED).
+  function checkEnvelope(env, hid, epoch) {
+    if (!env || env.format !== "mijoterie-foyer" || env.v !== 1 || env.hid !== hid || !isB64(env.iv, 64) || !isB64(env.ct, MAX_ENVELOPE)
+        || !Number.isInteger(envEpoch(env)) || envEpoch(env) < 0) bad(400, "ENVELOPE_INVALID");
+    if (envEpoch(env) !== epoch) bad(409, "KEY_ROTATED");
+    const text = JSON.stringify({ format: env.format, v: env.v, hid: env.hid, ...(envEpoch(env) ? { epoch: envEpoch(env) } : {}),
+      iv: env.iv, ct: env.ct, sealedAt: String(env.sealedAt || "").slice(0, 40) });
+    if (text.length > MAX_ENVELOPE) bad(413, "TOO_LARGE");
+    return text;
+  }
 
   // ── Routes ────────────────────────────────────────────────────────────
   async function route(req, bodyBuf) {
@@ -154,7 +180,7 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
       db.exec("BEGIN");
       try {
         q.insertHousehold.run(b.hid, b.joinVerifier, t);
-        q.insertDevice.run(b.hid, deviceId, b.pubkey, String(b.labelCt || "").slice(0, 4096), 1, 1, t, t, Number(req.headers["x-mij-ts"]));
+        q.insertDevice.run(b.hid, deviceId, b.pubkey, String(b.labelCt || "").slice(0, 4096), 1, 1, t, t, Number(req.headers["x-mij-ts"]), ecdhOrNull(b.ecdhPub));
         db.exec("COMMIT");
       } catch (e) { db.exec("ROLLBACK"); throw e; }
       return [201, { hid: b.hid, deviceId, approved: true, isAdmin: true }];
@@ -173,25 +199,75 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
       if (existing) return [200, { hid: h.hid, deviceId, approved: !!existing.approved, isAdmin: !!existing.is_admin }];
       if (q.countDevices.get(h.hid).n >= MAX_DEVICES) bad(409, "DEVICE_LIMIT");
       const t = now();
-      q.insertDevice.run(h.hid, deviceId, b.pubkey, String(b.labelCt || "").slice(0, 4096), 0, 0, t, t, Number(req.headers["x-mij-ts"]));
+      q.insertDevice.run(h.hid, deviceId, b.pubkey, String(b.labelCt || "").slice(0, 4096), 0, 0, t, t, Number(req.headers["x-mij-ts"]), ecdhOrNull(b.ecdhPub));
       return [202, { hid: h.hid, deviceId, approved: false, isAdmin: false }];
     }
 
     if (r[0] !== "households" || !isHid(r[1])) bad(404, "NOT_FOUND");
     const hid = r[1];
-    if (!q.household.get(hid)) bad(404, "HOUSEHOLD_UNKNOWN");
+    const house = q.household.get(hid);
+    if (!house) bad(404, "HOUSEHOLD_UNKNOWN");
 
     // GET /households/:hid/me — statut de MON appareil (autorisé même en attente)
     if (M === "GET" && r.length === 3 && r[2] === "me") {
       const dev = await authDevice(hid, req, bodyBuf, { requireApproved: false });
-      return [200, { deviceId: dev.device_id, approved: !!dev.approved, isAdmin: !!dev.is_admin }];
+      return [200, { deviceId: dev.device_id, approved: !!dev.approved, isAdmin: !!dev.is_admin, epoch: house.epoch, hasEcdh: !!dev.ecdh_pub }];
+    }
+    // PUT /households/:hid/me/ecdh {ecdhPub} — enregistre la clé ECDH de MON appareil (S5, rotation)
+    if (M === "PUT" && r.length === 4 && r[2] === "me" && r[3] === "ecdh") {
+      const dev = await authDevice(hid, req, bodyBuf, { requireApproved: false });
+      const b = parseJson(bodyBuf);
+      if (!isB64(b.ecdhPub, 200)) bad(400, "FIELDS_INVALID");
+      q.setEcdh.run(b.ecdhPub, hid, dev.device_id);
+      return [200, { ok: true }];
+    }
+    // GET /households/:hid/keywrap — MA nouvelle clé de foyer emballée (après rotation)
+    if (M === "GET" && r.length === 3 && r[2] === "keywrap") {
+      const dev = await authDevice(hid, req, bodyBuf);
+      const w = q.wrapFor.get(hid, dev.device_id);
+      if (!w || w.epoch !== house.epoch) bad(404, "NO_WRAP");
+      const from = q.device.get(hid, w.from_device);
+      if (!from?.ecdh_pub) bad(404, "NO_WRAP");
+      return [200, { epoch: w.epoch, from: w.from_device, fromEcdhPub: from.ecdh_pub, wrap: JSON.parse(w.wrap) }];
+    }
+    // POST /households/:hid/rotate — l'admin change la clé du foyer (après retrait d'un appareil) :
+    // nouvelle époque + emballages par appareil + nouveau joinVerifier (anciens QR invalides) + foyer rescellé, d'un bloc.
+    if (M === "POST" && r.length === 3 && r[2] === "rotate") {
+      const dev = await authDevice(hid, req, bodyBuf);
+      requireAdmin(dev);
+      const b = parseJson(bodyBuf);
+      const epoch = house.epoch + 1;
+      if (Number(b.epoch) !== epoch || !/^[0-9a-f]{64}$/.test(b.joinVerifier || "") || !Array.isArray(b.wraps)) bad(400, "FIELDS_INVALID");
+      const envText = checkEnvelope(b.envelope, hid, epoch);
+      const last = q.latestBlob.get(hid);
+      const current = last ? last.version : 0;
+      if (Number(b.baseVersion) !== current) bad(409, "CONFLICT");
+      if (!b.wraps.some(w => w.deviceId === dev.device_id)) bad(400, "WRAP_SELF_MISSING");
+      const t = now();
+      db.exec("BEGIN");
+      try {
+        q.rotateHousehold.run(epoch, b.joinVerifier, hid);
+        q.deleteWraps.run(hid);
+        for (const w of b.wraps.slice(0, MAX_DEVICES)) {
+          if (!q.device.get(hid, w.deviceId) || !isB64(w.iv, 64) || !isB64(w.ct, 200)) continue;
+          q.insertWrap.run(hid, w.deviceId, epoch, dev.device_id, JSON.stringify({ iv: w.iv, ct: w.ct }));
+        }
+        // Libellés d'appareils rescellés par l'admin avec la nouvelle clé (toujours chiffrés).
+        for (const l of (Array.isArray(b.labels) ? b.labels : []).slice(0, MAX_DEVICES)) {
+          if (typeof l?.labelCt === "string" && l.labelCt.length <= 4096) q.setLabel.run(l.labelCt, hid, String(l.deviceId));
+        }
+        q.insertBlob.run(hid, current + 1, envText, envText.length, t, dev.device_id);
+        q.pruneOld.run(hid, hid, KEEP_VERSIONS);
+        db.exec("COMMIT");
+      } catch (e) { db.exec("ROLLBACK"); throw e; }
+      return [200, { version: current + 1, epoch }];
     }
     // GET /households/:hid/devices — liste (appareil approuvé)
     if (M === "GET" && r.length === 3 && r[2] === "devices") {
       await authDevice(hid, req, bodyBuf);
       const list = q.devices.all(hid).map(d => ({ deviceId: d.device_id, labelCt: d.label_ct, isAdmin: !!d.is_admin,
-        approved: !!d.approved, createdAt: d.created_at, lastSeen: d.last_seen }));
-      return [200, { devices: list, max: MAX_DEVICES }];
+        approved: !!d.approved, createdAt: d.created_at, lastSeen: d.last_seen, ecdhPub: d.ecdh_pub || null }));
+      return [200, { devices: list, max: MAX_DEVICES, epoch: house.epoch }];
     }
     // POST /households/:hid/devices/:id/approve — admin seulement
     if (M === "POST" && r.length === 5 && r[2] === "devices" && r[4] === "approve") {
@@ -216,17 +292,14 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
       const last = q.latestBlob.get(hid);
       if (!last) return [200, { version: 0, envelope: null }];
       const since = Number(url.searchParams.get("since"));
-      if (Number.isFinite(since) && since >= last.version) return [200, { version: last.version, unchanged: true }];
-      return [200, { version: last.version, envelope: JSON.parse(last.envelope), updatedAt: last.updated_at, byDevice: last.by_device }];
+      if (Number.isFinite(since) && since >= last.version) return [200, { version: last.version, epoch: house.epoch, unchanged: true }];
+      return [200, { version: last.version, epoch: house.epoch, envelope: JSON.parse(last.envelope), updatedAt: last.updated_at, byDevice: last.by_device }];
     }
     // PUT /households/:hid/blob {baseVersion, envelope} — écriture optimiste
     if (M === "PUT" && r.length === 3 && r[2] === "blob") {
       const dev = await authDevice(hid, req, bodyBuf);
       const b = parseJson(bodyBuf);
-      const env = b.envelope;
-      if (!env || env.format !== "mijoterie-foyer" || env.v !== 1 || env.hid !== hid || !isB64(env.iv, 64) || !isB64(env.ct, MAX_ENVELOPE)) bad(400, "ENVELOPE_INVALID");
-      const envText = JSON.stringify({ format: env.format, v: env.v, hid: env.hid, iv: env.iv, ct: env.ct, sealedAt: String(env.sealedAt || "").slice(0, 40) });
-      if (envText.length > MAX_ENVELOPE) bad(413, "TOO_LARGE");
+      const envText = checkEnvelope(b.envelope, hid, house.epoch);
       const last = q.latestBlob.get(hid);
       const current = last ? last.version : 0;
       if (Number(b.baseVersion) !== current) bad(409, "CONFLICT");
