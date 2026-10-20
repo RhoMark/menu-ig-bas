@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.110.2</title>
+<title>Menu IG Bas — V2.110.3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -165602,7 +165602,9 @@ function SettingsView({state, update, updateProfile}) {
           {/* Pattern label+input : plus fiable que ref.click() (notamment iOS Safari). */}
           <label className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium cursor-pointer inline-flex items-center">
             ⬆️ Importer depuis un fichier
-            <input type="file" accept="application/json,.json,*/*" onChange={onImportFile} className="sr-only" />
+            {/* Android : le joker « tout type » fait ouvrir le sélecteur photos/caméra de Chrome
+                au lieu des fichiers → types non-média uniquement. iOS garde le joker (validé). */}
+            <input type="file" accept={/Android/i.test(navigator.userAgent) ? ".json,application/json,text/plain,application/octet-stream" : "application/json,.json,*/*"} onChange={onImportFile} className="sr-only" />
           </label>
           <button onClick={() => { setPasteMode(m => !m); setImportStatus(null); }} className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-slate-100 px-4 py-2 rounded text-sm font-medium">
             {pasteMode ? "✕ Annuler" : "📋 Coller du texte"}
