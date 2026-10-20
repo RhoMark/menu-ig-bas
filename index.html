@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.111.0</title>
+<title>Menu IG Bas — V2.111.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -122,7 +122,8 @@ if ("serviceWorker" in navigator) {
   (function resolveSyncLab() {
     try {
       var KEY = 'menu-ig-bas-synclab';
-      var s = new URLSearchParams(window.location.search).get('sync');
+      // Nettoyage : une ponctuation collée par copier-coller (« ?sync=lab, ») ne doit pas faire échouer.
+      var s = (new URLSearchParams(window.location.search).get('sync') || '').replace(/[^a-z]/gi, '').toLowerCase();
       if (s === 'lab') localStorage.setItem(KEY, 'on');
       else if (s === 'off') localStorage.removeItem(KEY);
       window.__SYNC_LAB = localStorage.getItem(KEY) === 'on';
