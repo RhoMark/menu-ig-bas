@@ -163,6 +163,30 @@ await check("fusion : sans base (1re synchro) → le foyer partagé fait foi ; s
   assert.equal(M(null, fam(["x"]), null).merged.members[0].allergies[0], "x");
 });
 
+// Import d'une sauvegarde sur un appareil relié (bug V2.113.1 : l'import effaçait le lien)
+const v2 = (house, device) => ({schema: 2, session: {activeHouseholdId: "h1", activeUserId: "u1"},
+  users: {u1: {id: "u1", householdId: "h1", ...(device ? {device} : {})}}, households: {h1: {id: "h1", ...house}}});
+const link = {hid: "hh_x", founderMemberId: 1};
+const devSrv = {deviceId: "dev1", mode: "personal", boundMemberId: 1, server: {hid: "hh_x", approved: true, version: 7}};
+await check("import : lien de foyer (syncMeta + appareil/serveur) conservé", () => {
+  const cur = v2({syncMeta: link, ...fam(["peanuts"])}, devSrv);
+  const imp = v2({...fam(["peanuts"]), menus: {w9: {mon: "b1"}}});
+  const out = hc.keepLinkOnImport(cur, imp);
+  assert.deepEqual(out.households.h1.syncMeta, link);
+  assert.deepEqual(out.users.u1.device, devSrv);
+  assert.deepEqual(out.households.h1.menus, {w9: {mon: "b1"}});
+  assert.equal(imp.households.h1.syncMeta, undefined); // entrée non modifiée
+});
+await check("import : une allergie connue n'est jamais retirée par l'import", () => {
+  const cur = v2({syncMeta: link, ...fam(["peanuts", "fish"])}, devSrv);
+  const out = hc.keepLinkOnImport(cur, v2(fam(["gluten"])));
+  assert.deepEqual(out.households.h1.members[0].allergies, ["gluten", "peanuts", "fish"]);
+});
+await check("import : appareil non relié → import inchangé", () => {
+  const imp = v2(fam(["gluten"]));
+  assert.equal(hc.keepLinkOnImport(v2(fam(["peanuts"])), imp), imp);
+});
+
 console.log("━".repeat(28));
 if (process.exitCode) { console.error("❌ householdCrypto : échec"); process.exit(1); }
 console.log(`✅ householdCrypto : ${ok} vérifications OK`);

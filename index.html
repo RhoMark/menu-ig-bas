@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.113.1</title>
+<title>Menu IG Bas — V2.113.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -157681,8 +157681,31 @@ const householdCrypto = (() => {
     return {merged: merge3(base, local, remote, "foyer", conflicts), conflicts};
   }
 
+  // Import d'une sauvegarde sur un appareil relié à un foyer partagé : on garde
+  // le lien (syncMeta du foyer actif + appareil/serveur de l'utilisateur actif),
+  // sinon l'appareil quitte la synchro sans prévenir. Sécurité : un import ne
+  // retire jamais une allergie déjà connue d'un membre (union par membre).
+  function keepLinkOnImport(current, imported) {
+    const cah = current?.session?.activeHouseholdId, cuid = current?.session?.activeUserId;
+    const curHouse = current?.households?.[cah];
+    if (!curHouse?.syncMeta?.hid || imported?.schema !== 2) return imported;
+    const out = JSON.parse(JSON.stringify(imported));
+    const ah = out.session?.activeHouseholdId, uid = out.session?.activeUserId;
+    const house = out.households?.[ah];
+    if (!house) return imported;
+    house.syncMeta = {...curHouse.syncMeta};
+    const known = new Map((curHouse.members || []).map(m => [String(m.id), m.allergies || []]));
+    house.members = (house.members || []).map(m => {
+      const extra = (known.get(String(m.id)) || []).filter(a => !(m.allergies || []).some(x => same(x, a)));
+      return extra.length ? {...m, allergies: [...(m.allergies || []), ...extra]} : m;
+    });
+    const dev = current.users?.[cuid]?.device;
+    if (dev && out.users?.[uid]) out.users[uid] = {...out.users[uid], device: JSON.parse(JSON.stringify(dev))};
+    return out;
+  }
+
   return {newHid, newKey, seal, open, inviteString, parseInvite, recoveryCode, parseRecoveryCode, toB64url, fromB64url,
-    joinSecret, joinVerifier, deviceIdOf, signingString, wrapKey, unwrapKey, mergeHousehold, same, stable};
+    joinSecret, joinVerifier, deviceIdOf, signingString, wrapKey, unwrapKey, mergeHousehold, keepLinkOnImport, same, stable};
 })();
 // @@household-crypto:end
 
@@ -157712,7 +157735,8 @@ const householdKeyStore = (() => {
     all[hid] = {k: householdCrypto.toB64url(rawKey), e: epoch};
     localStorage.setItem(LS_KEY, JSON.stringify(await cryptoStore.encrypt(JSON.stringify(all))));
   }
-  return {get, getEpoch, put};
+  const hids = async () => Object.keys(await readAll());
+  return {get, getEpoch, put, hids};
 })();
 // S5 — Dernier état synchronisé (« base » de la fusion 3 voies) : l'enveloppe
 // telle qu'envoyée / reçue, donc déjà chiffrée par la clé de foyer.
@@ -160707,6 +160731,37 @@ function FoyerLabCard({state, update}) {
       say("ok", `Serveur maison activé : foyer envoyé (version ${p.version}). Le serveur ne peut pas le lire. La synchro est maintenant automatique.`);
     }
   });
+  // Lien de foyer perdu (ex. import d'une sauvegarde par une version antérieure) :
+  // la clé est toujours dans le trousseau et l'appareil toujours connu du serveur.
+  const [orphanHids, setOrphanHids] = useState([]);
+  useEffect(() => {
+    let alive = true;
+    if (meta?.hid) { setOrphanHids([]); return; }
+    const linked = new Set(Object.values(state._households || {}).map(h => h?.syncMeta?.hid).filter(Boolean));
+    householdKeyStore.hids().then(l => alive && setOrphanHids(l.filter(h => !linked.has(h)))).catch(() => {});
+    return () => { alive = false; };
+  }, [meta?.hid]);
+  const reconnectFoyer = hid => run(async () => {
+    const key = await householdKeyStore.get(hid);
+    const r = await homeTransport.me(hid);
+    let remoteMeta = {};
+    if (r.approved) {
+      const p = await homeTransport.pull(hid, 0);
+      try { if (p.envelope) remoteMeta = (await householdCrypto.open(p.envelope, key)).syncMeta || {}; } catch (e) { /* clé changée : la synchro récupérera la nouvelle */ }
+    }
+    update(s => {
+      const u = s._users[uid] || {};
+      const dev = u.device || {};
+      return {
+        _households: {...s._households, [ah]: {...s._households[ah], syncMeta: {...remoteMeta, hid}}},
+        _users: {...s._users, [uid]: {...u, device: {deviceId: dev.deviceId || makeId("dev"), mode: dev.mode || "personal",
+          boundMemberId: dev.boundMemberId ?? (r.isAdmin ? remoteMeta.founderMemberId ?? null : null),
+          server: {hid, deviceId: r.deviceId, isAdmin: !!r.isAdmin, approved: !!r.approved, version: 0, ecdh: !!r.hasEcdh}}}},
+      };
+    });
+    say("ok", r.approved ? "Foyer reconnecté ✅ Tes données vont être fusionnées avec celles des autres appareils."
+      : "Foyer reconnecté, en attente d'approbation par l'appareil administrateur.");
+  });
   const syncNow = () => { setMsg(null); homeSyncKick(); };
   const checkApproval = () => run(async () => {
     const r = await homeTransport.me(meta.hid);
@@ -160879,6 +160934,15 @@ function FoyerLabCard({state, update}) {
         <p className="text-sm text-amber-800 dark:text-amber-200 mb-3">
           Ce foyer est partagé mais la clé du foyer n'est pas sur cet appareil. Utilise « Rejoindre un foyer » ci-dessous.
         </p>
+      )}
+
+      {!meta?.hid && !join && orphanHids.length > 0 && (
+        <div className="border border-sky-300 dark:border-sky-700 bg-sky-50 dark:bg-sky-950 rounded p-3 space-y-2 mb-4">
+          <p className="text-sm text-sky-900 dark:text-sky-100">
+            🔗 Cet appareil faisait partie d'un foyer partagé (sa clé est toujours là), mais le lien a été perdu, par exemple après l'import d'une sauvegarde.
+          </p>
+          <button onClick={() => reconnectFoyer(orphanHids[0])} disabled={busy} className={btnMain}>🔗 Reconnecter le foyer partagé</button>
+        </div>
       )}
 
       {!meta?.hid && !join && (
@@ -166182,7 +166246,10 @@ function SettingsView({state, update, updateProfile}) {
   };
   const confirmImport = () => {
     try {
-      localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(pendingImport.payload.data));
+      // Appareil relié à un foyer partagé : l'import garde le lien de synchro
+      // (les données importées partent alors vers les autres appareils).
+      const data = householdCrypto.keepLinkOnImport(applyRuntimeToV2(state), pendingImport.payload.data);
+      localStorage.setItem(STORAGE_KEY_V2, JSON.stringify(data));
       window.location.reload();
     } catch (err) {
       console.error("[import-apply] échec :", err);
@@ -166856,6 +166923,11 @@ function SettingsView({state, update, updateProfile}) {
             <div className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded p-3 text-sm text-amber-900 dark:text-amber-100 mb-4">
               ⚠️ Vos données actuelles (profil, menus, notes) seront <strong>remplacées</strong>. Action irréversible — pensez à exporter d'abord si vous voulez garder l'état actuel.
             </div>
+            {state._households?.[state._session?.activeHouseholdId]?.syncMeta?.hid && pendingImport.payload.data?.schema === 2 && (
+              <div className="bg-sky-50 dark:bg-sky-950 border border-sky-300 dark:border-sky-700 rounded p-3 text-sm text-sky-900 dark:text-sky-100 mb-4">
+                🏠 Cet appareil reste dans le foyer partagé : les données importées seront envoyées aux autres appareils du foyer. Les allergies déjà connues sont conservées.
+              </div>
+            )}
             <div className="flex gap-2 justify-end">
               <button onClick={cancelImport} className="px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-600 rounded">
                 Annuler
