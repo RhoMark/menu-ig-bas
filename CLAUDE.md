@@ -244,8 +244,13 @@ les données. À faire évoluer selon les besoins.
   cache-first sur les assets).
 - `manifest.json` : métadonnées PWA installable.
 - Tables de données embarquées : `categories`, `allergens`,
-  `equipment`, `tags`, `units`, `ingredients`, `recipes`. Champ
+  `equipment`, `tags`, `units`, `ingredients`. Champ
   `schema` à incrémenter en cas de changement structurel.
+- **Catalogue de recettes : `data/recipes.js`** (V2.115.0, sorti
+  d'`index.html` qui approchait la limite CI de 5 Mo). Script classique
+  chargé avant l'app → `window.__DATA_RECIPES`. Tous les scripts Python
+  lisent / écrivent via `scripts/recipes_store.py` (jamais de regex sur
+  le fichier). Mis en cache hors-ligne par `sw.js`.
 
 ### Lancer en local
 ```bash
@@ -303,7 +308,7 @@ python3 scripts/auto-enrich-glycemic.py /tmp/lot65-recipes.py --apply
 python3 scripts/lint-new-recipes.py /tmp/lot65-recipes.py --varname LOT65
 
 # 6. Injection + bump + commit
-python3 /tmp/inject-lot.py lot65-recipes LOT65
+python3 scripts/inject-lot.py /tmp/lot65-recipes.py LOT65   # écrit data/recipes.js
 bash scripts/bump-version.sh --auto patch
 echo "<count>" > .expected-recipe-count
 python3 scripts/validate-recipe-data.py

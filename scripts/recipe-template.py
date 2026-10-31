@@ -21,6 +21,7 @@ import json
 import argparse
 import datetime as dt
 from pathlib import Path
+from recipes_store import load_items, recipes_path_for  # catalogue data/recipes.js (V2.115.0)
 
 # Map type → préfixe ID
 TYPE_TO_PREFIX = {
@@ -60,8 +61,7 @@ def next_id_for_type(existing_recipes, type_):
 
 def load_existing(repo_root):
     content = (Path(repo_root) / "index.html").read_text(encoding="utf-8")
-    m = re.search(r'<script type="application/json" id="data-recipes">\s*(\{.*?\})\s*</script>', content, re.DOTALL)
-    recipes = json.loads(m.group(1))["items"]
+    recipes = load_items(recipes_path_for(Path(repo_root) / "index.html"))
     m = re.search(r'<script type="application/json" id="data-glycemic">\s*(\{.*?\})\s*</script>', content, re.DOTALL)
     glyc = json.loads(m.group(1))["items"]
     return recipes, glyc

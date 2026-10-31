@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.114.0";
+const CACHE_VERSION = "menu-ig-bas-v2.115.0";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -32,6 +32,8 @@ const CRITICAL_ASSETS = [
   "./vendor/react.production.min.js",
   "./vendor/react-dom.production.min.js",
   "./vendor/babel.min.js",
+  // V2.115.0 — Catalogue de recettes sorti d'index.html (limite 5 Mo).
+  "./data/recipes.js",
 ];
 
 // V3.0 Phase 2·L (S0) — Plus aucune dépendance CDN runtime. React/Babel/Tailwind

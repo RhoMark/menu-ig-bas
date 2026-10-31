@@ -33,3 +33,6 @@ server/
 # (~50 MB) et est généré à la demande via `npm install`. Le fichier
 # package-lock.json est gardé (reproductibilité).
 node_modules/
+
+# --- Python ---
+__pycache__/

@@ -37,17 +37,9 @@ import argparse
 import subprocess
 import datetime as dt
 from pathlib import Path
+from recipes_store import load_recipes, save_recipes  # catalogue data/recipes.js (V2.115.0)
 
 
-def extract_recipes(index_path):
-    with open(index_path, encoding="utf-8") as f:
-        content = f.read()
-    m = re.search(
-        r'(<script type="application/json" id="data-recipes">\s*)(\{.*?\})(\s*</script>)',
-        content, re.DOTALL)
-    if not m:
-        raise RuntimeError("data-recipes introuvable")
-    return content, m, json.loads(m.group(2))
 
 
 def filter_recipes(recipes, args, assets_dir):
@@ -155,14 +147,11 @@ def convert_to_webp(src_png, dest_webp, quality=82, width=1280, height=720):
     return True
 
 
-def patch_recipe_photo(content, m, data, target_ids, photo_paths):
-    """Met à jour data-recipes avec les nouveaux champs photo."""
+def patch_recipe_photo(data, target_ids, photo_paths):
+    """Ajoute le champ photo aux recettes du catalogue."""
     for r in data["items"]:
         if r["id"] in target_ids and r["id"] in photo_paths:
             r["photo"] = photo_paths[r["id"]]
-    new_raw = json.dumps(data, ensure_ascii=False, indent=2)
-    new_content = content[:m.start()] + m.group(1) + new_raw + m.group(3) + content[m.end():]
-    return new_content
 
 
 def main():
@@ -208,7 +197,7 @@ def main():
     config = json.loads(prompts_path.read_text(encoding="utf-8"))
 
     # Chargement recettes
-    content, m, data = extract_recipes(index_path)
+    data = load_recipes()
 
     # Filtrage
     items = filter_recipes(data, args, assets_dir)
@@ -278,9 +267,9 @@ def main():
     # Patch data-recipes
     if photo_paths and not args.no_patch:
         print(f"\nPatch data-recipes pour {len(photo_paths)} recettes...")
-        new_content = patch_recipe_photo(content, m, data, target_ids, photo_paths)
-        index_path.write_text(new_content, encoding="utf-8")
-        print(f"✅ index.html mis à jour")
+        patch_recipe_photo(data, target_ids, photo_paths)
+        save_recipes(data)
+        print(f"✅ data/recipes.js mis à jour")
 
     print(f"\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
     print(f"Photos générées : {len(photo_paths)}/{len(items)}")

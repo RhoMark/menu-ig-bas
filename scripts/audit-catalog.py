@@ -21,6 +21,7 @@ import json
 import argparse
 import datetime as dt
 from pathlib import Path
+from recipes_store import load_items, recipes_path_for  # catalogue data/recipes.js (V2.115.0)
 from collections import Counter, defaultdict
 
 ALL_TYPES = ["breakfast", "lunch", "dinner", "snack", "dessert"]
@@ -29,14 +30,8 @@ ALL_CUISINES = ["francais", "italien", "mediterraneen", "asiatique",
 
 
 def extract_recipes(index_path):
-    with open(index_path, encoding="utf-8") as f:
-        content = f.read()
-    m = re.search(
-        r'<script type="application/json" id="data-recipes">\s*(.*?)\s*</script>',
-        content, re.DOTALL)
-    if not m:
-        raise RuntimeError("data-recipes introuvable")
-    return json.loads(m.group(1)).get("items", [])
+    # V2.115.0 — catalogue dans data/recipes.js (cf. recipes_store.py)
+    return load_items(recipes_path_for(index_path))
 
 
 def cell_status(count, target_min=15):

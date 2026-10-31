@@ -50,6 +50,7 @@ DIM = "\033[2m"
 # validate-recipe-data.py → impossible de diverger (cf. bug allergène V2.99.76).
 # allergens / cuisines sont DÉRIVÉS de index.html (UI = source de vérité).
 import vocab
+from recipes_store import load_items, recipes_path_for  # catalogue data/recipes.js (V2.115.0)
 VALID_TYPES = vocab.TYPES
 VALID_CUISINES = vocab.cuisines()
 VALID_SEASONS = vocab.SEASONS            # inclut "all" (recette toutes saisons)
@@ -223,8 +224,7 @@ def load_lot(path, varname):
 def load_existing_data(repo_root):
     index = Path(repo_root) / "index.html"
     content = index.read_text(encoding="utf-8")
-    m = re.search(r'<script type="application/json" id="data-recipes">\s*(\{.*?\})\s*</script>', content, re.DOTALL)
-    recipes = json.loads(m.group(1))["items"]
+    recipes = load_items(recipes_path_for(index))
     m = re.search(r'<script type="application/json" id="data-glycemic">\s*(\{.*?\})\s*</script>', content, re.DOTALL)
     glyc = json.loads(m.group(1))["items"]
     glyc_map = {canonical(it["id"]): it for it in glyc}

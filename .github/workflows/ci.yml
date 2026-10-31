@@ -1,7 +1,7 @@
 # CI Menu IG Bas — validation à chaque push/PR
 #
 # Validations exécutées :
-#   1. JSON parse des 4 blocs (data-recipes, data-faq, data-ingredients, data-glycemic)
+#   1. JSON parse : data/recipes.js (V2.115.0) + 3 blocs (data-faq, data-ingredients, data-glycemic)
 #   2. Size check (index.html < 5 MB, sw.js < 50 KB)
 #   3. Cohérence <title> ↔ CACHE_VERSION
 #   4. Validation schéma recettes (scripts/validate-recipe-data.py)
@@ -46,7 +46,14 @@ jobs:
           with open("index.html", encoding="utf-8") as f:
               c = f.read()
           errors = 0
-          for sid in ["data-recipes", "data-faq", "data-ingredients", "data-glycemic"]:
+          sys.path.insert(0, "scripts")
+          try:
+              import recipes_store  # catalogue sorti d'index.html (V2.115.0)
+              print(f"✅ data/recipes.js parse OK ({len(recipes_store.load_items())} recettes)")
+          except Exception as e:
+              print(f"❌ data/recipes.js illisible : {e}")
+              errors += 1
+          for sid in ["data-faq", "data-ingredients", "data-glycemic"]:
               m = re.search(r'<script type="application/json" id="' + sid + r'">\s*(.*?)\s*</script>', c, re.DOTALL)
               if not m:
                   print(f"❌ Block {sid} introuvable")
@@ -128,12 +135,9 @@ jobs:
       - name: Recipe count check
         run: |
           COUNT=$(python3 -c "
-          import re, json
-          with open('index.html', encoding='utf-8') as f:
-              c = f.read()
-          m = re.search(r'<script type=\"application/json\" id=\"data-recipes\">\s*(.*?)\s*</script>', c, re.DOTALL)
-          data = json.loads(m.group(1))
-          print(len(data['items']))
+          import sys; sys.path.insert(0, 'scripts')
+          import recipes_store
+          print(len(recipes_store.load_items()))
           ")
           echo "Recipe count : $COUNT"
           if [ -f .expected-recipe-count ]; then

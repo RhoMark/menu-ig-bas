@@ -26,6 +26,7 @@ import json
 import argparse
 from pathlib import Path
 
+from recipes_store import load_items, recipes_path_for
 import vocab  # source unique des vocabulaires fermés (cf. scripts/vocab.py)
 
 # Les vocabulaires clos (types, cuisines, seasons, tags, eq, allergens,
@@ -56,16 +57,8 @@ REQUIRED_FIELDS = {"id", "name", "type", "cuisine", "seasons", "prep",
 
 
 def extract_recipes(index_path):
-    """Extrait data-recipes JSON depuis index.html."""
-    with open(index_path, encoding="utf-8") as f:
-        content = f.read()
-    m = re.search(
-        r'<script type="application/json" id="data-recipes">\s*(.*?)\s*</script>',
-        content, re.DOTALL)
-    if not m:
-        raise RuntimeError("Bloc data-recipes introuvable dans index.html")
-    data = json.loads(m.group(1))
-    return data.get("items", [])
+    """Catalogue de recettes (data/recipes.js à côté d'index.html, V2.115.0)."""
+    return load_items(recipes_path_for(index_path))
 
 
 def normalize_ing_name(name):
