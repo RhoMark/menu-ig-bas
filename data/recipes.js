@@ -144380,6 +144380,1159 @@ window.__DATA_RECIPES = {
         "Sors la plaque, retourne les légumes avec une spatule, pousse-les sur les côtés et pose le poisson au milieu. Ajoute les olives. Remets au four 12 à 15 minutes : le merlu est cuit quand sa chair devient blanche, opaque et se sépare en lamelles quand tu appuies avec une fourchette.",
         "Les légumes sont prêts quand ils sont dorés sur les bords et tendres sous la pointe du couteau. Sers aussitôt, avec le reste de la chermoula versé sur le poisson."
       ]
+    },
+    {
+      "id": "l447",
+      "name": "Machher jhol (curry bengali léger de lieu noir aux légumes d'hiver), riz basmati complet",
+      "type": "lunch",
+      "cuisine": "indien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "diff": 2,
+      "cost": 3.6,
+      "kcal": 450,
+      "tags": [],
+      "eq": [
+        "stove",
+        "pan"
+      ],
+      "allergens": [
+        "fish",
+        "mustard"
+      ],
+      "ing": [
+        [
+          "Lieu noir (filet)",
+          130,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Riz basmati complet",
+          45,
+          "g",
+          "pantry"
+        ],
+        [
+          "Chou-fleur",
+          100,
+          "g",
+          "produce"
+        ],
+        [
+          "Navet",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Épinards frais",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Tomate",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Gingembre frais",
+          1,
+          "cm",
+          "produce"
+        ],
+        [
+          "Graines de moutarde",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Graines de cumin",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Curcuma moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Piment de Cachemire en poudre",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Huile de colza",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Lance le riz : rince-le, mets-le dans une casserole avec 2,5 fois son volume d'eau salée, porte à ébullition puis laisse cuire 25 minutes à couvert à feu doux.",
+        "Coupe le poisson en 3 ou 4 gros morceaux, frotte-les avec une partie du curcuma et une pincée de sel et laisse-les de côté 10 minutes.",
+        "Détaille le chou-fleur en petits bouquets, coupe le navet en cubes de 1,5 cm et la tomate en dés. Râpe le gingembre.",
+        "Dans une sauteuse, fais chauffer l'huile à feu moyen. Fais dorer les morceaux de poisson 1 minute par face seulement (ils finiront de cuire dans la sauce) et retire-les sur une assiette.",
+        "Dans la même sauteuse, mets les graines de moutarde et de cumin : quand les graines de moutarde commencent à sauter (comme du pop-corn miniature), ajoute le gingembre, le reste du curcuma et le piment, remue 20 secondes.",
+        "Ajoute le chou-fleur, le navet et la tomate, puis 250 ml d'eau et une pincée de sel. Couvre et laisse cuire 12 minutes à feu doux : les légumes doivent être tendres sous la pointe du couteau. Le jhol est un curry liquide, comme un bouillon épicé : c'est normal qu'il ne soit pas épais.",
+        "Pose le poisson dans le bouillon, ajoute les épinards et laisse frémir 5 minutes sans remuer (le poisson est fragile). Il est cuit quand sa chair devient blanche et se sépare en lamelles.",
+        "Sers dans une assiette creuse avec le riz, le bouillon versé par-dessus et la coriandre hachée."
+      ]
+    },
+    {
+      "id": "l448",
+      "name": "Caldo de pescado (soupe de poisson mexicaine tomate-guajillo, légumes et citron vert)",
+      "type": "lunch",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "diff": 2,
+      "cost": 3.8,
+      "kcal": 400,
+      "tags": [
+        "kid-friendly"
+      ],
+      "eq": [
+        "stove",
+        "blender"
+      ],
+      "allergens": [
+        "fish"
+      ],
+      "ing": [
+        [
+          "Lieu noir (filet)",
+          140,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Piment guajillo séché",
+          1,
+          "u",
+          "spices"
+        ],
+        [
+          "Tomate",
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon blanc",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Carotte",
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Pomme de terre à chair ferme (Charlotte, Amandine)",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Origan séché",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Bouillon de légumes",
+          450,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron vert",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Ouvre le piment guajillo avec des ciseaux, retire la queue et les graines, et fais-le tremper 10 minutes dans un bol d'eau très chaude jusqu'à ce qu'il devienne mou.",
+        "Mixe le piment égoutté avec la tomate, une partie de l'oignon (garde le reste pour servir) et l'ail épluché jusqu'à obtenir une purée rouge lisse.",
+        "Épluche la carotte et la pomme de terre et coupe-les en cubes de 1,5 cm (garde la peau de la pomme de terre si elle est nouvelle, bien lavée). Coupe la courgette en demi-rondelles. Coupe le reste de l'oignon en petits dés pour servir.",
+        "Fais chauffer l'huile dans une marmite à feu moyen, verse la purée rouge (attention, ça éclabousse) et laisse-la cuire 4 minutes en remuant : elle fonce et sent moins le cru.",
+        "Ajoute le bouillon, la carotte, la pomme de terre et l'origan. Porte à ébullition, puis laisse frémir 12 minutes.",
+        "Ajoute la courgette et le poisson coupé en gros cubes de 3 cm. Laisse frémir 6 à 8 minutes sans remuer fort : le poisson est cuit quand il devient blanc et opaque au cœur, et la pomme de terre quand un couteau la traverse sans résistance.",
+        "Goûte, sale, poivre. Sers dans un grand bol avec l'oignon cru en dés, la coriandre hachée et un quartier de citron vert à presser au dernier moment."
+      ]
+    },
+    {
+      "id": "l449",
+      "name": "Insalata tiepida di lenticchie, sgombro e finocchio (lentilles tièdes, maquereau, fenouil et orange)",
+      "type": "lunch",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 25,
+      "diff": 1,
+      "cost": 3.2,
+      "kcal": 520,
+      "tags": [],
+      "eq": [
+        "stove",
+        "oven",
+        "bowl"
+      ],
+      "allergens": [
+        "fish"
+      ],
+      "ing": [
+        [
+          "Lentilles vertes du Puy",
+          60,
+          "g",
+          "pantry"
+        ],
+        [
+          "Filet de maquereau (frais)",
+          120,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Fenouil",
+          100,
+          "g",
+          "produce"
+        ],
+        [
+          "Orange",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Roquette",
+          30,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          20,
+          "g",
+          "produce"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Vinaigre de vin rouge",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Câpres",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Rince les lentilles, mets-les dans une casserole avec 3 fois leur volume d'eau froide et la feuille de laurier (sans sel : le sel au début les fait durcir). Porte à ébullition puis laisse cuire 20 à 25 minutes à feu doux : elles doivent être tendres mais garder leur forme. Sale en fin de cuisson et égoutte.",
+        "Pendant ce temps, préchauffe le four à 200 °C. Pose les filets de maquereau peau dessous sur une plaque recouverte de papier cuisson, sale, poivre et arrose de quelques gouttes d'huile. Enfourne 8 à 10 minutes : la chair devient opaque et se détache facilement à la fourchette.",
+        "Coupe le fenouil en lamelles très fines (presque transparentes) et l'oignon rouge en fines demi-rondelles.",
+        "Pèle l'orange à vif : coupe le haut et le bas, pose-la debout et enlève la peau et toute la partie blanche avec un couteau en suivant l'arrondi. Coupe-la en rondelles au-dessus d'un bol pour récupérer le jus.",
+        "Prépare la vinaigrette dans un saladier : le jus d'orange récupéré, le vinaigre, le reste de l'huile, une pincée de sel et de poivre. Ajoute les lentilles encore tièdes et mélange : elles absorbent mieux la sauce quand elles sont chaudes.",
+        "Ajoute le fenouil, l'oignon, les câpres et la roquette, mélange délicatement.",
+        "Sers avec le maquereau effeuillé en gros morceaux et les rondelles d'orange par-dessus."
+      ]
+    },
+    {
+      "id": "d435",
+      "name": "Caballa en escabeche (maquereau mariné aux légumes vinaigrés et origan), haricots noirs",
+      "type": "dinner",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 15,
+      "rest": 30,
+      "diff": 2,
+      "cost": 3.0,
+      "kcal": 430,
+      "tags": [],
+      "eq": [
+        "stove",
+        "pan"
+      ],
+      "allergens": [
+        "fish"
+      ],
+      "ing": [
+        [
+          "Filet de maquereau (frais)",
+          130,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Haricots noirs cuits (en bocal, égouttés)",
+          80,
+          "g",
+          "pantry"
+        ],
+        [
+          "Carotte",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Piment jalapeño",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Vinaigre de cidre",
+          3,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Origan séché",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Poivre noir en grains",
+          4,
+          "u",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Épluche la carotte et coupe-la en fines rondelles. Coupe l'oignon rouge en lamelles, le chou-fleur en tout petits bouquets et le jalapeño en rondelles (retire les graines si tu veux que ça pique moins). Écrase l'ail.",
+        "Escabeche (légumes au vinaigre) : dans une petite casserole, mets le vinaigre, 100 ml d'eau, l'origan, le laurier, les grains de poivre, l'ail et une pincée de sel. Porte à ébullition, ajoute les légumes et laisse cuire 4 minutes : ils doivent rester croquants. Éteins le feu.",
+        "Sèche les filets de maquereau avec du papier absorbant (sinon ils accrochent). Fais chauffer l'huile dans une poêle à feu moyen-vif et pose-les côté peau. Cuis 3 minutes sans les toucher, jusqu'à ce que la peau soit croustillante, puis retourne-les 1 minute.",
+        "Mets les filets dans un plat creux et verse dessus les légumes avec leur liquide encore chaud. Laisse mariner au moins 30 minutes (ou jusqu'au lendemain au frais : c'est encore meilleur).",
+        "Rince et égoutte les haricots noirs, puis réchauffe-les 3 minutes dans une casserole avec 2 cuillères à soupe d'eau et une pincée de sel.",
+        "Sers le maquereau tiède ou froid avec les légumes vinaigrés, les haricots noirs et la coriandre hachée. Il se garde 2 jours au frais dans sa marinade."
+      ]
+    },
+    {
+      "id": "d436",
+      "name": "Tinga de lentejas (lentilles mijotées tomate-chipotle) en feuilles de laitue, pico de gallo",
+      "type": "dinner",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 30,
+      "diff": 1,
+      "cost": 1.8,
+      "kcal": 340,
+      "tags": [
+        "vegan",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove",
+        "bowl"
+      ],
+      "allergens": [],
+      "producesLeftovers": true,
+      "ing": [
+        [
+          "Lentilles vertes du Puy",
+          50,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon blanc",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Tomates concassées (en conserve)",
+          150,
+          "g",
+          "pantry"
+        ],
+        [
+          "Piment chipotle en poudre",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Cumin moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Origan séché",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Salade romaine",
+          4,
+          "feuille",
+          "produce"
+        ],
+        [
+          "Tomate",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          15,
+          "g",
+          "produce"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron vert",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Avocat",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Rince les lentilles et fais-les cuire 20 minutes dans 3 fois leur volume d'eau non salée : elles doivent être tendres mais encore entières. Égoutte-les.",
+        "Pendant ce temps, coupe l'oignon blanc en fines lamelles et écrase l'ail. Fais chauffer l'huile dans une sauteuse à feu moyen et fais revenir l'oignon 6 minutes, jusqu'à ce qu'il devienne translucide et commence à dorer.",
+        "Ajoute l'ail, le cumin, l'origan et le chipotle, remue 30 secondes, puis verse les tomates concassées et une pincée de sel. Laisse épaissir 5 minutes.",
+        "Ajoute les lentilles et laisse mijoter 5 minutes en remuant : la sauce doit enrober les lentilles et ne plus être liquide. Goûte et ajuste le sel (et le chipotle si tu aimes plus fumé et piquant).",
+        "Pico de gallo (salsa crue) : coupe la tomate en tout petits dés, l'oignon rouge très finement, hache la coriandre et mélange le tout avec le jus du citron vert et une pincée de sel.",
+        "Lave et sèche les feuilles de laitue : elles remplacent les tortillas. Remplis chaque feuille de tinga, ajoute du pico de gallo et une lamelle d'avocat, puis roule ou plie comme un taco pour manger avec les doigts."
+      ]
+    },
+    {
+      "id": "d437",
+      "name": "Psarosoupa avgolemono (soupe grecque de poisson et légumes, liée œuf-citron)",
+      "type": "dinner",
+      "cuisine": "mediterraneen",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "diff": 3,
+      "cost": 3.9,
+      "kcal": 330,
+      "tags": [],
+      "eq": [
+        "stove",
+        "bowl"
+      ],
+      "allergens": [
+        "fish",
+        "eggs"
+      ],
+      "ing": [
+        [
+          "Filet de merlu",
+          130,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Carotte",
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Céleri branche",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Poireau",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Pomme de terre à chair ferme (Charlotte, Amandine)",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon jaune",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Œuf",
+          1,
+          "u",
+          "dairy"
+        ],
+        [
+          "Citron jaune",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Bouillon de légumes",
+          450,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Aneth frais",
+          3,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Épluche la carotte, la pomme de terre et l'oignon et coupe-les en petits cubes de 1 cm. Coupe le céleri et le poireau en fines rondelles (rince bien le poireau : de la terre se cache entre les feuilles).",
+        "Dans une marmite, fais chauffer l'huile à feu moyen et fais revenir l'oignon et le poireau 4 minutes, jusqu'à ce qu'ils soient tendres sans dorer.",
+        "Ajoute la carotte, la pomme de terre, le céleri et le bouillon. Porte à ébullition puis laisse frémir 15 minutes, jusqu'à ce que la pomme de terre s'écrase facilement.",
+        "Ajoute le poisson en gros morceaux et laisse frémir 6 minutes : il devient blanc et se défait en lamelles. Éteins le feu et attends 2 minutes que la soupe arrête de bouillir.",
+        "Avgolemono (la liaison œuf-citron qui rend la soupe crémeuse) : dans un bol, fouette l'œuf avec le jus du citron jusqu'à ce que ce soit mousseux. Sans cesser de fouetter, ajoute une louche de bouillon chaud petit à petit : on réchauffe l'œuf doucement pour qu'il ne cuise pas en grumeaux.",
+        "Verse ce mélange dans la marmite en remuant doucement, sur feu très doux, pendant 2 minutes : la soupe doit devenir légèrement nappante et ne jamais bouillir (sinon l'œuf tranche, il forme des petits morceaux).",
+        "Goûte, sale, poivre et sers aussitôt avec l'aneth ciselé."
+      ]
+    },
+    {
+      "id": "des253",
+      "name": "Budino di ricotta (petits flans de ricotta au citron et à la clémentine)",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 25,
+      "rest": 60,
+      "diff": 1,
+      "cost": 1.6,
+      "kcal": 210,
+      "tags": [
+        "vegetarian",
+        "kid-friendly"
+      ],
+      "eq": [
+        "oven",
+        "bowl"
+      ],
+      "allergens": [
+        "lactose",
+        "eggs"
+      ],
+      "ing": [
+        [
+          "Ricotta",
+          80,
+          "g",
+          "dairy"
+        ],
+        [
+          "Œuf",
+          0.5,
+          "u",
+          "dairy"
+        ],
+        [
+          "Sirop d'érable",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Citron jaune (zeste)",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Clémentine",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Extrait de vanille",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 170 °C. Lave le citron et râpe finement son zeste (seulement la partie jaune : le blanc est amer).",
+        "Dans un bol, écrase la ricotta à la fourchette, puis ajoute l'œuf battu, le sirop d'érable, la vanille et le zeste. Fouette jusqu'à obtenir une crème lisse, sans grumeaux.",
+        "Verse dans des petits ramequins (ou des moules à muffins en silicone) et pose-les dans un plat à four. Verse de l'eau chaude dans le plat jusqu'à mi-hauteur des ramequins : c'est un bain-marie, il évite que les flans cuisent trop vite et se fendent.",
+        "Enfourne 20 à 25 minutes : les flans sont cuits quand le dessus est pris et légèrement doré, mais que le centre tremble encore un peu quand tu secoues le plat.",
+        "Laisse refroidir, puis mets au frais au moins 1 heure : ils se raffermissent en refroidissant.",
+        "Pèle la clémentine, sépare les quartiers et pose-les sur les flans au moment de servir."
+      ],
+      "advance": "1 h au frais"
+    },
+    {
+      "id": "des254",
+      "name": "Torta di carote e mandorle (gâteau carottes-amandes sans farine, peu sucré)",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 35,
+      "diff": 2,
+      "cost": 1.4,
+      "kcal": 230,
+      "tags": [
+        "vegetarian",
+        "kid-friendly",
+        "batch-friendly"
+      ],
+      "eq": [
+        "oven",
+        "bowl"
+      ],
+      "allergens": [
+        "eggs",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Carotte",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Poudre d'amande",
+          30,
+          "g",
+          "pantry"
+        ],
+        [
+          "Œuf",
+          0.5,
+          "u",
+          "dairy"
+        ],
+        [
+          "Sirop d'érable",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Orange (zeste)",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Levure chimique",
+          1,
+          "pincée",
+          "pantry"
+        ],
+        [
+          "Cannelle moulue",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Amandes effilées",
+          3,
+          "g",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 170 °C. Recouvre de papier cuisson un moule rond (environ 20 cm de diamètre pour 6 personnes ; des ramequins pour 1 ou 2).",
+        "Épluche les carottes et râpe-les finement (côté petits trous de la râpe) : plus c'est fin, plus le gâteau est moelleux.",
+        "Sépare les blancs des jaunes d'œufs : casse l'œuf et fais passer le jaune d'une demi-coquille à l'autre au-dessus d'un bol, le blanc tombe dedans.",
+        "Dans un saladier, fouette les jaunes avec le sirop d'érable jusqu'à ce que le mélange blanchisse un peu. Ajoute les carottes, la poudre d'amande, le zeste d'orange râpé, la cannelle et la levure, mélange.",
+        "Bats les blancs en neige avec une pincée de sel : ils sont prêts quand ils forment des pics fermes et ne glissent pas si tu penches le bol. Incorpore-les en 3 fois au mélange avec une spatule, en soulevant la pâte de bas en haut, doucement, pour ne pas casser les bulles d'air.",
+        "Verse dans le moule, parsème d'amandes effilées et enfourne 30 à 35 minutes : le gâteau est cuit quand une lame de couteau plantée au centre ressort sèche.",
+        "Laisse refroidir dans le moule avant de démouler : il est fragile tant qu'il est chaud. Se garde 3 jours dans une boîte, au frais."
+      ]
+    },
+    {
+      "id": "des255",
+      "name": "Ensalada de frutas de invierno (agrumes, grenade et pomme au citron vert, pointe de piment)",
+      "type": "dessert",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 0,
+      "diff": 1,
+      "cost": 1.7,
+      "kcal": 120,
+      "tags": [
+        "vegan",
+        "no-cook",
+        "quick",
+        "light"
+      ],
+      "eq": [
+        "bowl"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Orange",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Pamplemousse",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Grenade",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Pomme",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Citron vert",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Menthe fraîche",
+          2,
+          "g",
+          "produce"
+        ],
+        [
+          "Piment d'Espelette",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Fleur de sel",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Pèle l'orange et le pamplemousse à vif : coupe le haut et le bas, pose le fruit debout et retire la peau et la partie blanche avec un couteau en suivant l'arrondi. Coupe en rondelles puis en morceaux, au-dessus d'un bol pour garder le jus.",
+        "Égrène la grenade : coupe-la en deux et tape fort sur la peau avec le dos d'une cuillère en bois, au-dessus du bol, côté coupé en bas. Les grains tombent tout seuls (enlève les petites peaux blanches, elles sont amères).",
+        "Lave la pomme, retire le trognon et coupe-la en petits dés sans l'éplucher (la peau apporte des fibres).",
+        "Mélange tous les fruits avec le jus récupéré et le jus de citron vert : le citron empêche la pomme de noircir.",
+        "Au Mexique, on assaisonne les fruits avec du piment et du sel : saupoudre d'une toute petite pincée de piment d'Espelette et de fleur de sel juste avant de servir, ça réveille le goût sucré. Termine par la menthe ciselée."
+      ]
+    },
+    {
+      "id": "des256",
+      "name": "Crème de chocolat mexicain au tofu soyeux (cacao, cannelle et pointe de piment)",
+      "type": "dessert",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 5,
+      "rest": 60,
+      "diff": 1,
+      "cost": 1.5,
+      "kcal": 190,
+      "tags": [
+        "vegan"
+      ],
+      "eq": [
+        "stove",
+        "blender"
+      ],
+      "allergens": [
+        "soy"
+      ],
+      "ing": [
+        [
+          "Tofu soyeux",
+          100,
+          "g",
+          "pantry"
+        ],
+        [
+          "Chocolat noir 70%",
+          15,
+          "g",
+          "pantry"
+        ],
+        [
+          "Cacao en poudre non sucré",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Sirop d'érable",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Cannelle moulue",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Piment de Cayenne",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Extrait de vanille",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Casse le chocolat en petits morceaux dans un bol et fais-le fondre au bain-marie : pose le bol sur une casserole d'eau qui frémit, sans que le fond touche l'eau, et remue jusqu'à ce qu'il soit lisse. (Au micro-ondes : par tranches de 20 secondes en remuant entre chaque.)",
+        "Égoutte le tofu soyeux (jette l'eau du paquet) et mets-le dans le mixeur avec le cacao, le sirop d'érable, la cannelle, la vanille et une toute petite pincée de piment.",
+        "Ajoute le chocolat fondu et mixe 1 minute, en raclant les bords avec une spatule, jusqu'à obtenir une crème très lisse et brillante, sans aucun petit morceau blanc.",
+        "Goûte : le piment doit chauffer légèrement au fond de la gorge sans piquer la langue. Ajoute une pincée de cannelle si tu veux plus doux.",
+        "Verse dans des petits pots et mets au frais au moins 1 heure : la crème épaissit en refroidissant. Saupoudre d'un voile de cannelle au moment de servir."
+      ],
+      "advance": "1 h au frais"
+    },
+    {
+      "id": "des257",
+      "name": "Yaourt grec, coings rôtis au miel de thym et pistaches",
+      "type": "dessert",
+      "cuisine": "mediterraneen",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 40,
+      "diff": 1,
+      "cost": 1.9,
+      "kcal": 220,
+      "tags": [
+        "vegetarian"
+      ],
+      "eq": [
+        "oven",
+        "bowl"
+      ],
+      "allergens": [
+        "lactose",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Coing",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Yaourt grec",
+          100,
+          "g",
+          "dairy"
+        ],
+        [
+          "Miel",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Thym frais",
+          1,
+          "brin",
+          "produce"
+        ],
+        [
+          "Pistaches non salées",
+          8,
+          "g",
+          "pantry"
+        ],
+        [
+          "Citron jaune (jus)",
+          1,
+          "c.à.c",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 180 °C. Frotte le coing avec un torchon pour enlever son duvet, puis coupe-le en quartiers et retire le cœur dur avec un petit couteau (le coing est très ferme : pose-le bien à plat et coupe doucement).",
+        "Pose les quartiers dans un petit plat, arrose avec le jus de citron, la moitié du miel et 3 cuillères à soupe d'eau, ajoute le thym.",
+        "Couvre le plat de papier aluminium et enfourne 30 minutes, puis retire l'aluminium et prolonge 10 minutes. Les coings sont prêts quand ils deviennent rose-doré et tendres sous la pointe d'un couteau.",
+        "Pendant ce temps, concasse les pistaches (écrase-les grossièrement avec le fond d'une casserole ou hache-les au couteau).",
+        "Sers le yaourt grec bien froid avec les quartiers de coing tièdes, un filet du jus de cuisson, le reste du miel et les pistaches."
+      ]
+    },
+    {
+      "id": "des258",
+      "name": "Poire pochée au gingembre et à l'anis étoilé, baies de goji (dessert chinois d'hiver)",
+      "type": "dessert",
+      "cuisine": "asiatique",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 25,
+      "diff": 1,
+      "cost": 1.5,
+      "kcal": 110,
+      "tags": [
+        "vegan",
+        "light"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Poire Conférence",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Gingembre frais",
+          2,
+          "cm",
+          "produce"
+        ],
+        [
+          "Anis étoilé (badiane)",
+          1,
+          "étoile",
+          "spices"
+        ],
+        [
+          "Baies de goji (séchées)",
+          5,
+          "g",
+          "pantry"
+        ],
+        [
+          "Miel",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Citron jaune (zeste)",
+          0.25,
+          "u",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Épluche la poire avec un économe en gardant la queue (c'est plus joli) et coupe une fine tranche à la base pour qu'elle tienne debout.",
+        "Épluche le gingembre et coupe-le en fines lamelles. Prélève le zeste de citron en larges rubans avec l'économe.",
+        "Dans une petite casserole, mets 300 ml d'eau, le gingembre, l'anis étoilé, le zeste et le miel. Porte à frémissement (petites bulles).",
+        "Plonge la poire dans le sirop, couvre et laisse pocher (cuire doucement dans un liquide qui frémit) 20 minutes en la retournant à mi-cuisson. Elle est prête quand la pointe d'un couteau entre jusqu'au cœur sans forcer.",
+        "Ajoute les baies de goji les 3 dernières minutes : elles gonflent et deviennent tendres.",
+        "Sers la poire tiède dans un bol creux, avec un peu de son bouillon parfumé et les baies de goji. En Chine, on boit le bouillon : il réchauffe en hiver."
+      ]
     }
   ]
 };
