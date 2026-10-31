@@ -224,7 +224,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.25,
-      "kcal": 360,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -240,7 +240,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de sarrasin",
-          50,
+          25,
           "g",
           "pantry"
         ],
@@ -257,9 +257,15 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Lait demi-écrémé (ou boisson d'amande)",
-          100,
+          "Lait demi-écrémé",
+          50,
           "ml",
+          "dairy"
+        ],
+        [
+          "Fromage blanc",
+          60,
+          "g",
           "dairy"
         ],
         [
@@ -275,19 +281,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fruits frais pour servir",
-          80,
+          "Fruits rouges frais (fraises, framboises, myrtilles)",
+          60,
           "g",
           "produce"
         ]
       ],
       "steps": [
         "Écrase la banane à la fourchette dans un saladier.",
-        "Ajoute l'œuf et bats le mélange.",
+        "Ajoute l'œuf et le fromage blanc (il rend les pancakes moelleux et plus rassasiants), puis bats le mélange.",
         "Verse la farine et la levure, puis le lait petit à petit en fouettant pour éviter les grumeaux. Tu dois obtenir une pâte souple, pas liquide.",
         "Chauffe une poêle antiadhésive avec un peu d'huile à feu moyen.",
         "Verse une petite louche de pâte pour former un pancake. Quand des bulles apparaissent à la surface (environ 2 min), retourne-le avec une spatule. Cuis 1 min de l'autre côté.",
-        "Continue jusqu'à épuisement de la pâte. Sers avec les fruits frais par-dessus."
+        "Continue jusqu'à épuisement de la pâte. Sers avec les fruits rouges par-dessus."
       ],
       "photo": "assets/recipes/b4.webp"
     },
@@ -350,9 +356,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Grille légèrement la tranche de pain de seigle (le seigle complet a un IG plus bas que le pain complet classique) (facultatif).",
+        "Grille légèrement le pain de seigle (le seigle complet a un IG plus bas que le pain complet classique) (facultatif).",
         "Étale la purée d'amande sur chaque tranche (attention, c'est épais : utilise le dos d'une cuillère).",
-        "Coupe la demi-poire en fines lamelles (enlève le trognon).",
+        "Coupe la poire en fines lamelles (enlève le trognon).",
         "Dispose les lamelles sur les tartines et saupoudre d'une pincée de cannelle.",
         "Sers avec le fromage blanc à côté (ou étalé sous la poire) : ses protéines calent jusqu'au déjeuner et ralentissent la montée du sucre."
       ],
@@ -3726,7 +3732,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -3743,13 +3749,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          40,
+          25,
           "g",
           "pantry"
         ],
         [
           "Amandes",
-          10,
+          15,
           "g",
           "pantry"
         ],
@@ -3757,6 +3763,12 @@ window.__DATA_RECIPES = {
           "Graines de tournesol",
           5,
           "g",
+          "pantry"
+        ],
+        [
+          "Graines de chia",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
@@ -3779,7 +3791,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un bol, mets les flocons d'avoine, les amandes concassées et les graines de tournesol.",
+        "Dans un bol, mets les flocons d'avoine, les amandes concassées, les graines de tournesol et les graines de chia.",
         "Verse le kéfir par-dessus. Remue.",
         "Ajoute la pomme coupée en petits dés, saupoudre de cannelle."
       ],
@@ -6743,7 +6755,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.38,
-      "kcal": 260,
+      "kcal": 290,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -6759,31 +6771,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pommes",
-          1.5,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Farine de sarrasin",
-          25,
+          12,
           "g",
           "pantry"
         ],
         [
           "Flocons d'avoine",
-          15,
+          8,
           "g",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          15,
+          8,
           "g",
           "pantry"
         ],
         [
           "Beurre doux",
-          15,
+          8,
           "g",
           "dairy"
         ],
@@ -6795,7 +6807,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cerneaux de noix",
-          10,
+          5,
           "g",
           "pantry"
         ]
@@ -10324,7 +10336,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 510,
+      "kcal": 490,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -10340,7 +10352,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Spaghetti complets",
-          70,
+          45,
           "g",
           "pantry"
         ],
@@ -10366,6 +10378,12 @@ window.__DATA_RECIPES = {
           "Carotte",
           0.5,
           "u",
+          "produce"
+        ],
+        [
+          "Courgette",
+          120,
+          "g",
           "produce"
         ],
         [
@@ -10400,7 +10418,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe oignon, carotte, céleri en petits dés. Fais revenir 5-7 min dans l'huile.",
+        "Coupe oignon, carotte, céleri et courgette en petits dés (la courgette fond dans la sauce et la rend plus généreuse). Fais revenir 5-7 min dans l'huile.",
         "Ajoute ail, lentilles, tomates, origan. Mijote 15-20 min.",
         "Cuis les spaghetti al dente selon paquet.",
         "Sers les pâtes nappées de sauce, parmesan râpé sur le dessus."
@@ -30296,9 +30314,9 @@ window.__DATA_RECIPES = {
         "Si potiron surgelé : étale les cubes gelés sur une plaque garnie de papier cuisson, sans les décongeler.",
         "Arrose d'huile d'olive, sale et poivre. Mélange à la main.",
         "Enfourne 20-25 min en remuant à mi-cuisson. Les cubes doivent être tendres et légèrement dorés sur les bords.",
-        "Toaste la tranche de pain de seigle 2-3 min au grille-pain ou directement au four sur la fin (la croûte doit croquer mais la mie reste moelleuse).",
+        "Toaste le pain de seigle 2-3 min au grille-pain ou directement au four sur la fin (la croûte doit croquer mais la mie reste moelleuse).",
         "Coupe la bûche de chèvre en rondelles de 5 mm d'épaisseur.",
-        "Pose les tranches de chèvre sur les pains chauds, ajoute le potiron rôti par-dessus, drizzle d'un filet de miel et de vinaigre balsamique.",
+        "Pose les tranches de chèvre sur les pains chauds, ajoute le potiron rôti par-dessus, arrose de quelques gouttes de vinaigre balsamique.",
         "Termine avec une poignée de roquette et une c.à.s de graines de courge sur chaque tartine.",
         "Sers avec une salade de roquette et de noix concassées, arrosée du vinaigre balsamique : elle remplit l'assiette sans faire grimper la charge glycémique."
       ],
@@ -42192,7 +42210,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 580,
+      "kcal": 590,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -42209,7 +42227,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          50,
           "g",
           "pantry"
         ],
@@ -42228,6 +42246,12 @@ window.__DATA_RECIPES = {
         [
           "Tomate",
           1,
+          "u",
+          "produce"
+        ],
+        [
+          "Poivron rouge",
+          0.5,
           "u",
           "produce"
         ],
@@ -42268,14 +42292,8 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Maïs (facultatif)",
-          30,
-          "g",
-          "pantry"
-        ],
-        [
-          "Skyr (ou yaourt grec)",
-          30,
+          "Skyr",
+          50,
           "g",
           "dairy"
         ],
@@ -42289,10 +42307,10 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rince le quinoa 30 sec sous l'eau froide. Mets-le dans une casserole avec 2 fois son volume d'eau salée. Porte à ébullition, baisse, couvre, laisse 12 min jusqu'à ce que les grains soient translucides.",
         "Pendant ce temps, dans une poêle, chauffe l'huile d'olive à feu moyen. Ajoute les haricots noirs rincés, le cumin et le paprika fumé. Remue 5 min : les haricots doivent être chauds et un peu écrasés (texture confite).",
-        "Coupe la tomate en dés, émince finement l'oignon rouge, ciselle la coriandre.",
+        "Coupe la tomate et le poivron en dés, émince finement l'oignon rouge, ciselle la coriandre.",
         "Coupe l'avocat en deux, retire le noyau, sors la chair à la cuillère et coupe-la en cubes.",
-        "Dans un bol, mélange tomate, oignon rouge, coriandre, jus de citron vert (1/2). Sale légèrement (pico de gallo express).",
-        "Compose le bowl : quinoa au fond, haricots noirs à un endroit, pico de gallo à un autre, avocat en cubes, maïs si tu veux. Pose une cuillère de skyr dessus.",
+        "Dans un bol, mélange tomate, poivron, oignon rouge, coriandre, jus de citron vert (1/2). Sale légèrement (pico de gallo express).",
+        "Compose le bowl : quinoa au fond, haricots noirs à un endroit, pico de gallo à un autre, avocat en cubes. Pose une cuillère de skyr dessus.",
         "Termine avec un trait de jus de citron vert restant et un peu de coriandre."
       ],
       "photo": "assets/recipes/l134.webp"
@@ -43937,12 +43955,12 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          50,
+          35,
           "g",
           "pantry"
         ],
         [
-          "Lait demi-écrémé (ou boisson d'amande)",
+          "Lait demi-écrémé",
           200,
           "ml",
           "dairy"
@@ -43958,6 +43976,12 @@ window.__DATA_RECIPES = {
           10,
           "g",
           "pantry"
+        ],
+        [
+          "Yaourt grec",
+          60,
+          "g",
+          "dairy"
         ],
         [
           "Cannelle en poudre",
@@ -43982,18 +44006,6 @@ window.__DATA_RECIPES = {
           0.05,
           "c.à.c",
           "spices"
-        ],
-        [
-          "Sirop d'érable (ou miel)",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
-          "Banane",
-          0.5,
-          "u",
-          "produce"
         ]
       ],
       "steps": [
@@ -44001,9 +44013,9 @@ window.__DATA_RECIPES = {
         "Porte à ébullition à feu moyen sans cesser de remuer (le lait monte vite et déborde si tu ne surveilles pas).",
         "Dès que ça frémit, baisse à feu doux. Ajoute les raisins secs. Cuis 5-7 min en remuant régulièrement : tu vas voir le porridge épaissir progressivement, les flocons absorbent le liquide. Texture cible : crémeuse, qui coule lentement de la cuillère.",
         "Pendant ce temps, fais griller à sec les amandes effilées 90 secondes dans une petite poêle, en surveillant : elles passent du blanc au doré clair très vite, et au-delà elles brûlent.",
-        "Coupe la demi-banane en rondelles.",
-        "Hors du feu, sucre le porridge avec le sirop d'érable (le sirop se dose mieux que le miel pour les enfants : moins concentré).",
-        "Verse dans un bol. Dispose les rondelles de banane en couronne, parsème d'amandes grillées.",
+        "Pendant que le porridge cuit, sors le yaourt grec : il apporte du crémeux et des protéines qui calent jusqu'au déjeuner.",
+        "Hors du feu, goûte : les raisins secs et les épices sucrent déjà le porridge, pas besoin de sirop.",
+        "Verse dans un bol. Ajoute une cuillère de yaourt grec au centre, parsème d'amandes grillées.",
         "Mange chaud : c'est tout l'esprit du chai latte version petit-déjeuner consistant. Variante du soir : version épaisse en goûter chaud d'hiver."
       ],
       "photo": "assets/recipes/b59.webp"
@@ -45866,7 +45878,7 @@ window.__DATA_RECIPES = {
         "Dans une petite casserole, verse le lait + flocons d'avoine + cannelle. Porte à frémissement à feu moyen en remuant régulièrement (le lait monte vite : ne pars pas).",
         "Baisse à feu doux. Cuis 5-7 min en remuant : le mélange épaissit progressivement, les flocons absorbent le liquide. Texture cible : crémeuse, qui coule lentement de la cuillère.",
         "Pendant ce temps, coupe la banane en deux : la moitié en rondelles fines pour la déco, l'autre moitié à écraser à la fourchette.",
-        "Hors du feu, incorpore la banane écrasée. Elle apporte le sucré naturel : pas besoin de sirop, tu peux même réduire le sirop à 0 si elle est très mûre.",
+        "Hors du feu, incorpore la banane écrasée. Elle apporte le sucré naturel : pas besoin de sirop.",
         "Verse dans un bol. Dispose les rondelles de banane fraîche en couronne, ajoute une cuillère de yaourt grec (il rend le porridge plus rassasiant et ralentit l'absorption des sucres) et parsème les graines de chia.",
         "Mange chaud. Recette cheap par excellence : 80 centimes la portion."
       ],
@@ -50426,9 +50438,9 @@ window.__DATA_RECIPES = {
         "Baisse à feu doux. Cuis 5-7 min en remuant régulièrement : le porridge épaissit, prend une couleur chocolat brun foncé. Texture cible : crémeuse, qui coule lentement de la cuillère.",
         "Pendant ce temps, fais griller à sec les noisettes concassées 60 sec dans une petite poêle, surveillance : elles passent du blond au doré-brun vite.",
         "Coupe la banane en rondelles : moitié à écraser dans le porridge (sucré naturel), moitié pour la déco par-dessus.",
-        "Hors du feu, incorpore la banane écrasée et les graines de chia (elles épaississent et apportent des fibres). Goûte : la banane mûre apporte beaucoup de douceur, ajuste le sirop selon préférence.",
+        "Hors du feu, incorpore la banane écrasée et les graines de chia (elles épaississent et apportent des fibres). Goûte : la banane mûre apporte beaucoup de douceur, pas besoin de sirop.",
         "Verse dans un bol. Dispose la banane fraîche en couronne, parsème noisettes grillées, finis par 1 c.à.s de purée de noisette en zigzag (= signature).",
-        "Mange chaud. Goût brownie-banane sain, IG bas, vegan, 340 kcal. 1 € la portion : record du rapport qualité-prix au petit-déj.",
+        "Mange chaud. Goût brownie-banane sain, IG bas, vegan. 1 € la portion : record du rapport qualité-prix au petit-déj.",
         "Variante anti-coup-de-mou : ajoute 1 c.à.c de café soluble dissous dans le lait au début (= mocha porridge)."
       ],
       "photo": "assets/recipes/b67.webp"
@@ -54129,7 +54141,7 @@ window.__DATA_RECIPES = {
       "advance": "2h",
       "diff": 2,
       "cost": 1.8,
-      "kcal": 215,
+      "kcal": 240,
       "tags": [
         "vegetarian"
       ],
@@ -54144,13 +54156,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          400,
+          200,
           "ml",
           "dairy"
         ],
@@ -54162,20 +54174,20 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pistaches non salées",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sirop d'érable",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -54191,7 +54203,7 @@ window.__DATA_RECIPES = {
         "Quand ça frémit, baisse à feu doux. Ajoute la cardamome et le safran (= les filaments rouges, ils vont colorer le lait en jaune doré). Laisse cuire 25-30 minutes en remuant souvent au fouet pour éviter que ça attache au fond.",
         "Le mélange doit épaissir progressivement : à la fin tu obtiens une texture crémeuse, presque mousse, jaune-orangé.",
         "Hors du feu, ajoute le sirop d'érable et l'eau de fleur d'oranger. Mélange. Goûte : ça doit être délicatement parfumé, pas trop sucré (le quinoa apporte une texture intéressante).",
-        "Verse dans 4 ramequins ou petites verrines. Couvre de film alimentaire au contact et place au frigo minimum 2 heures (idéalement 4h).",
+        "Verse dans des ramequins ou petites verrines. Couvre de film alimentaire au contact et place au frigo minimum 2 heures (idéalement 4h).",
         "Pendant ce temps, concasse grossièrement les pistaches au couteau (= des morceaux irréguliers).",
         "Au moment de servir, sors les phirni du frigo. Parsème les pistaches concassées sur le dessus. La couleur jaune doré + le vert vif des pistaches, c'est très festif visuellement.",
         "Optionnel : ajoute 2-3 fils de safran sur le dessus pour la déco. C'est un dessert traditionnel du nord de l'Inde (originellement au riz blanc), ici en quinoa pour rester IG bas + apporter des protéines. Le mélange cardamome + safran + fleur d'oranger est typiquement indien-perse."
@@ -55747,7 +55759,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dénoyaute la datte : entaille chacune sur la longueur, écarte légèrement, retire le noyau central avec la pointe du couteau. Coupe en petits dés de 5 mm.",
+        "Dénoyaute les dattes : entaille chacune sur la longueur, écarte légèrement, retire le noyau central avec la pointe du couteau. Coupe en petits dés de 5 mm.",
         "Dans une casserole, mélange les flocons d'avoine, le lait demi-écrémé et la cannelle. Porte à frémissement à feu moyen en remuant.",
         "Quand ça frémit (= petites bulles aux bords), baisse à feu doux. Ajoute 2/3 des dés de dattes (garde 1/3 pour la déco). Les dattes vont fondre légèrement et sucrer la bouillie naturellement.",
         "Laisse cuire 8-10 minutes en remuant régulièrement : le mélange épaissit pour devenir une bouillie crémeuse, beige-doré.",
@@ -98663,7 +98675,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 320,
+      "kcal": 460,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -98677,25 +98689,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Haricots borlotti cuits",
-          150,
+          120,
           "g",
           "pantry"
         ],
         [
           "Tomates concassées",
-          150,
+          120,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          70,
+          50,
           "g",
           "produce"
         ],
@@ -98708,6 +98720,12 @@ window.__DATA_RECIPES = {
         [
           "Céleri branche",
           40,
+          "g",
+          "produce"
+        ],
+        [
+          "Blettes (ou chou kale)",
+          80,
           "g",
           "produce"
         ],
@@ -98747,7 +98765,7 @@ window.__DATA_RECIPES = {
         "Fais-les revenir 5 min dans l'huile d'olive à feu moyen.",
         "Ajoute l'ail écrasé, les tomates, le romarin et le bouillon. Laisse mijoter 10 min.",
         "Prélève une louche de haricots et écrase-les à la fourchette, puis remets-les : ça lie la soupe naturellement. Ajoute le reste des haricots entiers.",
-        "Verse les pâtes complètes et laisse cuire le temps indiqué sur le paquet (≈10 min), jusqu'à ce qu'elles soient al dente.",
+        "Ajoute les blettes émincées (feuilles et côtes coupées en lanières) et les pâtes complètes, puis laisse cuire le temps indiqué sur le paquet (≈10 min), jusqu'à ce qu'elles soient al dente.",
         "Sale, poivre, ajoute un filet d'huile d'olive crue et sers bien chaud."
       ],
       "photo": "assets/recipes/l247.webp"
@@ -102152,7 +102170,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 330,
+      "kcal": 590,
       "tags": [
         "vegetarian"
       ],
@@ -102166,8 +102184,8 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Galette de maïs",
-          70,
+          "Tortilla de maïs",
+          60,
           "g",
           "pantry"
         ],
@@ -102208,6 +102226,12 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
+          "Avocat",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Coriandre fraîche",
           8,
           "g",
@@ -102231,7 +102255,7 @@ window.__DATA_RECIPES = {
         "Prépare la salsa verde : fais cuire les tomatillos avec l'oignon, l'ail et le jalapeño 8 min dans un peu d'eau, puis mixe. Sale.",
         "Mélange les chips de tortilla avec la salsa verde dans un plat : elles s'imprègnent juste ce qu'il faut (elles doivent rester un peu fermes).",
         "Pendant ce temps, fais cuire les œufs au plat dans une poêle.",
-        "Dresse les chilaquiles, pose les œufs dessus, parsème de cottage cheese émietté et de coriandre. Poivre et sers aussitôt."
+        "Dresse les chilaquiles, pose les œufs dessus, parsème de cottage cheese émietté, de dés d'avocat et de coriandre. Poivre et sers aussitôt."
       ],
       "photo": "assets/recipes/l268.webp"
     },
@@ -106149,7 +106173,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 170,
+      "kcal": 190,
       "tags": [
         "vegetarian"
       ],
@@ -106162,31 +106186,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          250,
+          125,
           "ml",
           "dairy"
         ],
         [
           "Chocolat noir 70%",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Fécule de maïs",
-          18,
+          8,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Cacao non sucré",
-          4,
+          3,
           "g",
           "pantry"
         ]
@@ -106483,7 +106507,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 110,
+      "kcal": 100,
       "tags": [
         "vegetarian",
         "vegan",
@@ -106497,13 +106521,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poire",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Coing",
-          150,
+          75,
           "g",
           "produce"
         ],
@@ -106515,13 +106539,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Jus de citron",
-          10,
+          5,
           "ml",
           "produce"
         ],
         [
           "Eau",
-          80,
+          40,
           "ml",
           "pantry"
         ]
@@ -106685,7 +106709,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 140,
+      "kcal": 180,
       "tags": [
         "vegetarian",
         "vegan",
@@ -106699,13 +106723,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Orange",
-          300,
+          150,
           "g",
           "produce"
         ],
         [
           "Dattes",
-          20,
+          10,
           "g",
           "produce"
         ],
@@ -106865,7 +106889,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Délaye la fécule de riz et l'agar-agar (une gélifiant naturel à base d'algue) dans un peu de lait froid prélevé sur le total, jusqu'à obtenir un mélange lisse.",
+        "Délaye la fécule de riz et l'agar-agar (un gélifiant naturel à base d'algue) dans un peu de lait froid prélevé sur le total, jusqu'à obtenir un mélange lisse.",
         "Fais chauffer le reste du lait avec le sirop d'érable jusqu'à frémissement.",
         "Verse la fécule délayée en fouettant, et laisse bouillir 1 minute en fouettant (l'agar-agar doit bouillir pour prendre), puis 3 min à feu doux : la crème épaissit.",
         "Hors du feu, parfume avec l'eau de fleur d'oranger.",
