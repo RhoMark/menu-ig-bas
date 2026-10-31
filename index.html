@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.118.1</title>
+<title>Menu IG Bas — V2.119.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21186,6 +21186,26 @@ function RecipePrintSheet({recipe, mult, qtyLabel}) {
 }
 
 // ----- Recipe Modal --------------------------------------------------------
+// V2.119.0 (refonte 1C) — Bandeau visuel de la fiche « magazine » : photo de
+// la recette si elle existe (avec mention IA, AI Act art. 50), sinon un repli
+// illustré par cuisine (dégradé sauge → terracotta + emoji de la cuisine).
+function RecipeHero({recipe, className = "h-44 md:h-64"}) {
+  const c = (dataRef.cuisines() || []).find(x => x.id === recipe.cuisine);
+  if (recipe.photo) {
+    return (
+      <div className={`relative ${className} bg-surface-2`}>
+        <img src={recipe.photo} alt="" loading="lazy" className="w-full h-full object-cover" />
+        <span className="absolute right-2 bottom-2 text-[11px] bg-black/55 text-white px-2 py-0.5 rounded-full">Image générée par IA</span>
+      </div>
+    );
+  }
+  return (
+    <div className="relative h-28 md:h-36 bg-gradient-to-br from-sage-soft via-surface-2 to-terracotta-soft flex items-center justify-center" aria-hidden="true">
+      <span className="text-5xl md:text-6xl opacity-80">{(c && c.id !== "universel" && c.emoji) || "🍽️"}</span>
+    </div>
+  );
+}
+
 function RecipeModal({recipe, profile, season = null, attendees, guests = null, guestRatios = null, ratings, recentUsageCount = 0, onRate, canRate = () => true, cooked = null, onToggleCooked = null, onClose, isFavorite = false, onToggleFavorite = null}) {
   const hasContext = Array.isArray(attendees);
   const nAll = profile.members?.length || 0;
@@ -21256,6 +21276,137 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
     })();
     return () => { cancelled = true; };
   }, [exportMode]);
+  // V2.119.0 (refonte 1C) — Sections de la fiche, partagées par la mise en page
+  // classique et la mise en page « magazine » de la nouvelle interface.
+  // Qui aime quoi (écran uniquement : la fiche imprimée/PDF n'affiche jamais de prénoms).
+  const likedBlock = (() => {
+            const liked = recipeLikedBy(recipe, profile);
+            if (!liked.length) return null;
+            return (
+              <div className="flex flex-wrap gap-1 text-sm">
+                {liked.map(({member, likes}) => (
+                  <span key={member.id} className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200">
+                    {member.name} ❤️ {likes.join(", ")}
+                  </span>
+                ))}
+              </div>
+            );
+          })();
+  const allergensBlock = recipe.allergens?.length > 0 && (() => {
+            const concerned = membersAllergicTo(profile, recipe.allergens);
+            const familyHits = (profile.globalAllergies || []).filter(a => recipe.allergens.includes(a));
+            const isCritical = concerned.length > 0 || familyHits.length > 0;
+            return (
+              <div className={`border p-3 rounded text-sm ${isCritical ? "bg-red-100 dark:bg-red-900 border-red-500 text-red-900 dark:text-red-100" : "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"}`}>
+                <div className="flex gap-2 items-start">
+                  <span className="text-xl leading-none">{isCritical ? "🚫" : "⚠️"}</span>
+                  <div className="flex-1 space-y-1">
+                    <div className="font-semibold">Contient :</div>
+                    <div className="flex flex-wrap gap-1">
+                      {recipe.allergens.map(a => {
+                        const memberHits = concerned.filter(m => (m.allergies || []).includes(a));
+                        const isFamilyHit = familyHits.includes(a);
+                        const isHit = isFamilyHit || memberHits.length > 0;
+                        return (
+                          <span key={a} className={`px-2 py-0.5 rounded text-xs border inline-flex items-center gap-1 ${isHit ? "bg-red-600 text-white border-red-700 font-bold" : "bg-white dark:bg-slate-800 text-red-700 dark:text-red-300 border-red-300 dark:border-red-700"}`}>
+                            <span>{isHit ? "🚫" : "⚠️"}</span>
+                            <span>{dataRef.allergenLabel(a)}</span>
+                            {memberHits.length > 0 && <span className="italic font-normal text-red-100">— {memberHits.map(m => m.name).join(", ")}</span>}
+                            {isFamilyHit && memberHits.length === 0 && <span className="italic font-normal text-red-100">— famille</span>}
+                          </span>
+                        );
+                      })}
+                    </div>
+                    {isCritical && (
+                      <p className="font-bold mt-2">⚠️ Allergène incompatible avec votre foyer — cette recette ne devrait pas être proposée par la génération.</p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })();
+  const externalBlock = isExternal && (
+            <div className="bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 text-sky-800 dark:text-sky-200 text-sm rounded p-3">
+              🌃 <strong>Repas pris à l'extérieur</strong> — ce slot est ignoré dans la liste de courses et le budget de la semaine. Les quantités ci-dessous sont affichées pour la famille à titre indicatif.
+            </div>
+          );
+  const ingredientsBlock = (
+          <div>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isExternal ? "text-sky-700 dark:text-sky-300 font-medium" : isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{qtyLabel}</span></h3>
+            <ul className="space-y-1">
+              {recipe.ing.map(([name,qty,unit,cat],i) => (
+                <li key={i} className="flex justify-between gap-3 text-sm border-b border-dashed border-slate-200 dark:border-slate-700 py-1">
+                  <span>{name}</span>
+                  {/* V2.119.0 — Sur petit écran la quantité peut passer à la ligne (« 2 u (≈200 g/pièce soit 400 g) » débordait à 360 px). */}
+                  <span className="font-mono text-slate-600 dark:text-slate-300 text-right sm:whitespace-nowrap">{formatQty(scaleQty(qty, mult, name, cat), unit, name)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+  );
+  const stepsBlock = (
+          <div>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">👨‍🍳 Étapes</h3>
+            <ol className="space-y-3">
+              {recipe.steps.map((s,i) => (
+                <li key={i} className="flex gap-3">
+                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center">{i+1}</span>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">{s}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+  );
+  const ratingBlock = (
+          <div className="bg-slate-50 dark:bg-slate-800 rounded p-4 space-y-2">
+            {onToggleCooked && (() => {
+              const by = cooked?.by != null ? profile.members.find(m => m.id === cooked.by)?.name : null;
+              const when = cooked ? new Date(cooked.at).toLocaleString("fr-FR", {weekday: "long", hour: "2-digit", minute: "2-digit"}) : "";
+              return (
+                <div className="flex flex-wrap items-center gap-2 pb-2 mb-1 border-b border-slate-200 dark:border-slate-700">
+                  <button onClick={onToggleCooked}
+                    className={`px-3 py-1.5 rounded text-sm font-medium border ${cooked
+                      ? "bg-emerald-600 border-emerald-600 text-white hover:bg-emerald-700"
+                      : "border-emerald-600 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950"}`}>
+                    {cooked ? "✅ Cuisiné" : "✓ Marquer comme cuisiné"}
+                  </button>
+                  {cooked && <span className="text-xs text-slate-600 dark:text-slate-300">{when}{by ? ` · par ${by}` : ""} — touche à nouveau pour annuler</span>}
+                </div>
+              );
+            })()}
+            <span className="font-medium text-slate-800 dark:text-slate-100 block">Notation par membre du foyer</span>
+            {profile.members.map(m => {
+              const memberRating = getMemberRating(ratings, recipe.id, m.id);
+              const allowed = canRate(m.id);
+              return (
+                <div key={m.id} className="flex items-center gap-3 flex-wrap">
+                  <span className="text-sm w-24 truncate text-slate-700 dark:text-slate-200">{m.name}</span>
+                  <div className="flex gap-1">
+                    {[1,2,3,4,5].map(n => (
+                      <button key={n} onClick={() => onRate(n, m.id)} disabled={!allowed}
+                        title={allowed ? undefined : `Seul(e) ${m.name} note depuis son appareil`}
+                        className="text-xl hover:scale-110 transition disabled:hover:scale-100 disabled:cursor-default">
+                        {n <= (memberRating||0) ? "⭐" : "☆"}
+                      </button>
+                    ))}
+                  </div>
+                  {memberRating != null && <span className="text-xs text-slate-600 dark:text-slate-300">({memberRating}/5)</span>}
+                </div>
+              );
+            })}
+            {(() => {
+              const eff = getEffectiveRating(ratings, recipe.id, profile);
+              const noteFmt = eff.toFixed(1);
+              return (
+                <div className="text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center gap-2">
+                  <span>Score effectif (moyenne pondérée par appétit) : <strong>{noteFmt}/5</strong></span>
+                  {eff < 2 && <span className="text-red-600 dark:text-red-400">Sera évitée pour les prochains menus</span>}
+                  {eff < 3 && eff >= 2 && <span className="text-amber-600 dark:text-amber-400">Sera dépriorité dans la génération</span>}
+                </div>
+              );
+            })()}
+          </div>
+  );
   return (
     <>
     {exportMode && ReactDOM.createPortal(
@@ -21266,6 +21417,83 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
       document.body
     )}
     {exportMode === "pdf" && <PdfGeneratingOverlay />}
+    {window.__V3_UI ? (
+    <div className="fixed inset-0 z-50 no-print bg-black/50 flex md:items-center justify-center md:p-6" onClick={onClose}>
+      <div role="dialog" aria-modal="true" aria-label={recipe.name}
+        className="relative bg-surface text-ink w-full md:max-w-5xl md:rounded-card md:shadow-card overflow-auto max-h-full md:max-h-[92vh]"
+        onClick={e=>e.stopPropagation()}>
+        {/* Seule une barre fine reste collée (règle 360 px de V2.113.1). */}
+        <div className="sticky top-0 z-10 flex items-center gap-1 px-2 py-1.5 bg-surface/95 backdrop-blur border-b border-line">
+          <button onClick={onClose} aria-label="Fermer la recette" className="w-10 h-10 rounded-full hover:bg-surface-2 text-muted text-xl">←</button>
+          <span className="flex-1 min-w-0 truncate font-title font-semibold">{recipe.name}</span>
+          {onToggleFavorite && (
+            <button onClick={() => onToggleFavorite(recipe.id)} aria-label={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+              title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris (boost en génération)"}
+              className={`w-10 h-10 rounded-full hover:bg-surface-2 text-xl ${isFavorite ? "" : "opacity-60"}`}>{isFavorite ? "⭐" : "☆"}</button>
+          )}
+          <button onClick={() => setExportMode("print")} disabled={!!exportMode} aria-label="Imprimer la recette"
+            title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
+            className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">🖨️</button>
+          <button onClick={() => setExportMode("pdf")} disabled={!!exportMode} aria-label="Télécharger la recette en PDF"
+            title="Télécharger la recette en PDF (quantités de ce repas)"
+            className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">📄</button>
+        </div>
+        <RecipeHero recipe={recipe} />
+        <div className="px-5 md:px-8 pt-5 pb-8 space-y-6">
+          <div className="space-y-3">
+            <p className="text-xs font-bold uppercase tracking-wide text-brand">
+              {dataRef.cuisineLabel(recipe.cuisine)} · {ALL_MEALS.find(m => m.key === recipe.type)?.label || recipe.type}
+            </p>
+            <h2 className="font-title text-2xl md:text-3xl font-semibold leading-tight">{recipe.name}</h2>
+            <div className="flex flex-wrap gap-2 text-sm">
+              {(() => {
+                const chip = "inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-2 text-ink";
+                const gly = computeRecipeGlycemic(recipe);
+                const tier = gly ? glycemicTier(gly.cg) : null;
+                const m = computeRecipeMacros(recipe);
+                return (
+                  <>
+                    <span className={chip}>⏱ {recipe.prep + recipe.cook} min <span className="text-muted">({recipe.prep} prép. · {recipe.cook} cuisson)</span></span>
+                    {recipe.rest > 0 && <span className={chip}>❄️ Repos {recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10} h` : `${recipe.rest} min`}</span>}
+                    <span className={chip}>🔢 {recipeKcal(recipe)} kcal</span>
+                    {m && <span className={chip} title={`Calculé sur ${m.covered}/${m.total} ingrédients référencés. Précision Ciqual ±10-15 %.`}>P {m.protein} g · L {m.fat} g · G {m.carbs} g</span>}
+                    {gly && (
+                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-semibold ${tier === "low" ? "bg-brand-soft text-brand" : tier === "medium" ? "bg-terracotta-soft text-terracotta" : "bg-danger-soft text-danger"}`}
+                        title={`IG moyen pondéré : ${gly.ig} · CG : ${gly.cg} (≤10 bas, 11-19 modéré, ≥20 élevé — Harvard). Calculé sur ${gly.covered}/${gly.total} ingrédients.`}>
+                        {tier === "low" ? "IG bas ✓" : tier === "medium" ? "IG modéré" : "IG élevé ⚠️"} · CG {gly.cg}
+                      </span>
+                    )}
+                    <span className={chip}>💰 ~{recipeEffectiveCost(recipe).toFixed(2)} €/pers</span>
+                    <span className={chip}>Difficulté {"●".repeat(recipe.diff)}<span className="text-line">{"●".repeat(3 - recipe.diff)}</span></span>
+                    {recentUsageCount > 0 && <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-terracotta-soft text-terracotta font-semibold" title="Nombre de fois où cette recette a été servie ces 15 derniers jours.">🔁 {recentUsageCount}× / 15 j</span>}
+                    {season && recipeIsOutOfSeason(recipe, season) && <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-terracotta-soft text-terracotta font-semibold">⚠️ Hors saison</span>}
+                  </>
+                );
+              })()}
+            </div>
+            {recipeAdvanceInfo(recipe) && (
+              <p className="inline-flex items-center gap-2 bg-terracotta-soft text-terracotta px-3 py-1.5 rounded-full text-sm font-semibold">
+                {recipeAdvanceInfo(recipe).icon} À commencer {recipeAdvanceInfo(recipe).label} avant le repas
+              </p>
+            )}
+            {recipe.tags?.length > 0 && (
+              <div className="flex flex-wrap gap-1">
+                {recipe.tags.map(t => <span key={t} className="px-2 py-0.5 rounded-full text-xs border border-line text-muted">{t}</span>)}
+              </div>
+            )}
+          </div>
+          {likedBlock}
+          {allergensBlock}
+          {externalBlock}
+          <div className="md:grid md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] md:gap-8 space-y-6 md:space-y-0">
+            <div className="md:sticky md:top-16 self-start bg-surface-2/60 rounded-card p-4">{ingredientsBlock}</div>
+            <div>{stepsBlock}</div>
+          </div>
+          {ratingBlock}
+        </div>
+      </div>
+    </div>
+    ) : (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center z-50 p-4 no-print" onClick={onClose}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-2xl border border-slate-200 dark:border-slate-700 max-w-3xl w-full max-h-[90vh] overflow-auto" onClick={e=>e.stopPropagation()}>
         {/* V2.113.1 — Seule la barre titre + boutons reste collée en haut. Avant, tout
@@ -21374,132 +21602,16 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             </div>
         </div>
         <div className="p-6 space-y-6">
-          {/* V2.109.0 (#100) — Qui aime quoi dans cette recette (écran
-              uniquement : la fiche imprimée/PDF n'affiche jamais de prénoms). */}
-          {(() => {
-            const liked = recipeLikedBy(recipe, profile);
-            if (!liked.length) return null;
-            return (
-              <div className="flex flex-wrap gap-1 text-sm">
-                {liked.map(({member, likes}) => (
-                  <span key={member.id} className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200">
-                    {member.name} ❤️ {likes.join(", ")}
-                  </span>
-                ))}
-              </div>
-            );
-          })()}
-          {recipe.allergens?.length > 0 && (() => {
-            const concerned = membersAllergicTo(profile, recipe.allergens);
-            const familyHits = (profile.globalAllergies || []).filter(a => recipe.allergens.includes(a));
-            const isCritical = concerned.length > 0 || familyHits.length > 0;
-            return (
-              <div className={`border p-3 rounded text-sm ${isCritical ? "bg-red-100 dark:bg-red-900 border-red-500 text-red-900 dark:text-red-100" : "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"}`}>
-                <div className="flex gap-2 items-start">
-                  <span className="text-xl leading-none">{isCritical ? "🚫" : "⚠️"}</span>
-                  <div className="flex-1 space-y-1">
-                    <div className="font-semibold">Contient :</div>
-                    <div className="flex flex-wrap gap-1">
-                      {recipe.allergens.map(a => {
-                        const memberHits = concerned.filter(m => (m.allergies || []).includes(a));
-                        const isFamilyHit = familyHits.includes(a);
-                        const isHit = isFamilyHit || memberHits.length > 0;
-                        return (
-                          <span key={a} className={`px-2 py-0.5 rounded text-xs border inline-flex items-center gap-1 ${isHit ? "bg-red-600 text-white border-red-700 font-bold" : "bg-white dark:bg-slate-800 text-red-700 dark:text-red-300 border-red-300 dark:border-red-700"}`}>
-                            <span>{isHit ? "🚫" : "⚠️"}</span>
-                            <span>{dataRef.allergenLabel(a)}</span>
-                            {memberHits.length > 0 && <span className="italic font-normal text-red-100">— {memberHits.map(m => m.name).join(", ")}</span>}
-                            {isFamilyHit && memberHits.length === 0 && <span className="italic font-normal text-red-100">— famille</span>}
-                          </span>
-                        );
-                      })}
-                    </div>
-                    {isCritical && (
-                      <p className="font-bold mt-2">⚠️ Allergène incompatible avec votre foyer — cette recette ne devrait pas être proposée par la génération.</p>
-                    )}
-                  </div>
-                </div>
-              </div>
-            );
-          })()}
-          {isExternal && (
-            <div className="bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 text-sky-800 dark:text-sky-200 text-sm rounded p-3">
-              🌃 <strong>Repas pris à l'extérieur</strong> — ce slot est ignoré dans la liste de courses et le budget de la semaine. Les quantités ci-dessous sont affichées pour la famille à titre indicatif.
-            </div>
-          )}
-          <div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🧺 Ingrédients <span className={`text-xs font-normal ${isExternal ? "text-sky-700 dark:text-sky-300 font-medium" : isPartial ? "text-amber-700 dark:text-amber-300 font-medium" : "text-slate-500 dark:text-slate-400"}`}>{qtyLabel}</span></h3>
-            <ul className="space-y-1">
-              {recipe.ing.map(([name,qty,unit,cat],i) => (
-                <li key={i} className="flex justify-between text-sm border-b border-dashed border-slate-200 dark:border-slate-700 py-1">
-                  <span>{name}</span>
-                  <span className="font-mono text-slate-600 dark:text-slate-300 whitespace-nowrap">{formatQty(scaleQty(qty, mult, name, cat), unit, name)}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">👨‍🍳 Étapes</h3>
-            <ol className="space-y-3">
-              {recipe.steps.map((s,i) => (
-                <li key={i} className="flex gap-3">
-                  <span className="flex-shrink-0 w-7 h-7 rounded-full bg-emerald-600 text-white text-sm font-bold flex items-center justify-center">{i+1}</span>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">{s}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-          <div className="bg-slate-50 dark:bg-slate-800 rounded p-4 space-y-2">
-            {onToggleCooked && (() => {
-              const by = cooked?.by != null ? profile.members.find(m => m.id === cooked.by)?.name : null;
-              const when = cooked ? new Date(cooked.at).toLocaleString("fr-FR", {weekday: "long", hour: "2-digit", minute: "2-digit"}) : "";
-              return (
-                <div className="flex flex-wrap items-center gap-2 pb-2 mb-1 border-b border-slate-200 dark:border-slate-700">
-                  <button onClick={onToggleCooked}
-                    className={`px-3 py-1.5 rounded text-sm font-medium border ${cooked
-                      ? "bg-emerald-600 border-emerald-600 text-white hover:bg-emerald-700"
-                      : "border-emerald-600 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950"}`}>
-                    {cooked ? "✅ Cuisiné" : "✓ Marquer comme cuisiné"}
-                  </button>
-                  {cooked && <span className="text-xs text-slate-600 dark:text-slate-300">{when}{by ? ` · par ${by}` : ""} — touche à nouveau pour annuler</span>}
-                </div>
-              );
-            })()}
-            <span className="font-medium text-slate-800 dark:text-slate-100 block">Notation par membre du foyer</span>
-            {profile.members.map(m => {
-              const memberRating = getMemberRating(ratings, recipe.id, m.id);
-              const allowed = canRate(m.id);
-              return (
-                <div key={m.id} className="flex items-center gap-3 flex-wrap">
-                  <span className="text-sm w-24 truncate text-slate-700 dark:text-slate-200">{m.name}</span>
-                  <div className="flex gap-1">
-                    {[1,2,3,4,5].map(n => (
-                      <button key={n} onClick={() => onRate(n, m.id)} disabled={!allowed}
-                        title={allowed ? undefined : `Seul(e) ${m.name} note depuis son appareil`}
-                        className="text-xl hover:scale-110 transition disabled:hover:scale-100 disabled:cursor-default">
-                        {n <= (memberRating||0) ? "⭐" : "☆"}
-                      </button>
-                    ))}
-                  </div>
-                  {memberRating != null && <span className="text-xs text-slate-600 dark:text-slate-300">({memberRating}/5)</span>}
-                </div>
-              );
-            })}
-            {(() => {
-              const eff = getEffectiveRating(ratings, recipe.id, profile);
-              const noteFmt = eff.toFixed(1);
-              return (
-                <div className="text-xs text-slate-500 dark:text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-700 flex flex-wrap items-center gap-2">
-                  <span>Score effectif (moyenne pondérée par appétit) : <strong>{noteFmt}/5</strong></span>
-                  {eff < 2 && <span className="text-red-600 dark:text-red-400">Sera évitée pour les prochains menus</span>}
-                  {eff < 3 && eff >= 2 && <span className="text-amber-600 dark:text-amber-400">Sera dépriorité dans la génération</span>}
-                </div>
-              );
-            })()}
-          </div>
+          {likedBlock}
+          {allergensBlock}
+          {externalBlock}
+          {ingredientsBlock}
+          {stepsBlock}
+          {ratingBlock}
         </div>
       </div>
     </div>
+    )}
     </>
   );
 }
