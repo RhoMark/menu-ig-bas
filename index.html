@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.124.2</title>
+<title>Menu IG Bas — V2.125.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -19175,6 +19175,13 @@ function App({initialState}) {
         {view === "foyer" && window.__V3_UI && (
           <SettingsView state={state} update={update} updateProfile={updateProfile} section="foyer" />
         )}
+        {view === "journal" && window.__V3_UI && (
+          <SettingsView state={state} update={update} updateProfile={updateProfile} section="journal"
+            journal={{weekKey: wk, currentWeek, setJournalField}} />
+        )}
+        {view === "technique" && window.__V3_UI && (
+          <SettingsView state={state} update={update} updateProfile={updateProfile} section="technique" />
+        )}
         {view === "setup" && (
           <SetupView state={state} update={update} updateProfile={updateProfile}
             onDone={() => { update({onboarded:true}); regenerate({keepLocked:false}); setView("menu"); }} />
@@ -19481,6 +19488,8 @@ const V3_ICON_PATHS = {
   foyer: "M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20a6 6 0 0 1 12 0M16 11a2.5 2.5 0 1 0 0-5M17.5 20H21a4.5 4.5 0 0 0-4.5-4.5",
   more: "M6 12h.01M12 12h.01M18 12h.01",
   tutorial: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM10 8.5v7l6-3.5z",
+  journal: "M6 3h11a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6zM6 3v18M10 8h5M10 12h5",
+  technique: "M14.7 6.3a4 4 0 0 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z",
 };
 function V3Icon({name, className = "w-5 h-5"}) {
   return (
@@ -19494,11 +19503,13 @@ const V3_TABS = [
   {key: "library",  label: "Recettes"},
   {key: "history",  label: "Suivi"},
   {key: "month",    label: "Vue mensuelle"},
+  {key: "journal",  label: "Mon journal bien-être"},
   {key: "faq",      label: "FAQ"},
   {key: "foyer",    label: "Mon foyer"},
   {key: "settings", label: "Paramètres"},
+  {key: "technique", label: "Technique"},
 ];
-const V3_FOOT_KEYS = ["foyer", "settings"]; // barre latérale : en bas, à côté du profil
+const V3_FOOT_KEYS = ["foyer", "settings", "technique"]; // barre latérale : en bas, à côté du profil
 const V3_HELP_KEYS = ["faq"];               // groupe « Aide » : FAQ + Tutoriel (action)
 
 // Pastille d'un membre (initiale sur fond doux) — mêmes couleurs partout.
@@ -19935,10 +19946,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
         </div>
       )}
       <PoolDiagnostic profile={state.profile} currentWeek={currentWeek} />
-      {journalEnabled && (
+      {journalEnabled && !window.__V3_UI && (
         <JournalEntry state={state} currentWeekKey={journalWeekKey} setJournalField={setJournalField} />
       )}
-      {journalEnabled && (
+      {journalEnabled && !window.__V3_UI && (
         <JournalHistory state={state} currentWeek={currentWeek} profile={state.profile} />
       )}
       {!batchActiveThisWeek && (
@@ -23874,7 +23885,7 @@ function PinPromptHost() {
   );
 }
 
-function SettingsView({state, update, updateProfile, section = "all"}) {
+function SettingsView({state, update, updateProfile, section = "all", journal: journal_ = null}) {
   const p = state.profile;
   // S6 — Foyer partagé : droits de l'acteur (INV-3). Foyer non partagé → full = true.
   const actor = useActorContext(state);
@@ -24120,9 +24131,175 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
   };
   const cancelImport = () => setPendingImport(null);
 
+  // Tuiles réutilisées par plusieurs sections (une seule définition).
+  const tileBatch = (<>
+      {/* V2.47.0 (issue #12) — Mode batch cooking : préparation groupée
+          V2.47.1 — fix : pas de disabled sur slider/select pour permettre
+          la pré-config avant activation. Ordre jours aligné sur shoppingDay
+          (lundi en premier). Doc inline "Comment ça marche". */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">🍱 Mode batch cooking</h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Préparer plusieurs repas en une session le week-end pour gagner du temps en semaine. Quand activé, le générateur privilégie les recettes <em>batch-friendly</em> (préparables à l'avance, conservables 3-4 jours au frigo) sur le nombre de jours choisi. Réglage par défaut du foyer ; chaque semaine peut être basculée individuellement depuis le planning.
+        </p>
+        <div>
+          <label className="flex items-center gap-2 cursor-pointer">
+            <input type="checkbox" checked={!!p.batchCookingEnabled}
+              onChange={e => updateProfile({batchCookingEnabled: e.target.checked})} />
+            <span className="text-sm font-medium">Activer le mode batch cooking par défaut</span>
+          </label>
+        </div>
+        <div>
+          <label className="text-sm block mb-1">Cible : nombre de jours batch-friendly sur 7</label>
+          <input type="range" min="3" max="7" step="1"
+            value={p.batchCookingTarget ?? 5}
+            onChange={e => updateProfile({batchCookingTarget: parseInt(e.target.value, 10)})}
+            className="w-48" />
+          <span className="ml-3 text-sm font-semibold">{p.batchCookingTarget ?? 5} / 7 jours</span>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
+            Au-delà du seuil, les jours restants utilisent le pool normal (variété). Si le sous-pool batch-friendly est trop pauvre pour la saison, l'algo bascule gracieusement sur le pool global.
+          </p>
+        </div>
+        <div>
+          <label className="text-sm block mb-1">📅 Jour de la session de préparation</label>
+          <select value={p.batchCookingDay ?? 2}
+            onChange={e => updateProfile({batchCookingDay: parseInt(e.target.value, 10)})}
+            className="border rounded px-3 py-2 w-48"
+            title="Jour où vous prévoyez de cuisiner les recettes batch. Le lendemain des courses est intuitif, mais le samedi ou dimanche convient aussi.">
+            {[1,2,3,4,5,6,0].map(d => (
+              <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
+            ))}
+          </select>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Conseil : les week-ends (samedi / dimanche) sont les plus courants pour une session batch.</p>
+        </div>
+        {/* V2.50.0 (issue #13) — Toggle suggestions de réutilisation des
+            restes. Placé dans la même section que batch cooking car les 2
+            fonctionnent en complément (mode batch = restes désactivés
+            cohérence). */}
+        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
+          <label className="flex items-start gap-2 cursor-pointer">
+            <input type="checkbox" checked={p.leftoverSuggestionsEnabled !== false}
+              onChange={e => updateProfile({leftoverSuggestionsEnabled: e.target.checked})}
+              className="mt-1" />
+            <span>
+              <span className="text-sm font-medium">♻️ Suggestions de recettes utilisant les restes</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Quand certaines recettes du planning produisent des restes typiques (poulet rôti, riz cuit, soupes, ratatouille…), suggère pour le lendemain ou le surlendemain une recette qui les consomme. Affichage en haut du planning, suggestion non-bloquante (tu peux toujours ignorer). Désactivé automatiquement quand le mode batch cooking est actif pour la semaine.
+              </span>
+            </span>
+          </label>
+        </div>
+        {/* V2.92.0 (issue #93) — Toggle sous-groupes liste de courses */}
+        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
+          <label className="flex items-start gap-2 cursor-pointer">
+            <input type="checkbox" checked={p.shoppingSubgroups !== false}
+              onChange={e => updateProfile({shoppingSubgroups: e.target.checked})}
+              className="mt-1" />
+            <span>
+              <span className="text-sm font-medium">🏷️ Sous-groupes dans la liste de courses</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Au sein de chaque catégorie (légumes, viandes, épicerie…), regroupe les articles par rayon : <em>herbes fraîches</em>, <em>alliacées</em>, <em>légumes-racines</em>, <em>légumes-fruits</em>, <em>poissons gras</em> vs <em>maigres</em>, <em>fromages</em> vs <em>yaourts</em>, <em>féculents secs</em>, etc. Pratique pour faire les courses dans l'ordre des rayons. Désactive pour revenir à une liste plate alphabétique par catégorie.
+              </span>
+            </span>
+          </label>
+        </div>
+        {/* V2.97.0 (issue #3) — Toggle filtre ingrédients locaux / épicerie commune */}
+        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
+          <label className="flex items-start gap-2 cursor-pointer">
+            <input type="checkbox" checked={!!p.preferCommonIngredients}
+              onChange={e => updateProfile({preferCommonIngredients: e.target.checked})}
+              className="mt-1" />
+            <span>
+              <span className="text-sm font-medium">🌍 Privilégier les ingrédients locaux / grande surface</span>
+              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                Pénalise (×0.3 sur la pondération de pioche) les recettes qui nécessitent une épicerie spécialisée — celles taggées <em>epicerie-specialisee</em> (~22 recettes avec ≥2 ingrédients non trouvables en grande surface française standard : tomatille mexicaine, paneer indien, citron confit, chaat masala, miso, ras el-hanout, sumac, feuille de curry, etc.). Pas un filtre dur : ces recettes restent accessibles en bibliothèque, mais l'algo les évite à la génération. Désactivé par défaut — active si tu n'as pas d'épicerie internationale à proximité.
+              </span>
+            </span>
+          </label>
+        </div>
+        {/* V2.47.1 — doc inline "Comment ça marche" pour expliquer le flux
+            d'utilisation. Sera repris dans la FAQ globale (issue #84). */}
+        <details className="text-xs text-slate-600 dark:text-slate-300 mt-2">
+          <summary className="cursor-pointer font-medium hover:text-emerald-700 dark:hover:text-emerald-300">📖 Comment ça marche ?</summary>
+          <ol className="list-decimal pl-5 mt-2 space-y-1">
+            <li>Active le toggle ci-dessus pour mettre le mode batch ON par défaut sur toutes les semaines à venir.</li>
+            <li>Choisis ta cible (par ex. 5 jours / 7) : le générateur s'efforcera d'avoir au moins ce nombre de jours avec lunch ET dinner batch-friendly. Les jours restants restent libres pour la variété.</li>
+            <li>Choisis le jour où tu prévois ta session de préparation (typiquement samedi ou dimanche, ou le lendemain des courses).</li>
+            <li>Régénère le menu de la semaine depuis l'écran Planning : les slots concernés afficheront un 🍱.</li>
+            <li>Sur l'écran Planning, le badge <strong>🍱 Batch ON / OFF</strong> en haut permet de basculer le mode juste pour la semaine courante (override sans toucher à la préférence globale).</li>
+            <li><em>Bientôt en V2.48.0 :</em> page <strong>Préparation [Jour]</strong> avec to-do séquentielle des étapes regroupées et estimation du temps total.</li>
+          </ol>
+          <p className="mt-2 italic text-slate-500 dark:text-slate-400">
+            Conseils conservation : 3-4 jours au frigo dans des boîtes hermétiques. Réchauffer doucement (poêle ou micro-ondes 50%). Plats mijotés et soupes se congèlent généralement bien (3 mois max).
+          </p>
+        </details>
+      </div>
+  </>);
+  const tileJournal = (<>
+      {/* V2.52.0 (issue #24) — Journal bien-être : section dédiée car
+          fonctionnalité indépendante (énergie / digestion / sommeil), opt-in. */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
+        <h3 className="font-bold text-slate-800 dark:text-slate-100">📔 Journal bien-être</h3>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Saisie hebdomadaire optionnelle de 3 indicateurs (énergie, digestion, sommeil) + notes libres. Affichée en haut du planning courant si activée. Toutes les données restent sur ton appareil (aucune transmission externe).
+        </p>
+        <label className="flex items-center gap-2 cursor-pointer">
+          <input type="checkbox" checked={!!p.journalEnabled}
+            onChange={e => updateProfile({journalEnabled: e.target.checked})} />
+          <span className="text-sm font-medium">Activer le journal bien-être</span>
+        </label>
+        <p className="text-xs text-slate-500 dark:text-slate-400 italic">
+          À terme, des corrélations seront proposées entre la composition des menus et le ressenti (informatif, pas un diagnostic médical). Cf. <code className="text-xs">issue #85</code> pour l'intégration future avec Apple Santé / Oura / Polar.
+        </p>
+      </div>
+  </>);
+  const tileCuisines = (<>
+      {/* V2.40.0 (issue #2) — Cuisines préférées : multi-select max 3, hors universel */}
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
+        <div className="flex items-center justify-between flex-wrap gap-2">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">🌍 Cuisines préférées</h3>
+          <span className="text-xs text-slate-500 dark:text-slate-400">
+            {(p.preferredCuisines || []).length}/3 sélectionnée{(p.preferredCuisines || []).length > 1 ? "s" : ""}
+          </span>
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Choisis jusqu'à 3 cuisines préférées du foyer. Les recettes de ces cuisines seront mises en avant lors de la génération (boost ×2, cible ~50 % des plats). Aucune sélection = pondération neutre.
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {dataRef.cuisines().filter(c => c.id !== "universel").map(c => {
+            const selected = (p.preferredCuisines || []).includes(c.id);
+            const atMax = (p.preferredCuisines || []).length >= 3;
+            const disabled = !selected && atMax;
+            return (
+              <button key={c.id}
+                disabled={disabled}
+                onClick={() => {
+                  const cur = p.preferredCuisines || [];
+                  const next = selected
+                    ? cur.filter(x => x !== c.id)
+                    : [...cur, c.id];
+                  updateProfile({preferredCuisines: next});
+                }}
+                className={`px-3 py-2 rounded-md border text-sm transition ${
+                  selected ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200 font-semibold"
+                  : disabled ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
+                  : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
+                }`}
+                title={disabled ? "Maximum 3 cuisines — désélectionne-en une avant d'en ajouter une autre." : (selected ? "Cliquer pour désélectionner" : "Cliquer pour sélectionner")}>
+                <span className="mr-1">{c.emoji}</span>{c.label}
+                {selected && <span className="ml-2 text-xs">✓</span>}
+              </button>
+            );
+          })}
+        </div>
+        <p className="text-xs text-slate-500 dark:text-slate-400">
+          Les recettes « universel » (sans signature culturelle marquée) gardent toujours une pondération neutre — elles assurent la diversité du fond de pool.
+        </p>
+      </div>
+  </>);
   return (
     <div className="space-y-4 max-w-3xl">
-      <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold" : "text-xl font-bold"}>{section === "foyer" ? "Mon foyer" : window.__V3_UI ? "Paramètres" : "⚙️ Paramètres"}</h2>
+      <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold" : "text-xl font-bold"}>{section === "foyer" ? "Mon foyer" : section === "journal" ? "Mon journal bien-être" : section === "technique" ? "Technique" : window.__V3_UI ? "Paramètres" : "⚙️ Paramètres"}</h2>
       {actor.shared && !full && (
         <p className="text-sm border border-sky-300 dark:border-sky-700 bg-sky-50 dark:bg-sky-950 text-sky-900 dark:text-sky-100 rounded p-3">
           🔒 Foyer partagé : {actor.actor ? <>tu es <strong>{actor.actor.name}</strong></> : "personne n'est sélectionné sur cet appareil"}.
@@ -24133,7 +24310,7 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
       )}
 
       {/* Nouvelle interface : « Mon foyer » (membres + allergies communes) est sa propre section. */}
-      {section !== "settings" && (<>
+      {(section === "all" || section === "foyer") && (<>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className={window.__V3_UI ? "font-title text-2xl font-semibold mb-3" : "font-bold text-slate-800 dark:text-slate-100 mb-3"}>{section === "foyer" ? "Membres" : window.__V3_UI ? "Mon foyer" : "Famille"}</h3>
         {p.members.map(m => {
@@ -24300,9 +24477,13 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
         <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
       </div>
       </fieldset>
+      {/* Nouvelle interface : le foyer partagé (labo) termine « Mon foyer ». */}
+      {section === "foyer" && window.__SYNC_LAB && <FoyerLabCard state={state} update={update} />}
       </>)}
 
-      {section !== "foyer" && (<>
+      {/* Réglages des menus — classique : ordre d'origine ; nouvelle interface :
+          Repas → Cuisines → Batch → Contraintes → Ratios (journal dans sa section). */}
+      {(section === "all" || section === "settings") && (
       <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
@@ -24362,169 +24543,7 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
           <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">L'ordre d'affichage des jours du planning commence ce jour-là. Le stockage interne des menus reste inchangé.</p>
         </div>
       </div>
-
-      {/* V2.47.0 (issue #12) — Mode batch cooking : préparation groupée
-          V2.47.1 — fix : pas de disabled sur slider/select pour permettre
-          la pré-config avant activation. Ordre jours aligné sur shoppingDay
-          (lundi en premier). Doc inline "Comment ça marche". */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
-        <h3 className="font-bold text-slate-800 dark:text-slate-100">🍱 Mode batch cooking</h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          Préparer plusieurs repas en une session le week-end pour gagner du temps en semaine. Quand activé, le générateur privilégie les recettes <em>batch-friendly</em> (préparables à l'avance, conservables 3-4 jours au frigo) sur le nombre de jours choisi. Réglage par défaut du foyer ; chaque semaine peut être basculée individuellement depuis le planning.
-        </p>
-        <div>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={!!p.batchCookingEnabled}
-              onChange={e => updateProfile({batchCookingEnabled: e.target.checked})} />
-            <span className="text-sm font-medium">Activer le mode batch cooking par défaut</span>
-          </label>
-        </div>
-        <div>
-          <label className="text-sm block mb-1">Cible : nombre de jours batch-friendly sur 7</label>
-          <input type="range" min="3" max="7" step="1"
-            value={p.batchCookingTarget ?? 5}
-            onChange={e => updateProfile({batchCookingTarget: parseInt(e.target.value, 10)})}
-            className="w-48" />
-          <span className="ml-3 text-sm font-semibold">{p.batchCookingTarget ?? 5} / 7 jours</span>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-            Au-delà du seuil, les jours restants utilisent le pool normal (variété). Si le sous-pool batch-friendly est trop pauvre pour la saison, l'algo bascule gracieusement sur le pool global.
-          </p>
-        </div>
-        <div>
-          <label className="text-sm block mb-1">📅 Jour de la session de préparation</label>
-          <select value={p.batchCookingDay ?? 2}
-            onChange={e => updateProfile({batchCookingDay: parseInt(e.target.value, 10)})}
-            className="border rounded px-3 py-2 w-48"
-            title="Jour où vous prévoyez de cuisiner les recettes batch. Le lendemain des courses est intuitif, mais le samedi ou dimanche convient aussi.">
-            {[1,2,3,4,5,6,0].map(d => (
-              <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
-            ))}
-          </select>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Conseil : les week-ends (samedi / dimanche) sont les plus courants pour une session batch.</p>
-        </div>
-        {/* V2.50.0 (issue #13) — Toggle suggestions de réutilisation des
-            restes. Placé dans la même section que batch cooking car les 2
-            fonctionnent en complément (mode batch = restes désactivés
-            cohérence). */}
-        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={p.leftoverSuggestionsEnabled !== false}
-              onChange={e => updateProfile({leftoverSuggestionsEnabled: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">♻️ Suggestions de recettes utilisant les restes</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Quand certaines recettes du planning produisent des restes typiques (poulet rôti, riz cuit, soupes, ratatouille…), suggère pour le lendemain ou le surlendemain une recette qui les consomme. Affichage en haut du planning, suggestion non-bloquante (tu peux toujours ignorer). Désactivé automatiquement quand le mode batch cooking est actif pour la semaine.
-              </span>
-            </span>
-          </label>
-        </div>
-        {/* V2.92.0 (issue #93) — Toggle sous-groupes liste de courses */}
-        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={p.shoppingSubgroups !== false}
-              onChange={e => updateProfile({shoppingSubgroups: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">🏷️ Sous-groupes dans la liste de courses</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Au sein de chaque catégorie (légumes, viandes, épicerie…), regroupe les articles par rayon : <em>herbes fraîches</em>, <em>alliacées</em>, <em>légumes-racines</em>, <em>légumes-fruits</em>, <em>poissons gras</em> vs <em>maigres</em>, <em>fromages</em> vs <em>yaourts</em>, <em>féculents secs</em>, etc. Pratique pour faire les courses dans l'ordre des rayons. Désactive pour revenir à une liste plate alphabétique par catégorie.
-              </span>
-            </span>
-          </label>
-        </div>
-        {/* V2.97.0 (issue #3) — Toggle filtre ingrédients locaux / épicerie commune */}
-        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={!!p.preferCommonIngredients}
-              onChange={e => updateProfile({preferCommonIngredients: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">🌍 Privilégier les ingrédients locaux / grande surface</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Pénalise (×0.3 sur la pondération de pioche) les recettes qui nécessitent une épicerie spécialisée — celles taggées <em>epicerie-specialisee</em> (~22 recettes avec ≥2 ingrédients non trouvables en grande surface française standard : tomatille mexicaine, paneer indien, citron confit, chaat masala, miso, ras el-hanout, sumac, feuille de curry, etc.). Pas un filtre dur : ces recettes restent accessibles en bibliothèque, mais l'algo les évite à la génération. Désactivé par défaut — active si tu n'as pas d'épicerie internationale à proximité.
-              </span>
-            </span>
-          </label>
-        </div>
-        {/* V2.47.1 — doc inline "Comment ça marche" pour expliquer le flux
-            d'utilisation. Sera repris dans la FAQ globale (issue #84). */}
-        <details className="text-xs text-slate-600 dark:text-slate-300 mt-2">
-          <summary className="cursor-pointer font-medium hover:text-emerald-700 dark:hover:text-emerald-300">📖 Comment ça marche ?</summary>
-          <ol className="list-decimal pl-5 mt-2 space-y-1">
-            <li>Active le toggle ci-dessus pour mettre le mode batch ON par défaut sur toutes les semaines à venir.</li>
-            <li>Choisis ta cible (par ex. 5 jours / 7) : le générateur s'efforcera d'avoir au moins ce nombre de jours avec lunch ET dinner batch-friendly. Les jours restants restent libres pour la variété.</li>
-            <li>Choisis le jour où tu prévois ta session de préparation (typiquement samedi ou dimanche, ou le lendemain des courses).</li>
-            <li>Régénère le menu de la semaine depuis l'écran Planning : les slots concernés afficheront un 🍱.</li>
-            <li>Sur l'écran Planning, le badge <strong>🍱 Batch ON / OFF</strong> en haut permet de basculer le mode juste pour la semaine courante (override sans toucher à la préférence globale).</li>
-            <li><em>Bientôt en V2.48.0 :</em> page <strong>Préparation [Jour]</strong> avec to-do séquentielle des étapes regroupées et estimation du temps total.</li>
-          </ol>
-          <p className="mt-2 italic text-slate-500 dark:text-slate-400">
-            Conseils conservation : 3-4 jours au frigo dans des boîtes hermétiques. Réchauffer doucement (poêle ou micro-ondes 50%). Plats mijotés et soupes se congèlent généralement bien (3 mois max).
-          </p>
-        </details>
-      </div>
-
-      {/* V2.52.0 (issue #24) — Journal bien-être : section dédiée car
-          fonctionnalité indépendante (énergie / digestion / sommeil), opt-in. */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
-        <h3 className="font-bold text-slate-800 dark:text-slate-100">📔 Journal bien-être</h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          Saisie hebdomadaire optionnelle de 3 indicateurs (énergie, digestion, sommeil) + notes libres. Affichée en haut du planning courant si activée. Toutes les données restent sur ton appareil (aucune transmission externe).
-        </p>
-        <label className="flex items-center gap-2 cursor-pointer">
-          <input type="checkbox" checked={!!p.journalEnabled}
-            onChange={e => updateProfile({journalEnabled: e.target.checked})} />
-          <span className="text-sm font-medium">Activer le journal bien-être</span>
-        </label>
-        <p className="text-xs text-slate-500 dark:text-slate-400 italic">
-          À terme, des corrélations seront proposées entre la composition des menus et le ressenti (informatif, pas un diagnostic médical). Cf. <code className="text-xs">issue #85</code> pour l'intégration future avec Apple Santé / Oura / Polar.
-        </p>
-      </div>
-
-      {/* V2.40.0 (issue #2) — Cuisines préférées : multi-select max 3, hors universel */}
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <h3 className="font-bold text-slate-800 dark:text-slate-100">🌍 Cuisines préférées</h3>
-          <span className="text-xs text-slate-500 dark:text-slate-400">
-            {(p.preferredCuisines || []).length}/3 sélectionnée{(p.preferredCuisines || []).length > 1 ? "s" : ""}
-          </span>
-        </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          Choisis jusqu'à 3 cuisines préférées du foyer. Les recettes de ces cuisines seront mises en avant lors de la génération (boost ×2, cible ~50 % des plats). Aucune sélection = pondération neutre.
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {dataRef.cuisines().filter(c => c.id !== "universel").map(c => {
-            const selected = (p.preferredCuisines || []).includes(c.id);
-            const atMax = (p.preferredCuisines || []).length >= 3;
-            const disabled = !selected && atMax;
-            return (
-              <button key={c.id}
-                disabled={disabled}
-                onClick={() => {
-                  const cur = p.preferredCuisines || [];
-                  const next = selected
-                    ? cur.filter(x => x !== c.id)
-                    : [...cur, c.id];
-                  updateProfile({preferredCuisines: next});
-                }}
-                className={`px-3 py-2 rounded-md border text-sm transition ${
-                  selected ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200 font-semibold"
-                  : disabled ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
-                  : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
-                }`}
-                title={disabled ? "Maximum 3 cuisines — désélectionne-en une avant d'en ajouter une autre." : (selected ? "Cliquer pour désélectionner" : "Cliquer pour sélectionner")}>
-                <span className="mr-1">{c.emoji}</span>{c.label}
-                {selected && <span className="ml-2 text-xs">✓</span>}
-              </button>
-            );
-          })}
-        </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          Les recettes « universel » (sans signature culturelle marquée) gardent toujours une pondération neutre — elles assurent la diversité du fond de pool.
-        </p>
-      </div>
-
+{section === "all" ? (<>{tileBatch}{tileJournal}{tileCuisines}</>) : (<>{tileCuisines}{tileBatch}</>)}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
         <h3 className="font-bold text-slate-800 dark:text-slate-100">Contraintes pratiques</h3>
         <div>
@@ -24620,7 +24639,6 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
           </div>
         </div>
       </div>
-
       {/* V2.75.0 (#79) — Section Ratios invités */}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
         <h3 className="font-bold text-slate-800 dark:text-slate-100">🎉 Ratios portion invités</h3>
@@ -24657,6 +24675,21 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
         </div>
       </div>
       </fieldset>
+      )}
+
+      {/* Nouvelle interface : « Mon journal bien-être » (activation + saisie + historique). */}
+      {section === "journal" && (<>
+      <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
+      {tileJournal}
+      </fieldset>
+      {p.journalEnabled && journal_ && journal_.setJournalField && (<>
+        <JournalEntry state={state} currentWeekKey={journal_.weekKey} setJournalField={journal_.setJournalField} />
+        <JournalHistory state={state} currentWeek={journal_.currentWeek} profile={state.profile} />
+      </>)}
+      </>)}
+
+      {/* Technique (nouvelle interface) — classique : même ordre qu'avant. */}
+      {(section === "all" || section === "technique") && (<>
 
       {/* V2.80.3 (#74) — Maintenance : purge des semaines orphelines shoppingDay */}
       {(() => {
@@ -24678,7 +24711,6 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
           </div>
         );
       })()}
-
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">💾 Sauvegarde / restauration</h3>
         <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">
@@ -24746,11 +24778,11 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
           </div>
         )}
       </div>
-
       {/* V3.0 Phase 0.7 — Restauration des snapshots auto (B1) + opt-in UI V3 (C2). */}
       <BackupRestoreCard />
+{section === "all" && (<>
       {window.__SYNC_LAB && <FoyerLabCard state={state} update={update} />}
-
+</>)}
       {/* Refonte design (1A) — opt-in réservé au labo tant que la nouvelle
           interface est en construction ; retour toujours visible si activée. */}
       {(window.__SYNC_LAB || window.__V3_UI) && (
@@ -24771,7 +24803,6 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
         </div>
       )}
       <V3UICard />
-
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">🔒 Données et confidentialité</h3>
         <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">
@@ -24807,7 +24838,6 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
             className="text-emerald-700 dark:text-emerald-300 underline">PRIVACY.md sur GitHub</a>.
         </p>
       </div>
-
       {/* V2.57.0 (issue #84) — Re-déclencher le tutoriel onboarding.
           Nouvelle interface : dans le menu « Aide → Tutoriel » (pas ici). */}
       {section === "all" && (
@@ -24825,14 +24855,12 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
         </button>
       </div>
       )}
-
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Zone dangereuse</h3>
         <button onClick={resetAll} className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
           Tout effacer et recommencer
         </button>
       </div>
-
       </>)}
 
       {pendingAllergy && (
