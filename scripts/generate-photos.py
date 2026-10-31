@@ -21,6 +21,8 @@ mini-PC : aucun compte, aucune clé API, rien ne sort de la maison.
 
 Ordre de priorité (sans --ids) : déjeuners et dîners de la saison en cours,
 en alternant les cuisines, puis les desserts, puis le reste du catalogue.
+Avec --frequence fichier.json ({id: nombre d'apparitions}, issu d'une
+simulation de menus) : les recettes qui reviennent le plus passent d'abord.
 
 Mention « Image générée par IA » affichée sur chaque photo (EU AI Act art. 50).
 """
@@ -145,6 +147,8 @@ def main():
     ap.add_argument("--overwrite", action="store_true", help="refaire même si la photo existe")
     ap.add_argument("--seed", type=int, default=7, help="graine (changer pour une autre version)")
     ap.add_argument("--season", type=str, default=None, help="saison prioritaire (défaut : saison en cours)")
+    ap.add_argument("--frequence", type=str, default=None,
+                    help="JSON {id: apparitions} : les recettes les plus fréquentes passent d'abord")
     ap.add_argument("--dry-run", action="store_true", help="affiche la liste et un exemple de consigne, sans générer")
     ap.add_argument("--apply", action="store_true", help="ajoute le champ photo aux recettes dont la photo existe")
     args = ap.parse_args()
@@ -174,6 +178,10 @@ def main():
         todo = [by_id[i] for i in wanted]
     else:
         todo = priority_order(items, args.season or current_season())
+        if args.frequence:
+            freq = json.loads(Path(args.frequence).read_text(encoding="utf-8"))
+            rank = {r["id"]: k for k, r in enumerate(todo)}
+            todo.sort(key=lambda r: (-freq.get(r["id"], 0), rank[r["id"]]))
     if not args.overwrite:
         todo = [r for r in todo if not (ASSETS / f"{r['id']}.webp").exists()]
     if args.count:
