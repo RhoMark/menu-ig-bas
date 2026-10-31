@@ -11,11 +11,11 @@
  * Chargées seulement quand une règle les utilise (interface V3 activée).
  */
 @font-face {
-  font-family: "Manrope Variable";
+  font-family: "Nunito Variable";
   font-style: normal;
   font-display: swap;
-  font-weight: 200 800;
-  src: url("vendor/fonts/manrope-latin-wght-normal.woff2") format("woff2-variations");
+  font-weight: 200 1000;
+  src: url("vendor/fonts/nunito-latin-wght-normal.woff2") format("woff2-variations");
 }
 @font-face {
   font-family: "Fraunces Variable";
@@ -46,7 +46,7 @@
   --danger: 180 35 24;          /* allergies : rouge, jamais adouci */
   --danger-soft: 253 231 228;
   --on-brand: 255 255 255;
-  --font-ui: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-ui: "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
   --font-title: "Fraunces Variable", Georgia, ui-serif, serif;
   --radius-card: 1rem;
   --shadow-card: 0 1px 2px rgb(43 39 34 / 0.06), 0 4px 16px rgb(43 39 34 / 0.06);

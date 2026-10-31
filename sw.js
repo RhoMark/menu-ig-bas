@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.117.0";
+const CACHE_VERSION = "menu-ig-bas-v2.117.1";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -35,7 +35,7 @@ const CRITICAL_ASSETS = [
   // V2.115.0 — Catalogue de recettes sorti d'index.html (limite 5 Mo).
   "./data/recipes.js",
   // Refonte design (1A) — polices auto-hébergées (OFL), utilisées par l'interface V3.
-  "./vendor/fonts/manrope-latin-wght-normal.woff2",
+  "./vendor/fonts/nunito-latin-wght-normal.woff2",
   "./vendor/fonts/fraunces-latin-soft-normal.woff2",
 ];
 
