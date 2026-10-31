@@ -187,6 +187,81 @@ await check("import : appareil non relié → import inchangé", () => {
   assert.equal(hc.keepLinkOnImport(v2(fam(["peanuts"])), imp), imp);
 });
 
+// ── S6 — PIN de membre ──
+await check("PIN : haché (jamais en clair), bon PIN accepté, mauvais refusé", async () => {
+  const rec = await hc.hashPin("4821");
+  assert.ok(!JSON.stringify(rec).includes("4821"));
+  assert.equal(await hc.checkPin("4821", rec), true);
+  assert.equal(await hc.checkPin("4822", rec), false);
+  assert.equal(await hc.checkPin("", rec), false);
+  assert.equal(await hc.checkPin("4821", null), false);
+  const rec2 = await hc.hashPin("4821");
+  assert.notEqual(rec.hash, rec2.hash); // sel aléatoire
+});
+await check("PIN : moins de 4 chiffres ou lettres → refusé à la création", async () => {
+  await rejects(() => hc.hashPin("123"), "PIN_INVALID");
+  await rejects(() => hc.hashPin("12ab"), "PIN_INVALID");
+  await rejects(() => hc.hashPin("1234567"), "PIN_INVALID");
+});
+
+// ── S6 — INV-3 : garde-fou avant envoi (appareil sans droits admin) ──
+const ref6 = {id: "h1", members: [
+  {id: 1, name: "Maman", allergies: ["peanuts"], healthProfile: "sopk", role: "admin"},
+  {id: 2, name: "Léa", allergies: [], healthProfile: "healthy"},
+], preferences: {globalAllergies: ["sesame"]}, syncMeta: {hid: "hh_x", founderMemberId: 1}, ratings: {}};
+const clone = o => JSON.parse(JSON.stringify(o));
+await check("garde-fou : rien de sensible changé → foyer inchangé (même objet)", () => {
+  const cand = clone(ref6); cand.ratings = {d1: {2: 5}}; cand.members[1].likes = ["fraise"];
+  const g = hc.guardSecurity(ref6, cand, 2);
+  assert.equal(g.refused, 0); assert.equal(g.house, cand);
+});
+await check("garde-fou : allergie retirée par un membre → remise ; ajout gardé", () => {
+  const cand = clone(ref6); cand.members[0].allergies = []; cand.members[1].allergies = ["gluten"];
+  const g = hc.guardSecurity(ref6, cand, 2);
+  assert.equal(g.refused, 1);
+  assert.deepEqual(g.house.members[0].allergies, ["peanuts"]);
+  assert.deepEqual(g.house.members[1].allergies, ["gluten"]);
+});
+await check("garde-fou : profil santé, rôle (auto-promotion), fondateur → remis", () => {
+  const cand = clone(ref6); cand.members[0].healthProfile = "healthy"; cand.members[1].role = "coadmin";
+  cand.syncMeta.founderMemberId = 2;
+  const g = hc.guardSecurity(ref6, cand, 2);
+  assert.equal(g.refused, 3);
+  assert.equal(g.house.members[0].healthProfile, "sopk");
+  assert.equal("role" in g.house.members[1], false);
+  assert.equal(g.house.syncMeta.founderMemberId, 1);
+});
+await check("garde-fou : membre supprimé → remis ; membre ajouté → écarté", () => {
+  const cand = clone(ref6); cand.members = [cand.members[1], {id: 3, name: "Intrus", allergies: []}];
+  const g = hc.guardSecurity(ref6, cand, 2);
+  assert.equal(g.refused, 2);
+  assert.deepEqual(g.house.members.map(m => m.id), [1, 2]);
+  assert.deepEqual(g.house.members[0], ref6.members[0]);
+});
+await check("garde-fou : allergie commune retirée → remise", () => {
+  const cand = clone(ref6); cand.preferences.globalAllergies = [];
+  const g = hc.guardSecurity(ref6, cand, 2);
+  assert.deepEqual(g.house.preferences.globalAllergies, ["sesame"]);
+});
+await check("garde-fou : PIN — le membre change le sien, pas celui d'un autre", async () => {
+  const pin = await hc.hashPin("1111");
+  const cand = clone(ref6); cand.members[1].pin = pin; cand.members[0].pin = pin;
+  const g = hc.guardSecurity(ref6, cand, 2);
+  assert.equal(g.refused, 1);
+  assert.deepEqual(g.house.members[1].pin, pin);
+  assert.equal("pin" in g.house.members[0], false);
+});
+await check("garde-fou + fusion : une suppression d'allergie faite par l'ADMIN (serveur) n'est pas annulée", () => {
+  // L'admin a retiré l'allergie (version serveur) ; le membre n'a touché qu'à une note.
+  const remote = clone(ref6); remote.members[0].allergies = [];
+  const local = clone(ref6); local.ratings = {d1: {2: 4}};
+  const {merged} = hc.mergeHousehold(ref6, local, remote);
+  const g = hc.guardSecurity(remote, merged, 2);
+  assert.equal(g.refused, 0);
+  assert.deepEqual(g.house.members[0].allergies, []);
+  assert.deepEqual(g.house.ratings, {d1: {2: 4}});
+});
+
 console.log("━".repeat(28));
 if (process.exitCode) { console.error("❌ householdCrypto : échec"); process.exit(1); }
 console.log(`✅ householdCrypto : ${ok} vérifications OK`);

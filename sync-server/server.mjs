@@ -107,6 +107,7 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
     insertDevice: db.prepare("INSERT INTO devices (hid, device_id, pubkey, label_ct, is_admin, approved, created_at, last_seen, last_ts, ecdh_pub) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"),
     touchDevice: db.prepare("UPDATE devices SET last_ts = ?, last_seen = ? WHERE hid = ? AND device_id = ?"),
     approveDevice: db.prepare("UPDATE devices SET approved = 1 WHERE hid = ? AND device_id = ?"),
+    setAdmin: db.prepare("UPDATE devices SET is_admin = ? WHERE hid = ? AND device_id = ?"),
     deleteDevice: db.prepare("DELETE FROM devices WHERE hid = ? AND device_id = ?"),
     latestBlob: db.prepare("SELECT * FROM blobs WHERE hid = ? ORDER BY version DESC LIMIT 1"),
     insertBlob: db.prepare("INSERT INTO blobs (hid, version, envelope, byte_size, updated_at, by_device) VALUES (?, ?, ?, ?, ?, ?)"),
@@ -211,7 +212,8 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
     // GET /households/:hid/me — statut de MON appareil (autorisé même en attente)
     if (M === "GET" && r.length === 3 && r[2] === "me") {
       const dev = await authDevice(hid, req, bodyBuf, { requireApproved: false });
-      return [200, { deviceId: dev.device_id, approved: !!dev.approved, isAdmin: !!dev.is_admin, epoch: house.epoch, hasEcdh: !!dev.ecdh_pub }];
+      return [200, { deviceId: dev.device_id, approved: !!dev.approved, isAdmin: !!dev.is_admin, epoch: house.epoch, hasEcdh: !!dev.ecdh_pub,
+        adminCount: q.countAdmins.get(hid).n }];
     }
     // PUT /households/:hid/me/ecdh {ecdhPub} — enregistre la clé ECDH de MON appareil (S5, rotation)
     if (M === "PUT" && r.length === 4 && r[2] === "me" && r[3] === "ecdh") {
@@ -274,6 +276,19 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
       requireAdmin(await authDevice(hid, req, bodyBuf));
       if (!q.device.get(hid, r[3])) bad(404, "DEVICE_UNKNOWN");
       q.approveDevice.run(hid, r[3]);
+      return [200, { ok: true }];
+    }
+    // POST /households/:hid/devices/:id/admin {isAdmin} — admin seulement (S6) : un 2ᵉ appareil
+    // administrateur évite qu'un navigateur effacé bloque toute approbation.
+    if (M === "POST" && r.length === 5 && r[2] === "devices" && r[4] === "admin") {
+      requireAdmin(await authDevice(hid, req, bodyBuf));
+      const b = parseJson(bodyBuf);
+      if (typeof b.isAdmin !== "boolean") bad(400, "FIELDS_INVALID");
+      const target = q.device.get(hid, r[3]);
+      if (!target) bad(404, "DEVICE_UNKNOWN");
+      if (b.isAdmin && !target.approved) bad(409, "TARGET_NOT_APPROVED");
+      if (!b.isAdmin && target.is_admin && q.countAdmins.get(hid).n <= 1) bad(409, "LAST_ADMIN");
+      q.setAdmin.run(b.isAdmin ? 1 : 0, hid, r[3]);
       return [200, { ok: true }];
     }
     // DELETE /households/:hid/devices/:id — admin (ou l'appareil lui-même)

@@ -21,3 +21,21 @@ node --disable-warning=ExperimentalWarning scripts/test-sync-server.mjs   # test
 ```
 
 Dans l'app, la fonction est en test (mode labo `?sync=lab`), désactivée par défaut.
+
+## Ne jamais dépendre d'un seul appareil administrateur
+
+Les clés d'un appareil vivent dans le stockage de son navigateur. Si ce
+stockage est effacé (nettoyage, réinitialisation, option « supprimer les
+cookies et données des sites à la fermeture »), l'appareil perd sa place.
+S'il était le **seul** administrateur, plus personne ne peut approuver.
+
+- Dans l'app : « 📱 Appareils » → **Rendre admin** sur un 2ᵉ appareil d'adulte
+  (l'app le rappelle tant qu'il n'y a qu'un admin).
+- Firefox avec effacement à la fermeture : ajouter une exception
+  **Autoriser** pour l'adresse de l'app (Paramètres → Vie privée et sécurité →
+  Cookies et données de sites → Gérer les exceptions).
+- **Secours** si le seul admin est perdu : un appareil restant affiche le code
+  du foyer, le nouvel appareil demande à rejoindre, puis sur le serveur (après
+  une copie de la base) on passe ce nouvel appareil `approved = 1, is_admin = 1`
+  et on supprime l'ancien appareil de la table `devices`. Aucune donnée en
+  clair n'est touchée (tout reste chiffré).

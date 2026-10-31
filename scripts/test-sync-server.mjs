@@ -148,6 +148,23 @@ await check(`limite ${MAX_DEVICES} appareils (en attente compris) → 9ᵉ refus
   const r = await call(ninth, "POST", "/api/v1/join", { pubkey: ninth.pub, joinSecret: secret });
   assert.equal(r.status, 409); assert.equal(r.body.error, "DEVICE_LIMIT");
 });
+await check("S6 : /me donne le nombre d'appareils admin (1)", async () => {
+  const r = await call(A, "GET", `/api/v1/households/${hid}/me`);
+  assert.equal(r.status, 200); assert.equal(r.body.adminCount, 1);
+});
+await check("S6 : B (non admin) ne peut pas se rendre admin", async () => {
+  const r = await call(B, "POST", `/api/v1/households/${hid}/devices/${B.id}/admin`, { isAdmin: true });
+  assert.equal(r.status, 403); assert.equal(r.body.error, "ADMIN_ONLY");
+});
+await check("S6 : A rend B admin → 2 admins, B peut approuver ; A ne peut pas être rétrogradé s'il est le dernier", async () => {
+  assert.equal((await call(A, "POST", `/api/v1/households/${hid}/devices/${B.id}/admin`, { isAdmin: "oui" })).status, 400);
+  assert.equal((await call(A, "POST", `/api/v1/households/${hid}/devices/${B.id}/admin`, { isAdmin: true })).status, 200);
+  const me = await call(B, "GET", `/api/v1/households/${hid}/me`);
+  assert.equal(me.body.isAdmin, true); assert.equal(me.body.adminCount, 2);
+  assert.equal((await call(B, "POST", `/api/v1/households/${hid}/devices/${B.id}/admin`, { isAdmin: false })).status, 200);
+  const last = await call(A, "POST", `/api/v1/households/${hid}/devices/${A.id}/admin`, { isAdmin: false });
+  assert.equal(last.status, 409); assert.equal(last.body.error, "LAST_ADMIN");
+});
 await check("retrait de B par l'admin → B n'a plus accès", async () => {
   assert.equal((await call(A, "DELETE", `/api/v1/households/${hid}/devices/${B.id}`)).status, 200);
   const r = await call(B, "GET", `/api/v1/households/${hid}/blob`);

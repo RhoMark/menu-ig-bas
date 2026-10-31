@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.113.2</title>
+<title>Menu IG Bas — V2.114.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -157704,8 +157704,67 @@ const householdCrypto = (() => {
     return out;
   }
 
+  // ── S6 — PIN de membre (verrou familial, pas une sécurité forte) ──
+  // PBKDF2-SHA256 + sel aléatoire : le foyer partagé ne contient jamais le PIN
+  // en clair. Qui détient la clé du foyer lit déjà tout : le PIN sert seulement
+  // à empêcher, sur un appareil partagé, de se faire passer pour un parent.
+  const PIN_ITER = 150000;
+  async function pinDigest(pin, salt, iter) {
+    const k = await crypto.subtle.importKey("raw", enc.encode(String(pin)), "PBKDF2", false, ["deriveBits"]);
+    return toB64url(new Uint8Array(await crypto.subtle.deriveBits({name: "PBKDF2", hash: "SHA-256", salt, iterations: iter}, k, 256)));
+  }
+  async function hashPin(pin) {
+    if (!/^\d{4,6}$/.test(String(pin))) throw fail("PIN_INVALID", "Le PIN doit faire 4 à 6 chiffres.");
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    return {v: 1, salt: toB64url(salt), iter: PIN_ITER, hash: await pinDigest(pin, salt, PIN_ITER)};
+  }
+  async function checkPin(pin, rec) {
+    if (!rec?.hash || !/^\d{4,6}$/.test(String(pin))) return false;
+    return (await pinDigest(pin, fromB64url(rec.salt), rec.iter || PIN_ITER)) === rec.hash;
+  }
+
+  // ── S6 — INV-3, garde-fou avant envoi ──
+  // Un appareil SANS droits admin ne peut pas faire baisser la sécurité du
+  // foyer partagé, même par un chemin détourné (import d'une vieille
+  // sauvegarde, bug…). Par rapport au foyer de référence (dernier état du
+  // serveur) : membre retiré → remis ; membre ajouté → écarté ; allergie
+  // retirée → remise ; profil santé / rôle → remis ; PIN : seul le membre
+  // lui-même change le sien. Ajouter une allergie passe toujours (plus sûr).
+  function guardSecurity(ref, cand, actorId = null) {
+    if (!isObj(ref) || !isObj(cand)) return {house: cand, refused: 0};
+    let refused = 0;
+    const out = JSON.parse(JSON.stringify(cand));
+    const refMembers = Array.isArray(ref.members) ? ref.members : [];
+    const byId = new Map((Array.isArray(out.members) ? out.members : []).map(m => [String(m.id), m]));
+    const refIds = new Set(refMembers.map(m => String(m.id)));
+    refused += [...byId.keys()].filter(id => !refIds.has(id)).length;
+    out.members = refMembers.map(rm => {
+      const m = byId.get(String(rm.id));
+      if (!m) { refused++; return JSON.parse(JSON.stringify(rm)); }
+      const fixed = {...m};
+      const lost = (rm.allergies || []).filter(a => !(m.allergies || []).some(x => same(x, a)));
+      if (lost.length) { fixed.allergies = [...(m.allergies || []), ...lost]; refused += lost.length; }
+      for (const f of ["healthProfile", "role", ...(String(rm.id) === String(actorId) ? [] : ["pin"])]) {
+        if (same(m[f], rm[f])) continue;
+        refused++;
+        if (rm[f] === undefined) delete fixed[f]; else fixed[f] = rm[f];
+      }
+      return fixed;
+    });
+    const refG = ref.preferences?.globalAllergies || [];
+    const curG = out.preferences?.globalAllergies || [];
+    const lostG = refG.filter(a => !curG.some(x => same(x, a)));
+    if (lostG.length) { out.preferences = {...(out.preferences || {}), globalAllergies: [...curG, ...lostG]}; refused += lostG.length; }
+    const refFounder = ref.syncMeta?.founderMemberId;
+    if (refFounder !== undefined && !same(out.syncMeta?.founderMemberId, refFounder)) {
+      out.syncMeta = {...(out.syncMeta || {}), founderMemberId: refFounder}; refused++;
+    }
+    return refused ? {house: out, refused} : {house: cand, refused: 0};
+  }
+
   return {newHid, newKey, seal, open, inviteString, parseInvite, recoveryCode, parseRecoveryCode, toB64url, fromB64url,
-    joinSecret, joinVerifier, deviceIdOf, signingString, wrapKey, unwrapKey, mergeHousehold, keepLinkOnImport, same, stable};
+    joinSecret, joinVerifier, deviceIdOf, signingString, wrapKey, unwrapKey, mergeHousehold, keepLinkOnImport, same, stable,
+    hashPin, checkPin, guardSecurity};
 })();
 // @@household-crypto:end
 
@@ -157752,6 +157811,84 @@ function memberRole(household, member) {
   if (member?.role) return member.role;
   return member && household?.syncMeta?.founderMemberId === member.id ? "admin" : "member";
 }
+// ── S6 — Qui agit sur cet appareil, avec quels droits (INV-3) ──
+// Foyer non partagé : rien ne change, tout est permis comme avant (shadow mode).
+// Appareil perso : l'acteur = le membre de l'appareil. Appareil partagé :
+// l'acteur = le membre choisi (« c'est qui ? », PIN s'il en a un), oublié
+// après 2 min sans activité ; les droits admin y exigent un PIN.
+const ACTOR_IDLE_MS = 120000;
+const activeMemberStore = (() => {
+  let value = null; // {memberId, until}
+  let timer = null;
+  const subs = new Set();
+  const emit = () => subs.forEach(f => f(value));
+  const arm = () => { clearTimeout(timer); if (value) timer = setTimeout(() => { value = null; emit(); }, Math.max(0, value.until - Date.now())); };
+  return {
+    get: () => (value && value.until > Date.now() ? value : null),
+    set(memberId) { value = memberId == null ? null : {memberId, until: Date.now() + ACTOR_IDLE_MS}; arm(); emit(); },
+    touch() { if (value && value.until > Date.now()) { value = {...value, until: Date.now() + ACTOR_IDLE_MS}; arm(); } },
+    subscribe(f) { subs.add(f); return () => subs.delete(f); },
+  };
+})();
+["pointerdown", "keydown"].forEach(ev => window.addEventListener(ev, () => activeMemberStore.touch(), {passive: true}));
+
+function actorContext(state) {
+  const ah = state?._session?.activeHouseholdId;
+  const house = state?._households?.[ah];
+  if (!house?.syncMeta?.hid) return {shared: false, deviceMode: null, actorId: null, actor: null, role: "admin", canAdmin: true, canPromote: true};
+  const members = state.profile?.members || [];
+  const dev = state._users?.[state._session?.activeUserId]?.device || {};
+  const deviceMode = dev.mode === "shared" ? "shared" : "personal";
+  const actorId = deviceMode === "personal" ? (dev.boundMemberId ?? null) : (activeMemberStore.get()?.memberId ?? null);
+  const actor = members.find(m => m.id === actorId) || null;
+  const role = actor ? memberRole(house, actor) : null;
+  // Un appareil perso administrateur du serveur peut déjà faire entrer un appareil
+  // (donc donner accès à tout le foyer) : il garde aussi la gestion du foyer.
+  const deviceAdmin = deviceMode === "personal" && !!dev.server?.isAdmin;
+  const canAdmin = deviceAdmin || ((role === "admin" || role === "coadmin") && (deviceMode === "personal" || !!actor?.pin));
+  return {shared: true, deviceMode, actorId, actor, role, canAdmin, canPromote: deviceAdmin || (canAdmin && role === "admin")};
+}
+function useActorContext(state) {
+  const [, setTick] = useState(0);
+  useEffect(() => activeMemberStore.subscribe(() => setTick(x => x + 1)), []);
+  return actorContext(state);
+}
+
+// Demande de PIN (modale unique, cf. PinPromptHost) : mode "check" → true/false,
+// mode "create" → enregistrement haché du nouveau PIN, ou null si annulé.
+const pinPrompt = (() => {
+  let req = null;
+  const subs = new Set();
+  return {
+    ask(opts) { return new Promise(resolve => { req?.resolve(opts.mode === "check" ? false : null); req = {...opts, resolve}; subs.forEach(f => f(req)); }); },
+    done(v) { const r = req; req = null; subs.forEach(f => f(null)); r?.resolve(v); },
+    subscribe(f) { subs.add(f); return () => subs.delete(f); },
+  };
+})();
+// 5 PIN faux de suite → 1 minute d'attente (par membre, en mémoire).
+const pinLockout = (() => {
+  const m = new Map();
+  return {
+    until: id => m.get(id)?.until || 0,
+    fail(id) { const r = m.get(id) || {fails: 0, until: 0}; r.fails++; if (r.fails >= 5) { r.fails = 0; r.until = Date.now() + 60000; } m.set(id, r); return r.until > Date.now() ? 0 : 5 - r.fails; },
+    reset: id => m.delete(id),
+  };
+})();
+// Nouveau PIN pour un membre (stocké haché dans le foyer partagé).
+async function promptNewPin(update, member) {
+  const rec = await pinPrompt.ask({mode: "create", member});
+  if (rec) update(s => ({profile: {...s.profile, members: (s.profile.members || []).map(x => x.id === member.id ? {...x, pin: rec} : x)}}));
+  return rec;
+}
+// Appareil partagé : « c'est qui ? » → ce membre devient l'acteur (PIN s'il en a un).
+async function activateMember(member) {
+  if (!member) return false;
+  if (activeMemberStore.get()?.memberId === member.id) { activeMemberStore.touch(); return true; }
+  if (member.pin && !(await pinPrompt.ask({mode: "check", member}))) return false;
+  activeMemberStore.set(member.id);
+  return true;
+}
+
 // 1er adulte (≥ 18 ans) du foyer = admin fondateur par défaut ; sinon 1er membre.
 function defaultFounderId(members) {
   const y = new Date().getFullYear();
@@ -160383,6 +160520,7 @@ function createLocalHomeTransport(base = "/api/v1") {
     listDevices: hid => call("GET", `/households/${hid}/devices`),
     approve: (hid, id) => call("POST", `/households/${hid}/devices/${id}/approve`),
     remove: (hid, id) => call("DELETE", `/households/${hid}/devices/${id}`),
+    setAdmin: (hid, id, isAdmin) => call("POST", `/households/${hid}/devices/${id}/admin`, {isAdmin}),
     pull: (hid, since) => call("GET", `/households/${hid}/blob${since ? `?since=${since}` : ""}`),
     push: (hid, baseVersion, envelope) => call("PUT", `/households/${hid}/blob`, {baseVersion, envelope}),
   };
@@ -160403,6 +160541,7 @@ const SYNC_ERRORS = {
   NO_WRAP: "La clé du foyer a changé et cet appareil n'a pas reçu la nouvelle : rescanne le QR du foyer.",
   UNWRAP_FAILED: "Nouvelle clé du foyer illisible pour cet appareil : rescanne le QR du foyer.",
   LAST_ADMIN: "Impossible de retirer le dernier appareil administrateur.",
+  TARGET_NOT_APPROVED: "Approuve d'abord cet appareil avant de le rendre administrateur.",
 };
 const syncErrorText = e => SYNC_ERRORS[e?.code] || `Erreur serveur maison : ${e?.code || e?.message || e}`;
 function guessDeviceLabel() {
@@ -160475,7 +160614,11 @@ async function homeSyncCycle(getState, update) {
     if (r.envelope) { remote = await householdCrypto.open(r.envelope, key); remoteVersion = r.version; remoteEnv = r.envelope; }
     else { remote = null; remoteVersion = 0; remoteEnv = null; }
   }
-  const {merged, conflicts} = householdCrypto.mergeHousehold(base, local, remote);
+  let {merged, conflicts} = householdCrypto.mergeHousehold(base, local, remote);
+  // S6 — INV-3 : sans droits admin, aucune baisse de sécurité ne part vers le foyer.
+  const actor = actorContext(st0);
+  let refused = 0;
+  if (!actor.canAdmin && remote) ({house: merged, refused} = householdCrypto.guardSecurity(remote, merged, actor.actorId));
   merged.syncMeta = {...(merged.syncMeta || {}), hid};
 
   // L'utilisateur a modifié pendant le cycle → on n'écrase rien, on recommence.
@@ -160495,7 +160638,7 @@ async function homeSyncCycle(getState, update) {
   }
   if (env) syncBaseStore.set(hid, env);
   patchServer(update, uid, {version, epoch});
-  return {ok: true, pulled, pushed, conflicts: conflicts.length, hash: householdHash(merged)};
+  return {ok: true, pulled, pushed, conflicts: conflicts.length, refused, hash: householdHash(merged)};
 }
 
 function useHomeSync(state, update) {
@@ -160514,7 +160657,9 @@ function useHomeSync(state, update) {
       if (res.ok) {
         lastHash.current = res.hash;
         homeSyncStatus.set({state: "ok", at: Date.now(), error: null,
-          info: res.conflicts ? `${res.conflicts} modification(s) simultanée(s) : la plus récente a été gardée.` : null});
+          info: [res.conflicts ? `${res.conflicts} modification(s) simultanée(s) : la plus récente a été gardée.` : "",
+            res.refused ? `🔒 ${res.refused} modification(s) réservée(s) à l'admin non envoyée(s) (allergie retirée, profil santé, membres…).` : ""]
+            .filter(Boolean).join(" ") || null});
       } else if (res.retry) homeSyncStatus.set({state: "pending", error: null});
     } catch (e) {
       homeSyncStatus.set({state: e.code === "OFFLINE" || e.code === "HTTP_502" ? "offline" : "error", error: syncErrorText(e)});
@@ -160581,6 +160726,11 @@ async function rotateHouseholdKey(getState, update) {
   return {epoch, missing};
 }
 
+// S6.0 — Demande au navigateur de ne pas effacer le stockage de l'app quand
+// il manque de place (sans effet sur un effacement à la fermeture voulu par
+// l'utilisateur : d'où l'avertissement « un seul appareil admin »).
+const requestPersistentStorage = () => { try { navigator.storage?.persist?.().catch(() => {}); } catch (e) { /* non supporté */ } };
+
 function FoyerLabCard({state, update}) {
   const ah = state._session?.activeHouseholdId;
   const rawHouse = state._households?.[ah] || {};
@@ -160601,6 +160751,17 @@ function FoyerLabCard({state, update}) {
   const srv = me.device?.server?.hid && me.device.server.hid === meta?.hid ? me.device.server : null;
   const [sync, setSync] = useState(() => homeSyncStatus.get());
   useEffect(() => homeSyncStatus.subscribe(setSync), []);
+  const actor = useActorContext(state);
+  // S6.0 — Nombre d'appareils administrateurs (un seul = foyer bloqué si on le perd).
+  const [adminCount, setAdminCount] = useState(null);
+  const refreshAdmins = async () => {
+    try {
+      const r = await homeTransport.me(meta.hid);
+      setAdminCount(r.adminCount ?? null);
+      if (!!r.isAdmin !== !!srv?.isAdmin) setServer({isAdmin: !!r.isAdmin});
+    } catch (e) { /* hors WiFi : on garde la dernière valeur */ }
+  };
+  useEffect(() => { if (srv?.approved && meta?.hid) refreshAdmins(); }, [srv?.approved, meta?.hid]);
   const [, setTick] = useState(0); // rafraîchit « il y a X s »
   useEffect(() => { const t = setInterval(() => setTick(x => x + 1), 10000); return () => clearInterval(t); }, []);
 
@@ -160633,6 +160794,7 @@ function FoyerLabCard({state, update}) {
         _users: {...s._users, [uid]: {...s._users[uid], device: {deviceId: s._users[uid]?.device?.deviceId || makeId("dev"), mode: "personal", boundMemberId: founderId}}},
       }));
       setHasKey(true);
+      requestPersistentStorage();
       say("ok", "Foyer partagé créé. Tu peux maintenant inviter un autre appareil.");
     } catch (e) { say("err", "Échec de la création : " + (e.message || e)); }
   };
@@ -160694,6 +160856,7 @@ function FoyerLabCard({state, update}) {
           ...(join.server ? {server: join.server} : {})}}};
       v2.session = {...v2.session, activeHouseholdId: house.id};
       update(() => projectRuntime(v2));
+      requestPersistentStorage();
       setJoin(null);
       say("ok", `Foyer rejoint : ${house.members.length} membre(s), ${Object.keys(house.menus || {}).length} semaine(s) de menus.`);
     } catch (e) { say("err", "Échec : " + (e.message || e)); }
@@ -160722,6 +160885,7 @@ function FoyerLabCard({state, update}) {
     // Foyer déjà inscrit par un autre appareil (cas d'un appareil qui avait la clé via S3) :
     // pas de « base » locale → au 1er cycle, le foyer du serveur fera foi.
     setServer({hid: meta.hid, deviceId: r.deviceId, isAdmin: !!r.isAdmin, approved: !!r.approved, version: 0, ecdh: true});
+    requestPersistentStorage();
     if (!r.approved) { say("ok", "Demande envoyée : l'appareil administrateur doit l'approuver."); return; }
     if (r.isAdmin) {
       const env = await householdCrypto.seal(currentHousehold(), meta.hid, raw, await householdKeyStore.getEpoch(meta.hid));
@@ -160779,6 +160943,13 @@ function FoyerLabCard({state, update}) {
     setDevices({list, max: r.max});
   });
   const approveDevice = id => run(async () => { await homeTransport.approve(meta.hid, id); await loadDevices(); });
+  const setDeviceAdmin = (id, isAdmin) => run(async () => {
+    await homeTransport.setAdmin(meta.hid, id, isAdmin);
+    await loadDevices(); await refreshAdmins();
+    say("ok", isAdmin ? "Cet appareil peut maintenant approuver et retirer des appareils." : "Cet appareil n'est plus administrateur.");
+  });
+  // Appareil partagé : fin de session → on envoie d'abord ce qui a été modifié avec ses droits.
+  const endActorSession = async () => { try { await homeSyncKick(); } finally { activeMemberStore.set(null); } };
   // Retirer un appareil = lui couper le serveur PUIS changer la clé du foyer
   // (sinon il pourrait encore lire avec l'ancienne clé). Anciens QR invalidés.
   const removeDevice = id => run(async () => {
@@ -160847,6 +161018,34 @@ function FoyerLabCard({state, update}) {
           {device && (
             <p className="text-sm text-slate-600 dark:text-slate-300">
               📱 Cet appareil : {device.mode === "shared" ? "appareil partagé (famille)" : `personnel — ${deviceMember?.name || "membre inconnu"}`}
+            </p>
+          )}
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            👤 {actor.actor ? <>Tu agis en tant que <strong>{actor.actor.name}</strong> ({roleLabel(actor.role)}{actor.canAdmin ? " : gestion du foyer autorisée" : " : allergies à retirer, profils santé et membres réservés à l'admin"}).</>
+              : actor.deviceMode === "shared" ? "Personne n'est sélectionné : choisis qui utilise la tablette."
+              : actor.canAdmin ? "Appareil administrateur." : "Aucun membre attribué à cet appareil."}
+          </p>
+          {actor.deviceMode === "shared" && (
+            <div className="flex flex-wrap gap-2 items-center">
+              <span className="text-sm text-slate-600 dark:text-slate-300">C'est qui ?</span>
+              {members.map(m => (
+                <button key={m.id} onClick={() => activateMember(m)}
+                  className={`${btn} ${actor.actorId === m.id ? "bg-emerald-600 text-white" : "bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100"}`}>
+                  {m.pin ? "🔢 " : ""}{m.name}
+                </button>
+              ))}
+              {actor.actorId != null && <button onClick={endActorSession} className={btnAlt}>Terminer</button>}
+            </div>
+          )}
+          {actor.deviceMode === "shared" && actor.actor && (actor.role === "admin" || actor.role === "coadmin") && !actor.actor.pin && (
+            <div className="flex flex-wrap gap-2 items-center text-sm border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-100 rounded p-3">
+              <span>🔢 Sur un appareil partagé, gérer le foyer demande un PIN (sinon n'importe qui pourrait choisir ton prénom).</span>
+              <button onClick={() => promptNewPin(update, actor.actor)} className={btnMain}>Créer mon PIN</button>
+            </div>
+          )}
+          {srv?.approved && srv.isAdmin && adminCount === 1 && (
+            <p className="text-sm border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-100 rounded p-3">
+              ⚠️ Cet appareil est le <strong>seul administrateur</strong>. Si son navigateur est effacé (nettoyage, réinitialisation, « supprimer les données à la fermeture »), plus personne ne pourra approuver de nouvel appareil. Ouvre « 📱 Appareils » ci-dessous et clique « Rendre admin » sur un 2ᵉ appareil d'adulte.
             </p>
           )}
           <div className="flex flex-wrap gap-2">
@@ -160918,6 +161117,7 @@ function FoyerLabCard({state, update}) {
                       {srv?.isAdmin && d.deviceId !== srv.deviceId && (
                         <span className="flex gap-2">
                           {!d.approved && <button onClick={() => approveDevice(d.deviceId)} disabled={busy} className={btnMain}>Approuver</button>}
+                          {d.approved && <button onClick={() => setDeviceAdmin(d.deviceId, !d.isAdmin)} disabled={busy} className={btnAlt}>{d.isAdmin ? "Retirer admin" : "Rendre admin"}</button>}
                           <button onClick={() => removeDevice(d.deviceId)} disabled={busy} className={btnAlt}>Retirer</button>
                         </span>
                       )}
@@ -161405,6 +161605,21 @@ function App({initialState}) {
       const baseObj = (current && typeof current === "object") ? current : {};
       return {ratings: {...s.ratings, [rid]: {...baseObj, [memberId]: score}}};
     });
+  };
+  // S6 — Foyer partagé : qui note ? Appareil perso → sa propre ligne (l'admin
+  // peut noter pour tous, ex. un jeune enfant). Appareil partagé → toucher la
+  // ligne d'un membre le sélectionne (PIN s'il en a un) pendant 2 min.
+  const canRateFor = memberId => {
+    const c = actorContext(state);
+    return !c.shared || c.deviceMode === "shared" || c.canAdmin || c.actorId === memberId;
+  };
+  const rateAs = async (rid, score, memberId) => {
+    const c = actorContext(state);
+    if (c.shared && c.deviceMode === "shared") {
+      if (c.canAdmin && c.actorId !== memberId) { rateRecipe(rid, score, memberId); return; }
+      if (!(await activateMember((state.profile.members || []).find(m => m.id === memberId)))) return;
+    } else if (!canRateFor(memberId)) return;
+    rateRecipe(rid, score, memberId);
   };
   const togglePantry = (key) => {
     update(s => ({pantryChecks: {...s.pantryChecks, [wk]: {...(s.pantryChecks[wk]||{}), [key]: !s.pantryChecks[wk]?.[key]}}}));
@@ -161984,12 +162199,14 @@ function App({initialState}) {
           guestRatios={state.profile.guestRatios}
           ratings={state.ratings}
           recentUsageCount={countRecipeUsageRecent(state.menus, selectedRecipe.id, new Date(), RECENT_DAYS, state.profile?.shoppingDay ?? 1)}
-          onRate={(score, memberId) => rateRecipe(selectedRecipe.id, score, memberId)}
+          onRate={(score, memberId) => rateAs(selectedRecipe.id, score, memberId)}
+          canRate={canRateFor}
           onClose={() => setSelectedRecipe(null)}
           isFavorite={(state.favorites || []).includes(selectedRecipe.id)}
           onToggleFavorite={toggleFavorite}
         />
       )}
+      <PinPromptHost />
       <footer className="no-print bg-slate-900 text-slate-400 dark:text-slate-500 text-center py-3 text-xs">
         {/* S3 — 5 touches rapides sur la version = bascule du labo « Foyer partagé »
             (indispensable sur une app iPhone installée : pas de barre d'adresse pour ?sync=lab). */}
@@ -163813,7 +164030,7 @@ function RecipePrintSheet({recipe, mult, qtyLabel}) {
 }
 
 // ----- Recipe Modal --------------------------------------------------------
-function RecipeModal({recipe, profile, season = null, attendees, guests = null, guestRatios = null, ratings, recentUsageCount = 0, onRate, onClose, isFavorite = false, onToggleFavorite = null}) {
+function RecipeModal({recipe, profile, season = null, attendees, guests = null, guestRatios = null, ratings, recentUsageCount = 0, onRate, canRate = () => true, onClose, isFavorite = false, onToggleFavorite = null}) {
   const hasContext = Array.isArray(attendees);
   const nAll = profile.members?.length || 0;
   const nPresent = hasContext ? attendees.length : nAll;
@@ -164080,13 +164297,15 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             <span className="font-medium text-slate-800 dark:text-slate-100 block">Notation par membre du foyer</span>
             {profile.members.map(m => {
               const memberRating = getMemberRating(ratings, recipe.id, m.id);
+              const allowed = canRate(m.id);
               return (
                 <div key={m.id} className="flex items-center gap-3 flex-wrap">
                   <span className="text-sm w-24 truncate text-slate-700 dark:text-slate-200">{m.name}</span>
                   <div className="flex gap-1">
                     {[1,2,3,4,5].map(n => (
-                      <button key={n} onClick={() => onRate(n, m.id)}
-                        className="text-xl hover:scale-110 transition">
+                      <button key={n} onClick={() => onRate(n, m.id)} disabled={!allowed}
+                        title={allowed ? undefined : `Seul(e) ${m.name} note depuis son appareil`}
+                        className="text-xl hover:scale-110 transition disabled:hover:scale-100 disabled:cursor-default">
                         {n <= (memberRating||0) ? "⭐" : "☆"}
                       </button>
                     ))}
@@ -166021,8 +166240,70 @@ function PoolBadge({label, n, min}) {
 }
 
 // ----- Settings View -------------------------------------------------------
+// S6 — Modale PIN unique (vérifier ou créer), au-dessus de tout le reste.
+function PinPromptHost() {
+  const [req, setReq] = useState(null);
+  const [pin, setPin] = useState("");
+  const [pin2, setPin2] = useState("");
+  const [err, setErr] = useState(null);
+  const [busy, setBusy] = useState(false);
+  useEffect(() => pinPrompt.subscribe(r => { setReq(r); setPin(""); setPin2(""); setErr(null); setBusy(false); }), []);
+  if (!req) return null;
+  const name = req.member?.name || "ce membre";
+  const creating = req.mode === "create";
+  const cancel = () => pinPrompt.done(creating ? null : false);
+  const submit = async (e) => {
+    e.preventDefault();
+    setBusy(true); setErr(null);
+    try {
+      if (creating) {
+        if (pin !== pin2) { setErr("Les deux PIN ne sont pas identiques."); return; }
+        pinPrompt.done(await householdCrypto.hashPin(pin));
+        return;
+      }
+      const wait = pinLockout.until(req.member.id) - Date.now();
+      if (wait > 0) { setErr(`Trop d'essais : réessaie dans ${Math.ceil(wait / 1000)} s.`); return; }
+      if (await householdCrypto.checkPin(pin, req.member.pin)) { pinLockout.reset(req.member.id); pinPrompt.done(true); return; }
+      const left = pinLockout.fail(req.member.id);
+      setPin("");
+      setErr(left > 0 ? `PIN incorrect (encore ${left} essai${left > 1 ? "s" : ""}).` : "PIN incorrect. Trop d'essais : attends 1 minute.");
+    } catch (e2) { setErr(e2.message || String(e2)); }
+    finally { setBusy(false); }
+  };
+  const input = "border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-3 py-2 text-lg font-mono tracking-widest w-full";
+  return (
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[70] p-4" onClick={cancel}>
+      <form onSubmit={submit} onClick={e => e.stopPropagation()}
+        className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 max-w-sm w-full p-5 space-y-3">
+        <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">{creating ? `🔢 Nouveau PIN pour ${name}` : `🔢 PIN de ${name}`}</h3>
+        <p className="text-sm text-slate-600 dark:text-slate-300">
+          {creating ? "4 à 6 chiffres. Il empêche quelqu'un d'autre de choisir ce prénom sur un appareil partagé. Il est enregistré brouillé, jamais en clair."
+            : "Tape le PIN pour continuer en tant que ce membre."}
+        </p>
+        <input type="password" inputMode="numeric" pattern="[0-9]*" autoComplete="off" maxLength={6} autoFocus
+          aria-label="PIN" value={pin} onChange={e => setPin(e.target.value.replace(/\D/g, ""))} className={input} />
+        {creating && (
+          <input type="password" inputMode="numeric" pattern="[0-9]*" autoComplete="off" maxLength={6}
+            aria-label="Confirmer le PIN" placeholder="Confirmer" value={pin2} onChange={e => setPin2(e.target.value.replace(/\D/g, ""))} className={input} />
+        )}
+        {err && <p className="text-sm text-red-700 dark:text-red-300" role="alert">{err}</p>}
+        <div className="flex gap-2 justify-end">
+          <button type="button" onClick={cancel} className="px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-600 rounded">Annuler</button>
+          <button type="submit" disabled={busy || pin.length < 4 || (creating && pin2.length < 4)}
+            className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-50 text-white rounded font-medium">{creating ? "Enregistrer" : "Valider"}</button>
+        </div>
+      </form>
+    </div>
+  );
+}
+
 function SettingsView({state, update, updateProfile}) {
   const p = state.profile;
+  // S6 — Foyer partagé : droits de l'acteur (INV-3). Foyer non partagé → full = true.
+  const actor = useActorContext(state);
+  const full = actor.canAdmin;
+  const canTaste = id => full || actor.actorId === id;
+  const lockTitle = full ? undefined : "Réservé à l'admin et aux co-admins du foyer";
   // pendingImport : null tant qu'aucun fichier n'a été choisi pour import,
   // sinon { payload, fileName }. Utilisé pour afficher le modal de
   // confirmation in-app (Safari iOS bloque silencieusement confirm/alert
@@ -166050,20 +166331,23 @@ function SettingsView({state, update, updateProfile}) {
     updateProfile({members: [...p.members, {id:newId, name:`Membre ${p.members.length+1}`, birthYear: new Date().getFullYear() - 30, sex:"F", allergies:[]}]});
   };
   const updateMember = (id, patch) => updateProfile({members: p.members.map(m => m.id === id ? {...m, ...patch} : m)});
-  const removeMember = (id) => { if (p.members.length > 1) updateProfile({members: p.members.filter(m => m.id !== id)}); };
+  const removeMember = (id) => { if (full && p.members.length > 1) updateProfile({members: p.members.filter(m => m.id !== id)}); };
 
   // ----- Allergies : ajout avec confirmation, suppression directe -----
   const tryAddGlobalAllergy = (allergenId) => {
     setPendingAllergy({scope: "global", allergenId});
   };
   const removeGlobalAllergy = (allergenId) => {
+    if (!full) return;
     updateProfile({globalAllergies: (p.globalAllergies || []).filter(x => x !== allergenId)});
   };
   const tryAddMemberAllergy = (memberId, allergenId) => {
+    if (!canTaste(memberId)) return; // Q-A : un membre peut ajouter une allergie à SON profil
     const member = p.members.find(m => m.id === memberId);
     setPendingAllergy({scope: "member", memberId, memberName: member?.name || "?", allergenId});
   };
   const removeMemberAllergy = (memberId, allergenId) => {
+    if (!full) return; // retirer une allergie = admin / co-admin uniquement (INV-3)
     const member = p.members.find(m => m.id === memberId);
     updateMember(memberId, {allergies: (member?.allergies || []).filter(x => x !== allergenId)});
   };
@@ -166262,36 +166546,65 @@ function SettingsView({state, update, updateProfile}) {
   return (
     <div className="space-y-4 max-w-3xl">
       <h2 className="text-xl font-bold">⚙️ Paramètres</h2>
+      {actor.shared && !full && (
+        <p className="text-sm border border-sky-300 dark:border-sky-700 bg-sky-50 dark:bg-sky-950 text-sky-900 dark:text-sky-100 rounded p-3">
+          🔒 Foyer partagé : {actor.actor ? <>tu es <strong>{actor.actor.name}</strong></> : "personne n'est sélectionné sur cet appareil"}.
+          Retirer une allergie, changer un profil santé, ajouter ou retirer un membre et régler les menus sont réservés à l'admin et aux co-admins.
+          {actor.actor ? " Tu peux ajouter une allergie à ton profil et modifier tes goûts." : ""}
+          {actor.deviceMode === "shared" ? " Choisis qui utilise la tablette dans Paramètres → Foyer partagé (labo)." : ""}
+        </p>
+      )}
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Famille</h3>
         {p.members.map(m => {
           const memberAllergies = m.allergies || [];
+          const own = actor.actorId === m.id;
+          const mRole = memberRole(state._households?.[state._session?.activeHouseholdId], m);
           return (
             <div key={m.id} className="bg-slate-50 dark:bg-slate-800 p-3 rounded mb-2 space-y-2">
               <div className="flex flex-wrap gap-2 items-end">
-                <input value={m.name} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
+                <input value={m.name} disabled={!full} title={lockTitle} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
                 <div className="flex items-center gap-1">
                   <input type="number" min="1900" max={new Date().getFullYear()} value={m.birthYear || ""}
                     placeholder="Année"
                     title="Année de naissance"
                     onChange={e=>updateMember(m.id,{birthYear:parseInt(e.target.value)||0})}
+                    disabled={!full}
                     className="border rounded px-2 py-1 w-24" />
                   <span className="text-xs text-slate-500 dark:text-slate-400 whitespace-nowrap">{memberAge(m)} ans</span>
                 </div>
-                <select value={m.sex} onChange={e=>updateMember(m.id,{sex:e.target.value})} className="border rounded px-2 py-1">
+                <select value={m.sex} disabled={!full} onChange={e=>updateMember(m.id,{sex:e.target.value})} className="border rounded px-2 py-1">
                   <option value="F">F</option><option value="M">M</option><option value="X">Autre</option>
                 </select>
-                <select value={m.healthProfile || "healthy"} onChange={e=>updateMember(m.id,{healthProfile:e.target.value})} className="border rounded px-2 py-1 min-w-[180px]" title="Profil santé : détermine le seuil de charge glycémique journalière. Pour le foyer, le profil le plus contraignant gagne.">
+                <select value={m.healthProfile || "healthy"} disabled={!full} onChange={e=>updateMember(m.id,{healthProfile:e.target.value})} className="border rounded px-2 py-1 min-w-[180px]" title="Profil santé : détermine le seuil de charge glycémique journalière. Pour le foyer, le profil le plus contraignant gagne.">
                   {Object.entries(HEALTH_PROFILE_LABELS).map(([key, label]) => (
                     <option key={key} value={key}>{label}</option>
                   ))}
                 </select>
-                {p.members.length > 1 && <button onClick={()=>removeMember(m.id)} className="text-red-500 text-sm">Retirer</button>}
+                {full && p.members.length > 1 && <button onClick={()=>removeMember(m.id)} className="text-red-500 text-sm">Retirer</button>}
               </div>
+              {/* S6 — Foyer partagé : rôle (promotion co-admin, adultes seulement) + PIN optionnel */}
+              {actor.shared && (
+                <div className="flex flex-wrap gap-2 items-center text-xs text-slate-600 dark:text-slate-300">
+                  <span>{mRole === "admin" ? "👑 Admin" : mRole === "coadmin" ? "🛡️ Co-admin" : "👤 Membre"}</span>
+                  {actor.canPromote && mRole !== "admin" && (memberAge(m) >= 18
+                    ? <button onClick={() => updateMember(m.id, {role: mRole === "coadmin" ? "member" : "coadmin"})}
+                        className="underline text-emerald-700 dark:text-emerald-300">{mRole === "coadmin" ? "Rétrograder en membre" : "Promouvoir co-admin"}</button>
+                    : <span className="text-slate-400 dark:text-slate-500">(co-admin réservé aux adultes)</span>)}
+                  <span>· {m.pin ? "🔢 PIN défini" : "pas de PIN"}</span>
+                  {(full || own) && (
+                    <button onClick={() => promptNewPin(update, m)} className="underline text-emerald-700 dark:text-emerald-300">{m.pin ? "Changer le PIN" : "Définir un PIN"}</button>
+                  )}
+                  {m.pin && (full || own) && (
+                    <button onClick={() => { const {pin, ...rest} = m; updateProfile({members: p.members.map(x => x.id === m.id ? rest : x)}); }}
+                      className="underline text-red-600 dark:text-red-400">Supprimer le PIN</button>
+                  )}
+                </div>
+              )}
               {/* V2.84.0 (#76 L1) — Champs sportifs (poids + heures hebdo) si profil athlète */}
               {(m.healthProfile === "strength_athlete" || m.healthProfile === "endurance_athlete" || m.healthProfile === "intermittent_athlete") && (
-                <div className="flex flex-wrap gap-2 items-center text-sm pl-2 border-l-2 border-emerald-300 dark:border-emerald-700">
+                <fieldset disabled={!full} className="flex flex-wrap gap-2 items-center text-sm pl-2 border-l-2 border-emerald-300 dark:border-emerald-700">
                   <span className="text-xs text-slate-500 dark:text-slate-400">🏃 Profil sportif :</span>
                   <div className="flex items-center gap-1">
                     <input type="number" min="20" max="200" step="1" value={m.weight_kg || ""}
@@ -166309,7 +166622,7 @@ function SettingsView({state, update, updateProfile}) {
                       className="border rounded px-2 py-1 w-20" />
                     <span className="text-xs text-slate-500 dark:text-slate-400">h sport/sem</span>
                   </div>
-                </div>
+                </fieldset>
               )}
               <details className="text-sm" open={memberAllergies.length > 0}>
                 <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
@@ -166319,10 +166632,11 @@ function SettingsView({state, update, updateProfile}) {
                 <div className="mt-2 flex flex-wrap gap-1">
                   {dataRef.allergens().map(({id: k, label: v}) => {
                     const active = memberAllergies.includes(k);
+                    const locked = active ? !full : !canTaste(m.id);
                     return (
-                      <button key={k}
+                      <button key={k} disabled={locked} title={locked ? "Réservé à l'admin et aux co-admins du foyer" : undefined}
                         onClick={() => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)}
-                        className={`text-xs px-2 py-1 rounded border ${active ? "bg-red-100 dark:bg-red-900 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600"}`}>
+                        className={`text-xs px-2 py-1 rounded border disabled:cursor-not-allowed ${active ? "bg-red-100 dark:bg-red-900 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600"}`}>
                         {active ? "⚠️ " : ""}{v}
                       </button>
                     );
@@ -166335,9 +166649,9 @@ function SettingsView({state, update, updateProfile}) {
                   {(m.exclusions || []).length > 0 && <span className="ml-1 text-amber-700 dark:text-amber-300 font-medium">({(m.exclusions || []).length})</span>}
                 </summary>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre préfère éviter (par goût, pas allergique). Une recette est exclue uniquement si <strong>tous les membres présents</strong> au repas excluent l'ingrédient — sinon elle reste proposée.</p>
-                <div className="mt-2">
+                <fieldset disabled={!canTaste(m.id)} className="mt-2 min-w-0">
                   <ExclusionsTextarea value={m.exclusions || []} onChange={(arr) => updateMember(m.id, {exclusions: arr})} />
-                </div>
+                </fieldset>
               </details>
               <details className="text-sm" open={(m.likes || []).length > 0}>
                 <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
@@ -166345,21 +166659,23 @@ function SettingsView({state, update, updateProfile}) {
                   {(m.likes || []).length > 0 && <span className="ml-1 text-emerald-700 dark:text-emerald-300 font-medium">({(m.likes || []).length})</span>}
                 </summary>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre adore. Les recettes qui en contiennent sont <strong>favorisées</strong> dans les menus (plus le foyer est nombreux à aimer, plus l'effet est marqué), sans jamais être imposées : au plus ~1 repas sur 3 en profite, pour garder de la variété.</p>
-                <div className="mt-2">
+                <fieldset disabled={!canTaste(m.id)} className="mt-2 min-w-0">
                   <LikesEditor memberId={m.id} value={m.likes || []} onChange={(arr) => updateMember(m.id, {likes: arr})} />
-                </div>
+                </fieldset>
               </details>
             </div>
           );
         })}
-        <button onClick={addMember} className="text-emerald-700 dark:text-emerald-300 text-sm font-medium">+ Ajouter un membre</button>
+        {full && <button onClick={addMember} className="text-emerald-700 dark:text-emerald-300 text-sm font-medium">+ Ajouter un membre</button>}
         <div className="mt-3">
           <label className="text-xs text-slate-500 dark:text-slate-400 block">Localisation</label>
-          <input value={p.location} onChange={e=>updateProfile({location:e.target.value})}
+          <input value={p.location} disabled={!full} onChange={e=>updateProfile({location:e.target.value})}
             placeholder="Ex. Lyon, France" className="border rounded px-3 py-2 w-full" />
         </div>
       </div>
 
+      {/* S6 — Réglages du foyer (allergies communes, structure des menus) : admin / co-admin (INV-3) */}
+      <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-red-800 dark:text-red-200 mb-3">⚠️ Allergies / intolérances de toute la famille</h3>
         <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
@@ -166737,6 +167053,7 @@ function SettingsView({state, update, updateProfile}) {
           })}
         </div>
       </div>
+      </fieldset>
 
       {/* V2.80.3 (#74) — Maintenance : purge des semaines orphelines shoppingDay */}
       {(() => {
