@@ -324,7 +324,7 @@ git commit && git push  # pre-commit hook verrouille
 6. Catégorie rayon cohérente (V2.99.80 : œuf → `dairy`, jamais `produce`,
    sinon dédoublé dans la liste de courses car clé = nom|unité|catégorie)
 7. Tags cohérents (vegan + fish = erreur, quick avec prep>30 = erreur)
-8. CG estimée par recette (warning > seuil, bloque si >2×)
+8. CG par recette calculée par le vrai code de l'app (`scripts/recipe-cg.mjs`, quantités PAR PORTION) : warning si modérée pour son repas, bloquant si élevée (V2.127.0 — avant : estimation ÷4 qui laissait passer des recettes 4× trop chargées)
 9. Couverture data-glycemic ≥ 80%
 10. Macros minimales pour boost protéique sportif
 11. rest/advance cohérents

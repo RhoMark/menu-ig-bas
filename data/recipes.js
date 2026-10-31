@@ -288,7 +288,8 @@ window.__DATA_RECIPES = {
         "Chauffe une poêle antiadhésive avec un peu d'huile à feu moyen.",
         "Verse une petite louche de pâte pour former un pancake. Quand des bulles apparaissent à la surface (environ 2 min), retourne-le avec une spatule. Cuis 1 min de l'autre côté.",
         "Continue jusqu'à épuisement de la pâte. Sers avec les fruits frais par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/b4.webp"
     },
     {
       "id": "b5",
@@ -4283,49 +4284,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Patate douce",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Œuf",
-          3,
+          1.5,
           "u",
           "dairy"
         ],
         [
           "Huile d'olive",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sel, poivre",
-          1,
+          0.5,
           "pincée",
           "spices"
         ],
         [
           "Salade verte",
-          50,
+          25,
           "g",
           "produce"
         ]
@@ -6394,7 +6395,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, badigeonne le filet mignon de moutarde, sel, poivre. Saisis-le 3 min dans une poêle.",
         "Mets-le au four 15-18 minutes (la chair doit rester rosée).",
         "Laisse reposer 3 min, coupe en tranches. Sers sur les lentilles."
-      ]
+      ],
+      "photo": "assets/recipes/d28.webp"
     },
     {
       "id": "d29",
@@ -7434,7 +7436,8 @@ window.__DATA_RECIPES = {
         "Trempe rapidement les biscuits dans le café. Dispose-les au fond d'un petit verre.",
         "Recouvre de crème. Recommence une couche si tu veux.",
         "Saupoudre de cacao. Laisse au frais minimum 2 heures."
-      ]
+      ],
+      "photo": "assets/recipes/des14.webp"
     },
     {
       "id": "des15",
@@ -9611,7 +9614,8 @@ window.__DATA_RECIPES = {
         "Émince finement l'oignon rouge.",
         "Mélange haricots, thon émietté, tomates séchées en lamelles, oignon, câpres.",
         "Pose sur la roquette, arrose d'huile et de citron, assaisonne."
-      ]
+      ],
+      "photo": "assets/recipes/l38.webp"
     },
     {
       "id": "l39",
@@ -21352,43 +21356,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme de terre à chair ferme",
-          400,
+          133,
           "g",
           "produce"
         ],
         [
           "Œuf",
-          6,
+          2.0,
           "u",
           "dairy"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Salade verte",
-          80,
+          27,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          4,
+          1.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel, poivre",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -21435,67 +21439,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Feta",
-          100,
+          25,
           "g",
           "dairy"
         ],
         [
           "Jambon blanc",
-          100,
+          25,
           "g",
           "meat-fish"
         ],
         [
           "Œuf",
-          3,
+          0.75,
           "u",
           "dairy"
         ],
         [
           "Farine de sarrasin",
-          150,
+          38,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          25,
           "ml",
           "dairy"
         ],
         [
           "Levure chimique",
-          1,
+          0.25,
           "sachet",
           "pantry"
         ],
         [
           "Salade verte",
-          100,
+          25,
           "g",
           "produce"
         ],
         [
           "Aneth",
-          0.05,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel, poivre",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -30780,43 +30784,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cuisse de poulet",
-          2,
+          0.75,
           "u",
           "meat-fish"
         ],
         [
           "Potiron",
-          250,
+          83,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits (en boîte)",
-          120,
+          40,
           "g",
           "pantry"
         ],
         [
           "Pruneaux dénoyautés",
-          60,
+          20,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Ras el-hanout",
-          2,
+          0.75,
           "c.à.c",
           "spices"
         ],
@@ -30828,37 +30832,37 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légume",
-          300,
+          100,
           "ml",
           "pantry"
         ],
         [
           "Semoule complète",
-          60,
+          20,
           "g",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "c.à.s",
           "produce"
         ],
         [
           "Amandes effilées",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel, poivre",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -30908,61 +30912,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          200,
+          25,
           "g",
           "produce"
         ],
         [
           "Farine T80 (semi-complète)",
-          120,
+          15,
           "g",
           "pantry"
         ],
         [
           "Flocons d'avoine complets",
-          40,
+          5,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          2,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          12,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de coco fondue (ou neutre)",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cerneaux de noix concassés",
-          40,
+          5,
           "g",
           "pantry"
         ],
         [
           "Cannelle en poudre",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Levure chimique",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
@@ -30974,7 +30978,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -32162,25 +32166,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ananas",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Lait de coco",
-          200,
+          67,
           "ml",
           "dairy"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
@@ -32192,7 +32196,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          4,
+          1.25,
           "feuille",
           "produce"
         ]
@@ -32236,31 +32240,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Carotte",
-          4,
+          1.25,
           "u",
           "produce"
         ],
         [
           "Orange",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Olives noires dénoyautées",
-          30,
+          10,
           "g",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          2,
+          0.75,
           "c.à.s",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -32272,31 +32276,31 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1.5,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Pain pita complet",
-          1,
+          0.25,
           "u",
           "bread"
         ],
         [
           "Pois chiches cuits (en boîte)",
-          100,
+          33,
           "g",
           "pantry"
         ],
         [
           "Sel, poivre",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -33303,91 +33307,91 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Blanc de poulet",
-          250,
+          83,
           "g",
           "meat-fish"
         ],
         [
           "Tortilla complète (blé ou maïs souple)",
-          6,
+          2.0,
           "u",
           "bread"
         ],
         [
           "Tomate verte (ou tomate verte non mûre)",
-          200,
+          67,
           "g",
           "produce"
         ],
         [
           "Poivron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          4,
+          1.25,
           "c.à.s",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          33,
           "g",
           "dairy"
         ],
         [
           "Mozzarella râpée",
-          80,
+          27,
           "g",
           "dairy"
         ],
         [
           "Bouillon de légume",
-          200,
+          67,
           "ml",
           "pantry"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel, poivre",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -35172,7 +35176,8 @@ window.__DATA_RECIPES = {
         "Crée un petit tourbillon dans l'eau avec une cuillère, puis verse délicatement l'œuf au centre. Cuis 3 min sans toucher : le blanc doit être pris, le jaune coulant. Sors avec une écumoire et pose sur du papier absorbant pour égoutter.",
         "Mixe le velouté de chou-fleur (au mixeur plongeant directement dans la casserole) jusqu'à obtenir une texture lisse. Ajoute le yaourt nature et mixe 5 secondes pour incorporer (texture crémeuse). Sale et poivre.",
         "Verse le velouté dans un bol creux. Pose l'œuf poché au centre. Parsème de persil ciselé. Optionnel : un trait d'huile d'olive et une pincée de curcuma pour la déco."
-      ]
+      ],
+      "photo": "assets/recipes/l139.webp"
     },
     {
       "id": "l140",
@@ -37916,7 +37921,8 @@ window.__DATA_RECIPES = {
         "Ajoute les feuilles de pak choï dans les 2 dernières min (elles cuisent vite, garde-les vertes).",
         "Hors du feu, ajoute l'huile de sésame, le jus de citron vert. Goûte, sale et poivre si nécessaire.",
         "Sers dans un grand bol creux. Termine par : noix de cajou concassées, coriandre ciselée, et le piment en fines rondelles si tu veux du piquant."
-      ]
+      ],
+      "photo": "assets/recipes/d147.webp"
     },
     {
       "id": "s43",
@@ -38536,7 +38542,8 @@ window.__DATA_RECIPES = {
         "Pèle l'orange à vif (au couteau, retire la peau et le blanc). Prélève les suprêmes (quartiers sans la peau interne).",
         "Dans un saladier, mélange fenouil, suprêmes d'orange, olives noires. Vinaigrette express : reste d'huile d'olive, jus du quart de citron restant, sel, poivre. Mélange.",
         "Dresse l'assiette : pavé de saumon d'un côté, salade de fenouil de l'autre. Décore le saumon de brins d'aneth réservés et d'un quartier de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d149.webp"
     },
     {
       "id": "b52",
@@ -41759,7 +41766,8 @@ window.__DATA_RECIPES = {
         "Concasse grossièrement les pistaches au couteau.",
         "Couvre et laisse macérer 30 min minimum au frais (les saveurs se mélangent).",
         "Au moment de servir, parsème de menthe ciselée et de pistaches concassées. Décore de feuilles de menthe entières. Sers très frais."
-      ]
+      ],
+      "photo": "assets/recipes/des53.webp"
     },
     {
       "id": "b55",
@@ -44345,7 +44353,8 @@ window.__DATA_RECIPES = {
         "Ajoute sauce soja et huile de sésame.",
         "Sers immédiatement dans un grand bol creux. Parsème de partie verte de cébette ciselée + graines de sésame.",
         "C'est un repas léger mais rassasiant : les shirataki ne donnent quasi pas de calories mais beaucoup de volume, le tofu apporte les protéines, les shiitakés et le miso le côté umami profond."
-      ]
+      ],
+      "photo": "assets/recipes/l154.webp"
     },
     {
       "id": "b60",
@@ -46190,7 +46199,8 @@ window.__DATA_RECIPES = {
         "Dresse : lit de salade dans une grande assiette, dispose tomates cerises et bâtonnets de pomme, parsème les noix concassées.",
         "Pose les 2 toasts de chèvre chaud par-dessus, en équilibre sur la salade.",
         "Sers immédiatement : le contraste fromage chaud / salade froide / pomme croquante / noix grillées est l'âme de cette salade bistro."
-      ]
+      ],
+      "photo": "assets/recipes/l160.webp"
     },
     {
       "id": "d168",
@@ -46485,7 +46495,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le basilic effeuillé à la main (pas au couteau, ça noircit) et le reste d'huile d'olive en filet.",
         "Sers chaud dans des bols larges. Saupoudre de parmesan râpé si tu en utilises.",
         "Plat unique consistant et bon marché (1.50 € la portion). Se conserve 3 jours au frigo, encore meilleur le lendemain (les saveurs fusionnent)."
-      ]
+      ],
+      "photo": "assets/recipes/l161.webp"
     },
     {
       "id": "d169",
@@ -46971,7 +46982,8 @@ window.__DATA_RECIPES = {
         "Répartis les nouilles cuites dans 2 bols larges. Verse la soupe miso brûlante par-dessus.",
         "Parsème graines de sésame et part verte de cébette. Si tu as des feuilles de nori, coupe-les en lanières fines aux ciseaux et mets sur le bol.",
         "Mange chaud, idéalement avec des baguettes (les nouilles soba se mangent en aspirant — les Japonais font même du bruit, c'est encouragé). 2.40 € le bol consistant."
-      ]
+      ],
+      "photo": "assets/recipes/l163.webp"
     },
     {
       "id": "d171",
@@ -48340,43 +48352,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches secs trempés 12 h (= 100 g secs → ~250 g trempés)",
-          250,
+          83,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Persil plat (gros bouquet)",
-          0.2,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Cumin",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre en poudre",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -48388,43 +48400,43 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine de pois chiche (ou T80)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Pita complète",
-          1,
+          0.25,
           "u",
           "bread"
         ],
         [
           "Yaourt nature",
-          100,
+          33,
           "g",
           "dairy"
         ],
         [
           "Tahini (purée de sésame)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Salade laitue (feuilles)",
-          50,
+          17,
           "g",
           "produce"
         ],
         [
           "Tomate",
-          1,
+          0.25,
           "u",
           "produce"
         ],
@@ -48436,13 +48448,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel, poivre",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -50318,7 +50330,8 @@ window.__DATA_RECIPES = {
         "Parsème graines de tournesol + flocons de piment d'Espelette + fleur de sel + filet d'huile d'olive + coriandre ciselée.",
         "Mange immédiatement (l'avocat noircit en 30 min : zéro avance possible).",
         "Petit-déjeuner salé style brunch : 320 kcal, riche en bonnes graisses + fibres. Tient toute la matinée jusqu'au déjeuner sans coup de fringale."
-      ]
+      ],
+      "photo": "assets/recipes/b66.webp"
     },
     {
       "id": "b67",
@@ -52199,31 +52212,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ananas",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Mangue",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          8,
+          1.5,
           "feuille",
           "produce"
         ],
         [
           "Gingembre frais",
-          1,
+          0.25,
           "cm",
           "produce"
         ]
@@ -53803,49 +53816,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz arborio",
-          80,
+          20,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Eau",
-          100,
+          25,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Mangue",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Amandes effilées",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          4,
+          1.0,
           "feuille",
           "produce"
         ]
@@ -54299,31 +54312,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de maïs (masa harina)",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Eau",
-          110,
+          28,
           "ml",
           "pantry"
         ],
         [
           "Haricots noirs cuits (en boîte)",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Fromage frais type St-Môret",
-          80,
+          20,
           "g",
           "dairy"
         ],
         [
           "Tomate cerise",
-          6,
+          1.5,
           "u",
           "produce"
         ],
@@ -54335,37 +54348,37 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          4,
+          1.0,
           "branche",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -55854,37 +55867,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de sarrasin",
-          100,
+          12,
           "g",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          40,
+          5,
           "g",
           "pantry"
         ],
         [
           "Beurre doux",
-          50,
+          6,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Orange",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Cannelle en poudre",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -55896,7 +55909,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -55948,55 +55961,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Noisettes",
-          40,
+          10,
           "g",
           "pantry"
         ],
         [
           "Amandes effilées",
-          20,
+          5,
           "g",
           "pantry"
         ],
         [
           "Graines de tournesol",
-          20,
+          5,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de coco",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle en poudre",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Skyr (ou yaourt grec)",
-          150,
+          38,
           "g",
           "dairy"
         ],
         [
           "Fruits rouges (frais ou surgelés)",
-          100,
+          25,
           "g",
           "produce"
         ]
@@ -56141,79 +56154,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galettes de riz",
-          4,
+          1.0,
           "u",
           "bread"
         ],
         [
           "Crevettes cuites décortiquées",
-          150,
+          38,
           "g",
           "meat-fish"
         ],
         [
           "Vermicelles de riz",
-          50,
+          12,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          12,
+          3.0,
           "feuille",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          6,
+          1.5,
           "branche",
           "produce"
         ],
         [
           "Beurre de cacahuète",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sauce soja",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Gingembre frais",
-          1,
+          0.25,
           "cm",
           "produce"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Eau",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ]
@@ -56330,7 +56343,8 @@ window.__DATA_RECIPES = {
         "Verse dans 2 bols. Parsème les dés de dattes et les amandes effilées sur le dessus.",
         "Termine par une petite pincée de cannelle. Sers tiède.",
         "Ce porridge masala chai capture l'âme du chai indien traditionnel (thé aux épices) dans un format petit-déjeuner consistant. Idéal en automne/hiver, ou par temps frais pour démarrer chaudement. Anti-inflammatoire grâce au combo cardamome + gingembre + cannelle + poivre."
-      ]
+      ],
+      "photo": "assets/recipes/b84.webp"
     },
     {
       "id": "b85",
@@ -56466,79 +56480,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme de terre à chair ferme",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Petits pois (frais ou surgelés)",
-          100,
+          25,
           "g",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.25,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          1,
+          0.25,
           "cm",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Feuille de pâte filo",
-          6,
+          1.5,
           "u",
           "bread"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          4,
+          1.0,
           "branche",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -56752,7 +56766,8 @@ window.__DATA_RECIPES = {
         "Verse le halwa dans 4 petits ramequins (= portions contrôlées). Parsème généreusement amandes torréfiées et pistaches concassées par-dessus.",
         "Sers tiède (tradition indienne) ou frais selon la saison.",
         "Le « gajar ka halwa » est LE dessert d'hiver indien traditionnel (originellement au lait entier + ghee + bcp de sucre). Cette version au lait d'amande sans ghee et avec sirop d'érable contrôlé est plus légère, IG bas, mais garde l'âme du dessert : carottes confites parfumées à la cardamome."
-      ]
+      ],
+      "photo": "assets/recipes/des79.webp"
     },
     {
       "id": "b86",
@@ -57105,55 +57120,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de pois chiche",
-          80,
+          27,
           "g",
           "pantry"
         ],
         [
           "Farine de sarrasin",
-          40,
+          13,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          250,
+          83,
           "ml",
           "dairy"
         ],
         [
           "Œuf",
-          1,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Levure chimique",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Miel",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Amandes effilées",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -58780,61 +58795,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots noirs cuits (boîte)",
-          240,
+          80,
           "g",
           "pantry"
         ],
         [
           "Maïs en grains (boîte sans sucre)",
-          150,
+          50,
           "g",
           "pantry"
         ],
         [
           "Mangue mûre",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Avocat mûr",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -58846,13 +58861,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -59152,97 +59167,97 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cuisses de poulet (avec peau)",
-          4,
+          0.75,
           "u",
           "meat-fish"
         ],
         [
           "Patate douce",
-          500,
+          100,
           "g",
           "produce"
         ],
         [
           "Tomatille fraîche (ou tomate verte ferme)",
-          6,
+          1.25,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Piment jalapeño frais",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Origan séché",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Ail en poudre",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -59393,85 +59408,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Couscous d'orge complet (ou boulgour complet)",
-          150,
+          50,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits (boîte)",
-          240,
+          80,
           "g",
           "pantry"
         ],
         [
           "Asperges vertes",
-          200,
+          67,
           "g",
           "produce"
         ],
         [
           "Petits pois frais (ou surgelés)",
-          150,
+          50,
           "g",
           "produce"
         ],
         [
           "Courgette",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Radis roses",
-          6,
+          2.0,
           "u",
           "produce"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive",
-          3,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -59483,13 +59498,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -59810,103 +59825,103 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          300,
+          100,
           "g",
           "meat-fish"
         ],
         [
           "Graines de sarrasin (kasha)",
-          120,
+          40,
           "g",
           "pantry"
         ],
         [
           "Yaourt grec",
-          250,
+          83,
           "g",
           "dairy"
         ],
         [
           "Concombre",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Salade roquette",
-          100,
+          33,
           "g",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          0.75,
           "cm",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Garam masala",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -59918,13 +59933,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -59970,91 +59985,91 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (boîte)",
-          480,
+          160,
           "g",
           "pantry"
         ],
         [
           "Mangue verte ferme (ou mangue mûre)",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Piment vert (facultatif)",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Chaat masala (ou cumin + sel noir)",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -60271,85 +60286,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Pois chiches cuits (boîte)",
-          480,
+          120,
           "g",
           "pantry"
         ],
         [
           "Tomate concassée (boîte)",
-          400,
+          100,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          3,
+          0.75,
           "cm",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Naan complet (pain plat)",
-          2,
+          0.5,
           "u",
           "bread"
         ],
         [
           "Huile de coco",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Curry doux en poudre",
-          2,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -60367,19 +60382,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -60841,103 +60856,103 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          350,
+          88,
           "g",
           "meat-fish"
         ],
         [
           "Tortilla de blé complet (taille moyenne)",
-          6,
+          1.5,
           "u",
           "bread"
         ],
         [
           "Tomatille fraîche (ou tomate verte ferme)",
-          8,
+          2.0,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Piment jalapeño frais",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Yaourt grec",
-          150,
+          38,
           "g",
           "dairy"
         ],
         [
           "Cottage cheese (ou ricotta légère)",
-          200,
+          50,
           "g",
           "dairy"
         ],
         [
           "Mozzarella râpée",
-          80,
+          20,
           "g",
           "dairy"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Bouillon de poulet (cube)",
-          1,
+          0.25,
           "u",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Origan séché",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -60984,85 +60999,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (boîte)",
-          480,
+          160,
           "g",
           "pantry"
         ],
         [
           "Épinards frais",
-          300,
+          100,
           "g",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Tomate",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Citron confit (ou écorce de citron blanchie)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Persil plat",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Boulgour complet",
-          120,
+          40,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          3,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Gingembre moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -61080,13 +61095,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -61134,85 +61149,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Orange",
-          3,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Fenouil bulbe",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Olive noire dénoyautée",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits (boîte)",
-          240,
+          60,
           "g",
           "pantry"
         ],
         [
           "Salade roquette",
-          100,
+          25,
           "g",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Persil plat",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.25,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive",
-          4,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -61224,13 +61239,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -61428,115 +61443,115 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Épaule d'agneau désossée",
-          350,
+          70,
           "g",
           "meat-fish"
         ],
         [
           "Fèves fraîches (écossées)",
-          250,
+          50,
           "g",
           "produce"
         ],
         [
           "Petits pois frais (ou surgelés)",
-          150,
+          30,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          3,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Navet",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Courgette",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          4,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Couscous complet (semoule)",
-          200,
+          40,
           "g",
           "pantry"
         ],
         [
           "Concentré de tomates",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Bouillon de bœuf (cube)",
-          1,
+          0.25,
           "u",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          4,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Harissa",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Carvi (ou cumin)",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -61548,13 +61563,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -61600,109 +61615,109 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots rouges cuits (boîte)",
-          480,
+          160,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          120,
+          40,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          3,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          3,
+          1.0,
           "cm",
           "produce"
         ],
         [
           "Piment vert (facultatif)",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Yaourt nature",
-          100,
+          33,
           "g",
           "dairy"
         ],
         [
           "Huile de coco",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Garam masala",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -63702,37 +63717,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          500,
+          125,
           "ml",
           "dairy"
         ],
         [
           "Fécule de maïs (Maïzena)",
-          4,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable (ou miel)",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Amande effilée",
-          30,
+          8,
           "g",
           "pantry"
         ],
         [
           "Pistache non salée",
-          20,
+          5,
           "g",
           "pantry"
         ],
@@ -63783,31 +63798,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          70,
+          35,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          250,
+          125,
           "ml",
           "dairy"
         ],
         [
           "Mangue mûre",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Amande effilée",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Cardamome en poudre",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -63819,7 +63834,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable (ou miel)",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ]
@@ -64451,7 +64466,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, dénoyaute les dattes Medjool et coupe-les en petits morceaux. Fais griller légèrement les amandes effilées dans une poêle sèche 1-2 min en remuant constamment.",
         "Dressage dans 2 bols : verse la semoule au lait. Garnis avec les morceaux de dattes et les amandes dorées. Saupoudre d'une pointe de cannelle.",
         "Sers tiède. Le mesfouf est traditionnellement un dessert maghrébin de couscous fin (Tunisie, Algérie) servi avec lait, raisins secs, dattes — souvent durant le Ramadan. Cette version breakfast utilise de la semoule complète pour un IG plus bas (IG ~50 vs ~70 raffinée) et les dattes Medjool (IG ~50, riches en potassium et fibres) comme édulcorant naturel. Aucun sucre ajouté. Riche en fibres (semoule complète, dattes), magnésium, bons gras (amandes, huile d'olive)."
-      ]
+      ],
+      "photo": "assets/recipes/b94.webp"
     },
     {
       "id": "b95",
@@ -64754,61 +64770,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de sarrasin",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Myrtilles fraîches",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Levure chimique",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Huile d'olive (ou neutre)",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "pincée",
           "spices"
         ]
@@ -64960,55 +64976,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          100,
+          33,
           "g",
           "pantry"
         ],
         [
           "Ricotta",
-          150,
+          50,
           "g",
           "dairy"
         ],
         [
           "Œuf",
-          2,
+          0.75,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          33,
           "ml",
           "dairy"
         ],
         [
           "Myrtilles fraîches",
-          150,
+          50,
           "g",
           "produce"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Levure chimique",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -65020,7 +65036,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -65279,67 +65295,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba (sarrasin)",
-          120,
+          60,
           "g",
           "pantry"
         ],
         [
           "Edamame écossés (surgelés)",
-          150,
+          75,
           "g",
           "frozen"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Vinaigre de riz (ou jus de citron)",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Graines de sésame grillées",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Coriandre fraîche (ou menthe)",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ]
@@ -65577,43 +65593,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait d'amande",
-          400,
+          133,
           "ml",
           "dairy"
         ],
         [
           "Thé matcha en poudre",
-          2,
+          0.75,
           "c.à.c",
           "spices"
         ],
         [
           "Fécule de maïs (Maïzena)",
-          3,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Framboises fraîches",
-          150,
+          50,
           "g",
           "produce"
         ],
         [
           "Amande effilée",
-          15,
+          5,
           "g",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
@@ -65655,43 +65671,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz noir (riz interdit / venere)",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Mangue mûre",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable (ou sucre de coco)",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de sésame grillées",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -65909,31 +65925,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          400,
+          133,
           "ml",
           "dairy"
         ],
         [
           "Cacao en poudre non sucré",
-          3,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Fécule de maïs (Maïzena)",
-          3,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable (ou sucre de coco)",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -65945,19 +65961,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Vanille (extrait)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Chocolat noir 70% (râpé)",
-          15,
+          5,
           "g",
           "pantry"
         ]
@@ -66084,67 +66100,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Feuille de brick",
-          6,
+          1.0,
           "u",
           "bread"
         ],
         [
           "Feta",
-          200,
+          33,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Persil frais",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Œuf",
-          1,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Miel d'oranger (ou miel d'acacia)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Graines de sésame",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -66628,91 +66644,91 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme de terre à chair ferme",
-          500,
+          100,
           "g",
           "produce"
         ],
         [
           "Pois cassés jaunes (chana dal cuits, ou pois chiches égouttés)",
-          150,
+          30,
           "g",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Oignon nouveau",
-          3,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Piment vert frais (facultatif)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Garam masala",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive (ou ghee)",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Farine de pois chiche",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ]
@@ -66877,73 +66893,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Maïs en grains frais (ou surgelé)",
-          400,
+          100,
           "g",
           "frozen"
         ],
         [
           "Feta émiettée (substitut cotija)",
-          60,
+          15,
           "g",
           "dairy"
         ],
         [
           "Skyr (ou yaourt grec)",
-          3,
+          0.75,
           "c.à.s",
           "dairy"
         ],
         [
           "Crème fraîche épaisse 15%",
-          1,
+          0.25,
           "c.à.s",
           "dairy"
         ],
         [
           "Citron vert",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Piment d'Espelette (ou chile en polvo Tajín)",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika fumé",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Ail",
-          1,
+          0.25,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ]
@@ -67066,7 +67082,8 @@ window.__DATA_RECIPES = {
         "Quand les panna cotta sont prises, prépare le topping : dans un bol, mélange les dattes hachées + 2 c.à.s de jus d'orange + 1 c.à.c d'eau de fleur d'oranger. Laisse macérer 5 min (les dattes vont absorber le jus et devenir brillantes).",
         "Dressage festif : dépose la moitié des dattes macérées sur chaque panna cotta. Parsème de pistaches grillées concassées. Râpe un peu de zeste d'orange frais par-dessus.",
         "Sers très frais. Cette panna cotta italo-maghrebine marie la technique italienne (cuisson lacto-crémeuse) aux parfums du Maghreb (fleur d'oranger, dattes, pistaches). Dessert festif idéal pour ftour (rupture de jeûne ramadan), Aïd, accueil d'invités. Sucre réduit (juste 2 c.à.s sirop d'érable pour 4 portions, le sucre des dattes apporte le reste). Riche en calcium (lait, crème), antioxydants (fleur d'oranger, pistaches), fibres (dattes)."
-      ]
+      ],
+      "photo": "assets/recipes/des88.webp"
     },
     {
       "id": "des89",
@@ -68122,55 +68139,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomelo (ou pamplemousse rose)",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Litchis frais (ou en conserve égouttés)",
-          250,
+          62,
           "g",
           "produce"
         ],
         [
           "Mangue mûre",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Cardamome verte (gousses)",
-          4,
+          1.0,
           "u",
           "spices"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger (facultatif)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Basilic thaï (facultatif)",
-          4,
+          1.0,
           "feuille",
           "produce"
         ]
@@ -68318,61 +68335,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Carotte bien mûre",
-          500,
+          100,
           "g",
           "produce"
         ],
         [
           "Lait demi-écrémé",
-          400,
+          80,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable (ou sucre de coco)",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cardamome verte (gousses)",
-          4,
+          0.75,
           "u",
           "spices"
         ],
         [
           "Amande effilée",
-          30,
+          6,
           "g",
           "pantry"
         ],
         [
           "Pistache non salée",
-          20,
+          4.0,
           "g",
           "pantry"
         ],
         [
           "Raisin sec golden",
-          30,
+          6,
           "g",
           "pantry"
         ],
         [
           "Beurre clarifié (ghee, ou huile coco)",
-          1,
+          0.25,
           "c.à.s",
           "dairy"
         ],
         [
           "Vanille (extrait)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Eau de rose (facultatif)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ]
@@ -68421,43 +68438,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue mûre",
-          2,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          250,
+          42,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Graines de chia",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille (extrait)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -68814,49 +68831,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          200,
+          50,
           "g",
           "pantry"
         ],
         [
           "Semoule fine de blé dur",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Eau tiède",
-          180,
+          45,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sucre roux",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Beurre clarifié (ou beurre doux fondu)",
-          30,
+          8,
           "g",
           "dairy"
         ],
         [
           "Huile d'olive",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Miel d'oranger",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ]
@@ -68898,49 +68915,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fèves sèches décortiquées (ou fèves cassées)",
-          200,
+          40,
           "g",
           "pantry"
         ],
         [
           "Ail",
-          3,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Pain complet",
-          4,
+          0.75,
           "tranche",
           "bread"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -68992,49 +69009,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          150,
+          19,
           "g",
           "pantry"
         ],
         [
           "Amande non salée",
-          80,
+          10,
           "g",
           "pantry"
         ],
         [
           "Graines de sésame",
-          40,
+          5,
           "g",
           "pantry"
         ],
         [
           "Anis vert (graines)",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cannelle",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Miel d'acacia",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'argan (ou huile d'olive douce)",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sucre glace pour la déco",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -69079,61 +69096,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          200,
+          33,
           "g",
           "pantry"
         ],
         [
           "Levure de boulanger sèche",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Eau tiède",
-          130,
+          22,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sucre roux",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Miel d'oranger",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de sésame",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ]
@@ -69182,85 +69199,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Feuille de brick (ou pâte filo)",
-          8,
+          2.0,
           "u",
           "bread"
         ],
         [
           "Pomme de terre",
-          300,
+          75,
           "g",
           "produce"
         ],
         [
           "Petits pois surgelés",
-          100,
+          25,
           "g",
           "frozen"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Garam masala",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
@@ -69420,61 +69437,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de sarrasin",
-          150,
+          50,
           "g",
           "pantry"
         ],
         [
           "Yaourt nature (ou yaourt végétal)",
-          200,
+          67,
           "g",
           "dairy"
         ],
         [
           "Eau",
-          100,
+          33,
           "ml",
           "pantry"
         ],
         [
           "Levure chimique",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Bicarbonate de sodium",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Graines de moutarde noire",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Feuilles de curry (facultatif)",
-          6,
+          2.0,
           "u",
           "spices"
         ],
         [
           "Huile de coco",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ]
@@ -69517,79 +69534,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz aplati poha (ou flocons d'avoine en remplacement)",
-          150,
+          38,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Pomme de terre",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Petits pois surgelés",
-          80,
+          20,
           "g",
           "frozen"
         ],
         [
           "Cacahuète non salée",
-          40,
+          10,
           "g",
           "pantry"
         ],
         [
           "Graines de moutarde noire",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment vert frais (facultatif)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ]
@@ -70078,55 +70095,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          150,
+          15,
           "g",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          80,
+          8,
           "g",
           "pantry"
         ],
         [
           "Beurre doux",
-          80,
+          8,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          3,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Jaune d'œuf",
-          1,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Cannelle",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Vanille (extrait)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Sucre glace pour la déco",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -70170,49 +70187,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          200,
+          33,
           "g",
           "pantry"
         ],
         [
           "Levure chimique",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Eau tiède",
-          100,
+          17,
           "ml",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Miel d'oranger",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
@@ -70358,43 +70375,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue mûre",
-          2,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          300,
+          50,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          1.5,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Cardamome verte (gousses)",
-          3,
+          0.5,
           "u",
           "spices"
         ],
         [
           "Eau de rose (facultatif)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Pistache non salée",
-          20,
+          3.5,
           "g",
           "pantry"
         ]
@@ -70442,73 +70459,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine (gros)",
-          200,
+          25,
           "g",
           "pantry"
         ],
         [
           "Amande non salée",
-          50,
+          6,
           "g",
           "pantry"
         ],
         [
           "Noix de pécan",
-          50,
+          6,
           "g",
           "pantry"
         ],
         [
           "Graines de tournesol",
-          30,
+          4.0,
           "g",
           "pantry"
         ],
         [
           "Graines de courge",
-          30,
+          4.0,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          4,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de coco",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Vanille (extrait)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Raisin sec golden",
-          50,
+          6,
           "g",
           "pantry"
         ],
         [
           "Yaourt nature (pour servir)",
-          400,
+          50,
           "g",
           "dairy"
         ]
@@ -70847,43 +70864,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de riz gluant (mochiko)",
-          100,
+          33,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          150,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Cacao en poudre non sucré",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Pâte à tartiner chocolat-noisette maison (cacao + purée noisette + sirop)",
-          4,
+          1.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Fécule de maïs (Maïzena) pour le plan",
-          3,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -71271,61 +71288,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cerise noire (avec ou sans noyau selon préférence)",
-          500,
+          62,
           "g",
           "produce"
         ],
         [
           "Œuf",
-          3,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          300,
+          38,
           "ml",
           "dairy"
         ],
         [
           "Farine T80 (semi-complète)",
-          80,
+          10,
           "g",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          50,
+          6,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille (extrait, ou gousse)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Beurre doux pour le moule",
-          10,
+          1.0,
           "g",
           "dairy"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Amande effilée",
-          15,
+          2.0,
           "g",
           "pantry"
         ]
@@ -71665,73 +71682,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          250,
+          62,
           "g",
           "pantry"
         ],
         [
           "Levure de boulanger sèche",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Lait demi-écrémé tiède",
-          130,
+          32,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Thon naturel en boîte",
-          200,
+          50,
           "g",
           "meat-fish"
         ],
         [
           "Mayonnaise allégée",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Épinards frais",
-          100,
+          25,
           "g",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
@@ -72114,67 +72131,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme de terre",
-          600,
+          120,
           "g",
           "produce"
         ],
         [
           "Persil frais",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Farine de pois chiche (liant)",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ]
@@ -72309,43 +72326,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tortilla de blé complet (ou maïs)",
-          4,
+          0.75,
           "u",
           "bread"
         ],
         [
           "Haricots noirs cuits",
-          200,
+          40,
           "g",
           "pantry"
         ],
         [
           "Cheddar râpé (ou emmental)",
-          80,
+          16,
           "g",
           "dairy"
         ],
         [
           "Épinards frais",
-          80,
+          16,
           "g",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.25,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -72357,19 +72374,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ]
@@ -72418,61 +72435,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Semoule fine",
-          150,
+          38,
           "g",
           "pantry"
         ],
         [
           "Farine T80 (semi-complète)",
-          50,
+          12,
           "g",
           "pantry"
         ],
         [
           "Levure de boulanger sèche",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Levure chimique",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Eau tiède",
-          400,
+          100,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sucre roux",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Miel d'oranger",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Beurre doux",
-          15,
+          4.0,
           "g",
           "dairy"
         ],
         [
           "Amande effilée",
-          30,
+          8,
           "g",
           "pantry"
         ]
@@ -72628,49 +72645,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          500,
+          125,
           "ml",
           "dairy"
         ],
         [
           "Fécule de maïs (Maïzena)",
-          4,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Amande effilée",
-          20,
+          5,
           "g",
           "pantry"
         ],
         [
           "Pistache hachée",
-          15,
+          4.0,
           "g",
           "pantry"
         ],
         [
           "Pétales de rose comestibles (facultatif)",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ]
@@ -72894,67 +72911,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          200,
+          25,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          3,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          12,
           "ml",
           "dairy"
         ],
         [
           "Huile d'olive",
-          5,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Levure chimique",
-          1,
+          0.25,
           "sachet",
           "pantry"
         ],
         [
           "Courgette",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Feta",
-          150,
+          19,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Olives noires dénoyautées",
-          50,
+          6,
           "g",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -73641,79 +73658,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tortilla de blé complet",
-          4,
+          0.75,
           "u",
           "bread"
         ],
         [
           "Œuf",
-          6,
+          1.25,
           "u",
           "dairy"
         ],
         [
           "Haricots noirs cuits",
-          200,
+          40,
           "g",
           "pantry"
         ],
         [
           "Avocat mûr",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Cheddar râpé",
-          60,
+          12,
           "g",
           "dairy"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ]
@@ -73757,67 +73774,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au maïs (ou pain complet)",
-          4,
+          1.0,
           "tranche",
           "bread"
         ],
         [
           "Avocat mûr",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Œuf",
-          4,
+          1.0,
           "u",
           "dairy"
         ],
         [
           "Tomate cerise",
-          100,
+          25,
           "g",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Poivre noir",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Graines de courge grillées",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ]
@@ -73975,85 +73992,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Semoule fine de blé",
-          200,
+          50,
           "g",
           "pantry"
         ],
         [
           "Eau bouillante",
-          500,
+          125,
           "ml",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Carotte",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Petits pois surgelés",
-          80,
+          20,
           "g",
           "frozen"
         ],
         [
           "Piment vert frais (facultatif)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Cacahuète non salée",
-          30,
+          8,
           "g",
           "pantry"
         ],
         [
           "Graines de moutarde noire",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ]
@@ -74323,79 +74340,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches secs (trempés 12h)",
-          250,
+          42,
           "g",
           "pantry"
         ],
         [
           "Épinards frais",
-          100,
+          17,
           "g",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Persil frais",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Cumin moulu",
-          1.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Bicarbonate de sodium",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ]
@@ -74623,43 +74640,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          500,
+          125,
           "ml",
           "dairy"
         ],
         [
           "Farine de maïs (masa harina, ou Maïzena)",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Cacao en poudre non sucré",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Chocolat noir 70% (râpé)",
-          30,
+          8,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle bâton",
-          1,
+          0.25,
           "u",
           "spices"
         ],
         [
           "Vanille (extrait)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
@@ -74671,7 +74688,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -74888,55 +74905,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pruneau dénoyauté",
-          200,
+          33,
           "g",
           "produce"
         ],
         [
           "Lait demi-écrémé",
-          500,
+          83,
           "ml",
           "dairy"
         ],
         [
           "Œuf",
-          3,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Farine T80 (semi-complète)",
-          100,
+          17,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille (extrait)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Beurre doux (pour le moule)",
-          10,
+          1.5,
           "g",
           "dairy"
         ],
         [
           "Rhum brun (facultatif, pour macérer pruneaux)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -74985,61 +75002,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          200,
+          33,
           "g",
           "pantry"
         ],
         [
           "Amande entière non salée",
-          150,
+          25,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          2,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          4,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Levure chimique",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Anis vert (graines)",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Zeste de citron",
-          1,
+          0.25,
           "c.à.c",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Skyr (ou yaourt grec, pour servir)",
-          400,
+          67,
           "g",
           "dairy"
         ],
         [
           "Miel d'acacia (pour servir)",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -75180,67 +75197,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Polenta fine (semoule de maïs)",
-          100,
+          33,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          500,
+          167,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille (extrait)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Fraise fraîche",
-          100,
+          33,
           "g",
           "produce"
         ],
         [
           "Framboise fraîche",
-          80,
+          27,
           "g",
           "produce"
         ],
         [
           "Myrtille fraîche",
-          80,
+          27,
           "g",
           "produce"
         ],
         [
           "Miel de thym (ou miel d'acacia)",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Thym frais",
-          4,
+          1.25,
           "brin",
           "produce"
         ],
         [
           "Amande effilée",
-          20,
+          7,
           "g",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -75287,61 +75304,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine (gros)",
-          80,
+          27,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          400,
+          133,
           "ml",
           "dairy"
         ],
         [
           "Thé matcha en poudre",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Banane",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Beurre d'amande",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Amande effilée",
-          20,
+          7,
           "g",
           "pantry"
         ],
         [
           "Graines de chia",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille (extrait)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ]
@@ -75391,67 +75408,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          250,
+          42,
           "g",
           "pantry"
         ],
         [
           "Eau chaude (~70 °C)",
-          130,
+          22,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Oignon nouveau (tige verte)",
-          8,
+          1.25,
           "u",
           "produce"
         ],
         [
           "Huile de sésame",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de sésame blanc",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Poivre noir",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sauce soja (pour servir)",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Vinaigre de riz (pour servir)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Gingembre frais (pour servir)",
-          1,
+          0.25,
           "cm",
           "produce"
         ]
@@ -75500,67 +75517,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          3,
+          1.5,
           "u",
           "dairy"
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          80,
+          40,
           "ml",
           "dairy"
         ],
         [
           "Farine T80 (semi-complète)",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Levure chimique",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille (extrait)",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Beurre doux (pour la poêle)",
-          10,
+          5,
           "g",
           "dairy"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "pincée",
           "spices"
         ],
         [
           "Myrtille fraîche (pour servir)",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable supplémentaire (pour servir)",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ]
@@ -75689,55 +75706,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Perles de tapioca (taille moyenne, blanc ou rouge)",
-          80,
+          13,
           "g",
           "pantry"
         ],
         [
           "Lait de coco (light)",
-          400,
+          67,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Mangue mûre",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Feuille de pandan (facultatif, ou extrait)",
-          2,
+          0.25,
           "feuille",
           "spices"
         ],
         [
           "Vanille (extrait, si pas de pandan)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Menthe fraîche",
-          4,
+          0.75,
           "feuille",
           "produce"
         ]
@@ -75785,55 +75802,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de riz gluant (mochiko)",
-          120,
+          24,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          200,
+          40,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Vanille (extrait)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Pâte de sésame noir (ou tahini classique + cacao)",
-          4,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable (pour la pâte de sésame)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de coco",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de sésame noir et blanc (pour servir)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -76063,49 +76080,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Dattes Medjool dénoyautées",
-          200,
+          20,
           "g",
           "produce"
         ],
         [
           "Noisette",
-          80,
+          8,
           "g",
           "pantry"
         ],
         [
           "Cacao en poudre non sucré",
-          3,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Flocons d'avoine complets",
-          50,
+          5,
           "g",
           "pantry"
         ],
         [
           "Huile de coco",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille (extrait)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "pincée",
           "spices"
         ],
         [
           "Cacao en poudre non sucré (pour rouler)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -76840,43 +76857,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          120,
+          40,
           "g",
           "pantry"
         ],
         [
           "Eau tiède",
-          80,
+          27,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Épinards frais",
-          200,
+          67,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits",
-          150,
+          50,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
@@ -76888,13 +76905,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cumin",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Garam masala",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -76906,19 +76923,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Yaourt nature",
-          200,
+          67,
           "g",
           "dairy"
         ],
         [
           "Ghee",
-          2,
+          0.75,
           "c.à.s",
           "dairy"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -76973,31 +76990,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de riz",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail (cuites et écrasées, ou farine de pois chiche)",
-          120,
+          60,
           "g",
           "pantry"
         ],
         [
           "Eau",
-          160,
+          80,
           "ml",
           "pantry"
         ],
         [
           "Yaourt nature",
-          50,
+          25,
           "g",
           "dairy"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -77009,31 +77026,31 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Poivron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "cm",
           "produce"
         ],
@@ -77051,7 +77068,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
@@ -78563,31 +78580,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Feuilles de brick",
-          2,
+          0.75,
           "u",
           "pantry"
         ],
         [
           "Figues séchées",
-          80,
+          27,
           "g",
           "produce"
         ],
         [
           "Amandes en poudre",
-          50,
+          17,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          12,
+          4.0,
           "g",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          10,
+          3.5,
           "ml",
           "pantry"
         ],
@@ -78599,19 +78616,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Œuf",
-          1,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Huile d'olive",
-          5,
+          1.5,
           "ml",
           "pantry"
         ],
         [
           "Pistaches non salées",
-          8,
+          2.5,
           "g",
           "pantry"
         ]
@@ -81991,67 +82008,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain rassis",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          18,
+          9,
           "g",
           "pantry"
         ],
         [
           "Cannelle en bâton",
-          2,
+          1.0,
           "g",
           "spices"
         ],
         [
           "Anis étoilé",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Raisins secs",
-          20,
+          10,
           "g",
           "produce"
         ],
         [
           "Amandes effilées",
-          15,
+          8,
           "g",
           "pantry"
         ],
         [
           "Pomme",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Zeste d'orange",
-          2,
+          1.0,
           "g",
           "produce"
         ]
@@ -82371,43 +82388,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Amandes effilées",
-          15,
+          8,
           "g",
           "pantry"
         ],
         [
           "Pistaches non salées",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Graines de sésame",
-          8,
+          4.0,
           "g",
           "pantry"
         ],
         [
           "Dattes Medjool",
-          30,
+          15,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4.0,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          12,
+          6,
           "g",
           "pantry"
         ],
@@ -82425,7 +82442,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Eau de fleur d'oranger",
-          4,
+          2.0,
           "ml",
           "pantry"
         ]
@@ -98746,43 +98763,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Châtaignes cuites",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Oignon jaune",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Crème liquide légère",
-          40,
+          20,
           "ml",
           "dairy"
         ],
         [
           "Romarin frais",
-          2,
+          1.0,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Bouillon de légumes",
-          450,
+          225,
           "ml",
           "pantry"
         ],
         [
           "Sel, poivre",
-          1,
+          0.5,
           "g",
           "spices"
         ]
@@ -100186,7 +100203,8 @@ window.__DATA_RECIPES = {
         "Range les ingrédients dans la cocotte en respectant les temps : carotte et poulet d'abord (cuis 6 min).",
         "Ajoute champignons, tofu et chou chinois. Laisse frémir 8 min, jusqu'à ce que tout soit tendre et imprégné de bouillon.",
         "Parsème de ciboule. Sers la cocotte au centre de la table, chacun se sert dans son bol avec un peu de bouillon."
-      ]
+      ],
+      "photo": "assets/recipes/d247.webp"
     },
     {
       "id": "d248",
@@ -101731,7 +101749,8 @@ window.__DATA_RECIPES = {
         "Fais griller les merguez 8 min à la poêle, puis coupe-les en tronçons.",
         "Prépare la semoule complète selon le paquet (gonflée à l'eau chaude + filet d'huile), égraine à la fourchette.",
         "Sers la semoule, dispose les légumes et les merguez par-dessus, arrose de bouillon. Sale, poivre."
-      ]
+      ],
+      "photo": "assets/recipes/d258.webp"
     },
     {
       "id": "l264",
@@ -101828,7 +101847,8 @@ window.__DATA_RECIPES = {
         "Verse le bouillon, ajoute le poulet entier et les pois chiches. Laisse mijoter 15 min.",
         "Retire le poulet, effiloche-le à la fourchette et remets-le. Ajoute carotte et courgette en dés, cuis 10 min jusqu'à ce qu'elles soient tendres.",
         "Sale, poivre, parsème de coriandre. Sers très chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l264.webp"
     },
     {
       "id": "l265",
@@ -104047,7 +104067,8 @@ window.__DATA_RECIPES = {
         "Ajoute les tomates, le tamarin et le bouillon. Porte à frémissement.",
         "Laisse mijoter 12 min à feu doux (le rasam est une soupe claire et acidulée-épicée, pas un velouté).",
         "Sale, parsème de coriandre et sers brûlant (excellent quand on est enrhumé)."
-      ]
+      ],
+      "photo": "assets/recipes/l277.webp"
     },
     {
       "id": "l278",
@@ -106183,37 +106204,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de châtaigne",
-          70,
+          23,
           "g",
           "pantry"
         ],
         [
           "Cerneaux de noix",
-          15,
+          5,
           "g",
           "produce"
         ],
         [
           "Raisins secs",
-          15,
+          5,
           "g",
           "produce"
         ],
         [
           "Romarin frais",
-          1,
+          0.5,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          10,
+          3.5,
           "ml",
           "pantry"
         ],
         [
           "Eau",
-          130,
+          43,
           "ml",
           "pantry"
         ]
@@ -106281,7 +106302,8 @@ window.__DATA_RECIPES = {
         "Place le cul-de-poule sur une casserole d'eau frémissante (bain-marie, le fond ne touche pas l'eau).",
         "Fouette sans arrêt 6 à 8 min : le mélange triple de volume et devient une mousse aérienne et nappante. Ne pas surchauffer (les œufs coaguleraient).",
         "Verse le zabaione mousseux sur les fruits rouges et sers aussitôt, tiède."
-      ]
+      ],
+      "photo": "assets/recipes/des181.webp"
     },
     {
       "id": "des182",
@@ -106624,7 +106646,8 @@ window.__DATA_RECIPES = {
         "Concasse les noix et torréfie-les 3 min à sec dans une poêle.",
         "Répartis le skyr dans les coupes, dépose les poires rôties tièdes dessus.",
         "Arrose d'un filet de miel et parsème de noix. Sers aussitôt (chaud-froid)."
-      ]
+      ],
+      "photo": "assets/recipes/des186.webp"
     },
     {
       "id": "des187",
@@ -107067,37 +107090,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          80,
+          27,
           "g",
           "pantry"
         ],
         [
           "Banane",
-          100,
+          33,
           "g",
           "produce"
         ],
         [
           "Pomme",
-          80,
+          27,
           "g",
           "produce"
         ],
         [
           "Œuf",
-          1,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Cannelle moulue",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Raisins secs",
-          15,
+          5,
           "g",
           "produce"
         ]
@@ -107954,7 +107977,8 @@ window.__DATA_RECIPES = {
         "Concasse les noix et torréfie-les 3 min à sec.",
         "Mélange l'épeautre tiède, la courge, la roquette, les noix. Assaisonne d'huile d'olive et de vinaigre balsamique.",
         "Parsème de copeaux de parmesan, sale, poivre. Se mange tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l292.webp"
     },
     {
       "id": "l293",
@@ -108112,7 +108136,8 @@ window.__DATA_RECIPES = {
         "Verse le vin blanc, laisse-le s'évaporer 2 min en grattant les sucs.",
         "Ajoute les tomates, le romarin et les olives. Remets le poulet, couvre et laisse mijoter 30 min, jusqu'à ce que le poulet soit tendre et la sauce épaisse.",
         "Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d283.webp"
     },
     {
       "id": "d284",
@@ -108290,7 +108315,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, fais revenir l'oignon émincé et la dernière gousse d'ail 4 min.",
         "Ajoute les tomates concassées et le basilic, laisse mijoter 10 min.",
         "Remets les boulettes dans la sauce, couvre et laisse 15 min à feu doux. Sale, poivre et sers (avec un peu de pâtes complètes ou de légumes)."
-      ]
+      ],
+      "photo": "assets/recipes/d285.webp"
     },
     {
       "id": "d286",
@@ -109136,7 +109162,8 @@ window.__DATA_RECIPES = {
         "Ajoute l'endive, la poire, la mâche et les noix. Mélange délicatement.",
         "Répartis dans l'assiette et parsème le bleu émietté par-dessus juste avant de servir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l295.webp"
     },
     {
       "id": "l296",
@@ -109928,7 +109955,8 @@ window.__DATA_RECIPES = {
         "Pose le filet de dorade au centre, côté peau dessous. Arrose du reste d'huile, sale, poivre et dépose 2-3 fines rondelles de citron dessus.",
         "Répartis les olives noires autour et remets au four 12-15 minutes : le poisson est cuit quand la chair devient opaque et se détache en feuillets à la fourchette.",
         "Presse le reste du demi-citron par-dessus juste avant de servir, directement dans la plaque."
-      ]
+      ],
+      "photo": "assets/recipes/d294.webp"
     },
     {
       "id": "des192",
@@ -110382,7 +110410,8 @@ window.__DATA_RECIPES = {
         "Écale délicatement l'oeuf (retire la coquille sous un filet d'eau si elle accroche).",
         "Arrose la poêlée de pois chiches d'un filet de jus de citron, sale et poivre, mélange.",
         "Dresse dans une assiette creuse, coupe l'oeuf mollet en deux et dépose-le par-dessus pour que le jaune coule légèrement."
-      ]
+      ],
+      "photo": "assets/recipes/l302.webp"
     },
     {
       "id": "l303",
@@ -110865,7 +110894,8 @@ window.__DATA_RECIPES = {
         "Parsème de parmesan râpé sur toute la surface.",
         "Enfourne 25-30 minutes, jusqu'à ce que le dessus soit doré et légèrement gonflé, et qu'un couteau planté au centre ressorte propre."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d297.webp"
     },
     {
       "id": "d298",
@@ -111624,7 +111654,8 @@ window.__DATA_RECIPES = {
         "Remets le tofu dans le wok, arrose de sauce soja et d'huile de sésame, mélange 1 minute.",
         "Sers sur le riz complet, parsemé de graines de sésame."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l308.webp"
     },
     {
       "id": "l309",
@@ -112070,7 +112101,8 @@ window.__DATA_RECIPES = {
         "Ajoute la tomate, laisse compoter 2-3 minutes, puis verse le lait de coco et porte à frémissement doux.",
         "Dépose délicatement les cubes de cabillaud dans la sauce, couvre et laisse pocher 6-8 minutes jusqu'à ce que le poisson s'effeuille facilement à la fourchette.",
         "Ajoute les épinards, mélange délicatement 2 minutes jusqu'à ce qu'ils retombent, sale et sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d302.webp"
     },
     {
       "id": "d303",
@@ -112546,7 +112578,8 @@ window.__DATA_RECIPES = {
         "Goûte, rectifie le sel et le poivre.",
         "Sers chaud, parsemé de coriandre fraîche ciselée."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l310.webp"
     },
     {
       "id": "l311",
@@ -112653,7 +112686,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol (bowl), dispose les haricots noirs, le maïs, la tomate, l'oignon rouge et l'avocat en petits tas séparés.",
         "Ajoute le poulet chaud au centre.",
         "Arrose de jus de citron vert, parsème de coriandre ciselée et sers aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/l311.webp"
     },
     {
       "id": "l312",
@@ -112937,7 +112971,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais pocher l'œuf : porte une petite casserole d'eau frémissante (pas bouillante) avec un peu de vinaigre, crée un tourbillon avec une cuillère et casse l'œuf au centre. Laisse cuire 3 minutes.",
         "Sale et poivre la poêlée, goûte et rectifie.",
         "Dresse la poêlée dans une assiette creuse, dépose l'œuf poché dessus et sers aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/l314.webp"
     },
     {
       "id": "d305",
@@ -113558,7 +113593,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste la cannelle si tu veux plus de parfum.",
         "Laisse refroidir avant de servir, tiède ou froid, selon ton envie."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/des199.webp"
     },
     {
       "id": "l315",
@@ -113669,7 +113705,8 @@ window.__DATA_RECIPES = {
         "Goûte, rectifie l'assaisonnement en sel et poivre.",
         "Sers bien chaud avec le parmesan râpé saupoudré dessus."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l315.webp"
     },
     {
       "id": "l316",
@@ -113947,7 +113984,8 @@ window.__DATA_RECIPES = {
         "Parsème de comté râpé et d'un filet d'huile d'olive.",
         "Enfourne 18-20 minutes jusqu'à ce que le dessus soit doré et que le poisson s'effeuille facilement à la fourchette.",
         "Sers immédiatement, bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l318.webp"
     },
     {
       "id": "l319",
@@ -114055,7 +114093,8 @@ window.__DATA_RECIPES = {
         "Goûte, rectifie l'assaisonnement en sel et poivre.",
         "Sers chaud, parsemé de coriandre fraîche ciselée."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l319.webp"
     },
     {
       "id": "d310",
@@ -114751,7 +114790,8 @@ window.__DATA_RECIPES = {
         "À mi-cuisson, retourne les légumes dans le jus pour qu'ils caramélisent uniformément.",
         "Laisse reposer 5 minutes avant de servir : le jus se répartit dans la chair. Sers le poulet sur son lit de légumes rôtis."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l320.webp"
     },
     {
       "id": "l321",
@@ -114943,7 +114983,8 @@ window.__DATA_RECIPES = {
         "Prépare la gremolata : hache finement le persil, râpe le zeste du demi-citron (juste la partie jaune) et écrase l'ail, puis mélange le tout.",
         "Parsème la gremolata sur l'osso buco juste avant de servir : elle apporte de la fraîcheur au plat mijoté."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l322.webp"
     },
     {
       "id": "l323",
@@ -115340,7 +115381,8 @@ window.__DATA_RECIPES = {
         "Taille le concombre et la carotte en fins bâtonnets, émince les oignons nouveaux.",
         "Coupe le magret en fines lamelles et enrobe-les de laque dans la poêle hors du feu.",
         "Réchauffe la galette de sarrasin 30 secondes à la poêle, garnis-la de canard laqué et de légumes croquants, roule et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l326.webp"
     },
     {
       "id": "l327",
@@ -115902,7 +115944,8 @@ window.__DATA_RECIPES = {
         "Ajoute les haricots, le thon, l'oignon et les tomates séchées. Mélange délicatement pour ne pas écraser les haricots.",
         "Ajoute la roquette juste avant de servir et mélange une dernière fois. Sert tiède ou frais."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l332.webp"
     },
     {
       "id": "l333",
@@ -116227,7 +116270,8 @@ window.__DATA_RECIPES = {
         "Concasse grossièrement les cacahuètes et fais-les dorer 1 minute à sec dans la poêle (surveille, ça brûle vite).",
         "Dans un grand bol, dépose les vermicelles tièdes, la salade, les crudités, le bœuf et la menthe.",
         "Arrose de sauce et parsème de cacahuètes. Mélange au moment de manger."
-      ]
+      ],
+      "photo": "assets/recipes/l335.webp"
     },
     {
       "id": "l336",
@@ -116529,7 +116573,8 @@ window.__DATA_RECIPES = {
         "Remets les boulettes dans la sauce, couvre et laisse mijoter 12 minutes à feu doux : elles finissent de cuire et s'imprègnent de sauce.",
         "Ajoute les épinards et laisse-les tomber 2 minutes (ils réduisent beaucoup). Sers bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d316.webp"
     },
     {
       "id": "d317",
@@ -117485,7 +117530,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, coupe le pain complet en petits cubes, fais-les dorer 3-4 minutes dans une poêle avec le reste d'huile d'olive, en remuant souvent, jusqu'à ce qu'ils soient croustillants.",
         "Mixe la soupe si tu préfères une texture lisse, ou laisse-la rustique. Sale, poivre, sers avec les croûtons et le persil ciselé par-dessus."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l341.webp"
     },
     {
       "id": "d320",
@@ -118514,7 +118560,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, mélange la farine de maïs avec un peu d'eau tiède et une pincée de sel pour obtenir une pâte souple, façonne une petite galette plate et fais-la cuire 2-3 minutes de chaque côté dans une poêle avec le reste de beurre, jusqu'à ce qu'elle soit dorée.",
         "Sers le saag bien chaud accompagné de la galette de maïs."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l344.webp"
     },
     {
       "id": "l345",
@@ -119037,7 +119084,8 @@ window.__DATA_RECIPES = {
         "Ajoute les pommes de terre et le paneer, couvre et laisse mijoter à feu doux 10 minutes pour que les saveurs se mélangent.",
         "Parsème de coriandre fraîche et sers bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d327.webp"
     },
     {
       "id": "d328",
@@ -120215,7 +120263,8 @@ window.__DATA_RECIPES = {
         "Enfourne 8 à 10 minutes, puis retourne délicatement l'escalope et poursuis la cuisson 8 à 10 minutes, jusqu'à ce que la panure soit bien dorée et croustillante.",
         "Pendant ce temps, lave la roquette et mélange-la avec le jus pressé du citron et un filet d'huile d'olive.",
         "Sers l'escalope accompagnée de la roquette assaisonnée."
-      ]
+      ],
+      "photo": "assets/recipes/d333.webp"
     },
     {
       "id": "d334",
@@ -122539,7 +122588,8 @@ window.__DATA_RECIPES = {
         "Retire le poisson avec précaution et réserve-le au chaud dans une assiette.",
         "Fais réduire le jus de cuisson 2 minutes à feu vif, puis incorpore la crème fraîche épaisse et le reste du beurre. Fouette jusqu'à obtenir une sauce onctueuse.",
         "Rectifie le sel et le poivre, nappe le poisson de sauce et parsème de persil plat ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d343.webp"
     },
     {
       "id": "d344",
@@ -123104,7 +123154,8 @@ window.__DATA_RECIPES = {
         "Ajoute le riz froid en l'émiettant avec les doigts pour casser les grains collés. Fais sauter 3-4 minutes à feu vif en remuant sans arrêt, jusqu'à ce que le riz soit bien chaud et légèrement doré par endroits.",
         "Remets le poulet et l'œuf dans le wok, arrose de sauce soja et de piment. Mélange 1 minute pour tout enrober.",
         "Parsème de ciboule émincée et sers immédiatement, bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l364.webp"
     },
     {
       "id": "l365",
@@ -124582,7 +124633,8 @@ window.__DATA_RECIPES = {
         "Ajoute les cubes de thon, couvre et laisse cuire encore 4-5 minutes à feu doux : le thon doit juste changer de couleur, passer du rose cru à un rose pâle opaque. Ne le cuis pas trop longtemps, sinon il devient sec et filandreux.",
         "Hors du feu, sale, poivre, parsème de persil frais et laisse reposer 2 minutes à couvert avant de servir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d350.webp"
     },
     {
       "id": "d351",
@@ -125418,7 +125470,8 @@ window.__DATA_RECIPES = {
         "Couvre et laisse mijoter à feu doux 30-35 min jusqu'à ce que les fèves soient bien tendres et s'écrasent facilement à la cuillère.",
         "Hors du feu, ajoute la harissa et le jus de citron selon ton goût (plus ou moins pimenté). Rectifie le sel et le poivre.",
         "Sers bien chaud, parsemé de coriandre fraîche ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l374.webp"
     },
     {
       "id": "l375",
@@ -126417,7 +126470,8 @@ window.__DATA_RECIPES = {
         "Dresse les tranches de veau côte à côte sur une assiette plate, sans les superposer.",
         "Nappe généreusement de sauce thon-câpres, puis dépose quelques feuilles de roquette par-dessus et termine par le persil ciselé (= coupé en tout petits morceaux avec la pointe du couteau).",
         "Sers froid, en entrée festive."
-      ]
+      ],
+      "photo": "assets/recipes/l377.webp"
     },
     {
       "id": "l378",
@@ -129840,7 +129894,8 @@ window.__DATA_RECIPES = {
         "Répète l'opération pour former 3 triangles par portion. Badigeonne légèrement chaque briouate d'huile d'olive au pinceau (ça remplace la friture et leur donne quand même une belle couleur dorée).",
         "Enfourne 15-18 minutes, jusqu'à ce que les briouates soient bien dorées et croustillantes.",
         "Si tu utilises le miel, fais-le tiédir 10 secondes au micro-ondes et badigeonne-en un fin filet sur les briouates à la sortie du four."
-      ]
+      ],
+      "photo": "assets/recipes/l387.webp"
     },
     {
       "id": "l388",
@@ -138494,7 +138549,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais revenir les girolles dans une poêle avec un peu d'huile d'olive à feu vif 5 minutes, jusqu'à ce qu'elles soient dorées et que leur eau se soit évaporée. Effeuille le thym frais et ajoute-le dans les 2 dernières minutes.",
         "Quand l'orge est cuit et crémeux (il doit napper la cuillère), retire du feu et incorpore le parmesan râpé en remuant énergiquement.",
         "Ajoute les girolles poêlées à l'orzotto, mélange délicatement, sale et poivre. Sers immédiatement, parsemé de persil plat ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l426.webp"
     },
     {
       "id": "l427",
@@ -142591,7 +142647,8 @@ window.__DATA_RECIPES = {
         "Ajoute les épinards frais et remue : ils vont faner (ramollir et réduire en volume) en 2 à 3 minutes à peine sous l'effet de la chaleur du curry.",
         "Goûte et rectifie le sel et le poivre.",
         "Sers bien chaud, parsemé de coriandre fraîche ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/d426.webp"
     },
     {
       "id": "d427",
@@ -144133,7 +144190,8 @@ window.__DATA_RECIPES = {
         "Ajoute la courgette, les champignons et le gochugaru. Coupe le tofu en cubes de 2 cm et pose-les délicatement sur le dessus (ne remue pas trop fort, sinon le tofu se casse). Laisse frémir encore 8 minutes : le potimarron doit être fondant sous la fourchette.",
         "Goûte : la pâte de soja est déjà salée, n'ajoute du sel que si nécessaire. Coupe la cébette en fines rondelles.",
         "Sers le ragoût bien chaud dans un bol, parsemé de cébette et d'un filet d'huile de sésame, avec le riz à côté."
-      ]
+      ],
+      "photo": "assets/recipes/l444.webp"
     },
     {
       "id": "l445",

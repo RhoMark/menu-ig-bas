@@ -117,6 +117,10 @@ jobs:
       - name: Sync server (serveur maison aveugle, Phase 2·L S4)
         run: node --disable-warning=ExperimentalWarning scripts/test-sync-server.mjs
 
+      # ── Charge glycémique : le calcul extrait du vrai code de l'app doit tourner ──
+      - name: Recipe CG (code de l'app)
+        run: node scripts/recipe-cg.mjs --catalogue > /dev/null
+
       # ── 5. HTML basique ─────────────────────────────────────────────
       - name: HTML basic checks
         run: |

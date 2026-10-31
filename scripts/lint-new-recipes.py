@@ -426,41 +426,29 @@ def check_tags_consistency(recipes, report):
             pass
 
 def check_cg_threshold(recipes, glyc_map, report):
-    for r in recipes:
-        rid = r.get("id", "?")
-        mealType = r.get("type")
-        if mealType not in CG_THRESHOLDS:
+    """V2.127.0 — CG calculée par le VRAI code de l'app (scripts/recipe-cg.mjs).
+    Avant : estimation Python divisée par 4 portions alors que les quantités
+    sont PAR PORTION → CG sous-estimée 4×, 465 recettes « élevées » passées.
+    Seuils par repas = CG_TIERS_BY_MEAL de l'app : au-delà du « bas » → avertissement,
+    au-delà du « modéré » (tier high) → bloquant."""
+    import subprocess
+    repo = Path(__file__).resolve().parent.parent
+    try:
+        out = subprocess.run(["node", str(repo / "scripts" / "recipe-cg.mjs")],
+                             input=json.dumps(recipes, ensure_ascii=False), capture_output=True,
+                             text=True, check=True, timeout=60).stdout
+        results = json.loads(out)
+    except Exception as e:  # node absent ou extraction cassée : on le dit, on ne laisse pas passer en silence
+        report.err("lot", f"CG non calculable (node scripts/recipe-cg.mjs) : {e}")
+        return
+    for res in results:
+        rid, cg, tier, meal = res["id"], res["cg"], res["tier"], res["type"]
+        if cg is None:
             continue
-        threshold = CG_THRESHOLDS[mealType]
-        # Calculer CG estimée
-        total_cg = 0
-        for ing in r.get("ing", []):
-            if not ing or len(ing) < 3: continue
-            name, qty, unit = ing[0], ing[1], ing[2]
-            entry = lookup_glycemic(name, glyc_map)
-            if not entry or entry.get("ig") is None: continue
-            # Approx : qty en g (sera plus précis avec qtyToGrams)
-            if unit.lower() in ("g", "gramme"):
-                grams = qty
-            elif unit.lower() in ("ml", "centilitre"):
-                grams = qty  # approx pour les liquides
-            else:
-                continue  # skip si on ne sait pas convertir
-            carbs = entry.get("carbsPer100g") or 0
-            ig = entry.get("ig") or 0
-            cg_ing = (grams * carbs / 100) * ig / 100
-            total_cg += cg_ing
-        # Par portion (4 portions par défaut)
-        cg_per_portion = total_cg / 4
-        # V2.99.19 — CG estimée approximative (qtyToGrams JS plus précis).
-        # On warn dès dépassement, on bloque seulement si >2× seuil (probable
-        # vraie sortie de seuil même avec marge d'incertitude). Empêche le
-        # blocage abusif sur des recettes correctes mais où le calcul Python
-        # surestime la CG par manque de granularité unités.
-        if cg_per_portion > threshold * 2.0:
-            report.err(rid, f"CG estimée {cg_per_portion:.1f} ≫ seuil {mealType} ({threshold}) — à vérifier")
-        elif cg_per_portion > threshold:
-            report.warn(rid, f"CG estimée {cg_per_portion:.1f} > seuil {mealType} ({threshold})")
+        if tier == "high":
+            report.err(rid, f"CG {cg} trop élevée pour un {meal} (seuil modéré dépassé, cf. CG_TIERS_BY_MEAL)")
+        elif tier == "medium":
+            report.warn(rid, f"CG {cg} modérée pour un {meal} (cible basse : {CG_THRESHOLDS.get(meal, '?')})")
 
 def check_glycemic_coverage(recipes, glyc_map, report, all_missing):
     for r in recipes:
