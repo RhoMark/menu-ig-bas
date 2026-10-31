@@ -231,7 +231,7 @@ WORKFLOW POST-RÉDACTION :
 1. python3 scripts/lint-new-recipes.py {out_path} --varname {lot_label}
 2. (si manquants) python3 scripts/auto-enrich-glycemic.py {out_path} --apply
 3. python3 scripts/lint-new-recipes.py {out_path} --varname {lot_label}   # re-check
-4. python3 /tmp/inject-lot.py lot{args.lot}-recipes {lot_label}
+4. python3 scripts/inject-lot.py /tmp/lot{args.lot}-recipes.py {lot_label}   # écrit data/recipes.js
 5. bash scripts/bump-version.sh --auto patch
 6. echo "<nouveau_count>" > .expected-recipe-count
 7. python3 scripts/validate-recipe-data.py

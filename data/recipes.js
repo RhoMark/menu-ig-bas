@@ -142993,6 +142993,1393 @@ window.__DATA_RECIPES = {
         "Prépare la vinaigrette dans un bol : mélange l'huile de noix et le vinaigre de cidre avec un peu de poivre, puis assaisonne la salade et parsème les cerneaux de noix. Servez la salade EN PREMIER, avant la raclette : les fibres et le vinaigre pris au début du repas ralentissent l'absorption des glucides qui suivent.",
         "Allume l'appareil à raclette. Chacun fait fondre son fromage dans sa coupelle 2 à 4 minutes, jusqu'à ce qu'il bouillonne et dore légèrement, puis le fait glisser sur les légumes rôtis, les champignons ou les pommes de terre. Essaie la version verger : quelques lamelles de poire recouvertes d'une rondelle de chèvre, passées sous le grill de l'appareil."
       ]
+    },
+    {
+      "id": "l441",
+      "name": "Pipián verde de pollo (poulet en sauce aux graines de courge et tomatillos), riz complet",
+      "type": "lunch",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "diff": 2,
+      "cost": 3.6,
+      "kcal": 480,
+      "tags": [
+        "epicerie-specialisee"
+      ],
+      "eq": [
+        "stove",
+        "blender",
+        "pan"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Blanc de poulet",
+          120,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Riz long complet",
+          45,
+          "g",
+          "pantry"
+        ],
+        [
+          "Graines de courge (pepitas)",
+          25,
+          "g",
+          "pantry"
+        ],
+        [
+          "Tomatillo (en conserve, égouttés)",
+          100,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon blanc",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Piment jalapeño",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Coriandre fraîche",
+          10,
+          "g",
+          "produce"
+        ],
+        [
+          "Épinards frais",
+          30,
+          "g",
+          "produce"
+        ],
+        [
+          "Cumin moulu",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Bouillon de volaille",
+          200,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Huile de colza",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Citron vert",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Lance le riz : rince-le, mets-le dans une casserole avec 2,5 fois son volume d'eau salée, porte à ébullition puis laisse cuire 25 minutes à couvert à feu doux.",
+        "Pose le blanc de poulet dans une casserole avec le bouillon : il doit être recouvert (ajoute un peu d'eau sinon). Fais-le frémir (petites bulles) 15 minutes, jusqu'à ce qu'il soit blanc au cœur, sans trace rose. Garde le bouillon.",
+        "Pendant ce temps, fais griller les graines de courge dans une poêle sans matière grasse 3 minutes, en secouant, jusqu'à ce qu'elles gonflent et éclatent. Laisse-les refroidir 2 minutes sur une assiette.",
+        "Mets dans le mixeur les graines grillées, les tomatillos égouttés, l'oignon et l'ail épluchés, le jalapeño sans ses graines (ce sont elles qui piquent le plus), la coriandre, les épinards, le cumin et 150 ml du bouillon de cuisson. Mixe jusqu'à obtenir une sauce verte lisse et épaisse.",
+        "Fais chauffer l'huile dans la poêle à feu moyen, verse la sauce (attention, ça éclabousse) et laisse-la cuire 5 minutes en remuant : elle fonce un peu et épaissit jusqu'à napper le dos de la cuillère. Si elle devient trop épaisse, ajoute un peu de bouillon.",
+        "Coupe le poulet en tranches et mets-les dans la sauce 2 minutes pour les réchauffer. Goûte, sale, poivre et ajoute le jus de citron vert.",
+        "Sers le poulet nappé de pipián avec le riz complet à côté."
+      ]
+    },
+    {
+      "id": "l442",
+      "name": "Bowl de calabaza asada : courge rôtie, haricots pinto, quinoa et salsa de pepitas",
+      "type": "lunch",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "diff": 2,
+      "cost": 2.8,
+      "kcal": 470,
+      "tags": [
+        "vegan"
+      ],
+      "eq": [
+        "oven",
+        "stove",
+        "bowl"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Courge butternut",
+          200,
+          "g",
+          "produce"
+        ],
+        [
+          "Quinoa",
+          40,
+          "g",
+          "pantry"
+        ],
+        [
+          "Haricots pinto cuits (en bocal, égouttés)",
+          100,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon rouge",
+          30,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou rouge",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Graines de courge (pepitas)",
+          15,
+          "g",
+          "pantry"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron vert",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Ail",
+          0.5,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Piment jalapeño",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Paprika fumé",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Cumin moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 200 °C. Épluche la courge avec un économe, retire les graines avec une cuillère et coupe la chair en cubes de 2 cm.",
+        "Mets les cubes sur une plaque recouverte de papier cuisson, arrose avec la moitié de l'huile, saupoudre de paprika fumé, de cumin et d'une pincée de sel, puis mélange avec les mains. Enfourne 25 à 30 minutes : les bords doivent dorer et la pointe d'un couteau doit entrer sans forcer.",
+        "Pendant ce temps, rince le quinoa dans une passoire fine (ça enlève son goût amer). Mets-le dans une casserole avec 2 fois son volume d'eau, porte à ébullition puis laisse cuire 12 minutes à feu doux : il est cuit quand un petit filament blanc se détache autour de chaque grain.",
+        "Rince et égoutte les haricots pinto. Coupe le chou rouge en lanières très fines et l'oignon rouge en petits dés. Arrose-les d'un peu de jus de citron vert : l'oignon devient plus doux en 10 minutes.",
+        "Prépare la salsa de pepitas : fais griller les graines de courge 2 à 3 minutes dans une poêle sans matière grasse, jusqu'à ce qu'elles gonflent. Hache-les grossièrement avec la coriandre, l'ail, le jalapeño épépiné (retire les graines, ce sont elles qui piquent le plus), le reste de l'huile, le reste du jus de citron vert et une pincée de sel.",
+        "Monte le bowl : quinoa au fond, puis la courge rôtie, les haricots, le chou et l'oignon. Termine par une grosse cuillère de salsa de pepitas."
+      ]
+    },
+    {
+      "id": "d429",
+      "name": "Pescado a la talla au four (cabillaud mariné guajillo-ail), chou rouge et avocat",
+      "type": "dinner",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 15,
+      "rest": 20,
+      "diff": 2,
+      "cost": 4.2,
+      "kcal": 380,
+      "tags": [],
+      "eq": [
+        "oven",
+        "blender",
+        "bowl"
+      ],
+      "allergens": [
+        "fish"
+      ],
+      "ing": [
+        [
+          "Dos de cabillaud",
+          140,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Piment guajillo séché",
+          1,
+          "u",
+          "spices"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Tomates concassées (en conserve)",
+          40,
+          "g",
+          "pantry"
+        ],
+        [
+          "Origan séché",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Cumin moulu",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Vinaigre de cidre",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Chou rouge",
+          100,
+          "g",
+          "produce"
+        ],
+        [
+          "Avocat",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Citron vert",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Ouvre le piment guajillo avec des ciseaux, retire la queue et les graines, puis mets-le dans un bol d'eau très chaude pendant 15 minutes : il doit devenir mou comme un vieux cuir.",
+        "Égoutte le piment et mets-le dans le mixeur avec l'ail épluché, les tomates concassées, l'origan, le cumin, le vinaigre, la moitié de l'huile et une pincée de sel. Mixe jusqu'à obtenir une sauce rouge lisse : c'est la marinade.",
+        "Pose le cabillaud dans un plat allant au four légèrement huilé. Recouvre une seule face (le dessus) de marinade avec le dos d'une cuillère et laisse reposer 20 minutes au frais pour que le poisson prenne le goût.",
+        "Pendant ce temps, préchauffe le four à 200 °C. Coupe le chou rouge en lanières très fines, mets-le dans un bol avec un peu de jus de citron vert, le reste de l'huile et une pincée de sel, puis malaxe-le 1 minute avec les mains : il devient plus tendre.",
+        "Enfourne le poisson 12 à 15 minutes selon l'épaisseur. Il est cuit quand la chair devient blanche et opaque au cœur et se sépare en lamelles quand tu appuies avec une fourchette.",
+        "Coupe l'avocat en deux, retire le noyau, coupe la chair en lamelles et arrose-la de jus de citron vert pour qu'elle ne noircisse pas.",
+        "Sers le poisson avec le chou rouge, l'avocat, la coriandre hachée et un quartier de citron vert à presser au dernier moment."
+      ]
+    },
+    {
+      "id": "l443",
+      "name": "Gobi matar masala (chou-fleur et petits pois épicés), dal moong et riz basmati complet",
+      "type": "lunch",
+      "cuisine": "indien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 30,
+      "diff": 2,
+      "cost": 2.4,
+      "kcal": 460,
+      "tags": [
+        "vegan",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove",
+        "pan"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Riz basmati complet",
+          40,
+          "g",
+          "pantry"
+        ],
+        [
+          "Lentilles mung (moong dal jaune)",
+          35,
+          "g",
+          "pantry"
+        ],
+        [
+          "Chou-fleur",
+          180,
+          "g",
+          "produce"
+        ],
+        [
+          "Petits pois surgelés",
+          60,
+          "g",
+          "frozen"
+        ],
+        [
+          "Oignon jaune",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Tomate",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Gingembre frais",
+          1,
+          "cm",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Graines de cumin",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Curcuma moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Garam masala",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Coriandre moulue",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Huile de colza",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Rince le riz et les lentilles mung séparément dans une passoire fine, jusqu'à ce que l'eau soit claire.",
+        "Riz : mets-le dans une casserole avec 2,5 fois son volume d'eau salée, porte à ébullition puis laisse cuire à feu doux 25 minutes à couvert, jusqu'à ce que l'eau soit absorbée.",
+        "Dal : mets les lentilles dans une autre casserole avec 3 fois leur volume d'eau et la moitié du curcuma. Fais cuire 20 minutes à feu doux en enlevant la mousse blanche qui monte avec une cuillère : les lentilles doivent se défaire en purée. Sale à la fin.",
+        "Pendant ce temps, détaille le chou-fleur en petits bouquets (de la taille d'une noix). Coupe l'oignon et la tomate en petits dés. Râpe le gingembre et l'ail.",
+        "Dans une grande poêle, fais chauffer l'huile à feu moyen avec les graines de cumin : quand elles grésillent et brunissent légèrement (environ 30 secondes), ajoute l'oignon et fais-le revenir 4 minutes jusqu'à ce qu'il devienne translucide.",
+        "Ajoute l'ail, le gingembre, le reste du curcuma et la coriandre moulue, remue 30 secondes, puis ajoute la tomate. Laisse cuire 3 minutes en écrasant avec la cuillère jusqu'à obtenir une sauce épaisse.",
+        "Ajoute le chou-fleur, 4 cuillères à soupe d'eau et une pincée de sel. Couvre et laisse cuire 10 minutes à feu doux : la pointe d'un couteau doit entrer dans les bouquets avec une petite résistance (ils ne doivent pas s'écraser).",
+        "Ajoute les petits pois et le garam masala, cuis encore 3 minutes à découvert. Sers avec le riz et le dal, parsemé de coriandre fraîche."
+      ]
+    },
+    {
+      "id": "d430",
+      "name": "Murgh yakhni shorba (bouillon de poulet épicé au gingembre, chou-fleur et légumes d'hiver)",
+      "type": "dinner",
+      "cuisine": "indien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 30,
+      "diff": 1,
+      "cost": 3.0,
+      "kcal": 280,
+      "tags": [
+        "batch-friendly",
+        "kid-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [],
+      "producesLeftovers": true,
+      "ing": [
+        [
+          "Blanc de poulet",
+          110,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Chou-fleur",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Carotte",
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Navet",
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Céleri branche",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon jaune",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Gingembre frais",
+          2,
+          "cm",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Curcuma moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Graines de cumin",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Garam masala",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Bouillon de volaille",
+          400,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Huile de colza",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Citron jaune",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Épluche la carotte, le navet et l'oignon, puis coupe-les en petits dés de 1 cm. Coupe le céleri en tranches fines et le chou-fleur en tout petits bouquets. Râpe le gingembre et l'ail.",
+        "Dans une grande casserole, fais chauffer l'huile à feu moyen avec les graines de cumin jusqu'à ce qu'elles grésillent (30 secondes). Ajoute l'oignon et fais-le revenir 4 minutes, jusqu'à ce qu'il devienne translucide.",
+        "Ajoute l'ail, le gingembre et le curcuma, remue 30 secondes : ça doit sentir fort, sans brûler.",
+        "Ajoute les légumes et le bouillon. Porte à ébullition, puis baisse le feu.",
+        "Pose le blanc de poulet entier dans la soupe : il doit être recouvert de liquide. Laisse frémir (petites bulles seulement) 20 minutes à couvert. Le poulet est cuit quand il est blanc au centre, sans aucune trace rose quand tu le coupes.",
+        "Sors le poulet sur une planche et effiloche-le avec deux fourchettes (tire dans des sens opposés pour obtenir des petits filaments).",
+        "Remets le poulet dans la soupe avec le garam masala. Le bouillon doit rester clair et parfumé, les légumes tendres mais entiers. Goûte, sale, poivre et ajoute le jus de citron.",
+        "Sers bien chaud, parsemé de coriandre fraîche. Se garde 3 jours au frais (réchauffe doucement, sans faire bouillir)."
+      ]
+    },
+    {
+      "id": "d431",
+      "name": "Shalgam masala (navets mijotés aux épices et à la tomate), pois chiches et raïta",
+      "type": "dinner",
+      "cuisine": "indien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 30,
+      "diff": 2,
+      "cost": 2.1,
+      "kcal": 360,
+      "tags": [
+        "vegetarian"
+      ],
+      "eq": [
+        "stove",
+        "bowl"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Navet",
+          220,
+          "g",
+          "produce"
+        ],
+        [
+          "Pois chiches cuits (en bocal, égouttés)",
+          90,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon jaune",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Tomates concassées (en conserve)",
+          120,
+          "g",
+          "pantry"
+        ],
+        [
+          "Gingembre frais",
+          1,
+          "cm",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Graines de cumin",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Curcuma moulu",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Coriandre moulue",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Garam masala",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Piment de Cachemire en poudre",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Huile de colza",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Yaourt nature",
+          80,
+          "g",
+          "dairy"
+        ],
+        [
+          "Concombre",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Menthe fraîche",
+          3,
+          "g",
+          "produce"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Épluche les navets et coupe-les en cubes de 2 cm. Coupe l'oignon en petits dés, râpe le gingembre et l'ail. Rince et égoutte les pois chiches.",
+        "Dans une sauteuse, fais chauffer l'huile à feu moyen avec les graines de cumin jusqu'à ce qu'elles grésillent. Ajoute l'oignon et laisse-le dorer 6 à 8 minutes en remuant : il doit devenir brun clair, c'est ce qui donne le goût à la sauce.",
+        "Ajoute l'ail, le gingembre, le curcuma, la coriandre moulue et le piment, remue 30 secondes. Verse les tomates et laisse épaissir 3 minutes.",
+        "Ajoute les navets, les pois chiches, 100 ml d'eau et une pincée de sel. Couvre et laisse mijoter (cuire doucement à petites bulles) 20 minutes : les navets sont prêts quand ils deviennent un peu translucides et qu'un couteau les traverse sans forcer.",
+        "Pendant ce temps, prépare la raïta : râpe le concombre, presse-le dans tes mains au-dessus de l'évier pour enlever son eau, puis mélange-le avec le yaourt, la menthe hachée et une pincée de sel.",
+        "Retire le couvercle, ajoute le garam masala et laisse réduire 3 minutes si la sauce est trop liquide (elle doit napper les légumes).",
+        "Sers chaud, parsemé de coriandre fraîche, avec la raïta bien froide à côté : elle adoucit le piquant."
+      ]
+    },
+    {
+      "id": "l444",
+      "name": "Doenjang jjigae (ragoût coréen de pâte de soja, tofu, potimarron et champignons), riz complet",
+      "type": "lunch",
+      "cuisine": "asiatique",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 25,
+      "diff": 2,
+      "cost": 3.0,
+      "kcal": 430,
+      "tags": [
+        "vegan",
+        "epicerie-specialisee"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "soy",
+        "gluten",
+        "sesame"
+      ],
+      "ing": [
+        [
+          "Riz long complet",
+          45,
+          "g",
+          "pantry"
+        ],
+        [
+          "Tofu ferme",
+          120,
+          "g",
+          "pantry"
+        ],
+        [
+          "Potimarron",
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Champignons shiitakés",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon jaune",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Pâte de soja fermentée (doenjang)",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Piment coréen en flocons (gochugaru)",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Bouillon de légumes",
+          350,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Oignon nouveau (cébette)",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Huile de sésame",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Lance le riz : rince-le, mets-le dans une casserole avec 2,5 fois son volume d'eau, porte à ébullition puis laisse cuire 25 minutes à couvert à feu doux.",
+        "Lave le potimarron (pas besoin de l'éplucher, sa peau devient tendre à la cuisson), retire les graines et coupe-le en cubes de 2 cm. Coupe la courgette en demi-rondelles, l'oignon en lamelles et les shiitakés en tranches (retire le pied, il est dur). Écrase l'ail.",
+        "Dans une petite marmite, délaye la pâte de soja dans un peu de bouillon avec une cuillère, jusqu'à ce qu'il n'y ait plus de grumeaux, puis ajoute le reste du bouillon.",
+        "Ajoute le potimarron, l'oignon et l'ail. Porte à ébullition puis laisse frémir 10 minutes.",
+        "Ajoute la courgette, les champignons et le gochugaru. Coupe le tofu en cubes de 2 cm et pose-les délicatement sur le dessus (ne remue pas trop fort, sinon le tofu se casse). Laisse frémir encore 8 minutes : le potimarron doit être fondant sous la fourchette.",
+        "Goûte : la pâte de soja est déjà salée, n'ajoute du sel que si nécessaire. Coupe la cébette en fines rondelles.",
+        "Sers le ragoût bien chaud dans un bol, parsemé de cébette et d'un filet d'huile de sésame, avec le riz à côté."
+      ]
+    },
+    {
+      "id": "l445",
+      "name": "Teishoku d'hiver : saumon grillé au sel, potimarron mijoté façon nimono et riz complet",
+      "type": "lunch",
+      "cuisine": "asiatique",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 25,
+      "diff": 2,
+      "cost": 4.3,
+      "kcal": 500,
+      "tags": [
+        "epicerie-specialisee"
+      ],
+      "eq": [
+        "stove",
+        "oven"
+      ],
+      "allergens": [
+        "fish",
+        "soy",
+        "gluten",
+        "sesame"
+      ],
+      "ing": [
+        [
+          "Pavé de saumon",
+          120,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Riz long complet",
+          45,
+          "g",
+          "pantry"
+        ],
+        [
+          "Potimarron",
+          150,
+          "g",
+          "produce"
+        ],
+        [
+          "Bouillon dashi (ou bouillon de légumes)",
+          200,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Sauce soja salée (réduite en sel)",
+          2,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Mirin",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Gingembre frais",
+          1,
+          "cm",
+          "produce"
+        ],
+        [
+          "Brocoli",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Graines de sésame",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Citron jaune",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Lance le riz : rince-le, mets-le dans une casserole avec 2,5 fois son volume d'eau, porte à ébullition puis laisse cuire 25 minutes à couvert à feu doux.",
+        "Sale le saumon sur les deux faces avec une pincée de sel et laisse-le 10 minutes au frais : le sel fait sortir un peu d'eau, la peau grillera mieux. Essuie-le ensuite avec du papier absorbant.",
+        "Nimono (légumes mijotés à la japonaise) : lave le potimarron, retire les graines et coupe-le en cubes de 3 cm sans l'éplucher. Mets-les dans une petite casserole, peau en dessous, avec le dashi, la sauce soja, le mirin et le gingembre coupé en fines lamelles.",
+        "Pose un morceau de papier cuisson directement sur le potimarron (comme un couvercle qui touche les légumes : ça cuit sans les abîmer) et laisse frémir 12 à 15 minutes, jusqu'à ce que la pointe d'un couteau entre facilement. Laisse-les refroidir dans leur jus : ils prennent le goût.",
+        "Allume le grill du four (position « gril », 240 °C). Pose le saumon peau vers le haut sur une plaque recouverte de papier cuisson et enfourne en haut du four 8 à 10 minutes : la peau doit cloquer et dorer, la chair devenir rose pâle et s'effeuiller.",
+        "Pendant ce temps, coupe le brocoli en petits bouquets et fais-le cuire 4 minutes à la vapeur ou dans l'eau bouillante : il doit rester vert vif et un peu croquant. Parsème-le de graines de sésame.",
+        "Sers comme un plateau japonais : un bol de riz, le saumon avec un quartier de citron, le potimarron avec un peu de son jus, et le brocoli à côté."
+      ]
+    },
+    {
+      "id": "d432",
+      "name": "Sukiyaki léger (bœuf émincé, tofu, chou chinois et shiitakés mijotés au bouillon soja-mirin)",
+      "type": "dinner",
+      "cuisine": "asiatique",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 15,
+      "diff": 2,
+      "cost": 4.5,
+      "kcal": 410,
+      "tags": [
+        "epicerie-specialisee"
+      ],
+      "eq": [
+        "stove",
+        "cast-iron"
+      ],
+      "allergens": [
+        "soy",
+        "gluten"
+      ],
+      "ing": [
+        [
+          "Bœuf à fondue (tranches très fines)",
+          100,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Tofu ferme",
+          80,
+          "g",
+          "pantry"
+        ],
+        [
+          "Chou chinois",
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Champignons shiitakés",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Poireau",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Carotte",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Nouilles de konjac (shirataki)",
+          80,
+          "g",
+          "pantry"
+        ],
+        [
+          "Sauce soja salée (réduite en sel)",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Mirin",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Bouillon dashi (ou bouillon de légumes)",
+          200,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Huile de colza",
+          1,
+          "c.à.c",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Rince les nouilles de konjac sous l'eau froide 1 minute dans une passoire (ça enlève leur odeur), puis plonge-les 2 minutes dans l'eau bouillante et égoutte-les.",
+        "Coupe le chou chinois en tronçons de 4 cm, le poireau en biseaux (en tranches de travers) de 1 cm, la carotte en fines rondelles et le tofu en cubes de 2 cm. Retire le pied des shiitakés et garde-les entiers.",
+        "Mélange la sauce soja, le mirin et le bouillon dans un bol : c'est le warishita, le bouillon de cuisson.",
+        "Fais chauffer l'huile dans une sauteuse ou une cocotte en fonte à feu vif. Saisis les tranches de bœuf 30 secondes de chaque côté : elles doivent juste changer de couleur. Retire-les sur une assiette (elles finiront de cuire plus tard).",
+        "Dans la même cocotte, range les légumes, le tofu et les nouilles par petits tas séparés, comme une palette de peinture. Verse le bouillon, couvre et laisse frémir 8 à 10 minutes : le chou doit devenir tendre et translucide.",
+        "Remets le bœuf par-dessus et laisse 1 minute, juste pour le réchauffer : s'il cuit trop longtemps, il devient dur.",
+        "Pose la cocotte au milieu de la table et sers chacun à la louche, avec un peu de bouillon. (La version traditionnelle trempe la viande dans un œuf cru : on s'en passe ici.)"
+      ]
+    },
+    {
+      "id": "l446",
+      "name": "Silq bel hommos (ragoût tunisien de blettes et pois chiches au cumin), boulgour complet",
+      "type": "lunch",
+      "cuisine": "maghrebin",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 30,
+      "diff": 1,
+      "cost": 2.3,
+      "kcal": 450,
+      "tags": [
+        "vegan",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "ing": [
+        [
+          "Boulgour complet",
+          45,
+          "g",
+          "pantry"
+        ],
+        [
+          "Blettes",
+          200,
+          "g",
+          "produce"
+        ],
+        [
+          "Pois chiches cuits (en bocal, égouttés)",
+          120,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon jaune",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          2,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Concentré de tomate",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Harissa",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Cumin moulu",
+          1,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Carvi moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Citron jaune",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Lave les blettes. Sépare les côtes blanches des feuilles vertes en coupant le long de la côte. Coupe les côtes en tronçons de 1 cm et les feuilles en larges lanières (garde-les à part : elles cuisent beaucoup plus vite).",
+        "Coupe l'oignon en petits dés et écrase l'ail. Rince et égoutte les pois chiches.",
+        "Fais chauffer l'huile d'olive dans une sauteuse à feu moyen. Ajoute l'oignon et les côtes de blettes, fais revenir 6 minutes en remuant, jusqu'à ce que l'oignon devienne translucide.",
+        "Ajoute l'ail, le concentré de tomate, la harissa, le cumin et le carvi. Remue 1 minute : le concentré doit foncer légèrement et coller un peu au fond, c'est ce qui donne du goût.",
+        "Ajoute les pois chiches et 200 ml d'eau en grattant le fond avec la cuillère pour décoller les sucs (les petits morceaux caramélisés). Couvre et laisse mijoter 15 minutes à feu doux.",
+        "Pendant ce temps, fais cuire le boulgour : mets-le dans une casserole avec 2 fois son volume d'eau salée, porte à ébullition puis laisse gonfler 10 minutes à couvert, feu éteint.",
+        "Ajoute les feuilles de blettes dans le ragoût et laisse cuire 5 minutes à découvert : elles doivent devenir souples et vert foncé. La sauce doit être épaisse ; si elle est trop liquide, laisse réduire 2 minutes de plus.",
+        "Goûte, sale, poivre, ajoute le jus de citron et sers avec le boulgour. Encore meilleur réchauffé le lendemain."
+      ]
+    },
+    {
+      "id": "d433",
+      "name": "Lablabi léger (soupe tunisienne de pois chiches à l'ail, cumin et harissa, œuf mollet)",
+      "type": "dinner",
+      "cuisine": "maghrebin",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 25,
+      "diff": 1,
+      "cost": 1.9,
+      "kcal": 380,
+      "tags": [
+        "vegetarian",
+        "kid-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "eggs"
+      ],
+      "ing": [
+        [
+          "Pois chiches cuits (en bocal, égouttés)",
+          150,
+          "g",
+          "pantry"
+        ],
+        [
+          "Œuf",
+          1,
+          "u",
+          "dairy"
+        ],
+        [
+          "Ail",
+          2,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Bouillon de légumes",
+          350,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Cumin moulu",
+          1,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Harissa",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Câpres",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Persil plat",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron jaune",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Rince et égoutte les pois chiches. Épluche l'ail et écrase-le en purée avec le plat du couteau et une pincée de sel.",
+        "Mets les pois chiches, une partie de l'ail, une partie du cumin et le bouillon dans une casserole. Porte à ébullition puis laisse frémir 15 minutes : les pois chiches doivent devenir très tendres.",
+        "Pendant ce temps, fais cuire l'œuf mollet : plonge-le délicatement avec une cuillère dans une petite casserole d'eau bouillante et compte exactement 6 minutes. Mets-le aussitôt dans un bol d'eau très froide pour arrêter la cuisson, puis écale-le (enlève la coquille) en le roulant doucement sur le plan de travail.",
+        "Écrase grossièrement un tiers des pois chiches dans la casserole avec un presse-purée ou une fourchette : ça épaissit la soupe tout en gardant des morceaux.",
+        "Dans un petit bol, mélange la harissa avec le reste de l'ail, le reste du cumin, l'huile d'olive et le jus de citron.",
+        "Verse la soupe dans un bol creux, pose l'œuf coupé en deux au centre (le jaune doit couler un peu), arrose du mélange harissa-ail et parsème de câpres et de persil haché. Mélange au moment de manger."
+      ]
+    },
+    {
+      "id": "d434",
+      "name": "Merlu au four à la chermoula, carottes et fenouil rôtis au cumin",
+      "type": "dinner",
+      "cuisine": "maghrebin",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "rest": 15,
+      "diff": 1,
+      "cost": 3.8,
+      "kcal": 360,
+      "tags": [],
+      "eq": [
+        "oven",
+        "bowl"
+      ],
+      "allergens": [
+        "fish"
+      ],
+      "ing": [
+        [
+          "Filet de merlu",
+          140,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Carotte",
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Fenouil",
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Coriandre fraîche",
+          8,
+          "g",
+          "produce"
+        ],
+        [
+          "Persil plat",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Cumin moulu",
+          1,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Paprika doux",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Citron jaune",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Huile d'olive",
+          1.5,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Olives vertes dénoyautées",
+          15,
+          "g",
+          "pantry"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 210 °C. Épluche les carottes et coupe-les en bâtonnets de la taille d'un doigt. Coupe le fenouil en quartiers fins (garde le cœur, il tient les lamelles ensemble) et l'oignon rouge en quartiers.",
+        "Sur une plaque recouverte de papier cuisson, mélange les légumes avec la moitié du cumin, une cuillère à soupe d'huile et une pincée de sel. Enfourne 15 minutes.",
+        "Pendant ce temps, prépare la chermoula (marinade verte maghrébine) : hache très finement la coriandre, le persil et l'ail, puis mélange-les avec le reste du cumin, le paprika, le jus du citron, le reste de l'huile et une pincée de sel.",
+        "Étale la moitié de la chermoula sur le poisson des deux côtés et laisse reposer 15 minutes à température ambiante (le temps que les légumes avancent).",
+        "Sors la plaque, retourne les légumes avec une spatule, pousse-les sur les côtés et pose le poisson au milieu. Ajoute les olives. Remets au four 12 à 15 minutes : le merlu est cuit quand sa chair devient blanche, opaque et se sépare en lamelles quand tu appuies avec une fourchette.",
+        "Les légumes sont prêts quand ils sont dorés sur les bords et tendres sous la pointe du couteau. Sers aussitôt, avec le reste de la chermoula versé sur le poisson."
+      ]
     }
   ]
 };
