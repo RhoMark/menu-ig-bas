@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.120.0</title>
+<title>Menu IG Bas — V2.121.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21662,6 +21662,50 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
   );
 }
 
+// ----- V3 — Carte de recette de la bibliothèque (refonte 1F) ---------------
+// Vignette (photo + mention IA, ou repli illustré), cuisine · repas, titre
+// Fraunces, temps / kcal / coût, pastilles IG-CG, hors saison et allergies
+// du foyer (rouge, jamais adoucie), note du foyer.
+function LibraryCardV3({r, isFav, currentSeason, ratings, profile, onOpen}) {
+  const gly = computeRecipeGlycemic(r);
+  const tier = gly ? glycemicTier(gly.cg) : null;
+  const hits = (r.allergens || []).filter(a => (profile.globalAllergies || []).includes(a) || membersAllergicTo(profile, [a]).length > 0);
+  const eff = getEffectiveRating(ratings, r.id, profile);
+  const isRated = ratings[r.id] != null;
+  const typeLabel = ALL_MEALS.find(m => m.key === r.type)?.label || r.type;
+  return (
+    <button type="button" onClick={onOpen}
+      className="text-left bg-surface rounded-card shadow-card border border-line overflow-hidden hover:-translate-y-0.5 hover:shadow-lg transition flex flex-col">
+      <div className="relative w-full">
+        {r.photo
+          ? <img src={r.photo} alt="" loading="lazy" className="w-full aspect-[16/9] object-cover bg-surface-2" />
+          : <div className="w-full aspect-[16/9] bg-gradient-to-br from-sage-soft via-surface-2 to-terracotta-soft flex items-center justify-center text-4xl" aria-hidden="true">
+              {((dataRef.cuisines() || []).find(c => c.id === r.cuisine && c.id !== "universel") || {}).emoji || "🍽️"}
+            </div>}
+        {isFav && <span className="absolute left-2 top-2 bg-surface/90 rounded-full w-8 h-8 flex items-center justify-center text-base" title="Recette favorite">⭐</span>}
+        {r.photo && <span className="absolute right-2 bottom-2 text-[10px] bg-black/55 text-white px-1.5 py-0.5 rounded-full">Image générée par IA</span>}
+      </div>
+      <div className="p-3.5 flex-1 flex flex-col gap-1.5">
+        <p className="text-[11px] font-bold uppercase tracking-wide text-brand">{dataRef.cuisineLabel(r.cuisine)} · {typeLabel}</p>
+        <h3 className="font-title font-semibold text-[17px] leading-snug text-ink">
+          {r.name}
+          {recipeAdvanceInfo(r) && <span className="ml-1" title={`À préparer ${recipeAdvanceInfo(r).label}`}>{recipeAdvanceInfo(r).icon}</span>}
+        </h3>
+        <p className="text-sm text-muted">
+          ⏱ {recipeActiveMinutes(r)} min{recipeRestMinutes(r) > 0 && ` + ${recipeRestMinutes(r) >= 60 ? Math.round(recipeRestMinutes(r)/60*10)/10 + " h" : recipeRestMinutes(r) + " min"} repos`} · {r.kcal} kcal · {recipeEffectiveCost(r).toFixed(2)} €
+        </p>
+        <div className="flex flex-wrap gap-1 text-xs font-semibold mt-auto pt-1">
+          {gly && <span className={`px-2 py-0.5 rounded-full ${tier === "low" ? "bg-brand-soft text-brand" : tier === "medium" ? "bg-terracotta-soft text-terracotta" : "bg-danger-soft text-danger"}`}>
+            {tier === "low" ? "IG bas" : tier === "medium" ? "IG modéré" : "IG élevé"} · CG {gly.cg}</span>}
+          {recipeIsOutOfSeason(r, currentSeason) && <span className="px-2 py-0.5 rounded-full bg-terracotta-soft text-terracotta">Hors saison</span>}
+          {hits.length > 0 && <span className="px-2 py-0.5 rounded-full bg-danger text-white" title="Contient un allergène d'un membre du foyer">🚫 {hits.map(a => dataRef.allergenLabel(a)).join(", ")}</span>}
+          {isRated && <span className="px-2 py-0.5 rounded-full bg-surface-2 text-ink">★ {eff.toFixed(1)}</span>}
+        </div>
+      </div>
+    </button>
+  );
+}
+
 // ----- Library View --------------------------------------------------------
 function LibraryView({state, onSelectRecipe, rateRecipe}) {
   const [filter, setFilter] = useState("all");
@@ -21722,6 +21766,14 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
           <option value="snack">Goûters</option>
         </select>
       </div>
+      {window.__V3_UI ? (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
+        {filtered.map(r => (
+          <LibraryCardV3 key={r.id} r={r} isFav={favSet.has(r.id)} currentSeason={currentSeason}
+            ratings={state.ratings} profile={state.profile} onOpen={() => onSelectRecipe(r.id)} />
+        ))}
+      </div>
+      ) : (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {filtered.map(r => (
           <div key={r.id} className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 hover:shadow-lg transition p-4 cursor-pointer"
@@ -21781,6 +21833,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
           </div>
         ))}
       </div>
+      )}
     </div>
   );
 }
