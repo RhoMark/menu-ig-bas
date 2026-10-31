@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.124.0</title>
+<title>Menu IG Bas — V2.124.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -24280,15 +24280,16 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
         </div>
       </div>
 
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
+        <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-3">Exclusions préférentielles</h3>
+        {section === "foyer" && <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">Ingrédients évités pour toute la famille, par goût (ce ne sont pas des allergies). Pour un seul membre, utilise ses « Exclusions préférentielles » dans sa fiche ci-dessus.</p>}
+        <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
+      </div>
       </fieldset>
       </>)}
 
       {section !== "foyer" && (<>
       <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
-        <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-3">Exclusions préférentielles</h3>
-        <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
-      </div>
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
         <h3 className="font-bold text-slate-800 dark:text-slate-100">Repas et rythme</h3>
