@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.118.0</title>
+<title>Menu IG Bas — V2.118.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -13899,6 +13899,18 @@ function displayCanonName(canon) {
   if (!canon) return "";
   return canon.charAt(0).toUpperCase() + canon.slice(1);
 }
+// V2.118.1 — Libellé affiché d'un article agrégé : le nom tel qu'écrit dans
+// les recettes (accents, apostrophes, option entre parenthèses — règle
+// « dénominations » de CLAUDE.md), le plus fréquent parmi ceux qui
+// correspondent exactement à l'article. À défaut (ex. « Pomme râpée » rangée
+// sous « Pomme »), le nom canonique. Avant : « Huile dolive », « Pates completes ».
+function pickDisplayLabel(labels, canon) {
+  let best = null, n = 0;
+  for (const [lab, c] of Object.entries(labels || {})) {
+    if (c > n && canonicalName(lab) === canon) { best = lab; n = c; }
+  }
+  return best || displayCanonName(canon);
+}
 
 // Fruits/légumes : la table de poids/pièce vit désormais dans <script id="data-ingredients">,
 // et la résolution se fait via dataRef.produceUnitWeight() (cf. couche d'accès données).
@@ -16528,7 +16540,7 @@ function suggestBudgetSubstitutions(byCat, profile, actualCost, target) {
       const savings  = costFrom - costTo;
       if (savings < 0.30) continue; // <30 cts, pas la peine de suggérer
       suggestions.push({
-        from: it.name,
+        from: it.label || it.name,
         to: sub.toLabel,
         rationale: sub.rationale,
         category: sub.category,
@@ -16571,8 +16583,10 @@ function aggregateShoppingList(weekMenu, profile) {
       if (conv) { cQty = conv.qty; cUnit = conv.unit; }
       const key = `${cName}|${cUnit}|${category}`;
       if (!agg[key]) {
-        agg[key] = {name: displayCanonName(cName), qty: 0, unit: cUnit, category};
+        // `name` reste la clé stable (cases cochées, sous-groupes) ; `label` = affichage.
+        agg[key] = {name: displayCanonName(cName), canon: cName, labels: {}, qty: 0, unit: cUnit, category};
       }
+      agg[key].labels[name] = (agg[key].labels[name] || 0) + 1;
       agg[key].qty += scaleQty(cQty, mult, cName, category);
     });
   };
@@ -16620,6 +16634,8 @@ function aggregateShoppingList(weekMenu, profile) {
   // group by category
   const byCat = {};
   Object.values(agg).forEach(item => {
+    item.label = pickDisplayLabel(item.labels, item.canon);
+    delete item.labels; delete item.canon;
     if (!byCat[item.category]) byCat[item.category] = [];
     byCat[item.category].push(item);
   });
@@ -21739,7 +21755,7 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
                             return (
                               <li key={`${g.id}_${i}`} className="flex items-center gap-2">
                                 <input type="checkbox" checked={!!got} onChange={() => onTogglePantry(key)} />
-                                <span className={`flex-1 ${got ? "line-through text-slate-400 dark:text-slate-500" : "text-slate-700 dark:text-slate-200"}`}>{it.name}</span>
+                                <span className={`flex-1 ${got ? "line-through text-slate-400 dark:text-slate-500" : "text-slate-700 dark:text-slate-200"}`}>{it.label || it.name}</span>
                                 <span className="font-mono text-sm text-slate-600 dark:text-slate-300">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
                               </li>
                             );
@@ -21756,7 +21772,7 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
                       return (
                         <li key={i} className="flex items-center gap-2">
                           <input type="checkbox" checked={!!got} onChange={() => onTogglePantry(key)} />
-                          <span className={`flex-1 ${got ? "line-through text-slate-400 dark:text-slate-500" : "text-slate-700 dark:text-slate-200"}`}>{it.name}</span>
+                          <span className={`flex-1 ${got ? "line-through text-slate-400 dark:text-slate-500" : "text-slate-700 dark:text-slate-200"}`}>{it.label || it.name}</span>
                           <span className="font-mono text-sm text-slate-600 dark:text-slate-300">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
                         </li>
                       );
@@ -21888,7 +21904,7 @@ function computeRecentStats(menus, profile, count = 8) {
             if (!canon) return;
             const prev = ingredientFreq.get(canon);
             if (prev) prev.count++;
-            else ingredientFreq.set(canon, {count: 1, label: displayCanonName(canon)});
+            else ingredientFreq.set(canon, {count: 1, label: canonicalName(rawName) === canon ? rawName : displayCanonName(canon)});
           });
           const tags = recipe.tags || [];
           const allergens = recipe.allergens || [];
@@ -24708,7 +24724,7 @@ function PrintShoppingPage({weekStart, menu, profile, pantryChecks, manualItems}
                         {g.items.map((it,i) => (
                           <li key={`${g.id}_${i}`} className="flex items-baseline gap-2 py-0.5">
                             <span className="inline-block border border-slate-400 w-3 h-3 flex-shrink-0"></span>
-                            <span className="flex-1">{it.name}</span>
+                            <span className="flex-1">{it.label || it.name}</span>
                             <span className="font-mono text-slate-700 dark:text-slate-200 text-[9pt]">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
                           </li>
                         ))}
@@ -24721,7 +24737,7 @@ function PrintShoppingPage({weekStart, menu, profile, pantryChecks, manualItems}
                   {list.map((it,i) => (
                     <li key={i} className="flex items-baseline gap-2 py-0.5">
                       <span className="inline-block border border-slate-400 w-3 h-3 flex-shrink-0"></span>
-                      <span className="flex-1">{it.name}</span>
+                      <span className="flex-1">{it.label || it.name}</span>
                       <span className="font-mono text-slate-700 dark:text-slate-200 text-[9pt]">{formatQtyShopping(it.qty, it.unit, it.name, it.category)}</span>
                     </li>
                   ))}
