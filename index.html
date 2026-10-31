@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.123.0</title>
+<title>Menu IG Bas — V2.124.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -19170,8 +19170,11 @@ function App({initialState}) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {window.__V3_UI ? <V3Nav view={view} setView={setView} /> : <TopBar view={view} setView={setView} />}
+      {window.__V3_UI ? <V3Nav view={view} setView={setView} state={state} /> : <TopBar view={view} setView={setView} />}
       <main className={`flex-1 container mx-auto px-4 py-6 max-w-7xl ${window.__V3_UI ? "pb-28 md:pb-6 md:pl-64" : ""}`}>
+        {view === "foyer" && window.__V3_UI && (
+          <SettingsView state={state} update={update} updateProfile={updateProfile} section="foyer" />
+        )}
         {view === "setup" && (
           <SetupView state={state} update={update} updateProfile={updateProfile}
             onDone={() => { update({onboarded:true}); regenerate({keepLocked:false}); setView("menu"); }} />
@@ -19242,7 +19245,7 @@ function App({initialState}) {
           <FaqView />
         )}
         {view === "settings" && (
-          <SettingsView state={state} update={update} updateProfile={updateProfile} />
+          <SettingsView state={state} update={update} updateProfile={updateProfile} section={window.__V3_UI ? "settings" : "all"} />
         )}
       </main>
       {selectedRecipe && (
@@ -19475,6 +19478,7 @@ const V3_ICON_PATHS = {
   history: "M5 19V11M10 19V6M15 19v-5M20 19V9",
   faq: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01",
   settings: "M4 7h10M18 7h2M4 17h4M12 17h8M16 5v4M10 15v4",
+  foyer: "M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20a6 6 0 0 1 12 0M16 11a2.5 2.5 0 1 0 0-5M17.5 20H21a4.5 4.5 0 0 0-4.5-4.5",
   more: "M6 12h.01M12 12h.01M18 12h.01",
 };
 function V3Icon({name, className = "w-5 h-5"}) {
@@ -19490,11 +19494,53 @@ const V3_TABS = [
   {key: "history",  label: "Suivi"},
   {key: "month",    label: "Vue mensuelle"},
   {key: "faq",      label: "Aide"},
+  {key: "foyer",    label: "Mon foyer"},
   {key: "settings", label: "Paramètres"},
 ];
+const V3_FOOT_KEYS = ["foyer", "settings"]; // barre latérale : en bas, à côté du profil
+
+// Pastille d'un membre (initiale sur fond doux) — mêmes couleurs partout.
+const memberAvatarClass = m => ["bg-brand-soft text-brand", "bg-terracotta-soft text-terracotta", "bg-sage-soft text-ink"][((m?.id || 1) - 1) % 3];
+
+// Badge « qui est connecté sur cet appareil » (foyer partagé : membre de
+// l'appareil perso ou membre choisi sur la tablette ; sinon le foyer entier).
+// Appareil partagé : le badge ouvre « C'est qui ? » ; sinon il mène à Mon foyer.
+function V3ProfileBadge({state, compact = false, onOpenFoyer}) {
+  const actor = useActorContext(state);
+  const [pick, setPick] = useState(false);
+  const members = state.profile?.members || [];
+  const roleTxt = r => r === "admin" ? "Admin" : r === "coadmin" ? "Co-admin" : "Membre";
+  let initial, title, sub, cls;
+  if (!actor.shared) { initial = "👪"; title = "Mon foyer"; sub = `${members.length} membre${members.length > 1 ? "s" : ""}`; cls = "bg-sage-soft text-ink"; }
+  else if (actor.actor) { initial = actor.actor.name.trim().charAt(0).toUpperCase(); title = actor.actor.name; sub = roleTxt(actor.role) + (actor.deviceMode === "shared" ? " · tablette" : ""); cls = memberAvatarClass(actor.actor); }
+  else { initial = "?"; title = actor.deviceMode === "shared" ? "Qui utilise ?" : "Profil non choisi"; sub = actor.deviceMode === "shared" ? "Appareil partagé" : "Appareil perso"; cls = "bg-surface-2 text-muted"; }
+  const onClick = () => actor.deviceMode === "shared" ? setPick(o => !o) : onOpenFoyer();
+  return (
+    <div className="relative">
+      <button onClick={onClick} aria-label={`Profil connecté : ${title}`} title={`Profil connecté sur cet appareil : ${title}`}
+        className={compact ? "flex items-center" : "w-full flex items-center gap-3 px-2 py-2 rounded-xl hover:bg-surface-2 text-left"}>
+        <span className={`w-9 h-9 rounded-full flex items-center justify-center font-bold flex-shrink-0 ${cls}`}>{initial}</span>
+        {!compact && <span className="min-w-0"><span className="block font-semibold text-ink truncate">{title}</span><span className="block text-xs text-muted truncate">{sub}</span></span>}
+      </button>
+      {pick && (
+        <div className={`absolute z-50 w-56 bg-surface border border-line rounded-2xl shadow-card p-2 ${compact ? "right-0 top-11" : "left-0 bottom-14"}`}>
+          <p className="px-2 py-1 text-xs font-bold text-muted">C'est qui ?</p>
+          {members.map(m => (
+            <button key={m.id} onClick={async () => { if (await activateMember(m)) setPick(false); }}
+              className={`w-full flex items-center gap-2 px-2 py-2 rounded-xl text-left hover:bg-surface-2 ${actor.actorId === m.id ? "bg-brand-soft" : ""}`}>
+              <span className={`w-7 h-7 rounded-full flex items-center justify-center text-sm font-bold ${memberAvatarClass(m)}`}>{m.name.trim().charAt(0).toUpperCase()}</span>
+              <span className="flex-1 text-ink font-semibold">{m.name}</span>{m.pin ? "🔢" : ""}
+            </button>
+          ))}
+          {actor.actorId != null && <button onClick={() => { activeMemberStore.set(null); setPick(false); }} className="w-full px-2 py-2 rounded-xl text-left text-sm text-muted hover:bg-surface-2">Terminer (personne)</button>}
+        </div>
+      )}
+    </div>
+  );
+}
 const V3_BOTTOM_KEYS = ["menu", "shopping", "library", "history"];
 
-function V3Nav({view, setView}) {
+function V3Nav({view, setView, state}) {
   const [moreOpen, setMoreOpen] = useState(false);
   const go = key => { setView(key); setMoreOpen(false); };
   const more = V3_TABS.filter(t => !V3_BOTTOM_KEYS.includes(t.key));
@@ -19508,7 +19554,7 @@ function V3Nav({view, setView}) {
       <aside className="no-print hidden md:flex fixed inset-y-0 left-0 w-60 flex-col bg-surface border-r border-line z-30">
         <div className="px-5 pt-6 pb-4">{wordmark}</div>
         <nav className="flex-1 px-3 space-y-1" aria-label="Navigation principale">
-          {V3_TABS.map(t => (
+          {V3_TABS.filter(t => !V3_FOOT_KEYS.includes(t.key)).map(t => (
             <button key={t.key} onClick={() => go(t.key)} aria-current={view === t.key ? "page" : undefined}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition ${
                 view === t.key ? "bg-brand-soft text-brand" : "text-muted hover:bg-surface-2 hover:text-ink"}`}>
@@ -19516,7 +19562,15 @@ function V3Nav({view, setView}) {
             </button>
           ))}
         </nav>
-        <div className="px-3 pb-5">
+        <div className="px-3 pb-5 pt-3 space-y-1 border-t border-line">
+          <V3ProfileBadge state={state} onOpenFoyer={() => go("foyer")} />
+          {V3_TABS.filter(t => V3_FOOT_KEYS.includes(t.key)).map(t => (
+            <button key={t.key} onClick={() => go(t.key)} aria-current={view === t.key ? "page" : undefined}
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition ${
+                view === t.key ? "bg-brand-soft text-brand" : "text-muted hover:bg-surface-2 hover:text-ink"}`}>
+              <V3Icon name={t.key} />{t.label}
+            </button>
+          ))}
           <ThemeToggle className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold text-muted hover:bg-surface-2 hover:text-ink transition" />
         </div>
       </aside>
@@ -19524,7 +19578,10 @@ function V3Nav({view, setView}) {
       {/* Téléphone : en-tête léger + barre d'onglets en bas */}
       <header className="no-print md:hidden sticky top-0 z-30 bg-canvas/95 backdrop-blur border-b border-line px-4 py-3 flex items-center justify-between">
         {wordmark}
-        <ThemeToggle className="flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold text-muted hover:bg-surface-2" />
+        <div className="flex items-center gap-1">
+          <ThemeToggle className="flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold text-muted hover:bg-surface-2" />
+          <V3ProfileBadge state={state} compact onOpenFoyer={() => go("foyer")} />
+        </div>
       </header>
       {moreOpen && (
         <div className="no-print md:hidden fixed inset-0 z-40" onClick={() => setMoreOpen(false)}>
@@ -23803,7 +23860,7 @@ function PinPromptHost() {
   );
 }
 
-function SettingsView({state, update, updateProfile}) {
+function SettingsView({state, update, updateProfile, section = "all"}) {
   const p = state.profile;
   // S6 — Foyer partagé : droits de l'acteur (INV-3). Foyer non partagé → full = true.
   const actor = useActorContext(state);
@@ -24051,7 +24108,7 @@ function SettingsView({state, update, updateProfile}) {
 
   return (
     <div className="space-y-4 max-w-3xl">
-      <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold" : "text-xl font-bold"}>{window.__V3_UI ? "Paramètres" : "⚙️ Paramètres"}</h2>
+      <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold" : "text-xl font-bold"}>{section === "foyer" ? "Mon foyer" : window.__V3_UI ? "Paramètres" : "⚙️ Paramètres"}</h2>
       {actor.shared && !full && (
         <p className="text-sm border border-sky-300 dark:border-sky-700 bg-sky-50 dark:bg-sky-950 text-sky-900 dark:text-sky-100 rounded p-3">
           🔒 Foyer partagé : {actor.actor ? <>tu es <strong>{actor.actor.name}</strong></> : "personne n'est sélectionné sur cet appareil"}.
@@ -24061,8 +24118,10 @@ function SettingsView({state, update, updateProfile}) {
         </p>
       )}
 
+      {/* Nouvelle interface : « Mon foyer » (membres + allergies communes) est sa propre section. */}
+      {section !== "settings" && (<>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
-        <h3 className={window.__V3_UI ? "font-title text-2xl font-semibold mb-3" : "font-bold text-slate-800 dark:text-slate-100 mb-3"}>{window.__V3_UI ? "Mon foyer" : "Famille"}</h3>
+        <h3 className={window.__V3_UI ? "font-title text-2xl font-semibold mb-3" : "font-bold text-slate-800 dark:text-slate-100 mb-3"}>{section === "foyer" ? "Membres" : window.__V3_UI ? "Mon foyer" : "Famille"}</h3>
         {p.members.map(m => {
           const memberAllergies = m.allergies || [];
           const own = actor.actorId === m.id;
@@ -24221,6 +24280,11 @@ function SettingsView({state, update, updateProfile}) {
         </div>
       </div>
 
+      </fieldset>
+      </>)}
+
+      {section !== "foyer" && (<>
+      <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-3">Exclusions préférentielles</h3>
         <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
@@ -24750,6 +24814,8 @@ function SettingsView({state, update, updateProfile}) {
           Tout effacer et recommencer
         </button>
       </div>
+
+      </>)}
 
       {pendingAllergy && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={cancelPendingAllergy}>
