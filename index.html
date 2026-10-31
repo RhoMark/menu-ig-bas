@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.117.2</title>
+<title>Menu IG Bas — V2.118.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -19146,8 +19146,8 @@ function App({initialState}) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <TopBar view={view} setView={setView} />
-      <main className="flex-1 container mx-auto px-4 py-6 max-w-7xl">
+      {window.__V3_UI ? <V3Nav view={view} setView={setView} /> : <TopBar view={view} setView={setView} />}
+      <main className={`flex-1 container mx-auto px-4 py-6 max-w-7xl ${window.__V3_UI ? "pb-28 md:pb-6 md:pl-64" : ""}`}>
         {view === "setup" && (
           <SetupView state={state} update={update} updateProfile={updateProfile}
             onDone={() => { update({onboarded:true}); regenerate({keepLocked:false}); setView("menu"); }} />
@@ -19248,7 +19248,7 @@ function App({initialState}) {
         />
       )}
       <PinPromptHost />
-      <footer className="no-print bg-slate-900 text-slate-400 dark:text-slate-500 text-center py-3 text-xs">
+      <footer className={`no-print bg-slate-900 text-slate-400 dark:text-slate-500 text-center py-3 text-xs ${window.__V3_UI ? "md:pl-60 mb-[calc(4rem+env(safe-area-inset-bottom))] md:mb-0" : ""}`}>
         {/* S3 — 5 touches rapides sur la version = bascule du labo « Foyer partagé »
             (indispensable sur une app iPhone installée : pas de barre d'adresse pour ?sync=lab). */}
         <span onClick={labTap}>Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""}</span> — prototype local • Données stockées dans votre navigateur ·{" "}
@@ -19268,7 +19268,7 @@ function App({initialState}) {
 // thème AVANT le déchiffrement du V2 envelope (cf. <script> bootstrap dans
 // <head>) et d'éviter le flash de page blanche au boot.
 const THEME_STORAGE_KEY = "menu-ig-bas-theme";
-function ThemeToggle() {
+function ThemeToggle({className = "no-print px-3 py-2 rounded-md text-sm font-medium hover:bg-emerald-600/50 transition flex items-center gap-1.5 text-white"}) {
   const [theme, setTheme] = useState(() => localStorage.getItem(THEME_STORAGE_KEY) || "auto");
   // Applique le thème : auto → suit le système, sinon force la classe.
   useEffect(() => {
@@ -19298,7 +19298,7 @@ function ThemeToggle() {
     <button onClick={cycle}
       title={`Thème : ${label} — clic pour changer`}
       aria-label={`Thème ${label}`}
-      className="no-print px-3 py-2 rounded-md text-sm font-medium hover:bg-emerald-600/50 transition flex items-center gap-1.5 text-white">
+      className={className}>
       <span className="text-base">{icon}</span>
       <span className="hidden sm:inline">{label}</span>
     </button>
@@ -19435,6 +19435,105 @@ function TopBar({view, setView}) {
         <ThemeToggle />
       </div>
     </header>
+  );
+}
+
+// ----- V3 — Navigation (refonte 1B) ----------------------------------------
+// Nouvelle interface seulement (window.__V3_UI) : barre d'onglets en bas sur
+// téléphone (4 onglets + « Plus »), barre latérale sur ordinateur (≥ md).
+// Couleurs = tokens de la marque (tailwind-input.css). Icônes SVG tracées à la
+// main (aucune bibliothèque externe).
+const V3_ICON_PATHS = {
+  menu: "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4",
+  month: "M4 6h16v14H4zM4 10h16M8 3v4M16 3v4M8 14h2M14 14h2M8 17h2M14 17h2",
+  shopping: "M5 9h14l-1.5 10h-11zM9 9l3-5 3 5",
+  library: "M4 5h6a2 2 0 0 1 2 2v12a2 2 0 0 0-2-2H4zM20 5h-6a2 2 0 0 0-2 2v12a2 2 0 0 1 2-2h6z",
+  history: "M5 19V11M10 19V6M15 19v-5M20 19V9",
+  faq: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6M12 17h.01",
+  settings: "M4 7h10M18 7h2M4 17h4M12 17h8M16 5v4M10 15v4",
+  more: "M6 12h.01M12 12h.01M18 12h.01",
+};
+function V3Icon({name, className = "w-5 h-5"}) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"
+      className={className} aria-hidden="true"><path d={V3_ICON_PATHS[name]} /></svg>
+  );
+}
+const V3_TABS = [
+  {key: "menu",     label: "Planning"},
+  {key: "shopping", label: "Courses"},
+  {key: "library",  label: "Recettes"},
+  {key: "history",  label: "Suivi"},
+  {key: "month",    label: "Vue mensuelle"},
+  {key: "faq",      label: "Aide"},
+  {key: "settings", label: "Paramètres"},
+];
+const V3_BOTTOM_KEYS = ["menu", "shopping", "library", "history"];
+
+function V3Nav({view, setView}) {
+  const [moreOpen, setMoreOpen] = useState(false);
+  const go = key => { setView(key); setMoreOpen(false); };
+  const more = V3_TABS.filter(t => !V3_BOTTOM_KEYS.includes(t.key));
+  const moreActive = more.some(t => t.key === view);
+  const wordmark = (
+    <span className="font-title text-2xl font-semibold text-ink tracking-tight">Menu IG Bas</span>
+  );
+  return (
+    <>
+      {/* Ordinateur : barre latérale */}
+      <aside className="no-print hidden md:flex fixed inset-y-0 left-0 w-60 flex-col bg-surface border-r border-line z-30">
+        <div className="px-5 pt-6 pb-4">{wordmark}</div>
+        <nav className="flex-1 px-3 space-y-1" aria-label="Navigation principale">
+          {V3_TABS.map(t => (
+            <button key={t.key} onClick={() => go(t.key)} aria-current={view === t.key ? "page" : undefined}
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition ${
+                view === t.key ? "bg-brand-soft text-brand" : "text-muted hover:bg-surface-2 hover:text-ink"}`}>
+              <V3Icon name={t.key} />{t.label}
+            </button>
+          ))}
+        </nav>
+        <div className="px-3 pb-5">
+          <ThemeToggle className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold text-muted hover:bg-surface-2 hover:text-ink transition" />
+        </div>
+      </aside>
+
+      {/* Téléphone : en-tête léger + barre d'onglets en bas */}
+      <header className="no-print md:hidden sticky top-0 z-30 bg-canvas/95 backdrop-blur border-b border-line px-4 py-3 flex items-center justify-between">
+        {wordmark}
+        <ThemeToggle className="flex items-center gap-1.5 px-3 py-2 rounded-full text-sm font-semibold text-muted hover:bg-surface-2" />
+      </header>
+      {moreOpen && (
+        <div className="no-print md:hidden fixed inset-0 z-40" onClick={() => setMoreOpen(false)}>
+          <div className="absolute right-3 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] w-56 bg-surface border border-line rounded-2xl shadow-card p-2"
+            onClick={e => e.stopPropagation()}>
+            {more.map(t => (
+              <button key={t.key} onClick={() => go(t.key)} aria-current={view === t.key ? "page" : undefined}
+                className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold ${
+                  view === t.key ? "bg-brand-soft text-brand" : "text-ink hover:bg-surface-2"}`}>
+                <V3Icon name={t.key} />{t.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+      <nav className="no-print md:hidden fixed bottom-0 inset-x-0 z-40 bg-surface/95 backdrop-blur border-t border-line pb-[env(safe-area-inset-bottom)]"
+        aria-label="Navigation principale">
+        <div className="grid grid-cols-5">
+          {V3_TABS.filter(t => V3_BOTTOM_KEYS.includes(t.key)).map(t => (
+            <button key={t.key} onClick={() => go(t.key)} aria-current={view === t.key ? "page" : undefined}
+              className={`flex flex-col items-center gap-0.5 pt-2 pb-1.5 text-[11px] font-semibold ${view === t.key ? "text-brand" : "text-muted"}`}>
+              <span className={`px-4 py-1 rounded-full ${view === t.key ? "bg-brand-soft" : ""}`}><V3Icon name={t.key} /></span>
+              {t.label}
+            </button>
+          ))}
+          <button onClick={() => setMoreOpen(o => !o)} aria-expanded={moreOpen}
+            className={`flex flex-col items-center gap-0.5 pt-2 pb-1.5 text-[11px] font-semibold ${moreActive || moreOpen ? "text-brand" : "text-muted"}`}>
+            <span className={`px-4 py-1 rounded-full ${moreActive ? "bg-brand-soft" : ""}`}><V3Icon name="more" /></span>
+            Plus
+          </button>
+        </div>
+      </nav>
+    </>
   );
 }
 
