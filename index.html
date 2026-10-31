@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.122.0</title>
+<title>Menu IG Bas — V2.123.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -203,6 +203,14 @@ if ("serviceWorker" in navigator) {
   html.dark input::placeholder,
   html.dark textarea::placeholder {
     color: rgb(148 163 184); /* slate-400 */
+  }
+  /* Refonte 1H — nouvelle interface : champs aux couleurs de la marque (tokens). */
+  html.ui-v3.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="color"]),
+  html.ui-v3.dark select,
+  html.ui-v3.dark textarea {
+    background-color: rgb(var(--surface-2));
+    color: rgb(var(--ink));
+    border-color: rgb(var(--line));
   }
 </style>
 </head>
@@ -19785,7 +19793,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
   // 7 colonnes sur ordinateur. null = « aujourd'hui si dans la semaine, sinon 1er jour ».
   const [v3Day, setV3Day] = useState(null);
   const v3Swipe = useRef(null);
-  useEffect(() => { setV3Day(null); }, [currentWeek]);
+  // Clé = date (et non l'objet Date) : un re-calage de currentWeek sur la même
+  // semaine (ex. au démarrage) ne doit pas effacer le jour choisi.
+  useEffect(() => { setV3Day(null); }, [currentWeek ? new Date(currentWeek).toDateString() : ""]);
   const [attendancePanel, setAttendancePanel] = useState(null); // {day, meal}
   const [guestPanel, setGuestPanel] = useState(null); // V2.75.0 (#79) {day, meal}
   const [aperoPanel, setAperoPanel] = useState(null); // V2.76.0 (#80) {day}
@@ -24041,7 +24051,7 @@ function SettingsView({state, update, updateProfile}) {
 
   return (
     <div className="space-y-4 max-w-3xl">
-      <h2 className="text-xl font-bold">⚙️ Paramètres</h2>
+      <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold" : "text-xl font-bold"}>{window.__V3_UI ? "Paramètres" : "⚙️ Paramètres"}</h2>
       {actor.shared && !full && (
         <p className="text-sm border border-sky-300 dark:border-sky-700 bg-sky-50 dark:bg-sky-950 text-sky-900 dark:text-sky-100 rounded p-3">
           🔒 Foyer partagé : {actor.actor ? <>tu es <strong>{actor.actor.name}</strong></> : "personne n'est sélectionné sur cet appareil"}.
@@ -24052,13 +24062,31 @@ function SettingsView({state, update, updateProfile}) {
       )}
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
-        <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Famille</h3>
+        <h3 className={window.__V3_UI ? "font-title text-2xl font-semibold mb-3" : "font-bold text-slate-800 dark:text-slate-100 mb-3"}>{window.__V3_UI ? "Mon foyer" : "Famille"}</h3>
         {p.members.map(m => {
           const memberAllergies = m.allergies || [];
           const own = actor.actorId === m.id;
           const mRole = memberRole(state._households?.[state._session?.activeHouseholdId], m);
           return (
-            <div key={m.id} className="bg-slate-50 dark:bg-slate-800 p-3 rounded mb-2 space-y-2">
+            <div key={m.id} className={window.__V3_UI ? "bg-surface-2 dark:bg-surface-2 p-4 rounded-2xl mb-3 space-y-3 border border-line" : "bg-slate-50 dark:bg-slate-800 p-3 rounded mb-2 space-y-2"}>
+              {/* Refonte 1H — en-tête de la fiche membre : pastille, prénom, âge, profil santé, allergies (rouge) */}
+              {window.__V3_UI && (
+                <div className="flex items-center gap-3">
+                  <span aria-hidden="true" className={`w-11 h-11 rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0 ${
+                    ["bg-brand-soft text-brand", "bg-terracotta-soft text-terracotta", "bg-sage-soft text-ink"][(m.id - 1) % 3]}`}>
+                    {(m.name || "?").trim().charAt(0).toUpperCase()}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-title text-lg font-semibold leading-tight truncate">{m.name || "Sans nom"}</p>
+                    <p className="text-sm text-muted">{memberAge(m)} ans · {HEALTH_PROFILE_LABELS[m.healthProfile || "healthy"]}{actor.shared ? ` · ${mRole === "admin" ? "Admin" : mRole === "coadmin" ? "Co-admin" : "Membre"}` : ""}</p>
+                  </div>
+                  {memberAllergies.length > 0 && (
+                    <span className="px-2.5 py-1 rounded-full bg-danger text-white text-xs font-bold" title={memberAllergies.map(a => dataRef.allergenLabel(a)).join(", ")}>
+                      🚫 {memberAllergies.length} allergie{memberAllergies.length > 1 ? "s" : ""}
+                    </span>
+                  )}
+                </div>
+              )}
               <div className="flex flex-wrap gap-2 items-end">
                 <input value={m.name} disabled={!full} title={lockTitle} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
                 <div className="flex items-center gap-1">

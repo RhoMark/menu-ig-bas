@@ -86,3 +86,24 @@ html.ui-v3.dark .dark\:text-slate-200 { color: rgb(var(--ink)); }
 html.ui-v3.dark .dark\:text-slate-300,
 html.ui-v3.dark .dark\:text-slate-400,
 html.ui-v3.dark .dark\:text-slate-500 { color: rgb(var(--muted)); }
+
+/* Pont transitoire (refonte 1H) : les écrans pas encore redessinés (Paramètres,
+ * Suivi, Aide, Vue mensuelle…) prennent les surfaces, bordures et textes de la
+ * marque. Clair et sombre traités séparément pour ne jamais créer de texte clair
+ * sur fond clair (ou l'inverse) : seuls les couples prévus par l'écran sont
+ * remappés. Les couleurs d'alerte (rouge allergies, ambre…) ne sont pas touchées. */
+html.ui-v3:not(.dark) .bg-white { background-color: rgb(var(--surface)); }
+html.ui-v3:not(.dark) .bg-slate-50:not(body) { background-color: rgb(var(--surface-2)); }
+html.ui-v3:not(.dark) .border-slate-200,
+html.ui-v3:not(.dark) .border-slate-300 { border-color: rgb(var(--line)); }
+html.ui-v3:not(.dark) .text-slate-900,
+html.ui-v3:not(.dark) .text-slate-800,
+html.ui-v3:not(.dark) .text-slate-700 { color: rgb(var(--ink)); }
+html.ui-v3:not(.dark) .text-slate-600,
+html.ui-v3:not(.dark) .text-slate-500 { color: rgb(var(--muted)); }
+html.ui-v3.dark .dark\:bg-slate-800 { background-color: rgb(var(--surface)); }
+html.ui-v3.dark .dark\:bg-slate-900 { background-color: rgb(var(--canvas)); }
+html.ui-v3.dark .dark\:border-slate-700,
+html.ui-v3.dark .dark\:border-slate-600 { border-color: rgb(var(--line)); }
+html.ui-v3 :is(input, select, textarea).border { border-color: rgb(var(--line)); border-radius: 0.6rem; }
+html.ui-v3 .rounded-lg.shadow-sm { border-radius: var(--radius-card); }
