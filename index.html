@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.121.0</title>
+<title>Menu IG Bas — V2.122.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21861,6 +21861,110 @@ function groupItemsBySubgroup(category, items) {
   return [...buckets.values()].sort((a, b) => a.order - b.order);
 }
 
+// ----- V3 — Liste de courses « au magasin » (refonte 1G) -------------------
+// Mêmes données et mêmes cases cochées que l'interface classique (clé
+// name|unité → aucune case perdue). En plus : progression, articles cochés
+// rangés en bas de leur rayon, option « Masquer les articles pris », grandes
+// zones tactiles, et « Mes ajouts » cochables ligne par ligne.
+function ShoppingListV3({currentWeek, entries, totalItems, checkedCount, useSubgroups, pantryChecks, onTogglePantry,
+                         manualItems, onManualChange, onPrint, onPdf, pdfBusy, substitutionsBlock}) {
+  const [hideDone, setHideDone] = useState(false);
+  const [editManual, setEditManual] = useState(false);
+  const manualLines = (manualItems || "").split("\n").map(l => l.trim()).filter(Boolean);
+  const manualKey = l => `ajout|${l}`;
+  const manualDone = manualLines.filter(l => pantryChecks[manualKey(l)]).length;
+  const all = totalItems + manualLines.length, done = checkedCount + manualDone;
+  const pct = all ? Math.round(100 * done / all) : 0;
+  const Row = ({k, label, qty}) => {
+    const got = !!pantryChecks[k];
+    if (got && hideDone) return null;
+    return (
+      <li>
+        <label className={`flex items-center gap-3 py-2.5 px-1 rounded-lg cursor-pointer select-none ${got ? "opacity-60" : "hover:bg-surface-2"}`}>
+          <input type="checkbox" checked={got} onChange={() => onTogglePantry(k)} className="sr-only" />
+          <span aria-hidden="true" className={`w-6 h-6 rounded-full border-2 flex-shrink-0 flex items-center justify-center text-sm font-bold ${
+            got ? "bg-brand border-brand text-brand-on" : "border-line"}`}>{got ? "✓" : ""}</span>
+          <span className={`flex-1 text-[15px] ${got ? "line-through text-muted" : "text-ink"}`}>{label}</span>
+          {qty && <span className="text-sm text-muted text-right">{qty}</span>}
+        </label>
+      </li>
+    );
+  };
+  const sortDone = items => [...items].sort((a, b) =>
+    (pantryChecks[`${a.name}|${a.unit}`] ? 1 : 0) - (pantryChecks[`${b.name}|${b.unit}`] ? 1 : 0));
+  const itemRows = items => sortDone(items).map(it => (
+    <Row key={`${it.name}|${it.unit}`} k={`${it.name}|${it.unit}`} label={it.label || it.name}
+      qty={formatQtyShopping(it.qty, it.unit, it.name, it.category)} />
+  ));
+  return (
+    <div className="space-y-4">
+      <div className="bg-surface rounded-card shadow-card border border-line p-4 space-y-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <h2 className="font-title text-2xl font-semibold text-ink flex-1">Liste de courses</h2>
+          <button onClick={onPrint} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2">🖨️ Imprimer</button>
+          <button onClick={onPdf} disabled={pdfBusy} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2 disabled:opacity-50">{pdfBusy ? "⏳ PDF…" : "📄 PDF"}</button>
+        </div>
+        <p className="text-sm text-muted">Semaine du {formatShort(currentWeek)} · {all} article{all > 1 ? "s" : ""}</p>
+        <div>
+          <div className="flex justify-between text-sm font-semibold mb-1">
+            <span className="text-ink">{done} / {all} pris</span><span className="text-brand">{pct} %</span>
+          </div>
+          <div className="h-2.5 rounded-full bg-surface-2 overflow-hidden" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+            <div className="h-full bg-brand rounded-full transition-all" style={{width: `${pct}%`}} />
+          </div>
+        </div>
+        <label className="flex items-center gap-2 text-sm text-ink cursor-pointer">
+          <input type="checkbox" checked={hideDone} onChange={e => setHideDone(e.target.checked)} className="w-4 h-4 accent-current" />
+          Masquer les articles déjà pris
+        </label>
+        <p className="text-xs text-muted">Une case cochée = déjà chez toi ou déjà dans le panier : l'article est barré ici et retiré de la liste imprimée.</p>
+      </div>
+      {substitutionsBlock}
+      {entries.length === 0 ? (
+        <div className="bg-surface rounded-card border border-line p-8 text-center text-muted">Aucun menu généré cette semaine.</div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+          {entries.map(([cat, list]) => {
+            const left = list.filter(it => !pantryChecks[`${it.name}|${it.unit}`]).length;
+            if (hideDone && left === 0) return null;
+            const groups = useSubgroups ? groupItemsBySubgroup(cat, list) : null;
+            return (
+              <section key={cat} className="bg-surface rounded-card shadow-card border border-line p-4">
+                <h3 className="font-title text-lg font-semibold text-ink flex justify-between items-baseline mb-1">
+                  {dataRef.categoryLabel(cat)}<span className="font-ui text-xs font-semibold text-muted">{left} restant{left > 1 ? "s" : ""}</span>
+                </h3>
+                {groups && groups.length > 1 ? groups.map(g => (
+                  <div key={g.id} className="mt-2">
+                    <h4 className="text-[11px] uppercase tracking-wide font-bold text-sage">{g.label}</h4>
+                    <ul>{itemRows(g.items)}</ul>
+                  </div>
+                )) : <ul>{itemRows(list)}</ul>}
+              </section>
+            );
+          })}
+        </div>
+      )}
+      <section className="bg-surface rounded-card shadow-card border border-line p-4">
+        <div className="flex items-center gap-2 mb-1">
+          <h3 className="font-title text-lg font-semibold text-ink flex-1">Mes ajouts</h3>
+          <button onClick={() => setEditManual(e => !e)} className="text-sm font-semibold text-brand px-2 py-1 rounded-full hover:bg-brand-soft">
+            {editManual ? "Terminé" : manualLines.length ? "Modifier" : "+ Ajouter"}
+          </button>
+        </div>
+        <p className="text-xs text-muted mb-2">Produits hors recettes (hygiène, entretien, animalerie…). Une ligne = un article, repris dans la liste imprimée.</p>
+        {editManual ? (
+          <textarea value={manualItems} onChange={e => onManualChange(e.target.value)} rows={5} autoFocus
+            placeholder={"Dentifrice\nSacs congélation\nCroquettes chat"}
+            className="w-full rounded-xl border border-line bg-surface-2 text-ink text-[15px] p-3 resize-y focus:outline-none focus:ring-2 focus:ring-brand" />
+        ) : manualLines.length > 0 ? (
+          <ul>{[...manualLines].sort((a, b) => (pantryChecks[manualKey(a)] ? 1 : 0) - (pantryChecks[manualKey(b)] ? 1 : 0))
+            .map(l => <Row key={l} k={manualKey(l)} label={l} />)}</ul>
+        ) : null}
+      </section>
+    </div>
+  );
+}
+
 function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onTogglePantry, manualItems, onManualChange, onPrint, onPdf, pdfBusy}) {
   const byCat = useMemo(() => aggregateShoppingList(currentMenu, profile), [currentMenu, profile]);
   const entries = Object.entries(byCat);
@@ -21891,30 +21995,9 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
     [byCat, profile, menuCost]
   );
 
-  return (
-    <div className="space-y-4">
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4 flex flex-wrap items-center gap-3">
-        <h2 className="text-xl font-bold">🛒 Liste de courses</h2>
-        <p className="text-sm text-slate-500 dark:text-slate-400">
-          Semaine du {formatShort(currentWeek)} · {totalItems} articles
-          {checkedCount > 0 && <span className="ml-2 text-emerald-700 dark:text-emerald-300">· {checkedCount} déjà coché{checkedCount > 1 ? "s" : ""} (exclus de l'impression)</span>}
-        </p>
-        <div className="flex-1"></div>
-        <button onClick={onPrint} className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
-          🖨️ Imprimer la liste
-        </button>
-        <button onClick={onPdf} disabled={pdfBusy}
-          className="bg-rose-600 hover:bg-rose-700 disabled:bg-slate-400 disabled:cursor-wait text-white px-4 py-2 rounded-md text-sm font-medium"
-          title="Télécharger la liste de courses en PDF (.pdf)">
-          {pdfBusy ? "⏳ PDF…" : "📄 PDF"}
-        </button>
-      </div>
-      <p className="text-xs text-slate-500 dark:text-slate-400 -mt-2 px-1">
-        💡 Coche les articles que tu as déjà chez toi : ils seront barrés ici et exclus du PDF imprimé.
-        Sous-groupes par rayon (épices, fromages, féculents…) {useSubgroups ? "activés" : "désactivés"} — modifiable dans Paramètres.
-      </p>
-      {/* V2.96.0 (#15) — Suggestions de substitutions économiques si over budget */}
-      {substitutions.length > 0 && (
+  // V2.96.0 (#15) — Suggestions de substitutions économiques si over budget
+  // (bloc partagé par les deux interfaces).
+  const substitutionsBlock = substitutions.length > 0 && (
         <details className="bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 rounded-lg p-4 group">
           <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-emerald-900 dark:text-emerald-100">
             <span className="text-lg">💰</span>
@@ -21942,7 +22025,38 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
             </p>
           </div>
         </details>
-      )}
+  );
+
+  if (window.__V3_UI) return (
+    <ShoppingListV3 currentWeek={currentWeek} entries={entries} totalItems={totalItems} checkedCount={checkedCount}
+      useSubgroups={useSubgroups} pantryChecks={pantryChecks} onTogglePantry={onTogglePantry}
+      manualItems={manualItems} onManualChange={onManualChange} onPrint={onPrint} onPdf={onPdf} pdfBusy={pdfBusy}
+      substitutionsBlock={substitutionsBlock} />
+  );
+
+  return (
+    <div className="space-y-4">
+      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4 flex flex-wrap items-center gap-3">
+        <h2 className="text-xl font-bold">🛒 Liste de courses</h2>
+        <p className="text-sm text-slate-500 dark:text-slate-400">
+          Semaine du {formatShort(currentWeek)} · {totalItems} articles
+          {checkedCount > 0 && <span className="ml-2 text-emerald-700 dark:text-emerald-300">· {checkedCount} déjà coché{checkedCount > 1 ? "s" : ""} (exclus de l'impression)</span>}
+        </p>
+        <div className="flex-1"></div>
+        <button onClick={onPrint} className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
+          🖨️ Imprimer la liste
+        </button>
+        <button onClick={onPdf} disabled={pdfBusy}
+          className="bg-rose-600 hover:bg-rose-700 disabled:bg-slate-400 disabled:cursor-wait text-white px-4 py-2 rounded-md text-sm font-medium"
+          title="Télécharger la liste de courses en PDF (.pdf)">
+          {pdfBusy ? "⏳ PDF…" : "📄 PDF"}
+        </button>
+      </div>
+      <p className="text-xs text-slate-500 dark:text-slate-400 -mt-2 px-1">
+        💡 Coche les articles que tu as déjà chez toi : ils seront barrés ici et exclus du PDF imprimé.
+        Sous-groupes par rayon (épices, fromages, féculents…) {useSubgroups ? "activés" : "désactivés"} — modifiable dans Paramètres.
+      </p>
+      {substitutionsBlock}
       {entries.length === 0 ? (
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-8 text-center text-slate-500 dark:text-slate-400">
           Aucun menu généré cette semaine.
