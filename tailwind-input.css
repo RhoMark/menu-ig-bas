@@ -5,3 +5,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ── V3 (refonte design, étape 1A) ────────────────────────────────────────
+ * Polices auto-hébergées (licence OFL, vendor/fonts/) : aucune requête externe.
+ * Chargées seulement quand une règle les utilise (interface V3 activée).
+ */
+@font-face {
+  font-family: "Manrope Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url("vendor/fonts/manrope-latin-wght-normal.woff2") format("woff2-variations");
+}
+@font-face {
+  font-family: "Fraunces Variable";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("vendor/fonts/fraunces-latin-soft-normal.woff2") format("woff2-variations");
+}
+
+/* Design tokens de la marque (plateforme de juin : chaleureux et naturel —
+ * crème / lin, sauge, terracotta — ancré par un vert profond de confiance).
+ * Valeurs RGB séparées par des espaces pour l'opacité Tailwind (bg-brand/20).
+ * Contrastes vérifiés AA (≥ 4,5:1) pour le texte : cf. tâches/design-tokens.html.
+ */
+:root {
+  --canvas: 246 241 232;        /* fond de page : lin clair */
+  --surface: 255 252 247;       /* cartes */
+  --surface-2: 237 229 215;     /* zones secondaires, lin */
+  --ink: 43 39 34;              /* texte principal, brun presque noir */
+  --muted: 103 93 82;           /* texte secondaire */
+  --line: 221 210 193;          /* bordures */
+  --brand: 46 91 78;            /* vert profond « confiance » */
+  --brand-soft: 220 233 225;
+  --sage: 126 156 130;          /* sauge */
+  --sage-soft: 227 235 224;
+  --terracotta: 160 77 44;      /* accent chaleureux */
+  --terracotta-soft: 249 232 222;
+  --danger: 180 35 24;          /* allergies : rouge, jamais adouci */
+  --danger-soft: 253 231 228;
+  --on-brand: 255 255 255;
+  --font-ui: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-title: "Fraunces Variable", Georgia, ui-serif, serif;
+  --radius-card: 1rem;
+  --shadow-card: 0 1px 2px rgb(43 39 34 / 0.06), 0 4px 16px rgb(43 39 34 / 0.06);
+}
+.dark {
+  --canvas: 27 25 22;
+  --surface: 37 34 30;
+  --surface-2: 48 44 39;
+  --ink: 241 235 226;
+  --muted: 181 170 156;
+  --line: 62 56 50;
+  --brand: 123 184 162;
+  --brand-soft: 31 53 46;
+  --sage: 163 190 166;
+  --sage-soft: 39 49 42;
+  --terracotta: 227 145 107;
+  --terracotta-soft: 58 40 32;
+  --danger: 247 134 122;
+  --danger-soft: 59 29 26;
+  --on-brand: 27 25 22;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.25);
+}
+
+/* Interface V3 activée (classe posée sur <html> avant React, cf. index.html) :
+ * fond et typographie de la marque. Sans la classe, rien ne change. */
+html.ui-v3 body {
+  font-family: var(--font-ui);
+  background-color: rgb(var(--canvas));
+  color: rgb(var(--ink));
+}

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.116.2</title>
+<title>Menu IG Bas — V2.117.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -113,6 +113,9 @@ if ("serviceWorker" in navigator) {
       if (ui === 'v3') localStorage.setItem(KEY, 'on');
       else if (ui === 'classic') localStorage.removeItem(KEY);
       window.__V3_UI = localStorage.getItem(KEY) === 'on';
+      // Refonte design (1A) : fond, couleurs et polices de la marque via la
+      // classe ui-v3 (tailwind-input.css). Sans elle, rien ne change.
+      if (window.__V3_UI) document.documentElement.classList.add('ui-v3');
     } catch (e) { window.__V3_UI = false; }
   })();
 
@@ -24200,6 +24203,26 @@ function SettingsView({state, update, updateProfile}) {
       {/* V3.0 Phase 0.7 — Restauration des snapshots auto (B1) + opt-in UI V3 (C2). */}
       <BackupRestoreCard />
       {window.__SYNC_LAB && <FoyerLabCard state={state} update={update} />}
+
+      {/* Refonte design (1A) — opt-in réservé au labo tant que la nouvelle
+          interface est en construction ; retour toujours visible si activée. */}
+      {(window.__SYNC_LAB || window.__V3_UI) && (
+        <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-2">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">✨ Nouvelle interface (en préparation)</h3>
+          <p className="text-sm text-slate-600 dark:text-slate-300">
+            {window.__V3_UI
+              ? "Tu utilises la nouvelle interface. Tes données sont les mêmes : tu peux revenir en arrière à tout moment."
+              : "Aperçu de la future interface (couleurs et polices de la nouvelle identité). Mêmes données, retour possible à tout moment."}
+          </p>
+          <button onClick={() => {
+              try { if (window.__V3_UI) localStorage.removeItem("menu-ig-bas-v3ui"); else localStorage.setItem("menu-ig-bas-v3ui", "on"); } catch (e) { /* stockage indisponible */ }
+              window.location.reload();
+            }}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">
+            {window.__V3_UI ? "← Revenir à l'interface classique" : "✨ Essayer la nouvelle interface"}
+          </button>
+        </div>
+      )}
       <V3UICard />
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
