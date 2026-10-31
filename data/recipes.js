@@ -293,7 +293,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "b5",
-      "name": "Tartine pain complet, beurre d'amande et poire",
+      "name": "Tartine de seigle complet, beurre d'amande, poire et fromage blanc",
       "type": "breakfast",
       "cuisine": "universel",
       "seasons": [
@@ -304,7 +304,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.38,
-      "kcal": 340,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "quick",
@@ -314,13 +314,14 @@ window.__DATA_RECIPES = {
       "eq": [],
       "allergens": [
         "gluten",
-        "nuts"
+        "nuts",
+        "lactose"
       ],
       "ing": [
         [
-          "Pain complet aux céréales",
-          2,
-          "tranches",
+          "Pain de seigle complet",
+          1,
+          "tranche",
           "bread"
         ],
         [
@@ -331,9 +332,15 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poire",
-          1,
+          0.5,
           "u",
           "produce"
+        ],
+        [
+          "Fromage blanc",
+          80,
+          "g",
+          "dairy"
         ],
         [
           "Cannelle",
@@ -343,10 +350,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Grille légèrement les tranches de pain (facultatif).",
+        "Grille légèrement la tranche de pain de seigle (le seigle complet a un IG plus bas que le pain complet classique) (facultatif).",
         "Étale la purée d'amande sur chaque tranche (attention, c'est épais : utilise le dos d'une cuillère).",
-        "Coupe la poire en fines lamelles (enlève le trognon).",
-        "Dispose les lamelles sur les tartines et saupoudre d'une pincée de cannelle."
+        "Coupe la demi-poire en fines lamelles (enlève le trognon).",
+        "Dispose les lamelles sur les tartines et saupoudre d'une pincée de cannelle.",
+        "Sers avec le fromage blanc à côté (ou étalé sous la poire) : ses protéines calent jusqu'au déjeuner et ralentissent la montée du sucre."
       ],
       "photo": "assets/recipes/b5.webp"
     },
@@ -428,7 +436,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 340,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "quick",
@@ -450,13 +458,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine",
-          30,
+          20,
           "g",
           "pantry"
         ],
         [
           "Noisettes concassées",
-          10,
+          15,
           "g",
           "pantry"
         ],
@@ -471,19 +479,13 @@ window.__DATA_RECIPES = {
           1,
           "u",
           "produce"
-        ],
-        [
-          "Miel",
-          1,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
         "Verse le skyr dans un bol.",
         "Dans un autre petit bol, mélange les flocons d'avoine, les noisettes et les graines de lin. C'est ton muesli express.",
         "Lave et coupe le fruit en morceaux.",
-        "Dispose le muesli et les morceaux de fruit sur le yaourt. Arrose d'un trait de miel."
+        "Dispose le muesli et les morceaux de fruit sur le yaourt. Pas besoin de miel : le fruit sucre déjà le bol."
       ],
       "photo": "assets/recipes/b7.webp"
     },
@@ -1522,7 +1524,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 560,
+      "kcal": 660,
       "tags": [
         "kid-friendly",
         "quick"
@@ -1538,7 +1540,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes (penne, fusilli)",
-          70,
+          50,
           "g",
           "pantry"
         ],
@@ -1550,7 +1552,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Brocoli",
-          120,
+          200,
           "g",
           "produce"
         ],
@@ -2073,7 +2075,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 360,
+      "kcal": 450,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -2100,9 +2102,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pomme de terre à chair ferme (petite)",
-          1,
-          "u",
+          "Céleri-rave",
+          120,
+          "g",
           "produce"
         ],
         [
@@ -2144,9 +2146,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Lave les poireaux (sépare bien les feuilles pour enlever le sable) et coupe-les en rondelles fines.",
-        "Émince l'oignon. Épluche et coupe la pomme de terre en petits dés.",
+        "Émince l'oignon. Épluche le céleri-rave (enlève toute la peau épaisse au couteau) et coupe-le en petits dés.",
         "Chauffe l'huile dans une casserole. Fais revenir oignon et poireaux 5 min.",
-        "Ajoute la pomme de terre, les lentilles corail rincées, le cumin et le thym. Mélange 1 min.",
+        "Ajoute le céleri-rave, les lentilles corail rincées, le cumin et le thym. Mélange 1 min.",
         "Verse le bouillon. Porte à ébullition puis baisse à feu doux 20 min.",
         "Goûte et ajuste l'assaisonnement. Tu peux laisser en morceaux ou mixer légèrement pour un velouté plus lisse."
       ],
@@ -18668,7 +18670,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 390,
       "tags": [
         "vegetarian",
         "kid-friendly",
@@ -18685,14 +18687,14 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Flocons d'avoine",
-          60,
+          "Flocons d'avoine complets",
+          30,
           "g",
           "pantry"
         ],
         [
           "Banane mûre",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -18704,8 +18706,14 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait demi-écrémé",
-          80,
+          50,
           "ml",
+          "dairy"
+        ],
+        [
+          "Fromage blanc",
+          60,
+          "g",
           "dairy"
         ],
         [
@@ -18728,7 +18736,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fruit de saison (fraises, myrtilles)",
-          80,
+          60,
           "g",
           "produce"
         ]
@@ -18736,7 +18744,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Mixe les flocons d'avoine en poudre fine au mixeur (ou prends de la farine d'avoine).",
         "Dans un bol, écrase la banane à la fourchette pour en faire une purée.",
-        "Ajoute l'œuf, le lait, la farine d'avoine, la cannelle et la levure. Mélange — la pâte doit être homogène et un peu épaisse.",
+        "Ajoute l'œuf, le fromage blanc (il rend les pancakes moelleux et plus rassasiants), le lait, la farine d'avoine, la cannelle et la levure. Mélange — la pâte doit être homogène et un peu épaisse.",
         "Fais fondre un peu de beurre dans une poêle anti-adhésive à feu moyen.",
         "Verse une petite louche de pâte par pancake. Cuis 2 min jusqu'à ce que des bulles apparaissent en surface, retourne et cuis 1 min de l'autre côté.",
         "Sers tiède avec les fruits frais par-dessus."
@@ -30204,7 +30212,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "l119",
-      "name": "Tartines complètes potiron rôti, chèvre et graines de courge",
+      "name": "Tartine de seigle au potiron rôti, chèvre et graines de courge, salade roquette-noix",
       "type": "lunch",
       "cuisine": "francais",
       "seasons": [
@@ -30214,7 +30222,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 420,
+      "kcal": 610,
       "tags": [
         "vegetarian",
         "quick"
@@ -30224,18 +30232,19 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "nuts"
       ],
       "ing": [
         [
           "Potiron",
-          200,
+          150,
           "g",
           "produce"
         ],
         [
-          "Pain complet (tranche épaisse)",
-          2,
+          "Pain de seigle complet (tranche épaisse)",
+          1,
           "tranche",
           "bread"
         ],
@@ -30244,12 +30253,6 @@ window.__DATA_RECIPES = {
           60,
           "g",
           "dairy"
-        ],
-        [
-          "Miel",
-          1,
-          "c.à.c",
-          "pantry"
         ],
         [
           "Graines de courge grillées",
@@ -30265,9 +30268,15 @@ window.__DATA_RECIPES = {
         ],
         [
           "Roquette",
-          20,
+          50,
           "g",
           "produce"
+        ],
+        [
+          "Cerneaux de noix",
+          10,
+          "g",
+          "pantry"
         ],
         [
           "Sel, poivre",
@@ -30287,10 +30296,11 @@ window.__DATA_RECIPES = {
         "Si potiron surgelé : étale les cubes gelés sur une plaque garnie de papier cuisson, sans les décongeler.",
         "Arrose d'huile d'olive, sale et poivre. Mélange à la main.",
         "Enfourne 20-25 min en remuant à mi-cuisson. Les cubes doivent être tendres et légèrement dorés sur les bords.",
-        "Toaste les tranches de pain complet 2-3 min au grille-pain ou directement au four sur la fin (la croûte doit croquer mais la mie reste moelleuse).",
+        "Toaste la tranche de pain de seigle 2-3 min au grille-pain ou directement au four sur la fin (la croûte doit croquer mais la mie reste moelleuse).",
         "Coupe la bûche de chèvre en rondelles de 5 mm d'épaisseur.",
         "Pose les tranches de chèvre sur les pains chauds, ajoute le potiron rôti par-dessus, drizzle d'un filet de miel et de vinaigre balsamique.",
-        "Termine avec une poignée de roquette et une c.à.s de graines de courge sur chaque tartine."
+        "Termine avec une poignée de roquette et une c.à.s de graines de courge sur chaque tartine.",
+        "Sers avec une salade de roquette et de noix concassées, arrosée du vinaigre balsamique : elle remplit l'assiette sans faire grimper la charge glycémique."
       ],
       "photo": "assets/recipes/l119.webp"
     },
@@ -45802,7 +45812,7 @@ window.__DATA_RECIPES = {
       "cook": 7,
       "diff": 1,
       "cost": 0.8,
-      "kcal": 320,
+      "kcal": 380,
       "tags": [
         "vegetarian",
         "quick"
@@ -45817,19 +45827,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          50,
+          35,
           "g",
           "pantry"
         ],
         [
-          "Lait demi-écrémé (ou boisson d'amande)",
+          "Lait demi-écrémé",
           200,
           "ml",
           "dairy"
         ],
         [
           "Banane",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -45840,24 +45850,24 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable (ou miel)",
-          0.5,
-          "c.à.c",
+          "Graines de chia",
+          10,
+          "g",
           "pantry"
         ],
         [
-          "Graines de chia",
-          5,
+          "Yaourt grec",
+          60,
           "g",
-          "pantry"
+          "dairy"
         ]
       ],
       "steps": [
         "Dans une petite casserole, verse le lait + flocons d'avoine + cannelle. Porte à frémissement à feu moyen en remuant régulièrement (le lait monte vite : ne pars pas).",
         "Baisse à feu doux. Cuis 5-7 min en remuant : le mélange épaissit progressivement, les flocons absorbent le liquide. Texture cible : crémeuse, qui coule lentement de la cuillère.",
         "Pendant ce temps, coupe la banane en deux : la moitié en rondelles fines pour la déco, l'autre moitié à écraser à la fourchette.",
-        "Hors du feu, incorpore la moitié de banane écrasée et le sirop d'érable. La banane apporte le sucré naturel, tu peux même réduire le sirop à 0 si elle est très mûre.",
-        "Verse dans un bol. Dispose les rondelles de banane fraîche en couronne, parsème les graines de chia.",
+        "Hors du feu, incorpore la banane écrasée. Elle apporte le sucré naturel : pas besoin de sirop, tu peux même réduire le sirop à 0 si elle est très mûre.",
+        "Verse dans un bol. Dispose les rondelles de banane fraîche en couronne, ajoute une cuillère de yaourt grec (il rend le porridge plus rassasiant et ralentit l'absorption des sucres) et parsème les graines de chia.",
         "Mange chaud. Recette cheap par excellence : 80 centimes la portion."
       ],
       "photo": "assets/recipes/b61.webp"
@@ -50347,7 +50357,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 340,
+      "kcal": 470,
       "tags": [
         "vegan",
         "vegetarian",
@@ -50363,12 +50373,12 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          50,
+          40,
           "g",
           "pantry"
         ],
         [
-          "Boisson d'amande (ou autre lait végétal)",
+          "Boisson d'amande (ou autre boisson végétale)",
           250,
           "ml",
           "dairy"
@@ -50381,20 +50391,20 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane (mûre)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Noisettes concassées",
-          10,
+          15,
           "g",
           "pantry"
         ],
         [
-          "Sirop d'érable",
-          0.5,
-          "c.à.c",
+          "Graines de chia",
+          1,
+          "c.à.s",
           "pantry"
         ],
         [
@@ -50404,7 +50414,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Beurre de noisette (ou tahini)",
+          "Purée de noisette",
           0.5,
           "c.à.s",
           "pantry"
@@ -50416,8 +50426,8 @@ window.__DATA_RECIPES = {
         "Baisse à feu doux. Cuis 5-7 min en remuant régulièrement : le porridge épaissit, prend une couleur chocolat brun foncé. Texture cible : crémeuse, qui coule lentement de la cuillère.",
         "Pendant ce temps, fais griller à sec les noisettes concassées 60 sec dans une petite poêle, surveillance : elles passent du blond au doré-brun vite.",
         "Coupe la banane en rondelles : moitié à écraser dans le porridge (sucré naturel), moitié pour la déco par-dessus.",
-        "Hors du feu, incorpore la moitié de banane écrasée + sirop d'érable. Goûte : la banane mûre apporte beaucoup de douceur, ajuste le sirop selon préférence.",
-        "Verse dans un bol. Dispose la banane fraîche en couronne, parsème noisettes grillées, finis par 1 c.à.s de beurre de noisette en zigzag (= signature).",
+        "Hors du feu, incorpore la banane écrasée et les graines de chia (elles épaississent et apportent des fibres). Goûte : la banane mûre apporte beaucoup de douceur, ajuste le sirop selon préférence.",
+        "Verse dans un bol. Dispose la banane fraîche en couronne, parsème noisettes grillées, finis par 1 c.à.s de purée de noisette en zigzag (= signature).",
         "Mange chaud. Goût brownie-banane sain, IG bas, vegan, 340 kcal. 1 € la portion : record du rapport qualité-prix au petit-déj.",
         "Variante anti-coup-de-mou : ajoute 1 c.à.c de café soluble dissous dans le lait au début (= mocha porridge)."
       ],
@@ -55673,7 +55683,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 340,
+      "kcal": 470,
       "tags": [
         "vegetarian",
         "quick"
@@ -55683,12 +55693,13 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "sesame"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          50,
+          35,
           "g",
           "pantry"
         ],
@@ -55700,7 +55711,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Dattes Medjool",
-          3,
+          1,
           "u",
           "produce"
         ],
@@ -55708,6 +55719,12 @@ window.__DATA_RECIPES = {
           "Amandes effilées",
           2,
           "c.à.s",
+          "pantry"
+        ],
+        [
+          "Graines de chia",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
@@ -55730,13 +55747,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dénoyaute les dattes : entaille chacune sur la longueur, écarte légèrement, retire le noyau central avec la pointe du couteau. Coupe en petits dés de 5 mm.",
+        "Dénoyaute la datte : entaille chacune sur la longueur, écarte légèrement, retire le noyau central avec la pointe du couteau. Coupe en petits dés de 5 mm.",
         "Dans une casserole, mélange les flocons d'avoine, le lait demi-écrémé et la cannelle. Porte à frémissement à feu moyen en remuant.",
         "Quand ça frémit (= petites bulles aux bords), baisse à feu doux. Ajoute 2/3 des dés de dattes (garde 1/3 pour la déco). Les dattes vont fondre légèrement et sucrer la bouillie naturellement.",
         "Laisse cuire 8-10 minutes en remuant régulièrement : le mélange épaissit pour devenir une bouillie crémeuse, beige-doré.",
         "Pendant ce temps, dans une petite poêle sèche, à feu moyen, fais torréfier les amandes effilées et les graines de sésame 2 minutes en remuant. Elles doivent dorer et embaumer (= odeur de noisette grillée). Réserve.",
         "Hors du feu, ajoute l'eau de fleur d'oranger à la bouillie. Mélange. Goûte : ça doit être délicatement parfumé, naturellement sucré (les dattes apportent suffisamment de douceur, pas besoin d'ajouter du sucre).",
-        "Verse dans 2 bols. Parsème généreusement amandes torréfiées, graines de sésame et les dés de dattes restants par-dessus.",
+        "Verse dans un bol. Parsème généreusement amandes torréfiées, graines de sésame et les dés de dattes restants par-dessus.",
         "Termine par une petite pincée de cannelle pour l'aspect final.",
         "Sers tiède. Ce porridge d'inspiration maghrébine est rassasiant, riche en fibres (avoine), bons gras (amandes, sésame), et le combo dattes + fleur d'oranger + cannelle, c'est l'âme des desserts du Maghreb adaptés en breakfast. Idéal en hiver pour démarrer doucement."
       ],
@@ -99522,7 +99539,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 550,
       "tags": [
         "vegetarian",
         "quick"
@@ -99537,13 +99554,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Orecchiette complètes",
-          70,
+          50,
           "g",
           "pantry"
         ],
         [
           "Brocoli",
-          200,
+          260,
           "g",
           "produce"
         ],
@@ -99566,6 +99583,12 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
+          "Pignons de pin",
+          10,
+          "g",
+          "pantry"
+        ],
+        [
           "Huile d'olive",
           14,
           "ml",
@@ -99584,7 +99607,7 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais chauffer doucement l'huile d'olive avec l'ail écrasé et le piment d'Espelette : l'ail doit juste blondir, sans brûler (sinon il devient amer).",
         "Égoutte pâtes et brocoli en gardant une petite louche d'eau de cuisson.",
         "Verse le tout dans la poêle à l'ail, ajoute un peu d'eau de cuisson et mélange 1 min pour lier.",
-        "Hors du feu, ajoute le parmesan, sale, poivre et sers."
+        "Hors du feu, ajoute le parmesan et les pignons (grillés 2 min à sec dans une petite poêle, jusqu'à ce qu'ils blondissent), sale, poivre et sers."
       ],
       "photo": "assets/recipes/d246.webp"
     },
@@ -105723,7 +105746,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 320,
+      "kcal": 480,
       "tags": [
         "vegetarian"
       ],
@@ -105736,13 +105759,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poireau",
-          250,
+          320,
           "g",
           "produce"
         ],
         [
           "Pomme de terre à chair ferme",
-          200,
+          100,
           "g",
           "produce"
         ],
@@ -106792,7 +106815,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 160,
+      "kcal": 120,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -106806,13 +106829,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          300,
+          150,
           "ml",
           "dairy"
         ],
         [
           "Fécule de riz",
-          25,
+          10,
+          "g",
+          "pantry"
+        ],
+        [
+          "Agar-agar",
+          0.5,
           "g",
           "pantry"
         ],
@@ -106824,7 +106853,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "ml",
           "pantry"
         ],
@@ -106836,9 +106865,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Délaye la fécule de riz dans un peu de lait froid prélevé sur le total, jusqu'à obtenir un mélange lisse.",
+        "Délaye la fécule de riz et l'agar-agar (une gélifiant naturel à base d'algue) dans un peu de lait froid prélevé sur le total, jusqu'à obtenir un mélange lisse.",
         "Fais chauffer le reste du lait avec le sirop d'érable jusqu'à frémissement.",
-        "Verse la fécule délayée en fouettant, et continue de fouetter 4-5 min à feu doux : la crème épaissit.",
+        "Verse la fécule délayée en fouettant, et laisse bouillir 1 minute en fouettant (l'agar-agar doit bouillir pour prendre), puis 3 min à feu doux : la crème épaissit.",
         "Hors du feu, parfume avec l'eau de fleur d'oranger.",
         "Répartis dans des coupes, saupoudre d'un voile de cannelle et place au frais au moins 2h. Sers froid."
       ],
