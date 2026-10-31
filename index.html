@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.124.1</title>
+<title>Menu IG Bas — V2.124.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -17206,7 +17206,7 @@ function OnboardingTour({onComplete, onSkip}) {
             Étape {step + 1} sur {total}
           </div>
           <button onClick={onSkip}
-            title="Passer le tutoriel — tu pourras le rejouer depuis Paramètres."
+            title={`Passer le tutoriel — tu pourras le rejouer depuis ${window.__V3_UI ? "Aide → Tutoriel" : "Paramètres"}.`}
             className="text-xs text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
             ✕ Passer
           </button>
@@ -19170,7 +19170,7 @@ function App({initialState}) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {window.__V3_UI ? <V3Nav view={view} setView={setView} state={state} /> : <TopBar view={view} setView={setView} />}
+      {window.__V3_UI ? <V3Nav view={view} setView={setView} state={state} onTutorial={() => update({hasSeenTutorial: false})} /> : <TopBar view={view} setView={setView} />}
       <main className={`flex-1 container mx-auto px-4 py-6 max-w-7xl ${window.__V3_UI ? "pb-28 md:pb-6 md:pl-64" : ""}`}>
         {view === "foyer" && window.__V3_UI && (
           <SettingsView state={state} update={update} updateProfile={updateProfile} section="foyer" />
@@ -19480,6 +19480,7 @@ const V3_ICON_PATHS = {
   settings: "M4 7h10M18 7h2M4 17h4M12 17h8M16 5v4M10 15v4",
   foyer: "M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20a6 6 0 0 1 12 0M16 11a2.5 2.5 0 1 0 0-5M17.5 20H21a4.5 4.5 0 0 0-4.5-4.5",
   more: "M6 12h.01M12 12h.01M18 12h.01",
+  tutorial: "M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM10 8.5v7l6-3.5z",
 };
 function V3Icon({name, className = "w-5 h-5"}) {
   return (
@@ -19493,11 +19494,12 @@ const V3_TABS = [
   {key: "library",  label: "Recettes"},
   {key: "history",  label: "Suivi"},
   {key: "month",    label: "Vue mensuelle"},
-  {key: "faq",      label: "Aide"},
+  {key: "faq",      label: "FAQ"},
   {key: "foyer",    label: "Mon foyer"},
   {key: "settings", label: "Paramètres"},
 ];
 const V3_FOOT_KEYS = ["foyer", "settings"]; // barre latérale : en bas, à côté du profil
+const V3_HELP_KEYS = ["faq"];               // groupe « Aide » : FAQ + Tutoriel (action)
 
 // Pastille d'un membre (initiale sur fond doux) — mêmes couleurs partout.
 const memberAvatarClass = m => ["bg-brand-soft text-brand", "bg-terracotta-soft text-terracotta", "bg-sage-soft text-ink"][((m?.id || 1) - 1) % 3];
@@ -19540,11 +19542,21 @@ function V3ProfileBadge({state, compact = false, onOpenFoyer}) {
 }
 const V3_BOTTOM_KEYS = ["menu", "shopping", "library", "history"];
 
-function V3Nav({view, setView, state}) {
+function V3Nav({view, setView, state, onTutorial}) {
   const [moreOpen, setMoreOpen] = useState(false);
   const go = key => { setView(key); setMoreOpen(false); };
-  const more = V3_TABS.filter(t => !V3_BOTTOM_KEYS.includes(t.key));
-  const moreActive = more.some(t => t.key === view);
+  const more = V3_TABS.filter(t => !V3_BOTTOM_KEYS.includes(t.key) && !V3_HELP_KEYS.includes(t.key));
+  const tutorial = () => { setMoreOpen(false); onTutorial(); };
+  const moreActive = more.some(t => t.key === view) || view === "faq";
+  // Groupe « Aide » : titre + FAQ (vue) + Tutoriel (relance le tour guidé).
+  const helpGroup = (itemCls) => (
+    <div className="pt-2">
+      <p className="px-3 pb-1 text-[11px] font-bold uppercase tracking-wide text-muted">Aide</p>
+      <button onClick={() => go("faq")} aria-current={view === "faq" ? "page" : undefined}
+        className={`${itemCls} ${view === "faq" ? "bg-brand-soft text-brand" : ""}`}><V3Icon name="faq" />FAQ</button>
+      <button onClick={tutorial} className={itemCls}><V3Icon name="tutorial" />Tutoriel</button>
+    </div>
+  );
   const wordmark = (
     <span className="font-title text-2xl font-semibold text-ink tracking-tight">Menu IG Bas</span>
   );
@@ -19554,13 +19566,14 @@ function V3Nav({view, setView, state}) {
       <aside className="no-print hidden md:flex fixed inset-y-0 left-0 w-60 flex-col bg-surface border-r border-line z-30">
         <div className="px-5 pt-6 pb-4">{wordmark}</div>
         <nav className="flex-1 px-3 space-y-1" aria-label="Navigation principale">
-          {V3_TABS.filter(t => !V3_FOOT_KEYS.includes(t.key)).map(t => (
+          {V3_TABS.filter(t => !V3_FOOT_KEYS.includes(t.key) && !V3_HELP_KEYS.includes(t.key)).map(t => (
             <button key={t.key} onClick={() => go(t.key)} aria-current={view === t.key ? "page" : undefined}
               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold transition ${
                 view === t.key ? "bg-brand-soft text-brand" : "text-muted hover:bg-surface-2 hover:text-ink"}`}>
               <V3Icon name={t.key} />{t.label}
             </button>
           ))}
+          {helpGroup("w-full flex items-center gap-3 pl-5 pr-3 py-2 rounded-xl text-[15px] font-semibold text-muted hover:bg-surface-2 hover:text-ink transition")}
         </nav>
         <div className="px-3 pb-5 pt-3 space-y-1 border-t border-line">
           <V3ProfileBadge state={state} onOpenFoyer={() => go("foyer")} />
@@ -19594,6 +19607,7 @@ function V3Nav({view, setView, state}) {
                 <V3Icon name={t.key} />{t.label}
               </button>
             ))}
+            {helpGroup("w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-[15px] font-semibold text-ink hover:bg-surface-2")}
           </div>
         </div>
       )}
@@ -24794,7 +24808,9 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
         </p>
       </div>
 
-      {/* V2.57.0 (issue #84) — Re-déclencher le tutoriel onboarding */}
+      {/* V2.57.0 (issue #84) — Re-déclencher le tutoriel onboarding.
+          Nouvelle interface : dans le menu « Aide → Tutoriel » (pas ici). */}
+      {section === "all" && (
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-2">
         <h3 className="font-bold text-slate-800 dark:text-slate-100">🎓 Aide & tutoriel</h3>
         <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -24808,6 +24824,7 @@ function SettingsView({state, update, updateProfile, section = "all"}) {
           🎓 Refaire le tutoriel
         </button>
       </div>
+      )}
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">Zone dangereuse</h3>
