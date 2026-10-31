@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.125.0</title>
+<title>Menu IG Bas — V2.126.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -695,6 +695,14 @@ if ("serviceWorker" in navigator) {
       "label": "À propos",
       "icon": "ℹ️",
       "qa": [
+        {
+          "q": "✨ Nouvelle interface (bêta) : comment l'essayer, et revenir en arrière ?",
+          "a": "Dans l'interface actuelle : Paramètres → « ✨ Nouvelle interface (bêta) » → « Essayer la nouvelle interface » (ou le bandeau en haut du planning). Tes données ne changent pas : menus, notes, liste de courses et cases cochées sont les mêmes. Pour revenir : menu Technique → « Revenir à l'interface classique ». Le choix est propre à chaque appareil."
+        },
+        {
+          "q": "📸 Les photos des recettes sont-elles de vraies photos ?",
+          "a": "Non : ce sont des images générées par intelligence artificielle, signalées par la mention « Image générée par IA » (ou « IA » sur les petites vignettes). Elles ont été créées sur l'ordinateur du projet avec le modèle ouvert FLUX.2 [klein] (Black Forest Labs, Allemagne), à partir du nom de la recette et de ses ingrédients uniquement : aucune donnée personnelle n'est utilisée. Elles illustrent le plat : ton assiette peut être un peu différente. Les menus, eux, ne sont pas générés par IA : ils sont calculés par des règles fixes (saisons, allergies, charge glycémique, budget…)."
+        },
         {
           "q": "Quel est l'objectif du projet ?",
           "a": "Permettre aux familles françaises de manger équilibré à index glycémique bas sans charge mentale. L'app génère automatiquement des menus hebdomadaires adaptés (profils santé, allergies, saison, budget, équipement, niveau de cuisine), avec recettes détaillées style « ado qui cuisine » (gestes définis, repères visuels) et liste de courses agrégée. Spécifications complètes dans le dépôt GitHub."
@@ -15084,22 +15092,6 @@ function restoreBackup(key) {
   localStorage.setItem(target, raw);
 }
 
-// ----------------------------------------------------------------------------
-// V3.0 Phase 0.7 (C1/C2) — Lecture/écriture du flag interface V3 (shadow mode).
-// Défaut OFF. Toute future UI V3 doit être gated par isV3UI(). Aujourd'hui, pas
-// d'UI V3 → le flag ne fait qu'exposer l'opt-in + l'escape hatch dans Réglages.
-// ----------------------------------------------------------------------------
-const V3UI_KEY = "menu-ig-bas-v3ui";
-function isV3UI() {
-  try { return localStorage.getItem(V3UI_KEY) === "on"; } catch (e) { return false; }
-}
-function setV3UI(on) {
-  try {
-    if (on) localStorage.setItem(V3UI_KEY, "on");
-    else localStorage.removeItem(V3UI_KEY);
-  } catch (e) { /* noop */ }
-}
-
 // ----- Menu generation -----------------------------------------------------
 // Renvoie la liste des recettes breakfast/lunch/dinner servies dans les
 // RECENT_DAYS jours précédant `currentWeekStart`, plus une carte
@@ -18270,39 +18262,6 @@ function FoyerLabCard({state, update}) {
   );
 }
 
-// V3.0 Phase 0.7 (C2) — Carte « Interface (beta) » : opt-in V3 + escape hatch.
-// Le flag est OFF par défaut. Aujourd'hui aucune UI V3 n'existe encore : la
-// carte sert à valider le harnais (activer/désactiver + bascule au rechargement).
-function V3UICard() {
-  const on = isV3UI();
-  const toggle = () => { setV3UI(!on); window.location.reload(); };
-  return (
-    <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
-      <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">🧪 Interface (beta)</h3>
-      <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">
-        Une nouvelle interface est en préparation. Tu pourras bientôt l'essayer en avant-première.
-        L'interrupteur est déjà en place&nbsp;; l'habillage arrivera progressivement, sans rien
-        changer à tes données. Tu pourras revenir à l'interface classique à tout moment.
-      </p>
-      {on ? (
-        <div className="space-y-3">
-          <div className="bg-teal-50 dark:bg-teal-950 border border-teal-300 dark:border-teal-700 rounded px-3 py-2 text-sm text-teal-800 dark:text-teal-200 font-medium">
-            ✨ Interface V3 (beta) <strong>active</strong> sur cet appareil.
-          </div>
-          <button onClick={toggle}
-            className="bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 text-slate-800 dark:text-slate-100 px-4 py-2 rounded text-sm font-medium">
-            ← Revenir à l'interface classique
-          </button>
-        </div>
-      ) : (
-        <button onClick={toggle}
-          className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded text-sm font-medium">
-          ✨ Essayer la nouvelle interface (beta)
-        </button>
-      )}
-    </div>
-  );
-}
 
 // AppLoader (V2.11.0) : entoure App pour gérer le chargement async (déchiffrement
 // au démarrage). Trois phases : "loading" → "ready" → App, ou "recovery" si la
@@ -19868,6 +19827,28 @@ function SetupView({state, update, updateProfile, onDone}) {
 }
 
 // ----- Menu View -----------------------------------------------------------
+// V2.126.0 — Annonce de la nouvelle interface (bêta) dans l'interface
+// classique : « Essayer » (bascule, mêmes données) ou « Plus tard » (masquée
+// pour de bon sur cet appareil). Préférence d'affichage, non chiffrée.
+function NewUiAnnouncement() {
+  const KEY = "menu-ig-bas-v3-annonce";
+  const [hidden, setHidden] = useState(() => { try { return !!localStorage.getItem(KEY); } catch (e) { return true; } });
+  if (window.__V3_UI || hidden) return null;
+  const dismiss = () => { try { localStorage.setItem(KEY, "vu"); } catch (e) { /* stockage indisponible */ } setHidden(true); };
+  const tryIt = () => { try { localStorage.setItem("menu-ig-bas-v3ui", "on"); localStorage.setItem(KEY, "vu"); } catch (e) { /* idem */ } window.location.reload(); };
+  return (
+    <div className="no-print bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 rounded-lg p-4 flex flex-wrap items-center gap-3">
+      <span className="text-2xl" aria-hidden="true">✨</span>
+      <p className="flex-1 min-w-[220px] text-sm text-emerald-900 dark:text-emerald-100">
+        <strong>Nouvelle interface disponible (bêta)</strong> : plus lisible, photos des recettes, planning jour par jour sur téléphone.
+        Tes données restent les mêmes et tu peux revenir en arrière à tout moment.
+      </p>
+      <button onClick={tryIt} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">Essayer</button>
+      <button onClick={dismiss} className="text-sm text-emerald-800 dark:text-emerald-200 underline">Plus tard</button>
+    </div>
+  );
+}
+
 function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDayFallback, regenerate, regenerateSlot, toggleLock, replaceSlot, onSelectRecipe, onPrint, onPdf, pdfBusy, onShopping, setAttendance, setSlotGuests, setSlotApero, clearSlotApero, regenerateSlotApero, enableSlotFeast, disableSlotFeast, regenerateFeastMeal, regenerateFeastPart, replaceFeastPart, setCompetitionEvent, clearCompetitionEvent, toggleDayExternal, toggleBatchActiveForWeek, setJournalField}) {
   const [replacePanel, setReplacePanel] = useState(null); // {day, meal}
   // V2.120.0 (refonte 1E) — Nouvelle interface sur téléphone : un seul jour à la
@@ -19945,6 +19926,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
           </button>
         </div>
       )}
+      <NewUiAnnouncement />
       <PoolDiagnostic profile={state.profile} currentWeek={currentWeek} />
       {journalEnabled && !window.__V3_UI && (
         <JournalEntry state={state} currentWeekKey={journalWeekKey} setJournalField={setJournalField} />
@@ -20422,7 +20404,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                           <button onClick={() => onSelectRecipe(recipe.id, {day, meal: m.key})}
                             className="text-left w-full hover:text-emerald-700 dark:text-emerald-300 font-medium text-slate-800 dark:text-slate-100">
                             {window.__V3_UI && recipe.photo && (
-                              <img src={recipe.photo} alt="" loading="lazy" className="w-full aspect-[16/9] object-cover rounded-lg mb-1.5" />
+                              <span className="relative block mb-1.5">
+                                <img src={recipe.photo} alt="" loading="lazy" className="w-full aspect-[16/9] object-cover rounded-lg" />
+                                <span className="absolute right-1 bottom-1 text-[9px] leading-none bg-black/55 text-white px-1 py-0.5 rounded" title="Image générée par IA">IA</span>
+                              </span>
                             )}
                             <span className="flex items-start gap-1">
                               <span className="flex-1">{cookedEntry(slot, m.key, recipe.id) && <span title="Cuisiné" className="mr-0.5">✅</span>}{recipe.name}</span>
@@ -24783,15 +24768,15 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
 {section === "all" && (<>
       {window.__SYNC_LAB && <FoyerLabCard state={state} update={update} />}
 </>)}
-      {/* Refonte design (1A) — opt-in réservé au labo tant que la nouvelle
-          interface est en construction ; retour toujours visible si activée. */}
-      {(window.__SYNC_LAB || window.__V3_UI) && (
+      {/* Refonte design — V2.126.0 : nouvelle interface ouverte à tous en
+          bêta (opt-in) ; retour à l'interface classique toujours possible. */}
+      {true && (
         <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-2">
-          <h3 className="font-bold text-slate-800 dark:text-slate-100">✨ Nouvelle interface (en préparation)</h3>
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">✨ Nouvelle interface (bêta)</h3>
           <p className="text-sm text-slate-600 dark:text-slate-300">
             {window.__V3_UI
               ? "Tu utilises la nouvelle interface. Tes données sont les mêmes : tu peux revenir en arrière à tout moment."
-              : "Aperçu de la future interface (couleurs et polices de la nouvelle identité). Mêmes données, retour possible à tout moment."}
+              : "Plus lisible, avec les photos des recettes, le planning jour par jour sur téléphone et une liste de courses pensée pour le magasin. Mêmes données, retour possible à tout moment."}
           </p>
           <button onClick={() => {
               try { if (window.__V3_UI) localStorage.removeItem("menu-ig-bas-v3ui"); else localStorage.setItem("menu-ig-bas-v3ui", "on"); } catch (e) { /* stockage indisponible */ }
@@ -24802,7 +24787,6 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
           </button>
         </div>
       )}
-      <V3UICard />
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-3">🔒 Données et confidentialité</h3>
         <p className="text-sm text-slate-600 dark:text-slate-300 mb-3">

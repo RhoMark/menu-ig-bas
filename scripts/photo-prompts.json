@@ -11,5 +11,12 @@
   },
   "width": 1024,
   "height": 576,
-  "webp_quality": 78
+  "webp_quality": 78,
+  "_overrides_doc": "Description du plat à la place du nom, quand le nom induit le modèle en erreur (ex. « sandwich » → pain). Clé = id de recette.",
+  "overrides": {
+    "b108": "Onigirazu : a square Japanese rice sandwich made of cooked quinoa wrapped in a sheet of dark green nori seaweed, cut in half to show neat layers of smoked salmon, avocado slices and cucumber, sprinkled with sesame seeds. Absolutely no bread, the outside is only black-green nori seaweed",
+    "d75": "Quiche sans pâte : a crustless quiche (no pastry, no crust at all): a golden baked egg custard slice served directly on the plate, showing the filling, with courgette slices, goat cheese and thyme",
+    "d103": "Quiche sans pâte : a crustless quiche (no pastry, no crust at all): a golden baked egg custard slice served directly on the plate, showing the filling, with courgette, feta and fresh mint",
+    "s44": "Mini-quiches sans pâte : small crustless egg muffins baked in a muffin tin (no pastry), with leek and fresh goat cheese, a few on a small plate"
+  }
 }

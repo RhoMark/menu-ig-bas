@@ -92,6 +92,9 @@ def main_ingredients(recipe, n=5):
 
 def build_prompt(recipe, cfg):
     ing = ", ".join(main_ingredients(recipe))
+    override = cfg.get("overrides", {}).get(recipe["id"])
+    if override:  # nom trompeur pour le modèle (ex. « sandwich » → pain) : description explicite
+        return f"Photo culinaire. {override}. " + cfg["per_type"].get(recipe["type"], "") + cfg["base_style"]
     return (f"Photo culinaire : {recipe['name']}. "
             + (f"Ingrédients visibles : {ing}. " if ing else "")
             + cfg["per_type"].get(recipe["type"], "") + cfg["base_style"])

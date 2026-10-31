@@ -73,6 +73,17 @@ Le bouton **« Exporter »** dans Paramètres → Sauvegarde télécharge un fic
 
 ---
 
+## 🖼️ Photos des recettes générées par IA
+
+Depuis la V2.126.0, les photos des recettes sont des **images générées par intelligence artificielle**, signalées comme telles dans l'app (« Image générée par IA », ou « IA » sur les petites vignettes), conformément à l'article 50 du règlement européen sur l'IA.
+
+- Elles ont été créées **sur l'ordinateur du projet**, avec le modèle ouvert **FLUX.2 [klein]** de Black Forest Labs (Allemagne, licence Apache 2.0) : aucun service en ligne, aucun compte, aucune clé d'API.
+- Elles sont produites **uniquement à partir du nom de la recette et de ses ingrédients**. **Aucune donnée personnelle** (foyer, allergies, menus, notes) n'est utilisée ni transmise.
+- Elles sont publiées avec le code (dossier `assets/recipes/`) et mises en cache par ton navigateur comme le reste de l'app.
+- Les **menus ne sont pas générés par IA** : ils sont calculés par des règles fixes, sur ton appareil.
+
+---
+
 ## 🍪 Cookies
 
 L'application **n'utilise pas de cookies**. La persistance se fait via `localStorage` et `IndexedDB`, qui sont des mécanismes de stockage navigateur, distincts des cookies, et qui ne sont jamais transmis automatiquement à un serveur.
