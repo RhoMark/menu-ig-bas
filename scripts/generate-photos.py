@@ -1,279 +1,210 @@
 #!/usr/bin/env python3
-"""generate-photos.py — pipeline DALL-E 3 batch pour photos catalogue.
+"""generate-photos.py — photos du catalogue générées EN LOCAL (refonte 1D, V2.120.0).
 
-Lit data-recipes, identifie les recettes sans `photo`, appelle DALL-E 3
-via API OpenAI, télécharge PNG, convertit en WebP, sauvegarde dans
-assets/recipes/<id>.webp, et patche data-recipes pour ajouter le field.
+Remplace l'ancienne version DALL·E (OpenAI, payante). Tout tourne sur le
+mini-PC : aucun compte, aucune clé API, rien ne sort de la maison.
 
-PRÉ-REQUIS :
-  - OPENAI_API_KEY dans env
-  - Bibliothèques : openai, requests, Pillow (pip install)
-  - cwebp installé (dnf install libwebp-tools) — pour conversion WebP
-    (fallback PIL si cwebp absent)
+  Modèle   : FLUX.2 [klein] 4B (Black Forest Labs, Allemagne — licence Apache 2.0)
+  Moteur   : stable-diffusion.cpp (MIT), binaire officiel Vulkan
+  Matériel : ~38 s / photo sur la Radeon 890M
+  Dossier  : ~/ia-photos (bin-vulkan/, models/, out/) — hors du repo
+             (surchargeable par la variable MIJOTERIE_IA_DIR)
 
-USAGE :
-  python3 scripts/generate-photos.py --dry-run       # liste seulement
-  python3 scripts/generate-photos.py --count 5       # génère 5 photos
-  python3 scripts/generate-photos.py --cuisine indien --count 10
-  python3 scripts/generate-photos.py --type lunch --count 20
-  python3 scripts/generate-photos.py --ids l190,d201,d202
-  python3 scripts/generate-photos.py --overwrite     # re-génère existantes
+ÉTAPES :
+  1. Générer (reprend là où ça s'est arrêté : les photos déjà faites sont sautées)
+       python3 scripts/generate-photos.py --count 100
+     → assets/recipes/<id>.webp (1024×576, ~45 Ko) + tâches/galerie-photos.html
+  2. Relire la galerie ; refaire une photo ratée avec une autre graine :
+       python3 scripts/generate-photos.py --ids d434,l12 --overwrite --seed 11
+  3. Publier : ajoute le champ `photo` aux recettes dont la photo existe
+       python3 scripts/generate-photos.py --apply
 
-COÛT :
-  ~0.04 €/photo (DALL-E 3 standard 1024x1024)
-  50 photos = ~2 €
-  600 photos = ~24 €
+Ordre de priorité (sans --ids) : déjeuners et dîners de la saison en cours,
+en alternant les cuisines, puis les desserts, puis le reste du catalogue.
 
-PRIVACY :
-  La clé OPENAI_API_KEY reste dans l'env du terminal, jamais commitée.
-  Photos uploadées dans assets/recipes/ (repo public), pas chez OpenAI.
+Mention « Image générée par IA » affichée sur chaque photo (EU AI Act art. 50).
 """
 
-import os
-import re
-import sys
-import json
 import argparse
-import subprocess
 import datetime as dt
+import html
+import json
+import os
+import subprocess
+import sys
+import time
+from collections import defaultdict
 from pathlib import Path
-from recipes_store import load_recipes, save_recipes  # catalogue data/recipes.js (V2.115.0)
+
+from recipes_store import load_recipes, save_recipes  # catalogue data/recipes.js
+
+REPO = Path(__file__).resolve().parent.parent
+ASSETS = REPO / "assets" / "recipes"
+GALLERY = REPO / "tâches" / "galerie-photos.html"
+CONFIG = Path(__file__).resolve().parent / "photo-prompts.json"
+IA = Path(os.environ.get("MIJOTERIE_IA_DIR", Path.home() / "ia-photos"))
 
 
+def current_season(today=None):
+    m = (today or dt.date.today()).month
+    return {12: "winter", 1: "winter", 2: "winter", 3: "spring", 4: "spring", 5: "spring",
+            6: "summer", 7: "summer", 8: "summer"}.get(m, "autumn")
 
 
-def filter_recipes(recipes, args, assets_dir):
-    """Filtre les recettes selon args CLI."""
-    items = recipes.get("items", [])
-
-    # Filtre par ids explicites
-    if args.ids:
-        ids = [i.strip() for i in args.ids.split(",")]
-        items = [r for r in items if r.get("id") in ids]
-
-    # Filtre par cuisine
-    if args.cuisine:
-        items = [r for r in items if r.get("cuisine") == args.cuisine]
-
-    # Filtre par type
-    if args.type:
-        items = [r for r in items if r.get("type") == args.type]
-
-    # Exclure recettes déjà avec photo (sauf --overwrite)
-    if not args.overwrite:
-        items = [r for r in items if not r.get("photo")]
-        # Et vérif fichier physique présent
-        items = [r for r in items if not (assets_dir / f"{r['id']}.webp").exists()]
-
-    # Limite count
-    if args.count > 0:
-        items = items[:args.count]
-
-    return items
+def priority_order(items, season):
+    """Déjeuners/dîners de saison (cuisines alternées), puis desserts de saison, puis le reste."""
+    def round_robin(rs):
+        by = defaultdict(list)
+        for r in rs:
+            by[r["cuisine"]].append(r)
+        out, i = [], 0
+        while any(by.values()):
+            for c in sorted(by):
+                if i < len(by[c]):
+                    out.append(by[c][i])
+            i += 1
+            if all(i >= len(v) for v in by.values()):
+                break
+        return out
+    in_season = lambda r: season in r.get("seasons", []) or "all" in r.get("seasons", [])
+    first = round_robin([r for r in items if r["type"] in ("lunch", "dinner") and in_season(r)])
+    second = round_robin([r for r in items if r["type"] == "dessert" and in_season(r)])
+    seen = {r["id"] for r in first + second}
+    return first + second + [r for r in items if r["id"] not in seen]
 
 
-def build_prompt(recipe, config):
-    """Construit le prompt DALL-E unifié pour une recette."""
-    name = recipe.get("name", "?")
-    cuisine = recipe.get("cuisine", "universel")
-    base = config["base_style"]
-    ratio = config["aspect_ratio_default"]
-    modifier = config["per_cuisine_modifiers"].get(cuisine, "")
-    negative = config.get("negative_prompts", "")
-    return f"{name}, {base}, {ratio}{modifier}. {negative}"
+def main_ingredients(recipe, n=5):
+    """Ingrédients visibles dans l'assiette : on écarte épices, huiles, sel, bouillons."""
+    skip = ("sel", "poivre", "huile", "bouillon", "eau", "vinaigre", "levure", "extrait", "sauce soja")
+    out = []
+    for name, *_rest in recipe["ing"]:
+        cat = _rest[2] if len(_rest) > 2 else ""
+        base = name.split("(")[0].strip()
+        if cat == "spices" or base.lower().startswith(skip):
+            continue
+        out.append(base)
+        if len(out) >= n:
+            break
+    return out
 
 
-def call_openai(prompt, api_key, settings):
-    """Appel DALL-E 3 — retourne URL image générée."""
-    try:
-        from openai import OpenAI
-    except ImportError:
-        print("❌ Module openai non installé. pip install openai")
-        sys.exit(2)
-
-    client = OpenAI(api_key=api_key)
-    response = client.images.generate(
-        model=settings.get("model", "dall-e-3"),
-        prompt=prompt,
-        size=settings.get("size", "1024x1024"),
-        quality=settings.get("quality", "standard"),
-        n=1,
-    )
-    return response.data[0].url
+def build_prompt(recipe, cfg):
+    ing = ", ".join(main_ingredients(recipe))
+    return (f"Photo culinaire : {recipe['name']}. "
+            + (f"Ingrédients visibles : {ing}. " if ing else "")
+            + cfg["per_type"].get(recipe["type"], "") + cfg["base_style"])
 
 
-def download_image(url, dest_png):
-    """Télécharge l'image depuis l'URL temporaire DALL-E."""
-    try:
-        import requests
-    except ImportError:
-        print("❌ Module requests non installé. pip install requests")
-        sys.exit(2)
-    resp = requests.get(url, timeout=30)
-    resp.raise_for_status()
-    dest_png.write_bytes(resp.content)
+def generate(recipe, cfg, seed, png):
+    cmd = [str(IA / "bin-vulkan/sd-cli"),
+           "--diffusion-model", str(IA / "models/flux-2-klein-4b-Q8_0.gguf"),
+           "--vae", str(IA / "models/flux2-vae.safetensors"),
+           "--llm", str(IA / "models/Qwen3-4B-Q8_0.gguf"),
+           "-p", build_prompt(recipe, cfg),
+           "--cfg-scale", "1.0", "--steps", "4", "--sampling-method", "euler",
+           "-W", str(cfg["width"]), "-H", str(cfg["height"]), "-s", str(seed),
+           "--vae-tiling", "-o", str(png)]
+    env = dict(os.environ, LD_LIBRARY_PATH=str(IA / "bin-vulkan"))
+    with open(str(png) + ".log", "w") as log:
+        rc = subprocess.run(cmd, cwd=IA / "bin-vulkan", env=env, stdout=log, stderr=subprocess.STDOUT).returncode
+    return rc == 0 and png.exists()
 
 
-def convert_to_webp(src_png, dest_webp, quality=82, width=1280, height=720):
-    """Convertit PNG → WebP via cwebp (préféré) ou Pillow."""
-    # Tentative cwebp
-    if subprocess.run(["which", "cwebp"], capture_output=True).returncode == 0:
-        cmd = ["cwebp", "-q", str(quality), "-resize", str(width), str(height),
-               str(src_png), "-o", str(dest_webp)]
-        result = subprocess.run(cmd, capture_output=True)
-        if result.returncode == 0:
-            return True
-
-    # Fallback Pillow
-    try:
-        from PIL import Image
-    except ImportError:
-        print("❌ Ni cwebp ni Pillow installés. dnf install libwebp-tools OR pip install Pillow")
-        sys.exit(2)
-
-    img = Image.open(src_png)
-    # Resize en gardant l'aspect ratio puis crop center
-    img.thumbnail((width * 2, height * 2), Image.LANCZOS)
-    # Crop carré au centre
-    w, h = img.size
-    if w > h:
-        left = (w - h) // 2
-        img = img.crop((left, 0, left + h, h))
-    else:
-        top = (h - w) // 2
-        img = img.crop((0, top, w, top + w))
-    img = img.resize((1024, 1024), Image.LANCZOS)
-    img.save(dest_webp, "WEBP", quality=quality)
-    return True
+def to_webp(png, webp, quality):
+    from PIL import Image
+    with Image.open(png) as im:
+        im.convert("RGB").save(webp, "WEBP", quality=quality, method=6)
 
 
-def patch_recipe_photo(data, target_ids, photo_paths):
-    """Ajoute le champ photo aux recettes du catalogue."""
-    for r in data["items"]:
-        if r["id"] in target_ids and r["id"] in photo_paths:
-            r["photo"] = photo_paths[r["id"]]
+def write_gallery(items):
+    """Galerie de relecture (privée, tâches/) : photos présentes, avec id pour demander une reprise."""
+    by_id = {r["id"]: r for r in items}
+    files = sorted(ASSETS.glob("*.webp"), key=lambda p: p.stat().st_mtime, reverse=True)
+    cards = []
+    for f in files:
+        r = by_id.get(f.stem)
+        if not r:
+            continue
+        cards.append(f'<figure><img src="../assets/recipes/{f.name}" loading="lazy" alt="">'
+                     f'<figcaption><b>{html.escape(r["id"])}</b> · {html.escape(r["cuisine"])} · {html.escape(r["type"])}'
+                     f'<br>{html.escape(r["name"])}</figcaption></figure>')
+    GALLERY.write_text(
+        '<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<title>Galerie photos</title><style>body{font-family:system-ui;margin:16px;background:#f6f1e8;color:#2b2722}'
+        '.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}figure{margin:0;background:#fffcf7;'
+        'border:1px solid #ddd2c1;border-radius:12px;overflow:hidden}img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}'
+        'figcaption{padding:8px 10px;font-size:13px;line-height:1.35}</style></head><body>'
+        f'<h1>Photos générées : {len(cards)}</h1><p>Plus récentes en premier. Pour refaire une photo : donner son identifiant '
+        '(ex. <b>d434</b>).</p><div class="g">' + "".join(cards) + "</div></body></html>", encoding="utf-8")
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Génère les photos catalogue via DALL-E 3")
-    parser.add_argument("--count", type=int, default=0,
-                        help="nombre max de recettes à traiter (0 = toutes)")
-    parser.add_argument("--cuisine", type=str, default=None,
-                        help="filtre par cuisine")
-    parser.add_argument("--type", type=str, default=None,
-                        help="filtre par type")
-    parser.add_argument("--ids", type=str, default=None,
-                        help="liste d'ids séparés par virgule")
-    parser.add_argument("--overwrite", action="store_true",
-                        help="re-génère même si photo existe")
-    parser.add_argument("--dry-run", action="store_true",
-                        help="liste seulement, ne génère pas")
-    parser.add_argument("--no-patch", action="store_true",
-                        help="ne pas patcher data-recipes (juste générer fichiers)")
-    args = parser.parse_args()
+    ap = argparse.ArgumentParser(description="Photos du catalogue générées en local (FLUX.2 klein)")
+    ap.add_argument("--count", type=int, default=0, help="nombre de photos à générer (0 = aucune limite)")
+    ap.add_argument("--ids", type=str, default=None, help="identifiants séparés par des virgules")
+    ap.add_argument("--overwrite", action="store_true", help="refaire même si la photo existe")
+    ap.add_argument("--seed", type=int, default=7, help="graine (changer pour une autre version)")
+    ap.add_argument("--season", type=str, default=None, help="saison prioritaire (défaut : saison en cours)")
+    ap.add_argument("--dry-run", action="store_true", help="affiche la liste et un exemple de consigne, sans générer")
+    ap.add_argument("--apply", action="store_true", help="ajoute le champ photo aux recettes dont la photo existe")
+    args = ap.parse_args()
 
-    repo_root = Path(__file__).resolve().parent.parent
-    index_path = repo_root / "index.html"
-    assets_dir = repo_root / "assets" / "recipes"
-    prompts_path = Path(__file__).resolve().parent / "photo-prompts.json"
-
-    if not index_path.exists():
-        print(f"❌ {index_path} introuvable")
-        sys.exit(2)
-    if not prompts_path.exists():
-        print(f"❌ {prompts_path} introuvable")
-        sys.exit(2)
-
-    # Vérif clé API
-    api_key = os.environ.get("OPENAI_API_KEY")
-    if not api_key and not args.dry_run:
-        print("❌ OPENAI_API_KEY non définie. export OPENAI_API_KEY='sk-...'")
-        sys.exit(2)
-
-    # Création dir assets
-    assets_dir.mkdir(parents=True, exist_ok=True)
-
-    # Chargement config
-    config = json.loads(prompts_path.read_text(encoding="utf-8"))
-
-    # Chargement recettes
+    cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
     data = load_recipes()
+    items = data["items"]
+    ASSETS.mkdir(parents=True, exist_ok=True)
 
-    # Filtrage
-    items = filter_recipes(data, args, assets_dir)
-
-    if not items:
-        print("⚠️ Aucune recette à traiter avec ces filtres.")
-        return
-
-    # Estimation coût
-    cost_per = config["api_settings"].get("estimated_cost_eur", 0.04)
-    total_cost = len(items) * cost_per
-    print(f"Recettes à traiter : {len(items)}")
-    print(f"Coût estimé      : {total_cost:.2f} €")
-    print()
-
-    if args.dry_run:
+    if args.apply:
+        n = 0
         for r in items:
-            prompt = build_prompt(r, config)
-            print(f"  {r['id']:6} {r['name'][:50]}")
-            print(f"         prompt: {prompt[:100]}...")
-        print(f"\n✅ Dry-run terminé. {len(items)} recettes seraient générées.")
-        return
-
-    # Confirmation
-    confirm = input(f"Continuer ? [y/N] : ").strip().lower()
-    if confirm != "y":
-        print("Annulé.")
-        return
-
-    # Pipeline
-    photo_paths = {}
-    target_ids = set()
-    tmp_dir = Path("/tmp/dalle-png")
-    tmp_dir.mkdir(exist_ok=True)
-
-    for i, r in enumerate(items, 1):
-        rid = r["id"]
-        print(f"\n[{i}/{len(items)}] {rid} {r['name'][:50]}")
-        try:
-            prompt = build_prompt(r, config)
-            print(f"  Génération DALL-E...")
-            url = call_openai(prompt, api_key, config["api_settings"])
-
-            tmp_png = tmp_dir / f"{rid}.png"
-            print(f"  Téléchargement PNG...")
-            download_image(url, tmp_png)
-
-            dest_webp = assets_dir / f"{rid}.webp"
-            print(f"  Conversion WebP...")
-            convert_to_webp(tmp_png, dest_webp, **config["webp_settings"])
-
-            # Suppression PNG temp
-            tmp_png.unlink(missing_ok=True)
-
-            rel_path = f"assets/recipes/{rid}.webp"
-            photo_paths[rid] = rel_path
-            target_ids.add(rid)
-            print(f"  ✅ {rel_path}")
-
-        except KeyboardInterrupt:
-            print("\n⚠️ Interrompu. Données partielles patchées si --no-patch absent.")
-            break
-        except Exception as e:
-            print(f"  ❌ Échec : {e}")
-            continue
-
-    # Patch data-recipes
-    if photo_paths and not args.no_patch:
-        print(f"\nPatch data-recipes pour {len(photo_paths)} recettes...")
-        patch_recipe_photo(data, target_ids, photo_paths)
+            f = ASSETS / f"{r['id']}.webp"
+            if f.exists() and r.get("photo") != f"assets/recipes/{f.name}":
+                r["photo"] = f"assets/recipes/{f.name}"
+                n += 1
         save_recipes(data)
-        print(f"✅ data/recipes.js mis à jour")
+        print(f"✅ champ photo ajouté à {n} recette(s) ({sum(1 for r in items if r.get('photo'))} au total)")
+        return
 
-    print(f"\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
-    print(f"Photos générées : {len(photo_paths)}/{len(items)}")
-    print(f"Coût réel estimé : {len(photo_paths) * cost_per:.2f} €")
+    if args.ids:
+        wanted = [i.strip() for i in args.ids.split(",") if i.strip()]
+        by_id = {r["id"]: r for r in items}
+        missing = [i for i in wanted if i not in by_id]
+        if missing:
+            sys.exit(f"❌ identifiants inconnus : {missing}")
+        todo = [by_id[i] for i in wanted]
+    else:
+        todo = priority_order(items, args.season or current_season())
+    if not args.overwrite:
+        todo = [r for r in todo if not (ASSETS / f"{r['id']}.webp").exists()]
+    if args.count:
+        todo = todo[:args.count]
+
+    print(f"📸 {len(todo)} photo(s) à générer (~{len(todo) * 40 // 60} min)")
+    if args.dry_run:
+        for r in todo[:15]:
+            print(f"   {r['id']:7} {r['cuisine']:13} {r['type']:9} {r['name'][:60]}")
+        if todo:
+            print("\nExemple de consigne :\n" + build_prompt(todo[0], cfg))
+        return
+    if not (IA / "bin-vulkan/sd-cli").exists():
+        sys.exit(f"❌ moteur introuvable : {IA / 'bin-vulkan/sd-cli'}")
+
+    out = IA / "out/catalogue"
+    out.mkdir(parents=True, exist_ok=True)
+    t0, done, failed = time.time(), 0, []
+    for k, r in enumerate(todo, 1):
+        png = out / f"{r['id']}-s{args.seed}.png"
+        t = time.time()
+        if generate(r, cfg, args.seed, png):
+            to_webp(png, ASSETS / f"{r['id']}.webp", cfg["webp_quality"])
+            done += 1
+            write_gallery(items)
+            print(f"[{k}/{len(todo)}] ✅ {r['id']} ({time.time() - t:.0f} s) {r['name'][:55]}", flush=True)
+        else:
+            failed.append(r["id"])
+            print(f"[{k}/{len(todo)}] ❌ {r['id']} — voir {png}.log", flush=True)
+    print(f"━━━ {done} photo(s) en {(time.time() - t0) / 60:.0f} min ; échecs : {failed or 'aucun'}")
+    print("→ relire tâches/galerie-photos.html, puis : python3 scripts/generate-photos.py --apply")
 
 
 if __name__ == "__main__":
