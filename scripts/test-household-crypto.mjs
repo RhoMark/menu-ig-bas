@@ -262,6 +262,16 @@ await check("garde-fou + fusion : une suppression d'allergie faite par l'ADMIN (
   assert.deepEqual(g.house.ratings, {d1: {2: 4}});
 });
 
+await check("fusion « Cuisiné » : deux appareils marquent deux repas différents → les deux gardés", () => {
+  const base = {id: "h1", menus: {w1: {mon: {lunch: "l1"}, tue: {dinner: "d2"}}}};
+  const a = clone(base); a.menus.w1.mon.cooked = {"lunch:l1": {at: "2026-10-27T12:30:00.000Z", by: 1}};
+  const b = clone(base); b.menus.w1.tue.cooked = {"dinner:d2": {at: "2026-10-28T19:40:00.000Z", by: 2}};
+  const {merged, conflicts} = hc.mergeHousehold(base, a, b);
+  assert.equal(conflicts.length, 0);
+  assert.equal(merged.menus.w1.mon.cooked["lunch:l1"].by, 1);
+  assert.equal(merged.menus.w1.tue.cooked["dinner:d2"].by, 2);
+});
+
 console.log("━".repeat(28));
 if (process.exitCode) { console.error("❌ householdCrypto : échec"); process.exit(1); }
 console.log(`✅ householdCrypto : ${ok} vérifications OK`);

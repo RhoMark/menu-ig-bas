@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.115.0</title>
+<title>Menu IG Bas — V2.116.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -606,6 +606,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Pictogrammes du planning (case d'un repas)",
           "a": "👥 présence / qui mange — clic ouvre la fenêtre pour décocher les absents. 🎉 invités ponctuels — adulte/ado/enfant/petit enfant avec scaling auto. 🥂 apéro (sec en plus du repas, ou dînatoire/déjeunatoire qui remplace). 🍾 mode fête (entrée + plat + dessert, compensation glycémique J-1/J+1). 🔒/🔓 verrouillage de la case (la régénération ne change pas). 🔀 remplacer cette recette (ouvre la liste filtrée). 🎲 piocher aléatoirement une autre recette du même type. 🌃 marquer tout le jour comme repas à l'extérieur (resto, cantine)."
+        },
+        {
+          "q": "✅ « Cuisiné » : à quoi sert ce bouton ?",
+          "a": "Ouvre une recette depuis une case du planning, puis touche « ✓ Marquer comme cuisiné » quand le plat a vraiment été préparé. La case affiche alors ✅ devant le nom. L'app retient le jour et l'heure (et, dans un foyer partagé, qui l'a cuisiné) : c'est ce qui permettra plus tard de suivre ce que vous cuisinez réellement, et pas seulement ce qui était prévu. Touche à nouveau le bouton pour annuler. Si tu remplaces la recette de la case, le marquage ne s'applique plus. Comme tout le reste, ces informations restent sur ton appareil."
         },
         {
           "q": "Pictogrammes types de repas",
@@ -15128,6 +15132,14 @@ function menuDayDate(wk, dayIdx, shoppingDay) {
   const jsDay = (dayIdx + 1) % 7;
   return addDays(ws, (jsDay - ws.getDay() + 7) % 7);
 }
+// V2.116.0 — « Cuisiné » : menus[wk][day].cooked["<repas>:<recetteId>"] =
+// {at: ISO, by?: memberId}. Horodaté (chronologie requise par la gamification
+// Phase 3, jamais un booléen) et lié à la recette : si la recette du créneau
+// change, l'ancien marquage ne s'applique plus, sans rien avoir à effacer.
+const cookedKey = (meal, recipeId) => `${meal}:${recipeId}`;
+function cookedEntry(dayObj, meal, recipeId) {
+  return (meal && recipeId && dayObj?.cooked?.[cookedKey(meal, recipeId)]) || null;
+}
 // Parcourt les cases de menu dont la date réelle tombe dans `windows`
 // ([début, fin[ en dates), hors repas pris à l'extérieur.
 function forEachMenuSlotIn(menus, shoppingDay, windows, meals, fn) {
@@ -18475,7 +18487,14 @@ function App({initialState}) {
       keepLocked,
       favorites: state.favorites || [],
     });
-    update(s => ({menus: {...s.menus, [wk]: days}}));
+    // V2.116.0 — Les repas déjà marqués « Cuisiné » restent dans l'historique
+    // (chronologie réelle) même si la semaine est regénérée.
+    update(s => {
+      const prev = s.menus[wk] || {};
+      const next = {...days};
+      DAYS.forEach(d => { if (prev[d]?.cooked && next[d]) next[d] = {...next[d], cooked: prev[d].cooked}; });
+      return {menus: {...s.menus, [wk]: next}};
+    });
   };
   const regenerateSlot = (day, meal) => {
     const season = getSeason(currentWeek);
@@ -18625,6 +18644,17 @@ function App({initialState}) {
       if (!(await activateMember((state.profile.members || []).find(m => m.id === memberId)))) return;
     } else if (!canRateFor(memberId)) return;
     rateRecipe(rid, score, memberId);
+  };
+  const toggleCooked = (day, meal, recipeId) => {
+    const by = actorContext(state).actorId; // S6 — qui a cuisiné (foyer partagé)
+    const key = cookedKey(meal, recipeId);
+    update(s => {
+      const dayObj = s.menus[wk]?.[day] || {};
+      const cooked = {...(dayObj.cooked || {})};
+      if (cooked[key]) delete cooked[key];
+      else cooked[key] = {at: new Date().toISOString(), ...(by != null ? {by} : {})};
+      return {menus: {...s.menus, [wk]: {...(s.menus[wk] || {}), [day]: {...dayObj, cooked}}}};
+    });
   };
   const togglePantry = (key) => {
     update(s => ({pantryChecks: {...s.pantryChecks, [wk]: {...(s.pantryChecks[wk]||{}), [key]: !s.pantryChecks[wk]?.[key]}}}));
@@ -19205,6 +19235,9 @@ function App({initialState}) {
           ratings={state.ratings}
           recentUsageCount={countRecipeUsageRecent(state.menus, selectedRecipe.id, new Date(), RECENT_DAYS, state.profile?.shoppingDay ?? 1)}
           onRate={(score, memberId) => rateAs(selectedRecipe.id, score, memberId)}
+          cooked={cookedEntry(currentMenu[selectedRecipe.day], selectedRecipe.meal, selectedRecipe.id)}
+          onToggleCooked={selectedRecipe.day && selectedRecipe.meal
+            ? () => toggleCooked(selectedRecipe.day, selectedRecipe.meal, selectedRecipe.id) : null}
           canRate={canRateFor}
           onClose={() => setSelectedRecipe(null)}
           isFavorite={(state.favorites || []).includes(selectedRecipe.id)}
@@ -20136,7 +20169,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                           <button onClick={() => onSelectRecipe(recipe.id, {day, meal: m.key})}
                             className="text-left w-full hover:text-emerald-700 dark:text-emerald-300 font-medium text-slate-800 dark:text-slate-100">
                             <span className="flex items-start gap-1">
-                              <span className="flex-1">{recipe.name}</span>
+                              <span className="flex-1">{cookedEntry(slot, m.key, recipe.id) && <span title="Cuisiné" className="mr-0.5">✅</span>}{recipe.name}</span>
                               {recipeAdvanceInfo(recipe) && (
                                 <span title={`À préparer ${recipeAdvanceInfo(recipe).label}`}
                                       className="text-amber-600 text-sm flex-shrink-0">
@@ -20218,7 +20251,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                               <button onClick={() => onSelectRecipe(dessertRecipe.id, {day, meal: "dessert"})}
                                 className="text-left w-full hover:text-rose-700 dark:text-rose-300 text-xs text-slate-700 dark:text-slate-200">
                                 <span className="flex items-start gap-1">
-                                  <span className="flex-1 font-medium">{dessertRecipe.name}</span>
+                                  <span className="flex-1 font-medium">{cookedEntry(slot, "dessert", dessertRecipe.id) && <span title="Cuisiné" className="mr-0.5">✅</span>}{dessertRecipe.name}</span>
                                   {recipeAdvanceInfo(dessertRecipe) && (
                                     <span title={`À préparer ${recipeAdvanceInfo(dessertRecipe).label}`}
                                           className="text-amber-600 flex-shrink-0">
@@ -21035,7 +21068,7 @@ function RecipePrintSheet({recipe, mult, qtyLabel}) {
 }
 
 // ----- Recipe Modal --------------------------------------------------------
-function RecipeModal({recipe, profile, season = null, attendees, guests = null, guestRatios = null, ratings, recentUsageCount = 0, onRate, canRate = () => true, onClose, isFavorite = false, onToggleFavorite = null}) {
+function RecipeModal({recipe, profile, season = null, attendees, guests = null, guestRatios = null, ratings, recentUsageCount = 0, onRate, canRate = () => true, cooked = null, onToggleCooked = null, onClose, isFavorite = false, onToggleFavorite = null}) {
   const hasContext = Array.isArray(attendees);
   const nAll = profile.members?.length || 0;
   const nPresent = hasContext ? attendees.length : nAll;
@@ -21299,6 +21332,21 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             </ol>
           </div>
           <div className="bg-slate-50 dark:bg-slate-800 rounded p-4 space-y-2">
+            {onToggleCooked && (() => {
+              const by = cooked?.by != null ? profile.members.find(m => m.id === cooked.by)?.name : null;
+              const when = cooked ? new Date(cooked.at).toLocaleString("fr-FR", {weekday: "long", hour: "2-digit", minute: "2-digit"}) : "";
+              return (
+                <div className="flex flex-wrap items-center gap-2 pb-2 mb-1 border-b border-slate-200 dark:border-slate-700">
+                  <button onClick={onToggleCooked}
+                    className={`px-3 py-1.5 rounded text-sm font-medium border ${cooked
+                      ? "bg-emerald-600 border-emerald-600 text-white hover:bg-emerald-700"
+                      : "border-emerald-600 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-50 dark:hover:bg-emerald-950"}`}>
+                    {cooked ? "✅ Cuisiné" : "✓ Marquer comme cuisiné"}
+                  </button>
+                  {cooked && <span className="text-xs text-slate-600 dark:text-slate-300">{when}{by ? ` · par ${by}` : ""} — touche à nouveau pour annuler</span>}
+                </div>
+              );
+            })()}
             <span className="font-medium text-slate-800 dark:text-slate-100 block">Notation par membre du foyer</span>
             {profile.members.map(m => {
               const memberRating = getMemberRating(ratings, recipe.id, m.id);
