@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.131.1</title>
+<title>Menu IG Bas — V2.131.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21628,7 +21628,18 @@ function pdfCanvasOptions(el) {
   const w = Math.max(el?.scrollWidth || 0, 1100);
   const h = Math.max(el?.scrollHeight || 0, 800);
   const scale = Math.max(0.75, Math.min(2, Math.sqrt(16e6 / (w * h))));
-  return {scale, useCORS: false, logging: false, backgroundColor: "#ffffff", scrollX: 0, scrollY: 0};
+  // V2.131.2 — html2canvas recopie TOUTE la page dans une iframe et attend
+  // qu'elle soit « complete » (images comprises) avant de dessiner. Avec la
+  // nouvelle interface (planning et fiche pleins de photos), Safari iPhone
+  // n'y arrivait pas : préparation sans fin. On ne recopie plus que la feuille
+  // à exporter et le chemin qui y mène (+ <head> pour les styles). html2pdf
+  // dessine une COPIE de la feuille, placée dans `.html2pdf__overlay`.
+  const ignoreElements = n => {
+    if (n.nodeType !== 1 || document.head.contains(n)) return false;
+    if (n.closest(".html2pdf__overlay") || n.querySelector(".html2pdf__overlay")) return false;
+    return !(el && (n.contains(el) || el.contains(n)));
+  };
+  return {scale, useCORS: false, logging: false, backgroundColor: "#ffffff", scrollX: 0, scrollY: 0, ignoreElements};
 }
 
 // V2.110.2 — Impression compatible iPhone / iPad. Sur iOS, window.print()
@@ -21676,18 +21687,18 @@ function recipeShareText(recipe) {
   return `${recipe.name}\n\nIngrédients (pour 1 personne) :\n${ing}\n\nÉtapes :\n${steps}`;
 }
 
-// Partage la fiche PDF (ou, à défaut, le texte). AbortError = l'utilisateur a
-// fermé la feuille → rien à faire ; NotAllowedError = le toucher est « trop
-// vieux » (génération longue, Safari) → on propose un 2e bouton.
+// Partage la fiche PDF (ou, à défaut / file = null, le texte). AbortError =
+// l'utilisateur a fermé la feuille → rien à faire ; NotAllowedError = le toucher
+// est « trop vieux » (génération longue, Safari) → on propose un 2e bouton.
 async function shareRecipeFile(file, recipe, setPending) {
   try {
-    if (navigator.canShare && navigator.canShare({files: [file]})) {
+    if (file && navigator.canShare && navigator.canShare({files: [file]})) {
       await navigator.share({files: [file], title: recipe.name});
     } else {
       await navigator.share({title: recipe.name, text: recipeShareText(recipe)});
     }
   } catch (e) {
-    if (e?.name === "NotAllowedError") setPending(file);
+    if (e?.name === "NotAllowedError") setPending({file});
     else if (e?.name !== "AbortError") console.error("[share] recette", e);
   }
 }
@@ -21815,7 +21826,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
   // au système : rien ne passe par un serveur. Safari exige que navigator.share
   // suive de près le toucher ; si la génération a été trop longue, le fichier
   // prêt est gardé dans `pendingShare` et un 2e bouton le partage.
-  const [pendingShare, setPendingShare] = useState(null); // File | null
+  const [pendingShare, setPendingShare] = useState(null); // {file: File | null} | null (null = texte)
   const sheetRootRef = useRef(null);
   useEffect(() => {
     if (!CAN_SHARE) return;
@@ -21837,8 +21848,10 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
     const watchdog = setTimeout(() => {
       if (cancelled) return;
       cancelled = true; setExportMode(null);
-      alert("La préparation de la fiche prend trop de temps sur cet appareil. Réessaie, ou utilise 🖨️ puis « Partager » / « Enregistrer en PDF » depuis la fenêtre d'impression.");
-    }, 45000);
+      // Partage : on propose d'envoyer la recette en texte plutôt que d'échouer.
+      if (exportMode === "share") { setPendingShare({file: null}); return; }
+      alert("La préparation de la fiche prend trop de temps sur cet appareil. Réessaie, ou utilise 🖨️ puis « Enregistrer en PDF » depuis la fenêtre d'impression.");
+    }, exportMode === "share" ? 20000 : 45000);
     (async () => {
       try {
         await loadHtml2Pdf();
@@ -22017,9 +22030,9 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
     {pendingShare && (
       <div className="fixed bottom-4 z-[70] no-print bg-slate-800 text-white pl-4 pr-2 py-2 rounded-lg shadow-lg text-sm flex items-center gap-2"
            style={{position: "fixed", left: "50%", transform: "translateX(-50%)", maxWidth: "calc(100vw - 32px)"}}>
-        <span>La fiche PDF est prête.</span>
-        <button onClick={() => { const f = pendingShare; setPendingShare(null); shareRecipeFile(f, recipe, setPendingShare); }}
-          className="px-3 py-1.5 rounded-full bg-white text-slate-900 font-semibold">Partager</button>
+        <span>{pendingShare.file ? "La fiche PDF est prête." : "La fiche PDF n'a pas pu être préparée."}</span>
+        <button onClick={() => { const f = pendingShare.file; setPendingShare(null); shareRecipeFile(f, recipe, setPendingShare); }}
+          className="px-3 py-1.5 rounded-full bg-white text-slate-900 font-semibold whitespace-nowrap">{pendingShare.file ? "Partager" : "Partager en texte"}</button>
         <button onClick={() => setPendingShare(null)} aria-label="Annuler le partage" className="w-8 h-8 text-white/70">✕</button>
       </div>
     )}
