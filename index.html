@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.131.2</title>
+<title>Menu IG Bas — V2.132.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -508,7 +508,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment envoyer une recette par message (WhatsApp, Signal, mail…) ?",
-          "a": "Ouvre la recette et touche le bouton « Partager » (le carré avec une flèche vers le haut, à côté de 🖨️). L'app fabrique la fiche en PDF, avec les quantités de ce repas, puis ouvre la fenêtre de partage de ton téléphone ou de ton ordinateur : tu choisis l'app (WhatsApp, Signal, Messages, Mail…), « Imprimer » ou « Enregistrer dans Fichiers ». Le PDF est fabriqué sur ton appareil et remis directement à l'app choisie : il ne passe par aucun serveur. Comme sur la fiche imprimée, il ne contient jamais les prénoms de ta famille. Si la fiche met un peu de temps à se préparer, un petit bandeau « La fiche PDF est prête » s'affiche : touche « Partager ». Le bouton n'apparaît pas sur les navigateurs qui ne savent pas partager (Firefox sur ordinateur, par exemple) : utilise alors 📄 PDF puis envoie le fichier."
+          "a": "Ouvre la recette et touche le bouton « Partager » (le carré avec une flèche vers le haut, en haut de la fiche). L'app fabrique la fiche en PDF, avec les quantités de ce repas, puis ouvre la fenêtre de partage de ton téléphone ou de ton ordinateur : tu choisis l'app (WhatsApp, Signal, Messages, Mail…), « Imprimer » ou « Enregistrer dans Fichiers ». Le PDF est fabriqué sur ton appareil et remis directement à l'app choisie : il ne passe par aucun serveur. Comme sur la fiche imprimée, il ne contient jamais les prénoms de ta famille. Si la fiche met un peu de temps à se préparer, un petit bandeau « La fiche PDF est prête » s'affiche : touche « Partager ». Sur ces appareils, le bouton Partager remplace 🖨️ et 📄 : imprimer et enregistrer en PDF se font depuis la fenêtre de partage. Les navigateurs qui ne savent pas partager (Firefox sur ordinateur, par exemple) gardent 🖨️ Imprimer et 📄 PDF ; pour envoyer la recette, télécharge le PDF puis joins le fichier à ton message."
         },
         {
           "q": "Comment exporter le menu ou la liste de courses en PDF ?",
@@ -22050,17 +22050,22 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
               title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris (boost en génération)"}
               className={`w-10 h-10 rounded-full hover:bg-surface-2 text-xl ${isFavorite ? "" : "opacity-60"}`}>{isFavorite ? "⭐" : "☆"}</button>
           )}
-          {CAN_SHARE && (
+          {/* V2.132.0 — Partager remplace 🖨️ et 📄 là où il existe (la feuille de
+              partage propose Imprimer et Enregistrer) ; sinon (Firefox ordinateur) ils restent. */}
+          {CAN_SHARE ? (
             <button onClick={() => setExportMode("share")} disabled={!!exportMode} aria-label="Partager la recette"
               title="Partager la recette (message, mail, impression, enregistrement en PDF…)"
               className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40"><ShareIcon /></button>
+          ) : (
+            <>
+              <button onClick={() => setExportMode("print")} disabled={!!exportMode} aria-label="Imprimer la recette"
+                title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
+                className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">🖨️</button>
+              <button onClick={() => setExportMode("pdf")} disabled={!!exportMode} aria-label="Télécharger la recette en PDF"
+                title="Télécharger la recette en PDF (quantités de ce repas)"
+                className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">📄</button>
+            </>
           )}
-          <button onClick={() => setExportMode("print")} disabled={!!exportMode} aria-label="Imprimer la recette"
-            title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
-            className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">🖨️</button>
-          <button onClick={() => setExportMode("pdf")} disabled={!!exportMode} aria-label="Télécharger la recette en PDF"
-            title="Télécharger la recette en PDF (quantités de ce repas)"
-            className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">📄</button>
         </div>
         <RecipeHero recipe={recipe} />
         <div className="px-5 md:px-8 pt-5 pb-8 space-y-6">
@@ -22139,21 +22144,25 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                   {isFavorite ? "⭐" : "☆"}
                 </button>
               )}
-              {/* V2.108.0 — Imprimer / exporter la fiche recette (V2.131.0 : + partager) */}
-              {CAN_SHARE && (
+              {/* V2.108.0 — Imprimer / exporter la fiche recette. V2.132.0 : Partager
+                  les remplace là où il existe (Imprimer / Enregistrer y figurent). */}
+              {CAN_SHARE ? (
                 <button onClick={() => setExportMode("share")} disabled={!!exportMode}
                   title="Partager la recette (message, mail, impression, enregistrement en PDF…)"
                   aria-label="Partager la recette"
                   className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40"><ShareIcon /></button>
+              ) : (
+                <>
+                  <button onClick={() => setExportMode("print")} disabled={!!exportMode}
+                    title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
+                    aria-label="Imprimer la recette"
+                    className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">🖨️</button>
+                  <button onClick={() => setExportMode("pdf")} disabled={!!exportMode}
+                    title="Télécharger la recette en PDF (quantités de ce repas)"
+                    aria-label="Télécharger la recette en PDF"
+                    className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">📄</button>
+                </>
               )}
-              <button onClick={() => setExportMode("print")} disabled={!!exportMode}
-                title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
-                aria-label="Imprimer la recette"
-                className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">🖨️</button>
-              <button onClick={() => setExportMode("pdf")} disabled={!!exportMode}
-                title="Télécharger la recette en PDF (quantités de ce repas)"
-                aria-label="Télécharger la recette en PDF"
-                className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">📄</button>
               <button onClick={onClose} aria-label="Fermer la recette" className="text-white/80 hover:text-white text-2xl">✕</button>
             </div>
           </div>
