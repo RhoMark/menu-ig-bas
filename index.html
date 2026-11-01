@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.130.0</title>
+<title>Menu IG Bas — V2.131.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -505,6 +505,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Pourquoi une recette contient un ingrédient que j'ai exclu ?",
           "a": "Si le badge ⚠️🚫 apparaît sur une recette, c'est que l'algorithme a appliqué le fallback exclusions (issue #10). Cas typique : tes exclusions sont si nombreuses qu'il restait moins de 3 recettes éligibles pour ce repas dans la saison. Plutôt que de laisser la case vide, l'app a pioché quand même et te signale la situation. Une bannière apparaît en haut du planning listant les conflits. Solution : assouplis tes exclusions (Paramètres → Membres → Exclusions) ou enrichis ton catalogue. ⚠️ Important : les ALLERGIES médicales ne sont jamais relâchées — seules les préférences de goût (exclusions) peuvent l'être."
+        },
+        {
+          "q": "Comment envoyer une recette par message (WhatsApp, Signal, mail…) ?",
+          "a": "Ouvre la recette et touche le bouton « Partager » (le carré avec une flèche vers le haut, à côté de 🖨️). L'app fabrique la fiche en PDF, avec les quantités de ce repas, puis ouvre la fenêtre de partage de ton téléphone ou de ton ordinateur : tu choisis l'app (WhatsApp, Signal, Messages, Mail…), « Imprimer » ou « Enregistrer dans Fichiers ». Le PDF est fabriqué sur ton appareil et remis directement à l'app choisie : il ne passe par aucun serveur. Comme sur la fiche imprimée, il ne contient jamais les prénoms de ta famille. Si la fiche met un peu de temps à se préparer, un petit bandeau « La fiche PDF est prête » s'affiche : touche « Partager ». Le bouton n'apparaît pas sur les navigateurs qui ne savent pas partager (Firefox sur ordinateur, par exemple) : utilise alors 📄 PDF puis envoie le fichier."
         },
         {
           "q": "Comment exporter le menu ou la liste de courses en PDF ?",
@@ -21649,6 +21653,45 @@ function printThenOnReturn(onReturn) {
   return cleanup;
 }
 
+// V2.131.0 — Partage natif (Web Share API) : la feuille de partage du système
+// propose les apps installées (WhatsApp, Signal, Mail…), Imprimer et
+// Enregistrer dans Fichiers. Absente de certains navigateurs (Firefox sur
+// ordinateur notamment) → bouton masqué, 🖨️ et 📄 restent.
+const CAN_SHARE = typeof navigator !== "undefined" && typeof navigator.share === "function";
+
+// Icône « partager » façon Apple (carré ouvert + flèche vers le haut).
+function ShareIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" strokeWidth="2"
+         strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" style={{display: "inline-block", verticalAlign: "-0.125em"}}>
+      <path d="M12 3v12" /><path d="M7.5 7.5 12 3l4.5 4.5" /><path d="M8 10H6a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1h-2" />
+    </svg>
+  );
+}
+
+// Texte de secours quand le navigateur ne sait partager que du texte (pas de fichier).
+function recipeShareText(recipe) {
+  const ing = (recipe.ing || []).map(i => `• ${i[0]} : ${+i[1]} ${i[2]}`).join("\n");
+  const steps = (recipe.steps || []).map((s, k) => `${k + 1}. ${s}`).join("\n");
+  return `${recipe.name}\n\nIngrédients (pour 1 personne) :\n${ing}\n\nÉtapes :\n${steps}`;
+}
+
+// Partage la fiche PDF (ou, à défaut, le texte). AbortError = l'utilisateur a
+// fermé la feuille → rien à faire ; NotAllowedError = le toucher est « trop
+// vieux » (génération longue, Safari) → on propose un 2e bouton.
+async function shareRecipeFile(file, recipe, setPending) {
+  try {
+    if (navigator.canShare && navigator.canShare({files: [file]})) {
+      await navigator.share({files: [file], title: recipe.name});
+    } else {
+      await navigator.share({title: recipe.name, text: recipeShareText(recipe)});
+    }
+  } catch (e) {
+    if (e?.name === "NotAllowedError") setPending(file);
+    else if (e?.name !== "AbortError") console.error("[share] recette", e);
+  }
+}
+
 // V2.108.0 — Fiche recette imprimable / exportable PDF (A4 portrait).
 // Styles inline (pas de classes dark:) → rendu identique à l'écran, à
 // l'impression et dans html2canvas, quel que soit le thème de l'app.
@@ -21766,7 +21809,13 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
   // html2pdf). La fiche est rendue par portail en enfant direct de <body>,
   // hors écran ; en impression, le CSS `body.printing-recipe` masque tout
   // le reste. Les quantités imprimées = celles affichées (mult du slot).
-  const [exportMode, setExportMode] = useState(null); // null | "print" | "pdf"
+  const [exportMode, setExportMode] = useState(null); // null | "print" | "pdf" | "share"
+  // V2.131.0 — Partager (feuille de partage du système : WhatsApp, Mail,
+  // Imprimer, Enregistrer dans Fichiers…). Le PDF est fabriqué ici puis remis
+  // au système : rien ne passe par un serveur. Safari exige que navigator.share
+  // suive de près le toucher ; si la génération a été trop longue, le fichier
+  // prêt est gardé dans `pendingShare` et un 2e bouton le partage.
+  const [pendingShare, setPendingShare] = useState(null); // File | null
   const sheetRootRef = useRef(null);
   useEffect(() => {
     if (!exportMode) return;
@@ -21787,14 +21836,22 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
         const el = sheetRootRef.current?.querySelector(".recipe-print-sheet");
         if (cancelled || !el) return;
         const slug = canonicalName(recipe.name).replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60) || recipe.id;
-        await window.html2pdf().set({
+        const worker = window.html2pdf().set({
           filename: `recette-${slug}.pdf`,
           margin: [10, 10, 10, 10],
           image: {type: "jpeg", quality: 0.92},
           html2canvas: pdfCanvasOptions(el),
           jsPDF: {unit: "mm", format: "a4", orientation: "portrait"},
           pagebreak: {mode: ["css", "legacy"], avoid: ["li", "tr"]},
-        }).from(el).save();
+        }).from(el);
+        if (exportMode === "share") {
+          const blob = await worker.outputPdf("blob");
+          if (cancelled) return;
+          const file = new File([blob], `recette-${slug}.pdf`, {type: "application/pdf"});
+          await shareRecipeFile(file, recipe, setPendingShare);
+        } else {
+          await worker.save();
+        }
       } catch (e) {
         console.error("[pdf] export recette failed", e);
         alert("Échec de l'export PDF : " + (e.message || "erreur inconnue") + "\nL'impression (🖨️) reste disponible, avec l'option « Enregistrer en PDF ».");
@@ -21944,7 +22001,16 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
       </div>,
       document.body
     )}
-    {exportMode === "pdf" && <PdfGeneratingOverlay />}
+    {(exportMode === "pdf" || exportMode === "share") && <PdfGeneratingOverlay />}
+    {pendingShare && (
+      <div className="fixed bottom-4 z-[70] no-print bg-slate-800 text-white pl-4 pr-2 py-2 rounded-lg shadow-lg text-sm flex items-center gap-2"
+           style={{position: "fixed", left: "50%", transform: "translateX(-50%)", maxWidth: "calc(100vw - 32px)"}}>
+        <span>La fiche PDF est prête.</span>
+        <button onClick={() => { const f = pendingShare; setPendingShare(null); shareRecipeFile(f, recipe, setPendingShare); }}
+          className="px-3 py-1.5 rounded-full bg-white text-slate-900 font-semibold">Partager</button>
+        <button onClick={() => setPendingShare(null)} aria-label="Annuler le partage" className="w-8 h-8 text-white/70">✕</button>
+      </div>
+    )}
     {window.__V3_UI ? (
     <div className="fixed inset-0 z-50 no-print bg-black/50 flex md:items-center justify-center md:p-6" onClick={onClose}>
       <div role="dialog" aria-modal="true" aria-label={recipe.name}
@@ -21958,6 +22024,11 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             <button onClick={() => onToggleFavorite(recipe.id)} aria-label={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
               title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris (boost en génération)"}
               className={`w-10 h-10 rounded-full hover:bg-surface-2 text-xl ${isFavorite ? "" : "opacity-60"}`}>{isFavorite ? "⭐" : "☆"}</button>
+          )}
+          {CAN_SHARE && (
+            <button onClick={() => setExportMode("share")} disabled={!!exportMode} aria-label="Partager la recette"
+              title="Partager la recette (message, mail, impression, enregistrement en PDF…)"
+              className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40"><ShareIcon /></button>
           )}
           <button onClick={() => setExportMode("print")} disabled={!!exportMode} aria-label="Imprimer la recette"
             title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
@@ -22043,7 +22114,13 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                   {isFavorite ? "⭐" : "☆"}
                 </button>
               )}
-              {/* V2.108.0 — Imprimer / exporter la fiche recette */}
+              {/* V2.108.0 — Imprimer / exporter la fiche recette (V2.131.0 : + partager) */}
+              {CAN_SHARE && (
+                <button onClick={() => setExportMode("share")} disabled={!!exportMode}
+                  title="Partager la recette (message, mail, impression, enregistrement en PDF…)"
+                  aria-label="Partager la recette"
+                  className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40"><ShareIcon /></button>
+              )}
               <button onClick={() => setExportMode("print")} disabled={!!exportMode}
                 title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
                 aria-label="Imprimer la recette"
