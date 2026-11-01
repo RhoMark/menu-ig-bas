@@ -71,7 +71,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, lave la pomme, enlève le trognon et coupe-la en petits dés (pas besoin de l'éplucher).",
         "Ajoute les dés de pomme et la cannelle dans la casserole. Laisse encore 2 à 3 minutes sur feu doux.",
         "Verse le porridge dans un bol, parsème de noix grossièrement concassées. Ajoute le miel si tu veux."
-      ]
+      ],
+      "photo": "assets/recipes/b1.webp"
     },
     {
       "id": "b2",
@@ -213,7 +214,8 @@ window.__DATA_RECIPES = {
         "Lave rapidement les fruits rouges et dépose-les sur le fromage blanc.",
         "Parsème les graines de chia et les amandes effilées par-dessus.",
         "Ajoute un filet de miel si tu veux un peu de sucré."
-      ]
+      ],
+      "photo": "assets/recipes/b3.webp"
     },
     {
       "id": "b4",
@@ -582,7 +584,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, fais sauter les dés de courgette et de poivron 5-6 min. Ils doivent être tendres mais encore un peu croquants.",
         "Coupe le poulet en lamelles. Coupe les tomates cerises en deux.",
         "Dans un grand saladier, mélange quinoa, légumes sautés, tomates cerises et poulet. Arrose d'huile d'olive et de jus de citron, parsème d'herbes ciselées."
-      ]
+      ],
+      "photo": "assets/recipes/l1.webp"
     },
     {
       "id": "l2",
@@ -775,7 +778,8 @@ window.__DATA_RECIPES = {
         "Coupe la tomate en rondelles. Lave la salade.",
         "Étale la sauce avocat sur la tortilla. Dispose la salade, la tomate puis le poulet au centre.",
         "Replie les deux côtés de la tortilla vers l'intérieur puis roule fermement. Coupe en deux en biais."
-      ]
+      ],
+      "photo": "assets/recipes/l3.webp"
     },
     {
       "id": "l4",
@@ -908,7 +912,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "nuts",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -1178,7 +1183,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -1255,7 +1261,8 @@ window.__DATA_RECIPES = {
         "Dispose la salade dans une grande assiette creuse.",
         "Ajoute les haricots verts, la tomate, le poivron, l'oignon, les olives, le thon égoutté et émietté.",
         "Coupe l'œuf dur en quartiers et dispose-le. Assaisonne avec huile, vinaigre et basilic ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l8.webp"
     },
     {
       "id": "l9",
@@ -1373,7 +1380,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles vertes",
@@ -1527,7 +1536,8 @@ window.__DATA_RECIPES = {
         "Coupe la courgette en rondelles.",
         "Chauffe l'huile dans une grande poêle. Sors les morceaux de poulet de la marinade (garde-la) et fais-les dorer 4 min de chaque côté.",
         "Ajoute les courgettes et la marinade. Couvre et laisse cuire 8 min à feu moyen. Sers avec le riz."
-      ]
+      ],
+      "photo": "assets/recipes/l11.webp"
     },
     {
       "id": "l12",
@@ -1713,7 +1723,8 @@ window.__DATA_RECIPES = {
         "Cisèle menthe et persil.",
         "Dans un saladier, mélange quinoa refroidi, légumes, pois chiches rincés, herbes.",
         "Assaisonne avec jus de citron, huile d'olive, sel et poivre. Laisse reposer 10 min au frais avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l13.webp"
     },
     {
       "id": "l14",
@@ -1930,7 +1941,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "producesLeftovers": [
         "soupe de légumes"
@@ -1998,7 +2010,8 @@ window.__DATA_RECIPES = {
         "Ajoute les courgettes et le bouillon. Porte à ébullition puis baisse à feu moyen 15 min.",
         "Ajoute le basilic. Mixe le tout au blender ou mixeur plongeant jusqu'à obtenir un velouté lisse.",
         "Ajoute le yaourt, mélange. Sale, poivre. Sers avec l'œuf dur coupé en deux dans le bol."
-      ]
+      ],
+      "photo": "assets/recipes/d2.webp"
     },
     {
       "id": "d3",
@@ -2107,7 +2120,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "soupe de légumes"
       ],
@@ -2278,7 +2293,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "producesLeftovers": [
         "soupe de légumes"
@@ -2552,7 +2568,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "soupe de légumes"
       ],
@@ -2726,7 +2744,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "producesLeftovers": [
         "riz cuit"
@@ -2815,7 +2834,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "fish"
       ],
       "ing": [
         [
@@ -3068,7 +3088,8 @@ window.__DATA_RECIPES = {
         "Ajoute le reste d'oignon et d'ail. Remue 1 min.",
         "Verse les tomates et l'origan. Ajoute la courgette coupée en rondelles.",
         "Couvre et laisse mijoter 15 min à feu doux. Sers seul ou avec du quinoa."
-      ]
+      ],
+      "photo": "assets/recipes/d14.webp"
     },
     {
       "id": "b8",
@@ -3145,7 +3166,8 @@ window.__DATA_RECIPES = {
         "Mixe 30 secondes jusqu'à obtenir une texture très épaisse (ajoute très peu de lait si besoin).",
         "Verse dans un bol.",
         "Parsème les flocons d'avoine, amandes effilées et graines de chia par-dessus. Mange tout de suite."
-      ]
+      ],
+      "photo": "assets/recipes/b8.webp"
     },
     {
       "id": "b9",
@@ -3224,7 +3246,8 @@ window.__DATA_RECIPES = {
         "La veille au soir : mélange avoine, yaourt, lait d'amande, zeste de citron, miel et graines de chia dans un bocal.",
         "Ferme et mets au frigo toute la nuit.",
         "Le matin : remue, ajoute les myrtilles par-dessus. C'est prêt, tu peux même l'emporter."
-      ]
+      ],
+      "photo": "assets/recipes/b9.webp"
     },
     {
       "id": "b10",
@@ -3670,7 +3693,8 @@ window.__DATA_RECIPES = {
         "Écrase l'avocat à la fourchette avec un peu de citron, sel et poivre.",
         "Tartine le pain d'avocat. Émince l'œuf et les radis en rondelles fines, pose-les sur la tartine.",
         "Parsème de graines de courge."
-      ]
+      ],
+      "photo": "assets/recipes/b15.webp"
     },
     {
       "id": "b16",
@@ -3742,7 +3766,8 @@ window.__DATA_RECIPES = {
         "Secoue 2-3 fois dans les 15 premières minutes pour éviter que les graines ne collent.",
         "Laisse une nuit au frigo.",
         "Le matin : remue, coupe les fraises en dés, ajoute-les. Parsème de noix de coco râpée."
-      ]
+      ],
+      "photo": "assets/recipes/b16.webp"
     },
     {
       "id": "b17",
@@ -4013,7 +4038,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol, mélange tout avec le quinoa.",
         "Assaisonne avec huile d'olive, jus de citron, origan, sel et poivre. Ajoute les olives.",
         "Mange tout de suite ou garde au frigo 1-2 jours (meilleur le lendemain)."
-      ]
+      ],
+      "photo": "assets/recipes/l16.webp"
     },
     {
       "id": "l17",
@@ -4137,7 +4163,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "nuts",
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -4498,7 +4525,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "gluten",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -4594,7 +4622,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Sarrasin (kasha)",
@@ -5221,7 +5251,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "lactose",
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -5298,7 +5329,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Butternut",
@@ -5430,7 +5463,8 @@ window.__DATA_RECIPES = {
         "Écrase-les à la fourchette ou au presse-purée avec le beurre et le lait chaud. Sale, poivre.",
         "Pendant ce temps, pose le poisson dans le panier vapeur (salé, poivré), cuis 8 minutes.",
         "Sers le poisson sur la purée avec jus de citron et herbe ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/d17.webp"
     },
     {
       "id": "d18",
@@ -5457,7 +5491,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -5521,7 +5556,8 @@ window.__DATA_RECIPES = {
         "Mixe jusqu'à obtenir une soupe lisse. Goûte et ajuste. Mets au frais 30 minutes.",
         "Cuis l'œuf 9 minutes dans l'eau bouillante. Refroidis, écale, coupe en quartiers.",
         "Toaste le pain. Sers le gaspacho bien frais avec l'œuf et les mouillettes de pain."
-      ]
+      ],
+      "photo": "assets/recipes/d18.webp"
     },
     {
       "id": "d19",
@@ -5643,7 +5679,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -5823,7 +5860,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "soupe de légumes"
       ],
@@ -5911,7 +5950,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -6001,7 +6041,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "mustard",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -6093,7 +6134,8 @@ window.__DATA_RECIPES = {
         "gluten",
         "soy",
         "sesame",
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -6275,7 +6317,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "producesLeftovers": [
         "soupe de légumes"
@@ -6373,7 +6416,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "producesLeftovers": [
         "porc cuit"
@@ -6466,7 +6510,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -6923,7 +6968,8 @@ window.__DATA_RECIPES = {
         "Dans un blender, mixe avocat, banane, œuf, cacao, poudre d'amande avec le chocolat fondu.",
         "Verse dans un petit ramequin beurré.",
         "Enfourne 10-12 minutes : le cœur doit rester légèrement coulant."
-      ]
+      ],
+      "photo": "assets/recipes/des6.webp"
     },
     {
       "id": "des7",
@@ -7072,7 +7118,8 @@ window.__DATA_RECIPES = {
         "Mets tous les fruits dans un saladier.",
         "Ajoute jus de citron vert, miel et menthe ciselée. Remue doucement.",
         "Sers immédiatement ou laisse 15 min au frais."
-      ]
+      ],
+      "photo": "assets/recipes/des8.webp"
     },
     {
       "id": "des9",
@@ -7138,7 +7185,8 @@ window.__DATA_RECIPES = {
         "Retire la vanille, verse dans des verrines. Laisse tiédir puis mets au frigo 2 heures.",
         "Mixe les framboises avec 1 c.à.c d'eau pour en faire un coulis.",
         "Verse le coulis sur la panna cotta au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des9.webp"
     },
     {
       "id": "des10",
@@ -7313,7 +7361,8 @@ window.__DATA_RECIPES = {
         "La veille : coupe une banane mûre en rondelles et mets-la au congélateur sur une assiette.",
         "Le jour J : mixe la banane congelée avec le cacao et un filet de lait d'amande.",
         "Mixe fort par petits coups jusqu'à obtenir une texture de glace onctueuse."
-      ]
+      ],
+      "photo": "assets/recipes/des12.webp"
     },
     {
       "id": "des13",
@@ -7407,7 +7456,8 @@ window.__DATA_RECIPES = {
         "Mélange tous les ingrédients secs dans un bol.",
         "Ajoute œuf, huile, miel, courgette. Mélange. Incorpore les pépites.",
         "Répartis dans 2 caissettes. Enfourne 18-20 minutes."
-      ]
+      ],
+      "photo": "assets/recipes/des13.webp"
     },
     {
       "id": "des14",
@@ -7568,7 +7618,8 @@ window.__DATA_RECIPES = {
         "Beurre légèrement un petit plat, dispose les cerises.",
         "Dans un bol, fouette œuf, farine, poudre d'amande, lait, miel et vanille jusqu'à obtenir une pâte lisse.",
         "Verse sur les cerises. Enfourne 25-30 min : le dessus doit être doré et ferme."
-      ]
+      ],
+      "photo": "assets/recipes/des15.webp"
     },
     {
       "id": "des16",
@@ -7629,7 +7680,8 @@ window.__DATA_RECIPES = {
         "Fouette la ricotta 1 min pour l'aérer.",
         "Incorpore délicatement le coulis à la ricotta pour un effet marbré.",
         "Verse dans des coupelles, mets 30 min au frais."
-      ]
+      ],
+      "photo": "assets/recipes/des16.webp"
     },
     {
       "id": "des17",
@@ -7772,7 +7824,8 @@ window.__DATA_RECIPES = {
         "Incorpore les pépites de chocolat à la cuillère.",
         "Verse dans un petit moule tapissé de papier cuisson.",
         "Enfourne 20-25 minutes. Laisse tiédir avant de couper."
-      ]
+      ],
+      "photo": "assets/recipes/des18.webp"
     },
     {
       "id": "des19",
@@ -7897,7 +7950,8 @@ window.__DATA_RECIPES = {
         "Mixe fruits rouges, banane et yaourt 1 minute en une texture très épaisse.",
         "Verse dans un bol.",
         "Parsème de graines de chia et noix de coco râpée. Mange à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/des20.webp"
     },
     {
       "id": "s1",
@@ -7939,7 +7993,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Lave et coupe la pomme en quartiers.",
         "Sers avec le beurre d'amande dans un petit bol pour tremper."
-      ]
+      ],
+      "photo": "assets/recipes/s1.webp"
     },
     {
       "id": "s2",
@@ -7989,7 +8044,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Lave et coupe carotte et concombre en bâtonnets.",
         "Sers avec le houmous dans un petit bol."
-      ]
+      ],
+      "photo": "assets/recipes/s2.webp"
     },
     {
       "id": "s3",
@@ -8037,7 +8093,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Verse le yaourt dans un bol.",
         "Ajoute amandes concassées et myrtilles par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/s3.webp"
     },
     {
       "id": "s4",
@@ -8061,7 +8118,7 @@ window.__DATA_RECIPES = {
       "eq": [],
       "allergens": [
         "gluten",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -8087,7 +8144,8 @@ window.__DATA_RECIPES = {
         "Toaste légèrement le pain.",
         "Tartine de beurre de cacahuète.",
         "Pose des rondelles de banane dessus."
-      ]
+      ],
+      "photo": "assets/recipes/s4.webp"
     },
     {
       "id": "s5",
@@ -8134,7 +8192,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Tartine les galettes de tahini.",
         "Ajoute un tout petit filet de miel."
-      ]
+      ],
+      "photo": "assets/recipes/s5.webp"
     },
     {
       "id": "s6",
@@ -8157,7 +8216,8 @@ window.__DATA_RECIPES = {
       ],
       "eq": [],
       "allergens": [
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -8188,7 +8248,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Mélange tous les ingrédients dans un petit bol ou sachet.",
         "Conserve dans un bocal si tu en prépares en plus."
-      ]
+      ],
+      "photo": "assets/recipes/s6.webp"
     },
     {
       "id": "s7",
@@ -8249,7 +8310,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Lave la pomme, coupe-la en gros morceaux (retire le trognon).",
         "Mixe tous les ingrédients 45 secondes jusqu'à texture bien lisse."
-      ]
+      ],
+      "photo": "assets/recipes/s7.webp"
     },
     {
       "id": "s8",
@@ -8296,7 +8358,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Verse le houmous dans un bol, saupoudre de paprika.",
         "Sers avec les crackers pour tremper."
-      ]
+      ],
+      "photo": "assets/recipes/s8.webp"
     },
     {
       "id": "s9",
@@ -8359,7 +8422,8 @@ window.__DATA_RECIPES = {
         "Mixe dattes, amandes, avoine et cacao jusqu'à obtenir une pâte qui se tient.",
         "Forme 3-4 boulettes avec les mains.",
         "Roule-les dans la noix de coco râpée. Garde au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/s9.webp"
     },
     {
       "id": "s10",
@@ -8412,7 +8476,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Verse le fromage blanc dans un bol.",
         "Ajoute graines et cannelle par-dessus. Mélange ou pas, comme tu préfères."
-      ]
+      ],
+      "photo": "assets/recipes/s10.webp"
     },
     {
       "id": "s11",
@@ -8468,7 +8533,8 @@ window.__DATA_RECIPES = {
         "Réchauffe la galette 1 minute à la poêle.",
         "Tartine de fromage frais, pose des tranches de concombre.",
         "Parsème de ciboulette. Roule la galette."
-      ]
+      ],
+      "photo": "assets/recipes/s11.webp"
     },
     {
       "id": "s12",
@@ -8540,7 +8606,8 @@ window.__DATA_RECIPES = {
         "Mélange tous les ingrédients dans un bol.",
         "Forme une petite barre rectangulaire sur une plaque tapissée de papier cuisson.",
         "Enfourne 18-20 min : le dessus doit être doré. Laisse refroidir avant de manger."
-      ]
+      ],
+      "photo": "assets/recipes/s12.webp"
     },
     {
       "id": "b18",
@@ -8818,7 +8885,8 @@ window.__DATA_RECIPES = {
         "Mets tous les ingrédients dans le blender.",
         "Mixe 30-45 secondes jusqu'à obtenir une texture lisse.",
         "Verse dans un grand verre. Bois immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/b21.webp"
     },
     {
       "id": "b22",
@@ -8888,7 +8956,8 @@ window.__DATA_RECIPES = {
         "Lave et coupe les radis en fines rondelles.",
         "Dépose-les sur le houmous, parsème de graines.",
         "Quelques gouttes de citron, un tour de moulin à poivre."
-      ]
+      ],
+      "photo": "assets/recipes/b22.webp"
     },
     {
       "id": "l30",
@@ -8976,7 +9045,8 @@ window.__DATA_RECIPES = {
         "Coupe concombre et tomate en dés.",
         "Mélange quinoa, légumes, feta émiettée, olives.",
         "Ajoute la menthe ciselée, huile, citron, sel et poivre. Mélange et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l30.webp"
     },
     {
       "id": "l31",
@@ -9174,7 +9244,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -9432,7 +9504,7 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -9523,7 +9595,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -9934,7 +10007,8 @@ window.__DATA_RECIPES = {
         "Dispose tout dans un plat avec ail écrasé, romarin, huile, sel, poivre.",
         "Pose le poulet par-dessus, peau vers le haut.",
         "Enfourne 35-40 min : la peau doit être bien dorée et croustillante."
-      ]
+      ],
+      "photo": "assets/recipes/d31.webp"
     },
     {
       "id": "d32",
@@ -10013,7 +10087,8 @@ window.__DATA_RECIPES = {
         "Sur une feuille de papier sulfurisé : fenouil, daurade, citron, tomates, olives, herbes.",
         "Arrose d'huile, sale, poivre. Ferme la papillote.",
         "Enfourne 15-18 min."
-      ]
+      ],
+      "photo": "assets/recipes/d32.webp"
     },
     {
       "id": "d33",
@@ -10038,7 +10113,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "riz cuit"
@@ -10197,7 +10274,8 @@ window.__DATA_RECIPES = {
         "Fais revenir oignon, ajoute courgette en dés, tomates, eau si besoin.",
         "Remets les boulettes, mijote 20 min couvert.",
         "Cuis le boulghour selon paquet. Sers avec le tajine, jus de citron, coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/d34.webp"
     },
     {
       "id": "d35",
@@ -10386,7 +10464,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -10525,7 +10604,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Mixe tous les ingrédients jusqu'à une crème lisse.",
         "Verse en coupelle, mets 1h au frais avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des21.webp"
     },
     {
       "id": "des22",
@@ -10586,7 +10666,8 @@ window.__DATA_RECIPES = {
         "Coupe en suprêmes, dispose dans un saladier.",
         "Arrose de miel tiédi avec quelques aiguilles de romarin.",
         "Laisse reposer 10 min, sers frais."
-      ]
+      ],
+      "photo": "assets/recipes/des22.webp"
     },
     {
       "id": "des23",
@@ -10654,7 +10735,8 @@ window.__DATA_RECIPES = {
         "Ajoute œuf, poudre d'amande, cacao, levure. Mélange bien.",
         "Parsème de pépites de chocolat.",
         "Micro-ondes 90 secondes à pleine puissance (1 min 30)."
-      ]
+      ],
+      "photo": "assets/recipes/des23.webp"
     },
     {
       "id": "des24",
@@ -10773,7 +10855,8 @@ window.__DATA_RECIPES = {
         "Fais fondre le beurre dans une poêle. Dépose les pêches, le miel, le thym.",
         "Caramélise 5-7 min en retournant délicatement.",
         "Sers tiède avec une cuillère de skyr frais."
-      ]
+      ],
+      "photo": "assets/recipes/des25.webp"
     },
     {
       "id": "s14",
@@ -10853,7 +10936,8 @@ window.__DATA_RECIPES = {
         "Mixe pois chiches, tahini, ail, citron, cumin, huile, 2 c.à.s d'eau.",
         "Coupe carotte et concombre en bâtonnets.",
         "Sers le houmous avec les légumes pour tremper."
-      ]
+      ],
+      "photo": "assets/recipes/s14.webp"
     },
     {
       "id": "s15",
@@ -10919,7 +11003,8 @@ window.__DATA_RECIPES = {
         "Forme 3-4 boules à la main.",
         "Roule-les dans la noix de coco râpée.",
         "Repose 30 min au frais avant dégustation. Se garde 4-5 jours."
-      ]
+      ],
+      "photo": "assets/recipes/s15.webp"
     },
     {
       "id": "b23",
@@ -10996,7 +11081,8 @@ window.__DATA_RECIPES = {
         "Verse dans un bol. Coupe le fruit de la passion en deux, récupère la pulpe.",
         "Dispose les flocons d'avoine, amandes, graines de courge et pulpe de passion sur le smoothie.",
         "Déguste immédiatement à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/b23.webp"
     },
     {
       "id": "b24",
@@ -11064,7 +11150,8 @@ window.__DATA_RECIPES = {
         "Tartine généreusement de ricotta.",
         "Coupe les tomates cerises en deux, dispose-les sur la ricotta.",
         "Ajoute les feuilles de basilic, un filet d'huile d'olive, sel et poivre."
-      ]
+      ],
+      "photo": "assets/recipes/b24.webp"
     },
     {
       "id": "b25",
@@ -11136,7 +11223,8 @@ window.__DATA_RECIPES = {
         "Ferme et place au frigo toute la nuit.",
         "Le matin : coupe la pêche en tranches, dispose-les sur l'avoine.",
         "Parsème d'amandes effilées et déguste froid."
-      ]
+      ],
+      "photo": "assets/recipes/b25.webp"
     },
     {
       "id": "b26",
@@ -11206,7 +11294,8 @@ window.__DATA_RECIPES = {
         "Fais fondre le beurre dans une poêle à feu doux. Verse les œufs et remue sans cesse avec une spatule.",
         "Quand les œufs sont encore crémeux, retire du feu. Ajoute le chèvre émietté.",
         "Sers avec les asperges et la ciboulette ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/b26.webp"
     },
     {
       "id": "b27",
@@ -11276,7 +11365,8 @@ window.__DATA_RECIPES = {
         "La veille : mélange chia, flocons et lait de coco dans un bocal. Réfrigère.",
         "Le matin : coupe les abricots en quartiers.",
         "Dispose les abricots sur le porridge, ajoute pistaches et miel."
-      ]
+      ],
+      "photo": "assets/recipes/b27.webp"
     },
     {
       "id": "l40",
@@ -11299,7 +11389,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -11376,7 +11467,8 @@ window.__DATA_RECIPES = {
         "Coupe les tomates cerises en deux, émince finement l'oignon rouge.",
         "Dans un saladier : quinoa, haricots, tomates, thon émietté, olives, oignon.",
         "Assaisonne d'huile d'olive et vinaigre. Dispose l'œuf et le basilic."
-      ]
+      ],
+      "photo": "assets/recipes/l40.webp"
     },
     {
       "id": "l41",
@@ -11403,7 +11495,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -11472,7 +11565,8 @@ window.__DATA_RECIPES = {
         "Réfrigère au moins 1 heure.",
         "Fais griller le pain, tartine de chèvre frais.",
         "Sers le gaspacho bien frais avec la tartine. Décore de menthe ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l41.webp"
     },
     {
       "id": "l42",
@@ -11558,7 +11652,8 @@ window.__DATA_RECIPES = {
         "Ciselez persil et menthe finement. Coupe tomate et concombre en petits dés.",
         "Mélange le tout dans un saladier. Ajoute les graines de grenade.",
         "Assaisonne de citron, huile d'olive, sel, poivre. Laisse reposer 10 min avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l42.webp"
     },
     {
       "id": "l43",
@@ -11644,7 +11739,8 @@ window.__DATA_RECIPES = {
         "Coupe l'avocat et la mangue en dés.",
         "Dispose la roquette dans l'assiette, ajoute avocat, mangue et crevettes.",
         "Arrose de jus de citron vert et d'huile d'olive, parsème de coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/l43.webp"
     },
     {
       "id": "l44",
@@ -11669,7 +11765,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -11733,7 +11830,8 @@ window.__DATA_RECIPES = {
         "Mélange lentilles, betterave, échalote, roquette dans un saladier.",
         "Assaisonne de vinaigre balsamique et huile de noix.",
         "Émiette le chèvre et parsème de cerneaux de noix."
-      ]
+      ],
+      "photo": "assets/recipes/l44.webp"
     },
     {
       "id": "l45",
@@ -11826,7 +11924,8 @@ window.__DATA_RECIPES = {
         "Coupe le concombre en rondelles, l'avocat en tranches, les radis en fines lamelles.",
         "Décongèle les edamame rapidement à l'eau chaude.",
         "Assemble : riz au fond du bol, puis saumon, légumes, edamame. Parsème de sésame."
-      ]
+      ],
+      "photo": "assets/recipes/l45.webp"
     },
     {
       "id": "l46",
@@ -11909,7 +12008,8 @@ window.__DATA_RECIPES = {
         "Fais revenir l'oignon nouveau émincé dans l'huile, ajoute la courgette 2 min.",
         "Verse les œufs battus, émiette la feta par-dessus.",
         "Cuis 3 min à feu moyen puis enfourne 8-10 min jusqu'à ce que le dessus soit doré."
-      ]
+      ],
+      "photo": "assets/recipes/l46.webp"
     },
     {
       "id": "l47",
@@ -12002,7 +12102,8 @@ window.__DATA_RECIPES = {
         "Poche l'œuf 3 min dans l'eau frémissante vinaigrée.",
         "Coupe radis en rondelles, avocat en tranches.",
         "Assemble le bowl : quinoa, asperges, petits pois, radis, avocat, œuf poché. Citron, huile, graines de tournesol."
-      ]
+      ],
+      "photo": "assets/recipes/l47.webp"
     },
     {
       "id": "l48",
@@ -12024,7 +12125,8 @@ window.__DATA_RECIPES = {
       ],
       "eq": [],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -12082,7 +12184,8 @@ window.__DATA_RECIPES = {
         "Ouvre la burrata au centre, elle va couler naturellement.",
         "Parsème de câpres, pignons et basilic ciselé.",
         "Arrose d'huile d'olive et d'un trait de balsamique. Poivre au moulin."
-      ]
+      ],
+      "photo": "assets/recipes/l48.webp"
     },
     {
       "id": "l49",
@@ -12175,7 +12278,8 @@ window.__DATA_RECIPES = {
         "Mélange-les avec 1 c.à.s d'huile et le paprika. Étale sur une plaque. Enfourne 20 min en remuant à mi-cuisson.",
         "Coupe les poivrons en lanières, le concombre en dés.",
         "Mélange tout dans un saladier, émiette la feta, assaisonne de citron et huile restante. Parsème de persil."
-      ]
+      ],
+      "photo": "assets/recipes/l49.webp"
     },
     {
       "id": "d38",
@@ -12250,7 +12354,8 @@ window.__DATA_RECIPES = {
         "Sur une feuille de papier sulfurisé, dépose les rondelles de courgette, puis le cabillaud.",
         "Ajoute tomates, rondelles de citron, thym, huile d'olive, sel et poivre.",
         "Ferme la papillote hermétiquement. Enfourne 15-18 min."
-      ]
+      ],
+      "photo": "assets/recipes/d38.webp"
     },
     {
       "id": "d39",
@@ -12333,7 +12438,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, coupe la pêche en petits dés, émince l'oignon rouge finement.",
         "Mélange pêche, oignon, coriandre ciselée, citron vert, piment. C'est la salsa.",
         "Tranche le poulet, sers avec le riz et la salsa fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/d39.webp"
     },
     {
       "id": "d40",
@@ -12415,7 +12521,8 @@ window.__DATA_RECIPES = {
         "Coupe le chapeau des courgettes, évide-les à la cuillère. Garde la chair.",
         "Fais revenir ail et chair de courgette 3 min. Mélange avec quinoa, tomates séchées coupées, pignons, menthe.",
         "Garnis les courgettes, replace les chapeaux. Enfourne 20-25 min."
-      ]
+      ],
+      "photo": "assets/recipes/d40.webp"
     },
     {
       "id": "d41",
@@ -12439,7 +12546,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -12502,7 +12610,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer l'huile, ajoute l'ail émincé 30 sec, puis les haricots. Réchauffe 3-4 min.",
         "Ajoute les tomates confites coupées en morceaux.",
         "Hors du feu, ajoute roquette, basilic, copeaux de parmesan, vinaigre balsamique."
-      ]
+      ],
+      "photo": "assets/recipes/d41.webp"
     },
     {
       "id": "d42",
@@ -12593,7 +12702,8 @@ window.__DATA_RECIPES = {
         "Fais revenir les légumes dans une poêle 15 min à feu moyen avec un filet d'huile.",
         "Enfile les crevettes sur des brochettes. Grille 2-3 min de chaque côté.",
         "Sers les brochettes sur la ratatouille."
-      ]
+      ],
+      "photo": "assets/recipes/d42.webp"
     },
     {
       "id": "d43",
@@ -12615,7 +12725,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "mustard",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "producesLeftovers": [
         "porc cuit"
@@ -12676,7 +12787,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, fais revenir l'échalote émincée 2 min.",
         "Ajoute moutarde, crème et estragon ciselé. Remets la viande, laisse mijoter 5 min.",
         "Cuis les haricots verts 6 min à l'eau bouillante. Sers avec la viande et la sauce."
-      ]
+      ],
+      "photo": "assets/recipes/d43.webp"
     },
     {
       "id": "d44",
@@ -12763,7 +12875,8 @@ window.__DATA_RECIPES = {
         "Mélange-le avec sauce soja, huile de sésame, échalote émincée et citron vert.",
         "Coupe l'avocat en dés. Dresse en cercle : avocat au fond, tartare par-dessus.",
         "Parsème de ciboulette et graines de sésame. Sers immédiatement bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/d44.webp"
     },
     {
       "id": "d45",
@@ -12860,7 +12973,8 @@ window.__DATA_RECIPES = {
         "Ajoute les légumes, ail et gingembre râpés. Saute 4 min.",
         "Ajoute les nouilles, sauce soja, huile de sésame. Mélange 2 min.",
         "Sers parsemé de sésame et d'oignons nouveaux émincés."
-      ]
+      ],
+      "photo": "assets/recipes/d45.webp"
     },
     {
       "id": "d46",
@@ -12953,7 +13067,8 @@ window.__DATA_RECIPES = {
         "Fais revenir oignon, poivrons et ail 5 min.",
         "Ajoute tomates, thym, piment, sel. Remets le poulet.",
         "Couvre, laisse mijoter 20 min à feu doux."
-      ]
+      ],
+      "photo": "assets/recipes/d46.webp"
     },
     {
       "id": "d47",
@@ -13033,7 +13148,8 @@ window.__DATA_RECIPES = {
         "Épluche les fèves si elles sont grosses (retire la seconde peau).",
         "Mélange fèves, petits pois, roquette dans un saladier.",
         "Assaisonne de citron et huile d'olive. Parsème de copeaux de pecorino et menthe ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/d47.webp"
     },
     {
       "id": "d48",
@@ -13113,7 +13229,8 @@ window.__DATA_RECIPES = {
         "Fais revenir l'échalote émincée 2 min dans l'huile.",
         "Ajoute le lieu noir, cuis 4 min de chaque côté à feu moyen.",
         "Sers le poisson sur la purée de petits pois, avec un filet de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d48.webp"
     },
     {
       "id": "d49",
@@ -13201,7 +13318,8 @@ window.__DATA_RECIPES = {
         "Tapisse un plat d'oignon émincé et ail. Alterne les rondelles de légumes debout en serrant bien.",
         "Arrose d'huile, sel, herbes de Provence. Enfourne 25-30 min.",
         "Grille la dinde 5 min de chaque côté à la poêle. Sers avec le tian."
-      ]
+      ],
+      "photo": "assets/recipes/d49.webp"
     },
     {
       "id": "s16",
@@ -13268,7 +13386,8 @@ window.__DATA_RECIPES = {
         "Enfile-les sur des pics en bois en alternant les couleurs.",
         "Écrase les framboises à la fourchette avec le miel et le citron pour le coulis.",
         "Sers les brochettes avec le coulis à côté pour tremper."
-      ]
+      ],
+      "photo": "assets/recipes/s16.webp"
     },
     {
       "id": "s17",
@@ -13291,7 +13410,8 @@ window.__DATA_RECIPES = {
       ],
       "eq": [],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -13348,7 +13468,8 @@ window.__DATA_RECIPES = {
         "Mélange yaourt, concombre, ail écrasé, menthe ciselée, huile, sel.",
         "Coupe carotte et céleri en bâtonnets.",
         "Sers le tzatziki avec les crudités."
-      ]
+      ],
+      "photo": "assets/recipes/s17.webp"
     },
     {
       "id": "s18",
@@ -13399,7 +13520,8 @@ window.__DATA_RECIPES = {
         "Mixe avec le citron vert et la menthe.",
         "Verse dans un plat plat et congèle 2h en grattant à la fourchette toutes les 30 min.",
         "Sers en copeaux dans un verre."
-      ]
+      ],
+      "photo": "assets/recipes/s18.webp"
     },
     {
       "id": "s19",
@@ -13456,7 +13578,8 @@ window.__DATA_RECIPES = {
         "Coupe les abricots en quartiers.",
         "Verse le fromage blanc dans une verrine.",
         "Dispose les quartiers d'abricots, les pistaches concassées et un filet de miel."
-      ]
+      ],
+      "photo": "assets/recipes/s19.webp"
     },
     {
       "id": "s20",
@@ -13518,7 +13641,8 @@ window.__DATA_RECIPES = {
         "Coupe la pomme en quartiers (retire le trognon).",
         "Mixe le tout avec la menthe, le citron et les glaçons.",
         "Sers immédiatement bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/s20.webp"
     },
     {
       "id": "des26",
@@ -13582,7 +13706,8 @@ window.__DATA_RECIPES = {
         "Mélange mascarpone, fromage blanc et miel jusqu'à consistance lisse.",
         "Alterne couches de fraises et de crème dans des verrines.",
         "Réfrigère 30 min. Décore de basilic ciselé et de fraises."
-      ]
+      ],
+      "photo": "assets/recipes/des26.webp"
     },
     {
       "id": "des27",
@@ -13638,7 +13763,8 @@ window.__DATA_RECIPES = {
         "Sors la banane et les fraises du congélateur 5 min avant.",
         "Mixe banane et fraises au blender en ajoutant le citron. Racle les bords régulièrement.",
         "La texture doit être crémeuse comme un sorbet. Sers immédiatement avec la menthe."
-      ]
+      ],
+      "photo": "assets/recipes/des27.webp"
     },
     {
       "id": "des28",
@@ -13701,7 +13827,8 @@ window.__DATA_RECIPES = {
         "Coupe le melon en tranches très fines à la mandoline ou au couteau.",
         "Dispose en rosace dans l'assiette.",
         "Arrose de miel mélangé à la fleur d'oranger. Parsème d'amandes et de menthe."
-      ]
+      ],
+      "photo": "assets/recipes/des28.webp"
     },
     {
       "id": "des29",
@@ -13763,7 +13890,8 @@ window.__DATA_RECIPES = {
         "Saupoudre l'agar-agar, fouette. Porte à ébullition 2 min sans arrêter de remuer.",
         "Verse dans des verrines. Laisse tiédir puis réfrigère 3 heures.",
         "Mixe la mangue en coulis lisse. Verse sur les panna cotta au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des29.webp"
     },
     {
       "id": "des30",
@@ -13838,7 +13966,8 @@ window.__DATA_RECIPES = {
         "Mélange farine, poudre d'amande, cannelle. Incorpore le beurre du bout des doigts pour former un sable grossier.",
         "Répartis la pâte à crumble sur les fruits.",
         "Enfourne 25 min jusqu'à ce que le dessus soit doré."
-      ]
+      ],
+      "photo": "assets/recipes/des30.webp"
     },
     {
       "id": "des31",
@@ -13915,7 +14044,8 @@ window.__DATA_RECIPES = {
         "Coupe les abricots en deux, retire les noyaux. Dispose-les dans le plat.",
         "Bats les œufs avec le miel et la vanille. Ajoute poudre d'amande, farine, puis le lait progressivement.",
         "Verse la pâte sur les abricots. Enfourne 25 min."
-      ]
+      ],
+      "photo": "assets/recipes/des31.webp"
     },
     {
       "id": "des32",
@@ -13987,7 +14117,8 @@ window.__DATA_RECIPES = {
         "Mélange tous les fruits avec les myrtilles dans un saladier.",
         "Assaisonne de jus et zeste de citron vert, miel et menthe ciselée.",
         "Réfrigère 10 min et sers frais."
-      ]
+      ],
+      "photo": "assets/recipes/des32.webp"
     },
     {
       "id": "des33",
@@ -14051,7 +14182,8 @@ window.__DATA_RECIPES = {
         "Mixe les pêches avec le miel et le citron.",
         "Incorpore délicatement le skyr et la vanille.",
         "Verse dans des verrines, réfrigère au moins 1 heure. Sers bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/des33.webp"
     },
     {
       "id": "des34",
@@ -14116,7 +14248,8 @@ window.__DATA_RECIPES = {
         "Mélange chia et lait d'amande dans un bocal. Réfrigère 3 heures minimum.",
         "Coupe les fraises en morceaux.",
         "Dispose les fraises et le basilic ciselé sur le pudding. Ajoute un filet de miel."
-      ]
+      ],
+      "photo": "assets/recipes/des34.webp"
     },
     {
       "id": "des35",
@@ -14186,7 +14319,8 @@ window.__DATA_RECIPES = {
         "Fouette le jaune d'œuf avec le miel et le citron au bain-marie jusqu'à obtenir un sabayon mousseux.",
         "Nappe les fruits du sabayon. Passe sous le grill 2-3 min jusqu'à léger dorage.",
         "Sers tiède immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/des35.webp"
     },
     {
       "id": "l50",
@@ -14268,7 +14402,8 @@ window.__DATA_RECIPES = {
         "Dans une autre poêle, fais cuire les merguez à feu moyen 8-10 min en les retournant pour qu'elles dorent partout.",
         "Égrène le boulgour à la fourchette. Mélange-le avec la courgette, le jus de citron, sel et poivre.",
         "Coupe les merguez en rondelles, ajoute-les sur le boulgour et parsème de menthe ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l50.webp"
     },
     {
       "id": "l51",
@@ -14357,7 +14492,8 @@ window.__DATA_RECIPES = {
         "Coupe l'avocat et la mangue en cubes.",
         "Compose le bowl : lit de quinoa, roquette, poulet tranché, avocat et mangue.",
         "Arrose de jus de citron vert et d'un filet d'huile d'olive."
-      ]
+      ],
+      "photo": "assets/recipes/l51.webp"
     },
     {
       "id": "l52",
@@ -14380,7 +14516,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "mustard",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -14439,7 +14576,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol, fouette le yaourt avec la moutarde, le vinaigre, sel et poivre.",
         "Coupe les pommes de terre en deux ou en quartiers. Mélange-les délicatement avec la sauce.",
         "Dispose le jambon cru déchiré en lanières, les radis et la ciboulette par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/l52.webp"
     },
     {
       "id": "l53",
@@ -14529,7 +14667,8 @@ window.__DATA_RECIPES = {
         "Cuis 1-2 min de chaque côté. Recommence pour la deuxième galette.",
         "Tartine chaque galette de fromage frais. Dispose le saumon fumé, l'aneth ciselé, un trait de citron et un tour de poivre.",
         "Replie en quatre et déguste."
-      ]
+      ],
+      "photo": "assets/recipes/l53.webp"
     },
     {
       "id": "l54",
@@ -14619,7 +14758,8 @@ window.__DATA_RECIPES = {
         "Vide les sardines (ou demande au poissonnier). Sale-les légèrement.",
         "Fais chauffer une poêle à feu vif. Cuis les sardines 3-4 min de chaque côté, peau d'abord, sans les retourner trop vite.",
         "Sers le taboulé bien frais avec les sardines chaudes posées dessus."
-      ]
+      ],
+      "photo": "assets/recipes/l54.webp"
     },
     {
       "id": "l55",
@@ -14753,7 +14893,8 @@ window.__DATA_RECIPES = {
         "Coupe le concombre et la tomate en dés. Mélange avec la salade romaine ciselée et les morceaux de pain : c'est le fattouche.",
         "Sauce : mélange tahini, jus de citron et 2 c.à.s d'eau jusqu'à obtenir une crème lisse.",
         "Sers les falafels chauds sur le fattouche, nappés de sauce tahini."
-      ]
+      ],
+      "photo": "assets/recipes/l55.webp"
     },
     {
       "id": "d50",
@@ -14877,7 +15018,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -15033,7 +15175,8 @@ window.__DATA_RECIPES = {
         "Égoutte les pâtes en gardant 100 ml d'eau de cuisson.",
         "Verse les pâtes dans la poêle avec le zeste de citron, le jus, un filet d'huile d'olive et un peu d'eau de cuisson pour lier.",
         "Sers avec le parmesan râpé et un tour de poivre."
-      ]
+      ],
+      "photo": "assets/recipes/d52.webp"
     },
     {
       "id": "d53",
@@ -15114,7 +15257,8 @@ window.__DATA_RECIPES = {
         "Sale et poivre le dos de cabillaud. À 5 min de la fin de cuisson de la patate, fais chauffer une poêle à feu moyen.",
         "Mets le beurre dans la poêle. Quand il commence à dorer (couleur noisette, ça sent bon), pose le cabillaud peau dessous. Cuis 4 min, puis retourne et cuis 2 min de plus en arrosant avec le beurre.",
         "Sers le cabillaud sur les patates douces, arrose du beurre noisette de la poêle, ajoute le persil ciselé et un trait de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d53.webp"
     },
     {
       "id": "d54",
@@ -15206,7 +15350,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer une poêle à feu vif sans matière grasse. Saisis le thon 1 min sur chaque face — l'intérieur doit rester rosé.",
         "Tranche le thon en lamelles épaisses.",
         "Compose le bowl : lit de riz brun, edamame, concombre, lamelles de thon. Arrose de sauce soja, huile de sésame, jus de citron vert et gingembre râpé."
-      ]
+      ],
+      "photo": "assets/recipes/d54.webp"
     },
     {
       "id": "d55",
@@ -15230,7 +15375,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -15308,7 +15454,8 @@ window.__DATA_RECIPES = {
         "Ajoute les asperges et les petits pois sur le boulgour sans mélanger. Couvre encore 5-7 min, jusqu'à ce que les asperges soient tendres et le boulgour cuit.",
         "Hors du feu, ajoute le jus de citron, mélange délicatement.",
         "Sers en parsemant de feta émiettée et de menthe ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/d55.webp"
     },
     {
       "id": "l56",
@@ -15387,7 +15534,8 @@ window.__DATA_RECIPES = {
         "Coupe le jambon en lanières.",
         "Égoutte les pâtes en gardant 50 ml d'eau de cuisson. Remets dans la casserole, ajoute le pesto et un peu d'eau pour lier.",
         "Sers en disposant les courgettes grillées et le jambon par-dessus, parsème de parmesan et d'un tour de poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l56.webp"
     },
     {
       "id": "l57",
@@ -15468,7 +15616,8 @@ window.__DATA_RECIPES = {
         "Frotte le poulet avec le cumin, sel et poivre. Cuis-le à la poêle avec un peu d'huile, 5 min de chaque côté à feu moyen. Découpe en lamelles.",
         "Dans un grand bol, mélange quinoa tiède, fèves, jus et zeste de citron, huile d'olive.",
         "Dispose les lamelles de poulet et la menthe ciselée. Rectifie l'assaisonnement et déguste tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l57.webp"
     },
     {
       "id": "l58",
@@ -15590,7 +15739,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -15672,7 +15822,8 @@ window.__DATA_RECIPES = {
         "Cuis l'œuf 9 min à l'eau bouillante (jaune cuit). Refroidis, écale, coupe en quartiers.",
         "Dans une grande assiette, dispose la salade verte, puis pdt, haricots verts, tomate en quartiers, oignon rouge émincé, œuf, thon émietté, olives, anchois.",
         "Mélange vinaigre, huile d'olive, sel et poivre. Verse sur la salade au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l59.webp"
     },
     {
       "id": "l60",
@@ -15760,7 +15911,8 @@ window.__DATA_RECIPES = {
         "Coupe le concombre en demi-rondelles, l'avocat en cubes.",
         "Compose le bowl : sarrasin tiède au fond, puis saumon mariné, concombre et avocat.",
         "Arrose d'un filet d'huile d'olive et de sauce soja."
-      ]
+      ],
+      "photo": "assets/recipes/l60.webp"
     },
     {
       "id": "l61",
@@ -15783,7 +15935,8 @@ window.__DATA_RECIPES = {
       ],
       "eq": [],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -15841,7 +15994,8 @@ window.__DATA_RECIPES = {
         "Coupe la mozzarella en bouchées avec les mains (texture plus naturelle qu'au couteau).",
         "Dans un saladier, mélange haricots, tomates, oignon, mozzarella.",
         "Assaisonne avec vinaigre balsamique, huile d'olive, sel et poivre. Parsème de basilic ciselé au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l61.webp"
     },
     {
       "id": "d56",
@@ -16037,7 +16191,8 @@ window.__DATA_RECIPES = {
         "Égoutte les patates douces. Écrase à la fourchette avec le beurre et le lait. Sale.",
         "Verse la viande dans un plat à gratin. Recouvre de purée de patate douce.",
         "Enfourne 20 min jusqu'à ce que le dessus soit légèrement doré."
-      ]
+      ],
+      "photo": "assets/recipes/d57.webp"
     },
     {
       "id": "d58",
@@ -16145,7 +16300,8 @@ window.__DATA_RECIPES = {
         "Coupe la courgette en demi-rondelles. Fais-les sauter 5-6 min avec un filet d'huile dans une poêle à feu moyen.",
         "Égrène la semoule à la fourchette, ajoute persil et coriandre ciselés, jus de citron, un filet d'huile.",
         "Sers la semoule, les courgettes et les boulettes, un trait de citron en plus."
-      ]
+      ],
+      "photo": "assets/recipes/d58.webp"
     },
     {
       "id": "d59",
@@ -16228,7 +16384,8 @@ window.__DATA_RECIPES = {
         "Ajoute les crevettes, le piment d'Espelette, sale. Fais sauter 3-4 min jusqu'à ce qu'elles deviennent rosées.",
         "Hors du feu, ajoute le jus et zeste de citron, le persil.",
         "Égrène le boulgour à la fourchette, sers avec les crevettes et tout le jus de cuisson."
-      ]
+      ],
+      "photo": "assets/recipes/d59.webp"
     },
     {
       "id": "d60",
@@ -16248,8 +16405,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish",
-        "gluten"
+        "gluten",
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -16309,7 +16467,8 @@ window.__DATA_RECIPES = {
         "Ajoute les palourdes et le vin blanc. Couvre et cuis 3-4 min — les palourdes doivent toutes s'ouvrir (jette celles qui restent fermées).",
         "Égoutte les pâtes et verse-les dans la poêle avec les palourdes. Mélange 1 min sur le feu pour que les pâtes prennent le jus.",
         "Termine par le persil ciselé et un tour de poivre. Pas de fromage sur ce plat (tradition italienne)."
-      ]
+      ],
+      "photo": "assets/recipes/d60.webp"
     },
     {
       "id": "d61",
@@ -16432,7 +16591,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "gluten"
+        "gluten",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "poulet cuit"
@@ -16508,7 +16669,8 @@ window.__DATA_RECIPES = {
         "Verse le vin blanc, laisse évaporer.",
         "Ajoute le bouillon louche par louche, en remuant souvent, pendant 18 min. Le riz doit être crémeux mais encore al dente.",
         "Réincorpore le poulet et les asperges. Hors du feu, ajoute le beurre, le parmesan, sel et poivre. Mélange et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l62.webp"
     },
     {
       "id": "l63",
@@ -16533,7 +16695,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -16604,7 +16767,8 @@ window.__DATA_RECIPES = {
         "Mélange lentilles tièdes, betterave, échalote et la sauce.",
         "Dispose le magret en lamelles fines, parsème de cerneaux de noix grossièrement concassés et de persil ciselé.",
         "Sers tiède ou à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/l63.webp"
     },
     {
       "id": "l64",
@@ -16680,7 +16844,8 @@ window.__DATA_RECIPES = {
         "Verse les pommes de terre râpées, étale en disque épais avec une spatule, tasse bien.",
         "Cuis 10 min sans toucher pour former une croûte dorée. Retourne (utilise une assiette si besoin) et cuis 10 min de l'autre côté.",
         "Coupe en quartiers. Sers avec le jambon en lanières, le fromage frais en petites quenelles dessus, et la ciboulette ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l64.webp"
     },
     {
       "id": "l65",
@@ -16773,7 +16938,8 @@ window.__DATA_RECIPES = {
         "Sale et poivre la dorade. Cuis-la à la poêle avec un peu d'huile, peau dessous d'abord, 4 min puis retourne et cuis 2 min de plus.",
         "Égrène le boulgour, ajoute les tomates confites avec leur jus, les olives dénoyautées et coupées, les câpres.",
         "Sers la dorade sur le boulgour, arrose d'un trait de citron."
-      ]
+      ],
+      "photo": "assets/recipes/l65.webp"
     },
     {
       "id": "l66",
@@ -16963,7 +17129,8 @@ window.__DATA_RECIPES = {
         "Coupe l'halloumi en tranches de 1 cm. Fais-les griller à sec dans une poêle bien chaude 2 min par face jusqu'à ce qu'elles soient bien dorées.",
         "Dans un bol, dispose le quinoa au fond, puis les épinards crus, la betterave, l'avocat, l'halloumi grillé.",
         "Parsème de graines de courge et de cumin. Arrose d'huile d'olive, jus de citron, sel et poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l67.webp"
     },
     {
       "id": "d62",
@@ -16987,7 +17154,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -17176,7 +17345,8 @@ window.__DATA_RECIPES = {
         "Égrène la semoule à la fourchette. Ajoute le zeste et le reste de jus de citron, le persil et la coriandre ciselés, un trait d'huile d'olive.",
         "Enfile les cubes de poulet sur des piques. Cuis-les sur un grill ou une poêle bien chaude 3-4 min par face.",
         "Sers les brochettes sur la semoule, avec un quartier de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d63.webp"
     },
     {
       "id": "d64",
@@ -17350,7 +17520,8 @@ window.__DATA_RECIPES = {
         "Sale et poivre le filet de truite côté chair.",
         "Fais fondre les 5 g de beurre restant dans une poêle à feu moyen. Pose la truite côté peau d'abord. Cuis 4 min sans bouger. Retourne et cuis 1 min côté chair.",
         "Sers la truite sur les pommes de terre, dépose une noisette de beurre persillé sur le poisson encore chaud (il fond doucement). Ajoute un quartier de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d65.webp"
     },
     {
       "id": "d66",
@@ -17449,7 +17620,8 @@ window.__DATA_RECIPES = {
         "Ajoute les gambas, cuis 4-5 min jusqu'à ce qu'elles deviennent rosées et opaques.",
         "Hors du feu, ajoute le jus du citron vert.",
         "Sers sur le riz basmati, parsème de coriandre ciselée et du vert des oignons nouveaux."
-      ]
+      ],
+      "photo": "assets/recipes/d66.webp"
     },
     {
       "id": "d67",
@@ -17649,7 +17821,8 @@ window.__DATA_RECIPES = {
         "Égoutte les pâtes en gardant 2 c.à.s d'eau de cuisson. Remets-les dans la casserole hors du feu.",
         "Ajoute le pesto et l'eau réservée, mélange bien : la sauce doit napper.",
         "Sers avec les tomates cerises par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/l68.webp"
     },
     {
       "id": "l69",
@@ -17832,7 +18005,8 @@ window.__DATA_RECIPES = {
         "Tartine la tortilla d'une bonne couche de houmous (~3 c.à.s).",
         "Dispose les bâtonnets de concombre et la carotte râpée au centre, parsème de coriandre.",
         "Roule le wrap bien serré. Coupe en deux en biais pour servir."
-      ]
+      ],
+      "photo": "assets/recipes/l70.webp"
     },
     {
       "id": "l71",
@@ -17929,7 +18103,8 @@ window.__DATA_RECIPES = {
         "Dans un saladier, mélange tous les ingrédients.",
         "Assaisonne avec jus de citron, huile d'olive, cumin, sel et poivre.",
         "Mélange délicatement et laisse reposer 5 min avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l71.webp"
     },
     {
       "id": "l72",
@@ -17954,7 +18129,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -18020,7 +18196,8 @@ window.__DATA_RECIPES = {
         "Quand il reste un peu de baveux dessus, replie l'omelette en deux. Cuis 30 s de plus.",
         "Lave la mâche. Assaisonne avec vinaigre, huile, sel, poivre.",
         "Sers l'omelette avec la salade à côté."
-      ]
+      ],
+      "photo": "assets/recipes/l72.webp"
     },
     {
       "id": "l73",
@@ -18104,7 +18281,8 @@ window.__DATA_RECIPES = {
         "Coupe la tomate en rondelles fines.",
         "Tartine généreusement chaque tranche avec la préparation aux sardines.",
         "Pose les rondelles de tomate dessus, arrose d'un filet d'huile d'olive."
-      ]
+      ],
+      "photo": "assets/recipes/l73.webp"
     },
     {
       "id": "d68",
@@ -18190,7 +18368,8 @@ window.__DATA_RECIPES = {
         "Égoutte pâtes + brocolis en gardant 2 c.à.s d'eau de cuisson. Verse le tout dans la poêle avec l'ail.",
         "Mélange à feu vif 1 min. Ajoute l'eau réservée pour lier.",
         "Hors du feu, ajoute le jus de citron, le parmesan, sel et poivre. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d68.webp"
     },
     {
       "id": "d69",
@@ -18215,7 +18394,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "sesame",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -18280,7 +18460,8 @@ window.__DATA_RECIPES = {
         "Vinaigrette : fouette moutarde, jus de citron, huile d'olive, sel et poivre.",
         "Dans un bol : quinoa au fond, roquette et asperges par-dessus, œuf mollet ouvert au centre.",
         "Arrose de vinaigrette, parsème de graines de sésame."
-      ]
+      ],
+      "photo": "assets/recipes/d69.webp"
     },
     {
       "id": "d70",
@@ -18305,7 +18486,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -18370,7 +18552,8 @@ window.__DATA_RECIPES = {
         "Mélange lentilles tièdes, tomates, échalote et la sauce dans un saladier.",
         "Émiette la feta par-dessus, parsème de persil ciselé.",
         "Sers tiède ou à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/d70.webp"
     },
     {
       "id": "d71",
@@ -18467,7 +18650,8 @@ window.__DATA_RECIPES = {
         "Dans le même wok, ajoute l'huile, fais sauter carotte et blanc d'oignon 2 min. Ajoute petits pois et jambon, 1 min.",
         "Ajoute le riz refroidi, mélange bien. Verse la sauce soja, remue 1 min.",
         "Réincorpore l'œuf. Hors du feu, ajoute le vert d'oignon. Sers."
-      ]
+      ],
+      "photo": "assets/recipes/d71.webp"
     },
     {
       "id": "d72",
@@ -18558,7 +18742,8 @@ window.__DATA_RECIPES = {
         "Égoutte les pâtes en gardant 2 c.à.s d'eau de cuisson.",
         "Verse les pâtes dans le bol avec la préparation au thon. Ajoute l'eau réservée pour lier.",
         "Mélange bien et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d72.webp"
     },
     {
       "id": "d73",
@@ -18582,7 +18767,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -18642,7 +18828,8 @@ window.__DATA_RECIPES = {
         "Mixe au mixeur plongeant jusqu'à obtenir une soupe lisse.",
         "Laisse refroidir, puis place au frigo au moins 1 h.",
         "Au moment de servir, ajoute le skyr, mélange. Rectifie sel et poivre. Décore d'une feuille de menthe."
-      ]
+      ],
+      "photo": "assets/recipes/d73.webp"
     },
     {
       "id": "b28",
@@ -18721,7 +18908,8 @@ window.__DATA_RECIPES = {
         "Coupe les fraises restantes en deux ou en lamelles, dispose-les sur le smoothie.",
         "Parsème de flocons d'avoine et de graines de chia.",
         "Arrose d'un filet de miel pour finir. Mange immédiatement à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/b28.webp"
     },
     {
       "id": "b29",
@@ -18840,7 +19028,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -18893,7 +19082,8 @@ window.__DATA_RECIPES = {
         "Casse l'œuf dans un petit bol, puis fais-le glisser délicatement dans l'eau frémissante. Laisse 3 minutes : le blanc doit être cuit mais le jaune rester coulant.",
         "Sors l'œuf avec une écumoire, pose-le 10 secondes sur du papier absorbant.",
         "Tartine la tranche de pain d'avocat, pose l'œuf poché par-dessus, parsème de piment d'Espelette."
-      ]
+      ],
+      "photo": "assets/recipes/b30.webp"
     },
     {
       "id": "l74",
@@ -18984,7 +19174,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier : boulgour, tomates, concombre, herbes, oignon.",
         "Assaisonne avec jus de citron, huile d'olive, sel et poivre. Mélange bien.",
         "Laisse reposer 10 min au frais avant de servir — les saveurs se développent."
-      ]
+      ],
+      "photo": "assets/recipes/l74.webp"
     },
     {
       "id": "l75",
@@ -19093,7 +19284,8 @@ window.__DATA_RECIPES = {
         "Houmous express : mixe les pois chiches égouttés avec le tahini, le jus de citron, l'ail écrasé, 1 c.à.s d'huile d'olive et 2 c.à.s d'eau. Sale.",
         "Dans un grand bol : quinoa au fond, légumes rôtis, roquette, et une grosse cuillère de houmous au centre.",
         "Sers tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l75.webp"
     },
     {
       "id": "l76",
@@ -19186,7 +19378,8 @@ window.__DATA_RECIPES = {
         "Au centre : un lit de roquette, les tomates, la mozzarella, le poulet tiède.",
         "Cisèle le basilic dessus, arrose d'un trait de jus de citron, sale et poivre.",
         "Roule serré, coupe en deux en biais."
-      ]
+      ],
+      "photo": "assets/recipes/l76.webp"
     },
     {
       "id": "l77",
@@ -19276,7 +19469,8 @@ window.__DATA_RECIPES = {
         "Cisèle la menthe : empile les feuilles, roule-les en cigare bien serré, puis coupe en fines lanières.",
         "Dans un saladier, mélange le quinoa refroidi, les pois chiches égouttés, le concombre, les tomates, la feta et la menthe.",
         "Verse l'huile d'olive et le jus de citron, sale légèrement (la feta sale déjà), poivre. Mélange délicatement et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l77.webp"
     },
     {
       "id": "l78",
@@ -19376,7 +19570,8 @@ window.__DATA_RECIPES = {
         "Pose la tortilla à plat. Étale 2 c.à.s de sauce yaourt au centre, sur une bande d'environ 8 cm de large.",
         "Dispose dessus la salade, les lamelles d'avocat, les rondelles de tomate, et le poulet tiède.",
         "Roule serré : replie d'abord les bords gauche et droit vers le centre (pour empêcher la garniture de tomber sur les côtés), puis roule de bas en haut. Coupe en deux en biais."
-      ]
+      ],
+      "photo": "assets/recipes/l78.webp"
     },
     {
       "id": "l79",
@@ -19495,7 +19690,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare les crudités : râpe la carotte avec une râpe à gros trous (pas besoin de l'éplucher si elle est bio, sinon épluche-la). Coupe le concombre en demi-rondelles fines.",
         "Fais la sauce : dans un petit bol, mélange le tahini, le jus de citron, la sauce soja et 2 c.à.s d'eau. Le mélange doit avoir la consistance d'une crème lisse — ajoute un peu d'eau si trop épais.",
         "Dresse le bowl : pose le riz au fond, dispose en quartiers les pois chiches grillés, la carotte, le concombre et la roquette. Verse la sauce dessus, parsème de graines de sésame."
-      ]
+      ],
+      "photo": "assets/recipes/l79.webp"
     },
     {
       "id": "l80",
@@ -19519,7 +19715,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -19586,7 +19783,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélange la moutarde, le vinaigre, le sel et le poivre. Verse ensuite l'huile d'olive en fouettant pour émulsionner (= obtenir une vinaigrette homogène, pas séparée).",
         "Ajoute les lentilles tièdes, l'oignon rouge, la tomate, le persil. Mélange bien.",
         "Coupe les œufs durs en quartiers, dispose-les sur la salade. Sers tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l80.webp"
     },
     {
       "id": "l81",
@@ -19685,7 +19883,8 @@ window.__DATA_RECIPES = {
         "Ajoute les pois chiches égouttés, les tomates, le concombre, l'oignon nouveau, la menthe et le persil au boulgour.",
         "Verse le jus de citron et l'huile d'olive. Sale, poivre. Mélange bien.",
         "Idéalement, laisse 30 min au frais avant de servir : les saveurs se marient."
-      ]
+      ],
+      "photo": "assets/recipes/l81.webp"
     },
     {
       "id": "l82",
@@ -19788,7 +19987,8 @@ window.__DATA_RECIPES = {
         "Coupe le pita en triangles. Tu peux les servir nature, ou les passer 2 min sous le grill du four (ou à la poêle bien chaude sans matière grasse) pour les rendre légèrement croustillants.",
         "Coupe les crudités en bâtonnets : concombre (coupe en deux dans la longueur, vide les pépins à la cuillère, recoupe en lanières), carotte (épluche et coupe en bâtonnets de 6-7 cm), poivron rouge (enlève le pédoncule et les graines blanches, coupe en lanières).",
         "Sers le houmous dans un bol, fais un petit puits au centre avec le dos d'une cuillère, verse-y un filet d'huile d'olive et saupoudre d'un peu de cumin. Dispose les crudités et les triangles de pita autour."
-      ]
+      ],
+      "photo": "assets/recipes/l82.webp"
     },
     {
       "id": "l83",
@@ -19814,7 +20014,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "rest": 120,
       "ing": [
@@ -19878,7 +20079,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste : plus de sel, plus de vinaigre selon ton goût.",
         "Verse dans un grand bol, couvre et mets au frigo au moins 2 h (le froid réveille les saveurs — c'est une étape clé).",
         "Sers très froid dans des bols ou des verres. Verse un filet d'huile d'olive dessus et un tour de moulin à poivre. Tu peux aussi ajouter quelques dés de concombre ou de poivron pour le croquant."
-      ]
+      ],
+      "photo": "assets/recipes/l83.webp"
     },
     {
       "id": "l84",
@@ -19904,7 +20106,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -19984,7 +20187,8 @@ window.__DATA_RECIPES = {
         "Verse la vinaigrette, mélange.",
         "Coupe les œufs durs en quartiers, dispose-les sur la salade.",
         "Sers froid ou tiède. Se garde 2 jours au frigo dans un récipient hermétique : idéal pour préparer le dimanche soir et emporter le lundi midi."
-      ]
+      ],
+      "photo": "assets/recipes/l84.webp"
     },
     {
       "id": "l85",
@@ -20083,7 +20287,8 @@ window.__DATA_RECIPES = {
         "Ajoute les asperges et les petits pois égouttés dans la poêle, mélange brièvement, puis verse les œufs battus dessus.",
         "Laisse cuire 2 min à feu doux jusqu'à ce que les bords commencent à prendre, puis enfourne 18 à 20 min. Le centre doit être pris mais encore un peu tremblotant — c'est le secret d'une frittata moelleuse.",
         "Laisse tiédir 5 min avant de démouler ou de découper. Délicieuse chaude, tiède ou froide. Se garde 2 jours au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/l85.webp"
     },
     {
       "id": "l86",
@@ -20169,7 +20374,8 @@ window.__DATA_RECIPES = {
         "Verse dans un grand bol, couvre et mets au frigo au moins 1 h.",
         "Coupe le reste de concombre en petits dés.",
         "Au moment de servir, verse la soupe dans des bols, dépose les dés de concombre dessus, ajoute un filet d'huile d'olive et quelques feuilles de menthe entières."
-      ]
+      ],
+      "photo": "assets/recipes/l86.webp"
     },
     {
       "id": "l87",
@@ -20302,7 +20508,8 @@ window.__DATA_RECIPES = {
         "Réchauffe les tortillas 30 secondes au four (ou 5 sec à la poêle de chaque côté) pour qu'elles soient souples.",
         "Pose la tortilla à plat. Étale 1 c.à.s de sauce yaourt au centre. Dispose la salade, les rondelles de tomate, le concombre, et 4 falafels écrasés à la fourchette par wrap.",
         "Roule serré : replie les bords latéraux puis roule de bas en haut. Coupe en deux en biais."
-      ]
+      ],
+      "photo": "assets/recipes/l87.webp"
     },
     {
       "id": "l88",
@@ -20405,7 +20612,8 @@ window.__DATA_RECIPES = {
         "Ajoute les tomates et la mozzarella. Mélange délicatement (pour ne pas écraser la mozza).",
         "Goûte et ajuste sel/poivre.",
         "Sers froid ou à température ambiante. Se garde 2 jours au frigo — sors-la 15 min avant de la manger pour que les saveurs se réveillent."
-      ]
+      ],
+      "photo": "assets/recipes/l88.webp"
     },
     {
       "id": "d74",
@@ -20500,7 +20708,8 @@ window.__DATA_RECIPES = {
         "Ajoute l'ail et les courgettes, sale, poivre. Cuis 8 min à feu vif en remuant — les courgettes doivent être tendres mais encore fermes.",
         "Ajoute les tomates cerises et l'origan. Cuis 5 min de plus jusqu'à ce que les tomates commencent à fondre.",
         "Hors du feu, émiette la feta par-dessus, parsème les olives. Sers sur le quinoa."
-      ]
+      ],
+      "photo": "assets/recipes/d74.webp"
     },
     {
       "id": "d75",
@@ -20587,7 +20796,8 @@ window.__DATA_RECIPES = {
         "Émiette ou coupe le fromage de chèvre en morceaux, dispose-les sur la quiche.",
         "Enfourne 30-35 min : la quiche doit être bien dorée et le centre ferme au toucher.",
         "Laisse tiédir 5 min avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d75.webp"
     },
     {
       "id": "d76",
@@ -20687,7 +20897,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, ajoute les fleurettes de brocoli, l'ail et le gingembre. Sauté 5 min — le brocoli doit rester croquant.",
         "Réincorpore le tofu, ajoute la sauce soja et l'huile de sésame. Mélange 1 min.",
         "Hors du feu, arrose de jus de citron vert. Sers sur le riz, parsème de graines de sésame."
-      ]
+      ],
+      "photo": "assets/recipes/d76.webp"
     },
     {
       "id": "d77",
@@ -20770,7 +20981,8 @@ window.__DATA_RECIPES = {
         "Replie le papier en formant une papillote bien fermée : ramène les côtés au-dessus puis vrille les extrémités comme un bonbon.",
         "Pose les papillotes sur une plaque, enfourne 18 à 20 min. Le poisson doit être cuit (chair opaque, plus translucide) et la courgette tendre.",
         "Sers les papillotes fermées dans l'assiette : c'est l'ouverture qui libère tous les arômes."
-      ]
+      ],
+      "photo": "assets/recipes/d77.webp"
     },
     {
       "id": "d78",
@@ -20865,7 +21077,8 @@ window.__DATA_RECIPES = {
         "Monte les brochettes en alternant : poulet, poivron, courgette, oignon, et recommence jusqu'à remplir.",
         "Préchauffe une plancha, une poêle-grill ou un gril à feu vif. Pose les brochettes, cuis 10 à 12 min en les retournant 3 à 4 fois — les morceaux de poulet doivent être bien dorés et fermes au toucher, et les légumes marqués (= avec des stries de cuisson).",
         "Sers chaud, idéalement avec une salade verte ou un peu de boulgour."
-      ]
+      ],
+      "photo": "assets/recipes/d78.webp"
     },
     {
       "id": "d79",
@@ -20971,7 +21184,8 @@ window.__DATA_RECIPES = {
         "Ajoute les pois chiches égouttés. Sale légèrement. Laisse mijoter 10 min à feu doux à découvert — la sauce doit légèrement épaissir.",
         "Lave les épinards (rince-les bien, ils piègent souvent du sable). Ajoute-les dans la poêle, mélange : ils vont se flétrir en 1 à 2 min et réduire de volume de moitié.",
         "Goûte, ajuste le sel. Sers le curry sur le riz chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d79.webp"
     },
     {
       "id": "d80",
@@ -21069,7 +21283,8 @@ window.__DATA_RECIPES = {
         "Arrose d'un filet d'huile d'olive. Enfourne 20 à 25 min : les galettes doivent être dorées dessus et tenir quand tu les soulèves avec une spatule.",
         "Pendant ce temps, lave la salade. Assaisonne-la d'huile d'olive, jus de citron, sel, poivre.",
         "Sers les galettes chaudes avec la salade à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d80.webp"
     },
     {
       "id": "d81",
@@ -21164,7 +21379,8 @@ window.__DATA_RECIPES = {
         "Avant d'égoutter, prélève une petite louche d'eau de cuisson et mets-la de côté.",
         "Égoutte les pâtes. Remets-les dans la casserole hors du feu, ajoute le pesto et 2 à 3 c.à.s d'eau de cuisson. Mélange — l'eau de cuisson lie le pesto aux pâtes en une sauce crémeuse.",
         "Sers, dépose les tomates rôties dessus. Tu peux ajouter quelques copeaux de parmesan."
-      ]
+      ],
+      "photo": "assets/recipes/d81.webp"
     },
     {
       "id": "d82",
@@ -21273,7 +21489,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare le boulgour : verse 100 g dans un bol, couvre d'eau bouillante salée (~150 ml), couvre et laisse gonfler 15 min. Aère à la fourchette avant de servir.",
         "À la sortie du four, parsème le tian de parmesan râpé et passe 2 min sous le grill du four (ou laisse 5 min de plus à 200°C) pour gratiner.",
         "Sers le tian avec le boulgour à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d82.webp"
     },
     {
       "id": "d83",
@@ -21484,7 +21701,8 @@ window.__DATA_RECIPES = {
         "Étape clé du retournement : pose une grande assiette plate sur la poêle, retourne le tout d'un coup sec (la tortilla est sur l'assiette, le côté cuit visible). Fais glisser la tortilla dans la poêle pour cuire l'autre face 4 à 5 min.",
         "Glisse sur un plat de service. Laisse tiédir 5 min — la tortilla est meilleure tiède.",
         "Sers en parts avec la salade verte. Excellente froide le lendemain en pique-nique. Se garde 2 jours au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/d84.webp"
     },
     {
       "id": "d85",
@@ -21592,7 +21810,8 @@ window.__DATA_RECIPES = {
         "Enfourne 40 à 45 min : la lame d'un couteau planté au centre doit ressortir sèche.",
         "Laisse tiédir 10 min avant de démouler.",
         "Sers en tranches épaisses avec la salade verte assaisonnée. Le cake se garde 3 jours au frigo et est encore meilleur le lendemain. Idéal pour pique-nique ou lunch box."
-      ]
+      ],
+      "photo": "assets/recipes/d85.webp"
     },
     {
       "id": "d86",
@@ -21695,7 +21914,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais griller les tranches de pain complet (au grille-pain ou sous le grill 1 min de chaque côté).",
         "Cisèle le basilic.",
         "Sors du four, parsème de basilic et d'un tour de moulin à poivre. Sers immédiatement avec les tranches de pain pour saucer le jaune."
-      ]
+      ],
+      "photo": "assets/recipes/d86.webp"
     },
     {
       "id": "d87",
@@ -21801,7 +22021,8 @@ window.__DATA_RECIPES = {
         "Dresse les bowls : pose le quinoa au fond, dispose en quartiers la carotte, le concombre, l'avocat, la roquette et le thon.",
         "Verse la sauce dessus, parsème de graines de sésame.",
         "Sers immédiatement (l'avocat noircit s'il attend). Sans l'avocat, le bowl se garde 1 jour au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/d87.webp"
     },
     {
       "id": "d88",
@@ -21924,7 +22145,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste : sel, plus de curry si tu aimes plus relevé.",
         "Hors du feu, ajoute le jus de citron vert et la coriandre ciselée.",
         "Sers le curry sur le riz chaud. Se garde 2 jours au frigo et se réchauffe très bien."
-      ]
+      ],
+      "photo": "assets/recipes/d88.webp"
     },
     {
       "id": "s21",
@@ -21990,7 +22212,8 @@ window.__DATA_RECIPES = {
         "Dans une coupe ou un verre : alterne couches de fromage blanc et de fruits rouges écrasés.",
         "Termine par les fruits entiers et parsème de graines de chia.",
         "Sers immédiatement ou laisse 30 min au frigo pour une texture plus prise."
-      ]
+      ],
+      "photo": "assets/recipes/s21.webp"
     },
     {
       "id": "s22",
@@ -22059,7 +22282,8 @@ window.__DATA_RECIPES = {
         "Pèle le kiwi, coupe-le en petits dés. Arrose d'un peu de jus de citron vert.",
         "Dans une verrine : couche de yaourt, couche de kiwi, couche de yaourt.",
         "Termine par les graines de chia restantes et quelques feuilles de menthe ciselées."
-      ]
+      ],
+      "photo": "assets/recipes/s22.webp"
     },
     {
       "id": "de36",
@@ -22141,7 +22365,8 @@ window.__DATA_RECIPES = {
         "Arrose du jus de citron vert (évite que les fruits brunissent), ajoute le miel et la vanille. Mélange délicatement.",
         "Cisèle la menthe finement, parsème par-dessus.",
         "Laisse au frais 15 min avant de servir pour que les saveurs s'imprègnent."
-      ]
+      ],
+      "photo": "assets/recipes/de36.webp"
     },
     {
       "id": "b31",
@@ -22220,7 +22445,8 @@ window.__DATA_RECIPES = {
         "Saupoudre les graines de chia.",
         "Dispose les fruits rouges frais et les amandes effilées par-dessus.",
         "Mange à la cuillère, c'est plus frais quand c'est juste mixé."
-      ]
+      ],
+      "photo": "assets/recipes/b31.webp"
     },
     {
       "id": "b32",
@@ -22291,7 +22517,8 @@ window.__DATA_RECIPES = {
         "Dispose les lamelles de fraise sur la ricotta, en les chevauchant légèrement.",
         "Cisèle les feuilles de basilic et parsème-les sur la tartine.",
         "Si tu aimes le sucré, ajoute un filet de miel. Sinon une pincée de poivre noir relève le côté frais."
-      ]
+      ],
+      "photo": "assets/recipes/b32.webp"
     },
     {
       "id": "l89",
@@ -22376,7 +22603,8 @@ window.__DATA_RECIPES = {
         "Mélange tout doucement dans le saladier (sans écraser la feta).",
         "Arrose d'huile d'olive et du jus de citron, sale et poivre.",
         "Mange tout de suite, ou mets au frigo 30 min pour que les saveurs se mélangent (mieux comme ça)."
-      ]
+      ],
+      "photo": "assets/recipes/l89.webp"
     },
     {
       "id": "l90",
@@ -22463,7 +22691,8 @@ window.__DATA_RECIPES = {
         "Arrose d'un trait de jus de citron, parsème d'aneth ciselé et donne un tour de poivre.",
         "Roule la tortilla en partant du bas (où sont les ingrédients), serre bien sans écraser.",
         "Coupe en deux en biais, sers tout de suite."
-      ]
+      ],
+      "photo": "assets/recipes/l90.webp"
     },
     {
       "id": "l91",
@@ -22487,7 +22716,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -22555,7 +22785,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol, fouette la moutarde, le vinaigre balsamique et l'huile d'olive jusqu'à obtenir une vinaigrette homogène.",
         "Ajoute les lentilles tièdes, les haricots verts, l'échalote et les tomates. Mélange.",
         "Cisèle le persil, parsème, sale et poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l91.webp"
     },
     {
       "id": "l92",
@@ -22657,7 +22888,8 @@ window.__DATA_RECIPES = {
         "Prépare la sauce : dans un petit bol, mélange le miso, le tahini, le jus de citron et l'ail écrasé. Ajoute 1 c.à.s d'eau chaude pour fluidifier.",
         "Quand l'aubergine sort du four, nappe-la généreusement de sauce miso-tahini.",
         "Sers les lentilles à côté, parsème de graines de sésame et de coriandre ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l92.webp"
     },
     {
       "id": "d89",
@@ -22761,7 +22993,8 @@ window.__DATA_RECIPES = {
         "Enfile les cubes de poulet sur des piques (en bois trempés 10 min dans l'eau au préalable, ou en métal).",
         "Fais chauffer une poêle (ou plancha) à feu vif. Cuis les brochettes 4-5 min de chaque côté en les retournant — le poulet doit être doré et cuit à cœur (jus clair quand on pique).",
         "Sers les brochettes sur le taboulé sarrasin."
-      ]
+      ],
+      "photo": "assets/recipes/d89.webp"
     },
     {
       "id": "d90",
@@ -22864,7 +23097,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer une plancha (ou poêle bien chaude) à feu vif. Cuis les filets côté peau d'abord, 3-4 min jusqu'à ce que la peau soit croustillante.",
         "Retourne et cuis 1-2 min de l'autre côté. La chair doit être nacrée (pas vitrée) au cœur.",
         "Sers la daurade sur la ratatouille, arrose d'un trait de jus de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d90.webp"
     },
     {
       "id": "d91",
@@ -22886,7 +23120,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "riz cuit"
@@ -22963,7 +23199,8 @@ window.__DATA_RECIPES = {
         "À mi-cuisson (≈ 10 min), ajoute les dés de courgette : ils cuisent dans le risotto.",
         "À la fin, hors du feu, ajoute le beurre, le parmesan, le zeste de citron râpé fin et 2-3 gouttes de jus de citron. Mélange vigoureusement (= mantécature, ça donne le crémeux).",
         "Sale, poivre, sers tout de suite — un risotto n'attend pas."
-      ]
+      ],
+      "photo": "assets/recipes/d91.webp"
     },
     {
       "id": "d92",
@@ -23059,7 +23296,8 @@ window.__DATA_RECIPES = {
         "Enfourne 35-40 min — le poulet doit être doré, le fenouil tendre. Si tu cuisines pour plusieurs jours (batch cooking), prolonge de 5 min pour être sûr.",
         "Pendant ce temps, rince le riz basmati. Cuis-le dans 1,5 fois son volume d'eau salée : porte à ébullition, baisse le feu, couvre et laisse 18-20 min sans soulever.",
         "Quand tout est cuit, sers le poulet et les légumes sur le riz, arrose des sucs de cuisson du plat (c'est ce qui donne le goût)."
-      ]
+      ],
+      "photo": "assets/recipes/d92.webp"
     },
     {
       "id": "s23",
@@ -23129,7 +23367,8 @@ window.__DATA_RECIPES = {
         "Enfourne 30 à 35 min en remuant la plaque à mi-cuisson. Ils doivent être bien dorés et croustillants comme des chips.",
         "Laisse refroidir 5 min sur la plaque (ils croustillent encore en refroidissant).",
         "Se garde 3 jours dans une boîte hermétique — parfait pour grignoter au lieu des biscuits salés."
-      ]
+      ],
+      "photo": "assets/recipes/s23.webp"
     },
     {
       "id": "des36",
@@ -23201,7 +23440,8 @@ window.__DATA_RECIPES = {
         "Enfourne 18-20 min — les pêches doivent être tendres mais garder leur forme (un couteau s'enfonce sans résistance dans la chair).",
         "Laisse tiédir 5 min.",
         "Sers chaque demi-pêche avec une cuillerée de skyr à côté et une pincée d'amandes effilées par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/des36.webp"
     },
     {
       "id": "b33",
@@ -23362,7 +23602,8 @@ window.__DATA_RECIPES = {
         "Quand les œufs sont presque cuits mais encore légèrement coulants (≈ 2 min), retire du feu — la chaleur résiduelle finira la cuisson.",
         "Hors du feu, ajoute les dés de tomate et le basilic ciselé. Mélange une fois.",
         "Sers tout de suite sur le pain grillé."
-      ]
+      ],
+      "photo": "assets/recipes/b34.webp"
     },
     {
       "id": "l93",
@@ -23387,7 +23628,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "fish",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -23467,7 +23709,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, fouette la moutarde, le vinaigre de vin et l'huile d'olive jusqu'à obtenir une vinaigrette bien liée.",
         "Dans une assiette creuse, dispose la salade verte, les haricots tièdes, la tomate, l'oignon, les olives, le thon et l'œuf.",
         "Arrose de vinaigrette, sale et poivre. Mange tout de suite — c'est une salade qui ne se garde pas."
-      ]
+      ],
+      "photo": "assets/recipes/l93.webp"
     },
     {
       "id": "l94",
@@ -23557,7 +23800,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélange le quinoa froid, les légumes, les herbes, le jus de citron et l'huile d'olive.",
         "Sale et poivre. Goûte et ajuste — il faut que ce soit bien citronné.",
         "Idéalement, laisse 30 min au frigo pour que les saveurs se mélangent. Se garde 2 jours au frigo (parfait pour batch cooking)."
-      ]
+      ],
+      "photo": "assets/recipes/l94.webp"
     },
     {
       "id": "l95",
@@ -23649,7 +23893,8 @@ window.__DATA_RECIPES = {
         "Ajoute les tomates cerises coupées en deux, fais sauter 2 min de plus — elles doivent juste s'attendrir, pas s'écraser.",
         "Égoutte les pâtes en gardant 2-3 c.à.s d'eau de cuisson. Verse-les dans la poêle, ajoute le pesto et un peu d'eau de cuisson pour fluidifier.",
         "Mélange bien hors du feu (sinon le basilic noircit). Sers parsemé des pignons restants et de quelques feuilles de basilic frais."
-      ]
+      ],
+      "photo": "assets/recipes/l95.webp"
     },
     {
       "id": "l96",
@@ -23751,7 +23996,8 @@ window.__DATA_RECIPES = {
         "Roule la tortilla en partant du bas (où sont les ingrédients), serre bien sans écraser.",
         "Coupe en deux en biais. Sers la sauce restante à part pour tremper.",
         "Astuce batch : le poulet peut être cuit la veille, le wrap se monte alors en 3 min sans cuisson."
-      ]
+      ],
+      "photo": "assets/recipes/l96.webp"
     },
     {
       "id": "d93",
@@ -23837,7 +24083,8 @@ window.__DATA_RECIPES = {
         "Referme la papillote en pliant les bords du papier pour faire un paquet bien fermé (mais pas étanche au point d'éclater à la chaleur — laisse une petite ouverture en haut).",
         "Enfourne 12-15 min — le saumon doit être nacré au cœur, pas vitreux.",
         "Sers en ouvrant la papillote dans l'assiette (les arômes s'échappent au moment où tu ouvres = top), avec le riz basmati à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d93.webp"
     },
     {
       "id": "d94",
@@ -23938,7 +24185,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, incorpore le parmesan râpé. Réajuste sel.",
         "Retire le papier du tian, prolonge 5 min au four pour dorer le dessus.",
         "Sers le tian sur un lit de polenta crémeuse — c'est un plat doux, parfait pour les soirs sans envie de viande."
-      ]
+      ],
+      "photo": "assets/recipes/d94.webp"
     },
     {
       "id": "d95",
@@ -24047,7 +24295,8 @@ window.__DATA_RECIPES = {
         "Ajoute les épinards (frais ou décongelés). Ils vont tomber en 2-3 min en mélangeant.",
         "Goûte, réajuste sel et curry si tu veux plus de peps.",
         "Sers le curry sur le riz basmati. Plus c'est reposé, meilleur c'est : se garde 3 jours au frigo et le goût s'améliore le lendemain."
-      ]
+      ],
+      "photo": "assets/recipes/d95.webp"
     },
     {
       "id": "d96",
@@ -24068,7 +24317,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -24150,7 +24400,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste sel/poivre/moutarde selon ton goût.",
         "Pour la salade : assaisonne la roquette avec le vinaigre balsamique et 0,5 c.à.s d'huile d'olive.",
         "Forme une portion de tartare avec un cercle à pâtisserie (ou avec les mains, en boule aplatie). Sers avec les frites de patate douce et la salade de roquette."
-      ]
+      ],
+      "photo": "assets/recipes/d96.webp"
     },
     {
       "id": "s24",
@@ -24209,7 +24460,8 @@ window.__DATA_RECIPES = {
         "Termine avec les myrtilles restantes et les graines de tournesol.",
         "Verse un filet de miel par-dessus si tu aimes plus sucré (les myrtilles bien mûres sont déjà naturellement sucrées).",
         "À manger frais. Se prépare 1 h à l'avance ou jusqu'à 24 h (idéal en lunchbox)."
-      ]
+      ],
+      "photo": "assets/recipes/s24.webp"
     },
     {
       "id": "des37",
@@ -24231,7 +24483,9 @@ window.__DATA_RECIPES = {
         "no-cook"
       ],
       "eq": [],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Fraises",
@@ -24272,7 +24526,8 @@ window.__DATA_RECIPES = {
         "Verse un filet de vinaigre balsamique en zigzag — pas trop, juste pour parfumer.",
         "Si tu veux une touche de sucré, ajoute un filet de miel. Mais souvent les fraises bien mûres se suffisent à elles-mêmes.",
         "Laisse reposer 5 min à température ambiante avant de servir — les saveurs vont mieux se développer."
-      ]
+      ],
+      "photo": "assets/recipes/des37.webp"
     },
     {
       "id": "b35",
@@ -24349,7 +24604,8 @@ window.__DATA_RECIPES = {
         "Mixe 30 secondes à pleine vitesse jusqu'à obtenir une texture lisse et bien verte.",
         "Verse dans un grand verre, saupoudre les graines de chia par-dessus.",
         "Bois immédiatement — les vitamines des épinards crus s'oxydent vite à l'air."
-      ]
+      ],
+      "photo": "assets/recipes/b35.webp"
     },
     {
       "id": "b36",
@@ -24427,7 +24683,8 @@ window.__DATA_RECIPES = {
         "Replie les 4 bords de la galette vers le centre pour former un carré (l'œuf reste apparent au milieu).",
         "Laisse cuire 5-6 min à feu doux — le blanc d'œuf doit être pris mais le jaune coulant.",
         "Glisse sur une assiette et mange immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/b36.webp"
     },
     {
       "id": "l97",
@@ -24452,7 +24709,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "sulphites"
       ],
       "ing": [
         [
@@ -24531,7 +24789,8 @@ window.__DATA_RECIPES = {
         "Étale le quinoa cuit dans un grand bol. Dispose en quartiers : tofu mariné, mangue, avocat, concombre, edamame.",
         "Arrose d'huile de sésame et de jus de citron vert. Parsème de graines de sésame.",
         "Mange tout de suite ou laisse 10 min au frigo pour que les saveurs se mélangent."
-      ]
+      ],
+      "photo": "assets/recipes/l97.webp"
     },
     {
       "id": "l98",
@@ -24628,7 +24887,8 @@ window.__DATA_RECIPES = {
         "Arrose du jus de citron et de l'huile d'olive. Sale et poivre.",
         "Cisèle le persil, parsème.",
         "Se mange tiède ou bien froide. Se garde 24 h au frigo (parfait en lunchbox)."
-      ]
+      ],
+      "photo": "assets/recipes/l98.webp"
     },
     {
       "id": "l99",
@@ -24732,7 +24992,8 @@ window.__DATA_RECIPES = {
         "Verse 1 c.à.s de sauce yaourt par-dessus.",
         "Roule la tortilla en partant du bas (où sont les ingrédients), serre bien sans écraser.",
         "Coupe en deux en biais. Sers la sauce restante à part."
-      ]
+      ],
+      "photo": "assets/recipes/l99.webp"
     },
     {
       "id": "l100",
@@ -24759,7 +25020,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -24838,7 +25100,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste sel/vinaigre. Si trop épais, allonge avec un peu d'eau froide.",
         "Mets au frigo au moins 2 h avant de servir — c'est essentiel pour que le gaspacho soit bien froid et que les saveurs se mélangent.",
         "Sers dans des bols ou verrines avec les crackers sarrasin émiettés et le basilic ciselé par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/l100.webp"
     },
     {
       "id": "d97",
@@ -24918,7 +25181,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer une plancha (ou une poêle bien chaude) à feu vif. Dépose les filets côté peau, laisse cuire 3-4 min jusqu'à ce que la peau soit croustillante.",
         "Retourne et laisse 1-2 min côté chair. La truite doit être nacrée au cœur, pas vitrée.",
         "Sers la truite sur un lit d'orge perlé, avec le fenouil rôti à côté. Arrose de jus de citron et parsème d'aneth ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d97.webp"
     },
     {
       "id": "d98",
@@ -25029,7 +25293,8 @@ window.__DATA_RECIPES = {
         "Remets le tofu, ajoute la sauce soja. Laisse 2 min de plus pour réchauffer. Goûte et ajuste sel.",
         "Hors du feu, ajoute le jus de citron vert et la coriandre ciselée.",
         "Sers sur le riz basmati. Plus c'est reposé, meilleur c'est : se garde 3 jours au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/d98.webp"
     },
     {
       "id": "d99",
@@ -25055,7 +25320,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -25148,7 +25414,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer 0,5 c.à.s d'huile dans une poêle à feu moyen. Cuis les galettes 4-5 min de chaque côté — elles doivent être bien dorées et croustillantes.",
         "Sers les burgers de lentilles sur le pain grillé, avec la salade chou-pomme à côté.",
         "Astuce batch : tu peux préparer la pâte la veille, voire faire 4 galettes pour 2 jours."
-      ]
+      ],
+      "photo": "assets/recipes/d99.webp"
     },
     {
       "id": "d100",
@@ -25172,7 +25439,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "shellfish"
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -25242,7 +25510,8 @@ window.__DATA_RECIPES = {
         "Égoutte les spaghetti en gardant 2 c.à.s d'eau de cuisson. Verse les pâtes dans la poêle aux palourdes, ajoute l'eau de cuisson et le zeste de citron râpé fin.",
         "Mélange à feu vif 1 min — les pâtes finissent leur cuisson dans le jus des palourdes.",
         "Hors du feu, ajoute le jus de citron, le piment d'Espelette et le persil ciselé. Mélange et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d100.webp"
     },
     {
       "id": "s25",
@@ -25311,7 +25580,8 @@ window.__DATA_RECIPES = {
         "Forme des boulettes de la taille d'une noix avec les mains (humidifie tes mains pour que ça ne colle pas).",
         "Roule chaque boulette dans la noix de coco râpée pour la décorer.",
         "Mets au frigo 30 min pour qu'elles se raffermissent. Mange-les directement froides."
-      ]
+      ],
+      "photo": "assets/recipes/s25.webp"
     },
     {
       "id": "des38",
@@ -25392,7 +25662,8 @@ window.__DATA_RECIPES = {
         "Verse dans 1 verrine ou ramequin. Couvre et mets au frigo 4 h minimum (idéalement toute la nuit).",
         "Pendant ce temps (ou le lendemain), prépare le coulis : mets les fraises lavées et équeutées dans le blender avec le jus de citron. Mixe jusqu'à obtenir un coulis lisse. Pas besoin d'ajouter du sucre, les fraises mûres suffisent.",
         "Au moment de servir, démoule la pannacotta sur une assiette (passe rapidement le ramequin sous l'eau chaude pour faciliter le démoulage). Nappe de coulis de fraises."
-      ]
+      ],
+      "photo": "assets/recipes/des38.webp"
     },
     {
       "id": "b37",
@@ -25480,7 +25751,8 @@ window.__DATA_RECIPES = {
         "Verse une petite louche de pâte pour former un pancake (≈ 8 cm). Laisse cuire 2-3 min : quand des bulles apparaissent à la surface et éclatent, retourne avec une spatule.",
         "Cuis 1-2 min de l'autre côté. Renouvelle jusqu'à épuisement de la pâte (≈ 3-4 pancakes par portion).",
         "Sers chaud, décoré des myrtilles restantes. Filet de miel ou yaourt grec en accompagnement (facultatif)."
-      ]
+      ],
+      "photo": "assets/recipes/b37.webp"
     },
     {
       "id": "b38",
@@ -25591,7 +25863,8 @@ window.__DATA_RECIPES = {
         "Enfourne 20-25 min en remuant à mi-cuisson — le granola doit être doré uniformément (attention, ça brûle vite après 22 min).",
         "Laisse refroidir COMPLÈTEMENT sur la plaque (15 min) — c'est là que le granola devient croustillant en figeant.",
         "Pour servir : verse le skyr dans un bol, ajoute le granola, dépose les fruits de saison par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/b38.webp"
     },
     {
       "id": "l101",
@@ -25682,7 +25955,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste citron et sel.",
         "Grille la tranche de pain complet. Sers le tartare dans un cercle à pâtisserie sur l'assiette (ou en boule), avec le pain grillé à côté.",
         "À manger immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l101.webp"
     },
     {
       "id": "l102",
@@ -25706,7 +25980,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -25774,7 +26049,8 @@ window.__DATA_RECIPES = {
         "Verse la vinaigrette sur la salade, mélange.",
         "Émiette la feta par-dessus, parsème de noix concassées.",
         "Idéalement laisser 10 min pour que les saveurs se mélangent. Se garde 24 h au frigo (mets feta + noix au moment du service)."
-      ]
+      ],
+      "photo": "assets/recipes/l102.webp"
     },
     {
       "id": "l104",
@@ -25797,7 +26073,7 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -25871,7 +26147,8 @@ window.__DATA_RECIPES = {
         "Cisèle la coriandre, parsème.",
         "Concasse grossièrement les cacahuètes au couteau, ajoute à la fin (sinon elles ramollissent).",
         "Sers immédiatement. La salade peut se faire 1 h en avance, mets cacahuètes au moment du service."
-      ]
+      ],
+      "photo": "assets/recipes/l104.webp"
     },
     {
       "id": "d101",
@@ -25986,7 +26263,8 @@ window.__DATA_RECIPES = {
         "Coupe la tomate en rondelles. Grille légèrement le pain complet.",
         "Monte le burger : pain, sauce yaourt, roquette, rondelles de tomate, galette de cabillaud, refermer.",
         "Sers tout de suite."
-      ]
+      ],
+      "photo": "assets/recipes/d101.webp"
     },
     {
       "id": "d102",
@@ -26011,7 +26289,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "sulphites"
       ],
       "producesLeftovers": [
         "légumes rôtis"
@@ -26094,7 +26373,8 @@ window.__DATA_RECIPES = {
         "Si la marinade brûle un peu sur le dessus, c'est normal — c'est ça qui donne le goût caramélisé.",
         "Au moment de servir, badigeonne avec le reste de marinade. Parsème de graines de sésame et d'oignon nouveau ciselé.",
         "Sers sur un lit de riz noir."
-      ]
+      ],
+      "photo": "assets/recipes/d102.webp"
     },
     {
       "id": "d103",
@@ -26187,7 +26467,8 @@ window.__DATA_RECIPES = {
         "Huile légèrement un moule à tarte (ou ramequin individuel). Verse l'appareil.",
         "Enfourne 28-30 min — la quiche doit être dorée et un couteau planté au centre doit ressortir propre.",
         "Laisse tiédir 5 min avant de démouler. Se mange chaud, tiède, ou froid (parfait en lunchbox)."
-      ]
+      ],
+      "photo": "assets/recipes/d103.webp"
     },
     {
       "id": "d104",
@@ -26211,8 +26492,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "shellfish",
-        "lactose"
+        "lactose",
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -26295,7 +26577,8 @@ window.__DATA_RECIPES = {
         "Égoutte les linguini en gardant 2 c.à.s d'eau de cuisson. Verse dans la sauteuse aux moules, ajoute le beurre, le persil ciselé, le piment d'Espelette et le jus de citron.",
         "Mélange à feu vif 1 min — les pâtes finissent leur cuisson dans le jus des moules.",
         "Sers immédiatement avec un tour de poivre et le reste du persil par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/d104.webp"
     },
     {
       "id": "s26",
@@ -26390,7 +26673,8 @@ window.__DATA_RECIPES = {
         "Forme des boulettes de la taille d'une noix avec les mains humides (sinon ça colle).",
         "Roule chaque boulette dans la noix de coco râpée pour la décorer.",
         "Mets au frigo 30 min pour qu'elles se raffermissent. Mange-les directement froides."
-      ]
+      ],
+      "photo": "assets/recipes/s26.webp"
     },
     {
       "id": "des39",
@@ -26483,7 +26767,8 @@ window.__DATA_RECIPES = {
         "Recouvre les fruits du mélange crumble en une couche régulière (sans tasser).",
         "Enfourne 22-25 min — le crumble doit être bien doré et les fruits bouillonner sur les côtés.",
         "Laisse tiédir 5 min avant de servir (les fruits sont brûlants en sortant du four). Délicieux avec une cuillère de yaourt grec ou de fromage blanc à côté."
-      ]
+      ],
+      "photo": "assets/recipes/des39.webp"
     },
     {
       "id": "b39",
@@ -26559,7 +26844,8 @@ window.__DATA_RECIPES = {
         "Étale l'avocat écrasé sur le pain.",
         "Dispose les rondelles de radis en cercles légèrement chevauchants sur l'avocat.",
         "Saupoudre de graines de tournesol et arrose d'un filet d'huile d'olive."
-      ]
+      ],
+      "photo": "assets/recipes/b39.webp"
     },
     {
       "id": "b40",
@@ -26631,7 +26917,8 @@ window.__DATA_RECIPES = {
         "Mixe 30 secondes à pleine vitesse jusqu'à obtenir une texture lisse — le cacao masque complètement le goût des épinards (parfait pour kids).",
         "Verse dans un grand verre, saupoudre les graines de chia.",
         "Bois immédiatement — les vitamines des épinards crus s'oxydent vite à l'air."
-      ]
+      ],
+      "photo": "assets/recipes/b40.webp"
     },
     {
       "id": "l105",
@@ -26655,7 +26942,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "sulphites"
       ],
       "ing": [
         [
@@ -26741,7 +27029,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol, dispose le riz tiède en lit. Pose en quartiers : thon mariné, edamame, mangue, avocat, concombre.",
         "Cisèle l'oignon nouveau (vert et blanc), parsème. Arrose du jus de citron vert et saupoudre de graines de sésame.",
         "Sers immédiatement (le thon cru ne se garde pas)."
-      ]
+      ],
+      "photo": "assets/recipes/l105.webp"
     },
     {
       "id": "l106",
@@ -26833,7 +27122,8 @@ window.__DATA_RECIPES = {
         "Arrose du jus de citron et de l'huile d'olive. Sale et poivre légèrement (la feta sale déjà).",
         "Ajoute la feta sur le dessus juste avant de servir (sinon elle se mélange et perd ses morceaux).",
         "Mange tout de suite — la pastèque rend de l'eau si tu attends trop. Idéal après 10 min au frigo pour une fraîcheur maximale."
-      ]
+      ],
+      "photo": "assets/recipes/l106.webp"
     },
     {
       "id": "l107",
@@ -26943,7 +27233,8 @@ window.__DATA_RECIPES = {
         "Ouvre le pita en deux (= sandwich pocket). Tartine l'intérieur de tzatziki.",
         "Garnis : salade verte, rondelles de concombre, tomate, lanières de poulet.",
         "Arrose d'un trait de jus de citron. Sers tout de suite avec le tzatziki restant à part."
-      ]
+      ],
+      "photo": "assets/recipes/l107.webp"
     },
     {
       "id": "l108",
@@ -27054,7 +27345,8 @@ window.__DATA_RECIPES = {
         "Ajoute le riz cuit et froid, mélange en cassant les grumeaux. Fais sauter 3 min en mélangeant pour que le riz prenne couleur.",
         "Ajoute petits pois, edamame et œuf brouillé. Verse la sauce soja et l'huile de sésame, mélange.",
         "Hors du feu, ajoute le vert d'oignon nouveau ciselé. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l108.webp"
     },
     {
       "id": "d105",
@@ -27157,7 +27449,8 @@ window.__DATA_RECIPES = {
         "Enfile les cubes de saumon sur des piques (en bois trempés 10 min dans l'eau au préalable, ou en métal).",
         "Fais chauffer une plancha (ou poêle bien chaude) à feu vif. Cuis les brochettes 2-3 min de chaque côté en les retournant — le saumon doit être nacré au cœur, pas vitré.",
         "Sers les brochettes sur le taboulé sarrasin."
-      ]
+      ],
+      "photo": "assets/recipes/d105.webp"
     },
     {
       "id": "d106",
@@ -27183,7 +27476,8 @@ window.__DATA_RECIPES = {
         "eggs",
         "soy",
         "sesame",
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -27270,7 +27564,8 @@ window.__DATA_RECIPES = {
         "Égoutte les nouilles, dispose-les dans un grand bol creux. Verse le bouillon avec les légumes par-dessus.",
         "Coupe l'œuf mollet en deux, dépose-le sur le bouillon. Parsème d'oignon nouveau ciselé et d'huile de sésame.",
         "Sers tout de suite — les ramen ne se gardent pas une fois servis."
-      ]
+      ],
+      "photo": "assets/recipes/d106.webp"
     },
     {
       "id": "d107",
@@ -27381,7 +27676,8 @@ window.__DATA_RECIPES = {
         "Couvre la poêle, baisse à feu doux. Laisse cuire 4-5 min — le blanc doit être pris mais le jaune coulant.",
         "Pendant ce temps, grille la tranche de pain complet.",
         "Hors du feu, parsème de coriandre ciselée. Sers directement dans la poêle, avec le pain pour saucer."
-      ]
+      ],
+      "photo": "assets/recipes/d107.webp"
     },
     {
       "id": "d108",
@@ -27472,7 +27768,8 @@ window.__DATA_RECIPES = {
         "Réserve le pavé dans une assiette, couvre de papier alu, laisse reposer 3-4 min (essentiel pour que les sucs se redistribuent).",
         "Pendant ce temps, fais sauter les haricots verts dans la poêle du pavé (avec les sucs) 1 min.",
         "Sers le pavé tranché en biais, avec les haricots verts, les pommes de terre nouvelles écrasées à la fourchette et un peu de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d108.webp"
     },
     {
       "id": "s27",
@@ -27494,7 +27791,8 @@ window.__DATA_RECIPES = {
       ],
       "eq": [],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -27548,7 +27846,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, dispose les piques sur une assiette. Arrose d'un filet d'huile d'olive et d'un trait de vinaigre balsamique.",
         "Saupoudre de fleur de sel et donne un tour de moulin à poivre.",
         "À manger directement avec les doigts. Idéal pour l'apéro d'été ou un goûter salé."
-      ]
+      ],
+      "photo": "assets/recipes/s27.webp"
     },
     {
       "id": "des40",
@@ -27628,7 +27927,8 @@ window.__DATA_RECIPES = {
         "Verse dans une coupelle ou ramequin. Mets au frigo 1 h pour que la mousse se raffermisse.",
         "Au moment de servir, parsème de pépites de chocolat noir.",
         "Astuce : personne ne devine que c'est de l'avocat — le cacao masque complètement le goût. Et c'est vegan + IG bas, sans lait ni œufs."
-      ]
+      ],
+      "photo": "assets/recipes/des40.webp"
     },
     {
       "id": "b41",
@@ -27712,7 +28012,8 @@ window.__DATA_RECIPES = {
         "Ajoute par-dessus les pousses d'épinards et les dés de tomate.",
         "Récupère l'œuf à l'écumoire (égoutté), pose-le sur le bowl.",
         "Arrose d'un trait d'huile d'olive, donne un tour de poivre. Mange immédiatement, en cassant le jaune sur les épinards."
-      ]
+      ],
+      "photo": "assets/recipes/b41.webp"
     },
     {
       "id": "b42",
@@ -27784,7 +28085,8 @@ window.__DATA_RECIPES = {
         "Mixe 30 sec à pleine vitesse jusqu'à obtenir une texture lisse.",
         "Si trop épais, allonge avec un peu de lait. Goûte et ajuste le miel selon la maturité des fruits.",
         "Sers immédiatement dans un grand verre, parfait pour les matins d'été chauds."
-      ]
+      ],
+      "photo": "assets/recipes/b42.webp"
     },
     {
       "id": "l109",
@@ -27811,7 +28113,8 @@ window.__DATA_RECIPES = {
         "lactose",
         "eggs",
         "fish",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "usesLeftovers": [
         "poulet cuit"
@@ -27899,7 +28202,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélange la salade avec la sauce César.",
         "Dispose les lanières de poulet par-dessus, parsème de copeaux de parmesan (utilise un économe pour faire de jolis copeaux fins) et des croûtons sarrasin.",
         "Donne un tour de poivre au moulin. Mange tout de suite — la salade est meilleure quand elle est encore croquante."
-      ]
+      ],
+      "photo": "assets/recipes/l109.webp"
     },
     {
       "id": "l110",
@@ -28014,7 +28318,8 @@ window.__DATA_RECIPES = {
         "Sur la tortilla, dépose en ligne sur le tiers bas : quinoa, haricots noirs écrasés, avocat, pico de gallo. Saupoudre de piment d'Espelette.",
         "Replie les côtés de la tortilla vers l'intérieur, puis roule fermement de bas en haut (= technique du burrito : côtés rentrés, puis enroulé bien serré).",
         "Coupe en deux en biais. Sers tout de suite."
-      ]
+      ],
+      "photo": "assets/recipes/l110.webp"
     },
     {
       "id": "l111",
@@ -28087,7 +28392,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, verse dans un bol creux. Coupe le jambon cru en lanières fines, dépose en couronne au centre.",
         "Ajoute les petits cubes de melon réservés et le basilic ciselé. Donne un dernier tour de poivre.",
         "Mange immédiatement, c'est le contraste froid/chaud qui fait l'intérêt — le sel du jambon réveille le sucré du melon."
-      ]
+      ],
+      "photo": "assets/recipes/l111.webp"
     },
     {
       "id": "l112",
@@ -28113,7 +28419,7 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -28211,7 +28517,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol creux, dispose la salade en lit. Ajoute les vermicelles, la carotte, le concombre, le tofu doré.",
         "Cisèle menthe et coriandre, parsème généreusement par-dessus. Concasse grossièrement les cacahuètes au couteau et ajoute en finition.",
         "Verse la sauce thaï juste avant de servir et mélange — sinon les vermicelles boivent trop la sauce."
-      ]
+      ],
+      "photo": "assets/recipes/l112.webp"
     },
     {
       "id": "d109",
@@ -28234,7 +28541,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "mustard"
+        "mustard",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "porc cuit"
@@ -28319,7 +28628,8 @@ window.__DATA_RECIPES = {
         "Réserve le filet mignon, laisse reposer 3 min sous papier alu (essentiel pour que les sucs se redistribuent).",
         "Réajuste la sauce si trop liquide (réduction 1-2 min à feu vif). Goûte et ajuste sel/poivre.",
         "Tranche le filet en médaillons de 1,5 cm. Sers sur les lentilles, nappe de sauce, parsème de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d109.webp"
     },
     {
       "id": "d110",
@@ -28432,7 +28742,8 @@ window.__DATA_RECIPES = {
         "Réchauffe les tortillas 30 sec chacune à la poêle (ou 30 sec au micro-ondes, recouvertes d'un torchon humide).",
         "Monte chaque taco : tortilla, guacamole, lanières de poulet épicées, salsa, coriandre ciselée.",
         "Plie en deux et mange à la main, en penchant la tête pour ne pas en mettre partout."
-      ]
+      ],
+      "photo": "assets/recipes/d110.webp"
     },
     {
       "id": "d111",
@@ -28457,7 +28768,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -28526,7 +28838,8 @@ window.__DATA_RECIPES = {
         "Nappe le pavé avec la sauce.",
         "Enfourne 12-14 min — le cabillaud doit être nacré au cœur, pas vitreux. La sauce doit légèrement bouillonner.",
         "Sers le pavé et le poireau crémeux avec le riz basmati à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d111.webp"
     },
     {
       "id": "d112",
@@ -28551,7 +28864,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -28656,7 +28970,8 @@ window.__DATA_RECIPES = {
         "Dans une grande assiette creuse, dépose la semoule en lit. Verse les légumes mijotés et le bouillon par-dessus.",
         "Cisèle la coriandre fraîche, parsème.",
         "Ce plat est encore meilleur le lendemain (les saveurs se mélangent). Se garde 3 jours au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/d112.webp"
     },
     {
       "id": "s28",
@@ -28728,7 +29043,8 @@ window.__DATA_RECIPES = {
         "Parsème le romarin sur la tartine — c'est l'association inattendue qui surprend.",
         "Verse un filet de miel par-dessus, donne un tour de poivre noir.",
         "Mange immédiatement, c'est plus joli quand la pêche n'a pas eu le temps de s'oxyder."
-      ]
+      ],
+      "photo": "assets/recipes/s28.webp"
     },
     {
       "id": "des41",
@@ -28798,7 +29114,8 @@ window.__DATA_RECIPES = {
         "Mets au frigo 30 min minimum (idéalement 1 h) pour que les saveurs se mélangent et que le dessert soit bien froid.",
         "Au moment de servir, cisèle finement les feuilles de menthe restantes et parsème par-dessus.",
         "Ce dessert ultra-frais et IG bas (pas de sucre raffiné) est parfait après un repas d'été."
-      ]
+      ],
+      "photo": "assets/recipes/des41.webp"
     },
     {
       "id": "b43",
@@ -28884,7 +29201,8 @@ window.__DATA_RECIPES = {
         "Garnis en motifs : flocons d'avoine, amandes effilées, fruits rouges restants, graines de chia.",
         "Verse un filet de miel par-dessus.",
         "Mange immédiatement à la cuillère, c'est plus frais quand c'est juste mixé."
-      ]
+      ],
+      "photo": "assets/recipes/b43.webp"
     },
     {
       "id": "b44",
@@ -28973,7 +29291,8 @@ window.__DATA_RECIPES = {
         "Enfourne 12-14 min — le blanc doit être pris mais le jaune coulant.",
         "Pendant ce temps, grille la tranche de pain complet.",
         "Sers les œufs cocotte directement dans le ramequin, avec le pain pour saucer."
-      ]
+      ],
+      "photo": "assets/recipes/b44.webp"
     },
     {
       "id": "l113",
@@ -29078,7 +29397,8 @@ window.__DATA_RECIPES = {
         "Sors le saumon mariné, dépose-le sur la salade. Verse un peu de marinade comme sauce.",
         "Cisèle la coriandre, parsème généreusement.",
         "Mange tout de suite — le saumon mariné ne se garde pas plus de 24 h."
-      ]
+      ],
+      "photo": "assets/recipes/l113.webp"
     },
     {
       "id": "l114",
@@ -29201,7 +29521,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol, dispose la roquette en lit. Étale le houmous sur le côté.",
         "Ajoute concombre, tomate et 4-5 falafels chauds.",
         "Arrose d'un trait de jus de citron et 0,5 c.à.s d'huile d'olive restante. Mange à la fourchette ou en croquant les falafels avec les doigts."
-      ]
+      ],
+      "photo": "assets/recipes/l114.webp"
     },
     {
       "id": "l115",
@@ -29225,7 +29546,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -29293,7 +29615,8 @@ window.__DATA_RECIPES = {
         "Étale les rillettes de thon généreusement sur les tartines.",
         "Sers avec quelques feuilles de salade verte à côté pour le frais.",
         "Astuce batch : les rillettes se gardent 2 jours au frigo — parfait à préparer la veille en lunchbox."
-      ]
+      ],
+      "photo": "assets/recipes/l115.webp"
     },
     {
       "id": "l116",
@@ -29386,7 +29709,8 @@ window.__DATA_RECIPES = {
         "Dans la casserole hors du feu, mélange les pâtes avec le pesto rouge et l'eau de cuisson pour fluidifier légèrement.",
         "Sers dans une assiette, dispose la roquette par-dessus. Cisèle les feuilles de basilic réservées et parsème.",
         "Le pesto rouge se garde 1 semaine au frigo dans un bocal couvert d'huile — parfait à faire en batch pour 4-5 portions."
-      ]
+      ],
+      "photo": "assets/recipes/l116.webp"
     },
     {
       "id": "d113",
@@ -29476,7 +29800,8 @@ window.__DATA_RECIPES = {
         "Pose le bol sur une casserole d'eau frémissante (= bain-marie, pas en contact direct). Fouette sans arrêt en versant le beurre fondu en filet — la sauce épaissit et devient mousseuse.",
         "Hors du feu, incorpore la crème liquide délicatement à la cuillère. Sale, poivre. Si trop épaisse, ajoute 1 c.à.c d'eau chaude.",
         "Sers le saumon sur les asperges blanches, nappe de sauce mousseline. Parsème d'aneth ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d113.webp"
     },
     {
       "id": "d114",
@@ -29599,7 +29924,8 @@ window.__DATA_RECIPES = {
         "Remets les boulettes dans la sauce, couvre, laisse 5 min de plus à feu doux pour qu'elles finissent de cuire à cœur.",
         "Hors du feu, ajoute le basilic ciselé.",
         "Sers les boulettes sur le riz pilaf, nappe de sauce tomate-basilic."
-      ]
+      ],
+      "photo": "assets/recipes/d114.webp"
     },
     {
       "id": "d116",
@@ -29720,7 +30046,8 @@ window.__DATA_RECIPES = {
         "Verse la sauce soja, l'huile de sésame et le piment d'Espelette. Mélange.",
         "Hors du feu, ajoute le jus de citron vert, le vert d'oignon nouveau et la coriandre ciselée.",
         "Sers immédiatement sur le riz basmati."
-      ]
+      ],
+      "photo": "assets/recipes/d116.webp"
     },
     {
       "id": "s29",
@@ -29820,7 +30147,8 @@ window.__DATA_RECIPES = {
         "Coupe la carotte et le concombre en bâtonnets de 1 cm × 6 cm.",
         "Sers le houmous au centre, entouré des bâtonnets pour le dipper.",
         "Astuce batch : multiplie par 4 pour faire un grand bocal qui se garde 4 jours au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/s29.webp"
     },
     {
       "id": "des42",
@@ -29889,7 +30217,8 @@ window.__DATA_RECIPES = {
         "Pour une version 'la veille' parfaite : verse dans un moule rectangulaire, couvre, congèle toute la nuit. Sors 5 min avant de servir pour que la consistance soit crémeuse.",
         "Sers en quenelles avec une cuillère trempée dans l'eau chaude. Décore avec quelques fruits rouges frais.",
         "Bien plus sain qu'une glace industrielle : zéro sucre raffiné, protéines du skyr, antioxydants des fruits rouges."
-      ]
+      ],
+      "photo": "assets/recipes/des42.webp"
     },
     {
       "id": "b45",
@@ -29976,7 +30305,8 @@ window.__DATA_RECIPES = {
         "Chauffe une poêle antiadhésive avec un peu d'huile de coco (feu moyen — l'huile doit juste fumer légèrement).",
         "Verse 2-3 c.à.s de pâte par pancake. Cuis 2 min jusqu'à ce que des bulles apparaissent en surface, retourne, encore 1 min sur l'autre face. Les pancakes sont prêts quand ils sont dorés en surface et moelleux dedans.",
         "Sers tiède arrosé d'un filet de sirop d'érable."
-      ]
+      ],
+      "photo": "assets/recipes/b45.webp"
     },
     {
       "id": "b46",
@@ -30056,7 +30386,8 @@ window.__DATA_RECIPES = {
         "Verse dans un bol large, lisse la surface avec une cuillère.",
         "Parsème par-dessus les flocons d'avoine et les amandes effilées en bandes parallèles pour faire joli.",
         "Mange immédiatement à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/b46.webp"
     },
     {
       "id": "l117",
@@ -30080,7 +30411,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -30298,7 +30630,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -30706,7 +31039,8 @@ window.__DATA_RECIPES = {
         "Verse la crème par-dessus et saupoudre généreusement de muscade râpée.",
         "Couvre de tomme râpée. Enfourne 20 min — le fromage doit être doré et faire des cloques.",
         "Sors du four, attends 5 min avant de servir (le gratin se tient mieux). Accompagne d'une salade verte vinaigrée."
-      ]
+      ],
+      "photo": "assets/recipes/d118.webp"
     },
     {
       "id": "d119",
@@ -30857,7 +31191,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "nuts"
+        "nuts",
+        "celery"
       ],
       "ing": [
         [
@@ -31071,7 +31406,8 @@ window.__DATA_RECIPES = {
         "Répartis la pâte dans les caissettes en remplissant aux 3/4. Saupoudre éventuellement de quelques noix supplémentaires sur le dessus.",
         "Enfourne 22-25 min — les muffins sont prêts quand un cure-dent enfoncé au centre ressort sec.",
         "Laisse tiédir 10 min dans le moule avant de démouler. Se garde 3 jours dans une boîte hermétique, ou se congèle 2 mois."
-      ]
+      ],
+      "photo": "assets/recipes/s30.webp"
     },
     {
       "id": "des43",
@@ -31157,7 +31493,8 @@ window.__DATA_RECIPES = {
         "Verse dans un bocal ou bol, ajoute les graines de chia. Mélange à la cuillère pour bien répartir les graines (pas de paquet au fond, sinon il restera dur).",
         "Couvre et place au frigo minimum 4 heures (idéalement toute la nuit). Les graines vont gonfler et donner une texture épaisse type pudding.",
         "Au moment de servir, mélange à nouveau (les graines tendent à se déposer). Parsème de noix concassées par-dessus. Sers frais."
-      ]
+      ],
+      "photo": "assets/recipes/des43.webp"
     },
     {
       "id": "b47",
@@ -31238,7 +31575,8 @@ window.__DATA_RECIPES = {
         "Verse le skyr dans un grand bol, étale-le bien à la cuillère pour faire un fond uniforme.",
         "Dépose les fraises sur la moitié du bol, le mini-granola sur l'autre moitié pour un visuel propre. Termine par un filet de miel sur le dessus.",
         "Mange à la cuillère en attrapant un peu de chaque côté à chaque fois — le contraste fraises fraîches / granola croquant fait toute la recette."
-      ]
+      ],
+      "photo": "assets/recipes/b47.webp"
     },
     {
       "id": "l121",
@@ -31336,7 +31674,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare la vinaigrette : émince finement la demi-gousse d'ail (presse-la sur une planche avec le plat du couteau, puis hache fin), mélange avec 1 c.à.s d'huile d'olive et le jus du demi-citron, sel et poivre.",
         "Coupe le poulet en lanières et les asperges en tronçons de 4 cm. Coupe les tomates cerises en deux.",
         "Dans une grande assiette, dispose la roquette, ajoute poulet, asperges, tomates. Verse la vinaigrette, parsème de copeaux de parmesan."
-      ]
+      ],
+      "photo": "assets/recipes/l121.webp"
     },
     {
       "id": "l122",
@@ -31443,7 +31782,8 @@ window.__DATA_RECIPES = {
         "Enfile les crevettes sur les piques (4-5 par brochette).",
         "Préchauffe le grill à feu fort. Pose les brochettes 1 min 30 - 2 min de chaque côté — les crevettes sont cuites quand elles ont pris une couleur rose-orangée et qu'elles s'enroulent légèrement. Surcuites = caoutchouteuses, donc on retire dès qu'elles sont opaques.",
         "Sers les brochettes sur le taboulé tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l122.webp"
     },
     {
       "id": "l123",
@@ -31469,7 +31809,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -31541,7 +31882,8 @@ window.__DATA_RECIPES = {
         "Dans un petit bol, mélange ricotta avec un filet de jus de citron, sel, poivre — pour l'aérer et lui donner du peps.",
         "Étale la ricotta citronnée sur les pains. Dispose les rondelles de courgette grillée par-dessus, en escaliers pour faire joli.",
         "Cisèle le basilic. Parsème sur les tartines avec les pignons. Termine par un filet d'huile d'olive et quelques gouttes de vinaigre balsamique."
-      ]
+      ],
+      "photo": "assets/recipes/l123.webp"
     },
     {
       "id": "l124",
@@ -31565,7 +31907,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -31656,7 +31999,8 @@ window.__DATA_RECIPES = {
         "Coupe les pommes de terre en deux ou en quartiers. Coupe les œufs en quartiers. Coupe la tomate en quartiers, l'oignon rouge en lamelles fines.",
         "Vinaigrette : dans un bol, mélange moutarde, vinaigre, sel, poivre, puis ajoute l'huile d'olive en filet en fouettant.",
         "Dans une grande assiette : salade verte au fond, puis pommes de terre, haricots verts, tomate, oignon rouge, olives, anchois. Tranche le thon en lamelles épaisses, dispose-les au centre. Œufs en quartiers tout autour. Verse la vinaigrette au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l124.webp"
     },
     {
       "id": "d121",
@@ -31738,7 +32082,8 @@ window.__DATA_RECIPES = {
         "Pose le saumon côté peau d'abord 5 min sans bouger — la peau doit devenir croustillante et se détacher facilement du grill quand tu glisses une spatule. Retourne et cuis encore 3-4 min côté chair (selon épaisseur du pavé) — le centre doit rester rosé pour rester fondant.",
         "En parallèle, pose les asperges sur le grill 5-6 min en les tournant régulièrement — elles doivent avoir des marques de grill et rester croquantes (pas molles).",
         "Sers le saumon sur les asperges, parsème de fleur de sel, ajoute des quartiers de citron à presser au moment de manger."
-      ]
+      ],
+      "photo": "assets/recipes/d121.webp"
     },
     {
       "id": "d122",
@@ -31852,7 +32197,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le grill bien chaud. Cuis les brochettes 2-3 min de chaque côté pour avoir l'extérieur grillé et l'intérieur rosé. 4 min de chaque côté pour bien cuit. L'agneau cuit vite, ne pas trop cuire sinon ça devient sec.",
         "Coupe le pita en deux et fais-le tiédir 1 min sur le grill.",
         "Sers les brochettes avec le tzatziki à part, le pita tiède et la roquette en accompagnement."
-      ]
+      ],
+      "photo": "assets/recipes/d122.webp"
     },
     {
       "id": "d123",
@@ -31874,7 +32220,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -31965,7 +32312,8 @@ window.__DATA_RECIPES = {
         "Pose les sardines sur la plancha bien chaude (pas besoin d'huile supplémentaire — la chermoula contient déjà du gras). Cuis 2-3 min de chaque côté — la peau doit être bien dorée et la chair se détacher facilement à l'arête.",
         "Toaste la tranche de pain complet sur la plancha les 2 dernières minutes pour profiter des sucs.",
         "Sers les sardines avec la salade tomates-oignon, le pain grillé, et un quartier de citron à presser."
-      ]
+      ],
+      "photo": "assets/recipes/d123.webp"
     },
     {
       "id": "d124",
@@ -32086,7 +32434,8 @@ window.__DATA_RECIPES = {
         "Pose les cuisses de poulet côté peau d'abord. Cuis 8-10 min sans bouger pour que la peau soit bien grillée et croustillante. Retourne, encore 8-10 min sur l'autre face — le poulet est cuit quand le jus qui sort à la pointe d'un couteau est clair, pas rosé.",
         "Pose les légumes sur le grill en parallèle. Cuis 4-5 min de chaque côté — ils doivent avoir des marques de grill bien visibles et rester croquants.",
         "Cisèle la coriandre. Sers le poulet sur le riz, légumes grillés à côté, parsème de coriandre fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/d124.webp"
     },
     {
       "id": "s31",
@@ -32110,7 +32459,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -32157,7 +32507,8 @@ window.__DATA_RECIPES = {
         "Sur de petites piques en bois (ou des cure-dents pour brochettes apéro), enfile : 1 bille de melon, 1 feuille de menthe pliée en deux, 1 cube de feta. Recommence selon la taille de tes piques.",
         "Pose les brochettes sur une assiette plate. Arrose d'un filet d'huile d'olive et de quelques gouttes de vinaigre balsamique. Ajoute une pincée de poivre.",
         "Sers immédiatement (le melon rend de l'eau au repos, les brochettes ne se gardent pas très longtemps après assemblage)."
-      ]
+      ],
+      "photo": "assets/recipes/s31.webp"
     },
     {
       "id": "des44",
@@ -32222,7 +32573,8 @@ window.__DATA_RECIPES = {
         "Pose les demi-pêches côté chair sur le grill. Cuis 3-4 min sans bouger pour avoir de belles marques de grill — la chaleur fait caraméliser les sucres naturels du fruit. Retourne côté peau encore 2 min pour les chauffer à cœur.",
         "Pendant ce temps, fais griller à sec les amandes effilées 1-2 min dans une petite poêle (remue sans arrêt — ça brûle vite).",
         "Sers les demi-pêches dans des coupes ou bols, ajoute 1 c.à.s de skyr à côté ou sur le dessus, drizzle de miel, parsème de thym effeuillé et d'amandes grillées. Mange tiède."
-      ]
+      ],
+      "photo": "assets/recipes/des44.webp"
     },
     {
       "id": "des45",
@@ -32293,7 +32645,8 @@ window.__DATA_RECIPES = {
         "Enfile les morceaux d'ananas sur les piques (4-5 par brochette).",
         "Préchauffe le grill à feu moyen-fort. Cuis les brochettes 2-3 min de chaque côté — l'ananas doit avoir des marques de grill bien dorées (le sucre caramélise).",
         "Au moment de servir, gratte le granité à la fourchette pour bien le casser. Dispose les brochettes dans une assiette, ajoute une boule de granité coco à côté, parsème de menthe ciselée. Mange immédiatement (le granité fond vite)."
-      ]
+      ],
+      "photo": "assets/recipes/des45.webp"
     },
     {
       "id": "l125",
@@ -32639,7 +32992,8 @@ window.__DATA_RECIPES = {
         "Dans un saladier, mélange dés de poivrons, tomates, ail écrasé, cumin, coriandre, harissa, huile d'olive, jus de citron, sel, poivre. Goûte et rectifie.",
         "Au moment de servir, dispose la salade dans un grand plat, parsème de thon émietté, olives, câpres, et œufs durs coupés en quartiers. Sers tiède ou froid avec le pita en triangles.",
         "Encore meilleure le lendemain (les saveurs se développent au frigo)."
-      ]
+      ],
+      "photo": "assets/recipes/l127.webp"
     },
     {
       "id": "l128",
@@ -32908,7 +33262,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "eggs",
-        "nuts"
+        "nuts",
+        "celery"
       ],
       "ing": [
         [
@@ -33108,7 +33463,8 @@ window.__DATA_RECIPES = {
         "Égoutte le poisson (garde 2 c.à.s de jus de citron vert). Dans un saladier, mélange poisson, mangue, avocat, oignon rouge, tomate, coriandre, le jus de citron réservé, l'huile d'olive, le piment d'Espelette, sel et poivre.",
         "Goûte, rectifie en sel/citron. Sers très frais immédiatement, dans des bols ou verrines, avec les chips de tortilla pour saucer.",
         "Ne se conserve pas — le poisson continue de « cuire » dans l'acide et devient farineux après 1 h."
-      ]
+      ],
+      "photo": "assets/recipes/l129.webp"
     },
     {
       "id": "l130",
@@ -33237,7 +33593,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélange tous les ingrédients sauf l'avocat et la coriandre. Verse la vinaigrette et mélange.",
         "Ajoute l'avocat et la coriandre au moment de servir (sinon l'avocat noircit). Coupe la tortilla en lanières fines, fais-la griller 2 min à sec dans une poêle pour la rendre croustillante, et parsème par-dessus.",
         "Se garde 24 h au frigo (sans l'avocat)."
-      ]
+      ],
+      "photo": "assets/recipes/l130.webp"
     },
     {
       "id": "d127",
@@ -33364,7 +33721,8 @@ window.__DATA_RECIPES = {
         "Tiédis les tortillas 1 min de chaque côté sur le grill ou dans une poêle à sec — elles doivent être souples et chaudes (rigides = sèches, refroidies = cassantes).",
         "Coupe l'avocat en lamelles. Cisèle le reste de coriandre.",
         "Montage à table : chacun garnit ses tortillas tièdes — slaw chou-carotte, morceaux de poisson, lamelles d'avocat, sauce yaourt-citron, coriandre. Sers avec un quart de citron vert à presser."
-      ]
+      ],
+      "photo": "assets/recipes/d127.webp"
     },
     {
       "id": "d128",
@@ -33389,7 +33747,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -33521,7 +33880,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -33736,7 +34096,8 @@ window.__DATA_RECIPES = {
         "Casse les pépites de chocolat noir et enfonce-les dans la pâte (elles vont fondre en pépites coulantes pendant la cuisson — l'effet « cœur fondant »).",
         "Cuis au micro-ondes à 800 W pendant 90 secondes - 2 min. Surveille à travers la vitre : le gâteau gonfle, doit être ferme en surface mais légèrement humide au centre. Si encore liquide, ajoute 20 secondes maximum.",
         "Laisse tiédir 1 min (le mug est très chaud). Mange directement à la cuillère dans le mug, encore tiède pour que le chocolat soit coulant. Le combo chocolat-cannelle-piment est la signature du chocolat mexicain."
-      ]
+      ],
+      "photo": "assets/recipes/des46.webp"
     },
     {
       "id": "l131",
@@ -33759,7 +34120,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Quinoa",
@@ -33872,7 +34235,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "soupe de légumes"
       ],
@@ -33994,7 +34359,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "soupe de légumes"
       ],
@@ -34118,7 +34485,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "producesLeftovers": [
         "poulet cuit"
@@ -34243,7 +34611,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "producesLeftovers": [
         "bœuf cuit"
@@ -34447,7 +34816,8 @@ window.__DATA_RECIPES = {
         "Dans une poêle, chauffe le reste d'huile à feu moyen. Ajoute ail écrasé, cumin et paprika. Remue 30 secondes.",
         "Ajoute tomate et chair d'aubergine. Mélange et écrase à la fourchette pour obtenir une purée grossière. Laisse compoter 10 min à découvert : l'eau doit s'évaporer (texture épaisse).",
         "Sale, poivre, ajoute jus de citron, coriandre et persil ciselés. Sers tiède ou froid avec du pain complet grillé."
-      ]
+      ],
+      "photo": "assets/recipes/s32.webp"
     },
     {
       "id": "s33",
@@ -34472,7 +34842,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -34518,7 +34889,8 @@ window.__DATA_RECIPES = {
         "Pose les pinchos sur une assiette de service.",
         "Dans un petit bol, mélange l'huile d'olive et le vinaigre balsamique. Sale et poivre.",
         "Au moment de servir, badigeonne les pinchos au pinceau (ou arrose à la cuillère) avec la vinaigrette. Sert immédiatement (sinon le basilic noircit)."
-      ]
+      ],
+      "photo": "assets/recipes/s33.webp"
     },
     {
       "id": "s34",
@@ -34600,7 +34972,8 @@ window.__DATA_RECIPES = {
         "Dans le bol de jaunes, ajoute tahini, jus de citron, cumin, sel et poivre. Écrase le tout à la fourchette pour obtenir une pâte lisse (texture mousseuse).",
         "À la cuillère ou avec une poche à douille, garnis chaque demi-blanc de la préparation.",
         "Saupoudre d'une pincée de paprika et de persil ciselé. Sers frais."
-      ]
+      ],
+      "photo": "assets/recipes/s34.webp"
     },
     {
       "id": "s35",
@@ -34698,7 +35071,8 @@ window.__DATA_RECIPES = {
         "Coupe la tomate en très petits dés. Égoutte les pépins (sinon ça liquéfie).",
         "Monte les verrines (4 petites verrines de 60 ml) : guacamole au fond, dés de tomate au milieu, saumon mariné égoutté au dessus.",
         "Termine par une goutte d'huile d'olive et un brin d'aneth. Sers frais immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/s35.webp"
     },
     {
       "id": "d135",
@@ -34799,7 +35173,8 @@ window.__DATA_RECIPES = {
         "Pose les noix décortiquées en petit tas, ainsi que la grappe de raisins frais (ou des grains détachés selon préférence).",
         "Au centre ou en bordure de la planche, ajoute une poignée de mâche pour la fraîcheur visuelle et gustative.",
         "Sers avec un couteau par fromage si possible (évite le mélange des saveurs au couteau). Pour un dîner complet, accompagne d'une salade verte simple à part."
-      ]
+      ],
+      "photo": "assets/recipes/d135.webp"
     },
     {
       "id": "l137",
@@ -34820,7 +35195,7 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs"
       ],
       "ing": [
         [
@@ -34886,7 +35261,8 @@ window.__DATA_RECIPES = {
         "Pèle l'orange à vif (au couteau, retire la peau et la membrane blanche), prélève les suprêmes (les quartiers sans la peau interne).",
         "Dans un saladier, mélange roquette, fenouil, suprêmes d'orange, olives et poulpe grillé.",
         "Vinaigrette : dans un bol, mélange jus de citron, reste d'huile d'olive, origan, sel et poivre. Verse sur la salade au moment de servir, mélange délicatement. Décore des pluches de fenouil."
-      ]
+      ],
+      "photo": "assets/recipes/l137.webp"
     },
     {
       "id": "l138",
@@ -34978,7 +35354,8 @@ window.__DATA_RECIPES = {
         "Mixe 30 secondes jusqu'à obtenir une texture lisse mais pas trop liquide. Si trop épais, ajoute 2-3 c.à.s d'eau glacée.",
         "Place 30 min minimum au frigo (idéalement 1h) — la soupe doit être servie bien froide, c'est tout l'intérêt.",
         "Sers dans des bols. Dépose les quartiers d'œuf dur au centre, quelques brins d'aneth, et la lamelle de concombre réservée. Un trait d'huile d'olive pour finir."
-      ]
+      ],
+      "photo": "assets/recipes/l138.webp"
     },
     {
       "id": "d136",
@@ -35064,7 +35441,8 @@ window.__DATA_RECIPES = {
         "Retourne et cuis 1 min côté chair. Le poisson est cuit quand il s'effiloche facilement à la fourchette.",
         "Sors les asperges du four. Ail finement écrasé jeté dessus, jus de citron, persil ciselé, mélange.",
         "Sers le loup sur l'assiette, asperges en garniture, un quartier de citron à part."
-      ]
+      ],
+      "photo": "assets/recipes/d136.webp"
     },
     {
       "id": "d137",
@@ -35087,7 +35465,7 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs"
       ],
       "ing": [
         [
@@ -35154,7 +35532,8 @@ window.__DATA_RECIPES = {
         "Retourne et cuis 1-2 min de l'autre côté. Au-delà, ils deviennent élastiques.",
         "Verse les calamars chauds sur la salade. Ajoute le jus de citron, l'autre gousse d'ail dégermée et écrasée, le persil ciselé, le reste d'huile.",
         "Mélange délicatement. Sers immédiatement (la salade reste tiède, c'est l'intérêt)."
-      ]
+      ],
+      "photo": "assets/recipes/d137.webp"
     },
     {
       "id": "l139",
@@ -35179,7 +35558,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -35292,7 +35672,8 @@ window.__DATA_RECIPES = {
         "gluten",
         "lactose",
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "usesLeftovers": [
         "poulet cuit"
@@ -35442,7 +35823,8 @@ window.__DATA_RECIPES = {
         "Sale et poivre le cabillaud. Pose-le sur le dessus des légumes (ou utilise un 2ᵉ étage si tu en as un). Couvre et cuis 5-6 min : le poisson est cuit quand il s'effiloche à la fourchette et que la chair est blanche opaque.",
         "Sors le tout du panier. Pose le cabillaud sur l'assiette, dispose les légumes à côté.",
         "Arrose d'huile d'olive, jus de citron, sel et poivre. Parsème d'aneth ciselé. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d138.webp"
     },
     {
       "id": "d139",
@@ -35469,7 +35851,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -35585,7 +35968,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -35676,7 +36060,8 @@ window.__DATA_RECIPES = {
         "Lave les radis et coupe-les en quartiers (croix verticale, 4 morceaux par radis).",
         "Coupe les branches de céleri en bâtonnets équivalents (retire les fils du dos avec un économe si elles sont coriaces).",
         "Dispose les bâtonnets en éventail autour des ramequins de houmous sur une grande assiette ou planche en bois. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/s36.webp"
     },
     {
       "id": "s37",
@@ -35754,7 +36139,8 @@ window.__DATA_RECIPES = {
         "Coupe le saumon fumé en lanières fines de 5 mm de large.",
         "Étale 1 c.à.c de fromage frais sur chaque lamelle de courgette, parsème d'une lanière de saumon fumé. Roule la lamelle depuis un bout, fixe avec un cure-dent.",
         "Dispose les roulés debout sur une assiette de service. Décore d'un brin d'aneth sur le dessus. Sers frais (idéalement préparé 30 min avant pour que les saveurs se mélangent)."
-      ]
+      ],
+      "photo": "assets/recipes/s37.webp"
     },
     {
       "id": "s38",
@@ -35865,7 +36251,8 @@ window.__DATA_RECIPES = {
         "Topping 2 (avocat-saumon) : écrase la chair d'avocat à la fourchette avec jus de citron, sel et poivre. Étale sur 4 mini-tartines. Pose un morceau de saumon fumé roulé en rosette dessus + brin d'aneth.",
         "Topping 3 (ricotta-noix-miel) : étale ricotta sur 4 mini-tartines. Pose 1 cerneau de noix concassé sur chaque. Termine par un trait de miel (très fin) et un tour de poivre.",
         "Dispose les 12 mini-tartines en alternance (varies les couleurs : vert avocat, rose saumon, blanc chèvre) sur une planche ou grande assiette. Sers immédiatement (le pain ramollit si on attend)."
-      ]
+      ],
+      "photo": "assets/recipes/s38.webp"
     },
     {
       "id": "d140",
@@ -35889,7 +36276,9 @@ window.__DATA_RECIPES = {
         "oven",
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Gigot d'agneau (tranche ou portion)",
@@ -35965,7 +36354,8 @@ window.__DATA_RECIPES = {
         "Sors la viande du four. Couvre de papier alu et laisse reposer 10 min (la viande se détend, les jus se répartissent — étape cruciale, ne saute pas).",
         "Sale et poivre les flageolets. Coupe la viande en tranches fines à contre-fil (perpendiculaire aux fibres).",
         "Sers les tranches sur un lit de flageolets. Parsème de persil ciselé. Arrose des jus de cuisson restés dans le plat."
-      ]
+      ],
+      "photo": "assets/recipes/d140.webp"
     },
     {
       "id": "l141",
@@ -36056,7 +36446,8 @@ window.__DATA_RECIPES = {
         "Ajoute aux courgettes : zeste de citron râpé, basilic et menthe ciselés, huile d'olive, poivre. Mélange délicatement.",
         "Dresse dans un saladier individuel. Émiette la ricotta dessus avec les doigts (gros morceaux irréguliers). Parsème de pignons et de copeaux de parmesan.",
         "Termine par une pincée de fleur de sel et un dernier tour de poivre. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l141.webp"
     },
     {
       "id": "l142",
@@ -36080,7 +36471,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -36153,7 +36545,8 @@ window.__DATA_RECIPES = {
         "Garde quelques feuilles de menthe pour la déco. Mixe le velouté avec le reste de la menthe au mixeur plongeant directement dans la casserole : texture lisse, vert intense.",
         "Ajoute le skyr et mixe encore 5 sec pour incorporer. Sale, poivre, goûte.",
         "Verse le velouté dans un bol creux. Pose l'œuf poché au centre. Parsème des feuilles de menthe réservées. Trait d'huile d'olive et tour de poivre pour finir."
-      ]
+      ],
+      "photo": "assets/recipes/l142.webp"
     },
     {
       "id": "d141",
@@ -36244,7 +36637,8 @@ window.__DATA_RECIPES = {
         "Fais une papillote : ramène les bords du papier au-dessus, plie 2-3 fois pour fermer hermétiquement (l'air chaud doit gonfler la papillote). Tortille les extrémités.",
         "Pose la papillote sur une plaque, enfourne 18-20 min : la papillote doit être bien gonflée, signe que le poisson cuit à la vapeur.",
         "Sors la papillote, ouvre-la délicatement à table (vapeur très chaude). Parsème de persil ciselé. Sers directement dans la papillote (pour le côté spectaculaire)."
-      ]
+      ],
+      "photo": "assets/recipes/d141.webp"
     },
     {
       "id": "d142",
@@ -36270,7 +36664,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "poisson cuit"
@@ -36345,7 +36741,8 @@ window.__DATA_RECIPES = {
         "Sale et poivre le cabillaud. Pose-le sur le lit de poireaux. Couvre, laisse pocher 6-8 min : le poisson est cuit quand la chair est blanche opaque et s'effiloche à la fourchette.",
         "Vérifie la patate douce, sors-la du cuit-vapeur quand tendre.",
         "Dresse l'assiette : cubes de patate douce d'un côté, lit de poireaux + cabillaud de l'autre. Verse le jus de cuisson dessus. Parsème d'aneth ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d142.webp"
     },
     {
       "id": "b48",
@@ -36536,7 +36933,8 @@ window.__DATA_RECIPES = {
         "Verse dans un bol large peu profond (style 'açaï bowl' : surface large pour les toppings).",
         "Topping : dépose les fruits rouges restants en petites zones (visuel coloré), les fraises coupées en lamelles, les amandes effilées, les copeaux de coco, les graines de chia.",
         "Mange à la cuillère, en piochant des bouchées avec différents toppings (l'idée est de varier les textures à chaque cuillère). Sers très frais (le bol perd son côté glacé en 5 min)."
-      ]
+      ],
+      "photo": "assets/recipes/b49.webp"
     },
     {
       "id": "b50",
@@ -36748,7 +37146,8 @@ window.__DATA_RECIPES = {
         "Verse dans un grand verre. Saupoudre de graines de chia (qui vont gonfler en quelques minutes et apporter du croquant).",
         "Concasse grossièrement les amandes au couteau (ou laisse entières pour mâcher pendant la dégustation). Pose-les sur le dessus du smoothie.",
         "Sers immédiatement (les épinards oxydent vite, le smoothie devient marron au bout de 30 min — moins beau et un peu amer)."
-      ]
+      ],
+      "photo": "assets/recipes/b51.webp"
     },
     {
       "id": "s39",
@@ -36770,7 +37169,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Melon charentais",
@@ -36816,7 +37217,8 @@ window.__DATA_RECIPES = {
         "Dispose les brochettes en cercle ou éventail sur une assiette de service.",
         "Au moment de servir : mélange l'huile d'olive et le vinaigre balsamique dans un bol. Pinceau ou cuillère par-dessus les brochettes (2-3 gouttes par brochette suffisent).",
         "Termine par un tour de moulin à poivre. Sers immédiatement (le melon perd de son croquant si on attend trop)."
-      ]
+      ],
+      "photo": "assets/recipes/s39.webp"
     },
     {
       "id": "s40",
@@ -36887,7 +37289,8 @@ window.__DATA_RECIPES = {
         "Dispose les piques sur une assiette plate. Au dernier moment, arrose d'un trait de jus de citron vert et d'huile d'olive (pas avant, sinon la feta se délite).",
         "Termine par un tour de poivre noir (le poivre rehausse la pastèque, contraste classique de la salade pastèque-feta).",
         "Sers immédiatement, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/s40.webp"
     },
     {
       "id": "s41",
@@ -36982,7 +37385,8 @@ window.__DATA_RECIPES = {
         "Égoutte légèrement la marinade du saumon (sinon les verrines coulent).",
         "Dans 4 verrines de 60 ml, dépose à la cuillère ou à la poche à douille la mousse d'avocat (1/3 de la verrine). Ajoute le saumon mariné par-dessus. Termine par un brin d'aneth.",
         "Réserve au frais 15 min minimum avant de servir (les saveurs se mélangent)."
-      ]
+      ],
+      "photo": "assets/recipes/s41.webp"
     },
     {
       "id": "s42",
@@ -37109,7 +37513,8 @@ window.__DATA_RECIPES = {
         "Enfourne 20-25 min en retournant à mi-cuisson : ils doivent être bien dorés à l'extérieur (pas brûlés). Si pas assez colorés, mets sous le grill 2 min.",
         "Pendant ce temps, sauce yaourt-tahini : dans un bol, mélange skyr, tahini, jus de citron, 1 c.à.s d'eau froide, sel, poivre. Texture lisse et coulante.",
         "Sers les falafels chauds avec la sauce dans un ramequin à part. Tu peux les manger directement à la main, en piquant la sauce."
-      ]
+      ],
+      "photo": "assets/recipes/s42.webp"
     },
     {
       "id": "d143",
@@ -37134,7 +37539,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -37201,7 +37608,8 @@ window.__DATA_RECIPES = {
         "Pendant le repos, fais cuire les haricots verts : plonge-les dans une casserole d'eau bouillante salée, 8 min. Ils doivent rester verts vifs et croquants. Égoutte, ajoute le beurre, sel, poivre.",
         "Sauce : retire l'excédent de graisse de la poêle (garde 1 c.à.s). Émince l'échalote, fais-la revenir dans la graisse 2 min. Déglace au vinaigre balsamique (laisse réduire 30 sec), ajoute miel, bouillon, romarin. Laisse réduire 4-5 min jusqu'à consistance sirupeuse.",
         "Tranche le magret en biais (à contre-fil), tranches d'1 cm. Dispose sur l'assiette, nappe de sauce. Sers avec les haricots verts à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d143.webp"
     },
     {
       "id": "d144",
@@ -37225,7 +37633,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "bœuf cuit"
@@ -37341,7 +37751,8 @@ window.__DATA_RECIPES = {
         "Vérifie la sauce du bourguignon : si trop liquide, sors la viande à l'écumoire et fais réduire la sauce 5-10 min à feu vif. Si bonne consistance (nappe le dos d'une cuillère), parfait.",
         "Retire le bouquet garni. Sale, poivre. Goûte et ajuste.",
         "Sers : un nuage de polenta crémeuse au fond de l'assiette creuse, une louche de bourguignon par-dessus. Parsème de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d144.webp"
     },
     {
       "id": "l143",
@@ -37366,7 +37777,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -37439,7 +37851,8 @@ window.__DATA_RECIPES = {
         "Coupe les tomates cerises en deux. Lave la roquette.",
         "Dans un saladier ou directement dans l'assiette : quinoa tiédi, asperges, tomates cerises, roquette. Verse la vinaigrette, mélange délicatement.",
         "Pose l'œuf mollet au centre de l'assiette. Ouvre-le délicatement avec la pointe d'un couteau (le jaune doit couler comme une sauce). Parsème de copeaux de parmesan, poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l143.webp"
     },
     {
       "id": "l144",
@@ -37464,7 +37877,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "poulet cuit",
         "bouillon maison"
@@ -37546,7 +37961,8 @@ window.__DATA_RECIPES = {
         "Retire la cuisse de poulet et le bouquet garni. Désosse la cuisse : peau et os à jeter, chair à effilocher (tu peux mettre 80g dans le bouillon, et garder le reste pour le lendemain — wrap, salade, etc.).",
         "Goûte le bouillon : sale et poivre selon ton goût.",
         "Sers dans un grand bol creux : quelques louches de bouillon, légumes piochés (en priorité ceux qui sont restés entiers et croquants), poulet effiloché. Parsème de persil ciselé. Mange à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/l144.webp"
     },
     {
       "id": "l145",
@@ -37884,7 +38300,8 @@ window.__DATA_RECIPES = {
         "Chauffe une poêle (ou un grill / plancha) à feu moyen-vif avec 1 c.à.c d'huile. Quand bien chaud, dépose les brochettes.",
         "Cuis 4 min de chaque côté (8-10 min total selon épaisseur) : le poulet doit être doré à l'extérieur et bien cuit à cœur (chair blanche, pas rosée).",
         "Sers les brochettes chaudes avec le raita à part dans un ramequin. Tu peux ajouter une salade verte ou un peu de boulgour (50 g cuit) si tu veux compléter le repas."
-      ]
+      ],
+      "photo": "assets/recipes/d146.webp"
     },
     {
       "id": "d147",
@@ -37914,7 +38331,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "nuts",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -38102,7 +38520,8 @@ window.__DATA_RECIPES = {
         "Dans le bol du thon, ajoute skyr, mayonnaise, câpres, aneth, jus de citron, sel et poivre. Mélange jusqu'à obtenir une farce homogène mais avec un peu de texture.",
         "À l'aide d'une petite cuillère ou d'une poche à douille, farcis chaque tomate généreusement (la farce doit dépasser un peu pour le côté gourmand).",
         "Décore d'un brin d'aneth sur chaque tomate. Sers frais dans l'heure (sinon les tomates rendent leur eau)."
-      ]
+      ],
+      "photo": "assets/recipes/s43.webp"
     },
     {
       "id": "s44",
@@ -38200,7 +38619,8 @@ window.__DATA_RECIPES = {
         "Émiette le chèvre frais restant sur le dessus de chaque mini-quiche.",
         "Enfourne 22-25 min : les mini-quiches doivent être dorées, fermes au toucher, légèrement gonflées. Une lame de couteau plantée doit ressortir propre.",
         "Sors et laisse tiédir 5 min avant de démouler. Parsème de persil ciselé. Sers tiède ou froid (parfait à l'apéro dînatoire)."
-      ]
+      ],
+      "photo": "assets/recipes/s44.webp"
     },
     {
       "id": "d148",
@@ -38227,7 +38647,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "producesLeftovers": [
         "bœuf cuit"
@@ -38313,7 +38734,8 @@ window.__DATA_RECIPES = {
         "Émince l'échalote. Chauffe l'huile dans une poêle à feu moyen, fais revenir l'échalote 2 min, ajoute les haricots verts, sel, poivre. Réchauffe 3 min en remuant.",
         "Sors le filet du four. ⚠️ ÉTAPE CRUCIALE : couvre de papier alu et laisse reposer 8-10 min. Pendant ce repos, les jus se répartissent dans la viande (sinon ils s'écoulent à la coupe et la viande sèche).",
         "Tranche le filet en biais, en tranches d'1,5 cm. Dispose sur l'assiette avec les haricots verts. Le bœuf s'effiloche presque tellement il est tendre."
-      ]
+      ],
+      "photo": "assets/recipes/d148.webp"
     },
     {
       "id": "l146",
@@ -38337,7 +38759,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "soupe de légumes"
       ],
@@ -38419,7 +38843,8 @@ window.__DATA_RECIPES = {
         "Verse 80 % du lait de coco (garde 20% pour la déco), mixe au mixeur plongeant directement dans la casserole jusqu'à obtenir un velouté très lisse.",
         "Hors du feu, ajoute le jus de citron vert. Sale, poivre, goûte.",
         "Sers dans un bol creux. Verse en filet le reste de lait de coco au centre (forme un cercle ou un dessin). Parsème de coriandre ciselée. Optionnel : un trait d'huile d'olive pour finir."
-      ]
+      ],
+      "photo": "assets/recipes/l146.webp"
     },
     {
       "id": "l147",
@@ -38524,7 +38949,8 @@ window.__DATA_RECIPES = {
         "Sors les pois chiches du four et ajoute-les chauds sur la salade (effet contraste tiède/froid).",
         "Vinaigrette : dans un bol, mélange jus de citron, reste d'huile d'olive, sel, poivre. Verse sur la salade et mélange délicatement (l'avocat se casse facilement).",
         "Sers immédiatement (les pois chiches perdent leur croustillant au bout de 15-20 min)."
-      ]
+      ],
+      "photo": "assets/recipes/l147.webp"
     },
     {
       "id": "d149",
@@ -38552,7 +38978,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "producesLeftovers": [
         "poisson cuit"
@@ -38718,7 +39145,8 @@ window.__DATA_RECIPES = {
         "Coupe la mangue en cubes. Coupe le fruit de la passion en deux et récupère la pulpe à la cuillère (graines comprises, c'est le côté craquant).",
         "Verse le pudding dans un bol large peu profond. Dépose la mangue d'un côté, la pulpe de fruit de la passion de l'autre, parsème de copeaux de coco.",
         "Mange à la cuillère en alternant pudding + fruits pour varier les textures à chaque cuillerée."
-      ]
+      ],
+      "photo": "assets/recipes/b52.webp"
     },
     {
       "id": "b53",
@@ -38747,7 +39175,8 @@ window.__DATA_RECIPES = {
         "gluten",
         "eggs",
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -38911,7 +39340,8 @@ window.__DATA_RECIPES = {
         "Pose les tranches imbibées dans la poêle. Cuis 3 min de chaque côté : le pain doit être bien doré, croustillant à l'extérieur, fondant à l'intérieur.",
         "Dépose les tranches dans une assiette. Pose les fruits rouges dessus (ou à côté, selon préférence visuelle).",
         "Optionnel : un dernier trait de sirop d'érable (très fin) sur les fruits si tu veux une touche sucrée supplémentaire. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/b54.webp"
     },
     {
       "id": "des47",
@@ -38977,7 +39407,8 @@ window.__DATA_RECIPES = {
         "Si le sorbet est encore mou après mixage, place-le 1 h au congélateur dans un récipient hermétique pour qu'il prenne. S'il est déjà ferme, sers directement.",
         "Sers dans des coupes (ou des verres à martini pour le visuel). Décore de quelques feuilles de basilic frais et 1-2 fraises entières par coupe. Mange immédiatement (le sorbet fond vite).",
         "Astuce conservation : si tu fais une grande quantité, conserve au congélateur 1 mois max dans un récipient hermétique. Sors 5 min avant de servir pour qu'il soit malléable à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/des47.webp"
     },
     {
       "id": "des48",
@@ -39053,7 +39484,8 @@ window.__DATA_RECIPES = {
         "Ajoute le reste des blancs en plusieurs fois, en mélangeant délicatement à la spatule en bois, mouvements de bas en haut (l'objectif : ne PAS casser les blancs, garder l'air dedans).",
         "Verse dans 4 ramequins ou verrines individuels. Couvre de film alimentaire et place au frigo 4 h minimum (l'idéal : une nuit).",
         "Sers très frais. Décore : quelques copeaux de chocolat noir, un grain de café espresso, ou rien (la mousse parle pour elle-même)."
-      ]
+      ],
+      "photo": "assets/recipes/des48.webp"
     },
     {
       "id": "des49",
@@ -39208,7 +39640,8 @@ window.__DATA_RECIPES = {
         "Sors halloumi et poivrons. Sur des piques en bois, enfile en alternance : 1 cube halloumi, 1 cube poivron, 1 feuille de menthe, etc. (12 piques).",
         "Dans un petit bol, mélange jus de citron, huile d'olive, origan, poivre. Pas de sel (le halloumi est très salé).",
         "Au moment de servir : pinceau ou cuillère par-dessus les pinchos. Sers tiède (le halloumi devient caoutchouteux quand froid)."
-      ]
+      ],
+      "photo": "assets/recipes/s45.webp"
     },
     {
       "id": "s46",
@@ -39290,7 +39723,8 @@ window.__DATA_RECIPES = {
         "Ajoute les dés de saumon fumé, mélange délicatement.",
         "Avec une petite cuillère ou une poche à douille, garnis chaque feuille d'endive (1 belle cuillère par feuille).",
         "Décore d'un brin d'aneth sur chaque feuille. Dispose en éventail sur une planche en bois pour le visuel. Sers frais."
-      ]
+      ],
+      "photo": "assets/recipes/s46.webp"
     },
     {
       "id": "s47",
@@ -39361,7 +39795,8 @@ window.__DATA_RECIPES = {
         "Pose les asperges roulées sur une plaque ou plat de service.",
         "Au moment de servir : trait d'huile d'olive, parmesan râpé éparpillé, zeste de citron râpé en pluie, tour de poivre. Pas de sel (le prosciutto et le parmesan en apportent).",
         "Tu peux servir tiède (passe-les 30 sec au four à 180°C juste avant) ou à température ambiante. Évite le froid frigo (le prosciutto se durcit)."
-      ]
+      ],
+      "photo": "assets/recipes/s47.webp"
     },
     {
       "id": "s48",
@@ -39449,7 +39884,8 @@ window.__DATA_RECIPES = {
         "Mélange à la fourchette pour obtenir une texture mousseuse mais qui se tient (pas liquide). Si trop épais, ajoute 1 c.à.c de yaourt.",
         "À l'aide d'une poche à douille (ou 2 cuillères à café pour un côté rustique), dépose une noix de mousse au centre de chaque rondelle de concombre.",
         "Décore d'un brin de ciboulette ou d'aneth sur chaque bouchée. Sers frais immédiatement (les rondelles ramollissent au bout de 30 min)."
-      ]
+      ],
+      "photo": "assets/recipes/s48.webp"
     },
     {
       "id": "s49",
@@ -39537,7 +39973,8 @@ window.__DATA_RECIPES = {
         "Sur chaque pique en bois, enfile en alternance : 1 cube de saumon mariné, 1 cube d'avocat, 1 feuille de coriandre. 12 piques au total.",
         "Dispose les brochettes sur une assiette. Saupoudre de graines de sésame noir (effet visuel contrastant avec le rose du saumon et le vert de l'avocat).",
         "Sers frais immédiatement (le saumon mariné continue de \"cuire\" sous l'effet du citron, ne pas attendre)."
-      ]
+      ],
+      "photo": "assets/recipes/s49.webp"
     },
     {
       "id": "s50",
@@ -39637,7 +40074,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, monte les cuillères apéro (cuillères chinoises ou cuillères à amuse-bouche) : 1/2 cuillère d'écrasé d'avocat au fond, 1/2 cuillère de tartare de saumon par-dessus.",
         "Saupoudre de graines de sésame. Décore d'un brin d'aneth ou de ciboulette par cuillère.",
         "Pose les cuillères sur un plateau de service. Sers immédiatement (le tartare se tient 30 min max, après le saumon \"cuit\" trop sous le citron)."
-      ]
+      ],
+      "photo": "assets/recipes/s50.webp"
     },
     {
       "id": "s51",
@@ -39742,7 +40180,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, déglace la poêle avec le reste de marinade pendant 30 sec à feu vif (ça forme une sauce caramélisée qui va napper les brochettes).",
         "Dépose les brochettes sur une assiette de service. Verse la sauce de la poêle dessus.",
         "Saupoudre de graines de sésame (effet visuel + croquant). Décore de coriandre ciselée et de quartiers de citron vert. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/s51.webp"
     },
     {
       "id": "s52",
@@ -39851,7 +40290,8 @@ window.__DATA_RECIPES = {
         "Verse dans 8-10 moules à muffins en silicone (ou avec caissettes papier). Remplis aux 3/4.",
         "Enfourne 20-22 min : les muffins doivent être dorés, fermes au toucher. Une lame plantée doit ressortir propre.",
         "Sors et laisse tiédir 5 min avant de démouler. Sers tiède ou froid (parfait à l'apéro dînatoire). Conservation : 2 jours frigo dans une boîte hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/s52.webp"
     },
     {
       "id": "s53",
@@ -39874,8 +40314,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish",
-        "lactose"
+        "lactose",
+        "molluscs"
       ],
       "ing": [
         [
@@ -39943,7 +40383,8 @@ window.__DATA_RECIPES = {
         "Pose les Saint-Jacques en cercle dans la poêle, sans les coller. Cuis 1 min 30 d'un côté SANS BOUGER (formation de la croûte dorée). Retourne, cuis 1 min de l'autre côté. Pas plus, sinon elles deviennent caoutchouteuses.",
         "Dresse : à la cuillère, dépose une noix de purée de petits pois sur des cuillères apéro ou des mini-assiettes (cible 8-10 bouchées). Pose 1 Saint-Jacques par bouchée.",
         "Termine par fleur de sel, poivre frais, une feuille de menthe. Sers immédiatement (les Saint-Jacques refroidissent vite)."
-      ]
+      ],
+      "photo": "assets/recipes/s53.webp"
     },
     {
       "id": "s54",
@@ -40043,7 +40484,8 @@ window.__DATA_RECIPES = {
         "Coupe les crevettes en deux dans la longueur si elles sont grosses, sinon laisse-les entières.",
         "Monte les verrines (8-10 verrines de 60 ml) : taboulé de quinoa au fond (2/3), crevettes par-dessus (1/3). Décore d'une feuille de menthe.",
         "Sers frais immédiatement ou place 30 min au frais."
-      ]
+      ],
+      "photo": "assets/recipes/s54.webp"
     },
     {
       "id": "s55",
@@ -40146,7 +40588,8 @@ window.__DATA_RECIPES = {
         "Dépose les mini-bricks sur une plaque recouverte de papier sulfurisé. Badigeonne au pinceau d'1/2 c.à.s d'huile (ça donne le côté doré croustillant sans frire).",
         "Enfourne 10-12 min : ils doivent être bien dorés et croustillants. Le jaune d'œuf de caille reste légèrement coulant à l'intérieur (effet luxueux).",
         "Sers chaud à la sortie du four. Tu peux accompagner d'un quartier de citron à presser dessus."
-      ]
+      ],
+      "photo": "assets/recipes/s55.webp"
     },
     {
       "id": "s56",
@@ -40249,7 +40692,8 @@ window.__DATA_RECIPES = {
         "Laisse tiédir les blinis 5 min sur du papier absorbant.",
         "Garniture : étale 1 c.à.c de houmous sur chaque blini. Pose 2-3 rondelles de radis dessus en éventail.",
         "Termine par un brin d'aneth, un tour de poivre. Sers tiède ou à température ambiante (les blinis durcissent au frigo)."
-      ]
+      ],
+      "photo": "assets/recipes/s56.webp"
     },
     {
       "id": "d150",
@@ -40274,7 +40718,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -40363,7 +40808,8 @@ window.__DATA_RECIPES = {
         "Mixe les petits pois avec menthe ciselée (garde quelques feuilles pour déco), crème, jus de citron, sel et poivre. Texture purée fine, vert vif.",
         "Coupe le carré en côtelettes individuelles (entre les os).",
         "Dresse : un beau dôme de purée de petits pois sur l'assiette, 2 côtelettes par personne posées dessus, quelques feuilles de menthe. Verse sur le tout les jus de cuisson restés dans le plat."
-      ]
+      ],
+      "photo": "assets/recipes/d150.webp"
     },
     {
       "id": "d151",
@@ -40469,7 +40915,8 @@ window.__DATA_RECIPES = {
         "Sors du four et laisse reposer 5 min. Casse délicatement la croûte de sel avec le dos d'une cuillère ou un petit marteau. Retire la peau du dessus du saumon (elle vient avec le sel).",
         "Avec une grande spatule, soulève des portions de saumon en évitant le sel. La chair est nacrée, fondante, juteuse.",
         "Sers avec : un quartier de citron, le reste d'aneth ciselé, un trait d'huile d'olive et tour de poivre. Aucun sel à ajouter (le saumon a pris exactement ce qu'il faut)."
-      ]
+      ],
+      "photo": "assets/recipes/d151.webp"
     },
     {
       "id": "d152",
@@ -40492,8 +40939,10 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish",
-        "lactose"
+        "lactose",
+        "molluscs",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "riz cuit"
@@ -40607,7 +41056,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "shellfish",
-        "soy"
+        "soy",
+        "celery"
       ],
       "producesLeftovers": [
         "riz cuit"
@@ -40709,7 +41159,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute sauce soja et jus de citron vert. Goûte (la pâte de curry contient déjà du sel, sois prudent).",
         "Retire les tronçons de citronnelle.",
         "Sers : riz basmati complet en bordure de l'assiette, curry de gambas avec sauce au centre. Décore généreusement de coriandre ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/d153.webp"
     },
     {
       "id": "d154",
@@ -40737,7 +41188,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "mustard"
+        "mustard",
+        "celery",
+        "sulphites"
       ],
       "producesLeftovers": [
         "porc cuit"
@@ -40834,7 +41287,8 @@ window.__DATA_RECIPES = {
         "Dans une poêle, chauffe l'huile d'olive à feu moyen. Ajoute carottes et pommes de terre, fais sauter 3 min en remuant pour les colorer un peu. Sale, poivre.",
         "Sauce : déglace la cocotte (où était le filet mignon) avec le bouillon, gratte les sucs avec une cuillère en bois. Ajoute l'autre gousse d'ail écrasée et la crème, laisse réduire 3 min jusqu'à consistance nappante.",
         "Tranche le filet en médaillons d'1 cm (à contre-fil). Dispose sur l'assiette avec carottes et pommes de terre. Nappe de sauce. Parsème d'un peu de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d154.webp"
     },
     {
       "id": "d155",
@@ -40859,7 +41313,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "gluten"
+        "gluten",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -40960,7 +41416,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute la crème liquide en remuant. Sale, poivre, goûte.",
         "Retire le bouquet garni.",
         "Sers : un nuage de boulgour complet sur l'assiette, une louche généreuse de mijoté avec viande, champignons et sauce. Parsème de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d155.webp"
     },
     {
       "id": "d156",
@@ -40986,7 +41443,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "nuts",
         "sesame",
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -41195,7 +41653,8 @@ window.__DATA_RECIPES = {
         "Vinaigrette express : dans un bol, mélange jus de citron vert, huile d'olive et poivre. Pas de sel (la feta et les olives en apportent assez).",
         "Verse la vinaigrette au moment de servir, mélange une dernière fois. Décore des feuilles de menthe entières.",
         "Sers immédiatement bien frais. Si tu attends, la pastèque va relâcher son jus et la salade devient liquide."
-      ]
+      ],
+      "photo": "assets/recipes/l148.webp"
     },
     {
       "id": "l149",
@@ -41293,7 +41752,8 @@ window.__DATA_RECIPES = {
         "Mélange délicatement à la cuillère pour ne pas écraser l'avocat.",
         "Pour le dressage, utilise un emporte-pièce rond (ou un cercle improvisé avec une boîte de conserve sans fond) : pose-le au centre de l'assiette, remplis avec le tartare, tasse légèrement, retire l'emporte-pièce → tu obtiens un beau dôme.",
         "Décore des feuilles de coriandre. Sers avec 1-2 tranches de pain de seigle toastées à part. Mange immédiatement (l'avocat noircit en 30 min)."
-      ]
+      ],
+      "photo": "assets/recipes/l149.webp"
     },
     {
       "id": "d157",
@@ -41318,7 +41778,7 @@ window.__DATA_RECIPES = {
         "shellfish",
         "soy",
         "sesame",
-        "nuts"
+        "peanuts"
       ],
       "producesLeftovers": [
         "poisson cuit"
@@ -41422,7 +41882,8 @@ window.__DATA_RECIPES = {
         "Concasse grossièrement les cacahuètes au couteau (pas en poudre).",
         "Enfile les crevettes sur les piques (3-4 par pique). Chauffe une poêle (ou plancha) à feu vif. Cuis les brochettes 2-3 min de chaque côté : les crevettes doivent virer rose et opaque (pas plus, sinon elles deviennent caoutchouteuses).",
         "Dresse l'assiette : salade thaï en lit, brochettes posées dessus. Parsème de coriandre ciselée et de cacahuètes concassées. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d157.webp"
     },
     {
       "id": "d158",
@@ -41446,7 +41907,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -41521,7 +41983,8 @@ window.__DATA_RECIPES = {
         "Pendant la cuisson, prépare la salade : dans un saladier, dispose roquette et tomates cerises.",
         "Vinaigrette : dans un bol, mélange reste d'huile d'olive, vinaigre balsamique, jus de 1/4 de citron, sel, poivre. Verse sur la salade au moment de servir, mélange.",
         "Dresse l'assiette : salade de roquette-tomates-pignons-parmesan en lit, filet de bar peau vers le haut. Décore d'un quartier de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d158.webp"
     },
     {
       "id": "des50",
@@ -41614,7 +42077,8 @@ window.__DATA_RECIPES = {
         "Verse dans 4 verrines ou ramequins individuels. Place au frigo 4 h minimum (idéalement une nuit) pour que la panna cotta prenne.",
         "Coulis : dans un blender, mixe 80g de fraises et toutes les framboises avec le jus de citron. Passe au tamis si tu veux retirer les pépins (optionnel).",
         "Au moment de servir, démoule (option) ou laisse en verrines. Verse le coulis dessus. Décore des fraises restantes coupées en lamelles et de feuilles de menthe."
-      ]
+      ],
+      "photo": "assets/recipes/des50.webp"
     },
     {
       "id": "des51",
@@ -41694,7 +42158,8 @@ window.__DATA_RECIPES = {
         "Incorpore délicatement la purée de mangue à la chantilly de coco, en remuant avec une spatule en bois (mouvements de bas en haut, ne pas casser la mousse).",
         "Verse dans 4 verrines individuelles. Place au frigo 1 h minimum.",
         "Au moment de servir, dépose des cubes de mangue restants sur le dessus, parsème de graines de chia et de copeaux de coco. Décore d'une feuille de menthe."
-      ]
+      ],
+      "photo": "assets/recipes/des51.webp"
     },
     {
       "id": "des52",
@@ -41796,7 +42261,8 @@ window.__DATA_RECIPES = {
         "Recouvre uniformément du sablé crumble (ne tasse pas, garde l'aspect grumeleux).",
         "Enfourne 25-30 min : le dessus doit être bien doré et croustillant, les fruits tendres et parfumés.",
         "Sors et laisse tiédir 10 min (les fruits sont brûlants à la sortie). Sers tiède (idéal) ou froid. Tu peux ajouter 1 c.à.s de yaourt grec pour une touche fraîcheur."
-      ]
+      ],
+      "photo": "assets/recipes/des52.webp"
     },
     {
       "id": "des53",
@@ -41970,7 +42436,8 @@ window.__DATA_RECIPES = {
         "Termine par un trait de miel en spirale par-dessus l'ensemble.",
         "Mange à la cuillère en mélangeant ou en piochant les ingrédients un par un selon ton humeur.",
         "Astuce batch : tu peux préparer un mix sec (fruits + graines + amandes/noix concassées) pour 1 semaine dans un bocal hermétique. Au matin, juste à verser sur le yaourt."
-      ]
+      ],
+      "photo": "assets/recipes/b55.webp"
     },
     {
       "id": "b56",
@@ -42167,7 +42634,8 @@ window.__DATA_RECIPES = {
         "Cuis 1 min 30 du premier côté : des bulles apparaissent, les bords sèchent → retourne. Cuis 1 min de l'autre côté. Les pancakes sont dorés des deux faces.",
         "Empile les pancakes sur une assiette. Décore de fruits rouges (frais ou décongelés).",
         "Termine par un trait léger de sirop d'érable (pas trop, les pancakes sont déjà sucrés naturellement avec la banane). Mange tiède."
-      ]
+      ],
+      "photo": "assets/recipes/b57.webp"
     },
     {
       "id": "b58",
@@ -42417,7 +42885,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Blanc de poulet",
@@ -42538,7 +43008,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Blanc de poulet",
@@ -42997,7 +43469,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle bien chaude, ajoute les crevettes avec leur marinade. Cuis 3 min en remuant : elles doivent virer rose et opaque (pas plus, sinon elles deviennent caoutchouteuses).",
         "Coupe l'avocat en cubes.",
         "Dresse le bowl : quinoa au fond, légumes sautés, crevettes, cubes d'avocat. Parsème de coriandre. Sers avec un quartier de citron vert."
-      ]
+      ],
+      "photo": "assets/recipes/d134.webp"
     },
     {
       "id": "l150",
@@ -43340,7 +43813,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Semoule de quinoa",
@@ -43504,7 +43979,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -43628,7 +44104,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, ajoute les croûtons de pita au fattouche, arrose avec le reste d'huile d'olive + mélasse de grenade + sumac, sel poivre. Mélange (les croûtons doivent rester un peu croustillants : ne préassemble pas trop tôt).",
         "Dresse : fattouche en lit dans l'assiette, brochettes ou cubes de poulet par-dessus. Verse un trait de jus du fond de poêle si tu en as gardé.",
         "Astuce batch : le poulet mariné se garde 24 h cru au frigo, ou se cuit à l'avance et se mange froid sur le fattouche le lendemain (excellent en lunch box)."
-      ]
+      ],
+      "photo": "assets/recipes/d160.webp"
     },
     {
       "id": "s57",
@@ -43721,7 +44198,8 @@ window.__DATA_RECIPES = {
         "Enfourne 12 min : la pâte doit être dorée et croustillante (les briouates frites traditionnelles sont 3x plus grasses, là on a la même croquance avec moins de matière grasse).",
         "Laisse tiédir 5 min avant de manger : la farce est brûlante au sortir du four.",
         "Astuce : tu peux préparer 12 briouates d'avance, les mettre crues au congélateur sur une plaque, puis les transvaser en sachet une fois durcies. À la demande : 14 min au four congelées (sans décongélation préalable)."
-      ]
+      ],
+      "photo": "assets/recipes/s57.webp"
     },
     {
       "id": "l152",
@@ -43858,7 +44336,8 @@ window.__DATA_RECIPES = {
         "Verse les pois chiches tandoori encore tièdes sur les légumes (le contraste tiède-froid fait toute la différence).",
         "Nappe d'une grosse cuillère de sauce yaourt-coriandre, parsème du reste d'herbes ciselées.",
         "Astuce batch : double les pois chiches tandoori, ils se gardent 3 jours au frigo et se mangent froids ou réchauffés (poêle 2 min). Le yaourt-sauce se prépare aussi 2 jours à l'avance."
-      ]
+      ],
+      "photo": "assets/recipes/l152.webp"
     },
     {
       "id": "d161",
@@ -44007,7 +44486,8 @@ window.__DATA_RECIPES = {
         "Ajoute garam masala et le jus du quart de citron. Mijote 5 min à couvert : les saveurs se lient.",
         "Sale, poivre. Le riz doit être prêt en parallèle.",
         "Dresse : riz d'un côté, saag paneer de l'autre. Parsème de coriandre fraîche ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/d161.webp"
     },
     {
       "id": "b59",
@@ -44034,7 +44514,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -44336,7 +44817,8 @@ window.__DATA_RECIPES = {
         "Sors le poisson : récupère le jus de cuisson dans la sauce, c'est plein de goût. Décolle délicatement (la sole se casse facilement).",
         "Dresse : lit de riz noir, brocolis sur le côté, filet de sole nappé de sauce. Parsème de graines de sésame, coriandre ciselée et partie verte de cébette.",
         "Mange immédiatement. Le riz noir + brocolis vapeur peut se faire à l'avance, le poisson c'est à la minute."
-      ]
+      ],
+      "photo": "assets/recipes/d162.webp"
     },
     {
       "id": "l154",
@@ -44364,7 +44846,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "celery",
+        "fish"
       ],
       "ing": [
         [
@@ -44559,7 +45043,8 @@ window.__DATA_RECIPES = {
         "Dispose en cercles autour : myrtilles, amandes effilées, flocons de coco, granola.",
         "Saupoudre les graines de chia (elles vont gonfler en surface en quelques minutes : c'est normal).",
         "Mange immédiatement à la cuillère, en raclant un peu du smoothie + un peu des toppings à chaque cuillerée."
-      ]
+      ],
+      "photo": "assets/recipes/b60.webp"
     },
     {
       "id": "l155",
@@ -44583,7 +45068,9 @@ window.__DATA_RECIPES = {
         "pan",
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Filet de poulet",
@@ -44681,7 +45168,8 @@ window.__DATA_RECIPES = {
         "Ajoute concombre, oignon rouge égoutté, avocat. Verse la vinaigrette, mélange délicatement (sans écraser l'avocat).",
         "Dispose le poulet tiède sur le dessus, parsème généreusement de grenade et menthe ciselée.",
         "Astuce batch : double le quinoa et le poulet, garde au frigo séparément 3 jours. Les arilles de grenade aussi se conservent 4 jours en boîte hermétique. Tu n'ajoutes l'avocat qu'au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l155.webp"
     },
     {
       "id": "l156",
@@ -44805,7 +45293,8 @@ window.__DATA_RECIPES = {
         "Coupe l'œuf en 4 quartiers, dispose-les en étoile.",
         "Verse la vinaigrette, parsème de basilic effeuillé.",
         "Mange à température ambiante, idéalement avec une bonne tranche de pain de campagne grillé frotté à l'ail."
-      ]
+      ],
+      "photo": "assets/recipes/l156.webp"
     },
     {
       "id": "l157",
@@ -44833,7 +45322,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -44932,7 +45422,8 @@ window.__DATA_RECIPES = {
         "Étale le fromage frais sur les tartines tièdes. Coupe les tomates cerises en deux et dispose-les en pluie. Sale, poivre, filet d'huile d'olive, basilic effeuillé.",
         "Sers le gazpacho dans un bol froid, filet d'huile d'olive en surface, accompagné des tartines.",
         "Astuce batch : le gazpacho se garde 2-3 jours au frigo, encore meilleur le lendemain. Tu peux préparer une grosse jarre pour 3-4 services."
-      ]
+      ],
+      "photo": "assets/recipes/l157.webp"
     },
     {
       "id": "d163",
@@ -44957,7 +45448,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "gluten"
+        "gluten",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -45078,7 +45571,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "producesLeftovers": [
         "légumes rôtis"
@@ -45203,7 +45697,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "nuts",
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -45292,7 +45787,8 @@ window.__DATA_RECIPES = {
         "Parsème les pignons grillés et le basilic effeuillé à la main (pas au couteau, ça noircit).",
         "Fleur de sel + poivre fraîchement moulu sur tout, généreusement.",
         "Sers immédiatement avec les tranches de pain grillé, à manger avec les doigts en piochant un peu de tout."
-      ]
+      ],
+      "photo": "assets/recipes/d165.webp"
     },
     {
       "id": "s58",
@@ -45317,7 +45813,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -45393,7 +45890,8 @@ window.__DATA_RECIPES = {
         "Arrose d'un filet d'huile d'olive et de quelques gouttes de balsamique.",
         "Fleur de sel + poivre + basilic effeuillé à la main.",
         "Mange tiède, idéalement à 4 h de l'après-midi avec un thé glacé maison ou une eau citronnée."
-      ]
+      ],
+      "photo": "assets/recipes/s58.webp"
     },
     {
       "id": "des55",
@@ -45498,7 +45996,8 @@ window.__DATA_RECIPES = {
         "Filme et mets au frigo minimum 4 h, idéalement la veille pour le lendemain (les boudoirs s'imbibent, la crème se raffermit).",
         "Au moment de servir, coupe les fraises gardées en lamelles, dispose en éventail sur le dessus. Parsème de pistaches concassées et de petites feuilles de basilic.",
         "C'est plus léger qu'un tiramisu traditionnel (-30% de gras vs version 100% mascarpone), mais l'effet aérien est conservé grâce au blanc en neige."
-      ]
+      ],
+      "photo": "assets/recipes/des55.webp"
     },
     {
       "id": "l158",
@@ -45525,8 +46024,8 @@ window.__DATA_RECIPES = {
         "shellfish",
         "gluten",
         "soy",
-        "nuts",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -45640,7 +46139,8 @@ window.__DATA_RECIPES = {
         "Recommence avec les 3 autres galettes.",
         "Coupe chaque rouleau en biais en deux pour la présentation. Sers froid avec la sauce cacahuète à part.",
         "Mange les rouleaux à la main en les trempant dans la sauce. Frais, croquant, parfumé : c'est l'été en bouchée."
-      ]
+      ],
+      "photo": "assets/recipes/l158.webp"
     },
     {
       "id": "d166",
@@ -45664,9 +46164,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "nuts",
         "sesame",
-        "fish"
+        "fish",
+        "peanuts"
       ],
       "ing": [
         [
@@ -45799,7 +46299,8 @@ window.__DATA_RECIPES = {
         "Pose les tranches sur la salade, arrose de la sauce d'assaisonnement.",
         "Parsème de cacahuètes concassées et d'herbes restantes.",
         "Sers immédiatement, mange en mélangeant pour que chaque bouchée ait viande + légumes + herbes + sauce."
-      ]
+      ],
+      "photo": "assets/recipes/d166.webp"
     },
     {
       "id": "des56",
@@ -45997,7 +46498,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -46229,7 +46732,8 @@ window.__DATA_RECIPES = {
         "gluten",
         "lactose",
         "nuts",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -46424,7 +46928,8 @@ window.__DATA_RECIPES = {
         "Quand le dessus est encore brillant et un peu coulant (= cuisson \"baveuse\" française), arrête. Glisse-la sur l'assiette en la pliant en demi-lune avec la spatule.",
         "Pose les pommes de terre sautées à côté. Parsème le reste d'herbes sur l'omelette.",
         "Sers avec une salade verte vinaigrette à part. 3 œufs + 200 g de pdt = repas complet, 2 € la portion."
-      ]
+      ],
+      "photo": "assets/recipes/d168.webp"
     },
     {
       "id": "des57",
@@ -46521,7 +47026,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -46733,7 +47239,8 @@ window.__DATA_RECIPES = {
         "Ajoute concombre, tomates cerises, oignon rouge égoutté, olives. Mélange délicatement.",
         "Au moment de servir, parsème la feta en cubes + menthe et persil ciselés.",
         "Mange tiède ou froid. Astuce batch : double les lentilles cuites, conserve 3 jours au frigo. Tu n'ajoutes feta-herbes qu'au dernier moment pour qu'elles restent fraîches."
-      ]
+      ],
+      "photo": "assets/recipes/d169.webp"
     },
     {
       "id": "l162",
@@ -46759,7 +47266,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "lactose",
-        "nuts"
+        "nuts",
+        "celery"
       ],
       "ing": [
         [
@@ -46860,7 +47368,8 @@ window.__DATA_RECIPES = {
         "Sers dans des bols larges. Parsème de parmesan et basilic effeuillé.",
         "Ce minestrone ressemble plus à un \"plat-soupe\" qu'à une soupe seule, c'est normal : c'est le repas complet italien. 2 € la portion généreuse.",
         "Astuce : au lendemain, la soupe a absorbé les pâtes et devient \"ribollita\". Délaye avec un peu d'eau et tu manges 2 fois."
-      ]
+      ],
+      "photo": "assets/recipes/l162.webp"
     },
     {
       "id": "d170",
@@ -47001,7 +47510,9 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "gluten",
-        "sesame"
+        "sesame",
+        "celery",
+        "fish"
       ],
       "ing": [
         [
@@ -47228,7 +47739,8 @@ window.__DATA_RECIPES = {
         "Arrose du reste de sauce.",
         "Parsème graines de sésame, cébette ciselée et coriandre.",
         "Mange tiède-frais en mélangeant bien à chaque cuillerée. Le thon en boîte naturel est l'astuce budget : 2.50 € le poke bowl complet vs 12-15 € en restaurant."
-      ]
+      ],
+      "photo": "assets/recipes/d171.webp"
     },
     {
       "id": "b62",
@@ -47329,7 +47841,8 @@ window.__DATA_RECIPES = {
         "Termine par persil ciselé + sel + poivre du moulin.",
         "Mange immédiatement, idéalement avec un bol de yaourt grec + miel à côté ou une salade de fruits frais.",
         "Petit-déjeuner salé style méditerranéen oriental : tient toute la matinée grâce aux protéines + fibres des pois chiches."
-      ]
+      ],
+      "photo": "assets/recipes/b62.webp"
     },
     {
       "id": "l167",
@@ -47593,7 +48106,8 @@ window.__DATA_RECIPES = {
         "Sers : assiette d'houmous au centre, autour disposes en couronnes les crudités + olives + pita.",
         "Mange à la main : trempe pita ou crudités dans l'houmous. Convivial, simple, complet.",
         "Astuce batch : l'houmous se garde 4 jours au frigo dans une boîte hermétique, en surface lisse pour ne pas qu'il sèche. Tartine le sur du pain au petit-déjeuner pour finir."
-      ]
+      ],
+      "photo": "assets/recipes/l164.webp"
     },
     {
       "id": "d172",
@@ -47617,7 +48131,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -47706,7 +48221,8 @@ window.__DATA_RECIPES = {
         "Dresse : lit de fenouil mariné dans 2 assiettes, pommes de terre à côté, sardines par-dessus (3 chacun). Verse une grosse cuillère de salsa verde sur les sardines.",
         "Quartiers du citron restant en accompagnement (à presser au moment de manger).",
         "Riche en oméga-3, calcium (arêtes molles), protéines, vitamine D. Pierre angulaire du régime crétois."
-      ]
+      ],
+      "photo": "assets/recipes/d172.webp"
     },
     {
       "id": "d173",
@@ -47731,7 +48247,9 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -47838,7 +48356,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, ouvre la papillote sur l'assiette (vapeur parfumée garantie). Arrose du jus du demi-citron restant. Parsème de persil.",
         "Sers le quinoa à côté, qui a profité du bouillon parfumé.",
         "Le maquereau est l'un des meilleurs poissons gras pour les oméga-3 : 3-5 g/100 g, soit l'apport hebdo recommandé en 1 portion."
-      ]
+      ],
+      "photo": "assets/recipes/d173.webp"
     },
     {
       "id": "s59",
@@ -47866,7 +48385,8 @@ window.__DATA_RECIPES = {
       "eq": [],
       "allergens": [
         "gluten",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -47927,7 +48447,8 @@ window.__DATA_RECIPES = {
         "Mange en trempant les crudités et gressins dans l'houmous.",
         "Goûter sain et complet : protéines pois chiches + sésame, fibres crudités, IG bas. 220 kcal.",
         "Astuce : pour préparer 1 semaine de goûters, prépare un grand bol d'houmous dimanche, taille les crudités le matin, conserve-les dans une boîte hermétique avec un fond d'eau (elles restent croquantes 3-4 jours)."
-      ]
+      ],
+      "photo": "assets/recipes/s59.webp"
     },
     {
       "id": "d174",
@@ -48039,7 +48560,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais sauter brièvement les haricots verts dans une poêle avec ail écrasé + 0.5 c.à.s de beurre du beurre meunière.",
         "Dresse : pommes de terre vapeur d'un côté, haricots verts ail-beurre, truite par-dessus, nappée généreusement du beurre meunière aux amandes.",
         "Truite = excellent poisson gras (3-4 g oméga-3 / portion). Recette élégante, en 30 min, pour finir la semaine en beauté."
-      ]
+      ],
+      "photo": "assets/recipes/d174.webp"
     },
     {
       "id": "d175",
@@ -48063,7 +48585,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "fish",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -48166,7 +48689,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute zeste + jus de citron + persil + plumets de fenouil ciselés. Mélange.",
         "Dresse dans 2 assiettes creuses. SURTOUT : parsème généreusement la pangrattata par-dessus (= la signature du plat, contraste croquant).",
         "Plat sicilien classique : poisson gras + légume + fruit sec + croustillant. 3.20 € la portion généreuse."
-      ]
+      ],
+      "photo": "assets/recipes/d175.webp"
     },
     {
       "id": "d176",
@@ -48192,7 +48716,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "sulphites"
       ],
       "ing": [
         [
@@ -48288,7 +48813,8 @@ window.__DATA_RECIPES = {
         "Dresse : riz noir d'un côté (ça se marie bien avec le glaçage soja), brocolis sésame, saumon teriyaki nappé de la sauce de cuisson.",
         "Parsème cébette ciselée + reste de graines de sésame.",
         "Mange chaud. Le saumon teriyaki maison est SANS le sucre raffiné des sauces du commerce — sirop d'érable + mirin font le travail avec moins de glycémie."
-      ]
+      ],
+      "photo": "assets/recipes/d176.webp"
     },
     {
       "id": "l168",
@@ -48433,7 +48959,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, parsème graines de sésame + part verte de cébette + coriandre.",
         "Sers sur un lit de sarrasin. 2.50 € le bowl complet, vegan, riche en protéines végétales et fibres.",
         "Astuce batch : double les quantités de sarrasin et tofu cuit (pas le légume, qui ramollit), conserve 3 jours au frigo. Réchauffe 2 min poêle vive."
-      ]
+      ],
+      "photo": "assets/recipes/l168.webp"
     },
     {
       "id": "l165",
@@ -48589,7 +49116,8 @@ window.__DATA_RECIPES = {
         "Mange immédiatement, c'est meilleur tiède.",
         "Astuce batch : la pâte de falafel se garde 24 h crue au frigo. Tu peux aussi cuire tous les falafels d'un coup, conserver 3 jours au frigo, et les réchauffer 5 min au four à 180 °C (ils retrouvent leur croustillant).",
         "Falafel = la définition du \"complet en protéines végétales bon marché\" : 100 g de pois chiches secs → repas pour 4 à 1 € de base."
-      ]
+      ],
+      "photo": "assets/recipes/l165.webp"
     },
     {
       "id": "l166",
@@ -48889,7 +49417,8 @@ window.__DATA_RECIPES = {
         "Dresse en grand bowl : lit de laitue, dispose en quartiers visuellement séparés haricots noirs / maïs grillé / tomates cerises / poivron / oignon rouge / avocat.",
         "Pose le poulet tiède au centre. Arrose de sauce yaourt-lime, parsème de coriandre ciselée.",
         "Mange immédiatement, en mélangeant pour que chaque cuillerée ait viande + légumes + sauce."
-      ]
+      ],
+      "photo": "assets/recipes/l169.webp"
     },
     {
       "id": "d177",
@@ -48914,7 +49443,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -49028,7 +49558,8 @@ window.__DATA_RECIPES = {
         "Sors, laisse reposer 3 min (la sauce s'épaissit en refroidissant un peu).",
         "Sers : 2 portions par assiette, nappées de skyr + reste de coriandre fraîche + jus de lime au moment de manger.",
         "Astuce batch : la sauce verde se conserve 5 jours au frigo, 3 mois congelée. Tu peux faire 2x la sauce et utiliser l'autre moitié pour un autre dîner enchiladas plus tard."
-      ]
+      ],
+      "photo": "assets/recipes/d177.webp"
     },
     {
       "id": "des58",
@@ -49109,7 +49640,8 @@ window.__DATA_RECIPES = {
         "Sers dans des coupes ou verrines, parsème zeste de lime + menthe ciselée à la main.",
         "Frais, vitaminé, anti-canicule. 130 kcal la portion. Excellent en fin de repas mexicain ou été.",
         "Variante : ajoute 50 g d'ananas en cubes pour plus de tropical."
-      ]
+      ],
+      "photo": "assets/recipes/des58.webp"
     },
     {
       "id": "b63",
@@ -49137,7 +49669,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "peanuts"
       ],
       "ing": [
         [
@@ -49221,7 +49754,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "nuts",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -49330,7 +49864,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, ajoute la roquette + bâtonnets de pomme. Mélange délicatement.",
         "Dresse en couronne. Émiette le chèvre frais par-dessus. Parsème noix concassées + persil ciselé + reste de vinaigrette.",
         "Mange tiède ou froid. Les lentilles + betterave se gardent 3 jours au frigo, ajoute pomme/chèvre/roquette à la dernière minute."
-      ]
+      ],
+      "photo": "assets/recipes/l170.webp"
     },
     {
       "id": "des59",
@@ -49431,7 +49966,8 @@ window.__DATA_RECIPES = {
         "Sors, laisse tiédir 5-10 min (les jus fruitiers se réabsorbent).",
         "Mange tiède, idéalement avec une cuillère de yaourt grec ou de fromage blanc 0 % nature à côté. 280 kcal la portion (vs 450+ pour un crumble classique au beurre + sucre).",
         "Astuce batch : prépare 4 portions individuelles dans des ramequins, conserve 3 jours au frigo, réchauffe 10 min au four à 160 °C avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des59.webp"
     },
     {
       "id": "l171",
@@ -49455,7 +49991,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -49537,7 +50074,8 @@ window.__DATA_RECIPES = {
         "Laisse reposer 10-15 min au frais : c'est CRUCIAL — le pain absorbe les jus tomates-vinaigre-huile et devient fondant tout en gardant son corps. La panzanella mal reposée = pain dur et insipide.",
         "Avant de servir, parsème généreusement de feuilles de basilic ciselées à la main (= grosses bouchées de basilic, pas en miettes).",
         "Sers à température ambiante. Plat estival emblématique de la Toscane, anti-gaspi par essence : utilise pain rassis + tomates en pleine maturité. 2.50 € la portion."
-      ]
+      ],
+      "photo": "assets/recipes/l171.webp"
     },
     {
       "id": "d178",
@@ -49563,7 +50101,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "shellfish"
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -49761,7 +50300,8 @@ window.__DATA_RECIPES = {
         "Roule SERRÉ : ramène le bord inférieur sur la garniture en tassant, puis replie les côtés vers l'intérieur (sinon ça déborde quand tu manges), continue de rouler en serrant légèrement.",
         "Coupe en biais en deux, pour la présentation et la facilité de prise en main.",
         "Mange immédiatement. Astuce lunch box : roule serré dans du papier sulfurisé, tient 4 h sans détremper. 2.80 € le wrap libanais maison vs 7-9 € en boutique."
-      ]
+      ],
+      "photo": "assets/recipes/l172.webp"
     },
     {
       "id": "d179",
@@ -49897,7 +50437,8 @@ window.__DATA_RECIPES = {
         "Sors, laisse reposer 10 min (la moussaka se 'tient' en refroidissant un peu, plus facile à découper).",
         "Sers en parts. Parsème de persil ciselé.",
         "Astuce : la moussaka allégée est encore meilleure le lendemain. 540 kcal vs 750+ pour version béchamel classique. Les aubergines au four (pas frites) économisent 200 kcal."
-      ]
+      ],
+      "photo": "assets/recipes/d179.webp"
     },
     {
       "id": "l173",
@@ -49923,7 +50464,8 @@ window.__DATA_RECIPES = {
         "eggs",
         "gluten",
         "mustard",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -50014,7 +50556,8 @@ window.__DATA_RECIPES = {
         "Verse la vinaigrette tiède sur la salade.",
         "Sale, poivre, parsème persil ciselé.",
         "AU MOMENT de manger : casse les œufs avec la fourchette pour que le jaune coule sur la salade tiède. C'est l'essence de la salade lyonnaise — chaleur lardons + croûtons + jaune coulant + amertume pissenlit."
-      ]
+      ],
+      "photo": "assets/recipes/l173.webp"
     },
     {
       "id": "d180",
@@ -50038,7 +50581,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -50146,7 +50691,8 @@ window.__DATA_RECIPES = {
         "Pose le pavé de cabillaud sur la base basquaise. Couvre la sauteuse 1 min hors du feu : les saveurs fusionnent.",
         "Dresse : riz complet d'un côté, base basquaise + cabillaud par-dessus, parsème de persil ciselé.",
         "Sers immédiatement. La basquaise est l'un des plus beaux mariages français : Pays Basque + cuisine de mer + piment doux. 5 € la portion complète."
-      ]
+      ],
+      "photo": "assets/recipes/d180.webp"
     },
     {
       "id": "b64",
@@ -50256,7 +50802,8 @@ window.__DATA_RECIPES = {
         "Casse les gros morceaux à la main, transvase en bocal hermétique : se conserve 3 semaines à T° ambiante.",
         "Au moment de servir : 50g de granola dans un bol, recouvre de skyr + myrtilles fraîches.",
         "Astuce batch : double les quantités (1 plaque = ~10 portions). Le ROI est imbattable : 3 € le bocal de 500g vs 6-8 € en magasin pour les bonnes versions sans sucre raffiné."
-      ]
+      ],
+      "photo": "assets/recipes/b64.webp"
     },
     {
       "id": "b65",
@@ -50682,7 +51229,8 @@ window.__DATA_RECIPES = {
         "Dresse en bowl thali : riz basmati au centre, curry de pois chiches d'un côté, raita de l'autre. Parsème coriandre fraîche.",
         "Mange à la cuillère, en piochant dans chaque section pour des bouchées variées. C'est l'esprit du thali : un repas complet en plusieurs petites portions. 2 € par personne.",
         "Astuce batch : double curry et riz, conserve 3 jours frigo. Le raita à la minute (le concombre rendrait son eau)."
-      ]
+      ],
+      "photo": "assets/recipes/l174.webp"
     },
     {
       "id": "s60",
@@ -50785,7 +51333,8 @@ window.__DATA_RECIPES = {
         "Tartine généreusement chaque mini-naan de baba ghanoush, parsème graines de sésame noir + coriandre ciselée.",
         "Mange tiède. La combo aubergine grillée + tahini + citron est l'âme de la cuisine méditerranéenne orientale et indienne.",
         "Astuce batch : la tartinade se conserve 4 jours au frigo, encore meilleure le lendemain."
-      ]
+      ],
+      "photo": "assets/recipes/s60.webp"
     },
     {
       "id": "l175",
@@ -50811,7 +51360,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -50946,7 +51496,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "nuts",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -51064,7 +51615,8 @@ window.__DATA_RECIPES = {
         "Saupoudre généreusement de cannelle en poudre + très très fin glaçage de sucre glace (très peu, juste pour le côté festif marocain).",
         "Sers en parts. Pastilla maison au four = 2/3 du gras d'une pastilla frite traditionnelle. La cannelle salée-sucrée + amandes + poulet est l'âme de cette recette.",
         "Astuce batch : prépare-la la veille jusqu'à l'étape baluchon (sans cuire), conserve filmée au frigo 24 h. Cuis le jour J pour servir tiède-craquant."
-      ]
+      ],
+      "photo": "assets/recipes/d181.webp"
     },
     {
       "id": "l176",
@@ -51214,7 +51766,8 @@ window.__DATA_RECIPES = {
         "Parsème généreusement de coriandre fraîche. Quartier de lime à presser au moment de manger.",
         "Mange en mélangeant pour que chaque bouchée ait riz + protéines + légumes + sauce. C'est l'essence du burrito bowl mexicain modernisé : aussi complet et savoureux qu'un wrap, sans la tortilla raffinée.",
         "Astuce batch : double poulet + riz + salsa verde, conserve 3 jours frigo. Avocat + coriandre à la minute."
-      ]
+      ],
+      "photo": "assets/recipes/l176.webp"
     },
     {
       "id": "d182",
@@ -51239,7 +51792,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -51371,7 +51925,8 @@ window.__DATA_RECIPES = {
         "Parsème généreusement de coriandre fraîche.",
         "Mange en alternant tinga + riz + chou + avocat à chaque cuillerée : la combo umami chipotle + acidité chou rose + crémeux avocat est mémorable. La tinga maison vs version restaurant : 1/3 du sodium et 0 sucre raffiné.",
         "Astuce batch : la tinga effilochée se conserve 3 jours frigo, congèle 2 mois. Excellente farce pour wraps ou bowls le lendemain."
-      ]
+      ],
+      "photo": "assets/recipes/d182.webp"
     },
     {
       "id": "l177",
@@ -51395,7 +51950,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "soy",
-        "fish"
+        "fish",
+        "celery"
       ],
       "ing": [
         [
@@ -51533,7 +52089,8 @@ window.__DATA_RECIPES = {
         "Sers AVEC à côté (chacun se sert) : pousses de soja, coriandre, basilic thaï, menthe, quartiers de lime, piment thaï émincé, partie verte de cébette.",
         "Mange immédiatement : ajoute 1 poignée de pousses de soja (qui restent croquants), des herbes, presse du lime, pioche tout dans le bouillon. C'est le pho authentique : tu construis chaque bouchée à ton goût.",
         "À 4 €/portion, c'est 1/3 du prix d'un pho restaurant."
-      ]
+      ],
+      "photo": "assets/recipes/l177.webp"
     },
     {
       "id": "d183",
@@ -51687,7 +52244,8 @@ window.__DATA_RECIPES = {
         "Parsème graines de sésame + cébette ciselée.",
         "Mange en MÉLANGEANT TOUT au moment du repas : c'est l'essence du bibimbap (= 'riz mélangé' en coréen). Chaque cuillerée combine viande + plusieurs légumes + sauce + riz.",
         "À 4.50 €/portion, c'est 1/4 du prix d'un bibimbap restaurant."
-      ]
+      ],
+      "photo": "assets/recipes/d183.webp"
     },
     {
       "id": "s61",
@@ -51712,7 +52270,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -51774,7 +52333,8 @@ window.__DATA_RECIPES = {
         "Verse la crème dans un bol bien sec. Bats-la au fouet électrique 2-3 minutes jusqu'à ce qu'elle forme des pics souples (= elle tient sur le fouet mais retombe légèrement). Ne va pas trop loin sinon elle tourne en beurre.",
         "Verse le velouté dans 4 petites tasses ou verrines. Pose délicatement une cuillère de chantilly au centre.",
         "Décore avec 2 feuilles de menthe entières par verrine. Sers immédiatement, tiède ou froid selon la saison."
-      ]
+      ],
+      "photo": "assets/recipes/s61.webp"
     },
     {
       "id": "s62",
@@ -51862,7 +52422,8 @@ window.__DATA_RECIPES = {
         "Recommence si tu as la place : avocat, fromage, saumon. Termine par le saumon visible sur le dessus.",
         "Décore avec une branche d'aneth entière piquée au centre et un fin zeste de citron vert.",
         "Couvre de film et place 15 min au frigo avant de servir : les saveurs se mélangent et c'est meilleur frais. Apporte le 2e demi-citron vert coupé en quartiers sur la table pour ceux qui veulent rajouter du jus."
-      ]
+      ],
+      "photo": "assets/recipes/s62.webp"
     },
     {
       "id": "s63",
@@ -51886,7 +52447,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -51942,7 +52504,8 @@ window.__DATA_RECIPES = {
         "Décore avec une feuille de basilic entière debout sur la burrata.",
         "Arrose chaque assiette d'un filet d'huile d'olive et de quelques gouttes de réduction balsamique. Termine par une pincée de fleur de sel sur la burrata.",
         "Sers immédiatement avec quelques mouillettes de pain au levain à part pour saucer."
-      ]
+      ],
+      "photo": "assets/recipes/s63.webp"
     },
     {
       "id": "s64",
@@ -52029,7 +52592,8 @@ window.__DATA_RECIPES = {
         "Cisèle 4 feuilles de basilic en chiffonnade, parsème sur les assiettes. Garde 2 feuilles entières pour la déco.",
         "Termine par les pignons torréfiés (un par assiette + saupoudrer), une pincée de fleur de sel, un tour de poivre du moulin.",
         "Sers immédiatement, à température ambiante. Apporte un quartier de citron à part au cas où quelqu'un veut plus d'acidité."
-      ]
+      ],
+      "photo": "assets/recipes/s64.webp"
     },
     {
       "id": "s65",
@@ -52123,7 +52687,8 @@ window.__DATA_RECIPES = {
         "Remue régulièrement avec une spatule pendant 4-5 minutes : les cubes doivent dorer sur toutes les faces et devenir croustillants. Une fois dorés, retire-les sur du papier absorbant et sale très légèrement.",
         "Au moment de servir, verse la soupe bien froide dans 4 bols. Dépose une belle branche d'aneth par bol, parsème quelques croûtons (juste 4-5 par bol pour le croquant).",
         "Apporte le reste des croûtons à part, dans un petit bol — ils se ramollissent dans la soupe, mieux vaut les ajouter au dernier moment."
-      ]
+      ],
+      "photo": "assets/recipes/s65.webp"
     },
     {
       "id": "s66",
@@ -52148,7 +52713,7 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs"
       ],
       "ing": [
         [
@@ -52206,7 +52771,8 @@ window.__DATA_RECIPES = {
         "Remplis chaque emporte-pièce de tartare, tasse délicatement à la cuillère pour avoir une forme nette. Retire doucement l'emporte-pièce. Si verrines, remplis aux deux tiers.",
         "Décore avec une branche d'aneth piquée au centre. Termine par un trait d'huile d'olive autour et une dernière pincée de fleur de sel.",
         "Sers IMMÉDIATEMENT — un tartare de Saint-Jacques se mange dans les 15 minutes de la préparation pour rester optimal."
-      ]
+      ],
+      "photo": "assets/recipes/s66.webp"
     },
     {
       "id": "des60",
@@ -52296,7 +52862,8 @@ window.__DATA_RECIPES = {
         "Chauffe à feu doux 5 minutes en écrasant à la fourchette : tu obtiens une compote rustique. Si tu veux un coulis lisse, mixe au mixeur plongeant puis passe au tamis (optionnel). Laisse refroidir.",
         "Au moment de servir, sors les panna cottas du frigo. Si tu veux les démouler : passe le ramequin 5 secondes dans de l'eau chaude, retourne sur une assiette, secoue légèrement. Sinon, sers directement dans le ramequin.",
         "Verse 2 c.à.s de coulis sur le dessus de chaque panna cotta. La fève tonka donne une note presque caramélisée qui se marie parfaitement avec l'acidité des fruits rouges — c'est festif et raffiné."
-      ]
+      ],
+      "photo": "assets/recipes/des60.webp"
     },
     {
       "id": "des61",
@@ -52364,7 +52931,8 @@ window.__DATA_RECIPES = {
         "Mélange délicatement à la cuillère pour répartir les saveurs sans écraser les fruits.",
         "Place au frigo 10 minutes avant de servir : les saveurs s'imprègnent et les fruits sont bien frais.",
         "Sers dans des coupes, des verrines ou directement dans la peau de l'ananas vidée (effet festif maximum). Pose une feuille de menthe entière sur chaque part. C'est un dessert ultra-frais, sans sucre ajouté — la mangue mûre apporte naturellement ce qu'il faut de douceur."
-      ]
+      ],
+      "photo": "assets/recipes/des61.webp"
     },
     {
       "id": "des62",
@@ -52443,7 +53011,8 @@ window.__DATA_RECIPES = {
         "Termine par une couche de crème bien lisse sur le dessus, à 1 cm du bord (laisse de la place pour la déco).",
         "Place au frigo minimum 1 heure (les saveurs se mélangent et la crème prend de la tenue).",
         "Au moment de servir : décore chaque verrine avec 3 framboises entières placées en triangle au centre, parsème généreusement d'amandes torréfiées sur le dessus. Le croquant des amandes contre la douceur de la crème et l'acidité des framboises, c'est le combo gagnant."
-      ]
+      ],
+      "photo": "assets/recipes/des62.webp"
     },
     {
       "id": "des63",
@@ -52508,7 +53077,8 @@ window.__DATA_RECIPES = {
         "Si tu prépares la veille : laisse le granité au congélateur, tel quel. Le jour J, sors-le 10 min avant de servir et gratte une dernière fois à la fourchette pour aérer.",
         "Sers dans des coupes ou des verrines bien froides (passe-les 5 min au congélateur avant). Décore avec une feuille de basilic entière piquée au sommet.",
         "Mange tout de suite — un granité fond vite. C'est ultra-rafraîchissant, festif par sa présentation, et complètement light. Le basilic apporte une touche herbacée surprenante qui élève le fruit."
-      ]
+      ],
+      "photo": "assets/recipes/des63.webp"
     },
     {
       "id": "des64",
@@ -52584,7 +53154,8 @@ window.__DATA_RECIPES = {
         "Verse dans 4 ramequins ou verrines individuelles. Lisse le dessus à la spatule. Couvre de film au contact (= film posé directement sur la mousse pour éviter qu'elle croûte).",
         "Mets au frigo minimum 3 heures, idéalement la veille pour le lendemain : la mousse prend et les saveurs se développent.",
         "Au moment de servir, saupoudre d'une micro-pincée de fleur de sel et râpe encore un peu de fève tonka sur le dessus. C'est sombre, intense, festif sans sucre ajouté — le chocolat 70% suffit."
-      ]
+      ],
+      "photo": "assets/recipes/des64.webp"
     },
     {
       "id": "des65",
@@ -52608,7 +53179,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Fraises",
@@ -52651,7 +53224,8 @@ window.__DATA_RECIPES = {
         "Cisèle finement 4 feuilles de basilic, parsème sur chaque assiette. Garde 2 feuilles entières pour la déco (une feuille au centre de chaque assiette, debout).",
         "Laisse reposer 5 minutes à température ambiante : les fraises rendent un peu de jus, qui se mélange à la réduction de balsamique. C'est ce mélange qui fait toute la magie.",
         "Sers immédiatement, à température ambiante (pas trop froid, sinon les arômes des fraises sont moins expressifs). Apporte une cuillère à part pour récupérer le jus parfumé au fond de l'assiette."
-      ]
+      ],
+      "photo": "assets/recipes/des65.webp"
     },
     {
       "id": "b68",
@@ -52731,7 +53305,8 @@ window.__DATA_RECIPES = {
         "Verse le quinoa coco dans 2 bols. Pose les cubes de mangue sur le dessus.",
         "Râpe un peu de zeste de citron vert sur les fruits, parsème la noix de coco râpée et les graines de sésame noir torréfiées.",
         "Sers tiède ou frais selon la saison. Le mélange coco-mangue-sésame, c'est un classique du sud-est asiatique adapté en petit-déjeuner riche en fibres et bons gras."
-      ]
+      ],
+      "photo": "assets/recipes/b68.webp"
     },
     {
       "id": "s67",
@@ -52824,7 +53399,8 @@ window.__DATA_RECIPES = {
         "Pose le triangle sur une bande de nori, replie la bande sur 2 côtés (= la base du triangle). Le nori adhère au riz humide.",
         "Recommence pour 3 autres onigiri. Saupoudre du reste de graines de sésame sur la pointe haute.",
         "Place au frigo 30 minutes pour que les onigiri se tiennent bien. Sers froid, en encas ou repas léger, accompagné d'un peu de sauce soja à côté."
-      ]
+      ],
+      "photo": "assets/recipes/s67.webp"
     },
     {
       "id": "des66",
@@ -52899,7 +53475,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, gratte une dernière fois pour aérer. Dans 4 coupes ou verrines bien froides (mets-les 5 min au congélateur avant), dépose 2-3 cuillères de fruits rouges au fond.",
         "Recouvre de 2-3 cuillères de granité matcha-coco par-dessus. Le contraste froid + rouge des baies + vert du matcha est visuellement très festif.",
         "Sers immédiatement (un granité fond vite). Apporte une cuillère longue à café pour récolter le jus mélangé au fond."
-      ]
+      ],
+      "photo": "assets/recipes/des66.webp"
     },
     {
       "id": "b69",
@@ -53094,7 +53671,8 @@ window.__DATA_RECIPES = {
         "Enfourne 22-25 minutes : à mi-cuisson (12 min), retourne les pakoras avec une spatule. Ils doivent être bien dorés et croustillants en surface, fondants à l'intérieur.",
         "Sors et laisse tiédir 2 minutes. Décore avec les feuilles de coriandre fraîche.",
         "Sers tiède avec une sauce yaourt-menthe (yaourt grec + menthe ciselée + jus de citron + sel) pour le côté indien authentique. La farine de pois chiche est naturellement riche en protéines (~20 g/100 g) et fibres."
-      ]
+      ],
+      "photo": "assets/recipes/s68.webp"
     },
     {
       "id": "des67",
@@ -53166,7 +53744,8 @@ window.__DATA_RECIPES = {
         "Goûte : la cardamome doit être présente mais discrète (parfumée, pas envahissante). Ajuste avec un peu plus de sirop si la mangue est acidulée.",
         "Verse dans 2 verres hauts. Optionnel : râpe un peu de zeste de citron vert sur le dessus pour la couleur.",
         "Sers immédiatement, bien frais. Le lassi mangue, c'est LE dessert-boisson indien par excellence : riche en probiotiques (yaourt), beta-carotène (mangue), et la cardamome aide la digestion. CG modérée par portion."
-      ]
+      ],
+      "photo": "assets/recipes/des67.webp"
     },
     {
       "id": "b70",
@@ -53278,7 +53857,8 @@ window.__DATA_RECIPES = {
         "Dressage : pose une galette de sarrasin sur chaque assiette. Étale dessus une bonne cuillère d'avocat écrasé. Couvre généreusement de sauce ranchera. Pose 1 œuf sur le dessus.",
         "Cisèle 3 branches de coriandre, parsème sur l'œuf. Garde 1 branche entière pour la déco.",
         "Sers immédiatement avec un quartier de citron vert à côté pour pimper. Les huevos rancheros, c'est LE petit-déjeuner mexicain costaud — protéines (œuf), bons gras (avocat), antioxydants (tomate), épices anti-inflammatoires."
-      ]
+      ],
+      "photo": "assets/recipes/b70.webp"
     },
     {
       "id": "s69",
@@ -53382,7 +53962,8 @@ window.__DATA_RECIPES = {
         "Coupe les tomates cerises en deux. Émince finement l'oignon rouge (1/4 d'oignon). Cisèle 3 branches de coriandre, garde 1 entière pour la déco.",
         "Dressage : sors les tostadas du four. Étale d'abord une couche de haricots noirs sur chaque (1 cuillère bien remplie). Couvre d'une couche de guacamole. Termine avec 4 demi-tomates cerises, un peu d'oignon rouge et de la coriandre.",
         "Apporte le reste de quartier de citron vert et un peu de piment d'Espelette à part pour les puristes. Mange immédiatement (les tostadas ramollissent vite avec l'humidité du guacamole)."
-      ]
+      ],
+      "photo": "assets/recipes/s69.webp"
     },
     {
       "id": "des68",
@@ -53450,7 +54031,8 @@ window.__DATA_RECIPES = {
         "Au bout de 4 grattages, tu obtiens une masse de cristaux légers, aérés, intensément aromatiques.",
         "Si tu prépares la veille, laisse tel quel au congélateur. Le jour J, sors 10 min avant de servir et gratte une dernière fois.",
         "Sers dans des coupes ou verrines bien froides (passe-les 5 min au congélateur). C'est ultra-rafraîchissant, sans sucre ajouté presque (juste le sirop d'érable), avec un kick caféiné et l'arôme cannelle-cacao qui rappelle le chocolat traditionnel mexicain."
-      ]
+      ],
+      "photo": "assets/recipes/des68.webp"
     },
     {
       "id": "b71",
@@ -53564,7 +54146,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -53657,7 +54240,8 @@ window.__DATA_RECIPES = {
         "Cisèle 3 branches de persil plat, parsème sur l'huile. Garde 1 branche entière pour la déco.",
         "Dispose les bâtonnets de crudités autour du bol. Apporte un quartier de citron à part au cas où.",
         "Le houmous est meilleur après 30 min de repos au frigo (les saveurs se mélangent), mais ça marche aussi tout de suite. Conservation : 3 jours au frigo, dans un récipient hermétique avec une couche d'huile d'olive en surface."
-      ]
+      ],
+      "photo": "assets/recipes/s70.webp"
     },
     {
       "id": "des69",
@@ -53725,7 +54309,8 @@ window.__DATA_RECIPES = {
         "Cisèle 6 feuilles de menthe en chiffonnade (= roule-les et coupe en lanières fines aux ciseaux). Parsème sur la pastèque. Garde 2 feuilles entières pour la déco au centre.",
         "Râpe un peu de zeste de citron vert sur l'ensemble pour la touche fraîche finale.",
         "Sers immédiatement, à peine sortant du frigo (10 min). C'est l'incarnation de l'été méditerranéen-maghrébin : ultra-rafraîchissant, parfumé fleur d'oranger (un classique des desserts marocains), croquant pistache, sans sucre ajouté car la pastèque est naturellement sucrée. CG quasi nulle."
-      ]
+      ],
+      "photo": "assets/recipes/des69.webp"
     },
     {
       "id": "b72",
@@ -53820,7 +54405,8 @@ window.__DATA_RECIPES = {
         "Verse dans 1 grand bol. La surface doit être bien lisse.",
         "Décoration façon Japon : dispose les rondelles de banane et kiwi en cercle, parsème les graines de chia au centre, et les amandes effilées sur le bord.",
         "Mange immédiatement à la cuillère, comme une glace healthy. Le matcha apporte un coup de boost (caféine douce, L-théanine apaisante), les épinards bourrent de minéraux, et les graines de chia ajoutent des oméga-3."
-      ]
+      ],
+      "photo": "assets/recipes/b72.webp"
     },
     {
       "id": "s71",
@@ -53902,7 +54488,8 @@ window.__DATA_RECIPES = {
         "Arrose immédiatement (= pendant qu'ils sont chauds) avec l'huile de sésame, la sauce soja, le piment d'Espelette, le jus du quart de citron vert et une pincée de sel. Mélange.",
         "Parsème les graines de sésame torréfiées par-dessus.",
         "Sers chaud ou tiède dans un grand bol. À manger AVEC la cosse : on prend la cosse entre les dents, on suce les graines à l'intérieur et on jette la peau dans un bol vide à côté. C'est l'apéro typique des izakaya japonaises — riche en protéines végétales (~11 g pour 100 g d'edamame), parfait pour patienter avant un repas."
-      ]
+      ],
+      "photo": "assets/recipes/s71.webp"
     },
     {
       "id": "des70",
@@ -53991,7 +54578,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, sors les coupes du frigo. Pose les cubes de mangue sur le dessus du riz (~1/4 de mangue par portion).",
         "Parsème les amandes torréfiées et 1 feuille de menthe ciselée par coupe. Termine par un zeste de citron vert râpé.",
         "C'est un grand classique thaï (« khao niao mamuang ») revisité moins sucré. Le contraste tiède-froid du riz crémeux + mangue juteuse + amandes croquantes est festif sans être bourratif."
-      ]
+      ],
+      "photo": "assets/recipes/des70.webp"
     },
     {
       "id": "b73",
@@ -54219,7 +54807,8 @@ window.__DATA_RECIPES = {
         "Dressage : verse dans 4 petits bols ou verrines. Pose 1 belle cuillère de skyr au centre. Verse par-dessus 1 cuillère du chutney vert.",
         "Cisèle finement le reste de coriandre, parsème sur le dessus. Optionnel : pour une touche encore plus authentique, ajoute quelques pop chips de sarrasin écrasés pour le croquant.",
         "Sers immédiatement. C'est l'apéro de rue indien typique — explosion de saveurs (acide, épicé, frais, herbacé), pour réveiller les papilles. Riche en fibres et protéines végétales (~16 g de protéines par 200 g de pois chiches)."
-      ]
+      ],
+      "photo": "assets/recipes/s72.webp"
     },
     {
       "id": "des71",
@@ -54400,7 +54989,8 @@ window.__DATA_RECIPES = {
         "Dressage : dispose les cubes de mangue et les demi-fraises en rosace. Parsème les graines de chia au centre, la noix de coco râpée en cercle.",
         "Concasse grossièrement les pistaches au couteau et saupoudre sur le tout. Le combo fraise rouge + mangue orange + pistache verte + coco blanche, c'est festif et plein de couleurs.",
         "Mange immédiatement à la cuillère. Apporte le quart de citron vert restant à côté pour ceux qui veulent rajouter de l'acidité."
-      ]
+      ],
+      "photo": "assets/recipes/b74.webp"
     },
     {
       "id": "s73",
@@ -54514,7 +55104,8 @@ window.__DATA_RECIPES = {
         "Sors les sopes du four. Étale dans chaque coupelle : 1 c.à.c de haricots écrasés, 1 c.à.c de fromage frais, quelques quartiers de tomate, un peu d'oignon rouge et de coriandre.",
         "Saupoudre une pincée de piment d'Espelette sur chacune. Apporte le demi-citron vert à part en quartiers pour ceux qui veulent rajouter du jus.",
         "Sers immédiatement à l'apéro ou en mini-repas. Les sopes, c'est l'antojito (= grignote mexicaine) traditionnel — plus consistantes qu'une tostada, plus simples qu'un taco."
-      ]
+      ],
+      "photo": "assets/recipes/s73.webp"
     },
     {
       "id": "s74",
@@ -54605,7 +55196,8 @@ window.__DATA_RECIPES = {
         "Laisse reposer 10 minutes à température ambiante : les saveurs se mélangent et le jus se forme — c'est tout l'intérêt du pico de gallo (= salsa fraîche, pas cuite).",
         "Sors les chips du four, laisse tiédir 2 minutes (elles durcissent en refroidissant).",
         "Sers les chips dans une assiette plate, le pico de gallo dans un grand bol au centre. Chacun pioche. Garde 1 quartier de citron vert à part au cas où. C'est l'apéro mexicain par excellence — frais, herbacé, légèrement piquant, et 100 % sans friture."
-      ]
+      ],
+      "photo": "assets/recipes/s74.webp"
     },
     {
       "id": "b75",
@@ -54836,7 +55428,8 @@ window.__DATA_RECIPES = {
         "Enfourne 12-15 minutes : les briouates doivent être bien dorées et croustillantes (= la feuille de brick devient feuilletée et craquante).",
         "Sors, laisse tiédir 2 minutes. Sers chaud avec un quartier de citron à part, et un petit bol de yaourt grec à la menthe si tu veux la touche fraîche en contraste.",
         "C'est un grand classique de l'apéritif marocain et tunisien — la version au thon est plus quotidienne que la version au poulet ou aux amandes-cannelle qu'on garde pour les fêtes."
-      ]
+      ],
+      "photo": "assets/recipes/s75.webp"
     },
     {
       "id": "des72",
@@ -54929,7 +55522,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, sors les mhalbiya du frigo. Saupoudre une pincée de cannelle en poudre sur chaque coupe (= la touche maghrébine signature).",
         "Parsème les amandes effilées torréfiées et les pistaches concassées. Le contraste blanc-rose pâle de la crème + brun-doré des amandes + vert vif des pistaches, c'est festif et raffiné.",
         "C'est un dessert traditionnel marocain et algérien (originellement plus sucré, ici en version contrôlée IG bas). Le mariage amande + fleur d'oranger + cannelle est l'âme des desserts du Maghreb."
-      ]
+      ],
+      "photo": "assets/recipes/des72.webp"
     },
     {
       "id": "b76",
@@ -55103,7 +55697,8 @@ window.__DATA_RECIPES = {
         "Verse le porridge dans 1 grand bol. Au centre, dépose 1 c.à.c de pâte de matcha (= petit puits vert). Avec la cuillère, fais des spirales pour mélanger légèrement (effet marbré).",
         "Dispose les lamelles de poire en éventail sur le dessus. Parsème les amandes torréfiées.",
         "Termine par une pincée supplémentaire de cannelle. Mange tiède. Le mariage avoine-matcha-poire est doux et énergisant — idéal en hiver pour combattre la fatigue (L-théanine du matcha + fibres de l'avoine)."
-      ]
+      ],
+      "photo": "assets/recipes/b77.webp"
     },
     {
       "id": "des73",
@@ -55183,7 +55778,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, sors du frigo. Dépose 1 c.à.c de pulpe de fruit de la passion réservée au centre de chaque coupe (= des grains noirs sur fond jaune, très visuel).",
         "Parsème les graines de sésame noir sur le bord. Râpe un peu de zeste de citron vert au-dessus pour la touche fraîche finale.",
         "Sers bien frais. Le tofu soyeux donne une texture ultra-onctueuse et apporte ~7 g de protéines par portion, sans le côté lourd d'une crème classique. C'est l'équivalent asiatique d'une mousse au yaourt."
-      ]
+      ],
+      "photo": "assets/recipes/des73.webp"
     },
     {
       "id": "des74",
@@ -55271,7 +55867,8 @@ window.__DATA_RECIPES = {
         "Dressage style food-porn : dispose les rondelles de banane en demi-cercle. Pose le reste de fruits rouges (frais idéalement) en petit tas.",
         "Parsème la noix de coco râpée en cercle au centre. Saupoudre les graines de chia et les amandes effilées sur le reste.",
         "Mange immédiatement à la cuillère, comme une glace healthy. L'açaï est riche en antioxydants (les polyphénols sont concentrés dans ce fruit amazonien), parfait après le sport en été."
-      ]
+      ],
+      "photo": "assets/recipes/des74.webp"
     },
     {
       "id": "des75",
@@ -55362,7 +55959,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais torréfier les amandes effilées dans une poêle sèche 2 minutes à feu moyen, en remuant. Concasse grossièrement les pistaches au couteau.",
         "Au moment de servir, parsème généreusement amandes torréfiées et pistaches concassées sur le dessus.",
         "Optionnel : ajoute 1-2 fils de safran pour la déco. Le kheer est LE pudding indien festif (originellement au riz blanc + bcp de sucre), ici en quinoa + sirop d'érable pour rester IG bas. Le mariage cardamome + rose + safran est typique des desserts moghol-perse."
-      ]
+      ],
+      "photo": "assets/recipes/des75.webp"
     },
     {
       "id": "des76",
@@ -55449,7 +56047,8 @@ window.__DATA_RECIPES = {
         "Verse dans 2 grands verres ou 4 petits. Concasse grossièrement les pistaches au couteau.",
         "Parsème les pistaches sur le dessus de chaque verre. Optionnel : râpe un mini-zeste de citron vert pour la fraîcheur finale.",
         "Sers immédiatement avec une paille épaisse (la boisson est dense). Le lassi safran-rose est le dessert-boisson des fêtes de mariage indiennes — exotique, festif, sans sucre ajouté (la mangue mûre apporte la douceur naturelle)."
-      ]
+      ],
+      "photo": "assets/recipes/des76.webp"
     },
     {
       "id": "b78",
@@ -55670,7 +56269,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, mélange le fromage frais avec une pincée de zeste de citron vert pour parfumer.",
         "Dressage : 2-3 pancakes par assiette. Pose une cuillère de fromage frais au citron vert sur le côté. Parsème les grains de maïs réservés et 1 branche de coriandre.",
         "Apporte un quartier de citron vert à part. Ces pancakes salés mexicains (= « gorditas » revisités) sont rassasiants, riches en protéines (œufs + pois chiches + fromage) et en fibres (maïs + courgette). Excellent petit-déjeuner salé !"
-      ]
+      ],
+      "photo": "assets/recipes/b79.webp"
     },
     {
       "id": "b80",
@@ -55961,7 +56561,8 @@ window.__DATA_RECIPES = {
         "Concasse grossièrement les pistaches au couteau.",
         "Au moment de servir, sors les crémeux du frigo. Parsème les graines de grenade en petit tas au centre de chaque coupe (= contraste rouge vif sur blanc).",
         "Ajoute les pistaches concassées et termine par une mini-pincée de cannelle. C'est un dessert raffiné maghrébin-perse — l'amande + fleur d'oranger est l'âme du Maghreb, la grenade apporte la touche acidulée et visuelle."
-      ]
+      ],
+      "photo": "assets/recipes/des77.webp"
     },
     {
       "id": "des78",
@@ -56057,7 +56658,8 @@ window.__DATA_RECIPES = {
         "Enfourne 13-15 min en surveillant : les sablés doivent être bien dorés sur les bords. Ils restent un peu mous à la sortie du four mais durcissent en refroidissant.",
         "Sors du four, laisse refroidir 30 min sur la plaque (= ils prennent leur croquant en refroidissant). Saupoudre légèrement de cannelle au moment de servir.",
         "Conservation : 5 jours dans une boîte hermétique. Excellent avec un thé à la menthe — pas trop sucrés grâce au sirop d'érable, IG bas grâce au sarrasin, parfumés à l'orange confite et la cannelle, dans la tradition des biscuits du thé du Maghreb."
-      ]
+      ],
+      "photo": "assets/recipes/des78.webp"
     },
     {
       "id": "b82",
@@ -56154,7 +56756,8 @@ window.__DATA_RECIPES = {
         "Sors du four. Laisse refroidir 30 min sur la plaque sans toucher — le granola durcit en refroidissant et forme des clusters croustillants.",
         "Conservation : dans un bocal hermétique, 3 semaines.",
         "Au moment du petit-déjeuner : dans un bol, dépose le skyr, parsème 4-5 c.à.s de granola, ajoute les fruits rouges sur le dessus. C'est l'équivalent italien du petit-déjeuner « yogurt e cereali » qu'on retrouve dans les cafés de Milan."
-      ]
+      ],
+      "photo": "assets/recipes/b82.webp"
     },
     {
       "id": "b83",
@@ -56250,7 +56853,8 @@ window.__DATA_RECIPES = {
         "Verse dans 1 grand bol. La surface doit être bien lisse.",
         "Décore avec les rondelles de banane en demi-cercle. Parsème les graines de chia au centre, la noix de coco râpée et les amandes effilées en bord.",
         "Mange immédiatement à la cuillère. Le gingembre apporte un coup de fouet anti-inflammatoire, les épinards de la chlorophylle et du fer, la banane de l'énergie progressive — démarrage matinal asiatique optimal."
-      ]
+      ],
+      "photo": "assets/recipes/b83.webp"
     },
     {
       "id": "s76",
@@ -56276,9 +56880,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "shellfish",
-        "nuts",
         "soy",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -56371,7 +56975,8 @@ window.__DATA_RECIPES = {
         "Recommence pour les 3 autres rouleaux. Garde-les sur un plat couvert d'un torchon humide jusqu'au moment de servir (pour éviter qu'ils sèchent).",
         "Au moment de servir, coupe chaque rouleau en 2 en biais (= 8 demi-rouleaux). Le pas-net visible est joli.",
         "Sers avec la sauce cacahuète dans un petit bol pour tremper. Le quart de citron vert restant à part. Le rouleau de printemps vietnamien (« gỏi cuốn ») est un classique festif et frais, sans cuisson finale — riche en protéines (crevettes), fibres (légumes crus) et herbes aromatiques."
-      ]
+      ],
+      "photo": "assets/recipes/s76.webp"
     },
     {
       "id": "b84",
@@ -56577,7 +57182,8 @@ window.__DATA_RECIPES = {
         "Démoule délicatement (passe une lame de couteau autour si ça colle). Les idli sont blancs, légers, ronds.",
         "Sers tièdes dans 2 assiettes (4-5 idli par personne), avec 2-3 cuillères de chutney coriandre à côté. Décore avec une branche de coriandre.",
         "Les idli sont le petit-déjeuner classique du sud de l'Inde (originellement à la semoule de riz fermentée). Cette version quinoa-sarrasin est IG plus bas, riche en protéines végétales (~12 g par portion). Léger mais rassasiant."
-      ]
+      ],
+      "photo": "assets/recipes/b85.webp"
     },
     {
       "id": "s77",
@@ -56700,7 +57306,8 @@ window.__DATA_RECIPES = {
         "Pose les samosas sur 2 plaques recouvertes de papier sulfurisé, soudure dessous. Badigeonne le dessus d'huile d'olive (1 c.à.s répartie au pinceau) — c'est ce qui donnera le croustillant doré sans friture.",
         "Enfourne 20-25 min : à mi-cuisson, retourne les samosas avec une spatule. Ils doivent être bien dorés et croustillants.",
         "Sors, laisse tiédir 2 min. Sers tièdes avec un chutney à la menthe ou un yaourt grec à la coriandre. Cette version au four (= sans friture) divise les calories par 3 par rapport au samosa traditionnel."
-      ]
+      ],
+      "photo": "assets/recipes/s77.webp"
     },
     {
       "id": "s78",
@@ -56812,7 +57419,8 @@ window.__DATA_RECIPES = {
         "Écrase grossièrement les crackers sarrasin entre les mains (= des morceaux irréguliers, pas en poudre) — c'est l'équivalent IG bas des riz soufflés traditionnels.",
         "Dressage : verse le mélange dans 2 bols. Parsème par-dessus les crackers concassés (= croquant final), les graines de grenade réservées et les branches de coriandre.",
         "Sers immédiatement (les crackers ramollissent vite). Le bhel puri est LE street food de Bombay — explosif en saveurs (acide-sucré-piquant-frais), texture croquant-fondant. Riche en fibres, protéines végétales et antioxydants (grenade)."
-      ]
+      ],
+      "photo": "assets/recipes/s78.webp"
     },
     {
       "id": "des79",
@@ -57107,7 +57715,8 @@ window.__DATA_RECIPES = {
         "Coupe le demi-avocat en lamelles fines.",
         "Sers la salsa verde dans un petit bol au centre d'un grand plat. Dispose les chips croustillantes autour, et les lamelles d'avocat sur le côté.",
         "Parsème la salsa de coriandre fraîche ciselée pour la déco. Le tomatillo (très utilisé au Mexique mais peu connu en France) donne une acidité-fraîcheur typique, distincte de la salsa rouge à la tomate."
-      ]
+      ],
+      "photo": "assets/recipes/s79.webp"
     },
     {
       "id": "s80",
@@ -57215,7 +57824,8 @@ window.__DATA_RECIPES = {
         "Recommence pour les 3 autres quesadillas.",
         "Coupe chaque quesadilla en 3 triangles. Tu obtiens 12 mini-triangles à partager.",
         "Sers immédiatement avec le quartier de citron vert. Cette version IG bas (galette de sarrasin remplace la tortilla de blé blanc traditionnelle) est croustillante, savoureuse et reste fidèle à l'esprit street food mexicain."
-      ]
+      ],
+      "photo": "assets/recipes/s80.webp"
     },
     {
       "id": "b87",
@@ -57315,7 +57925,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, dans une petite poêle sèche, fais torréfier les amandes effilées 2 min à feu moyen.",
         "Au moment de servir, arrose chaque crêpe d'un peu de miel (1 c.à.c par crêpe). Parsème les amandes torréfiées.",
         "Sers immédiatement (les baghrir sont meilleurs tièdes). Cette version IG bas remplace la semoule de blé traditionnelle par farine de pois chiche + sarrasin — texture authentique « 1000 trous » garantie, mais sans pic glycémique. Un classique du Maghreb (Maroc, Algérie, Tunisie) qu'on retrouve pendant le ramadan."
-      ]
+      ],
+      "photo": "assets/recipes/b87.webp"
     },
     {
       "id": "l178",
@@ -57427,7 +58038,8 @@ window.__DATA_RECIPES = {
         "Dressage : dans 2 grands bols, dispose le quinoa au fond. Place les haricots noirs sur un quart, le maïs grillé sur un autre, l'avocat sur un troisième, et les tomates + oignon rouge sur le dernier (= effet poké bowl).",
         "Arrose de la vinaigrette uniformément. Parsème la coriandre fraîche ciselée, et un quartier de citron vert restant à côté.",
         "Sers tiède (le quinoa) ou frais (en laissant refroidir 10 min). Ce bowl IG bas (quinoa vs riz blanc traditionnel) est rassasiant, riche en protéines végétales et fibres."
-      ]
+      ],
+      "photo": "assets/recipes/l178.webp"
     },
     {
       "id": "l179",
@@ -57454,7 +58066,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -57560,7 +58173,8 @@ window.__DATA_RECIPES = {
         "Goûte la soupe : ajuste sel, ajoute le jus d'un demi-citron vert pour le pep.",
         "Dressage : verse la soupe dans 2 grands bols. Pose les lamelles d'avocat en éventail, 1 c.à.s de fromage frais émietté au centre, parsème généreusement de coriandre fraîche et de lanières de tortilla croustillantes (en gardent quelques-unes à part pour le service).",
         "Apporte le reste de tortillas + le 1/2 citron vert à part. Mange immédiatement (les tortillas ramollissent dans la soupe). C'est l'âme du « sopa de tortilla » mexicain — réconfortant en hiver, rafraîchissant en été grâce au citron vert et à la coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/l179.webp"
     },
     {
       "id": "d184",
@@ -57679,7 +58293,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, laisse tiédir 2 min (= plus facile à manipuler).",
         "Dressage façon street food : sur chaque feuille de chou, dépose 1 c.à.s de bœuf épicé. Recouvre de 1 c.à.c de guacamole et 1 c.à.s de pico de gallo. Décore de coriandre entière.",
         "Sers immédiatement, à manger avec les mains (= comme des tacos). 2 feuilles par convive (= 1 portion de 4 tacos pour 2). Apporte 1/2 citron vert restant à part."
-      ]
+      ],
+      "photo": "assets/recipes/d184.webp"
     },
     {
       "id": "d185",
@@ -57701,7 +58316,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Filet de poulet",
@@ -57813,7 +58430,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le jus du demi-citron vert et la moitié du persil ciselé. Mélange.",
         "Dressage : verse le riz brun dans 2 assiettes, fais un puits au centre. Verse le pollo veracruzana avec sa sauce. Décore avec le reste de persil entier.",
         "Le pollo a la veracruzana est un classique de l'État de Veracruz au Mexique, influence espagnole (olives, câpres) sur base mexicaine. Méditerranéen-tropical, savoureux et complet."
-      ]
+      ],
+      "photo": "assets/recipes/d185.webp"
     },
     {
       "id": "des80",
@@ -57901,7 +58519,8 @@ window.__DATA_RECIPES = {
         "Saupoudre une mini-pincée de piment d'Espelette sur la mangue (= signature mexicaine sucré-piquant qu'on retrouve sur les fruits frais à Mexico). Et le zeste de citron vert râpé.",
         "Parsème la noix de coco râpée en bord. Sers immédiatement.",
         "Le mariage mangue + piment + cannelle est emblématique du Mexique (cf. « mangonada », sorbet mangue-tajin). Cette version pudding chia est riche en oméga-3 (chia), fibres, et naturellement sucrée par la mangue."
-      ]
+      ],
+      "photo": "assets/recipes/des80.webp"
     },
     {
       "id": "l180",
@@ -58036,7 +58655,8 @@ window.__DATA_RECIPES = {
         "Égoutte le thon. Émiette-le en gros morceaux sur la salade.",
         "Dressage : verse la salade mechouia dans 2 grandes assiettes. Pose les quartiers d'œufs durs en étoile, parsème les olives noires et les câpres.",
         "Décore avec les branches de persil et coriandre entières. Sers tiède (sortant du four) ou frais (après 1 h au frigo). C'est LA salade tunisienne d'été, généreusement parfumée, riche en protéines (thon + œuf) et antioxydants (lycopène des tomates et poivrons grillés)."
-      ]
+      ],
+      "photo": "assets/recipes/l180.webp"
     },
     {
       "id": "l181",
@@ -58062,7 +58682,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentille verte",
@@ -58180,7 +58802,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute les herbes fraîches ciselées (coriandre + persil) et le jus du citron. Mélange. Goûte, ajuste le sel.",
         "Verse dans 4 bols. Décore avec une branche de coriandre/persil entière. Termine par 1 mini-pincée de piment d'Espelette pour le pep.",
         "La harira est LA soupe traditionnelle marocaine (souvent servie pour rompre le jeûne pendant le ramadan). Cette version sans vermicelles et sans roux est plus légère, IG bas, riche en protéines végétales (~16 g par portion), fibres et antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/l181.webp"
     },
     {
       "id": "d186",
@@ -58205,7 +58828,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -58317,7 +58941,8 @@ window.__DATA_RECIPES = {
         "Coupe les tomates en quartiers. Dans une poêle, à feu moyen-vif, fais sauter les quartiers 4 min avec 1 c.à.c d'huile d'olive — ils doivent légèrement caraméliser. Sale.",
         "Dressage : verse le boulgour dans 2 assiettes. Pose 5-6 keftas dessus. Dispose les quartiers de tomates poêlés autour. Arrose d'un trait d'huile d'olive et de jus de citron.",
         "Décore avec les herbes fraîches entières. Apporte 1/2 citron coupé en deux à part. Cette version au four est moins grasse que les keftas traditionnellement frites, mais conserve toute la saveur des épices marocaines."
-      ]
+      ],
+      "photo": "assets/recipes/d186.webp"
     },
     {
       "id": "d187",
@@ -58342,7 +58967,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -58456,7 +59082,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare le boulgour : mets-le dans une casserole avec 240 ml d'eau salée, couvre, cuis à feu doux 12-15 min jusqu'à absorption. Laisse reposer 5 min couvert.",
         "Dressage : verse le boulgour dans 2 grandes assiettes creuses. Verse le tajine de bœuf-pruneaux par-dessus (= la sauce nappe le boulgour). Parsème les amandes torréfiées et les herbes fraîches ciselées.",
         "Ce tajine est LE plat festif marocain par excellence (souvent servi pour les mariages, l'Aïd). La cannelle + pruneaux + amandes + fleur d'oranger est la signature des plats sucrés-salés du Maghreb."
-      ]
+      ],
+      "photo": "assets/recipes/d187.webp"
     },
     {
       "id": "l182",
@@ -58606,7 +59233,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, écrase légèrement quelques lentilles à la fourchette contre le bord de la casserole — ça épaissit la sauce et lui donne la texture « makhani » authentique (= veloutée).",
         "Cisèle la coriandre fraîche, parsème dessus.",
         "Sers chaud dans 2 grands bols, accompagné de pain plat indien (naan complet) ou riz brun. Le dal makhani (originellement aux haricots noirs urad dal + crème) est ici en lentilles vertes du Puy + lait de coco = plus IG bas, sans lactose, vegan, mais garde toute la profondeur des épices indiennes."
-      ]
+      ],
+      "photo": "assets/recipes/l182.webp"
     },
     {
       "id": "l183",
@@ -58753,7 +59381,8 @@ window.__DATA_RECIPES = {
         "Dressage : dans 2 grands bols, dispose les pousses d'épinards au fond. Verse le kachumbar par-dessus. Pose les cubes de tofu tandoori bien dorés sur le dessus.",
         "Verse 2 c.à.s de chutney menthe en filet sur l'ensemble. Décore avec les feuilles de menthe entières et quelques branches de coriandre.",
         "Sers immédiatement. Cette salade composée indienne est vegan, riche en protéines (tofu + yaourt = ~22 g), pleine de fraîcheur (kachumbar) et de couleurs (orange tofu, rouge tomate, vert chutney)."
-      ]
+      ],
+      "photo": "assets/recipes/l183.webp"
     },
     {
       "id": "d188",
@@ -58897,7 +59526,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le jus du demi-citron vert. Cisèle la coriandre fraîche.",
         "Dressage : verse le riz basmati complet dans 2 assiettes creuses. Pose le curry de cabillaud avec sa sauce épinards-coco. Parsème généreusement de coriandre fraîche.",
         "Sers immédiatement. Ce curry est inspiré du « meen molee » du Kerala (sud Inde, côte de Malabar) — base de coco, gingembre, curcuma. Riche en protéines (poisson) + bons gras (coco) + oméga-3, fer (épinards) et antioxydants (curcuma)."
-      ]
+      ],
+      "photo": "assets/recipes/d188.webp"
     },
     {
       "id": "l184",
@@ -59015,7 +59645,8 @@ window.__DATA_RECIPES = {
         "Prépare la vinaigrette : presse les 2 citrons verts (tu obtiens ~4 c.à.s de jus), ajoute l'huile d'olive, le cumin, le piment d'Espelette, sel, poivre. Fouette à la fourchette.",
         "Verse sur la salade, mélange délicatement. Ajoute l'avocat en dernier pour qu'il ne s'écrase pas.",
         "Sers immédiatement, ou laisse reposer 15 min au frais pour que les saveurs se mélangent. Cette salade vient de la cuisine tex-mex : haricots noirs (très haut en fibres, IG très bas) + maïs grillé (saveur caramélisée). Riche en protéines végétales, fibres, vitamine C (poivron, lime) et bons gras (avocat)."
-      ]
+      ],
+      "photo": "assets/recipes/l184.webp"
     },
     {
       "id": "l185",
@@ -59143,7 +59774,8 @@ window.__DATA_RECIPES = {
         "Sur chaque tortilla : étale une fine couche de guacamole, ajoute 2 feuilles de romaine ciselée, le poulet grillé, généreusement de pico de gallo.",
         "Roule en serrant : rabats les bords gauche/droite vers le centre, puis enroule du bas vers le haut. Coupe en deux en biais.",
         "Sers immédiatement avec le reste de coriandre. Cette technique est inspirée des burritos californiens version saine. Riche en protéines (poulet), fibres (tortilla complète), bons gras (avocat), vitamine C (lime, tomate)."
-      ]
+      ],
+      "photo": "assets/recipes/l185.webp"
     },
     {
       "id": "d189",
@@ -59269,7 +59901,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le jus du citron vert et la coriandre ciselée.",
         "Dressage : sers le riz brun en couronne dans deux assiettes creuses. Pose les crevettes a la diabla au centre avec la sauce. Parsème de coriandre fraîche.",
         "Ce plat est typique de Veracruz (côte est du Mexique) — « a la diabla » = à la diable, la sauce épicée. Riche en protéines (crevettes), fibres (riz brun), antioxydants (tomate, piment, ail) et oméga-3."
-      ]
+      ],
+      "photo": "assets/recipes/d189.webp"
     },
     {
       "id": "d190",
@@ -59404,7 +60037,8 @@ window.__DATA_RECIPES = {
         "Verse dans un blender avec la moitié de la coriandre, le jus du citron vert restant et 2 c.à.s d'eau. Mixe 30 sec en sauce épaisse, sel, poivre. Goûte.",
         "Dressage : sers le poulet asado et les cubes de patate douce dans une grande assiette. Nappe le poulet de salsa verde. Parsème du reste de coriandre.",
         "Ce plat combine deux classiques mexicains : le pollo asado (poulet épicé au four) et la salsa verde tomatille (sauce verte aigre-douce typique du nord du Mexique). Riche en protéines (poulet), fibres + bêta-carotène (patate douce), vitamine C (lime, tomatille), antioxydants (paprika, cumin)."
-      ]
+      ],
+      "photo": "assets/recipes/d190.webp"
     },
     {
       "id": "l186",
@@ -59509,7 +60143,8 @@ window.__DATA_RECIPES = {
         "Prépare la vinaigrette : presse les 2 citrons (~5 c.à.s de jus). Mélange avec l'huile d'olive, le cumin, sel, poivre.",
         "Dans un grand saladier, mélange le boulgour tiède, les herbes, les légumes et la vinaigrette. Goûte : il faut beaucoup de citron, de vert et de fraîcheur.",
         "Réfrigère minimum 30 min — les saveurs se mélangent. Le vrai taboulé maghrébin (libanais à l'origine) est très vert : c'est 2/3 d'herbes pour 1/3 de céréale, l'inverse du taboulé français industriel. Riche en fibres (boulgour complet, herbes, légumes), vitamine K (persil), vitamine C (citron, tomate) et antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/l186.webp"
     },
     {
       "id": "l187",
@@ -59652,7 +60287,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le jus du demi-citron et la menthe ciselée.",
         "Dressage : sers le couscous d'orge dans 2 grands bols. Arrange les légumes sauté, les pois chiches rôtis, les radis crus en lamelles. Décore de coriandre fraîche et de zeste de demi-citron.",
         "Arrose d'un filet d'huile d'olive et du reste de jus de citron au moment de servir. Ce bowl s'inspire des couscous légers du Maghreb printaniers : peu de viande, beaucoup de légumes, beaucoup d'herbes. L'orge complet a un IG très bas (~30) et un goût plus noisette que la semoule. Riche en fibres (orge, pois chiches), protéines végétales, vitamine C (asperges, citron) et folates."
-      ]
+      ],
+      "photo": "assets/recipes/l187.webp"
     },
     {
       "id": "d191",
@@ -59802,7 +60438,8 @@ window.__DATA_RECIPES = {
         "Pendant la cuisson, assemble la salade fattouche : romaine + tomate + concombre + radis + oignon + herbes. Arrose du dressing, mélange. Ajoute les croûtons de pita en dernier (pour qu'ils restent croquants).",
         "Dressage : pose 2 brochettes par assiette à côté d'une bonne portion de fattouche. Sers immédiatement.",
         "Ce plat marie le poulet épicé maghrébin et la salade fattouche levantine (Liban/Syrie) — sumac (baie acidulée) + pita grillé en croûtons. Riche en protéines (poulet, yaourt), fibres (pita complet, légumes), vitamine C et antioxydants (épices)."
-      ]
+      ],
+      "photo": "assets/recipes/d191.webp"
     },
     {
       "id": "d192",
@@ -59924,7 +60561,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare la coriandre : effeuille et hache grossièrement.",
         "Dressage : sers les lentilles tièdes dans 2 assiettes creuses. Pose les filets de loup, les fenouils, les tomates cerises et leur jus de cuisson. Parsème de coriandre fraîche et de frondes de fenouil.",
         "Ce plat fait honneur à la cuisine côtière maghrébine (Tanger, Bizerte) : poisson + citron + cumin + lentilles. Riche en protéines (poisson, lentilles), oméga-3, fibres (lentilles, fenouil), folates et fer."
-      ]
+      ],
+      "photo": "assets/recipes/d192.webp"
     },
     {
       "id": "l188",
@@ -60086,7 +60724,8 @@ window.__DATA_RECIPES = {
         "Dressage : dans 2 grandes assiettes, dispose la roquette en lit. Ajoute le sarrasin tiède, la tomate, l'oignon rouge. Pose les morceaux de poulet tikka. Arrose d'un filet d'huile et du jus du citron vert.",
         "Sers la raïta à part dans 2 ramequins. Parsème de coriandre fraîche.",
         "Cette salade reprend les saveurs du tikka indien (Pendjab) mais en version assiette équilibrée. Le sarrasin (kasha) est un IG bas (~40), sans gluten, riche en protéines complètes. La raïta yaourt-concombre est traditionnelle, elle calme les épices. Riche en protéines (poulet, yaourt grec, sarrasin), probiotiques, fibres, vitamine K et fer."
-      ]
+      ],
+      "photo": "assets/recipes/l188.webp"
     },
     {
       "id": "l189",
@@ -60218,7 +60857,8 @@ window.__DATA_RECIPES = {
         "Verse sur la salade, mélange bien. Ajoute le reste des herbes.",
         "Laisse reposer 10 min au frais — les pois chiches s'imprègnent.",
         "Sers tel quel ou avec du papadum (galette indienne). Le chaat est un classique de cuisine de rue indienne (Mumbai, Delhi) — mot qui signifie « lécher » à cause du goût acidulé qui pique les lèvres. Le sel noir (kala namak) ou chaat masala donne le goût soufré typique. Riche en fibres (pois chiches), protéines végétales, vitamine C (lime, mangue), magnésium et folates."
-      ]
+      ],
+      "photo": "assets/recipes/l189.webp"
     },
     {
       "id": "d193",
@@ -60385,7 +61025,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le jus du demi-citron restant et la coriandre ciselée.",
         "Dressage : sers le riz basmati complet en couronne dans 2 assiettes creuses. Pose le saumon tikka masala au centre avec sa sauce. Parsème généreusement de coriandre fraîche.",
         "Ce plat est une version « belle saison » du chicken tikka masala (plat indien-britannique inventé à Glasgow en 1971). Allégé avec yaourt + lait de coco light au lieu de la crème. Riche en oméga-3 (saumon), protéines complètes (poisson, yaourt), antioxydants (curcuma, gingembre) et fibres (riz complet)."
-      ]
+      ],
+      "photo": "assets/recipes/d193.webp"
     },
     {
       "id": "d194",
@@ -60544,7 +61185,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute la coriandre ciselée généreusement.",
         "Dressage : sers le curry dans 2 grandes assiettes creuses. Place un naan complet à côté. Décore du reste de coriandre.",
         "Ce curry s'inspire du baingan chana masala (Inde du Nord) — aubergine + pois chiches dans une sauce épicée crémeuse. Plat complet 100% végétal. Riche en fibres (aubergine, pois chiches), protéines végétales (pois chiches), antioxydants (épices) et bons gras (coco)."
-      ]
+      ],
+      "photo": "assets/recipes/d194.webp"
     },
     {
       "id": "l190",
@@ -60682,7 +61324,8 @@ window.__DATA_RECIPES = {
         "Dressage en sections : un quart de salade, un quart de poivrons/oignon sautés, un quart de poulet, un quart d'haricots noirs. Pose les tomates cerises et l'avocat au centre.",
         "Arrose du jus d'1 citron vert. Parsème de coriandre fraîche. Coupe le second citron en quartiers et sers à part pour ajuster à table.",
         "Cette salade reprend tous les composants d'une fajita classique (Tex-Mex) mais sans la tortilla — résultat plus léger et CG bas grâce aux haricots noirs (IG ~30) et à l'absence de pain. Riche en protéines (poulet, haricots), fibres, vitamine C (poivrons, lime) et bons gras (avocat)."
-      ]
+      ],
+      "photo": "assets/recipes/l190.webp"
     },
     {
       "id": "l191",
@@ -60706,7 +61349,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Filet de poulet",
@@ -60816,7 +61461,8 @@ window.__DATA_RECIPES = {
         "Prépare les garnitures : tranche les radis en lamelles très fines. Coupe l'avocat en cubes. Cisèle le reste de la coriandre.",
         "Dressage : verse le pozole dans 2 grandes assiettes creuses. Garnis chacune avec radis, avocat, coriandre, un quartier de citron vert.",
         "Le pozole est un plat ancestral mexicain (depuis l'époque aztèque), traditionnellement au maïs hominy. Cette version remplace le hominy par du sarrasin (IG ~40, sans gluten, riche en protéines complètes), gardant l'esprit one-pot et le goût acidulé caractéristique de la salsa verde. Riche en protéines (poulet), fibres, vitamine C et bons gras."
-      ]
+      ],
+      "photo": "assets/recipes/l191.webp"
     },
     {
       "id": "d195",
@@ -60954,7 +61600,8 @@ window.__DATA_RECIPES = {
         "Hors du four, arrose du jus du citron vert et de la dernière c.à.s d'huile. Parsème de persil ciselé.",
         "Dressage : sers le riz brun en couronne dans 2 assiettes. Pose les filets de tilapia, nappe de la sauce veracruzano. Décore de persil supplémentaire.",
         "Ce plat est emblématique de la cuisine de Veracruz (côte est du Mexique), influence espagnole évidente (olives, câpres, cannelle — mariage curieux mais qui marche). Riche en protéines maigres (tilapia), oméga-3, antioxydants (tomate, ail), fibres (riz brun)."
-      ]
+      ],
+      "photo": "assets/recipes/d195.webp"
     },
     {
       "id": "d196",
@@ -60982,7 +61629,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -61101,7 +61749,8 @@ window.__DATA_RECIPES = {
         "Enfourne 18-20 min : le fromage doit être doré et bouillonnant. Hors du four, arrose de la dernière c.à.s d'huile et parsème du reste de coriandre.",
         "Dressage : sers 3 enchiladas par personne dans une assiette, nappe d'un peu de sauce supplémentaire du plat.",
         "Les enchiladas suizas sont une variante créée à Mexico City vers 1950 (« suisses » à cause de la sauce crémeuse et du fromage gratiné — référence à la cuisine alpine). Version allégée : yaourt grec + cottage cheese remplacent la crème et le fromage gras. Riche en protéines (poulet, cottage, yaourt), calcium, fibres (tortilla complète), antioxydants (tomatille, ail)."
-      ]
+      ],
+      "photo": "assets/recipes/d196.webp"
     },
     {
       "id": "l192",
@@ -61253,7 +61902,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute la dernière c.à.s d'huile, la coriandre et le persil ciselés. Mélange.",
         "Dressage : sers le boulgour dans 2 grandes assiettes creuses. Pose le tajine de pois chiches au centre, parsème du reste d'herbes.",
         "Le citron confit (citron beldi au Maroc) est un ingrédient signature de la cuisine maghrébine — citrons salés et fermentés en saumure pendant 1 mois. Si tu n'en as pas, le mélange zeste + jus de citron approche le goût. Riche en fibres (pois chiches, boulgour, épinards), protéines végétales, fer non-hémique, vitamine K, folates."
-      ]
+      ],
+      "photo": "assets/recipes/l192.webp"
     },
     {
       "id": "l193",
@@ -61393,7 +62043,8 @@ window.__DATA_RECIPES = {
         "Dans 2 grandes assiettes, dispose la roquette en lit. Arrange en sections : suprêmes d'orange, lamelles de fenouil, olives, pois chiches assaisonnés, oignon rouge.",
         "Verse la chermoula généreusement sur l'ensemble. Ajoute le jus d'orange récupéré pour ajuster l'acidité.",
         "Sers immédiatement. Cette salade marie 3 éléments classiques du Maghreb : l'orange (fraîcheur acidulée), l'olive (gras, salinité), la chermoula (marinade verte aux herbes typique du Maroc, Algérie, Tunisie). La chermoula contient les 4 herbes fondamentales du Maghreb (coriandre, persil, menthe + ail). Pas de cuisson — parfait pour les jours de canicule. Riche en vitamine C (orange), fibres (pois chiches, fenouil), antioxydants (herbes) et bons gras (olive, huile d'olive)."
-      ]
+      ],
+      "photo": "assets/recipes/l193.webp"
     },
     {
       "id": "d197",
@@ -61418,7 +62069,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -61550,7 +62202,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute la coriandre et le persil ciselés généreusement dans la cocotte. Mélange délicatement.",
         "Dressage : sers le boulgour dans 4 assiettes creuses (oui ce tajine en sert 4). Pose 1 cuisse par assiette, nappe abondamment de sauce avec oignons, olives, citron confit. Décore d'herbes fraîches supplémentaires.",
         "Ce plat est le tajine emblématique du Maroc (« djaj makhlul » = poulet désossé, ou « djaj mqalli » = sauce dorée), traditionnellement cuit dans le tajine en argile mais une cocotte à fond épais donne un excellent résultat. Le safran et le citron confit sont les deux signatures. Riche en protéines (poulet), antioxydants (curcuma, gingembre, ail), fibres (boulgour complet, oignon)."
-      ]
+      ],
+      "photo": "assets/recipes/d197.webp"
     },
     {
       "id": "d198",
@@ -61573,7 +62226,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -61722,7 +62376,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, cisèle la coriandre et ajoute généreusement dans la cocotte.",
         "Dressage : verse la semoule en couronne dans 2 grandes assiettes creuses (sert 4 personnes en tout en réalité). Pose au centre l'agneau, les légumes printaniers, nappe abondamment de bouillon parfumé.",
         "Sers à part un peu de harissa diluée dans du bouillon, pour ceux qui veulent corser. Le couscous printanier tunisien (« kasksou bel khodra ») met à l'honneur les légumes nouveaux : fèves fraîches, petits pois, jeunes carottes. Le carvi est typiquement tunisien (vs cumin marocain). Riche en protéines (agneau), fibres (semoule complète, légumes, légumineuses), folates (fèves), bêta-carotène (carotte), vitamine C."
-      ]
+      ],
+      "photo": "assets/recipes/d198.webp"
     },
     {
       "id": "l194",
@@ -61870,7 +62525,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute la dernière c.à.s d'huile de coco, le jus du demi-citron, la moitié de la coriandre ciselée.",
         "Dressage : sers le riz basmati complet dans 2 grands bols. Pose le rajma au centre. Décore d'une cuillère de yaourt nature au milieu, le reste de coriandre, et 2 quartiers du citron restant à arroser à table.",
         "Le rajma est un plat emblématique du Punjab (nord de l'Inde), traditionnellement servi avec du riz (« rajma chawal »). C'est un comfort food végé du quotidien indien. Riche en protéines végétales (haricots rouges, en haut de l'index protéique des légumineuses), fibres, fer non-hémique (potentialisé par la vitamine C du citron et de la tomate), folates."
-      ]
+      ],
+      "photo": "assets/recipes/l194.webp"
     },
     {
       "id": "l195",
@@ -62035,7 +62691,8 @@ window.__DATA_RECIPES = {
         "Roule en serrant : rabats les bords gauche/droite vers le centre, puis enroule du bas vers le haut. Coupe en deux en biais.",
         "Sers immédiatement avec le reste de raïta à part pour tremper.",
         "Le paneer est un fromage frais indien (caillé pressé), neutre en goût, parfait pour absorber les épices. Le paneer tikka (cubes marinés et grillés au tandoor) est un grand classique végé indien. Riche en protéines (paneer/yaourt, l'un des fromages les plus riches en protéines), calcium, fibres (chapati complet), antioxydants (épices)."
-      ]
+      ],
+      "photo": "assets/recipes/l195.webp"
     },
     {
       "id": "d199",
@@ -62200,7 +62857,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le yaourt grec restant (100 g) en remuant doucement pour ne pas qu'il caille. Ajoute le jus du demi-citron.",
         "Dressage : sers le riz dans 2 grandes assiettes creuses. Pose le saag chicken au centre. Décore du reste de coriandre. Donne 2 quartiers de citron à part pour ajuster à table.",
         "Le « saag » est le terme indien pour les légumes-feuilles cuisinés en purée — typiquement épinards, mais aussi moutarde (sarson ka saag), fenugrec (methi). Le saag chicken (poulet) ou paneer (fromage) sont les versions les plus populaires hors d'Inde. Couleur verte profonde caractéristique. Riche en protéines (poulet, yaourt), fer (épinards potentialisés par vitamine C du citron), antioxydants (curcuma, gingembre)."
-      ]
+      ],
+      "photo": "assets/recipes/d199.webp"
     },
     {
       "id": "d200",
@@ -62361,7 +63019,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute la dernière c.à.s d'huile de coco, le jus du citron vert, la coriandre ciselée généreusement.",
         "Dressage : sers le riz basmati en couronne dans 2 grandes assiettes creuses. Pose le cabillaud kerala au centre avec sa sauce coco-courgettes. Parsème du reste de coriandre.",
         "Ce plat est inspiré de la cuisine du Kerala (côte sud-ouest de l'Inde, état de Cochin), célèbre pour ses currys au lait de coco frais et ses produits de la mer. Les feuilles de curry (« kadi patta ») sont la signature aromatique — si tu en trouves au rayon asiatique, ne saute pas l'étape. Riche en oméga-3 (poisson + coco), protéines maigres, fibres (riz complet, courgette), antioxydants (curcuma, gingembre, ail)."
-      ]
+      ],
+      "photo": "assets/recipes/d200.webp"
     },
     {
       "id": "l196",
@@ -62496,7 +63155,8 @@ window.__DATA_RECIPES = {
         "Dans 2 grandes assiettes plates, dispose la romaine en lit. Arrange en sections : thon, haricots noirs, maïs, tomates cerises, oignon rouge, olives, avocat. Pose les œufs en quartiers au centre.",
         "Arrose de vinaigrette, parsème de coriandre ciselée généreusement.",
         "Sers immédiatement. Cette salade fusionne le format niçois (composé en sections, vinaigrette à la dernière minute) et les saveurs mexicaines (haricots noirs, maïs grillé, cumin, piment d'Espelette). Riche en protéines (thon, œufs, haricots noirs = combo complet), fibres, vitamine C, et bons gras (avocat, olive, oméga-3 du thon)."
-      ]
+      ],
+      "photo": "assets/recipes/l196.webp"
     },
     {
       "id": "l197",
@@ -62518,7 +63178,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Filet de poulet",
@@ -62636,7 +63298,8 @@ window.__DATA_RECIPES = {
         "À la fin de cuisson, retire le piment vert. Ajoute hors du feu le jus des 2 citrons verts (le citron est la signature de la sopa de lima — il transforme la soupe). Ajoute la moitié de la coriandre.",
         "Dressage : verse dans 2 grandes assiettes creuses. Garnis avec cubes d'avocat, reste de coriandre, dernier filet d'huile d'olive. Sers avec quartiers de citron vert à part.",
         "La sopa de lima est un plat emblématique de la péninsule du Yucatan, traditionnellement préparée avec la « lima agria » (citron très acidulé local). Cette version utilise du citron vert standard. Riche en protéines (poulet), fibres (riz brun, avocat), vitamine C (citron vert, tomate), antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/l197.webp"
     },
     {
       "id": "d201",
@@ -62773,7 +63436,8 @@ window.__DATA_RECIPES = {
         "Coupe la romaine en lanières, l'avocat en cubes.",
         "Dressage : sers le riz brun en couronne dans 2 assiettes creuses. Pose au centre la tinga de pollo. Garnis de romaine ciselée, avocat, coriandre fraîche. Sers le demi-citron vert restant en quartiers à part.",
         "La tinga est originaire de Puebla (centre du Mexique). « Chipotle » = piment jalapeño fumé. Cette version traditionnelle simplifiée est facile à scaler pour les batchs. Riche en protéines (poulet), fibres (riz brun, avocat, tomate), antioxydants (paprika fumé), vitamine C."
-      ]
+      ],
+      "photo": "assets/recipes/d201.webp"
     },
     {
       "id": "l198",
@@ -62910,7 +63574,8 @@ window.__DATA_RECIPES = {
         "Quand la chakchouka est prête, déplace la sauce dans 2 grands bols. Pose le kasha sur le côté. Pose 2 œufs mollets au centre, ouvre-les en deux pour laisser couler le jaune.",
         "Cisèle persil et coriandre par-dessus. Arrose de la dernière c.à.s d'huile d'olive.",
         "La chakchouka (Tunisie/Maghreb) est traditionnellement servie avec du pain. Cette version revisitée la sert sur lit de kasha (sarrasin, IG ~40) pour une CG bien plus basse. Le jaune coulant fait la sauce. Riche en protéines (œufs, sarrasin = combo complet), vitamine C massive (3 poivrons + tomates), antioxydants (paprika, cumin)."
-      ]
+      ],
+      "photo": "assets/recipes/l198.webp"
     },
     {
       "id": "l199",
@@ -63054,7 +63719,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélange romaine, tomate, concombre, radis, oignon rouge, herbes. Verse le dressing, mélange.",
         "Dressage dans 2 grandes assiettes : étale la salade en lit. Pose au centre les pois chiches grillés et les tranches de halloumi rôti. Parsème les croûtons de pita en dernier (pour qu'ils restent croquants).",
         "Sers immédiatement. Le sumac (baie acidulée moulue, signature levantine + maghrébine) donne le ton citronné caractéristique. Le halloumi (fromage chypriote très répandu au Maghreb) grille sans fondre — c'est sa signature. Riche en protéines (halloumi, pois chiches), fibres, vitamine C, calcium."
-      ]
+      ],
+      "photo": "assets/recipes/l199.webp"
     },
     {
       "id": "d202",
@@ -63188,7 +63854,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, arrose du jus du demi-citron restant et parsème du reste de coriandre.",
         "Dressage : sers le boulgour dans 2 grandes assiettes creuses. Pose les sardines avec leur sauce tomate-chermoula. Décore de coriandre fraîche supplémentaire.",
         "Ce tajine de sardines est typique de la cuisine côtière maghrébine (Tunisie, Maroc — Tanger, Essaouira). Les sardines fraîches sont un poisson abordable, riche en oméga-3 (plus que le saumon) et faible en métaux lourds (petit poisson, courte chaîne alimentaire). Riche en protéines, oméga-3, calcium (arêtes), vitamine D, fibres (boulgour complet), antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/d202.webp"
     },
     {
       "id": "l200",
@@ -63344,7 +64011,8 @@ window.__DATA_RECIPES = {
         "Prépare la raïta : râpe le concombre (peau lavée). Presse dans un torchon. Mélange avec le skyr, la menthe ciselée, sel, poivre.",
         "Dressage dans 2 grands bols : sépare en 3 sections — jeera rice (un tiers), dal jaune au milieu (un tiers), raïta sur le côté (un tiers). Parsème de coriandre fraîche au centre, ajoute 2 quartiers de citron sur le bord.",
         "Le « jeera » signifie cumin en hindi, et « jeera rice » est l'accompagnement riz le plus simple et populaire en Inde du Nord. Le dal de lentilles corail (« masoor dal ») est ultra-rapide (15 min, pas de trempage). Le combo dal + riz est la base nutritionnelle complète de l'Inde rurale. Riche en protéines végétales complètes (combo céréale + légumineuse), fibres, fer non-hémique (potentialisé par vit C du citron)."
-      ]
+      ],
+      "photo": "assets/recipes/l200.webp"
     },
     {
       "id": "l201",
@@ -63480,7 +64148,8 @@ window.__DATA_RECIPES = {
         "Cisèle généreusement la coriandre et la menthe.",
         "Dressage dans 2 grandes assiettes : étale la sauce yaourt en lit. Pose au centre l'aubergine rôtie, les pois chiches grillés croquants. Parsème de grenade (couleur rouge éclatant), tomate cerise, oignon rouge, herbes fraîches. Arrose d'1/2 c.à.s d'huile et du jus de l'autre demi-citron vert.",
         "Le chaat est la street food indienne — mot qui signifie « lécher » à cause des saveurs explosives (aigre, sucré, piquant, salé). La grenade apporte le côté sucré-acidulé et le craquant. L'aubergine rôtie remplace ici la pomme de terre traditionnelle pour une CG plus basse. Riche en protéines (pois chiches, skyr), fibres, antioxydants (anthocyanes de grenade, polyphénols de l'aubergine), vitamine C."
-      ]
+      ],
+      "photo": "assets/recipes/l201.webp"
     },
     {
       "id": "d203",
@@ -63621,7 +64290,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le jus du demi-citron vert et la coriandre ciselée généreusement.",
         "Dressage : sers le riz basmati complet en couronne dans 2 grandes assiettes creuses. Pose les crevettes avec leur sauce coco-tomate au centre. Parsème du reste de coriandre. Ajoute 2 quartiers de citron vert à part.",
         "Ce curry s'inspire de la cuisine côtière du Goa et du Kerala (côte sud-ouest de l'Inde). Tradition portugaise et indienne mélangées : tomate (apport européen) + lait de coco (sud Inde) + épices indiennes. Crevettes cuissons rapide = parfait pour un dîner en 35 min total. Riche en protéines maigres (crevettes), bons gras (coco), antioxydants (curcuma, gingembre), fibres (riz complet)."
-      ]
+      ],
+      "photo": "assets/recipes/d203.webp"
     },
     {
       "id": "s81",
@@ -63698,7 +64368,8 @@ window.__DATA_RECIPES = {
         "Mixe 30-40 secondes en boisson lisse, mousseuse. Goûte et ajuste sel/cumin.",
         "Verse dans 2 grands verres. Décore d'une feuille de menthe et d'une pincée de cumin moulu sur le dessus.",
         "Sers immédiatement très frais. Le lassi salé (« namkeen lassi ») est la boisson rafraîchissante du nord de l'Inde, particulièrement consommée l'été ou avec des plats épicés (le yaourt neutralise le piquant). Le lassi sucré est plus connu en France mais la version salée est traditionnellement plus répandue dans les régions chaudes (Punjab, Rajasthan). Riche en protéines (yaourt), probiotiques, hydratation (concombre 95% d'eau)."
-      ]
+      ],
+      "photo": "assets/recipes/s81.webp"
     },
     {
       "id": "s82",
@@ -63723,7 +64394,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Avocat mûr",
@@ -63820,7 +64493,8 @@ window.__DATA_RECIPES = {
         "Prépare les crudités : épluche les carottes, coupe en bâtonnets de 6 cm × 5 mm. Coupe le concombre en bâtonnets similaires. Coupe le poivron rouge en lanières. Pèle les branches de céleri (technique : passe l'épluche-légumes pour enlever les fils durs), coupe en bâtonnets.",
         "Dressage : verse la trempette guacamole-haricots dans un grand bol au centre. Dispose les bâtonnets de crudités autour en éventail (couleurs : orange carotte, vert concombre/céleri, rouge poivron).",
         "Sers immédiatement. La trempette ne se conserve que quelques heures (l'avocat brunit). Les haricots noirs apportent les protéines + fibres que le guacamole pur n'a pas (super combo nutritionnel). Cette trempette inspirée mexicaine est un apéro IG très bas (CG ~6 / portion). Riche en bons gras (avocat), protéines végétales (haricots noirs), fibres, vitamine C (poivron, citron vert)."
-      ]
+      ],
+      "photo": "assets/recipes/s82.webp"
     },
     {
       "id": "des81",
@@ -63906,7 +64580,8 @@ window.__DATA_RECIPES = {
         "Hache grossièrement les pistaches refroidies.",
         "Dressage : sors les m'halbi du frigo. Parsème généreusement d'amandes effilées dorées et de pistaches hachées. Saupoudre d'une pointe de cannelle.",
         "Le m'halbi (ou « malbi » selon les régions) est un flan au lait emblématique du Maghreb et du Levant — Algérie, Maroc, Tunisie, Liban. Version traditionnelle = beaucoup de sucre. Cette adaptation utilise seulement 2 c.à.s de sirop d'érable pour 4 portions (~150 cal de sucres ajoutés au total), parfumé délicatement à la fleur d'oranger. Riche en calcium (lait), bons gras (oléagineux), protéines (lait, amandes)."
-      ]
+      ],
+      "photo": "assets/recipes/des81.webp"
     },
     {
       "id": "b88",
@@ -63984,7 +64659,8 @@ window.__DATA_RECIPES = {
         "Quand le porridge est crémeux mais encore coulant (il épaissira encore en refroidissant un peu), retire du feu. Ajoute le sirop d'érable, mélange.",
         "Dressage : verse dans 2 bols. Garnis avec les cubes de mangue et les amandes effilées dorées. Saupoudre d'un peu de cardamome supplémentaire.",
         "Sers tiède. Inspiration indienne : la cardamome verte est une épice douce et florale, traditionnellement utilisée en Inde dans les desserts et boissons (chai, lassi). Combinée à la mangue mûre, c'est un classique d'été. Riche en fibres (avoine, mangue), bons gras (amandes), antioxydants (cardamome), bêta-carotène (mangue)."
-      ]
+      ],
+      "photo": "assets/recipes/b88.webp"
     },
     {
       "id": "b89",
@@ -64070,7 +64746,8 @@ window.__DATA_RECIPES = {
         "Mélange la chia au lait avec le skyr pour obtenir une crème onctueuse.",
         "Dressage dans 2 bols : verse la crème yaourt-chia. Pose les cubes de mangue par-dessus. Parsème de noix de coco râpée. Râpe le zeste du demi-citron vert au-dessus puis presse un filet de jus.",
         "Sers immédiatement. Ce bowl reprend l'esprit lassi indien (yaourt + mangue + cardamome) en format épais. Le chia (originaire d'Amérique mais maintenant intégré aux superfoods world wide) apporte une texture pudding + 6g de fibres par portion. Riche en protéines (skyr), bons gras (chia, coco), oméga-3 ALA, fibres, vitamine C (citron vert), bêta-carotène (mangue)."
-      ]
+      ],
+      "photo": "assets/recipes/b89.webp"
     },
     {
       "id": "b90",
@@ -64189,7 +64866,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute le jus du demi-citron et la coriandre ciselée. Aère à la fourchette.",
         "Dressage dans 2 bols. Décore d'une cuillère de coriandre fraîche.",
         "L'upma est un petit-déjeuner salé classique d'Inde du Sud, traditionnellement préparé avec de la semoule de blé (« rava »). Cette version utilise du sarrasin (kasha) pour un IG bas et zéro gluten. Un breakfast salé change des céréales sucrées habituelles et tient bien jusqu'à midi. Riche en protéines complètes (sarrasin = profil aminés rare en céréale), fibres, fer, vitamine K (coriandre), antioxydants (curcuma)."
-      ]
+      ],
+      "photo": "assets/recipes/b90.webp"
     },
     {
       "id": "b91",
@@ -64322,7 +65000,8 @@ window.__DATA_RECIPES = {
         "Coupe l'avocat en lamelles.",
         "Dressage : dispose une tranche de pain complet grillé dans chaque assiette creuse. Pose 2 œufs avec la sauce tomate-haricots. Décore de lamelles d'avocat, coriandre ciselée, filet de jus de citron vert, dernière 1/2 c.à.s d'huile d'olive.",
         "Les huevos rancheros (= œufs à la fermière) sont LE petit-déjeuner mexicain par excellence — un brunch salé qui tient toute la matinée. Cette version revisitée intègre les haricots noirs dans la sauce pour boost protéines + fibres (vs version classique avec tortilla seule). Riche en protéines complètes (œufs + haricots noirs = combo végétarien parfait), fibres (haricots, pain complet), bons gras (avocat), vitamines C/K."
-      ]
+      ],
+      "photo": "assets/recipes/b91.webp"
     },
     {
       "id": "b92",
@@ -64408,7 +65087,8 @@ window.__DATA_RECIPES = {
         "Quand le porridge est prêt, hors du feu, ajoute le sirop d'érable. Mélange.",
         "Dressage dans 2 bols : verse le porridge cacao. Garnis avec les rondelles de banane et les noix hachées. Saupoudre d'un peu de cannelle supplémentaire.",
         "Sers tiède. L'atole est une boisson chaude traditionnelle mexicaine à base de maïs et de cacao (« champurrado » avec cacao). Cette version porridge transpose les saveurs : cacao non sucré + cannelle = essence mésoamericaine. Le sucre est minimisé (1 c.à.c de sirop d'érable pour 2 portions, soit ~5g de sucres par bol). Riche en fibres (avoine, banane), bons gras (noix), magnésium (cacao + noix), antioxydants (cacao = un des aliments les plus riches en flavonoïdes)."
-      ]
+      ],
+      "photo": "assets/recipes/b92.webp"
     },
     {
       "id": "b93",
@@ -64519,7 +65199,8 @@ window.__DATA_RECIPES = {
         "Coupe l'avocat en lamelles.",
         "Dressage : pose une tranche de pain complet grillé dans chaque assiette. Étale la brouillade tomate-œufs. Décore de lamelles d'avocat, vert d'oignons nouveaux, coriandre ciselée, piment d'Espelette, jus de citron vert.",
         "Sers immédiatement (la brouillade ne supporte pas l'attente). Cette brouillade est inspirée des œufs à la mexicaine (« huevos a la mexicana ») qui contient les 3 couleurs du drapeau mexicain : blanc (oignon ou œuf), vert (coriandre/piment vert), rouge (tomate). Riche en protéines (œufs), vitamine C (tomate, citron vert), bons gras (avocat, huile d'olive), fibres (pain complet)."
-      ]
+      ],
+      "photo": "assets/recipes/b93.webp"
     },
     {
       "id": "b94",
@@ -64688,7 +65369,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange le skyr avec l'eau de fleur d'oranger, le miel, la cannelle, et le jus d'orange récupéré (~2 c.à.s).",
         "Dressage dans 2 grands bols : verse le yaourt parfumé. Arrange les suprêmes d'orange en éventail au-dessus. Parsème de pistaches hachées et de menthe ciselée.",
         "Sers immédiatement. Ce breakfast est inspiré de la « salade d'oranges marocaine » classique (oranges + eau de fleur d'oranger + cannelle), version yaourt pour booster les protéines et tenir jusqu'à midi. L'eau de fleur d'oranger est l'arôme signature des desserts maghrébins. Riche en protéines (skyr = 2× plus de protéines qu'un yaourt classique), vitamine C massive (2 oranges), bons gras (pistaches), antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/b95.webp"
     },
     {
       "id": "b96",
@@ -64806,7 +65488,8 @@ window.__DATA_RECIPES = {
         "Répète avec le reste de pâte (3 pancakes au total, ajoute un peu d'huile entre chaque). Garde au chaud sur une assiette couverte d'aluminium.",
         "Dressage : sers chaque assiette avec 1-2 pancakes. Décore d'un filet d'huile d'olive, jus du demi-citron, coriandre fraîche supplémentaire.",
         "Ces pancakes sont inspirés du « socca » niçois et du « cecina » italien (pancake de pois chiche), avec une touche maghrébine : herbes fraîches + cumin/paprika comme une « tortilla espanyola » salée. Le msemen traditionnel est un feuilleté plus complexe, cette version pancake en garde l'esprit salé pour un breakfast nourrissant. Riche en protéines végétales (farine de pois chiche = ~22% protéines, presque autant qu'une viande), fibres, fer, sans gluten."
-      ]
+      ],
+      "photo": "assets/recipes/b96.webp"
     },
     {
       "id": "b97",
@@ -64980,7 +65663,8 @@ window.__DATA_RECIPES = {
         "Répète avec le reste de pâte (tu obtiens 6 pancakes au total, soit 3 par personne). Garde au chaud sur une assiette couverte.",
         "Dressage : empile 3 pancakes par assiette. Verse une cuillère de skyr sur le dessus, parsème du reste de myrtilles fraîches, arrose d'un filet de sirop d'érable. Saupoudre d'un peu de cannelle.",
         "Le sarrasin (kasha) est un pseudo-céréale sans gluten, IG ~45, riche en protéines complètes. Avec les myrtilles (saison été), c'est un breakfast pour sportifs ou amateurs de petits-déjs nourrissants. Riche en protéines (sarrasin, œuf, skyr), fibres, antioxydants (anthocyanes des myrtilles parmi les plus puissants), magnésium."
-      ]
+      ],
+      "photo": "assets/recipes/b98.webp"
     },
     {
       "id": "b99",
@@ -65086,7 +65770,8 @@ window.__DATA_RECIPES = {
         "Garnis : disque les rondelles de concombre, lamelles de radis, demi-tomates cerises sur le labneh.",
         "Dressage : pose 2 tartines par assiette. Parsème généreusement de zaatar (mélange thym/sumac/sésame typique levantin). Arrose d'huile d'olive. Décore de menthe et d'aneth ciselés. Sel, poivre.",
         "Sers immédiatement. Le labneh est un fromage frais levantin (Liban, Syrie, Palestine) obtenu en égouttant du yaourt jusqu'à texture mi-fromage mi-yaourt. Souvent le breakfast quotidien dans ces régions, tartiné sur du pain plat avec olive et zaatar. Cette version utilise du pain complet français. Riche en protéines (labneh = ~2× plus que yaourt classique), calcium, bons gras (huile d'olive, sésame du zaatar), vitamine C (tomate, radis), fibres (pain complet)."
-      ]
+      ],
+      "photo": "assets/recipes/b99.webp"
     },
     {
       "id": "b100",
@@ -65190,7 +65875,8 @@ window.__DATA_RECIPES = {
         "Pose 3-4 myrtilles sur chaque pancake en pressant légèrement. Retourne avec une spatule et cuis 1-2 min de l'autre côté.",
         "Empile 3 pancakes par assiette. Décore du reste de myrtilles fraîches, d'un filet de jus de citron et d'une pointe de cannelle.",
         "Ces pancakes ricotta sont une variante des pancakes américains revisités à l'italienne (la ricotta est un ingrédient italien classique). Plus moelleux que les pancakes traditionnels grâce aux blancs en neige. Riche en protéines (ricotta, œufs), antioxydants (myrtilles parmi les plus puissants), calcium."
-      ]
+      ],
+      "photo": "assets/recipes/b100.webp"
     },
     {
       "id": "b101",
@@ -65214,7 +65900,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -65294,7 +65981,8 @@ window.__DATA_RECIPES = {
         "Déchire la burrata en morceaux et répartis sur les 4 crostini. Le cœur crémeux doit couler légèrement.",
         "Cisèle le basilic frais par-dessus. Arrose du reste d'huile d'olive et du jus des tomates marinées. Sel, poivre.",
         "Sers immédiatement (le pain doit rester croustillant). Ce petit-déj salé italien est inspiré de la tradition toscane des crostini al pomodoro, enrichi de l'onctuosité de la burrata (fromage des Pouilles). Riche en protéines (burrata), bons gras (avocat, huile d'olive), fibres (pain complet), vitamine C (tomate, citron) et antioxydants (basilic)."
-      ]
+      ],
+      "photo": "assets/recipes/b101.webp"
     },
     {
       "id": "b102",
@@ -65401,7 +66089,8 @@ window.__DATA_RECIPES = {
         "Dressage : verse le congee dans 2 grands bols. Coupe les œufs mollets en deux et pose 2 demi-œufs par bol.",
         "Garnis chaque bol avec : oignons nouveaux, coriandre, graines de sésame, un filet d'huile de sésame, 1/2 c.à.s de sauce soja, poivre.",
         "Sers immédiatement. Le congee est un porridge de riz traditionnel en Chine et Asie du Sud-Est, consommé au petit-déj depuis 2000+ ans. Cette version utilise du riz complet (IG bas ~50) au lieu du riz blanc (IG 73). Riche en protéines (œufs), fibres (riz complet), antioxydants (gingembre, ail), vitamines B."
-      ]
+      ],
+      "photo": "assets/recipes/b102.webp"
     },
     {
       "id": "b103",
@@ -65510,7 +66199,8 @@ window.__DATA_RECIPES = {
         "Verse la sauce, mélange délicatement.",
         "Dressage dans 2 grands bols : sers froid. Parsème généreusement de graines de sésame grillées et de coriandre fraîche.",
         "Les nouilles soba sont un emblème de la cuisine japonaise, faites à 100% sarrasin (IG ~40) ou en mix sarrasin-blé. Servies froides l'été (zaru soba), elles sont rafraîchissantes et apportent des protéines complètes (combo sarrasin+edamame). Bowl petit-déj parfait pour les ados qui ne supportent pas le sucré le matin. Riche en protéines végétales, fibres, oméga-3 (sésame), antioxydants (gingembre, soja)."
-      ]
+      ],
+      "photo": "assets/recipes/b103.webp"
     },
     {
       "id": "s83",
@@ -65588,7 +66278,8 @@ window.__DATA_RECIPES = {
         "Sors du four, saupoudre immédiatement de sel et arrose du jus du demi-citron vert.",
         "Sers tiède ou à température ambiante. Pour manger : presse la cosse entre tes dents pour libérer les graines dans ta bouche, jette la cosse (qui n'est pas comestible).",
         "Les edamame sont des fèves de soja jeunes, consommées au Japon comme snack/apéro depuis des siècles. Très riches en protéines végétales (~11g pour 100g, autant qu'un steak léger), fibres et acides aminés essentiels (combo très rare en végétal). Snack ado-friendly : 'on mange avec les doigts, on jette la cosse'."
-      ]
+      ],
+      "photo": "assets/recipes/s83.webp"
     },
     {
       "id": "s84",
@@ -65702,7 +66393,8 @@ window.__DATA_RECIPES = {
         "Pose le rouleau côté pli en dessous. Recommence avec les 5 autres galettes.",
         "Coupe chaque rouleau en deux en biais pour la présentation. Sers immédiatement avec le bol de sauce dip.",
         "Ces rouleaux frais (gỏi cuốn en vietnamien, summer rolls en anglais) sont snack-apéro ou repas léger emblématique de la cuisine vietnamienne. Pas de cuisson = on garde toute la fraîcheur des herbes et légumes. Riche en oméga-3 (saumon), bons gras (avocat), fibres (légumes crus), vitamines C/K, protéines."
-      ]
+      ],
+      "photo": "assets/recipes/s84.webp"
     },
     {
       "id": "des82",
@@ -65784,7 +66476,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais légèrement griller les amandes effilées dans une poêle sèche 1-2 min en remuant. Réserve.",
         "Au moment de servir, sors les crèmes du frigo. Dispose les framboises fraîches par-dessus chaque crème. Parsème d'amandes effilées dorées. Râpe un peu de zeste de citron vert sur le dessus.",
         "Cette crème reprend les codes du dessert japonais matcha (très tendance) en version allégée : pas de gélatine, pas de crème entière, peu de sucre (2 c.à.s sirop d'érable pour 4 portions = ~15 cal de sucre/portion). Le matcha est riche en L-théanine (effet calmant) et en antioxydants EGCG. Combinée avec les framboises (anthocyanes), c'est un dessert super-antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/des82.webp"
     },
     {
       "id": "des83",
@@ -65862,7 +66555,8 @@ window.__DATA_RECIPES = {
         "Dressage dans 2 assiettes creuses : dépose une portion de riz noir crémeux d'un côté, les cubes de mangue de l'autre.",
         "Arrose le tout du dernier tiers de sauce coco réservée. Parsème de graines de sésame grillées. Râpe un peu de zeste de citron vert.",
         "Sers tiède ou à température ambiante. La version originale thaïlandaise (khao niao mamuang) utilise du riz gluant blanc (IG ~95, très haut) sucré au sucre de palme (gros pic glycémique). Cette version remplace par du riz noir (IG ~42) + sirop d'érable minimal (~30g de sucres ajoutés pour 4 portions). Riche en antioxydants (anthocyanes du riz noir = parmi les plus puissants connus), fibres, bons gras (coco, sésame), bêta-carotène (mangue)."
-      ]
+      ],
+      "photo": "assets/recipes/des83.webp"
     },
     {
       "id": "des84",
@@ -66035,7 +66729,8 @@ window.__DATA_RECIPES = {
         "Hache grossièrement les pistaches.",
         "Verse dans 4 grands verres. Décore chaque verre avec : les cubes de mangue réservés, des pistaches hachées, quelques pétales de rose si tu en as.",
         "Sers immédiatement très frais. Le lassi mangue est la boisson-dessert iconique du nord de l'Inde (Punjab, Delhi), consommée pendant la saison des mangues (mai-juillet). Sans sucre ajouté grâce à la mangue mûre qui apporte naturellement le côté sucré. Cette version cardamome-rose ajoute l'élégance perse-moghole. Riche en probiotiques (yaourt), bêta-carotène (mangue), vitamine C, calcium, protéines."
-      ]
+      ],
+      "photo": "assets/recipes/des85.webp"
     },
     {
       "id": "des86",
@@ -66129,7 +66824,8 @@ window.__DATA_RECIPES = {
         "Verse dans 4 ramequins individuels. Laisse refroidir à température ambiante 30 min, puis réfrigère 2 h minimum.",
         "Au moment de servir, sors les crèmes du frigo. Parsème de chocolat noir râpé (utilise une râpe fine ou un économe) et d'une pointe de cannelle.",
         "Cette crème s'inspire de l'atole mexicain — boisson chaude millénaire à base de maïs et chocolat (champurrado = atole au chocolat). Cette version est crème onctueuse façon dessert. Touche piment d'Espelette = héritage aztèque (le chocolat était consommé épicé). Riche en magnésium (cacao + chocolat noir), antioxydants (flavonoïdes du cacao = parmi les plus puissants), calcium (lait). Sucre minimal (~30g pour 4 portions = ~7g par crème)."
-      ]
+      ],
+      "photo": "assets/recipes/des86.webp"
     },
     {
       "id": "des87",
@@ -66212,7 +66908,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, gratte une dernière fois à la fourchette pour bien aérer. Sers immédiatement dans des coupes ou verres glacés.",
         "Décore chaque coupe avec une feuille de menthe fraîche et une pincée supplémentaire de piment d'Espelette en saupoudrage léger (effet visuel et goût).",
         "Ce granité s'inspire des paletas mexicaines (sorbets sur bâton) avec saveur tropicale et touche piquante typique : 'agua de piña con chile' (eau d'ananas piquée). Le piment doux n'est pas pour brûler la bouche mais pour réveiller les papilles et faire ressortir le sucré de l'ananas. CG très basse (~5 par portion). Riche en vitamine C massive (ananas + citron vert), bromélaïne (enzyme digestive ananas), antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/des87.webp"
     },
     {
       "id": "s85",
@@ -66320,7 +67017,8 @@ window.__DATA_RECIPES = {
         "Pendant la cuisson, mélange le miel + l'eau de fleur d'oranger + 1 c.à.s d'eau tiède dans un petit bol.",
         "Sors les briouates, laisse tiédir 2 min, puis arrose-les du sirop miel-fleur d'oranger en filet (l'aspect classique festif maghrebin = pas trop noyé, juste un voile brillant).",
         "Sers tiède ou à température ambiante avec un thé à la menthe. Les briouates sont la pâtisserie salée-sucrée emblématique des fêtes maghrébines (mariages, ramadan, accueil d'invités). Cette version au four (vs friture traditionnelle) divise les graisses par 5. Riche en protéines (feta, œuf), calcium, antioxydants (menthe, persil)."
-      ]
+      ],
+      "photo": "assets/recipes/s85.webp"
     },
     {
       "id": "s86",
@@ -66434,7 +67132,8 @@ window.__DATA_RECIPES = {
         "Place dans un plat, arrose du reste d'huile d'olive (1 c.à.s).",
         "Couvre et réfrigère 2 h minimum (le boulgour s'imprègne, les saveurs se mélangent).",
         "Sers froid à l'apéro ou en entrée festive. Variante mezze : avec des feuilles de salade et du pain pita complet. La chermoula est la sauce-marinade emblématique du Maghreb (Maroc, Tunisie, Algérie). Cette version tomate-farcie froide est typique des grandes tables d'été et des fêtes (ramadan, mariages, ftour). Riche en fibres (boulgour, légumes), antioxydants (chermoula = bombe d'herbes), bons gras (huile olive)."
-      ]
+      ],
+      "photo": "assets/recipes/s86.webp"
     },
     {
       "id": "b104",
@@ -66546,7 +67245,8 @@ window.__DATA_RECIPES = {
         "Dressage festif : dépose 1 tranche par assiette. Couvre d'une grosse cuillère de fromage blanc battu. Empile les fraises en quartiers par-dessus. Parsème de petits dés de fraise et de menthe fraîche.",
         "Arrose d'un trait de sirop d'érable (1/2 c.à.s par assiette).",
         "Sers immédiatement. Le pain perdu (officiellement 'pain perdu' ou 'french toast') est un héritage médiéval : récup du pain rassis avec œufs et lait. Cette version brunch festif été remplace la version brioche-sucre par pain au levain (IG ~55 vs brioche IG 70) + fromage blanc 0% riche en protéines (~10g/100g). Sucre minimal (1,5 c.à.s pour 4 portions = 5g sucre par personne). Idéal brunch dimanche / fête des mères / petit-déj anniversaire."
-      ]
+      ],
+      "photo": "assets/recipes/b104.webp"
     },
     {
       "id": "b105",
@@ -66659,7 +67359,8 @@ window.__DATA_RECIPES = {
         "Enfourne 10-12 min. Le blanc doit être pris mais le jaune encore tremblotant et liquide (test : secoue doucement, le jaune doit bouger).",
         "Sors du four, cisèle basilic et ciboulette par-dessus. Ajoute un peu de zeste de citron râpé sur chaque ramequin.",
         "Sers immédiatement avec une mouillette de pain complet (technique : on plonge la mouillette dans le jaune coulant). Les œufs cocotte sont un classique français revisité brunch festif : printemps avec asperges (saison avril-mai), chèvre frais (laiteries du Poitou). Idéal pâques, brunch fête des mères, anniversaire enfant. Riche en protéines (œufs, chèvre), folates (asperges), antioxydants (basilic, citron)."
-      ]
+      ],
+      "photo": "assets/recipes/b105.webp"
     },
     {
       "id": "s87",
@@ -66758,7 +67459,8 @@ window.__DATA_RECIPES = {
         "Ajoute les glaçons, mixe 15 sec de plus pour les concasser légèrement.",
         "Verse dans 4 verres. Saupoudre chaque verre avec une pincée de cumin grillé + 2 feuilles de menthe entières + une pincée de sel noir si tu en as (couleur sombre = effet festif).",
         "Sers très frais immédiatement. Le lassi salé (paani lassi ou namkeen lassi) est la boisson rafraîchissante de l'été indien, consommée dans le nord et au Pakistan en pleine canicule. Le sel noir kala namak (sulfureux, salé-œuf) signe la version festive. Cette version (vs lassi sucré classique) = beaucoup moins de sucre, beaucoup plus rafraîchissant. Riche en probiotiques (yaourt), électrolytes, hydratation."
-      ]
+      ],
+      "photo": "assets/recipes/s87.webp"
     },
     {
       "id": "s88",
@@ -66889,7 +67591,8 @@ window.__DATA_RECIPES = {
         "Pose sur la plaque, badigeonne le dessus d'huile d'olive au pinceau.",
         "Enfourne 12 min, retourne délicatement, badigeonne l'autre face, et cuis 10-13 min de plus. Les galettes doivent être bien dorées-craquantes des 2 côtés.",
         "Sers chaud avec un chutney à la menthe (yaourt + menthe + citron + sel) ou un chutney tamarin pour le côté festif chaat. Les aloo tikki sont LE street food indien (Delhi, Mumbai), normalement frits. Cette version au four divise les graisses par 4. Festif car servis dans les fêtes (Diwali, Holi) avec chutneys + yaourt + grenade en chaat. Riche en fibres (pommes de terre avec peau si bio, pois cassés), protéines végétales (pois cassés), antioxydants (curcuma, garam masala)."
-      ]
+      ],
+      "photo": "assets/recipes/s88.webp"
     },
     {
       "id": "s89",
@@ -67008,7 +67711,8 @@ window.__DATA_RECIPES = {
         "Incorpore les tomates cerises et 3/4 des graines de grenade. Mélange délicatement (pas pour ne pas écraser la grenade).",
         "Dressage festif : dans un grand bol de service, dépose le guacamole-grenade. Parsème du reste de graines de grenade pour l'effet rouge-rubis. Ajoute quelques feuilles de coriandre entières.",
         "Sers immédiatement avec les chips de tortilla maison. Le guacamole-grenade est la version 'fancy' du guacamole classique, popularisée par les chefs mexicains modernes (Pujol, Quintonil). Les éclats rouge-rubis de la grenade donnent un aspect bijoux qui en fait le snack festif n°1 pour apéro entre amis (Noël, anniversaires, fiesta). Riche en bons gras mono-insaturés (avocat), antioxydants (grenade = polyphénols, lycopène tomate), vitamine C, fibres."
-      ]
+      ],
+      "photo": "assets/recipes/s89.webp"
     },
     {
       "id": "s90",
@@ -67119,7 +67823,8 @@ window.__DATA_RECIPES = {
         "Mélange le maïs tiède + oignon rouge + coriandre + sauce. Goûte, ajuste sel ou citron.",
         "Dressage festif : sers dans des bols ou gobelets façon street food. Saupoudre généreusement de feta émiettée par-dessus. Pincée supplémentaire de piment d'Espelette + zeste de citron vert râpé. Ajoute des quartiers de citron vert pour presser à table.",
         "Sers immédiatement (tiède). Les esquites (de 'elote' = maïs) sont LE street snack n°1 au Mexique, vendus dans les gobelets en plastique dans les rues de Mexico, Oaxaca, Puebla. Version festive parfaite pour BBQ d'été, fiesta, cinco de mayo. Riche en fibres (maïs entier), antioxydants (zéaxanthine, lutéine du maïs), probiotiques (yaourt), vitamine C (citron vert)."
-      ]
+      ],
+      "photo": "assets/recipes/s90.webp"
     },
     {
       "id": "des88",
@@ -67306,7 +68011,8 @@ window.__DATA_RECIPES = {
         "Si tu utilises des dattes : coupe-les en 4 dans la longueur, dispose 2 quartiers par assiette en rosace.",
         "Parsème d'amandes effilées dorées + feuilles de menthe ciselées (ou fleurs de bourrache si tu en as).",
         "Laisse reposer 5-10 min avant de servir (la cannelle s'imprègne, le jus se mélange). La salade d'oranges à la cannelle est LE dessert maghrebin festif classique, servi en fin de couscous royal, de tajine de fête, ou de méchoui. Cette version simple est zéro effort, ultra-rapide, ultra-élégante, et ultra-light (~150 kcal par portion). Eau de fleur d'oranger + cannelle = l'odeur des fêtes au Maroc/Tunisie/Algérie. Riche en vitamine C massive (oranges = 70 mg/100 g), antioxydants (cannelle, eau de fleur d'oranger), bons gras (amandes), aucun sucre ajouté."
-      ]
+      ],
+      "photo": "assets/recipes/des89.webp"
     },
     {
       "id": "des90",
@@ -67406,7 +68112,8 @@ window.__DATA_RECIPES = {
         "Couvre et réfrigère 2 h minimum (la mousse va se raffermir, les saveurs se mélangent).",
         "Au moment de servir, concasse les pistaches grossièrement. Décore chaque verrine avec : 2 fraises entières (queue verte vers le haut), 1 feuille de basilic ou menthe, une pincée de pistaches concassées.",
         "Sers très frais. Cette mousse en verrines est l'inspiration light du fraisier français (Pâtisserie Stohrer, Paris, années 1860). On garde la fraise reine + crème onctueuse + élégance, on enlève la génoise et la crème mousseline (très grasses). Sucre minimal (2 c.à.s pour 4 portions = ~12 g sucre par portion). Festif pour fête des mères, anniversaire enfant, brunch d'été. Riche en vitamine C (fraises = 60 mg/100 g, plus que l'orange !), protéines (fromage blanc, blancs d'œufs), antioxydants (anthocyanes fraises, basilic)."
-      ]
+      ],
+      "photo": "assets/recipes/des90.webp"
     },
     {
       "id": "des91",
@@ -67498,7 +68205,8 @@ window.__DATA_RECIPES = {
         "Dressage festif : verse la soupe dans 4 bols à dessert (ou coupes martini pour effet wow). Pose 2-3 quartiers de pêche réservés en éventail. Parsème de framboises fraîches. Ajoute 3-4 belles feuilles de basilic entières par bol.",
         "Râpe finement un peu de zeste de citron par-dessus pour la finition. Sers très frais immédiatement (la soupe ne doit pas tiédir).",
         "Cette soupe froide aux fruits est une création de la pâtisserie française moderne (style Christophe Michalak / Pierre Hermé). Le thé vert + basilic = combo aromatique signature (chlorophylle, herbacé, frais), parfait pour finir un dîner d'été en légèreté. Festif pour repas estival entre amis, fin de menu BBQ, dîner anniversaire. CG très basse (~5), 130 kcal seulement. Riche en antioxydants (catéchines thé vert, polyphénols pêche, anthocyanes framboise), vitamine C, fibres."
-      ]
+      ],
+      "photo": "assets/recipes/des91.webp"
     },
     {
       "id": "b106",
@@ -67596,7 +68304,8 @@ window.__DATA_RECIPES = {
         "Enfourne la poêle 8-10 min à 180 °C : la frittata doit être dorée et juste prise au centre (test : enfonce la pointe d'un couteau, elle doit ressortir propre).",
         "Sors du four, laisse tiédir 5 min (la frittata se raffermit, plus facile à démouler).",
         "Démoule sur une planche, parsème du reste de basilic ciselé. Coupe en 4 ou 6 parts. Sers tiède ou à température ambiante avec une salade de roquette à côté. La frittata est l'omelette plate italienne, cuite à four chaud — différente de l'omelette française pliée. Excellent batch-cooking petit-déj : tu fais ça le dimanche, tu prends une part chaque matin de la semaine (se conserve 4 j au frais, se mange froide ou tiède). Riche en protéines (œufs, ricotta, parmesan), fibres (courgettes), antioxydants (basilic)."
-      ]
+      ],
+      "photo": "assets/recipes/b106.webp"
     },
     {
       "id": "b107",
@@ -67703,7 +68412,8 @@ window.__DATA_RECIPES = {
         "Pose les tranches de mozzarella par-dessus. Parsème d'origan séché et d'un filet d'huile d'olive.",
         "Garnis de quelques feuilles de roquette fraîche. Termine avec un peu de zeste de citron râpé.",
         "Sers immédiatement (le pain doit rester croustillant). Cette tartine s'inspire de la bruschetta italienne (Toscane, Émilie-Romagne) revisitée en version brunch petit-déj : pain au levain (IG ~55), mozzarella di bufala (Campania, AOP, plus douce), pesto fait avec basilic frais idéalement maison. Riche en bons gras (mozzarella, avocat, huile d'olive), protéines (mozzarella), fibres (pain levain, roquette), antioxydants (lycopène tomate, basilic)."
-      ]
+      ],
+      "photo": "assets/recipes/b107.webp"
     },
     {
       "id": "b108",
@@ -68063,7 +68773,8 @@ window.__DATA_RECIPES = {
         "Saupoudre de graines de sésame grillées. Mélange à nouveau.",
         "Tu peux servir immédiatement (croquant, frais) ou laisser au frais 1-2 h pour que les saveurs se développent (mieux). Se conserve 4-5 jours au frais bien fermé.",
         "Sers en accompagnement (avec un bowl, un congee, un riz nature) ou en snack-apéro avec des tranches de pain pita complet. Ces pickles s'inspirent du oi muchim coréen (concombres assaisonnés), version sans fermentation rapide (vs kimchi traditionnel qui fermente 3-7 jours). Excellent snack-prép : tu en fais un bocal le dimanche, tu en grignotes toute la semaine. Ultra-light (60 kcal/portion), CG ≈ 2. Riche en hydratation (concombre = 96 % eau), antioxydants (ail, gingembre, piment), électrolytes."
-      ]
+      ],
+      "photo": "assets/recipes/s91.webp"
     },
     {
       "id": "s92",
@@ -68091,7 +68802,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "gluten",
-        "sesame"
+        "sesame",
+        "sulphites"
       ],
       "ing": [
         [
@@ -68171,7 +68883,8 @@ window.__DATA_RECIPES = {
         "Enfourne 12-15 min, en retournant à mi-cuisson et en badigeonnant à nouveau de sauce. À la fin, passe sous le grill 1-2 min pour laquer (surveille pour ne pas brûler).",
         "Sors les brochettes, badigeonne du dernier 1/3 de sauce. Parsème généreusement de graines de sésame + oignon nouveau émincé (uniquement le vert) + piment d'Espelette si tu en mets.",
         "Sers immédiatement (snack-apéro festif, ou en plat avec une salade de chou). Les yakitori (焼き鳥 = 'oiseau grillé') sont LE street food japonais des izakaya (bars-restaurants japonais traditionnels). Cette version au four (vs grill charbon traditionnel) plus simple à la maison. Excellent festif pour BBQ d'été, apéro entre amis. Riche en protéines maigres (poulet), fibres (poireau), antioxydants (ail, gingembre)."
-      ]
+      ],
+      "photo": "assets/recipes/s92.webp"
     },
     {
       "id": "des92",
@@ -68249,7 +68962,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, gratte une dernière fois pour bien aérer. Sers immédiatement dans des coupes ou verres glacés.",
         "Décore chaque coupe avec des feuilles de basilic thaï entières (forme caractéristique pointue, parfum anisé) et un zeste de citron vert frais. Saupoudre d'une pincée de matcha sec sur le dessus.",
         "Ce granité tutoie le 'kakigori' japonais (glace pilée parfumée) et le sorbet matcha. Le combo matcha-basilic-citron vert = signature des chefs pâtissiers asiatiques modernes (Sadaharu Aoki, Mori Yoshida). CG très basse (~3), 80 kcal seulement. Riche en antioxydants (catéchines EGCG du matcha = parmi les plus puissants), L-théanine (effet calmant), vitamine C."
-      ]
+      ],
+      "photo": "assets/recipes/des92.webp"
     },
     {
       "id": "des93",
@@ -68343,7 +69057,8 @@ window.__DATA_RECIPES = {
         "Dressage festif dans 4 coupes ou bols transparents : alterne les fruits pour bien voir les couleurs (rose pomelo, blanc litchi, jaune mangue).",
         "Décore avec de belles feuilles de menthe entières + basilic thaï si tu en as. Râpe un peu de zeste de citron vert frais par-dessus pour la finition aromatique.",
         "Sers très frais immédiatement. Cette salade s'inspire de la cuisine thaï-vietnamienne (yam mamuang, salades de fruits sucrées-acides), avec ajout de la cardamome verte (typique cuisine indienne, mais aussi très utilisée en pâtisserie persane et yémenite). Dessert festif idéal pour dîner asiatique d'été, brunch festif, fin de menu. CG basse, 130 kcal. Riche en vitamine C massive (pomelo + litchi + citron vert + mangue), bêta-carotène (mangue), antioxydants (cardamome, menthe)."
-      ]
+      ],
+      "photo": "assets/recipes/des93.webp"
     },
     {
       "id": "des94",
@@ -68443,7 +69158,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais griller les pistaches et amandes effilées séparément dans une poêle sèche 1-2 min. Hache grossièrement les pistaches au couteau.",
         "Au moment de servir, sors les phirni du frigo. Parsème généreusement de pistaches concassées + amandes effilées dorées. Ajoute quelques filaments de safran entiers (facultatif, pour l'esthétique festive).",
         "Sers très frais. Le phirni est un dessert ancestral du nord de l'Inde (Punjab, Delhi), traditionnellement servi dans des bols en argile (matka) qui parfument le dessert. Cette version remplace le riz blanc (IG 73) par du riz complet (IG ~50) et le sucre raffiné par du sirop d'érable. Sucre minimal (2 c.à.s pour 4 portions = 8 g sucre par portion). Festif pour Diwali, Eid, mariage, anniversaire. Riche en calcium (lait), antioxydants (safran, cardamome), bons gras (pistaches, amandes)."
-      ]
+      ],
+      "photo": "assets/recipes/des94.webp"
     },
     {
       "id": "des95",
@@ -68470,7 +69186,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -68545,7 +69262,8 @@ window.__DATA_RECIPES = {
         "Dressage festif dans 4 bols ou coupes : sers chaud ou tiède pour la version traditionnelle (idéal hiver), ou laisse refroidir 30 min puis sers à température ambiante (printemps).",
         "Parsème généreusement de pistaches concassées + amandes effilées dorées par-dessus (l'aspect festif indien = beaucoup de noix visibles).",
         "Le gajar halwa est LE dessert d'hiver du Punjab (nord de l'Inde, Pakistan), traditionnellement servi pendant Diwali et les mariages d'hiver. Version traditionnelle = très grasse (beaucoup de ghee + crème khoa épaissie). Cette version allégée garde l'essentiel des saveurs (carotte caramélisée, cardamome, ghee parfumé) avec moitié moins de matières grasses et minimal sucre ajouté (carotte = sucre naturel). Riche en bêta-carotène massif (carottes = vit A pour la vision), fibres, calcium, antioxydants (cardamome, eau de rose), bons gras (amandes, pistaches)."
-      ]
+      ],
+      "photo": "assets/recipes/des95.webp"
     },
     {
       "id": "des96",
@@ -68631,7 +69349,8 @@ window.__DATA_RECIPES = {
         "Pour démouler : passe rapidement le moule sous l'eau tiède 5-10 sec, tire doucement sur le bâton — la paleta se libère.",
         "Sers immédiatement (sortie du congel, à manger dans les 10-15 min). Si tu veux préparer à l'avance : démoule et stocke dans un sac congel jusqu'à 1 mois.",
         "Les paletas sont les sorbets sur bâton emblématiques du Mexique (paletas, à différencier des popsicles industriels = plein de sucre artificiel). On les trouve à Mexico, Puebla, Oaxaca avec des dizaines de parfums frais. Cette version mangue-yaourt-chia est inspirée des paletas de Tierra Caliente (versions crémeuses au lait/yaourt). Festif pour BBQ, fiesta enfants, été. CG basse (~5), 140 kcal. Riche en bêta-carotène massif (mangue), probiotiques (skyr), oméga-3 (chia), fibres, vitamine C."
-      ]
+      ],
+      "photo": "assets/recipes/des96.webp"
     },
     {
       "id": "des97",
@@ -68726,7 +69445,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, dépose les glaçons + cubes de pastèque réservés dans 4 grands verres.",
         "Verse l'agua fresca par-dessus. Décore avec 1-2 feuilles de basilic entières + 1 feuille de menthe + un zeste de citron vert + une mini pincée de piment d'Espelette saupoudrée sur le dessus (technique : le piment doux mexicain en surface = le petit chic typique 'salt and chile' qui réveille les papilles).",
         "Plante une paille dans chaque verre. Sers immédiatement glacé. Les aguas frescas (eaux fraîches) sont les boissons-desserts iconiques de la rue mexicaine — vendues dans tous les marchés (Mercado de la Merced, Mexico) dans des grandes jarras (carafes en verre). Sandía (pastèque) est avec hibiscus (Jamaica) et chia la plus populaire. Festif été pour BBQ, fiesta, apéritif sans alcool (technique pour transformer en cocktail : 30 ml de tequila ou mezcal = 'sandía margarita'). Ultra hydratant (pastèque = 91 % eau), 70 kcal seulement, CG basse. Riche en lycopène (antioxydant, plus que la tomate cuite !), citrulline (récupération musculaire), vitamine C, antioxydants (basilic, menthe, piment)."
-      ]
+      ],
+      "photo": "assets/recipes/des97.webp"
     },
     {
       "id": "s93",
@@ -68827,7 +69547,8 @@ window.__DATA_RECIPES = {
         "Coupe chaque pita en 6 triangles, fais-les griller à la poêle sèche 2-3 min de chaque côté jusqu'à coloration dorée et croquant.",
         "Verse le houmous betterave dans un bol de service. Arrose du reste d'huile d'olive, saupoudre de persil ciselé et d'une pincée de cumin.",
         "Sers avec les pita grillés. Le houmous betterave (chmandar en arabe) est un classique festif du Maghreb. Riche en protéines végétales, fibres, bêta-carotène (betterave)."
-      ]
+      ],
+      "photo": "assets/recipes/s93.webp"
     },
     {
       "id": "s94",
@@ -68938,7 +69659,8 @@ window.__DATA_RECIPES = {
         "Forme 16 boulettes plates de 4 cm de diamètre. Pose sur la plaque, badigeonne le dessus d'huile d'olive.",
         "Enfourne 12 min, retourne délicatement, badigeonne l'autre face, cuis 10-13 min de plus. Les falafels doivent être bien dorés croustillants.",
         "Sers avec une sauce yaourt-tahini-citron, des crudités, du pain pita. Recette d'origine égypto-levantine adoptée dans tout le Maghreb. Riche en protéines végétales, fibres, antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/s94.webp"
     },
     {
       "id": "b110",
@@ -69025,7 +69747,8 @@ window.__DATA_RECIPES = {
         "Badigeonne le centre de beurre fondu + 1 pincée de semoule fine sèche. Replie en 4 : rabats les côtés vers le centre pour former un carré.",
         "Cuis chaque msemen dans une poêle chaude (sans matière grasse) 2-3 min par face, en pressant légèrement à la spatule. La pâte doit gonfler et dorer.",
         "Sers chaud avec un filet de miel d'oranger et un thé à la menthe. Le msemen est le petit-déj festif du Maghreb (Maroc surtout). Cette version remplace partiellement la farine blanche par du T80 (IG réduit) tout en conservant la technique du feuilletage."
-      ]
+      ],
+      "photo": "assets/recipes/b110.webp"
     },
     {
       "id": "b111",
@@ -69117,7 +69840,8 @@ window.__DATA_RECIPES = {
         "Goûte, ajuste sel + jus de citron.",
         "Verse dans 4 bols. Arrose chaque bol d'huile d'olive (1 c.à.s) en surface, saupoudre de cumin + paprika + piment d'Espelette.",
         "Sers chaud avec du pain complet. La bissara est LE petit-déj traditionnel des paysans du Rif marocain et du nord algérien. Ultra nourrissant, riche en protéines végétales (fèves), fibres, fer."
-      ]
+      ],
+      "photo": "assets/recipes/b111.webp"
     },
     {
       "id": "des98",
@@ -69205,7 +69929,8 @@ window.__DATA_RECIPES = {
         "Ajoute le miel + huile d'argan progressivement en mélangeant à la cuillère. La pâte doit être malléable et tenir sans être trop grasse.",
         "Forme 16 boules de la taille d'une noix entre les paumes. Pose-les dans un plat de service.",
         "Saupoudre légèrement de sucre glace au moment de servir (déco festive). Se conserve 1 semaine au frais en boîte hermétique. Le sellou (ou sfouf) est le dessert traditionnel marocain de Ramadan, du Mouloud et des baptêmes. Cette version en boules (vs traditionnel en montagne) plus facile à doser/partager."
-      ]
+      ],
+      "photo": "assets/recipes/des98.webp"
     },
     {
       "id": "des99",
@@ -69308,7 +70033,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, mélange miel + fleur d'oranger + 2 c.à.s d'eau tiède dans un bol.",
         "Sors les loukoumades, arrose immédiatement du sirop miel-fleur d'oranger. Parsème de sésame + cannelle.",
         "Sers tiède. Ces beignets sont emblématiques de la cuisine maghrébine/grecque/turque (loukoumades en grec, sfenj en marocain). Version au four divise les graisses par 6 vs friture traditionnelle."
-      ]
+      ],
+      "photo": "assets/recipes/des99.webp"
     },
     {
       "id": "s95",
@@ -69433,7 +70159,8 @@ window.__DATA_RECIPES = {
         "Sur chaque bande, dépose 1 c.à.s de farce à l'extrémité. Replie en triangle (technique du drapeau).",
         "Pose sur plaque, badigeonne d'huile d'olive. Enfourne 15-18 min, en retournant à mi-cuisson, jusqu'à doré croustillant.",
         "Sers avec chutney menthe (yaourt + menthe + citron). Snack festif iconique indien, version four = healthy."
-      ]
+      ],
+      "photo": "assets/recipes/s95.webp"
     },
     {
       "id": "s96",
@@ -69460,7 +70187,7 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -69549,7 +70276,8 @@ window.__DATA_RECIPES = {
         "JUSTE AVANT de servir (sinon le riz soufflé ramollit) : dans un grand bol, mélange le riz soufflé + légumes en dés + 3/4 des cacahuètes + 2/3 de la coriandre.",
         "Verse la sauce tamarin progressivement en mélangeant délicatement. Le riz soufflé doit être enrobé mais rester croustillant.",
         "Dressage dans 4 bols : sers immédiatement (croustillance maximale). Parsème du reste de cacahuètes + coriandre. Quartier de citron vert à côté pour presser. Le bhel puri est LE street food n°1 de Bombay/Mumbai. CG basse, ultra-festif, fait toujours sensation à l'apéro."
-      ]
+      ],
+      "photo": "assets/recipes/s96.webp"
     },
     {
       "id": "b112",
@@ -69649,7 +70377,8 @@ window.__DATA_RECIPES = {
         "Mets de l'eau au fond d'un cuit-vapeur (ou grande casserole avec panier vapeur). Place les moules dans la vapeur, couvre, cuis 12-15 min : les idli doivent être bien gonflées, élastiques, sèches au toucher.",
         "Pendant ce temps, prépare le tadka (tempérage) : chauffe l'huile de coco, ajoute graines de moutarde et feuilles de curry, attends que les graines éclatent (30 sec).",
         "Démoule les idli, arrose du tadka, parsème de coriandre fraîche. Sers avec un chutney coco-coriandre ou chutney menthe. Les idli sont LE petit-déj du sud de l'Inde (Tamil Nadu, Kerala). Version sarrasin = sans gluten, IG réduit (sarrasin IG ~40)."
-      ]
+      ],
+      "photo": "assets/recipes/b112.webp"
     },
     {
       "id": "b113",
@@ -69678,7 +70407,7 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "mustard",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -69768,7 +70497,8 @@ window.__DATA_RECIPES = {
         "Ajoute petits pois (sans décongélation), cuis 2 min.",
         "Ajoute le poha égoutté + cacahuètes dorées + piment vert haché si tu en mets. Mélange délicatement, cuis 2 min jusqu'à ce que tout soit bien chaud et le poha tendre-aéré.",
         "Hors du feu, ajoute le jus du citron vert + coriandre fraîche ciselée. Mélange. Sers chaud immédiatement. Le poha est LE petit-déj rapide de Maharashtra/Indore. CG basse vs vrai riz cuit, super nourrissant, batch-friendly."
-      ]
+      ],
+      "photo": "assets/recipes/b113.webp"
     },
     {
       "id": "s97",
@@ -69878,7 +70608,8 @@ window.__DATA_RECIPES = {
         "Montage : sur chaque tostada, étale 1 c.à.c de haricots noirs écrasés, puis 1 c.à.c d'avocat écrasé.",
         "Garnis avec 2 rondelles de radis, 2 quartiers de tomate cerise, qq morceaux d'oignon rouge, qq feuilles de coriandre, 1 pincée de piment d'Espelette.",
         "Sers immédiatement (la tostada doit rester croustillante). Snack-apéro mexicain festif iconique. Riche en protéines (haricots), fibres, bons gras."
-      ]
+      ],
+      "photo": "assets/recipes/s97.webp"
     },
     {
       "id": "s98",
@@ -69981,7 +70712,8 @@ window.__DATA_RECIPES = {
         "Dans un saladier, mélange : mangue + tomate + oignon rouge + coriandre + ail + jus des citrons verts + piment d'Espelette + sel.",
         "Laisse reposer 10 min au frais : les saveurs se mélangent, le jus se libère.",
         "Dressage : verse la salsa dans un bol de service. Parsème de coriandre entière. Sers avec les chips de tortilla maison. Festif été : BBQ, cinco de mayo, fiesta. CG basse, riche en vitamine C massive, bêta-carotène."
-      ]
+      ],
+      "photo": "assets/recipes/s98.webp"
     },
     {
       "id": "b114",
@@ -70092,7 +70824,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, casse les œufs et cuis-les au plat 3-4 min à feu moyen-doux (blanc pris, jaune coulant).",
         "Dressage : pose 1 tortilla par assiette, garnis d'une grosse cuillère de salsa rouge, pose 1 œuf au plat par-dessus.",
         "Parsème de feta émiettée + cubes d'avocat + coriandre ciselée. Sers immédiatement. Petit-déj festif mexicain classique, parfait brunch dimanche/anniversaire."
-      ]
+      ],
+      "photo": "assets/recipes/b114.webp"
     },
     {
       "id": "b115",
@@ -70211,7 +70944,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, cuis les œufs au plat dans une autre poêle huilée 3-4 min.",
         "Dressage : répartis les chilaquiles dans 4 assiettes. Pose 1 œuf au plat par assiette. Garnis chaque assiette de feta émiettée, 1 c.à.s de skyr, coriandre fraîche.",
         "Sers immédiatement. Petit-déj iconique du Mexique central, idéal lendemain de fête (rumeur : c'était le remède hangover des aztèques !). Riche en protéines, fibres, lycopène."
-      ]
+      ],
+      "photo": "assets/recipes/b115.webp"
     },
     {
       "id": "des100",
@@ -70304,7 +71038,8 @@ window.__DATA_RECIPES = {
         "Forme 16 boules entre les paumes (taille d'une noix). Pose sur la plaque en les espaçant.",
         "Enfourne 15-18 min jusqu'à coloration dorée pâle (ne pas trop colorer, les polvorones sont blonds, pas bruns).",
         "Sors du four, laisse refroidir 10 min (ils sont très fragiles à chaud). Saupoudre généreusement de sucre glace + une touche supplémentaire de cannelle. Sers à température ambiante. Biscuit traditionnel mexicain de Noël (las posadas) et mariages. Se conserve 1 semaine en boîte hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/des100.webp"
     },
     {
       "id": "des101",
@@ -70391,7 +71126,8 @@ window.__DATA_RECIPES = {
         "Enfourne 10-12 min jusqu'à doré gonflé (les sopapillas vont gonfler comme des coussinets — c'est leur signature).",
         "Pendant ce temps, fais tiédir le miel + jus du citron + 1 c.à.s d'eau dans une petite casserole.",
         "Sors les sopapillas, arrose immédiatement du sirop miel. Saupoudre généreusement de cannelle. Sers tiède. Pâtisserie typique du Mexique/Nouveau-Mexique. Version four divise les graisses par 8 vs friture traditionnelle."
-      ]
+      ],
+      "photo": "assets/recipes/des101.webp"
     },
     {
       "id": "des102",
@@ -70485,7 +71221,8 @@ window.__DATA_RECIPES = {
         "Verse le lait sur les vermicelles grillés. Ajoute la cardamome et le safran infusé (les dattes sucreront le lait, pas besoin de sirop). Porte à frémissement, baisse à feu doux, cuis 12-15 min en remuant régulièrement.",
         "Ajoute dattes + amandes + pistaches (réserves-en un peu pour la déco). Cuis 3 min de plus : le mélange épaissit légèrement.",
         "Hors du feu, ajoute l'eau de rose si tu en mets. Verse dans les bols, parsème de noix réservées + une nouvelle pincée de cardamome. Sers chaud ou tiède. Dessert iconique d'Eid al-Fitr (fin du ramadan) en Inde/Pakistan/Bangladesh. Riche en calcium, antioxydants, bons gras."
-      ]
+      ],
+      "photo": "assets/recipes/des102.webp"
     },
     {
       "id": "des103",
@@ -70567,7 +71304,8 @@ window.__DATA_RECIPES = {
         "Concasse les pistaches au couteau.",
         "Verse le mélange dans 8 moules à popsicles. Dépose 1 pincée de pistaches concassées dans chaque moule. Plante un bâton.",
         "Mets au congélateur 6 h minimum (idéalement la nuit). Pour démouler : passe le moule sous l'eau tiède 5-10 sec, tire le bâton. Sers immédiatement. Lassi mangue iconique du Nord-Inde transformé en popsicle d'été. Idéal goûter enfants + apéro festif."
-      ]
+      ],
+      "photo": "assets/recipes/des103.webp"
     },
     {
       "id": "b116",
@@ -70597,7 +71335,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "nuts",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -70682,7 +71421,8 @@ window.__DATA_RECIPES = {
         "Sors du four, laisse refroidir COMPLÈTEMENT sans toucher : c'est en refroidissant que le granola devient croustillant (technique cruciale).",
         "Une fois refroidi, ajoute les raisins secs (ne pas les cuire, sinon ils brûlent). Casse en morceaux. Se conserve 3 semaines en boîte hermétique.",
         "Sers chaque portion : 1 bol de yaourt nature, 4 c.à.s de granola par-dessus, des fruits frais selon saison. Petit-déj batch-cooking n°1 : tu fais ça le dimanche, tu prends une part chaque matin de la semaine."
-      ]
+      ],
+      "photo": "assets/recipes/b116.webp"
     },
     {
       "id": "b117",
@@ -70786,7 +71526,8 @@ window.__DATA_RECIPES = {
         "Trempe chaque tranche de pain dans l'appareil œufs-lait 30 sec par face.",
         "Dans la même poêle (rincée), fais fondre l'autre moitié du beurre. Cuis les tranches 2-3 min par face jusqu'à doré.",
         "Dressage : 1 tranche par assiette, couvre de pommes caramélisées, ajoute une grosse cuillère de chantilly fromage blanc. Parsème de noix concassées + une pointe de cannelle. Brunch festif automne-hiver, fête des mères / fête des pères."
-      ]
+      ],
+      "photo": "assets/recipes/b117.webp"
     },
     {
       "id": "s99",
@@ -70811,7 +71552,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -70882,7 +71624,8 @@ window.__DATA_RECIPES = {
         "Ajoute aux tomates : mozzarella + basilic ciselé + 2 c.à.s d'huile d'olive + vinaigre balsamique + origan + poivre. Mélange.",
         "Dressage : dépose la moitié du mélange sur chaque tranche grillée. Arrose du reste d'huile d'olive.",
         "Sers immédiatement (le pain doit rester croustillant). Snack-apéro italien iconique. La bruschetta est née comme repas paysan toscan pour utiliser le pain rassis."
-      ]
+      ],
+      "photo": "assets/recipes/s99.webp"
     },
     {
       "id": "s100",
@@ -70907,7 +71650,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -70972,7 +71716,8 @@ window.__DATA_RECIPES = {
         "Prépare la vinaigrette balsamique : mélange huile d'olive + vinaigre balsamique + pesto + sel + poivre.",
         "Au moment de servir, arrose les brochettes de la vinaigrette (technique : pas trop tôt, sinon le balsamique tache la mozzarella).",
         "Fais légèrement griller les pignons à sec dans une poêle 1-2 min. Parsème sur les brochettes + feuilles de basilic entières. Sers immédiatement. Brochettes classiques apéritif italien, été, BBQ, mariages."
-      ]
+      ],
+      "photo": "assets/recipes/s100.webp"
     },
     {
       "id": "des104",
@@ -71057,7 +71802,8 @@ window.__DATA_RECIPES = {
         "Forme un boudin, coupe en 8 morceaux. Aplatis chaque morceau en disque (8 cm de diamètre) entre tes mains farinées.",
         "Au centre de chaque disque, dépose 1/2 c.à.s de pâte à tartiner. Refais une boule en pinçant les bords vers le centre. Roule entre les paumes pour lisser. Pose côté fermé en dessous.",
         "Réfrigère 1 h minimum (la pâte se raffermit). Sers à température ambiante (sortis 5 min avant). Mochi = friandise japonaise traditionnelle (Daifuku au fourrage). Cette version utilise un fourrage cacao moins sucré. Festif Saint-Valentin / anniversaire / fête asiatique."
-      ]
+      ],
+      "photo": "assets/recipes/des104.webp"
     },
     {
       "id": "des105",
@@ -71146,7 +71892,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, sors le pudding : si trop épais, ajoute 1-2 c.à.s de lait de coco supplémentaire. Mélange.",
         "Coupe la mangue en petits dés. Coupe les fruits de la passion en deux, récupère la pulpe à la cuillère.",
         "Dressage en 4 verrines : étale le pudding chia. Garnis du dessus avec pulpe de passion + cubes de mangue + noix de coco râpée + feuilles de menthe. Sers très frais. Pudding chia = recette superfood adoptée par les chefs asiatiques modernes (Singapour, Bangkok). Ultra batch-friendly : prépare le dimanche, mange toute la semaine. Riche en oméga-3, fibres."
-      ]
+      ],
+      "photo": "assets/recipes/des105.webp"
     },
     {
       "id": "des106",
@@ -71226,7 +71973,8 @@ window.__DATA_RECIPES = {
         "Garnis chaque coupe avec 1 figue en quartiers + 1/2 c.à.s de miel filé + 1 c.à.c de pistaches concassées + 1 mini pincée de cannelle + 1 zeste de citron râpé fin.",
         "Décore d'une feuille de menthe ciselée. Sers immédiatement à température ambiante.",
         "Dessert grec/levantin emblématique : combinaison ancestrale yaourt-miel-figues-noix. Riche en protéines (skyr), antioxydants, calcium."
-      ]
+      ],
+      "photo": "assets/recipes/des106.webp"
     },
     {
       "id": "des107",
@@ -71316,7 +72064,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir : démoule, coupe en 16 cubes de 3 cm.",
         "Mélange sucre glace + Maïzena dans un bol. Roule chaque cube dans ce mélange pour qu'il ne colle pas.",
         "Dispose dans un plat festif, parsème du reste de pistaches. Le loukoum (rahat lokum en turc) est emblématique de la Méditerranée orientale. Version agar-agar = sans gluten, vegan, beaucoup moins sucrée que l'original (qui contient 50% sucre et amidon)."
-      ]
+      ],
+      "photo": "assets/recipes/des107.webp"
     },
     {
       "id": "des108",
@@ -71342,7 +72091,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -71400,7 +72150,8 @@ window.__DATA_RECIPES = {
         "Dans un grand plat festif, dispose la pastèque en couche puis la feta en gros morceaux par-dessus.",
         "Parsème d'olives + feuilles de menthe entières.",
         "Arrose de vinaigre balsamique + huile d'olive + jus du demi-citron vert + poivre. Sers immédiatement très frais. Dessert/entrée mediterranéen festif d'été (Grèce, Italie, Liban). Le contraste sucré-salé est addictif. Ultra hydratant, light (130 kcal)."
-      ]
+      ],
+      "photo": "assets/recipes/des108.webp"
     },
     {
       "id": "des109",
@@ -71499,7 +72250,8 @@ window.__DATA_RECIPES = {
         "Verse l'appareil sur les cerises. Parsème d'amandes effilées.",
         "Enfourne 35-40 min : le clafoutis est prêt quand il est bien gonflé, doré, et que la pointe d'un couteau ressort propre.",
         "Sors du four. Le clafoutis va retomber légèrement en refroidissant (normal). Sers tiède ou à température ambiante. Dessert paysan du Limousin (XIXe siècle), emblème de la gastronomie française rurale. Idéal goûter d'été, fête de famille."
-      ]
+      ],
+      "photo": "assets/recipes/des109.webp"
     },
     {
       "id": "des110",
@@ -71601,7 +72353,8 @@ window.__DATA_RECIPES = {
         "Monte les blancs en neige ferme avec une pincée de sel. Incorpore-les délicatement à la spatule dans le mélange mascarpone.",
         "Dressage en 4 verrines : 1 c.à.s de coulis au fond + 1,5 biscuit cuillère cassé trempé dans le coulis + 1/4 des dés de fraise + 1 couche de mousse mascarpone. Refais la couche : coulis + biscuit + fraises + mousse.",
         "Couvre, réfrigère 4 h minimum. Au moment de servir, décore avec 1 fraise entière coupée en éventail + feuilles de menthe. Tiramisu allégé : ratio mascarpone/fromage blanc 1:1 (vs 100% mascarpone original), moitié moins de sucre."
-      ]
+      ],
+      "photo": "assets/recipes/des110.webp"
     },
     {
       "id": "b118",
@@ -71698,7 +72451,8 @@ window.__DATA_RECIPES = {
         "Dressage dans 2 grands bols : dépose la moitié du mélange ricotta dans chaque bol.",
         "Répartis les fruits rouges en couronne autour. Parsème d'amandes effilées + menthe ciselée. Arrose d'1 c.à.s de miel d'acacia par bol.",
         "Sers immédiatement. Petit-déj italien moderne (très tendance brunch Milan/Rome). Le 'ricotta bowl' avec fruits rouges et miel = la version saine et locale du yogurt bowl américain. Riche en protéines (ricotta), antioxydants (anthocyanes), bons gras."
-      ]
+      ],
+      "photo": "assets/recipes/b118.webp"
     },
     {
       "id": "b119",
@@ -71790,7 +72544,8 @@ window.__DATA_RECIPES = {
         "Fais légèrement griller les pignons à sec 1 min.",
         "Tartine chaque toast d'une couche généreuse de ricotta. Dispose 1 figue (4 quartiers) par toast.",
         "Arrose chaque toast d'1/2 c.à.s de miel + parsème de pignons grillés + feuilles de thym effeuillées + un peu de poivre noir + filet d'huile d'olive. Sers immédiatement. Brunch italien sucré-salé, fin été-début automne quand les figues sont à leur apogée. Combo classique des dolci romain."
-      ]
+      ],
+      "photo": "assets/recipes/b119.webp"
     },
     {
       "id": "b120",
@@ -71907,7 +72662,8 @@ window.__DATA_RECIPES = {
         "Étale la pâte en boudin, coupe en 8 morceaux. Étale chaque morceau en disque (10 cm). Garnis le centre de 1 c.à.s farce thon + qq épinards. Replie en boule en pinçant les bords. Pose côté lisse au-dessus sur petit carré papier cuisson.",
         "Laisse lever 30 min sur les carrés papier. Mets de l'eau dans un cuit-vapeur, place les bao espacés (ils gonflent), cuis 12-15 min vapeur (bao moelleux et blancs).",
         "Sers chaud. Le bao bun (gua bao taïwanais, baozi chinois) est le sandwich vapeur asiatique iconique. Version brunch atypique petit-déj salé."
-      ]
+      ],
+      "photo": "assets/recipes/b120.webp"
     },
     {
       "id": "b121",
@@ -72027,7 +72783,8 @@ window.__DATA_RECIPES = {
         "Cuis les œufs au plat 3 min (blanc pris, jaune coulant).",
         "Dressage dans 4 grands bols : répartis le riz au fond. Dispose chaque légume en quartiers visibles autour (effet roue de couleur). Pose 1 œuf au plat au centre.",
         "Garnis avec oignons nouveaux émincés + graines de sésame + filet de sauce soja + 1 pincée de piment d'Espelette. Sers immédiatement. Bibimbap = plat national coréen, parfait petit-déj copieux et équilibré."
-      ]
+      ],
+      "photo": "assets/recipes/b121.webp"
     },
     {
       "id": "s101",
@@ -72138,7 +72895,8 @@ window.__DATA_RECIPES = {
         "Cuisson au four : préchauffe à 200 °C. Tapisse une plaque de papier cuisson. Pose les gyozas, badigeonne d'huile de sésame. Enfourne 12-15 min jusqu'à doré croustillant.",
         "Prépare la sauce : mélange 1 c.à.s sauce soja + vinaigre de riz + 1/2 c.à.c huile sésame.",
         "Sers les gyozas chauds, parsemés de coriandre + sésame. Accompagne de la sauce dip. Snack festif n°1 fait-maison pour brunch ou apéro asiatique. Version four divise les graisses par 4 vs poêle traditionnelle."
-      ]
+      ],
+      "photo": "assets/recipes/s101.webp"
     },
     {
       "id": "s102",
@@ -72248,7 +73006,8 @@ window.__DATA_RECIPES = {
         "Quand les aubergines sont prêtes, laisse-les tiédir 10 min. Pèle la peau noire à la main, écrase la chair grossièrement à la fourchette.",
         "Mélange la chair d'aubergine avec la compote de tomate + coriandre + persil ciselés + jus du demi-citron + 2 c.à.s huile d'olive. Mélange. Goûte, ajuste sel/citron.",
         "Sers tiède ou froid avec du pain pita grillé. Le zaalouk est LE mezze marocain incontournable. Excellent batch-cooking, meilleur le lendemain. Riche en fibres, antioxydants (lycopène, polyphénols), bons gras."
-      ]
+      ],
+      "photo": "assets/recipes/s102.webp"
     },
     {
       "id": "s103",
@@ -72352,7 +73111,8 @@ window.__DATA_RECIPES = {
         "Forme 12 galettes plates de 6 cm de diamètre. Pose sur la plaque, badigeonne le dessus d'huile d'olive.",
         "Enfourne 12 min, retourne, badigeonne l'autre face, cuis 10-13 min de plus. Les maakouda doivent être bien dorés croustillants.",
         "Sers chaud avec quartiers de citron à presser + harissa pour les amateurs. Snack typique des marchés algériens et marocains, version four (vs friture traditionnelle) plus saine. Riche en fibres, protéines végétales (pois chiche)."
-      ]
+      ],
+      "photo": "assets/recipes/s103.webp"
     },
     {
       "id": "s104",
@@ -72440,7 +73200,8 @@ window.__DATA_RECIPES = {
         "Émince très finement l'oignon rouge. Cisèle finement la coriandre.",
         "Dans un saladier, mélange tomate + oignon + coriandre + jus des 2 citrons verts + piment + 1/4 c.à.c sel. Laisse reposer 10 min.",
         "Sers la pico de gallo froide avec les chips de tortilla. Snack apéro mexicain ultra-classique, ultra-light. Riche en lycopène (tomate), vitamine C massive."
-      ]
+      ],
+      "photo": "assets/recipes/s104.webp"
     },
     {
       "id": "s105",
@@ -72546,7 +73307,8 @@ window.__DATA_RECIPES = {
         "Dispose 2 tortillas sur une plaque. Étale la garniture sur chaque tortilla, parsème de cheddar râpé. Couvre des 2 autres tortillas en pressant.",
         "Enfourne 8-10 min : les tortillas doivent être dorées et le fromage fondu.",
         "Coupe chaque quesadilla en 4. Sers immédiatement. Snack mexicain rapide et nourrissant. Riche en fibres, protéines, calcium."
-      ]
+      ],
+      "photo": "assets/recipes/s105.webp"
     },
     {
       "id": "b122",
@@ -72649,7 +73411,8 @@ window.__DATA_RECIPES = {
         "Des centaines de petits trous vont se former en surface en 2-3 min. La crêpe est cuite quand la surface est sèche, pas brillante.",
         "Réserve sous un torchon. Recommence avec le reste de pâte (~12 crêpes).",
         "Mélange miel + beurre fondu + 1 c.à.s d'eau tiède dans un bol. Au moment de servir, arrose les baghrir de ce sirop. Parsème d'amandes effilées légèrement grillées. Sers tiède. Crêpes traditionnelles marocaines, parfaites pour brunch festif famille."
-      ]
+      ],
+      "photo": "assets/recipes/b122.webp"
     },
     {
       "id": "b123",
@@ -72759,7 +73522,8 @@ window.__DATA_RECIPES = {
         "Verse les œufs sur les tomates dans la poêle. Mélange doucement à la spatule pendant les 30 premières secondes (technique : crée des replis dans l'omelette pour avoir des morceaux moelleux). Laisse cuire 3-4 min sans toucher jusqu'à ce que le dessus soit presque pris.",
         "Couvre 1 min hors du feu pour finir la cuisson en douceur.",
         "Parsème du reste d'herbes ciselées. Sers chaud avec du pain pita complet. Cette omelette berbère est emblématique du Maghreb rural. Riche en protéines, antioxydants (herbes), lycopène."
-      ]
+      ],
+      "photo": "assets/recipes/b123.webp"
     },
     {
       "id": "des111",
@@ -72848,7 +73612,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute l'eau de fleur d'oranger. Mélange.",
         "Verse dans 4 ramequins. Laisse refroidir, puis réfrigère 2 h.",
         "Au moment de servir, saupoudre généreusement de cannelle (motif en croix ou totalement recouvert = le geste classique). Parsème d'amandes effilées légèrement grillées + pistaches hachées + pétales de rose si tu en as. Dessert ancestral d'Afrique du Nord, ultra-simple, ultra-festif (mariages, ramadan)."
-      ]
+      ],
+      "photo": "assets/recipes/des111.webp"
     },
     {
       "id": "des112",
@@ -72942,7 +73707,8 @@ window.__DATA_RECIPES = {
         "Mélange dans un bol : safran infusé + eau de fleur d'oranger + jus collecté.",
         "Arrose les agrumes de ce sirop, saupoudre généreusement de cannelle.",
         "Parsème de pistaches hachées + feuilles de menthe entières. Laisse macérer 10 min avant de servir. Dessert maghrebin classique d'hiver/printemps, festif (Aïd, mariages). Ultra-vitaminé, antioxydant, light."
-      ]
+      ],
+      "photo": "assets/recipes/des112.webp"
     },
     {
       "id": "s106",
@@ -73028,7 +73794,8 @@ window.__DATA_RECIPES = {
         "Concasse grossièrement les noix.",
         "Arrose chaque toast d'1/2 c.à.s de miel + parsème de noix + feuilles de thym + un peu de poivre + filet d'huile d'olive.",
         "Garnis avec quelques feuilles de roquette. Sers immédiatement. Snack-apéro français classique chèvre-miel-noix, parfait toute saison."
-      ]
+      ],
+      "photo": "assets/recipes/s106.webp"
     },
     {
       "id": "s107",
@@ -73133,7 +73900,8 @@ window.__DATA_RECIPES = {
         "Ajoute courgette + feta + olives + menthe. Mélange délicatement.",
         "Verse dans le moule. Enfourne 40-45 min jusqu'à doré et la pointe d'un couteau ressort propre.",
         "Démoule, laisse tiédir 10 min. Coupe en 8 tranches. Excellent batch (5 j au frais). Snack apéro français-méditerranéen, brunch d'été."
-      ]
+      ],
+      "photo": "assets/recipes/s107.webp"
     },
     {
       "id": "s108",
@@ -73226,7 +73994,8 @@ window.__DATA_RECIPES = {
         "Fais légèrement griller les pignons à sec 1-2 min.",
         "Au moment de servir, parsème de copeaux de parmesan + pignons + feuilles de basilic et menthe entières + zeste de citron râpé + poivre.",
         "Sers immédiatement frais. Snack-entrée italienne raffinée, parfaite début de repas estival. Ultra-light (180 kcal), CG basse."
-      ]
+      ],
+      "photo": "assets/recipes/s108.webp"
     },
     {
       "id": "s109",
@@ -73252,7 +74021,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -73330,7 +74100,8 @@ window.__DATA_RECIPES = {
         "Fais griller les tranches de pain. Coupe chaque tranche en 4 morceaux (16 mini-toasts).",
         "Étale un peu d'ail confit sur chaque mini-toast, garnis de cubes d'aubergine + 1-2 tomates cerises rôties.",
         "Parsème de basilic ciselé + filet d'huile d'olive. Sers tiède. Bocconcini = petites bouchées italiennes, parfait apéro festif été."
-      ]
+      ],
+      "photo": "assets/recipes/s109.webp"
     },
     {
       "id": "s110",
@@ -73440,7 +74211,8 @@ window.__DATA_RECIPES = {
         "Dans un saladier, mélange : pois chiches + légumes en dés + herbes + jus du citron vert + tamarin + cumin + piment + sel noir.",
         "Goûte, ajuste sel/citron/piment. Laisse reposer 10 min.",
         "Parsème de graines de grenade au moment de servir (l'effet visuel rouge-rubis = signature). Snack street food indien, batch-friendly, ultra-équilibré (protéines végétales + légumes + acidité)."
-      ]
+      ],
+      "photo": "assets/recipes/s110.webp"
     },
     {
       "id": "s111",
@@ -73562,7 +74334,8 @@ window.__DATA_RECIPES = {
         "À la cuillère, forme 16 petits tas sur la plaque (taille d'une noix). Aplatis légèrement. Badigeonne d'huile d'olive.",
         "Enfourne 15-18 min, en retournant à mi-cuisson, jusqu'à doré croustillant.",
         "Sers chaud avec quartiers de citron vert + chutney menthe (yaourt + menthe + citron). Snack street food indien (Mumbai, Delhi), version four = healthy."
-      ]
+      ],
+      "photo": "assets/recipes/s111.webp"
     },
     {
       "id": "b124",
@@ -73667,7 +74440,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, pour les œufs pochés : porte 1 L d'eau + vinaigre à frémissement. Casse chaque œuf dans un petit bol séparé.",
         "Crée un tourbillon dans l'eau avec une cuillère, plonge un œuf au centre. Cuis 3 min. Sors à l'écumoire, égoutte sur papier absorbant. Recommence avec les 3 autres œufs.",
         "Dressage : pose 1 pain perdu garni par assiette, surmonte d'1 œuf poché. Parsème de ciboulette ciselée + poivre. Sers immédiatement. Brunch français iconique, festif dimanche."
-      ]
+      ],
+      "photo": "assets/recipes/b124.webp"
     },
     {
       "id": "b125",
@@ -73773,7 +74547,8 @@ window.__DATA_RECIPES = {
         "Verse dans 2 grands bols. La texture doit être épaisse (cuillerable, pas buvable) — sinon ajoute plus de banane congelée.",
         "Dressage : sur chaque smoothie bowl, dépose en rangs distincts : 2 c.à.s de granola, 1/2 banane en rondelles, 1/2 des myrtilles.",
         "Sers immédiatement à la cuillère. Brunch healthy moderne, parfait été. Riche en potassium, fer (épinards), oméga-3 (chia), fibres."
-      ]
+      ],
+      "photo": "assets/recipes/b125.webp"
     },
     {
       "id": "b126",
@@ -73891,7 +74666,8 @@ window.__DATA_RECIPES = {
         "Réchauffe les tortillas 20 sec par face dans une poêle sèche.",
         "Garniture sur chaque tortilla (au centre, en bande horizontale) : 1/4 des haricots écrasés + 1/4 des œufs brouillés + 1/4 avocat écrasé + 1/4 tomate + 1/4 oignon nouveau + 15 g cheddar + 1/4 coriandre.",
         "Pliage burrito : rabats le bas sur la garniture, replie les côtés vers l'intérieur, roule en serrant. Pose côté pli en dessous. Refais 3 fois. Sers immédiatement (chaud) ou enveloppé dans film alu pour batch (3-4 j frais)."
-      ]
+      ],
+      "photo": "assets/recipes/b126.webp"
     },
     {
       "id": "b127",
@@ -73995,7 +74771,8 @@ window.__DATA_RECIPES = {
         "Chauffe l'huile dans une poêle, casse les œufs et cuis-les au plat 3-4 min (blanc pris, jaune coulant).",
         "Tartine chaque toast d'avocat écrasé. Pose 1 œuf au plat par toast.",
         "Garnis avec tomates cerises + coriandre ciselée + graines de courge + piment d'Espelette + zeste de citron vert + 1 pincée de sel sur l'œuf. Sers immédiatement. Brunch mexicain-fusion moderne, ultra populaire CDMX et boroughs cool."
-      ]
+      ],
+      "photo": "assets/recipes/b127.webp"
     },
     {
       "id": "b128",
@@ -74111,7 +74888,8 @@ window.__DATA_RECIPES = {
         "Verse les œufs assaisonnés. Mélange doucement à la spatule pendant 20 sec puis laisse cuire 3-4 min sans toucher jusqu'à ce que le dessus soit presque pris.",
         "Couvre la poêle 1 min hors du feu pour finir la cuisson en douceur.",
         "Parsème du reste de coriandre. Sers chaud, coupé en parts, avec du pain pita. Petit-déj populaire indien (Bombay, Pune) — rapide, copieux."
-      ]
+      ],
+      "photo": "assets/recipes/b128.webp"
     },
     {
       "id": "b129",
@@ -74141,7 +74919,7 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "mustard",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -74237,7 +75015,8 @@ window.__DATA_RECIPES = {
         "Verse l'eau bouillante (attention, ça mousse). Mélange. Ajoute la semoule grillée en pluie en fouettant pour éviter les grumeaux.",
         "Baisse à feu doux, couvre 2-3 min : la semoule absorbe l'eau et devient moelleuse.",
         "Hors du feu, ajoute les cacahuètes + jus du citron vert + coriandre ciselée. Mélange, sers chaud. Petit-déj du sud de l'Inde (Tamil Nadu, Karnataka), ultra-rapide, super nourrissant."
-      ]
+      ],
+      "photo": "assets/recipes/b129.webp"
     },
     {
       "id": "s112",
@@ -74359,7 +75138,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 220 °C. Sur chaque galette de spring roll, dépose 2 c.à.s de farce en bande au centre-bas. Replie le bas sur la farce, replie les côtés, roule en serrant. Humidifie le bord pour fermer.",
         "Pose sur plaque, badigeonne d'1 c.à.s huile d'olive. Enfourne 15-18 min, en retournant à mi-cuisson, jusqu'à doré croustillant.",
         "Sers chaud avec sauce dip (sauce soja + vinaigre riz + gingembre râpé). Snack festif chinois revisité au four (vs friture). CG basse, batch-friendly."
-      ]
+      ],
+      "photo": "assets/recipes/s112.webp"
     },
     {
       "id": "s113",
@@ -74463,7 +75243,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange sauce soja + huile sésame + gingembre râpé + wasabi (si utilisé).",
         "Dans un saladier, mélange délicatement : saumon + avocat + oignons nouveaux émincés + 2/3 de la coriandre ciselée + sauce. Goûte, ajuste sel/citron.",
         "Dressage en cuillères chinoises (8-12 cuillères) ou petites verrines : dépose 1-2 c.à.s de tartare par cuillère. Parsème de sésame noir et blanc + coriandre entière. Sers immédiatement très frais. Snack-apéro asiatique-fusion festif, signature des restos modernes."
-      ]
+      ],
+      "photo": "assets/recipes/s113.webp"
     },
     {
       "id": "s114",
@@ -74579,7 +75360,8 @@ window.__DATA_RECIPES = {
         "Forme 16 boulettes plates de 4 cm. Pose sur la plaque, badigeonne d'huile d'olive.",
         "Enfourne 12 min, retourne, badigeonne, cuis 10 min de plus.",
         "Sers chaud avec quartiers de citron, sauce yaourt-tahini-citron, salade. Variante maghrébine du falafel avec ajout d'épinards (signature Tunis-Sfax)."
-      ]
+      ],
+      "photo": "assets/recipes/s114.webp"
     },
     {
       "id": "des113",
@@ -74674,7 +75456,8 @@ window.__DATA_RECIPES = {
         "Verse dans 4 verrines. Réfrigère 4 h minimum.",
         "Coulis : équeute les fraises (garde 4 pour la déco). Mixe le reste avec 3-4 feuilles de basilic + 1/2 c.à.c sucre roux + 1 c.à.s eau jusqu'à coulis lisse.",
         "Au moment de servir : verse 2 c.à.s de coulis sur chaque pannacotta. Décore avec 1 fraise coupée en éventail + feuille de basilic + pistaches hachées. Dessert italien classique revisité avec skyr (plus de protéines, moins de calories que tout-crème)."
-      ]
+      ],
+      "photo": "assets/recipes/des113.webp"
     },
     {
       "id": "des114",
@@ -74765,7 +75548,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute vanille + eau de rose. Laisse tiédir 5 min : la pâte se raffermit.",
         "Forme 16 boules entre les paumes (taille d'une noix). Roule chaque boule dans la coco râpée réservée. Plante 1 amande effilée sur le dessus de chaque boule.",
         "Réfrigère 30 min minimum (les ladoo se raffermissent). Se conservent 1 semaine au frais en boîte hermétique. Friandises iconiques indiennes de Diwali, Holi, mariages. Sucre minimal (3 c.à.s sirop pour 16 boules)."
-      ]
+      ],
+      "photo": "assets/recipes/des114.webp"
     },
     {
       "id": "des115",
@@ -74855,7 +75639,8 @@ window.__DATA_RECIPES = {
         "Verse le mélange farine-cacao en fouettant constamment. Continue à feu doux en fouettant 5-7 min jusqu'à boisson lisse, brillante, légèrement épaissie (nappe la cuillère).",
         "Hors du feu, ajoute sirop d'érable + vanille. Mélange.",
         "Sers chaud dans 4 mugs ou tasses. Saupoudre d'un peu de cannelle moulue + une mini pincée de piment d'Espelette en surface. Boisson-dessert ancestrale aztèque (popularisée chez Moctezuma). Festif Noël (Las Posadas), Día de los Muertos."
-      ]
+      ],
+      "photo": "assets/recipes/des115.webp"
     },
     {
       "id": "des116",
@@ -74940,7 +75725,8 @@ window.__DATA_RECIPES = {
         "Incorpore le reste des blancs en 2 fois, délicatement, en soulevant la masse (technique : ne fais pas couler, soulève en formant des 8 pour conserver l'air).",
         "Verse dans 4 ramequins. Couvre, réfrigère 4 h minimum.",
         "Au moment de servir, saupoudre de cacao en poudre. Mousse au chocolat classique française (recette Escoffier 1903) en version légère : sucre minimal (1 c.à.s sirop érable pour 4 portions), pas de crème. Riche en antioxydants (chocolat noir 70%), protéines (œufs)."
-      ]
+      ],
+      "photo": "assets/recipes/des116.webp"
     },
     {
       "id": "des117",
@@ -75028,7 +75814,8 @@ window.__DATA_RECIPES = {
         "Enfourne 30-35 min : les crèmes doivent être prises au bord mais légèrement tremblotantes au centre.",
         "Sors du bain-marie, laisse refroidir, réfrigère 4 h minimum.",
         "Au moment de servir, saupoudre chaque crème d'1 c.à.c de sucre roux. Brûle au chalumeau (ou sous le grill 1-2 min très près surveillant). Sers immédiatement. Crème brûlée allégée : la moitié de la crème remplacée par yaourt grec = -30% calories, +protéines."
-      ]
+      ],
+      "photo": "assets/recipes/des117.webp"
     },
     {
       "id": "des118",
@@ -75123,7 +75910,8 @@ window.__DATA_RECIPES = {
         "Égoutte les pruneaux, répartis-les dans l'appareil (technique : ils coulent un peu mais ce n'est pas grave, l'aspect rustique est la marque du far).",
         "Enfourne 10 min à 200 °C, puis baisse à 180 °C et cuis 35 min de plus jusqu'à doré et la pointe d'un couteau ressort propre.",
         "Sors du four, laisse tiédir 20 min. Sers tiède ou à température ambiante. Le far breton est emblématique de la gastronomie bretonne (XVIIIe siècle). Version T80 (vs farine blanche) + sirop d'érable (vs sucre raffiné) = IG réduit, plus de fibres."
-      ]
+      ],
+      "photo": "assets/recipes/des118.webp"
     },
     {
       "id": "b130",
@@ -75226,7 +76014,8 @@ window.__DATA_RECIPES = {
         "Sors, laisse tiédir 10 min. Coupe en tranches en biais de 1,5 cm d'épaisseur (technique cantucci : double cuisson).",
         "Repose les tranches à plat sur la plaque, enfourne 8-10 min de plus, en retournant à mi-cuisson, jusqu'à doré sec (consistance biscuit).",
         "Sers chaque portion : 100 g de skyr dans un bol + 3-4 cantucci à tremper + 1/2 c.à.s de miel d'acacia filé sur le yaourt. Cantucci traditionnels de Prato (Toscane), trempés dans le vin santo ou (version brunch) dans le yaourt. Excellent batch (3 semaines en boîte hermétique)."
-      ]
+      ],
+      "photo": "assets/recipes/b130.webp"
     },
     {
       "id": "b131",
@@ -75320,7 +76109,8 @@ window.__DATA_RECIPES = {
         "Dressage dans 2 grands bols : dépose une couche de crème mascarpone (la moitié), pose 2 biscuits cuillère imbibés cassés en morceaux, ajoute moitié des fraises.",
         "Couvre d'une autre couche de crème mascarpone + reste de fraises + pistaches concassées + saupoudrage de cacao au tamis.",
         "Sers immédiatement. Brunch italien festif inspiré du tiramisu (Trévise, Vénétie, 1960s) revisité petit-déj de printemps. Riche en protéines (mascarpone, yaourt), antioxydants (fraises = anthocyanes), bons gras (pistaches)."
-      ]
+      ],
+      "photo": "assets/recipes/b131.webp"
     },
     {
       "id": "b132",
@@ -75425,7 +76215,8 @@ window.__DATA_RECIPES = {
         "Fais légèrement griller les amandes effilées à sec.",
         "Dressage dans 2 grands bols : dépose la polenta crémeuse. Garnis avec moitié des fruits rouges, miel filé en spirale, feuilles de thym effeuillées, amandes effilées.",
         "Sers immédiatement (la polenta fige vite — si tu prépares en avance, réchauffe avec un peu de lait). Petit-déj rustique italien du Nord (Vénétie, Piémont), traditionnellement salé mais ici version sucrée brunch. Riche en fibres (maïs entier), calcium, antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/b132.webp"
     },
     {
       "id": "b133",
@@ -75526,7 +76317,8 @@ window.__DATA_RECIPES = {
         "Fais légèrement griller les amandes effilées à sec 1-2 min.",
         "Coupe les bananes en rondelles.",
         "Dressage dans 2 grands bols : verse le porridge matcha. Garnis avec rondelles de banane + amandes effilées + chia + saupoudrage léger de matcha en surface. Sers chaud. Petit-déj japonais-fusion : porridge anglais + matcha. Riche en EGCG (matcha), fibres bêta-glucanes (avoine), oméga-3 (chia), potassium (banane)."
-      ]
+      ],
+      "photo": "assets/recipes/b133.webp"
     },
     {
       "id": "b134",
@@ -75638,7 +76430,8 @@ window.__DATA_RECIPES = {
         "Chauffe une poêle anti-adhésive à feu moyen-vif. Verse 1 c.à.s d'huile d'olive. Cuis chaque galette 3-4 min par face jusqu'à doré croustillant. Parsème de sésame en fin de cuisson.",
         "Prépare la sauce dip : sauce soja + vinaigre de riz + gingembre râpé.",
         "Coupe chaque galette en 6 parts. Sers chaud avec la sauce. Petit-déj/brunch chinois iconique des marchés de Shanghai, Pékin, Taipei. Excellent batch (réchauffer 1 min au four)."
-      ]
+      ],
+      "photo": "assets/recipes/b134.webp"
     },
     {
       "id": "b135",
@@ -75746,7 +76539,8 @@ window.__DATA_RECIPES = {
         "Verse 1 c.à.s d'eau dans la poêle (technique cruciale : la vapeur sous le couvercle cuit le haut sans dorer). Couvre, cuis 4-5 min de plus.",
         "Retourne délicatement les pancakes (ils sont fragiles), couvre, cuis 3-4 min de plus.",
         "Dressage : 3 pancakes empilés par assiette, myrtilles fraîches dessus, filet de sirop d'érable. Sers immédiatement (ils retombent un peu après 5 min, c'est leur nature). Pancakes japonais (souffle pancakes) inventés par les cafés Tokyo des années 2010. Hyper photogéniques, ado-friendly, festifs."
-      ]
+      ],
+      "photo": "assets/recipes/b135.webp"
     },
     {
       "id": "des119",
@@ -75778,7 +76572,7 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -75831,7 +76625,8 @@ window.__DATA_RECIPES = {
         "Coupe doucement le tofu soyeux en gros morceaux à la cuillère (technique : le tofu soyeux est ultra-fragile, ne le manipule pas trop). Répartis dans 4 coupes.",
         "Arrose chaque coupe du sirop gingembre tiède.",
         "Parsème de cacahuètes grossièrement concassées + graines de sésame. Sers à température ambiante. Le dou hua (豆花) est le dessert chinois ancestral des rues de Taipei, Hong Kong et toute la diaspora chinoise. Ultra-light (160 kcal), CG basse (~4), riche en protéines végétales complètes (tofu)."
-      ]
+      ],
+      "photo": "assets/recipes/des119.webp"
     },
     {
       "id": "des120",
@@ -75924,7 +76719,8 @@ window.__DATA_RECIPES = {
         "Sers tiède immédiatement ou laisse refroidir + frigo 1 h pour version froide.",
         "Pendant ce temps, coupe la mangue en petits cubes.",
         "Dressage dans 4 coupes : verse le tapioca au coco. Dépose les cubes de mangue dessus. Décore avec menthe fraîche + zeste de citron vert. Dessert thaïlandais classique (sako mamuang), aussi présent au Vietnam, Singapour. CG basse, sucre minimal."
-      ]
+      ],
+      "photo": "assets/recipes/des120.webp"
     },
     {
       "id": "des121",
@@ -76020,7 +76816,8 @@ window.__DATA_RECIPES = {
         "Remets dans la poêle 1 min par face avec un peu d'huile de coco pour dorer légèrement (technique : extérieur croustillant, intérieur moelleux/fondant).",
         "Refais 3 fois (4 crêpes mochi au total).",
         "Sers chaud, parsemé de sésame noir et blanc grillé. Le mochi crêpe au sésame noir est une street-food très populaire à Hong Kong et Tokyo. Le sésame noir est super-antioxydant, riche en calcium et fer."
-      ]
+      ],
+      "photo": "assets/recipes/des121.webp"
     },
     {
       "id": "b136",
@@ -76115,7 +76912,8 @@ window.__DATA_RECIPES = {
         "Sors les œufs au bout de 3 min 30, place-les dans des coquetiers ou des petits ramequins.",
         "Décapsule délicatement le sommet à la cuillère ou avec un toque-œuf (technique : tape tout autour de la pointe, puis soulève le chapeau).",
         "Sers chaque œuf coque avec 3 mouillettes par convive + un trait de sauce verte par-dessus le jaune. Le petit-déj français-bistrot ultime — protéines, fibres, antioxydants des herbes. Riche en lutéine (jaune d'œuf), choline (mémoire), folates (persil)."
-      ]
+      ],
+      "photo": "assets/recipes/b136.webp"
     },
     {
       "id": "b137",
@@ -76200,7 +76998,8 @@ window.__DATA_RECIPES = {
         "Dispose 4 quartiers de figue par toast.",
         "Arrose chaque toast d'1/2 c.à.s de miel filé en spirale, parsème de feuilles de thym effeuillées, ajoute un trait d'huile d'olive et un peu de poivre du moulin.",
         "Sers immédiatement (pain croustillant). Ce brunch français inspiré du Sud (Toscane via Provence) marche aussi à l'apéro découpé en mini-toasts. Riche en bons gras (huile olive), fibres (pain levain + figue), calcium (fromage frais), polyphénols (thym, miel)."
-      ]
+      ],
+      "photo": "assets/recipes/b137.webp"
     },
     {
       "id": "s115",
@@ -76292,7 +77091,8 @@ window.__DATA_RECIPES = {
         "Roule chaque boule dans le cacao en poudre réservé (effet truffe).",
         "Place sur une assiette, réfrigère 30 min minimum (les energy balls se raffermissent et les saveurs se développent).",
         "Sers en collation (1-2 boules par personne). Se conserve 1 semaine au frais en boîte hermétique. Snack ultra-nutritif sans sucre ajouté — le sucré vient des dattes (sucres naturels avec fibres = absorption lente). Riche en bons gras (noisettes), magnésium (cacao), fibres (avoine), polyphénols antioxydants."
-      ]
+      ],
+      "photo": "assets/recipes/s115.webp"
     },
     {
       "id": "s116",
@@ -76392,7 +77192,8 @@ window.__DATA_RECIPES = {
         "Montage dans 4 petites verrines (verres à shot, ramekins) : 1ʳᵉ couche → avocat écrasé (épaisseur 1,5 cm), 2ᵉ couche → fromage frais aux herbes (épaisseur 1 cm), 3ᵉ couche → dés de saumon fumé.",
         "Décore le sommet de chaque verrine : pluches d'aneth, ciboulette, qq câpres (si tu en mets), trait d'huile d'olive, zeste de citron râpé.",
         "Sers immédiatement bien frais (idéalement préparées 30 min avant et stockées au frigo). Apéro français raffiné, alternative aux tartines classiques. Riche en oméga-3 (saumon), bons gras mono-insaturés (avocat), protéines, vitamines liposolubles. Idéal anniversaire / dîner entre amis."
-      ]
+      ],
+      "photo": "assets/recipes/s116.webp"
     },
     {
       "id": "s117",
@@ -76491,7 +77292,8 @@ window.__DATA_RECIPES = {
         "Dispose les tomates cerises marinées par-dessus en couvrant bien.",
         "Termine avec basilic ciselé en chiffonnade, filet d'huile d'olive, pincée de poivre du moulin, mini-éclats d'origan.",
         "Sers immédiatement (pain doit rester croustillant). Apéro italien iconique alternative à la bruschetta classique. La ricotta = protéines + calcium ; tomate = lycopène ; basilic = polyphénols. Idéal apéro été."
-      ]
+      ],
+      "photo": "assets/recipes/s117.webp"
     },
     {
       "id": "s118",
@@ -76586,7 +77388,8 @@ window.__DATA_RECIPES = {
         "Dressage façon antipasti : disposes les rondelles d'aubergine sur un grand plat. Sur chacune, dépose 1/2 c.à.c de pesto. Parsème de copeaux de parmesan + pignons grillés + basilic ciselé.",
         "Arrose d'un trait d'huile d'olive vierge + jus du demi-citron. Couvre, laisse mariner 1 h au frais pour que les saveurs se mêlent.",
         "Sers à température ambiante (sors du frigo 15 min avant). Snack-apéro typique des trattoria italiennes du Sud, parfait à partager. Riche en fibres (aubergine), bons gras (pignons, huile olive), protéines (parmesan), antioxydants (basilic)."
-      ]
+      ],
+      "photo": "assets/recipes/s118.webp"
     },
     {
       "id": "des122",
@@ -76664,7 +77467,8 @@ window.__DATA_RECIPES = {
         "Place au congélateur. Toutes les 45-60 min, gratte la surface à la fourchette en formant des cristaux. Répète 3-4 fois (total 3-4 h).",
         "Le granité est prêt quand l'ensemble est cristallisé en paillettes mais reste émiettable à la fourchette (pas un bloc dur).",
         "Au moment de servir, gratte une dernière fois pour bien aérer. Sers immédiatement dans des coupes glacées. Décore avec feuilles de menthe entières + zeste de citron vert frais. Dessert méditerranéen ultra-rafraîchissant, parfait fin de repas estival. CG très basse (~3), 60 kcal seulement. Hydratant (concombre 96 % eau), antioxydant (menthe), vit C massive (citron vert)."
-      ]
+      ],
+      "photo": "assets/recipes/des122.webp"
     },
     {
       "id": "des123",
@@ -76751,7 +77555,8 @@ window.__DATA_RECIPES = {
         "Dressage en 4 verrines (verres à dessert ou ramekins) : alterne couches → 1 c.à.s crème ricotta au fond, 1 c.à.s fraises macérées, 1 c.à.s crème ricotta, 1 c.à.s fraises.",
         "Termine avec des amandes effilées dorées + 1 fraise entière coupée en éventail + feuille de basilic entière pour la déco.",
         "Sers immédiatement (le basilic perd ses arômes à l'air, ne pas préparer trop en avance) ou réfrigère 30 min avant. Dessert méditerranéen frais et léger, classique italo-provençal. Le basilic+fraise = combo de chefs étoilés (Pic, Robuchon). Riche en protéines (ricotta + skyr), vitamine C massive (fraises = 60 mg/100 g), bons gras (amandes), peu de sucre ajouté (1 c.à.s pour 4 portions)."
-      ]
+      ],
+      "photo": "assets/recipes/des123.webp"
     },
     {
       "id": "s119",
@@ -76865,7 +77670,8 @@ window.__DATA_RECIPES = {
         "Sors les brochettes, parsème généreusement de graines de sésame.",
         "Coupe le concombre en lanières fines pour l'accompagnement.",
         "Sers chaud avec les lanières de concombre frais + un trait de jus de citron vert. Snack-apéro asiatique vegan riche en protéines complètes (tofu + soja), antioxydants (gingembre, ail), bons gras (sésame). Excellent batch (4 j frais) pour des collations sportif force."
-      ]
+      ],
+      "photo": "assets/recipes/s119.webp"
     },
     {
       "id": "s120",
@@ -76981,7 +77787,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélange : quinoa refroidi + edamame + concombre + radis + coriandre + menthe + vinaigrette.",
         "Mélange délicatement pour enrober. Goûte, ajuste citron vert ou piment selon ton goût.",
         "Dressage dans 4 bols : parsème généreusement de graines de sésame + une nouvelle pincée de piment d'Espelette + qq feuilles de menthe entières. Sers frais. Snack-bowl asiatique-fusion à la mode Bali/Bangkok, ultra protéiné (quinoa = 14 g protéines complètes + edamame 11 g + bons gras sésame). Excellent batch (3 j frais). CG basse, parfait collation sportive."
-      ]
+      ],
+      "photo": "assets/recipes/s120.webp"
     },
     {
       "id": "b138",
@@ -77113,7 +77920,8 @@ window.__DATA_RECIPES = {
         "Chauffe une poêle anti-adhésive à feu moyen-vif sans matière grasse. Cuis chaque paratha 2-3 min par face en pressant délicatement avec une spatule. Quand bien doré, badigeonne d'1/2 c.à.c de ghee fondu par face.",
         "Prépare le raita : mélange le yaourt + le reste de coriandre ciselée + la menthe ciselée + jus du demi-citron vert + 1 pincée de sel + 1 pincée de cumin.",
         "Sers chaud : 1 paratha par personne avec un bol de raita à côté pour tremper. Petit-déj indien du Pendjab traditionnel (lassi + paratha + chutney), super-équilibré. Riche en protéines (pois chiches + yaourt), fibres (épinards + T80), fer (épinards = 3 mg/100 g), antioxydants (épices)."
-      ]
+      ],
+      "photo": "assets/recipes/b138.webp"
     },
     {
       "id": "b139",
@@ -77249,7 +78057,8 @@ window.__DATA_RECIPES = {
         "Cuis 1-2 min côté légumes pour les caraméliser légèrement.",
         "Réserve au chaud. Recommence avec le reste de la pâte (4 uttapams au total).",
         "Sers chaud avec un chutney coco-coriandre ou raita. Petit-déj du sud de l'Inde (Tamil Nadu, Karnataka), fermentation lactique = facile à digérer + probiotiques + IG plus bas que riz nature. Riche en glucides complexes lents, protéines végétales (lentilles), fibres."
-      ]
+      ],
+      "photo": "assets/recipes/b139.webp"
     },
     {
       "id": "s121",
@@ -77356,7 +78165,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, faire chauffer l'huile d'olive dans une petite poêle, ajouter les graines de moutarde : elles éclatent (1 minute). Ajouter les feuilles de curry hors du feu.",
         "Démouler le dhokla tiède, le découper en carrés de 4 cm, verser le tempering d'huile-moutarde-curry dessus.",
         "Parsemer de coriandre fraîche ciselée et servir tiède ou à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/s121.webp"
     },
     {
       "id": "s122",
@@ -77435,7 +78245,8 @@ window.__DATA_RECIPES = {
         "Ajouter le curcuma, le cumin, la coriandre, le piment doux et le sel, mélanger 1 minute à feu doux.",
         "Retirer du feu, transférer dans un saladier et laisser refroidir 5 minutes (ils continuent de croustiller).",
         "Servir en apéro ou snack dans un petit bol — se conserve 1 semaine dans une boîte hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/s122.webp"
     },
     {
       "id": "des124",
@@ -77513,7 +78324,8 @@ window.__DATA_RECIPES = {
         "Concasser les pistaches au couteau (pas trop fines, on veut garder du croquant).",
         "Répartir dans 2 verrines, parsemer de pistaches concassées sur le dessus.",
         "Servir bien frais, idéalement après 30 minutes au frigo pour que les saveurs se marient."
-      ]
+      ],
+      "photo": "assets/recipes/des124.webp"
     },
     {
       "id": "des125",
@@ -77586,7 +78398,8 @@ window.__DATA_RECIPES = {
         "Goûter et ajuster : un peu plus de cardamome si on veut plus parfumé, plus de sirop si trop fade.",
         "Répartir dans 2 ramequins, parsemer d'amandes grillées sur le dessus.",
         "Servir tiède ou frais selon préférence — le halwa se garde 3 jours au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/des125.webp"
     },
     {
       "id": "b140",
@@ -77697,7 +78510,8 @@ window.__DATA_RECIPES = {
         "Tartiner chaque tranche d'une bonne couche de haricots écrasés chauds, parsemer de fromage frais émietté.",
         "Enfourner 5-6 minutes sous le grill : le fromage doit colorer légèrement et le pain être croustillant.",
         "Sortir du four, déposer des lamelles d'avocat sur chaque mollete et couronner d'une généreuse cuillère de pico de gallo."
-      ]
+      ],
+      "photo": "assets/recipes/b140.webp"
     },
     {
       "id": "b141",
@@ -77779,7 +78593,8 @@ window.__DATA_RECIPES = {
         "Verser dans un bol large, déposer une cuillère du chia gonflé au centre.",
         "Disposer en couronne les flocons d'avoine, la noix de coco râpée et les lamelles de mangue réservées.",
         "Servir immédiatement à la cuillère, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/b141.webp"
     },
     {
       "id": "s123",
@@ -77878,7 +78693,8 @@ window.__DATA_RECIPES = {
         "Goûter : ajuster le citron (acidité), le sel, ou le piment selon préférence.",
         "Préparer les crudités : couper la carotte, le concombre et le poivron en bâtonnets de 8 cm de long.",
         "Servir le guacamole dans un bol au centre d'une assiette, entourer des bâtonnets de crudités."
-      ]
+      ],
+      "photo": "assets/recipes/s123.webp"
     },
     {
       "id": "s124",
@@ -77956,7 +78772,8 @@ window.__DATA_RECIPES = {
         "Enfourner 25-30 minutes en remuant à mi-cuisson : ils doivent être dorés et croustillants (secouer un pois chiche dans la main = bruit sec).",
         "Laisser tiédir 5 minutes sur la plaque (ils continuent de croustiller en refroidissant).",
         "Servir en apéro dans un petit bol, ou conserver 3-4 jours dans une boîte hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/s124.webp"
     },
     {
       "id": "des126",
@@ -78038,7 +78855,8 @@ window.__DATA_RECIPES = {
         "Répartir dans 2 verrines, lisser le dessus à la cuillère.",
         "Laisser reposer 30 minutes au frigo pour que la texture se raffermisse.",
         "Au moment de servir, déposer 3-4 framboises fraîches sur chaque verrine."
-      ]
+      ],
+      "photo": "assets/recipes/des126.webp"
     },
     {
       "id": "des127",
@@ -78119,7 +78937,8 @@ window.__DATA_RECIPES = {
         "Mélanger délicatement à la cuillère en bois pour ne pas écraser les fruits.",
         "Ciseler les feuilles de menthe (sans les tiges) et les parsemer sur le dessus.",
         "Servir immédiatement, bien frais — le contraste citron/piment réveille les fruits."
-      ]
+      ],
+      "photo": "assets/recipes/des127.webp"
     },
     {
       "id": "b142",
@@ -78213,7 +79032,8 @@ window.__DATA_RECIPES = {
         "Disposer les rondelles de tomate sur la tartine, parsemer d'olives hachées et de persil.",
         "Saupoudrer d'une pincée de sel et presser quelques gouttes de citron par-dessus.",
         "Servir avec les bâtonnets de concombre à côté, à grignoter en accompagnement."
-      ]
+      ],
+      "photo": "assets/recipes/b142.webp"
     },
     {
       "id": "b143",
@@ -78317,7 +79137,8 @@ window.__DATA_RECIPES = {
         "Toaster le pain au levain 2 minutes au grille-pain.",
         "Étaler le zaalouk encore tiède sur la tartine, déposer l'œuf poché par-dessus.",
         "Finir par un filet d'huile d'olive et un tour de moulin à poivre, servir immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/b143.webp"
     },
     {
       "id": "s125",
@@ -78415,7 +79236,8 @@ window.__DATA_RECIPES = {
         "Hacher grossièrement la chair de tous les légumes au couteau (texture rustique, pas en purée).",
         "Mélanger avec l'ail écrasé, le cumin, le sel, l'huile d'olive et le jus du demi-citron.",
         "Ciseler la coriandre, parsemer dessus avec les olives noires hachées. Servir tiède ou froid."
-      ]
+      ],
+      "photo": "assets/recipes/s125.webp"
     },
     {
       "id": "s126",
@@ -78507,7 +79329,8 @@ window.__DATA_RECIPES = {
         "Mélanger les carottes encore tièdes avec l'ail, le citron confit haché, le cumin, le paprika, l'huile d'olive et le jus du demi-citron frais.",
         "Goûter et ajuster : très peu de sel nécessaire (le citron confit est déjà salé).",
         "Ciseler la coriandre et la parsemer juste avant de servir, tiède ou frais."
-      ]
+      ],
+      "photo": "assets/recipes/s126.webp"
     },
     {
       "id": "s127",
@@ -78599,7 +79422,8 @@ window.__DATA_RECIPES = {
         "Mélanger dans un petit bol l'huile d'olive, le jus du quart de citron, le cumin, le piment doux et le sel.",
         "Verser la sauce sur la salade, parsemer de persil ciselé.",
         "Servir frais, dans les 30 minutes pour préserver le jus naturel des oranges."
-      ]
+      ],
+      "photo": "assets/recipes/s127.webp"
     },
     {
       "id": "s128",
@@ -78705,7 +79529,8 @@ window.__DATA_RECIPES = {
         "Déposer sur une plaque recouverte de papier cuisson, badigeonner d'huile d'olive au pinceau.",
         "Enfourner 20-25 minutes en retournant à mi-cuisson : doré croustillant à l'extérieur, fondant dedans.",
         "Servir tiède avec des quartiers de citron à presser et une sauce yaourt-tahini en option."
-      ]
+      ],
+      "photo": "assets/recipes/s128.webp"
     },
     {
       "id": "des128",
@@ -78802,7 +79627,8 @@ window.__DATA_RECIPES = {
         "Badigeonner le dessus du jaune d'œuf battu, parsemer de pistaches concassées.",
         "Enfourner 20-25 minutes : la pâte doit être bien dorée et croustillante.",
         "Laisser tiédir 10 minutes avant de découper en parts (le cœur figues se solidifie en refroidissant)."
-      ]
+      ],
+      "photo": "assets/recipes/des128.webp"
     },
     {
       "id": "des129",
@@ -78871,7 +79697,8 @@ window.__DATA_RECIPES = {
         "Mixer en pulsant par à-coups (5 sec × 4 fois), en raclant les parois entre chaque : texture sorbet onctueuse.",
         "Servir immédiatement dans des coupes glacées, décorer d'une feuille de menthe.",
         "Si le sorbet est trop dur, laisser revenir 5 minutes au frais avant de mixer."
-      ]
+      ],
+      "photo": "assets/recipes/des129.webp"
     },
     {
       "id": "des130",
@@ -78961,7 +79788,8 @@ window.__DATA_RECIPES = {
         "Déposer les briouates sur une plaque cuisson, badigeonner d'huile d'olive au pinceau sur les 2 faces.",
         "Enfourner 12-15 minutes : doré croustillant, retourner à mi-cuisson.",
         "Servir tiède, parsemer d'un peu de cannelle supplémentaire si souhaité."
-      ]
+      ],
+      "photo": "assets/recipes/des130.webp"
     },
     {
       "id": "des131",
@@ -79046,7 +79874,8 @@ window.__DATA_RECIPES = {
         "Verser dans 2 ramequins individuels, filmer au contact (le film touche la crème pour éviter la peau).",
         "Laisser tiédir puis placer 2h au frigo pour figer.",
         "Au moment de servir, concasser les pistaches et les parsemer sur le dessus."
-      ]
+      ],
+      "photo": "assets/recipes/des131.webp"
     },
     {
       "id": "b144",
@@ -79142,7 +79971,8 @@ window.__DATA_RECIPES = {
         "Concasser grossièrement les noisettes au couteau.",
         "Répartir dans 2 bols, parsemer de noisettes concassées et d'un filet de sirop d'érable optionnel.",
         "Servir frais — peut se garder 2 jours au frigo."
-      ]
+      ],
+      "photo": "assets/recipes/b144.webp"
     },
     {
       "id": "s129",
@@ -79236,7 +80066,8 @@ window.__DATA_RECIPES = {
         "Transférer dans un petit ramequin, lisser le dessus.",
         "Couper les carottes en bâtonnets de 8 cm pour accompagner.",
         "Servir avec les gressins complets et les bâtonnets de crudités, tartiner à volonté."
-      ]
+      ],
+      "photo": "assets/recipes/s129.webp"
     },
     {
       "id": "des132",
@@ -79315,7 +80146,8 @@ window.__DATA_RECIPES = {
         "Égoutter délicatement sur un papier absorbant.",
         "Déposer les blancs pochés sur la crème anglaise dans 2 assiettes, parsemer d'amandes effilées grillées à sec.",
         "Servir immédiatement, à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/des132.webp"
     },
     {
       "id": "b145",
@@ -79398,7 +80230,8 @@ window.__DATA_RECIPES = {
         "Concasser grossièrement les pistaches au couteau, les parsemer au centre.",
         "Saupoudrer d'une pointe de cannelle, ajouter les flocons d'avoine pour le croquant.",
         "Finir par un filet de miel d'acacia en spirale et servir immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/b145.webp"
     },
     {
       "id": "s130",
@@ -79424,7 +80257,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Aubergine",
@@ -79510,7 +80346,8 @@ window.__DATA_RECIPES = {
         "Faire griller les pignons à sec dans une petite poêle 2 minutes (couleur dorée).",
         "Hors du feu, parsemer de pignons et de basilic ciselé.",
         "Servir à température ambiante (la caponata est meilleure le lendemain, les saveurs s'équilibrent)."
-      ]
+      ],
+      "photo": "assets/recipes/s130.webp"
     },
     {
       "id": "s131",
@@ -79613,7 +80450,8 @@ window.__DATA_RECIPES = {
         "Façonner 10-12 boulettes de 3 cm avec les mains humides, les déposer sur une plaque chemisée de papier cuisson.",
         "Badigeonner d'huile d'olive au pinceau, enfourner 18-20 minutes en retournant à mi-cuisson (dorées dehors, fondantes dedans).",
         "Servir tièdes ou à température ambiante, avec un coulis de tomate maison ou nature."
-      ]
+      ],
+      "photo": "assets/recipes/s131.webp"
     },
     {
       "id": "des133",
@@ -79700,7 +80538,8 @@ window.__DATA_RECIPES = {
         "Déposer dans un plat à four (les demi-pêches doivent se tenir debout : caler avec un peu de papier alu en boule sous chacune).",
         "Enfourner 20-25 minutes : la farce dore et les pêches sont fondantes.",
         "Servir tièdes (idéal) ou froides."
-      ]
+      ],
+      "photo": "assets/recipes/des133.webp"
     },
     {
       "id": "des134",
@@ -79793,7 +80632,8 @@ window.__DATA_RECIPES = {
         "Tirer doucement le film par-dessus pour fermer, placer au congélateur 4h minimum.",
         "Au moment de servir, démouler en tirant le film, couper en tranches de 2 cm avec un couteau passé sous l'eau chaude.",
         "Servir immédiatement, décorer du reste de fraises et framboises fraîches."
-      ]
+      ],
+      "photo": "assets/recipes/des134.webp"
     },
     {
       "id": "b146",
@@ -79892,7 +80732,8 @@ window.__DATA_RECIPES = {
         "Enfourner 12-15 minutes : le blanc doit être pris mais le jaune encore coulant.",
         "Sortir du four, parsemer de feuilles de basilic ciselées.",
         "Servir immédiatement, avec une tranche de pain complet ou des bâtonnets de concombre pour saucer."
-      ]
+      ],
+      "photo": "assets/recipes/b146.webp"
     },
     {
       "id": "b147",
@@ -79918,7 +80759,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -79985,7 +80827,8 @@ window.__DATA_RECIPES = {
         "Aérer la semoule à la fourchette : les grains doivent être séparés et moelleux.",
         "Répartir dans 2 bols, déposer une cuillère de skyr sur le côté, disposer les suprêmes d'orange.",
         "Parsemer d'amandes grillées, saupoudrer de cannelle et finir par un filet de miel d'acacia."
-      ]
+      ],
+      "photo": "assets/recipes/b147.webp"
     },
     {
       "id": "des135",
@@ -80075,7 +80918,8 @@ window.__DATA_RECIPES = {
         "Laisser tiédir puis placer 1h au frigo pour que la halwa fige et se découpe nettement.",
         "Au moment de servir, démouler et découper en carrés de 3 cm.",
         "Concasser grossièrement les pistaches au couteau, les parsemer sur chaque part."
-      ]
+      ],
+      "photo": "assets/recipes/des135.webp"
     },
     {
       "id": "des136",
@@ -80151,7 +80995,8 @@ window.__DATA_RECIPES = {
         "Sortir toutes les 30 minutes pendant 2h et gratter à la fourchette pour casser les cristaux (texture sorbet onctueux).",
         "Au moment de servir, gratter une dernière fois à la fourchette pour obtenir une texture granitée.",
         "Servir dans des coupes glacées, décorer d'une fraise fraîche et d'une feuille de menthe optionnelle."
-      ]
+      ],
+      "photo": "assets/recipes/des136.webp"
     },
     {
       "id": "b148",
@@ -80174,7 +81019,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "shellfish",
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -80249,7 +81095,8 @@ window.__DATA_RECIPES = {
         "Goûter et ajuster : un peu plus de soja ou de citron selon préférence.",
         "Répartir dans 2 bols, parsemer du vert des oignons nouveaux et de coriandre fraîche.",
         "Servir bien chaud avec un quartier de citron vert à presser."
-      ]
+      ],
+      "photo": "assets/recipes/b148.webp"
     },
     {
       "id": "b149",
@@ -80338,7 +81185,8 @@ window.__DATA_RECIPES = {
         "Disposer les rondelles de kiwi en couronne sur le smoothie.",
         "Parsemer les flocons d'avoine, les graines de chia et les 4g de sésame noir restant au centre.",
         "Servir immédiatement à la cuillère, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/b149.webp"
     },
     {
       "id": "s132",
@@ -80435,7 +81283,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, égoutter rapidement chaque légume (garder un peu de saumure pour l'humidité).",
         "Dresser sur une assiette de présentation par couleur, parsemer de graines de sésame et de nori émietté à la main.",
         "Conservation : 5 jours au frigo dans un bocal hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/s132.webp"
     },
     {
       "id": "s133",
@@ -80459,9 +81308,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts",
         "soy",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -80543,7 +81392,8 @@ window.__DATA_RECIPES = {
         "Concasser grossièrement les cacahuètes au couteau, ciseler la coriandre.",
         "Garnir chaque feuille de laitue d'une cuillère de poulet-sauce, parsemer de julienne de carotte, cacahuètes concassées et coriandre.",
         "Servir immédiatement, à manger avec les doigts en repliant la feuille comme un taco."
-      ]
+      ],
+      "photo": "assets/recipes/s133.webp"
     },
     {
       "id": "des137",
@@ -80613,7 +81463,8 @@ window.__DATA_RECIPES = {
         "Mixer en pulsant par à-coups (5 sec × 4 fois), racler les parois entre chaque : texture sorbet onctueuse rose pâle.",
         "Verser dans 2 coupes glacées, décorer d'une feuille de menthe et d'un zeste de citron vert.",
         "Servir immédiatement (si le sorbet est trop dur, laisser tempérer 5 minutes au frais avant de mixer)."
-      ]
+      ],
+      "photo": "assets/recipes/des137.webp"
     },
     {
       "id": "des138",
@@ -80698,7 +81549,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, faire griller les amandes effilées 2-3 minutes à sec dans une petite poêle (dorées).",
         "Au moment de servir, démouler en passant le ramequin 5 sec dans un fond d'eau chaude, retourner sur l'assiette.",
         "Décorer de framboises fraîches et parsemer d'amandes effilées grillées sur le dessus."
-      ]
+      ],
+      "photo": "assets/recipes/des138.webp"
     },
     {
       "id": "b150",
@@ -80724,7 +81576,7 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "mustard",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -80810,7 +81662,8 @@ window.__DATA_RECIPES = {
         "Verser le tempering chaud sur le pongal cuit, ajouter le cumin et le poivre noir, mélanger.",
         "Goûter et rectifier le sel.",
         "Servir bien chaud dans 2 bols, accompagné d'un peu de yaourt nature ou de chutney coco (optionnel)."
-      ]
+      ],
+      "photo": "assets/recipes/b150.webp"
     },
     {
       "id": "b151",
@@ -80898,7 +81751,8 @@ window.__DATA_RECIPES = {
         "Enfourner 22-25 minutes : la surface dore et le mélange est pris (lame de couteau plantée sort sèche).",
         "Sortir, laisser tiédir 5 minutes (la texture continue de se raffermir).",
         "Servir tiède avec une cuillère de yaourt nature sur le dessus."
-      ]
+      ],
+      "photo": "assets/recipes/b151.webp"
     },
     {
       "id": "s134",
@@ -80993,7 +81847,8 @@ window.__DATA_RECIPES = {
         "Mélanger délicatement, presser le jus du demi-citron vert par-dessus.",
         "Ciseler la coriandre et la parsemer sur le dessus juste avant de servir.",
         "Servir tiède ou à température ambiante en petits bols apéro."
-      ]
+      ],
+      "photo": "assets/recipes/s134.webp"
     },
     {
       "id": "s135",
@@ -81022,7 +81877,7 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "mustard",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -81090,7 +81945,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, presser le jus du quart de citron vert par-dessus, mélanger.",
         "Transférer dans un saladier, laisser refroidir 5 minutes (croustillant garanti).",
         "Servir dans un petit bol — se conserve 3-4 jours dans une boîte hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/s135.webp"
     },
     {
       "id": "des139",
@@ -81174,7 +82030,8 @@ window.__DATA_RECIPES = {
         "Aplatir légèrement chaque boule du bout du pouce pour faire un creux au centre.",
         "Placer 1 petite pistache concassée au centre de chaque sandesh, parsemer d'amandes effilées autour.",
         "Réfrigérer 1h pour que les sandesh se raffermissent. Servir frais en mignardise."
-      ]
+      ],
+      "photo": "assets/recipes/des139.webp"
     },
     {
       "id": "des140",
@@ -81268,7 +82125,8 @@ window.__DATA_RECIPES = {
         "Compléter avec le reste de lait, finir par une couche de vermicelles flottants.",
         "Parsemer généreusement de pistaches concassées et d'un trait d'eau de rose.",
         "Servir avec une cuillère longue et une paille — à boire et à manger en alternance."
-      ]
+      ],
+      "photo": "assets/recipes/des140.webp"
     },
     {
       "id": "b152",
@@ -81378,7 +82236,8 @@ window.__DATA_RECIPES = {
         "Chauffer une poêle anti-adhésive à feu moyen avec 4 ml d'huile, cuire 4 minutes par face : croûte dorée, intérieur cuit.",
         "Dans la même poêle, sauter les épinards et l'oignon émincé 3 minutes (les épinards tombent).",
         "Dresser : un tlacoyo dans chaque assiette, garni d'épinards-oignon, parsemé de coriandre ciselée. Presser le jus du demi-citron vert au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/b152.webp"
     },
     {
       "id": "b153",
@@ -81477,7 +82336,8 @@ window.__DATA_RECIPES = {
         "Retirer du feu quand les œufs sont encore légèrement baveux (ils finissent de cuire dans la chaleur résiduelle).",
         "Couper l'avocat en lamelles.",
         "Dresser dans une assiette : les migas au centre, la salsa fraîche d'un côté, les lamelles d'avocat de l'autre. Servir immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/b153.webp"
     },
     {
       "id": "s136",
@@ -81579,7 +82439,8 @@ window.__DATA_RECIPES = {
         "Mélanger dans un saladier : poisson, mangue, tomate, oignon, coriandre, piment doux et huile d'olive. Ajouter le jus de citron réservé.",
         "Goûter, ajuster le sel si besoin.",
         "Dresser en verrines ou en coupelles, déposer les lamelles d'avocat dessus. Servir immédiatement, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/s136.webp"
     },
     {
       "id": "s137",
@@ -81673,7 +82534,8 @@ window.__DATA_RECIPES = {
         "Mélanger délicatement à la cuillère en bois.",
         "Hacher la coriandre, la parsemer sur la salade avec les graines de chia.",
         "Servir immédiatement, bien frais. Le contraste sucré orange / piment / acide citron est la signature de cette salade mexicaine de marché."
-      ]
+      ],
+      "photo": "assets/recipes/s137.webp"
     },
     {
       "id": "des141",
@@ -81786,7 +82648,8 @@ window.__DATA_RECIPES = {
         "Couvrir et placer 4h minimum au frigo (mieux : une nuit).",
         "Au moment de servir, équeuter les fraises et les couper en quartiers, les disposer sur le gâteau.",
         "Découper en parts généreuses imbibées — le bonheur mexicain version IG bas."
-      ]
+      ],
+      "photo": "assets/recipes/des141.webp"
     },
     {
       "id": "des142",
@@ -81879,7 +82742,8 @@ window.__DATA_RECIPES = {
         "Placer les ramequins dans le bain-marie au four, cuire 35-40 minutes : le flan doit être pris mais trembler légèrement au centre.",
         "Sortir, laisser tiédir, puis placer 4h au frigo.",
         "Au moment de servir, passer un couteau autour du flan, retourner sur l'assiette : le caramel coule sur le flan."
-      ]
+      ],
+      "photo": "assets/recipes/des142.webp"
     },
     {
       "id": "des143",
@@ -81948,7 +82812,8 @@ window.__DATA_RECIPES = {
         "Mixer en pulsant par à-coups (5 sec × 5 fois), racler les parois entre chaque : texture sorbet onctueuse rose vif.",
         "Verser dans 2 coupes glacées, décorer d'une feuille de menthe et d'une pincée supplémentaire de piment doux pour les amateurs.",
         "Servir immédiatement (si le sorbet est trop dur, laisser tempérer 5 minutes avant de mixer)."
-      ]
+      ],
+      "photo": "assets/recipes/des143.webp"
     },
     {
       "id": "des144",
@@ -82032,7 +82897,8 @@ window.__DATA_RECIPES = {
         "Au moment de servir, former 2 boules de glace à la cuillère à glace, les déposer dans des coupes glacées.",
         "Saupoudrer généreusement du mélange cacao-cannelle-copeaux.",
         "Servir immédiatement, accompagné d'une mini-cuillère pour profiter du croquant."
-      ]
+      ],
+      "photo": "assets/recipes/des144.webp"
     },
     {
       "id": "des145",
@@ -82136,7 +83002,8 @@ window.__DATA_RECIPES = {
         "Enfourner 10-12 minutes : ils doivent être dorés et croustillants comme des bugnes au four.",
         "Sortir, badigeonner légèrement du reste de sirop d'érable encore tiède, saupoudrer du reste de cannelle.",
         "Servir tièdes ou froids — se conservent 3-4 jours en boîte hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/des145.webp"
     },
     {
       "id": "des146",
@@ -82164,7 +83031,8 @@ window.__DATA_RECIPES = {
         "gluten",
         "lactose",
         "nuts",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -82247,7 +83115,8 @@ window.__DATA_RECIPES = {
         "Enfourner 22-25 minutes : la surface dore et le mélange est pris (légèrement tremblotant au centre).",
         "Laisser tiédir 10 minutes avant de servir (la texture se raffermit).",
         "Servir tiède en parts généreuses — la capirotada de Carême revisitée IG bas."
-      ]
+      ],
+      "photo": "assets/recipes/des146.webp"
     },
     {
       "id": "b154",
@@ -82343,7 +83212,8 @@ window.__DATA_RECIPES = {
         "Faire griller les amandes effilées 2 minutes à sec dans une poêle (couleur dorée).",
         "Verser la bsissa dans 2 bols, parsemer de dés de dattes et d'amandes grillées.",
         "Arroser d'un trait d'eau de fleur d'oranger juste avant de servir. Servir chaud ou tiède."
-      ]
+      ],
+      "photo": "assets/recipes/b154.webp"
     },
     {
       "id": "b155",
@@ -82429,7 +83299,8 @@ window.__DATA_RECIPES = {
         "Verser dans 2 grands verres (texture crémeuse, presque comme un milkshake).",
         "Parsemer des amandes effilées et graines de chia réservées sur le dessus.",
         "Servir immédiatement avec une paille — bien frais, parfait pour démarrer une journée de chaleur."
-      ]
+      ],
+      "photo": "assets/recipes/b155.webp"
     },
     {
       "id": "b156",
@@ -82518,7 +83389,8 @@ window.__DATA_RECIPES = {
         "Ciseler la menthe et parsemer sur les tartines.",
         "Finir par un filet de miel d'acacia en spirale sur chaque tartine.",
         "Servir immédiatement — la combinaison sucré-salé-acide est emblématique du Maghreb."
-      ]
+      ],
+      "photo": "assets/recipes/b156.webp"
     },
     {
       "id": "b157",
@@ -82618,7 +83490,8 @@ window.__DATA_RECIPES = {
         "Sortir et laisser refroidir totalement sur la plaque (15 min : la texture devient croustillante en refroidissant).",
         "Dénoyauter et couper les dattes en petits dés, les mélanger au granola refroidi.",
         "Conserver dans un bocal hermétique 2 semaines. Servir avec yaourt nature et fruits frais."
-      ]
+      ],
+      "photo": "assets/recipes/b157.webp"
     },
     {
       "id": "b158",
@@ -82706,7 +83579,8 @@ window.__DATA_RECIPES = {
         "Répartir le quinoa au lait d'amande dans 2 bols.",
         "Disposer les suprêmes d'orange en couronne, parsemer de dés de dattes, d'amandes effilées et de pistaches concassées.",
         "Servir tiède ou à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/b158.webp"
     },
     {
       "id": "b159",
@@ -82820,7 +83694,8 @@ window.__DATA_RECIPES = {
         "Peler l'orange à vif, détacher les quartiers en suprêmes.",
         "Concasser les pistaches au couteau.",
         "Dresser 3 pancakes par assiette, garnir de suprêmes d'orange et de pistaches, finir par un filet du reste de sirop d'érable."
-      ]
+      ],
+      "photo": "assets/recipes/b159.webp"
     },
     {
       "id": "l202",
@@ -82952,7 +83827,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, faire griller les amandes effilées 2 minutes à sec dans une poêle.",
         "Hors du feu, laisser reposer 5 minutes couvert, puis aérer le riz à la fourchette.",
         "Parsemer d'amandes grillées et de coriandre fraîche ciselée. Servir chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l202.webp"
     },
     {
       "id": "l203",
@@ -83070,7 +83946,8 @@ window.__DATA_RECIPES = {
         "Porter à ébullition, baisser à feu doux, couvrir et cuire 18-20 minutes : le riz et les lentilles sont fondants, texture comme un risotto épais (ajouter un peu d'eau si trop sec).",
         "Goûter et rectifier le sel.",
         "Hors du feu, parsemer généreusement de coriandre fraîche ciselée. Servir chaud, plat-doudou indien complet."
-      ]
+      ],
+      "photo": "assets/recipes/l203.webp"
     },
     {
       "id": "d204",
@@ -83196,7 +84073,8 @@ window.__DATA_RECIPES = {
         "Couvrir et cuire 15 minutes à feu doux : les légumes sont tendres mais encore légèrement croquants.",
         "Hors du feu, incorporer le yaourt nature (évite qu'il tranche), mélanger doucement.",
         "Parsemer de coriandre fraîche. Servir chaud, accompagné d'un peu de riz basmati complet ou de naan (CG dinner respectée sans féculent obligatoire)."
-      ]
+      ],
+      "photo": "assets/recipes/d204.webp"
     },
     {
       "id": "d205",
@@ -83318,7 +84196,8 @@ window.__DATA_RECIPES = {
         "Écraser légèrement une partie des pois chiches à la cuillère pour épaissir naturellement la sauce.",
         "Ajouter le garam masala et le jus du demi-citron, mélanger (le garam masala se met en fin pour garder son parfum).",
         "Parsemer de coriandre fraîche ciselée. Servir chaud — un classique du Nord de l'Inde, riche en fibres et protéines végétales."
-      ]
+      ],
+      "photo": "assets/recipes/d205.webp"
     },
     {
       "id": "l204",
@@ -83448,7 +84327,8 @@ window.__DATA_RECIPES = {
         "Faire griller les graines de sésame 1 minute à sec.",
         "Dresser le riz brun dans 2 bols, déposer le poulet au mole par-dessus.",
         "Parsemer de graines de sésame grillées et de coriandre ciselée. Servir chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l204.webp"
     },
     {
       "id": "l205",
@@ -83564,7 +84444,8 @@ window.__DATA_RECIPES = {
         "Dresser le riz brun dans 2 bols, répartir les haricots noirs, les crevettes.",
         "Couper l'avocat en lamelles, l'ajouter avec le pico de gallo.",
         "Parsemer du reste de coriandre, servir avec un quartier de citron vert."
-      ]
+      ],
+      "photo": "assets/recipes/l205.webp"
     },
     {
       "id": "d206",
@@ -83676,7 +84557,8 @@ window.__DATA_RECIPES = {
         "Garnir chaque demi-poivron de farce haricots-maïs-fromage, les déposer sur la sauce tomate.",
         "Arroser d'un filet d'huile d'olive, enfourner 18-20 minutes : les poivrons sont fondants et la farce gratinée.",
         "Parsemer du reste de coriandre fraîche. Servir chaud, 2 demi-poivrons par personne."
-      ]
+      ],
+      "photo": "assets/recipes/d206.webp"
     },
     {
       "id": "d207",
@@ -83787,7 +84669,8 @@ window.__DATA_RECIPES = {
         "Couper la courgette en demi-lunes, l'ajouter à la sauce, cuire 5 minutes (légèrement croquante).",
         "Ajouter les boulettes cuites dans la sauce, mijoter 5 minutes pour qu'elles s'imprègnent.",
         "Parsemer du reste de coriandre fraîche. Servir chaud — comfort food mexicain, le chipotle apporte la touche fumée."
-      ]
+      ],
+      "photo": "assets/recipes/d207.webp"
     },
     {
       "id": "l206",
@@ -83899,7 +84782,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, préparer la semoule : verser 90 ml d'eau bouillante salée sur la semoule, couvrir 5 minutes, puis aérer à la fourchette avec un filet d'huile.",
         "Presser le jus du demi-citron dans la loubia, parsemer de coriandre fraîche.",
         "Servir la loubia chaude sur un lit de semoule complète — plat populaire marocain, économique et nourrissant."
-      ]
+      ],
+      "photo": "assets/recipes/l206.webp"
     },
     {
       "id": "l207",
@@ -84017,7 +84901,8 @@ window.__DATA_RECIPES = {
         "Mélanger le freekeh avec la moitié de la chermoula.",
         "Dresser le freekeh dans 2 bols, répartir les légumes grillés et pois chiches.",
         "Napper du reste de chermoula, presser le jus du demi-citron restant. Servir tiède ou à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/l207.webp"
     },
     {
       "id": "d208",
@@ -84139,7 +85024,8 @@ window.__DATA_RECIPES = {
         "Couvrir et cuire 10-12 minutes à feu doux : le poisson est nacré et se détache à la fourchette (ne pas surcuire).",
         "Goûter, ajuster le sel (le citron confit et les olives salent déjà).",
         "Servir chaud directement dans le plat, le jus de cuisson est délicieux avec un peu de pain complet."
-      ]
+      ],
+      "photo": "assets/recipes/d208.webp"
     },
     {
       "id": "d209",
@@ -84256,7 +85142,8 @@ window.__DATA_RECIPES = {
         "Casser délicatement 1 œuf dans chaque puits, couvrir et cuire 5-6 minutes à feu doux : le blanc prend, le jaune reste coulant.",
         "Parsemer de coriandre fraîche ciselée.",
         "Servir chaud avec la semoule complète à côté — repas du soir végétarien complet et réconfortant."
-      ]
+      ],
+      "photo": "assets/recipes/d209.webp"
     },
     {
       "id": "l208",
@@ -84281,7 +85168,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -84363,7 +85252,8 @@ window.__DATA_RECIPES = {
         "Quand l'épeautre est cuit et crémeux, incorporer les champignons, le parmesan, le sel et le poivre hors du feu.",
         "Mélanger énergiquement pour rendre le risotto onctueux (mantecatura).",
         "Parsemer de persil ciselé. Servir immédiatement, bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l208.webp"
     },
     {
       "id": "l209",
@@ -84461,7 +85351,8 @@ window.__DATA_RECIPES = {
         "Monter la parmigiana dans un plat à gratin : une couche de sauce, une couche d'aubergines, des tranches de mozzarella, un peu de parmesan. Répéter en finissant par sauce + parmesan.",
         "Enfourner 18-20 minutes : le dessus gratine et bouillonne.",
         "Laisser reposer 5 minutes (les couches se tiennent mieux à la découpe), parsemer du reste de basilic. Servir chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l209.webp"
     },
     {
       "id": "l210",
@@ -84585,7 +85476,8 @@ window.__DATA_RECIPES = {
         "Ajouter les tomates en dés, le sel et 100 ml d'eau. Couvrir et cuire 18-20 minutes à feu doux (les légumes sont tendres, vérifier avec une pointe de couteau).",
         "Ajouter le garam masala en fin de cuisson, mélanger délicatement (pour ne pas écraser les légumes).",
         "Parsemer de coriandre fraîche. Servir chaud avec le riz basmati complet."
-      ]
+      ],
+      "photo": "assets/recipes/l210.webp"
     },
     {
       "id": "l211",
@@ -84709,7 +85601,8 @@ window.__DATA_RECIPES = {
         "Verser le tempering chaud dans le sambar, mélanger (le grésillement libère les arômes).",
         "Goûter et ajuster le sel et l'acidité (un peu plus de tamarin si souhaité).",
         "Dresser le riz dans 2 bols, napper de sambar, parsemer de coriandre fraîche. Servir chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l211.webp"
     },
     {
       "id": "l212",
@@ -84734,7 +85627,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -84827,7 +85721,8 @@ window.__DATA_RECIPES = {
         "Couper l'avocat en dés, ciseler la coriandre.",
         "Verser la soupe dans 2 bols, garnir de dés d'avocat, fromage frais émietté et coriandre.",
         "Servir chaud avec un quartier de citron vert à presser."
-      ]
+      ],
+      "photo": "assets/recipes/l212.webp"
     },
     {
       "id": "l213",
@@ -84941,7 +85836,8 @@ window.__DATA_RECIPES = {
         "Presser le jus du demi-citron vert, mélanger.",
         "Dresser le quinoa dans 2 bols, répartir les calabacitas par-dessus.",
         "Parsemer de coriandre fraîche ciselée. Servir chaud ou tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l213.webp"
     },
     {
       "id": "d210",
@@ -85039,7 +85935,8 @@ window.__DATA_RECIPES = {
         "Remettre les courgettes, mélanger pour réchauffer.",
         "Hors du feu, presser le jus du citron vert entier sur les crevettes.",
         "Parsemer de coriandre fraîche. Servir chaud — plat léger et rapide, parfait pour le soir."
-      ]
+      ],
+      "photo": "assets/recipes/d210.webp"
     },
     {
       "id": "d211",
@@ -85155,7 +86052,8 @@ window.__DATA_RECIPES = {
         "Enfourner 10-12 minutes : le poisson est nacré et se détache à la fourchette (ne pas surcuire).",
         "Napper le poisson de salsa verde, parsemer du reste de coriandre.",
         "Servir chaud avec les légumes rôtis — le poisson grillé épicé de la côte du Guerrero."
-      ]
+      ],
+      "photo": "assets/recipes/d211.webp"
     },
     {
       "id": "l214",
@@ -85272,7 +86170,8 @@ window.__DATA_RECIPES = {
         "Ajuster la consistance : ajouter un peu d'eau chaude si trop épais (le berkoukes doit rester légèrement soupe).",
         "Goûter et rectifier le sel.",
         "Parsemer de coriandre fraîche ciselée. Servir chaud — plat-soupe algérien réconfortant aux pâtes roulées."
-      ]
+      ],
+      "photo": "assets/recipes/l214.webp"
     },
     {
       "id": "l215",
@@ -85376,7 +86275,8 @@ window.__DATA_RECIPES = {
         "Verser la vinaigrette sur la salade, mélanger délicatement.",
         "Ciseler le persil et la menthe, les parsemer sur la salade.",
         "Laisser reposer 15 minutes au frais pour que les saveurs se marient. Servir frais — salade printanière du Maghreb."
-      ]
+      ],
+      "photo": "assets/recipes/l215.webp"
     },
     {
       "id": "d212",
@@ -85495,7 +86395,8 @@ window.__DATA_RECIPES = {
         "Prolonger 5 minutes pour que les saveurs se mêlent. La sauce doit napper (réduire à découvert si trop liquide).",
         "Presser le jus du demi-citron jaune, parsemer de coriandre fraîche.",
         "Servir chaud — tajine printanier marocain, le citron confit et les olives font la signature."
-      ]
+      ],
+      "photo": "assets/recipes/d212.webp"
     },
     {
       "id": "d213",
@@ -85605,7 +86506,8 @@ window.__DATA_RECIPES = {
         "Ajouter les aubergines rôties et les pois chiches égouttés, mélanger délicatement, prolonger 8 minutes à feu doux pour que les saveurs fusionnent.",
         "Écraser légèrement quelques aubergines pour lier (texture confite caractéristique).",
         "Presser le jus du demi-citron, parsemer de coriandre et persil ciselés. Servir chaud ou tiède — plat algérien d'aubergines confites."
-      ]
+      ],
+      "photo": "assets/recipes/d213.webp"
     },
     {
       "id": "b160",
@@ -85685,7 +86587,8 @@ window.__DATA_RECIPES = {
         "Concasser grossièrement les noix au couteau.",
         "Verser le porridge dans 2 bols, répartir les dés de pomme frais, les noix concassées et les graines de lin.",
         "Finir par un filet de sirop d'érable. Servir chaud."
-      ]
+      ],
+      "photo": "assets/recipes/b160.webp"
     },
     {
       "id": "b161",
@@ -85780,7 +86683,8 @@ window.__DATA_RECIPES = {
         "Cuire 2 minutes : des bulles apparaissent en surface, retourner et cuire 1-2 minutes l'autre face. Réserver au chaud.",
         "Continuer jusqu'à épuiser la pâte (environ 6 pancakes).",
         "Dresser les pancakes, garnir du reste de fromage blanc, des myrtilles fraîches et d'un filet du sirop d'érable restant."
-      ]
+      ],
+      "photo": "assets/recipes/b161.webp"
     },
     {
       "id": "b162",
@@ -85866,7 +86770,8 @@ window.__DATA_RECIPES = {
         "Quand l'omelette est presque prise mais encore baveuse au centre, déposer le fromage frais émietté sur une moitié.",
         "Replier l'omelette en deux par-dessus le fromage, laisser fondre 1 minute.",
         "Glisser sur 2 assiettes, parsemer du reste d'herbes fraîches. Servir immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/b162.webp"
     },
     {
       "id": "b163",
@@ -85953,7 +86858,8 @@ window.__DATA_RECIPES = {
         "Concasser grossièrement les noisettes au couteau, les faire griller 2 minutes à sec dans une poêle.",
         "Verser le porridge dans 2 bols, disposer les rondelles de banane en éventail.",
         "Parsemer de noisettes grillées et d'une pointe de cannelle façon saupoudrage de cappuccino. Servir chaud."
-      ]
+      ],
+      "photo": "assets/recipes/b163.webp"
     },
     {
       "id": "b164",
@@ -86046,7 +86952,8 @@ window.__DATA_RECIPES = {
         "Enfourner 10-12 minutes : le blanc est pris mais le jaune reste coulant.",
         "Sortir, parsemer de basilic frais ciselé.",
         "Servir immédiatement avec une tranche de pain au levain toasté pour saucer le jaune."
-      ]
+      ],
+      "photo": "assets/recipes/b164.webp"
     },
     {
       "id": "b165",
@@ -86132,7 +87039,8 @@ window.__DATA_RECIPES = {
         "Verser le smoothie dans un bol large, lisser le dessus.",
         "Disposer les lamelles de pêche réservées, parsemer de flocons d'avoine et d'amandes grillées.",
         "Servir immédiatement, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/b165.webp"
     },
     {
       "id": "s138",
@@ -86222,7 +87130,8 @@ window.__DATA_RECIPES = {
         "Ajouter la moitié de la ciboulette dans les rillettes, réserver le reste pour la déco.",
         "Toaster le pain de seigle, le couper en mouillettes. Couper le concombre en rondelles épaisses.",
         "Servir les rillettes dans un ramequin, parsemées de ciboulette, avec les mouillettes et les rondelles de concombre pour tartiner."
-      ]
+      ],
+      "photo": "assets/recipes/s138.webp"
     },
     {
       "id": "s139",
@@ -86250,7 +87159,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -86323,7 +87233,8 @@ window.__DATA_RECIPES = {
         "Goûter et rectifier l'assaisonnement.",
         "Placer 2h au frigo pour servir bien froid (le velouté froid est plus rafraîchissant l'été).",
         "Verser dans des verrines, décorer d'un filet d'huile d'olive et d'une feuille de basilic. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/s139.webp"
     },
     {
       "id": "s140",
@@ -86429,7 +87340,8 @@ window.__DATA_RECIPES = {
         "Verser le houmous dans un bol, lisser le dessus en spirale à la cuillère.",
         "Garnir des petits pois réservés, de feuilles de menthe et d'un filet d'huile d'olive.",
         "Servir avec les crudités pour tremper. Conservation : 3 jours au frais."
-      ]
+      ],
+      "photo": "assets/recipes/s140.webp"
     },
     {
       "id": "des147",
@@ -86502,7 +87414,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajouter le sirop d'érable et mélanger (le sucre en fin préserve la texture).",
         "Répartir dans 2 ramequins, saupoudrer d'une pointe de cannelle.",
         "Servir tiède ou froid selon préférence. Se conserve 3 jours au frais."
-      ]
+      ],
+      "photo": "assets/recipes/des147.webp"
     },
     {
       "id": "des148",
@@ -86589,7 +87502,8 @@ window.__DATA_RECIPES = {
         "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
         "Dresser : une cuillère de skyr dans chaque assiette, déposer les demi-poires par-dessus.",
         "Napper d'un peu de sirop de pochage réduit, parsemer d'amandes effilées grillées. Servir tiède ou frais."
-      ]
+      ],
+      "photo": "assets/recipes/des148.webp"
     },
     {
       "id": "des149",
@@ -86679,7 +87593,8 @@ window.__DATA_RECIPES = {
         "Enfoncer 2-3 framboises dans chaque financier.",
         "Enfourner 16-18 minutes : ils sont dorés sur les bords et la pointe d'un couteau ressort sèche.",
         "Démouler tièdes sur une grille. Servir tièdes ou à température ambiante — se conservent 3 jours en boîte."
-      ]
+      ],
+      "photo": "assets/recipes/des149.webp"
     },
     {
       "id": "s141",
@@ -86773,7 +87688,8 @@ window.__DATA_RECIPES = {
         "Napper de la sauce verte aguachile, répartir les demi-lunes de concombre et l'oignon rouge.",
         "Couper l'avocat en lamelles, les ajouter au moment de servir.",
         "Servir immédiatement, très frais — entrée mexicaine vibrante et piquante de la côte du Pacifique."
-      ]
+      ],
+      "photo": "assets/recipes/s141.webp"
     },
     {
       "id": "s142",
@@ -86860,7 +87776,8 @@ window.__DATA_RECIPES = {
         "Préparer la vinaigrette : fouetter l'huile d'olive, le jus du demi-citron et le poivre (pas de sel, la feta et les olives salent déjà).",
         "Arroser la salade de vinaigrette, mélanger très délicatement (la pastèque est fragile).",
         "Ciseler la menthe et la parsemer généreusement. Servir immédiatement, bien frais — le contraste sucré-salé désaltérant de l'été."
-      ]
+      ],
+      "photo": "assets/recipes/s142.webp"
     },
     {
       "id": "s143",
@@ -86955,7 +87872,8 @@ window.__DATA_RECIPES = {
         "Laisser mariner 5 minutes pour que les saveurs pénètrent.",
         "Faire griller les graines de sésame 1 minute à sec dans une poêle.",
         "Parsemer de graines de sésame grillées et d'oignons nouveaux ciselés. Servir frais — le snack chinois rafraîchissant par excellence."
-      ]
+      ],
+      "photo": "assets/recipes/s143.webp"
     },
     {
       "id": "s144",
@@ -87046,7 +87964,8 @@ window.__DATA_RECIPES = {
         "Presser le jus du citron vert entier par-dessus, mélanger.",
         "Ciseler la coriandre et la menthe, les parsemer sur la salade.",
         "Servir immédiatement (le kachumber se mange frais, il rend de l'eau s'il attend). Accompagnement frais des plats indiens épicés."
-      ]
+      ],
+      "photo": "assets/recipes/s144.webp"
     },
     {
       "id": "s145",
@@ -87132,7 +88051,8 @@ window.__DATA_RECIPES = {
         "Préparer la vinaigrette : fouetter l'huile d'olive, le jus du demi-citron et le poivre.",
         "Arroser la salade de vinaigrette.",
         "Parsemer de copeaux de parmesan (à l'économe pour de jolis copeaux) et de pignons grillés. Servir immédiatement — l'antipasto estival italien chic et léger."
-      ]
+      ],
+      "photo": "assets/recipes/s145.webp"
     },
     {
       "id": "des150",
@@ -87194,7 +88114,8 @@ window.__DATA_RECIPES = {
         "Mixer en pulsant par à-coups (5 sec × 5 fois), racler les parois entre chaque : texture sorbet onctueuse.",
         "Verser dans 2 coupes glacées, décorer d'une feuille de basilic.",
         "Servir immédiatement (si trop dur, laisser tempérer 5 minutes avant de mixer) — le basilic relève subtilement la douceur du melon."
-      ]
+      ],
+      "photo": "assets/recipes/des150.webp"
     },
     {
       "id": "des151",
@@ -87257,7 +88178,8 @@ window.__DATA_RECIPES = {
         "Placer au congélateur 1h, puis sortir et gratter à la fourchette pour casser les cristaux qui se forment sur les bords.",
         "Répéter le grattage toutes les 40 minutes pendant 2-3h (total 3-4 grattages) : on obtient des cristaux légers et neigeux, c'est la texture du vrai granité.",
         "Servir dans des coupes glacées, décorer de feuilles de menthe fraîche — le rafraîchissement sicilien intense de l'été."
-      ]
+      ],
+      "photo": "assets/recipes/des151.webp"
     },
     {
       "id": "des152",
@@ -87333,7 +88255,8 @@ window.__DATA_RECIPES = {
         "Verser délicatement la couche mangue tiède sur la couche coco déjà prise (verser sur le dos d'une cuillère pour ne pas creuser).",
         "Placer au frais 1h30 minimum pour que les 2 couches figent.",
         "Servir bien frais — le dessert gélifié végétal d'Asie du Sud-Est, frais et léger."
-      ]
+      ],
+      "photo": "assets/recipes/des152.webp"
     },
     {
       "id": "des153",
@@ -87418,7 +88341,8 @@ window.__DATA_RECIPES = {
         "Placer au congélateur 6h minimum, idéalement une nuit (texture dense crémeuse, sans cristaux grâce au lait réduit).",
         "Au moment de servir, démouler en passant le moule 10 secondes sous l'eau tiède.",
         "Parsemer du reste de pistaches et d'amandes effilées. Servir aussitôt — la glace traditionnelle indienne qui ne fond pas trop vite."
-      ]
+      ],
+      "photo": "assets/recipes/des153.webp"
     },
     {
       "id": "des154",
@@ -87500,7 +88424,8 @@ window.__DATA_RECIPES = {
         "Faire griller les amandes effilées 2 minutes à sec.",
         "Verser la soupe dans des bols ou des verres, déposer les cubes de fruits réservés.",
         "Parsemer d'amandes effilées grillées et de menthe ciselée. Servir très frais — dessert-boisson désaltérant du Maghreb estival."
-      ]
+      ],
+      "photo": "assets/recipes/des154.webp"
     },
     {
       "id": "l216",
@@ -87618,7 +88543,8 @@ window.__DATA_RECIPES = {
         "Répartir le riz vinaigré dans 2 bols.",
         "Disposer harmonieusement par secteurs : saumon mariné, mangue, edamame, concombre, avocat.",
         "Arroser d'un peu de marinade restante, parsemer de graines de sésame et d'oignons nouveaux ciselés. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/l216.webp"
     },
     {
       "id": "d214",
@@ -87721,7 +88647,8 @@ window.__DATA_RECIPES = {
         "Badigeonner du reste de marinade en cours de cuisson.",
         "Dresser les brochettes, parsemer de menthe fraîche ciselée et d'un trait de citron.",
         "Servir chaud — le dîner d'été méditerranéen au barbecue, riche en protéines végétariennes."
-      ]
+      ],
+      "photo": "assets/recipes/d214.webp"
     },
     {
       "id": "b166",
@@ -87809,7 +88736,8 @@ window.__DATA_RECIPES = {
         "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
         "Répartir l'overnight oats dans 2 bols (ou servir directement dans le bocal).",
         "Garnir des lamelles de pêche, des amandes grillées et d'un filet de miel d'acacia. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/b166.webp"
     },
     {
       "id": "b167",
@@ -87895,7 +88823,8 @@ window.__DATA_RECIPES = {
         "Disposer les framboises et lamelles de pêche réservées en couronne.",
         "Parsemer de flocons d'avoine, d'amandes effilées et de graines de chia.",
         "Servir immédiatement, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/b167.webp"
     },
     {
       "id": "b168",
@@ -87976,7 +88905,8 @@ window.__DATA_RECIPES = {
         "Répartir le chia pudding dans 2 verres, verser la purée de mangue par-dessus.",
         "Ouvrir le fruit de la passion, prélever la pulpe à la cuillère et la répartir sur la mangue.",
         "Parsemer de noix de coco râpée. Servir frais — le petit-déj tropical d'Asie du Sud-Est."
-      ]
+      ],
+      "photo": "assets/recipes/b168.webp"
     },
     {
       "id": "b169",
@@ -88060,7 +88990,8 @@ window.__DATA_RECIPES = {
         "Verser dans un bol large.",
         "Disposer en couronne les flocons d'avoine, les graines de chia et les graines de courge.",
         "Décorer d'une feuille de menthe. Servir immédiatement, ultra rafraîchissant."
-      ]
+      ],
+      "photo": "assets/recipes/b169.webp"
     },
     {
       "id": "b170",
@@ -88147,7 +89078,8 @@ window.__DATA_RECIPES = {
         "Préparer un granola express : faire dorer les flocons d'avoine et les amandes effilées 3 minutes à sec dans une poêle.",
         "Répartir le shrikhand dans 2 bols.",
         "Garnir des dés de mangue, du granola d'avoine et des pistaches concassées. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/b170.webp"
     },
     {
       "id": "b171",
@@ -88244,7 +89176,8 @@ window.__DATA_RECIPES = {
         "Ajouter aux fruits le cumin torréfié, le gingembre, le piment doux, le sel et le jus du citron vert entier.",
         "Mélanger délicatement (le citron évite l'oxydation et réveille les fruits).",
         "Parsemer de grenade et de menthe ciselée. Servir immédiatement — le petit-déj fruité et épicé des rues indiennes."
-      ]
+      ],
+      "photo": "assets/recipes/b171.webp"
     },
     {
       "id": "b172",
@@ -88330,7 +89263,8 @@ window.__DATA_RECIPES = {
         "Presser le jus du citron vert sur la papaye (le lime sur la papaye est la combinaison mexicaine classique).",
         "Parsemer de graines de courge grillées, de flocons d'avoine et d'une pointe de cannelle.",
         "Finir par un filet de miel d'acacia. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/b172.webp"
     },
     {
       "id": "b173",
@@ -88416,7 +89350,8 @@ window.__DATA_RECIPES = {
         "Couper les fraises réservées en lamelles, les disposer en éventail.",
         "Parsemer de graines de chia et de flocons d'avoine.",
         "Servir immédiatement, bien frais — touche cacao façon chocolat chaud mexicain, version glacée."
-      ]
+      ],
+      "photo": "assets/recipes/b173.webp"
     },
     {
       "id": "des155",
@@ -88491,7 +89426,8 @@ window.__DATA_RECIPES = {
         "Former 2 boules de yaourt glacé à la cuillère à glace, les déposer dans des verres ou coupes.",
         "Au moment de servir, verser l'expresso chaud sur le yaourt glacé (le contraste chaud-froid est la signature de l'affogato).",
         "Parsemer d'amandes effilées grillées et d'une pincée de cacao. Servir et déguster aussitôt à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/des155.webp"
     },
     {
       "id": "des156",
@@ -88559,7 +89495,8 @@ window.__DATA_RECIPES = {
         "Sortir toutes les 40 minutes pendant 3h et gratter à la fourchette pour casser les cristaux (texture sorbet).",
         "Au moment de servir, gratter une dernière fois pour une texture neigeuse.",
         "Servir dans des coupes glacées, décorer d'une petite pointe de romarin — l'alliance herbacée-fruitée de l'été italien."
-      ]
+      ],
+      "photo": "assets/recipes/des156.webp"
     },
     {
       "id": "s146",
@@ -88650,7 +89587,8 @@ window.__DATA_RECIPES = {
         "Presser le jus du demi-citron, mélanger énergiquement.",
         "Goûter et ajuster la harissa selon la tolérance au piquant.",
         "Parsemer de coriandre fraîche ciselée. Servir frais ou tiède avec du pain complet — le caviar de courgettes tunisien."
-      ]
+      ],
+      "photo": "assets/recipes/s146.webp"
     },
     {
       "id": "s147",
@@ -88738,7 +89676,8 @@ window.__DATA_RECIPES = {
         "Répartir dans des verrines, lisser le dessus.",
         "Arroser d'un filet d'huile d'olive et saupoudrer généreusement de zaatar.",
         "Décorer du reste de menthe. Servir frais avec des bâtonnets de légumes ou du pain pita complet — la fraîcheur acidulée du labneh levantin."
-      ]
+      ],
+      "photo": "assets/recipes/s147.webp"
     },
     {
       "id": "s148",
@@ -88763,7 +89702,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -88823,7 +89763,8 @@ window.__DATA_RECIPES = {
         "Déposer la burrata sur les tranches de pain, répartir les lamelles de pêche.",
         "Arroser d'un filet d'huile d'olive et de quelques gouttes de vinaigre balsamique.",
         "Poivrer et parsemer de feuilles de basilic. Servir immédiatement — l'antipasto estival sucré-salé crémeux."
-      ]
+      ],
+      "photo": "assets/recipes/s148.webp"
     },
     {
       "id": "s149",
@@ -88918,7 +89859,8 @@ window.__DATA_RECIPES = {
         "Napper chaque bouchée d'une cuillère de sauce tonnato.",
         "Parsemer du reste de câpres et de persil ciselé.",
         "Laisser reposer 30 minutes au frais avant de servir (les saveurs se marient). Pic apéro froid piémontais."
-      ]
+      ],
+      "photo": "assets/recipes/s149.webp"
     },
     {
       "id": "s150",
@@ -89006,7 +89948,8 @@ window.__DATA_RECIPES = {
         "Laisser mariner 10 minutes au frais.",
         "Faire griller les graines de sésame 1 minute à sec.",
         "Parsemer de graines de sésame grillées. Servir frais — la salade vinaigrée japonaise ultra-rafraîchissante."
-      ]
+      ],
+      "photo": "assets/recipes/s150.webp"
     },
     {
       "id": "s151",
@@ -89033,8 +89976,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "nuts",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -89113,7 +90056,8 @@ window.__DATA_RECIPES = {
         "Replier les côtés vers le centre, puis rouler fermement du bas vers le haut (comme un burrito serré).",
         "Répéter avec les 3 autres galettes.",
         "Couper chaque rouleau en deux en biais. Servir frais avec la sauce cacahuète — frais, croquant et fruité."
-      ]
+      ],
+      "photo": "assets/recipes/s151.webp"
     },
     {
       "id": "s152",
@@ -89216,7 +90160,8 @@ window.__DATA_RECIPES = {
         "Ajouter le cumin torréfié, la coriandre moulue, le piment doux, le sel et le jus du citron vert entier.",
         "Mélanger délicatement, laisser reposer 15 minutes au frais (les pommes de terre s'imprègnent).",
         "Parsemer de coriandre et menthe ciselées et de grains de grenade. Servir frais — le chaat de rue indien revisité froid pour l'été."
-      ]
+      ],
+      "photo": "assets/recipes/s152.webp"
     },
     {
       "id": "s153",
@@ -89242,7 +90187,7 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -89309,7 +90254,8 @@ window.__DATA_RECIPES = {
         "Ajouter le cumin torréfié, le piment doux, le sel et le jus du demi-citron vert.",
         "Mélanger, laisser reposer 5 minutes.",
         "Parsemer de cacahuètes concassées, de coriandre et menthe ciselées. Servir frais — l'acidité vibrante de la mangue verte épicée."
-      ]
+      ],
+      "photo": "assets/recipes/s153.webp"
     },
     {
       "id": "des157",
@@ -89381,7 +90327,8 @@ window.__DATA_RECIPES = {
         "Incorporer les perles de tapioca égouttées à la crème mangue-coco.",
         "Répartir dans 2 bols ou verres, ajouter les dés de mangue et les éclats de pomelo.",
         "Placer 1h au frais. Servir bien frais — le dessert star de Hong Kong, frais et texturé."
-      ]
+      ],
+      "photo": "assets/recipes/des157.webp"
     },
     {
       "id": "des158",
@@ -89474,7 +90421,8 @@ window.__DATA_RECIPES = {
         "Verser la sauce coco sur les fruits, mélanger délicatement.",
         "Ouvrir le fruit de la passion, prélever la pulpe et la répartir sur la salade.",
         "Parsemer de noix de coco râpée et de menthe ciselée. Servir bien frais — l'évasion tropicale en dessert."
-      ]
+      ],
+      "photo": "assets/recipes/des158.webp"
     },
     {
       "id": "des159",
@@ -89555,7 +90503,8 @@ window.__DATA_RECIPES = {
         "Répartir dans 2 coupes, placer 30 minutes au frais.",
         "Concasser les pistaches au couteau.",
         "Parsemer de pistaches concassées. Servir bien frais — le dessert-doudou de l'été indien, traditionnellement de la saison des mangues."
-      ]
+      ],
+      "photo": "assets/recipes/des159.webp"
     },
     {
       "id": "des160",
@@ -89650,7 +90599,8 @@ window.__DATA_RECIPES = {
         "Verser dans des moules à esquimaux, planter les bâtonnets.",
         "Placer au congélateur 6h minimum (idéalement une nuit).",
         "Démouler en passant les moules 10 secondes sous l'eau tiède. Servir aussitôt — la boisson festive indienne transformée en glace."
-      ]
+      ],
+      "photo": "assets/recipes/des160.webp"
     },
     {
       "id": "des161",
@@ -89718,7 +90668,8 @@ window.__DATA_RECIPES = {
         "Verser dans un récipient large à fond plat, placer au congélateur.",
         "Gratter à la fourchette toutes les 40 minutes pendant 3h (3-4 grattages) pour casser les cristaux : texture neigeuse du granité.",
         "Servir dans des verres glacés, décorer d'une feuille de menthe — le thé à la menthe marocain version glacée, désaltérant et léger."
-      ]
+      ],
+      "photo": "assets/recipes/des161.webp"
     },
     {
       "id": "des162",
@@ -89804,7 +90755,8 @@ window.__DATA_RECIPES = {
         "Laisser macérer 10 minutes au frais (les fruits rendent leur jus et s'imprègnent du parfum).",
         "Concasser grossièrement les pistaches au couteau.",
         "Parsemer de pistaches concassées et de menthe ciselée. Servir frais — la douceur parfumée des vergers du Maghreb en été."
-      ]
+      ],
+      "photo": "assets/recipes/des162.webp"
     },
     {
       "id": "des163",
@@ -89872,7 +90824,8 @@ window.__DATA_RECIPES = {
         "Gratter à la fourchette toutes les 45 minutes pendant 3h (3-4 grattages) : on obtient une texture frozen yogurt onctueuse, sans cristaux durs.",
         "Au moment de servir, former des boules à la cuillère à glace.",
         "Décorer de lamelles de fraise et d'une feuille de basilic. Servir aussitôt — le basilic relève subtilement la fraise."
-      ]
+      ],
+      "photo": "assets/recipes/des163.webp"
     },
     {
       "id": "des164",
@@ -89943,7 +90896,8 @@ window.__DATA_RECIPES = {
         "Arroser le carpaccio du sirop citron-miel au pinceau ou à la cuillère.",
         "Faire griller les pignons de pin 2 minutes à sec dans une poêle.",
         "Parsemer de pignons grillés et de feuilles de basilic ciselées. Servir frais, idéalement après 15 minutes au frais."
-      ]
+      ],
+      "photo": "assets/recipes/des164.webp"
     },
     {
       "id": "s154",
@@ -90011,7 +90965,8 @@ window.__DATA_RECIPES = {
         "Verser la mangonada dans 2 verres, en alternant avec une pincée du mélange chili-lime entre les couches (effet marbré épicé).",
         "Presser le reste du jus de citron vert sur le dessus.",
         "Saupoudrer d'une dernière pincée de chili-lime. Servir immédiatement à la cuillère ou avec une paille épaisse — la friandise glacée des rues mexicaines."
-      ]
+      ],
+      "photo": "assets/recipes/s154.webp"
     },
     {
       "id": "s155",
@@ -90097,7 +91052,8 @@ window.__DATA_RECIPES = {
         "Ajouter le jus du citron vert entier, le piment doux et le sel, mélanger délicatement.",
         "Laisser reposer 5 minutes (les saveurs se mêlent, ne pas attendre trop pour garder le croquant).",
         "Émietter la feta sur le dessus, parsemer de coriandre. Servir frais — le pico de gallo estival sucré-salé, parfait avec des chips de maïs."
-      ]
+      ],
+      "photo": "assets/recipes/s155.webp"
     },
     {
       "id": "s156",
@@ -90125,7 +91081,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Tomate",
@@ -90190,7 +91148,8 @@ window.__DATA_RECIPES = {
         "Passer au chinois pour une texture ultra-lisse (optionnel mais plus élégant).",
         "Placer 2h au frigo pour servir bien froid (le gaspacho se sert glacé).",
         "Verser dans des verrines, garnir de dés de concombre, d'un filet d'huile d'olive et de basilic. Servir glacé."
-      ]
+      ],
+      "photo": "assets/recipes/s156.webp"
     },
     {
       "id": "s157",
@@ -90275,7 +91234,8 @@ window.__DATA_RECIPES = {
         "Répartir la crème de chèvre-concombre dans des verrines.",
         "Garnir des dés de concombre frais sur le dessus.",
         "Parsemer du reste d'aneth et de ciboulette. Placer 15 minutes au frais avant de servir — la fraîcheur acidulée parfaite à l'apéro estival."
-      ]
+      ],
+      "photo": "assets/recipes/s157.webp"
     },
     {
       "id": "des165",
@@ -90343,7 +91303,8 @@ window.__DATA_RECIPES = {
         "Placer 1h au frigo pour servir bien glacée.",
         "Couper les fraises réservées en quartiers.",
         "Verser la soupe dans des bols ou verres, déposer les quartiers de fraise et décorer du reste de menthe. Servir très frais — le dessert le plus rafraîchissant de l'été."
-      ]
+      ],
+      "photo": "assets/recipes/des165.webp"
     },
     {
       "id": "des166",
@@ -90422,7 +91383,8 @@ window.__DATA_RECIPES = {
         "Monter les verrines : une couche de fromage blanc, un peu de coulis de framboise, répéter.",
         "Terminer par une cuillère de coulis en surface (effet marbré).",
         "Garnir des framboises réservées, des myrtilles fraîches et des amandes grillées. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/des166.webp"
     },
     {
       "id": "b174",
@@ -90508,7 +91470,8 @@ window.__DATA_RECIPES = {
         "Disposer les lamelles de fruits réservées.",
         "Faire griller les amandes effilées 2 minutes à sec.",
         "Parsemer de flocons d'avoine, d'amandes grillées et de graines de chia. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/b174.webp"
     },
     {
       "id": "b175",
@@ -90592,7 +91555,8 @@ window.__DATA_RECIPES = {
         "Disposer les fraises, les myrtilles et les framboises en secteurs colorés.",
         "Parsemer du granola express tiède (flocons-noisettes-graines).",
         "Finir par un filet de miel d'acacia. Servir aussitôt pour garder le croustillant."
-      ]
+      ],
+      "photo": "assets/recipes/b175.webp"
     },
     {
       "id": "b176",
@@ -90671,7 +91635,8 @@ window.__DATA_RECIPES = {
         "Disposer les lamelles de fraise sur la ricotta.",
         "Concasser les pistaches au couteau.",
         "Parsemer de pistaches et de basilic ciselé, finir par un filet du reste de miel. Servir aussitôt — le petit-déj italien sucré-frais."
-      ]
+      ],
+      "photo": "assets/recipes/b176.webp"
     },
     {
       "id": "b177",
@@ -90751,7 +91716,8 @@ window.__DATA_RECIPES = {
         "Mélanger le skyr avec la vanille et le reste du miel.",
         "Répartir le yaourt dans 2 bols, déposer les abricots rôtis tièdes.",
         "Parsemer du mélange amandes-avoine grillé. Servir tiède ou frais — le contraste yaourt froid / abricots tièdes est délicieux."
-      ]
+      ],
+      "photo": "assets/recipes/b177.webp"
     },
     {
       "id": "b178",
@@ -90842,7 +91808,8 @@ window.__DATA_RECIPES = {
         "Disposer les rondelles de tomate et de concombre par-dessus.",
         "Arroser d'un filet d'huile d'olive et saupoudrer généreusement de zaatar.",
         "Parsemer de menthe ciselée. Servir aussitôt — le petit-déj salé méditerranéen frais et parfumé."
-      ]
+      ],
+      "photo": "assets/recipes/b178.webp"
     },
     {
       "id": "b179",
@@ -90922,7 +91889,8 @@ window.__DATA_RECIPES = {
         "Disposer les cubes de melon réservés.",
         "Parsemer de flocons d'avoine et de graines de courge, finir par un filet de miel.",
         "Décorer d'une feuille de menthe. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/b179.webp"
     },
     {
       "id": "b180",
@@ -90997,7 +91965,8 @@ window.__DATA_RECIPES = {
         "Le matin, éplucher le kiwi et le couper en rondelles ou en dés.",
         "Répartir le chia pudding dans 2 verres, garnir de kiwi.",
         "Parsemer de noix de coco râpée. Servir frais — le petit-déj antioxydant matcha-coco."
-      ]
+      ],
+      "photo": "assets/recipes/b180.webp"
     },
     {
       "id": "b181",
@@ -91094,7 +92063,8 @@ window.__DATA_RECIPES = {
         "Disposer le concombre, l'avocat et l'œuf mollet coupé en deux (le jaune coulant nappe le riz).",
         "Arroser de sauce soja et d'huile de sésame.",
         "Parsemer de graines de sésame, de nori émietté et d'oignons nouveaux ciselés. Servir tiède — le petit-déj salé japonais réconfortant."
-      ]
+      ],
+      "photo": "assets/recipes/b181.webp"
     },
     {
       "id": "b182",
@@ -91181,7 +92151,8 @@ window.__DATA_RECIPES = {
         "Faire griller les amandes effilées 2 minutes à sec.",
         "Répartir l'overnight oats dans 2 bols, napper de purée de mangue.",
         "Parsemer d'amandes grillées, finir par un filet de miel. Servir frais — le petit-déj indien parfumé à la cardamome."
-      ]
+      ],
+      "photo": "assets/recipes/b182.webp"
     },
     {
       "id": "b183",
@@ -91267,7 +92238,8 @@ window.__DATA_RECIPES = {
         "Concasser les pistaches au couteau.",
         "Disposer les dés de mangue réservés, parsemer de pistaches et de flocons d'avoine.",
         "Servir immédiatement — le lassi à la mangue en version bowl à la cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/b183.webp"
     },
     {
       "id": "b184",
@@ -91344,7 +92316,8 @@ window.__DATA_RECIPES = {
         "Goûter et ajuster (un peu plus de sirop si les fraises sont acides).",
         "Verser dans 2 grands verres.",
         "Décorer d'une lamelle de fraise et d'une pincée de cannelle. Servir frais — le smoothie-repas mexicain du matin, crémeux et nourrissant."
-      ]
+      ],
+      "photo": "assets/recipes/b184.webp"
     },
     {
       "id": "b185",
@@ -91429,7 +92402,8 @@ window.__DATA_RECIPES = {
         "Verser dans un bol large, lisser le dessus.",
         "Disposer les dés de mangue réservés.",
         "Parsemer de graines de chia, de flocons d'avoine et de graines de courge. Servir immédiatement — le bowl exotique coloré du Mexique."
-      ]
+      ],
+      "photo": "assets/recipes/b185.webp"
     },
     {
       "id": "l217",
@@ -91453,7 +92427,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -91538,7 +92513,8 @@ window.__DATA_RECIPES = {
         "Ajouter la tomate, le concombre et l'oignon, mélanger délicatement.",
         "Émietter le fromage de chèvre frais sur le dessus.",
         "Parsemer de persil et de ciboulette ciselés. Servir tiède ou frais — la salade de lentilles complète et fraîche de l'été."
-      ]
+      ],
+      "photo": "assets/recipes/l217.webp"
     },
     {
       "id": "d215",
@@ -91666,7 +92642,8 @@ window.__DATA_RECIPES = {
         "Griller les légumes marinés 12-15 minutes en les retournant : ils doivent être tendres avec des marques de grill et des bords légèrement charbonnés (effet tandoor).",
         "Dresser les légumes grillés dans 2 assiettes.",
         "Servir avec la raïta concombre-menthe bien fraîche à côté — le dîner indien grillé, léger et parfumé."
-      ]
+      ],
+      "photo": "assets/recipes/d215.webp"
     },
     {
       "id": "d216",
@@ -91778,7 +92755,8 @@ window.__DATA_RECIPES = {
         "Réchauffer les tortillas de maïs 30 secondes par face sur le grill (souples avec marques).",
         "Garnir chaque tortilla de slaw de chou rouge, crevettes grillées, salsa de mangue et lamelles d'avocat.",
         "Parsemer du reste de coriandre, servir avec un quartier de citron vert. Tacos d'été frais et grillés."
-      ]
+      ],
+      "photo": "assets/recipes/d216.webp"
     },
     {
       "id": "d217",
@@ -91890,7 +92868,8 @@ window.__DATA_RECIPES = {
         "Faire chauffer le grill (ou poêle-gril) à feu vif.",
         "Griller les brochettes 10-12 minutes en les retournant régulièrement : l'agneau est doré dehors et rosé dedans, les légumes marqués.",
         "Au moment de servir, napper du reste de chermoula et presser le jus du demi-citron restant. Le BBQ maghrébin parfumé de l'été."
-      ]
+      ],
+      "photo": "assets/recipes/d217.webp"
     },
     {
       "id": "b186",
@@ -91968,7 +92947,8 @@ window.__DATA_RECIPES = {
         "Disposer les quartiers de fraise.",
         "Parsemer du mélange amandes-avoine grillé.",
         "Finir par un filet de miel et quelques feuilles de menthe ciselées. Servir aussitôt — petit-déj printanier frais et croustillant."
-      ]
+      ],
+      "photo": "assets/recipes/b186.webp"
     },
     {
       "id": "b187",
@@ -92055,7 +93035,8 @@ window.__DATA_RECIPES = {
         "Faire griller les amandes effilées et les flocons d'avoine 3 minutes à sec.",
         "Disposer les fraises réservées en lamelles, parsemer du mélange amandes-avoine grillé et des graines de chia.",
         "Servir aussitôt — l'acidité de la rhubarbe réveille ce bowl printanier."
-      ]
+      ],
+      "photo": "assets/recipes/b187.webp"
     },
     {
       "id": "s158",
@@ -92142,7 +93123,8 @@ window.__DATA_RECIPES = {
         "Étaler la ricotta citronnée sur les crostini.",
         "Disposer les asperges sautées par-dessus, presser un peu de jus de citron.",
         "Parsemer de menthe ciselée. Servir tiède — l'apéro printanier aux asperges."
-      ]
+      ],
+      "photo": "assets/recipes/s158.webp"
     },
     {
       "id": "s159",
@@ -92241,7 +93223,8 @@ window.__DATA_RECIPES = {
         "Frotter chaque tranche chaude avec la gousse d'ail coupée.",
         "Étaler généreusement l'écrasé de petits pois sur les bruschetta.",
         "Garnir des petits pois réservés, de copeaux de parmesan et du reste de menthe. Servir aussitôt — la fraîcheur printanière des petits pois."
-      ]
+      ],
+      "photo": "assets/recipes/s159.webp"
     },
     {
       "id": "s160",
@@ -92333,7 +93316,8 @@ window.__DATA_RECIPES = {
         "Disposer les rondelles de radis en les faisant se chevaucher (effet écailles).",
         "Arroser d'un filet d'huile d'olive.",
         "Parsemer du reste d'herbes. Servir aussitôt — le radis-beurre printanier revisité, croquant et frais."
-      ]
+      ],
+      "photo": "assets/recipes/s160.webp"
     },
     {
       "id": "l218",
@@ -92357,7 +93341,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "mustard",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -92435,7 +93420,8 @@ window.__DATA_RECIPES = {
         "Disposer la salade verte dans 2 assiettes, répartir les asperges et les radis en fines rondelles.",
         "Arroser de vinaigrette.",
         "Déposer un œuf poché sur chaque assiette, parsemer de noisettes grillées et de ciboulette. Servir tiède — le jaune coulant fait la sauce."
-      ]
+      ],
+      "photo": "assets/recipes/l218.webp"
     },
     {
       "id": "l219",
@@ -92533,7 +93519,8 @@ window.__DATA_RECIPES = {
         "Ajouter les asperges, sauter 5 minutes à feu vif (croquantes, légèrement dorées).",
         "Remettre le tofu, ajouter la sauce soja, mélanger 2 minutes pour enrober.",
         "Hors du feu, presser le jus du demi-citron vert, parsemer de graines de sésame et d'oignons nouveaux. Servir sur le riz complet."
-      ]
+      ],
+      "photo": "assets/recipes/l219.webp"
     },
     {
       "id": "l220",
@@ -92654,7 +93641,8 @@ window.__DATA_RECIPES = {
         "Ajouter les épinards, laisser tomber 3 minutes (ils réduisent).",
         "Remettre le paneer doré, ajouter le garam masala, mélanger délicatement 2 minutes.",
         "Parsemer de coriandre fraîche. Servir avec le riz basmati complet — le curry printanier petits pois-épinards."
-      ]
+      ],
+      "photo": "assets/recipes/l220.webp"
     },
     {
       "id": "d218",
@@ -92678,7 +93666,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -92764,7 +93753,8 @@ window.__DATA_RECIPES = {
         "Ajouter les pointes d'asperges 4 minutes avant la fin (elles restent croquantes).",
         "Hors du feu, incorporer le parmesan, le jus du demi-citron, le sel et le poivre. Mélanger pour rendre crémeux.",
         "Parsemer de basilic. Servir aussitôt — le dîner printanier crémeux et léger."
-      ]
+      ],
+      "photo": "assets/recipes/d218.webp"
     },
     {
       "id": "d219",
@@ -92879,7 +93869,8 @@ window.__DATA_RECIPES = {
         "Creuser 2 puits dans la préparation, y casser délicatement les œufs.",
         "Couvrir et cuire 5-6 minutes à feu doux (blanc pris, jaune coulant).",
         "Presser le jus du demi-citron, parsemer de coriandre ciselée. Servir chaud — le ragoût printanier tunisien aux fèves et blettes."
-      ]
+      ],
+      "photo": "assets/recipes/d219.webp"
     },
     {
       "id": "des167",
@@ -92960,7 +93951,8 @@ window.__DATA_RECIPES = {
         "Faire griller les amandes effilées 2 minutes à sec.",
         "Répartir le skyr dans 2 verrines, ajouter la compote rhubarbe-fraise.",
         "Parsemer d'amandes effilées grillées. Servir frais — l'acidité de la rhubarbe équilibre la douceur des fraises."
-      ]
+      ],
+      "photo": "assets/recipes/des167.webp"
     },
     {
       "id": "des168",
@@ -93046,7 +94038,8 @@ window.__DATA_RECIPES = {
         "Répartir le crumble sur les fruits en couche régulière.",
         "Enfourner 25-30 minutes : le dessus est doré et les fruits bouillonnent sur les bords.",
         "Laisser tiédir 10 minutes avant de servir (le crumble se raffermit). Délicieux tiède, éventuellement avec un peu de yaourt grec."
-      ]
+      ],
+      "photo": "assets/recipes/des168.webp"
     },
     {
       "id": "l221",
@@ -93072,7 +94065,7 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "mustard",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -93158,7 +94151,8 @@ window.__DATA_RECIPES = {
         "Presser le jus du citron vert entier, ajouter le sel, mélanger.",
         "Laisser reposer 30 minutes au frais pour que les saveurs se mêlent.",
         "Parsemer de coriandre fraîche. Servir frais — le lemon rice indien transformé en salade-repas estivale."
-      ]
+      ],
+      "photo": "assets/recipes/l221.webp"
     },
     {
       "id": "l222",
@@ -93275,7 +94269,8 @@ window.__DATA_RECIPES = {
         "Dresser le riz tiède dans 2 bols, répartir le concombre et la tomate.",
         "Déposer les crevettes grillées, ajouter une cuillère de raïta.",
         "Parsemer du reste de menthe, servir avec un quartier de citron vert. Bowl indien grillé frais et complet."
-      ]
+      ],
+      "photo": "assets/recipes/l222.webp"
     },
     {
       "id": "l223",
@@ -93385,7 +94380,8 @@ window.__DATA_RECIPES = {
         "Préparer la vinaigrette : fouetter le reste d'huile, le jus du citron entier, le cumin et le sel.",
         "Mélanger le boulgour, les légumes grillés, la tomate et l'oignon avec la vinaigrette.",
         "Parsemer de menthe et persil ciselés. Servir tiède ou frais — la salade de boulgour aux légumes du soleil grillés."
-      ]
+      ],
+      "photo": "assets/recipes/l223.webp"
     },
     {
       "id": "l224",
@@ -93493,7 +94489,8 @@ window.__DATA_RECIPES = {
         "Mettre la tomate, le concombre et l'oignon dans un saladier, arroser de vinaigrette.",
         "Ajouter les pois chiches grillés encore tièdes (ils restent croustillants si ajoutés au dernier moment).",
         "Émietter la feta sur le dessus, parsemer de menthe et persil. Servir aussitôt — le croquant des pois chiches grillés sur la fraîcheur des crudités."
-      ]
+      ],
+      "photo": "assets/recipes/l224.webp"
     },
     {
       "id": "l225",
@@ -93519,8 +94516,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "nuts",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -93617,7 +94614,8 @@ window.__DATA_RECIPES = {
         "Faire chauffer le grill (ou poêle-gril) à feu vif, saisir les lanières de bœuf 2-3 minutes (juste dorées, encore tendres).",
         "Monter les bols : vermicelles au fond, salade, carotte, concombre, puis le bœuf grillé chaud.",
         "Arroser de sauce nuoc-cham, parsemer de menthe, coriandre et cacahuètes. Servir aussitôt — le grand classique vietnamien frais et chaud à la fois."
-      ]
+      ],
+      "photo": "assets/recipes/l225.webp"
     },
     {
       "id": "l226",
@@ -93640,8 +94638,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "nuts",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -93739,7 +94737,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélanger le chou, la carotte, le concombre et la mangue avec la sauce.",
         "Dresser dans 2 assiettes, déposer le poulet grillé émincé.",
         "Parsemer de cacahuètes, coriandre et menthe. Servir aussitôt — la salade thaï croquante, sucrée-acidulée et fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/l226.webp"
     },
     {
       "id": "d220",
@@ -93847,7 +94846,8 @@ window.__DATA_RECIPES = {
         "Griller les légumes 10 minutes en les retournant (marqués et tendres), réserver au chaud.",
         "Griller la dorade côté peau d'abord 3-4 minutes, puis 2-3 minutes côté chair (la chair est nacrée et se détache à la fourchette).",
         "Dresser la dorade sur les légumes grillés, napper du reste de chermoula et presser le jus du demi-citron. Le poisson grillé estival parfumé du Maghreb."
-      ]
+      ],
+      "photo": "assets/recipes/d220.webp"
     },
     {
       "id": "d221",
@@ -93954,7 +94954,8 @@ window.__DATA_RECIPES = {
         "Ajouter la courgette et les pois chiches égouttés, prolonger 12 minutes (les légumes sont fondants mais pas en bouillie).",
         "Réduire à découvert 3 minutes si trop liquide (la sauce doit napper).",
         "Presser le jus du demi-citron, parsemer de coriandre. Servir chaud — le tajine léger aux légumes du soleil."
-      ]
+      ],
+      "photo": "assets/recipes/d221.webp"
     },
     {
       "id": "b188",
@@ -94050,7 +95051,8 @@ window.__DATA_RECIPES = {
         "Remuer doucement à la spatule : les œufs prennent en restant crémeux et baveux (ne pas trop cuire).",
         "Retirer du feu quand les œufs sont encore brillants (ils finissent dans la chaleur résiduelle).",
         "Parsemer de persil ciselé. Servir avec du pain complet toasté — le petit-déj turc-méditerranéen aux légumes d'été."
-      ]
+      ],
+      "photo": "assets/recipes/b188.webp"
     },
     {
       "id": "b189",
@@ -94131,7 +95133,8 @@ window.__DATA_RECIPES = {
         "Mélanger le chia pudding avec le skyr pour le rendre plus crémeux.",
         "Répartir dans 2 verres, alterner avec le coulis de myrtilles et les myrtilles entières.",
         "Faire griller les amandes effilées 2 minutes à sec, en parsemer le dessus. Servir frais."
-      ]
+      ],
+      "photo": "assets/recipes/b189.webp"
     },
     {
       "id": "des169",
@@ -94199,7 +95202,8 @@ window.__DATA_RECIPES = {
         "Verser dans des moules à esquimaux (paletas), planter les bâtonnets.",
         "Placer au congélateur 6h minimum.",
         "Démouler en passant les moules 10 secondes sous l'eau tiède. Servir aussitôt — les paletas mexicaines aux fruits frais, sans sucre raffiné."
-      ]
+      ],
+      "photo": "assets/recipes/des169.webp"
     },
     {
       "id": "des170",
@@ -94274,7 +95278,8 @@ window.__DATA_RECIPES = {
         "Faire griller la noix de coco râpée 1 minute à sec dans une poêle (légèrement dorée).",
         "Au moment de servir, gratter une dernière fois pour une texture neigeuse.",
         "Servir dans des coupes glacées, parsemer de noix de coco grillée et de menthe ciselée. La glace pilée coco-citron vert des marchés mexicains."
-      ]
+      ],
+      "photo": "assets/recipes/des170.webp"
     },
     {
       "id": "l227",
@@ -94300,7 +95305,7 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -94391,7 +95396,8 @@ window.__DATA_RECIPES = {
         "Ajouter le cumin torréfié, le piment doux, le sel, l'huile d'olive et le jus du citron vert entier.",
         "Incorporer la noix de coco râpée et les cacahuètes concassées.",
         "Parsemer de coriandre et menthe ciselées. Servir frais — la salade de germes protéinée, croquante et désaltérante (sprout salad indien)."
-      ]
+      ],
+      "photo": "assets/recipes/l227.webp"
     },
     {
       "id": "l228",
@@ -94506,7 +95512,8 @@ window.__DATA_RECIPES = {
         "Dresser le riz tiède dans 2 bols, ajouter la roquette, la mangue et le concombre.",
         "Déposer le paneer grillé, arroser de vinaigrette.",
         "Parsemer de menthe ciselée. Servir tiède — le bowl indien grillé, fruité et frais."
-      ]
+      ],
+      "photo": "assets/recipes/l228.webp"
     },
     {
       "id": "l229",
@@ -94621,7 +95628,8 @@ window.__DATA_RECIPES = {
         "Couvrir et cuire 4-5 minutes à feu doux (blanc pris, jaune coulant).",
         "Parsemer de coriandre ciselée.",
         "Servir chaud dans la poêle avec du pain complet pour saucer — l'ojja tunisienne, shakshuka relevée aux crevettes et poivrons d'été."
-      ]
+      ],
+      "photo": "assets/recipes/l229.webp"
     },
     {
       "id": "l230",
@@ -94724,7 +95732,8 @@ window.__DATA_RECIPES = {
         "Enfourner 35-40 minutes : les légumes sont fondants et légèrement confits sur le dessus.",
         "Sortir, émietter le fromage de chèvre frais sur le tian chaud (il fond légèrement).",
         "Servir tiède — le tian provençal complet avec sa base de quinoa, plat unique estival."
-      ]
+      ],
+      "photo": "assets/recipes/l230.webp"
     },
     {
       "id": "l231",
@@ -94747,10 +95756,10 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts",
         "soy",
         "eggs",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -94847,7 +95856,8 @@ window.__DATA_RECIPES = {
         "Dresser dans 2 grandes assiettes : disposer harmonieusement par secteurs les légumes vapeur, le concombre, les pousses de soja, le tofu et les œufs.",
         "Napper généreusement de sauce cacahuète.",
         "Servir tiède — la grande salade composée indonésienne, complète et gourmande."
-      ]
+      ],
+      "photo": "assets/recipes/l231.webp"
     },
     {
       "id": "d222",
@@ -94870,7 +95880,7 @@ window.__DATA_RECIPES = {
         "grill"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs"
       ],
       "ing": [
         [
@@ -94949,7 +95959,8 @@ window.__DATA_RECIPES = {
         "Griller les calamars à feu très vif 2-3 minutes au total (cuisson rapide impérative : trop cuits, ils deviennent caoutchouteux).",
         "Hors du feu, mélanger les calamars chauds avec la persillade.",
         "Dresser sur les courgettes grillées, presser le jus du demi-citron restant. Servir aussitôt — les calamars grillés à l'ail, légers et iodés."
-      ]
+      ],
+      "photo": "assets/recipes/d222.webp"
     },
     {
       "id": "d223",
@@ -95069,7 +96080,8 @@ window.__DATA_RECIPES = {
         "Griller les brochettes 10-12 minutes en les retournant régulièrement (dorées dehors, juste cuites dedans).",
         "Dresser les brochettes, parsemer du reste de coriandre.",
         "Servir avec le tzatziki concombre-menthe bien frais. Le BBQ maghrébin classique de l'été."
-      ]
+      ],
+      "photo": "assets/recipes/d223.webp"
     },
     {
       "id": "d224",
@@ -95189,7 +96201,8 @@ window.__DATA_RECIPES = {
         "Griller les cubes de poisson 3-4 minutes par face (la chair est nacrée, légèrement charbonnée aux bords — effet tandoor).",
         "Dresser le poisson tikka grillé dans 2 assiettes.",
         "Servir avec la salade kachumber bien fraîche et de la coriandre ciselée. Le poisson tikka grillé, léger et parfumé, sans curry lourd."
-      ]
+      ],
+      "photo": "assets/recipes/d224.webp"
     },
     {
       "id": "d225",
@@ -95296,7 +96309,8 @@ window.__DATA_RECIPES = {
         "Faire chauffer le grill (ou poêle-gril) à feu vif.",
         "Griller les brochettes 12-15 minutes en les retournant : le poulet est cuit à cœur, l'ananas doré et caramélisé.",
         "Presser le jus du demi-citron vert restant, parsemer de coriandre. Servir aussitôt — les brochettes al pastor sucrées-épicées du Mexique."
-      ]
+      ],
+      "photo": "assets/recipes/d225.webp"
     },
     {
       "id": "d226",
@@ -95318,7 +96332,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -95397,7 +96412,8 @@ window.__DATA_RECIPES = {
         "Déposer les filets de dorade côté peau dans le bouillon de tomates, couvrir et pocher 8-10 minutes (la chair est nacrée et se détache).",
         "Parsemer de persil ciselé.",
         "Servir le poisson nappé de son bouillon de tomates aux câpres et olives — le grand classique côtier napolitain, léger et parfumé. Délicieux avec un peu de pain au levain pour saucer."
-      ]
+      ],
+      "photo": "assets/recipes/d226.webp"
     },
     {
       "id": "des171",
@@ -95473,7 +96489,8 @@ window.__DATA_RECIPES = {
         "Gratter à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : texture sorbet neigeuse.",
         "Faire griller les amandes effilées 2 minutes à sec.",
         "Au moment de servir, gratter une dernière fois, dresser dans des coupes glacées et parsemer d'amandes grillées. Le sorbet d'abricot parfumé à la fleur d'oranger."
-      ]
+      ],
+      "photo": "assets/recipes/des171.webp"
     },
     {
       "id": "des172",
@@ -95554,7 +96571,8 @@ window.__DATA_RECIPES = {
         "Verser dans 2 verres ou coupes, placer 1h au frais pour servir bien glacé.",
         "Concasser les pistaches au couteau.",
         "Garnir des dés de pêche réservés et des pistaches concassées. Servir bien frais — le lassi à la pêche, dessert-boisson rafraîchissant de l'été indien."
-      ]
+      ],
+      "photo": "assets/recipes/des172.webp"
     },
     {
       "id": "l232",
@@ -95578,7 +96596,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -95669,7 +96688,8 @@ window.__DATA_RECIPES = {
         "Verser la vinaigrette, mélanger délicatement.",
         "Disposer les quartiers d'œuf sur le dessus, parsemer de persil ciselé.",
         "Servir frais — la salade de riz complète et colorée, classique des pique-niques d'été."
-      ]
+      ],
+      "photo": "assets/recipes/l232.webp"
     },
     {
       "id": "l233",
@@ -95778,7 +96798,8 @@ window.__DATA_RECIPES = {
         "Verser la sauce sur les légumes, mélanger.",
         "Dresser dans les assiettes, garnir du thon égoutté émietté, des quartiers d'œuf et des olives.",
         "Parsemer de menthe ciselée. Servir frais — la salade tunisienne finement coupée, vive et relevée."
-      ]
+      ],
+      "photo": "assets/recipes/l233.webp"
     },
     {
       "id": "l234",
@@ -95802,7 +96823,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -95887,7 +96909,8 @@ window.__DATA_RECIPES = {
         "Couper le reste de mangue en dés, émincer l'oignon rouge.",
         "Dresser le riz et la roquette dans 2 bols, ajouter le poulet coronation.",
         "Garnir des dés de mangue, de l'oignon, des raisins secs et des amandes grillées. Parsemer de coriandre. Servir frais — le classique anglo-indien curry-mangue."
-      ]
+      ],
+      "photo": "assets/recipes/l234.webp"
     },
     {
       "id": "l235",
@@ -95912,7 +96935,7 @@ window.__DATA_RECIPES = {
       "allergens": [
         "shellfish",
         "fish",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -95996,7 +97019,8 @@ window.__DATA_RECIPES = {
         "Ajouter la papaye, les haricots, la carotte et la tomate dans le bol, mélanger en pressant légèrement pour que les légumes s'imprègnent (technique du pilon traditionnel).",
         "Ajouter les crevettes cuites et les cacahuètes concassées, mélanger délicatement.",
         "Dresser, parsemer du reste de cacahuètes et de coriandre. Servir frais — la salade thaïe explosive sucrée-salée-acidulée-pimentée."
-      ]
+      ],
+      "photo": "assets/recipes/l235.webp"
     },
     {
       "id": "l236",
@@ -96109,7 +97133,8 @@ window.__DATA_RECIPES = {
         "Dans 2 grands bols, disposer la salade verte, le maïs grillé, les haricots noirs, la tomate et l'oignon.",
         "Ajouter le poisson grillé émietté et les lamelles d'avocat.",
         "Arroser de vinaigrette, parsemer de coriandre. Servir aussitôt — le taco déconstruit en salade, frais et fumé."
-      ]
+      ],
+      "photo": "assets/recipes/l236.webp"
     },
     {
       "id": "d227",
@@ -96231,7 +97256,8 @@ window.__DATA_RECIPES = {
         "Ajouter la courgette et le lait de coco, prolonger 8 minutes (les légumes sont fondants, la sauce nappe).",
         "Ajouter le garam masala en fin de cuisson, mélanger.",
         "Parsemer de coriandre. Servir chaud — le curry léger aux légumes d'été, sans féculent obligatoire (CG dinner respectée)."
-      ]
+      ],
+      "photo": "assets/recipes/d227.webp"
     },
     {
       "id": "d228",
@@ -96332,7 +97358,8 @@ window.__DATA_RECIPES = {
         "Faire chauffer le grill (ou poêle-gril) à feu vif.",
         "Griller le fenouil 8 minutes (tendre et marqué), réserver. Griller les brochettes 12-15 minutes en les retournant (poulet caramélisé, cuit à cœur).",
         "Dresser les brochettes sur le fenouil grillé, presser le jus du demi-citron restant, parsemer de coriandre. Le sucré-épicé maghrébin au barbecue."
-      ]
+      ],
+      "photo": "assets/recipes/d228.webp"
     },
     {
       "id": "d229",
@@ -96448,7 +97475,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajouter la moitié de la coriandre et le jus du demi-citron vert.",
         "Garnir les coques de courgette de farce, parsemer de fromage frais émietté.",
         "Enfourner 18-20 minutes (les courgettes sont fondantes, le dessus gratiné). Parsemer du reste de coriandre. Servir chaud — les courgettes farcies à la mexicaine."
-      ]
+      ],
+      "photo": "assets/recipes/d229.webp"
     },
     {
       "id": "d230",
@@ -96553,7 +97581,8 @@ window.__DATA_RECIPES = {
         "Faire réduire le reste de sauce teriyaki 2 minutes à la casserole (elle épaissit et brille).",
         "Dresser le riz dans 2 bols, ajouter les edamame et le saumon grillé.",
         "Napper du reste de sauce teriyaki réduite, presser le jus du demi-citron vert, parsemer de graines de sésame et d'oignons nouveaux. Servir chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d230.webp"
     },
     {
       "id": "d231",
@@ -96663,7 +97692,8 @@ window.__DATA_RECIPES = {
         "Étaler la sauce tomate au fond d'un plat à gratin, déposer les involtini serrés, parsemer de parmesan.",
         "Enfourner 15-18 minutes (le dessus gratine, la sauce bouillonne).",
         "Parsemer du reste de basilic. Servir chaud — les roulés d'aubergine farcis à la ricotta, classique estival du sud de l'Italie."
-      ]
+      ],
+      "photo": "assets/recipes/d231.webp"
     },
     {
       "id": "des173",
@@ -96731,7 +97761,8 @@ window.__DATA_RECIPES = {
         "Gratter à la fourchette toutes les 40 minutes pendant 3h (3-4 grattages) : cristaux légers et neigeux.",
         "Au moment de servir, gratter une dernière fois pour une texture aérienne.",
         "Servir dans des verres glacés, décorer d'une feuille de menthe — le granité de pastèque parfumé à la fleur d'oranger, ultra-désaltérant."
-      ]
+      ],
+      "photo": "assets/recipes/des173.webp"
     },
     {
       "id": "des174",
@@ -96798,7 +97829,8 @@ window.__DATA_RECIPES = {
         "Gratter à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : texture sorbet neigeuse.",
         "Au moment de servir, gratter une dernière fois.",
         "Servir dans des coupes glacées, décorer d'une feuille de verveine — l'alliance délicate pêche-verveine de l'été méditerranéen."
-      ]
+      ],
+      "photo": "assets/recipes/des174.webp"
     },
     {
       "id": "l237",
@@ -96899,7 +97931,8 @@ window.__DATA_RECIPES = {
         "Verser la vinaigrette, mélanger.",
         "Émietter la feta, ajouter les olives coupées en deux.",
         "Parsemer de menthe et persil ciselés. Servir frais — la salade de quinoa méditerranéenne, complète et rafraîchissante."
-      ]
+      ],
+      "photo": "assets/recipes/l237.webp"
     },
     {
       "id": "l238",
@@ -97001,7 +98034,8 @@ window.__DATA_RECIPES = {
         "Étaler la sauce yaourt au fond de 2 assiettes.",
         "Déposer les carottes et pois chiches rôtis encore tièdes par-dessus.",
         "Presser le jus du demi-citron restant, arroser du reste d'huile, parsemer de menthe et coriandre. Servir tiède — le contraste chaud-froid carottes rôties / yaourt frais."
-      ]
+      ],
+      "photo": "assets/recipes/l238.webp"
     },
     {
       "id": "l239",
@@ -97105,7 +98139,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélanger le riz froid, la mangue, le poivron, l'oignon et le mélange cajou-moutarde-curry.",
         "Presser le jus du citron vert entier, ajouter le sel, mélanger.",
         "Laisser reposer 20 minutes au frais. Parsemer de coriandre. Servir frais — la salade de riz indienne fruitée et croquante."
-      ]
+      ],
+      "photo": "assets/recipes/l239.webp"
     },
     {
       "id": "l240",
@@ -97131,7 +98166,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -97215,7 +98251,8 @@ window.__DATA_RECIPES = {
         "Préparer la garniture : faire griller le maïs 3 minutes à sec dans une poêle (légèrement charbonné).",
         "Verser la soupe dans des bols, garnir du maïs grillé, d'oignon nouveau ciselé et du reste de coriandre.",
         "Saupoudrer d'une pointe de piment doux et presser le jus du demi-citron restant. Servir glacé — le velouté froid d'avocat mexicain, onctueux et frais."
-      ]
+      ],
+      "photo": "assets/recipes/l240.webp"
     },
     {
       "id": "d232",
@@ -97332,7 +98369,8 @@ window.__DATA_RECIPES = {
         "Rincer le citron confit, le couper en lanières (jeter la pulpe), l'ajouter avec les olives.",
         "Réduire à découvert 3 minutes si trop liquide (la sauce doit napper).",
         "Presser le jus du demi-citron, parsemer de coriandre. Servir chaud — le tajine d'été léger au poulet et courgettes."
-      ]
+      ],
+      "photo": "assets/recipes/d232.webp"
     },
     {
       "id": "d233",
@@ -97447,7 +98485,8 @@ window.__DATA_RECIPES = {
         "Griller les courgettes 8 minutes (marquées et tendres), réserver.",
         "Griller le cabillaud 3-4 minutes par face (la chair est nacrée et se détache).",
         "Dresser le poisson sur les courgettes grillées, napper de salsa mangue-coco, parsemer de coriandre. Le poisson grillé épicé à la fraîcheur tropicale de Goa."
-      ]
+      ],
+      "photo": "assets/recipes/d233.webp"
     },
     {
       "id": "d234",
@@ -97471,8 +98510,8 @@ window.__DATA_RECIPES = {
         "grill"
       ],
       "allergens": [
-        "nuts",
-        "soy"
+        "soy",
+        "peanuts"
       ],
       "ing": [
         [
@@ -97562,7 +98601,8 @@ window.__DATA_RECIPES = {
         "Enfiler le poulet mariné sur les brochettes (tremper les pics en bois 10 min dans l'eau).",
         "Faire chauffer le grill (ou poêle-gril) à feu vif, griller les brochettes 12-15 minutes en les retournant (dorées, cuites à cœur).",
         "Servir les brochettes nappées de sauce satay, avec le pickle concombre-oignon et la coriandre. Le satay grillé, sauce cacahuète onctueuse."
-      ]
+      ],
+      "photo": "assets/recipes/d234.webp"
     },
     {
       "id": "d235",
@@ -97664,7 +98704,8 @@ window.__DATA_RECIPES = {
         "Disposer les tranches de mozzarella sur le poulet.",
         "Enfourner 10-12 minutes (la mozzarella fond et gratine, le poulet finit de cuire).",
         "Parsemer de basilic frais, servir avec les courgettes poêlées. Le poulet à la pizzaiola, saveurs de pizza sans la pâte."
-      ]
+      ],
+      "photo": "assets/recipes/d235.webp"
     },
     {
       "id": "des175",
@@ -97726,7 +98767,8 @@ window.__DATA_RECIPES = {
         "Mixer en pulsant par à-coups (5 sec × 5 fois), racler les parois entre chaque : texture sorbet onctueuse jaune vif.",
         "Verser dans 2 coupes glacées, décorer d'un zeste de citron vert.",
         "Servir immédiatement (si trop dur, laisser tempérer 5 minutes avant de mixer) — le sorbet de mangue parfumé à la cardamome, intensément fruité."
-      ]
+      ],
+      "photo": "assets/recipes/des175.webp"
     },
     {
       "id": "l241",
@@ -97752,7 +98794,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -97812,7 +98855,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le four en position gril. Coupe le pain complet en tranches et fais-les légèrement griller.",
         "Répartis la soupe dans des bols qui vont au four. Pose une tranche de pain dessus, couvre de comté râpé.",
         "Enfourne sous le gril 3 à 5 min, jusqu'à ce que le fromage soit doré et bouillonnant. Sers très chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l241.webp"
     },
     {
       "id": "l242",
@@ -97838,7 +98882,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -97892,7 +98937,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, concasse grossièrement les noisettes et fais-les torréfier 3 min à sec dans une poêle, jusqu'à ce qu'elles sentent bon et dorent légèrement.",
         "Mixe la soupe avec la crème jusqu'à obtenir un velouté lisse. Ajoute la muscade, sale et poivre.",
         "Sers parsemé de noisettes torréfiées."
-      ]
+      ],
+      "photo": "assets/recipes/l242.webp"
     },
     {
       "id": "l243",
@@ -97918,7 +98964,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -98077,7 +99124,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -98149,7 +99198,8 @@ window.__DATA_RECIPES = {
         "Casse chaque œuf dans un ramequin, fais tourner l'eau avec une cuillère pour créer un tourbillon, puis glisse l'œuf au centre. Laisse cuire 3 min : le blanc prend, le jaune reste coulant. Égoutte sur papier absorbant.",
         "Fais tomber les épinards 2 min dans une poêle chaude jusqu'à ce qu'ils réduisent et deviennent brillants. Sale légèrement.",
         "Dresse les épinards dans l'assiette, pose l'œuf poché dessus, nappe de sauce meurette. Poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l245.webp"
     },
     {
       "id": "d236",
@@ -98171,7 +99221,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Bœuf à braiser (paleron)",
@@ -98241,7 +99293,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, épluche carottes, navet et céleri-rave, coupe-les en gros morceaux. Lave le poireau et coupe-le en tronçons.",
         "Ajoute tous les légumes dans la marmite. Poursuis la cuisson 30 à 40 min, jusqu'à ce qu'ils soient tendres (la pointe d'un couteau s'enfonce sans résistance).",
         "Rectifie l'assaisonnement. Sers la viande tranchée et les légumes nappés d'un peu de bouillon bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d236.webp"
     },
     {
       "id": "d237",
@@ -98325,7 +99378,8 @@ window.__DATA_RECIPES = {
         "Dans une poêle, chauffe l'huile d'olive à feu moyen-vif. Pose le filet côté peau (s'il en a) et fais cuire 3 à 4 min sans y toucher, puis retourne 2 min : la chair doit être nacrée et s'effeuiller facilement.",
         "Ajoute l'échalote ciselée dans la poêle en fin de cuisson, déglace avec le jus de citron.",
         "Dresse la crème de chou-fleur, pose le filet dessus, parsème de noisettes et arrose du jus de cuisson citronné."
-      ]
+      ],
+      "photo": "assets/recipes/d237.webp"
     },
     {
       "id": "d238",
@@ -98410,7 +99464,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 200°C. Enroule chaque demi-endive dans une fine tranche de jambon.",
         "Range les endives dans un plat, nappe de béchamel, parsème de comté.",
         "Enfourne 15 à 20 min, jusqu'à ce que le dessus soit doré. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d238.webp"
     },
     {
       "id": "d239",
@@ -98433,8 +99488,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish",
-        "lactose"
+        "lactose",
+        "molluscs",
+        "celery"
       ],
       "ing": [
         [
@@ -98487,7 +99543,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer l'huile d'olive dans une poêle à feu vif jusqu'à ce qu'elle soit bien chaude.",
         "Pose les Saint-Jacques sans les coller et saisis-les 1 min 30 de chaque côté : elles doivent être dorées dehors et nacrées au centre. Ne pas trop cuire (elles deviennent caoutchouteuses).",
         "Sale et poivre en fin de cuisson. Dresse la purée de céleri-rave, pose les Saint-Jacques dessus et parsème de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d239.webp"
     },
     {
       "id": "d240",
@@ -98509,7 +99566,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Sauté de porc (épaule)",
@@ -98568,7 +99627,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, épluche les navets et coupe-les en quartiers.",
         "Ajoute les navets et les pruneaux dans la cocotte. Poursuis 20 min, jusqu'à ce que la viande et les navets soient bien tendres et la sauce sirupeuse.",
         "Rectifie sel et poivre. Sers bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d240.webp"
     },
     {
       "id": "des176",
@@ -98700,7 +99760,8 @@ window.__DATA_RECIPES = {
         "Répartis dans des ramequins. Place-les dans un plat et verse de l'eau chaude à mi-hauteur des ramequins (bain-marie : la cuisson reste douce et le flan ne tranche pas).",
         "Enfourne 30 à 35 min : le flan est pris quand il est juste tremblotant au centre.",
         "Laisse refroidir puis place au frais au moins 1h avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des177.webp"
     },
     {
       "id": "l246",
@@ -98724,7 +99785,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -98801,7 +99863,8 @@ window.__DATA_RECIPES = {
         "Lave le chou noir, retire la côte centrale dure et coupe les feuilles en lanières. Ajoute-les avec les haricots blancs et le thym.",
         "Laisse mijoter 25 min à feu doux, jusqu'à ce que le chou soit fondant.",
         "Coupe le pain complet en morceaux, ajoute-les dans la soupe et laisse 5 min : le pain gonfle et épaissit la ribollita (c'est sa signature). Mélange, sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l246.webp"
     },
     {
       "id": "l247",
@@ -98825,7 +99888,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -98934,7 +99998,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -98986,7 +100051,8 @@ window.__DATA_RECIPES = {
         "Laisse cuire 20 min à feu doux pour que les châtaignes s'attendrissent et libèrent leur goût.",
         "Retire le brin de romarin. Mixe finement avec la crème jusqu'à obtenir un velouté lisse et onctueux.",
         "Sale, poivre. Si c'est trop épais, détends avec un peu de bouillon chaud. Sers avec un tour de poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l248.webp"
     },
     {
       "id": "l249",
@@ -99010,7 +100076,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles vertes",
@@ -99153,7 +100221,8 @@ window.__DATA_RECIPES = {
         "Concasse les noisettes et torréfie-les 3 min à sec dans une poêle.",
         "Dans la poêle, fais fondre le beurre avec les feuilles de sauge jusqu'à ce qu'il sente la noisette (beurre légèrement doré). Ajoute les gnocchi, fais-les rouler 2 min.",
         "Sers parsemé de noisettes torréfiées et d'un peu de parmesan."
-      ]
+      ],
+      "photo": "assets/recipes/l250.webp"
     },
     {
       "id": "l251",
@@ -99174,7 +100243,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Saucisse de volaille",
@@ -99237,7 +100308,8 @@ window.__DATA_RECIPES = {
         "Verse le bouillon, ajoute le piment doux et porte à frémissement.",
         "Lave le chou kale, retire les côtes dures et coupe les feuilles en lanières. Ajoute-les avec les haricots cannellini.",
         "Laisse mijoter 15 min, jusqu'à ce que le chou soit tendre. Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l251.webp"
     },
     {
       "id": "d241",
@@ -99259,7 +100331,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Jarret de dinde",
@@ -99341,7 +100416,8 @@ window.__DATA_RECIPES = {
         "Ajoute les tomates, 1 gousse d'ail écrasée et le bouillon. Remets la viande, couvre et laisse mijoter 50 min à feu doux, jusqu'à ce que la dinde soit très tendre.",
         "Prépare la gremolata : mélange le persil ciselé, le zeste de citron râpé (juste le jaune) et la dernière gousse d'ail finement hachée.",
         "Sale et poivre la sauce. Sers le jarret nappé de sauce et parsemé de gremolata (elle apporte la fraîcheur qui réveille le plat)."
-      ]
+      ],
+      "photo": "assets/recipes/d241.webp"
     },
     {
       "id": "d242",
@@ -99364,7 +100440,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -99452,7 +100529,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -99517,7 +100596,8 @@ window.__DATA_RECIPES = {
         "Ajoute les dés de potimarron, puis le bouillon chaud louche par louche : attends que chaque louche soit presque absorbée avant d'ajouter la suivante, en remuant. Compte environ 18 min.",
         "À mi-cuisson, ajoute le radicchio coupé en lanières : il fond et colore le risotto.",
         "Quand le riz est crémeux et al dente, coupe le feu, incorpore le parmesan en remuant énergiquement (le « mantecatura » qui rend le risotto onctueux). Sale, poivre et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d243.webp"
     },
     {
       "id": "d244",
@@ -99539,7 +100619,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Escalope de dinde",
@@ -99613,7 +100695,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Bœuf à braiser (paleron)",
@@ -99683,7 +100768,8 @@ window.__DATA_RECIPES = {
         "Remets la viande, ajoute les tomates, le bouillon, le romarin et le laurier. Couvre et laisse mijoter 1h à feu doux.",
         "Épluche carotte et céleri-rave, coupe-les en gros cubes. Ajoute-les dans la cocotte et poursuis 30 min, jusqu'à ce que la viande s'effiloche à la fourchette et que les légumes soient fondants.",
         "Retire le laurier, rectifie sel et poivre. Sers bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d245.webp"
     },
     {
       "id": "d246",
@@ -99792,7 +100878,8 @@ window.__DATA_RECIPES = {
         "shellfish",
         "gluten",
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -99856,7 +100943,8 @@ window.__DATA_RECIPES = {
         "Porte le bouillon à frémissement avec le reste de gingembre et la sauce soja.",
         "Plonge les won-ton 4 min : ils sont cuits quand ils remontent et que la pâte devient translucide. Ajoute le pak choï coupé en lanières et les crevettes entières restantes, cuis 2 min.",
         "Sers avec un filet d'huile de sésame et la ciboule ciselée. Poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l252.webp"
     },
     {
       "id": "l253",
@@ -99880,7 +100968,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -99938,7 +101027,8 @@ window.__DATA_RECIPES = {
         "À mi-cuisson, ajoute le blanc de poulet entier. Au bout de 15 min, retire-le et effiloche-le à la fourchette, puis remets-le.",
         "Assaisonne avec la sauce soja. Si c'est trop épais, ajoute un peu de bouillon chaud.",
         "Sers parsemé de ciboule ciselée et d'un filet d'huile de sésame. Poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l253.webp"
     },
     {
       "id": "l254",
@@ -99962,7 +101052,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -100032,7 +101123,8 @@ window.__DATA_RECIPES = {
         "Assaisonne avec la sauce soja, le vinaigre de riz et le piment : c'est l'équilibre aigre (vinaigre) / piquant (piment) qui donne son nom à la soupe. Goûte et ajuste.",
         "Délaye la fécule dans 2 c.à.s d'eau froide, verse dans la soupe en remuant : elle épaissit légèrement.",
         "Bats l'œuf et verse-le en filet dans la soupe frémissante en remuant doucement : il forme des rubans. Sers aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/l254.webp"
     },
     {
       "id": "l255",
@@ -100054,7 +101146,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "shellfish",
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -100124,7 +101217,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, réhydrate les vermicelles de riz selon le paquet (souvent 5 min dans l'eau chaude), puis égoutte.",
         "Ajoute les crevettes et le pak choï dans le bouillon, cuis 3 min : les crevettes deviennent roses et opaques.",
         "Répartis les vermicelles dans les bols, verse le bouillon dessus, garnis de germes de soja et de coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/l255.webp"
     },
     {
       "id": "l256",
@@ -100147,7 +101241,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -100217,7 +101312,8 @@ window.__DATA_RECIPES = {
         "Remets la viande, verse le bouillon et la sauce soja. Couvre et laisse mijoter 30 min, jusqu'à ce que le bœuf soit tendre.",
         "Délaye la fécule dans un peu d'eau froide et verse-la dans la cocotte : la sauce épaissit en quelques minutes pour devenir nappante (texture typique du curry japonais).",
         "Pendant ce temps, cuis le riz complet selon le paquet. Sers le curry à côté du riz."
-      ]
+      ],
+      "photo": "assets/recipes/l256.webp"
     },
     {
       "id": "l257",
@@ -100241,7 +101337,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -100299,7 +101396,8 @@ window.__DATA_RECIPES = {
         "Coupe le poulet en lamelles, ajoute-le dans le bouillon et cuis 5 min, jusqu'à ce qu'il soit cuit à cœur (plus de rose).",
         "Bats les œufs grossièrement (laisse des traînées de blanc et de jaune). Verse-les sur le poulet, couvre et coupe le feu : la chaleur résiduelle prend les œufs en 1-2 min, ils restent baveux.",
         "Fais glisser la préparation sur le bol de riz. Parsème de ciboule ciselée et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l257.webp"
     },
     {
       "id": "d247",
@@ -100321,7 +101419,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -100409,7 +101508,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -100500,7 +101600,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -100570,7 +101671,8 @@ window.__DATA_RECIPES = {
         "Retire le bœuf, tranche-le finement. Filtre le bouillon pour retirer citronnelle et oignon, puis assaisonne avec la sauce soja et le piment.",
         "Réhydrate les vermicelles de riz selon le paquet, égoutte et répartis dans les bols.",
         "Dépose les tranches de bœuf, verse le bouillon brûlant, garnis de germes de soja et de coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/d249.webp"
     },
     {
       "id": "d250",
@@ -100675,7 +101777,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -100733,7 +101836,8 @@ window.__DATA_RECIPES = {
         "Dépose 1 c.à.c de farce au centre de chaque disque de pâte, humidifie le bord et plie en formant des plis pour souder (en demi-lune).",
         "Porte le bouillon à frémissement avec un trait de sauce soja. Plonge les gyoza et cuis 6 min : ils remontent quand ils sont cuits.",
         "Sers les gyoza dans le bouillon, parsemés de ciboule."
-      ]
+      ],
+      "photo": "assets/recipes/d251.webp"
     },
     {
       "id": "d252",
@@ -100825,7 +101929,8 @@ window.__DATA_RECIPES = {
         "Cuis le riz complet selon le paquet.",
         "Fais chauffer le wok à feu vif. Saisis le bœuf mariné 2-3 min : il caramélise légèrement. Réserve.",
         "Dans le wok, fais sauter le chou chinois 3 min, remets le bœuf 1 min. Sers sur le riz, parsemé de graines de sésame et de ciboule."
-      ]
+      ],
+      "photo": "assets/recipes/d252.webp"
     },
     {
       "id": "l258",
@@ -100850,7 +101955,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Fèves sèches décortiquées",
@@ -100907,7 +102014,8 @@ window.__DATA_RECIPES = {
         "Mixe finement avec le cumin jusqu'à obtenir un velouté lisse (ajoute un peu d'eau chaude si trop épais).",
         "Verse dans les bols, arrose d'huile d'olive et de jus de citron.",
         "Saupoudre de paprika et d'un peu de cumin, sale et poivre. Sers très chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l258.webp"
     },
     {
       "id": "l259",
@@ -100931,7 +102039,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -101001,7 +102110,8 @@ window.__DATA_RECIPES = {
         "Rince l'orge perlé, ajoute-le avec le bouillon et les pois chiches. Porte à ébullition.",
         "Baisse à feu doux et laisse mijoter 35 min, jusqu'à ce que l'orge soit tendre et la soupe épaisse.",
         "Sale, poivre, parsème de coriandre ciselée et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l259.webp"
     },
     {
       "id": "l260",
@@ -101025,7 +102135,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Potiron",
@@ -101082,7 +102194,8 @@ window.__DATA_RECIPES = {
         "Ajoute le potiron et le bouillon. Couvre et laisse cuire 18 min, jusqu'à ce que le potiron soit fondant.",
         "Mixe finement. Incorpore la harissa petit à petit en goûtant (elle pique, vas-y doucement).",
         "Sale, poivre. Sers avec un filet d'huile d'olive."
-      ]
+      ],
+      "photo": "assets/recipes/l260.webp"
     },
     {
       "id": "l261",
@@ -101107,7 +102220,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -101176,7 +102291,8 @@ window.__DATA_RECIPES = {
         "Ajoute les lentilles et le bouillon. Laisse mijoter 20 min, jusqu'à ce que les lentilles soient fondues.",
         "Mixe pour un velouté lisse (ou laisse un peu de texture, au choix).",
         "Ajoute le jus de citron, sale et poivre. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l261.webp"
     },
     {
       "id": "l262",
@@ -101257,7 +102373,8 @@ window.__DATA_RECIPES = {
         "Enfourne 25 à 30 min en remuant à mi-cuisson : la patate douce doit être tendre et caraméliser sur les bords, les pois chiches devenir croustillants.",
         "Verse dans un saladier, arrose de jus de citron.",
         "Parsème de coriandre, sale et poivre. Se mange tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l262.webp"
     },
     {
       "id": "l263",
@@ -101281,7 +102398,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -101380,7 +102498,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Épaule d'agneau",
@@ -101450,7 +102570,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, lave les coings, coupe-les en quartiers épais (garde la peau, retire le cœur dur).",
         "Ajoute les coings dans la cocotte et poursuis 25 min, jusqu'à ce qu'ils soient fondants et l'agneau très tendre.",
         "Sale, poivre. La sauce doit être courte et parfumée. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d253.webp"
     },
     {
       "id": "d254",
@@ -101472,7 +102593,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haut de cuisse de poulet",
@@ -101548,7 +102671,8 @@ window.__DATA_RECIPES = {
         "Couvre et laisse mijoter 30 min, jusqu'à ce que le poulet soit tendre.",
         "Ajoute les châtaignes cuites et poursuis 8 min pour qu'elles s'imprègnent de sauce.",
         "Sale, poivre, parsème de coriandre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d254.webp"
     },
     {
       "id": "d255",
@@ -101569,7 +102693,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Bœuf à braiser (paleron)",
@@ -101645,7 +102771,8 @@ window.__DATA_RECIPES = {
         "Épluche les navets et coupe-les en quartiers. Ajoute-les dans la cocotte.",
         "Poursuis 25 à 30 min, jusqu'à ce que le bœuf s'effiloche et les navets soient fondants.",
         "Sale, poivre, parsème de coriandre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d255.webp"
     },
     {
       "id": "d256",
@@ -101668,7 +102795,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -101739,7 +102867,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, déchire le pain complet rassis en morceaux et fais-les légèrement sécher au four ou à la poêle.",
         "Dispose le pain au fond du plat, pose le poulet dessus et nappe généreusement de sauce aux lentilles : le pain s'imbibe (principe de la rfissa, où le pain remplace traditionnellement le msemen).",
         "Sale, poivre et sers aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/d256.webp"
     },
     {
       "id": "d257",
@@ -101831,7 +102960,8 @@ window.__DATA_RECIPES = {
         "Verse les tomates concassées, laisse mijoter 12 min jusqu'à ce que la sauce réduise.",
         "Dépose délicatement les boulettes dans la sauce, couvre et laisse pocher 12 min sans trop remuer (elles sont fragiles).",
         "Parsème du reste de coriandre et persil. Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d257.webp"
     },
     {
       "id": "d258",
@@ -101854,7 +102984,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -101954,7 +103085,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Blanc de poulet",
@@ -102054,7 +103187,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -102118,7 +103252,8 @@ window.__DATA_RECIPES = {
         "Mixe finement avec la crème jusqu'à obtenir un velouté lisse. Passe au tamis si tu veux une texture très fine.",
         "Réchauffe, ajoute le piment doux, sale et poivre.",
         "Sers parsemé des grains de maïs réservés et de coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/l265.webp"
     },
     {
       "id": "l266",
@@ -102140,7 +103275,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Dinde hachée",
@@ -102232,7 +103369,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haricots pinto cuits",
@@ -102511,7 +103650,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Bœuf à braiser (paleron)",
@@ -102586,7 +103727,8 @@ window.__DATA_RECIPES = {
         "Ajoute la carotte et le maïs en tronçons, cuis 15 min.",
         "Ajoute la courgette et le chou vert coupé en lanières, poursuis 10 min : tout doit être fondant.",
         "Rectifie sel et poivre. Sers la viande et les légumes nappés de bouillon, parsemés de coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/d259.webp"
     },
     {
       "id": "d260",
@@ -102671,7 +103813,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 160°C. Place la viande et sa marinade dans un plat, couvre de papier cuisson puis d'alu (cuisson douce et humide).",
         "Enfourne 1h20, jusqu'à ce que la viande s'effiloche très facilement à la fourchette.",
         "Effiloche le porc, mélange-le au jus de cuisson. Sers avec l'oignon rouge émincé cru par-dessus (mariné 5 min dans un peu de jus de citron, c'est meilleur)."
-      ]
+      ],
+      "photo": "assets/recipes/d260.webp"
     },
     {
       "id": "d261",
@@ -102774,7 +103917,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Bœuf à braiser (paleron)",
@@ -102849,7 +103994,8 @@ window.__DATA_RECIPES = {
         "Coupe le bœuf en gros morceaux, fais-les dorer 4 min dans une cocotte. Verse l'adobo et le bouillon, ajoute le laurier.",
         "Couvre et laisse mijoter 1h30 à feu doux, jusqu'à ce que la viande s'effiloche.",
         "Effiloche la viande dans son bouillon épicé. Sale, poivre, parsème de coriandre. Sers en bol, le bouillon est la signature de la birria."
-      ]
+      ],
+      "photo": "assets/recipes/d262.webp"
     },
     {
       "id": "d263",
@@ -102871,7 +104017,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haut de cuisse de poulet",
@@ -103052,7 +104200,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haricots blancs cuits",
@@ -103115,7 +104265,8 @@ window.__DATA_RECIPES = {
         "Verse le bouillon et les haricots blancs, ajoute l'origan.",
         "Laisse mijoter 25 min à feu doux : la soupe épaissit légèrement (écrase quelques haricots à la cuillère pour la lier).",
         "Sale, poivre, arrose d'un filet d'huile d'olive crue et sers bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l270.webp"
     },
     {
       "id": "l271",
@@ -103139,7 +104290,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Lentilles vertes",
@@ -103234,7 +104388,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Pois chiches cuits",
@@ -103291,7 +104447,8 @@ window.__DATA_RECIPES = {
         "Mixe la moitié de la soupe puis remets-la : tu obtiens une texture mi-crémeuse mi-rustique (typique de la revithosoupa).",
         "Ajoute le jus de citron, sale et poivre.",
         "Sers avec un filet d'huile d'olive et un tour de poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l272.webp"
     },
     {
       "id": "l273",
@@ -103312,7 +104469,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -103395,7 +104553,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Épinards frais",
@@ -103483,7 +104643,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles vertes",
@@ -103645,7 +104807,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Bœuf à braiser (paleron)",
@@ -103714,7 +104879,8 @@ window.__DATA_RECIPES = {
         "Remets la viande, ajoute l'ail écrasé, les tomates, le vinaigre, la cannelle, le laurier et le bouillon.",
         "Couvre et laisse mijoter 1h30 à feu très doux : la viande devient fondante, la sauce épaisse et parfumée (la cannelle est la signature du stifado).",
         "Retire la cannelle et le laurier. Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d266.webp"
     },
     {
       "id": "d267",
@@ -103738,7 +104904,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -103802,7 +104969,8 @@ window.__DATA_RECIPES = {
         "Ajoute l'orzo cru, le bouillon et remets le poulet. Mélange.",
         "Enfourne à découvert 30 min : l'orzo absorbe le bouillon et cuit comme un risotto au four (remue à mi-cuisson, ajoute un peu de bouillon si trop sec).",
         "Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d267.webp"
     },
     {
       "id": "d268",
@@ -103826,7 +104994,9 @@ window.__DATA_RECIPES = {
         "oven",
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Aubergine",
@@ -103883,7 +105053,8 @@ window.__DATA_RECIPES = {
         "Creuse un peu la chair des aubergines pré-cuites et mélange-la à la farce oignon-tomate. Sale, poivre, ajoute le persil.",
         "Garnis les aubergines de farce, verse le bouillon au fond du plat.",
         "Enfourne encore 20 min, jusqu'à ce que les aubergines soient ultra-fondantes. Se mange tiède (« l'imam s'est évanoui » de plaisir, dit la légende)."
-      ]
+      ],
+      "photo": "assets/recipes/d268.webp"
     },
     {
       "id": "d269",
@@ -103969,7 +105140,8 @@ window.__DATA_RECIPES = {
         "Ajoute la tomate mixée ou en petits dés : elle apporte le jus qui confit les légumes.",
         "Enfourne 45 à 50 min en remuant à mi-cuisson, jusqu'à ce que les légumes soient fondants et dorés sur les bords.",
         "Laisse tiédir 5 min avant de servir (le briam est meilleur tiède, quand les saveurs se sont mêlées)."
-      ]
+      ],
+      "photo": "assets/recipes/d269.webp"
     },
     {
       "id": "d270",
@@ -103992,7 +105164,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -104062,7 +105235,8 @@ window.__DATA_RECIPES = {
         "Dépose un peu de farce sur chaque feuille, replie les côtés et roule en petit paquet. Range les rouleaux serrés dans une casserole.",
         "Verse le bouillon à hauteur, couvre et laisse mijoter 35 min à feu doux (le riz cuit dans les rouleaux).",
         "Prépare l'avgolemono : bats l'œuf avec le jus de citron, détends avec 1 louche de bouillon chaud en fouettant, puis reverse hors du feu sur les choux farcis. Ne pas rebouillir. Sale, poivre et sers nappé de cette sauce citronnée."
-      ]
+      ],
+      "photo": "assets/recipes/d270.webp"
     },
     {
       "id": "l276",
@@ -104087,7 +105261,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -104162,7 +105338,8 @@ window.__DATA_RECIPES = {
         "Laisse mijoter 20 min, jusqu'à ce que les lentilles soient fondues (la pomme apporte une douceur acidulée typique du mulligatawny).",
         "Mixe pour un velouté lisse, ajoute le lait de coco et réchauffe sans bouillir.",
         "Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l276.webp"
     },
     {
       "id": "l277",
@@ -104186,7 +105363,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Tomate",
@@ -104342,7 +105521,8 @@ window.__DATA_RECIPES = {
         "Fais revenir l'oignon émincé, l'ail et le gingembre 5 min dans l'huile. Ajoute le garam masala, remue 30 sec.",
         "Ajoute la tomate en dés, cuis 3 min, puis la chair d'aubergine. Mélange et laisse 5 min à feu moyen.",
         "Sale, poivre, parsème de coriandre. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l278.webp"
     },
     {
       "id": "l279",
@@ -104530,7 +105710,8 @@ window.__DATA_RECIPES = {
         "Dans une casserole, chauffe l'huile, fais grésiller le cumin, le gingembre râpé et le curcuma 30 sec.",
         "Verse le mélange yaourt-besan en fouettant. Porte doucement à frémissement et laisse épaissir 10 min à feu doux en remuant (ne pas faire bouillir fort).",
         "Plonge les beignets dans la sauce 3 min. Sale, poivre, parsème de coriandre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l280.webp"
     },
     {
       "id": "l281",
@@ -104650,7 +105831,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -104726,7 +105908,8 @@ window.__DATA_RECIPES = {
         "Ajoute le garam masala et le paprika (qui donne la couleur rouge du rogan josh), remue 1 min.",
         "Remets la viande, ajoute la tomate en dés et le bouillon. Couvre et laisse mijoter 50 min.",
         "Hors ébullition, incorpore le yaourt cuillère par cuillère en remuant (pour ne pas qu'il tranche). Poursuis 10 min à feu doux. Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d271.webp"
     },
     {
       "id": "d272",
@@ -104819,7 +106002,8 @@ window.__DATA_RECIPES = {
         "Laisse mijoter 10 min, puis mixe la sauce pour qu'elle soit bien lisse (signature du butter chicken).",
         "Remets la sauce dans la casserole, ajoute le poulet mariné et cuis 12 min à feu doux.",
         "Hors du feu, incorpore la crème légère (au lieu du beurre + crème entière classiques). Sale, poivre et sers avec un peu de riz basmati complet."
-      ]
+      ],
+      "photo": "assets/recipes/d272.webp"
     },
     {
       "id": "d273",
@@ -105235,7 +106419,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Pois cassés",
@@ -105292,7 +106478,8 @@ window.__DATA_RECIPES = {
         "Ajoute les pois cassés, le laurier et le bouillon. Porte à ébullition.",
         "Baisse à feu doux et laisse mijoter 35 min, jusqu'à ce que les pois cassés soient fondants.",
         "Retire le laurier, mixe (totalement ou à moitié, au choix). Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l282.webp"
     },
     {
       "id": "l283",
@@ -105318,7 +106505,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -105370,7 +106558,8 @@ window.__DATA_RECIPES = {
         "Ajoute le chou-fleur rôti (garde quelques bouquets pour la déco) et le bouillon. Laisse cuire 8 min.",
         "Concasse les noisettes et torréfie-les 3 min à sec.",
         "Mixe la soupe avec la crème et la muscade jusqu'à obtenir un velouté lisse. Sale, poivre. Sers parsemé de noisettes et de bouquets rôtis."
-      ]
+      ],
+      "photo": "assets/recipes/l283.webp"
     },
     {
       "id": "l284",
@@ -105394,7 +106583,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -105470,7 +106660,8 @@ window.__DATA_RECIPES = {
         "Ajoute le chou vert en lanières et les haricots blancs. Laisse mijoter 15 min.",
         "Ajoute les petites pâtes complètes et cuis le temps indiqué (≈10 min), jusqu'à ce qu'elles soient al dente.",
         "Sale, poivre. Sers avec un filet d'huile d'olive crue."
-      ]
+      ],
+      "photo": "assets/recipes/l284.webp"
     },
     {
       "id": "l285",
@@ -105560,7 +106751,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, rince le quinoa et cuis-le 12 min dans 2 fois son volume d'eau salée, jusqu'à ce que le germe se détache.",
         "Prépare la sauce : délaye le tahini avec le jus de citron et un peu d'eau jusqu'à obtenir une crème nappante.",
         "Dresse le quinoa, dispose les légumes rôtis dessus, arrose de sauce tahini. Sale, poivre et sers tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l285.webp"
     },
     {
       "id": "l286",
@@ -105585,7 +106777,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -105643,7 +106836,8 @@ window.__DATA_RECIPES = {
         "Verse le bouillon et laisse mijoter 10 min.",
         "Mixe finement avec la crème jusqu'à obtenir un velouté lisse. Sale, poivre.",
         "Sers parsemé des champignons réservés et de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l286.webp"
     },
     {
       "id": "l287",
@@ -105667,7 +106861,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haricots blancs cuits",
@@ -105730,7 +106926,8 @@ window.__DATA_RECIPES = {
         "Ajoute le chou vert en lanières et les haricots blancs.",
         "Laisse mijoter 25 min, jusqu'à ce que les légumes soient tendres. Écrase quelques haricots pour lier.",
         "Retire le laurier, sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/l287.webp"
     },
     {
       "id": "d277",
@@ -105754,7 +106951,9 @@ window.__DATA_RECIPES = {
         "oven",
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles vertes",
@@ -105896,7 +107095,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 200°C. Dispose les légumes dans un plat, nappe de béchamel, parsème de comté.",
         "Enfourne 20 min, jusqu'à ce que le dessus soit doré et bouillonnant.",
         "Laisse reposer 5 min avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d278.webp"
     },
     {
       "id": "d279",
@@ -105996,7 +107196,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Pois chiches cuits",
@@ -106065,7 +107267,8 @@ window.__DATA_RECIPES = {
         "Ajoute les légumes racines, les tomates concassées et le bouillon. Porte à frémissement.",
         "Couvre et laisse mijoter 20 min, jusqu'à ce que les légumes soient tendres. Ajoute les pois chiches et poursuis 8 min.",
         "Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d280.webp"
     },
     {
       "id": "d281",
@@ -106153,7 +107356,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais cuire le potiron en cubes 15 min à l'eau ou vapeur, puis écrase-le en purée avec un filet d'huile. Sale, poivre.",
         "Prépare la sauce : fais revenir le reste d'oignon et l'ail 3 min, ajoute les tomates, laisse mijoter 8 min.",
         "Dresse la purée de potiron, pose les boulettes, nappe de sauce tomate et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d281.webp"
     },
     {
       "id": "d282",
@@ -106254,7 +107458,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Poire",
@@ -106299,7 +107505,8 @@ window.__DATA_RECIPES = {
         "Dépose les poires couchées, couvre à moitié et laisse pocher 25 min en les retournant à mi-cuisson : elles s'imprègnent et prennent une jolie couleur grenat.",
         "Retire les poires. Fais réduire le jus 5 min à feu vif jusqu'à ce qu'il devienne sirupeux.",
         "Nappe les poires du sirop épicé. Se mange tiède ou froid."
-      ]
+      ],
+      "photo": "assets/recipes/des178.webp"
     },
     {
       "id": "des179",
@@ -106387,7 +107594,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -106433,7 +107641,8 @@ window.__DATA_RECIPES = {
         "Verse dans un petit moule huilé. Parsème de noix concassées, de raisins et de quelques aiguilles de romarin (le mariage romarin-châtaigne est la signature toscane).",
         "Enfourne 25 à 30 min : le dessus craquelle, c'est le signe que c'est cuit.",
         "Laisse tiédir avant de couper. Se mange en fine part."
-      ]
+      ],
+      "photo": "assets/recipes/des180.webp"
     },
     {
       "id": "des181",
@@ -106456,7 +107665,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -106515,7 +107725,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -106555,7 +107766,8 @@ window.__DATA_RECIPES = {
         "Garnis le creux des pommes de ce mélange.",
         "Dépose dans un plat avec un fond d'eau (2 c.à.s) et enfourne 30 à 35 min, jusqu'à ce que les pommes soient fondantes (la peau se fripe).",
         "Arrose du jus de cuisson et sers tiède."
-      ]
+      ],
+      "photo": "assets/recipes/des182.webp"
     },
     {
       "id": "des183",
@@ -106633,7 +107845,8 @@ window.__DATA_RECIPES = {
         "Ajoute la farine et la poudre d'amande, mélange, puis verse le lait petit à petit jusqu'à obtenir une pâte fluide sans grumeaux.",
         "Verse l'appareil sur les poires.",
         "Enfourne 35 min : le clafoutis est pris quand il est doré et juste tremblotant au centre. Laisse tiédir avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des183.webp"
     },
     {
       "id": "des184",
@@ -106769,7 +107982,8 @@ window.__DATA_RECIPES = {
         "Émiette ce mélange sur les poires.",
         "Enfourne 22 à 25 min, jusqu'à ce que le dessus soit doré et croustillant.",
         "Sers tiède (le chocolat est fondant)."
-      ]
+      ],
+      "photo": "assets/recipes/des185.webp"
     },
     {
       "id": "des186",
@@ -107084,7 +108298,8 @@ window.__DATA_RECIPES = {
         "Étale-les sur une plaque, face incisée vers le haut.",
         "Enfourne 20 à 25 min : la peau s'ouvre et se rétracte au niveau de l'incision, signe que c'est cuit.",
         "Laisse tiédir 5 min (elles s'épluchent plus facilement encore chaudes), sale légèrement et déguste."
-      ]
+      ],
+      "photo": "assets/recipes/s161.webp"
     },
     {
       "id": "s162",
@@ -107144,7 +108359,8 @@ window.__DATA_RECIPES = {
         "Prélève des petites quantités et roule entre les paumes pour former des boules de la taille d'une noix.",
         "Place 30 min au frais pour qu'elles raffermissent.",
         "Se conservent 1 semaine dans une boîte au frigo (parfait pour un coup de barre l'après-midi)."
-      ]
+      ],
+      "photo": "assets/recipes/s162.webp"
     },
     {
       "id": "s163",
@@ -107197,7 +108413,8 @@ window.__DATA_RECIPES = {
         "Mets les dés dans un bol, saupoudre de cannelle et mélange.",
         "Couvre d'une assiette et passe 4 à 5 min au micro-ondes, jusqu'à ce que la pomme soit fondante.",
         "Concasse les noix par-dessus et déguste tiède (un dessert-goûter réconfortant en 5 min)."
-      ]
+      ],
+      "photo": "assets/recipes/s163.webp"
     },
     {
       "id": "s164",
@@ -107257,7 +108474,8 @@ window.__DATA_RECIPES = {
         "Tartine la purée d'amande dessus.",
         "Coupe la banane en rondelles et dispose-les sur la tartine.",
         "Saupoudre d'un voile de cannelle et déguste aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/s164.webp"
     },
     {
       "id": "s165",
@@ -107282,7 +108500,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -107328,7 +108547,8 @@ window.__DATA_RECIPES = {
         "Étale la pâte sur 1,5 cm d'épaisseur dans un petit moule chemisé de papier cuisson.",
         "Enfourne 25 min, jusqu'à ce que le dessus soit doré et ferme au toucher.",
         "Laisse refroidir avant de couper en barres. Se gardent 4-5 jours."
-      ]
+      ],
+      "photo": "assets/recipes/s165.webp"
     },
     {
       "id": "s166",
@@ -107388,7 +108608,8 @@ window.__DATA_RECIPES = {
         "Verse le fromage blanc dans un bol.",
         "Ajoute la compote de pomme sans sucre par-dessus.",
         "Saupoudre de cannelle et parsème d'amandes torréfiées. Mélange juste avant de manger."
-      ]
+      ],
+      "photo": "assets/recipes/s166.webp"
     },
     {
       "id": "s167",
@@ -107413,7 +108634,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -107447,7 +108669,8 @@ window.__DATA_RECIPES = {
         "Pendant que le chocolat est encore mou, dépose sur chaque disque une amande, une noisette et quelques raisins secs.",
         "Place 20 min au frais pour que le chocolat durcisse.",
         "Décolle délicatement les mendiants (2-3 = une portion gourmande et raisonnable). Se conservent en boîte hermétique."
-      ]
+      ],
+      "photo": "assets/recipes/s167.webp"
     },
     {
       "id": "s168",
@@ -107507,7 +108730,8 @@ window.__DATA_RECIPES = {
         "Coupe la poire en petits dés (garde la peau).",
         "Verse le yaourt dans un bol, ajoute les dés de poire.",
         "Parsème de noisettes torréfiées et d'un voile de cannelle. Déguste aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/s168.webp"
     },
     {
       "id": "s169",
@@ -107566,7 +108790,8 @@ window.__DATA_RECIPES = {
         "Coupe la poire en fines lamelles et dispose-les sur la ricotta.",
         "Arrose d'un filet de miel.",
         "Termine par un tour de moulin à poivre (le poivre sur la poire-ricotta, c'est la petite touche italienne qui réveille la douceur). Déguste aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/s169.webp"
     },
     {
       "id": "s170",
@@ -107636,7 +108861,8 @@ window.__DATA_RECIPES = {
         "Chauffe à feu doux 5 min sans faire bouillir, en fouettant pour bien mélanger les épices.",
         "Filtre si tu veux retirer les morceaux de gingembre.",
         "Hors du feu, ajoute le miel (pour ne pas le chauffer trop fort). Bois bien chaud, c'est une boisson réconfortante et anti-inflammatoire."
-      ]
+      ],
+      "photo": "assets/recipes/s170.webp"
     },
     {
       "id": "s171",
@@ -107690,7 +108916,8 @@ window.__DATA_RECIPES = {
         "Garnis chaque datte d'un peu de purée d'amande à l'aide d'une petite cuillère.",
         "Referme légèrement la datte sur la farce.",
         "Roule la partie ouverte dans les graines de sésame. Déguste (2-3 dattes suffisent, c'est dense en énergie)."
-      ]
+      ],
+      "photo": "assets/recipes/s171.webp"
     },
     {
       "id": "s172",
@@ -107744,7 +108971,8 @@ window.__DATA_RECIPES = {
         "Glisse une amande entière au cœur de chaque demi-figue (ou sers-les côte à côte).",
         "Saupoudre d'un voile de cannelle.",
         "Déguste tel quel : un goûter méditerranéen simple, riche en fibres et en bons lipides (portion modeste, c'est concentré en sucres naturels)."
-      ]
+      ],
+      "photo": "assets/recipes/s172.webp"
     },
     {
       "id": "l288",
@@ -107768,7 +108996,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -107832,7 +109061,8 @@ window.__DATA_RECIPES = {
         "Prélève une louche de pois chiches et écrase-les à la fourchette, puis remets-les avec les pois chiches entiers : ça lie naturellement le plat.",
         "Ajoute les pâtes complètes et cuis le temps indiqué (≈10 min), en remuant : la préparation doit rester soupeuse mais nappante.",
         "Sale, poivre, ajoute un filet d'huile d'olive crue et un peu de romarin. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l288.webp"
     },
     {
       "id": "l289",
@@ -107856,7 +109086,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -107926,7 +109157,8 @@ window.__DATA_RECIPES = {
         "Ajoute les tomates, l'épeautre, les haricots blancs et le bouillon.",
         "Laisse mijoter 35 min à feu doux, jusqu'à ce que l'épeautre soit tendre mais encore un peu ferme sous la dent (al dente).",
         "Sale, poivre, parsème de sauge et sers avec un filet d'huile d'olive."
-      ]
+      ],
+      "photo": "assets/recipes/l289.webp"
     },
     {
       "id": "l290",
@@ -107949,7 +109181,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -108037,7 +109271,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -108116,7 +109351,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "nuts",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -108201,7 +109437,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -108264,7 +109501,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Haut de cuisse de poulet",
@@ -108355,7 +109594,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Bœuf à braiser (paleron)",
@@ -108424,7 +109666,8 @@ window.__DATA_RECIPES = {
         "Verse le vin rouge et laisse réduire 5 min pour évaporer l'alcool.",
         "Remets la viande, ajoute le bouillon, le laurier et le romarin. Couvre et laisse mijoter 1h45 à feu très doux, jusqu'à ce que la viande s'effiloche à la fourchette.",
         "Retire le laurier. Pour une sauce nappante, mixe les légumes de cuisson et reverse sur la viande. Sale, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d284.webp"
     },
     {
       "id": "d285",
@@ -108600,7 +109843,8 @@ window.__DATA_RECIPES = {
         "Ajoute les tomates, les olives et les câpres. Laisse mijoter 10 min.",
         "Dépose les morceaux de morue dans la sauce, couvre et laisse pocher 15 min à feu doux (la chair doit s'effeuiller facilement). Ne sale qu'à la fin (la morue reste un peu salée).",
         "Parsème de persil, poivre et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d286.webp"
     },
     {
       "id": "d287",
@@ -108711,7 +109955,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Saucisse italienne",
@@ -108774,7 +110020,8 @@ window.__DATA_RECIPES = {
         "Rince les lentilles, ajoute-les avec les tomates, le laurier et de l'eau à hauteur (≈400 ml).",
         "Remets la saucisse, couvre et laisse mijoter 30 min, jusqu'à ce que les lentilles soient tendres (ajoute un peu d'eau si besoin).",
         "Retire le laurier, sale, poivre et sers (plat traditionnel du Nouvel An italien, censé porter chance)."
-      ]
+      ],
+      "photo": "assets/recipes/d288.webp"
     },
     {
       "id": "b190",
@@ -108855,7 +110102,8 @@ window.__DATA_RECIPES = {
         "Ajoute la moitié des cerises dans le bol et mélange.",
         "Couvre et place au réfrigérateur toute la nuit (au moins 6 h) : les flocons et le chia vont gonfler et devenir crémeux.",
         "Le matin, mélange, puis dépose le reste des cerises et les amandes effilées par-dessus avant de déguster."
-      ]
+      ],
+      "photo": "assets/recipes/b190.webp"
     },
     {
       "id": "s173",
@@ -108922,7 +110170,8 @@ window.__DATA_RECIPES = {
         "Mets les cerises, la banane, les flocons d'avoine, le lait d'amande et la cannelle dans le blender.",
         "Mixe 30 à 45 secondes, jusqu'à obtenir une texture lisse et mousseuse, sans morceaux.",
         "Si c'est trop épais à ton goût, ajoute un peu d'eau ou de lait d'amande et mixe à nouveau. Sers aussitôt, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/s173.webp"
     },
     {
       "id": "l294",
@@ -108946,7 +110195,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -109012,7 +110262,8 @@ window.__DATA_RECIPES = {
         "Prépare la vinaigrette : mélange le reste d'huile d'olive avec le vinaigre balsamique et une pincée de sel.",
         "Ajoute les pois chiches tièdes, verse la vinaigrette et mélange délicatement.",
         "Émiette la feta par-dessus, parsème de graines de courge et sers aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/l294.webp"
     },
     {
       "id": "d289",
@@ -109032,7 +110283,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Filet de poulet",
@@ -109115,7 +110369,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, baisse le feu et fais revenir l'échalote 1 minute. Ajoute le vinaigre balsamique pour déglacer (verse-le pour décoller les sucs au fond de la poêle) et laisse réduire 30 secondes.",
         "Ajoute les cerises, le bouillon de volaille, le miel et le thym. Laisse mijoter 6 à 8 minutes à feu doux : la sauce épaissit et les cerises ramollissent.",
         "Remets le poulet (et son jus) dans la poêle 1 minute pour le réchauffer dans la sauce. Sers avec le quinoa et les haricots verts."
-      ]
+      ],
+      "photo": "assets/recipes/d289.webp"
     },
     {
       "id": "des190",
@@ -109186,7 +110441,8 @@ window.__DATA_RECIPES = {
         "Enfourne 15 à 18 minutes : les cerises doivent être tendres et avoir rendu un joli jus sirupeux. Laisse tiédir 5 minutes.",
         "Pendant ce temps, fais dorer les amandes effilées à sec dans une poêle 2 minutes à feu moyen, en surveillant pour qu'elles ne brûlent pas.",
         "Répartis le skyr dans deux coupes, dépose les cerises rôties tièdes et leur jus par-dessus, puis parsème d'amandes grillées."
-      ]
+      ],
+      "photo": "assets/recipes/des190.webp"
     },
     {
       "id": "des191",
@@ -109258,7 +110514,8 @@ window.__DATA_RECIPES = {
         "Concasse grossièrement les pistaches (coupe-les au couteau ou écrase-les dans un torchon avec le plat d'un verre).",
         "Dans deux verrines, dépose une couche de crème de ricotta, puis une couche de cerises, et répète une fois.",
         "Termine par quelques cerises, les pistaches concassées et un filet du miel restant. Place 10 minutes au frais avant de servir si tu as le temps."
-      ]
+      ],
+      "photo": "assets/recipes/des191.webp"
     },
     {
       "id": "l295",
@@ -109285,7 +110542,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "nuts",
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -109386,7 +110644,9 @@ window.__DATA_RECIPES = {
       "allergens": [
         "nuts",
         "lactose",
-        "mustard"
+        "mustard",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -109480,7 +110740,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -109541,7 +110802,8 @@ window.__DATA_RECIPES = {
         "Coupe la pomme en dés (avec la peau). Ajoute-la dans la poêle avec les lentilles égouttées et les noix concassées. Réchauffe 2 minutes.",
         "Hors du feu, verse le vinaigre balsamique, sale, poivre et mélange. Sert tiède."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l297.webp"
     },
     {
       "id": "l298",
@@ -109569,7 +110831,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -109630,7 +110893,8 @@ window.__DATA_RECIPES = {
         "Ajoute la roquette et les noix concassées, mélange délicatement pour ne pas casser la roquette.",
         "Dresse dans l'assiette, pose les quartiers de poire rôtie, puis fais des copeaux de parmesan par-dessus avec un économe. Sert tiède ou froid."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l298.webp"
     },
     {
       "id": "l299",
@@ -109745,7 +111009,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -109834,7 +111099,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Magret de canard",
@@ -109888,7 +111155,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle (garde juste une cuillère de gras), fais revenir l'échalote 1 minute. Ajoute les prunes, le miel et le vinaigre balsamique.",
         "Laisse compoter 4-5 minutes à feu moyen : les prunes ramollissent et la sauce devient sirupeuse. Ajoute le thym.",
         "Tranche le magret en fines lamelles dans le sens de la largeur, nappe des prunes rôties et sers avec les haricots verts."
-      ]
+      ],
+      "photo": "assets/recipes/d291.webp"
     },
     {
       "id": "d292",
@@ -109910,7 +111178,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Escalope de dinde",
@@ -109992,7 +111262,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "celery"
       ],
       "ing": [
         [
@@ -110078,7 +111349,8 @@ window.__DATA_RECIPES = {
         "Ajoute les quartiers de prune et laisse cuire encore 5 minutes à découvert : elles doivent fondre sans se défaire complètement, et la sauce épaissir.",
         "Fais dorer les amandes effilées à sec dans une petite poêle 2 minutes (surveille, ça brûle vite). Parsème-les sur le tajine avec la coriandre ciselée avant de servir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d293.webp"
     },
     {
       "id": "d294",
@@ -110242,7 +111514,8 @@ window.__DATA_RECIPES = {
         "Enfourne 30-35 minutes : le clafoutis est cuit quand il est doré et que la lame d'un couteau plantée au centre ressort propre.",
         "Laisse tiédir au moins 15 minutes avant de démouler ou servir : il se tient beaucoup mieux tiède que brûlant."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/des192.webp"
     },
     {
       "id": "des193",
@@ -110334,7 +111607,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -110447,7 +111721,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -110633,7 +111908,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -110725,7 +112001,8 @@ window.__DATA_RECIPES = {
         "Retire le brin de romarin avant de servir.",
         "Sers bien chaud dans des bols, saupoudré de parmesan râpé et d'un filet d'huile d'olive."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l303.webp"
     },
     {
       "id": "l304",
@@ -110934,7 +112211,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -111116,7 +112394,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -111177,7 +112456,8 @@ window.__DATA_RECIPES = {
         "Égoutte le céleri-rave et mixe-le au blender (ou écrase-le au presse-purée) avec l'huile d'olive restante, jusqu'à obtenir une purée lisse. Sale et poivre.",
         "Presse un filet de jus de citron sur le poisson à la sortie du four.",
         "Dresse la purée de céleri-rave dans l'assiette, dépose le cabillaud en croûte par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/d298.webp"
     },
     {
       "id": "d299",
@@ -111202,7 +112482,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "celery"
       ],
       "ing": [
         [
@@ -111294,7 +112575,8 @@ window.__DATA_RECIPES = {
         "Goûte et rectifie l'assaisonnement en sel et poivre. Si la sauce est trop liquide, laisse réduire 5 minutes à découvert.",
         "Sers bien chaud, parsemé d'amandes dorées et de coriandre fraîche ciselée."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d299.webp"
     },
     {
       "id": "des194",
@@ -111645,7 +112927,8 @@ window.__DATA_RECIPES = {
         "Égoutte et rince les haricots rouges, ajoute-les. Sale, poivre, couvre et laisse mijoter 15-20 minutes à feu doux. Écrase quelques haricots à la cuillère pour lier la sauce.",
         "Parsème de coriandre ciselée et sers. Encore meilleur réchauffé le lendemain."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l306.webp"
     },
     {
       "id": "l307",
@@ -111950,7 +113233,8 @@ window.__DATA_RECIPES = {
         "Dans le même wok, fais revenir le gingembre et l'ail 30 secondes jusqu'à ce qu'ils embaument, ajoute le brocoli et la carotte, fais sauter 4-5 minutes jusqu'à ce que le brocoli soit tendre-croquant.",
         "Remets le poulet et ajoute les nouilles soba, la sauce soja et l'huile de sésame, mélange 2 minutes à feu vif jusqu'à ce que tout soit bien enrobé et chaud.",
         "Sers immédiatement, parsemé de graines de sésame."
-      ]
+      ],
+      "photo": "assets/recipes/l309.webp"
     },
     {
       "id": "d300",
@@ -112070,7 +113354,8 @@ window.__DATA_RECIPES = {
         "Ajoute les petits pois surgelés et poursuis la cuisson 4-5 minutes.",
         "Sale, parsème de coriandre fraîche ciselée et sers chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d300.webp"
     },
     {
       "id": "d301",
@@ -112092,7 +113377,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Blanc de poulet",
@@ -112324,7 +113611,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -112398,7 +113686,8 @@ window.__DATA_RECIPES = {
         "Retire la casserole du feu (le miso ne doit pas bouillir pour garder ses arômes). Prélève une louche de bouillon chaud, délaye la pâte miso dedans jusqu'à ce qu'elle soit lisse, puis reverse le tout dans la casserole.",
         "Ajoute délicatement les cubes de tofu et l'huile de sésame, réchauffe doucement 1-2 minutes sans bouillir.",
         "Répartis dans des bols, parsème de ciboule ciselée et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d303.webp"
     },
     {
       "id": "d304",
@@ -112982,7 +114271,8 @@ window.__DATA_RECIPES = {
         "Ajoute les haricots rouges, le maïs grillé refroidi, le poivron, l'oignon rouge et la feta.",
         "Mélange délicatement pour ne pas écraser la feta.",
         "Parsème de coriandre ciselée et sers tiède ou froid."
-      ]
+      ],
+      "photo": "assets/recipes/l312.webp"
     },
     {
       "id": "l313",
@@ -113005,7 +114295,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -113078,7 +114370,8 @@ window.__DATA_RECIPES = {
         "Mixe une partie de la soupe au mixeur plongeant pour l'épaissir tout en gardant quelques morceaux, ou laisse-la entière selon ta préférence.",
         "Goûte, rectifie le sel et le poivre, et sers bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l313.webp"
     },
     {
       "id": "l314",
@@ -113270,7 +114563,8 @@ window.__DATA_RECIPES = {
         "Goûte, rectifie le sel, le poivre et les épices selon ton goût.",
         "Sers bien chaud, éventuellement avec un peu de coriandre fraîche."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d305.webp"
     },
     {
       "id": "d306",
@@ -113492,7 +114786,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -113565,7 +114860,8 @@ window.__DATA_RECIPES = {
         "Verse le bouillon de légumes et la sauce soja, porte à frémissement.",
         "Ajoute le pak-choï et laisse cuire encore 4 à 5 minutes, jusqu'à ce que les légumes soient tendres mais encore colorés.",
         "Émince l'oignon nouveau et parsème-le sur le bouillon juste avant de servir bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d308.webp"
     },
     {
       "id": "d309",
@@ -113816,7 +115112,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -113927,7 +115224,9 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "lactose",
-        "eggs"
+        "eggs",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -114006,7 +115305,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais pocher l'œuf 3 minutes dans une petite casserole d'eau frémissante additionnée d'un trait de vinaigre.",
         "Quand l'orge est crémeux et tendre sous la dent, hors du feu incorpore le parmesan râpé.",
         "Sers dans une assiette creuse, dépose l'œuf mollet dessus, parsème de persil ciselé et poivre."
-      ]
+      ],
+      "photo": "assets/recipes/l316.webp"
     },
     {
       "id": "l317",
@@ -114030,7 +115330,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -114097,7 +115398,8 @@ window.__DATA_RECIPES = {
         "Ajoute la courge rôtie encore tiède, l'huile d'olive restante et le vinaigre balsamique. Mélange délicatement.",
         "Émiette la feta sur le dessus.",
         "Rectifie l'assaisonnement et sers tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l317.webp"
     },
     {
       "id": "l318",
@@ -114205,7 +115507,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -114400,7 +115704,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -114486,7 +115791,8 @@ window.__DATA_RECIPES = {
         "Goûte, rectifie l'assaisonnement en sel et poivre.",
         "Sers chaud avec le parmesan râpé saupoudré dessus et un filet d'huile d'olive."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d311.webp"
     },
     {
       "id": "d312",
@@ -114596,7 +115902,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -114657,7 +115964,8 @@ window.__DATA_RECIPES = {
         "Verse le vin blanc pour déglacer en grattant les sucs, laisse réduire 2 minutes.",
         "Ajoute la crème fraîche allégée, mélange et laisse épaissir légèrement à feu doux 2 minutes.",
         "Remets l'escalope dans la sauce pour la réchauffer, parsème de persil ciselé et sers."
-      ]
+      ],
+      "photo": "assets/recipes/d313.webp"
     },
     {
       "id": "d314",
@@ -114680,7 +115988,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles corail",
@@ -114831,7 +116141,8 @@ window.__DATA_RECIPES = {
         "Retourne les poires à mi-cuisson pour qu'elles s'imprègnent uniformément.",
         "Retire les poires, fais réduire le sirop 3-4 minutes à feu vif jusqu'à ce qu'il nappe une cuillère.",
         "Nappe les poires du sirop réduit et sers tiède ou froid."
-      ]
+      ],
+      "photo": "assets/recipes/des200.webp"
     },
     {
       "id": "des201",
@@ -114855,7 +116166,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -115012,7 +116324,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -115079,7 +116392,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange la crème et le jus de citron. Hors du feu, verse ce mélange dans la cocotte et remue : la sauce blanchit et nappe légèrement (ne pas rebouillir sinon la crème tranche).",
         "Rectifie le sel et le poivre. Sers bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l321.webp"
     },
     {
       "id": "l322",
@@ -115102,7 +116416,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Rôti de dinde en tranches épaisses",
@@ -115271,7 +116588,8 @@ window.__DATA_RECIPES = {
         "Sors le poisson : la croûte de sel est dure et dorée. Casse-la avec le dos d'une cuillère et retire les morceaux (le sel s'enlève avec la peau).",
         "Lève les filets délicatement (la chair se détache en feuillets, nacrée et cuite à cœur). La croûte de sel garde le poisson moelleux sans le rendre salé.",
         "Sers les filets avec la poêlée de légumes du soleil et un filet d'huile d'olive."
-      ]
+      ],
+      "photo": "assets/recipes/l323.webp"
     },
     {
       "id": "l324",
@@ -115375,7 +116693,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, verse la semoule complète dans un saladier, couvre-la d'eau bouillante salée à hauteur (+1 c.à.c d'huile), couvre et laisse gonfler 5 minutes, puis égraine-la à la fourchette.",
         "Sers la semoule, dispose le poulet et les légumes par-dessus, et arrose d'une louche de bouillon."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l324.webp"
     },
     {
       "id": "l325",
@@ -115398,7 +116717,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish"
+        "shellfish",
+        "molluscs",
+        "celery"
       ],
       "ing": [
         [
@@ -115482,7 +116803,8 @@ window.__DATA_RECIPES = {
         "Laisse cuire 30 minutes à feu doux sans remuer (c'est ce qui forme le fond légèrement doré, le « socarrat ») : le riz complet absorbe le bouillon.",
         "Répartis les fruits de mer et les petits pois sur le dessus, couvre et laisse cuire 8-10 minutes : les fruits de mer sont cuits quand ils sont chauds et fermes.",
         "Laisse reposer 5 minutes hors du feu, couvert, puis sers directement dans la poêle."
-      ]
+      ],
+      "photo": "assets/recipes/l325.webp"
     },
     {
       "id": "l326",
@@ -115683,7 +117005,8 @@ window.__DATA_RECIPES = {
         "Ne remue pas pendant cette étape : les arômes montent dans le riz.",
         "Au moment de servir, mélange délicatement les couches à la fourchette et parsème du reste de coriandre."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l327.webp"
     },
     {
       "id": "l328",
@@ -115785,7 +117108,8 @@ window.__DATA_RECIPES = {
         "Réchauffe les tortillas de maïs 20 secondes de chaque côté dans une poêle sèche jusqu'à ce qu'elles soient souples et légèrement dorées.",
         "Garnis chaque tortilla de dinde effilochée et de pickles d'oignon rouge. Sers avec un quartier de citron vert."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l328.webp"
     },
     {
       "id": "l329",
@@ -115812,7 +117136,8 @@ window.__DATA_RECIPES = {
         "fish",
         "gluten",
         "mustard",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -115878,7 +117203,8 @@ window.__DATA_RECIPES = {
         "Dans une poêle, chauffe le reste d'huile et fais suer les poireaux 10 minutes à feu doux à couvert (ils fondent sans colorer et deviennent tendres).",
         "Ajoute la crème liquide aux poireaux, sale, poivre et mélange 1 minute : tu obtiens une fondue crémeuse.",
         "Sers le saumon en croûte sur le lit de fondue de poireaux."
-      ]
+      ],
+      "photo": "assets/recipes/l329.webp"
     },
     {
       "id": "l330",
@@ -115960,7 +117286,8 @@ window.__DATA_RECIPES = {
         "Laisse mijoter les flageolets 10 minutes à feu doux avec le reste de romarin : ils s'imprègnent des saveurs. Sale, poivre.",
         "Laisse reposer la viande 5 minutes, puis sers-la tranchée sur le lit de flageolets."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l330.webp"
     },
     {
       "id": "l331",
@@ -115984,7 +117311,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -116050,7 +117378,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, chauffe le reste d'huile et fais revenir l'échalote 2 minutes, ajoute tous les champignons et fais-les sauter 6-8 minutes à feu vif jusqu'à ce qu'ils rendent leur eau puis dorent.",
         "Ajoute l'ail, un filet d'eau de trempage des cèpes et le persil haché, laisse réduire 2 minutes. Sale, poivre.",
         "Laisse reposer la viande 5 minutes, tranche-la et sers sur la poêlée forestière."
-      ]
+      ],
+      "photo": "assets/recipes/l331.webp"
     },
     {
       "id": "l332",
@@ -116383,7 +117712,7 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -116575,7 +117904,8 @@ window.__DATA_RECIPES = {
         "Ajoute le frik rincé, la courgette et les pois chiches. Poursuis la cuisson 20 minutes à feu doux : le frik gonfle et épaissit la soupe (ajoute un peu d'eau si trop épais).",
         "Parsème de coriandre ciselée avant de servir, bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l336.webp"
     },
     {
       "id": "d315",
@@ -117005,7 +118335,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -117210,7 +118541,8 @@ window.__DATA_RECIPES = {
         "Répartis la mousse de yaourt dans deux verres ou coupes.",
         "Parsème généreusement de grains de grenade et de pistaches concassées.",
         "Sers aussitôt, ou place au frais jusqu'au moment du dessert."
-      ]
+      ],
+      "photo": "assets/recipes/des203.webp"
     },
     {
       "id": "l337",
@@ -117411,7 +118743,8 @@ window.__DATA_RECIPES = {
         "Mélange les deux tiers de l'oignon caramélisé au riz chaud ; garde le reste pour le dessus.",
         "Dresse le riz dans une assiette creuse, pose le cabillaud par-dessus, arrose de jus de citron.",
         "Termine avec le reste d'oignon caramélisé, les pignons torréfiés et le persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l338.webp"
     },
     {
       "id": "l339",
@@ -117647,7 +118980,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -117861,7 +119195,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "celery"
       ],
       "ing": [
         [
@@ -117940,7 +119275,8 @@ window.__DATA_RECIPES = {
         "Enfourne de nouveau 15-18 minutes, jusqu'à ce que le poisson soit opaque et se détache facilement en appuyant avec une fourchette.",
         "Vérifie que les légumes sont bien tendres ; sinon, prolonge la cuisson de quelques minutes en surveillant le poisson pour qu'il ne sèche pas.",
         "Parsème de persil frais ciselé et sers directement dans le plat."
-      ]
+      ],
+      "photo": "assets/recipes/d321.webp"
     },
     {
       "id": "d322",
@@ -117964,7 +119300,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -118044,7 +119381,8 @@ window.__DATA_RECIPES = {
         "Remets les boulettes dans la sauce, couvre et laisse mijoter à feu doux 15-18 minutes, jusqu'à ce que les boulettes soient cuites à cœur et la sauce légèrement réduite.",
         "Retire la feuille de laurier et sers les boulettes nappées de sauce, parsemées d'un peu de persil frais."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d322.webp"
     },
     {
       "id": "d323",
@@ -118153,7 +119491,8 @@ window.__DATA_RECIPES = {
         "Casse l'œuf directement dans un petit creux formé dans la sauce, couvre à nouveau et laisse pocher 4-5 minutes, jusqu'à ce que le blanc soit opaque et le jaune encore légèrement coulant.",
         "Parsème de persil ciselé et sers bien chaud directement dans la cocotte."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d323.webp"
     },
     {
       "id": "d324",
@@ -118261,7 +119600,8 @@ window.__DATA_RECIPES = {
         "Couvre et laisse mijoter à feu doux 35-40 minutes, jusqu'à ce que le riz de la farce soit cuit et les légumes bien tendres (vérifie en piquant la courgette avec la pointe d'un couteau : elle doit s'enfoncer facilement).",
         "Retire la feuille de laurier, nappe les légumes farcis de sauce et parsème de persil avant de servir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d324.webp"
     },
     {
       "id": "des204",
@@ -118413,7 +119753,8 @@ window.__DATA_RECIPES = {
         "Vérifie la cuisson en piquant un morceau de coing avec la pointe d'un couteau : il doit s'enfoncer sans résistance.",
         "Répartis la poêlée tiède dans une coupelle.",
         "Ajoute une belle cuillère de skyr par-dessus et sers aussitôt."
-      ]
+      ],
+      "photo": "assets/recipes/des205.webp"
     },
     {
       "id": "l342",
@@ -118525,7 +119866,8 @@ window.__DATA_RECIPES = {
         "Ajoute les épinards et l'ail, poursuis 1-2 minutes jusqu'à ce que les épinards retombent.",
         "Remets le bœuf dans la poêle avec les nouilles égouttées, la sauce soja, le sucre roux et l'huile de sésame. Mélange bien au wok pendant 2-3 minutes pour que les nouilles s'imprègnent de sauce.",
         "Goûte et rectifie en sauce soja si besoin, puis parsème de graines de sésame avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l342.webp"
     },
     {
       "id": "l343",
@@ -118547,7 +119889,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "fish"
+        "fish",
+        "celery"
       ],
       "ing": [
         [
@@ -118639,7 +119982,8 @@ window.__DATA_RECIPES = {
         "Ajoute le sucre de coco, goûte et ajuste l'assaisonnement.",
         "Répartis les nouilles dans les bols, verse la soupe-curry par-dessus, presse le citron vert et parsème de coriandre fraîche avant de servir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l343.webp"
     },
     {
       "id": "l344",
@@ -118862,7 +120206,8 @@ window.__DATA_RECIPES = {
         "Verse les œufs battus dans la poêle et remue constamment à la cuillère en bois, comme pour des œufs brouillés, jusqu'à ce qu'ils soient juste pris mais encore moelleux (2-3 minutes).",
         "Parsème de coriandre fraîche et toaste les tranches de pain complet pendant ce temps.",
         "Sers l'egg bhurji bien chaud avec le pain complet grillé à côté."
-      ]
+      ],
+      "photo": "assets/recipes/l345.webp"
     },
     {
       "id": "l346",
@@ -118885,7 +120230,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -118971,7 +120317,8 @@ window.__DATA_RECIPES = {
         "Goûte, rectifie l'assaisonnement en sel et poivre.",
         "Parsème de persil frais ciselé avant de servir bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l346.webp"
     },
     {
       "id": "d325",
@@ -118994,7 +120341,7 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -119074,7 +120421,8 @@ window.__DATA_RECIPES = {
         "Retire la cannelle et la cardamome, goûte et rectifie l'assaisonnement en sel.",
         "Parsème de cacahuètes concassées juste avant de servir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d325.webp"
     },
     {
       "id": "d326",
@@ -119097,7 +120445,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "sulphites"
       ],
       "ing": [
         [
@@ -119171,7 +120520,8 @@ window.__DATA_RECIPES = {
         "Retire le couvercle et laisse réduire 5 minutes à découvert pour que la sauce devienne légèrement sirupeuse.",
         "Goûte et rectifie en sauce soja si besoin avant de servir bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d326.webp"
     },
     {
       "id": "d327",
@@ -119414,7 +120764,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles beluga",
@@ -119493,7 +120845,8 @@ window.__DATA_RECIPES = {
         "Retire le thym et le laurier, goûte et rectifie l'assaisonnement en sel et poivre.",
         "Sers bien chaud dans des bols creux."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d329.webp"
     },
     {
       "id": "des206",
@@ -119558,7 +120911,8 @@ window.__DATA_RECIPES = {
         "Ajoute le lait de coco, le sirop d'érable, le zeste d'orange et la cannelle. Mélange bien et laisse chauffer 5 minutes à feu doux sans bouillir.",
         "Goûte : la soupe doit rester peu sucrée, ajuste avec un filet de sirop d'érable si besoin.",
         "Sers tiède ou bien frais dans de petits bols, selon tes goûts."
-      ]
+      ],
+      "photo": "assets/recipes/des206.webp"
     },
     {
       "id": "des207",
@@ -119654,7 +121008,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Cuisse de poulet",
@@ -119721,7 +121077,8 @@ window.__DATA_RECIPES = {
         "Sors la cuisse de poulet, effiloche la chair (= détache-la en petits filaments à l'aide de deux fourchettes) et remets la viande dans la soupe.",
         "Goûte et rectifie l'assaisonnement en sel et poivre, puis sers bien chaud avec le persil plat ciselé par-dessus."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l347.webp"
     },
     {
       "id": "l348",
@@ -119743,7 +121100,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Saucisse de volaille",
@@ -119804,7 +121163,8 @@ window.__DATA_RECIPES = {
         "Remets la saucisse coupée en rondelles dans la cocotte et poursuis la cuisson 10 minutes, jusqu'à ce que les lentilles soient tendres.",
         "Goûte, rectifie l'assaisonnement et sers bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l348.webp"
     },
     {
       "id": "l349",
@@ -119829,7 +121189,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -119932,7 +121293,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haricots borlotti cuits",
@@ -119999,7 +121362,8 @@ window.__DATA_RECIPES = {
         "Écrase une partie de la pomme de terre contre la paroi de la cocotte avec le dos d'une cuillère pour épaissir légèrement la soupe : c'est la texture caractéristique de la jota.",
         "Rectifie l'assaisonnement en sel et poivre, et sers avec un filet d'huile d'olive."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l350.webp"
     },
     {
       "id": "l351",
@@ -120085,7 +121449,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange la crème fraîche liquide avec la muscade.",
         "Dans un plat à gratin, mélange les crozets cuits, le poireau fondant, le jambon et la crème à la muscade, puis répartis uniformément.",
         "Parsème de comté râpé sur le dessus et enfourne 20 minutes, jusqu'à ce que le dessus soit doré et gratiné."
-      ]
+      ],
+      "photo": "assets/recipes/l351.webp"
     },
     {
       "id": "d330",
@@ -120108,7 +121473,9 @@ window.__DATA_RECIPES = {
         "stove",
         "cast-iron"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "rest": 720,
       "advance": "12h de marinade au frais la veille",
       "ing": [
@@ -120183,7 +121550,8 @@ window.__DATA_RECIPES = {
         "Couvre et laisse mijoter à feu très doux pendant 2h30, jusqu'à ce que la viande s'effiloche facilement à la fourchette.",
         "Rectifie l'assaisonnement en sel et poivre, et sers bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d330.webp"
     },
     {
       "id": "d331",
@@ -120209,7 +121577,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "mustard",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -120271,7 +121640,8 @@ window.__DATA_RECIPES = {
         "Couvre et laisse mijoter à feu très doux 2h30, jusqu'à ce que la viande s'effiloche facilement.",
         "Ajoute la moutarde à l'ancienne, mélange, rectifie l'assaisonnement et sers."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d331.webp"
     },
     {
       "id": "d332",
@@ -120293,8 +121663,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "shellfish",
-        "gluten"
+        "gluten",
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -120373,7 +121744,8 @@ window.__DATA_RECIPES = {
         "Ajoute les moules et les calamars, couvre et laisse cuire encore 5 minutes, jusqu'à ce que les coquilles des moules soient toutes ouvertes.",
         "Vérifie qu'il ne reste aucune moule fermée et jette celles qui ne se sont pas ouvertes, par sécurité alimentaire.",
         "Parsème de persil plat ciselé et sers avec une tranche de pain complet légèrement grillée."
-      ]
+      ],
+      "photo": "assets/recipes/d332.webp"
     },
     {
       "id": "d333",
@@ -120487,7 +121859,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -120561,7 +121934,8 @@ window.__DATA_RECIPES = {
         "Dépose une cuillère de farce au centre de chaque feuille de chou, puis roule-la en serrant bien et en repliant les côtés (= comme un petit paquet).",
         "Range les rouleaux côte à côte dans un plat à gratin huilé, la jointure vers le dessous, verse le bouillon de légumes autour, couvre de papier aluminium et enfourne 25 minutes à 200°C, jusqu'à ce que les feuilles soient tendres."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d334.webp"
     },
     {
       "id": "des208",
@@ -120708,7 +122082,8 @@ window.__DATA_RECIPES = {
         "Place au réfrigérateur au moins 2 heures, jusqu'à ce que la mousse soit bien ferme.",
         "Sers frais, éventuellement avec quelques copeaux de chocolat noir par-dessus."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/des209.webp"
     },
     {
       "id": "l352",
@@ -120731,7 +122106,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "peanuts",
+        "celery"
       ],
       "ing": [
         [
@@ -120823,7 +122199,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, émince finement le chou vert et les radis, et coupe le citron vert en quartiers.",
         "Sers la soupe fumante dans des bols, garnis de chou, de radis et d'un quartier de citron vert à presser au moment de manger."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l352.webp"
     },
     {
       "id": "l353",
@@ -120848,7 +122225,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -120939,7 +122317,8 @@ window.__DATA_RECIPES = {
         "Nappe les tortillas enrobées du reste de sauce aux haricots.",
         "Parsème de fromage cotija râpé, d'oignon rouge émincé et de coriandre fraîche.",
         "Dépose l'œuf poché sur le dessus et sers immédiatement, tant que c'est chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l353.webp"
     },
     {
       "id": "l354",
@@ -121051,7 +122430,8 @@ window.__DATA_RECIPES = {
         "Dans chaque assiette, superpose le riz, les lentilles, puis les pâtes.",
         "Nappe de sauce tomate, parsème des oignons dorés et de persil frais ciselé avant de servir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l354.webp"
     },
     {
       "id": "l355",
@@ -121075,7 +122455,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -121149,7 +122530,8 @@ window.__DATA_RECIPES = {
         "Verse ce mélange tempéré dans la casserole hors du feu, en remuant doucement pour épaissir légèrement la soupe.",
         "Parsème d'aneth frais ciselé et sers aussitôt, tant que la sauce est encore soyeuse."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l355.webp"
     },
     {
       "id": "l356",
@@ -121171,7 +122553,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haricots blancs cuits",
@@ -121250,7 +122634,8 @@ window.__DATA_RECIPES = {
         "Retire la feuille de laurier, puis sale et poivre selon ton goût.",
         "Sers bien chaud. Si la soupe est trop liquide à ton goût, écrase quelques haricots à la fourchette contre le bord de la casserole pour l'épaissir."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l356.webp"
     },
     {
       "id": "d335",
@@ -121273,7 +122658,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Bœuf à braiser, émincé finement",
@@ -121364,7 +122751,8 @@ window.__DATA_RECIPES = {
         "Ajoute les haricots pinto cuits et les lardons réservés, et laisse mijoter encore 5 minutes.",
         "Sers dans une assiette creuse avec le jus de cuisson, garni de radis en fines rondelles, d'oignon rouge émincé et de coriandre fraîche."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d335.webp"
     },
     {
       "id": "d336",
@@ -121482,7 +122870,8 @@ window.__DATA_RECIPES = {
         "Ajoute la chair d'aubergine écrasée à la fourchette et le fromage kashkaval râpé à ce roux, mélange jusqu'à obtenir une purée lisse et filante.",
         "Dresse la purée d'aubergine dans l'assiette, nappe du bœuf mijoté à la tomate et parsème de persil frais."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d336.webp"
     },
     {
       "id": "d337",
@@ -121583,7 +122972,8 @@ window.__DATA_RECIPES = {
         "Presse le jus du citron jaune sur le ragoût juste avant la fin de cuisson.",
         "Parsème de coriandre fraîche ciselée et sers chaud, avec le jus bien nappant."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d337.webp"
     },
     {
       "id": "d338",
@@ -121604,7 +122994,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "ing": [
         [
@@ -121677,7 +123068,8 @@ window.__DATA_RECIPES = {
         "Ajoute les pois chiches cuits et laisse mijoter encore 5 minutes.",
         "Pendant ce temps, fais cuire les pâtes complètes dans une grande casserole d'eau bouillante salée, jusqu'à ce qu'elles soient juste tendres, puis égoutte.",
         "Répartis les pâtes dans les assiettes, nappe généreusement de la sauce blanche au poulet et aux légumes, et parsème de persil frais."
-      ]
+      ],
+      "photo": "assets/recipes/d338.webp"
     },
     {
       "id": "d339",
@@ -121937,7 +123329,8 @@ window.__DATA_RECIPES = {
         "Répartis la mousse dans un petit verre ou ramequin par personne.",
         "Lisse le dessus avec le dos d'une cuillère.",
         "Place au réfrigérateur au moins 1 heure avant de servir, pour qu'elle se raffermisse légèrement."
-      ]
+      ],
+      "photo": "assets/recipes/des211.webp"
     },
     {
       "id": "l357",
@@ -122047,7 +123440,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Pois chiches cuits (en conserve, égouttés)",
@@ -122142,7 +123537,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -122209,7 +123605,8 @@ window.__DATA_RECIPES = {
         "Dans un petit plat à gratin, dépose les rondelles de pomme de terre, puis le mélange lardons-oignon, la crème fraîche, le sel, le poivre et la muscade. Mélange délicatement.",
         "Coupe le reblochon en deux dans l'épaisseur et pose les deux moitiés, croûte vers le haut, sur le dessus du plat.",
         "Enfourne 20 minutes, jusqu'à ce que le fromage soit fondu et légèrement doré par endroits."
-      ]
+      ],
+      "photo": "assets/recipes/l359.webp"
     },
     {
       "id": "l360",
@@ -122234,7 +123631,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -122306,7 +123704,8 @@ window.__DATA_RECIPES = {
         "Pendant que le potage mijote, prépare l'œuf poché : fais chauffer une petite casserole d'eau avec le vinaigre, sans la faire bouillir fort. Casse l'œuf dans une tasse puis fais-le glisser doucement dans l'eau frémissante.",
         "Laisse cuire l'œuf 3 minutes : le blanc doit être ferme et le jaune encore coulant. Retire-le à l'écumoire et égoutte-le sur un papier absorbant.",
         "Verse le velouté bien chaud dans une assiette creuse, dépose l'œuf poché au centre et parsème de persil plat ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l360.webp"
     },
     {
       "id": "l361",
@@ -122328,7 +123727,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles beluga",
@@ -122423,7 +123824,10 @@ window.__DATA_RECIPES = {
         "stove",
         "cast-iron"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "producesLeftovers": [
         "bœuf mijoté au poivre noir"
       ],
@@ -122498,7 +123902,8 @@ window.__DATA_RECIPES = {
         "Porte à ébullition, puis couvre et baisse le feu au minimum. Laisse mijoter 2h30 à 3h, en remuant de temps en temps : la viande doit devenir fondante et se défaire facilement à la fourchette.",
         "Si la sauce est trop liquide en fin de cuisson, retire le couvercle les 15 dernières minutes pour la laisser réduire et épaissir.",
         "Retire la feuille de laurier avant de servir, bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d340.webp"
     },
     {
       "id": "d341",
@@ -122520,7 +123925,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "producesLeftovers": [
         "porc mijoté aux poivrons"
       ],
@@ -122595,7 +124002,8 @@ window.__DATA_RECIPES = {
         "Ajoute les tomates pelées concassées, l'origan, le sel et le poivre. Mélange bien.",
         "Couvre et laisse mijoter à feu doux 35 minutes, en remuant de temps en temps, jusqu'à ce que la viande soit tendre et les poivrons fondants.",
         "Goûte et rectifie l'assaisonnement avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d341.webp"
     },
     {
       "id": "d342",
@@ -122616,7 +124024,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": [
         "petit salé de dinde aux lentilles"
       ],
@@ -122690,7 +124100,8 @@ window.__DATA_RECIPES = {
         "Poursuis la cuisson à couvert 25 à 30 minutes, jusqu'à ce que les lentilles soient fondantes mais encore entières (pas en purée) et la dinde bien tendre.",
         "Retire la feuille de laurier, le clou de girofle et les gousses d'ail (ou écrase-les dans le jus pour plus de goût).",
         "Émiette ou tranche la dinde, dépose-la sur les lentilles et sers avec un peu de jus de cuisson."
-      ]
+      ],
+      "photo": "assets/recipes/d342.webp"
     },
     {
       "id": "d343",
@@ -122712,7 +124123,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -122809,7 +124221,10 @@ window.__DATA_RECIPES = {
         "oven",
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "producesLeftovers": [
         "rôti de porc effiloché"
       ],
@@ -122878,7 +124293,8 @@ window.__DATA_RECIPES = {
         "Ajoute un fond d'eau, couvre et laisse braiser le chou à feu doux 15 minutes, jusqu'à ce qu'il soit fondant.",
         "Quinze minutes avant la fin de cuisson du rôti, ajoute les châtaignes cuites autour de la viande dans la cocotte pour qu'elles se réchauffent et s'imprègnent du jus.",
         "Laisse reposer le rôti 5 minutes hors du four avant de le trancher. Sers avec le chou braisé et les châtaignes."
-      ]
+      ],
+      "photo": "assets/recipes/d344.webp"
     },
     {
       "id": "des212",
@@ -123175,7 +124591,7 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -123373,7 +124789,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -123452,7 +124869,8 @@ window.__DATA_RECIPES = {
         "Coupe le concombre en fines rondelles.",
         "Dépose le riz dans une assiette, dispose les tranches de poulet poché par-dessus, et ajoute les rondelles de concombre sur le côté.",
         "Verse un peu de bouillon chaud filtré dans un bol à part pour accompagner, nappe le poulet de sauce et termine avec la coriandre fraîche ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l365.webp"
     },
     {
       "id": "l366",
@@ -123477,7 +124895,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Patate douce",
@@ -123548,7 +124968,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, éponge les pois chiches cuits avec un torchon, mélange-les avec un filet d'huile et une pincée de sel, et fais-les griller 15 minutes au four ou 8-10 minutes à la poêle à feu moyen-vif en remuant souvent, jusqu'à ce qu'ils soient dorés et croustillants.",
         "Mixe la soupe au blender (ou au mixeur plongeant) jusqu'à obtenir une texture bien lisse et veloutée. Ajuste le sel et le poivre.",
         "Verse dans un bol, parsème de pois chiches grillés juste avant de servir pour garder leur croquant."
-      ]
+      ],
+      "photo": "assets/recipes/l366.webp"
     },
     {
       "id": "d345",
@@ -123661,7 +125082,8 @@ window.__DATA_RECIPES = {
         "Porte à ébullition puis baisse à feu doux, couvre et laisse mijoter 30 minutes en remuant de temps en temps, jusqu'à ce que les lentilles soient fondues en une sauce épaisse et que l'agneau se défasse facilement à la fourchette.",
         "Ajoute la pâte de tamarin, mélange et laisse encore 5 minutes à découvert pour que la sauce réduise légèrement.",
         "Sale à ton goût et sers chaud. Ce curry se garde très bien 3-4 jours au réfrigérateur et le goût s'améliore même le lendemain."
-      ]
+      ],
+      "photo": "assets/recipes/d345.webp"
     },
     {
       "id": "d346",
@@ -123885,7 +125307,8 @@ window.__DATA_RECIPES = {
         "Remue régulièrement en fin de cuisson pour éviter que la sauce n'attache au fond de la cocotte.",
         "Retire la citronnelle, la cannelle en bâton et l'anis étoilé avant de servir : ils ont donné leur parfum mais ne se mangent pas.",
         "Sale à ton goût et sers chaud. Comme tous les rendangs, il est encore meilleur réchauffé le lendemain."
-      ]
+      ],
+      "photo": "assets/recipes/d347.webp"
     },
     {
       "id": "d348",
@@ -123977,7 +125400,8 @@ window.__DATA_RECIPES = {
         "Arrose de sauce soja et remue encore 1 minute pour que les nouilles prennent une couleur homogène.",
         "Ajoute les germes de soja, la ciboule et les crevettes réservées. Fais sauter 1-2 minutes à feu vif : les germes de soja doivent rester croquants, pas flétris.",
         "Saupoudre de piment, mélange une dernière fois et sers immédiatement, bien chaud : ce plat se mange dès la sortie du wok, il perd son croquant en attendant."
-      ]
+      ],
+      "photo": "assets/recipes/d348.webp"
     },
     {
       "id": "d349",
@@ -124000,7 +125424,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "gluten"
+        "gluten",
+        "celery"
       ],
       "producesLeftovers": true,
       "ing": [
@@ -124067,7 +125492,8 @@ window.__DATA_RECIPES = {
         "Baisse à feu doux, couvre, et laisse mijoter 35-40 minutes jusqu'à ce que le bœuf se défasse facilement à la fourchette.",
         "15 minutes avant la fin, prépare le boulgour complet séparément : verse-le dans une casserole avec le double de son volume d'eau bouillante salée, couvre, retire du feu et laisse gonfler 12-15 minutes jusqu'à absorption complète de l'eau.",
         "Égrène le boulgour à la fourchette, sale et poivre le mijoté à ton goût, et sers le bœuf et les carottes accompagnés du boulgour."
-      ]
+      ],
+      "photo": "assets/recipes/d349.webp"
     },
     {
       "id": "des214",
@@ -124238,7 +125664,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Haricots blancs cuits",
@@ -124311,7 +125739,8 @@ window.__DATA_RECIPES = {
         "En fin de cuisson, écrase une petite louche de haricots contre la paroi de la casserole avec le dos d'une cuillère : ça épaissit naturellement la sauce sans ajouter de crème.",
         "Sale, poivre, parsème de persil frais ciselé et sers bien chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l367.webp"
     },
     {
       "id": "l368",
@@ -124333,7 +125762,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles vertes cuites",
@@ -124412,7 +125843,8 @@ window.__DATA_RECIPES = {
         "Laisse mijoter à couvert pendant 15 minutes, en remuant de temps en temps, jusqu'à ce que les lentilles soient fondantes et le bouillon réduit de moitié.",
         "Sale, poivre, goûte et ajuste l'assaisonnement, puis sers chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l368.webp"
     },
     {
       "id": "l369",
@@ -124517,7 +125949,8 @@ window.__DATA_RECIPES = {
         "Baisse le feu, sale, poivre, et remue doucement et lentement avec une spatule pendant 2-3 minutes : les œufs doivent rester moelleux et un peu baveux, jamais secs comme une omelette.",
         "Hors du feu, émiette la feta sur le dessus (la chaleur résiduelle va juste la ramollir, pas la faire fondre complètement). Parsème de persil frais ciselé.",
         "Sers immédiatement avec le pain complet, idéalement légèrement toasté, pour saucer."
-      ]
+      ],
+      "photo": "assets/recipes/l369.webp"
     },
     {
       "id": "l370",
@@ -124611,7 +126044,8 @@ window.__DATA_RECIPES = {
         "Dans une assiette creuse, dispose d'abord le pain pita grillé au fond, puis les pois chiches chauds par-dessus.",
         "Nappe généreusement de la sauce au yaourt, arrose du reste d'huile d'olive, parsème de pignons toastés et saupoudre de paprika doux.",
         "Sers immédiatement, tant que le pain pita est encore croustillant : il se ramollit vite au contact du yaourt."
-      ]
+      ],
+      "photo": "assets/recipes/l370.webp"
     },
     {
       "id": "l371",
@@ -124635,7 +126069,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -124715,7 +126150,8 @@ window.__DATA_RECIPES = {
         "Sale, poivre la soupe, goûte et ajuste.",
         "Verse la soupe dans un bol et dépose une bonne cuillère de pistou sur le dessus au moment de servir, sans le mélanger à la cuisson, pour qu'il garde tout son parfum."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/l371.webp"
     },
     {
       "id": "d350",
@@ -124927,7 +126363,8 @@ window.__DATA_RECIPES = {
         "Sors les aubergines du four, garnis généreusement le creux de chaque moitié avec la farce à la viande. Dispose les lanières de poivron vert et les dés de tomate restants sur le dessus.",
         "Enfourne encore 22-25 minutes, jusqu'à ce que les aubergines soient fondantes et que le dessus soit légèrement grillé. Sers chaud."
       ],
-      "producesLeftovers": true
+      "producesLeftovers": true,
+      "photo": "assets/recipes/d351.webp"
     },
     {
       "id": "d352",
@@ -125131,7 +126568,8 @@ window.__DATA_RECIPES = {
         "Couvre et laisse cuire à feu doux 25-30 minutes, sans remuer, jusqu'à ce que le riz ait absorbé tout le liquide.",
         "Laisse reposer 5 minutes hors du feu, couvercle fermé. Pose un grand plat sur la casserole, puis retourne l'ensemble d'un geste ferme et rapide pour démouler le riz-poulet-aubergine en forme de dôme, comme un gâteau renversé.",
         "Parsème de pignons de pin toastés et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d353.webp"
     },
     {
       "id": "d354",
@@ -125216,7 +126654,8 @@ window.__DATA_RECIPES = {
         "Pousse les légumes sur le côté de la poêle pour faire un peu de place au centre. Casse l'œuf directement dans cet espace et laisse-le cuire 3-4 minutes à feu doux, à couvert, jusqu'à ce que le blanc soit bien pris et que le jaune reste encore un peu coulant.",
         "Sale, poivre, arrose du jus de citron.",
         "Sers directement dans la poêle, l'œuf posé sur le dessus."
-      ]
+      ],
+      "photo": "assets/recipes/d354.webp"
     },
     {
       "id": "des216",
@@ -125289,7 +126728,8 @@ window.__DATA_RECIPES = {
         "Laisse durcir 1 minute avant de casser le fin voile de caramel avec le dos d'une cuillère et de servir aussitôt."
       ],
       "rest": 120,
-      "advance": "2h"
+      "advance": "2h",
+      "photo": "assets/recipes/des216.webp"
     },
     {
       "id": "des217",
@@ -125378,7 +126818,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -125450,7 +126891,8 @@ window.__DATA_RECIPES = {
         "Pour pocher l'œuf : porte une casserole d'eau à léger frémissement (de petites bulles, pas une ébullition forte). Casse l'œuf dans un bol puis fais-le glisser délicatement dans l'eau. Laisse cuire 3 min sans toucher : le blanc doit être ferme et le jaune encore coulant.",
         "Égoutte les lentilles cuites, encore tièdes. Mélange-les avec la vinaigrette, l'échalote et la mâche.",
         "Dresse la salade dans une assiette creuse, ajoute le haddock émietté par-dessus, pose délicatement l'œuf poché au centre et parsème de persil ciselé. Sers tiède sans attendre."
-      ]
+      ],
+      "photo": "assets/recipes/l372.webp"
     },
     {
       "id": "l373",
@@ -125475,7 +126917,8 @@ window.__DATA_RECIPES = {
         "pan"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -125559,7 +127002,8 @@ window.__DATA_RECIPES = {
         "Trempe chaque tortilla dans la sauce chaude pour bien l'enrober des deux côtés, puis plie-la en deux et dépose-la dans une assiette.",
         "Nappe les tortillas du reste de sauce chaude.",
         "Émiette le fromage frais par-dessus et parsème de coriandre ciselée. Sers immédiatement bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l373.webp"
     },
     {
       "id": "l374",
@@ -125582,7 +127026,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -125778,7 +127224,8 @@ window.__DATA_RECIPES = {
         "Enfourne 12 min, retourne délicatement les galettes à la spatule, badigeonne l'autre face et poursuis la cuisson 10-12 min : elles doivent être dorées et légèrement craquantes sur les bords.",
         "Pendant ce temps, prépare la salade verte avec un filet de jus de citron et d'huile d'olive.",
         "Sers les galettes bien chaudes accompagnées de la salade verte et d'un quartier de citron."
-      ]
+      ],
+      "photo": "assets/recipes/l375.webp"
     },
     {
       "id": "l376",
@@ -125804,7 +127251,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -125876,7 +127325,8 @@ window.__DATA_RECIPES = {
         "Ajoute le chou-fleur rôti (réserve quelques bouquets pour la déco), le curry en poudre et le bouillon de légumes. Porte à ébullition puis laisse mijoter 10 min.",
         "Ajoute le lait de coco, puis mixe au blender jusqu'à obtenir une texture bien lisse et onctueuse.",
         "Rectifie le sel et le poivre. Verse dans un bol, parsème des pois chiches grillés et de coriandre ciselée. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l376.webp"
     },
     {
       "id": "d355",
@@ -125898,7 +127348,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -125977,7 +127429,8 @@ window.__DATA_RECIPES = {
         "Découvre en fin de cuisson 10 min pour que le jus réduise et nappe légèrement les haricots.",
         "Retire le bouquet garni, rectifie le sel et le poivre.",
         "Sers bien chaud dans une assiette creuse."
-      ]
+      ],
+      "photo": "assets/recipes/d355.webp"
     },
     {
       "id": "d356",
@@ -126000,7 +127453,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -126091,7 +127546,8 @@ window.__DATA_RECIPES = {
         "Ajoute la courgette coupée en rondelles épaisses, les haricots verts et le maïs doux. Poursuis la cuisson 15 min à couvert jusqu'à ce que les légumes soient tendres mais encore fermes.",
         "Rectifie le sel et le poivre, ajoute un filet de jus de citron vert.",
         "Sers chaud dans un bol creux, parsemé de coriandre fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/d356.webp"
     },
     {
       "id": "d357",
@@ -126115,7 +127571,10 @@ window.__DATA_RECIPES = {
         "oven",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -126218,7 +127677,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare le chou rouge mariné : émince-le finement et mélange-le avec un filet de jus de citron vert et une pincée de sel. Laisse mariner au frais.",
         "Retire la viande de la cocotte et effiloche-la (= détache-la en filaments avec deux fourchettes). Remets-la dans le jus de cuisson réduit pour qu'elle s'imbibe de sauce.",
         "Sers la viande effilochée avec le chou rouge mariné et la coriandre fraîche ciselée par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/d357.webp"
     },
     {
       "id": "d358",
@@ -126241,7 +127701,9 @@ window.__DATA_RECIPES = {
         "stove",
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -126320,7 +127782,8 @@ window.__DATA_RECIPES = {
         "Ajoute les pois chiches cuits et remets les boulettes dans la sauce. Couvre et laisse mijoter à feu doux 20 min jusqu'à ce que les boulettes soient cuites à cœur.",
         "Hors du feu, ajoute le jus de citron, rectifie le sel et le poivre.",
         "Sers bien chaud dans un bol creux."
-      ]
+      ],
+      "photo": "assets/recipes/d358.webp"
     },
     {
       "id": "d359",
@@ -126342,8 +127805,10 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "shellfish",
-        "lactose"
+        "lactose",
+        "molluscs",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -126573,7 +128038,8 @@ window.__DATA_RECIPES = {
         "Arrose avec le miel et laisse caraméliser 1 min à feu doux : le jus doit devenir sirupeux.",
         "Saupoudre d'une pincée de cannelle en poudre.",
         "Dresse dans une assiette, dépose une cuillère de ricotta à côté et sers tiède."
-      ]
+      ],
+      "photo": "assets/recipes/des219.webp"
     },
     {
       "id": "l377",
@@ -126692,7 +128158,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -126748,7 +128215,8 @@ window.__DATA_RECIPES = {
         "Parsème de roquette fraîche sur toute la surface.",
         "Termine par des copeaux de parmesan : passe un économe ou un couteau à fromage sur le bloc de parmesan pour obtenir de fines lamelles.",
         "Sers immédiatement, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/l378.webp"
     },
     {
       "id": "l379",
@@ -126773,7 +128241,8 @@ window.__DATA_RECIPES = {
         "pan"
       ],
       "allergens": [
-        "shellfish"
+        "shellfish",
+        "molluscs"
       ],
       "ing": [
         [
@@ -126841,7 +128310,8 @@ window.__DATA_RECIPES = {
         "Dans une assiette, dispose un lit de mâche fraîche.",
         "Dépose les fruits de mer encore tièdes par-dessus avec leur jus de cuisson.",
         "Parsème de persil plat ciselé et sers immédiatement, tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l379.webp"
     },
     {
       "id": "d360",
@@ -126932,7 +128402,8 @@ window.__DATA_RECIPES = {
         "Enfourne 20-25 min selon la taille du poisson : la chair doit devenir opaque et se détacher facilement de l'arête quand tu la testes à la fourchette près de la tête.",
         "À la sortie du four, arrose avec le jus du reste du citron.",
         "Sers directement dans le plat de cuisson, pour un effet de partage convivial, avec les tomates et les olives confites tout autour."
-      ]
+      ],
+      "photo": "assets/recipes/d360.webp"
     },
     {
       "id": "d361",
@@ -126955,7 +128426,10 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -127041,7 +128515,8 @@ window.__DATA_RECIPES = {
         "Pendant la dernière demi-heure de cuisson, prépare la gremolata : mélange dans un petit bol le zeste de citron (seulement la partie jaune, pas le blanc amer) avec le persil plat ciselé.",
         "En fin de cuisson, rectifie le sel et le poivre de la sauce. Si elle est trop liquide, découvre et laisse réduire quelques minutes à feu vif.",
         "Sers le jarret de veau nappé de sa sauce, avec la gremolata fraîche parsemée par-dessus au dernier moment (elle doit rester crue, surtout ne pas la cuire)."
-      ]
+      ],
+      "photo": "assets/recipes/d361.webp"
     },
     {
       "id": "d362",
@@ -127146,7 +128621,8 @@ window.__DATA_RECIPES = {
         "À la sortie du four, casse la croûte de sel avec le dos d'une cuillère ou le plat d'un couteau (attention, ça peut projeter des éclats). Retire délicatement toute la croûte : la peau du poisson part généralement avec elle.",
         "Lève les filets de dorade à l'aide d'une fourchette et d'une cuillère, en les décollant doucement de l'arête centrale.",
         "Dresse les filets avec les légumes vapeur et un quartier de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d362.webp"
     },
     {
       "id": "d363",
@@ -127170,7 +128646,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "shellfish"
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -127332,7 +128809,8 @@ window.__DATA_RECIPES = {
         "Dépose par-dessus les lamelles de figue fraîche, puis une fine tranche de jambon cru légèrement froissée (= plie-la en deux ou trois pour lui donner du volume).",
         "Arrose d'un filet de miel et parsème de quelques feuilles de thym frais effeuillées (= détachées de la branche avec les doigts).",
         "Sers immédiatement en apéritif, à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/s174.webp"
     },
     {
       "id": "s175",
@@ -127407,7 +128885,8 @@ window.__DATA_RECIPES = {
         "Parsème du reste d'aneth frais sur le dessus pour la décoration.",
         "Garde au frais jusqu'au moment de servir (idéalement pas plus de 2h, pour que l'avocat ne s'oxyde pas).",
         "Sers bien frais, avec une petite cuillère."
-      ]
+      ],
+      "photo": "assets/recipes/s175.webp"
     },
     {
       "id": "des220",
@@ -127766,7 +129245,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange les légumes avec le jus de citron vert et la moitié de la sauce ponzu, pour bien enrober et garder le croquant.",
         "Avec un couteau bien aiguisé, tranche le thon froid en tranches fines de 5 mm, perpendiculairement à la longueur du pavé.",
         "Dresse les tranches de thon sur la salade croquante, nappe avec le reste de sauce ponzu et parsème de coriandre fraîche ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l380.webp"
     },
     {
       "id": "l381",
@@ -127889,7 +129369,8 @@ window.__DATA_RECIPES = {
         "Enfourne sous le grill 10-12 minutes, en retournant à mi-cuisson : le poulet doit être bien doré et sans trace rosée à cœur, les crevettes roses et fermes.",
         "Pendant la cuisson, dresse la roquette dans l'assiette, émince l'oignon rouge très finement par-dessus.",
         "Dispose le poulet et les crevettes grillés sur le lit de roquette, arrose d'un filet d'huile d'olive et parsème de coriandre fraîche ciselée. Sers immédiatement bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/l381.webp"
     },
     {
       "id": "l382",
@@ -127988,7 +129469,8 @@ window.__DATA_RECIPES = {
         "Dans un autre bol, mélange délicatement le saumon, la mangue, l'avocat et l'oignon nouveau. Verse l'assaisonnement par-dessus et mélange sans écraser les dés, avec une cuillère ou une spatule souple.",
         "Goûte et rectifie : un peu plus de citron vert pour l'acidité, un peu de sel si besoin.",
         "Dresse à la cuillère façon quenelle (ou avec un cercle à pâtisserie si tu en as). Parsème de graines de sésame et de coriandre fraîche ciselée juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l382.webp"
     },
     {
       "id": "d364",
@@ -128090,7 +129572,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle (garde 1 c.à.s de graisse de canard, retire le reste), fais revenir l'ail et le gingembre 30 secondes à feu vif. Ajoute le pak-choï et la carotte, fais sauter 3-4 minutes : les légumes doivent rester croquants, juste attendris.",
         "Pousse les légumes sur le côté. Verse le jus d'orange, la sauce soja, le miel et le cinq-épices dans la poêle. Laisse réduire 2-3 minutes à feu vif, jusqu'à obtenir une sauce sirupeuse qui nappe la cuillère.",
         "Tranche le magret en biais, à contre-fil (perpendiculaire aux fibres). Dispose sur les légumes, nappe de sauce à l'orange et parsème du zeste réservé."
-      ]
+      ],
+      "photo": "assets/recipes/d364.webp"
     },
     {
       "id": "d365",
@@ -128194,7 +129677,8 @@ window.__DATA_RECIPES = {
         "Jette les gambas dans la poêle chaude, fais-les sauter 2 minutes maximum en remuant sans arrêt : elles doivent devenir roses et fermes (trop longtemps, elles deviennent caoutchouteuses). Retire-les, réserve.",
         "Dans la même poêle, fais revenir l'ail, le gingembre et le piment 30 secondes. Ajoute les tiges de pak-choï, fais sauter 2 minutes, puis ajoute les feuilles et l'oignon nouveau, encore 1-2 minutes : tout doit rester croquant et vert vif.",
         "Remets les gambas dans la poêle, arrose de sauce soja et de vinaigre de riz, mélange 30 secondes pour napper. Parsème de coriandre fraîche et sers immédiatement bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d365.webp"
     },
     {
       "id": "d366",
@@ -128316,7 +129800,8 @@ window.__DATA_RECIPES = {
         "Fais revenir l'oignon émincé 4 min dans l'huile, ajoute ail, gingembre et garam masala, remue 1 min.",
         "Verse les tomates concassées, laisse réduire 8 min, puis ajoute la crème de cajou et la crème liquide : la sauce devient onctueuse.",
         "Dépose les boulettes dans la sauce au moment de servir, parsème de coriandre."
-      ]
+      ],
+      "photo": "assets/recipes/d366.webp"
     },
     {
       "id": "d367",
@@ -128439,7 +129924,8 @@ window.__DATA_RECIPES = {
         "Enfourne 12-15 minutes selon l'épaisseur : le poisson doit devenir opaque et se détacher facilement en flocons à la fourchette, signe qu'il est cuit à cœur.",
         "Sors le poisson du four, laisse reposer 2 minutes.",
         "Sers le poisson tikka avec le raïta frais à côté, pour que chacun se serve à sa convenance."
-      ]
+      ],
+      "photo": "assets/recipes/d367.webp"
     },
     {
       "id": "s176",
@@ -128524,7 +130010,8 @@ window.__DATA_RECIPES = {
         "Dépose les siu mai dans un panier vapeur tapissé de papier cuisson troué.",
         "Cuis 10-12 min à la vapeur : la farce devient rose et ferme.",
         "Sers chaud avec un filet de sauce soja — parfait en bouchée apéritive de fête."
-      ]
+      ],
+      "photo": "assets/recipes/s176.webp"
     },
     {
       "id": "s177",
@@ -128619,7 +130106,8 @@ window.__DATA_RECIPES = {
         "Dépose des petits tas sur une plaque avec papier cuisson, arrose d'un filet d'huile.",
         "Enfourne 25 min en retournant à mi-cuisson : les pakoras dorent et croustillent (sans friture).",
         "Sers chaud en apéritif, avec un chutney ou un yaourt."
-      ]
+      ],
+      "photo": "assets/recipes/s177.webp"
     },
     {
       "id": "des223",
@@ -128686,7 +130174,8 @@ window.__DATA_RECIPES = {
         "Démoule (moule passé sous l'eau tiède quelques secondes) et parsème du reste de pistaches."
       ],
       "advance": "4h au congélateur",
-      "rest": 240
+      "rest": 240,
+      "photo": "assets/recipes/des223.webp"
     },
     {
       "id": "des224",
@@ -128765,7 +130254,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange délicatement les litchis, les segments d'orange et de pamplemousse, la julienne de gingembre, le jus de citron vert et le sirop d'érable.",
         "Laisse reposer 10 minutes au frais, le temps que les saveurs se mélangent et que le gingembre parfume légèrement les fruits.",
         "Cisèle la menthe fraîche juste avant de servir, parsème sur la salade. Sers bien frais, dans une jolie coupelle pour l'effet festif."
-      ]
+      ],
+      "photo": "assets/recipes/des224.webp"
     },
     {
       "id": "des225",
@@ -128951,7 +130441,8 @@ window.__DATA_RECIPES = {
         "Faire fondre une noisette de beurre doux dans une poêle chaude. Verser des petites louches de pâte pour former des blinis de 5 cm de diamètre. Cuire 1 à 2 minutes jusqu'à ce que des bulles apparaissent en surface, puis retourner et cuire encore 1 minute : le blini est prêt quand il est doré des deux côtés et se détache facilement.",
         "Mélanger la crème fraîche épaisse avec le jus de citron et le poivre du moulin.",
         "Dresser une tranche de saumon gravlax sur chaque blini tiède, napper d'une petite cuillère de crème citronnée et décorer d'un brin d'aneth."
-      ]
+      ],
+      "photo": "assets/recipes/l383.webp"
     },
     {
       "id": "l384",
@@ -128976,7 +130467,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -129048,7 +130540,8 @@ window.__DATA_RECIPES = {
         "Mixer finement au blender jusqu'à obtenir un velouté lisse et homogène. Assaisonner de sel, de poivre et d'une pincée de muscade.",
         "Pendant ce temps, fouetter la crème liquide entière bien froide avec un batteur jusqu'à ce qu'elle forme une chantilly ferme, puis la saler très légèrement.",
         "Verser le velouté chaud dans des verres ou petites tasses, déposer une quenelle de chantilly salée sur le dessus et servir immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l384.webp"
     },
     {
       "id": "l385",
@@ -129076,7 +130569,9 @@ window.__DATA_RECIPES = {
         "shellfish",
         "eggs",
         "mustard",
-        "lactose"
+        "lactose",
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -129147,7 +130642,8 @@ window.__DATA_RECIPES = {
         "Incorporer le skyr et le jus de citron pour alléger la mayonnaise, puis saler et poivrer.",
         "Disposer la salade (roquette, mâche) au fond d'une assiette ou d'un plateau, puis répartir harmonieusement les crevettes et les bulots.",
         "Servir la mayonnaise allégée au citron à part, dans un petit ramequin, pour que chacun se serve selon son goût."
-      ]
+      ],
+      "photo": "assets/recipes/l385.webp"
     },
     {
       "id": "d368",
@@ -129171,7 +130667,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -129250,7 +130747,8 @@ window.__DATA_RECIPES = {
         "Poursuivre la cuisson au four 50 à 55 minutes en arrosant régulièrement avec le jus de cuisson, jusqu'à ce que la peau de la poularde soit bien dorée et croustillante et que la viande se détache facilement de l'os.",
         "Vérifier la cuisson : la viande ne doit plus être rosée près de l'os et le jus qui s'en écoule doit être clair.",
         "Laisser reposer 5 minutes hors du four avant de dresser la poularde entourée des légumes glacés et des châtaignes."
-      ]
+      ],
+      "photo": "assets/recipes/d368.webp"
     },
     {
       "id": "d369",
@@ -129272,7 +130770,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "pan"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Magret de canard",
@@ -129337,7 +130837,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, faire revenir l'échalote émincée 2 minutes, puis ajouter les figues séchées coupées en quartiers, le vin rouge, le miel, le vinaigre de Xérès et la cannelle.",
         "Laisser mijoter 5 minutes à feu doux en remuant, jusqu'à obtenir une sauce légèrement sirupeuse qui nappe les figues.",
         "Trancher le magret en biais et dresser avec la sauce aux figues et épices nappée dessus."
-      ]
+      ],
+      "photo": "assets/recipes/d369.webp"
     },
     {
       "id": "d370",
@@ -129362,8 +130863,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "shellfish",
-        "lactose"
+        "lactose",
+        "molluscs"
       ],
       "ing": [
         [
@@ -129423,7 +130924,8 @@ window.__DATA_RECIPES = {
         "Dans une poêle bien chaude, faire fondre le beurre doux restant jusqu'à ce qu'il commence à mousser.",
         "Snacker les noix de Saint-Jacques 1 minute 30 de chaque côté à feu vif, sans les bouger : elles doivent former une croûte dorée dessus-dessous tout en restant nacrées et fondantes au centre.",
         "Dresser la fondue de poireaux au safran dans l'assiette, disposer les noix de Saint-Jacques dessus et servir immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d370.webp"
     },
     {
       "id": "d371",
@@ -129515,7 +131017,8 @@ window.__DATA_RECIPES = {
         "Dans la même poêle, ajouter l'huile de sésame restante et faire sauter le poivron, la carotte et les pois mange-tout à feu vif 4 à 5 minutes en remuant constamment, jusqu'à ce qu'ils restent croquants.",
         "Ajouter l'oignon nouveau, le gingembre râpé et la sauce soja, puis sauter encore 1 minute.",
         "Trancher le pavé de thon en tranches épaisses et dresser sur le wok de légumes bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d371.webp"
     },
     {
       "id": "s178",
@@ -129540,7 +131043,7 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs"
       ],
       "ing": [
         [
@@ -129594,7 +131097,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélanger délicatement les dés de Saint-Jacques et d'agrumes avec l'huile d'olive, la ciboulette ciselée, la fleur de sel et le poivre du moulin.",
         "Laisser mariner 10 minutes au réfrigérateur pour que les saveurs se mélangent : le tartare doit rester frais et ferme, pas « cuit » par l'acidité.",
         "Répartir dans de petites verrines et servir immédiatement bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/s178.webp"
     },
     {
       "id": "s179",
@@ -129620,7 +131124,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "fish",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -129680,7 +131185,8 @@ window.__DATA_RECIPES = {
         "Ajouter la ciboulette et le persil ciselés, saler et poivrer, puis bien mélanger à nouveau.",
         "Garnir chaque blanc d'œuf de cette farce avec une petite cuillère, en formant un petit dôme (ou à la poche à douille pour un rendu plus régulier et festif).",
         "Parsemer d'un peu de ciboulette ciselée sur le dessus et servir frais sur un plateau de bouchées apéritives."
-      ]
+      ],
+      "photo": "assets/recipes/s179.webp"
     },
     {
       "id": "des226",
@@ -129773,7 +131279,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Poire",
@@ -129914,7 +131422,8 @@ window.__DATA_RECIPES = {
         "Enfourner 50 à 60 minutes, jusqu'à ce que l'extérieur soit sec et légèrement craquelé au toucher, l'intérieur devant rester un peu moelleux. Laisser refroidir complètement dans le four éteint, porte entrouverte.",
         "Pendant ce temps, laver et couper les fraises en morceaux, et laisser les framboises et myrtilles entières.",
         "Juste avant de servir, garnir le creux de la meringue froide de fromage blanc, puis déposer les fruits rouges dessus et décorer d'une feuille de menthe fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/des228.webp"
     },
     {
       "id": "l386",
@@ -129999,7 +131508,8 @@ window.__DATA_RECIPES = {
         "Ajoute la mangue, l'oignon rouge, le piment haché si tu en mets, l'huile d'olive, le sel et le poivre. Mélange délicatement à la cuillère pour ne pas écraser les cubes.",
         "Laisse mariner 5 minutes au réfrigérateur : les bords du poisson doivent passer du rose translucide à un blanc nacré.",
         "Parsème de coriandre ciselée juste avant de servir, dans des verres ou assiettes creuses bien froids."
-      ]
+      ],
+      "photo": "assets/recipes/l386.webp"
     },
     {
       "id": "l387",
@@ -130117,8 +131627,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "shellfish",
-        "nuts"
+        "nuts",
+        "molluscs"
       ],
       "ing": [
         [
@@ -130263,7 +131773,8 @@ window.__DATA_RECIPES = {
         "Pousse les légumes sur le côté de la poêle et ajoute les crevettes au centre. Fais-les cuire 2 à 3 minutes maximum par face : elles doivent devenir roses et former un « C », pas un rond serré (signe qu'elles sont trop cuites).",
         "Arrose du jus de citron vert, mélange avec les légumes, sale et poivre.",
         "Parsème de persil ciselé et sers immédiatement, bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d372.webp"
     },
     {
       "id": "d373",
@@ -130358,7 +131869,8 @@ window.__DATA_RECIPES = {
         "Enfourne pour 2h30 à 3h : la viande doit devenir si tendre qu'elle se détache à la fourchette, sans avoir besoin de couteau.",
         "20 minutes avant la fin, retire le papier aluminium pour que la viande et les légumes dorent légèrement en surface.",
         "Sors le plat, laisse reposer 5 minutes, puis effiloche la viande à la fourchette et sers avec les légumes rôtis et le jus de cuisson."
-      ]
+      ],
+      "photo": "assets/recipes/d373.webp"
     },
     {
       "id": "d374",
@@ -130463,7 +131975,8 @@ window.__DATA_RECIPES = {
         "Étale une feuille de brick sur le plan de travail, dépose la farce au centre, replie les bords vers l'intérieur comme un paquet carré bien serré. Pose une seconde feuille de brick dessous et replie-la aussi autour du paquet pour bien le fermer (ça évite que ça s'ouvre à la cuisson).",
         "Badigeonne le dessus d'un peu d'huile d'olive au pinceau et dépose sur une plaque recouverte de papier cuisson.",
         "Enfourne 20-25 minutes jusqu'à ce que la pastilla soit bien dorée et croustillante sur toutes les faces (retourne-la à mi-cuisson si besoin)."
-      ]
+      ],
+      "photo": "assets/recipes/d374.webp"
     },
     {
       "id": "d375",
@@ -130486,7 +131999,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -130553,7 +132067,8 @@ window.__DATA_RECIPES = {
         "Ajoute la crème fraîche, mélange et laisse épaissir 2-3 minutes à feu doux. Sale, poivre.",
         "Dans une autre poêle bien chaude, saisis le pavé de bœuf 2 à 3 minutes par face pour une cuisson saignante à point (adapte selon ton goût), puis laisse-le reposer 3 minutes sous une feuille d'aluminium avant de trancher.",
         "Dresse la purée de panais, pose le pavé de bœuf tranché par-dessus et nappe de sauce aux morilles."
-      ]
+      ],
+      "photo": "assets/recipes/d375.webp"
     },
     {
       "id": "s180",
@@ -130638,7 +132153,8 @@ window.__DATA_RECIPES = {
         "Goûte et rectifie l'assaisonnement si besoin (ajoute un peu plus de citron si tu aimes l'acidité).",
         "Répartis le mélange dans des petits verres ou verrines.",
         "Parsème de coriandre ciselée juste avant de servir, pour que ça reste bien frais et coloré."
-      ]
+      ],
+      "photo": "assets/recipes/s180.webp"
     },
     {
       "id": "s181",
@@ -130711,7 +132227,8 @@ window.__DATA_RECIPES = {
         "Dans chaque verrine, dépose une première couche de dés de betterave.",
         "Ajoute par-dessus une couche de fromage de chèvre crémeux, en lissant légèrement avec le dos d'une cuillère.",
         "Parsème d'éclats de noix et de ciboulette ciselée juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/s181.webp"
     },
     {
       "id": "des229",
@@ -130776,7 +132293,8 @@ window.__DATA_RECIPES = {
         "Répartis dans des petites verrines ou ramequins.",
         "Mets au réfrigérateur au moins 1 heure pour que la mousse prenne et refroidisse bien.",
         "Juste avant de servir, parsème quelques grains de fleur de sel sur le dessus : c'est ce qui fait le côté « fête » du dessert."
-      ]
+      ],
+      "photo": "assets/recipes/des229.webp"
     },
     {
       "id": "des230",
@@ -130912,7 +132430,8 @@ window.__DATA_RECIPES = {
         "Ajoute une couche de fruits rouges, puis quelques éclats de meringue.",
         "Répète les couches une seconde fois, en terminant par des fruits rouges et des éclats de meringue sur le dessus pour le croquant.",
         "Décore d'une feuille de menthe fraîche et sers immédiatement (la meringue doit rester croustillante, pas détrempée)."
-      ]
+      ],
+      "photo": "assets/recipes/des231.webp"
     },
     {
       "id": "l389",
@@ -130997,7 +132516,8 @@ window.__DATA_RECIPES = {
         "Dans un grand saladier, mélange la roquette, les fèves et les radis. Verse la vinaigrette et mélange délicatement avec deux cuillères.",
         "Avec un économe ou un couteau bien aiguisé, détache de fins copeaux de pecorino directement au-dessus de la salade.",
         "Ciselle la menthe fraîche en lanières très fines et parsème-la sur le dessus. Sers immédiatement, tant que les fèves sont encore fraîches et croquantes."
-      ]
+      ],
+      "photo": "assets/recipes/l389.webp"
     },
     {
       "id": "l390",
@@ -131085,7 +132605,8 @@ window.__DATA_RECIPES = {
         "Dépose la farce sur un tiers de la feuille, replie en triangle comme un drapeau qu'on plie, jusqu'au bout de la feuille. Badigeonne le dessus d'un peu d'huile d'olive.",
         "Dépose sur la plaque et enfourne 18-20 minutes jusqu'à ce que le triangle soit bien doré et croustillant (il doit craquer légèrement si tu tapes dessus avec une cuillère).",
         "Laisse reposer 3 minutes avant de servir : la farce finit de se stabiliser et tu évites de te brûler."
-      ]
+      ],
+      "photo": "assets/recipes/l390.webp"
     },
     {
       "id": "l391",
@@ -131175,7 +132696,8 @@ window.__DATA_RECIPES = {
         "Range les dolmades bien serrés côte à côte, en une seule couche, dans la casserole. Verse de l'eau froide jusqu'à les couvrir à peine, ajoute le reste de l'huile d'olive et le jus de citron.",
         "Pose une petite assiette retournée sur les dolmades pour les empêcher de se dérouler pendant la cuisson. Couvre, porte à petite ébullition puis baisse à feu doux et laisse mijoter 35 minutes, jusqu'à ce que le riz soit tendre.",
         "Laisse tiédir dans la casserole avant de servir, ou mets au frais pour les déguster bien frais avec un quartier de citron."
-      ]
+      ],
+      "photo": "assets/recipes/l391.webp"
     },
     {
       "id": "l392",
@@ -131266,7 +132788,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, fouette l'huile d'olive, le jus de citron, le cumin et le sel pour faire la vinaigrette.",
         "Dans un saladier, mélange les fèves, les petits pois et l'oignon rouge avec la vinaigrette.",
         "Dresse dans les assiettes, dispose les quartiers d'œuf dur par-dessus et parsème de persil ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l392.webp"
     },
     {
       "id": "l393",
@@ -131371,7 +132894,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais cuire l'œuf dans l'eau bouillante 9 minutes, refroidis-le, écale-le et coupe-le en quartiers.",
         "Hors du feu, sale, poivre, ajoute le jus de citron et la coriandre ciselée au zaalouk.",
         "Toaste les tranches de pain complet. Sers le zaalouk tiède, garni des quartiers d'œuf dur, avec le pain complet grillé à côté."
-      ]
+      ],
+      "photo": "assets/recipes/l393.webp"
     },
     {
       "id": "d376",
@@ -131475,7 +132999,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer le grill ou une poêle-gril à feu vif.",
         "Fais griller les brochettes 8-10 minutes en les retournant régulièrement, jusqu'à ce que l'extérieur soit bien doré et que l'intérieur ne soit plus rosé (coupe un morceau pour vérifier).",
         "Laisse reposer les brochettes 2 minutes hors du feu. Sers avec la salade concombre-tomate et une grosse cuillère de tzatziki à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d376.webp"
     },
     {
       "id": "d377",
@@ -131496,7 +133021,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Épaule d'agneau désossée",
@@ -131580,7 +133107,8 @@ window.__DATA_RECIPES = {
         "Ajoute le thym, la feuille de laurier, le sel et le poivre, puis verse de l'eau jusqu'à mi-hauteur des morceaux. Couvre et laisse mijoter à feu doux 30 minutes.",
         "Ajoute les cœurs d'artichaut, couvre à nouveau et prolonge la cuisson 12-15 minutes, jusqu'à ce que l'agneau se défasse facilement à la fourchette et que les artichauts soient tendres.",
         "Retire la feuille de laurier. Presse le jus de citron sur le plat, parsème de persil ciselé et sers bien chaud directement dans la cocotte."
-      ]
+      ],
+      "photo": "assets/recipes/d377.webp"
     },
     {
       "id": "d378",
@@ -131665,7 +133193,8 @@ window.__DATA_RECIPES = {
         "Dépose les sardines farcies dans le plat, bien serrées les unes contre les autres pour qu'elles ne s'ouvrent pas à la cuisson. Arrose du reste d'huile d'olive.",
         "Enfourne 15-18 minutes, jusqu'à ce que le dessus de la farce soit doré et que la chair des sardines se détache facilement à la fourchette.",
         "Sers chaud, avec un quartier de citron à presser au moment de manger."
-      ]
+      ],
+      "photo": "assets/recipes/d378.webp"
     },
     {
       "id": "d379",
@@ -131772,7 +133301,8 @@ window.__DATA_RECIPES = {
         "Si la sauce est trop liquide, fais réduire 2-3 minutes à découvert à feu vif : elle doit napper légèrement les légumes.",
         "Hors du feu, sale, poivre et presse le jus de citron sur le plat.",
         "Parsème de menthe et de persil ciselés juste avant de servir, bien chaud, dans un plat creux."
-      ]
+      ],
+      "photo": "assets/recipes/d379.webp"
     },
     {
       "id": "d380",
@@ -131882,7 +133412,8 @@ window.__DATA_RECIPES = {
         "Enfile délicatement les cubes de poisson sur des piques à brochette (trempe les piques en bois 10 minutes dans l'eau avant si besoin ; le poisson est fragile, ne serre pas trop).",
         "Fais chauffer le grill ou une poêle-gril à feu vif. Grille les brochettes 4-5 minutes par face, sans trop les retourner, jusqu'à ce que le poisson devienne opaque et s'émiette facilement à la fourchette.",
         "Nappe les brochettes du reste de chermoula et sers avec la salade de fenouil et concombre."
-      ]
+      ],
+      "photo": "assets/recipes/d380.webp"
     },
     {
       "id": "des232",
@@ -131949,7 +133480,8 @@ window.__DATA_RECIPES = {
         "Dispose les quartiers de fraises par-dessus.",
         "Arrose d'un filet de miel (fais-le tiédir 5 secondes au micro-ondes s'il est trop épais pour couler facilement).",
         "Parsème des pistaches concassées et de quelques feuilles de menthe ciselées. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/des232.webp"
     },
     {
       "id": "des233",
@@ -132007,7 +133539,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange délicatement les quartiers d'orange et les fraises.",
         "Arrose d'eau de fleur d'oranger et mélange à nouveau sans écraser les fruits.",
         "Laisse reposer 10 minutes au frais pour que les parfums se mélangent, puis parsème de feuilles de menthe fraîche ciselées juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des233.webp"
     },
     {
       "id": "l394",
@@ -132105,7 +133638,8 @@ window.__DATA_RECIPES = {
         "Juste au-dessus, aligne 4-5 crevettes côte à côte : c'est la rangée qu'on verra à travers la galette une fois roulée, le côté joli du rouleau.",
         "Roule serré : replie le bord du bas sur la garniture, rabats les deux côtés vers l'intérieur, puis continue à rouler en serrant doucement (pas trop fort, la galette se déchire facilement).",
         "Recommence avec les 3 autres galettes. Coupe chaque rouleau en deux en biais et sers immédiatement avec la sauce à tremper."
-      ]
+      ],
+      "photo": "assets/recipes/l394.webp"
     },
     {
       "id": "l395",
@@ -132206,7 +133740,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, fouette la sauce soja, l'huile de sésame, le vinaigre de riz et le gingembre frais râpé jusqu'à obtenir un mélange homogène.",
         "Dans un grand bol, mélange les nouilles soba froides, les edamame, le concombre et le chou rouge. Verse la sauce et mélange bien avec deux fourchettes pour tout enrober sans casser les nouilles.",
         "Parsème de graines de sésame grillées et d'oignon nouveau. Sers frais, directement ou après 15 min au réfrigérateur pour que les saveurs se mélangent."
-      ]
+      ],
+      "photo": "assets/recipes/l395.webp"
     },
     {
       "id": "l396",
@@ -132305,7 +133840,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, verse aussitôt les graines de moutarde grillées, avec leur huile, sur le yaourt au curcuma. Mélange.",
         "Dans un grand bol, mélange les lentilles germées, le concombre, la tomate et l'oignon rouge. Ajoute la sauce au yaourt et mélange bien pour tout enrober.",
         "Parsème de noix de coco râpée et de coriandre fraîche ciselée juste avant de servir, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/l396.webp"
     },
     {
       "id": "l397",
@@ -132407,7 +133943,8 @@ window.__DATA_RECIPES = {
         "Verse le lait de coco et 50 ml d'eau. Porte à frémissement puis baisse le feu.",
         "Ajoute les asperges et les petits pois. Laisse mijoter 10-12 min à couvert, jusqu'à ce que les asperges soient tendres mais encore un peu croquantes (pique avec la pointe d'un couteau pour vérifier).",
         "Parsème de coriandre fraîche ciselée et sers chaud, nature ou avec un peu de riz complet."
-      ]
+      ],
+      "photo": "assets/recipes/l397.webp"
     },
     {
       "id": "l398",
@@ -132432,7 +133969,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -132499,7 +134037,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, dépose la roquette au fond, puis le quinoa tiède, les asperges et les radis en petits tas séparés, pour un bel effet « bowl ».",
         "Coupe l'œuf mollet en deux et pose-le au centre. Parsème de graines de courge.",
         "Mélange l'huile d'olive, le vinaigre balsamique et la fleur de sel. Arrose le bowl juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l398.webp"
     },
     {
       "id": "d381",
@@ -132591,7 +134130,8 @@ window.__DATA_RECIPES = {
         "Chauffe l'huile de tournesol dans une petite casserole jusqu'à ce qu'elle frémisse légèrement, sans fumer.",
         "Dès que le poisson est cuit, parsème-le de blanc d'oignon nouveau et verse dessus l'huile bien chaude : ça doit grésiller, c'est la touche cantonaise.",
         "Arrose de sauce soja, ajoute le vert d'oignon nouveau et la coriandre fraîche. Sale légèrement. Sers immédiatement avec le pak choï et les champignons à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d381.webp"
     },
     {
       "id": "d382",
@@ -132682,7 +134222,8 @@ window.__DATA_RECIPES = {
         "Dans le même wok, fais sauter l'ail et le gingembre 30 secondes : ça doit sentir très bon, attention ça brûle vite. Ajoute les asperges et le poivron, puis fais sauter 4 min jusqu'à ce qu'ils soient tendres mais encore croquants.",
         "Remets le poulet dans le wok, ajoute la sauce soja et les noix de cajou. Mélange 1-2 min pour que tout s'enrobe bien et que les cajous soient tiédis.",
         "Parsème d'oignon nouveau et sers immédiatement, bien chaud, nature ou avec un peu de riz complet à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d382.webp"
     },
     {
       "id": "d383",
@@ -132792,7 +134333,8 @@ window.__DATA_RECIPES = {
         "Ajoute les petits pois et un peu d'eau si la sauce est trop épaisse (environ 50 ml). Laisse mijoter 5 min.",
         "Ajoute les crevettes crues décortiquées. Cuis 3-4 min jusqu'à ce qu'elles deviennent roses et opaques (plus de transparence grise) : ne les laisse pas trop longtemps, elles durcissent vite.",
         "Hors du feu, presse le jus du citron vert, ajoute la fleur de sel et parsème de coriandre fraîche ciselée. Sers chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d383.webp"
     },
     {
       "id": "d384",
@@ -132880,7 +134422,8 @@ window.__DATA_RECIPES = {
         "Verse le lait de coco et ajoute le blanc d'oignon nouveau. Porte à frémissement puis baisse le feu. Laisse mijoter 10 min à découvert.",
         "Ajoute la courgette et laisse cuire encore 8 min, jusqu'à ce qu'elle devienne tendre mais garde un peu de croquant (pique avec une fourchette pour vérifier).",
         "Hors du feu, presse le jus du citron vert et ajoute le vert d'oignon nouveau et la coriandre fraîche ciselée. Sale légèrement et sers chaud avec un peu de riz complet si besoin."
-      ]
+      ],
+      "photo": "assets/recipes/d384.webp"
     },
     {
       "id": "d385",
@@ -132963,7 +134506,8 @@ window.__DATA_RECIPES = {
         "Ferme la papillote hermétiquement : ramène les bords du papier cuisson vers le centre et plie-les plusieurs fois pour bien sceller, comme un chausson, pour que la vapeur reste piégée à l'intérieur.",
         "Enfourne 18-20 min, jusqu'à ce que le poisson soit opaque et s'effeuille facilement à la fourchette (ouvre la papillote avec précaution, la vapeur brûle).",
         "Ouvre la papillote à table en faisant attention à la vapeur chaude qui s'échappe, parsème de persil plat ciselé et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d385.webp"
     },
     {
       "id": "des234",
@@ -133036,7 +134580,8 @@ window.__DATA_RECIPES = {
         "Presse le jus du citron vert dessus. Râpe très finement le gingembre, comme de la poudre, et parsème-le sur les fruits : il réveille le goût sans piquer.",
         "Ciselle la menthe fraîche (roule les feuilles ensemble et coupe-les en fines lamelles) et ajoute-la juste avant de servir, pour qu'elle garde toute sa fraîcheur.",
         "Sers immédiatement bien frais, ou laisse reposer 10 min au frais pour que les saveurs se mélangent."
-      ]
+      ],
+      "photo": "assets/recipes/des234.webp"
     },
     {
       "id": "des235",
@@ -133113,7 +134658,8 @@ window.__DATA_RECIPES = {
         "Dans une casserole, fais chauffer le lait avec le safran, la cardamome et le miel. Laisse frémir 6-8 min en remuant : le lait réduit un peu et se colore (c'est le rabri léger).",
         "Dépose les triangles de pain dans une assiette creuse et nappe-les du lait safrané chaud. Laisse-les s'imbiber 5 min.",
         "Parsème de pistaches concassées et sers tiède ou frais."
-      ]
+      ],
+      "photo": "assets/recipes/des235.webp"
     },
     {
       "id": "l399",
@@ -133137,7 +134683,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -133204,7 +134751,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol, mélange l'huile d'olive, le vinaigre de vin blanc, l'ail haché, le sel et le poivre pour faire la vinaigrette.",
         "Ajoute les pommes de terre, le poulpe, les câpres, l'oignon rouge et le persil, puis mélange délicatement pour ne pas écraser les pommes de terre.",
         "Laisse reposer 10 minutes à température ambiante avant de servir : la salade est meilleure tiède ou à température ambiante que glacée."
-      ]
+      ],
+      "photo": "assets/recipes/l399.webp"
     },
     {
       "id": "l400",
@@ -133297,7 +134845,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, coupe le concombre en fines demi-lunes et émince l'oignon rouge très finement.",
         "Verse la sauce verte piquante sur les crevettes marinées, ajoute le concombre et l'oignon rouge, mélange délicatement.",
         "Sers immédiatement dans une assiette creuse avec des morceaux d'avocat et un filet d'huile d'olive par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/l400.webp"
     },
     {
       "id": "l401",
@@ -133394,7 +134943,8 @@ window.__DATA_RECIPES = {
         "Écrase l'avocat à la fourchette avec le jus du second citron vert et une pincée de sel, pour obtenir un écrasé crémeux.",
         "Tartine chaque tortilla grillée de l'écrasé d'avocat, dépose les cubes de thon saisi par-dessus, puis termine avec le pico de gallo.",
         "Saupoudre d'une pincée de piment d'Espelette et sers immédiatement, tostada à la main."
-      ]
+      ],
+      "photo": "assets/recipes/l401.webp"
     },
     {
       "id": "l402",
@@ -133416,7 +134966,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -133507,7 +135059,8 @@ window.__DATA_RECIPES = {
         "Remets l'aubergine dans la poêle, mélange bien et laisse mijoter encore 5 minutes à couvert : le mélange doit devenir légèrement sirupeux, c'est l'équilibre aigre-doux caractéristique de la caponata.",
         "Goûte et rectifie en sel et poivre, et ajoute un peu plus de vinaigre si tu veux plus d'acidité.",
         "Laisse tiédir 5 minutes, dresse dans une assiette, pose la burrata entière au centre et parsème de basilic frais ciselé : perce la burrata à table pour que son cœur crémeux se mélange à la caponata tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l402.webp"
     },
     {
       "id": "l403",
@@ -133532,7 +135085,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -133598,7 +135152,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste l'acidité (vinaigre) ou le sel selon ton goût : la pastèque étant sucrée, le gaspacho doit rester bien équilibré entre sucré et acide.",
         "Verse le gaspacho dans un bol ou un verre, et place au réfrigérateur 30 minutes minimum pour qu'il soit bien frais.",
         "Au moment de servir, émiette la feta sur le dessus et parsème de feuilles de menthe fraîche ciselées."
-      ]
+      ],
+      "photo": "assets/recipes/l403.webp"
     },
     {
       "id": "d386",
@@ -133620,7 +135175,8 @@ window.__DATA_RECIPES = {
         "grill"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -133699,7 +135255,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le grill (ou une poêle bien chaude) à feu vif.",
         "Fais griller les brochettes 4-5 minutes de chaque côté, en les retournant régulièrement, jusqu'à ce que l'espadon soit opaque à cœur et légèrement doré sur les bords.",
         "Dresse les brochettes sur un plat et nappe généreusement de salsa verde avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d386.webp"
     },
     {
       "id": "d387",
@@ -133721,7 +135278,9 @@ window.__DATA_RECIPES = {
         "grill",
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "sulphites"
+      ],
       "ing": [
         [
           "Blanc de poulet",
@@ -133811,7 +135370,8 @@ window.__DATA_RECIPES = {
         "Fais griller le poulet mariné 5-6 minutes de chaque côté, jusqu'à ce qu'il soit bien doré et cuit à cœur (la chair ne doit plus être rosée).",
         "En même temps, fais griller les rondelles de courgette 3-4 minutes de chaque côté, jusqu'à ce qu'elles soient tendres et marquées de belles traces de grill.",
         "Dresse le poulet grillé avec les courgettes, nappe de salsa fraîche et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/d387.webp"
     },
     {
       "id": "d388",
@@ -133913,7 +135473,8 @@ window.__DATA_RECIPES = {
         "Retourne délicatement le filet avec une spatule et poursuis la cuisson 3-4 minutes de l'autre côté, jusqu'à ce que la chair se détache facilement à la fourchette.",
         "Dresse le poisson grillé sur une assiette, surmonte-le du chou rouge mariné et de coriandre fraîche ciselée.",
         "Termine avec un filet d'huile d'olive et sers immédiatement, bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d388.webp"
     },
     {
       "id": "d389",
@@ -133934,7 +135495,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -134013,7 +135575,8 @@ window.__DATA_RECIPES = {
         "Dans une poêle à part (ou sur le grill), fais chauffer le reste d'huile d'olive à feu vif et dépose le filet de daurade côté peau vers le bas.",
         "Fais griller 4-5 minutes sans bouger, puis retourne délicatement et poursuis la cuisson 2-3 minutes, jusqu'à ce que la chair se détache facilement à la fourchette.",
         "Dresse la caponata dans une assiette, pose le filet de daurade grillé par-dessus et parsème de basilic frais ciselé avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d389.webp"
     },
     {
       "id": "d390",
@@ -134117,7 +135680,8 @@ window.__DATA_RECIPES = {
         "Pendant la cuisson, coupe la tomate en petits dés et hache finement le persil plat et la menthe fraîche.",
         "Mélange le quinoa refroidi avec la tomate, le persil, la menthe, le jus de citron jaune et le reste de l'huile d'olive. Sale et poivre.",
         "Dresse le taboulé de quinoa dans une assiette et pose les brochettes grillées par-dessus avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d390.webp"
     },
     {
       "id": "des236",
@@ -134187,7 +135751,8 @@ window.__DATA_RECIPES = {
         "Plante un bâton en bois dans chaque moule. Si le mélange est trop liquide pour que le bâton tienne droit, mets les moules 30 minutes au congélateur avant de planter les bâtons.",
         "Place au congélateur 5 heures minimum, jusqu'à ce que les paletas soient complètement dures.",
         "Pour démouler, passe rapidement les moules sous l'eau tiède 5-10 secondes et tire doucement sur le bâton. Sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/des236.webp"
     },
     {
       "id": "des237",
@@ -134258,7 +135823,8 @@ window.__DATA_RECIPES = {
         "Enfourne 15-18 minutes, jusqu'à ce que la pêche soit tendre et légèrement caramélisée sur les bords (vérifie avec la pointe d'un couteau).",
         "Pendant la cuisson, mélange le skyr avec le jus de citron dans un petit bol.",
         "Retire les pêches rôties du four, laisse tiédir 2 minutes, retire la branche de romarin cuite (elle a juste parfumé, on ne la mange pas) et nappe de skyr citronné avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/des237.webp"
     },
     {
       "id": "l404",
@@ -134282,7 +135848,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -134349,7 +135916,8 @@ window.__DATA_RECIPES = {
         "Prépare la vinaigrette : émince l'échalote en tout petits dés (couteau bien aiguisé, dés de 2-3 mm). Dans un bol, fouette la moutarde, le vinaigre, le sel et le poivre, puis verse l'huile d'olive petit à petit en fouettant sans arrêter jusqu'à ce que le mélange épaississe légèrement. Ajoute l'échalote.",
         "Égoutte les asperges et les pommes de terre. Dresse-les sur l'assiette, pose l'œuf mollet coupé en deux par-dessus.",
         "Nappe de vinaigrette à l'échalote et parsème de persil plat ciselé (coupé en tout petits morceaux avec des ciseaux ou un couteau). Sers immédiatement, tant que l'œuf est encore tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l404.webp"
     },
     {
       "id": "l405",
@@ -134376,7 +135944,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "gluten",
         "lactose",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -134443,7 +136012,8 @@ window.__DATA_RECIPES = {
         "Dresse la roquette assaisonnée dans une assiette creuse, répartis les lamelles de fraises par-dessus.",
         "Sors le pain-chèvre du four dès qu'il est bien doré. Pose-le au centre de l'assiette, encore chaud.",
         "Parsème de cerneaux de noix concassés (écrase-les grossièrement dans ta main ou avec le plat d'un couteau) et arrose du reste de vinaigrette. Sers tout de suite, le contraste chaud-froid fait tout l'intérêt du plat."
-      ]
+      ],
+      "photo": "assets/recipes/l405.webp"
     },
     {
       "id": "l406",
@@ -134529,7 +136099,8 @@ window.__DATA_RECIPES = {
         "Effeuille la menthe (retire les feuilles de la tige) et ciselle-la finement en petites lanières.",
         "Dans un grand bol, mélange l'épeautre tiède, les dés de courgette, les tomates cerises, les pois chiches et la menthe.",
         "Arrose de jus de citron et d'huile d'olive, sale, poivre, puis mélange délicatement avec deux cuillères. Sers tiède ou laisse refroidir au frais 30 minutes : les saveurs se marient encore mieux froid."
-      ]
+      ],
+      "photo": "assets/recipes/l406.webp"
     },
     {
       "id": "l407",
@@ -134552,7 +136123,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "gluten"
+        "gluten",
+        "sulphites"
       ],
       "ing": [
         [
@@ -134613,7 +136185,8 @@ window.__DATA_RECIPES = {
         "Ciselle grossièrement les feuilles de basilic (déchire-les simplement à la main pour éviter qu'elles noircissent) et parsème-les sur l'assiette.",
         "Arrose d'un filet d'huile d'olive et d'un trait de vinaigre balsamique, puis poivre généreusement.",
         "Sers immédiatement avec le pain grillé à côté, pour tremper dans les jus sucrés-salés qui se forment dans l'assiette."
-      ]
+      ],
+      "photo": "assets/recipes/l407.webp"
     },
     {
       "id": "l408",
@@ -134712,7 +136285,8 @@ window.__DATA_RECIPES = {
         "Effeuille la menthe et le persil (sépare les feuilles des tiges, qui sont amères) et ciselle-les finement au couteau.",
         "Dans le grand bol, mélange le chou-fleur, les pois chiches, les radis, le concombre et les herbes ciselées.",
         "Arrose de jus de citron et d'huile d'olive, sale, poivre, puis mélange bien. Émiette la feta par-dessus avec les doigts juste avant de servir, pour qu'elle garde ses petits morceaux."
-      ]
+      ],
+      "photo": "assets/recipes/l408.webp"
     },
     {
       "id": "d391",
@@ -134795,7 +136369,8 @@ window.__DATA_RECIPES = {
         "Dans une seconde poêle, verse le reste d'huile d'olive et fais-la chauffer à feu vif. Sale et poivre le filet de bar côté peau, puis dépose-le peau contre la poêle.",
         "Laisse cuire 4 minutes sans bouger le poisson, jusqu'à ce que la peau soit bien croustillante et dorée. Retourne-le délicatement avec une spatule et poursuis la cuisson 2 minutes de l'autre côté : la chair doit devenir nacrée et se détacher facilement à la fourchette.",
         "Dresse le fenouil confit et les tomates cerises dans l'assiette, ajoute les pommes de terre, pose le filet de bar par-dessus et arrose d'un trait de jus de citron avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d391.webp"
     },
     {
       "id": "d392",
@@ -134816,7 +136391,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Épaule d'agneau désossée",
@@ -134888,7 +136465,8 @@ window.__DATA_RECIPES = {
         "Ajoute la branche de thym, couvre et laisse mijoter à feu doux pendant 60 minutes : la sauce doit faire de tout petits bouillons réguliers, pas un bouillonnement fort.",
         "Pendant ce temps, épluche les carottes et les navets, coupe-les en gros morceaux (environ 3 cm). Ajoute-les dans la cocotte après les 60 minutes et poursuis la cuisson 25 minutes à couvert.",
         "Ajoute les petits pois pour les 5 dernières minutes de cuisson (ils cuisent très vite et deviendraient farineux s'ils cuisaient trop longtemps). Goûte, rectifie le sel et le poivre, retire la branche de thym et sers bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d392.webp"
     },
     {
       "id": "d393",
@@ -134912,7 +136490,7 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "shellfish"
+        "molluscs"
       ],
       "ing": [
         [
@@ -134973,7 +136551,8 @@ window.__DATA_RECIPES = {
         "Ajoute les palourdes dans la poêle, couvre avec un couvercle et laisse cuire 3 à 4 minutes : la chaleur les fait s'ouvrir d'elles-mêmes. Jette celles qui restent fermées après ce temps.",
         "Ajoute les tomates cerises dans la poêle et laisse-les tiédir 1 minute avec les palourdes ouvertes.",
         "Égoutte les spaghetti en gardant un petit verre de leur eau de cuisson. Verse-les dans la poêle avec les palourdes, ajoute un peu d'eau de cuisson si ça semble sec, le jus de citron et le basilic déchiré à la main. Mélange bien et sers immédiatement, tant que c'est chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d393.webp"
     },
     {
       "id": "d394",
@@ -135059,7 +136638,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, verse le jus de citron dans la poêle encore chaude et gratte le fond avec une cuillère en bois pour décoller les sucs caramélisés (« déglacer »). Ajoute les câpres.",
         "Remets la poêle sur feu doux et ajoute le reste du beurre en fouettant jusqu'à ce qu'il fonde et lie légèrement la sauce (on appelle ça « monter au beurre »).",
         "Dresse la roquette dans l'assiette, pose l'escalope par-dessus, nappe de sauce au citron et aux câpres, et termine par le parmesan râpé juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d394.webp"
     },
     {
       "id": "d395",
@@ -135152,7 +136732,8 @@ window.__DATA_RECIPES = {
         "Enfile le poulet mariné et les légumes sur des piques à brochette, en alternant les couleurs pour que ce soit joli dans l'assiette.",
         "Fais chauffer le grill (ou une poêle à griller) à feu vif. Dépose les brochettes et fais-les cuire 15 à 18 minutes en les retournant régulièrement, jusqu'à ce que le poulet soit bien doré partout et qu'il ne soit plus rosé à l'intérieur (coupe un morceau pour vérifier si besoin).",
         "Sers les brochettes bien chaudes sur un lit de riz basmati complet, avec le reste de marinade crue à éviter (jette-la, elle a touché du poulet cru)."
-      ]
+      ],
+      "photo": "assets/recipes/d395.webp"
     },
     {
       "id": "des238",
@@ -135239,7 +136820,8 @@ window.__DATA_RECIPES = {
         "Répartis les cerises dénoyautées au fond du ramequin beurré, puis verse la pâte par-dessus jusqu'à ce qu'elles soient recouvertes.",
         "Enfourne pendant 25 à 30 minutes : le clafoutis est cuit quand le dessus est doré et qu'une pointe de couteau plantée au centre ressort sans pâte liquide collée.",
         "Laisse tiédir au moins 10 minutes avant de déguster : un clafoutis trop chaud s'effondre, il a besoin de ce temps pour se raffermir légèrement."
-      ]
+      ],
+      "photo": "assets/recipes/des238.webp"
     },
     {
       "id": "des239",
@@ -135305,7 +136887,8 @@ window.__DATA_RECIPES = {
         "Ajoute le miel et mélange délicatement avec une cuillère pour enrober les fraises sans les écraser. Laisse reposer 5 minutes à température ambiante : les fraises rendent un peu de jus sucré-acidulé.",
         "Dans une coupelle ou un petit bol, dépose le fromage blanc et lisse-le légèrement à la cuillère.",
         "Verse les fraises marinées et leur jus par-dessus le fromage blanc juste avant de servir, pour garder le contraste entre le fromage frais et les fruits."
-      ]
+      ],
+      "photo": "assets/recipes/des239.webp"
     },
     {
       "id": "l409",
@@ -135329,9 +136912,9 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts",
         "fish",
-        "sesame"
+        "sesame",
+        "peanuts"
       ],
       "ing": [
         [
@@ -135416,7 +136999,8 @@ window.__DATA_RECIPES = {
         "Concasse grossièrement les cacahuètes grillées avec le plat d'un couteau ou en les écrasant dans un sachet avec un rouleau à pâtisserie.",
         "Dans un grand bol, mélange les nouilles de riz égouttées, le poulet effiloché, la carotte, le concombre et le chou rouge. Verse la sauce par-dessus et mélange bien avec deux cuillères pour tout enrober.",
         "Répartis dans les assiettes, parsème de cacahuètes concassées et de coriandre fraîche ciselée (sépare les feuilles des tiges et coupe-les grossièrement). Sers aussitôt, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/l409.webp"
     },
     {
       "id": "l410",
@@ -135514,7 +137098,8 @@ window.__DATA_RECIPES = {
         "Dans un petit bol, mélange la sauce soja et l'huile de sésame.",
         "Répartis le riz vinaigré au fond des bols. Dispose harmonieusement par-dessus le thon, la pastèque, les edamame, le concombre et l'avocat, en gardant chaque ingrédient dans sa zone (c'est l'esprit du poke bowl).",
         "Arrose avec la sauce soja-sésame et parsème de graines de sésame juste avant de servir, pour qu'elles gardent leur croquant."
-      ]
+      ],
+      "photo": "assets/recipes/l410.webp"
     },
     {
       "id": "l411",
@@ -135625,7 +137210,8 @@ window.__DATA_RECIPES = {
         "Pendant que le bœuf refroidit, coupe le concombre en fines demi-lunes et râpe la carotte.",
         "Dans un grand bol ou dans les assiettes, dépose le riz complet refroidi, puis répartis le concombre, la carotte, les germes de soja et le kimchi.",
         "Dispose les tranches de bœuf froid par-dessus, arrose d'un filet d'huile de sésame et parsème de graines de sésame avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l411.webp"
     },
     {
       "id": "l412",
@@ -135729,7 +137315,8 @@ window.__DATA_RECIPES = {
         "Dans un autre bol, mélange le skyr avec le jus de citron vert, pour l'assouplir et le rafraîchir.",
         "Dans les assiettes de service, dépose les pois chiches croustillants encore tièdes, puis répartis l'oignon rouge, la tomate et la grenade par-dessus.",
         "Nappe de yaourt citronné et de sauce tamarin en filets croisés, puis parsème de coriandre fraîche ciselée. Sers immédiatement, tant que les pois chiches sont encore croustillants."
-      ]
+      ],
+      "photo": "assets/recipes/l412.webp"
     },
     {
       "id": "l413",
@@ -135818,7 +137405,8 @@ window.__DATA_RECIPES = {
         "Dans un bol, mélange les crevettes avec un peu de jus de citron vert et l'huile d'olive, pour qu'elles s'imprègnent du parfum.",
         "Dans les bols de service, répartis le riz complet, puis dispose harmonieusement les crevettes, la mangue, l'avocat et le concombre par-dessus.",
         "Arrose du reste de jus de citron vert, sale, poivre et parsème de coriandre fraîche ciselée avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l413.webp"
     },
     {
       "id": "d396",
@@ -135844,7 +137432,7 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "nuts"
+        "peanuts"
       ],
       "ing": [
         [
@@ -135930,7 +137518,8 @@ window.__DATA_RECIPES = {
         "Enfile les cubes de porc marinés sur des piques à brochette.",
         "Préchauffe le grill (ou une poêle à griller) à feu vif et fais cuire les brochettes 12 à 15 minutes en les tournant régulièrement, jusqu'à ce que le porc soit bien doré et qu'il ne soit plus rosé à l'intérieur (coupe un morceau pour vérifier si besoin).",
         "Arrose la salade croquante d'un peu de jus de citron vert, parsème de cacahuètes concassées, et sers avec les brochettes bien chaudes."
-      ]
+      ],
+      "photo": "assets/recipes/d396.webp"
     },
     {
       "id": "d397",
@@ -136022,7 +137611,8 @@ window.__DATA_RECIPES = {
         "Laisse reposer 5 minutes au réfrigérateur : le citron vert commence à « cuire » légèrement le poisson en surface, comme pour un ceviche.",
         "Juste avant de servir, ciselle la coriandre fraîche (sépare les feuilles des tiges) et mélange-la au tartare. Coupe l'avocat en fines tranches.",
         "Trempe chaque feuille de papier de riz quelques secondes dans un plat d'eau tiède jusqu'à ce qu'elle devienne souple, pose-la sur une assiette, garnis-la de tartare et de tranches d'avocat, puis roule-la pour former un petit rouleau. Sers aussitôt avec le reste du tartare."
-      ]
+      ],
+      "photo": "assets/recipes/d397.webp"
     },
     {
       "id": "d398",
@@ -136109,7 +137699,8 @@ window.__DATA_RECIPES = {
         "En fin de cuisson, verse la sauce soja-gingembre dans la poêle et laisse mijoter 1 minute pour qu'elle nappe le poisson, en l'arrosant avec une cuillère.",
         "Pendant la cuisson du poisson, coupe le pak-choï en deux dans la longueur, fais-le revenir 3 à 4 minutes dans une autre poêle avec un peu d'eau, à couvert, jusqu'à ce que les feuilles soient tendres et le cœur encore légèrement croquant.",
         "Dresse le riz complet dans les assiettes, pose le pak-choï et le filet de cabillaud nappé de sauce par-dessus. Arrose d'un peu de jus de citron vert avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d398.webp"
     },
     {
       "id": "d399",
@@ -136205,7 +137796,8 @@ window.__DATA_RECIPES = {
         "Dépose le filet de cabillaud dans la sauce, couvre et laisse cuire à feu doux 10 à 12 minutes, jusqu'à ce qu'il se détache facilement en flocons avec une fourchette.",
         "Ajoute la mangue dans les 2 dernières minutes de cuisson, juste pour la tiédir sans qu'elle devienne molle : elle doit garder du croquant et de l'acidité.",
         "Pendant ce temps, fais cuire le riz basmati complet selon les indications du paquet (environ 20 minutes à l'eau bouillante salée). Sers le curry avec le riz, un filet de jus de citron vert et la coriandre fraîche ciselée par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/d399.webp"
     },
     {
       "id": "d400",
@@ -136290,7 +137882,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le grill (ou une poêle à griller) à feu vif. Fais cuire les brochettes 8 à 10 minutes en les tournant régulièrement, jusqu'à ce que les crevettes soient roses et opaques (plus du tout grises ou translucides) et les légumes légèrement grillés.",
         "Surveille bien la cuisson des crevettes : elles cuisent très vite et deviennent caoutchouteuses si tu les laisses trop longtemps.",
         "Sers les brochettes bien chaudes sur un lit de riz complet."
-      ]
+      ],
+      "photo": "assets/recipes/d400.webp"
     },
     {
       "id": "des240",
@@ -136355,7 +137948,8 @@ window.__DATA_RECIPES = {
         "Place les morceaux de mangue surgelée, la pulpe de fruit de la passion, le jus de citron vert et le lait de coco dans le bol d'un blender puissant.",
         "Mixe par courtes impulsions d'abord (pour casser les gros morceaux sans abîmer les lames), puis en continu jusqu'à obtenir une texture lisse et crémeuse, qui ressemble à un sorbet qui vient juste d'être sorti du congélateur. Si le mélange reste trop épais pour mixer, ajoute une cuillère à soupe d'eau froide.",
         "Sers immédiatement dans des petits bols bien frais, décoré de quelques feuilles de menthe fraîche ciselées. Ce sorbet express fond vite : à déguster sans attendre !"
-      ]
+      ],
+      "photo": "assets/recipes/des240.webp"
     },
     {
       "id": "des241",
@@ -136421,7 +138015,8 @@ window.__DATA_RECIPES = {
         "Dans une assiette ou un plat, dispose les cubes de pastèque, puis parsème la feta émiettée et la menthe ciselée par-dessus.",
         "Arrose d'un filet d'huile d'olive et de quelques gouttes de jus de citron vert juste avant de servir : l'acidité réveille le sucré de la pastèque et le salé de la feta.",
         "Sers immédiatement, bien frais : c'est le mariage classique grec de l'été, sucré-salé et très désaltérant."
-      ]
+      ],
+      "photo": "assets/recipes/des241.webp"
     },
     {
       "id": "l414",
@@ -136444,7 +138039,7 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "shellfish"
+        "molluscs"
       ],
       "ing": [
         [
@@ -136493,7 +138088,8 @@ window.__DATA_RECIPES = {
         "Répartir les tranches de poulpe sur les pommes de terre.",
         "Arroser généreusement d'huile d'olive, puis saupoudrer de paprika fumé et de fleur de sel sur toute la surface.",
         "Parsemer de persil plat ciselé (coupé très finement aux ciseaux) juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l414.webp"
     },
     {
       "id": "l415",
@@ -136517,7 +138113,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "eggs"
+        "eggs",
+        "sulphites"
       ],
       "ing": [
         [
@@ -136578,7 +138175,8 @@ window.__DATA_RECIPES = {
         "Goûter et ajuster avec une pincée de fleur de sel, puis réserver au frais au moins 30 minutes : le salmorejo se sert bien froid.",
         "Verser la soupe froide dans des bols. Couper l'œuf dur en petits dés et les répartir dessus.",
         "Parsemer de dés de jambon de volaille et d'un dernier filet d'huile d'olive avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l415.webp"
     },
     {
       "id": "l416",
@@ -136663,7 +138261,8 @@ window.__DATA_RECIPES = {
         "Égoutter les filets d'anchois marinés et les disposer sur les tranches de pain frotté à l'ail.",
         "Répartir la préparation de tomates par-dessus les anchois.",
         "Parsemer de persil plat ciselé et arroser d'un dernier filet d'huile d'olive avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l416.webp"
     },
     {
       "id": "l417",
@@ -136764,7 +138363,8 @@ window.__DATA_RECIPES = {
         "Ajouter l'huile d'olive, le cumin moulu, la harissa, le jus de citron et une pincée de fleur de sel, puis bien mélanger.",
         "Émietter le thon au naturel égoutté sur la salade et mélanger délicatement.",
         "Couper l'œuf dur en quartiers, les disposer sur la salade et parsemer de persil plat ciselé avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/l417.webp"
     },
     {
       "id": "l418",
@@ -136848,7 +138448,8 @@ window.__DATA_RECIPES = {
         "Faire chauffer une poêle à feu vif, y déposer les crevettes décortiquées.",
         "Faire griller les crevettes 2 à 3 minutes de chaque côté, jusqu'à ce qu'elles deviennent bien roses et légèrement dorées sur les bords.",
         "Verser le gaspacho vert bien frais dans des bols, déposer les crevettes grillées par-dessus et servir immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l418.webp"
     },
     {
       "id": "d401",
@@ -136924,7 +138525,8 @@ window.__DATA_RECIPES = {
         "Faire griller les brochettes 8 à 10 minutes en les retournant régulièrement, jusqu'à ce que le poulet soit bien doré à l'extérieur et qu'il n'y ait plus de jus rosé à l'intérieur.",
         "En même temps, faire griller les poivrons entiers 4 à 5 minutes, jusqu'à ce que leur peau cloque et noircisse légèrement par endroits.",
         "Servir les brochettes chaudes avec les poivrons grillés et une pincée de fleur de sel."
-      ]
+      ],
+      "photo": "assets/recipes/d401.webp"
     },
     {
       "id": "d402",
@@ -136946,7 +138548,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -137007,7 +138610,8 @@ window.__DATA_RECIPES = {
         "Retirer les légumes grillés du gril, les couper en lanières et les mélanger dans un plat avec l'ail écrasé (coupé en tout petits morceaux), l'huile d'olive et le vinaigre de vin.",
         "Laisser mariner les légumes 10 minutes à température ambiante pour que les saveurs se mélangent.",
         "Servir les sardines grillées chaudes accompagnées de l'escalivada tiède, avec une pincée de fleur de sel."
-      ]
+      ],
+      "photo": "assets/recipes/d402.webp"
     },
     {
       "id": "d403",
@@ -137084,7 +138688,8 @@ window.__DATA_RECIPES = {
         "Ajouter l'ail émincé et les lanières de poivrons piquillos, poursuivre la cuisson 2 minutes en remuant.",
         "Retirer du feu, ajouter le persil plat ciselé et le jus de citron, puis mélanger.",
         "Servir immédiatement, bien chaud, avec une pincée de fleur de sel."
-      ]
+      ],
+      "photo": "assets/recipes/d403.webp"
     },
     {
       "id": "d404",
@@ -137179,7 +138784,8 @@ window.__DATA_RECIPES = {
         "Faire chauffer un gril à feu vif.",
         "Faire griller les brochettes 8 à 10 minutes en les tournant régulièrement sur toutes les faces, jusqu'à ce que la viande soit bien dorée à l'extérieur et encore légèrement rosée à l'intérieur.",
         "Servir chaud avec une pincée de fleur de sel et, si besoin, un filet de jus de citron supplémentaire."
-      ]
+      ],
+      "photo": "assets/recipes/d404.webp"
     },
     {
       "id": "d405",
@@ -137274,7 +138880,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, faire chauffer une autre poêle à feu vif avec un peu d'huile d'olive, puis saisir le steak de thon 1 à 2 minutes de chaque côté : l'extérieur doit être doré et l'intérieur rester rosé (thon mi-cuit).",
         "Couper le thon en tranches épaisses.",
         "Servir les tranches de thon sur un lit de ratatouille express, parsemer de basilic frais ciselé et d'une pincée de fleur de sel."
-      ]
+      ],
+      "photo": "assets/recipes/d405.webp"
     },
     {
       "id": "des242",
@@ -137327,7 +138934,8 @@ window.__DATA_RECIPES = {
         "Placer le plat au congélateur pendant 4 heures.",
         "Toutes les 30 à 45 minutes, sortir le plat et racler la surface à la fourchette pour former de petits cristaux de glace, puis remettre au congélateur.",
         "Une fois la texture bien granuleuse obtenue, répartir le granité dans des verres bien froids et servir immédiatement, décoré d'une feuille de menthe."
-      ]
+      ],
+      "photo": "assets/recipes/des242.webp"
     },
     {
       "id": "des243",
@@ -137387,7 +138995,8 @@ window.__DATA_RECIPES = {
         "Sortir le plat du four et laisser tiédir 5 minutes.",
         "Répartir une cuillère de ricotta sur chaque moitié d'abricot encore tiède.",
         "Servir aussitôt, pendant que les abricots sont encore chauds et la ricotta fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/des243.webp"
     },
     {
       "id": "l419",
@@ -137491,7 +139100,8 @@ window.__DATA_RECIPES = {
         "Garnis une face de pain avec le thon émietté, la tomate, le poivron, l'oignon rouge, les olives noires et les câpres.",
         "Coupe l'œuf dur en rondelles avec un couteau passé sous l'eau froide entre chaque coupe (ça évite que le jaune colle à la lame), et pose les rondelles sur la garniture.",
         "Ajoute quelques feuilles de basilic frais, une pincée de sel et de poivre, puis referme le sandwich en appuyant fermement pour que tout se tienne. Laisse reposer 5 minutes avant de couper en deux : les saveurs ont le temps de se mélanger."
-      ]
+      ],
+      "photo": "assets/recipes/l419.webp"
     },
     {
       "id": "l420",
@@ -137513,7 +139123,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -137586,7 +139197,8 @@ window.__DATA_RECIPES = {
         "Verse la vinaigrette sur la salade de lentilles et mélange délicatement pour bien enrober chaque ingrédient.",
         "Coupe le saumon fumé en lanières fines avec un couteau bien aiguisé, pour des tranches nettes qui ne s'effilochent pas.",
         "Dépose les lanières de saumon fumé sur la salade juste avant de servir, pour qu'il reste bien ferme, et parsème d'aneth frais ciselé (coupé en petits morceaux avec des ciseaux ou un couteau)."
-      ]
+      ],
+      "photo": "assets/recipes/l420.webp"
     },
     {
       "id": "l421",
@@ -137609,7 +139221,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -137682,7 +139295,8 @@ window.__DATA_RECIPES = {
         "Dans un grand bol, mélange le riz refroidi, le thon émietté, les tomates cerises, le poivron rouge, le maïs, les olives noires et l'oignon rouge.",
         "Prépare la vinaigrette : mélange le vinaigre de vin blanc avec l'origan séché, le sel et le poivre, puis ajoute l'huile d'olive en fouettant.",
         "Verse la vinaigrette sur la salade de riz, mélange bien pour que chaque grain soit enrobé, et laisse reposer 10 minutes au frais avant de servir pour que les saveurs se mélangent."
-      ]
+      ],
+      "photo": "assets/recipes/l421.webp"
     },
     {
       "id": "l422",
@@ -137706,7 +139320,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -137779,7 +139394,8 @@ window.__DATA_RECIPES = {
         "Dans un petit bol, prépare la vinaigrette : mélange le vinaigre de vin rouge, l'origan séché, le sel et le poivre, puis ajoute l'huile d'olive en fouettant avec une fourchette.",
         "Verse la vinaigrette sur la panzanella et mélange délicatement avec les mains pour que le pain s'imbibe bien des jus de tomate et de la vinaigrette.",
         "Ajoute les feuilles de basilic frais déchirées à la main (ça libère plus d'arôme qu'un couteau) juste avant de servir, et laisse reposer 10 minutes à température ambiante pour que les goûts se mélangent."
-      ]
+      ],
+      "photo": "assets/recipes/l422.webp"
     },
     {
       "id": "l423",
@@ -137866,7 +139482,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajoute une pincée de sel et de poivre si besoin (le pesto est déjà salé, vas-y progressivement).",
         "Dresse le tartare dans un cercle à pâtisserie posé sur l'assiette si tu en as un (ça donne une jolie forme ronde), ou simplement à la cuillère si tu n'en as pas.",
         "Parsème des pignons de pin grillés tièdes et de quelques feuilles de basilic frais ciselées juste avant de servir, pour garder le croquant."
-      ]
+      ],
+      "photo": "assets/recipes/l423.webp"
     },
     {
       "id": "d406",
@@ -137954,7 +139571,8 @@ window.__DATA_RECIPES = {
         "Referme la papillote en ramenant les bords du papier vers le centre et en les pliant plusieurs fois pour bien sceller, comme un petit chausson : la vapeur doit rester emprisonnée à l'intérieur pendant la cuisson.",
         "Glisse la papillote sur une plaque et enfourne pendant 18 à 20 minutes : la truite est cuite quand sa chair devient opaque (elle n'est plus translucide) et se détache facilement à la fourchette.",
         "Égoutte la pomme de terre nouvelle, coupe-la en deux et dispose-la à côté de la papillote ouverte avec précaution (la vapeur chaude s'échappe, attention aux mains et au visage). Parsème de persil ciselé avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d406.webp"
     },
     {
       "id": "d407",
@@ -138046,7 +139664,8 @@ window.__DATA_RECIPES = {
         "Remets le poulet dans la cocotte, mélange bien pour enrober la viande de sauce, couvre et laisse mijoter à feu doux pendant 25 minutes : la sauce doit réduire et devenir plus épaisse, les poivrons bien fondants.",
         "Pendant ce temps, fais cuire le riz complet dans une casserole d'eau bouillante salée, en suivant le temps indiqué sur le paquet (environ 25 minutes).",
         "Goûte le poulet basquaise et rectifie l'assaisonnement en sel et poivre si besoin. Sers bien chaud avec le riz complet égoutté à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d407.webp"
     },
     {
       "id": "d408",
@@ -138134,7 +139753,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais cuire les haricots verts à la vapeur ou dans l'eau bouillante salée pendant 8 à 10 minutes, jusqu'à ce qu'ils soient tendres mais encore un peu croquants.",
         "Vérifie la cuisson de l'involtini en le coupant légèrement au centre : la dinde doit être bien blanche, plus du tout rosée.",
         "Saupoudre d'origan séché, ajoute une pincée de sel et de poivre, retire les pique-apéritifs et sers l'involtini coupé en tranches avec les haricots verts égouttés à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d408.webp"
     },
     {
       "id": "d409",
@@ -138228,7 +139848,8 @@ window.__DATA_RECIPES = {
         "Prépare la gremolata : mélange dans un petit bol le zeste de citron râpé (la fine peau parfumée, pas la partie blanche amère), l'ail écrasé très finement et le persil ciselé.",
         "Presse le jus du demi-citron sur les brochettes juste cuites.",
         "Sers les brochettes avec les pommes de terre grenaille rôties, et parsème généreusement de gremolata par-dessus pour apporter de la fraîcheur."
-      ]
+      ],
+      "photo": "assets/recipes/d409.webp"
     },
     {
       "id": "d410",
@@ -138322,7 +139943,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer un gril ou une poêle à feu moyen-vif. Fais cuire les brochettes 12 à 15 minutes en les retournant régulièrement sur toutes les faces, jusqu'à ce que la lotte devienne bien blanche et ferme (elle ne doit plus être translucide au centre).",
         "Vérifie la cuisson en coupant légèrement un cube de lotte au centre d'une brochette : la chair doit s'effeuiller facilement, signe qu'elle est cuite à cœur.",
         "Égoutte le riz complet et sers-le avec les brochettes bien chaudes, en arrosant éventuellement d'un peu de jus de cuisson."
-      ]
+      ],
+      "photo": "assets/recipes/d410.webp"
     },
     {
       "id": "des244",
@@ -138395,7 +140017,8 @@ window.__DATA_RECIPES = {
         "Goûte : si les fraises ne sont pas très sucrées, ajoute un peu plus de sirop d'érable.",
         "Verse la soupe dans un bol ou une assiette creuse, et mets-la au réfrigérateur pendant au moins 1 heure, pour qu'elle soit bien fraîche au moment de servir.",
         "Juste avant de servir, dépose au centre les morceaux de fraises réservés et les feuilles de menthe et de basilic ciselées (coupées en petits morceaux)."
-      ]
+      ],
+      "photo": "assets/recipes/des244.webp"
     },
     {
       "id": "des245",
@@ -138455,7 +140078,8 @@ window.__DATA_RECIPES = {
         "Remets le plat au congélateur, et répète l'opération de raclage toutes les 30 à 45 minutes, pendant environ 4 heures au total, jusqu'à obtenir plein de petits cristaux de glace granuleux et aucun bloc solide.",
         "Juste avant de servir, râpe finement le zeste de citron (la fine peau parfumée, sans la partie blanche amère) directement au-dessus du granité.",
         "Sers immédiatement dans des petits verres bien froids : le granité fond vite, c'est un dessert à déguster sans attendre."
-      ]
+      ],
+      "photo": "assets/recipes/des245.webp"
     },
     {
       "id": "l424",
@@ -138480,7 +140104,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -138554,7 +140180,8 @@ window.__DATA_RECIPES = {
         "Casse l'œuf dans une petite tasse. Fais un petit tourbillon dans l'eau avec une cuillère, puis verses-y doucement l'œuf : le mouvement aide le blanc à s'enrouler autour du jaune. Laisse cuire 3 minutes sans toucher.",
         "Sors l'œuf poché avec une écumoire (cuillère à trous) et pose-le quelques secondes sur du papier absorbant pour enlever l'excès d'eau.",
         "Verse le velouté chaud dans les bols, dépose délicatement l'œuf poché au centre de chaque bol et parsème de persil plat ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l424.webp"
     },
     {
       "id": "l425",
@@ -138577,7 +140204,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -138643,7 +140271,8 @@ window.__DATA_RECIPES = {
         "Dans un petit bol, mélange le reste d'huile d'olive, le vinaigre de cidre et la moutarde de Dijon avec une fourchette jusqu'à obtenir une vinaigrette homogène (= qui ne se sépare plus).",
         "Verse la poêlée de champignons encore chaude et les lardons sur les lentilles. Arrose de vinaigrette, sale, poivre et mélange bien pour que les lentilles s'imprègnent de la chaleur et des sucs.",
         "Effeuille le persil plat (sépare les feuilles des tiges, qui sont amères) et ciselle-le finement. Parsème sur la salade juste avant de servir, tiède."
-      ]
+      ],
+      "photo": "assets/recipes/l425.webp"
     },
     {
       "id": "l426",
@@ -138667,7 +140296,9 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -138843,7 +140474,8 @@ window.__DATA_RECIPES = {
         "Fais griller à sec les graines de courge dans une petite poêle à feu moyen 2-3 minutes en remuant souvent, jusqu'à ce qu'elles commencent à sauter dans la poêle et à dorer légèrement : surveille bien, elles brûlent vite.",
         "Quand le potimarron est rôti, ajoute-le encore chaud dans le bol avec les pois chiches et la roquette. Mélange délicatement pour ne pas écraser les quartiers.",
         "Parsème de graines de courge grillées juste avant de servir, tiède ou froid."
-      ]
+      ],
+      "photo": "assets/recipes/l427.webp"
     },
     {
       "id": "l428",
@@ -138867,7 +140499,9 @@ window.__DATA_RECIPES = {
         "stove",
         "blender"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Potiron",
@@ -138938,7 +140572,8 @@ window.__DATA_RECIPES = {
         "Ajoute les cubes de potiron, le cumin restant et la harissa. Verse le bouillon de légumes, porte à ébullition puis baisse le feu et laisse mijoter à couvert 18-20 minutes, jusqu'à ce que le potiron s'écrase facilement à la fourchette.",
         "Mixe la soupe au blender par petites quantités (tiens bien le couvercle, c'est chaud) jusqu'à obtenir une texture bien lisse. Remets dans la casserole et goûte pour ajuster le sel, le poivre et la harissa selon ton goût.",
         "Verse le velouté chaud dans les bols, parsème des pois chiches grillés encore tièdes et de quelques feuilles de coriandre fraîche ciselées."
-      ]
+      ],
+      "photo": "assets/recipes/l428.webp"
     },
     {
       "id": "d411",
@@ -138960,7 +140595,8 @@ window.__DATA_RECIPES = {
         "oven"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -139027,7 +140663,8 @@ window.__DATA_RECIPES = {
         "Verse le bouillon de volaille pour déglacer (= décoller les sucs caramélisés au fond de la poêle en gratouillant avec une cuillère en bois) et laisse réduire 2 minutes.",
         "Baisse le feu, ajoute la crème fraîche liquide et le thym effeuillé, mélange et laisse épaissir légèrement 2-3 minutes sans bouillir à gros bouillons.",
         "Coupe le suprême de pintade en tranches, nappe de sauce aux champignons et sers avec les bâtonnets de panais rôtis."
-      ]
+      ],
+      "photo": "assets/recipes/d411.webp"
     },
     {
       "id": "d412",
@@ -139048,7 +140685,9 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -139121,7 +140760,8 @@ window.__DATA_RECIPES = {
         "Remets le veau dans la cocotte, ajoute les châtaignes cuites et le bouillon de volaille (complète avec un peu d'eau de trempage des cèpes filtrée si tu en as gardé). Porte à frémissement, couvre et laisse mijoter à feu doux 20 minutes.",
         "Découvre, vérifie que le veau est tendre, puis ajoute la crème fraîche liquide. Mélange et laisse chauffer 2 minutes sans bouillir à gros bouillons, pour que la sauce nappe légèrement la viande.",
         "Sale, poivre et parsème de persil plat ciselé avant de servir bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d412.webp"
     },
     {
       "id": "d413",
@@ -139145,7 +140785,8 @@ window.__DATA_RECIPES = {
         "pan"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "ing": [
         [
@@ -139206,7 +140847,8 @@ window.__DATA_RECIPES = {
         "Étale la roquette sur un plat de service. Coupe le bœuf reposé en tranches fines contre le sens des fibres (= perpendiculairement aux lignes que tu vois dans la viande, pour qu'elle reste tendre à la mâche).",
         "Dispose les tranches de bœuf sur la roquette, répartis les cèpes poêlés par-dessus, puis arrose d'un filet de vinaigre balsamique.",
         "Termine avec des copeaux de parmesan taillés avec un économe (= éplucheur à légumes) directement sur le plat et sers immédiatement, tant que le bœuf est encore tiède."
-      ]
+      ],
+      "photo": "assets/recipes/d413.webp"
     },
     {
       "id": "d414",
@@ -139228,7 +140870,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Lentilles vertes",
@@ -139299,7 +140943,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, essuie les champignons de Paris avec un torchon humide (ne les passe pas sous l'eau) et coupe-les en quartiers.",
         "Après 20 minutes de mijotage des lentilles, ajoute les champignons dans la cocotte et poursuis la cuisson à découvert 5 à 10 minutes, jusqu'à ce que le mijoté ait réduit et épaissi légèrement.",
         "Goûte, ajuste le sel et le poivre, retire les brins de thym effeuillés (ou laisse-les, ils se mangent aussi) et sers bien chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d414.webp"
     },
     {
       "id": "d415",
@@ -139390,7 +141035,8 @@ window.__DATA_RECIPES = {
         "Écrase les rondelles de panais cuites à la fourchette ou au presse-purée (pas au blender, ça deviendrait trop liquide). Ajoute le lait demi-écrémé et le reste d'huile d'olive, mélange jusqu'à obtenir un écrasé grossier, sale et poivre.",
         "Dresse l'écrasé de panais dans les assiettes, pose le dos de cabillaud par-dessus et répartis la poêlée de champignons autour.",
         "Parsème de persil plat ciselé et sers immédiatement, tant que tout est encore chaud."
-      ]
+      ],
+      "photo": "assets/recipes/d415.webp"
     },
     {
       "id": "des246",
@@ -139478,7 +141124,8 @@ window.__DATA_RECIPES = {
         "Répartis ce crumble sur les dés de poire, en couvrant bien toute la surface.",
         "Enfourne 25 à 30 minutes, jusqu'à ce que le dessus soit doré et croustillant et que la poire soit fondante quand tu piques avec la pointe d'un couteau.",
         "Laisse tiédir 5 minutes avant de déguster : le crumble continue de croustiller en refroidissant légèrement."
-      ]
+      ],
+      "photo": "assets/recipes/des246.webp"
     },
     {
       "id": "des247",
@@ -139645,7 +141292,8 @@ window.__DATA_RECIPES = {
         "Verse l'huile d'olive, ajoute la fleur de sel et le poivre, puis mélange très délicatement avec une cuillère pour ne pas écraser l'avocat.",
         "Goûte et rajoute un peu de citron si tu veux plus d'acidité.",
         "Répartis le tartare dans de petites verrines ou à la cuillère, et réserve au frais jusqu'au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/s182.webp"
     },
     {
       "id": "s183",
@@ -139746,7 +141394,8 @@ window.__DATA_RECIPES = {
         "Goûte et ajuste l'assaisonnement (plus de citron pour l'acidité, plus de sel si besoin).",
         "Épluche la carotte et le concombre, puis coupe-les en bâtonnets réguliers (comme des frites fines).",
         "Verse le houmous dans un bol de service et dispose les bâtonnets de légumes autour pour tremper."
-      ]
+      ],
+      "photo": "assets/recipes/s183.webp"
     },
     {
       "id": "s184",
@@ -139819,7 +141468,8 @@ window.__DATA_RECIPES = {
         "Dispose toutes les brochettes sur un plat de service.",
         "Arrose d'un filet d'huile d'olive juste avant de servir et ajoute un tour de moulin à poivre.",
         "Sers immédiatement, ou garde au frais maximum 1 heure (le melon rend de l'eau avec le temps)."
-      ]
+      ],
+      "photo": "assets/recipes/s184.webp"
     },
     {
       "id": "s185",
@@ -139906,7 +141556,8 @@ window.__DATA_RECIPES = {
         "Incorpore la ciboulette et la moitié des graines de sésame.",
         "Répartis le tartare dans de petites cuillères de présentation, dépose quelques rondelles de radis dessus et termine par le reste des graines de sésame.",
         "Sers immédiatement, bien frais."
-      ]
+      ],
+      "photo": "assets/recipes/s185.webp"
     },
     {
       "id": "s186",
@@ -139997,7 +141648,8 @@ window.__DATA_RECIPES = {
         "Coupe la tomate et l'oignon rouge en tout petits dés (= brunoise), et hache finement la coriandre.",
         "Mélange l'avocat écrasé avec la tomate, l'oignon, la coriandre, le piment d'Espelette, le sel et le jus du citron vert.",
         "Verse le guacamole dans un bol, parsème de graines de courge, et sers avec les chips de tortilla tièdes."
-      ]
+      ],
+      "photo": "assets/recipes/s186.webp"
     },
     {
       "id": "s187",
@@ -140072,7 +141724,8 @@ window.__DATA_RECIPES = {
         "Fais dorer la tranche de jambon cru 2-3 min à la poêle sèche jusqu'à ce qu'elle devienne croustillante, puis brise-la en éclats.",
         "Répartis la crème de petits pois dans de petites verrines.",
         "Parsème d'éclats de jambon croustillant et d'une feuille de menthe. Sers frais."
-      ]
+      ],
+      "photo": "assets/recipes/s187.webp"
     },
     {
       "id": "s188",
@@ -140155,7 +141808,8 @@ window.__DATA_RECIPES = {
         "Écrase et mélange le tout à la fourchette jusqu'à obtenir une texture de rillettes, homogène mais encore un peu grossière.",
         "Coupe le pain complet en tranches fines et fais-les griller 3 minutes au four ou au grille-pain, jusqu'à ce qu'elles soient dorées et croustillantes.",
         "Tartine les toasts tièdes de rillettes de maquereau juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/s188.webp"
     },
     {
       "id": "s189",
@@ -140255,7 +141909,8 @@ window.__DATA_RECIPES = {
         "Mets les carottes, les pois chiches, l'ail, le tahini, le cumin, le jus du citron et l'huile d'olive dans le blender, avec le sel.",
         "Mixe jusqu'à obtenir une texture bien lisse et onctueuse. Goûte et ajuste l'assaisonnement.",
         "Coupe le concombre en bâtonnets et les radis en deux, puis dispose-les autour du houmous pour tremper."
-      ]
+      ],
+      "photo": "assets/recipes/s189.webp"
     },
     {
       "id": "s190",
@@ -140324,7 +141979,8 @@ window.__DATA_RECIPES = {
         "Remplis chaque tomate avec la préparation au fromage frais, à l'aide d'une petite cuillère ou d'une poche à douille.",
         "Dispose les tomates farcies sur un plat de service, chapeau légèrement posé de travers pour la déco.",
         "Réserve au frais jusqu'au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/s190.webp"
     },
     {
       "id": "s191",
@@ -140407,7 +142063,8 @@ window.__DATA_RECIPES = {
         "Ajoute les trois quarts du comté et la muscade, mélange jusqu'à obtenir une pâte lisse et brillante.",
         "À l'aide de deux cuillères, forme des petits tas de pâte de la taille d'une noix sur la plaque, espacés de 3 cm, et parsème du comté restant dessus.",
         "Enfourne 25 minutes sans ouvrir la porte du four (sinon les gougères retombent), jusqu'à ce qu'elles soient bien gonflées et dorées."
-      ]
+      ],
+      "photo": "assets/recipes/s191.webp"
     },
     {
       "id": "s192",
@@ -140489,7 +142146,8 @@ window.__DATA_RECIPES = {
         "Forme des boulettes de la taille d'une noix avec les mains légèrement humides, et dispose-les sur la plaque.",
         "Arrose d'un filet d'huile d'olive et enfourne 18 à 20 minutes, jusqu'à ce que les boulettes soient dorées.",
         "Laisse tiédir 5 minutes avant de servir (elles sont fragiles à la sortie du four)."
-      ]
+      ],
+      "photo": "assets/recipes/s192.webp"
     },
     {
       "id": "s193",
@@ -140564,7 +142222,8 @@ window.__DATA_RECIPES = {
         "Ajoute une couche de crème de chèvre frais par-dessus à la cuillère.",
         "Termine par les lanières de saumon fumé et un tour de moulin à poivre.",
         "Réserve au frais jusqu'au moment de servir."
-      ]
+      ],
+      "photo": "assets/recipes/s193.webp"
     },
     {
       "id": "l429",
@@ -140590,7 +142249,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "lactose"
+        "lactose",
+        "sulphites"
       ],
       "rest": 240,
       "advance": "4h au frais (ou la veille)",
@@ -140678,7 +142338,8 @@ window.__DATA_RECIPES = {
         "Verse dans un petit moule chemisé de film alimentaire (ou un ramequin individuel), tasse légèrement. Couvre et place au réfrigérateur au moins 4 heures (idéalement une nuit) : l'agar-agar a besoin de froid pour figer et donner à la terrine une tenue qui se tranche.",
         "Au moment de servir, démoule en retournant sur une assiette.",
         "Sers avec la mâche assaisonnée d'un filet d'huile d'olive et d'une pointe de vinaigre de cidre."
-      ]
+      ],
+      "photo": "assets/recipes/l429.webp"
     },
     {
       "id": "l430",
@@ -140768,7 +142429,8 @@ window.__DATA_RECIPES = {
         "Émince l'oignon rouge en lamelles très fines et parsème-le sur le dessus, avec quelques feuilles de basilic frais ciselées.",
         "Assaisonne de fleur de sel et d'un tour de moulin à poivre juste avant de servir.",
         "Sers immédiatement bien frais, sans attendre : le citron commence à « cuire » légèrement le poisson au contact."
-      ]
+      ],
+      "photo": "assets/recipes/l430.webp"
     },
     {
       "id": "l431",
@@ -140847,7 +142509,8 @@ window.__DATA_RECIPES = {
         "Ajoute les gambas encore tièdes par-dessus.",
         "Prépare la vinaigrette : mélange l'huile d'olive restante avec le jus de citron vert, du sel et du poivre.",
         "Arrose la salade de vinaigrette juste avant de servir, pour que la roquette ne ramollisse pas."
-      ]
+      ],
+      "photo": "assets/recipes/l431.webp"
     },
     {
       "id": "l432",
@@ -140918,7 +142581,8 @@ window.__DATA_RECIPES = {
         "Dresse les tranches de saumon et de thon sur une assiette, en les alternant, avec les rondelles de radis et un peu de ciboulette ciselée par-dessus.",
         "Dépose une petite noisette de wasabi sur le bord de l'assiette (ça pique fort : commence par une toute petite quantité).",
         "Sers avec la sauce soja dans une petite coupelle à part, pour que chacun trempe ses tranches à sa convenance."
-      ]
+      ],
+      "photo": "assets/recipes/l432.webp"
     },
     {
       "id": "l433",
@@ -140943,7 +142607,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "shellfish"
+        "molluscs",
+        "celery"
       ],
       "ing": [
         [
@@ -141021,7 +142686,8 @@ window.__DATA_RECIPES = {
         "Sors les noix de Saint-Jacques du réfrigérateur et sèche-les bien avec du papier absorbant (sinon elles n'accrocheront pas de jolie couleur à la cuisson).",
         "Fais chauffer le beurre dans une poêle à feu vif jusqu'à ce qu'il soit bien chaud et légèrement mousseux. Dépose les Saint-Jacques et laisse-les « snacker » (= cuire très vite à feu fort) 1 minute de chaque côté : elles doivent être dorées dessus-dessous et rester nacrées à l'intérieur.",
         "Verse le velouté chaud dans des assiettes creuses, dépose les noix de Saint-Jacques snackées au centre et parsème de ciboulette ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/l433.webp"
     },
     {
       "id": "l434",
@@ -141114,7 +142780,8 @@ window.__DATA_RECIPES = {
         "Égoutte légèrement le poisson mariné (retire un peu de jus s'il est très liquide, garde le reste comme sauce).",
         "Ajoute l'avocat, l'oignon rouge, les graines de grenade, la coriandre ciselée et le piment rouge émincé très fin. Mélange délicatement pour ne pas écraser l'avocat.",
         "Sers immédiatement dans de jolis verres ou coupelles, bien frais : les graines de grenade apportent une touche de fête en couleur et en croquant."
-      ]
+      ],
+      "photo": "assets/recipes/l434.webp"
     },
     {
       "id": "d416",
@@ -141138,7 +142805,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -141224,7 +142892,8 @@ window.__DATA_RECIPES = {
         "Laisse cuire à feu moyen, sans couvercle, en remuant de temps en temps : le bouillon s'évapore petit à petit et enrobe les légumes d'un glaçage brillant (c'est la technique des « légumes glacés »), compte 15-18 minutes jusqu'à ce qu'ils soient tendres et nappés d'un jus sirupeux.",
         "Sors le chapon du four, laisse-le reposer 5 minutes sous une feuille de papier aluminium avant de découper (le jus se redistribue dans la viande, elle reste moelleuse).",
         "Découpe le chapon en tranches, dresse avec les légumes glacés autour."
-      ]
+      ],
+      "photo": "assets/recipes/d416.webp"
     },
     {
       "id": "d417",
@@ -141248,7 +142917,9 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -141321,7 +142992,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer une poêle à feu vif avec un peu de beurre. Quand elle est bien chaude, saisis le pavé de cerf 2-3 minutes de chaque côté pour une cuisson rosée (le cerf se cuit comme un bœuf : il devient sec et dur s'il est trop cuit, la viande doit rester souple sous le doigt).",
         "Laisse reposer la viande 3 minutes sur une planche, enveloppée dans du papier aluminium, avant de la trancher.",
         "Dresse une quenelle de purée de céleri-rave dans l'assiette, pose les tranches de cerf par-dessus et nappe de sauce aux airelles."
-      ]
+      ],
+      "photo": "assets/recipes/d417.webp"
     },
     {
       "id": "d418",
@@ -141347,7 +143019,8 @@ window.__DATA_RECIPES = {
         "gluten",
         "eggs",
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -141439,7 +143112,8 @@ window.__DATA_RECIPES = {
         "Fais revenir la carotte et les choux de Bruxelles dans une poêle avec le beurre et le miel, à feu moyen, 10-12 minutes en remuant souvent, jusqu'à ce qu'ils soient tendres et bien dorés, enrobés d'un glaçage brillant.",
         "Sors le filet du four, laisse-le reposer 5 minutes sous une feuille de papier aluminium avant de trancher (la viande se détend et reste juteuse).",
         "Tranche le filet en médaillons épais, dresse avec les légumes glacés à côté."
-      ]
+      ],
+      "photo": "assets/recipes/d418.webp"
     },
     {
       "id": "d419",
@@ -141525,7 +143199,8 @@ window.__DATA_RECIPES = {
         "Pendant la cuisson, coupe le fenouil en lamelles fines dans le sens de la hauteur. Fais-le cuire tout doucement dans une poêle avec l'huile d'olive, à feu très bas et à couvert, 20 minutes, en remuant de temps en temps : il doit devenir fondant et légèrement doré (= « confit »), pas croustillant.",
         "À la sortie du four, laisse reposer le poisson 5 minutes. Casse la croûte de sel avec le dos d'une cuillère et retire les morceaux de sel.",
         "Soulève délicatement la peau, prélève les filets de chair à la cuillère (ils se détachent tout seuls de l'arête centrale). Dresse avec le fenouil confit, un filet d'huile d'olive et un peu de zeste de citron."
-      ]
+      ],
+      "photo": "assets/recipes/d419.webp"
     },
     {
       "id": "d420",
@@ -141604,7 +143279,8 @@ window.__DATA_RECIPES = {
         "Enfourne 6 à 8 minutes : les gambas sont cuites quand elles deviennent roses et légèrement recroquevillées, sans plus aucune partie translucide grise.",
         "Sors le plat du four, arrose immédiatement avec le jus de citron vert et parsème de persil ciselé.",
         "Sers tout de suite, avec le reste de beurre fondu du plat pour tremper."
-      ]
+      ],
+      "photo": "assets/recipes/d420.webp"
     },
     {
       "id": "d421",
@@ -141632,7 +143308,8 @@ window.__DATA_RECIPES = {
         "nuts",
         "gluten",
         "lactose",
-        "mustard"
+        "mustard",
+        "sulphites"
       ],
       "ing": [
         [
@@ -141798,7 +143475,8 @@ window.__DATA_RECIPES = {
         "Tartine généreusement le pain complet grillé avec l'avocat écrasé, puis dépose la roquette par-dessus.",
         "Pose délicatement un œuf poché bien égoutté sur chaque tranche de pain.",
         "Parsème les graines de sésame sur le dessus, arrose d'un filet d'huile d'olive, puis assaisonne de sel et de poivre. Sers aussitôt, tant que l'œuf est encore chaud et coulant."
-      ]
+      ],
+      "photo": "assets/recipes/l435.webp"
     },
     {
       "id": "l436",
@@ -141873,7 +143551,8 @@ window.__DATA_RECIPES = {
         "Coupe le saumon fumé en lanières fines avec un couteau bien aiguisé.",
         "Dès que les œufs sont presque pris mais encore moelleux, retire la poêle du feu et incorpore délicatement les lanières de saumon fumé : la chaleur résiduelle suffit à peine le tiédir sans le cuire.",
         "Dresse les œufs brouillés sur le pain complet grillé, parsème de ciboulette fraîche ciselée (coupée en petits morceaux avec des ciseaux) et sers immédiatement."
-      ]
+      ],
+      "photo": "assets/recipes/l436.webp"
     },
     {
       "id": "l437",
@@ -141895,7 +143574,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Pois chiche cuit",
@@ -141967,7 +143648,8 @@ window.__DATA_RECIPES = {
         "Ajoute les épinards frais et le chorizo dans la casserole. Laisse cuire encore 5 minutes en remuant de temps en temps, jusqu'à ce que les épinards soient complètement fanés (ramollis et réduits en volume) et que le chorizo soit chaud.",
         "Goûte et rectifie l'assaisonnement en sel et poivre si besoin.",
         "Sers la soupe bien chaude dans des bols, parsemée de persil plat frais ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/l437.webp"
     },
     {
       "id": "l438",
@@ -141992,7 +143674,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "gluten",
-        "lactose"
+        "lactose",
+        "celery"
       ],
       "ing": [
         [
@@ -142103,7 +143786,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -142219,7 +143903,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais cuire l'œuf dur dans une casserole d'eau bouillante pendant 9 minutes, puis passe-le sous l'eau froide et écale-le (retire la coquille).",
         "Goûte la harira et ajuste le sel, le poivre et le jus de citron selon ton goût : elle doit être relevée mais pas piquante.",
         "Sers la harira fumante dans des bols, avec l'œuf dur coupé en deux par-dessus et le persil plat frais ciselé pour la touche finale."
-      ]
+      ],
+      "photo": "assets/recipes/l439.webp"
     },
     {
       "id": "l440",
@@ -142244,7 +143929,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "celery"
       ],
       "ing": [
         [
@@ -142317,7 +144003,8 @@ window.__DATA_RECIPES = {
         "Verse le lait de coco dans la casserole, puis mixe le tout au blender (par petites quantités si besoin, en faisant attention car le mélange est chaud) jusqu'à obtenir une texture bien lisse et veloutée.",
         "Ajoute une pincée de muscade, rectifie le sel et le poivre selon ton goût.",
         "Sers le velouté bien chaud dans des bols, en parsemant les noisettes torréfiées concassées sur le dessus juste avant de servir, pour qu'elles gardent leur croquant."
-      ]
+      ],
+      "photo": "assets/recipes/l440.webp"
     },
     {
       "id": "d422",
@@ -142340,7 +144027,10 @@ window.__DATA_RECIPES = {
         "stove",
         "oven"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery",
+        "sulphites"
+      ],
       "ing": [
         [
           "Bœuf à braiser (joue ou paleron)",
@@ -142419,7 +144109,8 @@ window.__DATA_RECIPES = {
         "45 minutes avant la fin de la cuisson, ajoute les carottes et les pommes de terre grenaille dans la cocotte, pour qu'elles cuisent dans la sauce et deviennent fondantes.",
         "Goûte la sauce et rectifie le sel et le poivre. Si la sauce est trop liquide, retire le couvercle les 10 dernières minutes et laisse-la réduire à feu moyen-vif.",
         "Sers la joue de bœuf bien chaude avec les carottes fondantes, nappée de sa sauce."
-      ]
+      ],
+      "photo": "assets/recipes/d422.webp"
     },
     {
       "id": "d423",
@@ -142442,7 +144133,9 @@ window.__DATA_RECIPES = {
         "oven",
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Cuisse de canard dégraissée (effilochée)",
@@ -142515,7 +144208,8 @@ window.__DATA_RECIPES = {
         "Répartis le canard effiloché dans le fond d'un plat à gratin, puis recouvre uniformément avec la purée de patate douce en lissant le dessus avec le dos d'une cuillère.",
         "Enfourne 20 à 25 minutes, jusqu'à ce que le dessus commence à dorer légèrement sur les bords.",
         "Parsème de persil plat frais ciselé juste avant de servir."
-      ]
+      ],
+      "photo": "assets/recipes/d423.webp"
     },
     {
       "id": "d424",
@@ -142608,7 +144302,8 @@ window.__DATA_RECIPES = {
         "Saupoudre le parmesan râpé sur le dessus, puis assaisonne de sel et de poivre.",
         "Enfourne 30 à 35 minutes, jusqu'à ce que le dessus soit doré et qu'un couteau planté au centre ressorte propre (sans appareil liquide qui colle à la lame).",
         "Laisse reposer 5 minutes avant de découper en parts : ça permet au gratin de bien se tenir."
-      ]
+      ],
+      "photo": "assets/recipes/d424.webp"
     },
     {
       "id": "d425",
@@ -142631,7 +144326,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "celery"
       ],
       "ing": [
         [
@@ -142722,7 +144418,8 @@ window.__DATA_RECIPES = {
         "Dépose délicatement les morceaux de poisson dans le bouillon frémissant (sans les faire tomber de haut, pour ne pas les abîmer). Laisse cuire 6 à 8 minutes sans trop remuer, jusqu'à ce que la chair devienne opaque et se détache facilement à la fourchette.",
         "Goûte le bouillon et rectifie le sel et le poivre.",
         "Arrose d'un filet d'huile d'olive et parsème de persil plat frais ciselé juste avant de servir, pour garder sa fraîcheur."
-      ]
+      ],
+      "photo": "assets/recipes/d425.webp"
     },
     {
       "id": "d426",
@@ -142746,7 +144443,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "celery"
       ],
       "ing": [
         [
@@ -142870,7 +144568,8 @@ window.__DATA_RECIPES = {
         "cast-iron"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "celery"
       ],
       "ing": [
         [
@@ -142962,7 +144661,8 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais dorer les amandes effilées à sec dans une petite poêle à feu doux 2 à 3 minutes, en remuant souvent, jusqu'à ce qu'elles deviennent dorées. Réserve-les hors du feu.",
         "Goûte la sauce et rectifie le sel et le poivre.",
         "Sers le tajine bien chaud, parsemé des amandes effilées torréfiées et de coriandre fraîche ciselée."
-      ]
+      ],
+      "photo": "assets/recipes/d427.webp"
     },
     {
       "id": "des248",
@@ -143224,7 +144924,8 @@ window.__DATA_RECIPES = {
         "Dès qu'elle commence à prendre (= elle colle légèrement à la cuillère quand tu la soulèves), fouette vigoureusement 2 à 3 minutes au fouet électrique : la purée s'éclaircit et gonfle, c'est la texture mousse qui se forme.",
         "Dispose les dés de mangue réservés et l'ananas frais coupé en petits dés au fond d'un joli verre : c'est le « lit de fruits frais ». Verse la mousse par-dessus délicatement avec une cuillère.",
         "Mets au frigo minimum 2h30, jusqu'à ce que la mousse soit bien ferme. Juste avant de servir, décore avec la pulpe de fruit de la passion réservée et les feuilles de menthe fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/des250.webp"
     },
     {
       "id": "des251",
@@ -143369,7 +145070,8 @@ window.__DATA_RECIPES = {
         "Pendant la cuisson, prélève le zeste du citron vert avec une râpe fine (seulement la peau verte parfumée, pas la partie blanche amère), puis presse le jus.",
         "Sors les tranches d'ananas du four, laisse-les tiédir 5 minutes, puis dispose-les en rosace sur une assiette froide, comme un vrai carpaccio.",
         "Arrose du jus de citron vert, parsème du zeste et des feuilles de menthe fraîche ciselées (= coupées en très fines lanières avec un couteau). Sers immédiatement, tiède ou à température ambiante."
-      ]
+      ],
+      "photo": "assets/recipes/des252.webp"
     },
     {
       "id": "d428",
@@ -143399,7 +145101,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "fish",
-        "nuts"
+        "nuts",
+        "sulphites"
       ],
       "ing": [
         [
@@ -143528,7 +145231,8 @@ window.__DATA_RECIPES = {
         "Juste avant le repas, coupe les pommes de terre froides en deux et réchauffe-les 10 minutes sur le dessus de l'appareil à raclette (ou au four avec les légumes, les 10 dernières minutes).",
         "Prépare la vinaigrette dans un bol : mélange l'huile de noix et le vinaigre de cidre avec un peu de poivre, puis assaisonne la salade et parsème les cerneaux de noix. Servez la salade EN PREMIER, avant la raclette : les fibres et le vinaigre pris au début du repas ralentissent l'absorption des glucides qui suivent.",
         "Allume l'appareil à raclette. Chacun fait fondre son fromage dans sa coupelle 2 à 4 minutes, jusqu'à ce qu'il bouillonne et dore légèrement, puis le fait glisser sur les légumes rôtis, les champignons ou les pommes de terre. Essaie la version verger : quelques lamelles de poire recouvertes d'une rondelle de chèvre, passées sous le grill de l'appareil."
-      ]
+      ],
+      "photo": "assets/recipes/d428.webp"
     },
     {
       "id": "l441",
@@ -143552,7 +145256,9 @@ window.__DATA_RECIPES = {
         "blender",
         "pan"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "ing": [
         [
           "Blanc de poulet",
@@ -143647,7 +145353,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer l'huile dans la poêle à feu moyen, verse la sauce (attention, ça éclabousse) et laisse-la cuire 5 minutes en remuant : elle fonce un peu et épaissit jusqu'à napper le dos de la cuillère. Si elle devient trop épaisse, ajoute un peu de bouillon.",
         "Coupe le poulet en tranches et mets-les dans la sauce 2 minutes pour les réchauffer. Goûte, sale, poivre et ajoute le jus de citron vert.",
         "Sers le poulet nappé de pipián avec le riz complet à côté."
-      ]
+      ],
+      "photo": "assets/recipes/l441.webp"
     },
     {
       "id": "l442",
@@ -143765,7 +145472,8 @@ window.__DATA_RECIPES = {
         "Rince et égoutte les haricots pinto. Coupe le chou rouge en lanières très fines et l'oignon rouge en petits dés. Arrose-les d'un peu de jus de citron vert : l'oignon devient plus doux en 10 minutes.",
         "Prépare la salsa de pepitas : fais griller les graines de courge 2 à 3 minutes dans une poêle sans matière grasse, jusqu'à ce qu'elles gonflent. Hache-les grossièrement avec la coriandre, l'ail, le jalapeño épépiné (retire les graines, ce sont elles qui piquent le plus), le reste de l'huile, le reste du jus de citron vert et une pincée de sel.",
         "Monte le bowl : quinoa au fond, puis la courge rôtie, les haricots, le chou et l'oignon. Termine par une grosse cuillère de salsa de pepitas."
-      ]
+      ],
+      "photo": "assets/recipes/l442.webp"
     },
     {
       "id": "d429",
@@ -143789,7 +145497,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -143879,7 +145588,8 @@ window.__DATA_RECIPES = {
         "Enfourne le poisson 12 à 15 minutes selon l'épaisseur. Il est cuit quand la chair devient blanche et opaque au cœur et se sépare en lamelles quand tu appuies avec une fourchette.",
         "Coupe l'avocat en deux, retire le noyau, coupe la chair en lamelles et arrose-la de jus de citron vert pour qu'elle ne noircisse pas.",
         "Sers le poisson avec le chou rouge, l'avocat, la coriandre hachée et un quartier de citron vert à presser au dernier moment."
-      ]
+      ],
+      "photo": "assets/recipes/d429.webp"
     },
     {
       "id": "l443",
@@ -144005,7 +145715,8 @@ window.__DATA_RECIPES = {
         "Ajoute l'ail, le gingembre, le reste du curcuma et la coriandre moulue, remue 30 secondes, puis ajoute la tomate. Laisse cuire 3 minutes en écrasant avec la cuillère jusqu'à obtenir une sauce épaisse.",
         "Ajoute le chou-fleur, 4 cuillères à soupe d'eau et une pincée de sel. Couvre et laisse cuire 10 minutes à feu doux : la pointe d'un couteau doit entrer dans les bouquets avec une petite résistance (ils ne doivent pas s'écraser).",
         "Ajoute les petits pois et le garam masala, cuis encore 3 minutes à découvert. Sers avec le riz et le dal, parsemé de coriandre fraîche."
-      ]
+      ],
+      "photo": "assets/recipes/l443.webp"
     },
     {
       "id": "d430",
@@ -144028,7 +145739,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "celery"
+      ],
       "producesLeftovers": true,
       "ing": [
         [
@@ -144303,7 +146016,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "gluten",
-        "sesame"
+        "sesame",
+        "celery"
       ],
       "ing": [
         [
@@ -144415,7 +146129,9 @@ window.__DATA_RECIPES = {
         "fish",
         "soy",
         "gluten",
-        "sesame"
+        "sesame",
+        "celery",
+        "sulphites"
       ],
       "ing": [
         [
@@ -144493,7 +146209,8 @@ window.__DATA_RECIPES = {
         "Allume le grill du four (position « gril », 240 °C). Pose le saumon peau vers le haut sur une plaque recouverte de papier cuisson et enfourne en haut du four 8 à 10 minutes : la peau doit cloquer et dorer, la chair devenir rose pâle et s'effeuiller.",
         "Pendant ce temps, coupe le brocoli en petits bouquets et fais-le cuire 4 minutes à la vapeur ou dans l'eau bouillante : il doit rester vert vif et un peu croquant. Parsème-le de graines de sésame.",
         "Sers comme un plateau japonais : un bol de riz, le saumon avec un quartier de citron, le potimarron avec un peu de son jus, et le brocoli à côté."
-      ]
+      ],
+      "photo": "assets/recipes/l445.webp"
     },
     {
       "id": "d432",
@@ -144518,7 +146235,10 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "gluten"
+        "gluten",
+        "celery",
+        "sulphites",
+        "fish"
       ],
       "ing": [
         [
@@ -144596,7 +146316,8 @@ window.__DATA_RECIPES = {
         "Dans la même cocotte, range les légumes, le tofu et les nouilles par petits tas séparés, comme une palette de peinture. Verse le bouillon, couvre et laisse frémir 8 à 10 minutes : le chou doit devenir tendre et translucide.",
         "Remets le bœuf par-dessus et laisse 1 minute, juste pour le réchauffer : s'il cuit trop longtemps, il devient dur.",
         "Pose la cocotte au milieu de la table et sers chacun à la louche, avec un peu de bouillon. (La version traditionnelle trempe la viande dans un œuf cru : on s'en passe ici.)"
-      ]
+      ],
+      "photo": "assets/recipes/d432.webp"
     },
     {
       "id": "l446",
@@ -144730,7 +146451,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -145041,7 +146763,8 @@ window.__DATA_RECIPES = {
         "Ajoute le chou-fleur, le navet et la tomate, puis 250 ml d'eau et une pincée de sel. Couvre et laisse cuire 12 minutes à feu doux : les légumes doivent être tendres sous la pointe du couteau. Le jhol est un curry liquide, comme un bouillon épicé : c'est normal qu'il ne soit pas épais.",
         "Pose le poisson dans le bouillon, ajoute les épinards et laisse frémir 5 minutes sans remuer (le poisson est fragile). Il est cuit quand sa chair devient blanche et se sépare en lamelles.",
         "Sers dans une assiette creuse avec le riz, le bouillon versé par-dessus et la coriandre hachée."
-      ]
+      ],
+      "photo": "assets/recipes/l447.webp"
     },
     {
       "id": "l448",
@@ -145065,7 +146788,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "celery"
       ],
       "ing": [
         [
@@ -145161,7 +146885,8 @@ window.__DATA_RECIPES = {
         "Ajoute le bouillon, la carotte, la pomme de terre et l'origan. Porte à ébullition, puis laisse frémir 12 minutes.",
         "Ajoute la courgette et le poisson coupé en gros cubes de 3 cm. Laisse frémir 6 à 8 minutes sans remuer fort : le poisson est cuit quand il devient blanc et opaque au cœur, et la pomme de terre quand un couteau la traverse sans résistance.",
         "Goûte, sale, poivre. Sers dans un grand bol avec l'oignon cru en dés, la coriandre hachée et un quartier de citron vert à presser au dernier moment."
-      ]
+      ],
+      "photo": "assets/recipes/l448.webp"
     },
     {
       "id": "l449",
@@ -145184,7 +146909,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -145262,7 +146988,8 @@ window.__DATA_RECIPES = {
         "Prépare la vinaigrette dans un saladier : le jus d'orange récupéré, le vinaigre, le reste de l'huile, une pincée de sel et de poivre. Ajoute les lentilles encore tièdes et mélange : elles absorbent mieux la sauce quand elles sont chaudes.",
         "Ajoute le fenouil, l'oignon, les câpres et la roquette, mélange délicatement.",
         "Sers avec le maquereau effeuillé en gros morceaux et les rondelles d'orange par-dessus."
-      ]
+      ],
+      "photo": "assets/recipes/l449.webp"
     },
     {
       "id": "d435",
@@ -145285,7 +147012,8 @@ window.__DATA_RECIPES = {
         "pan"
       ],
       "allergens": [
-        "fish"
+        "fish",
+        "sulphites"
       ],
       "ing": [
         [
@@ -145380,7 +147108,8 @@ window.__DATA_RECIPES = {
         "Mets les filets dans un plat creux et verse dessus les légumes avec leur liquide encore chaud. Laisse mariner au moins 30 minutes (ou jusqu'au lendemain au frais : c'est encore meilleur).",
         "Rince et égoutte les haricots noirs, puis réchauffe-les 3 minutes dans une casserole avec 2 cuillères à soupe d'eau et une pincée de sel.",
         "Sers le maquereau tiède ou froid avec les légumes vinaigrés, les haricots noirs et la coriandre hachée. Il se garde 2 jours au frais dans sa marinade."
-      ]
+      ],
+      "photo": "assets/recipes/d435.webp"
     },
     {
       "id": "d436",
@@ -145529,7 +147258,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "eggs"
+        "eggs",
+        "celery"
       ],
       "ing": [
         [
@@ -145613,7 +147343,8 @@ window.__DATA_RECIPES = {
         "Avgolemono (la liaison œuf-citron qui rend la soupe crémeuse) : dans un bol, fouette l'œuf avec le jus du citron jusqu'à ce que ce soit mousseux. Sans cesser de fouetter, ajoute une louche de bouillon chaud petit à petit : on réchauffe l'œuf doucement pour qu'il ne cuise pas en grumeaux.",
         "Verse ce mélange dans la marmite en remuant doucement, sur feu très doux, pendant 2 minutes : la soupe doit devenir légèrement nappante et ne jamais bouillir (sinon l'œuf tranche, il forme des petits morceaux).",
         "Goûte, sale, poivre et sers aussitôt avec l'aneth ciselé."
-      ]
+      ],
+      "photo": "assets/recipes/d437.webp"
     },
     {
       "id": "des253",
@@ -145688,7 +147419,8 @@ window.__DATA_RECIPES = {
         "Laisse refroidir, puis mets au frais au moins 1 heure : ils se raffermissent en refroidissant.",
         "Pèle la clémentine, sépare les quartiers et pose-les sur les flans au moment de servir."
       ],
-      "advance": "1 h au frais"
+      "advance": "1 h au frais",
+      "photo": "assets/recipes/des253.webp"
     },
     {
       "id": "des254",
@@ -145775,7 +147507,8 @@ window.__DATA_RECIPES = {
         "Bats les blancs en neige avec une pincée de sel : ils sont prêts quand ils forment des pics fermes et ne glissent pas si tu penches le bol. Incorpore-les en 3 fois au mélange avec une spatule, en soulevant la pâte de bas en haut, doucement, pour ne pas casser les bulles d'air.",
         "Verse dans le moule, parsème d'amandes effilées et enfourne 30 à 35 minutes : le gâteau est cuit quand une lame de couteau plantée au centre ressort sèche.",
         "Laisse refroidir dans le moule avant de démouler : il est fragile tant qu'il est chaud. Se garde 3 jours dans une boîte, au frais."
-      ]
+      ],
+      "photo": "assets/recipes/des254.webp"
     },
     {
       "id": "des255",
@@ -145936,7 +147669,8 @@ window.__DATA_RECIPES = {
         "Goûte : le piment doit chauffer légèrement au fond de la gorge sans piquer la langue. Ajoute une pincée de cannelle si tu veux plus doux.",
         "Verse dans des petits pots et mets au frais au moins 1 heure : la crème épaissit en refroidissant. Saupoudre d'un voile de cannelle au moment de servir."
       ],
-      "advance": "1 h au frais"
+      "advance": "1 h au frais",
+      "photo": "assets/recipes/des256.webp"
     },
     {
       "id": "des257",

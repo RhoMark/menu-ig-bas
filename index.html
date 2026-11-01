@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.128.0</title>
+<title>Menu IG Bas — V2.129.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -251,11 +251,16 @@ if ("serviceWorker" in navigator) {
     {"id": "lactose",   "label": "Lactose"},
     {"id": "eggs",      "label": "Œufs"},
     {"id": "nuts",      "label": "Fruits à coque"},
+    {"id": "peanuts",   "label": "Arachide (cacahuète)"},
     {"id": "fish",      "label": "Poisson"},
     {"id": "shellfish", "label": "Crustacés"},
+    {"id": "molluscs",  "label": "Mollusques"},
     {"id": "soy",       "label": "Soja"},
     {"id": "sesame",    "label": "Sésame"},
-    {"id": "mustard",   "label": "Moutarde"}
+    {"id": "mustard",   "label": "Moutarde"},
+    {"id": "celery",    "label": "Céleri"},
+    {"id": "lupin",     "label": "Lupin"},
+    {"id": "sulphites", "label": "Sulfites"}
   ]
 }
 </script>
@@ -377,7 +382,15 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Que faire si un allergène manque dans la liste ?",
-          "a": "Tu peux ajouter une « exclusion » personnalisée (texte libre) dans Paramètres → Membres → onglet exclusions. L'app exclura les recettes dont les ingrédients contiennent ce mot-clé. Si l'allergène est officiel (parmi les 14 reconnus UE) et manque, signale-le via une issue GitHub — il sera ajouté dans la liste standard."
+          "a": "Depuis la V2.129.0, la liste reprend les 14 allergènes à déclaration obligatoire en Europe (règlement INCO) : gluten, crustacés, mollusques, œufs, poisson, arachide, soja, lait (lactose), fruits à coque, céleri, moutarde, sésame, sulfites, lupin. Pour un autre aliment, ajoute une « exclusion » personnalisée (texte libre) dans les exclusions du membre : l'app écartera les recettes dont les ingrédients contiennent ce mot."
+        },
+        {
+          "q": "Pourquoi le céleri ou les sulfites écartent-ils autant de recettes ?",
+          "a": "Par prudence, l'app compte aussi les ingrédients du commerce qui en contiennent souvent : le céleri est présent dans la plupart des bouillons en cube ou en poudre et des fonds de sauce ; les sulfites dans le vin, les vinaigres de vin, balsamique, de cidre ou de xérès, la moutarde préparée, le mirin, les cornichons, les raisins secs et les abricots secs (sauf « non traités »). Si tu fais ton bouillon toi-même ou si l'étiquette de ton produit ne mentionne pas l'allergène, la recette reste sûre pour toi : c'est l'étiquette qui fait foi."
+        },
+        {
+          "q": "J'avais coché « Fruits à coque » ou « Crustacés » : qu'est-ce qui a changé ?",
+          "a": "L'arachide (cacahuète) et les mollusques (moules, calamars, Saint-Jacques…) étaient compris dans ces deux cases ; ils ont maintenant la leur. Pour que tes menus ne changent pas, l'app a coché automatiquement « Arachide » pour chaque personne qui avait « Fruits à coque », et « Mollusques » pour « Crustacés », puis l'a signalé par un bandeau. Si une personne n'est pas concernée, décoche simplement la case."
         }
       ]
     },
@@ -13184,19 +13197,49 @@ function recipeHasAllergen(recipe, allergens) {
 // tous les membres (sécurité par défaut : la génération hebdomadaire ne
 // connaît pas l'attendance précise, on exclut large).
 function effectiveAllergies(profile, attendees) {
-  const set = new Set(profile.globalAllergies || []);
+  const set = new Set(legacyAllergyExpand(profile.globalAllergies, profile));
   const members = profile.members || [];
   const ids = Array.isArray(attendees) ? attendees : null;
   const present = (ids && ids.length > 0) ? members.filter(m => ids.includes(m.id)) : members;
-  present.forEach(m => (m.allergies || []).forEach(a => set.add(a)));
+  present.forEach(m => legacyAllergyExpand(m.allergies, profile).forEach(a => set.add(a)));
   return [...set];
+}
+// V2.129.0 — Liste UE des 14 allergènes : l'arachide et les mollusques, jusque-là
+// rangés sous « Fruits à coque » et « Crustacés », ont leur propre case. Une
+// allergie déclarée avant reste couverte : tant que le foyer n'est pas migré
+// (preferences.allergenTaxonomy < 2, ex. foyer reçu d'un appareil pas à jour),
+// « nuts » implique aussi « peanuts » et « shellfish » aussi « molluscs ».
+const ALLERGEN_SPLITS_V2 = {nuts: "peanuts", shellfish: "molluscs"};
+function legacyAllergyExpand(list, profile) {
+  const out = [...(list || [])];
+  if ((profile?.allergenTaxonomy || 1) >= 2) return out;
+  Object.entries(ALLERGEN_SPLITS_V2).forEach(([from, to]) => { if (out.includes(from) && !out.includes(to)) out.push(to); });
+  return out;
+}
+// Migration du foyer (au chargement) : ajoute réellement les nouvelles cases
+// aux allergies concernées et garde la liste des ajouts pour l'annoncer.
+function migrateAllergenTaxonomy(h) {
+  const prefs = h.preferences || (h.preferences = {});
+  if ((prefs.allergenTaxonomy || 1) >= 2) return h;
+  const notice = [];
+  const expand = (list, who) => {
+    const next = legacyAllergyExpand(list, {allergenTaxonomy: 1});
+    const added = next.filter(a => !(list || []).includes(a));
+    if (added.length) notice.push({who, added});
+    return next;
+  };
+  prefs.globalAllergies = expand(prefs.globalAllergies, null);
+  if (Array.isArray(h.members)) h.members = h.members.map(m => ({...m, allergies: expand(m.allergies, m.name || "")}));
+  prefs.allergenTaxonomy = 2;
+  if (notice.length) prefs.allergenNotice = notice;
+  return h;
 }
 // Renvoie les membres ayant au moins une allergie qui matche les allergènes
 // de la recette (sert aux indicateurs visuels in-app).
 function membersAllergicTo(profile, recipeAllergens) {
   if (!recipeAllergens?.length) return [];
   return (profile.members || []).filter(m =>
-    (m.allergies || []).some(a => recipeAllergens.includes(a))
+    legacyAllergyExpand(m.allergies, profile).some(a => recipeAllergens.includes(a))
   );
 }
 function recipeHasExcluded(recipe, exclusions) {
@@ -14501,7 +14544,7 @@ const SUPPORTED_SCHEMA = 2;
 const BACKUP_KEY_PREFIX = "menu-ig-bas-backup-";
 const BACKUP_KEEP = 3; // on ne conserve que les 3 plus récents
 // Champs reconnus dans `preferences` d'un household (whitelist anti-pollution).
-const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","maxPrepMinutesWeekend","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients","campingMode"];
+const PREF_KEYS = ["location","globalAllergies","globalExclusions","budgetWeekly","budgetTolerance","equipment","maxPrepMinutes","maxPrepMinutesWeekend","skillLevel","dessertTime","snackEnabled","shoppingDay","preferredCuisines","batchCookingEnabled","batchCookingTarget","batchCookingDay","leftoverSuggestionsEnabled","journalEnabled","includeOutOfSeason","guestRatios","shoppingSubgroups","preferCommonIngredients","campingMode","allergenTaxonomy","allergenNotice"];
 function makeId(prefix) {
   return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2,8)}`;
 }
@@ -14509,6 +14552,7 @@ function emptyHouseholdPreferences() {
   return {
     location: "",
     globalAllergies: [],
+    allergenTaxonomy: 2,
     globalExclusions: [],
     budgetWeekly: 120,
     // Tolérance budget en % (V2.11.0) : Strict (0) / 5 / 10 / 15 / 20.
@@ -15266,6 +15310,7 @@ function applyV2Backfills(v2) {
         (m.birthYear || !m.age) ? m : {...m, birthYear: currentYear - m.age}
       );
     }
+    migrateAllergenTaxonomy(h);
   });
   return v2;
 }
@@ -19463,6 +19508,9 @@ function App({initialState}) {
             onDone={() => { update({onboarded:true}); regenerate({keepLocked:false}); setView("menu"); }} />
         )}
         {view === "menu" && (
+          <AllergenNoticeBanner profile={state.profile} onDismiss={() => updateProfile({allergenNotice: null})} onOpen={() => setView(window.__V3_UI ? "foyer" : "settings")} />
+        )}
+        {view === "menu" && (
           <MenuView
             state={state}
             currentWeek={currentWeek}
@@ -20147,6 +20195,30 @@ function SetupView({state, update, updateProfile, onDone}) {
 // V2.126.0 — Annonce de la nouvelle interface (bêta) dans l'interface
 // classique : « Essayer » (bascule, mêmes données) ou « Plus tard » (masquée
 // pour de bon sur cet appareil). Préférence d'affichage, non chiffrée.
+// V2.129.0 — Annonce unique après la migration vers la liste UE des 14
+// allergènes : dit qui a reçu « Arachide » / « Mollusques » automatiquement
+// (par prudence, l'ancienne case les incluait) et comment les retirer.
+function AllergenNoticeBanner({profile, onDismiss, onOpen}) {
+  const notice = profile?.allergenNotice;
+  if (!Array.isArray(notice) || !notice.length) return null;
+  return (
+    <div role="alert" className="no-print mb-4 bg-red-50 dark:bg-red-950 border border-red-300 dark:border-red-700 rounded-lg p-4 text-sm text-red-900 dark:text-red-100">
+      <p className="font-bold mb-1">⚠️ Allergies : la liste suit maintenant les 14 allergènes européens</p>
+      <p className="mb-2">« Arachide (cacahuète) » et « Mollusques » ont leur propre case (avant, ils étaient compris dans « Fruits à coque » et « Crustacés »). Ont été ajoutés <strong>par prudence</strong>, pour que rien ne change dans les menus :</p>
+      <ul className="list-disc pl-5 mb-2">
+        {notice.map((n, i) => (
+          <li key={i}><strong>{n.who || "Toute la famille"}</strong> : {n.added.map(a => dataRef.allergenLabel(a)).join(", ")}</li>
+        ))}
+      </ul>
+      <p className="mb-3">Si une personne n'est pas concernée, décoche la case dans Mon foyer. Nouvelles cases disponibles : Céleri, Lupin, Sulfites.</p>
+      <div className="flex flex-wrap gap-2">
+        <button onClick={onOpen} className="bg-red-700 hover:bg-red-800 text-white px-3 py-1.5 rounded text-sm font-medium">Vérifier les allergies</button>
+        <button onClick={onDismiss} className="px-3 py-1.5 rounded text-sm underline">J'ai compris</button>
+      </div>
+    </div>
+  );
+}
+
 function NewUiAnnouncement() {
   const KEY = "menu-ig-bas-v3-annonce";
   const [hidden, setHidden] = useState(() => { try { return !!localStorage.getItem(KEY); } catch (e) { return true; } });
@@ -20630,6 +20702,12 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                           </div>
                           <button onClick={() => onSelectRecipe(rec.id, {day, meal: m.key})}
                             className="text-left w-full hover:text-rose-800 dark:hover:text-rose-200 text-slate-800 dark:text-slate-100 text-xs font-medium">
+                            {window.__V3_UI && rec.photo && (
+                              <span className="relative block mb-1">
+                                <img src={rec.photo} alt="" loading="lazy" className="w-full aspect-[16/9] object-cover rounded-lg" />
+                                <span className="absolute right-1 bottom-1 text-[9px] leading-none bg-black/55 text-white px-1 py-0.5 rounded" title="Image générée par IA">IA</span>
+                              </span>
+                            )}
                             {rec.name}
                           </button>
                           <div className="text-[10px] text-slate-500 dark:text-slate-400">⏱ {recipeTimeLabel(rec)} · {rec.kcal}kcal</div>
@@ -20808,6 +20886,12 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                             {dessertRecipe ? (
                               <button onClick={() => onSelectRecipe(dessertRecipe.id, {day, meal: "dessert"})}
                                 className="text-left w-full hover:text-rose-700 dark:text-rose-300 text-xs text-slate-700 dark:text-slate-200">
+                                {window.__V3_UI && dessertRecipe.photo && (
+                                  <span className="relative block mb-1.5">
+                                    <img src={dessertRecipe.photo} alt="" loading="lazy" className="w-full aspect-[16/9] object-cover rounded-lg" />
+                                    <span className="absolute right-1 bottom-1 text-[9px] leading-none bg-black/55 text-white px-1 py-0.5 rounded" title="Image générée par IA">IA</span>
+                                  </span>
+                                )}
                                 <span className="flex items-start gap-1">
                                   <span className="flex-1 font-medium">{cookedEntry(slot, "dessert", dessertRecipe.id) && <span title="Cuisiné" className="mr-0.5">✅</span>}{dessertRecipe.name}</span>
                                   {recipeAdvanceInfo(dessertRecipe) && (
@@ -22629,7 +22713,7 @@ function computeRecentStats(menus, profile, count = 8) {
           const allergens = recipe.allergens || [];
           if (tags.includes("vegan")) dietaryCounts.vegan++;
           else if (tags.includes("vegetarian")) dietaryCounts.vegetarian++;
-          else if (allergens.includes("fish") || allergens.includes("shellfish")) dietaryCounts.fish++;
+          else if (allergens.includes("fish") || allergens.includes("shellfish") || allergens.includes("molluscs")) dietaryCounts.fish++;
           else dietaryCounts.meat++;
         }
       });

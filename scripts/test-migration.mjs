@@ -35,6 +35,10 @@ const NEEDED = [
   { name: "emptyHouseholdPreferences", kind: "function" },
   { name: "emptyHousehold", kind: "function" },
   { name: "migrateV1toV2", kind: "function" },
+  { name: "ALLERGEN_SPLITS_V2", kind: "object" },
+  { name: "legacyAllergyExpand", kind: "function" },
+  { name: "migrateAllergenTaxonomy", kind: "function" },
+  { name: "effectiveAllergies", kind: "function" },
   { name: "applyV2Backfills", kind: "function" },
   { name: "projectRuntime", kind: "function" },
 ];
@@ -71,6 +75,12 @@ function extractSnippet(src, { name, kind }) {
     const braceStart = src.indexOf("{", m.index);
     const body = extractBalanced(src, braceStart, "{", "}");
     return src.slice(m.index, braceStart) + body;
+  } else if (kind === "object") {
+    const re = new RegExp(`const\\s+${name}\\s*=\\s*\\{`);
+    const m = re.exec(src);
+    if (!m) throw new Error(`const ${name} introuvable dans index.html`);
+    const start = src.indexOf("{", m.index);
+    return `const ${name} = ${extractBalanced(src, start, "{", "}")};`;
   } else { // const tableau
     const re = new RegExp(`const\\s+${name}\\s*=\\s*\\[`);
     const m = re.exec(src);
@@ -87,7 +97,7 @@ function buildMigrationModule() {
   const snippets = NEEDED.map(d => extractSnippet(src, d)).join("\n\n");
   const factory = new Function(`
     ${snippets}
-    return { migrateV1toV2, applyV2Backfills, projectRuntime };
+    return { migrateV1toV2, applyV2Backfills, projectRuntime, migrateAllergenTaxonomy, effectiveAllergies };
   `);
   return factory();
 }
@@ -158,6 +168,32 @@ function main() {
       diffs.forEach(k => console.error(`     ${k}: V1=${before[k]} → runtime=${after[k]}`));
     } else {
       console.log(`✅ ${f} : zéro perte (membres ${after.members}, semaines ${after.menuWeeks}, notes ${after.ratings}, journal ${after.journal}, garde-manger ${after.pantry}, ajouts ${after.manualItems})`);
+    }
+  }
+
+  // V2.129.0 — Liste UE des 14 allergènes : aucune allergie ne doit se perdre
+  // (« Fruits à coque » couvrait l'arachide, « Crustacés » les mollusques).
+  {
+    const h = {preferences: {globalAllergies: ["shellfish"]}, members: [
+      {id: 1, name: "A", allergies: ["nuts", "gluten"]}, {id: 2, name: "B", allergies: []}]};
+    const before = JSON.stringify(h);
+    const legacyProfile = {globalAllergies: ["shellfish"], members: JSON.parse(before).members};
+    const legacy = mod.effectiveAllergies(legacyProfile, null).sort().join(",");
+    mod.migrateAllergenTaxonomy(h);
+    const checks = [
+      ["membre A garde nuts+gluten et reçoit peanuts", h.members[0].allergies.join(",") === "nuts,gluten,peanuts"],
+      ["membre B inchangé", h.members[1].allergies.length === 0],
+      ["foyer : shellfish → + molluscs", h.preferences.globalAllergies.join(",") === "shellfish,molluscs"],
+      ["drapeau allergenTaxonomy = 2", h.preferences.allergenTaxonomy === 2],
+      ["annonce : 2 lignes (foyer, A)", (h.preferences.allergenNotice || []).length === 2],
+      ["foyer non migré déjà protégé à l'exécution", legacy === "gluten,molluscs,nuts,peanuts,shellfish"],
+      ["idempotent", (() => { const s1 = JSON.stringify(h); mod.migrateAllergenTaxonomy(h); return JSON.stringify(h) === s1; })()],
+      ["foyer migré : l'arachide retirée volontairement ne revient pas",
+        mod.effectiveAllergies({allergenTaxonomy: 2, globalAllergies: [], members: [{allergies: ["nuts"]}]}, null).join(",") === "nuts"],
+    ];
+    for (const [label, ok] of checks) {
+      if (ok) console.log(`✅ allergènes UE 14 : ${label}`);
+      else { failures++; console.error(`❌ allergènes UE 14 : ${label}`); }
     }
   }
 

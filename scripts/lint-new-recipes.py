@@ -110,10 +110,25 @@ GENERIC_NAMES_FORBIDDEN = {
 ALLERGEN_TRIGGERS = {
     "fish": ["saumon", "thon", "sardine", "maquereau", "cabillaud", "morue",
              "lieu", "merlu", "haddock", "anchois", "hareng", "truite", "loup",
-             "dorade", "rouget", "sole", "limande", "bar", "carrelet", "poisson"],
-    "shellfish": ["crevette", "crabe", "homard", "langouste", "huître", "huitre",
-                  "moule", "coquillage", "calamar", "calamars", "encornet", "poulpe",
-                  "seiche", "noix de saint-jacques", "saint-jacques"],
+             "dorade", "rouget", "sole", "limande", "bar", "carrelet", "poisson",
+             "dashi", "bonite", "nuoc", "nuoc-mâm", "nuoc mam"],
+    # V2.129.0 — liste UE des 14 allergènes (règlement INCO 1169/2011, annexe II) :
+    # crustacés et mollusques séparés, + arachide, céleri, lupin, sulfites.
+    "shellfish": ["crevette", "gambas", "crabe", "homard", "langouste", "langoustine",
+                  "écrevisse", "ecrevisse", "fruits de mer"],
+    "molluscs": ["huître", "huitre", "moule", "coquillage", "calamar", "encornet", "poulpe",
+                 "seiche", "saint-jacques", "pétoncle", "petoncle", "palourde", "coque",
+                 "bulot", "bigorneau", "escargot", "sauce d'huître", "fruits de mer"],
+    "peanuts": ["cacahuète", "cacahuete", "arachide"],
+    # Céleri : aussi dans les bouillons du commerce (cubes, fonds) → `bouillon`.
+    "celery": ["céleri", "celeri", "bouillon", "fond de volaille", "fond de veau"],
+    "lupin": ["lupin"],
+    # Sulfites (> 10 mg/kg) : vin, vinaigres de vin / balsamique / cidre / xérès,
+    # fruits secs sulfités, moutarde (disulfite), mirin, cornichons.
+    "sulphites": ["vin", "vinaigre de vin", "vinaigre balsamique", "vinaigre de cidre",
+                  "vinaigre de xérès", "vinaigre de xeres", "vinaigre de framboise",
+                  "abricot sec", "abricots secs", "raisins secs", "raisin sec", "sultanine",
+                  "moutarde", "mirin", "cornichon"],
     "eggs": ["œuf", "oeuf", "jaune d'œuf", "blanc d'œuf", "jaune d'oeuf", "blanc d'oeuf"],
     "lactose": ["lait", "yaourt", "skyr", "fromage", "crème", "creme", "beurre", "mascarpone",
                 "ricotta", "feta", "parmesan", "comté", "comte", "mozzarella", "burrata",
@@ -123,10 +138,8 @@ ALLERGEN_TRIGGERS = {
                "semoule", "soba", "épeautre", "epeautre", "seigle", "orge",
                "tortilla", "pita", "brick", "filo", "biscuit", "brioche",
                "baguette", "spaghetti", "tagliatelle", "lasagne", "penne"],
-    # Arachide (cacahuète) : pas un fruit à coque botaniquement, mais le catalogue
-    # la range sous `nuts` faute d'allergène « arachide » dédié (cf. tâches/).
     "nuts": ["amande", "noix", "noisette", "pistache", "cajou", "pécan", "pecan",
-             "macadamia", "praline", "cacahuète", "cacahuete", "arachide"],
+             "macadamia", "praline"],
     "soy": ["soja", "tofu", "tempeh", "miso", "sauce soja", "edamame", "lait de soja"],
     "sesame": ["sésame", "sesame", "tahin", "tahini", "huile de sésame", "huile de sesame"],
     "mustard": ["moutarde"],
@@ -135,8 +148,8 @@ ALLERGEN_TRIGGERS = {
 # Tags incompatibles
 TAG_CONFLICTS = [
     # (tag1, allergens_qui_interdisent_tag1)
-    ("vegan", ["fish", "shellfish", "eggs", "lactose"]),
-    ("vegetarian", ["fish", "shellfish"]),
+    ("vegan", ["fish", "shellfish", "molluscs", "eggs", "lactose"]),
+    ("vegetarian", ["fish", "shellfish", "molluscs"]),
 ]
 
 # Seuils CG par mealType (Harvard / GIF Sydney / CLAUDE.md)
@@ -353,6 +366,11 @@ def check_allergens_consistency(recipes, report):
     # = mention de l'ingrédient remplacé, absent de la recette.
     MOULD = re.compile(r"\b(pour\s+le|du|le|au)\s+moule\b")
     REPLACED = re.compile(r"\(en remplacement[^)]*\)")
+    EGG_COQUE = re.compile(r"meringue|(à la|a la)\s+coque|(œ|oe)ufs?\s+coque")
+    # Graines / feuilles de moutarde : pas de disulfite (c'est la moutarde préparée
+    # qui en contient) ; fruits secs « non traités » = non sulfités.
+    NO_SULPHITE = re.compile(r"(graines?|feuilles?) de moutarde|non trait[ée]")
+    DASHI_ONLY = re.compile(r"^bouillon dashi \(kombu\)$")
 
     for r in recipes:
         rid = r.get("id", "?")
@@ -384,10 +402,16 @@ def check_allergens_consistency(recipes, report):
                                 continue  # tortilla de maïs = sans gluten
                         if allergen == "nuts" and kw == "noix" and NON_NUT_NOIX.search(ing_name):
                             continue  # "noix de Saint-Jacques/veau/pétoncle" = pas un fruit à coque
-                        if allergen == "shellfish" and kw == "moule" and MOULD.search(ing_name):
+                        if allergen == "molluscs" and kw == "moule" and MOULD.search(ing_name):
                             continue  # « beurre pour le moule » = moule à gâteau
-                        if allergen == "shellfish" and kw == "moule" and "moule" not in ing_name.split():
-                            continue  # éviter de matcher "moelleux"
+                        if allergen == "molluscs" and kw == "coque" and EGG_COQUE.search(ing_name):
+                            continue  # « œuf à la coque » ≠ coquillage
+                        if allergen == "celery" and kw == "bouillon" and DASHI_ONLY.search(ing_name):
+                            continue  # dashi au kombu = algue, sans céleri
+                        if allergen == "fish" and kw == "dashi" and DASHI_ONLY.search(ing_name):
+                            continue  # dashi au kombu = algue, sans bonite
+                        if allergen == "sulphites" and NO_SULPHITE.search(ing_name):
+                            continue
                         detected.setdefault(allergen, []).append(ing_entry[0])
                         break
 

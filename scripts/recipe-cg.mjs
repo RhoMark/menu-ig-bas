@@ -20,7 +20,7 @@ const html = readFileSync(join(ROOT, "index.html"), "utf8");
 
 // Extrait une déclaration de haut niveau (function / const) avec appariement
 // des accolades, en ignorant chaînes, gabarits, commentaires et regex.
-function extract(name) {
+export function extract(name) {
   const re = new RegExp(`^(function ${name}\\(|const ${name}\\s*=)`, "m");
   const m = re.exec(html);
   if (!m) throw new Error(`déclaration introuvable : ${name}`);

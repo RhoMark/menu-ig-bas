@@ -80,7 +80,7 @@ RECIPE_SKELETON = '''    {{
         "kcal": 350,           # kcal par portion (sera recalculé par Atwater si macros ok)
         "tags": [],            # vegetarian, vegan, festif, quick, no-cook, batch-friendly, light, kid-friendly, epicerie-specialisee
         "eq": [],              # stove, oven, blender, bowl, microwave, plancha, etc.
-        "allergens": [],       # ⚠ DOIT correspondre aux ingrédients : eggs, lactose, gluten, fish, shellfish, nuts, soy, sesame, mustard
+        "allergens": [],       # ⚠ DOIT correspondre aux ingrédients (14 UE) : eggs, lactose, gluten, fish, shellfish (crustacés), molluscs, nuts, peanuts, soy, sesame, mustard, celery (+ bouillons), lupin, sulphites (vin, vinaigres, moutarde…)
         # Si rest >= 120 minutes, ajouter "advance": "Xh au frais/congel"
         "ing": [
             # Format : [nom_qualifié, qty, unit, category]
@@ -195,7 +195,7 @@ Plan de ce Lot :
 
 ✅ ALLERGENS COHÉRENTS avec les ing :
    - saumon/thon/etc. → fish
-   - crevettes/moules/etc. → shellfish
+   - crevettes/crabe → shellfish ; moules/calamars/Saint-Jacques → molluscs ; cacahuète → peanuts ; céleri / bouillon → celery ; vin / vinaigre de vin / moutarde → sulphites
    - œuf/jaune d'œuf → eggs
    - lait/yaourt/fromage/crème (sauf lait coco/amande/soja) → lactose
    - farine de blé/pâtes/pain/boulgour/couscous → gluten (PAS riz/maïs/sarrasin/pois chiche)
