@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.133.0</title>
+<title>Menu IG Bas — V2.134.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -440,8 +440,12 @@ if ("serviceWorker" in navigator) {
           "a": "Dans la barre de recherche de la Bibliothèque (et dans la fenêtre « Remplacer » d'un repas), utilise le signe + pour cumuler des critères : « noix + poire » n'affiche que les recettes contenant à la fois de la noix ET de la poire. Chaque mot-clé est cherché dans le nom, les tags et les ingrédients principaux de la recette, sans tenir compte des majuscules ni des accents (« saumon » trouve « Saumon fumé »). Tu peux enchaîner autant de critères que tu veux (« tomate + basilic + mozzarella »). Sans le +, la recherche fonctionne comme avant avec un seul mot-clé."
         },
         {
+          "q": "Comment filtrer la Bibliothèque par saison ou par note ?",
+          "a": "Dans Recettes (Bibliothèque), deux menus s'ajoutent au type de repas : « Saison » (une saison précise, ou « De saison » pour celle d'aujourd'hui ; les recettes toutes saisons sont toujours incluses) et « Note » : bien notées (4-5 étoiles), notées, mal notées (1-2) ou pas encore notées. Avec plusieurs membres, un 3e menu choisit de qui on regarde la note : celle du foyer (moyenne des membres qui ont noté, pondérée par l'appétit) ou celle d'une personne. Le nombre de recettes trouvées s'affiche sous les filtres. Pour retirer une note, ouvre la recette et touche « ✕ Retirer » à côté des étoiles du membre : la recette redevient « pas encore notée » (et neutre pour la génération des menus)."
+        },
+        {
           "q": "Combien de recettes contient le catalogue ?",
-          "a": "1501 recettes au 19 octobre 2026 (V2.110.1) : 439 déjeuners, 427 dîners, 253 desserts, 192 goûters/en-cas et 190 petits-déjeuners, dont 249 recettes de fête. Elles couvrent 8 cuisines (française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, universelle) et les 4 saisons. Le catalogue s'enrichit régulièrement par lots, en priorisant l'équilibre des cuisines et la saisonnalité (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet). Chaque nouvelle recette passe un contrôle automatique (allergènes, dénominations qualifiées — pas de « Lait » seul, on précise demi-écrémé, amande, coco… —, doublons, charge glycémique plafonnée par type de repas) ; la CG de chaque recette est affichée sur sa fiche."
+          "a": "1541 recettes au 1er novembre 2026 (V2.134.0) : 450 déjeuners, 440 dîners, 265 desserts, 196 goûters/en-cas et 190 petits-déjeuners, dont 249 recettes de fête. Elles couvrent 8 cuisines (française, italienne, méditerranéenne, asiatique, indienne, mexicaine, maghrébine, universelle) et les 4 saisons. Le catalogue s'enrichit régulièrement par lots, en priorisant l'équilibre des cuisines et la saisonnalité (printemps/été préparés d'avril à juin, automne/hiver à partir de juillet). Chaque nouvelle recette passe un contrôle automatique (allergènes, dénominations qualifiées — pas de « Lait » seul, on précise demi-écrémé, amande, coco… —, doublons, charge glycémique plafonnée par type de repas) ; la CG de chaque recette est affichée sur sa fiche."
         },
         {
           "q": "Quelles cuisines sont couvertes et comment sont-elles équilibrées ?",
@@ -18981,7 +18985,19 @@ function App({initialState}) {
   const rateRecipe = (rid, score, memberId) => {
     // V2.29.0 — si memberId fourni, écrit ratings[rid][memberId] (par membre).
     // Sinon, ancien comportement (note globale, écrase tout).
+    // V2.134.0 — score null = retirer la note (du membre ; ou toute la note
+    // si elle est encore à l'ancien format global). La clé est SUPPRIMÉE (pas
+    // mise à null) : la fusion du foyer partagé propage bien la suppression.
     update(s => {
+      if (score == null) {
+        const cur = s.ratings[rid];
+        if (cur == null) return {ratings: s.ratings};
+        const next = {...s.ratings};
+        if (memberId == null || typeof cur !== "object") { delete next[rid]; return {ratings: next}; }
+        const m = {...cur}; delete m[memberId];
+        if (Object.keys(m).length) next[rid] = m; else delete next[rid];
+        return {ratings: next};
+      }
       if (memberId == null) {
         return {ratings: {...s.ratings, [rid]: score}};
       }
@@ -22022,6 +22038,11 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                     ))}
                   </div>
                   {memberRating != null && <span className="text-xs text-slate-600 dark:text-slate-300">({memberRating}/5)</span>}
+                  {memberRating != null && allowed && (
+                    <button onClick={() => onRate(null, m.id)} aria-label={`Retirer la note de ${m.name}`}
+                      title="Retirer la note (comme si la recette n'avait jamais été notée)"
+                      className="text-xs text-slate-500 dark:text-slate-400 hover:text-red-600 underline">✕ Retirer</button>
+                  )}
                 </div>
               );
             })}
@@ -22329,6 +22350,18 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
   // V2.109.0 (#100) — Filtre « 💚 Avec ce qu'on aime » (affiché si ≥1 like).
   const [likedOnly, setLikedOnly] = useState(false);
   const hasLikes = (state.profile?.members || []).some(m => m.likes?.length);
+  // V2.134.0 — Filtres saison et note (retours testeurs).
+  // season : "all" | "now" | spring | summer | autumn | winter (toute-saison incluse).
+  // rating : "all" | "rated" | "good" (≥ 4) | "bad" (≤ 2) | "unrated" ;
+  // ratingWho : "foyer" (moyenne pondérée des membres ayant noté) ou id de membre.
+  const [seasonF, setSeasonF] = useState("all");
+  const [ratingF, setRatingF] = useState("all");
+  const [ratingWho, setRatingWho] = useState("foyer");
+  const members = state.profile?.members || [];
+  const noteOf = r => {
+    if (ratingWho === "foyer") return state.ratings[r.id] != null ? getEffectiveRating(state.ratings, r.id, state.profile) : null;
+    return getMemberRating(state.ratings, r.id, Number(ratingWho));
+  };
   const favSet = new Set(state.favorites || []);
   // V2.65.0 (issue #4) — Saison courante (basée sur aujourd'hui pour la
   // bibliothèque, vs currentWeek dans le planning). Sert à afficher le
@@ -22341,6 +22374,16 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
     if (!recipeMatchesSearch(r, query)) return false;
     if (favOnly && !favSet.has(r.id)) return false;
     if (likedOnly && hasLikes && recipeLikedBy(r, state.profile).length === 0) return false;
+    if (seasonF !== "all") {
+      const s = seasonF === "now" ? currentSeason : seasonF;
+      if (!(r.seasons || []).includes(s) && !(r.seasons || []).includes("all")) return false;
+    }
+    if (ratingF !== "all") {
+      const n = noteOf(r);
+      if (ratingF === "unrated" ? n != null : n == null) return false;
+      if (ratingF === "good" && n < 4) return false;
+      if (ratingF === "bad" && n > 2) return false;
+    }
     return true;
   });
   return (
@@ -22380,7 +22423,26 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
           <option value="dessert">Desserts</option>
           <option value="snack">Goûters</option>
         </select>
+        <select value={seasonF} onChange={e => setSeasonF(e.target.value)} aria-label="Filtrer par saison" className="border rounded px-3 py-2">
+          <option value="all">Toutes saisons</option>
+          <option value="now">De saison ({SEASON_FR[currentSeason]})</option>
+          {["spring", "summer", "autumn", "winter"].map(s => <option key={s} value={s}>{SEASON_FR[s]}</option>)}
+        </select>
+        <select value={ratingF} onChange={e => setRatingF(e.target.value)} aria-label="Filtrer par note" className="border rounded px-3 py-2">
+          <option value="all">Toutes les notes</option>
+          <option value="good">⭐ Bien notées (4-5)</option>
+          <option value="rated">Notées</option>
+          <option value="bad">Mal notées (1-2)</option>
+          <option value="unrated">Pas encore notées</option>
+        </select>
+        {ratingF !== "all" && members.length > 1 && (
+          <select value={ratingWho} onChange={e => setRatingWho(e.target.value)} aria-label="Note de qui" className="border rounded px-3 py-2">
+            <option value="foyer">Note du foyer</option>
+            {members.map(m => <option key={m.id} value={String(m.id)}>Note de {m.name}</option>)}
+          </select>
+        )}
       </div>
+      <p className="text-sm text-slate-500 dark:text-slate-400 px-1" aria-live="polite">{filtered.length} recette{filtered.length > 1 ? "s" : ""}</p>
       {window.__V3_UI ? (
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-4">
         {filtered.map(r => (
