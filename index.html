@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.131.0</title>
+<title>Menu IG Bas — V2.131.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -21818,6 +21818,11 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
   const [pendingShare, setPendingShare] = useState(null); // File | null
   const sheetRootRef = useRef(null);
   useEffect(() => {
+    if (!CAN_SHARE) return;
+    const t = setTimeout(() => loadHtml2Pdf().catch(() => {}), 1500);
+    return () => clearTimeout(t);
+  }, []);
+  useEffect(() => {
     if (!exportMode) return;
     let cancelled = false;
     const body = document.body;
@@ -21829,6 +21834,11 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
       const t = setTimeout(() => { stop = printThenOnReturn(() => { if (!cancelled) setExportMode(null); }); }, 150);
       return () => { cancelled = true; clearTimeout(t); stop?.(); body.classList.remove("printing-recipe"); };
     }
+    const watchdog = setTimeout(() => {
+      if (cancelled) return;
+      cancelled = true; setExportMode(null);
+      alert("La préparation de la fiche prend trop de temps sur cet appareil. Réessaie, ou utilise 🖨️ puis « Partager » / « Enregistrer en PDF » depuis la fenêtre d'impression.");
+    }, 45000);
     (async () => {
       try {
         await loadHtml2Pdf();
@@ -21856,10 +21866,11 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
         console.error("[pdf] export recette failed", e);
         alert("Échec de l'export PDF : " + (e.message || "erreur inconnue") + "\nL'impression (🖨️) reste disponible, avec l'option « Enregistrer en PDF ».");
       } finally {
+        clearTimeout(watchdog);
         if (!cancelled) setExportMode(null);
       }
     })();
-    return () => { cancelled = true; };
+    return () => { cancelled = true; clearTimeout(watchdog); };
   }, [exportMode]);
   // V2.119.0 (refonte 1C) — Sections de la fiche, partagées par la mise en page
   // classique et la mise en page « magazine » de la nouvelle interface.
@@ -22001,7 +22012,8 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
       </div>,
       document.body
     )}
-    {(exportMode === "pdf" || exportMode === "share") && <PdfGeneratingOverlay />}
+    {exportMode === "pdf" && <PdfGeneratingOverlay />}
+    {exportMode === "share" && <PdfGeneratingOverlay label="Préparation de la fiche à partager…" />}
     {pendingShare && (
       <div className="fixed bottom-4 z-[70] no-print bg-slate-800 text-white pl-4 pr-2 py-2 rounded-lg shadow-lg text-sm flex items-center gap-2"
            style={{position: "fixed", left: "50%", transform: "translateX(-50%)", maxWidth: "calc(100vw - 32px)"}}>
@@ -25470,12 +25482,14 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
 // V2.91.0 (#22) — Overlay fixé pendant la génération PDF. Volontairement
 // `position: fixed` + `print:hidden` pour qu'il ne soit pas capté par
 // html2canvas (qui ne snapshot que le contenu .print-page).
-function PdfGeneratingOverlay() {
+// V2.131.1 — z-[70] : au-dessus de la fiche recette plein écran (z-50), sinon
+// invisible pendant la préparation (boutons grisés seuls → « l'app plante »).
+function PdfGeneratingOverlay({label = "Génération du PDF en cours…"}) {
   return (
-    <div className="fixed bottom-4 right-4 z-50 bg-emerald-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 text-sm print:hidden"
+    <div role="status" className="fixed bottom-4 right-4 z-[70] bg-emerald-600 text-white px-4 py-3 rounded-lg shadow-lg flex items-center gap-2 text-sm print:hidden"
          style={{position: "fixed"}}>
       <span className="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
-      <span>Génération du PDF en cours…</span>
+      <span>{label}</span>
     </div>
   );
 }
