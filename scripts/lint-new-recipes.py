@@ -58,6 +58,7 @@ VALID_SEASONS_CONCRETE = vocab.SEASONS_CONCRETE
 VALID_DIFFICULTIES = vocab.DIFFICULTIES
 VALID_EQUIPMENT = vocab.EQUIPMENT
 VALID_ALLERGENS = vocab.allergens()
+VALID_CATEGORIES = vocab.categories()  # rayons (V2.133.0 : « bakery » passait le lint, refusé par validate)
 
 # V2.99.63 — Fractions hardcodées dans les steps (retour HedgeX 2026-05-26).
 # Pattern bug : step dit « le demi-œuf battu » alors que la liste d'ingrédients
@@ -86,7 +87,9 @@ GENERIC_NAMES_FORBIDDEN = {
     "lait": ["demi-écrémé", "demi-ecreme", "écrémé", "ecreme", "entier", "amande",
              "coco", "soja", "avoine", "riz", "noisette", "noix"],
     "riz": ["basmati", "long", "rond", "complet", "brun", "noir", "sauvage",
-            "soufflé", "soufle", "gluant", "thaï", "thai"],
+            "soufflé", "soufle", "gluant", "thaï", "thai",
+            # V2.133.0 — variétés précises, achetables telles quelles
+            "arborio", "carnaroli", "aplati", "poha"],
     "pâtes": ["complètes", "completes", "intégrales", "integrales", "sarrasin",
               "épeautre", "epeautre"],
     "pates": ["complètes", "completes", "intégrales", "integrales", "sarrasin",
@@ -94,14 +97,15 @@ GENERIC_NAMES_FORBIDDEN = {
     "farine": ["t80", "t110", "t150", "pois chiche", "épeautre", "epeautre",
                "sarrasin", "amande", "coco", "complète", "complete", "maïs",
                "mais", "manioc", "riz", "mochiko", "châtaigne", "chataigne",
-               "lentille", "millet"],
+               "lentille", "millet", "blé complet", "ble complet"],
     "yaourt": ["nature", "grec", "brassé", "brasse", "brebis", "chèvre", "chevre",
                "végétal", "vegetal", "amande", "coco", "soja"],
     "beurre": ["doux", "demi-sel", "salé", "sale", "clarifié", "clarifie",
                "amande", "cacahuète", "cacahuete"],
     "pain": ["complet", "levain", "seigle", "pita", "naan", "tortilla",
-             "blé entier", "ble entier", "intégral", "integral", "épeautre", "epeautre"],
-    "sucre": ["roux", "complet", "coco", "muscovado", "rapadura"],
+             "blé entier", "ble entier", "intégral", "integral", "épeautre", "epeautre",
+             "sarrasin"],
+    "sucre": ["roux", "complet", "coco", "muscovado", "rapadura", "glace"],
     "huile": ["olive", "colza", "sésame", "sesame", "coco", "noix", "tournesol",
               "argan", "lin", "avocat", "noisette"],
 }
@@ -291,6 +295,9 @@ def check_schema(recipe, report):
     if recipe.get("prep", 0) + recipe.get("cook", 0) <= 0:
         report.err(rid, f"prep+cook doit être > 0")
     ing = recipe.get("ing", [])
+    for i in ing:
+        if isinstance(i, list) and len(i) == 4 and i[3] not in VALID_CATEGORIES:
+            report.err(rid, f"rayon invalide pour {i[0]!r} : {i[3]!r} (attendu parmi {sorted(VALID_CATEGORIES)})")
     if len(ing) < 2:
         report.err(rid, f"ing < 2 (au moins 2 ingrédients requis)")
     steps = recipe.get("steps", [])

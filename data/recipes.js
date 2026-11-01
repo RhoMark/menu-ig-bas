@@ -574,7 +574,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rince le quinoa sous l'eau froide. Cuis-le dans 2 fois son volume d'eau salée pendant 12 minutes (feu moyen, couvercle). Égoutte.",
         "Coupe la courgette et le poivron en dés de 1 cm.",
-        "Salpoivre le blanc de poulet. Chauffe une poêle avec un peu d'huile et fais-le cuire 5 min de chaque côté à feu moyen. Réserve.",
+        "Sale et poivre le blanc de poulet. Chauffe une poêle avec un peu d'huile et fais-le cuire 5 min de chaque côté à feu moyen. Réserve.",
         "Dans la même poêle, fais sauter les dés de courgette et de poivron 5-6 min. Ils doivent être tendres mais encore un peu croquants.",
         "Coupe le poulet en lamelles. Coupe les tomates cerises en deux.",
         "Dans un grand saladier, mélange quinoa, légumes sautés, tomates cerises et poulet. Arrose d'huile d'olive et de jus de citron, parsème d'herbes ciselées."
@@ -2869,7 +2869,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Huile neutre",
+          "Huile de colza",
           1,
           "c.à.s",
           "pantry"
@@ -25336,7 +25336,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Huile neutre",
+          "Huile de colza",
           1,
           "c.à.c",
           "pantry"
@@ -25496,9 +25496,7 @@ window.__DATA_RECIPES = {
       "diff": 2,
       "cost": 5.0,
       "kcal": 480,
-      "tags": [
-        "quick"
-      ],
+      "tags": [],
       "eq": [
         "stove"
       ],
@@ -25802,7 +25800,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Huile neutre",
+          "Huile de colza",
           0.5,
           "c.à.c",
           "pantry"
@@ -27394,7 +27392,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Huile neutre",
+          "Huile de colza",
           0.5,
           "c.à.c",
           "pantry"
@@ -27405,7 +27403,7 @@ window.__DATA_RECIPES = {
         "Pendant la cuisson du riz, casse l'œuf dans un bol et bats à la fourchette avec une pincée de sel.",
         "Coupe la carotte en très petits dés. Émince l'oignon nouveau (garde séparés vert et blanc). Râpe le gingembre, écrase l'ail.",
         "Plonge les petits pois et edamame 3 min dans l'eau bouillante salée. Égoutte.",
-        "Fais chauffer un wok ou grande poêle à feu très vif avec l'huile neutre.",
+        "Fais chauffer un wok ou grande poêle à feu très vif avec l'huile de colza.",
         "Verse les œufs battus, brouille rapidement à la spatule (10 secondes). Réserve dans une assiette.",
         "Dans le même wok, fais sauter le blanc d'oignon, l'ail et le gingembre 30 secondes.",
         "Ajoute les dés de carotte, fais sauter 2 min à feu vif.",
@@ -30100,7 +30098,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Huile neutre",
+          "Huile de colza",
           0.5,
           "c.à.c",
           "pantry"
@@ -30117,7 +30115,7 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare les légumes : carotte en julienne, pois gourmands coupés en deux, oignon nouveau émincé (séparer vert et blanc).",
         "Râpe le gingembre, écrase l'ail.",
         "Décortique complètement les crevettes si pas déjà fait, retire le boyau noir sur le dos avec un couteau pointu.",
-        "Fais chauffer un wok ou grande poêle à feu très vif avec l'huile neutre.",
+        "Fais chauffer un wok ou grande poêle à feu très vif avec l'huile de colza.",
         "Ajoute le blanc d'oignon, l'ail et le gingembre. Fais sauter 30 sec.",
         "Ajoute la carotte, fais sauter 2 min à feu vif en remuant constamment (= sauté wok, ne brûle pas, légumes croquants).",
         "Ajoute les pois gourmands, fais sauter 2 min de plus.",
@@ -36440,7 +36438,7 @@ window.__DATA_RECIPES = {
         "Coupe 2 gousses d'ail en 4 morceaux dans la longueur. Effeuille la moitié du romarin et du thym.",
         "Insère dans chaque entaille un morceau d'ail + une feuille de romarin ou un brin de thym (la viande s'imprègne en cuisant).",
         "Frotte la viande avec 1 c.à.s d'huile, sale et poivre généreusement sur toutes les faces.",
-        "Pose la viande dans un plat à four, ajoute le reste de romarin et thym entiers autour. Enfourne 15 min à 220°C pour saisir, puis baisse à 180°C et continue 25 min (rosé) ou 35 min (à point) pour 200g. Pour gigot plus gros, compter 12 min/500g de cuisson totale après la saisie.",
+        "Pose la viande dans un plat à four, ajoute le reste de romarin et thym entiers autour. Enfourne 15 min à 220°C pour saisir, puis baisse à 180°C et continue 25 min (rosé) ou 35 min (à point) pour 200g. Pour gigot plus gros, compte 12 min/500g de cuisson totale après la saisie.",
         "Pendant ce temps : émince l'oignon. Écrase les 2 gousses d'ail restantes.",
         "Dans une casserole, chauffe 1 c.à.s d'huile à feu moyen. Fais revenir l'oignon 4 min jusqu'à translucide, ajoute l'ail écrasé, remue 30 sec.",
         "Ajoute les flageolets rincés et le bouillon. Couvre, baisse, laisse mijoter 15 min : les flageolets vont absorber les saveurs.",
@@ -36655,9 +36653,7 @@ window.__DATA_RECIPES = {
       "diff": 2,
       "cost": 6.0,
       "kcal": 310,
-      "tags": [
-        "quick"
-      ],
+      "tags": [],
       "eq": [
         "oven"
       ],
@@ -37957,8 +37953,7 @@ window.__DATA_RECIPES = {
       "cost": 3.5,
       "kcal": 250,
       "tags": [
-        "batch-friendly",
-        "quick"
+        "batch-friendly"
       ],
       "eq": [
         "stove"
@@ -38291,9 +38286,7 @@ window.__DATA_RECIPES = {
       "diff": 2,
       "cost": 4.0,
       "kcal": 290,
-      "tags": [
-        "quick"
-      ],
+      "tags": [],
       "eq": [
         "stove"
       ],
@@ -40490,7 +40483,6 @@ window.__DATA_RECIPES = {
       "cost": 4.5,
       "kcal": 240,
       "tags": [
-        "quick",
         "apero-dinatoire"
       ],
       "eq": [
@@ -40571,7 +40563,7 @@ window.__DATA_RECIPES = {
         "Dans un saladier, mélange quinoa refroidi, tomate, concombre, oignon rouge, herbes. Verse jus de citron, zeste de citron râpé, huile d'olive, sel et poivre. Mélange.",
         "Laisse reposer 10 min au frais (les saveurs se mélangent).",
         "Coupe les crevettes en deux dans la longueur si elles sont grosses, sinon laisse-les entières.",
-        "Monte les verrines (8-10 verrines de 60 ml) : taboulé de quinoa au fond (2/3), crevettes par-dessus (1/3). Décore d'une feuille de menthe.",
+        "Monte les verrines (des petits verres d'environ 60 ml) : taboulé de quinoa au fond (2/3), crevettes par-dessus (1/3). Décore d'une feuille de menthe.",
         "Sers frais immédiatement ou place 30 min au frais."
       ],
       "photo": "assets/recipes/s54.webp"
@@ -41000,7 +40992,7 @@ window.__DATA_RECIPES = {
         "Croûte de sel : dans un grand saladier, mélange gros sel et blancs d'œufs (battus à la fourchette pour les casser). Texture comme du sable mouillé.",
         "Dans un plat à four, étale 1/3 du sel en couche de 1 cm (lit de sel). Pose le saumon dessus.",
         "Recouvre entièrement le saumon avec le reste du sel (sauf la queue, qu'on peut laisser dépasser pour faciliter la sortie). Tasse bien pour former une coque hermétique.",
-        "Enfourne 25-30 min (compter 25 min pour 400g, 30 min pour 500g). Le sel forme une croûte dure mais pas brûlée.",
+        "Enfourne 25-30 min (compte 25 min pour 400g, 30 min pour 500g). Le sel forme une croûte dure mais pas brûlée.",
         "Sors du four et laisse reposer 5 min. Casse délicatement la croûte de sel avec le dos d'une cuillère ou un petit marteau. Retire la peau du dessus du saumon (elle vient avec le sel).",
         "Avec une grande spatule, soulève des portions de saumon en évitant le sel. La chair est nacrée, fondante, juteuse.",
         "Sers avec : un quartier de citron, le reste d'aneth ciselé, un trait d'huile d'olive et tour de poivre. Aucun sel à ajouter (le saumon a pris exactement ce qu'il faut)."
@@ -44934,7 +44926,6 @@ window.__DATA_RECIPES = {
         "soy",
         "sesame",
         "celery",
-        "fish",
         "gluten"
       ],
       "ing": [
@@ -44963,7 +44954,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bouillon de légumes (ou dashi)",
+          "Bouillon de légumes",
           600,
           "ml",
           "pantry"
@@ -48997,7 +48988,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Huile neutre",
+          "Huile de colza",
           1,
           "c.à.s",
           "pantry"
@@ -49022,7 +49013,7 @@ window.__DATA_RECIPES = {
         "Coupe la carotte en julienne fine, le poivron en lanières, les brocolis en petits bouquets, le pak choï en morceaux de 3 cm (sépare blanc et vert).",
         "Râpe gingembre + ail. Émince la cébette (sépare blanc et vert).",
         "Prépare la sauce : sauce soja + vinaigre de riz + sirop d'érable + huile de sésame + 2 c.à.s d'eau.",
-        "Dans un wok ou grande poêle, chauffe l'huile neutre à feu vif (presque fumant). Saisis le tofu en cubes 2 min sans bouger : il doit être doré, puis remue 2 min de plus pour dorer toutes les faces. Réserve.",
+        "Dans un wok ou grande poêle, chauffe l'huile de colza à feu vif (presque fumant). Saisis le tofu en cubes 2 min sans bouger : il doit être doré, puis remue 2 min de plus pour dorer toutes les faces. Réserve.",
         "Dans la même poêle, baisse à feu moyen-vif. Ajoute carotte + poivron + brocolis. Saute 4 min en remuant : ils doivent garder du croquant. Ajoute pak choï blanc, 1 min.",
         "Ajoute gingembre + ail + part blanche de cébette, remue 30 sec.",
         "Remets le tofu, ajoute pak choï vert. Verse la sauce, mélange 90 sec à feu vif : la sauce réduit et glaze tout.",
@@ -52987,8 +52978,8 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer l'ananas : pose-le sur la planche, coupe la couronne de feuilles puis la base. Tiens-le debout et coupe la peau du haut vers le bas, en suivant la forme. Retire les yeux noirs avec la pointe du couteau s'il en reste. Coupe en quartiers, retire le cœur fibreux central, coupe en cubes de 5 mm.",
-        "Préparer la mangue : tiens-la verticale. Coupe de chaque côté du noyau (le noyau est plat et large, au centre). Sur chaque morceau de mangue (= « joue »), fais un quadrillage à la peau (sans la transpercer), retourne la peau comme un hérisson, et coupe les cubes obtenus à la base. Ils tombent tout seuls.",
+        "Prépare l'ananas : pose-le sur la planche, coupe la couronne de feuilles puis la base. Tiens-le debout et coupe la peau du haut vers le bas, en suivant la forme. Retire les yeux noirs avec la pointe du couteau s'il en reste. Coupe en quartiers, retire le cœur fibreux central, coupe en cubes de 5 mm.",
+        "Prépare la mangue : tiens-la verticale. Coupe de chaque côté du noyau (le noyau est plat et large, au centre). Sur chaque morceau de mangue (= « joue »), fais un quadrillage à la peau (sans la transpercer), retourne la peau comme un hérisson, et coupe les cubes obtenus à la base. Ils tombent tout seuls.",
         "Dans un grand bol, mélange les cubes d'ananas et de mangue.",
         "Râpe finement le gingembre (épluché en grattant la peau avec une cuillère). Ajoute aux fruits.",
         "Râpe le zeste du citron vert (vert seulement, le blanc est amer) et ajoute. Presse le jus, verse sur les fruits.",
@@ -59572,7 +59563,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Démarre le riz : rince le basmati complet 30 sec sous l'eau froide. Cuis dans 280 ml d'eau salée, couvert à feu doux 20 min. Laisse reposer couvert 5 min.",
-        "Coupe les pavés de cabillaud en gros morceaux de 4 cm. Salez légèrement.",
+        "Coupe les pavés de cabillaud en gros morceaux de 4 cm. Sale légèrement.",
         "Émince l'oignon finement. Écrase l'ail. Râpe le gingembre.",
         "Coupe les tomates en deux, retire les graines, coupe en dés.",
         "Lave les épinards, sèche-les rapidement.",
@@ -61825,7 +61816,6 @@ window.__DATA_RECIPES = {
         "vegetarian",
         "vegan",
         "batch-friendly",
-        "quick",
         "epicerie-specialisee"
       ],
       "eq": [
@@ -61948,7 +61938,7 @@ window.__DATA_RECIPES = {
         "Cuis le boulgour : porte 240 ml d'eau salée à ébullition. Verse le boulgour, baisse à feu doux, couvre 10 min. Aère à la fourchette.",
         "Pendant ce temps, égoutte et rince les pois chiches.",
         "Émince finement l'oignon. Écrase l'ail. Coupe les tomates en deux, retire les graines, taille en dés de 1 cm.",
-        "Rince le citron confit, retire la pulpe interne (garde uniquement la peau qui est la partie aromatique). Coupe en petits dés. Si tu utilises de l'écorce de citron : prélève les zestes d'1/2 citron, blanchis 1 min dans l'eau bouillante pour adoucir l'amertume.",
+        "Rince le citron confit, retire la pulpe interne (garde uniquement la peau qui est la partie aromatique). Coupe en petits dés. Si tu utilises de l'écorce de citron : prélève les zestes du citron, blanchis 1 min dans l'eau bouillante pour adoucir l'amertume.",
         "Lave les épinards, essore-les rapidement.",
         "Dans une grande sauteuse à feu moyen avec 2 c.à.s d'huile, fais suer l'oignon 4 min jusqu'à translucide.",
         "Ajoute l'ail, le cumin, le gingembre, le curcuma, la coriandre moulue, la cannelle, le piment d'Espelette. Remue 30 sec — les épices libèrent leur arôme.",
@@ -63510,8 +63500,7 @@ window.__DATA_RECIPES = {
       "cost": 2.5,
       "kcal": 450,
       "tags": [
-        "vegetarian",
-        "quick"
+        "vegetarian"
       ],
       "eq": [
         "stove"
@@ -64220,9 +64209,7 @@ window.__DATA_RECIPES = {
       "diff": 2,
       "cost": 4.8,
       "kcal": 470,
-      "tags": [
-        "quick"
-      ],
+      "tags": [],
       "eq": [
         "stove"
       ],
@@ -64343,8 +64330,8 @@ window.__DATA_RECIPES = {
         "Ajoute les dés de tomates, sale. Cuis 4 min à feu moyen — les tomates se défont.",
         "Verse le lait de coco. Mélange. Porte à frémissement, mijote 4 min — la sauce s'épaissit légèrement.",
         "Remets les crevettes dans la sauce 2 min juste pour réchauffer (surcuisson = caoutchouc).",
-        "Hors du feu, ajoute le jus du demi-citron vert et la coriandre ciselée généreusement.",
-        "Dressage : sers le riz basmati complet en couronne dans 2 grandes assiettes creuses. Pose les crevettes avec leur sauce coco-tomate au centre. Parsème du reste de coriandre. Ajoute 2 quartiers de citron vert à part.",
+        "Hors du feu, ajoute le jus du citron vert et la coriandre ciselée généreusement.",
+        "Dressage : sers le riz basmati complet en couronne dans des assiettes creuses. Pose les crevettes avec leur sauce coco-tomate au centre. Parsème du reste de coriandre. Ajoute des quartiers de citron vert à part.",
         "Ce curry s'inspire de la cuisine côtière du Goa et du Kerala (côte sud-ouest de l'Inde). Tradition portugaise et indienne mélangées : tomate (apport européen) + lait de coco (sud Inde) + épices indiennes. Crevettes cuissons rapide = parfait pour un dîner en 35 min total. Riche en protéines maigres (crevettes), bons gras (coco), antioxydants (curcuma, gingembre), fibres (riz complet)."
       ],
       "photo": "assets/recipes/d203.webp"
@@ -66000,7 +65987,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Fais griller les tranches de pain complet (toaster ou poêle sèche à feu vif) jusqu'à ce qu'elles soient bien dorées et croustillantes.",
+        "Fais griller les tranches de pain complet (toaste ou poêle sèche à feu vif) jusqu'à ce qu'elles soient bien dorées et croustillantes.",
         "Frotte chaque tranche avec la gousse d'ail coupée en deux (technique : le pain croustillant accroche l'ail, parfume sans gros morceaux).",
         "Coupe les tomates cerises en deux ou en quartiers selon leur taille. Place-les dans un bol, mélange avec 1 c.à.s d'huile d'olive, le vinaigre balsamique, sel, poivre. Laisse mariner 5 min.",
         "Écrase la chair d'avocat à la fourchette avec le jus du demi-citron, sel, poivre. Garde un peu de texture (pas une purée lisse).",
@@ -71346,8 +71333,7 @@ window.__DATA_RECIPES = {
       "kcal": 360,
       "tags": [
         "vegetarian",
-        "batch-friendly",
-        "quick"
+        "batch-friendly"
       ],
       "eq": [
         "oven",
@@ -76390,7 +76376,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un saladier, mélange la farine + le sel (garde-en une pincée pour la garniture). Ajoute l'eau chaude progressivement en remuant (utiliser l'eau chaude = la signature des galettes chinoises, donne une pâte super souple). Pétris 5 min jusqu'à pâte lisse. Couvre, repose 30 min.",
+        "Dans un saladier, mélange la farine + le sel (garde-en une pincée pour la garniture). Ajoute l'eau chaude progressivement en remuant (utilise l'eau chaude = la signature des galettes chinoises, donne une pâte super souple). Pétris 5 min jusqu'à pâte lisse. Couvre, repose 30 min.",
         "Émince très finement les oignons nouveaux (vert principal, garde un peu de blanc).",
         "Divise la pâte en boules (une par personne). Sur le plan fariné, étale chaque boule en cercle très fin (Ø 25 cm).",
         "Badigeonne le cercle d'huile de sésame, saupoudre généreusement d'oignons nouveaux + 1 pincée de sel + poivre noir.",
@@ -76398,7 +76384,7 @@ window.__DATA_RECIPES = {
         "Recommence avec chaque boule de pâte.",
         "Chauffe une poêle anti-adhésive à feu moyen-vif. Verse un filet d'huile d'olive. Cuis chaque galette 3-4 min par face jusqu'à doré croustillant. Parsème de sésame en fin de cuisson.",
         "Prépare la sauce dip : sauce soja + vinaigre de riz + gingembre râpé.",
-        "Coupe chaque galette en parts, comme une pizza. Sers chaud avec la sauce. Petit-déj/brunch chinois iconique des marchés de Shanghai, Pékin, Taipei. Excellent batch (réchauffer 1 min au four)."
+        "Coupe chaque galette en parts, comme une pizza. Sers chaud avec la sauce. Petit-déj/brunch chinois iconique des marchés de Shanghai, Pékin, Taipei. Excellent batch (réchauffe 1 min au four)."
       ],
       "photo": "assets/recipes/b134.webp"
     },
@@ -78115,14 +78101,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un saladier, mélanger au fouet la farine de pois chiche, le yaourt nature, de l'eau tiède versée petit à petit, le curcuma, le sel et le gingembre râpé fin (pâte lisse comme une pâte à crêpe épaisse).",
-        "Laisser reposer 10 minutes (la farine de pois chiche s'hydrate).",
-        "Pendant ce temps, préparer un cuit-vapeur : faire bouillir 3 cm d'eau dans une grande casserole, y déposer un plat carré huilé qui rentre dedans.",
-        "Juste avant de verser, ajouter le jus du citron et le bicarbonate à la pâte, mélanger 5 secondes — la pâte mousse aussitôt. Verser dans le plat huilé sur 2 cm de hauteur.",
-        "Couvrir la casserole et cuire 15 minutes à la vapeur (une lame de couteau plantée doit ressortir sèche).",
-        "Pendant ce temps, faire chauffer l'huile d'olive dans une petite poêle, ajouter les graines de moutarde : elles éclatent (1 minute). Ajouter les feuilles de curry hors du feu.",
-        "Démouler le dhokla tiède, le découper en carrés de 4 cm, verser le tempering d'huile-moutarde-curry dessus.",
-        "Parsemer de coriandre fraîche ciselée et servir tiède ou à température ambiante."
+        "Dans un saladier, mélange au fouet la farine de pois chiche, le yaourt nature, de l'eau tiède versée petit à petit, le curcuma, le sel et le gingembre râpé fin (pâte lisse comme une pâte à crêpe épaisse).",
+        "Laisse reposer 10 minutes (la farine de pois chiche s'hydrate).",
+        "Pendant ce temps, prépare un cuit-vapeur : fais bouillir 3 cm d'eau dans une grande casserole, déposes-y un plat carré huilé qui rentre dedans.",
+        "Juste avant de verser, ajoute le jus du citron et le bicarbonate à la pâte, mélange 5 secondes — la pâte mousse aussitôt. Verse dans le plat huilé sur 2 cm de hauteur.",
+        "Couvre la casserole et cuis 15 minutes à la vapeur (une lame de couteau plantée doit ressortir sèche).",
+        "Pendant ce temps, fais chauffer l'huile d'olive dans une petite poêle, ajoute les graines de moutarde : elles éclatent (1 minute). Ajoute les feuilles de curry hors du feu.",
+        "Démoule le dhokla tiède, découpe-le en carrés de 4 cm, verse le tempering d'huile-moutarde-curry dessus.",
+        "Parsème de coriandre fraîche ciselée et sers tiède ou à température ambiante."
       ],
       "photo": "assets/recipes/s121.webp"
     },
@@ -78197,12 +78183,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire chauffer une poêle large à feu moyen sans matière grasse, ajouter les makhana (graines de lotus puffies).",
-        "Torréfier à sec 6-8 minutes en remuant régulièrement : ils doivent devenir cassants et légèrement dorés (test : un makhana craque sec sous les dents).",
-        "Verser l'huile d'olive en filet sur les makhana chauds, mélanger 30 secondes pour bien enrober.",
-        "Ajouter le curcuma, le cumin, la coriandre, le piment doux et le sel, mélanger 1 minute à feu doux.",
-        "Retirer du feu, transférer dans un saladier et laisser refroidir 5 minutes (ils continuent de croustiller).",
-        "Servir en apéro ou snack dans un petit bol — se conserve 1 semaine dans une boîte hermétique."
+        "Fais chauffer une poêle large à feu moyen sans matière grasse, ajoute les makhana (graines de lotus puffies).",
+        "Torréfie à sec 6-8 minutes en remuant régulièrement : ils doivent devenir cassants et légèrement dorés (test : un makhana craque sec sous les dents).",
+        "Verse l'huile d'olive en filet sur les makhana chauds, mélange 30 secondes pour bien enrober.",
+        "Ajoute le curcuma, le cumin, la coriandre, le piment doux et le sel, mélange 1 minute à feu doux.",
+        "Retire du feu, transfère dans un saladier et laisse refroidir 5 minutes (ils continuent de croustiller).",
+        "Sers en apéro ou snack dans un petit bol — se conserve 1 semaine dans une boîte hermétique."
       ],
       "photo": "assets/recipes/s122.webp"
     },
@@ -78274,14 +78260,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Verser le skyr dans une étamine (ou un torchon propre) au-dessus d'un bol, laisser égoutter 4h au frais (texture crémeuse épaisse).",
-        "Pendant ce temps, infuser le safran dans 1 cuillère à soupe d'eau tiède 10 min (couleur jaune dorée).",
-        "Éplucher la mangue, retirer le noyau, mixer la chair au mixeur plongeant en purée lisse.",
-        "Mélanger dans un bol le yaourt égoutté, la purée de mangue, le sirop d'érable, la cardamome et le safran infusé.",
-        "Fouetter au fouet manuel 1 minute pour aérer (texture mousseuse, pas liquide).",
-        "Concasser les pistaches au couteau (pas trop fines, on veut garder du croquant).",
-        "Répartir dans 2 verrines, parsemer de pistaches concassées sur le dessus.",
-        "Servir bien frais, idéalement après 30 minutes au frigo pour que les saveurs se marient."
+        "Verse le skyr dans une étamine (ou un torchon propre) au-dessus d'un bol, laisse égoutter 4h au frais (texture crémeuse épaisse).",
+        "Pendant ce temps, infuse le safran dans 1 cuillère à soupe d'eau tiède 10 min (couleur jaune dorée).",
+        "Épluche la mangue, retire le noyau, mixe la chair au mixeur plongeant en purée lisse.",
+        "Mélange dans un bol le yaourt égoutté, la purée de mangue, le sirop d'érable, la cardamome et le safran infusé.",
+        "Fouette au fouet manuel 1 minute pour aérer (texture mousseuse, pas liquide).",
+        "Concasse les pistaches au couteau (pas trop fines, on veut garder du croquant).",
+        "Répartis dans 2 verrines, parsème de pistaches concassées sur le dessus.",
+        "Sers bien frais, idéalement après 30 minutes au frigo pour que les saveurs se marient."
       ],
       "photo": "assets/recipes/des124.webp"
     },
@@ -78348,14 +78334,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver et râper les carottes finement (râpe fine de mandoline ou grand côté d'une râpe boîte).",
-        "Verser les carottes râpées dans une casserole avec le lait d'amande, porter à feu moyen.",
-        "Cuire à découvert 15-20 minutes en remuant régulièrement, jusqu'à ce que le lait soit absorbé et que la carotte devienne tendre et translucide.",
-        "Pendant ce temps, faire griller les amandes effilées 2-3 minutes à sec dans une petite poêle (couleur dorée).",
-        "Quand les carottes sont cuites, ajouter le sirop d'érable, la cardamome et la cannelle, mélanger 2 minutes à feu doux.",
-        "Goûter et ajuster : un peu plus de cardamome si on veut plus parfumé, plus de sirop si trop fade.",
-        "Répartir dans 2 ramequins, parsemer d'amandes grillées sur le dessus.",
-        "Servir tiède ou frais selon préférence — le halwa se garde 3 jours au frigo."
+        "Lave et râpe les carottes finement (râpe fine de mandoline ou grand côté d'une râpe boîte).",
+        "Verse les carottes râpées dans une casserole avec le lait d'amande, porte à feu moyen.",
+        "Cuis à découvert 15-20 minutes en remuant régulièrement, jusqu'à ce que le lait soit absorbé et que la carotte devienne tendre et translucide.",
+        "Pendant ce temps, fais griller les amandes effilées 2-3 minutes à sec dans une petite poêle (couleur dorée).",
+        "Quand les carottes sont cuites, ajoute le sirop d'érable, la cardamome et la cannelle, mélange 2 minutes à feu doux.",
+        "Goûte et ajuste : un peu plus de cardamome si on veut plus parfumé, plus de sirop si trop fade.",
+        "Répartis dans 2 ramequins, parsème d'amandes grillées sur le dessus.",
+        "Sers tiède ou frais selon préférence — le halwa se garde 3 jours au frigo."
       ],
       "photo": "assets/recipes/des125.webp"
     },
@@ -78460,14 +78446,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four en mode grill à 200°C.",
-        "Égoutter et rincer les haricots noirs, les écraser à la fourchette dans une petite casserole avec l'huile d'olive, le cumin et un petit filet d'eau.",
-        "Chauffer à feu doux 4 minutes en remuant : on obtient une purée rustique chaude (consistance qui se tient à la cuillère).",
-        "Préparer la salsa pico de gallo : couper la tomate en petits dés, émincer finement l'oignon rouge, hacher la coriandre. Mélanger avec le jus du citron vert, le piment doux et le sel.",
-        "Couper le pain au levain en tranches épaisses (3 cm), puis les ouvrir en deux dans l'épaisseur (façon bagel).",
-        "Tartiner chaque tranche d'une bonne couche de haricots écrasés chauds, parsemer de fromage frais émietté.",
-        "Enfourner 5-6 minutes sous le grill : le fromage doit colorer légèrement et le pain être croustillant.",
-        "Sortir du four, déposer des lamelles d'avocat sur chaque mollete et couronner d'une généreuse cuillère de pico de gallo."
+        "Préchauffe le four en mode grill à 200°C.",
+        "Égoutte et rince les haricots noirs, écrase-les à la fourchette dans une petite casserole avec l'huile d'olive, le cumin et un petit filet d'eau.",
+        "Chauffe à feu doux 4 minutes en remuant : on obtient une purée rustique chaude (consistance qui se tient à la cuillère).",
+        "Prépare la salsa pico de gallo : coupe la tomate en petits dés, émince finement l'oignon rouge, hache la coriandre. Mélange avec le jus du citron vert, le piment doux et le sel.",
+        "Coupe le pain au levain en tranches épaisses (3 cm), puis ouvre-les en deux dans l'épaisseur (façon bagel).",
+        "Tartine chaque tranche d'une bonne couche de haricots écrasés chauds, parsème de fromage frais émietté.",
+        "Enfourne 5-6 minutes sous le grill : le fromage doit colorer légèrement et le pain être croustillant.",
+        "Sors du four, dépose des lamelles d'avocat sur chaque mollete et couronne d'une généreuse cuillère de pico de gallo."
       ],
       "photo": "assets/recipes/b140.webp"
     },
@@ -78545,13 +78531,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille (ou 15 min avant), mélanger les graines de chia avec une partie du lait de coco dans un petit bol, laisser gonfler au frais (gel épais).",
-        "Éplucher la mangue, retirer le noyau, couper la chair en gros morceaux (en garder quelques lamelles pour la déco).",
-        "Éplucher la banane, la casser en morceaux. Mettre la mangue, la banane et le reste du lait de coco dans le blender avec le jus du citron vert.",
-        "Mixer 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace à l'italienne (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, déposer une cuillère du chia gonflé au centre.",
-        "Disposer en couronne les flocons d'avoine, la noix de coco râpée et les lamelles de mangue réservées.",
-        "Servir immédiatement à la cuillère, bien frais."
+        "La veille (ou 15 min avant), mélange les graines de chia avec une partie du lait de coco dans un petit bol, laisse gonfler au frais (gel épais).",
+        "Épluche la mangue, retire le noyau, coupe la chair en gros morceaux (gardes-en quelques lamelles pour la déco).",
+        "Épluche la banane, casse-la en morceaux. Mets la mangue, la banane et le reste du lait de coco dans le blender avec le jus du citron vert.",
+        "Mixe 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace à l'italienne (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, dépose une cuillère du chia gonflé au centre.",
+        "Dispose en couronne les flocons d'avoine, la noix de coco râpée et les lamelles de mangue réservées.",
+        "Sers immédiatement à la cuillère, bien frais."
       ],
       "photo": "assets/recipes/b141.webp"
     },
@@ -78644,14 +78630,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper l'avocat en deux, retirer le noyau, prélever la chair à la cuillère dans un bol.",
-        "Écraser l'avocat à la fourchette en gardant des morceaux (texture rustique, pas en purée lisse).",
-        "Couper la tomate en très petits dés (4-5 mm), émincer l'oignon rouge le plus finement possible.",
-        "Hacher la coriandre (tiges fines incluses), presser le jus du demi-citron vert directement sur l'avocat.",
-        "Ajouter la tomate, l'oignon, la coriandre, le sel et le piment doux dans le bol, mélanger doucement.",
-        "Goûter : ajuster le citron (acidité), le sel, ou le piment selon préférence.",
-        "Préparer les crudités : couper la carotte, le concombre et le poivron en bâtonnets de 8 cm de long.",
-        "Servir le guacamole dans un bol au centre d'une assiette, entourer des bâtonnets de crudités."
+        "Coupe l'avocat en deux, retire le noyau, prélève la chair à la cuillère dans un bol.",
+        "Écrase l'avocat à la fourchette en gardant des morceaux (texture rustique, pas en purée lisse).",
+        "Coupe la tomate en très petits dés (4-5 mm), émince l'oignon rouge le plus finement possible.",
+        "Hache la coriandre (tiges fines incluses), presse le jus du demi-citron vert directement sur l'avocat.",
+        "Ajoute la tomate, l'oignon, la coriandre, le sel et le piment doux dans le bol, mélange doucement.",
+        "Goûte : ajuste le citron (acidité), le sel, ou le piment selon préférence.",
+        "Prépare les crudités : coupe la carotte, le concombre et le poivron en bâtonnets de 8 cm de long.",
+        "Sers le guacamole dans un bol au centre d'une assiette, entoure des bâtonnets de crudités."
       ],
       "photo": "assets/recipes/s123.webp"
     },
@@ -78724,13 +78710,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Égoutter les pois chiches et les sécher consciencieusement entre 2 torchons (étape clé : pas d'eau = bien croustillant).",
-        "Verser les pois chiches dans un saladier, ajouter l'huile d'olive et toutes les épices, mélanger pour bien enrober.",
-        "Étaler les pois chiches sur une plaque recouverte de papier cuisson, en une seule couche bien espacée.",
-        "Enfourner 25-30 minutes en remuant à mi-cuisson : ils doivent être dorés et croustillants (secouer un pois chiche dans la main = bruit sec).",
-        "Laisser tiédir 5 minutes sur la plaque (ils continuent de croustiller en refroidissant).",
-        "Servir en apéro dans un petit bol, ou conserver 3-4 jours dans une boîte hermétique."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Égoutte les pois chiches et sèche-les consciencieusement entre 2 torchons (étape clé : pas d'eau = bien croustillant).",
+        "Verse les pois chiches dans un saladier, ajoute l'huile d'olive et toutes les épices, mélange pour bien enrober.",
+        "Étale les pois chiches sur une plaque recouverte de papier cuisson, en une seule couche bien espacée.",
+        "Enfourne 25-30 minutes en remuant à mi-cuisson : ils doivent être dorés et croustillants (secoue un pois chiche dans la main = bruit sec).",
+        "Laisse tiédir 5 minutes sur la plaque (ils continuent de croustiller en refroidissant).",
+        "Sers en apéro dans un petit bol, ou conserver 3-4 jours dans une boîte hermétique."
       ],
       "photo": "assets/recipes/s124.webp"
     },
@@ -78807,13 +78793,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper l'avocat en deux, retirer le noyau, prélever la chair à la cuillère.",
-        "Mettre la chair d'avocat dans le blender avec le cacao, le sirop d'érable, le lait d'amande, la vanille et la pincée de sel.",
-        "Mixer 30 secondes à pleine vitesse, racler les parois, remixer 20 secondes (texture parfaitement lisse, comme une mousse au chocolat classique).",
-        "Goûter : le mélange doit être chocolaté, légèrement sucré, sans goût d'avocat (sinon ajouter 1 cuillère à café de cacao).",
-        "Répartir dans 2 verrines, lisser le dessus à la cuillère.",
-        "Laisser reposer 30 minutes au frigo pour que la texture se raffermisse.",
-        "Au moment de servir, déposer 3-4 framboises fraîches sur chaque verrine."
+        "Coupe l'avocat en deux, retire le noyau, prélève la chair à la cuillère.",
+        "Mets la chair d'avocat dans le blender avec le cacao, le sirop d'érable, le lait d'amande, la vanille et la pincée de sel.",
+        "Mixe 30 secondes à pleine vitesse, racle les parois, remixe 20 secondes (texture parfaitement lisse, comme une mousse au chocolat classique).",
+        "Goûte : le mélange doit être chocolaté, légèrement sucré, sans goût d'avocat (sinon ajouter 1 cuillère à café de cacao).",
+        "Répartis dans 2 verrines, lisse le dessus à la cuillère.",
+        "Laisse reposer 30 minutes au frigo pour que la texture se raffermisse.",
+        "Au moment de servir, dépose 3-4 framboises fraîches sur chaque verrine."
       ],
       "photo": "assets/recipes/des126.webp"
     },
@@ -78882,14 +78868,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher l'ananas et la mangue, retirer le cœur fibreux de l'ananas, le noyau de la mangue.",
-        "Couper les deux en cubes de 1,5 cm (taille bouchée à la fourchette).",
-        "Équeuter les fraises, les couper en quartiers.",
-        "Mettre tous les fruits dans un saladier, presser le jus du citron vert au-dessus.",
-        "Saupoudrer du piment doux (la pointe d'une cuillère à café, à doser selon tolérance).",
-        "Mélanger délicatement à la cuillère en bois pour ne pas écraser les fruits.",
-        "Ciseler les feuilles de menthe (sans les tiges) et les parsemer sur le dessus.",
-        "Servir immédiatement, bien frais — le contraste citron/piment réveille les fruits."
+        "Épluche l'ananas et la mangue, retire le cœur fibreux de l'ananas, le noyau de la mangue.",
+        "Coupe les deux en cubes de 1,5 cm (taille bouchée à la fourchette).",
+        "Équeute les fraises, coupe-les en quartiers.",
+        "Mets tous les fruits dans un saladier, presse le jus du citron vert au-dessus.",
+        "Saupoudre du piment doux (la pointe d'une cuillère à café, à doser selon tolérance).",
+        "Mélange délicatement à la cuillère en bois pour ne pas écraser les fruits.",
+        "Cisèle les feuilles de menthe (sans les tiges) et parsème-les sur le dessus.",
+        "Sers immédiatement, bien frais — le contraste citron/piment réveille les fruits."
       ],
       "photo": "assets/recipes/des127.webp"
     },
@@ -78977,14 +78963,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Toaster les 2 tranches de pain complet 2 minutes au grille-pain (doré sans brûler).",
-        "Mélanger dans un petit bol l'huile d'olive avec le zaatar (mélange thym-sésame-sumac) : laisser infuser 2 minutes, le zaatar s'imbibe et devient une pâte parfumée.",
-        "Couper la tomate en fines rondelles (3 mm), le concombre en bâtonnets fins, hacher grossièrement les olives.",
-        "Ciseler le persil sans les tiges dures.",
-        "Tartiner généreusement chaque tranche avec le mélange huile-zaatar (toute la pâte doit être absorbée).",
-        "Disposer les rondelles de tomate sur la tartine, parsemer d'olives hachées et de persil.",
-        "Saupoudrer d'une pincée de sel et presser quelques gouttes de citron par-dessus.",
-        "Servir avec les bâtonnets de concombre à côté, à grignoter en accompagnement."
+        "Toaste les 2 tranches de pain complet 2 minutes au grille-pain (doré sans brûler).",
+        "Mélange dans un petit bol l'huile d'olive avec le zaatar (mélange thym-sésame-sumac) : laisse infuser 2 minutes, le zaatar s'imbibe et devient une pâte parfumée.",
+        "Coupe la tomate en fines rondelles (3 mm), le concombre en bâtonnets fins, hache grossièrement les olives.",
+        "Cisèle le persil sans les tiges dures.",
+        "Tartine généreusement chaque tranche avec le mélange huile-zaatar (toute la pâte doit être absorbée).",
+        "Dispose les rondelles de tomate sur la tartine, parsème d'olives hachées et de persil.",
+        "Saupoudre d'une pincée de sel et presse quelques gouttes de citron par-dessus.",
+        "Sers avec les bâtonnets de concombre à côté, à grignoter en accompagnement."
       ],
       "photo": "assets/recipes/b142.webp"
     },
@@ -79082,14 +79068,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper l'aubergine en cubes de 2 cm, la tomate en gros dés (peau retirée si possible : entaille en croix + 30 sec dans l'eau bouillante).",
-        "Dans une poêle, faire chauffer 5 ml d'huile d'olive à feu moyen, ajouter l'aubergine et l'ail écrasé. Cuire 10 minutes en remuant (l'aubergine doit dorer).",
-        "Ajouter la tomate, le cumin, le paprika et le sel, baisser le feu et couvrir. Cuire 8-10 minutes en écrasant à la fourchette en fin de cuisson (texture rustique, pas en purée).",
-        "Hors du feu, ajouter la coriandre et le persil ciselés, mélanger.",
-        "Pour pocher l'œuf : porter de l'eau frémissante avec 1 cuillère à soupe de vinaigre. Casser l'œuf dans un ramequin, le glisser doucement dans l'eau. Cuire 3 minutes (blanc pris, jaune coulant).",
-        "Toaster le pain au levain 2 minutes au grille-pain.",
-        "Étaler le zaalouk encore tiède sur la tartine, déposer l'œuf poché par-dessus.",
-        "Finir par un filet d'huile d'olive et un tour de moulin à poivre, servir immédiatement."
+        "Coupe l'aubergine en cubes de 2 cm, la tomate en gros dés (peau retirée si possible : entaille en croix + 30 sec dans l'eau bouillante).",
+        "Dans une poêle, fais chauffer 5 ml d'huile d'olive à feu moyen, ajoute l'aubergine et l'ail écrasé. Cuis 10 minutes en remuant (l'aubergine doit dorer).",
+        "Ajoute la tomate, le cumin, le paprika et le sel, baisse le feu et couvre. Cuis 8-10 minutes en écrasant à la fourchette en fin de cuisson (texture rustique, pas en purée).",
+        "Hors du feu, ajoute la coriandre et le persil ciselés, mélange.",
+        "Pour pocher l'œuf : porte de l'eau frémissante avec 1 cuillère à soupe de vinaigre. Casse l'œuf dans un ramequin, glisse-le doucement dans l'eau. Cuis 3 minutes (blanc pris, jaune coulant).",
+        "Toaste le pain au levain 2 minutes au grille-pain.",
+        "Étale le zaalouk encore tiède sur la tartine, dépose l'œuf poché par-dessus.",
+        "Finis par un filet d'huile d'olive et un tour de moulin à poivre, sers immédiatement."
       ],
       "photo": "assets/recipes/b143.webp"
     },
@@ -79181,14 +79167,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 220°C en mode grill.",
-        "Déposer les poivrons entiers et les tomates entières sur une plaque (peau intacte, pas d'huile).",
-        "Enfourner 20-25 minutes en retournant à mi-cuisson : la peau doit noircir par endroits et cloquer.",
-        "Sortir les légumes, les mettre dans un saladier filmé pour qu'ils tiédissent à la vapeur (10 min) — ça facilite l'épluchage.",
-        "Retirer la peau et les pépins des poivrons, peler la tomate (la peau se détache toute seule).",
-        "Hacher grossièrement la chair de tous les légumes au couteau (texture rustique, pas en purée).",
-        "Mélanger avec l'ail écrasé, le cumin, le sel, l'huile d'olive et le jus du demi-citron.",
-        "Ciseler la coriandre, parsemer dessus avec les olives noires hachées. Servir tiède ou froid."
+        "Préchauffe le four à 220°C en mode grill.",
+        "Dépose les poivrons entiers et les tomates entières sur une plaque (peau intacte, pas d'huile).",
+        "Enfourne 20-25 minutes en retournant à mi-cuisson : la peau doit noircir par endroits et cloquer.",
+        "Sors les légumes, mets-les dans un saladier filmé pour qu'ils tiédissent à la vapeur (10 min) — ça facilite l'épluchage.",
+        "Retire la peau et les pépins des poivrons, pèle la tomate (la peau se détache toute seule).",
+        "Hache grossièrement la chair de tous les légumes au couteau (texture rustique, pas en purée).",
+        "Mélange avec l'ail écrasé, le cumin, le sel, l'huile d'olive et le jus du demi-citron.",
+        "Cisèle la coriandre, parsème dessus avec les olives noires hachées. Sers tiède ou froid."
       ],
       "photo": "assets/recipes/s125.webp"
     },
@@ -79274,14 +79260,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver et brosser les carottes (garder la peau si elles sont jeunes), les couper en rondelles de 5 mm d'épaisseur.",
-        "Faire cuire les carottes 8-10 minutes à la vapeur ou dans une casserole d'eau bouillante salée (texture fondante mais qui se tient à la fourchette).",
-        "Égoutter, transférer dans un saladier.",
-        "Rincer le citron confit, hacher la peau finement (c'est elle qu'on consomme), jeter la pulpe trop salée.",
-        "Émincer l'ail très finement (presque en purée).",
-        "Mélanger les carottes encore tièdes avec l'ail, le citron confit haché, le cumin, le paprika, l'huile d'olive et le jus du demi-citron frais.",
-        "Goûter et ajuster : très peu de sel nécessaire (le citron confit est déjà salé).",
-        "Ciseler la coriandre et la parsemer juste avant de servir, tiède ou frais."
+        "Lave et brosse les carottes (garde la peau si elles sont jeunes), coupe-les en rondelles de 5 mm d'épaisseur.",
+        "Fais cuire les carottes 8-10 minutes à la vapeur ou dans une casserole d'eau bouillante salée (texture fondante mais qui se tient à la fourchette).",
+        "Égoutte, transfère dans un saladier.",
+        "Rince le citron confit, hache la peau finement (c'est elle qu'on consomme), jette la pulpe trop salée.",
+        "Émince l'ail très finement (presque en purée).",
+        "Mélange les carottes encore tièdes avec l'ail, le citron confit haché, le cumin, le paprika, l'huile d'olive et le jus du demi-citron frais.",
+        "Goûte et ajuste : très peu de sel nécessaire (le citron confit est déjà salé).",
+        "Cisèle la coriandre et parsème-la juste avant de servir, tiède ou frais."
       ],
       "photo": "assets/recipes/s126.webp"
     },
@@ -79367,14 +79353,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Peler les oranges à vif : couper le haut et le bas, puis suivre la courbe du fruit au couteau pour retirer toute la peau blanche.",
-        "Détacher les quartiers entre les membranes blanches (suprêmes), les déposer dans un saladier large et plat.",
-        "Émincer l'oignon rouge en lamelles très fines (presque transparentes).",
-        "Couper les olives noires en deux ou trois dans le sens de la longueur.",
-        "Parsemer l'oignon et les olives sur les suprêmes d'orange.",
-        "Mélanger dans un petit bol l'huile d'olive, le jus du quart de citron, le cumin, le piment doux et le sel.",
-        "Verser la sauce sur la salade, parsemer de persil ciselé.",
-        "Servir frais, dans les 30 minutes pour préserver le jus naturel des oranges."
+        "Pèle les oranges à vif : coupe le haut et le bas, puis suis la courbe du fruit au couteau pour retirer toute la peau blanche.",
+        "Détache les quartiers entre les membranes blanches (suprêmes), dépose-les dans un saladier large et plat.",
+        "Émince l'oignon rouge en lamelles très fines (presque transparentes).",
+        "Coupe les olives noires en deux ou trois dans le sens de la longueur.",
+        "Parsème l'oignon et les olives sur les suprêmes d'orange.",
+        "Mélange dans un petit bol l'huile d'olive, le jus du quart de citron, le cumin, le piment doux et le sel.",
+        "Verse la sauce sur la salade, parsème de persil ciselé.",
+        "Sers frais, dans les 30 minutes pour préserver le jus naturel des oranges."
       ],
       "photo": "assets/recipes/s127.webp"
     },
@@ -79472,16 +79458,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille, mettre les pois cassés à tremper dans un grand bol d'eau froide (4h minimum, idéalement 8h).",
-        "Le jour J, égoutter les pois cassés (pas besoin de cuisson : ils ont gonflé et sont assez tendres).",
-        "Mettre tous les ingrédients (sauf l'huile et le citron) dans un mixeur : pois cassés, oignon en gros morceaux, ail, herbes fraîches, épices, sel.",
-        "Mixer en pulsant 30 secondes : on doit obtenir une pâte épaisse et grumeleuse, pas une purée lisse.",
-        "Laisser reposer la pâte 15 minutes au frais pour qu'elle se raffermisse.",
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Façonner des boulettes de 3 cm de diamètre avec les mains humides (environ 12-14 boulettes).",
-        "Déposer sur une plaque recouverte de papier cuisson, badigeonner d'huile d'olive au pinceau.",
-        "Enfourner 20-25 minutes en retournant à mi-cuisson : doré croustillant à l'extérieur, fondant dedans.",
-        "Servir tiède avec des quartiers de citron à presser et une sauce yaourt-tahini en option."
+        "La veille, mets les pois cassés à tremper dans un grand bol d'eau froide (4h minimum, idéalement 8h).",
+        "Le jour J, égoutte les pois cassés (pas besoin de cuisson : ils ont gonflé et sont assez tendres).",
+        "Mets tous les ingrédients (sauf l'huile et le citron) dans un mixeur : pois cassés, oignon en gros morceaux, ail, herbes fraîches, épices, sel.",
+        "Mixe en pulsant 30 secondes : on doit obtenir une pâte épaisse et grumeleuse, pas une purée lisse.",
+        "Laisse reposer la pâte 15 minutes au frais pour qu'elle se raffermisse.",
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Façonne des boulettes de 3 cm de diamètre avec les mains humides (environ 12-14 boulettes).",
+        "Dépose sur une plaque recouverte de papier cuisson, badigeonne d'huile d'olive au pinceau.",
+        "Enfourne 20-25 minutes en retournant à mi-cuisson : doré croustillant à l'extérieur, fondant dedans.",
+        "Sers tiède avec des quartiers de citron à presser et une sauce yaourt-tahini en option."
       ],
       "photo": "assets/recipes/s128.webp"
     },
@@ -79569,17 +79555,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Hacher finement les figues séchées au couteau (texture humide collante).",
-        "Mélanger dans un bol les figues hachées, la poudre d'amandes, le sirop d'érable, l'eau de fleur d'oranger, la cannelle et le blanc d'œuf (garder le jaune pour dorer).",
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Hache finement les figues séchées au couteau (texture humide collante).",
+        "Mélange dans un bol les figues hachées, la poudre d'amandes, le sirop d'érable, l'eau de fleur d'oranger, la cannelle et le blanc d'œuf (garde le jaune pour dorer).",
         "On obtient une pâte épaisse et homogène qui se tient (sinon ajouter un peu de poudre d'amandes).",
-        "Étaler une feuille de brick sur le plan de travail, la badigeonner d'un peu d'huile d'olive au pinceau.",
-        "Déposer la pâte de figues en un long boudin sur le bord (1 cm d'épaisseur, 25 cm de long).",
-        "Rouler la brick en cigare serré, puis enrouler le cigare en escargot (spirale serrée) sur une plaque cuisson.",
-        "Répéter avec les feuilles de brick restantes et placer les escargots côte à côte.",
-        "Badigeonner le dessus du jaune d'œuf battu, parsemer de pistaches concassées.",
-        "Enfourner 20-25 minutes : la pâte doit être bien dorée et croustillante.",
-        "Laisser tiédir 10 minutes avant de découper en parts (le cœur figues se solidifie en refroidissant)."
+        "Étale une feuille de brick sur le plan de travail, badigeonne-la d'un peu d'huile d'olive au pinceau.",
+        "Dépose la pâte de figues en un long boudin sur le bord (1 cm d'épaisseur, 25 cm de long).",
+        "Roule la brick en cigare serré, puis enroule le cigare en escargot (spirale serrée) sur une plaque cuisson.",
+        "Répète avec les feuilles de brick restantes et place les escargots côte à côte.",
+        "Badigeonne le dessus du jaune d'œuf battu, parsème de pistaches concassées.",
+        "Enfourne 20-25 minutes : la pâte doit être bien dorée et croustillante.",
+        "Laisse tiédir 10 minutes avant de découper en parts (le cœur figues se solidifie en refroidissant)."
       ],
       "photo": "assets/recipes/des128.webp"
     },
@@ -79642,14 +79628,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le melon en deux, retirer les pépins à la cuillère, prélever la chair (200g par personne).",
-        "Couper la chair en cubes, les disposer en une seule couche sur une plaque chemisée de papier cuisson.",
-        "Mettre la plaque au congélateur au moins 4h, idéalement une nuit (les cubes doivent être bien durs).",
-        "Au moment de servir, sortir les cubes congelés et les mettre dans le blender.",
-        "Ajouter la menthe effeuillée, l'eau de fleur d'oranger, le sirop d'érable et le jus du demi-citron.",
-        "Mixer en pulsant par à-coups (5 sec × 4 fois), en raclant les parois entre chaque : texture sorbet onctueuse.",
-        "Servir immédiatement dans des coupes glacées, décorer d'une feuille de menthe.",
-        "Si le sorbet est trop dur, laisser revenir 5 minutes au frais avant de mixer."
+        "Coupe le melon en deux, retire les pépins à la cuillère, prélève la chair (200g par personne).",
+        "Coupe la chair en cubes, dispose-les en une seule couche sur une plaque chemisée de papier cuisson.",
+        "Mets la plaque au congélateur au moins 4h, idéalement une nuit (les cubes doivent être bien durs).",
+        "Au moment de servir, sors les cubes congelés et mets-les dans le blender.",
+        "Ajoute la menthe effeuillée, l'eau de fleur d'oranger, le sirop d'érable et le jus du demi-citron.",
+        "Mixe en pulsant par à-coups (5 sec × 4 fois), en raclant les parois entre chaque : texture sorbet onctueuse.",
+        "Sers immédiatement dans des coupes glacées, décore d'une feuille de menthe.",
+        "Si le sorbet est trop dur, laisse revenir 5 minutes au frais avant de mixer."
       ],
       "photo": "assets/recipes/des129.webp"
     },
@@ -79731,16 +79717,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Concasser les noix au couteau en morceaux moyens (garder de la texture, ne pas réduire en poudre).",
-        "Mélanger dans un bol les noix, le sirop d'érable, l'eau de fleur d'oranger, la cannelle, le zeste râpé du quart de citron et le blanc d'œuf battu.",
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Concasse les noix au couteau en morceaux moyens (garde de la texture, ne pas réduire en poudre).",
+        "Mélange dans un bol les noix, le sirop d'érable, l'eau de fleur d'oranger, la cannelle, le zeste râpé du quart de citron et le blanc d'œuf battu.",
         "La texture doit être collante et formable (sinon ajouter 1 cuillère à soupe de poudre d'amandes).",
-        "Couper chaque feuille de brick en 4 bandes égales (8 bandes au total).",
-        "Déposer 1 cuillère à café de farce au bout d'une bande, replier en triangle en pliant alternativement (comme un drapeau).",
-        "Continuer jusqu'au bout, plier le dernier coin sous le triangle pour fermer.",
-        "Déposer les briouates sur une plaque cuisson, badigeonner d'huile d'olive au pinceau sur les 2 faces.",
-        "Enfourner 12-15 minutes : doré croustillant, retourner à mi-cuisson.",
-        "Servir tiède, parsemer d'un peu de cannelle supplémentaire si souhaité."
+        "Coupe chaque feuille de brick en 4 bandes égales (8 bandes au total).",
+        "Dépose 1 cuillère à café de farce au bout d'une bande, replie en triangle en pliant alternativement (comme un drapeau).",
+        "Continue jusqu'au bout, plie le dernier coin sous le triangle pour fermer.",
+        "Dépose les briouates sur une plaque cuisson, badigeonne d'huile d'olive au pinceau sur les 2 faces.",
+        "Enfourne 12-15 minutes : doré croustillant, retourne à mi-cuisson.",
+        "Sers tiède, parsème d'un peu de cannelle supplémentaire si souhaité."
       ],
       "photo": "assets/recipes/des130.webp"
     },
@@ -79817,16 +79803,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Râper finement le zeste du citron au-dessus d'une casserole (juste la partie jaune, pas le blanc amer).",
-        "Verser le lait, presser le jus du citron dans un bol séparé.",
-        "Dans un bol, fouetter l'œuf entier, la fécule de maïs et le sirop d'érable jusqu'à obtenir un mélange homogène (couleur jaune pâle).",
-        "Faire chauffer le lait au zeste à feu moyen jusqu'aux premiers frémissements (pas l'ébullition).",
-        "Hors du feu, verser le lait chaud sur le mélange œuf-fécule en remuant au fouet sans s'arrêter.",
-        "Reverser dans la casserole, ajouter le jus de citron et l'eau de fleur d'oranger.",
-        "Faire chauffer à feu doux en remuant constamment 5-8 minutes : la crème doit épaissir et napper le dos d'une cuillère.",
-        "Verser dans les ramequins individuels, filmer au contact (le film touche la crème pour éviter la peau).",
-        "Laisser tiédir puis placer 2h au frigo pour figer.",
-        "Au moment de servir, concasser les pistaches et les parsemer sur le dessus."
+        "Râpe finement le zeste du citron au-dessus d'une casserole (juste la partie jaune, pas le blanc amer).",
+        "Verse le lait, presse le jus du citron dans un bol séparé.",
+        "Dans un bol, fouette l'œuf entier, la fécule de maïs et le sirop d'érable jusqu'à obtenir un mélange homogène (couleur jaune pâle).",
+        "Fais chauffer le lait au zeste à feu moyen jusqu'aux premiers frémissements (pas l'ébullition).",
+        "Hors du feu, verse le lait chaud sur le mélange œuf-fécule en remuant au fouet sans s'arrêter.",
+        "Reverse dans la casserole, ajoute le jus de citron et l'eau de fleur d'oranger.",
+        "Fais chauffer à feu doux en remuant constamment 5-8 minutes : la crème doit épaissir et napper le dos d'une cuillère.",
+        "Verse dans les ramequins individuels, filme au contact (le film touche la crème pour éviter la peau).",
+        "Laisse tiédir puis place 2h au frigo pour figer.",
+        "Au moment de servir, concasse les pistaches et parsème-les sur le dessus."
       ],
       "photo": "assets/recipes/des131.webp"
     },
@@ -79911,14 +79897,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille au soir, mélanger dans un bol les flocons d'avoine, le lait d'amande, les graines de chia et la cannelle.",
-        "Couvrir et laisser reposer toute la nuit au frigo (8h minimum) : les flocons gonflent et deviennent crémeux.",
-        "Au matin, sortir le bol, mélanger pour aérer.",
-        "Râper la pomme avec sa peau (grille gros côté) directement au-dessus du bol, presser le jus du citron par-dessus pour éviter l'oxydation.",
-        "Ajouter le yaourt nature, mélanger délicatement (texture crémeuse).",
-        "Concasser grossièrement les noisettes au couteau.",
-        "Verser dans le bol et parsemer de noisettes concassées (la pomme râpée apporte la douceur).",
-        "Servir frais — peut se garder 2 jours au frigo."
+        "La veille au soir, mélange dans un bol les flocons d'avoine, le lait d'amande, les graines de chia et la cannelle.",
+        "Couvre et laisse reposer toute la nuit au frigo (8h minimum) : les flocons gonflent et deviennent crémeux.",
+        "Au matin, sors le bol, mélange pour aérer.",
+        "Râpe la pomme avec sa peau (grille gros côté) directement au-dessus du bol, presse le jus du citron par-dessus pour éviter l'oxydation.",
+        "Ajoute le yaourt nature, mélange délicatement (texture crémeuse).",
+        "Concasse grossièrement les noisettes au couteau.",
+        "Verse dans le bol et parsème de noisettes concassées (la pomme râpée apporte la douceur).",
+        "Sers frais — peut se garder 2 jours au frigo."
       ],
       "photo": "assets/recipes/b144.webp"
     },
@@ -80006,14 +79992,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Égoutter les olives noires, les câpres et les anchois (rincer rapidement les câpres pour adoucir).",
-        "Mettre dans le mixeur les olives, câpres, anchois, ail épelé, jus du demi-citron et thym effeuillé.",
-        "Mixer en pulsant 10 secondes, racler les parois, ajouter l'huile d'olive en filet en pulsant à nouveau.",
+        "Égoutte les olives noires, les câpres et les anchois (rince rapidement les câpres pour adoucir).",
+        "Mets dans le mixeur les olives, câpres, anchois, ail épelé, jus du demi-citron et thym effeuillé.",
+        "Mixe en pulsant 10 secondes, racle les parois, ajoute l'huile d'olive en filet en pulsant à nouveau.",
         "On obtient une pâte rustique avec des morceaux (pas une purée lisse).",
-        "Goûter : ajouter un peu plus de citron si besoin (les anchois apportent déjà le sel).",
-        "Transférer dans un petit ramequin, lisser le dessus.",
-        "Couper les carottes en bâtonnets de 8 cm pour accompagner.",
-        "Servir avec les gressins complets et les bâtonnets de crudités, tartiner à volonté."
+        "Goûte : ajoute un peu plus de citron si besoin (les anchois apportent déjà le sel).",
+        "Transfère dans un petit ramequin, lisse le dessus.",
+        "Coupe les carottes en bâtonnets de 8 cm pour accompagner.",
+        "Sers avec les gressins complets et les bâtonnets de crudités, tartine à volonté."
       ],
       "photo": "assets/recipes/s129.webp"
     },
@@ -80082,18 +80068,18 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Séparer les blancs des jaunes (très soigneusement, pas une trace de jaune dans les blancs sinon ils ne montent pas).",
-        "Préparer la crème anglaise : faire chauffer le lait dans une casserole avec la vanille et la fève tonka râpée (juste 2 tours de râpe) jusqu'aux premiers frémissements.",
-        "Fouetter les jaunes avec 10g de sirop d'érable dans un bol jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
-        "Verser le lait chaud sur les jaunes en remuant au fouet, reverser dans la casserole.",
-        "Cuire à feu très doux en remuant à la cuillère en bois 5 minutes : la crème nappe le dos de la cuillère (le doigt qui glisse laisse une trace nette).",
-        "Filtrer la crème dans une assiette creuse, laisser tiédir.",
-        "Monter les blancs en neige ferme au fouet électrique, ajouter les 5g de sirop d'érable restants en pluie à la fin.",
-        "Faire chauffer une grande casserole d'eau frémissante (pas bouillante).",
-        "Former 4 quenelles de blancs avec 2 cuillères à soupe, les pocher 1 minute par face dans l'eau frémissante (elles doublent de volume).",
-        "Égoutter délicatement sur un papier absorbant.",
-        "Déposer les blancs pochés sur la crème anglaise dans 2 assiettes, parsemer d'amandes effilées grillées à sec.",
-        "Servir immédiatement, à température ambiante."
+        "Sépare les blancs des jaunes (très soigneusement, pas une trace de jaune dans les blancs sinon ils ne montent pas).",
+        "Prépare la crème anglaise : fais chauffer le lait dans une casserole avec la vanille et la fève tonka râpée (juste 2 tours de râpe) jusqu'aux premiers frémissements.",
+        "Fouette les jaunes avec 10g de sirop d'érable dans un bol jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
+        "Verse le lait chaud sur les jaunes en remuant au fouet, reverse dans la casserole.",
+        "Cuis à feu très doux en remuant à la cuillère en bois 5 minutes : la crème nappe le dos de la cuillère (le doigt qui glisse laisse une trace nette).",
+        "Filtre la crème dans une assiette creuse, laisse tiédir.",
+        "Monte les blancs en neige ferme au fouet électrique, ajoute les 5g de sirop d'érable restants en pluie à la fin.",
+        "Fais chauffer une grande casserole d'eau frémissante (pas bouillante).",
+        "Forme 4 quenelles de blancs avec 2 cuillères à soupe, poche-les 1 minute par face dans l'eau frémissante (elles doublent de volume).",
+        "Égoutte délicatement sur un papier absorbant.",
+        "Dépose les blancs pochés sur la crème anglaise dans 2 assiettes, parsème d'amandes effilées grillées à sec.",
+        "Sers immédiatement, à température ambiante."
       ],
       "photo": "assets/recipes/des132.webp"
     },
@@ -80170,15 +80156,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la grenade en deux, tenir une moitié au-dessus d'un bol côté coupé vers le bas.",
-        "Taper fermement sur la peau avec le dos d'une cuillère : les grains tombent dans le bol (méthode efficace, pas de couteau).",
-        "Trier rapidement pour retirer les éventuels morceaux de membrane blanche (amers).",
-        "Verser le skyr dans 2 bols, lisser le dessus à la cuillère.",
-        "Râper le zeste du quart de citron par-dessus (zeste de citron + yaourt = combo italien classique du sud).",
-        "Disposer les grains de grenade en couronne sur le yaourt.",
-        "Concasser grossièrement les pistaches au couteau, les parsemer au centre.",
-        "Saupoudrer d'une pointe de cannelle, ajouter les flocons d'avoine pour le croquant.",
-        "Finir par un filet de miel d'acacia en spirale et servir immédiatement."
+        "Coupe la grenade en deux, tiens une moitié au-dessus d'un bol côté coupé vers le bas.",
+        "Tape fermement sur la peau avec le dos d'une cuillère : les grains tombent dans le bol (méthode efficace, pas de couteau).",
+        "Trie rapidement pour retirer les éventuels morceaux de membrane blanche (amers).",
+        "Verse le skyr dans 2 bols, lisse le dessus à la cuillère.",
+        "Râpe le zeste du quart de citron par-dessus (zeste de citron + yaourt = combo italien classique du sud).",
+        "Dispose les grains de grenade en couronne sur le yaourt.",
+        "Concasse grossièrement les pistaches au couteau, parsème-les au centre.",
+        "Saupoudre d'une pointe de cannelle, ajoute les flocons d'avoine pour le croquant.",
+        "Finis par un filet de miel d'acacia en spirale et sers immédiatement."
       ],
       "photo": "assets/recipes/b145.webp"
     },
@@ -80285,16 +80271,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper l'aubergine en cubes de 2 cm, les saupoudrer d'une pincée de sel et laisser dégorger 10 minutes dans une passoire (élimine l'amertume).",
-        "Émincer l'oignon finement, le céleri en petits dés (5 mm), peler et couper la tomate en gros dés.",
-        "Rincer et sécher les cubes d'aubergine avec un torchon.",
-        "Dans une grande poêle, chauffer 8 ml d'huile d'olive à feu vif, ajouter l'aubergine et faire revenir 8 minutes en remuant jusqu'à ce qu'elle soit dorée et tendre. Réserver dans un bol.",
-        "Dans la même poêle, verser le reste d'huile, faire suer l'oignon et le céleri 5 minutes à feu moyen.",
-        "Ajouter la tomate, les câpres, les olives hachées, le sirop d'érable et le vinaigre. Cuire 8 minutes (l'aigre-doux se concentre).",
-        "Remettre les aubergines, mélanger délicatement, prolonger 3 minutes à feu doux.",
-        "Faire griller les pignons à sec dans une petite poêle 2 minutes (couleur dorée).",
-        "Hors du feu, parsemer de pignons et de basilic ciselé.",
-        "Servir à température ambiante (la caponata est meilleure le lendemain, les saveurs s'équilibrent)."
+        "Coupe l'aubergine en cubes de 2 cm, saupoudre-les d'une pincée de sel et laisse dégorger 10 minutes dans une passoire (élimine l'amertume).",
+        "Émince l'oignon finement, le céleri en petits dés (5 mm), pèle et coupe la tomate en gros dés.",
+        "Rince et sèche les cubes d'aubergine avec un torchon.",
+        "Dans une grande poêle, chauffe 8 ml d'huile d'olive à feu vif, ajoute l'aubergine et fais revenir 8 minutes en remuant jusqu'à ce qu'elle soit dorée et tendre. Réserve dans un bol.",
+        "Dans la même poêle, verse le reste d'huile, fais suer l'oignon et le céleri 5 minutes à feu moyen.",
+        "Ajoute la tomate, les câpres, les olives hachées, le sirop d'érable et le vinaigre. Cuis 8 minutes (l'aigre-doux se concentre).",
+        "Remets les aubergines, mélange délicatement, prolonge 3 minutes à feu doux.",
+        "Fais griller les pignons à sec dans une petite poêle 2 minutes (couleur dorée).",
+        "Hors du feu, parsème de pignons et de basilic ciselé.",
+        "Sers à température ambiante (la caponata est meilleure le lendemain, les saveurs s'équilibrent)."
       ],
       "photo": "assets/recipes/s130.webp"
     },
@@ -80389,16 +80375,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Couper l'aubergine en cubes de 2 cm, les disposer sur une plaque, arroser de 5 ml d'huile d'olive et enfourner 15 minutes (tendres et dorés).",
-        "Sortir les aubergines, les laisser tiédir 5 minutes.",
-        "Mettre les aubergines tièdes dans un saladier, écraser à la fourchette en purée rustique (garder des morceaux).",
-        "Ajouter la ricotta, le parmesan, l'œuf, la chapelure, l'ail écrasé, le basilic ciselé, le sel et le poivre.",
-        "Mélanger : la pâte doit être souple et façonnable (sinon ajouter 1 cuillère à soupe de chapelure).",
-        "Laisser reposer 10 minutes au frais (la pâte se raffermit).",
-        "Façonner 10-12 boulettes de 3 cm avec les mains humides, les déposer sur une plaque chemisée de papier cuisson.",
-        "Badigeonner d'huile d'olive au pinceau, enfourner 18-20 minutes en retournant à mi-cuisson (dorées dehors, fondantes dedans).",
-        "Servir tièdes ou à température ambiante, avec un coulis de tomate maison ou nature."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Coupe l'aubergine en cubes de 2 cm, dispose-les sur une plaque, arrose de 5 ml d'huile d'olive et enfourne 15 minutes (tendres et dorés).",
+        "Sors les aubergines, laisse-les tiédir 5 minutes.",
+        "Mets les aubergines tièdes dans un saladier, écrase à la fourchette en purée rustique (garde des morceaux).",
+        "Ajoute la ricotta, le parmesan, l'œuf, la chapelure, l'ail écrasé, le basilic ciselé, le sel et le poivre.",
+        "Mélange : la pâte doit être souple et façonnable (sinon ajouter 1 cuillère à soupe de chapelure).",
+        "Laisse reposer 10 minutes au frais (la pâte se raffermit).",
+        "Façonne 10-12 boulettes de 3 cm avec les mains humides, dépose-les sur une plaque chemisée de papier cuisson.",
+        "Badigeonne d'huile d'olive au pinceau, enfourne 18-20 minutes en retournant à mi-cuisson (dorées dehors, fondantes dedans).",
+        "Sers tièdes ou à température ambiante, avec un coulis de tomate maison ou nature."
       ],
       "photo": "assets/recipes/s131.webp"
     },
@@ -80477,16 +80463,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Couper les pêches en deux, retirer le noyau. Avec une petite cuillère, creuser légèrement chaque demi-pêche (réserver la chair prélevée dans un bol).",
-        "Émietter les amaretti grossièrement à la main (texture sablée, pas en poudre fine).",
-        "Mélanger dans un bol les amaretti émiettés, la poudre d'amandes, la chair de pêche prélevée et hachée, le cacao, le sirop d'érable, la vanille et le jaune d'œuf (réserver le blanc).",
-        "Battre légèrement le blanc d'œuf à la fourchette, l'incorporer au mélange pour lier (texture qui se tient à la cuillère).",
-        "Remplir les demi-pêches avec cette farce, faire un petit dôme bombé.",
-        "Parsemer chaque pêche d'amandes effilées.",
-        "Déposer dans un plat à four (les demi-pêches doivent se tenir debout : caler avec un peu de papier alu en boule sous chacune).",
-        "Enfourner 20-25 minutes : la farce dore et les pêches sont fondantes.",
-        "Servir tièdes (idéal) ou froides."
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Coupe les pêches en deux, retire le noyau. Avec une petite cuillère, creuse légèrement chaque demi-pêche (réserve la chair prélevée dans un bol).",
+        "Émiette les amaretti grossièrement à la main (texture sablée, pas en poudre fine).",
+        "Mélange dans un bol les amaretti émiettés, la poudre d'amandes, la chair de pêche prélevée et hachée, le cacao, le sirop d'érable, la vanille et le jaune d'œuf (réserve le blanc).",
+        "Bats légèrement le blanc d'œuf à la fourchette, incorpore-le au mélange pour lier (texture qui se tient à la cuillère).",
+        "Remplis les demi-pêches avec cette farce, fais un petit dôme bombé.",
+        "Parsème chaque pêche d'amandes effilées.",
+        "Dépose dans un plat à four (les demi-pêches doivent se tenir debout : cale avec un peu de papier alu en boule sous chacune).",
+        "Enfourne 20-25 minutes : la farce dore et les pêches sont fondantes.",
+        "Sers tièdes (idéal) ou froides."
       ],
       "photo": "assets/recipes/des133.webp"
     },
@@ -80571,16 +80557,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mélanger dans un grand bol le skyr, le mascarpone, le sirop d'érable et la vanille jusqu'à obtenir une crème homogène lisse.",
-        "Émietter grossièrement les amaretti à la main (garder de la texture).",
-        "Couper les fraises en petits dés, écraser légèrement la moitié des framboises à la fourchette dans un bol.",
-        "Ajouter le jus du quart de citron à la purée de framboises.",
-        "Incorporer délicatement les amaretti émiettés à la crème yaourt-mascarpone (mélange doux pour garder les éclats).",
-        "Tapisser un petit moule à cake (15 cm) de film alimentaire qui dépasse de chaque côté.",
-        "Verser une couche de crème, puis répartir des dés de fraises et framboises entières, recouvrir d'une autre couche de crème, terminer par la purée de framboise en spirale (marbrage).",
-        "Tirer doucement le film par-dessus pour fermer, placer au congélateur 4h minimum.",
-        "Au moment de servir, démouler en tirant le film, couper en tranches de 2 cm avec un couteau passé sous l'eau chaude.",
-        "Servir immédiatement, décorer du reste de fraises et framboises fraîches."
+        "Mélange dans un grand bol le skyr, le mascarpone, le sirop d'érable et la vanille jusqu'à obtenir une crème homogène lisse.",
+        "Émiette grossièrement les amaretti à la main (garde de la texture).",
+        "Coupe les fraises en petits dés, écrase légèrement la moitié des framboises à la fourchette dans un bol.",
+        "Ajoute le jus du quart de citron à la purée de framboises.",
+        "Incorpore délicatement les amaretti émiettés à la crème yaourt-mascarpone (mélange doux pour garder les éclats).",
+        "Tapisse un petit moule à cake (15 cm) de film alimentaire qui dépasse de chaque côté.",
+        "Verse une couche de crème, puis répartis des dés de fraises et framboises entières, recouvre d'une autre couche de crème, termine par la purée de framboise en spirale (marbrage).",
+        "Tire doucement le film par-dessus pour fermer, place au congélateur 4h minimum.",
+        "Au moment de servir, démoule en tirant le film, coupe en tranches de 2 cm avec un couteau passé sous l'eau chaude.",
+        "Sers immédiatement, décore du reste de fraises et framboises fraîches."
       ],
       "photo": "assets/recipes/des134.webp"
     },
@@ -80672,15 +80658,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Couper la tomate en petits dés, écraser l'ail finement (au pilon ou au plat du couteau).",
-        "Répartir la tomate au fond de 2 ramequins individuels (8 cm de diamètre), arroser d'un trait d'huile d'olive, parsemer d'ail, d'origan, sel et poivre.",
-        "Casser délicatement 1 œuf dans chaque ramequin (essayer de ne pas casser le jaune).",
-        "Émietter la feta autour du jaune (pas dessus, pour qu'on voie le jaune).",
-        "Couper les olives en deux, les disposer entre la tomate et le blanc.",
-        "Enfourner 12-15 minutes : le blanc doit être pris mais le jaune encore coulant.",
-        "Sortir du four, parsemer de feuilles de basilic ciselées.",
-        "Servir immédiatement, avec une tranche de pain complet ou des bâtonnets de concombre pour saucer."
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Coupe la tomate en petits dés, écrase l'ail finement (au pilon ou au plat du couteau).",
+        "Répartis la tomate au fond de 2 ramequins individuels (8 cm de diamètre), arrose d'un trait d'huile d'olive, parsème d'ail, d'origan, sel et poivre.",
+        "Casse délicatement 1 œuf dans chaque ramequin (essaie de ne pas casser le jaune).",
+        "Émiette la feta autour du jaune (pas dessus, pour qu'on voie le jaune).",
+        "Coupe les olives en deux, dispose-les entre la tomate et le blanc.",
+        "Enfourne 12-15 minutes : le blanc doit être pris mais le jaune encore coulant.",
+        "Sors du four, parsème de feuilles de basilic ciselées.",
+        "Sers immédiatement, avec une tranche de pain complet ou des bâtonnets de concombre pour saucer."
       ],
       "photo": "assets/recipes/b146.webp"
     },
@@ -80768,14 +80754,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire chauffer le lait dans une casserole jusqu'aux premiers frémissements (pas l'ébullition).",
-        "Mettre la semoule complète dans un bol, verser le lait chaud par-dessus en mélangeant rapidement à la fourchette.",
-        "Ajouter l'eau de fleur d'oranger et les raisins secs, couvrir d'un torchon et laisser gonfler 5 minutes (la semoule absorbe tout).",
-        "Pendant ce temps, faire griller les amandes effilées 2-3 minutes à sec dans une petite poêle (couleur dorée).",
-        "Peler l'orange à vif (retirer la peau blanche), détacher les quartiers en suprêmes.",
-        "Aérer la semoule à la fourchette : les grains doivent être séparés et moelleux.",
-        "Verser dans le bol, déposer le skyr sur le côté, disposer les suprêmes d'orange.",
-        "Parsemer d'amandes grillées, saupoudrer de cannelle et finir par un filet de miel d'acacia."
+        "Fais chauffer le lait dans une casserole jusqu'aux premiers frémissements (pas l'ébullition).",
+        "Mets la semoule complète dans un bol, verse le lait chaud par-dessus en mélangeant rapidement à la fourchette.",
+        "Ajoute l'eau de fleur d'oranger et les raisins secs, couvre d'un torchon et laisse gonfler 5 minutes (la semoule absorbe tout).",
+        "Pendant ce temps, fais griller les amandes effilées 2-3 minutes à sec dans une petite poêle (couleur dorée).",
+        "Pèle l'orange à vif (retire la peau blanche), détache les quartiers en suprêmes.",
+        "Aère la semoule à la fourchette : les grains doivent être séparés et moelleux.",
+        "Verse dans le bol, dépose le skyr sur le côté, dispose les suprêmes d'orange.",
+        "Parsème d'amandes grillées, saupoudre de cannelle et finis par un filet de miel d'acacia."
       ],
       "photo": "assets/recipes/b147.webp"
     },
@@ -80858,15 +80844,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire chauffer le lait avec la cannelle et la cardamome dans une casserole jusqu'aux premiers frémissements.",
-        "Dans une seconde casserole, faire dorer la semoule à sec à feu moyen 3-4 minutes en remuant constamment (parfum de noisette, couleur ambrée — étape clé pour la texture finale).",
-        "Hors du feu, verser doucement le lait chaud sur la semoule en remuant pour éviter les grumeaux.",
-        "Remettre à feu doux, ajouter le tahini et mélanger 3-5 minutes : la pâte épaissit et se détache des bords (texture pâte à modeler ferme).",
-        "Hors du feu, incorporer le miel et l'eau de fleur d'oranger, mélanger.",
-        "Verser dans un petit moule rectangulaire chemisé de papier cuisson, tasser bien avec le dos d'une cuillère.",
-        "Laisser tiédir puis placer 1h au frigo pour que la halwa fige et se découpe nettement.",
-        "Au moment de servir, démouler et découper en carrés de 3 cm.",
-        "Concasser grossièrement les pistaches au couteau, les parsemer sur chaque part."
+        "Fais chauffer le lait avec la cannelle et la cardamome dans une casserole jusqu'aux premiers frémissements.",
+        "Dans une seconde casserole, fais dorer la semoule à sec à feu moyen 3-4 minutes en remuant constamment (parfum de noisette, couleur ambrée — étape clé pour la texture finale).",
+        "Hors du feu, verse doucement le lait chaud sur la semoule en remuant pour éviter les grumeaux.",
+        "Remets à feu doux, ajoute le tahini et mélange 3-5 minutes : la pâte épaissit et se détache des bords (texture pâte à modeler ferme).",
+        "Hors du feu, incorpore le miel et l'eau de fleur d'oranger, mélange.",
+        "Verse dans un petit moule rectangulaire chemisé de papier cuisson, tasse bien avec le dos d'une cuillère.",
+        "Laisse tiédir puis place 1h au frigo pour que la halwa fige et se découpe nettement.",
+        "Au moment de servir, démoule et découpe en carrés de 3 cm.",
+        "Concasse grossièrement les pistaches au couteau, parsème-les sur chaque part."
       ],
       "photo": "assets/recipes/des135.webp"
     },
@@ -80934,16 +80920,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la rhubarbe en tronçons de 2 cm (retirer les feuilles toxiques si encore attachées).",
-        "Mettre la rhubarbe dans une casserole avec l'eau, le sirop d'érable et la cardamome.",
-        "Cuire 8-10 minutes à feu moyen : la rhubarbe se défait en compote (acidité naturelle préservée).",
-        "Pendant ce temps, équeuter et couper les fraises en quartiers.",
-        "Hors du feu, ajouter les fraises et le jus du demi-citron à la rhubarbe chaude, laisser tiédir 10 minutes (les fraises confisent légèrement).",
-        "Mixer le tout au blender 30 secondes : purée lisse rose foncé.",
-        "Verser le mélange dans un récipient large à fond plat (type plat à gratin), placer au congélateur.",
-        "Sortir toutes les 30 minutes pendant 2h et gratter à la fourchette pour casser les cristaux (texture sorbet onctueux).",
-        "Au moment de servir, gratter une dernière fois à la fourchette pour obtenir une texture granitée.",
-        "Servir dans des coupes glacées, décorer d'une fraise fraîche et d'une feuille de menthe optionnelle."
+        "Coupe la rhubarbe en tronçons de 2 cm (retire les feuilles toxiques si encore attachées).",
+        "Mets la rhubarbe dans une casserole avec l'eau, le sirop d'érable et la cardamome.",
+        "Cuis 8-10 minutes à feu moyen : la rhubarbe se défait en compote (acidité naturelle préservée).",
+        "Pendant ce temps, équeute et coupe les fraises en quartiers.",
+        "Hors du feu, ajoute les fraises et le jus du demi-citron à la rhubarbe chaude, laisse tiédir 10 minutes (les fraises confisent légèrement).",
+        "Mixe le tout au blender 30 secondes : purée lisse rose foncé.",
+        "Verse le mélange dans un récipient large à fond plat (type plat à gratin), place au congélateur.",
+        "Sors toutes les 30 minutes pendant 2h et gratte à la fourchette pour casser les cristaux (texture sorbet onctueux).",
+        "Au moment de servir, gratte une dernière fois à la fourchette pour obtenir une texture granitée.",
+        "Sers dans des coupes glacées, décore d'une fraise fraîche et d'une feuille de menthe optionnelle."
       ],
       "photo": "assets/recipes/des136.webp"
     },
@@ -81035,16 +81021,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz à l'eau froide jusqu'à ce que l'eau soit claire (élimine l'amidon).",
-        "Éplucher le gingembre, le couper en très fines lamelles (au couteau bien aiguisé).",
-        "Émincer l'ail finement, les oignons nouveaux en fines rondelles (séparer le blanc du vert).",
-        "Mettre le riz et le bouillon dans une casserole, ajouter le gingembre, l'ail et le blanc des oignons nouveaux.",
-        "Porter à ébullition puis baisser à feu doux, cuire 15-18 minutes en remuant régulièrement : le riz se défait et le bouillon épaissit comme un porridge léger.",
-        "Pendant ce temps, couper les crevettes en deux dans la longueur si elles sont grosses.",
-        "Quand le porridge a la texture désirée, ajouter les crevettes, la sauce soja et l'huile de sésame, prolonger 2 minutes (juste pour réchauffer les crevettes).",
-        "Goûter et ajuster : un peu plus de soja ou de citron selon préférence.",
-        "Répartir dans 2 bols, parsemer du vert des oignons nouveaux et de coriandre fraîche.",
-        "Servir bien chaud avec un quartier de citron vert à presser."
+        "Rince le riz à l'eau froide jusqu'à ce que l'eau soit claire (élimine l'amidon).",
+        "Épluche le gingembre, coupe-le en très fines lamelles (au couteau bien aiguisé).",
+        "Émince l'ail finement, les oignons nouveaux en fines rondelles (sépare le blanc du vert).",
+        "Mets le riz et le bouillon dans une casserole, ajoute le gingembre, l'ail et le blanc des oignons nouveaux.",
+        "Porte à ébullition puis baisse à feu doux, cuis 15-18 minutes en remuant régulièrement : le riz se défait et le bouillon épaissit comme un porridge léger.",
+        "Pendant ce temps, coupe les crevettes en deux dans la longueur si elles sont grosses.",
+        "Quand le porridge a la texture désirée, ajoute les crevettes, la sauce soja et l'huile de sésame, prolonge 2 minutes (juste pour réchauffer les crevettes).",
+        "Goûte et ajuste : un peu plus de soja ou de citron selon préférence.",
+        "Répartis dans 2 bols, parsème du vert des oignons nouveaux et de coriandre fraîche.",
+        "Sers bien chaud avec un quartier de citron vert à presser."
       ],
       "photo": "assets/recipes/b148.webp"
     },
@@ -81128,14 +81114,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire torréfier les graines de sésame noir à sec dans une petite poêle 2 minutes (le sésame éclate légèrement et libère un parfum intense).",
-        "Mixer au blender les deux tiers des graines de sésame torréfiées avec la banane épluchée en morceaux, le lait de soja, le tofu soyeux (il rend le mélange crémeux et nourrissant sans goût marqué) et le gingembre épluché.",
-        "Mixer 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace italienne (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, lisser le dessus à la cuillère.",
-        "Éplucher le kiwi, le couper en fines rondelles.",
-        "Disposer les rondelles de kiwi en couronne sur le smoothie.",
-        "Parsemer les flocons d'avoine, les graines de chia et le reste du sésame noir au centre.",
-        "Servir immédiatement à la cuillère, bien frais."
+        "Fais torréfier les graines de sésame noir à sec dans une petite poêle 2 minutes (le sésame éclate légèrement et libère un parfum intense).",
+        "Mixe au blender les deux tiers des graines de sésame torréfiées avec la banane épluchée en morceaux, le lait de soja, le tofu soyeux (il rend le mélange crémeux et nourrissant sans goût marqué) et le gingembre épluché.",
+        "Mixe 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace italienne (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, lisse le dessus à la cuillère.",
+        "Épluche le kiwi, coupe-le en fines rondelles.",
+        "Dispose les rondelles de kiwi en couronne sur le smoothie.",
+        "Parsème les flocons d'avoine, les graines de chia et le reste du sésame noir au centre.",
+        "Sers immédiatement à la cuillère, bien frais."
       ],
       "photo": "assets/recipes/b149.webp"
     },
@@ -81224,15 +81210,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le concombre en demi-lunes fines de 3 mm (couteau ou mandoline).",
-        "Émincer les radis en rondelles très fines (transparentes idéalement).",
-        "Éplucher la carotte, la couper en bâtonnets fins (5 mm × 4 cm).",
-        "Mettre les 3 légumes dans 3 bols séparés (ils marinent différemment).",
-        "Préparer la saumure : mélanger dans un bol le vinaigre de riz, le sirop d'érable, le sel, et le gingembre râpé. Bien dissoudre.",
-        "Verser un tiers de la saumure dans chaque bol, mélanger délicatement.",
-        "Couvrir et laisser mariner 1h au frigo (les légumes deviennent translucides et tendres-croquants).",
-        "Au moment de servir, égoutter rapidement chaque légume (garder un peu de saumure pour l'humidité).",
-        "Dresser sur une assiette de présentation par couleur, parsemer de graines de sésame et de nori émietté à la main.",
+        "Coupe le concombre en demi-lunes fines de 3 mm (couteau ou mandoline).",
+        "Émince les radis en rondelles très fines (transparentes idéalement).",
+        "Épluche la carotte, coupe-la en bâtonnets fins (5 mm × 4 cm).",
+        "Mets les 3 légumes dans 3 bols séparés (ils marinent différemment).",
+        "Prépare la saumure : mélange dans un bol le vinaigre de riz, le sirop d'érable, le sel, et le gingembre râpé. Bien dissoudre.",
+        "Verse un tiers de la saumure dans chaque bol, mélange délicatement.",
+        "Couvre et laisse mariner 1h au frigo (les légumes deviennent translucides et tendres-croquants).",
+        "Au moment de servir, égoutte rapidement chaque légume (garde un peu de saumure pour l'humidité).",
+        "Dresse sur une assiette de présentation par couleur, parsème de graines de sésame et de nori émietté à la main.",
         "Conservation : 5 jours au frigo dans un bocal hermétique."
       ],
       "photo": "assets/recipes/s132.webp"
@@ -81333,17 +81319,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le blanc de poulet en petits dés (1 cm).",
-        "Émincer finement l'ail et le gingembre.",
-        "Chauffer l'huile de sésame dans une poêle à feu moyen-vif, ajouter l'ail et le gingembre, faire revenir 30 secondes.",
-        "Ajouter le poulet, saisir 5-6 minutes en remuant : les dés deviennent dorés et cuits à cœur.",
-        "Pendant ce temps, préparer la sauce : mélanger la purée de cacahuète, la sauce soja, le jus du demi-citron vert et 2 cuillères à soupe d'eau chaude dans un bol (texture sauce nappante).",
-        "Verser la sauce sur le poulet hors du feu, mélanger pour bien enrober.",
-        "Râper la carotte en julienne fine (côté gros de la râpe).",
-        "Détacher les feuilles de laitue en gardant la coupe entière pour faire des coupelles.",
-        "Concasser grossièrement les cacahuètes au couteau, ciseler la coriandre.",
-        "Garnir chaque feuille de laitue d'une cuillère de poulet-sauce, parsemer de julienne de carotte, cacahuètes concassées et coriandre.",
-        "Servir immédiatement, à manger avec les doigts en repliant la feuille comme un taco."
+        "Coupe le blanc de poulet en petits dés (1 cm).",
+        "Émince finement l'ail et le gingembre.",
+        "Chauffe l'huile de sésame dans une poêle à feu moyen-vif, ajoute l'ail et le gingembre, fais revenir 30 secondes.",
+        "Ajoute le poulet, saisis 5-6 minutes en remuant : les dés deviennent dorés et cuits à cœur.",
+        "Pendant ce temps, prépare la sauce : mélange la purée de cacahuète, la sauce soja, le jus du demi-citron vert et 2 cuillères à soupe d'eau chaude dans un bol (texture sauce nappante).",
+        "Verse la sauce sur le poulet hors du feu, mélange pour bien enrober.",
+        "Râpe la carotte en julienne fine (côté gros de la râpe).",
+        "Détache les feuilles de laitue en gardant la coupe entière pour faire des coupelles.",
+        "Concasse grossièrement les cacahuètes au couteau, cisèle la coriandre.",
+        "Garnis chaque feuille de laitue d'une cuillère de poulet-sauce, parsème de julienne de carotte, cacahuètes concassées et coriandre.",
+        "Sers immédiatement, à manger avec les doigts en repliant la feuille comme un taco."
       ],
       "photo": "assets/recipes/s133.webp"
     },
@@ -81407,14 +81393,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Égoutter soigneusement les litchis (réserver le sirop pour une autre utilisation).",
-        "Étaler les litchis en une seule couche sur une plaque chemisée de papier cuisson.",
-        "Placer la plaque au congélateur au moins 4h, idéalement une nuit (les litchis doivent être totalement durs).",
-        "Au moment de servir, sortir les litchis congelés et les mettre dans le blender.",
-        "Ajouter l'eau de rose, le sirop d'érable, le jus du citron vert entier.",
-        "Mixer en pulsant par à-coups (5 sec × 4 fois), racler les parois entre chaque : texture sorbet onctueuse rose pâle.",
-        "Verser dans 2 coupes glacées, décorer d'une feuille de menthe et d'un zeste de citron vert.",
-        "Servir immédiatement (si le sorbet est trop dur, laisser tempérer 5 minutes au frais avant de mixer)."
+        "Égoutte soigneusement les litchis (réserve le sirop pour une autre utilisation).",
+        "Étale les litchis en une seule couche sur une plaque chemisée de papier cuisson.",
+        "Place la plaque au congélateur au moins 4h, idéalement une nuit (les litchis doivent être totalement durs).",
+        "Au moment de servir, sors les litchis congelés et mets-les dans le blender.",
+        "Ajoute l'eau de rose, le sirop d'érable, le jus du citron vert entier.",
+        "Mixe en pulsant par à-coups (5 sec × 4 fois), racle les parois entre chaque : texture sorbet onctueuse rose pâle.",
+        "Verse dans 2 coupes glacées, décore d'une feuille de menthe et d'un zeste de citron vert.",
+        "Sers immédiatement (si le sorbet est trop dur, laisse tempérer 5 minutes au frais avant de mixer)."
       ],
       "photo": "assets/recipes/des137.webp"
     },
@@ -81492,15 +81478,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un petit bol, mélanger le matcha avec 2 cuillères à soupe d'eau tiède en fouettant énergiquement jusqu'à dissolution totale (aucun grumeau, couleur vert vif).",
-        "Verser le lait de soja dans une casserole, ajouter le sirop d'érable, la vanille et l'agar-agar préalablement dispersé dans 1 cuillère à soupe d'eau froide.",
-        "Porter à frémissement à feu moyen en remuant constamment au fouet : il faut bien faire bouillir 1 minute pour activer l'agar-agar.",
-        "Hors du feu, incorporer le matcha dilué en fouettant pour mélanger.",
-        "Répartir dans 2 ramequins individuels (8 cm de diamètre), laisser tiédir 10 minutes.",
-        "Placer 4h au frigo : la pannacotta fige et devient tremblante.",
-        "Pendant ce temps, faire griller les amandes effilées 2-3 minutes à sec dans une petite poêle (dorées).",
-        "Au moment de servir, démouler en passant le ramequin 5 sec dans un fond d'eau chaude, retourner sur l'assiette.",
-        "Décorer de framboises fraîches et parsemer d'amandes effilées grillées sur le dessus."
+        "Dans un petit bol, mélange le matcha avec 2 cuillères à soupe d'eau tiède en fouettant énergiquement jusqu'à dissolution totale (aucun grumeau, couleur vert vif).",
+        "Verse le lait de soja dans une casserole, ajoute le sirop d'érable, la vanille et l'agar-agar préalablement dispersé dans 1 cuillère à soupe d'eau froide.",
+        "Porte à frémissement à feu moyen en remuant constamment au fouet : il faut bien faire bouillir 1 minute pour activer l'agar-agar.",
+        "Hors du feu, incorpore le matcha dilué en fouettant pour mélanger.",
+        "Répartis dans 2 ramequins individuels (8 cm de diamètre), laisse tiédir 10 minutes.",
+        "Place 4h au frigo : la pannacotta fige et devient tremblante.",
+        "Pendant ce temps, fais griller les amandes effilées 2-3 minutes à sec dans une petite poêle (dorées).",
+        "Au moment de servir, démoule en passant le ramequin 5 sec dans un fond d'eau chaude, retourne sur l'assiette.",
+        "Décore de framboises fraîches et parsème d'amandes effilées grillées sur le dessus."
       ],
       "photo": "assets/recipes/des138.webp"
     },
@@ -81605,15 +81591,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz et les lentilles corail séparément à l'eau froide jusqu'à ce que l'eau soit claire.",
-        "Mettre le riz et les lentilles dans une casserole avec l'eau, le curcuma et le sel.",
-        "Porter à ébullition, baisser à feu doux, couvrir et cuire 18-20 minutes : le riz et les lentilles se défont en une bouillie crémeuse (texture porridge épais).",
-        "Pendant ce temps, préparer le tempering (étape clé indienne) : chauffer l'huile d'olive dans une petite poêle à feu moyen.",
-        "Ajouter les graines de moutarde, attendre qu'elles éclatent (30 sec), puis ajouter les cacahuètes, le gingembre râpé fin et les feuilles de curry.",
-        "Faire revenir 1 minute : les cacahuètes dorent et les feuilles de curry libèrent leur parfum.",
-        "Verser le tempering chaud sur le pongal cuit, ajouter le cumin et le poivre noir, mélanger.",
-        "Goûter et rectifier le sel.",
-        "Servir bien chaud dans 2 bols, accompagné d'un peu de yaourt nature ou de chutney coco (optionnel)."
+        "Rince le riz et les lentilles corail séparément à l'eau froide jusqu'à ce que l'eau soit claire.",
+        "Mets le riz et les lentilles dans une casserole avec l'eau, le curcuma et le sel.",
+        "Porte à ébullition, baisse à feu doux, couvre et cuis 18-20 minutes : le riz et les lentilles se défont en une bouillie crémeuse (texture porridge épais).",
+        "Pendant ce temps, prépare le tempering (étape clé indienne) : chauffe l'huile d'olive dans une petite poêle à feu moyen.",
+        "Ajoute les graines de moutarde, attends qu'elles éclatent (30 sec), puis ajoute les cacahuètes, le gingembre râpé fin et les feuilles de curry.",
+        "Fais revenir 1 minute : les cacahuètes dorent et les feuilles de curry libèrent leur parfum.",
+        "Verse le tempering chaud sur le pongal cuit, ajoute le cumin et le poivre noir, mélange.",
+        "Goûte et rectifie le sel.",
+        "Sers bien chaud dans 2 bols, accompagné d'un peu de yaourt nature ou de chutney coco (optionnel)."
       ],
       "photo": "assets/recipes/b150.webp"
     },
@@ -81689,15 +81675,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Éplucher la mangue, retirer le noyau, couper la chair en cubes de 1 cm.",
-        "Dans un saladier, mélanger au fouet les flocons d'avoine, le lait d'amande, l'œuf et la cardamome.",
-        "Ajouter une partie des cubes de mangue, mélanger doucement.",
-        "Verser dans un ramequin individuel (10 cm de diamètre), tasser légèrement à la cuillère.",
-        "Disposer le reste des cubes de mangue sur le dessus, parsemer d'amandes effilées.",
-        "Enfourner 22-25 minutes : la surface dore et le mélange est pris (lame de couteau plantée sort sèche).",
-        "Sortir, laisser tiédir 5 minutes (la texture continue de se raffermir).",
-        "Servir tiède avec une cuillère de yaourt nature sur le dessus."
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Épluche la mangue, retire le noyau, coupe la chair en cubes de 1 cm.",
+        "Dans un saladier, mélange au fouet les flocons d'avoine, le lait d'amande, l'œuf et la cardamome.",
+        "Ajoute une partie des cubes de mangue, mélange doucement.",
+        "Verse dans un ramequin individuel (10 cm de diamètre), tasse légèrement à la cuillère.",
+        "Dispose le reste des cubes de mangue sur le dessus, parsème d'amandes effilées.",
+        "Enfourne 22-25 minutes : la surface dore et le mélange est pris (lame de couteau plantée sort sèche).",
+        "Sors, laisse tiédir 5 minutes (la texture continue de se raffermir).",
+        "Sers tiède avec une cuillère de yaourt nature sur le dessus."
       ],
       "photo": "assets/recipes/b151.webp"
     },
@@ -81785,15 +81771,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer les lentilles corail à l'eau froide.",
+        "Rince les lentilles corail à l'eau froide.",
         "Les faire cuire dans une casserole d'eau salée 10 minutes : elles doivent rester légèrement fermes (pas se défaire en purée).",
-        "Égoutter et réserver dans un saladier.",
-        "Préparer le tempering : chauffer l'huile d'olive dans une petite poêle à feu moyen, ajouter les graines de moutarde et attendre qu'elles éclatent (30 sec).",
-        "Ajouter le gingembre râpé et les feuilles de curry, faire revenir 30 secondes (parfum intense).",
-        "Verser le tempering chaud sur les lentilles, ajouter la noix de coco râpée et le sel.",
-        "Mélanger délicatement, presser le jus du demi-citron vert par-dessus.",
-        "Ciseler la coriandre et la parsemer sur le dessus juste avant de servir.",
-        "Servir tiède ou à température ambiante en petits bols apéro."
+        "Égoutte et réserve dans un saladier.",
+        "Prépare le tempering : chauffe l'huile d'olive dans une petite poêle à feu moyen, ajoute les graines de moutarde et attends qu'elles éclatent (30 sec).",
+        "Ajoute le gingembre râpé et les feuilles de curry, fais revenir 30 secondes (parfum intense).",
+        "Verse le tempering chaud sur les lentilles, ajoute la noix de coco râpée et le sel.",
+        "Mélange délicatement, presse le jus du demi-citron vert par-dessus.",
+        "Cisèle la coriandre et parsème-la sur le dessus juste avant de servir.",
+        "Sers tiède ou à température ambiante en petits bols apéro."
       ],
       "photo": "assets/recipes/s134.webp"
     },
@@ -81883,15 +81869,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Chauffer l'huile d'olive dans une grande poêle à feu moyen.",
-        "Ajouter les cacahuètes, faire revenir 2 minutes en remuant (couleur dorée).",
-        "Ajouter les graines de moutarde, attendre 30 secondes qu'elles éclatent.",
-        "Ajouter les feuilles de curry, le curcuma, le piment doux et le sel, mélanger 10 secondes.",
-        "Verser le riz soufflé dans la poêle, mélanger énergiquement 1-2 minutes pour que chaque grain s'enrobe des épices et de l'huile.",
-        "Le riz soufflé doit rester croustillant : pas de cuisson longue, juste le temps de chauffer et enrober.",
-        "Hors du feu, presser le jus du quart de citron vert par-dessus, mélanger.",
-        "Transférer dans un saladier, laisser refroidir 5 minutes (croustillant garanti).",
-        "Servir dans un petit bol — se conserve 3-4 jours dans une boîte hermétique."
+        "Chauffe l'huile d'olive dans une grande poêle à feu moyen.",
+        "Ajoute les cacahuètes, fais revenir 2 minutes en remuant (couleur dorée).",
+        "Ajoute les graines de moutarde, attends 30 secondes qu'elles éclatent.",
+        "Ajoute les feuilles de curry, le curcuma, le piment doux et le sel, mélange 10 secondes.",
+        "Verse le riz soufflé dans la poêle, mélange énergiquement 1-2 minutes pour que chaque grain s'enrobe des épices et de l'huile.",
+        "Le riz soufflé doit rester croustillant : pas de cuisson longue, juste le temps de chauffer et enrobe.",
+        "Hors du feu, presse le jus du quart de citron vert par-dessus, mélange.",
+        "Transfère dans un saladier, laisse refroidir 5 minutes (croustillant garanti).",
+        "Sers dans un petit bol — se conserve 3-4 jours dans une boîte hermétique."
       ],
       "photo": "assets/recipes/s135.webp"
     },
@@ -81967,16 +81953,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Infuser le safran dans 1 cuillère à soupe d'eau tiède 10 minutes (jaune doré intense).",
-        "Mettre la ricotta dans une étamine ou un torchon propre, presser doucement pour retirer l'excédent d'eau (texture plus ferme).",
-        "Dans une poêle anti-adhésive à feu très doux, verser la ricotta égouttée avec le sirop d'érable.",
-        "Cuire 4-5 minutes en remuant constamment à la cuillère en bois : la pâte doit légèrement épaissir et se détacher des bords (pas de coloration, juste assécher l'eau résiduelle).",
-        "Hors du feu, ajouter la cardamome, l'eau de rose et le safran infusé. Mélanger.",
-        "Laisser tiédir 10 minutes.",
-        "Façonner 6 petites boules de 3 cm avec les mains légèrement humides (texture pâte à modeler ferme).",
-        "Aplatir légèrement chaque boule du bout du pouce pour faire un creux au centre.",
-        "Placer 1 petite pistache concassée au centre de chaque sandesh, parsemer d'amandes effilées autour.",
-        "Réfrigérer 1h pour que les sandesh se raffermissent. Servir frais en mignardise."
+        "Infuse le safran dans 1 cuillère à soupe d'eau tiède 10 minutes (jaune doré intense).",
+        "Mets la ricotta dans une étamine ou un torchon propre, presse doucement pour retirer l'excédent d'eau (texture plus ferme).",
+        "Dans une poêle anti-adhésive à feu très doux, verse la ricotta égouttée avec le sirop d'érable.",
+        "Cuis 4-5 minutes en remuant constamment à la cuillère en bois : la pâte doit légèrement épaissir et se détacher des bords (pas de coloration, juste assécher l'eau résiduelle).",
+        "Hors du feu, ajoute la cardamome, l'eau de rose et le safran infusé. Mélange.",
+        "Laisse tiédir 10 minutes.",
+        "Façonne 6 petites boules de 3 cm avec les mains légèrement humides (texture pâte à modeler ferme).",
+        "Aplatis légèrement chaque boule du bout du pouce pour faire un creux au centre.",
+        "Place 1 petite pistache concassée au centre de chaque sandesh, parsème d'amandes effilées autour.",
+        "Réfrigère 1h pour que les sandesh se raffermissent. Sers frais en mignardise."
       ],
       "photo": "assets/recipes/des139.webp"
     },
@@ -82063,15 +82049,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire tremper les graines de basilic (sabja) dans un bol d'eau froide 20 minutes : elles gonflent et deviennent gélatineuses (texture comme des œufs de poisson).",
-        "Cuire les vermicelles de riz dans une casserole d'eau bouillante 3-4 minutes selon les indications du paquet, égoutter et passer sous l'eau froide pour stopper la cuisson.",
-        "Faire chauffer le lait avec la cardamome jusqu'aux premiers frémissements, ajouter le sirop d'érable et le sirop de rose. Laisser tiédir 10 minutes puis refroidir au frigo 20 minutes.",
-        "Concasser les pistaches au couteau.",
-        "Préparation du verre (par personne) : déposer au fond un trait de sirop de rose, ajouter les graines de basilic gonflées et égouttées, puis une couche de vermicelles.",
-        "Verser le lait rose froid à mi-hauteur, ajouter les glaçons.",
-        "Compléter avec le reste de lait, finir par une couche de vermicelles flottants.",
-        "Parsemer généreusement de pistaches concassées et d'un trait d'eau de rose.",
-        "Servir avec une cuillère longue et une paille — à boire et à manger en alternance."
+        "Fais tremper les graines de basilic (sabja) dans un bol d'eau froide 20 minutes : elles gonflent et deviennent gélatineuses (texture comme des œufs de poisson).",
+        "Cuis les vermicelles de riz dans une casserole d'eau bouillante 3-4 minutes selon les indications du paquet, égoutte et passe sous l'eau froide pour stopper la cuisson.",
+        "Fais chauffer le lait avec la cardamome jusqu'aux premiers frémissements, ajoute le sirop d'érable et le sirop de rose. Laisse tiédir 10 minutes puis refroidis au frigo 20 minutes.",
+        "Concasse les pistaches au couteau.",
+        "Préparation du verre (par personne) : dépose au fond un trait de sirop de rose, ajoute les graines de basilic gonflées et égouttées, puis une couche de vermicelles.",
+        "Verse le lait rose froid à mi-hauteur, ajoute les glaçons.",
+        "Complète avec le reste de lait, finis par une couche de vermicelles flottants.",
+        "Parsème généreusement de pistaches concassées et d'un trait d'eau de rose.",
+        "Sers avec une cuillère longue et une paille — à boire et à manger en alternance."
       ],
       "photo": "assets/recipes/des140.webp"
     },
@@ -82185,16 +82171,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la pâte (masa) : mélanger la farine de maïs et la farine de pois chiche avec l'eau tiède et une pincée de sel dans un saladier. Pétrir 3-4 minutes jusqu'à obtenir une pâte homogène et souple (pas collante, façonnable).",
-        "Laisser reposer la pâte 10 minutes couverte d'un torchon humide.",
-        "Pendant ce temps, écraser les haricots noirs à la fourchette dans un bol avec le cumin, le piment, l'ail écrasé et le reste du sel (texture rustique pas en purée).",
-        "Laver et essorer les épinards, les hacher grossièrement.",
-        "Diviser la pâte en boules de la taille d'une balle de ping-pong.",
-        "Aplatir chaque boule entre deux feuilles de papier cuisson en disque fin.",
-        "Déposer une cuillerée de haricots écrasés au centre, refermer en boule en pinçant les bords, puis ré-aplatir en ovale épais (2 cm).",
-        "Chauffer une poêle anti-adhésive à feu moyen avec une partie de l'huile, cuire 4 minutes par face : croûte dorée, intérieur cuit.",
-        "Dans la même poêle, avec le reste de l'huile, sauter les épinards et l'oignon émincé 3 minutes (les épinards tombent).",
-        "Pendant ce temps, couper l'avocat en deux, retirer le noyau, prélever la chair à la cuillère et la couper en fines lamelles. Dresser : les tlacoyos dans l'assiette, garnis d'épinards-oignon et de lamelles d'avocat, parsemés de coriandre ciselée. Presser le jus du citron vert au moment de servir."
+        "Prépare la pâte (masa) : mélange la farine de maïs et la farine de pois chiche avec l'eau tiède et une pincée de sel dans un saladier. Pétris 3-4 minutes jusqu'à obtenir une pâte homogène et souple (pas collante, façonnable).",
+        "Laisse reposer la pâte 10 minutes couverte d'un torchon humide.",
+        "Pendant ce temps, écrase les haricots noirs à la fourchette dans un bol avec le cumin, le piment, l'ail écrasé et le reste du sel (texture rustique pas en purée).",
+        "Lave et essore les épinards, hache-les grossièrement.",
+        "Divise la pâte en boules de la taille d'une balle de ping-pong.",
+        "Aplatis chaque boule entre deux feuilles de papier cuisson en disque fin.",
+        "Dépose une cuillerée de haricots écrasés au centre, referme en boule en pinçant les bords, puis ré-aplatir en ovale épais (2 cm).",
+        "Chauffe une poêle anti-adhésive à feu moyen avec une partie de l'huile, cuis 4 minutes par face : croûte dorée, intérieur cuit.",
+        "Dans la même poêle, avec le reste de l'huile, saute les épinards et l'oignon émincé 3 minutes (les épinards tombent).",
+        "Pendant ce temps, coupe l'avocat en deux, retire le noyau, prélève la chair à la cuillère et coupe-la en fines lamelles. Dresse : les tlacoyos dans l'assiette, garnis d'épinards-oignon et de lamelles d'avocat, parsemés de coriandre ciselée. Presse le jus du citron vert au moment de servir."
       ],
       "photo": "assets/recipes/b152.webp"
     },
@@ -82286,15 +82272,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la salsa fraîche : couper la tomate en petits dés, émincer finement l'oignon rouge, hacher la coriandre. Mélanger dans un bol avec le jus du demi-citron vert, le piment doux et le sel.",
-        "Couper la tortilla de maïs en morceaux irréguliers de 2 cm (briser à la main pour un effet rustique).",
-        "Chauffer l'huile d'olive dans une poêle à feu moyen, ajouter les morceaux de tortilla.",
-        "Faire frire 2-3 minutes en remuant : ils doivent dorer et devenir légèrement croustillants (comme des chips mais plus mou).",
-        "Battre les œufs dans un bol avec une fourchette (juste pour mélanger blanc et jaune, pas mousseux).",
-        "Verser les œufs dans la poêle sur les tortillas, mélanger doucement à la spatule en bois 2 minutes : les œufs cuisent en gardant les morceaux de tortilla intégrés (texture brouillade rustique).",
-        "Retirer du feu quand les œufs sont encore légèrement baveux (ils finissent de cuire dans la chaleur résiduelle).",
-        "Couper l'avocat en lamelles.",
-        "Dresser dans une assiette : les migas au centre, la salsa fraîche d'un côté, les lamelles d'avocat de l'autre. Servir immédiatement."
+        "Prépare la salsa fraîche : coupe la tomate en petits dés, émince finement l'oignon rouge, hache la coriandre. Mélange dans un bol avec le jus du demi-citron vert, le piment doux et le sel.",
+        "Coupe la tortilla de maïs en morceaux irréguliers de 2 cm (brise à la main pour un effet rustique).",
+        "Chauffe l'huile d'olive dans une poêle à feu moyen, ajoute les morceaux de tortilla.",
+        "Fais frire 2-3 minutes en remuant : ils doivent dorer et devenir légèrement croustillants (comme des chips mais plus mou).",
+        "Bats les œufs dans un bol avec une fourchette (juste pour mélanger blanc et jaune, pas mousseux).",
+        "Verse les œufs dans la poêle sur les tortillas, mélange doucement à la spatule en bois 2 minutes : les œufs cuisent en gardant les morceaux de tortilla intégrés (texture brouillade rustique).",
+        "Retire du feu quand les œufs sont encore légèrement baveux (ils finissent de cuire dans la chaleur résiduelle).",
+        "Coupe l'avocat en lamelles.",
+        "Dresse dans une assiette : les migas au centre, la salsa fraîche d'un côté, les lamelles d'avocat de l'autre. Sers immédiatement."
       ],
       "photo": "assets/recipes/b153.webp"
     },
@@ -82388,16 +82374,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠ Sécurité : utiliser du cabillaud très frais, idéalement labellisé sashimi ou préalablement congelé 24h à -18°C pour éliminer les parasites éventuels.",
-        "Couper le cabillaud en cubes de 1 cm avec un couteau bien aiguisé (chair ferme et translucide).",
-        "Mettre les cubes dans un bol en verre, presser le jus des 2 citrons verts par-dessus (le poisson doit être recouvert).",
-        "Ajouter une pincée de sel, mélanger délicatement et placer 25-30 minutes au frais : la chair devient blanche opaque (acidité 'cuit' le poisson).",
-        "Pendant ce temps, couper la mangue en dés de 8 mm, la tomate en petits dés (sans les pépins), émincer finement l'oignon rouge.",
-        "Hacher la coriandre, couper l'avocat en lamelles juste avant de servir (pour ne pas qu'il noircisse).",
-        "Égoutter rapidement le poisson (garder 1 cuillère à soupe du jus de citron parfumé).",
-        "Mélanger dans un saladier : poisson, mangue, tomate, oignon, coriandre, piment doux et huile d'olive. Ajouter le jus de citron réservé.",
-        "Goûter, ajuster le sel si besoin.",
-        "Dresser en verrines ou en coupelles, déposer les lamelles d'avocat dessus. Servir immédiatement, bien frais."
+        "⚠ Sécurité : utilise du cabillaud très frais, idéalement labellisé sashimi ou préalablement congelé 24h à -18°C pour éliminer les parasites éventuels.",
+        "Coupe le cabillaud en cubes de 1 cm avec un couteau bien aiguisé (chair ferme et translucide).",
+        "Mets les cubes dans un bol en verre, presse le jus des 2 citrons verts par-dessus (le poisson doit être recouvert).",
+        "Ajoute une pincée de sel, mélange délicatement et place 25-30 minutes au frais : la chair devient blanche opaque (acidité 'cuit' le poisson).",
+        "Pendant ce temps, coupe la mangue en dés de 8 mm, la tomate en petits dés (sans les pépins), émince finement l'oignon rouge.",
+        "Hache la coriandre, coupe l'avocat en lamelles juste avant de servir (pour ne pas qu'il noircisse).",
+        "Égoutte rapidement le poisson (garde 1 cuillère à soupe du jus de citron parfumé).",
+        "Mélange dans un saladier : poisson, mangue, tomate, oignon, coriandre, piment doux et huile d'olive. Ajoute le jus de citron réservé.",
+        "Goûte, ajuste le sel si besoin.",
+        "Dresse en verrines ou en coupelles, dépose les lamelles d'avocat dessus. Sers immédiatement, bien frais."
       ],
       "photo": "assets/recipes/s136.webp"
     },
@@ -82484,15 +82470,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher le jicama (ou peler la pomme verte si substitution), le couper en bâtonnets fins (5 mm × 5 cm).",
-        "Peler les oranges à vif : couper le haut et le bas, suivre la courbe au couteau pour retirer toute la peau blanche.",
-        "Détacher les quartiers entre les membranes blanches (suprêmes), les couper en morceaux de 2 cm.",
-        "Couper le concombre en demi-lunes fines (3 mm) après avoir retiré les pépins.",
-        "Mettre tous les fruits et légumes dans un grand saladier.",
-        "Presser le jus du citron vert entier par-dessus, ajouter l'huile d'olive, le sel et le piment doux (à doser selon tolérance).",
-        "Mélanger délicatement à la cuillère en bois.",
-        "Hacher la coriandre, la parsemer sur la salade avec les graines de chia.",
-        "Servir immédiatement, bien frais. Le contraste sucré orange / piment / acide citron est la signature de cette salade mexicaine de marché."
+        "Épluche le jicama (ou peler la pomme verte si substitution), coupe-le en bâtonnets fins (5 mm × 5 cm).",
+        "Pèle les oranges à vif : coupe le haut et le bas, suis la courbe au couteau pour retirer toute la peau blanche.",
+        "Détache les quartiers entre les membranes blanches (suprêmes), coupe-les en morceaux de 2 cm.",
+        "Coupe le concombre en demi-lunes fines (3 mm) après avoir retiré les pépins.",
+        "Mets tous les fruits et légumes dans un grand saladier.",
+        "Presse le jus du citron vert entier par-dessus, ajoute l'huile d'olive, le sel et le piment doux (à doser selon tolérance).",
+        "Mélange délicatement à la cuillère en bois.",
+        "Hache la coriandre, parsème-la sur la salade avec les graines de chia.",
+        "Sers immédiatement, bien frais. Le contraste sucré orange / piment / acide citron est la signature de cette salade mexicaine de marché."
       ],
       "photo": "assets/recipes/s137.webp"
     },
@@ -82595,18 +82581,18 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 170°C en chaleur tournante. Chemiser un petit moule à manqué de papier cuisson.",
-        "Séparer les blancs des jaunes d'œufs. Fouetter les jaunes avec la plus grande partie du sirop d'érable et la vanille jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
-        "Monter les blancs en neige ferme au fouet électrique.",
-        "Tamiser la farine T80 et la levure chimique sur les jaunes blanchis, ajouter le zeste de citron râpé, mélanger délicatement à la spatule.",
-        "Incorporer les blancs en neige en 3 fois en soulevant la pâte (pas remuer).",
-        "Verser dans le moule, enfourner 18-20 minutes : la lame d'un couteau plantée doit ressortir sèche.",
-        "Pendant ce temps, mélanger dans un bol le lait, le lait d'amande, le skyr, le reste du sirop d'érable et la cannelle (c'est le mélange 'tres leches').",
-        "Sortir le gâteau, le démouler tiède dans un plat creux. Piquer toute la surface à la fourchette (trous profonds).",
-        "Verser doucement le mélange tres leches en plusieurs fois en laissant absorber entre chaque ajout (le gâteau boit le liquide).",
-        "Couvrir et placer 4h minimum au frigo (mieux : une nuit).",
-        "Au moment de servir, équeuter les fraises et les couper en quartiers, les disposer sur le gâteau.",
-        "Découper en parts généreuses imbibées — le bonheur mexicain version IG bas."
+        "Préchauffe le four à 170°C en chaleur tournante. Chemise un petit moule à manqué de papier cuisson.",
+        "Sépare les blancs des jaunes d'œufs. Fouette les jaunes avec la plus grande partie du sirop d'érable et la vanille jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
+        "Monte les blancs en neige ferme au fouet électrique.",
+        "Tamise la farine T80 et la levure chimique sur les jaunes blanchis, ajoute le zeste de citron râpé, mélange délicatement à la spatule.",
+        "Incorpore les blancs en neige en 3 fois en soulevant la pâte (pas remuer).",
+        "Verse dans le moule, enfourne 18-20 minutes : la lame d'un couteau plantée doit ressortir sèche.",
+        "Pendant ce temps, mélange dans un bol le lait, le lait d'amande, le skyr, le reste du sirop d'érable et la cannelle (c'est le mélange 'tres leches').",
+        "Sors le gâteau, démoule-le tiède dans un plat creux. Pique toute la surface à la fourchette (trous profonds).",
+        "Verse doucement le mélange tres leches en plusieurs fois en laissant absorber entre chaque ajout (le gâteau boit le liquide).",
+        "Couvre et place 4h minimum au frigo (mieux : une nuit).",
+        "Au moment de servir, équeute les fraises et coupe-les en quartiers, dispose-les sur le gâteau.",
+        "Découpe en parts généreuses imbibées — le bonheur mexicain version IG bas."
       ],
       "photo": "assets/recipes/des141.webp"
     },
@@ -82690,17 +82676,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 160°C en chaleur tournante. Préparer un bain-marie : verser 2 cm d'eau dans un plat allant au four.",
-        "Préparer le caramel express : verser 12g de sirop d'érable dans une petite casserole, chauffer 2 minutes à feu moyen jusqu'à ce qu'il bouillonne et caramélise légèrement (couleur ambrée).",
-        "Répartir le caramel dans le fond de 4 ramequins individuels (8 cm de diamètre).",
-        "Faire chauffer le lait demi-écrémé et le lait de coco avec la cannelle, la vanille et le zeste d'orange jusqu'aux premiers frémissements (pas l'ébullition). Laisser tiédir 5 minutes.",
-        "Dans un saladier, fouetter les œufs avec 20g de sirop d'érable jusqu'à mélange homogène (sans faire mousser, sinon des bulles dans le flan).",
-        "Verser doucement le lait tiédi sur les œufs en remuant au fouet (pour éviter qu'ils ne cuisent).",
-        "Filtrer le mélange à travers un tamis fin pour retirer le zeste et toute trace mousseuse.",
-        "Répartir dans les ramequins sur le caramel.",
-        "Placer les ramequins dans le bain-marie au four, cuire 35-40 minutes : le flan doit être pris mais trembler légèrement au centre.",
-        "Sortir, laisser tiédir, puis placer 4h au frigo.",
-        "Au moment de servir, passer un couteau autour du flan, retourner sur l'assiette : le caramel coule sur le flan."
+        "Préchauffe le four à 160°C en chaleur tournante. Prépare un bain-marie : verse 2 cm d'eau dans un plat allant au four.",
+        "Prépare le caramel express : verse 12g de sirop d'érable dans une petite casserole, chauffe 2 minutes à feu moyen jusqu'à ce qu'il bouillonne et caramélise légèrement (couleur ambrée).",
+        "Répartis le caramel dans le fond de 4 ramequins individuels (8 cm de diamètre).",
+        "Fais chauffer le lait demi-écrémé et le lait de coco avec la cannelle, la vanille et le zeste d'orange jusqu'aux premiers frémissements (pas l'ébullition). Laisse tiédir 5 minutes.",
+        "Dans un saladier, fouette les œufs avec 20g de sirop d'érable jusqu'à mélange homogène (sans faire mousser, sinon des bulles dans le flan).",
+        "Verse doucement le lait tiédi sur les œufs en remuant au fouet (pour éviter qu'ils ne cuisent).",
+        "Filtre le mélange à travers un tamis fin pour retirer le zeste et toute trace mousseuse.",
+        "Répartis dans les ramequins sur le caramel.",
+        "Place les ramequins dans le bain-marie au four, cuis 35-40 minutes : le flan doit être pris mais trembler légèrement au centre.",
+        "Sors, laisse tiédir, puis place 4h au frigo.",
+        "Au moment de servir, passe un couteau autour du flan, retourne sur l'assiette : le caramel coule sur le flan."
       ],
       "photo": "assets/recipes/des142.webp"
     },
@@ -82763,14 +82749,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Retirer la peau et les pépins noirs de la pastèque, couper la chair en cubes de 2 cm.",
-        "Étaler les cubes en une seule couche sur une plaque chemisée de papier cuisson.",
-        "Placer la plaque au congélateur au moins 4h (les cubes doivent être totalement durs et glacés).",
-        "Au moment de servir, sortir les cubes congelés et les mettre dans le blender.",
-        "Ajouter le sirop d'érable, le piment doux et le jus du citron vert entier.",
-        "Mixer en pulsant par à-coups (5 sec × 5 fois), racler les parois entre chaque : texture sorbet onctueuse rose vif.",
-        "Verser dans 2 coupes glacées, décorer d'une feuille de menthe et d'une pincée supplémentaire de piment doux pour les amateurs.",
-        "Servir immédiatement (si le sorbet est trop dur, laisser tempérer 5 minutes avant de mixer)."
+        "Retire la peau et les pépins noirs de la pastèque, coupe la chair en cubes de 2 cm.",
+        "Étale les cubes en une seule couche sur une plaque chemisée de papier cuisson.",
+        "Place la plaque au congélateur au moins 4h (les cubes doivent être totalement durs et glacés).",
+        "Au moment de servir, sors les cubes congelés et mets-les dans le blender.",
+        "Ajoute le sirop d'érable, le piment doux et le jus du citron vert entier.",
+        "Mixe en pulsant par à-coups (5 sec × 5 fois), racle les parois entre chaque : texture sorbet onctueuse rose vif.",
+        "Verse dans 2 coupes glacées, décore d'une feuille de menthe et d'une pincée supplémentaire de piment doux pour les amateurs.",
+        "Sers immédiatement (si le sorbet est trop dur, laisse tempérer 5 minutes avant de mixer)."
       ],
       "photo": "assets/recipes/des143.webp"
     },
@@ -82847,15 +82833,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mélanger dans un bol le skyr, le sirop d'érable, la moitié de la cannelle, la vanille et le jus du quart de citron jusqu'à obtenir un mélange homogène.",
-        "Verser dans un récipient large à fond plat (plat à gratin métallique idéal).",
-        "Placer au congélateur 1h, puis sortir et gratter à la fourchette pour casser les cristaux.",
-        "Remettre 1h, gratter à nouveau. Répéter une fois (total 3h, texture glace italienne onctueuse).",
-        "Pendant ce temps, râper grossièrement le chocolat noir au couteau (copeaux irréguliers).",
-        "Mélanger les copeaux avec le cacao en poudre et le reste de cannelle dans un petit bol.",
-        "Au moment de servir, former 2 boules de glace à la cuillère à glace, les déposer dans des coupes glacées.",
-        "Saupoudrer généreusement du mélange cacao-cannelle-copeaux.",
-        "Servir immédiatement, accompagné d'une mini-cuillère pour profiter du croquant."
+        "Mélange dans un bol le skyr, le sirop d'érable, la moitié de la cannelle, la vanille et le jus du quart de citron jusqu'à obtenir un mélange homogène.",
+        "Verse dans un récipient large à fond plat (plat à gratin métallique idéal).",
+        "Place au congélateur 1h, puis sors et gratte à la fourchette pour casser les cristaux.",
+        "Remets 1h, gratte à nouveau. Répète une fois (total 3h, texture glace italienne onctueuse).",
+        "Pendant ce temps, râpe grossièrement le chocolat noir au couteau (copeaux irréguliers).",
+        "Mélange les copeaux avec le cacao en poudre et le reste de cannelle dans un petit bol.",
+        "Au moment de servir, forme 2 boules de glace à la cuillère à glace, dépose-les dans des coupes glacées.",
+        "Saupoudre généreusement du mélange cacao-cannelle-copeaux.",
+        "Sers immédiatement, accompagné d'une mini-cuillère pour profiter du croquant."
       ],
       "photo": "assets/recipes/des144.webp"
     },
@@ -82950,17 +82936,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mélanger dans un saladier la farine T80, la levure chimique, le sel, l'anis vert et le zeste d'orange râpé.",
-        "Dans un autre bol, fouetter l'œuf avec le lait, une partie du sirop d'érable et une partie de l'huile d'olive.",
-        "Verser les ingrédients liquides dans les secs, mélanger à la fourchette jusqu'à obtenir une pâte homogène et souple.",
-        "Pétrir 2 minutes sur un plan fariné (juste pour rendre lisse, ne pas trop travailler).",
-        "Couvrir d'un torchon humide et laisser reposer 30 minutes (le gluten se détend).",
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Diviser la pâte en petites boulettes (de la taille d'une noix), les abaisser au rouleau en disques fins de 6 cm.",
-        "Déposer sur une plaque chemisée, badigeonner d'huile d'olive au pinceau et saupoudrer de cannelle.",
-        "Enfourner 10-12 minutes : ils doivent être dorés et croustillants comme des bugnes au four.",
-        "Sortir, badigeonner légèrement du reste de sirop d'érable encore tiède, saupoudrer du reste de cannelle.",
-        "Servir tièdes ou froids — se conservent 3-4 jours en boîte hermétique."
+        "Mélange dans un saladier la farine T80, la levure chimique, le sel, l'anis vert et le zeste d'orange râpé.",
+        "Dans un autre bol, fouette l'œuf avec le lait, une partie du sirop d'érable et une partie de l'huile d'olive.",
+        "Verse les ingrédients liquides dans les secs, mélange à la fourchette jusqu'à obtenir une pâte homogène et souple.",
+        "Pétris 2 minutes sur un plan fariné (juste pour rendre lisse, ne pas trop travailler).",
+        "Couvre d'un torchon humide et laisse reposer 30 minutes (le gluten se détend).",
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Divise la pâte en petites boulettes (de la taille d'une noix), abaisse-les au rouleau en disques fins de 6 cm.",
+        "Dépose sur une plaque chemisée, badigeonne d'huile d'olive au pinceau et saupoudre de cannelle.",
+        "Enfourne 10-12 minutes : ils doivent être dorés et croustillants comme des bugnes au four.",
+        "Sors, badigeonne légèrement du reste de sirop d'érable encore tiède, saupoudre du reste de cannelle.",
+        "Sers tièdes ou froids — se conservent 3-4 jours en boîte hermétique."
       ],
       "photo": "assets/recipes/des145.webp"
     },
@@ -83062,18 +83048,18 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Couper le pain rassis en cubes de 2 cm.",
-        "Faire chauffer le lait dans une casserole avec la cannelle, l'anis étoilé, la vanille et le zeste d'orange jusqu'aux premiers frémissements. Couvrir et laisser infuser 10 minutes hors du feu.",
-        "Retirer la cannelle et l'anis étoilé du lait infusé. Ajouter le sirop d'érable.",
-        "Battre l'œuf dans un saladier, verser le lait infusé tiédi par-dessus en fouettant.",
-        "Couper la pomme en cubes de 1 cm (peau gardée).",
-        "Disposer les cubes de pain dans un plat à gratin individuel, parsemer de cubes de pomme, raisins secs et d'une partie des amandes effilées.",
-        "Verser la préparation lait-œuf par-dessus, presser légèrement le pain pour qu'il s'imbibe.",
-        "Parsemer du reste d'amandes effilées sur le dessus.",
-        "Enfourner 22-25 minutes : la surface dore et le mélange est pris (légèrement tremblotant au centre).",
-        "Laisser tiédir 10 minutes avant de servir (la texture se raffermit).",
-        "Servir tiède en parts généreuses — la capirotada de Carême revisitée IG bas."
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Coupe le pain rassis en cubes de 2 cm.",
+        "Fais chauffer le lait dans une casserole avec la cannelle, l'anis étoilé, la vanille et le zeste d'orange jusqu'aux premiers frémissements. Couvre et laisse infuser 10 minutes hors du feu.",
+        "Retire la cannelle et l'anis étoilé du lait infusé. Ajoute le sirop d'érable.",
+        "Bats l'œuf dans un saladier, verse le lait infusé tiédi par-dessus en fouettant.",
+        "Coupe la pomme en cubes de 1 cm (peau gardée).",
+        "Dispose les cubes de pain dans un plat à gratin individuel, parsème de cubes de pomme, raisins secs et d'une partie des amandes effilées.",
+        "Verse la préparation lait-œuf par-dessus, presse légèrement le pain pour qu'il s'imbibe.",
+        "Parsème du reste d'amandes effilées sur le dessus.",
+        "Enfourne 22-25 minutes : la surface dore et le mélange est pris (légèrement tremblotant au centre).",
+        "Laisse tiédir 10 minutes avant de servir (la texture se raffermit).",
+        "Sers tiède en parts généreuses — la capirotada de Carême revisitée IG bas."
       ],
       "photo": "assets/recipes/des146.webp"
     },
@@ -83162,15 +83148,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mélanger les 2 farines (orge + pois chiche) dans un saladier avec la cannelle et l'anis vert.",
-        "Faire chauffer le lait d'amande dans une casserole jusqu'aux premiers frémissements (pas l'ébullition).",
-        "Verser le lait chaud progressivement sur les farines en fouettant constamment au fouet pour éviter les grumeaux.",
-        "La bsissa épaissit aussitôt : ajuster la texture avec un peu plus de lait si trop épaisse (consistance bouillie crémeuse).",
-        "Ajouter le filet d'huile d'olive (signature traditionnelle, donne onctuosité), mélanger.",
-        "Dénoyauter et hacher les dattes Medjool en petits dés.",
-        "Faire griller les amandes effilées 2 minutes à sec dans une poêle (couleur dorée).",
-        "Verser la bsissa dans 2 bols, parsemer de dés de dattes et d'amandes grillées.",
-        "Arroser d'un trait d'eau de fleur d'oranger juste avant de servir. Servir chaud ou tiède."
+        "Mélange les 2 farines (orge + pois chiche) dans un saladier avec la cannelle et l'anis vert.",
+        "Fais chauffer le lait d'amande dans une casserole jusqu'aux premiers frémissements (pas l'ébullition).",
+        "Verse le lait chaud progressivement sur les farines en fouettant constamment au fouet pour éviter les grumeaux.",
+        "La bsissa épaissit aussitôt : ajuste la texture avec un peu plus de lait si trop épaisse (consistance bouillie crémeuse).",
+        "Ajoute le filet d'huile d'olive (signature traditionnelle, donne onctuosité), mélange.",
+        "Dénoyaute et hache les dattes Medjool en petits dés.",
+        "Fais griller les amandes effilées 2 minutes à sec dans une poêle (couleur dorée).",
+        "Verse la bsissa dans 2 bols, parsème de dés de dattes et d'amandes grillées.",
+        "Arrose d'un trait d'eau de fleur d'oranger juste avant de servir. Sers chaud ou tiède."
       ],
       "photo": "assets/recipes/b154.webp"
     },
@@ -83251,13 +83237,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dénoyauter les dattes Medjool et les couper en 2 dans le sens de la longueur.",
-        "Éplucher la banane, la casser en gros morceaux.",
-        "Mettre tous les ingrédients dans le blender sauf une pincée d'amandes effilées et de graines de chia (pour la déco).",
-        "Mixer 30-40 secondes à pleine vitesse jusqu'à obtention d'une texture lisse et onctueuse (les dattes doivent être complètement intégrées).",
-        "Verser dans un grand verre (texture crémeuse, presque comme un milkshake).",
-        "Parsemer des amandes effilées et graines de chia réservées sur le dessus.",
-        "Servir immédiatement avec une paille — bien frais, parfait pour démarrer une journée de chaleur."
+        "Dénoyaute les dattes Medjool et coupe-les en 2 dans le sens de la longueur.",
+        "Épluche la banane, casse-la en gros morceaux.",
+        "Mets tous les ingrédients dans le blender sauf une pincée d'amandes effilées et de graines de chia (pour la déco).",
+        "Mixe 30-40 secondes à pleine vitesse jusqu'à obtention d'une texture lisse et onctueuse (les dattes doivent être complètement intégrées).",
+        "Verse dans un grand verre (texture crémeuse, presque comme un milkshake).",
+        "Parsème des amandes effilées et graines de chia réservées sur le dessus.",
+        "Sers immédiatement avec une paille — bien frais, parfait pour démarrer une journée de chaleur."
       ],
       "photo": "assets/recipes/b155.webp"
     },
@@ -83338,16 +83324,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Toaster les 2 tranches de pain complet 2 minutes au grille-pain (doré sans brûler).",
-        "Mélanger dans un bol le fromage frais avec un trait de jus de citron, mélanger jusqu'à texture crémeuse.",
-        "Couper la grenade en deux, taper la peau au-dessus d'un bol pour récupérer les grains (méthode rapide, voir lot précédent).",
-        "Dans un petit bol, mélanger l'huile d'olive avec le zaatar pour faire une pâte parfumée (laisser infuser 2 minutes).",
-        "Étaler généreusement le fromage frais sur les 2 tartines toastées (couche épaisse de 4 mm).",
-        "Verser la moitié de la pâte huile-zaatar sur chaque tartine en filet.",
-        "Disposer les grains de grenade en couronne sur le fromage frais.",
-        "Ciseler la menthe et parsemer sur les tartines.",
-        "Finir par un filet de miel d'acacia en spirale sur chaque tartine.",
-        "Servir immédiatement — la combinaison sucré-salé-acide est emblématique du Maghreb."
+        "Toaste les 2 tranches de pain complet 2 minutes au grille-pain (doré sans brûler).",
+        "Mélange dans un bol le fromage frais avec un trait de jus de citron, mélange jusqu'à texture crémeuse.",
+        "Coupe la grenade en deux, tape la peau au-dessus d'un bol pour récupérer les grains (méthode rapide, voir lot précédent).",
+        "Dans un petit bol, mélange l'huile d'olive avec le zaatar pour faire une pâte parfumée (laisse infuser 2 minutes).",
+        "Étale généreusement le fromage frais sur les 2 tartines toastées (couche épaisse de 4 mm).",
+        "Verse la moitié de la pâte huile-zaatar sur chaque tartine en filet.",
+        "Dispose les grains de grenade en couronne sur le fromage frais.",
+        "Cisèle la menthe et parsème sur les tartines.",
+        "Finis par un filet de miel d'acacia en spirale sur chaque tartine.",
+        "Sers immédiatement — la combinaison sucré-salé-acide est emblématique du Maghreb."
       ],
       "photo": "assets/recipes/b156.webp"
     },
@@ -83441,15 +83427,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 150°C en chaleur tournante (cuisson basse pour ne pas brûler).",
-        "Dans un grand bol, mélanger les flocons d'avoine, les amandes effilées, les pistaches concassées grossièrement et les graines de sésame.",
-        "Dans un petit bol, fouetter l'huile d'olive, le sirop d'érable, la cardamome, la cannelle et l'eau de fleur d'oranger.",
-        "Verser le mélange liquide sur les flocons, mélanger à la cuillère en bois pour bien enrober tous les grains.",
-        "Étaler le mélange sur une plaque chemisée de papier cuisson, en une seule couche fine.",
-        "Enfourner 20-25 minutes en remuant toutes les 7-8 minutes : le granola dore uniformément.",
-        "Sortir et laisser refroidir totalement sur la plaque (15 min : la texture devient croustillante en refroidissant).",
-        "Dénoyauter et couper les dattes en petits dés, les mélanger au granola refroidi.",
-        "Conserver dans un bocal hermétique 2 semaines. Servir avec yaourt nature et fruits frais."
+        "Préchauffe le four à 150°C en chaleur tournante (cuisson basse pour ne pas brûler).",
+        "Dans un grand bol, mélange les flocons d'avoine, les amandes effilées, les pistaches concassées grossièrement et les graines de sésame.",
+        "Dans un petit bol, fouette l'huile d'olive, le sirop d'érable, la cardamome, la cannelle et l'eau de fleur d'oranger.",
+        "Verse le mélange liquide sur les flocons, mélange à la cuillère en bois pour bien enrober tous les grains.",
+        "Étale le mélange sur une plaque chemisée de papier cuisson, en une seule couche fine.",
+        "Enfourne 20-25 minutes en remuant toutes les 7-8 minutes : le granola dore uniformément.",
+        "Sors et laisse refroidir totalement sur la plaque (15 min : la texture devient croustillante en refroidissant).",
+        "Dénoyaute et coupe les dattes en petits dés, mélange-les au granola refroidi.",
+        "Conserve dans un bocal hermétique 2 semaines. Sers avec yaourt nature et fruits frais."
       ],
       "photo": "assets/recipes/b157.webp"
     },
@@ -83529,16 +83515,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le quinoa à l'eau froide jusqu'à ce que l'eau soit claire (élimine la saponine amère).",
-        "Mettre le quinoa et le lait d'amande dans une casserole, ajouter la cannelle.",
-        "Porter à frémissement, baisser à feu doux, couvrir et cuire 12-15 minutes : le quinoa est tendre et a absorbé presque tout le lait (texture porridge crémeux).",
-        "Hors du feu, ajouter l'eau de fleur d'oranger, couvrir et laisser reposer 5 minutes.",
-        "Peler l'orange à vif, détacher les quartiers en suprêmes (entre les membranes blanches).",
-        "Dénoyauter et hacher les dattes Medjool en petits dés.",
-        "Concasser grossièrement les pistaches au couteau.",
-        "Verser le quinoa au lait d'amande dans le bol.",
-        "Disposer les suprêmes d'orange en couronne, parsemer de dés de dattes, d'amandes effilées et de pistaches concassées.",
-        "Servir tiède ou à température ambiante."
+        "Rince le quinoa à l'eau froide jusqu'à ce que l'eau soit claire (élimine la saponine amère).",
+        "Mets le quinoa et le lait d'amande dans une casserole, ajoute la cannelle.",
+        "Porte à frémissement, baisse à feu doux, couvre et cuis 12-15 minutes : le quinoa est tendre et a absorbé presque tout le lait (texture porridge crémeux).",
+        "Hors du feu, ajoute l'eau de fleur d'oranger, couvre et laisse reposer 5 minutes.",
+        "Pèle l'orange à vif, détache les quartiers en suprêmes (entre les membranes blanches).",
+        "Dénoyaute et hache les dattes Medjool en petits dés.",
+        "Concasse grossièrement les pistaches au couteau.",
+        "Verse le quinoa au lait d'amande dans le bol.",
+        "Dispose les suprêmes d'orange en couronne, parsème de dés de dattes, d'amandes effilées et de pistaches concassées.",
+        "Sers tiède ou à température ambiante."
       ],
       "photo": "assets/recipes/b158.webp"
     },
@@ -83643,17 +83629,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un saladier, mélanger la farine de pois chiche, la levure chimique et la cardamome.",
-        "Dans un autre bol, fouetter l'œuf, le lait d'amande, le yaourt nature, une partie du sirop d'érable, l'eau de fleur d'oranger et le zeste d'orange râpé.",
-        "Verser les liquides dans les secs en fouettant progressivement (pâte homogène sans grumeaux, texture pâte à crêpes épaisse).",
-        "Laisser reposer 5 minutes (la farine de pois chiche s'hydrate).",
-        "Chauffer une poêle anti-adhésive à feu moyen avec un peu d'huile d'olive (la pâte ne doit pas accrocher).",
-        "Verser 2 cuillères à soupe de pâte par pancake (diamètre 8 cm), cuire 2 minutes : des bulles apparaissent en surface et le bord se dessine.",
-        "Retourner à la spatule, cuire 1-2 minutes l'autre face. Réserver au chaud sur une assiette couverte.",
-        "Continuer jusqu'à épuiser la pâte.",
-        "Peler l'orange à vif, détacher les quartiers en suprêmes.",
-        "Concasser les pistaches au couteau.",
-        "Dresser les pancakes sur l'assiette, garnir de suprêmes d'orange et de pistaches, finir par un filet du reste de sirop d'érable."
+        "Dans un saladier, mélange la farine de pois chiche, la levure chimique et la cardamome.",
+        "Dans un autre bol, fouette l'œuf, le lait d'amande, le yaourt nature, une partie du sirop d'érable, l'eau de fleur d'oranger et le zeste d'orange râpé.",
+        "Verse les liquides dans les secs en fouettant progressivement (pâte homogène sans grumeaux, texture pâte à crêpes épaisse).",
+        "Laisse reposer 5 minutes (la farine de pois chiche s'hydrate).",
+        "Chauffe une poêle anti-adhésive à feu moyen avec un peu d'huile d'olive (la pâte ne doit pas accrocher).",
+        "Verse 2 cuillères à soupe de pâte par pancake (diamètre 8 cm), cuis 2 minutes : des bulles apparaissent en surface et le bord se dessine.",
+        "Retourne à la spatule, cuis 1-2 minutes l'autre face. Réserve au chaud sur une assiette couverte.",
+        "Continue jusqu'à épuiser la pâte.",
+        "Pèle l'orange à vif, détache les quartiers en suprêmes.",
+        "Concasse les pistaches au couteau.",
+        "Dresse les pancakes sur l'assiette, garnis de suprêmes d'orange et de pistaches, finis par un filet du reste de sirop d'érable."
       ],
       "photo": "assets/recipes/b159.webp"
     },
@@ -83775,18 +83761,18 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz basmati complet à l'eau froide jusqu'à ce que l'eau soit claire, puis le faire tremper 15 minutes.",
-        "Pendant ce temps, couper la carotte en petits dés, les haricots verts en tronçons de 2 cm, émincer l'oignon finement.",
-        "Faire chauffer l'huile d'olive dans une cocotte à feu moyen, ajouter l'oignon et faire dorer 5 minutes (couleur dorée, bords caramélisés).",
-        "Ajouter l'ail écrasé et le gingembre râpé, faire revenir 1 minute (parfum intense).",
-        "Ajouter le garam masala, le curcuma et la cardamome, mélanger 30 secondes pour torréfier les épices.",
-        "Ajouter tous les légumes et le sel, faire revenir 5 minutes en remuant.",
-        "Incorporer le yaourt nature hors du feu (évite qu'il tranche), mélanger.",
-        "Égoutter le riz, l'ajouter dans la cocotte avec 180 ml d'eau chaude, mélanger délicatement.",
-        "Couvrir hermétiquement, cuire à feu très doux 18-20 minutes sans soulever le couvercle (cuisson vapeur, le riz absorbe tout).",
-        "Pendant ce temps, faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Hors du feu, laisser reposer 5 minutes couvert, puis aérer le riz à la fourchette.",
-        "Parsemer d'amandes grillées et de coriandre fraîche ciselée. Servir chaud."
+        "Rince le riz basmati complet à l'eau froide jusqu'à ce que l'eau soit claire, puis le faire tremper 15 minutes.",
+        "Pendant ce temps, coupe la carotte en petits dés, les haricots verts en tronçons de 2 cm, émince l'oignon finement.",
+        "Fais chauffer l'huile d'olive dans une cocotte à feu moyen, ajoute l'oignon et fais dorer 5 minutes (couleur dorée, bords caramélisés).",
+        "Ajoute l'ail écrasé et le gingembre râpé, fais revenir 1 minute (parfum intense).",
+        "Ajoute le garam masala, le curcuma et la cardamome, mélange 30 secondes pour torréfier les épices.",
+        "Ajoute tous les légumes et le sel, fais revenir 5 minutes en remuant.",
+        "Incorpore le yaourt nature hors du feu (évite qu'il tranche), mélange.",
+        "Égoutte le riz, ajoute-le dans la cocotte avec 180 ml d'eau chaude, mélange délicatement.",
+        "Couvre hermétiquement, cuis à feu très doux 18-20 minutes sans soulever le couvercle (cuisson vapeur, le riz absorbe tout).",
+        "Pendant ce temps, fais griller les amandes effilées 2 minutes à sec dans une poêle.",
+        "Hors du feu, laisse reposer 5 minutes couvert, puis aère le riz à la fourchette.",
+        "Parsème d'amandes grillées et de coriandre fraîche ciselée. Sers chaud."
       ],
       "photo": "assets/recipes/l202.webp"
     },
@@ -83896,16 +83882,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer ensemble le riz et les lentilles corail à l'eau froide jusqu'à ce que l'eau soit claire.",
-        "Couper la carotte en petits dés, la courgette en demi-lunes de 1 cm, la tomate en dés.",
-        "Faire chauffer l'huile d'olive dans une cocotte à feu moyen, ajouter les graines de moutarde et attendre qu'elles éclatent (30 sec).",
-        "Ajouter le gingembre râpé et les feuilles de curry, faire revenir 30 secondes.",
-        "Ajouter le cumin et le curcuma, mélanger 10 secondes.",
-        "Ajouter la tomate, cuire 2 minutes jusqu'à ce qu'elle se défasse.",
-        "Ajouter le riz, les lentilles, la carotte, la courgette, le sel et 500 ml d'eau chaude.",
-        "Porter à ébullition, baisser à feu doux, couvrir et cuire 18-20 minutes : le riz et les lentilles sont fondants, texture comme un risotto épais (ajouter un peu d'eau si trop sec).",
-        "Goûter et rectifier le sel.",
-        "Hors du feu, parsemer généreusement de coriandre fraîche ciselée. Servir chaud, plat-doudou indien complet."
+        "Rince ensemble le riz et les lentilles corail à l'eau froide jusqu'à ce que l'eau soit claire.",
+        "Coupe la carotte en petits dés, la courgette en demi-lunes de 1 cm, la tomate en dés.",
+        "Fais chauffer l'huile d'olive dans une cocotte à feu moyen, ajoute les graines de moutarde et attends qu'elles éclatent (30 sec).",
+        "Ajoute le gingembre râpé et les feuilles de curry, fais revenir 30 secondes.",
+        "Ajoute le cumin et le curcuma, mélange 10 secondes.",
+        "Ajoute la tomate, cuis 2 minutes jusqu'à ce qu'elle se défasse.",
+        "Ajoute le riz, les lentilles, la carotte, la courgette, le sel et 500 ml d'eau chaude.",
+        "Porte à ébullition, baisse à feu doux, couvre et cuis 18-20 minutes : le riz et les lentilles sont fondants, texture comme un risotto épais (ajoute un peu d'eau si trop sec).",
+        "Goûte et rectifie le sel.",
+        "Hors du feu, parsème généreusement de coriandre fraîche ciselée. Sers chaud, plat-doudou indien complet."
       ],
       "photo": "assets/recipes/l203.webp"
     },
@@ -84022,17 +84008,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire tremper les noix de cajou dans de l'eau chaude 15 minutes (elles ramollissent pour un mixage crémeux).",
-        "Détacher le chou-fleur en petits bouquets, couper la carotte en rondelles fines.",
-        "Égoutter les noix de cajou, les mixer au blender avec 80 ml d'eau jusqu'à obtenir une crème lisse (base onctueuse sans crème animale).",
-        "Émincer l'oignon finement. Faire chauffer l'huile d'olive dans une sauteuse à feu moyen, faire dorer l'oignon 5 minutes.",
-        "Ajouter l'ail écrasé et le gingembre râpé, faire revenir 1 minute.",
-        "Ajouter le garam masala, le curcuma et la cardamome, torréfier 30 secondes.",
-        "Ajouter le chou-fleur, la carotte et les petits pois, mélanger pour enrober d'épices.",
-        "Verser la crème de cajou et 100 ml d'eau, le sel. Porter à frémissement.",
-        "Couvrir et cuire 15 minutes à feu doux : les légumes sont tendres mais encore légèrement croquants.",
-        "Hors du feu, incorporer le yaourt nature (évite qu'il tranche), mélanger doucement.",
-        "Parsemer de coriandre fraîche. Servir chaud, accompagné d'un peu de riz basmati complet ou de naan (CG dinner respectée sans féculent obligatoire)."
+        "Fais tremper les noix de cajou dans de l'eau chaude 15 minutes (elles ramollissent pour un mixage crémeux).",
+        "Détache le chou-fleur en petits bouquets, coupe la carotte en rondelles fines.",
+        "Égoutte les noix de cajou, mixe-les au blender avec 80 ml d'eau jusqu'à obtenir une crème lisse (base onctueuse sans crème animale).",
+        "Émince l'oignon finement. Fais chauffer l'huile d'olive dans une sauteuse à feu moyen, fais dorer l'oignon 5 minutes.",
+        "Ajoute l'ail écrasé et le gingembre râpé, fais revenir 1 minute.",
+        "Ajoute le garam masala, le curcuma et la cardamome, torréfie 30 secondes.",
+        "Ajoute le chou-fleur, la carotte et les petits pois, mélange pour enrober d'épices.",
+        "Verse la crème de cajou et 100 ml d'eau, le sel. Porte à frémissement.",
+        "Couvre et cuis 15 minutes à feu doux : les légumes sont tendres mais encore légèrement croquants.",
+        "Hors du feu, incorpore le yaourt nature (évite qu'il tranche), mélange doucement.",
+        "Parsème de coriandre fraîche. Sers chaud, accompagné d'un peu de riz basmati complet ou de naan (CG dinner respectée sans féculent obligatoire)."
       ],
       "photo": "assets/recipes/d204.webp"
     },
@@ -84146,16 +84132,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Émincer l'oignon finement, couper les tomates en dés (ou utiliser des tomates concassées).",
-        "Faire chauffer l'huile d'olive dans une sauteuse à feu moyen, faire dorer l'oignon 6 minutes (couleur dorée foncée, base du goût).",
-        "Ajouter l'ail écrasé et le gingembre râpé, faire revenir 1 minute.",
-        "Ajouter le cumin, la coriandre moulue, le curcuma et le piment doux, torréfier 30 secondes (les épices doivent embaumer).",
-        "Ajouter les tomates en dés, cuire 8 minutes à feu moyen en écrasant à la cuillère : la sauce épaissit et concentre.",
-        "Égoutter et rincer les pois chiches, les ajouter à la sauce avec 100 ml d'eau et le sel.",
-        "Couvrir et mijoter 10 minutes à feu doux : les pois chiches s'imprègnent de la sauce.",
-        "Écraser légèrement une partie des pois chiches à la cuillère pour épaissir naturellement la sauce.",
-        "Ajouter le garam masala et le jus du demi-citron, mélanger (le garam masala se met en fin pour garder son parfum).",
-        "Parsemer de coriandre fraîche ciselée. Servir chaud — un classique du Nord de l'Inde, riche en fibres et protéines végétales."
+        "Émince l'oignon finement, coupe les tomates en dés (ou utiliser des tomates concassées).",
+        "Fais chauffer l'huile d'olive dans une sauteuse à feu moyen, fais dorer l'oignon 6 minutes (couleur dorée foncée, base du goût).",
+        "Ajoute l'ail écrasé et le gingembre râpé, fais revenir 1 minute.",
+        "Ajoute le cumin, la coriandre moulue, le curcuma et le piment doux, torréfie 30 secondes (les épices doivent embaumer).",
+        "Ajoute les tomates en dés, cuis 8 minutes à feu moyen en écrasant à la cuillère : la sauce épaissit et concentre.",
+        "Égoutte et rince les pois chiches, ajoute-les à la sauce avec 100 ml d'eau et le sel.",
+        "Couvre et mijote 10 minutes à feu doux : les pois chiches s'imprègnent de la sauce.",
+        "Écrase légèrement une partie des pois chiches à la cuillère pour épaissir naturellement la sauce.",
+        "Ajoute le garam masala et le jus du demi-citron, mélange (le garam masala se met en fin pour garder son parfum).",
+        "Parsème de coriandre fraîche ciselée. Sers chaud — un classique du Nord de l'Inde, riche en fibres et protéines végétales."
       ],
       "photo": "assets/recipes/d205.webp"
     },
@@ -84277,16 +84263,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz brun, le cuire dans une casserole d'eau bouillante salée 25 minutes (texture tendre mais ferme). Égoutter.",
-        "Pendant ce temps, préparer le mole : émincer l'oignon, couper les tomates en quartiers.",
-        "Faire chauffer 4 ml d'huile dans une poêle, faire revenir l'oignon, l'ail, les tomates 8 minutes (les légumes compotent).",
-        "Transférer dans le blender, ajouter la poudre d'amandes, le cacao, la cannelle, le cumin, le piment doux et 100 ml d'eau. Mixer en sauce lisse.",
-        "Reverser la sauce mole dans la poêle, ajouter le chocolat noir cassé en morceaux, le sel. Mijoter 5 minutes à feu doux : le chocolat fond et lie la sauce (couleur brun profond, signature du mole).",
-        "Couper le poulet en lanières. Faire chauffer le reste d'huile dans une autre poêle, saisir le poulet 6-7 minutes à feu moyen-vif (doré et cuit à cœur).",
-        "Verser la sauce mole sur le poulet, mélanger pour enrober, prolonger 2 minutes.",
-        "Faire griller les graines de sésame 1 minute à sec.",
-        "Dresser le riz brun dans 2 bols, déposer le poulet au mole par-dessus.",
-        "Parsemer de graines de sésame grillées et de coriandre ciselée. Servir chaud."
+        "Rince le riz brun, cuis-le dans une casserole d'eau bouillante salée 25 minutes (texture tendre mais ferme). Égoutte.",
+        "Pendant ce temps, prépare le mole : émince l'oignon, coupe les tomates en quartiers.",
+        "Fais chauffer 4 ml d'huile dans une poêle, fais revenir l'oignon, l'ail, les tomates 8 minutes (les légumes compotent).",
+        "Transfère dans le blender, ajoute la poudre d'amandes, le cacao, la cannelle, le cumin, le piment doux et 100 ml d'eau. Mixe en sauce lisse.",
+        "Reverse la sauce mole dans la poêle, ajoute le chocolat noir cassé en morceaux, le sel. Mijote 5 minutes à feu doux : le chocolat fond et lie la sauce (couleur brun profond, signature du mole).",
+        "Coupe le poulet en lanières. Fais chauffer le reste d'huile dans une autre poêle, saisis le poulet 6-7 minutes à feu moyen-vif (doré et cuit à cœur).",
+        "Verse la sauce mole sur le poulet, mélange pour enrober, prolonge 2 minutes.",
+        "Fais griller les graines de sésame 1 minute à sec.",
+        "Dresse le riz brun dans 2 bols, dépose le poulet au mole par-dessus.",
+        "Parsème de graines de sésame grillées et de coriandre ciselée. Sers chaud."
       ],
       "photo": "assets/recipes/l204.webp"
     },
@@ -84394,16 +84380,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz brun, le cuire dans une casserole d'eau bouillante salée 25 minutes. Égoutter et réserver au chaud.",
-        "Préparer le pico de gallo : couper la tomate en petits dés, émincer l'oignon rouge, hacher la moitié de la coriandre. Mélanger avec le jus d'un demi-citron vert et une pincée de sel.",
-        "Égoutter et rincer les haricots noirs, les réchauffer doucement avec le cumin dans une petite casserole.",
-        "Décortiquer les crevettes si nécessaire, les sécher avec un papier absorbant.",
-        "Faire chauffer l'huile d'olive dans une poêle à feu vif, ajouter l'ail écrasé et le piment doux 30 secondes.",
-        "Ajouter les crevettes, saisir 2-3 minutes par face : elles deviennent roses et opaques (ne pas surcuire, elles durcissent).",
-        "Hors du feu, presser le jus du demi-citron vert restant sur les crevettes, saler.",
-        "Dresser le riz brun dans 2 bols, répartir les haricots noirs, les crevettes.",
-        "Couper l'avocat en lamelles, l'ajouter avec le pico de gallo.",
-        "Parsemer du reste de coriandre, servir avec un quartier de citron vert."
+        "Rince le riz brun, cuis-le dans une casserole d'eau bouillante salée 25 minutes. Égoutte et réserve au chaud.",
+        "Prépare le pico de gallo : coupe la tomate en petits dés, émince l'oignon rouge, hache la moitié de la coriandre. Mélange avec le jus d'un demi-citron vert et une pincée de sel.",
+        "Égoutte et rince les haricots noirs, réchauffe-les doucement avec le cumin dans une petite casserole.",
+        "Décortique les crevettes si nécessaire, sèche-les avec un papier absorbant.",
+        "Fais chauffer l'huile d'olive dans une poêle à feu vif, ajoute l'ail écrasé et le piment doux 30 secondes.",
+        "Ajoute les crevettes, saisis 2-3 minutes par face : elles deviennent roses et opaques (ne pas surcuire, elles durcissent).",
+        "Hors du feu, presse le jus du demi-citron vert restant sur les crevettes, sale.",
+        "Dresse le riz brun dans 2 bols, répartis les haricots noirs, les crevettes.",
+        "Coupe l'avocat en lamelles, ajoute-le avec le pico de gallo.",
+        "Parsème du reste de coriandre, sers avec un quartier de citron vert."
       ],
       "photo": "assets/recipes/l205.webp"
     },
@@ -84507,16 +84493,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Couper les poivrons en deux dans la longueur, retirer les pépins et les membranes blanches (garder les queues pour la tenue).",
-        "Précuire les demi-poivrons 10 minutes au four (ils s'assouplissent), puis réserver.",
-        "Préparer la farce : faire chauffer 4 ml d'huile dans une poêle, faire revenir l'oignon émincé et l'ail écrasé 3 minutes.",
-        "Ajouter les haricots noirs égouttés, le maïs, le cumin, le piment doux et le sel. Écraser grossièrement les haricots à la fourchette, cuire 5 minutes.",
-        "Hors du feu, incorporer la moitié de la coriandre ciselée et le fromage frais émietté.",
-        "Préparer la sauce : mixer les tomates avec l'ail restant, une pincée de sel et de cumin. Verser au fond d'un plat à gratin.",
-        "Garnir chaque demi-poivron de farce haricots-maïs-fromage, les déposer sur la sauce tomate.",
-        "Arroser d'un filet d'huile d'olive, enfourner 18-20 minutes : les poivrons sont fondants et la farce gratinée.",
-        "Parsemer du reste de coriandre fraîche. Servir chaud, 2 demi-poivrons par personne."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Coupe les poivrons en deux dans la longueur, retire les pépins et les membranes blanches (garde les queues pour la tenue).",
+        "Précuis les demi-poivrons 10 minutes au four (ils s'assouplissent), puis réserve.",
+        "Prépare la farce : fais chauffer 4 ml d'huile dans une poêle, fais revenir l'oignon émincé et l'ail écrasé 3 minutes.",
+        "Ajoute les haricots noirs égouttés, le maïs, le cumin, le piment doux et le sel. Écrase grossièrement les haricots à la fourchette, cuis 5 minutes.",
+        "Hors du feu, incorpore la moitié de la coriandre ciselée et le fromage frais émietté.",
+        "Prépare la sauce : mixe les tomates avec l'ail restant, une pincée de sel et de cumin. Verse au fond d'un plat à gratin.",
+        "Garnis chaque demi-poivron de farce haricots-maïs-fromage, dépose-les sur la sauce tomate.",
+        "Arrose d'un filet d'huile d'olive, enfourne 18-20 minutes : les poivrons sont fondants et la farce gratinée.",
+        "Parsème du reste de coriandre fraîche. Sers chaud, 2 demi-poivrons par personne."
       ],
       "photo": "assets/recipes/d206.webp"
     },
@@ -84620,15 +84606,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Préparer les boulettes : dans un saladier, mélanger la dinde hachée, l'œuf, la chapelure, la moitié de l'oignon râpé, 1 gousse d'ail écrasée, la moitié du cumin, la moitié de la coriandre ciselée et 0,5 g de sel.",
-        "Façonner 10-12 boulettes de 3 cm avec les mains humides.",
-        "Déposer sur une plaque chemisée, badigeonner d'un peu d'huile, enfourner 15 minutes (dorées et cuites à cœur).",
-        "Pendant ce temps, préparer la sauce : faire chauffer le reste d'huile dans une sauteuse, faire revenir le reste d'oignon émincé et l'ail restant 3 minutes.",
-        "Ajouter les tomates en dés, le chipotle, le reste du cumin et le sel. Mijoter 10 minutes (sauce épaissie et fumée).",
-        "Couper la courgette en demi-lunes, l'ajouter à la sauce, cuire 5 minutes (légèrement croquante).",
-        "Ajouter les boulettes cuites dans la sauce, mijoter 5 minutes pour qu'elles s'imprègnent.",
-        "Parsemer du reste de coriandre fraîche. Servir chaud — comfort food mexicain, le chipotle apporte la touche fumée."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Prépare les boulettes : dans un saladier, mélange la dinde hachée, l'œuf, la chapelure, la moitié de l'oignon râpé, 1 gousse d'ail écrasée, la moitié du cumin, la moitié de la coriandre ciselée et 0,5 g de sel.",
+        "Façonne 10-12 boulettes de 3 cm avec les mains humides.",
+        "Dépose sur une plaque chemisée, badigeonne d'un peu d'huile, enfourne 15 minutes (dorées et cuites à cœur).",
+        "Pendant ce temps, prépare la sauce : fais chauffer le reste d'huile dans une sauteuse, fais revenir le reste d'oignon émincé et l'ail restant 3 minutes.",
+        "Ajoute les tomates en dés, le chipotle, le reste du cumin et le sel. Mijote 10 minutes (sauce épaissie et fumée).",
+        "Coupe la courgette en demi-lunes, ajoute-la à la sauce, cuis 5 minutes (légèrement croquante).",
+        "Ajoute les boulettes cuites dans la sauce, mijote 5 minutes pour qu'elles s'imprègnent.",
+        "Parsème du reste de coriandre fraîche. Sers chaud — comfort food mexicain, le chipotle apporte la touche fumée."
       ],
       "photo": "assets/recipes/d207.webp"
     },
@@ -84732,16 +84718,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Émincer l'oignon finement, écraser l'ail.",
-        "Faire chauffer l'huile d'olive dans une cocotte à feu moyen, faire revenir l'oignon 5 minutes (translucide).",
-        "Ajouter l'ail, le cumin et le paprika fumé, mélanger 30 secondes (parfum intense).",
-        "Ajouter le concentré de tomate, cuire 1 minute en remuant (il fonce légèrement, perd son acidité).",
-        "Ajouter les tomates en dés, cuire 8 minutes à feu moyen : la sauce épaissit.",
-        "Égoutter et rincer les haricots blancs, les ajouter avec un fond d'eau (juste de quoi les recouvrir) et le sel.",
-        "Couvrir et mijoter 15 minutes à feu doux : les haricots s'imprègnent et la sauce nappe (écraser quelques haricots pour épaissir).",
-        "Pendant ce temps, préparer la semoule : verser de l'eau bouillante salée sur la semoule, juste à hauteur (l'eau affleure les grains), couvrir 5 minutes, puis aérer à la fourchette avec un filet d'huile.",
-        "Presser le jus du citron dans la loubia, parsemer de coriandre fraîche.",
-        "Servir la loubia chaude sur un lit de semoule complète — plat populaire marocain, économique et nourrissant."
+        "Émince l'oignon finement, écrase l'ail.",
+        "Fais chauffer l'huile d'olive dans une cocotte à feu moyen, fais revenir l'oignon 5 minutes (translucide).",
+        "Ajoute l'ail, le cumin et le paprika fumé, mélange 30 secondes (parfum intense).",
+        "Ajoute le concentré de tomate, cuis 1 minute en remuant (il fonce légèrement, perd son acidité).",
+        "Ajoute les tomates en dés, cuis 8 minutes à feu moyen : la sauce épaissit.",
+        "Égoutte et rince les haricots blancs, ajoute-les avec un fond d'eau (juste de quoi les recouvrir) et le sel.",
+        "Couvre et mijote 15 minutes à feu doux : les haricots s'imprègnent et la sauce nappe (écrase quelques haricots pour épaissir).",
+        "Pendant ce temps, prépare la semoule : verse de l'eau bouillante salée sur la semoule, juste à hauteur (l'eau affleure les grains), couvre 5 minutes, puis aère à la fourchette avec un filet d'huile.",
+        "Presse le jus du citron dans la loubia, parsème de coriandre fraîche.",
+        "Sers la loubia chaude sur un lit de semoule complète — plat populaire marocain, économique et nourrissant."
       ],
       "photo": "assets/recipes/l206.webp"
     },
@@ -84852,15 +84838,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 210°C en chaleur tournante.",
-        "Rincer le freekeh (blé vert fumé), le cuire dans une casserole d'eau bouillante salée 20-25 minutes (texture al dente, légèrement croquante). Égoutter.",
-        "Pendant ce temps, couper la courgette, le poivron et l'aubergine en cubes de 2 cm.",
-        "Disposer les légumes sur une plaque, arroser de 6 ml d'huile, saupoudrer de paprika fumé et d'une pincée de sel. Enfourner 18-20 minutes (dorés et tendres).",
-        "Préparer la chermoula : mixer ou hacher très finement la coriandre, le persil, l'ail, le cumin, le jus d'un demi-citron, 8 ml d'huile et une pincée de sel (sauce verte parfumée).",
-        "Égoutter et rincer les pois chiches, les mélanger aux légumes grillés en fin de cuisson (juste réchauffer 2 minutes au four).",
-        "Mélanger le freekeh avec la moitié de la chermoula.",
-        "Dresser le freekeh dans 2 bols, répartir les légumes grillés et pois chiches.",
-        "Napper du reste de chermoula, presser le jus du demi-citron restant. Servir tiède ou à température ambiante."
+        "Préchauffe le four à 210°C en chaleur tournante.",
+        "Rince le freekeh (blé vert fumé), cuis-le dans une casserole d'eau bouillante salée 20-25 minutes (texture al dente, légèrement croquante). Égoutte.",
+        "Pendant ce temps, coupe la courgette, le poivron et l'aubergine en cubes de 2 cm.",
+        "Dispose les légumes sur une plaque, arrose de 6 ml d'huile, saupoudre de paprika fumé et d'une pincée de sel. Enfourne 18-20 minutes (dorés et tendres).",
+        "Prépare la chermoula : mixe ou hacher très finement la coriandre, le persil, l'ail, le cumin, le jus d'un demi-citron, 8 ml d'huile et une pincée de sel (sauce verte parfumée).",
+        "Égoutte et rince les pois chiches, mélange-les aux légumes grillés en fin de cuisson (juste réchauffer 2 minutes au four).",
+        "Mélange le freekeh avec la moitié de la chermoula.",
+        "Dresse le freekeh dans 2 bols, répartis les légumes grillés et pois chiches.",
+        "Nappe du reste de chermoula, presse le jus du demi-citron restant. Sers tiède ou à température ambiante."
       ],
       "photo": "assets/recipes/l207.webp"
     },
@@ -84974,16 +84960,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la chermoula : hacher très finement la coriandre, le persil, 2 gousses d'ail, le cumin, le paprika, 6 ml d'huile et le jus du demi-citron (marinade verte).",
-        "Couper le cabillaud en gros cubes, les enrober de la moitié de la chermoula, laisser mariner 15 minutes au frais.",
-        "Pendant ce temps, émincer le fenouil en lamelles, couper le poivron en lanières, la tomate en quartiers.",
-        "Faire chauffer le reste d'huile dans une sauteuse large (ou tajine) à feu moyen, faire revenir le fenouil et l'ail restant 5 minutes.",
-        "Ajouter le poivron et la tomate, cuire 8 minutes à couvert (les légumes rendent leur jus, base du tajine).",
-        "Rincer le citron confit, le couper en fines lanières (jeter la pulpe trop salée), l'ajouter avec les olives.",
-        "Déposer les cubes de cabillaud marinés sur les légumes, napper du reste de chermoula.",
-        "Couvrir et cuire 10-12 minutes à feu doux : le poisson est nacré et se détache à la fourchette (ne pas surcuire).",
-        "Goûter, ajuster le sel (le citron confit et les olives salent déjà).",
-        "Servir chaud directement dans le plat, le jus de cuisson est délicieux avec un peu de pain complet."
+        "Prépare la chermoula : hache très finement la coriandre, le persil, 2 gousses d'ail, le cumin, le paprika, 6 ml d'huile et le jus du demi-citron (marinade verte).",
+        "Coupe le cabillaud en gros cubes, enrobe-les de la moitié de la chermoula, laisse mariner 15 minutes au frais.",
+        "Pendant ce temps, émince le fenouil en lamelles, coupe le poivron en lanières, la tomate en quartiers.",
+        "Fais chauffer le reste d'huile dans une sauteuse large (ou tajine) à feu moyen, fais revenir le fenouil et l'ail restant 5 minutes.",
+        "Ajoute le poivron et la tomate, cuis 8 minutes à couvert (les légumes rendent leur jus, base du tajine).",
+        "Rince le citron confit, coupe-le en fines lanières (jette la pulpe trop salée), ajoute-le avec les olives.",
+        "Dépose les cubes de cabillaud marinés sur les légumes, nappe du reste de chermoula.",
+        "Couvre et cuis 10-12 minutes à feu doux : le poisson est nacré et se détache à la fourchette (ne pas surcuire).",
+        "Goûte, ajuste le sel (le citron confit et les olives salent déjà).",
+        "Sers chaud directement dans le plat, le jus de cuisson est délicieux avec un peu de pain complet."
       ],
       "photo": "assets/recipes/d208.webp"
     },
@@ -85092,16 +85078,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper tous les légumes en cubes de 2 cm, émincer l'oignon.",
-        "Faire chauffer l'huile d'olive dans une sauteuse large à feu moyen, faire revenir l'oignon et l'ail écrasé 4 minutes.",
-        "Ajouter l'aubergine, cuire 5 minutes en remuant (elle commence à dorer).",
-        "Ajouter le poivron et la courgette, le cumin et le ras el-hanout, mélanger 3 minutes.",
-        "Ajouter les tomates en dés et le sel, couvrir et mijoter 12 minutes (les légumes deviennent fondants, c'est une chakchouka de légumes).",
-        "Pendant ce temps, préparer la semoule : verser sur la semoule une fois et demie son volume d'eau bouillante salée, couvrir 5 minutes, aérer à la fourchette.",
-        "Quand les légumes sont tendres, creuser un puits par œuf dans la préparation à l'aide d'une cuillère.",
-        "Casser délicatement 1 œuf dans chaque puits, couvrir et cuire 5-6 minutes à feu doux : le blanc prend, le jaune reste coulant.",
-        "Parsemer de coriandre fraîche ciselée.",
-        "Servir chaud avec la semoule complète à côté — repas du soir végétarien complet et réconfortant."
+        "Coupe tous les légumes en cubes de 2 cm, émince l'oignon.",
+        "Fais chauffer l'huile d'olive dans une sauteuse large à feu moyen, fais revenir l'oignon et l'ail écrasé 4 minutes.",
+        "Ajoute l'aubergine, cuis 5 minutes en remuant (elle commence à dorer).",
+        "Ajoute le poivron et la courgette, le cumin et le ras el-hanout, mélange 3 minutes.",
+        "Ajoute les tomates en dés et le sel, couvre et mijote 12 minutes (les légumes deviennent fondants, c'est une chakchouka de légumes).",
+        "Pendant ce temps, prépare la semoule : verse sur la semoule une fois et demie son volume d'eau bouillante salée, couvre 5 minutes, aère à la fourchette.",
+        "Quand les légumes sont tendres, creuse un puits par œuf dans la préparation à l'aide d'une cuillère.",
+        "Casse délicatement 1 œuf dans chaque puits, couvre et cuis 5-6 minutes à feu doux : le blanc prend, le jaune reste coulant.",
+        "Parsème de coriandre fraîche ciselée.",
+        "Sers chaud avec la semoule complète à côté — repas du soir végétarien complet et réconfortant."
       ],
       "photo": "assets/recipes/d209.webp"
     },
@@ -85201,17 +85187,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer l'épeautre à l'eau froide. Émincer l'oignon finement, écraser l'ail.",
-        "Couper les champignons en lamelles de 5 mm.",
-        "Faire chauffer le bouillon dans une casserole et le maintenir frémissant à côté (clé du risotto : bouillon toujours chaud).",
-        "Dans une sauteuse, chauffer une partie de l'huile à feu moyen, faire revenir l'oignon 4 minutes (translucide).",
-        "Ajouter l'épeautre, mélanger 2 minutes pour le nacrer (les grains deviennent légèrement translucides).",
-        "Verser le vin blanc, laisser évaporer en remuant (l'alcool s'évapore, l'acidité reste).",
-        "Ajouter le bouillon chaud louche par louche, en attendant que chaque louche soit absorbée avant la suivante, en remuant souvent (25-30 min, l'épeautre reste légèrement al dente).",
-        "Pendant ce temps, dans une poêle à part, saisir les champignons et l'ail dans le reste de l'huile à feu vif 6 minutes (dorés, l'eau s'est évaporée).",
-        "Quand l'épeautre est cuit et crémeux, incorporer les champignons, le parmesan, le sel et le poivre hors du feu.",
-        "Mélanger énergiquement pour rendre le risotto onctueux (mantecatura).",
-        "Parsemer de persil ciselé. Servir immédiatement, bien chaud."
+        "Rince l'épeautre à l'eau froide. Émince l'oignon finement, écrase l'ail.",
+        "Coupe les champignons en lamelles de 5 mm.",
+        "Fais chauffer le bouillon dans une casserole et maintiens-le frémissant à côté (clé du risotto : bouillon toujours chaud).",
+        "Dans une sauteuse, chauffe une partie de l'huile à feu moyen, fais revenir l'oignon 4 minutes (translucide).",
+        "Ajoute l'épeautre, mélange 2 minutes pour le nacrer (les grains deviennent légèrement translucides).",
+        "Verse le vin blanc, laisse évaporer en remuant (l'alcool s'évapore, l'acidité reste).",
+        "Ajoute le bouillon chaud louche par louche, en attendant que chaque louche soit absorbée avant la suivante, en remuant souvent (25-30 min, l'épeautre reste légèrement al dente).",
+        "Pendant ce temps, dans une poêle à part, saisis les champignons et l'ail dans le reste de l'huile à feu vif 6 minutes (dorés, l'eau s'est évaporée).",
+        "Quand l'épeautre est cuit et crémeux, incorpore les champignons, le parmesan, le sel et le poivre hors du feu.",
+        "Mélange énergiquement pour rendre le risotto onctueux (mantecatura).",
+        "Parsème de persil ciselé. Sers immédiatement, bien chaud."
       ],
       "photo": "assets/recipes/l208.webp"
     },
@@ -85301,16 +85287,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Couper les aubergines en tranches de 1 cm dans la longueur. Les saler légèrement et laisser dégorger 10 minutes (retire l'amertume et l'eau).",
-        "Éponger les tranches avec un torchon, les badigeonner de 8 ml d'huile au pinceau, les disposer sur une plaque.",
-        "Enfourner les aubergines 20 minutes en les retournant à mi-cuisson (tendres et dorées, sans friture).",
-        "Pendant ce temps, préparer la sauce : faire revenir l'oignon émincé et l'ail dans 6 ml d'huile 4 minutes.",
-        "Ajouter les tomates en dés, l'origan et le sel, mijoter 12 minutes (sauce épaissie).",
-        "Incorporer la moitié du basilic ciselé hors du feu.",
-        "Monter la parmigiana dans un plat à gratin : une couche de sauce, une couche d'aubergines, des tranches de mozzarella, un peu de parmesan. Répéter en finissant par sauce + parmesan.",
-        "Enfourner 18-20 minutes : le dessus gratine et bouillonne.",
-        "Laisser reposer 5 minutes (les couches se tiennent mieux à la découpe), parsemer du reste de basilic. Servir chaud."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Coupe les aubergines en tranches de 1 cm dans la longueur. Sale-les légèrement et laisse dégorger 10 minutes (retire l'amertume et l'eau).",
+        "Éponge les tranches avec un torchon, badigeonne-les de 8 ml d'huile au pinceau, dispose-les sur une plaque.",
+        "Enfourne les aubergines 20 minutes en les retournant à mi-cuisson (tendres et dorées, sans friture).",
+        "Pendant ce temps, prépare la sauce : fais revenir l'oignon émincé et l'ail dans 6 ml d'huile 4 minutes.",
+        "Ajoute les tomates en dés, l'origan et le sel, mijote 12 minutes (sauce épaissie).",
+        "Incorpore la moitié du basilic ciselé hors du feu.",
+        "Monte la parmigiana dans un plat à gratin : une couche de sauce, une couche d'aubergines, des tranches de mozzarella, un peu de parmesan. Répète en finissant par sauce + parmesan.",
+        "Enfourne 18-20 minutes : le dessus gratine et bouillonne.",
+        "Laisse reposer 5 minutes (les couches se tiennent mieux à la découpe), parsème du reste de basilic. Sers chaud."
       ],
       "photo": "assets/recipes/l209.webp"
     },
@@ -85432,16 +85418,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz basmati complet, le cuire dans une casserole d'eau bouillante salée 18-20 minutes. Égoutter et réserver.",
-        "Détacher le chou-fleur en petits bouquets, couper la pomme de terre en cubes de 1,5 cm (laisser la peau si fine).",
-        "Faire chauffer l'huile d'olive dans une sauteuse à feu moyen, ajouter les graines de moutarde et attendre qu'elles éclatent (30 sec).",
-        "Ajouter l'oignon émincé, faire dorer 5 minutes.",
-        "Ajouter l'ail écrasé et le gingembre râpé, faire revenir 1 minute.",
-        "Ajouter le cumin et le curcuma, torréfier 30 secondes.",
-        "Ajouter les pommes de terre et le chou-fleur, mélanger pour enrober d'épices.",
-        "Ajouter les tomates en dés, le lait de coco, le sel et un fond d'eau (juste de quoi couvrir le fond de la sauteuse). Couvrir et cuire 18-20 minutes à feu doux (les légumes sont tendres, vérifier avec une pointe de couteau).",
-        "Ajouter le garam masala en fin de cuisson, mélanger délicatement (pour ne pas écraser les légumes).",
-        "Parsemer de coriandre fraîche. Servir chaud avec le riz basmati complet."
+        "Rince le riz basmati complet, cuis-le dans une casserole d'eau bouillante salée 18-20 minutes. Égoutte et réserve.",
+        "Détache le chou-fleur en petits bouquets, coupe la pomme de terre en cubes de 1,5 cm (laisse la peau si fine).",
+        "Fais chauffer l'huile d'olive dans une sauteuse à feu moyen, ajoute les graines de moutarde et attends qu'elles éclatent (30 sec).",
+        "Ajoute l'oignon émincé, fais dorer 5 minutes.",
+        "Ajoute l'ail écrasé et le gingembre râpé, fais revenir 1 minute.",
+        "Ajoute le cumin et le curcuma, torréfie 30 secondes.",
+        "Ajoute les pommes de terre et le chou-fleur, mélange pour enrober d'épices.",
+        "Ajoute les tomates en dés, le lait de coco, le sel et un fond d'eau (juste de quoi couvrir le fond de la sauteuse). Couvre et cuis 18-20 minutes à feu doux (les légumes sont tendres, vérifie avec une pointe de couteau).",
+        "Ajoute le garam masala en fin de cuisson, mélange délicatement (pour ne pas écraser les légumes).",
+        "Parsème de coriandre fraîche. Sers chaud avec le riz basmati complet."
       ],
       "photo": "assets/recipes/l210.webp"
     },
@@ -85557,16 +85543,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz basmati complet, le cuire dans une casserole d'eau bouillante salée 18-20 minutes. Égoutter.",
-        "Rincer les lentilles corail, les cuire dans 400 ml d'eau avec le curcuma 12 minutes (elles se défont en purée jaune).",
-        "Pendant ce temps, couper l'aubergine en cubes de 2 cm, les gombos en tronçons de 1,5 cm (ne pas trop les couper, ça libère du mucilage), la tomate en dés.",
-        "Délayer la pâte de tamarin dans 50 ml d'eau chaude (jus acidulé, signature du sambar).",
-        "Ajouter l'aubergine, les gombos, la tomate, le jus de tamarin, le sambar masala et le sel aux lentilles cuites. Mijoter 15 minutes (les légumes sont tendres, les gombos fondants).",
-        "Préparer le tempering : chauffer l'huile dans une petite poêle, ajouter les graines de moutarde, attendre qu'elles éclatent (30 sec).",
-        "Ajouter les feuilles de curry, faire revenir 20 secondes (parfum intense).",
-        "Verser le tempering chaud dans le sambar, mélanger (le grésillement libère les arômes).",
-        "Goûter et ajuster le sel et l'acidité (un peu plus de tamarin si souhaité).",
-        "Dresser le riz dans 2 bols, napper de sambar, parsemer de coriandre fraîche. Servir chaud."
+        "Rince le riz basmati complet, cuis-le dans une casserole d'eau bouillante salée 18-20 minutes. Égoutte.",
+        "Rince les lentilles corail, cuis-les dans 400 ml d'eau avec le curcuma 12 minutes (elles se défont en purée jaune).",
+        "Pendant ce temps, coupe l'aubergine en cubes de 2 cm, les gombos en tronçons de 1,5 cm (ne pas trop les couper, ça libère du mucilage), la tomate en dés.",
+        "Délaye la pâte de tamarin dans 50 ml d'eau chaude (jus acidulé, signature du sambar).",
+        "Ajoute l'aubergine, les gombos, la tomate, le jus de tamarin, le sambar masala et le sel aux lentilles cuites. Mijote 15 minutes (les légumes sont tendres, les gombos fondants).",
+        "Prépare le tempering : chauffe l'huile dans une petite poêle, ajoute les graines de moutarde, attends qu'elles éclatent (30 sec).",
+        "Ajoute les feuilles de curry, fais revenir 20 secondes (parfum intense).",
+        "Verse le tempering chaud dans le sambar, mélange (le grésillement libère les arômes).",
+        "Goûte et ajuste le sel et l'acidité (un peu plus de tamarin si souhaité).",
+        "Dresse le riz dans 2 bols, nappe de sambar, parsème de coriandre fraîche. Sers chaud."
       ],
       "photo": "assets/recipes/l211.webp"
     },
@@ -85677,16 +85663,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Émincer l'oignon, écraser l'ail, couper la tomate en dés.",
-        "Faire chauffer l'huile d'olive dans une casserole à feu moyen, faire revenir l'oignon 5 minutes (translucide).",
-        "Ajouter l'ail, le cumin et le piment doux, mélanger 30 secondes.",
-        "Ajouter la tomate, cuire 3 minutes jusqu'à ce qu'elle se défasse.",
-        "Égoutter et rincer les haricots noirs, les ajouter avec le bouillon et le sel. Porter à ébullition puis mijoter 12 minutes.",
-        "Mixer la moitié de la soupe au blender (ou mixeur plongeant), puis reverser dans la casserole : texture mi-veloutée, mi-rustique avec des haricots entiers.",
-        "Ajouter le jus d'un demi-citron vert, goûter et rectifier.",
-        "Couper l'avocat en dés, ciseler la coriandre.",
-        "Verser la soupe dans 2 bols, garnir de dés d'avocat, fromage frais émietté et coriandre.",
-        "Servir chaud avec un quartier de citron vert à presser."
+        "Émince l'oignon, écrase l'ail, coupe la tomate en dés.",
+        "Fais chauffer l'huile d'olive dans une casserole à feu moyen, fais revenir l'oignon 5 minutes (translucide).",
+        "Ajoute l'ail, le cumin et le piment doux, mélange 30 secondes.",
+        "Ajoute la tomate, cuis 3 minutes jusqu'à ce qu'elle se défasse.",
+        "Égoutte et rince les haricots noirs, ajoute-les avec le bouillon et le sel. Porte à ébullition puis mijote 12 minutes.",
+        "Mixe la moitié de la soupe au blender (ou mixeur plongeant), puis reverse dans la casserole : texture mi-veloutée, mi-rustique avec des haricots entiers.",
+        "Ajoute le jus d'un demi-citron vert, goûte et rectifie.",
+        "Coupe l'avocat en dés, cisèle la coriandre.",
+        "Verse la soupe dans 2 bols, garnis de dés d'avocat, fromage frais émietté et coriandre.",
+        "Sers chaud avec un quartier de citron vert à presser."
       ],
       "photo": "assets/recipes/l212.webp"
     },
@@ -85793,15 +85779,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le quinoa à l'eau froide, le cuire dans 2 fois son volume d'eau salée 15 minutes (l'eau est absorbée, les grains éclatent). Réserver.",
-        "Couper la courgette en cubes de 1,5 cm, la tomate en dés, émincer l'oignon rouge.",
-        "Faire chauffer l'huile d'olive dans une poêle à feu moyen-vif, faire revenir l'oignon et l'ail écrasé 3 minutes.",
-        "Ajouter la courgette, saisir 6 minutes à feu vif (dorée mais encore croquante).",
-        "Ajouter le maïs, la tomate, le cumin, le piment doux et le sel, cuire 5 minutes (la tomate fond, c'est le calabacitas).",
-        "Égoutter et rincer les haricots noirs, les ajouter pour les réchauffer 2 minutes.",
-        "Presser le jus du citron vert, mélanger.",
-        "Dresser le quinoa dans les bols, répartir les calabacitas par-dessus.",
-        "Parsemer de coriandre fraîche ciselée. Servir chaud ou tiède."
+        "Rince le quinoa à l'eau froide, cuis-le dans 2 fois son volume d'eau salée 15 minutes (l'eau est absorbée, les grains éclatent). Réserve.",
+        "Coupe la courgette en cubes de 1,5 cm, la tomate en dés, émince l'oignon rouge.",
+        "Fais chauffer l'huile d'olive dans une poêle à feu moyen-vif, fais revenir l'oignon et l'ail écrasé 3 minutes.",
+        "Ajoute la courgette, saisis 6 minutes à feu vif (dorée mais encore croquante).",
+        "Ajoute le maïs, la tomate, le cumin, le piment doux et le sel, cuis 5 minutes (la tomate fond, c'est le calabacitas).",
+        "Égoutte et rince les haricots noirs, ajoute-les pour les réchauffer 2 minutes.",
+        "Presse le jus du citron vert, mélange.",
+        "Dresse le quinoa dans les bols, répartis les calabacitas par-dessus.",
+        "Parsème de coriandre fraîche ciselée. Sers chaud ou tiède."
       ],
       "photo": "assets/recipes/l213.webp"
     },
@@ -85891,16 +85877,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Décortiquer les crevettes si nécessaire, les sécher avec un papier absorbant (clé pour qu'elles saisissent, pas bouillent).",
-        "Émincer l'ail en très fines lamelles, couper la courgette en demi-lunes de 1 cm, la tomate en dés.",
-        "Faire chauffer 6 ml d'huile dans une poêle à feu vif, saisir les courgettes 5 minutes (dorées, encore croquantes). Réserver.",
-        "Dans la même poêle, chauffer le reste d'huile à feu moyen, ajouter l'ail et faire blondir 1 minute (sans le brûler, sinon amer).",
-        "Ajouter le piment doux et le paprika fumé, mélanger 15 secondes.",
-        "Monter le feu, ajouter les crevettes, saisir 2-3 minutes par face : elles deviennent roses et opaques.",
-        "Ajouter la tomate et le sel, cuire 2 minutes (la tomate libère un peu de jus pour la sauce).",
-        "Remettre les courgettes, mélanger pour réchauffer.",
-        "Hors du feu, presser le jus du citron vert entier sur les crevettes.",
-        "Parsemer de coriandre fraîche. Servir chaud — plat léger et rapide, parfait pour le soir."
+        "Décortique les crevettes si nécessaire, sèche-les avec un papier absorbant (clé pour qu'elles saisissent, pas bouillent).",
+        "Émince l'ail en très fines lamelles, coupe la courgette en demi-lunes de 1 cm, la tomate en dés.",
+        "Fais chauffer 6 ml d'huile dans une poêle à feu vif, saisis les courgettes 5 minutes (dorées, encore croquantes). Réserve.",
+        "Dans la même poêle, chauffe le reste d'huile à feu moyen, ajoute l'ail et fais blondir 1 minute (sans le brûler, sinon amer).",
+        "Ajoute le piment doux et le paprika fumé, mélange 15 secondes.",
+        "Monte le feu, ajoute les crevettes, saisis 2-3 minutes par face : elles deviennent roses et opaques.",
+        "Ajoute la tomate et le sel, cuis 2 minutes (la tomate libère un peu de jus pour la sauce).",
+        "Remets les courgettes, mélange pour réchauffer.",
+        "Hors du feu, presse le jus du citron vert entier sur les crevettes.",
+        "Parsème de coriandre fraîche. Sers chaud — plat léger et rapide, parfait pour le soir."
       ],
       "photo": "assets/recipes/d210.webp"
     },
@@ -86008,16 +85994,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 210°C en chaleur tournante.",
-        "Préparer l'adobo : mélanger dans un bol le paprika fumé, le cumin, le piment doux, 1 gousse d'ail écrasée, 6 ml d'huile, le jus d'un demi-citron vert et une pincée de sel (pâte d'épices rouge).",
-        "Badigeonner le cabillaud de cet adobo sur les 2 faces, laisser mariner 15 minutes au frais.",
-        "Pendant ce temps, couper le poivron en lanières et la courgette en demi-lunes, les disposer sur une plaque, arroser de 3 ml d'huile et d'une pincée de sel.",
-        "Enfourner les légumes seuls 8 minutes (ils commencent à dorer).",
-        "Préparer la salsa verde : mixer les tomatillos, l'oignon rouge, le reste d'ail, la moitié de la coriandre, le jus du demi-citron restant, 3 ml d'huile et une pincée de sel (sauce verte fraîche).",
-        "Sortir la plaque, pousser les légumes sur les côtés, déposer le cabillaud mariné au centre.",
-        "Enfourner 10-12 minutes : le poisson est nacré et se détache à la fourchette (ne pas surcuire).",
-        "Napper le poisson de salsa verde, parsemer du reste de coriandre.",
-        "Servir chaud avec les légumes rôtis — le poisson grillé épicé de la côte du Guerrero."
+        "Préchauffe le four à 210°C en chaleur tournante.",
+        "Prépare l'adobo : mélange dans un bol le paprika fumé, le cumin, le piment doux, 1 gousse d'ail écrasée, 6 ml d'huile, le jus d'un demi-citron vert et une pincée de sel (pâte d'épices rouge).",
+        "Badigeonne le cabillaud de cet adobo sur les 2 faces, laisse mariner 15 minutes au frais.",
+        "Pendant ce temps, coupe le poivron en lanières et la courgette en demi-lunes, dispose-les sur une plaque, arrose de 3 ml d'huile et d'une pincée de sel.",
+        "Enfourne les légumes seuls 8 minutes (ils commencent à dorer).",
+        "Prépare la salsa verde : mixe les tomatillos, l'oignon rouge, le reste d'ail, la moitié de la coriandre, le jus du demi-citron restant, 3 ml d'huile et une pincée de sel (sauce verte fraîche).",
+        "Sors la plaque, pousse les légumes sur les côtés, dépose le cabillaud mariné au centre.",
+        "Enfourne 10-12 minutes : le poisson est nacré et se détache à la fourchette (ne pas surcuire).",
+        "Nappe le poisson de salsa verde, parsème du reste de coriandre.",
+        "Sers chaud avec les légumes rôtis — le poisson grillé épicé de la côte du Guerrero."
       ],
       "photo": "assets/recipes/d211.webp"
     },
@@ -86127,15 +86113,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Émincer l'oignon, couper la carotte en petits dés, la courgette en demi-lunes, la tomate en dés.",
-        "Faire chauffer l'huile d'olive dans une cocotte à feu moyen, faire revenir l'oignon 4 minutes.",
-        "Ajouter le concentré de tomate, le cumin, le paprika et le ras el-hanout, mélanger 1 minute (les épices torréfient).",
-        "Ajouter la carotte, la tomate en dés et 500 ml d'eau, le sel. Porter à ébullition.",
-        "Ajouter les berkoukes (gros grains de pâte roulée), cuire 12 minutes en remuant de temps en temps (ils gonflent comme un risotto).",
-        "Ajouter la courgette et les pois chiches égouttés, prolonger 8 minutes (la courgette est tendre, la texture nappe).",
-        "Ajuster la consistance : ajouter un peu d'eau chaude si trop épais (le berkoukes doit rester légèrement soupe).",
-        "Goûter et rectifier le sel.",
-        "Parsemer de coriandre fraîche ciselée. Servir chaud — plat-soupe algérien réconfortant aux pâtes roulées."
+        "Émince l'oignon, coupe la carotte en petits dés, la courgette en demi-lunes, la tomate en dés.",
+        "Fais chauffer l'huile d'olive dans une cocotte à feu moyen, fais revenir l'oignon 4 minutes.",
+        "Ajoute le concentré de tomate, le cumin, le paprika et le ras el-hanout, mélange 1 minute (les épices torréfient).",
+        "Ajoute la carotte, la tomate en dés et 500 ml d'eau, le sel. Porte à ébullition.",
+        "Ajoute les berkoukes (gros grains de pâte roulée), cuis 12 minutes en remuant de temps en temps (ils gonflent comme un risotto).",
+        "Ajoute la courgette et les pois chiches égouttés, prolonge 8 minutes (la courgette est tendre, la texture nappe).",
+        "Ajuste la consistance : ajoute un peu d'eau chaude si trop épais (le berkoukes doit rester légèrement soupe).",
+        "Goûte et rectifie le sel.",
+        "Parsème de coriandre fraîche ciselée. Sers chaud — plat-soupe algérien réconfortant aux pâtes roulées."
       ],
       "photo": "assets/recipes/l214.webp"
     },
@@ -86231,16 +86217,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire bouillir une casserole d'eau salée. Y plonger les fèves écossées 2 minutes (blanchir), puis les rafraîchir dans l'eau glacée.",
-        "Retirer la peau blanche épaisse de chaque fève en pinçant (les fèves vert vif dessous sont fondantes).",
-        "Si les cœurs d'artichaut sont crus : les cuire 10 minutes à l'eau bouillante citronnée. Si en conserve, les rincer. Les couper en quartiers.",
-        "Émincer l'oignon rouge très finement.",
-        "Rincer le citron confit, hacher finement la peau (jeter la pulpe trop salée).",
-        "Dans un grand saladier, mélanger les fèves, les artichauts, les pois chiches égouttés, l'oignon et le citron confit.",
-        "Préparer la vinaigrette : fouetter l'huile d'olive, le jus du citron jaune, le cumin et le sel.",
-        "Verser la vinaigrette sur la salade, mélanger délicatement.",
-        "Ciseler le persil et la menthe, les parsemer sur la salade.",
-        "Laisser reposer 15 minutes au frais pour que les saveurs se marient. Servir frais — salade printanière du Maghreb."
+        "Fais bouillir une casserole d'eau salée. Plonges-y les fèves écossées 2 minutes (blanchis), puis rafraîchis-les dans l'eau glacée.",
+        "Retire la peau blanche épaisse de chaque fève en pinçant (les fèves vert vif dessous sont fondantes).",
+        "Si les cœurs d'artichaut sont crus : cuis-les 10 minutes à l'eau bouillante citronnée. Si en conserve, rince-les. Coupe-les en quartiers.",
+        "Émince l'oignon rouge très finement.",
+        "Rince le citron confit, hache finement la peau (jette la pulpe trop salée).",
+        "Dans un grand saladier, mélange les fèves, les artichauts, les pois chiches égouttés, l'oignon et le citron confit.",
+        "Prépare la vinaigrette : fouette l'huile d'olive, le jus du citron jaune, le cumin et le sel.",
+        "Verse la vinaigrette sur la salade, mélange délicatement.",
+        "Cisèle le persil et la menthe, parsème-les sur la salade.",
+        "Laisse reposer 15 minutes au frais pour que les saveurs se marient. Sers frais — salade printanière du Maghreb."
       ],
       "photo": "assets/recipes/l215.webp"
     },
@@ -86351,16 +86337,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le poulet en gros morceaux. Émincer l'oignon, écraser l'ail, râper le gingembre.",
-        "Faire chauffer l'huile d'olive dans une cocotte (ou tajine) à feu moyen, dorer les morceaux de poulet 5 minutes sur toutes les faces. Réserver.",
-        "Dans la même cocotte, faire suer l'oignon 4 minutes, ajouter l'ail, le gingembre, le curcuma et le cumin, mélanger 1 minute.",
-        "Remettre le poulet, ajouter 150 ml d'eau et le sel. Couvrir et mijoter 15 minutes à feu doux.",
-        "Si les artichauts sont crus, les ajouter maintenant ; s'ils sont en conserve, les rincer et les garder pour plus tard.",
-        "Ajouter les petits pois (et les artichauts crus), couvrir et cuire 12 minutes (les légumes sont tendres).",
-        "Rincer le citron confit, le couper en lanières (jeter la pulpe trop salée), l'ajouter avec les olives et les artichauts en conserve si utilisés.",
-        "Prolonger 5 minutes pour que les saveurs se mêlent. La sauce doit napper (réduire à découvert si trop liquide).",
-        "Presser le jus du demi-citron jaune, parsemer de coriandre fraîche.",
-        "Servir chaud — tajine printanier marocain, le citron confit et les olives font la signature."
+        "Coupe le poulet en gros morceaux. Émince l'oignon, écrase l'ail, râpe le gingembre.",
+        "Fais chauffer l'huile d'olive dans une cocotte (ou tajine) à feu moyen, dore les morceaux de poulet 5 minutes sur toutes les faces. Réserve.",
+        "Dans la même cocotte, fais suer l'oignon 4 minutes, ajoute l'ail, le gingembre, le curcuma et le cumin, mélange 1 minute.",
+        "Remets le poulet, ajoute 150 ml d'eau et le sel. Couvre et mijote 15 minutes à feu doux.",
+        "Si les artichauts sont crus, ajoute-les maintenant ; s'ils sont en conserve, rince-les et garde-les pour plus tard.",
+        "Ajoute les petits pois (et les artichauts crus), couvre et cuis 12 minutes (les légumes sont tendres).",
+        "Rince le citron confit, coupe-le en lanières (jette la pulpe trop salée), ajoute-le avec les olives et les artichauts en conserve si utilisés.",
+        "Prolonge 5 minutes pour que les saveurs se mêlent. La sauce doit napper (réduis à découvert si trop liquide).",
+        "Presse le jus du demi-citron jaune, parsème de coriandre fraîche.",
+        "Sers chaud — tajine printanier marocain, le citron confit et les olives font la signature."
       ],
       "photo": "assets/recipes/d212.webp"
     },
@@ -86462,16 +86448,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 210°C en chaleur tournante.",
-        "Couper les aubergines en cubes de 2,5 cm, les disposer sur une plaque, arroser de 6 ml d'huile et d'une pincée de sel.",
-        "Enfourner 20 minutes en remuant à mi-cuisson (les aubergines dorent et deviennent fondantes, façon confite).",
-        "Pendant ce temps, émincer l'oignon, écraser l'ail, couper la tomate en dés.",
-        "Faire chauffer le reste d'huile dans une sauteuse à feu moyen, faire revenir l'oignon 5 minutes.",
-        "Ajouter l'ail, le cumin et le paprika fumé, mélanger 30 secondes.",
-        "Ajouter la tomate et le sel, mijoter 10 minutes (sauce épaissie, c'est la base du mderbel).",
-        "Ajouter les aubergines rôties et les pois chiches égouttés, mélanger délicatement, prolonger 8 minutes à feu doux pour que les saveurs fusionnent.",
-        "Écraser légèrement quelques aubergines pour lier (texture confite caractéristique).",
-        "Presser le jus du demi-citron, parsemer de coriandre et persil ciselés. Servir chaud ou tiède — plat algérien d'aubergines confites."
+        "Préchauffe le four à 210°C en chaleur tournante.",
+        "Coupe les aubergines en cubes de 2,5 cm, dispose-les sur une plaque, arrose de 6 ml d'huile et d'une pincée de sel.",
+        "Enfourne 20 minutes en remuant à mi-cuisson (les aubergines dorent et deviennent fondantes, façon confite).",
+        "Pendant ce temps, émince l'oignon, écrase l'ail, coupe la tomate en dés.",
+        "Fais chauffer le reste d'huile dans une sauteuse à feu moyen, fais revenir l'oignon 5 minutes.",
+        "Ajoute l'ail, le cumin et le paprika fumé, mélange 30 secondes.",
+        "Ajoute la tomate et le sel, mijote 10 minutes (sauce épaissie, c'est la base du mderbel).",
+        "Ajoute les aubergines rôties et les pois chiches égouttés, mélange délicatement, prolonge 8 minutes à feu doux pour que les saveurs fusionnent.",
+        "Écrase légèrement quelques aubergines pour lier (texture confite caractéristique).",
+        "Presse le jus du demi-citron, parsème de coriandre et persil ciselés. Sers chaud ou tiède — plat algérien d'aubergines confites."
       ],
       "photo": "assets/recipes/d213.webp"
     },
@@ -86541,13 +86527,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Verser les flocons d'avoine et le lait dans une casserole, ajouter la cannelle.",
-        "Porter à frémissement à feu moyen en remuant régulièrement (le porridge épaissit en 5-7 minutes).",
-        "Pendant ce temps, râper une partie de la pomme (avec la peau) et couper le reste en petits dés.",
-        "Ajouter la pomme râpée dans le porridge en fin de cuisson, mélanger (elle fond et adoucit naturellement le porridge).",
-        "Concasser grossièrement les noix au couteau.",
-        "Verser le porridge dans le bol, répartir les dés de pomme frais, les noix concassées et les graines de lin.",
-        "Servir chaud : la pomme râpée et la cannelle apportent toute la douceur."
+        "Verse les flocons d'avoine et le lait dans une casserole, ajoute la cannelle.",
+        "Porte à frémissement à feu moyen en remuant régulièrement (le porridge épaissit en 5-7 minutes).",
+        "Pendant ce temps, râpe une partie de la pomme (avec la peau) et coupe le reste en petits dés.",
+        "Ajoute la pomme râpée dans le porridge en fin de cuisson, mélange (elle fond et adoucit naturellement le porridge).",
+        "Concasse grossièrement les noix au couteau.",
+        "Verse le porridge dans le bol, répartis les dés de pomme frais, les noix concassées et les graines de lin.",
+        "Sers chaud : la pomme râpée et la cannelle apportent toute la douceur."
       ],
       "photo": "assets/recipes/b160.webp"
     },
@@ -86635,15 +86621,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mixer les flocons d'avoine au blender pour obtenir une farine grossière.",
-        "Dans un saladier, mélanger la farine d'avoine, la levure chimique et la vanille.",
-        "Dans un autre bol, fouetter l'œuf, une partie du fromage blanc et le lait.",
-        "Verser les liquides dans les secs, mélanger jusqu'à obtenir une pâte épaisse et lisse. Laisser reposer 5 minutes.",
-        "Incorporer délicatement une partie des myrtilles à la pâte.",
-        "Chauffer une poêle anti-adhésive à feu moyen avec un peu d'huile, verser 2 cuillères à soupe de pâte par pancake.",
-        "Cuire 2 minutes : des bulles apparaissent en surface, retourner et cuire 1-2 minutes l'autre face. Réserver au chaud.",
-        "Continuer jusqu'à épuiser la pâte.",
-        "Dresser les pancakes, garnir du reste de fromage blanc, des myrtilles restantes et des framboises (rincées et égouttées délicatement, elles s'écrasent vite). Les fruits apportent toute la douceur."
+        "Mixe les flocons d'avoine au blender pour obtenir une farine grossière.",
+        "Dans un saladier, mélange la farine d'avoine, la levure chimique et la vanille.",
+        "Dans un autre bol, fouette l'œuf, une partie du fromage blanc et le lait.",
+        "Verse les liquides dans les secs, mélange jusqu'à obtenir une pâte épaisse et lisse. Laisse reposer 5 minutes.",
+        "Incorpore délicatement une partie des myrtilles à la pâte.",
+        "Chauffe une poêle anti-adhésive à feu moyen avec un peu d'huile, verse 2 cuillères à soupe de pâte par pancake.",
+        "Cuis 2 minutes : des bulles apparaissent en surface, retourne et cuis 1-2 minutes l'autre face. Réserve au chaud.",
+        "Continue jusqu'à épuiser la pâte.",
+        "Dresse les pancakes, garnis du reste de fromage blanc, des myrtilles restantes et des framboises (rincées et égouttées délicatement, elles s'écrasent vite). Les fruits apportent toute la douceur."
       ],
       "photo": "assets/recipes/b161.webp"
     },
@@ -86723,14 +86709,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper les tomates cerises en deux. Ciseler finement la ciboulette et le persil.",
-        "Casser les œufs dans un bol, battre à la fourchette avec le sel, le poivre et la moitié des herbes (juste mélanger, pas mousseux).",
-        "Faire chauffer l'huile d'olive dans une poêle à feu moyen, ajouter les tomates cerises 2 minutes (elles ramollissent légèrement).",
-        "Verser les œufs battus sur les tomates, baisser le feu.",
-        "Laisser prendre 2 minutes sans remuer, puis ramener délicatement les bords vers le centre à la spatule en inclinant la poêle (l'œuf liquide coule sur les bords).",
-        "Quand l'omelette est presque prise mais encore baveuse au centre, déposer le fromage frais émietté sur une moitié.",
-        "Replier l'omelette en deux par-dessus le fromage, laisser fondre 1 minute.",
-        "Glisser sur 2 assiettes, parsemer du reste d'herbes fraîches. Servir immédiatement."
+        "Coupe les tomates cerises en deux. Cisèle finement la ciboulette et le persil.",
+        "Casse les œufs dans un bol, bats à la fourchette avec le sel, le poivre et la moitié des herbes (mélange juste, pas mousseux).",
+        "Fais chauffer l'huile d'olive dans une poêle à feu moyen, ajoute les tomates cerises 2 minutes (elles ramollissent légèrement).",
+        "Verse les œufs battus sur les tomates, baisse le feu.",
+        "Laisse prendre 2 minutes sans remuer, puis ramène délicatement les bords vers le centre à la spatule en inclinant la poêle (l'œuf liquide coule sur les bords).",
+        "Quand l'omelette est presque prise mais encore baveuse au centre, dépose le fromage frais émietté sur une moitié.",
+        "Replie l'omelette en deux par-dessus le fromage, laisse fondre 1 minute.",
+        "Glisse sur 2 assiettes, parsème du reste d'herbes fraîches. Sers immédiatement."
       ],
       "photo": "assets/recipes/b162.webp"
     },
@@ -86806,14 +86792,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer un expresso (ou café fort) et le laisser tiédir.",
-        "Verser les flocons d'avoine, le lait et le café dans une casserole.",
-        "Porter à frémissement à feu moyen en remuant, cuire 5-7 minutes (le porridge épaissit, couleur café au lait).",
-        "Ajouter le cacao en poudre, mélanger jusqu'à dissolution complète (texture mousse de cappuccino).",
-        "Couper la banane en rondelles.",
-        "Concasser grossièrement les noisettes au couteau, les faire griller 2 minutes à sec dans une poêle.",
-        "Verser le porridge dans le bol, disposer les rondelles de banane en éventail.",
-        "Parsemer de noisettes grillées et d'une pointe de cannelle façon saupoudrage de cappuccino. Servir chaud."
+        "Prépare un expresso (ou café fort) et laisse-le tiédir.",
+        "Verse les flocons d'avoine, le lait et le café dans une casserole.",
+        "Porte à frémissement à feu moyen en remuant, cuis 5-7 minutes (le porridge épaissit, couleur café au lait).",
+        "Ajoute le cacao en poudre, mélange jusqu'à dissolution complète (texture mousse de cappuccino).",
+        "Coupe la banane en rondelles.",
+        "Concasse grossièrement les noisettes au couteau, fais-les griller 2 minutes à sec dans une poêle.",
+        "Verse le porridge dans le bol, dispose les rondelles de banane en éventail.",
+        "Parsème de noisettes grillées et d'une pointe de cannelle façon saupoudrage de cappuccino. Sers chaud."
       ],
       "photo": "assets/recipes/b163.webp"
     },
@@ -86899,15 +86885,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Couper les tomates en petits dés, écraser l'ail finement.",
-        "Faire chauffer l'huile d'olive dans une poêle à feu moyen, faire revenir l'ail 30 secondes.",
-        "Ajouter les tomates, l'origan, le sel et le poivre, cuire 5 minutes (sauce épaissie).",
-        "Répartir la sauce tomate dans 2 ramequins individuels (8 cm de diamètre).",
-        "Casser délicatement 1 œuf dans chaque ramequin (sans casser le jaune), parsemer de parmesan râpé autour du jaune.",
-        "Enfourner 10-12 minutes : le blanc est pris mais le jaune reste coulant.",
-        "Sortir, parsemer de basilic frais ciselé.",
-        "Servir immédiatement avec une tranche de pain au levain toasté pour saucer le jaune."
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Coupe les tomates en petits dés, écrase l'ail finement.",
+        "Fais chauffer l'huile d'olive dans une poêle à feu moyen, fais revenir l'ail 30 secondes.",
+        "Ajoute les tomates, l'origan, le sel et le poivre, cuis 5 minutes (sauce épaissie).",
+        "Répartis la sauce tomate dans 2 ramequins individuels (8 cm de diamètre).",
+        "Casse délicatement 1 œuf dans chaque ramequin (sans casser le jaune), parsème de parmesan râpé autour du jaune.",
+        "Enfourne 10-12 minutes : le blanc est pris mais le jaune reste coulant.",
+        "Sors, parsème de basilic frais ciselé.",
+        "Sers immédiatement avec une tranche de pain au levain toasté pour saucer le jaune."
       ],
       "photo": "assets/recipes/b164.webp"
     },
@@ -86989,13 +86975,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les pêches et les abricots, retirer les noyaux, couper la chair en morceaux (garder 2-3 lamelles de pêche pour la déco).",
-        "Mettre les fruits dans le blender avec la ricotta, le lait d'amande, la vanille et le miel.",
-        "Mixer 30 secondes à pleine vitesse : la texture doit être épaisse et crémeuse (ajouter un glaçon si trop liquide).",
-        "Faire griller les amandes effilées 2 minutes à sec dans une petite poêle.",
-        "Verser le smoothie dans un bol large, lisser le dessus.",
-        "Disposer les lamelles de pêche réservées, parsemer de flocons d'avoine et d'amandes grillées.",
-        "Servir immédiatement, bien frais."
+        "Lave les pêches et les abricots, retire les noyaux, coupe la chair en morceaux (garde 2-3 lamelles de pêche pour la déco).",
+        "Mets les fruits dans le blender avec la ricotta, le lait d'amande, la vanille et le miel.",
+        "Mixe 30 secondes à pleine vitesse : la texture doit être épaisse et crémeuse (ajoute un glaçon si trop liquide).",
+        "Fais griller les amandes effilées 2 minutes à sec dans une petite poêle.",
+        "Verse le smoothie dans un bol large, lisse le dessus.",
+        "Dispose les lamelles de pêche réservées, parsème de flocons d'avoine et d'amandes grillées.",
+        "Sers immédiatement, bien frais."
       ],
       "photo": "assets/recipes/b165.webp"
     },
@@ -87078,15 +87064,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Égoutter les sardines, retirer l'arête centrale si présente (elle s'enlève facilement à la fourchette).",
-        "Écraser les sardines à la fourchette dans un bol (texture rustique).",
-        "Émincer l'échalote très finement, ciseler la ciboulette.",
-        "Ajouter le fromage frais, l'échalote, le jus du citron et le poivre aux sardines.",
-        "Mélanger jusqu'à obtenir une texture de rillettes homogène mais avec des morceaux.",
-        "Goûter et ajuster : un peu plus de citron si besoin (les sardines sont déjà salées, pas besoin de sel).",
-        "Ajouter une partie de la ciboulette dans les rillettes, réserver le reste pour la déco.",
-        "Toaster le pain de seigle, le couper en mouillettes. Couper le concombre en rondelles épaisses.",
-        "Servir les rillettes dans un ramequin, parsemées de ciboulette, avec les mouillettes et les rondelles de concombre pour tartiner."
+        "Égoutte les sardines, retire l'arête centrale si présente (elle s'enlève facilement à la fourchette).",
+        "Écrase les sardines à la fourchette dans un bol (texture rustique).",
+        "Émince l'échalote très finement, cisèle la ciboulette.",
+        "Ajoute le fromage frais, l'échalote, le jus du citron et le poivre aux sardines.",
+        "Mélange jusqu'à obtenir une texture de rillettes homogène mais avec des morceaux.",
+        "Goûte et ajuste : un peu plus de citron si besoin (les sardines sont déjà salées, pas besoin de sel).",
+        "Ajoute une partie de la ciboulette dans les rillettes, réserve le reste pour la déco.",
+        "Toaste le pain de seigle, coupe-le en mouillettes. Coupe le concombre en rondelles épaisses.",
+        "Sers les rillettes dans un ramequin, parsemées de ciboulette, avec les mouillettes et les rondelles de concombre pour tartiner."
       ],
       "photo": "assets/recipes/s138.webp"
     },
@@ -87182,14 +87168,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper les courgettes en rondelles (garder la peau pour la couleur verte), émincer l'oignon.",
-        "Faire chauffer l'huile d'olive dans une casserole à feu moyen, faire suer l'oignon et l'ail écrasé 4 minutes.",
-        "Ajouter les courgettes, le bouillon, le sel et le poivre. Porter à ébullition puis mijoter 12 minutes (les courgettes sont tendres).",
-        "Laisser tiédir 10 minutes, puis mixer au blender avec le fromage frais, le basilic (garder quelques feuilles) et le jus du quart de citron.",
-        "Mixer jusqu'à obtenir un velouté parfaitement lisse et vert pâle.",
-        "Goûter et rectifier l'assaisonnement.",
-        "Placer 2h au frigo pour servir bien froid (le velouté froid est plus rafraîchissant l'été).",
-        "Verser dans des verrines, décorer d'un filet d'huile d'olive et d'une feuille de basilic. Servir frais."
+        "Coupe les courgettes en rondelles (garde la peau pour la couleur verte), émince l'oignon.",
+        "Fais chauffer l'huile d'olive dans une casserole à feu moyen, fais suer l'oignon et l'ail écrasé 4 minutes.",
+        "Ajoute les courgettes, le bouillon, le sel et le poivre. Porte à ébullition puis mijote 12 minutes (les courgettes sont tendres).",
+        "Laisse tiédir 10 minutes, puis mixe au blender avec le fromage frais, le basilic (garde quelques feuilles) et le jus du quart de citron.",
+        "Mixe jusqu'à obtenir un velouté parfaitement lisse et vert pâle.",
+        "Goûte et rectifie l'assaisonnement.",
+        "Place 2h au frigo pour servir bien froid (le velouté froid est plus rafraîchissant l'été).",
+        "Verse dans des verrines, décore d'un filet d'huile d'olive et d'une feuille de basilic. Sers frais."
       ],
       "photo": "assets/recipes/s139.webp"
     },
@@ -87288,15 +87274,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Si les petits pois sont frais, les cuire 4-5 minutes à l'eau bouillante salée ; s'ils sont surgelés, les blanchir 3 minutes. Égoutter et rafraîchir à l'eau froide (garde la couleur vert vif).",
-        "Réserver 1 cuillère à soupe de petits pois pour la déco.",
-        "Mettre les petits pois, les pois chiches égouttés, le tahini, l'ail, le jus du demi-citron, le cumin, le sel et la moitié de la menthe dans le blender.",
-        "Mixer en ajoutant l'huile d'olive en filet, jusqu'à obtenir une texture lisse et onctueuse (ajouter 1-2 cuillères d'eau si trop épais).",
-        "Goûter et ajuster : citron, sel ou menthe selon préférence.",
-        "Couper la carotte en bâtonnets, les radis en rondelles ou en quartiers.",
-        "Verser le houmous dans un bol, lisser le dessus en spirale à la cuillère.",
-        "Garnir des petits pois réservés, de feuilles de menthe et d'un filet d'huile d'olive.",
-        "Servir avec les crudités pour tremper. Conservation : 3 jours au frais."
+        "Si les petits pois sont frais, cuis-les 4-5 minutes à l'eau bouillante salée ; s'ils sont surgelés, blanchis-les 3 minutes. Égoutte et rafraîchis à l'eau froide (garde la couleur vert vif).",
+        "Réserve 1 cuillère à soupe de petits pois pour la déco.",
+        "Mets les petits pois, les pois chiches égouttés, le tahini, l'ail, le jus du demi-citron, le cumin, le sel et la moitié de la menthe dans le blender.",
+        "Mixe en ajoutant l'huile d'olive en filet, jusqu'à obtenir une texture lisse et onctueuse (ajoute 1-2 cuillères d'eau si trop épais).",
+        "Goûte et ajuste : citron, sel ou menthe selon préférence.",
+        "Coupe la carotte en bâtonnets, les radis en rondelles ou en quartiers.",
+        "Verse le houmous dans un bol, lisse le dessus en spirale à la cuillère.",
+        "Garnis des petits pois réservés, de feuilles de menthe et d'un filet d'huile d'olive.",
+        "Sers avec les crudités pour tremper. Conservation : 3 jours au frais."
       ],
       "photo": "assets/recipes/s140.webp"
     },
@@ -87363,14 +87349,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz rond complet à l'eau froide.",
-        "Verser le lait dans une casserole à fond épais, ajouter la vanille et le zeste de citron râpé.",
-        "Porter à frémissement à feu moyen (surveiller, le lait déborde vite).",
-        "Ajouter le riz, baisser à feu très doux et cuire 30-35 minutes en remuant régulièrement (le riz absorbe le lait et devient crémeux).",
-        "Surveiller en fin de cuisson : le riz au lait doit rester légèrement coulant (il épaissit en refroidissant).",
-        "Hors du feu, ajouter le sirop d'érable et mélanger (le sucre en fin préserve la texture).",
-        "Répartir dans les ramequins, saupoudrer d'une pointe de cannelle.",
-        "Servir tiède ou froid selon préférence. Se conserve 3 jours au frais."
+        "Rince le riz rond complet à l'eau froide.",
+        "Verse le lait dans une casserole à fond épais, ajoute la vanille et le zeste de citron râpé.",
+        "Porte à frémissement à feu moyen (surveille, le lait déborde vite).",
+        "Ajoute le riz, baisse à feu très doux et cuis 30-35 minutes en remuant régulièrement (le riz absorbe le lait et devient crémeux).",
+        "Surveille en fin de cuisson : le riz au lait doit rester légèrement coulant (il épaissit en refroidissant).",
+        "Hors du feu, ajoute le sirop d'érable et mélange (le sucre en fin préserve la texture).",
+        "Répartis dans les ramequins, saupoudre d'une pointe de cannelle.",
+        "Sers tiède ou froid selon préférence. Se conserve 3 jours au frais."
       ],
       "photo": "assets/recipes/des147.webp"
     },
@@ -87451,14 +87437,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher les poires en gardant la queue si possible (plus joli), les couper en deux et retirer le cœur à la cuillère.",
-        "Dans une casserole, verser de l'eau (de quoi recouvrir les poires), le sirop d'érable, la cannelle, l'anis étoilé, la vanille et le jus du citron.",
-        "Porter à frémissement, déposer les morceaux de poire dans le sirop épicé.",
-        "Pocher à feu doux 20-25 minutes en les retournant à mi-cuisson : les poires sont tendres et translucides (une pointe de couteau s'enfonce sans résistance).",
-        "Retirer les poires délicatement, laisser réduire le jus de pochage 5 minutes à feu vif (il devient sirupeux).",
-        "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Dresser : une cuillère de skyr dans chaque assiette, déposer les morceaux de poire par-dessus.",
-        "Napper d'un peu de sirop de pochage réduit, parsemer d'amandes effilées grillées. Servir tiède ou frais."
+        "Épluche les poires en gardant la queue si possible (plus joli), coupe-les en deux et retire le cœur à la cuillère.",
+        "Dans une casserole, verse de l'eau (de quoi recouvrir les poires), le sirop d'érable, la cannelle, l'anis étoilé, la vanille et le jus du citron.",
+        "Porte à frémissement, dépose les morceaux de poire dans le sirop épicé.",
+        "Poche à feu doux 20-25 minutes en les retournant à mi-cuisson : les poires sont tendres et translucides (une pointe de couteau s'enfonce sans résistance).",
+        "Retire les poires délicatement, laisse réduire le jus de pochage 5 minutes à feu vif (il devient sirupeux).",
+        "Fais griller les amandes effilées 2 minutes à sec dans une poêle.",
+        "Dresse : une cuillère de skyr dans chaque assiette, dépose les morceaux de poire par-dessus.",
+        "Nappe d'un peu de sirop de pochage réduit, parsème d'amandes effilées grillées. Sers tiède ou frais."
       ],
       "photo": "assets/recipes/des148.webp"
     },
@@ -87541,15 +87527,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante. Beurrer légèrement 8 empreintes à financiers (ou petits moules).",
-        "Faire fondre le beurre dans une casserole à feu doux jusqu'à ce qu'il prenne une couleur noisette et sente bon (beurre noisette, la signature des financiers). Laisser tiédir.",
-        "Dans un saladier, mélanger la poudre d'amandes, la farine T80, la levure chimique et la vanille.",
-        "Dans un autre bol, fouetter légèrement les blancs d'œufs à la fourchette (juste mousseux, pas en neige) avec le sirop d'érable.",
-        "Verser les blancs sur le mélange sec, mélanger, puis incorporer le beurre noisette tiédi.",
-        "Répartir la pâte dans les empreintes (aux 3/4, ils gonflent).",
-        "Enfoncer 2-3 framboises dans chaque financier.",
-        "Enfourner 16-18 minutes : ils sont dorés sur les bords et la pointe d'un couteau ressort sèche.",
-        "Démouler tièdes sur une grille. Servir tièdes ou à température ambiante — se conservent 3 jours en boîte."
+        "Préchauffe le four à 180°C en chaleur tournante. Beurre légèrement 8 empreintes à financiers (ou petits moules).",
+        "Fais fondre le beurre dans une casserole à feu doux jusqu'à ce qu'il prenne une couleur noisette et sente bon (beurre noisette, la signature des financiers). Laisse tiédir.",
+        "Dans un saladier, mélange la poudre d'amandes, la farine T80, la levure chimique et la vanille.",
+        "Dans un autre bol, fouette légèrement les blancs d'œufs à la fourchette (juste mousseux, pas en neige) avec le sirop d'érable.",
+        "Verse les blancs sur le mélange sec, mélange, puis incorpore le beurre noisette tiédi.",
+        "Répartis la pâte dans les empreintes (aux 3/4, ils gonflent).",
+        "Enfonce 2-3 framboises dans chaque financier.",
+        "Enfourne 16-18 minutes : ils sont dorés sur les bords et la pointe d'un couteau ressort sèche.",
+        "Démoule tièdes sur une grille. Sers tièdes ou à température ambiante — se conservent 3 jours en boîte."
       ],
       "photo": "assets/recipes/des149.webp"
     },
@@ -87636,15 +87622,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠ Sécurité : utiliser des crevettes très fraîches ou préalablement congelées 24h à -18°C.",
-        "Ouvrir les crevettes en deux dans la longueur (papillon), retirer le boyau noir. Les disposer dans un plat creux.",
-        "Presser le jus des 3 citrons verts sur les crevettes, ajouter une pincée de sel, mélanger et laisser mariner 15-20 minutes au frais (l'acidité 'cuit' les crevettes : elles deviennent roses et opaques).",
-        "Pendant ce temps, mixer la moitié du concombre (épluché, épépiné) avec la coriandre, le piment doux, l'huile d'olive et un peu de jus de citron de la marinade, jusqu'à obtenir une sauce verte (l'aguachile).",
-        "Couper l'autre moitié du concombre en fines demi-lunes, émincer l'oignon rouge très finement.",
-        "Égoutter légèrement les crevettes, les disposer dans 2 assiettes creuses.",
-        "Napper de la sauce verte aguachile, répartir les demi-lunes de concombre et l'oignon rouge.",
-        "Couper l'avocat en lamelles, les ajouter au moment de servir.",
-        "Servir immédiatement, très frais — entrée mexicaine vibrante et piquante de la côte du Pacifique."
+        "⚠ Sécurité : utilise des crevettes très fraîches ou préalablement congelées 24h à -18°C.",
+        "Ouvre les crevettes en deux dans la longueur (papillon), retire le boyau noir. Dispose-les dans un plat creux.",
+        "Presse le jus des 3 citrons verts sur les crevettes, ajoute une pincée de sel, mélange et laisse mariner 15-20 minutes au frais (l'acidité 'cuit' les crevettes : elles deviennent roses et opaques).",
+        "Pendant ce temps, mixe la moitié du concombre (épluché, épépiné) avec la coriandre, le piment doux, l'huile d'olive et un peu de jus de citron de la marinade, jusqu'à obtenir une sauce verte (l'aguachile).",
+        "Coupe l'autre moitié du concombre en fines demi-lunes, émince l'oignon rouge très finement.",
+        "Égoutte légèrement les crevettes, dispose-les dans 2 assiettes creuses.",
+        "Nappe de la sauce verte aguachile, répartis les demi-lunes de concombre et l'oignon rouge.",
+        "Coupe l'avocat en lamelles, ajoute-les au moment de servir.",
+        "Sers immédiatement, très frais — entrée mexicaine vibrante et piquante de la côte du Pacifique."
       ],
       "photo": "assets/recipes/s141.webp"
     },
@@ -87725,14 +87711,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Retirer la peau et les pépins noirs de la pastèque, couper la chair en cubes de 2 cm.",
-        "Couper le concombre en demi-lunes de 1 cm (garder la peau pour le croquant et la couleur).",
-        "Émietter la feta en gros morceaux à la main.",
-        "Disposer la pastèque et le concombre dans un saladier large et plat.",
-        "Parsemer de feta émiettée et d'olives noires coupées en deux.",
-        "Préparer la vinaigrette : fouetter l'huile d'olive, le jus du demi-citron et le poivre (pas de sel, la feta et les olives salent déjà).",
-        "Arroser la salade de vinaigrette, mélanger très délicatement (la pastèque est fragile).",
-        "Ciseler la menthe et la parsemer généreusement. Servir immédiatement, bien frais — le contraste sucré-salé désaltérant de l'été."
+        "Retire la peau et les pépins noirs de la pastèque, coupe la chair en cubes de 2 cm.",
+        "Coupe le concombre en demi-lunes de 1 cm (garde la peau pour le croquant et la couleur).",
+        "Émiette la feta en gros morceaux à la main.",
+        "Dispose la pastèque et le concombre dans un saladier large et plat.",
+        "Parsème de feta émiettée et d'olives noires coupées en deux.",
+        "Prépare la vinaigrette : fouette l'huile d'olive, le jus du demi-citron et le poivre (pas de sel, la feta et les olives salent déjà).",
+        "Arrose la salade de vinaigrette, mélange très délicatement (la pastèque est fragile).",
+        "Cisèle la menthe et parsème-la généreusement. Sers immédiatement, bien frais — le contraste sucré-salé désaltérant de l'été."
       ],
       "photo": "assets/recipes/s142.webp"
     },
@@ -87822,14 +87808,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Poser le concombre entier sur une planche, l'écraser fermement avec le plat d'un grand couteau ou un rouleau (le 'smash' fait éclater la chair, qui absorbe mieux la sauce).",
-        "Couper le concombre écrasé en morceaux irréguliers de 3 cm.",
-        "Saupoudrer d'une pincée de sel, laisser dégorger 15 minutes dans une passoire, puis presser pour retirer l'eau (texture plus croquante).",
-        "Préparer la sauce : mélanger la sauce soja, le vinaigre de riz, l'huile de sésame, l'ail écrasé, le gingembre râpé et le piment doux.",
-        "Mettre le concombre dans un bol, verser la sauce et mélanger.",
-        "Laisser mariner 5 minutes pour que les saveurs pénètrent.",
-        "Faire griller les graines de sésame 1 minute à sec dans une poêle.",
-        "Parsemer de graines de sésame grillées et d'oignons nouveaux ciselés. Servir frais — le snack chinois rafraîchissant par excellence."
+        "Pose le concombre entier sur une planche, écrase-le fermement avec le plat d'un grand couteau ou un rouleau (le 'smash' fait éclater la chair, qui absorbe mieux la sauce).",
+        "Coupe le concombre écrasé en morceaux irréguliers de 3 cm.",
+        "Saupoudre d'une pincée de sel, laisse dégorger 15 minutes dans une passoire, puis presse pour retirer l'eau (texture plus croquante).",
+        "Prépare la sauce : mélange la sauce soja, le vinaigre de riz, l'huile de sésame, l'ail écrasé, le gingembre râpé et le piment doux.",
+        "Mets le concombre dans un bol, verse la sauce et mélange.",
+        "Laisse mariner 5 minutes pour que les saveurs pénètrent.",
+        "Fais griller les graines de sésame 1 minute à sec dans une poêle.",
+        "Parsème de graines de sésame grillées et d'oignons nouveaux ciselés. Sers frais — le snack chinois rafraîchissant par excellence."
       ],
       "photo": "assets/recipes/s143.webp"
     },
@@ -87914,14 +87900,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le concombre en petits dés de 5 mm (retirer les pépins centraux s'ils sont gros).",
-        "Couper la tomate en petits dés (sans les pépins pour éviter trop de jus), émincer l'oignon rouge très finement.",
-        "Mettre les légumes dans un saladier.",
-        "Torréfier le cumin moulu 30 secondes à sec dans une petite poêle (parfum plus intense, technique indienne).",
-        "Ajouter le cumin torréfié, le piment doux et le sel sur les légumes.",
-        "Presser le jus du citron vert entier par-dessus, mélanger.",
-        "Ciseler la coriandre et la menthe, les parsemer sur la salade.",
-        "Servir immédiatement (le kachumber se mange frais, il rend de l'eau s'il attend). Accompagnement frais des plats indiens épicés."
+        "Coupe le concombre en petits dés de 5 mm (retire les pépins centraux s'ils sont gros).",
+        "Coupe la tomate en petits dés (sans les pépins pour éviter trop de jus), émince l'oignon rouge très finement.",
+        "Mets les légumes dans un saladier.",
+        "Torréfie le cumin moulu 30 secondes à sec dans une petite poêle (parfum plus intense, technique indienne).",
+        "Ajoute le cumin torréfié, le piment doux et le sel sur les légumes.",
+        "Presse le jus du citron vert entier par-dessus, mélange.",
+        "Cisèle la coriandre et la menthe, parsème-les sur la salade.",
+        "Sers immédiatement (le kachumber se mange frais, il rend de l'eau s'il attend). Accompagnement frais des plats indiens épicés."
       ],
       "photo": "assets/recipes/s144.webp"
     },
@@ -88001,14 +87987,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le melon en deux, retirer les pépins, prélever la chair et la couper en fines lamelles ou en billes.",
-        "Faire griller les pignons de pin 2 minutes à sec dans une poêle (couleur dorée).",
-        "Laver et essorer la roquette.",
-        "Disposer la roquette dans 2 assiettes, répartir les lamelles de melon par-dessus.",
-        "Déposer les tranches de bresaola en les froissant légèrement (effet volume).",
-        "Préparer la vinaigrette : fouetter l'huile d'olive, le jus du demi-citron et le poivre.",
-        "Arroser la salade de vinaigrette.",
-        "Parsemer de copeaux de parmesan (à l'économe pour de jolis copeaux) et de pignons grillés. Servir immédiatement — l'antipasto estival italien chic et léger."
+        "Coupe le melon en deux, retire les pépins, prélève la chair et coupe-la en fines lamelles ou en billes.",
+        "Fais griller les pignons de pin 2 minutes à sec dans une poêle (couleur dorée).",
+        "Lave et essore la roquette.",
+        "Dispose la roquette dans 2 assiettes, répartis les lamelles de melon par-dessus.",
+        "Dépose les tranches de bresaola en les froissant légèrement (effet volume).",
+        "Prépare la vinaigrette : fouette l'huile d'olive, le jus du demi-citron et le poivre.",
+        "Arrose la salade de vinaigrette.",
+        "Parsème de copeaux de parmesan (à l'économe pour de jolis copeaux) et de pignons grillés. Sers immédiatement — l'antipasto estival italien chic et léger."
       ],
       "photo": "assets/recipes/s145.webp"
     },
@@ -88065,13 +88051,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le melon en deux, retirer les pépins, prélever la chair et la couper en cubes de 2 cm.",
-        "Étaler les cubes en une seule couche sur une plaque chemisée de papier cuisson.",
-        "Placer au congélateur au moins 4h (les cubes doivent être totalement durs).",
-        "Au moment de servir, mettre les cubes congelés dans le blender avec les feuilles de basilic, le jus du citron et le sirop d'érable.",
-        "Mixer en pulsant par à-coups (5 sec × 5 fois), racler les parois entre chaque : texture sorbet onctueuse.",
-        "Verser dans 2 coupes glacées, décorer d'une feuille de basilic.",
-        "Servir immédiatement (si trop dur, laisser tempérer 5 minutes avant de mixer) — le basilic relève subtilement la douceur du melon."
+        "Coupe le melon en deux, retire les pépins, prélève la chair et coupe-la en cubes de 2 cm.",
+        "Étale les cubes en une seule couche sur une plaque chemisée de papier cuisson.",
+        "Place au congélateur au moins 4h (les cubes doivent être totalement durs).",
+        "Au moment de servir, mets les cubes congelés dans le blender avec les feuilles de basilic, le jus du citron et le sirop d'érable.",
+        "Mixe en pulsant par à-coups (5 sec × 5 fois), racle les parois entre chaque : texture sorbet onctueuse.",
+        "Verse dans 2 coupes glacées, décore d'une feuille de basilic.",
+        "Sers immédiatement (si trop dur, laisse tempérer 5 minutes avant de mixer) — le basilic relève subtilement la douceur du melon."
       ],
       "photo": "assets/recipes/des150.webp"
     },
@@ -88128,14 +88114,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Presser le jus des 3 citrons (environ 90 ml de jus).",
-        "Faire chauffer l'eau avec le sirop d'érable jusqu'à dissolution (pas besoin de bouillir), laisser tiédir.",
-        "Ciseler finement la moitié de la menthe, l'ajouter au sirop tiède pour infuser 5 minutes.",
-        "Mélanger le jus de citron au sirop à la menthe.",
-        "Verser dans un récipient large à fond plat (plat à gratin métallique idéal).",
-        "Placer au congélateur 1h, puis sortir et gratter à la fourchette pour casser les cristaux qui se forment sur les bords.",
-        "Répéter le grattage toutes les 40 minutes pendant 2-3h (total 3-4 grattages) : on obtient des cristaux légers et neigeux, c'est la texture du vrai granité.",
-        "Servir dans des coupes glacées, décorer de feuilles de menthe fraîche — le rafraîchissement sicilien intense de l'été."
+        "Presse le jus des 3 citrons (environ 90 ml de jus).",
+        "Fais chauffer l'eau avec le sirop d'érable jusqu'à dissolution (pas besoin de bouillir), laisse tiédir.",
+        "Cisèle finement la moitié de la menthe, ajoute-la au sirop tiède pour infuser 5 minutes.",
+        "Mélange le jus de citron au sirop à la menthe.",
+        "Verse dans un récipient large à fond plat (plat à gratin métallique idéal).",
+        "Place au congélateur 1h, puis sors et gratte à la fourchette pour casser les cristaux qui se forment sur les bords.",
+        "Répète le grattage toutes les 40 minutes pendant 2-3h (total 3-4 grattages) : on obtient des cristaux légers et neigeux, c'est la texture du vrai granité.",
+        "Sers dans des coupes glacées, décore de feuilles de menthe fraîche — le rafraîchissement sicilien intense de l'été."
       ],
       "photo": "assets/recipes/des151.webp"
     },
@@ -88204,15 +88190,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la couche coco : verser le lait de coco, 50 ml d'eau, la moitié du sirop d'érable et 1,5 g d'agar-agar dans une casserole.",
-        "Porter à ébullition en fouettant, maintenir 1 minute (l'agar-agar doit bouillir pour s'activer).",
-        "Verser dans 4 verrines, laisser tiédir 15 minutes puis placer au frais 30 minutes (la couche blanche fige).",
-        "Pendant ce temps, mixer la mangue avec le jus du demi-citron vert pour obtenir une purée lisse.",
-        "Préparer la couche mangue : verser la purée de mangue, 50 ml d'eau, le reste du sirop et 1,5 g d'agar-agar dans une casserole.",
-        "Porter à ébullition en fouettant, maintenir 1 minute, puis laisser tiédir 5 minutes (sans figer).",
-        "Verser délicatement la couche mangue tiède sur la couche coco déjà prise (verser sur le dos d'une cuillère pour ne pas creuser).",
-        "Placer au frais 1h30 minimum pour que les 2 couches figent.",
-        "Servir bien frais — le dessert gélifié végétal d'Asie du Sud-Est, frais et léger."
+        "Prépare la couche coco : verse le lait de coco, 50 ml d'eau, la moitié du sirop d'érable et 1,5 g d'agar-agar dans une casserole.",
+        "Porte à ébullition en fouettant, maintiens 1 minute (l'agar-agar doit bouillir pour s'activer).",
+        "Verse dans 4 verrines, laisse tiédir 15 minutes puis place au frais 30 minutes (la couche blanche fige).",
+        "Pendant ce temps, mixe la mangue avec le jus du demi-citron vert pour obtenir une purée lisse.",
+        "Prépare la couche mangue : verse la purée de mangue, 50 ml d'eau, le reste du sirop et 1,5 g d'agar-agar dans une casserole.",
+        "Porte à ébullition en fouettant, maintiens 1 minute, puis laisse tiédir 5 minutes (sans figer).",
+        "Verse délicatement la couche mangue tiède sur la couche coco déjà prise (verse sur le dos d'une cuillère pour ne pas creuser).",
+        "Place au frais 1h30 minimum pour que les 2 couches figent.",
+        "Sers bien frais — le dessert gélifié végétal d'Asie du Sud-Est, frais et léger."
       ],
       "photo": "assets/recipes/des152.webp"
     },
@@ -88289,16 +88275,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Verser le lait demi-écrémé dans une casserole à fond épais, porter à frémissement.",
-        "Laisser réduire à feu doux 12-15 minutes en remuant souvent : le lait réduit d'environ un tiers et épaissit (technique kulfi qui concentre le goût lacté).",
-        "Ajouter le lait concentré non sucré et la cardamome, mélanger 2 minutes. Laisser tiédir.",
-        "Mixer la mangue en purée lisse au blender.",
-        "Mélanger la purée de mangue, le sirop d'érable et le lait réduit tiédi.",
-        "Concasser grossièrement les pistaches, en incorporer la moitié au mélange.",
-        "Répartir dans des moules à kulfi (ou petits ramequins / moules à esquimaux), planter un bâtonnet si format glace.",
-        "Placer au congélateur 6h minimum, idéalement une nuit (texture dense crémeuse, sans cristaux grâce au lait réduit).",
-        "Au moment de servir, démouler en passant le moule 10 secondes sous l'eau tiède.",
-        "Parsemer du reste de pistaches et d'amandes effilées. Servir aussitôt — la glace traditionnelle indienne qui ne fond pas trop vite."
+        "Verse le lait demi-écrémé dans une casserole à fond épais, porte à frémissement.",
+        "Laisse réduire à feu doux 12-15 minutes en remuant souvent : le lait réduit d'environ un tiers et épaissit (technique kulfi qui concentre le goût lacté).",
+        "Ajoute le lait concentré non sucré et la cardamome, mélange 2 minutes. Laisse tiédir.",
+        "Mixe la mangue en purée lisse au blender.",
+        "Mélange la purée de mangue, le sirop d'érable et le lait réduit tiédi.",
+        "Concasse grossièrement les pistaches, incorpores-en la moitié au mélange.",
+        "Répartis dans des moules à kulfi (ou petits ramequins / moules à esquimaux), plante un bâtonnet si format glace.",
+        "Place au congélateur 6h minimum, idéalement une nuit (texture dense crémeuse, sans cristaux grâce au lait réduit).",
+        "Au moment de servir, démoule en passant le moule 10 secondes sous l'eau tiède.",
+        "Parsème du reste de pistaches et d'amandes effilées. Sers aussitôt — la glace traditionnelle indienne qui ne fond pas trop vite."
       ],
       "photo": "assets/recipes/des153.webp"
     },
@@ -88374,14 +88360,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Retirer la peau et les pépins du melon et de la pastèque, couper la chair en cubes.",
-        "Réserver quelques petits cubes de chaque fruit pour la garniture.",
-        "Mettre le reste des cubes dans le blender avec l'eau de fleur d'oranger, le jus du demi-citron vert et le sirop d'érable.",
-        "Mixer jusqu'à obtenir une soupe lisse et fluide.",
-        "Placer au frais 1h pour servir bien frais (la soupe froide est plus parfumée glacée).",
-        "Faire griller les amandes effilées 2 minutes à sec.",
-        "Verser la soupe dans des bols ou des verres, déposer les cubes de fruits réservés.",
-        "Parsemer d'amandes effilées grillées et de menthe ciselée. Servir très frais — dessert-boisson désaltérant du Maghreb estival."
+        "Retire la peau et les pépins du melon et de la pastèque, coupe la chair en cubes.",
+        "Réserve quelques petits cubes de chaque fruit pour la garniture.",
+        "Mets le reste des cubes dans le blender avec l'eau de fleur d'oranger, le jus du demi-citron vert et le sirop d'érable.",
+        "Mixe jusqu'à obtenir une soupe lisse et fluide.",
+        "Place au frais 1h pour servir bien frais (la soupe froide est plus parfumée glacée).",
+        "Fais griller les amandes effilées 2 minutes à sec.",
+        "Verse la soupe dans des bols ou des verres, dépose les cubes de fruits réservés.",
+        "Parsème d'amandes effilées grillées et de menthe ciselée. Sers très frais — dessert-boisson désaltérant du Maghreb estival."
       ],
       "photo": "assets/recipes/des154.webp"
     },
@@ -88492,16 +88478,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠ Sécurité : utiliser du saumon très frais ou préalablement congelé 24h à -18°C (consommation crue).",
-        "Rincer le riz rond complet, le cuire dans une casserole d'eau bouillante 18-20 minutes. Égoutter.",
-        "Assaisonner le riz tiède avec le vinaigre de riz, mélanger délicatement, laisser refroidir.",
-        "Couper le saumon en cubes de 1,5 cm. Préparer la marinade : sauce soja, huile de sésame, gingembre râpé, jus du demi-citron vert.",
-        "Mélanger les cubes de saumon à la marinade, laisser 15 minutes au frais.",
-        "Pendant ce temps, cuire les edamame 4 minutes à l'eau bouillante salée, égoutter et rafraîchir.",
-        "Couper la mangue en cubes, le concombre en demi-lunes, l'avocat en lamelles.",
-        "Répartir le riz vinaigré dans 2 bols.",
-        "Disposer harmonieusement par secteurs : saumon mariné, mangue, edamame, concombre, avocat.",
-        "Arroser d'un peu de marinade restante, parsemer de graines de sésame et d'oignons nouveaux ciselés. Servir frais."
+        "⚠ Sécurité : utilise du saumon très frais ou préalablement congelé 24h à -18°C (consommation crue).",
+        "Rince le riz rond complet, cuis-le dans une casserole d'eau bouillante 18-20 minutes. Égoutte.",
+        "Assaisonne le riz tiède avec le vinaigre de riz, mélange délicatement, laisse refroidir.",
+        "Coupe le saumon en cubes de 1,5 cm. Prépare la marinade : sauce soja, huile de sésame, gingembre râpé, jus du demi-citron vert.",
+        "Mélange les cubes de saumon à la marinade, laisse 15 minutes au frais.",
+        "Pendant ce temps, cuis les edamame 4 minutes à l'eau bouillante salée, égoutte et rafraîchis.",
+        "Coupe la mangue en cubes, le concombre en demi-lunes, l'avocat en lamelles.",
+        "Répartis le riz vinaigré dans 2 bols.",
+        "Dispose harmonieusement par secteurs : saumon mariné, mangue, edamame, concombre, avocat.",
+        "Arrose d'un peu de marinade restante, parsème de graines de sésame et d'oignons nouveaux ciselés. Sers frais."
       ],
       "photo": "assets/recipes/l216.webp"
     },
@@ -88597,15 +88583,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le halloumi en cubes de 2,5 cm, la courgette en rondelles épaisses, le poivron en carrés de 3 cm, l'oignon rouge en quartiers.",
-        "Préparer la marinade : mélanger l'huile d'olive, l'ail écrasé, l'origan, le poivre et le jus du demi-citron.",
-        "Mettre tous les légumes (sauf les tomates cerises) dans la marinade, mélanger et laisser 15 minutes.",
-        "Monter les brochettes en alternant halloumi, courgette, poivron, oignon et tomates cerises (si brochettes en bois, les tremper 10 min dans l'eau pour éviter qu'elles brûlent).",
-        "Faire chauffer la plancha (ou une poêle-gril) à feu vif.",
-        "Déposer les brochettes, cuire 10-12 minutes en les retournant régulièrement : le halloumi dore et grille (il ne fond pas, il croûte), les légumes sont tendres avec des marques de grill.",
-        "Badigeonner du reste de marinade en cours de cuisson.",
-        "Dresser les brochettes, parsemer de menthe fraîche ciselée et d'un trait de citron.",
-        "Servir chaud — le dîner d'été méditerranéen au barbecue, riche en protéines végétariennes."
+        "Coupe le halloumi en cubes de 2,5 cm, la courgette en rondelles épaisses, le poivron en carrés de 3 cm, l'oignon rouge en quartiers.",
+        "Prépare la marinade : mélange l'huile d'olive, l'ail écrasé, l'origan, le poivre et le jus du demi-citron.",
+        "Mets tous les légumes (sauf les tomates cerises) dans la marinade, mélange et laisse 15 minutes.",
+        "Monte les brochettes en alternant halloumi, courgette, poivron, oignon et tomates cerises (si brochettes en bois, trempe-les 10 min dans l'eau pour éviter qu'elles brûlent).",
+        "Fais chauffer la plancha (ou une poêle-gril) à feu vif.",
+        "Dépose les brochettes, cuis 10-12 minutes en les retournant régulièrement : le halloumi dore et grille (il ne fond pas, il croûte), les légumes sont tendres avec des marques de grill.",
+        "Badigeonne du reste de marinade en cours de cuisson.",
+        "Dresse les brochettes, parsème de menthe fraîche ciselée et d'un trait de citron.",
+        "Sers chaud — le dîner d'été méditerranéen au barbecue, riche en protéines végétariennes."
       ],
       "photo": "assets/recipes/d214.webp"
     },
@@ -88682,14 +88668,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille au soir, mélanger dans un bocal les flocons d'avoine, le skyr, le lait d'amande, les graines de chia et l'eau de fleur d'oranger.",
-        "Couper une partie de la pêche en petits dés, l'ajouter au mélange.",
-        "Fermer le bocal et placer au frigo toute la nuit (8h minimum) : les flocons et le chia gonflent, texture crémeuse.",
-        "Le matin, sortir le bocal et mélanger.",
-        "Couper le reste de la pêche en lamelles.",
-        "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Verser l'overnight oats dans un bol (ou le servir directement dans le bocal).",
-        "Garnir des lamelles de pêche et des amandes grillées. Servir frais : la pêche bien mûre apporte toute la douceur."
+        "La veille au soir, mélange dans un bocal les flocons d'avoine, le skyr, le lait d'amande, les graines de chia et l'eau de fleur d'oranger.",
+        "Coupe une partie de la pêche en petits dés, ajoute-la au mélange.",
+        "Ferme le bocal et place au frigo toute la nuit (8h minimum) : les flocons et le chia gonflent, texture crémeuse.",
+        "Le matin, sors le bocal et mélange.",
+        "Coupe le reste de la pêche en lamelles.",
+        "Fais griller les amandes effilées 2 minutes à sec dans une poêle.",
+        "Verse l'overnight oats dans un bol (ou sers-le directement dans le bocal).",
+        "Garnis des lamelles de pêche et des amandes grillées. Sers frais : la pêche bien mûre apporte toute la douceur."
       ],
       "photo": "assets/recipes/b166.webp"
     },
@@ -88771,13 +88757,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les framboises (en garder quelques-unes pour la déco). Couper la pêche en morceaux (garder 2-3 lamelles).",
-        "Mettre les framboises, la pêche, le skyr, le lait d'amande et le miel dans le blender.",
-        "Mixer 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, lisser le dessus à la cuillère.",
-        "Disposer les framboises et lamelles de pêche réservées en couronne.",
-        "Parsemer de flocons d'avoine, d'amandes effilées et de graines de chia.",
-        "Servir immédiatement, bien frais."
+        "Lave les framboises (gardes-en quelques-unes pour la déco). Coupe la pêche en morceaux (garde 2-3 lamelles).",
+        "Mets les framboises, la pêche, le skyr, le lait d'amande et le miel dans le blender.",
+        "Mixe 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, lisse le dessus à la cuillère.",
+        "Dispose les framboises et lamelles de pêche réservées en couronne.",
+        "Parsème de flocons d'avoine, d'amandes effilées et de graines de chia.",
+        "Sers immédiatement, bien frais."
       ],
       "photo": "assets/recipes/b167.webp"
     },
@@ -88853,13 +88839,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille, mélanger dans un bol les graines de chia, le lait de coco et le sirop d'érable. Bien fouetter pour éviter les grumeaux.",
-        "Attendre 5 minutes, fouetter à nouveau (le chia commence à gonfler, ce 2e mélange évite qu'il se prenne en bloc).",
-        "Couvrir et placer au frigo toute la nuit (le chia gonfle et fige, texture pudding).",
-        "Le matin, éplucher la mangue et la mixer en purée avec le jus du demi-citron vert.",
-        "Répartir le chia pudding dans 2 verres, verser la purée de mangue par-dessus.",
-        "Ouvrir le fruit de la passion, prélever la pulpe à la cuillère et la répartir sur la mangue.",
-        "Parsemer de noix de coco râpée. Servir frais — le petit-déj tropical d'Asie du Sud-Est."
+        "La veille, mélange dans un bol les graines de chia, le lait de coco et le sirop d'érable. Fouette bien pour éviter les grumeaux.",
+        "Attends 5 minutes, fouette à nouveau (le chia commence à gonfler, ce 2e mélange évite qu'il se prenne en bloc).",
+        "Couvre et place au frigo toute la nuit (le chia gonfle et fige, texture pudding).",
+        "Le matin, épluche la mangue et mixe-la en purée avec le jus du demi-citron vert.",
+        "Répartis le chia pudding dans 2 verres, verse la purée de mangue par-dessus.",
+        "Ouvre le fruit de la passion, prélève la pulpe à la cuillère et répartis-la sur la mangue.",
+        "Parsème de noix de coco râpée. Sers frais — le petit-déj tropical d'Asie du Sud-Est."
       ],
       "photo": "assets/recipes/b168.webp"
     },
@@ -88941,12 +88927,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Retirer la peau et les pépins de la pastèque, couper la chair en cubes et la congeler 2h (ou utiliser de la pastèque déjà bien froide pour un bowl moins épais).",
-        "Mettre la pastèque, les litchis égouttés, la banane épluchée, la menthe et le jus du demi-citron vert dans le blender.",
-        "Mixer 30 secondes : la texture doit être épaisse et rose vif.",
-        "Verser dans un bol large.",
-        "Disposer en couronne les flocons d'avoine, les graines de chia et les graines de courge.",
-        "Décorer d'une feuille de menthe. Servir immédiatement, ultra rafraîchissant."
+        "Retire la peau et les pépins de la pastèque, coupe la chair en cubes et congèle-la 2h (ou utilise de la pastèque déjà bien froide pour un bowl moins épais).",
+        "Mets la pastèque, les litchis égouttés, la banane épluchée, la menthe et le jus du demi-citron vert dans le blender.",
+        "Mixe 30 secondes : la texture doit être épaisse et rose vif.",
+        "Verse dans un bol large.",
+        "Dispose en couronne les flocons d'avoine, les graines de chia et les graines de courge.",
+        "Décore d'une feuille de menthe. Sers immédiatement, ultra rafraîchissant."
       ],
       "photo": "assets/recipes/b169.webp"
     },
@@ -89029,13 +89015,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Verser le skyr dans une étamine au-dessus d'un bol, laisser égoutter 2h au frais (texture épaisse, base du shrikhand).",
-        "Infuser le safran dans un fond d'eau tiède 10 minutes (couleur jaune dorée).",
-        "Éplucher la mangue, en mixer une partie en purée, couper le reste en dés.",
-        "Mélanger le yaourt égoutté avec la purée de mangue, le safran infusé, la cardamome et le sirop d'érable (texture crémeuse jaune).",
-        "Préparer un granola express : faire dorer les flocons d'avoine et les amandes effilées 3 minutes à sec dans une poêle.",
-        "Verser le shrikhand dans le bol.",
-        "Garnir des dés de mangue, du granola d'avoine et des pistaches concassées. Servir frais."
+        "Verse le skyr dans une étamine au-dessus d'un bol, laisse égoutter 2h au frais (texture épaisse, base du shrikhand).",
+        "Infuse le safran dans un fond d'eau tiède 10 minutes (couleur jaune dorée).",
+        "Épluche la mangue, mixes-en une partie en purée, coupe le reste en dés.",
+        "Mélange le yaourt égoutté avec la purée de mangue, le safran infusé, la cardamome et le sirop d'érable (texture crémeuse jaune).",
+        "Prépare un granola express : fais dorer les flocons d'avoine et les amandes effilées 3 minutes à sec dans une poêle.",
+        "Verse le shrikhand dans le bol.",
+        "Garnis des dés de mangue, du granola d'avoine et des pistaches concassées. Sers frais."
       ],
       "photo": "assets/recipes/b170.webp"
     },
@@ -89126,14 +89112,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Torréfier le cumin moulu 30 secondes à sec dans une petite poêle (parfum intense, base du chaat masala).",
-        "Couper la pomme (avec la peau), la banane et la mangue en cubes de 1,5 cm.",
-        "Mettre les fruits dans un saladier.",
-        "Égrener la grenade (couper la grenade en deux et taper chaque morceau au-dessus du bol pour récupérer les grains).",
-        "Râper finement le gingembre.",
-        "Ajouter aux fruits le cumin torréfié, le gingembre, le piment doux, le sel et le jus du citron vert.",
-        "Mélanger délicatement (le citron évite l'oxydation et réveille les fruits).",
-        "Parsemer de grenade et de menthe ciselée. Servir immédiatement — le petit-déj fruité et épicé des rues indiennes."
+        "Torréfie le cumin moulu 30 secondes à sec dans une petite poêle (parfum intense, base du chaat masala).",
+        "Coupe la pomme (avec la peau), la banane et la mangue en cubes de 1,5 cm.",
+        "Mets les fruits dans un saladier.",
+        "Égrène la grenade (coupe la grenade en deux et tape chaque morceau au-dessus du bol pour récupérer les grains).",
+        "Râpe finement le gingembre.",
+        "Ajoute aux fruits le cumin torréfié, le gingembre, le piment doux, le sel et le jus du citron vert.",
+        "Mélange délicatement (le citron évite l'oxydation et réveille les fruits).",
+        "Parsème de grenade et de menthe ciselée. Sers immédiatement — le petit-déj fruité et épicé des rues indiennes."
       ],
       "photo": "assets/recipes/b171.webp"
     },
@@ -89214,14 +89200,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la papaye en deux, retirer les graines noires à la cuillère, prélever la chair et la couper en cubes.",
-        "Couper la banane en rondelles.",
-        "Faire griller les graines de courge 2 minutes à sec dans une poêle (elles gonflent et craquent).",
-        "Verser le yaourt nature dans 2 bols, lisser le dessus.",
-        "Disposer les cubes de papaye et les rondelles de banane.",
-        "Presser le jus du citron vert sur la papaye (le lime sur la papaye est la combinaison mexicaine classique).",
-        "Parsemer de graines de courge grillées, de flocons d'avoine et d'une pointe de cannelle.",
-        "Finir par un filet de miel d'acacia. Servir frais."
+        "Coupe la papaye en deux, retire les graines noires à la cuillère, prélève la chair et coupe-la en cubes.",
+        "Coupe la banane en rondelles.",
+        "Fais griller les graines de courge 2 minutes à sec dans une poêle (elles gonflent et craquent).",
+        "Verse le yaourt nature dans 2 bols, lisse le dessus.",
+        "Dispose les cubes de papaye et les rondelles de banane.",
+        "Presse le jus du citron vert sur la papaye (le lime sur la papaye est la combinaison mexicaine classique).",
+        "Parsème de graines de courge grillées, de flocons d'avoine et d'une pointe de cannelle.",
+        "Finis par un filet de miel d'acacia. Sers frais."
       ],
       "photo": "assets/recipes/b172.webp"
     },
@@ -89297,13 +89283,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Équeuter les fraises (en garder quelques-unes pour la déco). Éplucher la banane et la couper en morceaux.",
-        "Mettre les fraises, la banane, le lait d'amande, le cacao et la cannelle dans le blender.",
-        "Mixer 30 secondes à pleine vitesse : texture épaisse (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, lisser le dessus.",
-        "Couper les fraises réservées en lamelles, les disposer en éventail.",
-        "Parsemer de graines de chia et de flocons d'avoine.",
-        "Servir immédiatement, bien frais — touche cacao façon chocolat chaud mexicain, version glacée."
+        "Équeute les fraises (gardes-en quelques-unes pour la déco). Épluche la banane et coupe-la en morceaux.",
+        "Mets les fraises, la banane, le lait d'amande, le cacao et la cannelle dans le blender.",
+        "Mixe 30 secondes à pleine vitesse : texture épaisse (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, lisse le dessus.",
+        "Coupe les fraises réservées en lamelles, dispose-les en éventail.",
+        "Parsème de graines de chia et de flocons d'avoine.",
+        "Sers immédiatement, bien frais — touche cacao façon chocolat chaud mexicain, version glacée."
       ],
       "photo": "assets/recipes/b173.webp"
     },
@@ -89373,13 +89359,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mélanger le skyr avec le sirop d'érable et la vanille.",
-        "Verser dans un récipient plat, placer au congélateur 3h en grattant à la fourchette toutes les heures (texture glace onctueuse).",
-        "Préparer 2 expressos bien serrés et chauds, les laisser tiédir 2 minutes (pas brûlants).",
-        "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Former 2 boules de yaourt glacé à la cuillère à glace, les déposer dans des verres ou coupes.",
-        "Au moment de servir, verser l'expresso chaud sur le yaourt glacé (le contraste chaud-froid est la signature de l'affogato).",
-        "Parsemer d'amandes effilées grillées et d'une pincée de cacao. Servir et déguster aussitôt à la cuillère."
+        "Mélange le skyr avec le sirop d'érable et la vanille.",
+        "Verse dans un récipient plat, place au congélateur 3h en grattant à la fourchette toutes les heures (texture glace onctueuse).",
+        "Prépare 2 expressos bien serrés et chauds, laisse-les tiédir 2 minutes (pas brûlants).",
+        "Fais griller les amandes effilées 2 minutes à sec dans une poêle.",
+        "Forme 2 boules de yaourt glacé à la cuillère à glace, dépose-les dans des verres ou coupes.",
+        "Au moment de servir, verse l'expresso chaud sur le yaourt glacé (le contraste chaud-froid est la signature de l'affogato).",
+        "Parsème d'amandes effilées grillées et d'une pincée de cacao. Sers et déguste aussitôt à la cuillère."
       ],
       "photo": "assets/recipes/des155.webp"
     },
@@ -89441,14 +89427,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les abricots, les couper en deux et retirer les noyaux.",
-        "Faire chauffer l'eau avec le sirop d'érable et le brin de romarin dans une casserole 5 minutes (infusion sirupeuse parfumée).",
-        "Retirer le romarin. Ajouter les abricots, cuire 3 minutes (ils s'attendrissent légèrement).",
-        "Mixer le tout au blender avec le jus du demi-citron jusqu'à purée lisse.",
-        "Verser dans un récipient large à fond plat, placer au congélateur.",
-        "Sortir toutes les 40 minutes pendant 3h et gratter à la fourchette pour casser les cristaux (texture sorbet).",
-        "Au moment de servir, gratter une dernière fois pour une texture neigeuse.",
-        "Servir dans des coupes glacées, décorer d'une petite pointe de romarin — l'alliance herbacée-fruitée de l'été italien."
+        "Lave les abricots, coupe-les en deux et retire les noyaux.",
+        "Fais chauffer l'eau avec le sirop d'érable et le brin de romarin dans une casserole 5 minutes (infusion sirupeuse parfumée).",
+        "Retire le romarin. Ajoute les abricots, cuis 3 minutes (ils s'attendrissent légèrement).",
+        "Mixe le tout au blender avec le jus du demi-citron jusqu'à purée lisse.",
+        "Verse dans un récipient large à fond plat, place au congélateur.",
+        "Sors toutes les 40 minutes pendant 3h et gratte à la fourchette pour casser les cristaux (texture sorbet).",
+        "Au moment de servir, gratte une dernière fois pour une texture neigeuse.",
+        "Sers dans des coupes glacées, décore d'une petite pointe de romarin — l'alliance herbacée-fruitée de l'été italien."
       ],
       "photo": "assets/recipes/des156.webp"
     },
@@ -89533,14 +89519,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper les courgettes en gros morceaux (garder la peau).",
-        "Les cuire 12-15 minutes à la vapeur ou à l'eau bouillante salée jusqu'à ce qu'elles soient très tendres.",
-        "Égoutter soigneusement et presser pour retirer l'excès d'eau (clé pour une texture pas liquide).",
-        "Écraser les courgettes à la fourchette dans un saladier (texture rustique, pas en purée lisse).",
-        "Ajouter l'ail écrasé, le carvi, la coriandre moulue, la harissa, le sel et l'huile d'olive.",
-        "Presser le jus du demi-citron, mélanger énergiquement.",
-        "Goûter et ajuster la harissa selon la tolérance au piquant.",
-        "Parsemer de coriandre fraîche ciselée. Servir frais ou tiède avec du pain complet — le caviar de courgettes tunisien."
+        "Coupe les courgettes en gros morceaux (garde la peau).",
+        "Cuis-les 12-15 minutes à la vapeur ou à l'eau bouillante salée jusqu'à ce qu'elles soient très tendres.",
+        "Égoutte soigneusement et presse pour retirer l'excès d'eau (clé pour une texture pas liquide).",
+        "Écrase les courgettes à la fourchette dans un saladier (texture rustique, pas en purée lisse).",
+        "Ajoute l'ail écrasé, le carvi, la coriandre moulue, la harissa, le sel et l'huile d'olive.",
+        "Presse le jus du demi-citron, mélange énergiquement.",
+        "Goûte et ajuste la harissa selon la tolérance au piquant.",
+        "Parsème de coriandre fraîche ciselée. Sers frais ou tiède avec du pain complet — le caviar de courgettes tunisien."
       ],
       "photo": "assets/recipes/s146.webp"
     },
@@ -89623,13 +89609,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Verser le skyr dans une étamine avec une pincée de sel, laisser égoutter 2h au frais (on obtient le labneh, un fromage frais épais).",
-        "Couper le concombre en très petits dés (5 mm), le saler légèrement et laisser dégorger 10 minutes, puis presser.",
-        "Mélanger le labneh avec l'ail écrasé, le jus du demi-citron et la moitié de la menthe ciselée.",
-        "Incorporer les dés de concombre.",
-        "Répartir dans des verrines, lisser le dessus.",
-        "Arroser d'un filet d'huile d'olive et saupoudrer généreusement de zaatar.",
-        "Décorer du reste de menthe. Servir frais avec des bâtonnets de légumes ou du pain pita complet — la fraîcheur acidulée du labneh levantin."
+        "Verse le skyr dans une étamine avec une pincée de sel, laisse égoutter 2h au frais (on obtient le labneh, un fromage frais épais).",
+        "Coupe le concombre en très petits dés (5 mm), sale-le légèrement et laisse dégorger 10 minutes, puis presse.",
+        "Mélange le labneh avec l'ail écrasé, le jus du demi-citron et la moitié de la menthe ciselée.",
+        "Incorpore les dés de concombre.",
+        "Répartis dans des verrines, lisse le dessus.",
+        "Arrose d'un filet d'huile d'olive et saupoudre généreusement de zaatar.",
+        "Décore du reste de menthe. Sers frais avec des bâtonnets de légumes ou du pain pita complet — la fraîcheur acidulée du labneh levantin."
       ],
       "photo": "assets/recipes/s147.webp"
     },
@@ -89710,13 +89696,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le pain au levain en tranches, les passer 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées et croustillantes.",
-        "Frotter chaque tranche encore chaude avec la gousse d'ail coupée (parfume sans masquer).",
-        "Couper la pêche en fines lamelles.",
-        "Déchirer la burrata en morceaux à la main (sa crème coule, c'est voulu).",
-        "Déposer la burrata sur les tranches de pain, répartir les lamelles de pêche.",
-        "Arroser d'un filet d'huile d'olive et de quelques gouttes de vinaigre balsamique.",
-        "Poivrer et parsemer de feuilles de basilic. Servir immédiatement — l'antipasto estival sucré-salé crémeux."
+        "Coupe le pain au levain en tranches, passe-les 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées et croustillantes.",
+        "Frotte chaque tranche encore chaude avec la gousse d'ail coupée (parfume sans masquer).",
+        "Coupe la pêche en fines lamelles.",
+        "Déchire la burrata en morceaux à la main (sa crème coule, c'est voulu).",
+        "Dépose la burrata sur les tranches de pain, répartis les lamelles de pêche.",
+        "Arrose d'un filet d'huile d'olive et de quelques gouttes de vinaigre balsamique.",
+        "Poivre et parsème de feuilles de basilic. Sers immédiatement — l'antipasto estival sucré-salé crémeux."
       ],
       "photo": "assets/recipes/s148.webp"
     },
@@ -89805,14 +89791,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le rôti de veau cuit froid en fines tranches, puis en bouchées de 3 cm.",
-        "Préparer la sauce tonnato : mettre le thon égoutté, le skyr, la moitié des câpres, le jaune d'œuf dur, le jus du demi-citron et l'huile d'olive dans le blender.",
-        "Mixer jusqu'à obtenir une sauce lisse et crémeuse (texture mayonnaise allégée).",
-        "Goûter et poivrer (pas de sel, le thon et les câpres salent).",
-        "Disposer les bouchées de veau sur un plat de service.",
-        "Napper chaque bouchée d'une cuillère de sauce tonnato.",
-        "Parsemer du reste de câpres et de persil ciselé.",
-        "Laisser reposer 30 minutes au frais avant de servir (les saveurs se marient). Pic apéro froid piémontais."
+        "Coupe le rôti de veau cuit froid en fines tranches, puis en bouchées de 3 cm.",
+        "Prépare la sauce tonnato : mets le thon égoutté, le skyr, la moitié des câpres, le jaune d'œuf dur, le jus du demi-citron et l'huile d'olive dans le blender.",
+        "Mixe jusqu'à obtenir une sauce lisse et crémeuse (texture mayonnaise allégée).",
+        "Goûte et poivre (pas de sel, le thon et les câpres salent).",
+        "Dispose les bouchées de veau sur un plat de service.",
+        "Nappe chaque bouchée d'une cuillère de sauce tonnato.",
+        "Parsème du reste de câpres et de persil ciselé.",
+        "Laisse reposer 30 minutes au frais avant de servir (les saveurs se marient). Pic apéro froid piémontais."
       ],
       "photo": "assets/recipes/s149.webp"
     },
@@ -89895,14 +89881,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Réhydrater les algues wakame dans un bol d'eau froide 10 minutes (elles gonflent ×3), puis égoutter et presser.",
-        "Couper le concombre en rondelles très fines (à la mandoline idéalement).",
-        "Saler les rondelles, laisser dégorger 10 minutes dans une passoire, puis presser délicatement pour retirer l'eau (texture croquante).",
-        "Préparer la sauce : mélanger le vinaigre de riz, la sauce soja, le sirop d'érable et le gingembre râpé.",
-        "Mélanger le concombre et le wakame dans un bol, verser la sauce.",
-        "Laisser mariner 10 minutes au frais.",
-        "Faire griller les graines de sésame 1 minute à sec.",
-        "Parsemer de graines de sésame grillées. Servir frais — la salade vinaigrée japonaise ultra-rafraîchissante."
+        "Réhydrate les algues wakame dans un bol d'eau froide 10 minutes (elles gonflent ×3), puis égoutte et presse.",
+        "Coupe le concombre en rondelles très fines (à la mandoline idéalement).",
+        "Sale les rondelles, laisse dégorger 10 minutes dans une passoire, puis presse délicatement pour retirer l'eau (texture croquante).",
+        "Prépare la sauce : mélange le vinaigre de riz, la sauce soja, le sirop d'érable et le gingembre râpé.",
+        "Mélange le concombre et le wakame dans un bol, verse la sauce.",
+        "Laisse mariner 10 minutes au frais.",
+        "Fais griller les graines de sésame 1 minute à sec.",
+        "Parsème de graines de sésame grillées. Sers frais — la salade vinaigrée japonaise ultra-rafraîchissante."
       ],
       "photo": "assets/recipes/s150.webp"
     },
@@ -90004,14 +89990,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le tofu ferme en bâtonnets, les faire mariner 10 minutes dans la sauce soja et l'huile de sésame.",
-        "Couper la mangue, la carotte et le concombre en fins bâtonnets de 6 cm.",
-        "Préparer la sauce cacahuète : délayer la purée de cacahuète avec le jus du demi-citron vert et 2 cuillères à soupe d'eau chaude (texture nappante).",
-        "Remplir une grande assiette creuse d'eau tiède. Y tremper une galette de riz 10 secondes (elle s'assouplit, ne pas la laisser trop longtemps sinon elle se déchire).",
-        "Poser la galette sur un torchon humide. Au tiers inférieur, déposer quelques feuilles de menthe et coriandre, puis tofu, mangue, carotte et concombre.",
-        "Replier les côtés vers le centre, puis rouler fermement du bas vers le haut (comme un burrito serré).",
-        "Répéter avec les 3 autres galettes.",
-        "Couper chaque rouleau en deux en biais. Servir frais avec la sauce cacahuète — frais, croquant et fruité."
+        "Coupe le tofu ferme en bâtonnets, fais-les mariner 10 minutes dans la sauce soja et l'huile de sésame.",
+        "Coupe la mangue, la carotte et le concombre en fins bâtonnets de 6 cm.",
+        "Prépare la sauce cacahuète : délaye la purée de cacahuète avec le jus du demi-citron vert et 2 cuillères à soupe d'eau chaude (texture nappante).",
+        "Remplis une grande assiette creuse d'eau tiède. Trempes-y une galette de riz 10 secondes (elle s'assouplit, ne pas la laisser trop longtemps sinon elle se déchire).",
+        "Pose la galette sur un torchon humide. Au tiers inférieur, dépose quelques feuilles de menthe et coriandre, puis tofu, mangue, carotte et concombre.",
+        "Replie les côtés vers le centre, puis roule fermement du bas vers le haut (comme un burrito serré).",
+        "Répète avec les 3 autres galettes.",
+        "Coupe chaque rouleau en deux en biais. Sers frais avec la sauce cacahuète — frais, croquant et fruité."
       ],
       "photo": "assets/recipes/s151.webp"
     },
@@ -90114,14 +90100,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuire les pommes de terre entières (avec la peau) 15 minutes à l'eau bouillante salée jusqu'à ce qu'elles soient tendres. Égoutter et laisser refroidir.",
-        "Éplucher les pommes de terre refroidies, les couper en cubes de 2 cm.",
-        "Torréfier le cumin moulu 30 secondes à sec dans une poêle (parfum intense).",
-        "Couper la tomate et le concombre en petits dés, émincer l'oignon rouge finement.",
-        "Mettre les pommes de terre, la tomate, le concombre et l'oignon dans un saladier.",
-        "Ajouter le cumin torréfié, la coriandre moulue, le piment doux, le sel et le jus du citron vert.",
-        "Mélanger délicatement, laisser reposer 15 minutes au frais (les pommes de terre s'imprègnent).",
-        "Parsemer de coriandre et menthe ciselées et de grains de grenade. Servir frais — le chaat de rue indien revisité froid pour l'été."
+        "Cuis les pommes de terre entières (avec la peau) 15 minutes à l'eau bouillante salée jusqu'à ce qu'elles soient tendres. Égoutte et laisse refroidir.",
+        "Épluche les pommes de terre refroidies, coupe-les en cubes de 2 cm.",
+        "Torréfie le cumin moulu 30 secondes à sec dans une poêle (parfum intense).",
+        "Coupe la tomate et le concombre en petits dés, émince l'oignon rouge finement.",
+        "Mets les pommes de terre, la tomate, le concombre et l'oignon dans un saladier.",
+        "Ajoute le cumin torréfié, la coriandre moulue, le piment doux, le sel et le jus du citron vert.",
+        "Mélange délicatement, laisse reposer 15 minutes au frais (les pommes de terre s'imprègnent).",
+        "Parsème de coriandre et menthe ciselées et de grains de grenade. Sers frais — le chaat de rue indien revisité froid pour l'été."
       ],
       "photo": "assets/recipes/s152.webp"
     },
@@ -90214,14 +90200,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher la mangue verte (encore ferme et acidulée), la couper en fins bâtonnets ou en julienne. Couper aussi le concombre en fins bâtonnets (avec la peau, pour le croquant).",
-        "Émincer l'oignon rouge très finement.",
-        "Torréfier le cumin moulu 30 secondes à sec dans une poêle.",
-        "Concasser grossièrement les cacahuètes au couteau.",
-        "Mettre la mangue, le concombre et l'oignon dans un saladier.",
-        "Ajouter le cumin torréfié, le piment doux, le sel et le jus du citron vert.",
-        "Mélanger, laisser reposer 5 minutes.",
-        "Parsemer de cacahuètes concassées, de coriandre et menthe ciselées. Servir frais — l'acidité vibrante de la mangue verte épicée."
+        "Épluche la mangue verte (encore ferme et acidulée), coupe-la en fins bâtonnets ou en julienne. Coupe aussi le concombre en fins bâtonnets (avec la peau, pour le croquant).",
+        "Émince l'oignon rouge très finement.",
+        "Torréfie le cumin moulu 30 secondes à sec dans une poêle.",
+        "Concasse grossièrement les cacahuètes au couteau.",
+        "Mets la mangue, le concombre et l'oignon dans un saladier.",
+        "Ajoute le cumin torréfié, le piment doux, le sel et le jus du citron vert.",
+        "Mélange, laisse reposer 5 minutes.",
+        "Parsème de cacahuètes concassées, de coriandre et menthe ciselées. Sers frais — l'acidité vibrante de la mangue verte épicée."
       ],
       "photo": "assets/recipes/s153.webp"
     },
@@ -90288,13 +90274,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuire les perles de tapioca dans une grande casserole d'eau bouillante 12-15 minutes en remuant (elles deviennent translucides). Égoutter et rincer à l'eau froide.",
-        "Éplucher la mangue, mixer une partie en purée lisse, couper le reste en petits dés.",
-        "Mélanger la purée de mangue avec le lait de coco, le sirop d'érable et le jus du citron vert.",
-        "Détacher les suprêmes de pomelo et les défaire en petits éclats (texture perlée caractéristique).",
-        "Incorporer les perles de tapioca égouttées à la crème mangue-coco.",
-        "Verser dans un bol ou un verre, ajouter les dés de mangue et les éclats de pomelo.",
-        "Placer 1h au frais. Servir bien frais — le dessert star de Hong Kong, frais et texturé."
+        "Cuis les perles de tapioca dans une grande casserole d'eau bouillante 12-15 minutes en remuant (elles deviennent translucides). Égoutte et rince à l'eau froide.",
+        "Épluche la mangue, mixe une partie en purée lisse, coupe le reste en petits dés.",
+        "Mélange la purée de mangue avec le lait de coco, le sirop d'érable et le jus du citron vert.",
+        "Détache les suprêmes de pomelo et défais-les en petits éclats (texture perlée caractéristique).",
+        "Incorpore les perles de tapioca égouttées à la crème mangue-coco.",
+        "Verse dans un bol ou un verre, ajoute les dés de mangue et les éclats de pomelo.",
+        "Place 1h au frais. Sers bien frais — le dessert star de Hong Kong, frais et texturé."
       ],
       "photo": "assets/recipes/des157.webp"
     },
@@ -90382,13 +90368,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher l'ananas et la mangue, retirer le cœur fibreux de l'ananas. Couper les deux en cubes de 1,5 cm.",
-        "Couper la banane en rondelles.",
-        "Mettre les fruits dans un saladier.",
-        "Préparer la sauce : mélanger le lait de coco, le jus du citron vert entier et le sirop d'érable.",
-        "Verser la sauce coco sur les fruits, mélanger délicatement.",
-        "Ouvrir le fruit de la passion, prélever la pulpe et la répartir sur la salade.",
-        "Parsemer de noix de coco râpée et de menthe ciselée. Servir bien frais — l'évasion tropicale en dessert."
+        "Épluche l'ananas et la mangue, retire le cœur fibreux de l'ananas. Coupe les deux en cubes de 1,5 cm.",
+        "Coupe la banane en rondelles.",
+        "Mets les fruits dans un saladier.",
+        "Prépare la sauce : mélange le lait de coco, le jus du citron vert entier et le sirop d'érable.",
+        "Verse la sauce coco sur les fruits, mélange délicatement.",
+        "Ouvre le fruit de la passion, prélève la pulpe et répartis-la sur la salade.",
+        "Parsème de noix de coco râpée et de menthe ciselée. Sers bien frais — l'évasion tropicale en dessert."
       ],
       "photo": "assets/recipes/des158.webp"
     },
@@ -90458,13 +90444,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Infuser le safran dans un fond d'eau tiède 10 minutes (couleur dorée).",
-        "Éplucher la mangue, retirer le noyau, mixer la chair en purée parfaitement lisse au blender.",
-        "Ajouter le yaourt nature, la cardamome, le safran infusé et le jus du citron vert. Mixer 10 secondes pour homogénéiser (texture veloutée).",
-        "Goûter : l'aam ras doit être doux et parfumé (choisis une mangue bien mûre, qui sent fort et cède sous le doigt : c'est elle qui donne toute la douceur).",
-        "Répartir dans les coupes, placer 30 minutes au frais.",
-        "Concasser les pistaches au couteau.",
-        "Parsemer de pistaches concassées. Servir bien frais — le dessert-doudou de l'été indien, traditionnellement de la saison des mangues."
+        "Infuse le safran dans un fond d'eau tiède 10 minutes (couleur dorée).",
+        "Épluche la mangue, retire le noyau, mixe la chair en purée parfaitement lisse au blender.",
+        "Ajoute le yaourt nature, la cardamome, le safran infusé et le jus du citron vert. Mixe 10 secondes pour homogénéiser (texture veloutée).",
+        "Goûte : l'aam ras doit être doux et parfumé (choisis une mangue bien mûre, qui sent fort et cède sous le doigt : c'est elle qui donne toute la douceur).",
+        "Répartis dans les coupes, place 30 minutes au frais.",
+        "Concasse les pistaches au couteau.",
+        "Parsème de pistaches concassées. Sers bien frais — le dessert-doudou de l'été indien, traditionnellement de la saison des mangues."
       ],
       "photo": "assets/recipes/des159.webp"
     },
@@ -90553,14 +90539,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire chauffer le lait avec le safran et les graines de fenouil jusqu'aux premiers frémissements, puis laisser infuser 10 minutes hors du feu (couleur et parfum).",
-        "Mixer les amandes et les pistaches au blender pour obtenir une poudre fine.",
-        "Filtrer le lait infusé pour retirer les graines de fenouil.",
-        "Remettre le lait dans le blender avec la poudre d'amandes-pistaches, la cardamome, le poivre, le sirop d'érable et l'eau de rose.",
-        "Mixer 30 secondes (le lait s'épaissit légèrement et se parfume — c'est le thandai, boisson épicée de Holi).",
-        "Verser dans des moules à esquimaux, planter les bâtonnets.",
-        "Placer au congélateur 6h minimum (idéalement une nuit).",
-        "Démouler en passant les moules 10 secondes sous l'eau tiède. Servir aussitôt — la boisson festive indienne transformée en glace."
+        "Fais chauffer le lait avec le safran et les graines de fenouil jusqu'aux premiers frémissements, puis laisse infuser 10 minutes hors du feu (couleur et parfum).",
+        "Mixe les amandes et les pistaches au blender pour obtenir une poudre fine.",
+        "Filtre le lait infusé pour retirer les graines de fenouil.",
+        "Remets le lait dans le blender avec la poudre d'amandes-pistaches, la cardamome, le poivre, le sirop d'érable et l'eau de rose.",
+        "Mixe 30 secondes (le lait s'épaissit légèrement et se parfume — c'est le thandai, boisson épicée de Holi).",
+        "Verse dans des moules à esquimaux, plante les bâtonnets.",
+        "Place au congélateur 6h minimum (idéalement une nuit).",
+        "Démoule en passant les moules 10 secondes sous l'eau tiède. Sers aussitôt — la boisson festive indienne transformée en glace."
       ],
       "photo": "assets/recipes/des160.webp"
     },
@@ -90623,13 +90609,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Porter l'eau à frémissement (pas bouillante, sinon le thé vert devient amer).",
-        "Hors du feu, ajouter le thé vert et la moitié de la menthe, laisser infuser 5 minutes.",
-        "Filtrer l'infusion, ajouter le sirop d'érable tant que c'est chaud (il se dissout mieux) et le jus du demi-citron.",
-        "Laisser tiédir, ciseler le reste de la menthe et l'ajouter à l'infusion.",
-        "Verser dans un récipient large à fond plat, placer au congélateur.",
-        "Gratter à la fourchette toutes les 40 minutes pendant 3h (3-4 grattages) pour casser les cristaux : texture neigeuse du granité.",
-        "Servir dans des verres glacés, décorer d'une feuille de menthe — le thé à la menthe marocain version glacée, désaltérant et léger."
+        "Porte l'eau à frémissement (pas bouillante, sinon le thé vert devient amer).",
+        "Hors du feu, ajoute le thé vert et la moitié de la menthe, laisse infuser 5 minutes.",
+        "Filtre l'infusion, ajoute le sirop d'érable tant que c'est chaud (il se dissout mieux) et le jus du demi-citron.",
+        "Laisse tiédir, cisèle le reste de la menthe et ajoute-la à l'infusion.",
+        "Verse dans un récipient large à fond plat, place au congélateur.",
+        "Gratte à la fourchette toutes les 40 minutes pendant 3h (3-4 grattages) pour casser les cristaux : texture neigeuse du granité.",
+        "Sers dans des verres glacés, décore d'une feuille de menthe — le thé à la menthe marocain version glacée, désaltérant et léger."
       ],
       "photo": "assets/recipes/des161.webp"
     },
@@ -90709,14 +90695,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les pêches et les abricots, retirer les noyaux.",
-        "Couper les pêches en quartiers, les abricots en deux ou en quartiers selon la taille.",
-        "Disposer les fruits dans un saladier large et plat.",
-        "Préparer le sirop parfumé : mélanger le miel d'acacia, l'eau de fleur d'oranger, le jus du citron et la cannelle.",
-        "Verser le sirop sur les fruits, mélanger délicatement.",
-        "Laisser macérer 10 minutes au frais (les fruits rendent leur jus et s'imprègnent du parfum).",
-        "Concasser grossièrement les pistaches au couteau.",
-        "Parsemer de pistaches concassées et de menthe ciselée. Servir frais — la douceur parfumée des vergers du Maghreb en été."
+        "Lave les pêches et les abricots, retire les noyaux.",
+        "Coupe les pêches en quartiers, les abricots en deux ou en quartiers selon la taille.",
+        "Dispose les fruits dans un saladier large et plat.",
+        "Prépare le sirop parfumé : mélange le miel d'acacia, l'eau de fleur d'oranger, le jus du citron et la cannelle.",
+        "Verse le sirop sur les fruits, mélange délicatement.",
+        "Laisse macérer 10 minutes au frais (les fruits rendent leur jus et s'imprègnent du parfum).",
+        "Concasse grossièrement les pistaches au couteau.",
+        "Parsème de pistaches concassées et de menthe ciselée. Sers frais — la douceur parfumée des vergers du Maghreb en été."
       ],
       "photo": "assets/recipes/des162.webp"
     },
@@ -90780,12 +90766,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Équeuter les fraises (en garder 2-3 pour la déco), les mixer au blender avec le basilic, le jus du demi-citron et le sirop d'érable.",
-        "Ajouter le skyr, mixer 10 secondes juste pour homogénéiser (texture crème rose).",
-        "Verser dans un récipient large à fond plat, placer au congélateur.",
-        "Gratter à la fourchette toutes les 45 minutes pendant 3h (3-4 grattages) : on obtient une texture frozen yogurt onctueuse, sans cristaux durs.",
-        "Au moment de servir, former des boules à la cuillère à glace.",
-        "Décorer de lamelles de fraise et d'une feuille de basilic. Servir aussitôt — le basilic relève subtilement la fraise."
+        "Équeute les fraises (gardes-en 2-3 pour la déco), mixe-les au blender avec le basilic, le jus du demi-citron et le sirop d'érable.",
+        "Ajoute le skyr, mixe 10 secondes juste pour homogénéiser (texture crème rose).",
+        "Verse dans un récipient large à fond plat, place au congélateur.",
+        "Gratte à la fourchette toutes les 45 minutes pendant 3h (3-4 grattages) : on obtient une texture frozen yogurt onctueuse, sans cristaux durs.",
+        "Au moment de servir, forme des boules à la cuillère à glace.",
+        "Décore de lamelles de fraise et d'une feuille de basilic. Sers aussitôt — le basilic relève subtilement la fraise."
       ],
       "photo": "assets/recipes/des163.webp"
     },
@@ -90851,13 +90837,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les pêches, retirer les noyaux, les couper en très fines lamelles (carpaccio).",
-        "Disposer les lamelles de pêche en rosace sur 2 grandes assiettes plates, en les faisant se chevaucher légèrement.",
-        "Répartir les framboises entières entre les lamelles de pêche.",
-        "Préparer le sirop : mélanger le miel d'acacia avec le jus du demi-citron vert.",
-        "Arroser le carpaccio du sirop citron-miel au pinceau ou à la cuillère.",
-        "Faire griller les pignons de pin 2 minutes à sec dans une poêle.",
-        "Parsemer de pignons grillés et de feuilles de basilic ciselées. Servir frais, idéalement après 15 minutes au frais."
+        "Lave les pêches, retire les noyaux, coupe-les en très fines lamelles (carpaccio).",
+        "Dispose les lamelles de pêche en rosace sur 2 grandes assiettes plates, en les faisant se chevaucher légèrement.",
+        "Répartis les framboises entières entre les lamelles de pêche.",
+        "Prépare le sirop : mélange le miel d'acacia avec le jus du demi-citron vert.",
+        "Arrose le carpaccio du sirop citron-miel au pinceau ou à la cuillère.",
+        "Fais griller les pignons de pin 2 minutes à sec dans une poêle.",
+        "Parsème de pignons grillés et de feuilles de basilic ciselées. Sers frais, idéalement après 15 minutes au frais."
       ],
       "photo": "assets/recipes/des164.webp"
     },
@@ -90914,13 +90900,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher la mangue, couper la chair en cubes et la congeler 2h (texture nécessaire pour la mangonada glacée).",
-        "Mettre les cubes de mangue congelés dans le blender avec une partie du jus de citron vert.",
-        "Mixer en pulsant par à-coups jusqu'à obtenir une texture de sorbet épais (ajouter une cuillère d'eau si besoin).",
-        "Préparer le mélange chili-lime : mélanger le piment doux et le sel dans une coupelle.",
-        "Verser la mangonada dans les verres, en alternant avec une pincée du mélange chili-lime entre les couches (effet marbré épicé).",
-        "Presser le reste du jus de citron vert sur le dessus.",
-        "Saupoudrer d'une dernière pincée de chili-lime. Servir immédiatement à la cuillère ou avec une paille épaisse — la friandise glacée des rues mexicaines."
+        "Épluche la mangue, coupe la chair en cubes et congèle-la 2h (texture nécessaire pour la mangonada glacée).",
+        "Mets les cubes de mangue congelés dans le blender avec une partie du jus de citron vert.",
+        "Mixe en pulsant par à-coups jusqu'à obtenir une texture de sorbet épais (ajoute une cuillère d'eau si besoin).",
+        "Prépare le mélange chili-lime : mélange le piment doux et le sel dans une coupelle.",
+        "Verse la mangonada dans les verres, en alternant avec une pincée du mélange chili-lime entre les couches (effet marbré épicé).",
+        "Presse le reste du jus de citron vert sur le dessus.",
+        "Saupoudre d'une dernière pincée de chili-lime. Sers immédiatement à la cuillère ou avec une paille épaisse — la friandise glacée des rues mexicaines."
       ],
       "photo": "assets/recipes/s154.webp"
     },
@@ -91001,13 +90987,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Retirer la peau et les pépins de la pastèque, couper la chair en dés de 1 cm.",
-        "Couper le concombre en dés de 5 mm (retirer les pépins centraux).",
-        "Émincer l'oignon rouge très finement, hacher la coriandre.",
-        "Mettre la pastèque, le concombre et l'oignon dans un saladier.",
-        "Ajouter le jus du citron vert entier, le piment doux et le sel, mélanger délicatement.",
-        "Laisser reposer 5 minutes (les saveurs se mêlent, ne pas attendre trop pour garder le croquant).",
-        "Émietter la feta sur le dessus, parsemer de coriandre. Servir frais — le pico de gallo estival sucré-salé, parfait avec des chips de maïs."
+        "Retire la peau et les pépins de la pastèque, coupe la chair en dés de 1 cm.",
+        "Coupe le concombre en dés de 5 mm (retire les pépins centraux).",
+        "Émince l'oignon rouge très finement, hache la coriandre.",
+        "Mets la pastèque, le concombre et l'oignon dans un saladier.",
+        "Ajoute le jus du citron vert entier, le piment doux et le sel, mélange délicatement.",
+        "Laisse reposer 5 minutes (les saveurs se mêlent, ne pas attendre trop pour garder le croquant).",
+        "Émiette la feta sur le dessus, parsème de coriandre. Sers frais — le pico de gallo estival sucré-salé, parfait avec des chips de maïs."
       ],
       "photo": "assets/recipes/s155.webp"
     },
@@ -91097,13 +91083,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper les tomates, le poivron et le concombre en gros morceaux (garder quelques dés de concombre pour la garniture).",
-        "Mettre les légumes dans le blender avec l'ail, le basilic (garder quelques feuilles), l'huile d'olive, le vinaigre, le sel et le poivre.",
-        "Mixer 1 minute jusqu'à obtenir un velouté parfaitement lisse.",
-        "Goûter et ajuster l'assaisonnement (sel, vinaigre selon l'acidité des tomates).",
-        "Passer au chinois pour une texture ultra-lisse (optionnel mais plus élégant).",
-        "Placer 2h au frigo pour servir bien froid (le gaspacho se sert glacé).",
-        "Verser dans des verrines, garnir de dés de concombre, d'un filet d'huile d'olive et de basilic. Servir glacé."
+        "Coupe les tomates, le poivron et le concombre en gros morceaux (garde quelques dés de concombre pour la garniture).",
+        "Mets les légumes dans le blender avec l'ail, le basilic (garde quelques feuilles), l'huile d'olive, le vinaigre, le sel et le poivre.",
+        "Mixe 1 minute jusqu'à obtenir un velouté parfaitement lisse.",
+        "Goûte et ajuste l'assaisonnement (sel, vinaigre selon l'acidité des tomates).",
+        "Passe au chinois pour une texture ultra-lisse (optionnel mais plus élégant).",
+        "Place 2h au frigo pour servir bien froid (le gaspacho se sert glacé).",
+        "Verse dans des verrines, garnis de dés de concombre, d'un filet d'huile d'olive et de basilic. Sers glacé."
       ],
       "photo": "assets/recipes/s156.webp"
     },
@@ -91184,12 +91170,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la moitié du concombre en très petits dés, râper l'autre moitié et presser pour retirer l'eau.",
-        "Dans un bol, écraser le fromage de chèvre frais à la fourchette avec le jus du demi-citron et l'huile d'olive (texture crémeuse).",
-        "Incorporer le concombre râpé pressé, la moitié de l'aneth et de la ciboulette ciselés, le sel et le poivre.",
-        "Répartir la crème de chèvre-concombre dans des verrines.",
-        "Garnir des dés de concombre frais sur le dessus.",
-        "Parsemer du reste d'aneth et de ciboulette. Placer 15 minutes au frais avant de servir — la fraîcheur acidulée parfaite à l'apéro estival."
+        "Coupe la moitié du concombre en très petits dés, râpe l'autre moitié et presse pour retirer l'eau.",
+        "Dans un bol, écrase le fromage de chèvre frais à la fourchette avec le jus du demi-citron et l'huile d'olive (texture crémeuse).",
+        "Incorpore le concombre râpé pressé, la moitié de l'aneth et de la ciboulette ciselés, le sel et le poivre.",
+        "Répartis la crème de chèvre-concombre dans des verrines.",
+        "Garnis des dés de concombre frais sur le dessus.",
+        "Parsème du reste d'aneth et de ciboulette. Place 15 minutes au frais avant de servir — la fraîcheur acidulée parfaite à l'apéro estival."
       ],
       "photo": "assets/recipes/s157.webp"
     },
@@ -91252,13 +91238,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Équeuter les fraises (en réserver 4-5 pour la garniture).",
-        "Mettre les fraises dans le blender avec le jus du demi-citron, le sirop d'érable et l'eau.",
-        "Mixer jusqu'à obtenir une soupe lisse (passer au chinois si on veut retirer les grains).",
-        "Ciseler la moitié de la menthe et l'incorporer à la soupe.",
-        "Placer 1h au frigo pour servir bien glacée.",
-        "Couper les fraises réservées en quartiers.",
-        "Verser la soupe dans des bols ou verres, déposer les quartiers de fraise et décorer du reste de menthe. Servir très frais — le dessert le plus rafraîchissant de l'été."
+        "Équeute les fraises (réserves-en 4-5 pour la garniture).",
+        "Mets les fraises dans le blender avec le jus du demi-citron, le sirop d'érable et l'eau.",
+        "Mixe jusqu'à obtenir une soupe lisse (passe au chinois si on veut retirer les grains).",
+        "Cisèle la moitié de la menthe et incorpore-la à la soupe.",
+        "Place 1h au frigo pour servir bien glacée.",
+        "Coupe les fraises réservées en quartiers.",
+        "Verse la soupe dans des bols ou verres, dépose les quartiers de fraise et décore du reste de menthe. Sers très frais — le dessert le plus rafraîchissant de l'été."
       ],
       "photo": "assets/recipes/des165.webp"
     },
@@ -91333,12 +91319,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer le coulis : mixer les framboises (en garder quelques-unes pour la déco) avec la moitié du sirop d'érable et le jus du quart de citron. Passer au chinois pour retirer les grains.",
-        "Mélanger le fromage blanc avec le reste du sirop d'érable et la vanille (texture crémeuse).",
-        "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Monter les verrines : une couche de fromage blanc, un peu de coulis de framboise, répéter.",
-        "Terminer par une cuillère de coulis en surface (effet marbré).",
-        "Garnir des framboises réservées, des myrtilles fraîches et des amandes grillées. Servir frais."
+        "Prépare le coulis : mixe les framboises (gardes-en quelques-unes pour la déco) avec la moitié du sirop d'érable et le jus du quart de citron. Passe au chinois pour retirer les grains.",
+        "Mélange le fromage blanc avec le reste du sirop d'érable et la vanille (texture crémeuse).",
+        "Fais griller les amandes effilées 2 minutes à sec dans une poêle.",
+        "Monte les verrines : une couche de fromage blanc, un peu de coulis de framboise, répète.",
+        "Termine par une cuillère de coulis en surface (effet marbré).",
+        "Garnis des framboises réservées, des myrtilles fraîches et des amandes grillées. Sers frais."
       ],
       "photo": "assets/recipes/des166.webp"
     },
@@ -91414,13 +91400,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les abricots et la pêche, retirer les noyaux. Garder quelques lamelles pour la déco.",
-        "Mettre les fruits, le yaourt nature, et le lait d'amande dans le blender (les fruits mûrs apportent toute la douceur).",
-        "Mixer 30 secondes : texture épaisse (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, lisser le dessus.",
-        "Disposer les lamelles de fruits réservées.",
-        "Faire griller les amandes effilées 2 minutes à sec.",
-        "Parsemer de flocons d'avoine, d'amandes grillées et de graines de chia. Servir frais."
+        "Lave les abricots et la pêche, retire les noyaux. Garde quelques lamelles pour la déco.",
+        "Mets les fruits, le yaourt nature, et le lait d'amande dans le blender (les fruits mûrs apportent toute la douceur).",
+        "Mixe 30 secondes : texture épaisse (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, lisse le dessus.",
+        "Dispose les lamelles de fruits réservées.",
+        "Fais griller les amandes effilées 2 minutes à sec.",
+        "Parsème de flocons d'avoine, d'amandes grillées et de graines de chia. Sers frais."
       ],
       "photo": "assets/recipes/b174.webp"
     },
@@ -91501,12 +91487,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire griller les flocons d'avoine, les noisettes concassées et les graines de courge 3 minutes à sec dans une poêle (granola express croustillant).",
-        "Couper les fraises en quartiers.",
-        "Verser le fromage blanc dans le bol, lisser le dessus.",
-        "Disposer les fraises, les myrtilles et les framboises en secteurs colorés.",
-        "Parsemer du granola express tiède (flocons-noisettes-graines).",
-        "Finir par un mince filet de miel d'acacia. Servir aussitôt pour garder le croustillant."
+        "Fais griller les flocons d'avoine, les noisettes concassées et les graines de courge 3 minutes à sec dans une poêle (granola express croustillant).",
+        "Coupe les fraises en quartiers.",
+        "Verse le fromage blanc dans le bol, lisse le dessus.",
+        "Dispose les fraises, les myrtilles et les framboises en secteurs colorés.",
+        "Parsème du granola express tiède (flocons-noisettes-graines).",
+        "Finis par un mince filet de miel d'acacia. Sers aussitôt pour garder le croustillant."
       ],
       "photo": "assets/recipes/b175.webp"
     },
@@ -91580,13 +91566,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le pain au levain en tranches épaisses, les passer 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées.",
-        "Mélanger la ricotta avec le zeste du citron et une partie du miel (texture crémeuse parfumée).",
-        "Couper les fraises en fines lamelles.",
-        "Étaler généreusement la ricotta sur les tranches de pain tièdes.",
-        "Disposer les lamelles de fraise sur la ricotta.",
-        "Concasser les pistaches au couteau.",
-        "Parsemer de pistaches et de basilic ciselé, finir par un filet du reste de miel. Servir aussitôt — le petit-déj italien sucré-frais."
+        "Coupe le pain au levain en tranches épaisses, passe-les 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées.",
+        "Mélange la ricotta avec le zeste du citron et une partie du miel (texture crémeuse parfumée).",
+        "Coupe les fraises en fines lamelles.",
+        "Étale généreusement la ricotta sur les tranches de pain tièdes.",
+        "Dispose les lamelles de fraise sur la ricotta.",
+        "Concasse les pistaches au couteau.",
+        "Parsème de pistaches et de basilic ciselé, finis par un filet du reste de miel. Sers aussitôt — le petit-déj italien sucré-frais."
       ],
       "photo": "assets/recipes/b176.webp"
     },
@@ -91661,14 +91647,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 190°C en chaleur tournante.",
-        "Couper les abricots en deux, retirer les noyaux, les disposer face coupée vers le haut sur une plaque.",
-        "Arroser d'une partie du miel et parsemer de quelques aiguilles de romarin.",
-        "Enfourner 12 minutes : les abricots deviennent fondants et légèrement caramélisés.",
-        "Pendant ce temps, faire griller les amandes effilées et les flocons d'avoine 3 minutes à sec dans une poêle.",
-        "Mélanger le skyr avec la vanille et le reste du miel.",
-        "Verser le skyr dans le bol, déposer les abricots rôtis tièdes.",
-        "Parsemer du mélange amandes-avoine grillé. Servir tiède ou frais — le contraste yaourt froid / abricots tièdes est délicieux."
+        "Préchauffe le four à 190°C en chaleur tournante.",
+        "Coupe les abricots en deux, retire les noyaux, dispose-les face coupée vers le haut sur une plaque.",
+        "Arrose d'une partie du miel et parsème de quelques aiguilles de romarin.",
+        "Enfourne 12 minutes : les abricots deviennent fondants et légèrement caramélisés.",
+        "Pendant ce temps, fais griller les amandes effilées et les flocons d'avoine 3 minutes à sec dans une poêle.",
+        "Mélange le skyr avec la vanille et le reste du miel.",
+        "Verse le skyr dans le bol, dépose les abricots rôtis tièdes.",
+        "Parsème du mélange amandes-avoine grillé. Sers tiède ou frais — le contraste yaourt froid / abricots tièdes est délicieux."
       ],
       "photo": "assets/recipes/b177.webp"
     },
@@ -91754,13 +91740,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Toaster les 2 tranches de pain complet 2 minutes au grille-pain.",
-        "Mélanger le fromage frais avec le jus du quart de citron et une pincée de sel (texture crémeuse à tartiner).",
-        "Couper la tomate en fines rondelles, le concombre en demi-lunes fines.",
-        "Étaler le fromage frais sur les tartines toastées.",
-        "Disposer les rondelles de tomate et de concombre par-dessus.",
-        "Arroser d'un filet d'huile d'olive et saupoudrer généreusement de zaatar.",
-        "Parsemer de menthe ciselée. Servir aussitôt — le petit-déj salé méditerranéen frais et parfumé."
+        "Toaste les 2 tranches de pain complet 2 minutes au grille-pain.",
+        "Mélange le fromage frais avec le jus du quart de citron et une pincée de sel (texture crémeuse à tartiner).",
+        "Coupe la tomate en fines rondelles, le concombre en demi-lunes fines.",
+        "Étale le fromage frais sur les tartines toastées.",
+        "Dispose les rondelles de tomate et de concombre par-dessus.",
+        "Arrose d'un filet d'huile d'olive et saupoudre généreusement de zaatar.",
+        "Parsème de menthe ciselée. Sers aussitôt — le petit-déj salé méditerranéen frais et parfumé."
       ],
       "photo": "assets/recipes/b178.webp"
     },
@@ -91836,13 +91822,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Retirer la peau et les pépins du melon, couper la chair en cubes (en garder quelques-uns pour la déco).",
-        "Mettre le melon, le skyr, la menthe et le jus du demi-citron vert dans le blender.",
-        "Mixer 30 secondes : texture épaisse et onctueuse (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, lisser le dessus.",
-        "Disposer les cubes de melon réservés.",
-        "Parsemer de flocons d'avoine et de graines de courge, finir par un filet de miel.",
-        "Décorer d'une feuille de menthe. Servir frais."
+        "Retire la peau et les pépins du melon, coupe la chair en cubes (gardes-en quelques-uns pour la déco).",
+        "Mets le melon, le skyr, la menthe et le jus du demi-citron vert dans le blender.",
+        "Mixe 30 secondes : texture épaisse et onctueuse (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, lisse le dessus.",
+        "Dispose les cubes de melon réservés.",
+        "Parsème de flocons d'avoine et de graines de courge, finis par un filet de miel.",
+        "Décore d'une feuille de menthe. Sers frais."
       ],
       "photo": "assets/recipes/b179.webp"
     },
@@ -91912,13 +91898,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Délayer le matcha dans 2 cuillères à soupe d'eau tiède en fouettant énergiquement (aucun grumeau, vert vif).",
-        "La veille, mélanger dans un bol les graines de chia, le lait de coco, le matcha dilué et le sirop d'érable. Bien fouetter.",
-        "Attendre 5 minutes, fouetter à nouveau (évite que le chia se prenne en bloc).",
-        "Couvrir et placer au frigo toute la nuit (le chia gonfle et fige, couleur vert pâle).",
-        "Le matin, éplucher le kiwi et le couper en rondelles ou en dés.",
-        "Répartir le chia pudding dans 2 verres, garnir de kiwi.",
-        "Parsemer de noix de coco râpée. Servir frais — le petit-déj antioxydant matcha-coco."
+        "Délaye le matcha dans 2 cuillères à soupe d'eau tiède en fouettant énergiquement (aucun grumeau, vert vif).",
+        "La veille, mélange dans un bol les graines de chia, le lait de coco, le matcha dilué et le sirop d'érable. Fouette bien.",
+        "Attends 5 minutes, fouette à nouveau (évite que le chia se prenne en bloc).",
+        "Couvre et place au frigo toute la nuit (le chia gonfle et fige, couleur vert pâle).",
+        "Le matin, épluche le kiwi et coupe-le en rondelles ou en dés.",
+        "Répartis le chia pudding dans 2 verres, garnis de kiwi.",
+        "Parsème de noix de coco râpée. Sers frais — le petit-déj antioxydant matcha-coco."
       ],
       "photo": "assets/recipes/b180.webp"
     },
@@ -92010,14 +91996,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz rond complet, le cuire dans une casserole d'eau bouillante 18-20 minutes. Égoutter.",
-        "Assaisonner le riz tiède avec le vinaigre de riz, mélanger délicatement.",
-        "Cuire les œufs mollets : plonger les œufs dans l'eau bouillante 6 minutes, puis les rafraîchir dans l'eau glacée et les écaler délicatement.",
-        "Couper le concombre en fines demi-lunes, l'avocat en lamelles.",
-        "Répartir le riz vinaigré dans 2 bols.",
-        "Disposer le concombre, l'avocat et l'œuf mollet coupé en deux (le jaune coulant nappe le riz).",
-        "Arroser de sauce soja et d'huile de sésame.",
-        "Parsemer de graines de sésame, de nori émietté et d'oignons nouveaux ciselés. Servir tiède — le petit-déj salé japonais réconfortant."
+        "Rince le riz rond complet, cuis-le dans une casserole d'eau bouillante 18-20 minutes. Égoutte.",
+        "Assaisonne le riz tiède avec le vinaigre de riz, mélange délicatement.",
+        "Cuis les œufs mollets : plonge les œufs dans l'eau bouillante 6 minutes, puis rafraîchis-les dans l'eau glacée et écale-les délicatement.",
+        "Coupe le concombre en fines demi-lunes, l'avocat en lamelles.",
+        "Répartis le riz vinaigré dans 2 bols.",
+        "Dispose le concombre, l'avocat et l'œuf mollet coupé en deux (le jaune coulant nappe le riz).",
+        "Arrose de sauce soja et d'huile de sésame.",
+        "Parsème de graines de sésame, de nori émietté et d'oignons nouveaux ciselés. Sers tiède — le petit-déj salé japonais réconfortant."
       ],
       "photo": "assets/recipes/b181.webp"
     },
@@ -92094,13 +92080,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille, mélanger dans un bocal les flocons d'avoine, le yaourt nature, le lait d'amande, les graines de chia et la cardamome.",
-        "Couper une partie de la mangue en petits dés, l'ajouter au mélange.",
-        "Fermer et placer au frigo toute la nuit (texture crémeuse).",
-        "Le matin, mixer ou écraser le reste de la mangue en purée.",
-        "Faire griller les amandes effilées 2 minutes à sec.",
-        "Verser l'overnight oats dans le bol, napper de purée de mangue.",
-        "Parsemer d'amandes grillées (la purée de mangue adoucit le tout). Servir frais — le petit-déj indien parfumé à la cardamome."
+        "La veille, mélange dans un bocal les flocons d'avoine, le yaourt nature, le lait d'amande, les graines de chia et la cardamome.",
+        "Coupe une partie de la mangue en petits dés, ajoute-la au mélange.",
+        "Ferme et place au frigo toute la nuit (texture crémeuse).",
+        "Le matin, mixe ou écrase le reste de la mangue en purée.",
+        "Fais griller les amandes effilées 2 minutes à sec.",
+        "Verse l'overnight oats dans le bol, nappe de purée de mangue.",
+        "Parsème d'amandes grillées (la purée de mangue adoucit le tout). Sers frais — le petit-déj indien parfumé à la cardamome."
       ],
       "photo": "assets/recipes/b182.webp"
     },
@@ -92182,13 +92168,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher la mangue, couper la chair en morceaux (garder quelques dés pour la déco).",
-        "Mettre la mangue, le yaourt nature, le lait, l'eau de rose, la cardamome et le miel dans le blender.",
-        "Mixer 30 secondes : texture épaisse de lassi (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large.",
-        "Concasser les pistaches au couteau.",
-        "Disposer les dés de mangue réservés, parsemer de pistaches et de flocons d'avoine.",
-        "Servir immédiatement — le lassi à la mangue en version bowl à la cuillère."
+        "Épluche la mangue, coupe la chair en morceaux (garde quelques dés pour la déco).",
+        "Mets la mangue, le yaourt nature, le lait, l'eau de rose, la cardamome et le miel dans le blender.",
+        "Mixe 30 secondes : texture épaisse de lassi (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large.",
+        "Concasse les pistaches au couteau.",
+        "Dispose les dés de mangue réservés, parsème de pistaches et de flocons d'avoine.",
+        "Sers immédiatement — le lassi à la mangue en version bowl à la cuillère."
       ],
       "photo": "assets/recipes/b183.webp"
     },
@@ -92256,12 +92242,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Équeuter les fraises (en garder une pour la déco). Éplucher la banane.",
-        "Mettre les fraises, la banane, le lait, les flocons d'avoine, la cannelle et la vanille dans le blender.",
-        "Mixer 40 secondes à pleine vitesse jusqu'à obtenir une boisson épaisse et onctueuse (l'avoine épaissit et rassasie).",
-        "Goûter : la banane apporte toute la douceur. Si c'est trop épais, ajouter un trait de lait.",
-        "Verser dans un grand verre.",
-        "Décorer d'une lamelle de fraise et d'une pincée de cannelle. Servir frais — le smoothie-repas mexicain du matin, crémeux et nourrissant."
+        "Équeute les fraises (gardes-en une pour la déco). Épluche la banane.",
+        "Mets les fraises, la banane, le lait, les flocons d'avoine, la cannelle et la vanille dans le blender.",
+        "Mixe 40 secondes à pleine vitesse jusqu'à obtenir une boisson épaisse et onctueuse (l'avoine épaissit et rassasie).",
+        "Goûte : la banane apporte toute la douceur. Si c'est trop épais, ajoute un trait de lait.",
+        "Verse dans un grand verre.",
+        "Décore d'une lamelle de fraise et d'une pincée de cannelle. Sers frais — le smoothie-repas mexicain du matin, crémeux et nourrissant."
       ],
       "photo": "assets/recipes/b184.webp"
     },
@@ -92343,13 +92329,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le pitaya en deux, prélever la chair à la cuillère (rose vif pour le fruit à chair rouge).",
-        "Éplucher la mangue et la banane, couper en morceaux (garder quelques dés de mangue pour la déco).",
-        "Mettre le pitaya, la mangue, la banane, le lait de coco et le jus du citron vert dans le blender.",
-        "Mixer 30 secondes : texture épaisse rose vif (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, lisser le dessus.",
-        "Disposer les dés de mangue réservés.",
-        "Parsemer de graines de chia, de flocons d'avoine et de graines de courge. Servir immédiatement — le bowl exotique coloré du Mexique."
+        "Coupe le pitaya en deux, prélève la chair à la cuillère (rose vif pour le fruit à chair rouge).",
+        "Épluche la mangue et la banane, coupe en morceaux (garde quelques dés de mangue pour la déco).",
+        "Mets le pitaya, la mangue, la banane, le lait de coco et le jus du citron vert dans le blender.",
+        "Mixe 30 secondes : texture épaisse rose vif (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, lisse le dessus.",
+        "Dispose les dés de mangue réservés.",
+        "Parsème de graines de chia, de flocons d'avoine et de graines de courge. Sers immédiatement — le bowl exotique coloré du Mexique."
       ],
       "photo": "assets/recipes/b185.webp"
     },
@@ -92453,14 +92439,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer les lentilles vertes, les cuire dans une grande casserole d'eau (non salée au départ) 20-25 minutes : elles doivent rester légèrement fermes, pas en purée.",
-        "Égoutter les lentilles et les laisser tiédir (une salade de lentilles se fait tiède ou froide).",
-        "Préparer la vinaigrette : fouetter la moutarde, le vinaigre de cidre, l'huile d'olive, le sel et l'échalote émincée très fin.",
-        "Couper la tomate en dés, le concombre en demi-lunes, émincer l'oignon rouge.",
-        "Mélanger les lentilles tièdes avec la vinaigrette (elles s'imprègnent mieux tièdes).",
-        "Ajouter la tomate, le concombre et l'oignon, mélanger délicatement.",
-        "Émietter le fromage de chèvre frais sur le dessus.",
-        "Parsemer de persil et de ciboulette ciselés. Servir tiède ou frais — la salade de lentilles complète et fraîche de l'été."
+        "Rince les lentilles vertes, cuis-les dans une grande casserole d'eau (non salée au départ) 20-25 minutes : elles doivent rester légèrement fermes, pas en purée.",
+        "Égoutte les lentilles et laisse-les tiédir (une salade de lentilles se fait tiède ou froide).",
+        "Prépare la vinaigrette : fouette la moutarde, le vinaigre de cidre, l'huile d'olive, le sel et l'échalote émincée très fin.",
+        "Coupe la tomate en dés, le concombre en demi-lunes, émince l'oignon rouge.",
+        "Mélange les lentilles tièdes avec la vinaigrette (elles s'imprègnent mieux tièdes).",
+        "Ajoute la tomate, le concombre et l'oignon, mélange délicatement.",
+        "Émiette le fromage de chèvre frais sur le dessus.",
+        "Parsème de persil et de ciboulette ciselés. Sers tiède ou frais — la salade de lentilles complète et fraîche de l'été."
       ],
       "photo": "assets/recipes/l217.webp"
     },
@@ -92582,14 +92568,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la marinade tandoori : mélanger 60g de yaourt avec le gingembre râpé, l'ail écrasé, le garam masala, le curcuma, le paprika fumé, l'huile d'olive, le jus du demi-citron et 1 g de sel.",
-        "Détacher le chou-fleur en bouquets, couper la courgette en rondelles épaisses, le poivron en carrés, l'oignon en quartiers.",
-        "Enrober les légumes de marinade, laisser reposer 30 minutes (la couleur orangée pénètre).",
-        "Préparer la raïta : râper le concombre, presser pour retirer l'eau, mélanger avec le reste du yaourt (60g), la menthe ciselée et une pincée de sel.",
-        "Faire chauffer le grill (ou une poêle-gril) à feu vif.",
-        "Griller les légumes marinés 12-15 minutes en les retournant : ils doivent être tendres avec des marques de grill et des bords légèrement charbonnés (effet tandoor).",
-        "Dresser les légumes grillés dans 2 assiettes.",
-        "Servir avec la raïta concombre-menthe bien fraîche à côté — le dîner indien grillé, léger et parfumé."
+        "Prépare la marinade tandoori : mélange 60g de yaourt avec le gingembre râpé, l'ail écrasé, le garam masala, le curcuma, le paprika fumé, l'huile d'olive, le jus du demi-citron et 1 g de sel.",
+        "Détache le chou-fleur en bouquets, coupe la courgette en rondelles épaisses, le poivron en carrés, l'oignon en quartiers.",
+        "Enrobe les légumes de marinade, laisse reposer 30 minutes (la couleur orangée pénètre).",
+        "Prépare la raïta : râpe le concombre, presse pour retirer l'eau, mélange avec le reste du yaourt (60g), la menthe ciselée et une pincée de sel.",
+        "Fais chauffer le grill (ou une poêle-gril) à feu vif.",
+        "Grille les légumes marinés 12-15 minutes en les retournant : ils doivent être tendres avec des marques de grill et des bords légèrement charbonnés (effet tandoor).",
+        "Dresse les légumes grillés dans 2 assiettes.",
+        "Sers avec la raïta concombre-menthe bien fraîche à côté — le dîner indien grillé, léger et parfumé."
       ],
       "photo": "assets/recipes/d215.webp"
     },
@@ -92695,14 +92681,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer les crevettes, les sécher. Les mariner 10 minutes avec le paprika fumé, le cumin, le piment doux, une partie de l'huile et une pincée de sel.",
-        "Préparer la salsa de mangue : couper la mangue en petits dés, émincer l'oignon rouge, mélanger avec le jus d'une partie du citron vert et une partie de la coriandre.",
-        "Émincer le chou rouge très finement, l'assaisonner avec le reste du jus de citron vert, le reste d'huile et une pincée de sel (slaw croquant).",
-        "Couper l'avocat en lamelles.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, griller les crevettes 2-3 minutes par face (roses et marquées).",
-        "Réchauffer les tortillas de maïs 30 secondes par face sur le grill (souples avec marques).",
-        "Garnir chaque tortilla de slaw de chou rouge, crevettes grillées, salsa de mangue et lamelles d'avocat.",
-        "Parsemer du reste de coriandre, servir avec un quartier de citron vert. Tacos d'été frais et grillés."
+        "Rince les crevettes, sèche-les. Marine-les 10 minutes avec le paprika fumé, le cumin, le piment doux, une partie de l'huile et une pincée de sel.",
+        "Prépare la salsa de mangue : coupe la mangue en petits dés, émince l'oignon rouge, mélange avec le jus d'une partie du citron vert et une partie de la coriandre.",
+        "Émince le chou rouge très finement, assaisonne-le avec le reste du jus de citron vert, le reste d'huile et une pincée de sel (slaw croquant).",
+        "Coupe l'avocat en lamelles.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les crevettes 2-3 minutes par face (roses et marquées).",
+        "Réchauffe les tortillas de maïs 30 secondes par face sur le grill (souples avec marques).",
+        "Garnis chaque tortilla de slaw de chou rouge, crevettes grillées, salsa de mangue et lamelles d'avocat.",
+        "Parsème du reste de coriandre, sers avec un quartier de citron vert. Tacos d'été frais et grillés."
       ],
       "photo": "assets/recipes/d216.webp"
     },
@@ -92808,14 +92794,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la chermoula : hacher finement la coriandre, le persil, l'ail, le cumin, le paprika, le ras el-hanout, 8 ml d'huile, le jus d'un demi-citron et 1 g de sel (marinade verte épicée).",
-        "Couper l'agneau en cubes de 3 cm, les enrober de la moitié de la chermoula, laisser mariner 30 minutes au frais.",
-        "Couper la courgette en rondelles épaisses, le poivron en carrés, l'oignon en quartiers.",
-        "Monter les brochettes en alternant agneau, courgette, poivron et oignon (tremper les pics en bois 10 min dans l'eau si besoin).",
-        "Badigeonner les légumes du reste d'huile et d'une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller les brochettes 10-12 minutes en les retournant régulièrement : l'agneau est doré dehors et rosé dedans, les légumes marqués.",
-        "Au moment de servir, napper du reste de chermoula et presser le jus du demi-citron restant. Le BBQ maghrébin parfumé de l'été."
+        "Prépare la chermoula : hache finement la coriandre, le persil, l'ail, le cumin, le paprika, le ras el-hanout, 8 ml d'huile, le jus d'un demi-citron et 1 g de sel (marinade verte épicée).",
+        "Coupe l'agneau en cubes de 3 cm, enrobe-les de la moitié de la chermoula, laisse mariner 30 minutes au frais.",
+        "Coupe la courgette en rondelles épaisses, le poivron en carrés, l'oignon en quartiers.",
+        "Monte les brochettes en alternant agneau, courgette, poivron et oignon (trempe les pics en bois 10 min dans l'eau si besoin).",
+        "Badigeonne les légumes du reste d'huile et d'une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille les brochettes 10-12 minutes en les retournant régulièrement : l'agneau est doré dehors et rosé dedans, les légumes marqués.",
+        "Au moment de servir, nappe du reste de chermoula et presse le jus du demi-citron restant. Le BBQ maghrébin parfumé de l'été."
       ],
       "photo": "assets/recipes/d217.webp"
     },
@@ -92889,13 +92875,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Équeuter les fraises et les couper en quartiers.",
-        "Faire griller les amandes effilées et les flocons d'avoine 3 minutes à sec dans une poêle (granola express croustillant).",
-        "Mélanger le fromage blanc avec le zeste du quart de citron (parfume sans acidifier).",
-        "Répartir le fromage blanc dans 2 bols, lisser le dessus.",
-        "Disposer les quartiers de fraise.",
-        "Parsemer du mélange amandes-avoine grillé.",
-        "Finir par un filet de miel et quelques feuilles de menthe ciselées. Servir aussitôt — petit-déj printanier frais et croustillant."
+        "Équeute les fraises et coupe-les en quartiers.",
+        "Fais griller les amandes effilées et les flocons d'avoine 3 minutes à sec dans une poêle (granola express croustillant).",
+        "Mélange le fromage blanc avec le zeste du quart de citron (parfume sans acidifier).",
+        "Répartis le fromage blanc dans 2 bols, lisse le dessus.",
+        "Dispose les quartiers de fraise.",
+        "Parsème du mélange amandes-avoine grillé.",
+        "Finis par un filet de miel et quelques feuilles de menthe ciselées. Sers aussitôt — petit-déj printanier frais et croustillant."
       ],
       "photo": "assets/recipes/b186.webp"
     },
@@ -92977,14 +92963,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la rhubarbe en tronçons, la cuire 8 minutes dans une casserole avec le sirop d'érable et 2 cuillères à soupe d'eau (elle se défait en compote). Laisser refroidir.",
-        "Équeuter les fraises (garder 2-3 pour la déco).",
-        "Mettre la compote de rhubarbe refroidie, les fraises, le skyr et la vanille dans le blender.",
-        "Mixer 30 secondes : texture épaisse rose (ajouter un glaçon si trop liquide).",
-        "Verser dans un bol large, lisser le dessus.",
-        "Faire griller les amandes effilées et les flocons d'avoine 3 minutes à sec.",
-        "Disposer les fraises réservées en lamelles, parsemer du mélange amandes-avoine grillé et des graines de chia.",
-        "Servir aussitôt — l'acidité de la rhubarbe réveille ce bowl printanier."
+        "Coupe la rhubarbe en tronçons, cuis-la 8 minutes dans une casserole avec le sirop d'érable et 2 cuillères à soupe d'eau (elle se défait en compote). Laisse refroidir.",
+        "Équeute les fraises (garde 2-3 pour la déco).",
+        "Mets la compote de rhubarbe refroidie, les fraises, le skyr et la vanille dans le blender.",
+        "Mixe 30 secondes : texture épaisse rose (ajoute un glaçon si trop liquide).",
+        "Verse dans un bol large, lisse le dessus.",
+        "Fais griller les amandes effilées et les flocons d'avoine 3 minutes à sec.",
+        "Dispose les fraises réservées en lamelles, parsème du mélange amandes-avoine grillé et des graines de chia.",
+        "Sers aussitôt — l'acidité de la rhubarbe réveille ce bowl printanier."
       ],
       "photo": "assets/recipes/b187.webp"
     },
@@ -93065,14 +93051,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le pain au levain en tranches, les passer au four (ou grille-pain) 3 minutes jusqu'à ce qu'elles soient dorées.",
-        "Frotter chaque tranche encore chaude avec la gousse d'ail coupée.",
-        "Casser la base dure des asperges, les couper en tronçons fins (garder les pointes).",
-        "Faire sauter les asperges dans l'huile d'olive 5 minutes à feu moyen-vif (tendres, légèrement dorées).",
-        "Mélanger la ricotta avec le zeste du citron et le poivre (texture crémeuse parfumée).",
-        "Étaler la ricotta citronnée sur les crostini.",
-        "Disposer les asperges sautées par-dessus, presser un peu de jus de citron.",
-        "Parsemer de menthe ciselée. Servir tiède — l'apéro printanier aux asperges."
+        "Coupe le pain au levain en tranches, passe-les au four (ou grille-pain) 3 minutes jusqu'à ce qu'elles soient dorées.",
+        "Frotte chaque tranche encore chaude avec la gousse d'ail coupée.",
+        "Casse la base dure des asperges, coupe-les en tronçons fins (garde les pointes).",
+        "Fais sauter les asperges dans l'huile d'olive 5 minutes à feu moyen-vif (tendres, légèrement dorées).",
+        "Mélange la ricotta avec le zeste du citron et le poivre (texture crémeuse parfumée).",
+        "Étale la ricotta citronnée sur les crostini.",
+        "Dispose les asperges sautées par-dessus, presse un peu de jus de citron.",
+        "Parsème de menthe ciselée. Sers tiède — l'apéro printanier aux asperges."
       ],
       "photo": "assets/recipes/s158.webp"
     },
@@ -93166,13 +93152,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuire les petits pois 4-5 minutes à l'eau bouillante salée (s'ils sont frais), 3 minutes s'ils sont surgelés. Égoutter et rafraîchir à l'eau froide (garde le vert vif).",
-        "Réserver quelques petits pois pour la déco.",
-        "Mixer le reste des petits pois avec la ricotta, une partie de la menthe, le jus du citron, l'huile d'olive, le sel et le poivre (écrasé grossier, pas une purée lisse).",
-        "Couper le pain au levain en tranches, les toaster 3 minutes au four.",
-        "Frotter chaque tranche chaude avec la gousse d'ail coupée.",
-        "Étaler généreusement l'écrasé de petits pois sur les bruschetta.",
-        "Garnir des petits pois réservés, du parmesan râpé et du reste de menthe. Servir aussitôt — la fraîcheur printanière des petits pois."
+        "Cuis les petits pois 4-5 minutes à l'eau bouillante salée (s'ils sont frais), 3 minutes s'ils sont surgelés. Égoutte et rafraîchis à l'eau froide (garde le vert vif).",
+        "Réserve quelques petits pois pour la déco.",
+        "Mixe le reste des petits pois avec la ricotta, une partie de la menthe, le jus du citron, l'huile d'olive, le sel et le poivre (écrasé grossier, pas une purée lisse).",
+        "Coupe le pain au levain en tranches, toaste-les 3 minutes au four.",
+        "Frotte chaque tranche chaude avec la gousse d'ail coupée.",
+        "Étale généreusement l'écrasé de petits pois sur les bruschetta.",
+        "Garnis des petits pois réservés, du parmesan râpé et du reste de menthe. Sers aussitôt — la fraîcheur printanière des petits pois."
       ],
       "photo": "assets/recipes/s159.webp"
     },
@@ -93259,13 +93245,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Toaster légèrement les tranches de pain de seigle 2 minutes.",
-        "Laver les radis, les couper en très fines rondelles (à la mandoline idéalement).",
-        "Mélanger le fromage frais avec le jus du citron, une partie de la ciboulette et de l'aneth ciselés, le sel et le poivre.",
-        "Étaler généreusement le fromage frais aux herbes sur les tartines.",
-        "Disposer les rondelles de radis en les faisant se chevaucher (effet écailles).",
-        "Arroser d'un filet d'huile d'olive.",
-        "Parsemer du reste d'herbes. Servir aussitôt — le radis-beurre printanier revisité, croquant et frais."
+        "Toaste légèrement les tranches de pain de seigle 2 minutes.",
+        "Lave les radis, coupe-les en très fines rondelles (à la mandoline idéalement).",
+        "Mélange le fromage frais avec le jus du citron, une partie de la ciboulette et de l'aneth ciselés, le sel et le poivre.",
+        "Étale généreusement le fromage frais aux herbes sur les tartines.",
+        "Dispose les rondelles de radis en les faisant se chevaucher (effet écailles).",
+        "Arrose d'un filet d'huile d'olive.",
+        "Parsème du reste d'herbes. Sers aussitôt — le radis-beurre printanier revisité, croquant et frais."
       ],
       "photo": "assets/recipes/s160.webp"
     },
@@ -93363,13 +93349,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Casser la base dure des asperges, les cuire 6-7 minutes à l'eau bouillante salée (croquantes), rafraîchir à l'eau glacée pour garder le vert.",
-        "Concasser et faire griller les noisettes 2 minutes à sec dans une poêle.",
-        "Préparer la vinaigrette : fouetter la moutarde, le vinaigre de cidre, l'huile d'olive, le sel et le poivre.",
-        "Pour pocher les œufs : porter de l'eau à frémissement avec 1 cuillère à soupe de vinaigre. Casser chaque œuf dans un ramequin, le glisser dans l'eau, cuire 3 minutes (blanc pris, jaune coulant). Égoutter.",
-        "Disposer la salade verte dans 2 assiettes, répartir les asperges et les radis en fines rondelles.",
-        "Arroser de vinaigrette.",
-        "Déposer un œuf poché sur chaque assiette, parsemer de noisettes grillées et de ciboulette. Servir tiède — le jaune coulant fait la sauce."
+        "Casse la base dure des asperges, cuis-les 6-7 minutes à l'eau bouillante salée (croquantes), rafraîchis à l'eau glacée pour garder le vert.",
+        "Concasse et fais griller les noisettes 2 minutes à sec dans une poêle.",
+        "Prépare la vinaigrette : fouette la moutarde, le vinaigre de cidre, l'huile d'olive, le sel et le poivre.",
+        "Pour pocher les œufs : porte de l'eau à frémissement avec 1 cuillère à soupe de vinaigre. Casse chaque œuf dans un ramequin, glisse-le dans l'eau, cuis 3 minutes (blanc pris, jaune coulant). Égoutte.",
+        "Dispose la salade verte dans 2 assiettes, répartis les asperges et les radis en fines rondelles.",
+        "Arrose de vinaigrette.",
+        "Dépose un œuf poché sur chaque assiette, parsème de noisettes grillées et de ciboulette. Sers tiède — le jaune coulant fait la sauce."
       ],
       "photo": "assets/recipes/l218.webp"
     },
@@ -93462,14 +93448,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz complet, le cuire dans une casserole d'eau bouillante salée 18-20 minutes. Égoutter.",
-        "Couper le tofu en cubes, les sécher avec un papier absorbant.",
-        "Casser la base dure des asperges, les couper en tronçons de 4 cm en biais (les pointes entières).",
-        "Faire chauffer 3 ml d'huile de sésame dans une poêle ou wok à feu vif, saisir le tofu 6 minutes en le retournant (doré sur les faces). Réserver.",
-        "Dans le même wok, ajouter le reste d'huile, l'ail émincé et le gingembre râpé, faire revenir 30 secondes.",
-        "Ajouter les asperges, sauter 5 minutes à feu vif (croquantes, légèrement dorées).",
-        "Remettre le tofu, ajouter la sauce soja, mélanger 2 minutes pour enrober.",
-        "Hors du feu, presser le jus du demi-citron vert, parsemer de graines de sésame et d'oignons nouveaux. Servir sur le riz complet."
+        "Rince le riz complet, cuis-le dans une casserole d'eau bouillante salée 18-20 minutes. Égoutte.",
+        "Coupe le tofu en cubes, sèche-les avec un papier absorbant.",
+        "Casse la base dure des asperges, coupe-les en tronçons de 4 cm en biais (les pointes entières).",
+        "Fais chauffer 3 ml d'huile de sésame dans une poêle ou wok à feu vif, saisis le tofu 6 minutes en le retournant (doré sur les faces). Réserve.",
+        "Dans le même wok, ajoute le reste d'huile, l'ail émincé et le gingembre râpé, fais revenir 30 secondes.",
+        "Ajoute les asperges, saute 5 minutes à feu vif (croquantes, légèrement dorées).",
+        "Remets le tofu, ajoute la sauce soja, mélange 2 minutes pour enrober.",
+        "Hors du feu, presse le jus du demi-citron vert, parsème de graines de sésame et d'oignons nouveaux. Sers sur le riz complet."
       ],
       "photo": "assets/recipes/l219.webp"
     },
@@ -93583,15 +93569,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz basmati complet, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter.",
-        "Couper le paneer en cubes. Faire chauffer 4 ml d'huile dans une poêle, dorer les cubes de paneer sur les faces 4 minutes. Réserver.",
-        "Émincer l'oignon, faire revenir dans le reste d'huile 5 minutes (doré).",
-        "Ajouter l'ail écrasé et le gingembre râpé, puis le cumin, le curcuma, mélanger 30 secondes.",
-        "Ajouter la tomate en dés, cuire 5 minutes (sauce épaissie).",
-        "Ajouter les petits pois et 100 ml d'eau, le sel, mijoter 8 minutes.",
-        "Ajouter les épinards, laisser tomber 3 minutes (ils réduisent).",
-        "Remettre le paneer doré, ajouter le garam masala, mélanger délicatement 2 minutes.",
-        "Parsemer de coriandre fraîche. Servir avec le riz basmati complet — le curry printanier petits pois-épinards."
+        "Rince le riz basmati complet, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte.",
+        "Coupe le paneer en cubes. Fais chauffer 4 ml d'huile dans une poêle, dore les cubes de paneer sur les faces 4 minutes. Réserve.",
+        "Émince l'oignon, fais revenir dans le reste d'huile 5 minutes (doré).",
+        "Ajoute l'ail écrasé et le gingembre râpé, puis le cumin, le curcuma, mélange 30 secondes.",
+        "Ajoute la tomate en dés, cuis 5 minutes (sauce épaissie).",
+        "Ajoute les petits pois et 100 ml d'eau, le sel, mijote 8 minutes.",
+        "Ajoute les épinards, laisse tomber 3 minutes (ils réduisent).",
+        "Remets le paneer doré, ajoute le garam masala, mélange délicatement 2 minutes.",
+        "Parsème de coriandre fraîche. Sers avec le riz basmati complet — le curry printanier petits pois-épinards."
       ],
       "photo": "assets/recipes/l220.webp"
     },
@@ -93695,15 +93681,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Maintenir le bouillon chaud dans une casserole à côté.",
-        "Casser la base dure des asperges, couper les tiges en tronçons de 2 cm (pointes réservées).",
-        "Émincer l'oignon, faire revenir dans l'huile d'olive 4 minutes (translucide), ajouter l'ail 30 secondes.",
-        "Ajouter l'orzo, mélanger 1 minute pour le nacrer.",
-        "Verser le bouillon chaud louche par louche en remuant souvent, jusqu'à ce que l'orzo soit cuit et crémeux (15 min, façon risotto).",
-        "À mi-cuisson, ajouter les tronçons d'asperges et les petits pois.",
-        "Ajouter les pointes d'asperges 4 minutes avant la fin (elles restent croquantes).",
-        "Hors du feu, incorporer le parmesan, le jus du citron, le sel et le poivre. Mélanger pour rendre crémeux.",
-        "Parsemer de basilic. Servir aussitôt — le dîner printanier crémeux et léger."
+        "Maintiens le bouillon chaud dans une casserole à côté.",
+        "Casse la base dure des asperges, coupe les tiges en tronçons de 2 cm (pointes réservées).",
+        "Émince l'oignon, fais revenir dans l'huile d'olive 4 minutes (translucide), ajoute l'ail 30 secondes.",
+        "Ajoute l'orzo, mélange 1 minute pour le nacrer.",
+        "Verse le bouillon chaud louche par louche en remuant souvent, jusqu'à ce que l'orzo soit cuit et crémeux (15 min, façon risotto).",
+        "À mi-cuisson, ajoute les tronçons d'asperges et les petits pois.",
+        "Ajoute les pointes d'asperges 4 minutes avant la fin (elles restent croquantes).",
+        "Hors du feu, incorpore le parmesan, le jus du citron, le sel et le poivre. Mélange pour rendre crémeux.",
+        "Parsème de basilic. Sers aussitôt — le dîner printanier crémeux et léger."
       ],
       "photo": "assets/recipes/d218.webp"
     },
@@ -93811,15 +93797,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Blanchir les fèves 2 minutes à l'eau bouillante, les rafraîchir et retirer la peau blanche épaisse.",
-        "Séparer les côtes blanches des blettes (les couper en tronçons de 2 cm) et le vert (le ciseler grossièrement) : les côtes cuisent plus longtemps.",
-        "Émincer l'oignon, faire revenir dans l'huile d'olive dans une sauteuse 5 minutes.",
-        "Ajouter l'ail écrasé, le cumin, le paprika et la harissa, mélanger 30 secondes.",
-        "Ajouter la tomate en dés et les côtes de blettes, cuire 5 minutes avec 200 ml d'eau et le sel.",
-        "Ajouter les fèves et le vert des blettes, mijoter 12 minutes (les légumes sont fondants).",
-        "Creuser 2 puits dans la préparation, y casser délicatement les œufs.",
-        "Couvrir et cuire 5-6 minutes à feu doux (blanc pris, jaune coulant).",
-        "Presser le jus du demi-citron, parsemer de coriandre ciselée. Servir chaud — le ragoût printanier tunisien aux fèves et blettes."
+        "Blanchis les fèves 2 minutes à l'eau bouillante, rafraîchis-les et retire la peau blanche épaisse.",
+        "Sépare les côtes blanches des blettes (coupe-les en tronçons de 2 cm) et le vert (cisèle-le grossièrement) : les côtes cuisent plus longtemps.",
+        "Émince l'oignon, fais revenir dans l'huile d'olive dans une sauteuse 5 minutes.",
+        "Ajoute l'ail écrasé, le cumin, le paprika et la harissa, mélange 30 secondes.",
+        "Ajoute la tomate en dés et les côtes de blettes, cuis 5 minutes avec 200 ml d'eau et le sel.",
+        "Ajoute les fèves et le vert des blettes, mijote 12 minutes (les légumes sont fondants).",
+        "Creuse 2 puits dans la préparation, casses-y délicatement les œufs.",
+        "Couvre et cuis 5-6 minutes à feu doux (blanc pris, jaune coulant).",
+        "Presse le jus du demi-citron, parsème de coriandre ciselée. Sers chaud — le ragoût printanier tunisien aux fèves et blettes."
       ],
       "photo": "assets/recipes/d219.webp"
     },
@@ -93894,14 +93880,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la rhubarbe en tronçons de 2 cm (retirer les feuilles toxiques si présentes).",
-        "Mettre la rhubarbe dans une casserole avec le sirop d'érable, la vanille, le jus du quart de citron et 2 cuillères à soupe d'eau.",
-        "Cuire 8-10 minutes à feu moyen : la rhubarbe se défait en compote.",
-        "Ajouter les fraises coupées en quartiers, prolonger 2 minutes hors du feu (elles confisent légèrement sans se défaire totalement).",
-        "Laisser tiédir puis placer 30 minutes au frais.",
-        "Faire griller les amandes effilées 2 minutes à sec.",
-        "Répartir le skyr dans 2 verrines, ajouter la compote rhubarbe-fraise.",
-        "Parsemer d'amandes effilées grillées. Servir frais — l'acidité de la rhubarbe équilibre la douceur des fraises."
+        "Coupe la rhubarbe en tronçons de 2 cm (retire les feuilles toxiques si présentes).",
+        "Mets la rhubarbe dans une casserole avec le sirop d'érable, la vanille, le jus du quart de citron et 2 cuillères à soupe d'eau.",
+        "Cuis 8-10 minutes à feu moyen : la rhubarbe se défait en compote.",
+        "Ajoute les fraises coupées en quartiers, prolonge 2 minutes hors du feu (elles confisent légèrement sans se défaire totalement).",
+        "Laisse tiédir puis place 30 minutes au frais.",
+        "Fais griller les amandes effilées 2 minutes à sec.",
+        "Répartis le skyr dans 2 verrines, ajoute la compote rhubarbe-fraise.",
+        "Parsème d'amandes effilées grillées. Sers frais — l'acidité de la rhubarbe équilibre la douceur des fraises."
       ],
       "photo": "assets/recipes/des167.webp"
     },
@@ -93981,14 +93967,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C en chaleur tournante.",
-        "Couper la rhubarbe en tronçons de 2 cm, les fraises en deux.",
-        "Répartir les fruits dans un plat à gratin, mélanger avec la moitié du sirop d'érable et la cannelle.",
-        "Préparer le crumble : mélanger les flocons d'avoine, la farine T80, la poudre d'amandes et le reste du sirop d'érable.",
-        "Ajouter le beurre doux coupé en petits dés, travailler du bout des doigts jusqu'à obtenir une texture sableuse grumeleuse.",
-        "Répartir le crumble sur les fruits en couche régulière.",
-        "Enfourner 25-30 minutes : le dessus est doré et les fruits bouillonnent sur les bords.",
-        "Laisser tiédir 10 minutes avant de servir (le crumble se raffermit). Délicieux tiède, éventuellement avec un peu de yaourt grec."
+        "Préchauffe le four à 180°C en chaleur tournante.",
+        "Coupe la rhubarbe en tronçons de 2 cm, les fraises en deux.",
+        "Répartis les fruits dans un plat à gratin, mélange avec la moitié du sirop d'érable et la cannelle.",
+        "Prépare le crumble : mélange les flocons d'avoine, la farine T80, la poudre d'amandes et le reste du sirop d'érable.",
+        "Ajoute le beurre doux coupé en petits dés, travaille du bout des doigts jusqu'à obtenir une texture sableuse grumeleuse.",
+        "Répartis le crumble sur les fruits en couche régulière.",
+        "Enfourne 25-30 minutes : le dessus est doré et les fruits bouillonnent sur les bords.",
+        "Laisse tiédir 10 minutes avant de servir (le crumble se raffermit). Délicieux tiède, éventuellement avec un peu de yaourt grec."
       ],
       "photo": "assets/recipes/des168.webp"
     },
@@ -94093,15 +94079,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz basmati complet, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter et étaler sur une plaque pour refroidir (grains séparés).",
-        "Cuire les petits pois 4 minutes et la carotte coupée en petits dés 5 minutes à l'eau bouillante, égoutter et rafraîchir.",
-        "Préparer le tempering : chauffer l'huile d'olive dans une poêle, ajouter les graines de moutarde et attendre qu'elles éclatent (30 sec).",
-        "Ajouter les cacahuètes, le gingembre râpé et les feuilles de curry, faire revenir 2 minutes (cacahuètes dorées).",
-        "Ajouter le curcuma hors du feu, mélanger (couleur jaune).",
-        "Dans un grand saladier, mélanger le riz froid, les petits pois, la carotte et le tempering aux cacahuètes.",
-        "Presser le jus du citron vert entier, ajouter le sel, mélanger.",
-        "Laisser reposer 30 minutes au frais pour que les saveurs se mêlent.",
-        "Parsemer de coriandre fraîche. Servir frais — le lemon rice indien transformé en salade-repas estivale."
+        "Rince le riz basmati complet, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte et étale sur une plaque pour refroidir (grains séparés).",
+        "Cuis les petits pois 4 minutes et la carotte coupée en petits dés 5 minutes à l'eau bouillante, égoutte et rafraîchis.",
+        "Prépare le tempering : chauffe l'huile d'olive dans une poêle, ajoute les graines de moutarde et attends qu'elles éclatent (30 sec).",
+        "Ajoute les cacahuètes, le gingembre râpé et les feuilles de curry, fais revenir 2 minutes (cacahuètes dorées).",
+        "Ajoute le curcuma hors du feu, mélange (couleur jaune).",
+        "Dans un grand saladier, mélange le riz froid, les petits pois, la carotte et le tempering aux cacahuètes.",
+        "Presse le jus du citron vert entier, ajoute le sel, mélange.",
+        "Laisse reposer 30 minutes au frais pour que les saveurs se mêlent.",
+        "Parsème de coriandre fraîche. Sers frais — le lemon rice indien transformé en salade-repas estivale."
       ],
       "photo": "assets/recipes/l221.webp"
     },
@@ -94211,15 +94197,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la marinade tandoori : mélanger 40g de yaourt avec le gingembre râpé, l'ail écrasé, le garam masala, le paprika fumé, le jus d'un demi-citron vert et 1 g de sel.",
-        "Enrober les crevettes de marinade, laisser 30 minutes au frais.",
-        "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter, laisser tiédir.",
-        "Préparer la raïta : râper la moitié du concombre, presser, mélanger avec le reste du yaourt (60g), la moitié de la menthe ciselée et une pincée de sel.",
-        "Couper l'autre moitié du concombre en demi-lunes, la tomate en dés.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, griller les crevettes 2-3 minutes par face (roses et marquées).",
-        "Dresser le riz tiède dans 2 bols, répartir le concombre et la tomate.",
-        "Déposer les crevettes grillées, ajouter une cuillère de raïta.",
-        "Parsemer du reste de menthe, servir avec un quartier de citron vert. Bowl indien grillé frais et complet."
+        "Prépare la marinade tandoori : mélange 40g de yaourt avec le gingembre râpé, l'ail écrasé, le garam masala, le paprika fumé, le jus d'un demi-citron vert et 1 g de sel.",
+        "Enrobe les crevettes de marinade, laisse 30 minutes au frais.",
+        "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte, laisse tiédir.",
+        "Prépare la raïta : râpe la moitié du concombre, presse, mélange avec le reste du yaourt (60g), la moitié de la menthe ciselée et une pincée de sel.",
+        "Coupe l'autre moitié du concombre en demi-lunes, la tomate en dés.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les crevettes 2-3 minutes par face (roses et marquées).",
+        "Dresse le riz tiède dans 2 bols, répartis le concombre et la tomate.",
+        "Dépose les crevettes grillées, ajoute une cuillère de raïta.",
+        "Parsème du reste de menthe, sers avec un quartier de citron vert. Bowl indien grillé frais et complet."
       ],
       "photo": "assets/recipes/l222.webp"
     },
@@ -94323,14 +94309,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuire le boulgour : le couvrir d'eau bouillante salée (1,5 fois son volume), couvrir et laisser gonfler 12 minutes, puis aérer à la fourchette.",
-        "Couper la courgette, l'aubergine en rondelles épaisses, le poivron en larges lanières.",
-        "Badigeonner les légumes de 8 ml d'huile d'olive et d'une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, griller les légumes 10-12 minutes en les retournant (marques de grill, tendres).",
-        "Couper les légumes grillés en morceaux de 2 cm, couper la tomate fraîche en dés, émincer l'oignon rouge.",
-        "Préparer la vinaigrette : fouetter le reste d'huile, le jus du citron entier, le cumin et le sel.",
-        "Mélanger le boulgour, les légumes grillés, la tomate et l'oignon avec la vinaigrette.",
-        "Parsemer de menthe et persil ciselés. Servir tiède ou frais — la salade de boulgour aux légumes du soleil grillés."
+        "Cuis le boulgour : couvre-le d'eau bouillante salée (1,5 fois son volume), couvre et laisse gonfler 12 minutes, puis aère à la fourchette.",
+        "Coupe la courgette, l'aubergine en rondelles épaisses, le poivron en larges lanières.",
+        "Badigeonne les légumes de 8 ml d'huile d'olive et d'une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les légumes 10-12 minutes en les retournant (marques de grill, tendres).",
+        "Coupe les légumes grillés en morceaux de 2 cm, coupe la tomate fraîche en dés, émince l'oignon rouge.",
+        "Prépare la vinaigrette : fouette le reste d'huile, le jus du citron entier, le cumin et le sel.",
+        "Mélange le boulgour, les légumes grillés, la tomate et l'oignon avec la vinaigrette.",
+        "Parsème de menthe et persil ciselés. Sers tiède ou frais — la salade de boulgour aux légumes du soleil grillés."
       ],
       "photo": "assets/recipes/l223.webp"
     },
@@ -94432,14 +94418,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Égoutter et sécher les pois chiches, les mélanger avec 6 ml d'huile, le cumin, le paprika et une pincée de sel.",
-        "Étaler sur une plaque, enfourner 22-25 minutes en remuant à mi-cuisson (croustillants et dorés).",
-        "Pendant ce temps, couper la tomate en quartiers, le concombre en demi-lunes, émincer l'oignon rouge.",
-        "Préparer la vinaigrette : fouetter le reste d'huile, le jus du citron entier et le sel.",
-        "Mettre la tomate, le concombre et l'oignon dans un saladier, arroser de vinaigrette.",
-        "Ajouter les pois chiches grillés encore tièdes (ils restent croustillants si ajoutés au dernier moment).",
-        "Émietter la feta sur le dessus, parsemer de menthe et persil. Servir aussitôt — le croquant des pois chiches grillés sur la fraîcheur des crudités."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Égoutte et sèche les pois chiches, mélange-les avec 6 ml d'huile, le cumin, le paprika et une pincée de sel.",
+        "Étale sur une plaque, enfourne 22-25 minutes en remuant à mi-cuisson (croustillants et dorés).",
+        "Pendant ce temps, coupe la tomate en quartiers, le concombre en demi-lunes, émince l'oignon rouge.",
+        "Prépare la vinaigrette : fouette le reste d'huile, le jus du citron entier et le sel.",
+        "Mets la tomate, le concombre et l'oignon dans un saladier, arrose de vinaigrette.",
+        "Ajoute les pois chiches grillés encore tièdes (ils restent croustillants si ajoutés au dernier moment).",
+        "Émiette la feta sur le dessus, parsème de menthe et persil. Sers aussitôt — le croquant des pois chiches grillés sur la fraîcheur des crudités."
       ],
       "photo": "assets/recipes/l224.webp"
     },
@@ -94558,14 +94544,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le bœuf en fines lanières, les mariner 20 minutes dans la sauce soja, l'ail écrasé et l'huile de sésame.",
-        "Cuire les vermicelles de riz 3-4 minutes à l'eau bouillante, égoutter et rincer à l'eau froide (ils restent souples sans coller).",
-        "Préparer la sauce nuoc-cham : mélanger le nuoc-mâm, le jus du citron vert et un peu d'eau (la sauce doit rester bien liquide).",
-        "Râper la carotte en julienne, couper le concombre en bâtonnets, émincer la salade. Rincer les germes de soja à l'eau froide et les égoutter (ils doivent rester blancs et croquants).",
-        "Concasser les cacahuètes, les faire griller 2 minutes à sec.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, saisir les lanières de bœuf 2-3 minutes (juste dorées, encore tendres).",
-        "Monter les bols : vermicelles au fond, salade, carotte, concombre, germes de soja, puis le bœuf grillé chaud.",
-        "Arroser de sauce nuoc-cham, parsemer de menthe, coriandre et cacahuètes. Servir aussitôt — le grand classique vietnamien frais et chaud à la fois."
+        "Coupe le bœuf en fines lanières, marine-les 20 minutes dans la sauce soja, l'ail écrasé et l'huile de sésame.",
+        "Cuis les vermicelles de riz 3-4 minutes à l'eau bouillante, égoutte et rince à l'eau froide (ils restent souples sans coller).",
+        "Prépare la sauce nuoc-cham : mélange le nuoc-mâm, le jus du citron vert et un peu d'eau (la sauce doit rester bien liquide).",
+        "Râpe la carotte en julienne, coupe le concombre en bâtonnets, émince la salade. Rince les germes de soja à l'eau froide et égoutte-les (ils doivent rester blancs et croquants).",
+        "Concasse les cacahuètes, fais-les griller 2 minutes à sec.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, saisis les lanières de bœuf 2-3 minutes (juste dorées, encore tendres).",
+        "Monte les bols : vermicelles au fond, salade, carotte, concombre, germes de soja, puis le bœuf grillé chaud.",
+        "Arrose de sauce nuoc-cham, parsème de menthe, coriandre et cacahuètes. Sers aussitôt — le grand classique vietnamien frais et chaud à la fois."
       ],
       "photo": "assets/recipes/l225.webp"
     },
@@ -94680,15 +94666,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Aplatir légèrement le blanc de poulet, le badigeonner de 3 ml d'huile de sésame.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, griller le poulet 5-6 minutes par face (cuit à cœur, marqué). Laisser reposer 5 minutes puis émincer.",
-        "Préparer la sauce : mélanger le nuoc-mâm, le jus d'un citron vert, le sirop d'érable, le gingembre râpé, le piment doux et le reste d'huile de sésame.",
-        "Émincer le chou rouge très finement, râper la carotte en julienne, couper le concombre en bâtonnets.",
-        "Couper la mangue en fins bâtonnets.",
-        "Concasser les cacahuètes, les faire griller 2 minutes à sec.",
-        "Dans un grand saladier, mélanger le chou, la carotte, le concombre et la mangue avec la sauce.",
-        "Dresser dans 2 assiettes, déposer le poulet grillé émincé.",
-        "Parsemer de cacahuètes, coriandre et menthe. Servir aussitôt — la salade thaï croquante, sucrée-acidulée et fraîche."
+        "Aplatis légèrement le blanc de poulet, badigeonne-le de 3 ml d'huile de sésame.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, grille le poulet 5-6 minutes par face (cuit à cœur, marqué). Laisse reposer 5 minutes puis émince.",
+        "Prépare la sauce : mélange le nuoc-mâm, le jus d'un citron vert, le sirop d'érable, le gingembre râpé, le piment doux et le reste d'huile de sésame.",
+        "Émince le chou rouge très finement, râpe la carotte en julienne, coupe le concombre en bâtonnets.",
+        "Coupe la mangue en fins bâtonnets.",
+        "Concasse les cacahuètes, fais-les griller 2 minutes à sec.",
+        "Dans un grand saladier, mélange le chou, la carotte, le concombre et la mangue avec la sauce.",
+        "Dresse dans 2 assiettes, dépose le poulet grillé émincé.",
+        "Parsème de cacahuètes, coriandre et menthe. Sers aussitôt — la salade thaï croquante, sucrée-acidulée et fraîche."
       ],
       "photo": "assets/recipes/l226.webp"
     },
@@ -94790,14 +94776,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la chermoula : hacher finement la coriandre, le persil, l'ail, le cumin, le paprika, 8 ml d'huile, le jus d'un demi-citron et 0,5 g de sel (marinade verte).",
-        "Badigeonner les filets de dorade de la moitié de la chermoula, laisser mariner 20 minutes au frais.",
-        "Couper la courgette et le poivron en lanières épaisses, la tomate en tranches.",
-        "Badigeonner les légumes du reste d'huile et d'une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller les légumes 10 minutes en les retournant (marqués et tendres), réserver au chaud.",
-        "Griller la dorade côté peau d'abord 3-4 minutes, puis 2-3 minutes côté chair (la chair est nacrée et se détache à la fourchette).",
-        "Dresser la dorade sur les légumes grillés, napper du reste de chermoula et presser le jus du demi-citron. Le poisson grillé estival parfumé du Maghreb."
+        "Prépare la chermoula : hache finement la coriandre, le persil, l'ail, le cumin, le paprika, 8 ml d'huile, le jus d'un demi-citron et 0,5 g de sel (marinade verte).",
+        "Badigeonne les filets de dorade de la moitié de la chermoula, laisse mariner 20 minutes au frais.",
+        "Coupe la courgette et le poivron en lanières épaisses, la tomate en tranches.",
+        "Badigeonne les légumes du reste d'huile et d'une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille les légumes 10 minutes en les retournant (marqués et tendres), réserve au chaud.",
+        "Grille la dorade côté peau d'abord 3-4 minutes, puis 2-3 minutes côté chair (la chair est nacrée et se détache à la fourchette).",
+        "Dresse la dorade sur les légumes grillés, nappe du reste de chermoula et presse le jus du demi-citron. Le poisson grillé estival parfumé du Maghreb."
       ],
       "photo": "assets/recipes/d220.webp"
     },
@@ -94898,14 +94884,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Émincer l'oignon, couper la courgette en demi-lunes, le poivron en lanières, la tomate en dés.",
-        "Faire chauffer l'huile d'olive dans une sauteuse (ou tajine) à feu moyen, faire revenir l'oignon 4 minutes.",
-        "Ajouter l'ail écrasé, le cumin et le ras el-hanout, mélanger 30 secondes.",
-        "Ajouter la tomate, cuire 5 minutes (sauce qui se forme).",
-        "Ajouter le poivron et 150 ml d'eau, le sel, couvrir et mijoter 10 minutes.",
-        "Ajouter la courgette et les pois chiches égouttés, prolonger 12 minutes (les légumes sont fondants mais pas en bouillie).",
-        "Réduire à découvert 3 minutes si trop liquide (la sauce doit napper).",
-        "Presser le jus du demi-citron, parsemer de coriandre. Servir chaud — le tajine léger aux légumes du soleil."
+        "Émince l'oignon, coupe la courgette en demi-lunes, le poivron en lanières, la tomate en dés.",
+        "Fais chauffer l'huile d'olive dans une sauteuse (ou tajine) à feu moyen, fais revenir l'oignon 4 minutes.",
+        "Ajoute l'ail écrasé, le cumin et le ras el-hanout, mélange 30 secondes.",
+        "Ajoute la tomate, cuis 5 minutes (sauce qui se forme).",
+        "Ajoute le poivron et 150 ml d'eau, le sel, couvre et mijote 10 minutes.",
+        "Ajoute la courgette et les pois chiches égouttés, prolonge 12 minutes (les légumes sont fondants mais pas en bouillie).",
+        "Réduis à découvert 3 minutes si trop liquide (la sauce doit napper).",
+        "Presse le jus du demi-citron, parsème de coriandre. Sers chaud — le tajine léger aux légumes du soleil."
       ],
       "photo": "assets/recipes/d221.webp"
     },
@@ -94996,13 +94982,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Émincer l'oignon, couper le poivron vert en petits dés, la tomate en dés.",
-        "Faire chauffer l'huile d'olive dans une poêle à feu moyen, faire revenir l'oignon et le poivron 6 minutes (tendres).",
-        "Ajouter la tomate et le paprika fumé, cuire 5 minutes (la tomate compote, le mélange réduit).",
-        "Battre légèrement les œufs avec le sel et le poivre, les verser dans la poêle.",
-        "Remuer doucement à la spatule : les œufs prennent en restant crémeux et baveux (ne pas trop cuire).",
-        "Retirer du feu quand les œufs sont encore brillants (ils finissent dans la chaleur résiduelle).",
-        "Parsemer de persil ciselé. Servir avec du pain complet toasté — le petit-déj turc-méditerranéen aux légumes d'été."
+        "Émince l'oignon, coupe le poivron vert en petits dés, la tomate en dés.",
+        "Fais chauffer l'huile d'olive dans une poêle à feu moyen, fais revenir l'oignon et le poivron 6 minutes (tendres).",
+        "Ajoute la tomate et le paprika fumé, cuis 5 minutes (la tomate compote, le mélange réduit).",
+        "Bats légèrement les œufs avec le sel et le poivre, verse-les dans la poêle.",
+        "Remue doucement à la spatule : les œufs prennent en restant crémeux et baveux (ne pas trop cuire).",
+        "Retire du feu quand les œufs sont encore brillants (ils finissent dans la chaleur résiduelle).",
+        "Parsème de persil ciselé. Sers avec du pain complet toasté — le petit-déj turc-méditerranéen aux légumes d'été."
       ],
       "photo": "assets/recipes/b188.webp"
     },
@@ -95078,13 +95064,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille, mélanger les graines de chia, le lait d'amande, le zeste du demi-citron et le sirop d'érable dans un bol. Bien fouetter.",
-        "Attendre 5 minutes, fouetter à nouveau (évite que le chia se prenne en bloc).",
-        "Couvrir et placer au frigo toute la nuit (le chia gonfle et fige).",
-        "Le matin, écraser légèrement la moitié des myrtilles à la fourchette avec le jus du demi-citron (coulis rustique).",
-        "Mélanger le chia pudding avec le skyr pour le rendre plus crémeux.",
-        "Répartir dans 2 verres, alterner avec le coulis de myrtilles et les myrtilles entières.",
-        "Faire griller les amandes effilées 2 minutes à sec, en parsemer le dessus. Servir frais."
+        "La veille, mélange les graines de chia, le lait d'amande, le zeste du demi-citron et le sirop d'érable dans un bol. Fouette bien.",
+        "Attends 5 minutes, fouette à nouveau (évite que le chia se prenne en bloc).",
+        "Couvre et place au frigo toute la nuit (le chia gonfle et fige).",
+        "Le matin, écrase légèrement la moitié des myrtilles à la fourchette avec le jus du demi-citron (coulis rustique).",
+        "Mélange le chia pudding avec le skyr pour le rendre plus crémeux.",
+        "Répartis dans 2 verres, alterne avec le coulis de myrtilles et les myrtilles entières.",
+        "Fais griller les amandes effilées 2 minutes à sec, parsèmes-en le dessus. Sers frais."
       ],
       "photo": "assets/recipes/b189.webp"
     },
@@ -95147,13 +95133,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Équeuter les fraises, en réserver 2-3 coupées en petits dés.",
-        "Mixer le reste des fraises avec le jus du citron vert, le sirop d'érable et l'eau (purée lisse).",
-        "Incorporer les graines de chia et les dés de fraise réservés (le chia apporte des points texturés et des fibres).",
-        "Laisser reposer 10 minutes (le chia commence à gonfler et se répartit).",
-        "Verser dans des moules à esquimaux (paletas), planter les bâtonnets.",
-        "Placer au congélateur 6h minimum.",
-        "Démouler en passant les moules 10 secondes sous l'eau tiède. Servir aussitôt — les paletas mexicaines aux fruits frais, sans sucre raffiné."
+        "Équeute les fraises, réserves-en 2-3 coupées en petits dés.",
+        "Mixe le reste des fraises avec le jus du citron vert, le sirop d'érable et l'eau (purée lisse).",
+        "Incorpore les graines de chia et les dés de fraise réservés (le chia apporte des points texturés et des fibres).",
+        "Laisse reposer 10 minutes (le chia commence à gonfler et se répartit).",
+        "Verse dans des moules à esquimaux (paletas), plante les bâtonnets.",
+        "Place au congélateur 6h minimum.",
+        "Démoule en passant les moules 10 secondes sous l'eau tiède. Sers aussitôt — les paletas mexicaines aux fruits frais, sans sucre raffiné."
       ],
       "photo": "assets/recipes/des169.webp"
     },
@@ -95223,13 +95209,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mélanger le lait de coco, l'eau, le jus d'un citron vert et demi, le sirop d'érable et le zeste d'un citron vert.",
-        "Goûter et ajuster (un peu plus de sirop si trop acide).",
-        "Verser dans un récipient large à fond plat, placer au congélateur.",
-        "Gratter à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : on obtient des cristaux légers façon sorbet mexicain (nieve).",
-        "Faire griller la noix de coco râpée 1 minute à sec dans une poêle (légèrement dorée).",
-        "Au moment de servir, gratter une dernière fois pour une texture neigeuse.",
-        "Servir dans des coupes glacées, parsemer de noix de coco grillée et de menthe ciselée. La glace pilée coco-citron vert des marchés mexicains."
+        "Mélange le lait de coco, l'eau, le jus d'un citron vert et demi, le sirop d'érable et le zeste d'un citron vert.",
+        "Goûte et ajuste (un peu plus de sirop si trop acide).",
+        "Verse dans un récipient large à fond plat, place au congélateur.",
+        "Gratte à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : on obtient des cristaux légers façon sorbet mexicain (nieve).",
+        "Fais griller la noix de coco râpée 1 minute à sec dans une poêle (légèrement dorée).",
+        "Au moment de servir, gratte une dernière fois pour une texture neigeuse.",
+        "Sers dans des coupes glacées, parsème de noix de coco grillée et de menthe ciselée. La glace pilée coco-citron vert des marchés mexicains."
       ],
       "photo": "assets/recipes/des170.webp"
     },
@@ -95340,14 +95326,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Si les lentilles germées sont crues et que vous préférez les attendrir, les blanchir 2 minutes à l'eau bouillante puis rafraîchir (ou les laisser crues pour un maximum de croquant et de nutriments).",
-        "Couper le concombre en petits dés (5 mm), la tomate en dés (sans les pépins), émincer l'oignon rouge très finement.",
-        "Torréfier le cumin moulu 30 secondes à sec dans une poêle (parfum intense).",
-        "Faire griller les cacahuètes 2 minutes à sec, les concasser grossièrement.",
-        "Dans un grand saladier, mélanger les lentilles germées, le concombre, la tomate et l'oignon.",
-        "Ajouter le cumin torréfié, le piment doux, le sel, l'huile d'olive et le jus du citron vert entier.",
-        "Incorporer la noix de coco râpée et les cacahuètes concassées.",
-        "Parsemer de coriandre et menthe ciselées. Servir frais — la salade de germes protéinée, croquante et désaltérante (sprout salad indien)."
+        "Si les lentilles germées sont crues et que tu préfères les attendrir, blanchis-les 2 minutes à l'eau bouillante puis rafraîchis-les (ou laisse-les crues pour un maximum de croquant et de nutriments).",
+        "Coupe le concombre en petits dés (5 mm), la tomate en dés (sans les pépins), émince l'oignon rouge très finement.",
+        "Torréfie le cumin moulu 30 secondes à sec dans une poêle (parfum intense).",
+        "Fais griller les cacahuètes 2 minutes à sec, concasse-les grossièrement.",
+        "Dans un grand saladier, mélange les lentilles germées, le concombre, la tomate et l'oignon.",
+        "Ajoute le cumin torréfié, le piment doux, le sel, l'huile d'olive et le jus du citron vert entier.",
+        "Incorpore la noix de coco râpée et les cacahuètes concassées.",
+        "Parsème de coriandre et menthe ciselées. Sers frais — la salade de germes protéinée, croquante et désaltérante (sprout salad indien)."
       ],
       "photo": "assets/recipes/l227.webp"
     },
@@ -95456,14 +95442,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le paneer en cubes de 2,5 cm. Les mariner 20 minutes dans le yaourt, le garam masala, le paprika, le gingembre râpé, le jus d'un demi-citron vert et 0,5 g de sel.",
-        "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter, laisser tiédir.",
-        "Couper la mangue en dés, le concombre en demi-lunes.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, griller les cubes de paneer marinés 3 minutes par face (dorés et marqués).",
-        "Préparer la vinaigrette : fouetter l'huile d'olive, le jus du demi-citron vert restant et une pincée de sel.",
-        "Dresser le riz tiède dans 2 bols, ajouter la roquette, la mangue et le concombre.",
-        "Déposer le paneer grillé, arroser de vinaigrette.",
-        "Parsemer de menthe ciselée. Servir tiède — le bowl indien grillé, fruité et frais."
+        "Coupe le paneer en cubes de 2,5 cm. Marine-les 20 minutes dans le yaourt, le garam masala, le paprika, le gingembre râpé, le jus d'un demi-citron vert et 0,5 g de sel.",
+        "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte, laisse tiédir.",
+        "Coupe la mangue en dés, le concombre en demi-lunes.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les cubes de paneer marinés 3 minutes par face (dorés et marqués).",
+        "Prépare la vinaigrette : fouette l'huile d'olive, le jus du demi-citron vert restant et une pincée de sel.",
+        "Dresse le riz tiède dans 2 bols, ajoute la roquette, la mangue et le concombre.",
+        "Dépose le paneer grillé, arrose de vinaigrette.",
+        "Parsème de menthe ciselée. Sers tiède — le bowl indien grillé, fruité et frais."
       ],
       "photo": "assets/recipes/l228.webp"
     },
@@ -95572,14 +95558,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper les poivrons en fines lanières, la tomate en dés, écraser l'ail.",
-        "Faire chauffer l'huile d'olive dans une poêle à feu moyen, faire revenir les poivrons et l'ail 8 minutes (les poivrons s'attendrissent).",
-        "Ajouter la tomate, la harissa, le cumin, le paprika et le sel, mijoter 8 minutes (sauce épaissie et fondante, base de l'ojja).",
-        "Ajouter les crevettes, cuire 3 minutes (elles deviennent roses).",
-        "Creuser 2 puits dans la préparation, y casser délicatement les œufs.",
-        "Couvrir et cuire 4-5 minutes à feu doux (blanc pris, jaune coulant).",
-        "Parsemer de coriandre ciselée.",
-        "Servir chaud dans la poêle avec du pain complet pour saucer — l'ojja tunisienne, shakshuka relevée aux crevettes et poivrons d'été."
+        "Coupe les poivrons en fines lanières, la tomate en dés, écrase l'ail.",
+        "Fais chauffer l'huile d'olive dans une poêle à feu moyen, fais revenir les poivrons et l'ail 8 minutes (les poivrons s'attendrissent).",
+        "Ajoute la tomate, la harissa, le cumin, le paprika et le sel, mijote 8 minutes (sauce épaissie et fondante, base de l'ojja).",
+        "Ajoute les crevettes, cuis 3 minutes (elles deviennent roses).",
+        "Creuse 2 puits dans la préparation, casses-y délicatement les œufs.",
+        "Couvre et cuis 4-5 minutes à feu doux (blanc pris, jaune coulant).",
+        "Parsème de coriandre ciselée.",
+        "Sers chaud dans la poêle avec du pain complet pour saucer — l'ojja tunisienne, shakshuka relevée aux crevettes et poivrons d'été."
       ],
       "photo": "assets/recipes/l229.webp"
     },
@@ -95675,15 +95661,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 190°C en chaleur tournante.",
-        "Rincer le quinoa, le cuire dans 150 ml d'eau salée 15 minutes (eau absorbée). L'étaler au fond d'un plat à gratin (base qui absorbe les jus).",
-        "Émincer l'oignon, le faire fondre dans 6 ml d'huile à la poêle 6 minutes, l'étaler sur le quinoa.",
-        "Couper la courgette, l'aubergine et la tomate en fines rondelles (5 mm, régulières).",
-        "Disposer les rondelles en les alternant et les serrant debout en rangées sur le quinoa (effet tian coloré).",
-        "Glisser des lamelles d'ail entre les rangées, arroser du reste d'huile, saler, poivrer et parsemer de thym.",
-        "Enfourner 35-40 minutes : les légumes sont fondants et légèrement confits sur le dessus.",
-        "Sortir, émietter le fromage de chèvre frais sur le tian chaud (il fond légèrement).",
-        "Servir tiède — le tian provençal complet avec sa base de quinoa, plat unique estival."
+        "Préchauffe le four à 190°C en chaleur tournante.",
+        "Rince le quinoa, cuis-le dans 150 ml d'eau salée 15 minutes (eau absorbée). Étale-le au fond d'un plat à gratin (base qui absorbe les jus).",
+        "Émince l'oignon, fais-le fondre dans 6 ml d'huile à la poêle 6 minutes, étale-le sur le quinoa.",
+        "Coupe la courgette, l'aubergine et la tomate en fines rondelles (5 mm, régulières).",
+        "Dispose les rondelles en les alternant et les serrant debout en rangées sur le quinoa (effet tian coloré).",
+        "Glisse des lamelles d'ail entre les rangées, arrose du reste d'huile, sale, poivre et parsème de thym.",
+        "Enfourne 35-40 minutes : les légumes sont fondants et légèrement confits sur le dessus.",
+        "Sors, émiette le fromage de chèvre frais sur le tian chaud (il fond légèrement).",
+        "Sers tiède — le tian provençal complet avec sa base de quinoa, plat unique estival."
       ],
       "photo": "assets/recipes/l230.webp"
     },
@@ -95801,14 +95787,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuire les œufs durs 9 minutes, les rafraîchir, les écaler et les couper en deux.",
-        "Couper le tofu en cubes, les dorer dans l'huile de sésame à la poêle 6 minutes sur les faces.",
-        "Cuire à la vapeur les haricots verts (6 min), le chou émincé (4 min) et la carotte en bâtonnets (4 min) : ils restent croquants.",
-        "Blanchir les pousses de soja 1 minute. Couper le concombre en bâtonnets (cru).",
-        "Préparer la sauce cacahuète : délayer la purée de cacahuète avec la sauce soja, le jus d'un citron vert, l'ail écrasé, le gingembre râpé, le piment doux et 3 cuillères à soupe d'eau chaude (sauce nappante).",
-        "Dresser dans 2 grandes assiettes : disposer harmonieusement par secteurs les légumes vapeur, le concombre, les pousses de soja, le tofu et les œufs.",
-        "Napper généreusement de sauce cacahuète.",
-        "Servir tiède — la grande salade composée indonésienne, complète et gourmande."
+        "Cuis les œufs durs 9 minutes, rafraîchis-les, écale-les et coupe-les en deux.",
+        "Coupe le tofu en cubes, dore-les dans l'huile de sésame à la poêle 6 minutes sur les faces.",
+        "Cuis à la vapeur les haricots verts (6 min), le chou émincé (4 min) et la carotte en bâtonnets (4 min) : ils restent croquants.",
+        "Blanchis les pousses de soja 1 minute. Coupe le concombre en bâtonnets (cru).",
+        "Prépare la sauce cacahuète : délaye la purée de cacahuète avec la sauce soja, le jus d'un citron vert, l'ail écrasé, le gingembre râpé, le piment doux et 3 cuillères à soupe d'eau chaude (sauce nappante).",
+        "Dresse dans 2 grandes assiettes : dispose harmonieusement par secteurs les légumes vapeur, le concombre, les pousses de soja, le tofu et les œufs.",
+        "Nappe généreusement de sauce cacahuète.",
+        "Sers tiède — la grande salade composée indonésienne, complète et gourmande."
       ],
       "photo": "assets/recipes/l231.webp"
     },
@@ -95904,14 +95890,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer et sécher les calamars. Les mariner 20 minutes dans la moitié de l'huile, le cumin, le paprika, le piment doux, 1 gousse d'ail écrasée et le jus d'un demi-citron.",
-        "Couper la courgette en rondelles épaisses, les badigeonner d'un peu d'huile et de sel.",
-        "Préparer la persillade : hacher finement le persil, la coriandre et les 2 gousses d'ail restantes, mélanger avec le reste d'huile.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller les courgettes 8 minutes en les retournant (marquées et tendres), réserver.",
-        "Griller les calamars à feu très vif 2-3 minutes au total (cuisson rapide impérative : trop cuits, ils deviennent caoutchouteux).",
-        "Hors du feu, mélanger les calamars chauds avec la persillade.",
-        "Dresser sur les courgettes grillées, presser le jus du demi-citron restant. Servir aussitôt — les calamars grillés à l'ail, légers et iodés."
+        "Rince et sèche les calamars. Marine-les 20 minutes dans la moitié de l'huile, le cumin, le paprika, le piment doux, 1 gousse d'ail écrasée et le jus d'un demi-citron.",
+        "Coupe la courgette en rondelles épaisses, badigeonne-les d'un peu d'huile et de sel.",
+        "Prépare la persillade : hache finement le persil, la coriandre et les 2 gousses d'ail restantes, mélange avec le reste d'huile.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille les courgettes 8 minutes en les retournant (marquées et tendres), réserve.",
+        "Grille les calamars à feu très vif 2-3 minutes au total (cuisson rapide impérative : trop cuits, ils deviennent caoutchouteux).",
+        "Hors du feu, mélange les calamars chauds avec la persillade.",
+        "Dresse sur les courgettes grillées, presse le jus du demi-citron restant. Sers aussitôt — les calamars grillés à l'ail, légers et iodés."
       ],
       "photo": "assets/recipes/d222.webp"
     },
@@ -96025,14 +96011,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer les kefta : mélanger l'agneau haché avec l'oignon râpé, le persil et la moitié de la coriandre ciselés, le cumin, le paprika, la cannelle et 1 g de sel.",
-        "Pétrir 2 minutes (la viande devient homogène et collante, gage de brochettes qui se tiennent).",
-        "Façonner la viande en boudins allongés autour des pics à brochette (mains humides). Laisser raffermir 20 minutes au frais.",
-        "Préparer le tzatziki : râper le concombre, presser pour retirer l'eau, mélanger avec le skyr, l'ail écrasé, la menthe ciselée, le jus du demi-citron et 0,5 g de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller les brochettes 10-12 minutes en les retournant régulièrement (dorées dehors, juste cuites dedans).",
-        "Dresser les brochettes, parsemer du reste de coriandre.",
-        "Servir avec le tzatziki concombre-menthe bien frais. Le BBQ maghrébin classique de l'été."
+        "Prépare les kefta : mélange l'agneau haché avec l'oignon râpé, le persil et la moitié de la coriandre ciselés, le cumin, le paprika, la cannelle et 1 g de sel.",
+        "Pétris 2 minutes (la viande devient homogène et collante, gage de brochettes qui se tiennent).",
+        "Façonne la viande en boudins allongés autour des pics à brochette (mains humides). Laisse raffermir 20 minutes au frais.",
+        "Prépare le tzatziki : râpe le concombre, presse pour retirer l'eau, mélange avec le skyr, l'ail écrasé, la menthe ciselée, le jus du demi-citron et 0,5 g de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille les brochettes 10-12 minutes en les retournant régulièrement (dorées dehors, juste cuites dedans).",
+        "Dresse les brochettes, parsème du reste de coriandre.",
+        "Sers avec le tzatziki concombre-menthe bien frais. Le BBQ maghrébin classique de l'été."
       ],
       "photo": "assets/recipes/d223.webp"
     },
@@ -96147,13 +96133,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le cabillaud en gros cubes. Préparer la marinade tikka : yaourt, gingembre râpé, ail écrasé, garam masala, curcuma, paprika, jus d'un demi-citron vert et 1 g de sel.",
-        "Enrober le poisson de marinade, laisser 30 minutes au frais (la marinade attendrit et parfume).",
-        "Préparer le kachumber : couper la tomate, le concombre en petits dés, émincer l'oignon rouge. Torréfier le cumin 30 sec à sec, l'ajouter avec le jus du demi-citron restant et une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller les cubes de poisson 3-4 minutes par face (la chair est nacrée, légèrement charbonnée aux bords — effet tandoor).",
-        "Dresser le poisson tikka grillé dans 2 assiettes.",
-        "Servir avec la salade kachumber bien fraîche et de la coriandre ciselée. Le poisson tikka grillé, léger et parfumé, sans curry lourd."
+        "Coupe le cabillaud en gros cubes. Prépare la marinade tikka : yaourt, gingembre râpé, ail écrasé, garam masala, curcuma, paprika, jus d'un demi-citron vert et 1 g de sel.",
+        "Enrobe le poisson de marinade, laisse 30 minutes au frais (la marinade attendrit et parfume).",
+        "Prépare le kachumber : coupe la tomate, le concombre en petits dés, émince l'oignon rouge. Torréfie le cumin 30 sec à sec, ajoute-le avec le jus du demi-citron restant et une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille les cubes de poisson 3-4 minutes par face (la chair est nacrée, légèrement charbonnée aux bords — effet tandoor).",
+        "Dresse le poisson tikka grillé dans 2 assiettes.",
+        "Sers avec la salade kachumber bien fraîche et de la coriandre ciselée. Le poisson tikka grillé, léger et parfumé, sans curry lourd."
       ],
       "photo": "assets/recipes/d224.webp"
     },
@@ -96254,14 +96240,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le poulet en cubes de 3 cm. Préparer la marinade al pastor : paprika fumé, cumin, piment doux, ail écrasé, jus d'un demi-citron vert, 6 ml d'huile et 1 g de sel.",
-        "Enrober le poulet de marinade, laisser 30 minutes au frais.",
-        "Couper l'ananas en cubes, le poivron en carrés, l'oignon rouge en quartiers.",
-        "Monter les brochettes en alternant poulet, ananas, poivron et oignon (l'ananas caramélise et attendrit la viande, signature al pastor).",
-        "Badigeonner les légumes du reste d'huile et d'une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller les brochettes 12-15 minutes en les retournant : le poulet est cuit à cœur, l'ananas doré et caramélisé.",
-        "Presser le jus du demi-citron vert restant, parsemer de coriandre. Servir aussitôt — les brochettes al pastor sucrées-épicées du Mexique."
+        "Coupe le poulet en cubes de 3 cm. Prépare la marinade al pastor : paprika fumé, cumin, piment doux, ail écrasé, jus d'un demi-citron vert, 6 ml d'huile et 1 g de sel.",
+        "Enrobe le poulet de marinade, laisse 30 minutes au frais.",
+        "Coupe l'ananas en cubes, le poivron en carrés, l'oignon rouge en quartiers.",
+        "Monte les brochettes en alternant poulet, ananas, poivron et oignon (l'ananas caramélise et attendrit la viande, signature al pastor).",
+        "Badigeonne les légumes du reste d'huile et d'une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille les brochettes 12-15 minutes en les retournant : le poulet est cuit à cœur, l'ananas doré et caramélisé.",
+        "Presse le jus du demi-citron vert restant, parsème de coriandre. Sers aussitôt — les brochettes al pastor sucrées-épicées du Mexique."
       ],
       "photo": "assets/recipes/d225.webp"
     },
@@ -96357,14 +96343,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper les tomates cerises en deux, émincer l'ail.",
-        "Faire chauffer l'huile d'olive dans une grande poêle à feu moyen, faire revenir l'ail 1 minute (sans le brûler).",
-        "Ajouter les tomates cerises, les câpres, les olives et l'origan, cuire 5 minutes (les tomates rendent leur jus).",
-        "Verser le vin blanc, laisser évaporer 2 minutes (l'alcool s'évapore, c'est l'eau folle 'acqua pazza').",
-        "Ajouter 80 ml d'eau, le sel et le poivre, porter à frémissement.",
-        "Déposer les filets de dorade côté peau dans le bouillon de tomates, couvrir et pocher 8-10 minutes (la chair est nacrée et se détache).",
-        "Parsemer de persil ciselé.",
-        "Servir le poisson nappé de son bouillon de tomates aux câpres et olives — le grand classique côtier napolitain, léger et parfumé. Délicieux avec un peu de pain au levain pour saucer."
+        "Coupe les tomates cerises en deux, émince l'ail.",
+        "Fais chauffer l'huile d'olive dans une grande poêle à feu moyen, fais revenir l'ail 1 minute (sans le brûler).",
+        "Ajoute les tomates cerises, les câpres, les olives et l'origan, cuis 5 minutes (les tomates rendent leur jus).",
+        "Verse le vin blanc, laisse évaporer 2 minutes (l'alcool s'évapore, c'est l'eau folle 'acqua pazza').",
+        "Ajoute 80 ml d'eau, le sel et le poivre, porte à frémissement.",
+        "Dépose les filets de dorade côté peau dans le bouillon de tomates, couvre et poche 8-10 minutes (la chair est nacrée et se détache).",
+        "Parsème de persil ciselé.",
+        "Sers le poisson nappé de son bouillon de tomates aux câpres et olives — le grand classique côtier napolitain, léger et parfumé. Délicieux avec un peu de pain au levain pour saucer."
       ],
       "photo": "assets/recipes/d226.webp"
     },
@@ -96434,14 +96420,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les abricots, les couper en deux et retirer les noyaux.",
-        "Faire chauffer l'eau avec le sirop d'érable 3 minutes (sirop léger).",
-        "Ajouter les abricots, cuire 3 minutes (ils s'attendrissent).",
-        "Mixer au blender avec le jus du demi-citron et l'eau de fleur d'oranger jusqu'à purée lisse.",
-        "Verser dans un récipient large à fond plat, placer au congélateur.",
-        "Gratter à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : texture sorbet neigeuse.",
-        "Faire griller les amandes effilées 2 minutes à sec.",
-        "Au moment de servir, gratter une dernière fois, dresser dans des coupes glacées et parsemer d'amandes grillées. Le sorbet d'abricot parfumé à la fleur d'oranger."
+        "Lave les abricots, coupe-les en deux et retire les noyaux.",
+        "Fais chauffer l'eau avec le sirop d'érable 3 minutes (sirop léger).",
+        "Ajoute les abricots, cuis 3 minutes (ils s'attendrissent).",
+        "Mixe au blender avec le jus du demi-citron et l'eau de fleur d'oranger jusqu'à purée lisse.",
+        "Verse dans un récipient large à fond plat, place au congélateur.",
+        "Gratte à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : texture sorbet neigeuse.",
+        "Fais griller les amandes effilées 2 minutes à sec.",
+        "Au moment de servir, gratte une dernière fois, dresse dans des coupes glacées et parsème d'amandes grillées. Le sorbet d'abricot parfumé à la fleur d'oranger."
       ],
       "photo": "assets/recipes/des171.webp"
     },
@@ -96517,13 +96503,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Laver les pêches, retirer les noyaux, couper la chair en morceaux (garder quelques dés pour la déco).",
-        "Mettre les pêches, le yaourt nature, le lait, la cardamome, le sirop d'érable et les glaçons dans le blender.",
-        "Mixer 30-40 secondes jusqu'à obtenir une texture épaisse et glacée (lassi onctueux).",
-        "Goûter et ajuster (un peu plus de sirop si les pêches sont peu sucrées).",
-        "Verser dans 2 verres ou coupes, placer 1h au frais pour servir bien glacé.",
-        "Concasser les pistaches au couteau.",
-        "Garnir des dés de pêche réservés et des pistaches concassées. Servir bien frais — le lassi à la pêche, dessert-boisson rafraîchissant de l'été indien."
+        "Lave les pêches, retire les noyaux, coupe la chair en morceaux (garde quelques dés pour la déco).",
+        "Mets les pêches, le yaourt nature, le lait, la cardamome, le sirop d'érable et les glaçons dans le blender.",
+        "Mixe 30-40 secondes jusqu'à obtenir une texture épaisse et glacée (lassi onctueux).",
+        "Goûte et ajuste (un peu plus de sirop si les pêches sont peu sucrées).",
+        "Verse dans 2 verres ou coupes, place 1h au frais pour servir bien glacé.",
+        "Concasse les pistaches au couteau.",
+        "Garnis des dés de pêche réservés et des pistaches concassées. Sers bien frais — le lassi à la pêche, dessert-boisson rafraîchissant de l'été indien."
       ],
       "photo": "assets/recipes/des172.webp"
     },
@@ -96633,14 +96619,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter et passer sous l'eau froide (grains séparés, refroidis).",
-        "Cuire les œufs durs 9 minutes, les rafraîchir, les écaler et les couper en quartiers.",
-        "Couper le poivron en petits dés, la tomate en dés (sans pépins), émincer l'oignon rouge et les cornichons.",
-        "Préparer la vinaigrette : fouetter la moutarde, le vinaigre de cidre, l'huile d'olive et le sel.",
-        "Dans un grand saladier, mélanger le riz froid, le thon égoutté émietté, le poivron, le maïs, la tomate, l'oignon et les cornichons.",
-        "Verser la vinaigrette, mélanger délicatement.",
-        "Disposer les quartiers d'œuf sur le dessus, parsemer de persil ciselé.",
-        "Servir frais — la salade de riz complète et colorée, classique des pique-niques d'été."
+        "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte et passe sous l'eau froide (grains séparés, refroidis).",
+        "Cuis les œufs durs 9 minutes, rafraîchis-les, écale-les et coupe-les en quartiers.",
+        "Coupe le poivron en petits dés, la tomate en dés (sans pépins), émince l'oignon rouge et les cornichons.",
+        "Prépare la vinaigrette : fouette la moutarde, le vinaigre de cidre, l'huile d'olive et le sel.",
+        "Dans un grand saladier, mélange le riz froid, le thon égoutté émietté, le poivron, le maïs, la tomate, l'oignon et les cornichons.",
+        "Verse la vinaigrette, mélange délicatement.",
+        "Dispose les quartiers d'œuf sur le dessus, parsème de persil ciselé.",
+        "Sers frais — la salade de riz complète et colorée, classique des pique-niques d'été."
       ],
       "photo": "assets/recipes/l232.webp"
     },
@@ -96743,14 +96729,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuire les œufs durs 9 minutes, les rafraîchir, les écaler et les couper en quartiers.",
-        "Couper la tomate, le concombre et le poivron vert en TRÈS petits dés (5 mm, c'est la signature de la slata tounsia, finement coupée).",
-        "Émincer l'oignon rouge très finement.",
-        "Mettre tous les légumes dans un saladier.",
-        "Préparer la sauce : délayer la harissa avec l'huile d'olive, le jus du citron entier et le sel.",
-        "Verser la sauce sur les légumes, mélanger.",
-        "Dresser dans les assiettes, garnir du thon égoutté émietté, des quartiers d'œuf et des olives.",
-        "Parsemer de menthe ciselée. Servir frais — la salade tunisienne finement coupée, vive et relevée."
+        "Cuis les œufs durs 9 minutes, rafraîchis-les, écale-les et coupe-les en quartiers.",
+        "Coupe la tomate, le concombre et le poivron vert en TRÈS petits dés (5 mm, c'est la signature de la slata tounsia, finement coupée).",
+        "Émince l'oignon rouge très finement.",
+        "Mets tous les légumes dans un saladier.",
+        "Prépare la sauce : délaye la harissa avec l'huile d'olive, le jus du citron entier et le sel.",
+        "Verse la sauce sur les légumes, mélange.",
+        "Dresse dans les assiettes, garnis du thon égoutté émietté, des quartiers d'œuf et des olives.",
+        "Parsème de menthe ciselée. Sers frais — la salade tunisienne finement coupée, vive et relevée."
       ],
       "photo": "assets/recipes/l233.webp"
     },
@@ -96854,14 +96840,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter, laisser refroidir.",
-        "Pocher le blanc de poulet 12-15 minutes dans une casserole d'eau frémissante salée (cuit à cœur, moelleux). Égoutter, laisser tiédir puis effilocher ou couper en cubes.",
-        "Préparer la sauce coronation : mélanger le skyr, le curry en poudre, une partie de la mangue mixée en purée, le jus du citron vert et le sel.",
-        "Mélanger le poulet avec la sauce coronation, laisser 30 minutes au frais (il s'imprègne).",
-        "Faire griller les amandes effilées 2 minutes à sec.",
-        "Couper le reste de mangue en dés, émincer l'oignon rouge.",
-        "Dresser le riz et la roquette dans les bols, ajouter le poulet coronation.",
-        "Garnir des dés de mangue, de l'oignon, des raisins secs et des amandes grillées. Parsemer de coriandre. Servir frais — le classique anglo-indien curry-mangue."
+        "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte, laisse refroidir.",
+        "Poche le blanc de poulet 12-15 minutes dans une casserole d'eau frémissante salée (cuit à cœur, moelleux). Égoutte, laisse tiédir puis effiloche ou coupe en cubes.",
+        "Prépare la sauce coronation : mélange le skyr, le curry en poudre, une partie de la mangue mixée en purée, le jus du citron vert et le sel.",
+        "Mélange le poulet avec la sauce coronation, laisse 30 minutes au frais (il s'imprègne).",
+        "Fais griller les amandes effilées 2 minutes à sec.",
+        "Coupe le reste de mangue en dés, émince l'oignon rouge.",
+        "Dresse le riz et la roquette dans les bols, ajoute le poulet coronation.",
+        "Garnis des dés de mangue, de l'oignon, des raisins secs et des amandes grillées. Parsème de coriandre. Sers frais — le classique anglo-indien curry-mangue."
       ],
       "photo": "assets/recipes/l234.webp"
     },
@@ -96965,13 +96951,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher la papaye verte, retirer les graines, la râper en longue julienne (grosse râpe ou mandoline julienne).",
-        "Couper les haricots verts en tronçons de 3 cm (crus ou blanchis 2 min selon préférence), la carotte en julienne, la tomate en quartiers.",
-        "Faire griller les cacahuètes 2 minutes à sec, en concasser la moitié.",
-        "Préparer la sauce dans un grand bol (ou mortier) : écraser l'ail, ajouter le nuoc-mâm, le jus des citrons verts, le sirop d'érable et le piment doux.",
-        "Ajouter la papaye, les haricots, la carotte et la tomate dans le bol, mélanger en pressant légèrement pour que les légumes s'imprègnent (technique du pilon traditionnel).",
-        "Ajouter les crevettes cuites et les cacahuètes concassées, mélanger délicatement.",
-        "Dresser, parsemer du reste de cacahuètes et de coriandre. Servir frais — la salade thaïe explosive sucrée-salée-acidulée-pimentée."
+        "Épluche la papaye verte, retire les graines, râpe-la en longue julienne (grosse râpe ou mandoline julienne).",
+        "Coupe les haricots verts en tronçons de 3 cm (crus ou blanchis 2 min selon préférence), la carotte en julienne, la tomate en quartiers.",
+        "Fais griller les cacahuètes 2 minutes à sec, concasses-en la moitié.",
+        "Prépare la sauce dans un grand bol (ou mortier) : écrase l'ail, ajoute le nuoc-mâm, le jus des citrons verts, le sirop d'érable et le piment doux.",
+        "Ajoute la papaye, les haricots, la carotte et la tomate dans le bol, mélange en pressant légèrement pour que les légumes s'imprègnent (technique du pilon traditionnel).",
+        "Ajoute les crevettes cuites et les cacahuètes concassées, mélange délicatement.",
+        "Dresse, parsème du reste de cacahuètes et de coriandre. Sers frais — la salade thaïe explosive sucrée-salée-acidulée-pimentée."
       ],
       "photo": "assets/recipes/l235.webp"
     },
@@ -97078,14 +97064,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mariner le cabillaud 10 minutes avec le paprika fumé, le cumin, 4 ml d'huile, le jus d'un demi-citron vert et une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, griller le maïs 5 minutes (légèrement charbonné), puis le poisson 3-4 minutes par face. Émietter le poisson en gros morceaux.",
-        "Égoutter et rincer les haricots noirs.",
-        "Couper la tomate en dés, l'avocat en lamelles, émincer l'oignon rouge.",
-        "Préparer la vinaigrette : fouetter le reste d'huile, le jus du demi-citron vert restant et le sel.",
-        "Dans 2 grands bols, disposer la salade verte, le maïs grillé, les haricots noirs, la tomate et l'oignon.",
-        "Ajouter le poisson grillé émietté et les lamelles d'avocat.",
-        "Arroser de vinaigrette, parsemer de coriandre. Servir aussitôt — le taco déconstruit en salade, frais et fumé."
+        "Marine le cabillaud 10 minutes avec le paprika fumé, le cumin, 4 ml d'huile, le jus d'un demi-citron vert et une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, grille le maïs 5 minutes (légèrement charbonné), puis le poisson 3-4 minutes par face. Émiette le poisson en gros morceaux.",
+        "Égoutte et rince les haricots noirs.",
+        "Coupe la tomate en dés, l'avocat en lamelles, émince l'oignon rouge.",
+        "Prépare la vinaigrette : fouette le reste d'huile, le jus du demi-citron vert restant et le sel.",
+        "Dans 2 grands bols, dispose la salade verte, le maïs grillé, les haricots noirs, la tomate et l'oignon.",
+        "Ajoute le poisson grillé émietté et les lamelles d'avocat.",
+        "Arrose de vinaigrette, parsème de coriandre. Sers aussitôt — le taco déconstruit en salade, frais et fumé."
       ],
       "photo": "assets/recipes/l236.webp"
     },
@@ -97200,15 +97186,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la courgette en demi-lunes, l'aubergine en cubes de 2 cm, la tomate en dés.",
-        "Faire chauffer l'huile d'olive dans une sauteuse, ajouter les graines de moutarde et attendre qu'elles éclatent (30 sec).",
-        "Ajouter l'oignon émincé, faire dorer 5 minutes.",
-        "Ajouter l'ail écrasé, le gingembre râpé, le cumin et le curcuma, mélanger 30 secondes.",
-        "Ajouter l'aubergine, cuire 5 minutes (elle commence à fondre).",
-        "Ajouter la tomate et 100 ml d'eau, le sel, mijoter 8 minutes.",
-        "Ajouter la courgette et le lait de coco, prolonger 8 minutes (les légumes sont fondants, la sauce nappe).",
-        "Ajouter le garam masala en fin de cuisson, mélanger.",
-        "Parsemer de coriandre. Servir chaud — le curry léger aux légumes d'été, sans féculent obligatoire (CG dinner respectée)."
+        "Coupe la courgette en demi-lunes, l'aubergine en cubes de 2 cm, la tomate en dés.",
+        "Fais chauffer l'huile d'olive dans une sauteuse, ajoute les graines de moutarde et attends qu'elles éclatent (30 sec).",
+        "Ajoute l'oignon émincé, fais dorer 5 minutes.",
+        "Ajoute l'ail écrasé, le gingembre râpé, le cumin et le curcuma, mélange 30 secondes.",
+        "Ajoute l'aubergine, cuis 5 minutes (elle commence à fondre).",
+        "Ajoute la tomate et 100 ml d'eau, le sel, mijote 8 minutes.",
+        "Ajoute la courgette et le lait de coco, prolonge 8 minutes (les légumes sont fondants, la sauce nappe).",
+        "Ajoute le garam masala en fin de cuisson, mélange.",
+        "Parsème de coriandre. Sers chaud — le curry léger aux légumes d'été, sans féculent obligatoire (CG dinner respectée)."
       ],
       "photo": "assets/recipes/d227.webp"
     },
@@ -97303,14 +97289,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le poulet en cubes de 3 cm. Préparer la marinade : mélanger la harissa, le miel, le cumin, l'ail écrasé, le jus d'un demi-citron, 6 ml d'huile et 0,5 g de sel.",
-        "Enrober le poulet de marinade, laisser 30 minutes au frais (le miel caramélise à la cuisson, la harissa relève).",
-        "Émincer le fenouil en lamelles, couper le poivron en carrés.",
-        "Monter les brochettes en alternant poulet et poivron.",
-        "Badigeonner le fenouil du reste d'huile et d'une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller le fenouil 8 minutes (tendre et marqué), réserver. Griller les brochettes 12-15 minutes en les retournant (poulet caramélisé, cuit à cœur).",
-        "Dresser les brochettes sur le fenouil grillé, presser le jus du demi-citron restant, parsemer de coriandre. Le sucré-épicé maghrébin au barbecue."
+        "Coupe le poulet en cubes de 3 cm. Prépare la marinade : mélange la harissa, le miel, le cumin, l'ail écrasé, le jus d'un demi-citron, 6 ml d'huile et 0,5 g de sel.",
+        "Enrobe le poulet de marinade, laisse 30 minutes au frais (le miel caramélise à la cuisson, la harissa relève).",
+        "Émince le fenouil en lamelles, coupe le poivron en carrés.",
+        "Monte les brochettes en alternant poulet et poivron.",
+        "Badigeonne le fenouil du reste d'huile et d'une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille le fenouil 8 minutes (tendre et marqué), réserve. Grille les brochettes 12-15 minutes en les retournant (poulet caramélisé, cuit à cœur).",
+        "Dresse les brochettes sur le fenouil grillé, presse le jus du demi-citron restant, parsème de coriandre. Le sucré-épicé maghrébin au barbecue."
       ],
       "photo": "assets/recipes/d228.webp"
     },
@@ -97419,15 +97405,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Couper les courgettes en deux dans la longueur, creuser la chair à la cuillère (réserver la chair, garder une coque de 1 cm).",
-        "Précuire les coques de courgette 10 minutes au four (elles s'assouplissent).",
-        "Hacher la chair de courgette réservée. Faire chauffer l'huile dans une poêle, faire revenir l'oignon émincé et l'ail écrasé 3 minutes.",
-        "Ajouter la chair de courgette hachée, le cumin et le piment doux, cuire 5 minutes.",
-        "Ajouter les haricots noirs égouttés (écrasés grossièrement), le maïs, la tomate en dés et le sel, cuire 5 minutes (farce qui se tient).",
-        "Hors du feu, ajouter une partie de la coriandre et le jus du citron vert.",
-        "Garnir les coques de courgette de farce, parsemer de fromage frais émietté.",
-        "Enfourner 18-20 minutes (les courgettes sont fondantes, le dessus gratiné). Parsemer du reste de coriandre. Servir chaud — les courgettes farcies à la mexicaine."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Coupe les courgettes en deux dans la longueur, creuse la chair à la cuillère (réserve la chair, garde une coque de 1 cm).",
+        "Précuis les coques de courgette 10 minutes au four (elles s'assouplissent).",
+        "Hache la chair de courgette réservée. Fais chauffer l'huile dans une poêle, fais revenir l'oignon émincé et l'ail écrasé 3 minutes.",
+        "Ajoute la chair de courgette hachée, le cumin et le piment doux, cuis 5 minutes.",
+        "Ajoute les haricots noirs égouttés (écrasés grossièrement), le maïs, la tomate en dés et le sel, cuis 5 minutes (farce qui se tient).",
+        "Hors du feu, ajoute une partie de la coriandre et le jus du citron vert.",
+        "Garnis les coques de courgette de farce, parsème de fromage frais émietté.",
+        "Enfourne 18-20 minutes (les courgettes sont fondantes, le dessus gratiné). Parsème du reste de coriandre. Sers chaud — les courgettes farcies à la mexicaine."
       ],
       "photo": "assets/recipes/d229.webp"
     },
@@ -97527,14 +97513,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la sauce teriyaki : mélanger la sauce soja, le sirop d'érable, le gingembre râpé, l'ail écrasé et l'huile de sésame.",
-        "Mariner le saumon 20 minutes dans la moitié de la sauce.",
-        "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante. Égoutter.",
-        "Cuire les edamame 4 minutes à l'eau bouillante salée, égoutter.",
-        "Faire chauffer le grill (ou poêle-gril) à feu moyen-vif, griller le saumon 3-4 minutes par face (laqué, nacré au centre).",
-        "Faire réduire le reste de sauce teriyaki 2 minutes à la casserole (elle épaissit et brille).",
-        "Dresser le riz dans 2 bols, ajouter les edamame et le saumon grillé.",
-        "Napper du reste de sauce teriyaki réduite, presser le jus du demi-citron vert, parsemer de graines de sésame et d'oignons nouveaux. Servir chaud."
+        "Prépare la sauce teriyaki : mélange la sauce soja, le sirop d'érable, le gingembre râpé, l'ail écrasé et l'huile de sésame.",
+        "Marine le saumon 20 minutes dans la moitié de la sauce.",
+        "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante. Égoutte.",
+        "Cuis les edamame 4 minutes à l'eau bouillante salée, égoutte.",
+        "Fais chauffer le grill (ou poêle-gril) à feu moyen-vif, grille le saumon 3-4 minutes par face (laqué, nacré au centre).",
+        "Fais réduire le reste de sauce teriyaki 2 minutes à la casserole (elle épaissit et brille).",
+        "Dresse le riz dans 2 bols, ajoute les edamame et le saumon grillé.",
+        "Nappe du reste de sauce teriyaki réduite, presse le jus du demi-citron vert, parsème de graines de sésame et d'oignons nouveaux. Sers chaud."
       ],
       "photo": "assets/recipes/d230.webp"
     },
@@ -97637,15 +97623,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Couper l'aubergine en fines tranches dans la longueur (5 mm), les badigeonner de 6 ml d'huile, les enfourner 12 minutes sur une plaque (souples et dorées).",
-        "Préparer la sauce tomate : faire revenir l'oignon émincé et 1 gousse d'ail dans 3 ml d'huile 4 minutes, ajouter la tomate en dés, l'origan et le sel, mijoter 12 minutes.",
-        "Faire tomber les épinards 3 minutes à la poêle, les presser pour retirer l'eau, les hacher.",
-        "Mélanger la ricotta, les épinards hachés, l'ail restant écrasé, la moitié du basilic ciselé, le poivre et une pincée de sel.",
-        "Déposer une cuillère de farce ricotta-épinards au bout de chaque tranche d'aubergine, rouler en cigare (involtino).",
-        "Étaler la sauce tomate au fond d'un plat à gratin, déposer les involtini serrés, parsemer de parmesan.",
-        "Enfourner 15-18 minutes (le dessus gratine, la sauce bouillonne).",
-        "Parsemer du reste de basilic. Servir chaud — les roulés d'aubergine farcis à la ricotta, classique estival du sud de l'Italie."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Coupe l'aubergine en fines tranches dans la longueur (5 mm), badigeonne-les de 6 ml d'huile, enfourne-les 12 minutes sur une plaque (souples et dorées).",
+        "Prépare la sauce tomate : fais revenir l'oignon émincé et 1 gousse d'ail dans 3 ml d'huile 4 minutes, ajoute la tomate en dés, l'origan et le sel, mijote 12 minutes.",
+        "Fais tomber les épinards 3 minutes à la poêle, presse-les pour retirer l'eau, hache-les.",
+        "Mélange la ricotta, les épinards hachés, l'ail restant écrasé, la moitié du basilic ciselé, le poivre et une pincée de sel.",
+        "Dépose une cuillère de farce ricotta-épinards au bout de chaque tranche d'aubergine, roule en cigare (involtino).",
+        "Étale la sauce tomate au fond d'un plat à gratin, dépose les involtini serrés, parsème de parmesan.",
+        "Enfourne 15-18 minutes (le dessus gratine, la sauce bouillonne).",
+        "Parsème du reste de basilic. Sers chaud — les roulés d'aubergine farcis à la ricotta, classique estival du sud de l'Italie."
       ],
       "photo": "assets/recipes/d231.webp"
     },
@@ -97708,13 +97694,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Retirer la peau et les pépins de la pastèque, couper la chair en morceaux.",
-        "Mixer la pastèque avec le jus du citron vert, le sirop d'érable et l'eau de fleur d'oranger (jus lisse).",
-        "Ciseler finement la menthe, l'incorporer au jus.",
-        "Verser dans un récipient large à fond plat, placer au congélateur.",
-        "Gratter à la fourchette toutes les 40 minutes pendant 3h (3-4 grattages) : cristaux légers et neigeux.",
-        "Au moment de servir, gratter une dernière fois pour une texture aérienne.",
-        "Servir dans des verres glacés, décorer d'une feuille de menthe — le granité de pastèque parfumé à la fleur d'oranger, ultra-désaltérant."
+        "Retire la peau et les pépins de la pastèque, coupe la chair en morceaux.",
+        "Mixe la pastèque avec le jus du citron vert, le sirop d'érable et l'eau de fleur d'oranger (jus lisse).",
+        "Cisèle finement la menthe, incorpore-la au jus.",
+        "Verse dans un récipient large à fond plat, place au congélateur.",
+        "Gratte à la fourchette toutes les 40 minutes pendant 3h (3-4 grattages) : cristaux légers et neigeux.",
+        "Au moment de servir, gratte une dernière fois pour une texture aérienne.",
+        "Sers dans des verres glacés, décore d'une feuille de menthe — le granité de pastèque parfumé à la fleur d'oranger, ultra-désaltérant."
       ],
       "photo": "assets/recipes/des173.webp"
     },
@@ -97776,13 +97762,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire chauffer l'eau avec le sirop d'érable et les feuilles de verveine 5 minutes (infusion sirupeuse parfumée). Laisser infuser 5 minutes hors du feu, puis retirer la verveine.",
-        "Laver les pêches, retirer les noyaux, couper la chair en morceaux.",
-        "Mixer les pêches avec le sirop à la verveine et le jus du citron jusqu'à purée lisse.",
-        "Verser dans un récipient large à fond plat, placer au congélateur.",
-        "Gratter à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : texture sorbet neigeuse.",
-        "Au moment de servir, gratter une dernière fois.",
-        "Servir dans des coupes glacées, décorer d'une feuille de verveine — l'alliance délicate pêche-verveine de l'été méditerranéen."
+        "Fais chauffer l'eau avec le sirop d'érable et les feuilles de verveine 5 minutes (infusion sirupeuse parfumée). Laisse infuser 5 minutes hors du feu, puis retire la verveine.",
+        "Lave les pêches, retire les noyaux, coupe la chair en morceaux.",
+        "Mixe les pêches avec le sirop à la verveine et le jus du citron jusqu'à purée lisse.",
+        "Verse dans un récipient large à fond plat, place au congélateur.",
+        "Gratte à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : texture sorbet neigeuse.",
+        "Au moment de servir, gratte une dernière fois.",
+        "Sers dans des coupes glacées, décore d'une feuille de verveine — l'alliance délicate pêche-verveine de l'été méditerranéen."
       ],
       "photo": "assets/recipes/des174.webp"
     },
@@ -97878,13 +97864,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le quinoa, le cuire dans 150 ml d'eau salée 15 minutes (eau absorbée, grains éclatés). Laisser refroidir.",
-        "Couper le concombre en demi-lunes, la tomate en dés, émincer l'oignon rouge.",
-        "Préparer la vinaigrette : fouetter l'huile d'olive, le jus du citron entier et le sel.",
-        "Dans un grand saladier, mélanger le quinoa froid, le concombre, la tomate et l'oignon.",
-        "Verser la vinaigrette, mélanger.",
-        "Émietter la feta, ajouter les olives coupées en deux.",
-        "Parsemer de menthe et persil ciselés. Servir frais — la salade de quinoa méditerranéenne, complète et rafraîchissante."
+        "Rince le quinoa, cuis-le dans 150 ml d'eau salée 15 minutes (eau absorbée, grains éclatés). Laisse refroidir.",
+        "Coupe le concombre en demi-lunes, la tomate en dés, émince l'oignon rouge.",
+        "Prépare la vinaigrette : fouette l'huile d'olive, le jus du citron entier et le sel.",
+        "Dans un grand saladier, mélange le quinoa froid, le concombre, la tomate et l'oignon.",
+        "Verse la vinaigrette, mélange.",
+        "Émiette la feta, ajoute les olives coupées en deux.",
+        "Parsème de menthe et persil ciselés. Sers frais — la salade de quinoa méditerranéenne, complète et rafraîchissante."
       ],
       "photo": "assets/recipes/l237.webp"
     },
@@ -97980,14 +97966,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Couper les carottes en bâtonnets. Égoutter et sécher les pois chiches.",
-        "Mélanger carottes et pois chiches avec la plus grande partie de l'huile, le cumin, le paprika et une pincée de sel.",
-        "Étaler sur une plaque, enfourner 22-25 minutes en remuant à mi-cuisson (carottes tendres, pois chiches croustillants).",
-        "Préparer la sauce yaourt : mélanger le skyr, l'ail écrasé, une partie du jus du citron et une pincée de sel.",
-        "Étaler la sauce yaourt au fond des assiettes.",
-        "Déposer les carottes et pois chiches rôtis encore tièdes par-dessus.",
-        "Presser le reste du citron, arroser du reste d'huile, parsemer de menthe et coriandre. Servir tiède — le contraste chaud-froid carottes rôties / yaourt frais."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Coupe les carottes en bâtonnets. Égoutte et sèche les pois chiches.",
+        "Mélange carottes et pois chiches avec la plus grande partie de l'huile, le cumin, le paprika et une pincée de sel.",
+        "Étale sur une plaque, enfourne 22-25 minutes en remuant à mi-cuisson (carottes tendres, pois chiches croustillants).",
+        "Prépare la sauce yaourt : mélange le skyr, l'ail écrasé, une partie du jus du citron et une pincée de sel.",
+        "Étale la sauce yaourt au fond des assiettes.",
+        "Dépose les carottes et pois chiches rôtis encore tièdes par-dessus.",
+        "Presse le reste du citron, arrose du reste d'huile, parsème de menthe et coriandre. Sers tiède — le contraste chaud-froid carottes rôties / yaourt frais."
       ],
       "photo": "assets/recipes/l238.webp"
     },
@@ -98086,13 +98072,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter et passer sous l'eau froide.",
-        "Faire chauffer l'huile dans une poêle, ajouter les graines de moutarde et attendre qu'elles éclatent (30 sec).",
-        "Ajouter les noix de cajou, les dorer 2 minutes, ajouter le curry en poudre hors du feu (parfum).",
-        "Couper la mangue en dés, le poivron en petits dés, émincer l'oignon rouge.",
-        "Dans un grand saladier, mélanger le riz froid, la mangue, le poivron, l'oignon et le mélange cajou-moutarde-curry.",
-        "Presser le jus du citron vert entier, ajouter le sel, mélanger.",
-        "Laisser reposer 20 minutes au frais. Parsemer de coriandre. Servir frais — la salade de riz indienne fruitée et croquante."
+        "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte et passe sous l'eau froide.",
+        "Fais chauffer l'huile dans une poêle, ajoute les graines de moutarde et attends qu'elles éclatent (30 sec).",
+        "Ajoute les noix de cajou, dore-les 2 minutes, ajoute le curry en poudre hors du feu (parfum).",
+        "Coupe la mangue en dés, le poivron en petits dés, émince l'oignon rouge.",
+        "Dans un grand saladier, mélange le riz froid, la mangue, le poivron, l'oignon et le mélange cajou-moutarde-curry.",
+        "Presse le jus du citron vert entier, ajoute le sel, mélange.",
+        "Laisse reposer 20 minutes au frais. Parsème de coriandre. Sers frais — la salade de riz indienne fruitée et croquante."
       ],
       "photo": "assets/recipes/l239.webp"
     },
@@ -98198,13 +98184,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mettre la chair d'avocat, le concombre épluché en morceaux, le skyr, le bouillon froid, le jus d'un citron vert, l'ail, la moitié de la coriandre, le sel et l'huile dans le blender.",
-        "Mixer 1 minute jusqu'à obtenir un velouté parfaitement lisse et vert pâle.",
-        "Goûter et ajuster (jus de citron, sel) selon préférence.",
-        "Placer 1h au frigo pour servir bien glacé (la soupe froide se sert très fraîche).",
-        "Préparer la garniture : faire griller le maïs 3 minutes à sec dans une poêle (légèrement charbonné).",
-        "Verser la soupe dans des bols, garnir du maïs grillé, d'oignon nouveau ciselé et du reste de coriandre.",
-        "Saupoudrer d'une pointe de piment doux et presser le jus du demi-citron restant. Servir glacé — le velouté froid d'avocat mexicain, onctueux et frais."
+        "Mets la chair d'avocat, le concombre épluché en morceaux, le skyr, le bouillon froid, le jus d'un citron vert, l'ail, la moitié de la coriandre, le sel et l'huile dans le blender.",
+        "Mixe 1 minute jusqu'à obtenir un velouté parfaitement lisse et vert pâle.",
+        "Goûte et ajuste (jus de citron, sel) selon préférence.",
+        "Place 1h au frigo pour servir bien glacé (la soupe froide se sert très fraîche).",
+        "Prépare la garniture : fais griller le maïs 3 minutes à sec dans une poêle (légèrement charbonné).",
+        "Verse la soupe dans des bols, garnis du maïs grillé, d'oignon nouveau ciselé et du reste de coriandre.",
+        "Saupoudre d'une pointe de piment doux et presse le jus du demi-citron restant. Sers glacé — le velouté froid d'avocat mexicain, onctueux et frais."
       ],
       "photo": "assets/recipes/l240.webp"
     },
@@ -98315,14 +98301,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le poulet en gros morceaux. Émincer l'oignon, râper le gingembre.",
-        "Faire chauffer l'huile dans une cocotte (ou tajine), dorer les morceaux de poulet 5 minutes. Réserver.",
-        "Faire suer l'oignon 4 minutes, ajouter l'ail, le gingembre, le curcuma et le cumin, mélanger 30 secondes.",
-        "Ajouter la tomate en dés, remettre le poulet, ajouter 150 ml d'eau et le sel. Couvrir et mijoter 15 minutes.",
-        "Couper la courgette en demi-lunes épaisses, l'ajouter, prolonger 12 minutes (tendre mais pas en bouillie).",
-        "Rincer le citron confit, le couper en lanières (jeter la pulpe), l'ajouter avec les olives.",
-        "Réduire à découvert 3 minutes si trop liquide (la sauce doit napper).",
-        "Presser le jus du demi-citron, parsemer de coriandre. Servir chaud — le tajine d'été léger au poulet et courgettes."
+        "Coupe le poulet en gros morceaux. Émince l'oignon, râpe le gingembre.",
+        "Fais chauffer l'huile dans une cocotte (ou tajine), dore les morceaux de poulet 5 minutes. Réserve.",
+        "Fais suer l'oignon 4 minutes, ajoute l'ail, le gingembre, le curcuma et le cumin, mélange 30 secondes.",
+        "Ajoute la tomate en dés, remets le poulet, ajoute 150 ml d'eau et le sel. Couvre et mijote 15 minutes.",
+        "Coupe la courgette en demi-lunes épaisses, ajoute-la, prolonge 12 minutes (tendre mais pas en bouillie).",
+        "Rince le citron confit, coupe-le en lanières (jette la pulpe), ajoute-le avec les olives.",
+        "Réduis à découvert 3 minutes si trop liquide (la sauce doit napper).",
+        "Presse le jus du demi-citron, parsème de coriandre. Sers chaud — le tajine d'été léger au poulet et courgettes."
       ],
       "photo": "assets/recipes/d232.webp"
     },
@@ -98431,14 +98417,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la marinade : mélanger le gingembre râpé, l'ail écrasé, le curcuma, le cumin, le piment doux, le jus d'un demi-citron vert, 4 ml d'huile et 0,5 g de sel.",
-        "Badigeonner le cabillaud de marinade, laisser 30 minutes au frais.",
-        "Préparer la salsa de mangue-coco : couper la mangue en petits dés, mélanger avec le lait de coco, le jus du demi-citron vert restant et une pincée de sel.",
-        "Couper la courgette en rondelles, les badigeonner du reste d'huile et d'une pincée de sel.",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif.",
-        "Griller les courgettes 8 minutes (marquées et tendres), réserver.",
-        "Griller le cabillaud 3-4 minutes par face (la chair est nacrée et se détache).",
-        "Dresser le poisson sur les courgettes grillées, napper de salsa mangue-coco, parsemer de coriandre. Le poisson grillé épicé à la fraîcheur tropicale de Goa."
+        "Prépare la marinade : mélange le gingembre râpé, l'ail écrasé, le curcuma, le cumin, le piment doux, le jus d'un demi-citron vert, 4 ml d'huile et 0,5 g de sel.",
+        "Badigeonne le cabillaud de marinade, laisse 30 minutes au frais.",
+        "Prépare la salsa de mangue-coco : coupe la mangue en petits dés, mélange avec le lait de coco, le jus du demi-citron vert restant et une pincée de sel.",
+        "Coupe la courgette en rondelles, badigeonne-les du reste d'huile et d'une pincée de sel.",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif.",
+        "Grille les courgettes 8 minutes (marquées et tendres), réserve.",
+        "Grille le cabillaud 3-4 minutes par face (la chair est nacrée et se détache).",
+        "Dresse le poisson sur les courgettes grillées, nappe de salsa mangue-coco, parsème de coriandre. Le poisson grillé épicé à la fraîcheur tropicale de Goa."
       ],
       "photo": "assets/recipes/d233.webp"
     },
@@ -98549,13 +98535,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le poulet en lanières. Préparer la marinade : moitié du lait de coco, la moitié de la sauce soja, le curcuma, le cumin, le gingembre râpé et 1 gousse d'ail écrasée.",
-        "Mariner le poulet 30 minutes au frais.",
-        "Préparer la sauce satay : mélanger la purée de cacahuète, le reste du lait de coco, le reste de sauce soja, l'ail restant, le sirop d'érable, le jus d'un demi-citron vert et 2 cuillères à soupe d'eau chaude (sauce nappante).",
-        "Préparer un pickle express : émincer le concombre et l'oignon rouge finement, les mélanger avec le jus du demi-citron vert restant.",
-        "Enfiler le poulet mariné sur les brochettes (tremper les pics en bois 10 min dans l'eau).",
-        "Faire chauffer le grill (ou poêle-gril) à feu vif, griller les brochettes 12-15 minutes en les retournant (dorées, cuites à cœur).",
-        "Servir les brochettes nappées de sauce satay, avec le pickle concombre-oignon et la coriandre. Le satay grillé, sauce cacahuète onctueuse."
+        "Coupe le poulet en lanières. Prépare la marinade : moitié du lait de coco, la moitié de la sauce soja, le curcuma, le cumin, le gingembre râpé et 1 gousse d'ail écrasée.",
+        "Marine le poulet 30 minutes au frais.",
+        "Prépare la sauce satay : mélange la purée de cacahuète, le reste du lait de coco, le reste de sauce soja, l'ail restant, le sirop d'érable, le jus d'un demi-citron vert et 2 cuillères à soupe d'eau chaude (sauce nappante).",
+        "Prépare un pickle express : émince le concombre et l'oignon rouge finement, mélange-les avec le jus du demi-citron vert restant.",
+        "Enfile le poulet mariné sur les brochettes (trempe les pics en bois 10 min dans l'eau).",
+        "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les brochettes 12-15 minutes en les retournant (dorées, cuites à cœur).",
+        "Sers les brochettes nappées de sauce satay, avec le pickle concombre-oignon et la coriandre. Le satay grillé, sauce cacahuète onctueuse."
       ],
       "photo": "assets/recipes/d234.webp"
     },
@@ -98651,14 +98637,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C en chaleur tournante.",
-        "Préparer la sauce pizzaiola : faire revenir l'ail émincé dans 6 ml d'huile 1 minute, ajouter la tomate en dés, l'origan, le sel et le poivre, mijoter 12 minutes (sauce épaissie).",
-        "Couper la courgette en rondelles, les poêler dans 3 ml d'huile 6 minutes (dorées). Réserver.",
-        "Saisir les escalopes de poulet dans 3 ml d'huile à feu vif 3 minutes par face (dorées).",
-        "Déposer les escalopes dans un plat à gratin, napper de sauce pizzaiola, répartir les olives.",
-        "Disposer les tranches de mozzarella sur le poulet.",
-        "Enfourner 10-12 minutes (la mozzarella fond et gratine, le poulet finit de cuire).",
-        "Parsemer de basilic frais, servir avec les courgettes poêlées. Le poulet à la pizzaiola, saveurs de pizza sans la pâte."
+        "Préchauffe le four à 200°C en chaleur tournante.",
+        "Prépare la sauce pizzaiola : fais revenir l'ail émincé dans 6 ml d'huile 1 minute, ajoute la tomate en dés, l'origan, le sel et le poivre, mijote 12 minutes (sauce épaissie).",
+        "Coupe la courgette en rondelles, poêle-les dans 3 ml d'huile 6 minutes (dorées). Réserve.",
+        "Saisis les escalopes de poulet dans 3 ml d'huile à feu vif 3 minutes par face (dorées).",
+        "Dépose les escalopes dans un plat à gratin, nappe de sauce pizzaiola, répartis les olives.",
+        "Dispose les tranches de mozzarella sur le poulet.",
+        "Enfourne 10-12 minutes (la mozzarella fond et gratine, le poulet finit de cuire).",
+        "Parsème de basilic frais, sers avec les courgettes poêlées. Le poulet à la pizzaiola, saveurs de pizza sans la pâte."
       ],
       "photo": "assets/recipes/d235.webp"
     },
@@ -98715,13 +98701,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher les mangues, retirer les noyaux, couper la chair en cubes.",
-        "Étaler les cubes en une seule couche sur une plaque chemisée de papier cuisson.",
-        "Placer au congélateur au moins 4h (les cubes doivent être totalement durs).",
-        "Au moment de servir, mettre les cubes congelés dans le blender avec la cardamome, le jus du citron vert et le sirop d'érable.",
-        "Mixer en pulsant par à-coups (5 sec × 5 fois), racler les parois entre chaque : texture sorbet onctueuse jaune vif.",
-        "Verser dans 2 coupes glacées, décorer d'un zeste de citron vert.",
-        "Servir immédiatement (si trop dur, laisser tempérer 5 minutes avant de mixer) — le sorbet de mangue parfumé à la cardamome, intensément fruité."
+        "Épluche les mangues, retire les noyaux, coupe la chair en cubes.",
+        "Étale les cubes en une seule couche sur une plaque chemisée de papier cuisson.",
+        "Place au congélateur au moins 4h (les cubes doivent être totalement durs).",
+        "Au moment de servir, mets les cubes congelés dans le blender avec la cardamome, le jus du citron vert et le sirop d'érable.",
+        "Mixe en pulsant par à-coups (5 sec × 5 fois), racle les parois entre chaque : texture sorbet onctueuse jaune vif.",
+        "Verse dans 2 coupes glacées, décore d'un zeste de citron vert.",
+        "Sers immédiatement (si trop dur, laisse tempérer 5 minutes avant de mixer) — le sorbet de mangue parfumé à la cardamome, intensément fruité."
       ],
       "photo": "assets/recipes/des175.webp"
     },
@@ -130487,13 +130473,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille, dans un petit bol, mélanger le gros sel et le sucre roux.",
-        "Déposer le pavé de saumon dans un plat creux, le recouvrir entièrement du mélange sel-sucre puis parsemer d'aneth fraîche ciselée. Filmer et réfrigérer 12h : le sel va raidir légèrement la chair et en concentrer le goût.",
-        "Le jour J, rincer rapidement le saumon sous l'eau froide pour retirer l'excédent de sel, puis sécher avec du papier absorbant. Trancher très finement en biais avec un couteau bien aiguisé, comme pour un carpaccio.",
-        "Préparer la pâte à blinis : dans un bol, fouetter la farine de sarrasin, l'œuf et le lait demi-écrémé jusqu'à obtenir une pâte lisse et sans grumeaux. Incorporer la levure de boulanger et laisser reposer 15 minutes à température ambiante : la pâte doit légèrement gonfler et faire de petites bulles en surface.",
-        "Faire fondre une noisette de beurre doux dans une poêle chaude. Verser des petites louches de pâte pour former des blinis de 5 cm de diamètre. Cuire 1 à 2 minutes jusqu'à ce que des bulles apparaissent en surface, puis retourner et cuire encore 1 minute : le blini est prêt quand il est doré des deux côtés et se détache facilement.",
-        "Mélanger la crème fraîche épaisse avec le jus de citron et le poivre du moulin.",
-        "Dresser une tranche de saumon gravlax sur chaque blini tiède, napper d'une petite cuillère de crème citronnée et décorer d'un brin d'aneth."
+        "La veille, dans un petit bol, mélange le gros sel et le sucre roux.",
+        "Dépose le pavé de saumon dans un plat creux, recouvre-le entièrement du mélange sel-sucre puis parseme d'aneth fraîche ciselée. Filme et réfrigère 12h : le sel va raidir légèrement la chair et en concentrer le goût.",
+        "Le jour J, rince rapidement le saumon sous l'eau froide pour retirer l'excédent de sel, puis sèche avec du papier absorbant. Tranche très finement en biais avec un couteau bien aiguisé, comme pour un carpaccio.",
+        "Prépare la pâte à blinis : dans un bol, fouette la farine de sarrasin, l'œuf et le lait demi-écrémé jusqu'à obtenir une pâte lisse et sans grumeaux. Incorpore la levure de boulanger et laisse reposer 15 minutes à température ambiante : la pâte doit légèrement gonfler et faire de petites bulles en surface.",
+        "Fais fondre une noisette de beurre doux dans une poêle chaude. Verse des petites louches de pâte pour former des blinis de 5 cm de diamètre. Fais cuire 1 à 2 minutes jusqu'à ce que des bulles apparaissent en surface, puis retourne et fais cuire encore 1 minute : le blini est prêt quand il est doré des deux côtés et se détache facilement.",
+        "Mélange la crème fraîche épaisse avec le jus de citron et le poivre du moulin.",
+        "Dresse une tranche de saumon gravlax sur chaque blini tiède, nappe d'une petite cuillère de crème citronnée et décore d'un brin d'aneth."
       ],
       "photo": "assets/recipes/l383.webp"
     },
@@ -130586,13 +130572,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire réhydrater les cèpes séchés 20 minutes dans un bol d'eau tiède, puis les égoutter et les hacher grossièrement : ils doivent redevenir souples.",
-        "Émincer finement l'oignon et l'échalote.",
-        "Faire fondre le beurre doux dans une casserole, puis faire suer l'oignon et l'échalote à feu doux 5 minutes jusqu'à ce qu'ils deviennent translucides, sans coloration.",
-        "Ajouter les cèpes réhydratés et les châtaignes cuites, puis mouiller avec le bouillon de légumes. Porter à ébullition puis laisser mijoter 15 minutes à couvert.",
-        "Mixer finement au blender jusqu'à obtenir un velouté lisse et homogène. Assaisonner de sel, de poivre et d'une pincée de muscade.",
-        "Pendant ce temps, fouetter la crème liquide entière bien froide avec un batteur jusqu'à ce qu'elle forme une chantilly ferme, puis la saler très légèrement.",
-        "Verser le velouté chaud dans des verres ou petites tasses, déposer une quenelle de chantilly salée sur le dessus et servir immédiatement."
+        "Fais réhydrater les cèpes séchés 20 minutes dans un bol d'eau tiède, puis égoutte-les et hache-les grossièrement : ils doivent redevenir souples.",
+        "Émince finement l'oignon et l'échalote.",
+        "Fais fondre le beurre doux dans une casserole, puis fais suer l'oignon et l'échalote à feu doux 5 minutes jusqu'à ce qu'ils deviennent translucides, sans coloration.",
+        "Ajoute les cèpes réhydratés et les châtaignes cuites, puis mouille avec le bouillon de légumes. Porte à ébullition puis laisse mijoter 15 minutes à couvert.",
+        "Mixe finement au blender jusqu'à obtenir un velouté lisse et homogène. Assaisonne de sel, de poivre et d'une pincée de muscade.",
+        "Pendant ce temps, fouette la crème liquide entière bien froide avec un batteur jusqu'à ce qu'elle forme une chantilly ferme, puis sale-la très légèrement.",
+        "Verse le velouté chaud dans des verres ou petites tasses, dépose une quenelle de chantilly salée sur le dessus et sers immédiatement."
       ],
       "photo": "assets/recipes/l384.webp"
     },
@@ -130689,12 +130675,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Si besoin, décortiquer les crevettes cuites et vérifier que les bulots sont bien décoquillés.",
-        "Dans un bol, fouetter le jaune d'œuf avec la moutarde de Dijon jusqu'à ce que le mélange blanchisse légèrement.",
-        "Verser l'huile d'olive en tout petit filet tout en fouettant énergiquement sans arrêter, jusqu'à ce que la mayonnaise épaississe comme une crème lisse et brillante.",
-        "Incorporer le skyr et le jus de citron pour alléger la mayonnaise, puis saler et poivrer.",
-        "Disposer la salade (roquette, mâche) au fond d'une assiette ou d'un plateau, puis répartir harmonieusement les crevettes et les bulots.",
-        "Servir la mayonnaise allégée au citron à part, dans un petit ramequin, pour que chacun se serve selon son goût."
+        "Si besoin, décortique les crevettes cuites et vérifie que les bulots sont bien décoquillés.",
+        "Dans un bol, fouette le jaune d'œuf avec la moutarde de Dijon jusqu'à ce que le mélange blanchisse légèrement.",
+        "Verse l'huile d'olive en tout petit filet tout en fouettant énergiquement sans arrêter, jusqu'à ce que la mayonnaise épaississe comme une crème lisse et brillante.",
+        "Incorpore le skyr et le jus de citron pour alléger la mayonnaise, puis sale et poivre.",
+        "Dispose la salade (roquette, mâche) au fond d'une assiette ou d'un plateau, puis répartis harmonieusement les crevettes et les bulots.",
+        "Sers la mayonnaise allégée au citron à part, dans un petit ramequin, pour que chacun se serve selon son goût."
       ],
       "photo": "assets/recipes/l385.webp"
     },
@@ -130792,14 +130778,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 200°C (chaleur tournante).",
-        "Éplucher et couper la carotte et le navet en gros morceaux réguliers ; peler les oignons grelots entiers.",
-        "Dans un plat allant au four, déposer le morceau de poularde, saler, poivrer et parsemer de thym frais. Enfourner 20 minutes pour commencer la cuisson et dorer la peau.",
-        "Ajouter autour de la poularde les carottes, le navet, les oignons grelots et les châtaignes cuites. Arroser avec le bouillon de volaille.",
-        "Faire fondre le beurre doux avec le miel dans une petite casserole à feu doux, puis badigeonner les légumes et la poularde avec ce mélange : c'est ce qui donne l'aspect brillant et « glacé » aux légumes.",
-        "Poursuivre la cuisson au four 50 à 55 minutes en arrosant régulièrement avec le jus de cuisson, jusqu'à ce que la peau de la poularde soit bien dorée et croustillante et que la viande se détache facilement de l'os.",
-        "Vérifier la cuisson : la viande ne doit plus être rosée près de l'os et le jus qui s'en écoule doit être clair.",
-        "Laisser reposer 5 minutes hors du four avant de dresser la poularde entourée des légumes glacés et des châtaignes."
+        "Préchauffe le four à 200°C (chaleur tournante).",
+        "Épluche et coupe la carotte et le navet en gros morceaux réguliers ; pèle les oignons grelots entiers.",
+        "Dans un plat allant au four, dépose le morceau de poularde, sale, poivre et parseme de thym frais. Enfourne 20 minutes pour commencer la cuisson et dore la peau.",
+        "Ajoute autour de la poularde les carottes, le navet, les oignons grelots et les châtaignes cuites. Arrose avec le bouillon de volaille.",
+        "Fais fondre le beurre doux avec le miel dans une petite casserole à feu doux, puis badigeonne les légumes et la poularde avec ce mélange : c'est ce qui donne l'aspect brillant et « glacé » aux légumes.",
+        "Poursuis la cuisson au four 50 à 55 minutes en arrosant régulièrement avec le jus de cuisson, jusqu'à ce que la peau de la poularde soit bien dorée et croustillante et que la viande se détache facilement de l'os.",
+        "Vérifie la cuisson : la viande ne doit plus être rosée près de l'os et le jus qui s'en écoule doit être clair.",
+        "Laisse reposer 5 minutes hors du four avant de dresser la poularde entourée des légumes glacés et des châtaignes."
       ],
       "photo": "assets/recipes/d368.webp"
     },
@@ -130883,13 +130869,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Sortir le magret de canard du réfrigérateur 15 minutes avant la cuisson pour qu'il revienne à température ambiante.",
-        "Inciser légèrement la peau du magret en croisillons, sans entailler la chair : cela aide le gras à fondre et la peau à devenir croustillante.",
-        "Déposer le magret côté peau dans une poêle froide, puis allumer le feu à feu moyen. Laisser cuire 8 à 10 minutes côté peau en retirant l'excédent de gras au fur et à mesure, jusqu'à ce que la peau soit bien dorée et croustillante.",
-        "Retourner le magret et poursuivre la cuisson 4 à 5 minutes côté chair pour une cuisson rosée : la chair doit rester souple sous le doigt, pas dure. Réserver sous papier aluminium.",
-        "Dans la même poêle, faire revenir l'échalote émincée 2 minutes, puis ajouter les figues séchées coupées en quartiers, le vin rouge, le miel, le vinaigre de Xérès et la cannelle.",
-        "Laisser mijoter 5 minutes à feu doux en remuant, jusqu'à obtenir une sauce légèrement sirupeuse qui nappe les figues.",
-        "Trancher le magret en biais et dresser avec la sauce aux figues et épices nappée dessus."
+        "Sors le magret de canard du réfrigérateur 15 minutes avant la cuisson pour qu'il revienne à température ambiante.",
+        "Incise légèrement la peau du magret en croisillons, sans entailler la chair : cela aide le gras à fondre et la peau à devenir croustillante.",
+        "Dépose le magret côté peau dans une poêle froide, puis allume le feu à feu moyen. Laisse cuire 8 à 10 minutes côté peau en retirant l'excédent de gras au fur et à mesure, jusqu'à ce que la peau soit bien dorée et croustillante.",
+        "Retourne le magret et poursuis la cuisson 4 à 5 minutes côté chair pour une cuisson rosée : la chair doit rester souple sous le doigt, pas dure. Réserve sous papier aluminium.",
+        "Dans la même poêle, fais revenir l'échalote émincée 2 minutes, puis ajoute les figues séchées coupées en quartiers, le vin rouge, le miel, le vinaigre de Xérès et la cannelle.",
+        "Laisse mijoter 5 minutes à feu doux en remuant, jusqu'à obtenir une sauce légèrement sirupeuse qui nappe les figues.",
+        "Tranche le magret en biais et dresse avec la sauce aux figues et épices nappée dessus."
       ],
       "photo": "assets/recipes/d369.webp"
     },
@@ -130970,13 +130956,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer rapidement les noix de Saint-Jacques sous l'eau froide et les sécher soigneusement avec du papier absorbant : une noix humide n'accroche pas bien à la poêle.",
-        "Laver le poireau, retirer les feuilles abîmées, puis l'émincer finement en rondelles. Émincer également l'échalote.",
-        "Faire fondre une noisette de beurre doux dans une poêle à feu doux, puis faire fondre le poireau et l'échalote 10 minutes en remuant régulièrement, jusqu'à ce qu'ils deviennent tendres et translucides, sans coloration.",
-        "Ajouter la crème fraîche épaisse et les filaments de safran dans le poireau, mélanger et laisser mijoter 3 minutes à feu très doux. Saler et poivrer. Réserver au chaud.",
-        "Dans une poêle bien chaude, faire fondre le beurre doux restant jusqu'à ce qu'il commence à mousser.",
-        "Snacker les noix de Saint-Jacques 1 minute 30 de chaque côté à feu vif, sans les bouger : elles doivent former une croûte dorée dessus-dessous tout en restant nacrées et fondantes au centre.",
-        "Dresser la fondue de poireaux au safran dans l'assiette, disposer les noix de Saint-Jacques dessus et servir immédiatement."
+        "Rince rapidement les noix de Saint-Jacques sous l'eau froide et sèche-les soigneusement avec du papier absorbant : une noix humide n'accroche pas bien à la poêle.",
+        "Lave le poireau, retire les feuilles abîmées, puis émince-le finement en rondelles. Émince également l'échalote.",
+        "Fais fondre une noisette de beurre doux dans une poêle à feu doux, puis fais fondre le poireau et l'échalote 10 minutes en remuant régulièrement, jusqu'à ce qu'ils deviennent tendres et translucides, sans coloration.",
+        "Ajoute la crème fraîche épaisse et les filaments de safran dans le poireau, mélange et laisse mijoter 3 minutes à feu très doux. Sale et poivre. Réserve au chaud.",
+        "Dans une poêle bien chaude, fais fondre le beurre doux restant jusqu'à ce qu'il commence à mousser.",
+        "Snacke les noix de Saint-Jacques 1 minute 30 de chaque côté à feu vif, sans les bouger : elles doivent former une croûte dorée dessus-dessous tout en restant nacrées et fondantes au centre.",
+        "Dresse la fondue de poireaux au safran dans l'assiette, dispose les noix de Saint-Jacques dessus et sers immédiatement."
       ],
       "photo": "assets/recipes/d370.webp"
     },
@@ -131064,13 +131050,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer tous les légumes : couper le poivron rouge en lanières, la carotte en bâtonnets fins, émincer l'oignon nouveau et râper le gingembre frais.",
-        "Verser les graines de sésame dans une assiette plate. Rouler le pavé de thon dedans en appuyant légèrement pour bien faire adhérer les graines sur toutes les faces, dessus, dessous et sur les côtés.",
-        "Faire chauffer une partie de l'huile de sésame dans une poêle ou un wok à feu vif.",
-        "Saisir le pavé de thon en croûte de sésame 1 minute 30 de chaque face : les graines doivent être dorées et croustillantes, et le centre doit rester rosé (« mi-cuit »). Réserver.",
-        "Dans la même poêle, ajouter l'huile de sésame restante et faire sauter le poivron, la carotte et les pois mange-tout à feu vif 4 à 5 minutes en remuant constamment, jusqu'à ce qu'ils restent croquants.",
-        "Ajouter l'oignon nouveau, le gingembre râpé et la sauce soja, puis sauter encore 1 minute.",
-        "Trancher le pavé de thon en tranches épaisses et dresser sur le wok de légumes bien chaud."
+        "Prépare tous les légumes : coupe le poivron rouge en lanières, la carotte en bâtonnets fins, émince l'oignon nouveau et râpe le gingembre frais.",
+        "Verse les graines de sésame dans une assiette plate. Roule le pavé de thon dedans en appuyant légèrement pour bien faire adhérer les graines sur toutes les faces, dessus, dessous et sur les côtés.",
+        "Fais chauffer une partie de l'huile de sésame dans une poêle ou un wok à feu vif.",
+        "Saisis le pavé de thon en croûte de sésame 1 minute 30 de chaque face : les graines doivent être dorées et croustillantes, et le centre doit rester rosé (« mi-cuit »). Réserve.",
+        "Dans la même poêle, ajoute l'huile de sésame restante et fais sauter le poivron, la carotte et les pois mange-tout à feu vif 4 à 5 minutes en remuant constamment, jusqu'à ce qu'ils restent croquants.",
+        "Ajoute l'oignon nouveau, le gingembre râpé et la sauce soja, puis saute encore 1 minute.",
+        "Tranche le pavé de thon en tranches épaisses et dresse sur le wok de légumes bien chaud."
       ],
       "photo": "assets/recipes/d371.webp"
     },
@@ -131144,13 +131130,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Choisir des noix de Saint-Jacques très fraîches, de qualité « sashimi » (adaptées à une consommation crue), achetées le jour même chez un poissonnier de confiance.",
-        "Rincer les noix de Saint-Jacques sous l'eau froide et les sécher soigneusement avec du papier absorbant.",
-        "Avec un couteau bien aiguisé, détailler les noix de Saint-Jacques en petits dés réguliers de 5 mm, comme pour un tartare.",
-        "Prélever les suprêmes (quartiers sans peau ni membrane) de l'orange et du pamplemousse rose, puis les couper en petits dés de la même taille que les Saint-Jacques.",
-        "Dans un bol, mélanger délicatement les dés de Saint-Jacques et d'agrumes avec l'huile d'olive, la ciboulette ciselée, la fleur de sel et le poivre du moulin.",
-        "Laisser mariner 10 minutes au réfrigérateur pour que les saveurs se mélangent : le tartare doit rester frais et ferme, pas « cuit » par l'acidité.",
-        "Répartir dans de petites verrines et servir immédiatement bien frais."
+        "Choisis des noix de Saint-Jacques très fraîches, de qualité « sashimi » (adaptées à une consommation crue), achetées le jour même chez un poissonnier de confiance.",
+        "Rince les noix de Saint-Jacques sous l'eau froide et sèche-les soigneusement avec du papier absorbant.",
+        "Avec un couteau bien aiguisé, détaille les noix de Saint-Jacques en petits dés réguliers de 5 mm, comme pour un tartare.",
+        "Prélève les suprêmes (quartiers sans peau ni membrane) de l'orange et du pamplemousse rose, puis coupe-les en petits dés de la même taille que les Saint-Jacques.",
+        "Dans un bol, mélange délicatement les dés de Saint-Jacques et d'agrumes avec l'huile d'olive, la ciboulette ciselée, la fleur de sel et le poivre du moulin.",
+        "Laisse mariner 10 minutes au réfrigérateur pour que les saveurs se mélangent : le tartare doit rester frais et ferme, pas « cuit » par l'acidité.",
+        "Répartis dans de petites verrines et sers immédiatement bien frais."
       ],
       "photo": "assets/recipes/s178.webp"
     },
@@ -131232,13 +131218,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans une casserole d'eau froide, déposer les œufs et porter à ébullition. Laisser cuire 9 à 10 minutes à partir de l'ébullition pour obtenir des œufs durs, au jaune complètement cuit, sans partie coulante.",
-        "Plonger immédiatement les œufs dans un bol d'eau froide pour stopper la cuisson, puis les écaler une fois refroidis.",
-        "Couper chaque œuf en deux dans la longueur. Retirer délicatement les jaunes avec une petite cuillère et les déposer dans un bol, en gardant les blancs intacts.",
-        "Écraser les jaunes à la fourchette jusqu'à obtenir une texture sableuse, comme du sable fin, puis ajouter le thon émietté, la moutarde de Dijon et l'huile d'olive. Mélanger jusqu'à obtenir une farce homogène.",
-        "Ajouter la ciboulette et le persil ciselés, saler et poivrer, puis bien mélanger à nouveau.",
-        "Garnir chaque blanc d'œuf de cette farce avec une petite cuillère, en formant un petit dôme (ou à la poche à douille pour un rendu plus régulier et festif).",
-        "Parsemer d'un peu de ciboulette ciselée sur le dessus et servir frais sur un plateau de bouchées apéritives."
+        "Dans une casserole d'eau froide, dépose les œufs et porte à ébullition. Laisse cuire 9 à 10 minutes à partir de l'ébullition pour obtenir des œufs durs, au jaune complètement cuit, sans partie coulante.",
+        "Plonge immédiatement les œufs dans un bol d'eau froide pour stopper la cuisson, puis écale-les une fois refroidis.",
+        "Coupe chaque œuf en deux dans la longueur. Retire délicatement les jaunes avec une petite cuillère et dépose-les dans un bol, en gardant les blancs intacts.",
+        "Écrase les jaunes à la fourchette jusqu'à obtenir une texture sableuse, comme du sable fin, puis ajoute le thon émietté, la moutarde de Dijon et l'huile d'olive. Mélange jusqu'à obtenir une farce homogène.",
+        "Ajoute la ciboulette et le persil ciselés, sale et poivre, puis mélange bien à nouveau.",
+        "Garnis chaque blanc d'œuf de cette farce avec une petite cuillère, en formant un petit dôme (ou à la poche à douille pour un rendu plus régulier et festif).",
+        "Parseme d'un peu de ciboulette ciselée sur le dessus et sers frais sur un plateau de bouchées apéritives."
       ],
       "photo": "assets/recipes/s179.webp"
     },
@@ -131301,14 +131287,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Casser le chocolat noir 70% en petits morceaux et le faire fondre au bain-marie (bol posé sur une casserole d'eau frémissante, sans que le bol touche l'eau) en remuant régulièrement jusqu'à obtenir une texture lisse et brillante.",
-        "Ajouter le beurre doux dans le chocolat fondu et mélanger jusqu'à ce qu'il soit complètement incorporé. Laisser tiédir 5 minutes hors du feu.",
-        "Séparer le blanc du jaune d'œuf dans deux bols différents.",
-        "Incorporer le jaune d'œuf dans le chocolat tiède en fouettant rapidement : le mélange doit rester lisse, sans grumeaux de chocolat qui recuit.",
-        "Dans l'autre bol, fouetter le blanc d'œuf avec une pincée de sel jusqu'à ce qu'il forme une neige ferme qui tient toute seule quand on retourne le bol.",
-        "Ajouter le sucre roux au blanc en neige et fouetter encore quelques secondes pour le fixer.",
-        "Incorporer délicatement le blanc en neige au mélange chocolat, en soulevant la préparation à la spatule depuis le dessous, pour ne pas casser les bulles d'air qui donnent la texture mousseuse.",
-        "Répartir dans des petits pots ou verrines et réfrigérer au moins 3 heures avant de servir bien frais."
+        "Casse le chocolat noir 70% en petits morceaux et fais-le fondre au bain-marie (bol posé sur une casserole d'eau frémissante, sans que le bol touche l'eau) en remuant régulièrement jusqu'à obtenir une texture lisse et brillante.",
+        "Ajoute le beurre doux dans le chocolat fondu et mélange jusqu'à ce qu'il soit complètement incorporé. Laisse tiédir 5 minutes hors du feu.",
+        "Sépare le blanc du jaune d'œuf dans deux bols différents.",
+        "Incorpore le jaune d'œuf dans le chocolat tiède en fouettant rapidement : le mélange doit rester lisse, sans grumeaux de chocolat qui recuit.",
+        "Dans l'autre bol, fouette le blanc d'œuf avec une pincée de sel jusqu'à ce qu'il forme une neige ferme qui tient toute seule quand on retourne le bol.",
+        "Ajoute le sucre roux au blanc en neige et fouette encore quelques secondes pour le fixer.",
+        "Incorpore délicatement le blanc en neige au mélange chocolat, en soulevant la préparation à la spatule depuis le dessous, pour ne pas casser les bulles d'air qui donnent la texture mousseuse.",
+        "Répartis dans des petits pots ou verrines et réfrigère au moins 3 heures avant de servir bien frais."
       ],
       "photo": "assets/recipes/des226.webp"
     },
@@ -131381,13 +131367,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Peler les poires en conservant la queue pour la présentation, et retirer le cœur par le dessous avec un vide-pomme ou une petite cuillère, sans les couper en deux.",
-        "Dans une casserole assez grande pour contenir les poires, verser le vin rouge, le miel, le zeste et le jus d'orange, la cannelle, les clous de girofle et l'anis étoilé.",
-        "Porter à ébullition en remuant pour dissoudre le miel, puis baisser le feu.",
-        "Déposer les poires dans le vin épicé. Laisser pocher à feu doux et à couvert 20 à 25 minutes, en les retournant à mi-cuisson, jusqu'à ce qu'une pointe de couteau s'enfonce facilement dans la chair.",
-        "Retirer délicatement les poires et les réserver dans une assiette.",
-        "Faire réduire le vin de cuisson à feu vif 8 à 10 minutes sans couvercle, jusqu'à obtenir un sirop légèrement épais qui nappe une cuillère.",
-        "Napper chaque poire du sirop épicé tiède ou froid avant de servir, décorées d'un bâton de cannelle."
+        "Pèle les poires en conservant la queue pour la présentation, et retire le cœur par le dessous avec un vide-pomme ou une petite cuillère, sans les couper en deux.",
+        "Dans une casserole assez grande pour contenir les poires, verse le vin rouge, le miel, le zeste et le jus d'orange, la cannelle, les clous de girofle et l'anis étoilé.",
+        "Porte à ébullition en remuant pour dissoudre le miel, puis baisse le feu.",
+        "Dépose les poires dans le vin épicé. Laisse pocher à feu doux et à couvert 20 à 25 minutes, en les retournant à mi-cuisson, jusqu'à ce qu'une pointe de couteau s'enfonce facilement dans la chair.",
+        "Retire délicatement les poires et réserve-les dans une assiette.",
+        "Fais réduire le vin de cuisson à feu vif 8 à 10 minutes sans couvercle, jusqu'à obtenir un sirop légèrement épais qui nappe une cuillère.",
+        "Nappe chaque poire du sirop épicé tiède ou froid avant de servir, décorées d'un bâton de cannelle."
       ],
       "photo": "assets/recipes/des227.webp"
     },
@@ -131468,14 +131454,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 100°C (chaleur tournante) : une température basse est indispensable pour sécher la meringue sans la colorer.",
-        "Dans un bol bien propre et sec, fouetter le blanc d'œuf au batteur électrique jusqu'à ce qu'il forme une neige mousseuse.",
-        "Ajouter le sucre roux en 2-3 fois, en continuant de fouetter entre chaque ajout, jusqu'à obtenir une meringue brillante qui forme un bec rigide au bout du fouet.",
-        "Ajouter le vinaigre blanc et fouetter encore 30 secondes pour stabiliser la meringue.",
-        "Sur une plaque recouverte de papier cuisson, déposer la meringue en formant un petit disque creusé au centre, comme un nid, à l'aide d'une cuillère.",
-        "Enfourner 50 à 60 minutes, jusqu'à ce que l'extérieur soit sec et légèrement craquelé au toucher, l'intérieur devant rester un peu moelleux. Laisser refroidir complètement dans le four éteint, porte entrouverte.",
-        "Pendant ce temps, laver et couper les fraises en morceaux, et laisser les framboises et myrtilles entières.",
-        "Juste avant de servir, garnir le creux de la meringue froide de fromage blanc, puis déposer les fruits rouges dessus et décorer d'une feuille de menthe fraîche."
+        "Préchauffe le four à 100°C (chaleur tournante) : une température basse est indispensable pour sécher la meringue sans la colorer.",
+        "Dans un bol bien propre et sec, fouette le blanc d'œuf au batteur électrique jusqu'à ce qu'il forme une neige mousseuse.",
+        "Ajoute le sucre roux en 2-3 fois, en continuant de fouetter entre chaque ajout, jusqu'à obtenir une meringue brillante qui forme un bec rigide au bout du fouet.",
+        "Ajoute le vinaigre blanc et fouette encore 30 secondes pour stabiliser la meringue.",
+        "Sur une plaque recouverte de papier cuisson, dépose la meringue en formant un petit disque creusé au centre, comme un nid, à l'aide d'une cuillère.",
+        "Enfourne 50 à 60 minutes, jusqu'à ce que l'extérieur soit sec et légèrement craquelé au toucher, l'intérieur devant rester un peu moelleux. Laisse refroidir complètement dans le four éteint, porte entrouverte.",
+        "Pendant ce temps, lave et coupe les fraises en morceaux, et laisse les framboises et myrtilles entières.",
+        "Juste avant de servir, garnis le creux de la meringue froide de fromage blanc, puis dépose les fruits rouges dessus et décore d'une feuille de menthe fraîche."
       ],
       "photo": "assets/recipes/des228.webp"
     },
@@ -138139,14 +138125,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Porter une grande casserole d'eau salée à ébullition.",
-        "Laver les pommes de terre sans les éplucher, puis les couper en rondelles d'environ 1 cm d'épaisseur.",
-        "Plonger les rondelles dans l'eau bouillante et laisser cuire 12 à 15 minutes, jusqu'à ce qu'une pointe de couteau s'enfonce facilement dedans.",
-        "Égoutter les pommes de terre et les disposer sur une assiette ou une planche en bois.",
-        "Couper le poulpe cuit en tranches fines (environ 0,5 cm) avec un couteau bien aiguisé.",
-        "Répartir les tranches de poulpe sur les pommes de terre.",
-        "Arroser généreusement d'huile d'olive, puis saupoudrer de paprika fumé et de fleur de sel sur toute la surface.",
-        "Parsemer de persil plat ciselé (coupé très finement aux ciseaux) juste avant de servir."
+        "Porte une grande casserole d'eau salée à ébullition.",
+        "Lave les pommes de terre sans les éplucher, puis coupe-les en rondelles d'environ 1 cm d'épaisseur.",
+        "Plonge les rondelles dans l'eau bouillante et laisse cuire 12 à 15 minutes, jusqu'à ce qu'une pointe de couteau s'enfonce facilement dedans.",
+        "Égoutte les pommes de terre et dispose-les sur une assiette ou une planche en bois.",
+        "Coupe le poulpe cuit en tranches fines (environ 0,5 cm) avec un couteau bien aiguisé.",
+        "Répartis les tranches de poulpe sur les pommes de terre.",
+        "Arrose généreusement d'huile d'olive, puis saupoudre de paprika fumé et de fleur de sel sur toute la surface.",
+        "Parseme de persil plat ciselé (coupé très finement aux ciseaux) juste avant de servir."
       ],
       "photo": "assets/recipes/l414.webp"
     },
@@ -138226,14 +138212,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire cuire l'œuf 10 minutes dans l'eau bouillante pour l'avoir dur, puis le refroidir sous l'eau froide et l'écaler (retirer la coquille).",
-        "Couper les tomates en gros quartiers et retirer le pédoncule (la petite partie verte et dure).",
-        "Émietter le pain complet rassis (ou légèrement séché) en petits morceaux.",
-        "Mettre les tomates, le pain, l'ail épluché, l'huile d'olive et le vinaigre de xérès dans un blender.",
-        "Mixer 1 à 2 minutes jusqu'à obtenir une texture bien lisse et onctueuse, comme une crème.",
-        "Goûter et ajuster avec une pincée de fleur de sel, puis réserver au frais au moins 30 minutes : le salmorejo se sert bien froid.",
-        "Verser la soupe froide dans des bols. Couper l'œuf dur en petits dés et les répartir dessus.",
-        "Parsemer de dés de jambon de volaille et d'un dernier filet d'huile d'olive avant de servir."
+        "Fais cuire l'œuf 10 minutes dans l'eau bouillante pour l'avoir dur, puis refroidis-le sous l'eau froide et écale-le (retire la coquille).",
+        "Coupe les tomates en gros quartiers et retire le pédoncule (la petite partie verte et dure).",
+        "Émiette le pain complet rassis (ou légèrement séché) en petits morceaux.",
+        "Mets les tomates, le pain, l'ail épluché, l'huile d'olive et le vinaigre de xérès dans un blender.",
+        "Mixe 1 à 2 minutes jusqu'à obtenir une texture bien lisse et onctueuse, comme une crème.",
+        "Goûte et ajuste avec une pincée de fleur de sel, puis réserve au frais au moins 30 minutes : le salmorejo se sert bien froid.",
+        "Verse la soupe froide dans des bols. Coupe l'œuf dur en petits dés et répartis-les dessus.",
+        "Parseme de dés de jambon de volaille et d'un dernier filet d'huile d'olive avant de servir."
       ],
       "photo": "assets/recipes/l415.webp"
     },
@@ -138312,14 +138298,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le pain complet en tranches d'environ 1,5 cm d'épaisseur.",
-        "Faire griller les tranches de pain 2 minutes de chaque côté dans une poêle chaude sans matière grasse, jusqu'à ce qu'elles soient dorées et croustillantes.",
-        "Couper la gousse d'ail en deux et frotter chaque tranche de pain grillé avec la partie coupée, pour la parfumer sans laisser de gros morceaux.",
-        "Couper les tomates en petits dés d'environ 1 cm.",
-        "Dans un bol, mélanger les dés de tomate avec un filet d'huile d'olive, le jus de citron et une pincée de fleur de sel.",
-        "Égoutter les filets d'anchois marinés et les disposer sur les tranches de pain frotté à l'ail.",
-        "Répartir la préparation de tomates par-dessus les anchois.",
-        "Parsemer de persil plat ciselé et arroser d'un dernier filet d'huile d'olive avant de servir."
+        "Coupe le pain complet en tranches d'environ 1,5 cm d'épaisseur.",
+        "Fais griller les tranches de pain 2 minutes de chaque côté dans une poêle chaude sans matière grasse, jusqu'à ce qu'elles soient dorées et croustillantes.",
+        "Coupe la gousse d'ail en deux et frotte chaque tranche de pain grillé avec la partie coupée, pour la parfumer sans laisser de gros morceaux.",
+        "Coupe les tomates en petits dés d'environ 1 cm.",
+        "Dans un bol, mélange les dés de tomate avec un filet d'huile d'olive, le jus de citron et une pincée de fleur de sel.",
+        "Égoutte les filets d'anchois marinés et dispose-les sur les tranches de pain frotté à l'ail.",
+        "Répartis la préparation de tomates par-dessus les anchois.",
+        "Parseme de persil plat ciselé et arrose d'un dernier filet d'huile d'olive avant de servir."
       ],
       "photo": "assets/recipes/l416.webp"
     },
@@ -138414,14 +138400,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire chauffer un gril (ou une poêle très chaude) et y déposer les poivrons rouges et les tomates entiers.",
-        "Faire griller les légumes 15 à 18 minutes en les tournant régulièrement, jusqu'à ce que leur peau cloque et noircisse légèrement sur toutes les faces.",
-        "Pendant ce temps, faire cuire l'œuf 10 minutes dans l'eau bouillante pour l'avoir dur, puis le refroidir sous l'eau froide et l'écaler (retirer la coquille).",
-        "Laisser tiédir les légumes grillés, puis retirer la peau noircie avec les doigts et épépiner le poivron (retirer les graines à l'intérieur).",
-        "Couper la chair du poivron et de la tomate en lanières, et les mettre dans un bol avec l'ail écrasé (coupé en tout petits morceaux avec le plat d'un couteau).",
-        "Ajouter l'huile d'olive, le cumin moulu, la harissa, le jus de citron et une pincée de fleur de sel, puis bien mélanger.",
-        "Émietter le thon au naturel égoutté sur la salade et mélanger délicatement.",
-        "Couper l'œuf dur en quartiers, les disposer sur la salade et parsemer de persil plat ciselé avant de servir."
+        "Fais chauffer un gril (ou une poêle très chaude) et dépose-y les poivrons rouges et les tomates entiers.",
+        "Fais griller les légumes 15 à 18 minutes en les tournant régulièrement, jusqu'à ce que leur peau cloque et noircisse légèrement sur toutes les faces.",
+        "Pendant ce temps, fais cuire l'œuf 10 minutes dans l'eau bouillante pour l'avoir dur, puis refroidis-le sous l'eau froide et écale-le (retire la coquille).",
+        "Laisse tiédir les légumes grillés, puis retire la peau noircie avec les doigts et épépine le poivron (retire les graines à l'intérieur).",
+        "Coupe la chair du poivron et de la tomate en lanières, et mets-les dans un bol avec l'ail écrasé (coupé en tout petits morceaux avec le plat d'un couteau).",
+        "Ajoute l'huile d'olive, le cumin moulu, la harissa, le jus de citron et une pincée de fleur de sel, puis mélange bien.",
+        "Émiette le thon au naturel égoutté sur la salade et mélange délicatement.",
+        "Coupe l'œuf dur en quartiers, dispose-les sur la salade et parseme de persil plat ciselé avant de servir."
       ],
       "photo": "assets/recipes/l417.webp"
     },
@@ -138499,14 +138485,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Peler le concombre et le couper en gros morceaux.",
-        "Couper l'avocat en deux dans la longueur, retirer le noyau avec une cuillère, puis prélever la chair à la cuillère.",
-        "Mettre le concombre, l'avocat, le basilic frais, l'ail et le jus de citron vert dans un blender.",
-        "Mixer 1 à 2 minutes jusqu'à obtenir une texture bien lisse, comme une crème liquide. Ajouter un peu d'eau froide si c'est trop épais.",
-        "Ajouter un filet d'huile d'olive et une pincée de fleur de sel, mixer encore quelques secondes, puis réserver au frais.",
-        "Faire chauffer une poêle à feu vif, y déposer les crevettes décortiquées.",
-        "Faire griller les crevettes 2 à 3 minutes de chaque côté, jusqu'à ce qu'elles deviennent bien roses et légèrement dorées sur les bords.",
-        "Verser le gaspacho vert bien frais dans des bols, déposer les crevettes grillées par-dessus et servir immédiatement."
+        "Pèle le concombre et coupe-le en gros morceaux.",
+        "Coupe l'avocat en deux dans la longueur, retire le noyau avec une cuillère, puis prélève la chair à la cuillère.",
+        "Mets le concombre, l'avocat, le basilic frais, l'ail et le jus de citron vert dans un blender.",
+        "Mixe 1 à 2 minutes jusqu'à obtenir une texture bien lisse, comme une crème liquide. Ajoute un peu d'eau froide si c'est trop épais.",
+        "Ajoute un filet d'huile d'olive et une pincée de fleur de sel, mixe encore quelques secondes, puis réserve au frais.",
+        "Fais chauffer une poêle à feu vif, dépose-y les crevettes décortiquées.",
+        "Fais griller les crevettes 2 à 3 minutes de chaque côté, jusqu'à ce qu'elles deviennent bien roses et légèrement dorées sur les bords.",
+        "Verse le gaspacho vert bien frais dans des bols, dépose les crevettes grillées par-dessus et sers immédiatement."
       ],
       "photo": "assets/recipes/l418.webp"
     },
@@ -138576,14 +138562,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le blanc de poulet en cubes réguliers d'environ 3 cm de côté.",
-        "Dans un bol, mélanger le jus et le zeste de citron, l'huile d'olive, l'ail écrasé (coupé en tout petits morceaux avec le plat d'un couteau) et les feuilles de thym effeuillées (détachées de la branche avec les doigts).",
-        "Ajouter les cubes de poulet dans la marinade, bien les enrober, et laisser reposer 20 minutes au réfrigérateur.",
-        "Enfiler les cubes de poulet marinés sur des piques à brochette en bois, en les serrant légèrement.",
-        "Faire chauffer un gril à feu vif.",
-        "Faire griller les brochettes 8 à 10 minutes en les retournant régulièrement, jusqu'à ce que le poulet soit bien doré à l'extérieur et qu'il n'y ait plus de jus rosé à l'intérieur.",
-        "En même temps, faire griller les poivrons entiers 4 à 5 minutes, jusqu'à ce que leur peau cloque et noircisse légèrement par endroits.",
-        "Servir les brochettes chaudes avec les poivrons grillés et une pincée de fleur de sel."
+        "Coupe le blanc de poulet en cubes réguliers d'environ 3 cm de côté.",
+        "Dans un bol, mélange le jus et le zeste de citron, l'huile d'olive, l'ail écrasé (coupé en tout petits morceaux avec le plat d'un couteau) et les feuilles de thym effeuillées (détachées de la branche avec les doigts).",
+        "Ajoute les cubes de poulet dans la marinade, enrobe-les bien, et laisse reposer 20 minutes au réfrigérateur.",
+        "Enfile les cubes de poulet marinés sur des piques à brochette en bois, en les serrant légèrement.",
+        "Fais chauffer un gril à feu vif.",
+        "Fais griller les brochettes 8 à 10 minutes en les retournant régulièrement, jusqu'à ce que le poulet soit bien doré à l'extérieur et qu'il n'y ait plus de jus rosé à l'intérieur.",
+        "En même temps, fais griller les poivrons entiers 4 à 5 minutes, jusqu'à ce que leur peau cloque et noircisse légèrement par endroits.",
+        "Sers les brochettes chaudes avec les poivrons grillés et une pincée de fleur de sel."
       ],
       "photo": "assets/recipes/d401.webp"
     },
@@ -138661,14 +138647,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper l'aubergine et le poivron rouge en tranches épaisses d'environ 1 cm, et l'oignon rouge en rondelles.",
-        "Faire chauffer un gril (ou une poêle très chaude) et y déposer les tranches de légumes.",
-        "Faire griller les légumes 10 à 12 minutes, en les retournant à mi-cuisson, jusqu'à ce qu'ils soient bien tendres et légèrement marqués par le gril.",
-        "Pendant ce temps, écailler et vider les sardines si ce n'est pas déjà fait, puis les rincer sous l'eau froide et les sécher avec du papier absorbant.",
-        "Déposer les sardines sur le gril et les faire cuire 3 à 4 minutes de chaque côté, jusqu'à ce que la peau soit croustillante et que la chair se détache facilement à la fourchette.",
-        "Retirer les légumes grillés du gril, les couper en lanières et les mélanger dans un plat avec l'ail écrasé (coupé en tout petits morceaux), l'huile d'olive et le vinaigre de vin.",
-        "Laisser mariner les légumes 10 minutes à température ambiante pour que les saveurs se mélangent.",
-        "Servir les sardines grillées chaudes accompagnées de l'escalivada tiède, avec une pincée de fleur de sel."
+        "Coupe l'aubergine et le poivron rouge en tranches épaisses d'environ 1 cm, et l'oignon rouge en rondelles.",
+        "Fais chauffer un gril (ou une poêle très chaude) et dépose-y les tranches de légumes.",
+        "Fais griller les légumes 10 à 12 minutes, en les retournant à mi-cuisson, jusqu'à ce qu'ils soient bien tendres et légèrement marqués par le gril.",
+        "Pendant ce temps, écaille et vide les sardines si ce n'est pas déjà fait, puis rince-les sous l'eau froide et sèche-les avec du papier absorbant.",
+        "Dépose les sardines sur le gril et fais-les cuire 3 à 4 minutes de chaque côté, jusqu'à ce que la peau soit croustillante et que la chair se détache facilement à la fourchette.",
+        "Retire les légumes grillés du gril, coupe-les en lanières et mélange-les dans un plat avec l'ail écrasé (coupé en tout petits morceaux), l'huile d'olive et le vinaigre de vin.",
+        "Laisse mariner les légumes 10 minutes à température ambiante pour que les saveurs se mélangent.",
+        "Sers les sardines grillées chaudes accompagnées de l'escalivada tiède, avec une pincée de fleur de sel."
       ],
       "photo": "assets/recipes/d402.webp"
     },
@@ -138739,14 +138725,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer les anneaux de calmar sous l'eau froide et bien les sécher avec du papier absorbant (l'eau qui reste ferait éclabousser l'huile chaude).",
-        "Émincer l'ail finement (le couper en tout petits morceaux avec un couteau).",
-        "Couper les poivrons piquillos en lanières si ce n'est pas déjà fait.",
-        "Faire chauffer une poêle en fonte (ou une plancha) à feu vif avec l'huile d'olive, jusqu'à ce qu'elle fume légèrement.",
-        "Déposer les anneaux de calmar dans la poêle bien chaude et les faire cuire 1 à 2 minutes à peine, en remuant, jusqu'à ce qu'ils deviennent opaques (attention, trop cuire les rend caoutchouteux).",
-        "Ajouter l'ail émincé et les lanières de poivrons piquillos, poursuivre la cuisson 2 minutes en remuant.",
-        "Retirer du feu, ajouter le persil plat ciselé et le jus de citron, puis mélanger.",
-        "Servir immédiatement, bien chaud, avec une pincée de fleur de sel."
+        "Rince les anneaux de calmar sous l'eau froide et sèche-les bien avec du papier absorbant (l'eau qui reste ferait éclabousser l'huile chaude).",
+        "Émince l'ail finement (coupe-le en tout petits morceaux avec un couteau).",
+        "Coupe les poivrons piquillos en lanières si ce n'est pas déjà fait.",
+        "Fais chauffer une poêle en fonte (ou une plancha) à feu vif avec l'huile d'olive, jusqu'à ce qu'elle fume légèrement.",
+        "Dépose les anneaux de calmar dans la poêle bien chaude et fais-les cuire 1 à 2 minutes à peine, en remuant, jusqu'à ce qu'ils deviennent opaques (attention, trop cuire les rend caoutchouteux).",
+        "Ajoute l'ail émincé et les lanières de poivrons piquillos, poursuis la cuisson 2 minutes en remuant.",
+        "Retire du feu, ajoute le persil plat ciselé et le jus de citron, puis mélange.",
+        "Sers immédiatement, bien chaud, avec une pincée de fleur de sel."
       ],
       "photo": "assets/recipes/d403.webp"
     },
@@ -138835,14 +138821,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper l'épaule d'agneau en cubes réguliers d'environ 3 cm de côté.",
-        "Dans un bol, mélanger la harissa, l'huile d'olive, l'ail écrasé (coupé en tout petits morceaux), le cumin moulu et le jus de citron pour faire la marinade.",
-        "Ajouter les cubes d'agneau dans la marinade, bien les enrober avec les mains, et laisser reposer 20 minutes au réfrigérateur.",
-        "Couper les poivrons et l'oignon rouge en morceaux de taille proche de celle des cubes de viande.",
-        "Enfiler sur des piques à brochette en alternant un morceau d'agneau mariné, un morceau de poivron, un morceau d'oignon, et ainsi de suite.",
-        "Faire chauffer un gril à feu vif.",
-        "Faire griller les brochettes 8 à 10 minutes en les tournant régulièrement sur toutes les faces, jusqu'à ce que la viande soit bien dorée à l'extérieur et encore légèrement rosée à l'intérieur.",
-        "Servir chaud avec une pincée de fleur de sel et, si besoin, un filet de jus de citron supplémentaire."
+        "Coupe l'épaule d'agneau en cubes réguliers d'environ 3 cm de côté.",
+        "Dans un bol, mélange la harissa, l'huile d'olive, l'ail écrasé (coupé en tout petits morceaux), le cumin moulu et le jus de citron pour faire la marinade.",
+        "Ajoute les cubes d'agneau dans la marinade, enrobe-les bien avec les mains, et laisse reposer 20 minutes au réfrigérateur.",
+        "Coupe les poivrons et l'oignon rouge en morceaux de taille proche de celle des cubes de viande.",
+        "Enfile sur des piques à brochette en alternant un morceau d'agneau mariné, un morceau de poivron, un morceau d'oignon, et ainsi de suite.",
+        "Fais chauffer un gril à feu vif.",
+        "Fais griller les brochettes 8 à 10 minutes en les tournant régulièrement sur toutes les faces, jusqu'à ce que la viande soit bien dorée à l'extérieur et encore légèrement rosée à l'intérieur.",
+        "Sers chaud avec une pincée de fleur de sel et, si besoin, un filet de jus de citron supplémentaire."
       ],
       "photo": "assets/recipes/d404.webp"
     },
@@ -138931,14 +138917,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper la courgette, l'aubergine, le poivron rouge et la tomate en petits dés d'environ 1 cm.",
-        "Émincer l'oignon et l'ail (les couper en tout petits morceaux).",
-        "Faire chauffer une poêle avec un peu d'huile d'olive, ajouter l'oignon et l'ail, et faire revenir 2 minutes jusqu'à ce qu'ils deviennent translucides (presque transparents).",
-        "Ajouter l'aubergine et le poivron, faire cuire 5 minutes en remuant régulièrement.",
-        "Ajouter la courgette et la tomate, poursuivre la cuisson 6 à 8 minutes à feu moyen, jusqu'à ce que tous les légumes soient tendres mais encore un peu fermes.",
-        "Pendant ce temps, faire chauffer une autre poêle à feu vif avec un peu d'huile d'olive, puis saisir le steak de thon 1 à 2 minutes de chaque côté : l'extérieur doit être doré et l'intérieur rester rosé (thon mi-cuit).",
-        "Couper le thon en tranches épaisses.",
-        "Servir les tranches de thon sur un lit de ratatouille express, parsemer de basilic frais ciselé et d'une pincée de fleur de sel."
+        "Coupe la courgette, l'aubergine, le poivron rouge et la tomate en petits dés d'environ 1 cm.",
+        "Émince l'oignon et l'ail (coupe-les en tout petits morceaux).",
+        "Fais chauffer une poêle avec un peu d'huile d'olive, ajoute l'oignon et l'ail, et fais revenir 2 minutes jusqu'à ce qu'ils deviennent translucides (presque transparents).",
+        "Ajoute l'aubergine et le poivron, fais cuire 5 minutes en remuant régulièrement.",
+        "Ajoute la courgette et la tomate, poursuis la cuisson 6 à 8 minutes à feu moyen, jusqu'à ce que tous les légumes soient tendres mais encore un peu fermes.",
+        "Pendant ce temps, fais chauffer une autre poêle à feu vif avec un peu d'huile d'olive, puis saisis le steak de thon 1 à 2 minutes de chaque côté : l'extérieur doit être doré et l'intérieur rester rosé (thon mi-cuit).",
+        "Coupe le thon en tranches épaisses.",
+        "Sers les tranches de thon sur un lit de ratatouille express, parseme de basilic frais ciselé et d'une pincée de fleur de sel."
       ],
       "photo": "assets/recipes/d405.webp"
     },
@@ -138986,13 +138972,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le melon charentais en deux, retirer les graines à la cuillère, puis prélever la chair et la couper en gros cubes.",
-        "Mettre les cubes de melon dans un blender avec les feuilles de menthe fraîche et le jus de citron vert.",
-        "Mixer 1 à 2 minutes jusqu'à obtenir un jus bien lisse, sans morceaux.",
-        "Verser la préparation dans un plat large et peu profond (plus la couche est fine, plus le granité sera facile à racler).",
-        "Placer le plat au congélateur pendant 4 heures.",
-        "Toutes les 30 à 45 minutes, sortir le plat et racler la surface à la fourchette pour former de petits cristaux de glace, puis remettre au congélateur.",
-        "Une fois la texture bien granuleuse obtenue, répartir le granité dans des verres bien froids et servir immédiatement, décoré d'une feuille de menthe."
+        "Coupe le melon charentais en deux, retire les graines à la cuillère, puis prélève la chair et coupe-la en gros cubes.",
+        "Mets les cubes de melon dans un blender avec les feuilles de menthe fraîche et le jus de citron vert.",
+        "Mixe 1 à 2 minutes jusqu'à obtenir un jus bien lisse, sans morceaux.",
+        "Verse la préparation dans un plat large et peu profond (plus la couche est fine, plus le granité sera facile à racler).",
+        "Place le plat au congélateur pendant 4 heures.",
+        "Toutes les 30 à 45 minutes, sors le plat et racle la surface à la fourchette pour former de petits cristaux de glace, puis remets au congélateur.",
+        "Une fois la texture bien granuleuse obtenue, répartis le granité dans des verres bien froids et sers immédiatement, décoré d'une feuille de menthe."
       ],
       "photo": "assets/recipes/des242.webp"
     },
@@ -139046,14 +139032,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffer le four à 180°C (thermostat 6).",
-        "Couper les abricots en deux et retirer le noyau avec les doigts ou la pointe d'un couteau.",
-        "Disposer les moitiés d'abricot, face coupée vers le haut, dans un plat allant au four.",
-        "Arroser chaque moitié d'abricot d'un peu de miel et parsemer de feuilles de thym effeuillées (détachées de la branche).",
-        "Enfourner 12 à 15 minutes, jusqu'à ce que les abricots soient tendres et légèrement caramélisés sur les bords.",
-        "Sortir le plat du four et laisser tiédir 5 minutes.",
-        "Répartir une cuillère de ricotta sur chaque moitié d'abricot encore tiède.",
-        "Servir aussitôt, pendant que les abricots sont encore chauds et la ricotta fraîche."
+        "Préchauffe le four à 180°C (thermostat 6).",
+        "Coupe les abricots en deux et retire le noyau avec les doigts ou la pointe d'un couteau.",
+        "Dispose les moitiés d'abricot, face coupée vers le haut, dans un plat allant au four.",
+        "Arrose chaque moitié d'abricot d'un peu de miel et parseme de feuilles de thym effeuillées (détachées de la branche).",
+        "Enfourne 12 à 15 minutes, jusqu'à ce que les abricots soient tendres et légèrement caramélisés sur les bords.",
+        "Sors le plat du four et laisse tiédir 5 minutes.",
+        "Répartis une cuillère de ricotta sur chaque moitié d'abricot encore tiède.",
+        "Sers aussitôt, pendant que les abricots sont encore chauds et la ricotta fraîche."
       ],
       "photo": "assets/recipes/des243.webp"
     },
@@ -147868,6 +147854,1410 @@ window.__DATA_RECIPES = {
         "Sers la poire tiède dans un bol creux, avec un peu de son bouillon parfumé et les baies de goji. En Chine, on boit le bouillon : il réchauffe en hiver."
       ],
       "photo": "assets/recipes/des258.webp"
+    },
+    {
+      "id": "l450",
+      "name": "Pescado al mojo de ajo (merlu à l'ail doré et au citron vert), riz complet, haricots noirs et chou rouge mariné",
+      "type": "lunch",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "diff": 2,
+      "cost": 3.4,
+      "kcal": 505,
+      "tags": [],
+      "eq": [
+        "stove",
+        "pan",
+        "bowl"
+      ],
+      "allergens": [
+        "fish"
+      ],
+      "ing": [
+        [
+          "Filet de merlu",
+          150,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Riz basmati complet",
+          45,
+          "g",
+          "pantry"
+        ],
+        [
+          "Haricots noirs cuits",
+          80,
+          "g",
+          "pantry"
+        ],
+        [
+          "Chou rouge",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          20,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          3,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Piment guajillo séché",
+          1,
+          "u",
+          "spices"
+        ],
+        [
+          "Citron vert",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Cumin moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Lance le riz : rince-le sous l'eau froide jusqu'à ce que l'eau soit presque claire, puis plonge-le dans une grande casserole d'eau bouillante salée et laisse-le cuire 25 minutes à petits bouillons. Goûte un grain : il doit être tendre. Égoutte-le.",
+        "Prépare le chou mariné : coupe le chou rouge en lanières très fines (comme des cheveux épais) et l'oignon rouge en fines demi-rondelles. Mets-les dans un bol avec le jus d'une partie du citron vert et une pincée de sel, mélange avec les mains en pressant : le chou ramollit et devient rose vif en 15 minutes.",
+        "Épluche l'ail et coupe-le en lamelles fines. Retire la queue et les graines du piment guajillo avec des ciseaux et coupe-le en petits anneaux.",
+        "Dans une poêle froide, mets l'huile et l'ail, puis allume à feu doux. Laisse l'ail chauffer doucement 4 à 5 minutes en remuant : il doit devenir doré clair, pas brun (brûlé, il devient amer). Ajoute le piment 30 secondes, puis verse ce « mojo » dans un bol en gardant un peu d'huile dans la poêle.",
+        "Sèche le poisson avec du papier absorbant, sale, poivre et saupoudre-le de cumin. Fais-le cuire dans la poêle à feu moyen 3 minutes par face : il est cuit quand sa chair devient blanche et opaque et se détache en lamelles à la fourchette.",
+        "Pendant ce temps, réchauffe les haricots noirs égouttés et rincés dans une petite casserole avec un fond d'eau et une pincée de sel, 5 minutes en remuant.",
+        "Hors du feu, verse le mojo d'ail et le jus du reste du citron vert sur le poisson dans la poêle et arrose-le avec une cuillère.",
+        "Sers le poisson nappé de son ail doré à côté du riz, des haricots et du chou mariné, avec la coriandre hachée par-dessus."
+      ],
+      "photo": "assets/recipes/l450.webp"
+    },
+    {
+      "id": "d438",
+      "name": "Sopa de habas (soupe mexicaine de fèves sèches à la tomate, au cumin et à la menthe), graines de courge grillées",
+      "type": "dinner",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 50,
+      "rest": 480,
+      "advance": "Fèves à faire tremper la veille (8 h dans l'eau froide)",
+      "diff": 1,
+      "cost": 1.8,
+      "kcal": 535,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove",
+        "blender",
+        "pan"
+      ],
+      "allergens": [
+        "celery"
+      ],
+      "ing": [
+        [
+          "Fèves sèches décortiquées",
+          60,
+          "g",
+          "pantry"
+        ],
+        [
+          "Tomates concassées en boîte",
+          150,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon blanc",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Carotte",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Céleri branche",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Bouillon de légumes",
+          400,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Cumin moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Graines de courge",
+          10,
+          "g",
+          "pantry"
+        ],
+        [
+          "Menthe fraîche",
+          3,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron vert",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "La veille, mets les fèves dans un grand bol, couvre-les largement d'eau froide et laisse-les tremper toute la nuit : elles doublent de volume. Le lendemain, égoutte-les et rince-les.",
+        "Coupe l'oignon, la carotte et le céleri en petits dés (de la taille d'un petit pois). Épluche l'ail.",
+        "Mixe les tomates concassées avec l'ail jusqu'à obtenir une sauce lisse.",
+        "Dans une marmite, fais chauffer l'huile à feu moyen et fais revenir l'oignon, la carotte et le céleri 5 minutes en remuant, jusqu'à ce que l'oignon devienne translucide (on voit presque à travers).",
+        "Ajoute le cumin et remue 30 secondes, puis verse la sauce tomate : laisse-la cuire 3 minutes, elle fonce légèrement.",
+        "Ajoute les fèves et le bouillon. Porte à ébullition puis baisse le feu et laisse frémir (petites bulles calmes) 40 à 45 minutes à couvert : les fèves sont prêtes quand elles s'écrasent facilement entre deux doigts et commencent à se défaire dans la soupe.",
+        "Pendant la cuisson, fais griller les graines de courge à sec dans une petite poêle à feu moyen 3 minutes en remuant sans arrêt : elles gonflent, font de petits « pop » et dorent légèrement. Verse-les tout de suite dans une assiette pour qu'elles ne brûlent pas.",
+        "Écrase grossièrement une partie des fèves dans la marmite avec une fourchette pour épaissir la soupe. Goûte, sale et poivre.",
+        "Sers bien chaud avec la menthe ciselée (coupée finement aux ciseaux), un filet de jus de citron vert et les graines de courge parsemées au dernier moment pour qu'elles restent croquantes."
+      ],
+      "photo": "assets/recipes/d438.webp"
+    },
+    {
+      "id": "d439",
+      "name": "Uskumru pilaki (maquereau mijoté à la turque, carottes, céleri-rave et citron, servi tiède)",
+      "type": "dinner",
+      "cuisine": "mediterraneen",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 30,
+      "diff": 2,
+      "cost": 3.0,
+      "kcal": 580,
+      "tags": [],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "fish",
+        "celery"
+      ],
+      "ing": [
+        [
+          "Filet de maquereau (frais)",
+          140,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Carotte",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Céleri-rave",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Pomme de terre à chair ferme (Charlotte, Amandine)",
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Oignon blanc",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Concentré de tomate",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Paprika doux",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Citron jaune",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Persil plat",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Épluche la carotte, le céleri-rave (enlève bien toute la peau épaisse et brune avec un couteau) et la pomme de terre. Coupe-les en cubes de 1 cm environ. Coupe l'oignon en fines demi-rondelles et l'ail en lamelles.",
+        "Dans une sauteuse large, fais chauffer l'huile à feu moyen et fais revenir l'oignon 4 minutes jusqu'à ce qu'il devienne translucide (on voit presque à travers).",
+        "Ajoute l'ail, le concentré de tomate et le paprika, remue 1 minute : le concentré fonce et sent moins le cru.",
+        "Ajoute les cubes de légumes, une pincée de sel et de l'eau chaude juste à hauteur (les légumes doivent être à peine recouverts). Couvre et laisse cuire 15 minutes à feu doux : un couteau doit entrer dans les cubes en rencontrant encore une petite résistance.",
+        "Coupe les filets de maquereau en gros morceaux. Pose-les sur les légumes, peau dessus, avec quelques rondelles de citron. Couvre et laisse frémir 8 à 10 minutes sans remuer : le poisson est cuit quand sa chair devient opaque et se détache facilement.",
+        "Retire du feu et laisse reposer 10 minutes à couvert : en Turquie, le pilaki se mange tiède, la sauce devient plus onctueuse en refroidissant un peu.",
+        "Sers avec le jus du reste du citron pressé par-dessus et le persil haché."
+      ],
+      "photo": "assets/recipes/d439.webp"
+    },
+    {
+      "id": "d440",
+      "name": "Chorba hout (soupe algérienne de poisson blanc au frik, tomate, pois chiches et coriandre)",
+      "type": "dinner",
+      "cuisine": "maghrebin",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 35,
+      "diff": 2,
+      "cost": 3.2,
+      "kcal": 490,
+      "tags": [
+        "kid-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "fish",
+        "gluten",
+        "celery"
+      ],
+      "ing": [
+        [
+          "Filet de merlu",
+          140,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Frik (blé vert concassé)",
+          20,
+          "g",
+          "pantry"
+        ],
+        [
+          "Pois chiches cuits",
+          40,
+          "g",
+          "pantry"
+        ],
+        [
+          "Tomates concassées en boîte",
+          120,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon blanc",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Carotte",
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Céleri branche",
+          30,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Concentré de tomate",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Paprika doux",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Cumin moulu",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Cannelle en poudre",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Coriandre fraîche",
+          10,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron jaune",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Coupe l'oignon en petits dés, la carotte et le céleri en petits cubes, et hache l'ail. Hache la coriandre en gardant les tiges à part (elles parfument la soupe, les feuilles servent à la fin).",
+        "Dans une marmite, fais chauffer l'huile à feu moyen et fais revenir l'oignon 4 minutes jusqu'à ce qu'il devienne translucide (on voit presque à travers).",
+        "Ajoute l'ail, le concentré de tomate, le paprika, le cumin et la cannelle : remue 1 minute, les épices doivent sentir fort sans brûler.",
+        "Ajoute les tomates concassées, la carotte, le céleri et les tiges de coriandre, puis couvre largement d'eau chaude. Porte à ébullition et laisse frémir 10 minutes.",
+        "Rince le frik dans une passoire fine et verse-le en pluie (petit à petit en remuant) dans la soupe pour éviter les grumeaux. Laisse cuire 15 minutes à feu doux en remuant de temps en temps : le frik gonfle et épaissit la chorba.",
+        "Ajoute les pois chiches égouttés et rincés, puis le poisson coupé en gros cubes. Laisse frémir 6 à 8 minutes sans remuer fort : le poisson est cuit quand il devient blanc et opaque au cœur.",
+        "Goûte, sale et poivre. Si la soupe est trop épaisse, ajoute un peu d'eau chaude.",
+        "Sers dans des bols avec les feuilles de coriandre hachées par-dessus et un quartier de citron à presser au dernier moment."
+      ],
+      "photo": "assets/recipes/d440.webp"
+    },
+    {
+      "id": "l451",
+      "name": "Merluzzo alla livornese (cabillaud en sauce tomate, olives et câpres), petit épeautre et blettes à l'ail",
+      "type": "lunch",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 20,
+      "cook": 40,
+      "diff": 2,
+      "cost": 3.8,
+      "kcal": 485,
+      "tags": [],
+      "eq": [
+        "stove",
+        "pan"
+      ],
+      "allergens": [
+        "fish",
+        "gluten"
+      ],
+      "ing": [
+        [
+          "Filet de cabillaud",
+          150,
+          "g",
+          "meat-fish"
+        ],
+        [
+          "Petit épeautre",
+          40,
+          "g",
+          "pantry"
+        ],
+        [
+          "Tomates concassées en boîte",
+          150,
+          "g",
+          "pantry"
+        ],
+        [
+          "Olives noires dénoyautées",
+          15,
+          "g",
+          "pantry"
+        ],
+        [
+          "Câpres",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Blettes",
+          150,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          2,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Persil plat",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Rince le petit épeautre, plonge-le dans une grande casserole d'eau bouillante salée et laisse cuire 35 à 40 minutes à feu doux : il doit être tendre mais rester un peu ferme sous la dent. Égoutte-le.",
+        "Pendant ce temps, lave les blettes. Sépare les côtes blanches des feuilles vertes : coupe les côtes en tronçons de la largeur d'un doigt et les feuilles en larges lanières.",
+        "Épluche l'ail et coupe-le en lamelles. Coupe les olives en rondelles.",
+        "Dans une poêle, fais chauffer une partie de l'huile à feu moyen avec une partie de l'ail 1 minute, ajoute les tomates concassées, les olives et les câpres. Laisse mijoter (cuire doucement à petits bouillons) 10 minutes : la sauce épaissit.",
+        "Sale légèrement et poivre le poisson, pose-le dans la sauce et arrose-le avec une cuillère. Couvre et laisse cuire 8 à 10 minutes à feu doux : il est cuit quand sa chair devient blanche, opaque et se sépare en lamelles.",
+        "Dans une autre poêle, fais chauffer le reste de l'huile avec le reste de l'ail. Ajoute les côtes de blettes, couvre et laisse cuire 5 minutes, puis ajoute les feuilles et remue 2 à 3 minutes jusqu'à ce qu'elles soient tombées (elles réduisent beaucoup et deviennent souples).",
+        "Sers le poisson et sa sauce sur le petit épeautre, avec les blettes à côté et le persil haché par-dessus."
+      ],
+      "photo": "assets/recipes/l451.webp"
+    },
+    {
+      "id": "d441",
+      "name": "Rajma masala (haricots rouges en sauce tomate-oignon épicée du Pendjab), riz basmati complet et yaourt au cumin",
+      "type": "dinner",
+      "cuisine": "indien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 35,
+      "diff": 1,
+      "cost": 1.9,
+      "kcal": 450,
+      "tags": [
+        "vegetarian",
+        "batch-friendly",
+        "kid-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Haricots rouges cuits",
+          100,
+          "g",
+          "pantry"
+        ],
+        [
+          "Riz basmati complet",
+          25,
+          "g",
+          "pantry"
+        ],
+        [
+          "Oignon rouge",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Tomates concassées en boîte",
+          120,
+          "g",
+          "pantry"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Gingembre frais",
+          2,
+          "cm",
+          "produce"
+        ],
+        [
+          "Graines de cumin",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Garam masala",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Curcuma moulu",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Piment de Cachemire en poudre",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Huile de colza",
+          1,
+          "c.à.s",
+          "pantry"
+        ],
+        [
+          "Yaourt grec",
+          60,
+          "g",
+          "dairy"
+        ],
+        [
+          "Coriandre fraîche",
+          5,
+          "g",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Lance le riz : rince-le, plonge-le dans une grande casserole d'eau bouillante salée et laisse-le cuire 25 minutes à petits bouillons, jusqu'à ce qu'un grain goûté soit tendre. Égoutte-le.",
+        "Coupe l'oignon en tout petits dés, hache l'ail et râpe le gingembre épluché. Égoutte et rince les haricots rouges.",
+        "Dans une sauteuse, fais chauffer l'huile à feu moyen. Ajoute une partie des graines de cumin : quand elles grésillent et sentent bon (environ 20 secondes), ajoute l'oignon.",
+        "Fais revenir l'oignon 8 à 10 minutes en remuant souvent : il doit devenir brun doré, pas seulement translucide. C'est ce qui donne au rajma sa sauce profonde et légèrement sucrée.",
+        "Ajoute l'ail, le gingembre, le curcuma et le piment, remue 1 minute. Verse les tomates et laisse cuire 6 à 8 minutes : la sauce est prête quand de petites gouttes d'huile apparaissent sur les bords.",
+        "Ajoute les haricots, de l'eau chaude jusqu'à presque les couvrir et une pincée de sel. Laisse mijoter (cuire doucement à petits bouillons) 15 minutes. Écrase quelques haricots contre la paroi avec le dos de la cuillère pour épaissir la sauce, puis ajoute le garam masala.",
+        "Fais griller à sec le reste des graines de cumin dans une petite poêle 30 secondes, écrase-les entre tes doigts et mélange-les au yaourt avec une pincée de sel.",
+        "Sers le rajma sur le riz, avec la coriandre hachée et le yaourt au cumin à côté pour rafraîchir les épices."
+      ],
+      "photo": "assets/recipes/d441.webp"
+    },
+    {
+      "id": "des259",
+      "name": "Fan shu tong sui (soupe sucrée cantonaise de patate douce au gingembre, filet de lait de coco)",
+      "type": "dessert",
+      "cuisine": "asiatique",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 25,
+      "diff": 1,
+      "cost": 1.0,
+      "kcal": 180,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "light"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Patate douce",
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Gingembre frais",
+          3,
+          "cm",
+          "produce"
+        ],
+        [
+          "Baies de goji (séchées)",
+          5,
+          "g",
+          "pantry"
+        ],
+        [
+          "Miel",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Lait de coco",
+          40,
+          "ml",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Épluche la patate douce avec un économe et coupe-la en cubes de 2 cm environ. Rince-les sous l'eau froide pour enlever l'amidon de surface (la soupe restera plus claire).",
+        "Épluche le gingembre en grattant la peau avec le bord d'une cuillère et coupe-le en tranches fines. Écrase-les avec le plat d'un couteau : elles libèrent plus de parfum.",
+        "Dans une petite casserole, mets le gingembre et de l'eau froide pour bien couvrir les cubes de patate douce. Porte à ébullition et laisse frémir 5 minutes : l'eau prend un goût piquant.",
+        "Ajoute la patate douce et laisse frémir (petites bulles calmes) 15 minutes, jusqu'à ce que la pointe d'un couteau entre dans les cubes sans forcer. Ne remue pas trop : les cubes doivent rester entiers.",
+        "Ajoute le miel et les baies de goji et laisse encore 3 minutes : les baies gonflent et deviennent tendres.",
+        "Retire les tranches de gingembre si tu ne veux pas croquer dedans. Sers chaud dans un bol, avec un filet de lait de coco versé au dernier moment : il dessine des volutes blanches à la surface. Dans le sud de la Chine, on boit ce « tong sui » (eau sucrée) pour se réchauffer en hiver."
+      ],
+      "photo": "assets/recipes/des259.webp"
+    },
+    {
+      "id": "des260",
+      "name": "Geung jap pong naai (lait caillé au gingembre, dessert cantonais d'hiver servi tiède)",
+      "type": "dessert",
+      "cuisine": "asiatique",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 5,
+      "rest": 10,
+      "diff": 2,
+      "cost": 0.6,
+      "kcal": 155,
+      "tags": [
+        "vegetarian",
+        "quick",
+        "light"
+      ],
+      "eq": [
+        "stove",
+        "bowl"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Lait entier",
+          180,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Gingembre frais",
+          5,
+          "cm",
+          "produce"
+        ],
+        [
+          "Miel",
+          1,
+          "c.à.c",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Choisis un gingembre bien frais et juteux (sa peau est lisse et brillante) : c'est une enzyme de son jus qui fait prendre le lait, un gingembre sec et fibreux ne marche pas.",
+        "Épluche le gingembre en grattant la peau avec le bord d'une cuillère, râpe-le finement, puis presse la pulpe dans un torchon propre ou une passoire fine au-dessus du bol de service pour récupérer le jus. Garde seulement le jus.",
+        "Dans une petite casserole, chauffe le lait avec le miel à feu moyen en remuant, jusqu'à ce que de petites bulles apparaissent sur les bords et qu'il fume légèrement, sans le laisser bouillir (vers 70-75 °C si tu as un thermomètre).",
+        "Remue le jus de gingembre au fond du bol (l'amidon s'est déposé), puis verse le lait chaud d'un seul coup, d'assez haut, sans remuer ensuite : c'est le choc qui mélange.",
+        "Ne touche plus au bol pendant 10 minutes, sans le bouger : le lait se transforme en une crème tremblotante, comme un flan très souple.",
+        "Vérifie avec une cuillère : la surface doit résister légèrement. Déguste tiède, à la cuillère. Si le lait n'a pas pris, c'était qu'il était trop chaud ou pas assez : c'est délicieux quand même, comme un lait chaud au gingembre."
+      ],
+      "photo": "assets/recipes/des260.webp"
+    },
+    {
+      "id": "des261",
+      "name": "Elma hoşafı (compote turque de pommes et pruneaux à la cannelle et au clou de girofle), yaourt grec",
+      "type": "dessert",
+      "cuisine": "mediterraneen",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 15,
+      "rest": 60,
+      "diff": 1,
+      "cost": 1.1,
+      "kcal": 175,
+      "tags": [
+        "vegetarian",
+        "light",
+        "batch-friendly"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Pomme Reinette",
+          110,
+          "g",
+          "produce"
+        ],
+        [
+          "Pruneaux dénoyautés",
+          12,
+          "g",
+          "pantry"
+        ],
+        [
+          "Bâton de cannelle",
+          0.5,
+          "u",
+          "spices"
+        ],
+        [
+          "Clou de girofle",
+          2,
+          "u",
+          "spices"
+        ],
+        [
+          "Citron jaune (zeste)",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Yaourt grec",
+          80,
+          "g",
+          "dairy"
+        ]
+      ],
+      "steps": [
+        "Épluche la pomme, coupe-la en quartiers, retire le trognon (le cœur dur avec les pépins) et coupe chaque quartier en tranches épaisses.",
+        "Coupe les pruneaux en deux. Prélève le zeste de citron en larges rubans avec un économe, sans la partie blanche qui est amère.",
+        "Dans une petite casserole, mets la pomme, les pruneaux, la cannelle, les clous de girofle et le zeste, puis de l'eau juste à hauteur des fruits.",
+        "Porte à frémissement (petites bulles calmes) et laisse cuire 10 à 12 minutes, jusqu'à ce que les tranches de pomme deviennent translucides sur les bords mais gardent leur forme. Les pruneaux colorent le jus en ambre et le sucrent naturellement : pas besoin d'ajouter de sucre.",
+        "Retire du feu et laisse refroidir, puis mets au frais au moins 1 heure : en Turquie, le hoşaf se boit et se mange froid, avec son jus parfumé.",
+        "Au moment de servir, retire la cannelle et les clous de girofle. Sers les fruits avec leur jus dans un bol, et le yaourt grec à côté ou par-dessus."
+      ],
+      "photo": "assets/recipes/des261.webp"
+    },
+    {
+      "id": "des262",
+      "name": "Kabak tatlısı léger (potiron fondant à la cannelle, tahini et noix, dessert turc d'hiver)",
+      "type": "dessert",
+      "cuisine": "mediterraneen",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 35,
+      "diff": 1,
+      "cost": 1.2,
+      "kcal": 150,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "light"
+      ],
+      "eq": [
+        "stove"
+      ],
+      "allergens": [
+        "sesame",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Potiron",
+          130,
+          "g",
+          "produce"
+        ],
+        [
+          "Miel",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Bâton de cannelle",
+          0.5,
+          "u",
+          "spices"
+        ],
+        [
+          "Clou de girofle",
+          1,
+          "u",
+          "spices"
+        ],
+        [
+          "Tahini",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Cerneaux de noix",
+          10,
+          "g",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Épluche le potiron avec un couteau solide (pose-le bien à plat sur la planche pour qu'il ne roule pas), retire les graines et les filaments, puis coupe-le en gros morceaux épais comme deux doigts.",
+        "Range les morceaux bien serrés dans une petite casserole à fond épais, côte à côte, avec la cannelle et le clou de girofle.",
+        "Verse un fond d'eau (juste de quoi couvrir le fond de la casserole) et le miel. Couvre et laisse cuire à feu très doux 30 à 35 minutes sans remuer : le potiron rend son eau, devient orange vif, brillant et fondant.",
+        "Vérifie avec la pointe d'un couteau : elle doit entrer comme dans du beurre mou. Si le fond attache, ajoute un filet d'eau.",
+        "Pendant ce temps, fais griller les noix à sec dans une petite poêle 2 à 3 minutes en remuant, jusqu'à ce qu'elles sentent bon, puis concasse-les (écrase-les grossièrement au couteau).",
+        "Laisse tiédir le potiron, retire les épices, puis sers-le avec un filet de tahini (crème de sésame) et les noix concassées par-dessus."
+      ],
+      "photo": "assets/recipes/des262.webp"
+    },
+    {
+      "id": "des263",
+      "name": "Jericalla (flan de Guadalajara à la cannelle et au zeste d'orange, dessus caramélisé, peu sucré)",
+      "type": "dessert",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 40,
+      "rest": 60,
+      "diff": 2,
+      "cost": 0.8,
+      "kcal": 175,
+      "tags": [
+        "vegetarian",
+        "light",
+        "kid-friendly"
+      ],
+      "eq": [
+        "stove",
+        "oven",
+        "bowl"
+      ],
+      "allergens": [
+        "eggs",
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Lait demi-écrémé",
+          120,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Œuf",
+          1,
+          "u",
+          "dairy"
+        ],
+        [
+          "Sirop d'érable",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Bâton de cannelle",
+          0.5,
+          "u",
+          "spices"
+        ],
+        [
+          "Extrait de vanille",
+          0.25,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Orange (zeste)",
+          0.25,
+          "u",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Préchauffe le four à 160 °C. Prélève le zeste d'orange en rubans avec un économe, sans la partie blanche qui est amère.",
+        "Dans une petite casserole, chauffe le lait avec la cannelle et le zeste jusqu'aux premières petites bulles sur les bords, puis éteins, couvre et laisse infuser 10 minutes : le lait prend le goût des épices.",
+        "Dans un bol, fouette l'œuf avec le sirop d'érable et la vanille juste pour mélanger, sans faire de mousse (les bulles feraient des trous dans le flan).",
+        "Retire la cannelle et le zeste, puis verse le lait tiède sur l'œuf petit à petit en fouettant doucement. Si le lait est trop chaud, l'œuf cuit en grumeaux : il doit être tiède au doigt.",
+        "Verse la crème dans un ramequin allant au four. Pose-le dans un plat plus grand et verse de l'eau chaude dans le plat jusqu'à mi-hauteur du ramequin : c'est le bain-marie, il cuit la crème doucement.",
+        "Enfourne 30 à 35 minutes : la jericalla est prise quand elle tremble encore un peu au centre comme une gelée, mais que les bords sont fermes.",
+        "Sors le ramequin du bain-marie et passe-le 3 à 4 minutes sous le gril du four, en surveillant : le dessus doit se tacher de brun foncé, c'est la signature de la jericalla.",
+        "Laisse refroidir puis mets au frais au moins 1 heure. Sers froid."
+      ],
+      "photo": "assets/recipes/des263.webp"
+    },
+    {
+      "id": "des264",
+      "name": "Panna cotta allo yogurt (crème prise au yaourt et à la vanille), oranges sanguines de Sicile au miel",
+      "type": "dessert",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 5,
+      "rest": 90,
+      "diff": 1,
+      "cost": 1.4,
+      "kcal": 215,
+      "tags": [
+        "vegetarian"
+      ],
+      "eq": [
+        "stove",
+        "bowl"
+      ],
+      "allergens": [
+        "lactose"
+      ],
+      "ing": [
+        [
+          "Yaourt grec",
+          100,
+          "g",
+          "dairy"
+        ],
+        [
+          "Lait demi-écrémé",
+          50,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Agar-agar",
+          0.5,
+          "g",
+          "pantry"
+        ],
+        [
+          "Miel",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Extrait de vanille",
+          0.25,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Orange sanguine",
+          1,
+          "u",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Dans une petite casserole, mélange le lait froid avec l'agar-agar (une gélifiante naturelle tirée d'une algue) en fouettant pour qu'il ne fasse pas de grumeaux.",
+        "Porte à ébullition et laisse bouillir 1 minute en remuant sans arrêt : l'agar-agar ne gélifie que s'il a bouilli.",
+        "Hors du feu, ajoute une partie du miel et la vanille, puis verse ce lait chaud sur le yaourt dans un bol en fouettant vite pour obtenir une crème lisse.",
+        "Verse aussitôt dans un petit pot ou un verre (l'agar-agar commence à prendre dès qu'il refroidit) et mets au frais au moins 1 h 30 : la panna cotta doit être ferme et trembloter quand tu secoues le pot.",
+        "Pèle l'orange à vif : coupe le haut et le bas, pose-la debout et enlève la peau et toute la partie blanche avec un couteau en suivant l'arrondi. Coupe-la en rondelles au-dessus d'une assiette pour récupérer le jus rouge.",
+        "Mélange le jus récupéré avec le reste du miel. Au moment de servir, pose les rondelles d'orange sur la panna cotta et arrose de ce jus."
+      ],
+      "photo": "assets/recipes/des264.webp"
+    },
+    {
+      "id": "s194",
+      "name": "Fettunta al cavolo nero (pain complet grillé frotté à l'ail, chou noir de Toscane et huile d'olive)",
+      "type": "snack",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 10,
+      "cook": 10,
+      "diff": 1,
+      "cost": 0.9,
+      "kcal": 150,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "quick",
+        "light"
+      ],
+      "eq": [
+        "stove",
+        "oven"
+      ],
+      "allergens": [
+        "gluten"
+      ],
+      "ing": [
+        [
+          "Pain complet au levain",
+          35,
+          "g",
+          "bread"
+        ],
+        [
+          "Chou noir",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Ail",
+          1,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Lave les feuilles de chou noir et retire la grosse nervure centrale dure : tiens la tige d'une main et fais glisser l'autre main le long de la feuille pour arracher le vert.",
+        "Plonge les feuilles 5 minutes dans une casserole d'eau bouillante salée : elles deviennent vert foncé et souples. Égoutte-les et presse-les entre tes mains pour enlever l'eau, puis hache-les grossièrement.",
+        "Fais griller la tranche de pain sous le gril du four ou dans un grille-pain jusqu'à ce qu'elle soit bien dorée et croustillante en surface.",
+        "Coupe la gousse d'ail en deux et frotte la face coupée sur le pain encore chaud : la croûte râpe l'ail comme une râpe et le pain prend son parfum.",
+        "Pendant que le pain grille, fais sauter le chou haché 1 à 2 minutes dans une petite poêle chaude avec une pincée de sel : il sèche un peu et prend un léger goût grillé.",
+        "Pose le chou noir sur le pain, poivre et arrose avec l'huile d'olive crue (non chauffée, pour garder son goût fruité). C'est ainsi qu'on mange la « fettunta » en Toscane en hiver, à l'arrivée de l'huile nouvelle."
+      ],
+      "photo": "assets/recipes/s194.webp"
+    },
+    {
+      "id": "s195",
+      "name": "Pinzimonio d'hiver (bâtonnets de fenouil, céleri et carotte) et crème de cannellini au romarin",
+      "type": "snack",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 15,
+      "cook": 0,
+      "diff": 1,
+      "cost": 1.0,
+      "kcal": 175,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "quick",
+        "no-cook",
+        "light",
+        "batch-friendly"
+      ],
+      "eq": [
+        "blender"
+      ],
+      "allergens": [
+        "celery"
+      ],
+      "ing": [
+        [
+          "Haricots cannellini cuits",
+          70,
+          "g",
+          "pantry"
+        ],
+        [
+          "Fenouil",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Céleri branche",
+          40,
+          "g",
+          "produce"
+        ],
+        [
+          "Carotte",
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Huile d'olive",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Citron jaune",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Ail",
+          0.5,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Romarin frais",
+          1,
+          "branche",
+          "produce"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ]
+      ],
+      "steps": [
+        "Égoutte et rince les haricots dans une passoire jusqu'à ce que la mousse disparaisse.",
+        "Détache les aiguilles de romarin de la branche et hache-les très finement (elles sont dures, il faut presque en faire une poudre).",
+        "Mixe les haricots avec l'ail épluché, le jus du citron, l'huile, le romarin, une pincée de sel et un petit filet d'eau froide, jusqu'à obtenir une crème lisse qui tient sur une cuillère. Si elle est trop épaisse, ajoute un peu d'eau.",
+        "Épluche la carotte et coupe-la en bâtonnets de la taille d'un doigt. Coupe le céleri en bâtonnets de la même taille et le fenouil en fines tranches dans la hauteur.",
+        "Sers les bâtonnets bien froids, debout dans un verre, avec la crème de haricots dans un petit bol pour tremper : c'est le « pinzimonio », les crudités qu'on trempe en Italie.",
+        "La crème se garde 3 jours au frais dans une boîte fermée."
+      ],
+      "photo": "assets/recipes/s195.webp"
+    },
+    {
+      "id": "s196",
+      "name": "Pera, Parmigiano e noci (poire, copeaux de parmesan et cerneaux de noix)",
+      "type": "snack",
+      "cuisine": "italien",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 5,
+      "cook": 0,
+      "diff": 1,
+      "cost": 1.2,
+      "kcal": 185,
+      "tags": [
+        "vegetarian",
+        "quick",
+        "no-cook",
+        "light"
+      ],
+      "eq": [],
+      "allergens": [
+        "lactose",
+        "nuts"
+      ],
+      "ing": [
+        [
+          "Poire Conférence",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Parmesan",
+          15,
+          "g",
+          "dairy"
+        ],
+        [
+          "Cerneaux de noix",
+          10,
+          "g",
+          "pantry"
+        ]
+      ],
+      "steps": [
+        "Lave la poire, coupe-la en quartiers et retire le trognon (la partie dure du centre avec les pépins). Garde la peau : elle apporte des fibres.",
+        "Coupe chaque quartier en tranches fines.",
+        "Avec un économe, fais des copeaux de parmesan : passe la lame sur le bord du morceau comme pour éplucher une carotte.",
+        "Casse les cerneaux de noix en morceaux avec tes doigts.",
+        "Dispose les tranches de poire sur une assiette, les copeaux de parmesan et les noix par-dessus. Le sucré juteux de la poire et le salé du parmesan se marient très bien : en Italie, on dit qu'il ne faut pas laisser le paysan savoir à quel point c'est bon.",
+        "Mange tout de suite, avant que la poire coupée ne brunisse."
+      ],
+      "photo": "assets/recipes/s196.webp"
+    },
+    {
+      "id": "s197",
+      "name": "Pepitas enchiladas (graines de courge grillées au piment et citron vert) et clémentines",
+      "type": "snack",
+      "cuisine": "mexicain",
+      "seasons": [
+        "autumn",
+        "winter"
+      ],
+      "prep": 5,
+      "cook": 5,
+      "diff": 1,
+      "cost": 0.9,
+      "kcal": 195,
+      "tags": [
+        "vegetarian",
+        "vegan",
+        "quick",
+        "light"
+      ],
+      "eq": [
+        "pan"
+      ],
+      "allergens": [],
+      "ing": [
+        [
+          "Graines de courge",
+          20,
+          "g",
+          "pantry"
+        ],
+        [
+          "Citron vert",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Paprika fumé",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Piment de Cayenne",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel, poivre",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Clémentine",
+          2,
+          "u",
+          "produce"
+        ]
+      ],
+      "steps": [
+        "Fais chauffer une poêle à feu moyen, sans huile.",
+        "Verse les graines de courge et remue sans arrêt 3 à 4 minutes : elles gonflent, commencent à éclater en faisant de petits « pop » et deviennent légèrement dorées. Ne t'éloigne pas, elles brûlent vite.",
+        "Hors du feu, presse le citron vert sur les graines encore chaudes, ajoute le paprika, le piment et le sel, et remue : le jus s'évapore et les épices collent aux graines.",
+        "Étale-les sur une assiette pour qu'elles refroidissent et redeviennent croquantes.",
+        "Épluche les clémentines et sépare les quartiers.",
+        "Sers les pepitas dans un petit bol à côté des quartiers de clémentine. Au Mexique, on grignote les « pepitas » épicées dans la rue, souvent avec un fruit frais pour équilibrer le piquant."
+      ],
+      "photo": "assets/recipes/s197.webp"
     }
   ]
 };

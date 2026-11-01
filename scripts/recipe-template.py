@@ -114,11 +114,11 @@ RECIPE_SKELETON = '''    {{
 
 # Cibles CG par mealType (CLAUDE.md V2.95.0)
 CG_TARGETS = {
-    "breakfast": "6-9 (cible 9, max 18 = bloqué par lint)",
-    "lunch":     "12-14 (cible 14, max 28 = bloqué par lint)",
-    "dinner":    "8-10 (cible 10, max 20 = bloqué par lint)",
-    "snack":     "4-6 (cible 6, max 12 = bloqué par lint)",
-    "dessert":   "< 8 (cible 8, max 16 = bloqué par lint)",
+    "breakfast": "6-9 (cible 9, > 19 = bloqué par lint)",
+    "lunch":     "12-14 (cible 14, > 19 = bloqué par lint)",
+    "dinner":    "8-10 (cible 10, > 19 = bloqué par lint)",
+    "snack":     "4-6 (cible 6, > 12 = bloqué par lint)",
+    "dessert":   "< 8 (cible 8, > 15 = bloqué par lint)",
 }
 
 def main():
@@ -198,7 +198,7 @@ Plan de ce Lot :
    - crevettes/crabe → shellfish ; moules/calamars/Saint-Jacques → molluscs ; cacahuète → peanuts ; céleri / bouillon → celery ; vin / vinaigre de vin / moutarde → sulphites
    - œuf/jaune d'œuf → eggs
    - lait/yaourt/fromage/crème (sauf lait coco/amande/soja) → lactose
-   - farine de blé/pâtes/pain/boulgour/couscous → gluten (PAS riz/maïs/sarrasin/pois chiche)
+   - farine de blé/pâtes/pain/boulgour/couscous/AVOINE/SAUCE SOJA → gluten (PAS riz/maïs/sarrasin/pois chiche/tamari)
    - amande/noix/noisette/pistache/cajou/pécan → nuts
    - soja/tofu/tempeh/edamame → soy
    - sésame/tahin → sesame

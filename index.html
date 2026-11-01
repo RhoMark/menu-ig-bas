@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.132.0</title>
+<title>Menu IG Bas — V2.133.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -509,6 +509,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Comment envoyer une recette par message (WhatsApp, Signal, mail…) ?",
           "a": "Ouvre la recette et touche le bouton « Partager » (le carré avec une flèche vers le haut, en haut de la fiche). L'app fabrique la fiche en PDF, avec les quantités de ce repas, puis ouvre la fenêtre de partage de ton téléphone ou de ton ordinateur : tu choisis l'app (WhatsApp, Signal, Messages, Mail…), « Imprimer » ou « Enregistrer dans Fichiers ». Le PDF est fabriqué sur ton appareil et remis directement à l'app choisie : il ne passe par aucun serveur. Comme sur la fiche imprimée, il ne contient jamais les prénoms de ta famille. Si la fiche met un peu de temps à se préparer, un petit bandeau « La fiche PDF est prête » s'affiche : touche « Partager ». Sur ces appareils, le bouton Partager remplace 🖨️ et 📄 : imprimer et enregistrer en PDF se font depuis la fenêtre de partage. Les navigateurs qui ne savent pas partager (Firefox sur ordinateur, par exemple) gardent 🖨️ Imprimer et 📄 PDF ; pour envoyer la recette, télécharge le PDF puis joins le fichier à ton message."
+        },
+        {
+          "q": "Comment envoyer la liste de courses à la personne qui fait les courses ?",
+          "a": "Dans Courses, touche « Partager » : la liste part en texte (rayon par rayon, avec les quantités) dans l'app de ton choix — WhatsApp, Signal, Messages, Mail… Les articles cochés (déjà chez toi ou déjà dans le panier) et cochés dans « Mes ajouts » ne sont pas envoyés. Le texte est préparé sur ton appareil et remis directement à l'app choisie, sans passer par un serveur. Le bouton n'apparaît pas sur les navigateurs qui ne savent pas partager (Firefox sur ordinateur, par exemple) : utilise alors 📄 PDF."
         },
         {
           "q": "Comment exporter le menu ou la liste de courses en PDF ?",
@@ -21680,6 +21684,24 @@ function ShareIcon() {
   );
 }
 
+// V2.133.0 — Liste de courses en texte : rayon par rayon, articles NON cochés
+// seulement (cochés = déjà à la maison ou dans le panier), puis « Mes ajouts ».
+function shoppingShareText(week, entries, checks, manualItems) {
+  const lines = [`🛒 Liste de courses — semaine du ${formatShort(week)}`];
+  for (const [cat, list] of entries) {
+    const left = list.filter(it => !checks[`${it.name}|${it.unit}`]);
+    if (!left.length) continue;
+    lines.push("", dataRef.categoryLabel(cat).toUpperCase());
+    for (const it of left) {
+      const qty = formatQtyShopping(it.qty, it.unit, it.name, it.category);
+      lines.push(`• ${it.label || it.name}${qty ? ` — ${qty}` : ""}`);
+    }
+  }
+  const extra = (manualItems || "").split("\n").map(l => l.trim()).filter(l => l && !checks[`ajout|${l}`]);
+  if (extra.length) { lines.push("", "AUTRES"); extra.forEach(l => lines.push(`• ${l}`)); }
+  return lines.join("\n");
+}
+
 // Texte de secours quand le navigateur ne sait partager que du texte (pas de fichier).
 function recipeShareText(recipe) {
   const ing = (recipe.ing || []).map(i => `• ${i[0]} : ${+i[1]} ${i[2]}`).join("\n");
@@ -22460,7 +22482,7 @@ function groupItemsBySubgroup(category, items) {
 // rangés en bas de leur rayon, option « Masquer les articles pris », grandes
 // zones tactiles, et « Mes ajouts » cochables ligne par ligne.
 function ShoppingListV3({currentWeek, entries, totalItems, checkedCount, useSubgroups, pantryChecks, onTogglePantry,
-                         manualItems, onManualChange, onPrint, onPdf, pdfBusy, substitutionsBlock}) {
+                         manualItems, onManualChange, onPrint, onPdf, pdfBusy, substitutionsBlock, onShare}) {
   const [hideDone, setHideDone] = useState(false);
   const [editManual, setEditManual] = useState(false);
   const manualLines = (manualItems || "").split("\n").map(l => l.trim()).filter(Boolean);
@@ -22494,6 +22516,11 @@ function ShoppingListV3({currentWeek, entries, totalItems, checkedCount, useSubg
       <div className="bg-surface rounded-card shadow-card border border-line p-4 space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <h2 className="font-title text-2xl font-semibold text-ink flex-1">Liste de courses</h2>
+          {CAN_SHARE && entries.length > 0 && (
+            <button onClick={onShare} aria-label="Partager la liste de courses"
+              title="Envoyer la liste (articles restants) par message, mail…"
+              className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2"><ShareIcon /> Partager</button>
+          )}
           <button onClick={onPrint} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2">🖨️ Imprimer</button>
           <button onClick={onPdf} disabled={pdfBusy} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2 disabled:opacity-50">{pdfBusy ? "⏳ PDF…" : "📄 PDF"}</button>
         </div>
@@ -22620,11 +22647,18 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
         </details>
   );
 
+  // V2.133.0 — Partager la liste en TEXTE (lisible directement dans WhatsApp /
+  // Signal, instantané) : seulement les articles restants (non cochés).
+  const shareList = () => {
+    const text = shoppingShareText(currentWeek, entries, pantryChecks, manualItems);
+    navigator.share({title: `Liste de courses — semaine du ${formatShort(currentWeek)}`, text})
+      .catch(e => { if (e?.name !== "AbortError") console.error("[share] liste", e); });
+  };
   if (window.__V3_UI) return (
     <ShoppingListV3 currentWeek={currentWeek} entries={entries} totalItems={totalItems} checkedCount={checkedCount}
       useSubgroups={useSubgroups} pantryChecks={pantryChecks} onTogglePantry={onTogglePantry}
       manualItems={manualItems} onManualChange={onManualChange} onPrint={onPrint} onPdf={onPdf} pdfBusy={pdfBusy}
-      substitutionsBlock={substitutionsBlock} />
+      substitutionsBlock={substitutionsBlock} onShare={shareList} />
   );
 
   return (
@@ -22636,6 +22670,11 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
           {checkedCount > 0 && <span className="ml-2 text-emerald-700 dark:text-emerald-300">· {checkedCount} déjà coché{checkedCount > 1 ? "s" : ""} (exclus de l'impression)</span>}
         </p>
         <div className="flex-1"></div>
+        {CAN_SHARE && entries.length > 0 && (
+          <button onClick={shareList} aria-label="Partager la liste de courses"
+            title="Envoyer la liste (articles restants) par message, mail…"
+            className="bg-emerald-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium"><ShareIcon /> Partager</button>
+        )}
         <button onClick={onPrint} className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
           🖨️ Imprimer la liste
         </button>
