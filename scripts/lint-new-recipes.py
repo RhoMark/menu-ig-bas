@@ -137,7 +137,11 @@ ALLERGEN_TRIGGERS = {
     "gluten": ["farine", "pain", "pâtes", "pates", "boulgour", "couscous",
                "semoule", "soba", "épeautre", "epeautre", "seigle", "orge",
                "tortilla", "pita", "brick", "filo", "biscuit", "brioche",
-               "baguette", "spaghetti", "tagliatelle", "lasagne", "penne"],
+               "baguette", "spaghetti", "tagliatelle", "lasagne", "penne",
+               # V2.130.0 — avoine = céréale à gluten (règlement INCO 1169/2011,
+               # annexe II) sauf avoine certifiée « sans gluten » ; sauce soja
+               # classique = brassée avec du blé (le tamari, souvent sans blé, est exclu).
+               "avoine", "sauce soja", "ponzu"],
     "nuts": ["amande", "noix", "noisette", "pistache", "cajou", "pécan", "pecan",
              "macadamia", "praline"],
     "soy": ["soja", "tofu", "tempeh", "miso", "sauce soja", "edamame", "lait de soja"],
@@ -371,6 +375,7 @@ def check_allergens_consistency(recipes, report):
     # qui en contient) ; fruits secs « non traités » = non sulfités.
     NO_SULPHITE = re.compile(r"(graines?|feuilles?) de moutarde|non trait[ée]")
     DASHI_ONLY = re.compile(r"^bouillon dashi \(kombu\)$")
+    GLUTEN_FREE_LABEL = re.compile(r"sans gluten|\btamari\b")
 
     for r in recipes:
         rid = r.get("id", "?")
@@ -400,6 +405,8 @@ def check_allergens_consistency(recipes, report):
                                 continue  # "riz gluant" = sticky, pas gluten
                             if CORN_TORTILLA.search(ing_name):
                                 continue  # tortilla de maïs = sans gluten
+                            if kw in ("avoine", "sauce soja", "ponzu") and GLUTEN_FREE_LABEL.search(ing_name):
+                                continue  # avoine certifiée sans gluten / tamari
                         if allergen == "nuts" and kw == "noix" and NON_NUT_NOIX.search(ing_name):
                             continue  # "noix de Saint-Jacques/veau/pétoncle" = pas un fruit à coque
                         if allergen == "molluscs" and kw == "moule" and MOULD.search(ing_name):

@@ -13,7 +13,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 320,
+      "kcal": 390,
       "tags": [
         "vegetarian",
         "quick",
@@ -30,19 +30,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          60,
+          40,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé (ou boisson d'amande)",
-          250,
+          200,
           "ml",
           "dairy"
         ],
         [
           "Pomme",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -57,12 +57,6 @@ window.__DATA_RECIPES = {
           15,
           "g",
           "pantry"
-        ],
-        [
-          "Miel (facultatif)",
-          1,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
@@ -70,7 +64,7 @@ window.__DATA_RECIPES = {
         "Allume le feu sur doux et remue doucement pendant 5 minutes. Le mélange doit épaissir comme une crème.",
         "Pendant ce temps, lave la pomme, enlève le trognon et coupe-la en petits dés (pas besoin de l'éplucher).",
         "Ajoute les dés de pomme et la cannelle dans la casserole. Laisse encore 2 à 3 minutes sur feu doux.",
-        "Verse le porridge dans un bol, parsème de noix grossièrement concassées. Ajoute le miel si tu veux."
+        "Verse le porridge dans un bol, parsème de noix grossièrement concassées. La pomme et la cannelle suffisent à le rendre gourmand."
       ],
       "photo": "assets/recipes/b1.webp"
     },
@@ -1739,7 +1733,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 490,
+      "kcal": 450,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -1751,7 +1745,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots rouges cuits (en boîte)",
-          150,
+          110,
           "g",
           "pantry"
         ],
@@ -1775,13 +1769,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomates concassées",
-          200,
-          "g",
-          "pantry"
-        ],
-        [
-          "Maïs (facultatif)",
-          30,
+          150,
           "g",
           "pantry"
         ],
@@ -1811,7 +1799,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          50,
+          40,
           "g",
           "pantry"
         ]
@@ -1821,7 +1809,7 @@ window.__DATA_RECIPES = {
         "Émince l'oignon, l'ail et coupe le poivron en dés.",
         "Chauffe l'huile dans une casserole. Fais revenir oignon et poivron 5 min.",
         "Ajoute ail, cumin, paprika, piment. Remue 1 min.",
-        "Ajoute les tomates, les haricots rouges rincés et le maïs. Laisse mijoter 20 min à feu doux en remuant de temps en temps.",
+        "Ajoute les tomates et les haricots rouges rincés. Laisse mijoter 20 min à feu doux en remuant de temps en temps.",
         "Sale. Sers sur le riz."
       ],
       "photo": "assets/recipes/l14.webp"
@@ -2753,13 +2741,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Petit épeautre",
-          70,
+          50,
           "g",
           "pantry"
         ],
         [
           "Champignons (Paris ou mélangés)",
-          120,
+          180,
           "g",
           "produce"
         ],
@@ -3008,7 +2996,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "eggs"
+        "eggs",
+        "gluten"
       ],
       "producesLeftovers": [
         "dinde cuite"
@@ -3103,7 +3092,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 340,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "quick",
@@ -3115,12 +3104,13 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "lactose"
+        "lactose",
+        "gluten"
       ],
       "ing": [
         [
           "Banane congelée",
-          1,
+          0.75,
           "u",
           "frozen"
         ],
@@ -3143,7 +3133,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Flocons d'avoine",
+          "Flocons d'avoine complets",
           20,
           "g",
           "pantry"
@@ -3182,7 +3172,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 320,
+      "kcal": 310,
       "rest": 480,
       "advance": "veille",
       "tags": [
@@ -3201,7 +3191,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          50,
+          40,
           "g",
           "pantry"
         ],
@@ -3230,12 +3220,6 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Miel",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Graines de chia",
           1,
           "c.à.c",
@@ -3243,7 +3227,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille au soir : mélange avoine, yaourt, lait d'amande, zeste de citron, miel et graines de chia dans un bocal.",
+        "La veille au soir : mélange avoine, yaourt, lait d'amande, zeste de citron et graines de chia dans un bocal.",
         "Ferme et mets au frigo toute la nuit.",
         "Le matin : remue, ajoute les myrtilles par-dessus. C'est prêt, tu peux même l'emporter."
       ],
@@ -4335,7 +4319,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.88,
-      "kcal": 450,
+      "kcal": 460,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -4349,13 +4333,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Patate douce",
-          0.5,
+          0.33,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          0.25,
+          0.5,
           "u",
           "produce"
         ],
@@ -4367,7 +4351,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Œuf",
-          1.5,
+          2,
           "u",
           "dairy"
         ],
@@ -4385,7 +4369,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.5,
+          1,
           "pincée",
           "spices"
         ],
@@ -4418,7 +4402,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 470,
+      "kcal": 490,
       "tags": [
         "vegetarian",
         "quick"
@@ -4435,19 +4419,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba",
-          70,
+          40,
           "g",
           "pantry"
         ],
         [
           "Edamame surgelés",
-          80,
+          130,
           "g",
           "frozen"
         ],
         [
           "Concombre",
-          0.25,
+          0.5,
           "u",
           "produce"
         ],
@@ -4718,7 +4702,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "nuts",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "producesLeftovers": [
         "poulet cuit"
@@ -5060,7 +5045,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 490,
+      "kcal": 640,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -5078,7 +5063,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Haricots rouges",
-          120,
+          100,
           "g",
           "pantry"
         ],
@@ -5096,7 +5081,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivron",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -5126,7 +5111,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz complet",
-          50,
+          35,
           "g",
           "pantry"
         ]
@@ -5257,18 +5242,24 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poireaux",
-          2,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Pomme de terre",
-          1,
-          "u",
+          50,
+          "g",
           "produce"
         ],
         [
-          "Bouillon de volaille",
+          "Chou-fleur",
+          100,
+          "g",
+          "produce"
+        ],
+        [
+          "Bouillon de légumes",
           500,
           "ml",
           "pantry"
@@ -5299,8 +5290,8 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Lave les poireaux, coupe en rondelles. Épluche et coupe la pomme de terre en dés.",
-        "Mets tout dans une casserole avec le bouillon. Porte à ébullition puis laisse mijoter 20 minutes.",
+        "Lave les poireaux, coupe en rondelles. Épluche et coupe la pomme de terre en dés. Détache le chou-fleur en petits bouquets (les petites « fleurs » au bout des tiges).",
+        "Mets tout dans une casserole avec le bouillon. Porte à ébullition puis laisse mijoter 20 minutes, jusqu'à ce que la pomme de terre et le chou-fleur s'écrasent facilement à la fourchette.",
         "Pendant ce temps, cuis l'œuf mollet : 6 minutes dans de l'eau bouillante, puis eau froide et écalage délicat.",
         "Mixe la soupe avec un mixeur plongeant. Ajoute la crème. Rectifie l'assaisonnement.",
         "Verse dans un bol, pose l'œuf mollet au centre (coupe-le en deux pour voir le jaune). Pain complet à côté."
@@ -5403,7 +5394,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 390,
+      "kcal": 370,
       "tags": [
         "kid-friendly"
       ],
@@ -5423,7 +5414,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Patate douce",
-          200,
+          150,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          100,
           "g",
           "produce"
         ],
@@ -5459,8 +5456,8 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Épluche et coupe la patate douce en cubes. Cuis-les 15 min à la vapeur.",
-        "Écrase-les à la fourchette ou au presse-purée avec le beurre et le lait chaud. Sale, poivre.",
+        "Épluche et coupe la patate douce en cubes. Détaille le chou-fleur en petits bouquets. Cuis le tout 15 min à la vapeur : la pointe du couteau doit s'enfoncer sans résistance.",
+        "Écrase patate douce et chou-fleur ensemble à la fourchette ou au presse-purée avec le beurre et le lait chaud. Sale, poivre.",
         "Pendant ce temps, pose le poisson dans le panier vapeur (salé, poivré), cuis 8 minutes.",
         "Sers le poisson sur la purée avec jus de citron et herbe ciselée."
       ],
@@ -5581,7 +5578,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -5669,7 +5667,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 360,
+      "kcal": 530,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -5703,7 +5701,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Courgette",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -5727,7 +5725,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Petites pâtes complètes",
-          30,
+          15,
           "g",
           "pantry"
         ],
@@ -5754,7 +5752,7 @@ window.__DATA_RECIPES = {
         "Émince oignon, ail. Coupe carottes, céleri, courgette en petits dés.",
         "Chauffe l'huile. Fais revenir oignon et ail 3 min, puis carottes et céleri 5 min.",
         "Ajoute tomates concassées, haricots, bouillon. Laisse mijoter 15 min.",
-        "Ajoute courgette et pâtes, cuis encore 10 min.",
+        "Ajoute courgette et pâtes, cuis encore 10 min : la courgette devient tendre et les pâtes juste fondantes.",
         "Sale, poivre. Sers avec une pincée de parmesan."
       ],
       "photo": "assets/recipes/d20.webp"
@@ -6122,7 +6120,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.25,
-      "kcal": 380,
+      "kcal": 480,
       "tags": [
         "vegetarian",
         "quick"
@@ -6146,7 +6144,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Nouilles soba",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -6172,6 +6170,12 @@ window.__DATA_RECIPES = {
           "Œuf mollet",
           1,
           "u",
+          "dairy"
+        ],
+        [
+          "Tofu ferme",
+          70,
+          "g",
           "dairy"
         ],
         [
@@ -6204,7 +6208,7 @@ window.__DATA_RECIPES = {
         "Porte le bouillon à frémissement avec gingembre râpé.",
         "Ajoute carotte en lamelles fines et champignons émincés. Cuis 5 minutes.",
         "Ajoute les nouilles soba, cuis 4 minutes.",
-        "Ajoute le bok choy coupé en tronçons. Sauce soja et huile de sésame.",
+        "Ajoute le bok choy coupé en tronçons et le tofu ferme coupé en cubes (de la taille d'un dé à jouer), laisse chauffer 2 minutes. Sauce soja et huile de sésame.",
         "Verse dans un grand bol, pose l'œuf mollet coupé en deux par-dessus, parsème d'oignon nouveau ciselé."
       ],
       "photo": "assets/recipes/d25.webp"
@@ -6843,7 +6847,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "lactose"
+        "lactose",
+        "gluten"
       ],
       "ing": [
         [
@@ -7552,7 +7557,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.62,
-      "kcal": 230,
+      "kcal": 340,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -7571,7 +7576,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cerises",
-          150,
+          120,
           "g",
           "produce"
         ],
@@ -7583,13 +7588,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine de sarrasin",
-          25,
+          18,
           "g",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          15,
+          10,
           "g",
           "pantry"
         ],
@@ -7760,7 +7765,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.25,
-      "kcal": 220,
+      "kcal": 270,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -7777,37 +7782,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots noirs cuits (en boîte, rincés)",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Cacao non sucré",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Chocolat noir 70% (pépites)",
-          15,
+          8,
           "g",
           "pantry"
         ],
@@ -8108,7 +8113,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.75,
-      "kcal": 240,
+      "kcal": 220,
       "tags": [
         "vegetarian",
         "quick",
@@ -8135,8 +8140,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane",
-          0.5,
-          "u",
+          40,
+          "g",
           "produce"
         ]
       ],
@@ -8373,7 +8378,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.12,
-      "kcal": 180,
+      "kcal": 170,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -8384,43 +8389,44 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Dattes medjool dénoyautées",
-          40,
-          "g",
-          "pantry"
-        ],
-        [
-          "Amandes",
           20,
           "g",
           "pantry"
         ],
         [
+          "Amandes",
+          10,
+          "g",
+          "pantry"
+        ],
+        [
           "Flocons d'avoine",
-          15,
+          8,
           "g",
           "pantry"
         ],
         [
           "Cacao non sucré",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Noix de coco râpée",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ]
       ],
       "steps": [
         "Mixe dattes, amandes, avoine et cacao jusqu'à obtenir une pâte qui se tient.",
-        "Forme 3-4 boulettes avec les mains.",
+        "Forme des boulettes de la taille d'une noix avec les mains.",
         "Roule-les dans la noix de coco râpée. Garde au frigo."
       ],
       "photo": "assets/recipes/s9.webp"
@@ -8492,7 +8498,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 210,
+      "kcal": 170,
       "tags": [
         "vegetarian",
         "quick"
@@ -8506,19 +8512,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de sarrasin prête",
-          1,
+          0.5,
           "u",
           "bread"
         ],
         [
           "Fromage frais nature",
-          40,
+          50,
           "g",
           "dairy"
         ],
         [
           "Concombre",
-          0.2,
+          0.3,
           "u",
           "produce"
         ],
@@ -8530,7 +8536,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Réchauffe la galette 1 minute à la poêle.",
+        "Coupe la galette de sarrasin en deux et réchauffe ta part 1 minute à la poêle, sans matière grasse (elle doit redevenir souple).",
         "Tartine de fromage frais, pose des tranches de concombre.",
         "Parsème de ciboulette. Roule la galette."
       ],
@@ -8548,7 +8554,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 0.75,
-      "kcal": 220,
+      "kcal": 210,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -8566,19 +8572,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          30,
+          22,
           "g",
           "pantry"
         ],
         [
           "Pomme râpée",
-          50,
+          40,
           "g",
           "produce"
         ],
         [
           "Cerneaux de noix concassés",
-          10,
+          12,
           "g",
           "pantry"
         ],
@@ -8593,12 +8599,6 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
-        ],
-        [
-          "Miel",
-          0.5,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
@@ -9156,7 +9156,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -9324,7 +9325,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 510,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -9339,7 +9340,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          120,
+          110,
           "g",
           "pantry"
         ],
@@ -9351,7 +9352,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          40,
           "g",
           "pantry"
         ],
@@ -9504,7 +9505,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -9584,7 +9586,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 390,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -9601,13 +9603,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potimarron",
-          350,
+          280,
           "g",
           "produce"
         ],
         [
           "Châtaignes cuites sous vide",
-          60,
+          25,
           "g",
           "pantry"
         ],
@@ -9625,7 +9627,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Crème liquide légère",
-          2,
+          3,
           "c.à.s",
           "dairy"
         ],
@@ -9634,6 +9636,12 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
+        ],
+        [
+          "Graines de courge",
+          15,
+          "g",
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -9652,7 +9660,7 @@ window.__DATA_RECIPES = {
         "Coupe le potimarron en cubes (peau gardée).",
         "Émince l'oignon, fais-le revenir dans l'huile.",
         "Ajoute potimarron, châtaignes, bouillon. Cuis 20 min couvert.",
-        "Mixe avec la crème et la muscade. Sale, poivre."
+        "Mixe avec la crème et la muscade. Sale, poivre. Fais griller les graines de courge 2-3 min à sec dans une poêle : elles gonflent et commencent à crépiter. Parsème-les sur le velouté au moment de servir."
       ],
       "photo": "assets/recipes/l37.webp"
     },
@@ -9940,7 +9948,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 510,
+      "kcal": 710,
       "tags": [
         "batch-friendly"
       ],
@@ -9972,7 +9980,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pommes de terre nouvelles",
-          150,
+          110,
           "g",
           "produce"
         ],
@@ -9990,7 +9998,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -10619,7 +10627,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 130,
+      "kcal": 180,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -10632,7 +10640,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Orange",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -10650,7 +10658,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -10951,7 +10959,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 180,
+      "kcal": 160,
       "rest": 30,
       "advance": "30min",
       "tags": [
@@ -10964,43 +10972,44 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Dattes Medjool dénoyautées",
-          30,
-          "g",
-          "pantry"
-        ],
-        [
-          "Cerneaux de noix",
-          20,
-          "g",
-          "pantry"
-        ],
-        [
-          "Cacao non sucré",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
-          "Flocons d'avoine",
           15,
           "g",
           "pantry"
         ],
         [
+          "Cerneaux de noix",
+          10,
+          "g",
+          "pantry"
+        ],
+        [
+          "Cacao non sucré",
+          0.5,
+          "c.à.c",
+          "pantry"
+        ],
+        [
+          "Flocons d'avoine",
+          8,
+          "g",
+          "pantry"
+        ],
+        [
           "Noix de coco râpée (pour rouler)",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ]
       ],
       "steps": [
         "Mixe dattes, noix, cacao, flocons jusqu'à une pâte collante.",
-        "Forme 3-4 boules à la main.",
+        "Forme des petites boules à la main.",
         "Roule-les dans la noix de coco râpée.",
         "Repose 30 min au frais avant dégustation. Se garde 4-5 jours."
       ],
@@ -11019,7 +11028,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 330,
+      "kcal": 300,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -11030,7 +11039,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "lactose"
+        "lactose",
+        "gluten"
       ],
       "ing": [
         [
@@ -11040,12 +11050,6 @@ window.__DATA_RECIPES = {
           "frozen"
         ],
         [
-          "Banane",
-          0.5,
-          "u",
-          "produce"
-        ],
-        [
           "Fruit de la passion",
           1,
           "u",
@@ -11053,13 +11057,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Yaourt nature",
-          80,
+          120,
           "g",
           "dairy"
         ],
         [
-          "Flocons d'avoine",
-          20,
+          "Flocons d'avoine complets",
+          15,
           "g",
           "pantry"
         ],
@@ -11077,7 +11081,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mixe mangue surgelée, banane et yaourt jusqu'à obtenir une texture épaisse de sorbet.",
+        "Mixe mangue surgelée et yaourt jusqu'à obtenir une texture épaisse de sorbet.",
         "Verse dans un bol. Coupe le fruit de la passion en deux, récupère la pulpe.",
         "Dispose les flocons d'avoine, amandes, graines de courge et pulpe de passion sur le smoothie.",
         "Déguste immédiatement à la cuillère."
@@ -11165,7 +11169,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 340,
+      "kcal": 290,
       "rest": 480,
       "advance": "veille",
       "tags": [
@@ -11182,7 +11186,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Flocons d'avoine",
+          "Flocons d'avoine complets",
           40,
           "g",
           "pantry"
@@ -11206,12 +11210,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Miel",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Cannelle",
           1,
           "pincée",
@@ -11219,10 +11217,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille : mélange flocons d'avoine, lait d'amande, miel et cannelle dans un bocal.",
+        "La veille : mélange flocons d'avoine, lait d'amande et cannelle dans un bocal.",
         "Ferme et place au frigo toute la nuit.",
         "Le matin : coupe la pêche en tranches, dispose-les sur l'avoine.",
-        "Parsème d'amandes effilées et déguste froid."
+        "Parsème d'amandes effilées et déguste froid : la pêche mûre apporte toute la douceur."
       ],
       "photo": "assets/recipes/b25.webp"
     },
@@ -11321,7 +11319,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -11854,7 +11853,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -12812,7 +12812,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -12899,7 +12900,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "producesLeftovers": [
         "poulet cuit"
@@ -13722,7 +13724,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.88,
-      "kcal": 120,
+      "kcal": 140,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -13736,13 +13738,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Banane congelée",
-          1,
+          0.75,
           "u",
           "frozen"
         ],
         [
           "Fraises surgelées",
-          80,
+          120,
           "g",
           "frozen"
         ],
@@ -13793,13 +13795,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Melon charentais",
-          0.5,
-          "u",
+          180,
+          "g",
           "produce"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -13905,7 +13907,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 240,
+      "kcal": 330,
       "tags": [
         "vegetarian"
       ],
@@ -13919,7 +13921,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fraises",
-          100,
+          120,
           "g",
           "produce"
         ],
@@ -13931,7 +13933,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine de sarrasin",
-          30,
+          22,
           "g",
           "pantry"
         ],
@@ -13943,14 +13945,14 @@ window.__DATA_RECIPES = {
         ],
         [
           "Beurre doux",
-          20,
+          12,
           "g",
           "dairy"
         ],
         [
           "Miel",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -13982,7 +13984,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 210,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -13998,43 +14000,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Abricots frais",
-          4,
+          2.0,
           "u",
           "produce"
         ],
         [
           "Œuf",
-          2,
+          1.0,
           "u",
           "dairy"
         ],
         [
           "Poudre d'amande",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Farine de sarrasin",
-          15,
+          8,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Extrait de vanille",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ]
@@ -14042,7 +14044,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 180°C. Beurre un petit plat à gratin.",
         "Coupe les abricots en deux, retire les noyaux. Dispose-les dans le plat.",
-        "Bats les œufs avec le miel et la vanille. Ajoute poudre d'amande, farine, puis le lait progressivement.",
+        "Bats l'œuf avec le miel et la vanille. Ajoute poudre d'amande, farine, puis le lait progressivement.",
         "Verse la pâte sur les abricots. Enfourne 25 min."
       ],
       "photo": "assets/recipes/des31.webp"
@@ -14418,7 +14420,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 580,
+      "kcal": 620,
       "tags": [
         "batch-friendly"
       ],
@@ -14450,13 +14452,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Roquette",
-          30,
+          50,
           "g",
           "produce"
         ],
@@ -14486,7 +14488,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa sous l'eau froide. Verse-le dans une casserole avec 200 ml d'eau salée. Porte à ébullition, baisse le feu et laisse cuire 12 min couvercle fermé.",
+        "Rince le quinoa sous l'eau froide. Verse-le dans une casserole avec 2 fois son volume d'eau salée. Porte à ébullition, baisse le feu et laisse cuire 12 min couvercle fermé.",
         "Pendant ce temps, frotte le filet de poulet avec le paprika, le sel et le poivre.",
         "Fais chauffer une poêle avec un peu d'huile. Cuis le poulet 5 min de chaque côté à feu moyen, puis tranche-le.",
         "Coupe l'avocat et la mangue en cubes.",
@@ -14507,7 +14509,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 510,
+      "kcal": 390,
       "tags": [
         "kid-friendly"
       ],
@@ -14522,7 +14524,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pommes de terre nouvelles",
-          250,
+          150,
           "g",
           "produce"
         ],
@@ -14536,6 +14538,12 @@ window.__DATA_RECIPES = {
           "Radis roses",
           6,
           "u",
+          "produce"
+        ],
+        [
+          "Haricots verts",
+          100,
+          "g",
           "produce"
         ],
         [
@@ -14563,6 +14571,12 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
+          "Huile d'olive",
+          1,
+          "c.à.c",
+          "pantry"
+        ],
+        [
           "Sel, poivre",
           1,
           "pincée",
@@ -14571,10 +14585,10 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Brosse les pommes de terre sous l'eau (pas besoin de les éplucher). Mets-les dans une casserole d'eau froide salée.",
-        "Porte à ébullition et laisse cuire 18-20 min. Vérifie avec la pointe d'un couteau : ça doit s'enfoncer facilement. Égoutte et laisse tiédir.",
+        "Porte à ébullition et laisse cuire 18-20 min. Vérifie avec la pointe d'un couteau : ça doit s'enfoncer facilement. Pour les 6 dernières minutes, ajoute les haricots verts équeutés (casse les deux bouts) dans la même eau. Égoutte le tout, passe les haricots sous l'eau froide pour qu'ils restent vert vif et croquants, laisse tiédir.",
         "Pendant ce temps, lave et coupe les radis en fines rondelles. Cisèle la ciboulette.",
-        "Dans un grand bol, fouette le yaourt avec la moutarde, le vinaigre, sel et poivre.",
-        "Coupe les pommes de terre en deux ou en quartiers. Mélange-les délicatement avec la sauce.",
+        "Dans un grand bol, fouette le yaourt avec la moutarde, le vinaigre, l'huile d'olive, sel et poivre.",
+        "Coupe les pommes de terre en deux ou en quartiers. Mélange-les délicatement avec les haricots verts et la sauce.",
         "Dispose le jambon cru déchiré en lanières, les radis et la ciboulette par-dessus."
       ],
       "photo": "assets/recipes/l52.webp"
@@ -14683,7 +14697,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 470,
+      "kcal": 590,
       "tags": [
         "batch-friendly"
       ],
@@ -14696,7 +14710,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Semoule fine de blé",
+          "Boulgour fin",
           50,
           "g",
           "pantry"
@@ -14727,7 +14741,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sardines fraîches",
-          3,
+          2,
           "u",
           "meat-fish"
         ],
@@ -14739,7 +14753,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -14751,10 +14765,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un bol, recouvre la semoule du jus d'un demi-citron et de 50 ml d'eau. Laisse gonfler 15 min.",
-        "Pendant ce temps, lave et hache très finement le persil et la menthe (le vrai taboulé libanais a beaucoup plus d'herbes que de semoule).",
+        "Dans un bol, recouvre le boulgour fin d'eau froide juste à hauteur et d'un peu du jus de citron. Laisse gonfler 15 min : les grains doivent être tendres sous la dent et il ne doit plus rester d'eau au fond du bol.",
+        "Pendant ce temps, lave et hache très finement le persil et la menthe (le vrai taboulé libanais a beaucoup plus d'herbes que de boulgour).",
         "Coupe la tomate en tout petits dés, émince finement l'oignon nouveau (tige verte comprise).",
-        "Mélange semoule, herbes, tomate, oignon. Ajoute le reste du jus de citron, l'huile d'olive, sel et poivre. Réserve au frais.",
+        "Mélange boulgour, herbes, tomate, oignon. Ajoute le reste du jus de citron, l'huile d'olive, sel et poivre. Réserve au frais.",
         "Vide les sardines (ou demande au poissonnier). Sale-les légèrement.",
         "Fais chauffer une poêle à feu vif. Cuis les sardines 3-4 min de chaque côté, peau d'abord, sans les retourner trop vite.",
         "Sers le taboulé bien frais avec les sardines chaudes posées dessus."
@@ -14773,7 +14787,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 2.75,
-      "kcal": 530,
+      "kcal": 580,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -14789,7 +14803,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches en bocal",
-          200,
+          80,
           "g",
           "pantry"
         ],
@@ -14831,12 +14845,12 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine de pois chiche",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
-          "Pain pita",
+          "Pain pita complet",
           0.5,
           "u",
           "bread"
@@ -14887,7 +14901,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200 °C.",
         "Égoutte et rince les pois chiches. Mixe-les avec l'oignon, l'ail, persil, coriandre fraîche, cumin et coriandre moulus, sel et poivre. Tu dois obtenir une pâte épaisse mais pas en purée (texture grossière).",
-        "Ajoute la farine de pois chiche pour lier. Forme 8 boulettes aplaties avec les mains humides.",
+        "Ajoute la farine de pois chiche pour lier. Forme des boulettes de la taille d'une noix avec les mains humides, puis aplatis-les légèrement.",
         "Pose-les sur une plaque avec papier cuisson, badigeonne d'huile d'olive. Enfourne 20-25 min en retournant à mi-cuisson.",
         "Pendant ce temps, fais griller le pain pita au four 2 min puis brise-le en morceaux.",
         "Coupe le concombre et la tomate en dés. Mélange avec la salade romaine ciselée et les morceaux de pain : c'est le fattouche.",
@@ -15106,7 +15120,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.25,
-      "kcal": 580,
+      "kcal": 650,
       "tags": [
         "quick",
         "kid-friendly"
@@ -15121,7 +15135,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes (penne ou fusilli)",
-          90,
+          50,
           "g",
           "pantry"
         ],
@@ -15133,7 +15147,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Courgette",
-          1,
+          1.5,
           "u",
           "produce"
         ],
@@ -15170,9 +15184,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Mets une grande casserole d'eau salée à bouillir. Cuis les pâtes selon le temps indiqué sur le paquet.",
-        "Pendant ce temps, lave la courgette et coupe-la en demi-rondelles fines. Émince l'ail.",
-        "Dans une grande poêle, fais revenir les lardons sans matière grasse 3 min. Ajoute l'ail et la courgette, poursuis 5-6 min en remuant.",
-        "Égoutte les pâtes en gardant 100 ml d'eau de cuisson.",
+        "Pendant ce temps, lave les courgettes et coupe-les en rondelles fines. Émince l'ail.",
+        "Dans une grande poêle, fais revenir les lardons sans matière grasse 3 min. Ajoute l'ail et les courgettes, poursuis 5-6 min en remuant.",
+        "Égoutte les pâtes en gardant une petite louche d'eau de cuisson.",
         "Verse les pâtes dans la poêle avec le zeste de citron, le jus, un filet d'huile d'olive et un peu d'eau de cuisson pour lier.",
         "Sers avec le parmesan râpé et un tour de poivre."
       ],
@@ -15190,7 +15204,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 510,
+      "kcal": 550,
       "tags": [],
       "eq": [
         "oven",
@@ -15203,8 +15217,14 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Patate douce",
-          1,
-          "u",
+          150,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          150,
+          "g",
           "produce"
         ],
         [
@@ -15252,11 +15272,11 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200 °C.",
-        "Lave la patate douce, coupe-la en cubes de 2 cm sans l'éplucher. Mélange-les sur une plaque avec l'huile d'olive, le paprika, sel et poivre.",
-        "Enfourne 25-30 min jusqu'à ce que les cubes soient dorés et tendres.",
+        "Lave la patate douce, coupe-la en cubes de 2 cm sans l'éplucher. Détaille le chou-fleur en petits bouquets de la taille d'une noix. Mélange le tout sur une plaque avec l'huile d'olive, le paprika, sel et poivre.",
+        "Enfourne 25-30 min en remuant à mi-cuisson, jusqu'à ce que les cubes et le chou-fleur soient dorés sur les bords et tendres au couteau.",
         "Sale et poivre le dos de cabillaud. À 5 min de la fin de cuisson de la patate, fais chauffer une poêle à feu moyen.",
         "Mets le beurre dans la poêle. Quand il commence à dorer (couleur noisette, ça sent bon), pose le cabillaud peau dessous. Cuis 4 min, puis retourne et cuis 2 min de plus en arrosant avec le beurre.",
-        "Sers le cabillaud sur les patates douces, arrose du beurre noisette de la poêle, ajoute le persil ciselé et un trait de citron."
+        "Sers le cabillaud sur la patate douce et le chou-fleur rôtis, arrose du beurre noisette de la poêle, ajoute le persil ciselé et un trait de citron."
       ],
       "photo": "assets/recipes/d53.webp"
     },
@@ -15281,7 +15301,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "usesLeftovers": [
         "riz cuit"
@@ -15470,7 +15491,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.38,
-      "kcal": 580,
+      "kcal": 630,
       "tags": [
         "quick",
         "kid-friendly"
@@ -15486,7 +15507,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Linguine complètes",
-          90,
+          50,
           "g",
           "pantry"
         ],
@@ -15504,7 +15525,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Courgette",
-          1,
+          1.5,
           "u",
           "produce"
         ],
@@ -15529,10 +15550,10 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Mets une grande casserole d'eau salée à bouillir. Cuis les linguine selon le temps indiqué sur le paquet.",
-        "Pendant ce temps, lave la courgette et coupe-la en lamelles dans la longueur (3 mm).",
+        "Pendant ce temps, lave les courgettes et coupe-les en lamelles dans la longueur (3 mm).",
         "Fais chauffer une poêle avec un filet d'huile. Grille les lamelles de courgette 2-3 min de chaque côté, sale, poivre.",
         "Coupe le jambon en lanières.",
-        "Égoutte les pâtes en gardant 50 ml d'eau de cuisson. Remets dans la casserole, ajoute le pesto et un peu d'eau pour lier.",
+        "Égoutte les pâtes en gardant une petite louche d'eau de cuisson. Remets dans la casserole, ajoute le pesto et un peu d'eau pour lier.",
         "Sers en disposant les courgettes grillées et le jambon par-dessus, parsème de parmesan et d'un tour de poivre."
       ],
       "photo": "assets/recipes/l56.webp"
@@ -15730,7 +15751,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 540,
+      "kcal": 710,
       "tags": [
         "batch-friendly"
       ],
@@ -15745,13 +15766,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pommes de terre nouvelles",
-          200,
+          130,
           "g",
           "produce"
         ],
         [
           "Haricots verts",
-          100,
+          150,
           "g",
           "produce"
         ],
@@ -15847,7 +15868,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -16019,7 +16041,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -16100,7 +16123,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 600,
+      "kcal": 450,
       "tags": [
         "kid-friendly",
         "batch-friendly"
@@ -16118,61 +16141,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Patate douce",
-          500,
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          130,
           "g",
           "produce"
         ],
         [
           "Bœuf haché 5%",
-          200,
+          100,
           "g",
           "meat-fish"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Tomate concassée",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Beurre doux",
-          15,
+          8,
           "g",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          50,
+          25,
           "ml",
           "dairy"
         ],
         [
           "Thym séché",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -16185,11 +16214,11 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200 °C.",
-        "Épluche et coupe les patates douces en gros cubes. Cuis-les 15-20 min dans une casserole d'eau salée jusqu'à ce qu'elles soient tendres.",
+        "Épluche et coupe les patates douces en gros cubes. Détache le chou-fleur en bouquets (les petites « fleurs » au bout des tiges). Cuis-les ensemble 15-20 min dans une casserole d'eau salée jusqu'à ce qu'elles soient tendres.",
         "Pendant ce temps, émince l'oignon, l'ail, et coupe la carotte en petits dés. Fais revenir dans une poêle avec l'huile 5 min.",
         "Ajoute la viande hachée, fais dorer 5 min en émiettant. Ajoute la tomate concassée et le thym, sale, poivre. Laisse mijoter 5 min.",
-        "Égoutte les patates douces. Écrase à la fourchette avec le beurre et le lait. Sale.",
-        "Verse la viande dans un plat à gratin. Recouvre de purée de patate douce.",
+        "Égoutte les patates douces et le chou-fleur, laisse-les fumer 2 minutes dans la passoire pour que l'eau s'évapore (sinon la purée est liquide). Écrase à la fourchette avec le beurre et le lait. Sale.",
+        "Verse la viande dans un plat à gratin. Recouvre de purée de patate douce et chou-fleur.",
         "Enfourne 20 min jusqu'à ce que le dessus soit légèrement doré."
       ],
       "photo": "assets/recipes/d57.webp"
@@ -16482,7 +16511,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.75,
-      "kcal": 510,
+      "kcal": 580,
       "tags": [
         "vegetarian",
         "vegan",
@@ -16496,49 +16525,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches en bocal",
-          250,
+          125,
           "g",
           "pantry"
         ],
         [
           "Épinards frais",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          10,
+          5,
           "g",
           "produce"
         ],
         [
           "Curry en poudre",
-          1,
+          0.5,
           "c.à.s",
           "spices"
         ],
         [
           "Tomate concassée",
-          100,
+          50,
           "g",
           "pantry"
         ],
@@ -16550,7 +16579,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile de coco",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -16566,7 +16595,7 @@ window.__DATA_RECIPES = {
         "Fais chauffer l'huile dans une sauteuse. Ajoute oignon, ail, gingembre, curry. Remue 2 min jusqu'à ce que ça embaume.",
         "Égoutte et rince les pois chiches. Ajoute-les avec la tomate concassée et le lait de coco. Sale, poivre. Laisse mijoter 8-10 min.",
         "Lave les épinards, ajoute-les en bouquet (ils vont énormément réduire). Mélange et cuis encore 2-3 min.",
-        "Sers parsemé de coriandre ciselée. Accompagne d'un naan ou d'un peu de riz si tu veux un plat plus consistant."
+        "Sers parsemé de coriandre ciselée. Accompagne d'un peu de riz basmati complet si tu veux un plat plus consistant."
       ],
       "photo": "assets/recipes/d61.webp"
     },
@@ -16782,7 +16811,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.25,
-      "kcal": 560,
+      "kcal": 500,
       "tags": [
         "kid-friendly"
       ],
@@ -16795,7 +16824,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pommes de terre à chair ferme",
-          400,
+          160,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          160,
           "g",
           "produce"
         ],
@@ -16818,6 +16853,12 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
+          "Salade verte",
+          60,
+          "g",
+          "produce"
+        ],
+        [
           "Beurre doux",
           10,
           "g",
@@ -16837,13 +16878,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Épluche les pommes de terre. Râpe-les avec une râpe à gros trous.",
-        "Mets-les dans un torchon propre, presse fort pour évacuer un maximum d'eau (étape clé pour avoir un rösti croustillant).",
+        "Épluche les pommes de terre. Lave la courgette (garde la peau). Râpe les deux avec une râpe à gros trous.",
+        "Mets-les dans un torchon propre, presse fort pour évacuer un maximum d'eau : la courgette en rend beaucoup, c'est l'étape clé pour avoir un rösti croustillant (le mélange doit sembler presque sec au toucher).",
         "Sale, poivre, mélange.",
         "Fais chauffer l'huile et le beurre dans une grande poêle à feu moyen.",
-        "Verse les pommes de terre râpées, étale en disque épais avec une spatule, tasse bien.",
+        "Verse le mélange râpé, étale en disque épais avec une spatule, tasse bien.",
         "Cuis 10 min sans toucher pour former une croûte dorée. Retourne (utilise une assiette si besoin) et cuis 10 min de l'autre côté.",
-        "Coupe en quartiers. Sers avec le jambon en lanières, le fromage frais en petites quenelles dessus, et la ciboulette ciselée."
+        "Coupe en quartiers. Sers avec le jambon en lanières, le fromage frais en petites quenelles dessus, la ciboulette ciselée et la salade verte à côté."
       ],
       "photo": "assets/recipes/l64.webp"
     },
@@ -17047,7 +17088,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 580,
+      "kcal": 750,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -17076,7 +17117,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Betterave cuite",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -17124,7 +17165,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa. Cuis-le dans 200 ml d'eau salée 12-15 min à feu doux à couvert. Égoutte si besoin.",
+        "Rince le quinoa. Cuis-le dans 2 fois son volume d'eau salée 12-15 min à feu doux à couvert. Égoutte si besoin.",
         "Coupe la betterave en cubes, l'avocat en lamelles.",
         "Coupe l'halloumi en tranches de 1 cm. Fais-les griller à sec dans une poêle bien chaude 2 min par face jusqu'à ce qu'elles soient bien dorées.",
         "Dans un bol, dispose le quinoa au fond, puis les épinards crus, la betterave, l'avocat, l'halloumi grillé.",
@@ -17144,7 +17185,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 620,
+      "kcal": 700,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -17161,7 +17202,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tagliatelles fraîches",
-          100,
+          70,
           "g",
           "pantry"
         ],
@@ -17187,6 +17228,12 @@ window.__DATA_RECIPES = {
           "Carotte",
           1,
           "u",
+          "produce"
+        ],
+        [
+          "Courgette",
+          120,
+          "g",
           "produce"
         ],
         [
@@ -17233,9 +17280,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe le veau en cubes de 2 cm. Émince oignon et ail. Coupe la carotte en petits dés.",
+        "Coupe le veau en cubes de 2 cm. Émince oignon et ail. Coupe la carotte et la courgette en petits dés (cubes de la taille d'un petit pois).",
         "Fais chauffer l'huile dans une cocotte. Saisis les cubes de veau 5 min jusqu'à ce qu'ils dorent.",
-        "Ajoute oignon, ail et carotte, fais suer 5 min.",
+        "Ajoute oignon, ail, carotte et courgette, fais suer 5 min : les légumes ramollissent sans colorer.",
         "Verse le vin blanc, laisse réduire 2 min.",
         "Ajoute la tomate concassée et le bouillon. Sale, poivre. Couvre et laisse mijoter 45 min à feu doux. La sauce doit épaissir et la viande être très tendre.",
         "10 min avant la fin, fais cuire les tagliatelles dans une grande casserole d'eau salée selon le temps du paquet.",
@@ -17362,7 +17409,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 590,
+      "kcal": 640,
       "tags": [],
       "eq": [
         "stove",
@@ -17370,7 +17417,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -17381,13 +17429,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Patate douce",
-          1,
-          "u",
+          120,
+          "g",
           "produce"
         ],
         [
           "Pak choï",
-          2,
+          3,
           "u",
           "produce"
         ],
@@ -17458,9 +17506,8 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 5.62,
-      "kcal": 540,
+      "kcal": 570,
       "tags": [
-        "quick",
         "kid-friendly"
       ],
       "eq": [
@@ -17473,7 +17520,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pommes de terre à chair ferme",
-          300,
+          130,
+          "g",
+          "produce"
+        ],
+        [
+          "Haricots verts",
+          150,
           "g",
           "produce"
         ],
@@ -17515,11 +17568,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Brosse les pommes de terre. Coupe-les en morceaux égaux. Cuis-les à la vapeur 18-20 min.",
-        "Pendant ce temps, écrase l'ail finement, cisèle le persil. Mélange à 20 g de beurre ramolli avec sel et poivre — c'est le beurre persillé.",
+        "Brosse les pommes de terre. Coupe-les en morceaux égaux. Cuis-les à la vapeur 18-20 min. Équeute les haricots verts (casse les petites pointes aux deux bouts) et ajoute-les dans le panier vapeur pour les 10 dernières minutes : ils doivent rester vert vif et légèrement croquants.",
+        "Pendant ce temps, écrase l'ail finement, cisèle le persil. Mélange-les avec presque tout le beurre ramolli (garde une noisette pour la poêle), sel et poivre — c'est le beurre persillé.",
         "Sale et poivre le filet de truite côté chair.",
-        "Fais fondre les 5 g de beurre restant dans une poêle à feu moyen. Pose la truite côté peau d'abord. Cuis 4 min sans bouger. Retourne et cuis 1 min côté chair.",
-        "Sers la truite sur les pommes de terre, dépose une noisette de beurre persillé sur le poisson encore chaud (il fond doucement). Ajoute un quartier de citron."
+        "Fais fondre la noisette de beurre restante dans une poêle à feu moyen. Pose la truite côté peau d'abord. Cuis 4 min sans bouger. Retourne et cuis 1 min côté chair.",
+        "Sers la truite avec les pommes de terre et les haricots verts, dépose une noisette de beurre persillé sur le poisson encore chaud (il fond doucement). Ajoute un quartier de citron."
       ],
       "photo": "assets/recipes/d65.webp"
     },
@@ -17743,7 +17796,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 480,
+      "kcal": 720,
       "tags": [
         "vegetarian",
         "quick",
@@ -17761,7 +17814,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes",
-          100,
+          50,
           "g",
           "pantry"
         ],
@@ -17773,7 +17826,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomates cerises",
-          100,
+          150,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          120,
           "g",
           "produce"
         ],
@@ -17817,9 +17876,9 @@ window.__DATA_RECIPES = {
       "steps": [
         "Cuis les pâtes dans une grande casserole d'eau salée selon le temps du paquet (~10 min, al dente).",
         "Pendant ce temps, mixe la roquette avec l'ail écrasé, les noix concassées, le parmesan, l'huile d'olive et le jus de citron jusqu'à obtenir un pesto lisse. Sale et poivre.",
-        "Coupe les tomates cerises en deux.",
+        "Coupe les tomates cerises en deux. Lave la courgette et taille-la en fins rubans à l'économe ; fais-les sauter 2-3 min à la poêle avec un filet d'huile d'olive : ils doivent devenir souples et à peine dorés.",
         "Égoutte les pâtes en gardant 2 c.à.s d'eau de cuisson. Remets-les dans la casserole hors du feu.",
-        "Ajoute le pesto et l'eau réservée, mélange bien : la sauce doit napper.",
+        "Ajoute le pesto, les rubans de courgette et l'eau réservée, mélange bien : la sauce doit napper.",
         "Sers avec les tomates cerises par-dessus."
       ],
       "photo": "assets/recipes/l68.webp"
@@ -17918,7 +17977,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 470,
+      "kcal": 430,
       "tags": [
         "vegetarian",
         "quick",
@@ -17940,20 +17999,20 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pois chiches cuits",
-          80,
+          35,
           "g",
           "pantry"
         ],
         [
           "Tahini",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
-          "Citron (jus)",
-          0.5,
-          "u",
+          "Jus de citron",
+          10,
+          "ml",
           "produce"
         ],
         [
@@ -17982,8 +18041,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Carotte",
-          1,
-          "u",
+          30,
+          "g",
           "produce"
         ],
         [
@@ -18002,7 +18061,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Houmous maison : mixe les pois chiches avec tahini, jus de citron, ail écrasé, huile d'olive, cumin et 1 c.à.s d'eau jusqu'à obtenir une texture lisse. Sale.",
         "Râpe la carotte. Coupe le concombre en bâtonnets fins.",
-        "Tartine la tortilla d'une bonne couche de houmous (~3 c.à.s).",
+        "Tartine la tortilla de tout le houmous, en une couche bien régulière.",
         "Dispose les bâtonnets de concombre et la carotte râpée au centre, parsème de coriandre.",
         "Roule le wrap bien serré. Coupe en deux en biais pour servir."
       ],
@@ -18666,7 +18725,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 510,
+      "kcal": 630,
       "tags": [
         "quick",
         "kid-friendly",
@@ -18682,13 +18741,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Thon au naturel",
-          80,
+          110,
           "g",
           "meat-fish"
         ],
@@ -18717,6 +18776,12 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
+          "Roquette",
+          40,
+          "g",
+          "produce"
+        ],
+        [
           "Huile d'olive",
           2,
           "c.à.s",
@@ -18739,9 +18804,9 @@ window.__DATA_RECIPES = {
         "Cuis les pâtes complètes dans une grande casserole d'eau salée selon le paquet (al dente).",
         "Pendant ce temps, écrase finement l'ail. Égoutte le thon. Cisèle le persil.",
         "Dans un grand bol, mélange thon écrasé, ail, câpres, zeste et jus de citron, huile d'olive, persil, piment, sel et poivre.",
-        "Égoutte les pâtes en gardant 2 c.à.s d'eau de cuisson.",
+        "Égoutte les pâtes en gardant un fond d'eau de cuisson.",
         "Verse les pâtes dans le bol avec la préparation au thon. Ajoute l'eau réservée pour lier.",
-        "Mélange bien et sers immédiatement."
+        "Mélange bien, ajoute la roquette en dernier (elle doit juste tiédir, pas cuire) et sers immédiatement."
       ],
       "photo": "assets/recipes/d72.webp"
     },
@@ -18844,7 +18909,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 350,
+      "kcal": 340,
       "tags": [
         "vegetarian",
         "quick",
@@ -18856,24 +18921,25 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Banane mûre",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Fraises",
-          100,
+          150,
           "g",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          150,
           "g",
           "dairy"
         ],
@@ -18885,7 +18951,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine",
-          30,
+          15,
           "g",
           "pantry"
         ],
@@ -18897,13 +18963,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ]
       ],
       "steps": [
-        "Mixe la banane épluchée avec la moitié des fraises, le skyr et le lait d'amande jusqu'à obtenir une texture lisse et onctueuse.",
+        "Mixe la banane épluchée avec une partie des fraises, le skyr et le lait d'amande jusqu'à obtenir une texture lisse et onctueuse.",
         "Verse dans un bol large.",
         "Coupe les fraises restantes en deux ou en lamelles, dispose-les sur le smoothie.",
         "Parsème de flocons d'avoine et de graines de chia.",
@@ -19394,7 +19460,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 480,
+      "kcal": 650,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -19408,13 +19474,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          80,
+          60,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          150,
+          100,
           "g",
           "pantry"
         ],
@@ -19450,7 +19516,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          2,
+          1.5,
           "c.à.s",
           "pantry"
         ],
@@ -19586,7 +19652,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 540,
+      "kcal": 600,
       "tags": [
         "vegan"
       ],
@@ -19596,7 +19662,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "usesLeftovers": [
         "riz cuit"
@@ -19604,13 +19671,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          80,
+          50,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          150,
+          100,
           "g",
           "pantry"
         ],
@@ -19628,7 +19695,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Roquette",
-          30,
+          50,
           "g",
           "produce"
         ],
@@ -19687,7 +19754,7 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, égoutte les pois chiches et sèche-les soigneusement sur du papier absorbant (l'humidité empêche le grillage).",
         "Mets-les dans un saladier, ajoute l'huile d'olive, le cumin, le paprika et une bonne pincée de sel. Mélange pour bien enrober.",
         "Étale-les sur une plaque de cuisson recouverte de papier sulfurisé. Enfourne 20 min en remuant à mi-cuisson — ils doivent devenir bien dorés et croustillants.",
-        "Pendant ce temps, prépare les crudités : râpe la carotte avec une râpe à gros trous (pas besoin de l'éplucher si elle est bio, sinon épluche-la). Coupe le concombre en demi-rondelles fines.",
+        "Pendant ce temps, prépare les crudités : râpe la carotte avec une râpe à gros trous (pas besoin de l'éplucher si elle est bio, sinon épluche-la). Coupe le concombre en rondelles fines, puis recoupe chaque rondelle en deux.",
         "Fais la sauce : dans un petit bol, mélange le tahini, le jus de citron, la sauce soja et 2 c.à.s d'eau. Le mélange doit avoir la consistance d'une crème lisse — ajoute un peu d'eau si trop épais.",
         "Dresse le bowl : pose le riz au fond, dispose en quartiers les pois chiches grillés, la carotte, le concombre et la roquette. Verse la sauce dessus, parsème de graines de sésame."
       ],
@@ -19799,7 +19866,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 470,
+      "kcal": 540,
       "tags": [
         "vegan",
         "no-cook",
@@ -19815,13 +19882,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          150,
+          100,
           "g",
           "pantry"
         ],
@@ -19857,13 +19924,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron (jus)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          1.5,
           "c.à.s",
           "pantry"
         ],
@@ -19875,7 +19942,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Verse le boulgour dans un grand saladier. Couvre-le d'eau bouillante (~150 ml) avec une pincée de sel. Couvre avec une assiette et laisse gonfler 15 min — le boulgour absorbe l'eau et devient tendre.",
+        "Verse le boulgour dans un grand saladier. Couvre-le d'eau bouillante juste à hauteur (l'eau affleure les grains) avec une pincée de sel. Couvre avec une assiette et laisse gonfler 15 min — le boulgour absorbe l'eau et devient tendre.",
         "Pendant ce temps, coupe la tomate en petits dés (= des morceaux d'environ 0,5 cm de côté). Coupe le concombre en petits dés (pas besoin de l'éplucher).",
         "Émince finement l'oignon nouveau (utilise le blanc ET la partie verte tendre).",
         "Cisèle finement la menthe et le persil : empile les feuilles, roule en cigare, coupe en fines lanières puis recoupe en petits morceaux.",
@@ -19899,7 +19966,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 510,
+      "kcal": 520,
       "tags": [
         "vegan",
         "kid-friendly"
@@ -19914,61 +19981,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Tahini",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Pain pita complet",
-          1,
+          0.5,
           "u",
           "bread"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -19980,7 +20047,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Égoutte les pois chiches en gardant 3 c.à.s du jus dans un bol (l'aquafaba — c'est ce qui rend le houmous bien onctueux).",
+        "Égoutte les pois chiches en gardant un peu du jus dans un bol (l'aquafaba — c'est ce qui rend le houmous bien onctueux).",
         "Dans un mixeur ou avec un mixeur plongeant, mets les pois chiches, le tahini, le jus de citron, la gousse d'ail (épluchée et écrasée), le cumin, le sel et l'huile d'olive. Mixe pendant 1 min.",
         "Si le houmous est trop épais, ajoute le jus de pois chiches mis de côté, 1 c.à.s à la fois en mixant entre chaque, jusqu'à obtenir une texture crémeuse comme du beurre mou.",
         "Goûte et ajuste : un peu plus de citron si tu veux du peps, plus de sel, plus de cumin selon ton goût.",
@@ -20379,7 +20446,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "l87",
-      "name": "Wrap falafels maison, houmous et crudités",
+      "name": "Wrap de sarrasin aux falafels maison et crudités",
       "type": "lunch",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -20390,7 +20457,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 550,
+      "kcal": 470,
       "tags": [
         "kid-friendly"
       ],
@@ -20406,85 +20473,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Tahini",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Persil plat",
-          0.05,
+          0.1,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.05,
+          0.1,
           "bouquet",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Farine de sarrasin",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
-          "Tortilla de blé complet",
-          2,
+          "Galette de sarrasin",
+          1,
           "u",
           "bread"
         ],
         [
           "Salade verte",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Tomate",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -20500,13 +20567,13 @@ window.__DATA_RECIPES = {
         "Égoutte les pois chiches et sèche-les sur du papier absorbant.",
         "Dans le mixeur, mets les pois chiches, le tahini, l'ail épluché, le persil, la coriandre, le cumin, la farine de sarrasin, sel, poivre. Mixe par à-coups (= pulse, petites pressions courtes) — la pâte doit rester un peu granuleuse, pas en purée lisse, sinon les falafels seront pâteux.",
         "Si la pâte est trop humide, ajoute un peu de farine de sarrasin pour qu'elle se tienne. Tu dois pouvoir former des boulettes qui ne s'écroulent pas.",
-        "Forme 8 boulettes de la taille d'une grosse noix, aplatis-les légèrement en galettes.",
+        "Forme des boulettes de la taille d'une grosse noix (environ 4 par personne), aplatis-les légèrement en galettes.",
         "Pose-les sur une plaque recouverte de papier sulfurisé. Badigeonne-les d'huile d'olive avec un pinceau (ou les doigts).",
         "Enfourne 15 à 18 min en les retournant à mi-cuisson — elles doivent être bien dorées sur les deux faces.",
         "Pendant ce temps, prépare la sauce : mélange le skyr, le jus de citron, sel et poivre.",
         "Coupe la tomate en rondelles fines. Coupe le concombre en demi-rondelles.",
-        "Réchauffe les tortillas 30 secondes au four (ou 5 sec à la poêle de chaque côté) pour qu'elles soient souples.",
-        "Pose la tortilla à plat. Étale 1 c.à.s de sauce yaourt au centre. Dispose la salade, les rondelles de tomate, le concombre, et 4 falafels écrasés à la fourchette par wrap.",
+        "Réchauffe les galettes de sarrasin 20 secondes de chaque côté dans une poêle chaude, sans matière grasse, pour qu'elles soient souples (froides, elles cassent quand on les roule).",
+        "Pose une galette à plat. Étale une cuillerée de sauce yaourt au centre. Dispose la salade, les rondelles de tomate, le concombre, et les falafels écrasés à la fourchette (environ 4 par wrap).",
         "Roule serré : replie les bords latéraux puis roule de bas en haut. Coupe en deux en biais."
       ],
       "photo": "assets/recipes/l87.webp"
@@ -20560,7 +20627,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Basilic",
-          0.25,
+          0.03,
           "bouquet",
           "produce"
         ],
@@ -20590,13 +20657,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron (jus)",
-          0.25,
+          0.08,
           "u",
           "produce"
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -20822,7 +20889,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "producesLeftovers": [
         "tofu cuit"
@@ -21093,7 +21161,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 540,
+      "kcal": 610,
       "tags": [
         "vegan"
       ],
@@ -21104,67 +21172,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Épinard frais",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Tomate concassée",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          10,
+          5,
           "g",
           "produce"
         ],
         [
           "Curry en poudre",
-          2,
+          1.0,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -21182,7 +21250,7 @@ window.__DATA_RECIPES = {
         "Ajoute l'ail, le gingembre, le curry et le curcuma. Remue 1 min : les épices doivent être enrobées et libérer leur parfum (attention, ça brûle vite — baisse le feu si besoin).",
         "Verse la tomate concassée et le lait de coco. Mélange et porte à frémissement (= petites bulles, pas une grosse ébullition).",
         "Ajoute les pois chiches égouttés. Sale légèrement. Laisse mijoter 10 min à feu doux à découvert — la sauce doit légèrement épaissir.",
-        "Lave les épinards (rince-les bien, ils piègent souvent du sable). Ajoute-les dans la poêle, mélange : ils vont se flétrir en 1 à 2 min et réduire de volume de moitié.",
+        "Lave les épinards (rince-les bien, ils piègent souvent du sable). Ajoute-les dans la poêle, mélange : ils vont se flétrir en 1 à 2 min et réduire énormément de volume.",
         "Goûte, ajuste le sel. Sers le curry sur le riz chaud."
       ],
       "photo": "assets/recipes/d79.webp"
@@ -21413,61 +21481,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Courgette",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Boulgour",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Parmesan râpé",
-          30,
+          15,
           "g",
           "dairy"
         ],
         [
           "Thym séché",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Herbes de Provence",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          3,
+          1.5,
           "c.à.s",
           "pantry"
         ],
@@ -21481,12 +21549,12 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 180°C (chaleur tournante).",
         "Émince finement l'oignon (en très fines lamelles) et écrase l'ail.",
-        "Dans un plat à gratin, fais revenir 5 min l'oignon avec 1 c.à.s d'huile d'olive directement dans le plat sur feu doux (si ton plat va sur le feu) ou en poêle puis transvase. Ajoute l'ail, les herbes de Provence, sel et poivre. Étale au fond du plat.",
+        "Dans un plat à gratin, fais revenir 5 min l'oignon avec un peu de l'huile d'olive directement dans le plat sur feu doux (si ton plat va sur le feu) ou en poêle puis transvase. Ajoute l'ail, les herbes de Provence, sel et poivre. Étale au fond du plat.",
         "Lave les légumes. Coupe l'aubergine, la courgette et les tomates en rondelles régulières d'environ 5 mm d'épaisseur (utilise un économe ou un couteau bien aiguisé).",
-        "Range les rondelles debout dans le plat, en les serrant et en alternant : aubergine, tomate, courgette, aubergine, tomate, courgette… Ça forme des rangs colorés très joli.",
-        "Sale, poivre, parsème de thym. Arrose de 2 c.à.s d'huile d'olive en filet.",
+        "Range les rondelles debout dans le plat, en les serrant et en alternant : aubergine, tomate, courgette, aubergine, tomate, courgette… Ça forme des rangs colorés très jolis.",
+        "Sale, poivre, parsème de thym. Arrose du reste de l'huile d'olive en filet.",
         "Enfourne 40 min : les légumes doivent être tendres et caramélisés sur les bords.",
-        "Pendant ce temps, prépare le boulgour : verse 100 g dans un bol, couvre d'eau bouillante salée (~150 ml), couvre et laisse gonfler 15 min. Aère à la fourchette avant de servir.",
+        "Pendant ce temps, prépare le boulgour : verse le boulgour dans un bol, couvre-le d'une fois et demie son volume d'eau bouillante salée, couvre et laisse gonfler 15 min. Aère à la fourchette avant de servir.",
         "À la sortie du four, parsème le tian de parmesan râpé et passe 2 min sous le grill du four (ou laisse 5 min de plus à 200°C) pour gratiner.",
         "Sers le tian avec le boulgour à côté."
       ],
@@ -21506,7 +21574,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 530,
+      "kcal": 550,
       "tags": [
         "vegan",
         "batch-friendly",
@@ -21519,61 +21587,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail",
-          150,
+          75,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Tomate concassée",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          10,
+          5,
           "g",
           "produce"
         ],
         [
           "Curry en poudre",
-          1,
+          0.5,
           "c.à.s",
           "spices"
         ],
         [
           "Curcuma",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
@@ -21585,13 +21653,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -21609,7 +21677,7 @@ window.__DATA_RECIPES = {
         "Dans une grande casserole ou sauteuse, fais chauffer l'huile d'olive à feu moyen. Fais revenir l'oignon 5 min jusqu'à translucide.",
         "Ajoute l'ail, le gingembre, le curry, le curcuma et le cumin. Remue 1 min — les épices doivent libérer leur parfum (attention, ça brûle vite, baisse le feu si besoin).",
         "Verse les tomates concassées et le lait de coco. Mélange. Porte à frémissement.",
-        "Ajoute les lentilles corail rincées et 300 ml d'eau. Sale légèrement. Mélange.",
+        "Ajoute les lentilles corail rincées et de l'eau jusqu'à les recouvrir d'un doigt. Sale légèrement. Mélange.",
         "Couvre, laisse mijoter à feu doux 20 à 25 min en remuant de temps en temps. Les lentilles vont se défaire et le dahl va épaissir naturellement. Si trop épais, ajoute un peu d'eau.",
         "Goûte et ajuste : sel, citron pour la fraîcheur, plus de curry si tu veux du peps.",
         "Hors du feu, ajoute le jus de citron et la coriandre ciselée.",
@@ -21684,7 +21752,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -21780,7 +21848,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Aneth",
-          0.25,
+          0.01,
           "bouquet",
           "produce"
         ],
@@ -21792,7 +21860,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -21896,7 +21964,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -21940,7 +22008,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -22037,7 +22106,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.9,
-      "kcal": 580,
+      "kcal": 640,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -22049,61 +22118,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Filet de poulet",
-          250,
+          125,
           "g",
           "meat-fish"
         ],
         [
           "Courgette",
-          2,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          10,
+          5,
           "g",
           "produce"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Tomate concassée",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Curry en poudre",
-          2,
+          1.0,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -22115,13 +22184,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -22136,7 +22205,7 @@ window.__DATA_RECIPES = {
         "Lance le riz : verse-le dans une casserole avec 2 fois son volume d'eau salée. Porte à ébullition, baisse à feu doux, couvre 25 min sans soulever.",
         "Pendant ce temps, coupe le poulet en cubes de 2 cm. Sale, poivre.",
         "Émince l'oignon finement. Écrase l'ail. Râpe le gingembre.",
-        "Coupe les courgettes en demi-rondelles (~5 mm).",
+        "Coupe les courgettes en rondelles fines (environ 5 mm).",
         "Dans une grande sauteuse, fais chauffer l'huile d'olive à feu moyen-vif. Fais dorer les morceaux de poulet 4 min en remuant — ils doivent être colorés sur toutes les faces. Réserve dans une assiette.",
         "Dans la même poêle (récupère les sucs), baisse à feu moyen, ajoute l'oignon. Fais revenir 5 min jusqu'à translucide.",
         "Ajoute l'ail, le gingembre, le curry, le curcuma. Remue 1 min pour libérer les arômes.",
@@ -22298,7 +22367,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 150,
+      "kcal": 160,
       "tags": [
         "vegetarian",
         "quick",
@@ -22311,25 +22380,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fraises",
-          100,
+          150,
           "g",
           "produce"
         ],
         [
           "Pomme",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Banane",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Banane",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Kiwi",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -22346,12 +22415,6 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Miel",
-          0.5,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Vanille en poudre",
           1,
           "pincée",
@@ -22362,7 +22425,7 @@ window.__DATA_RECIPES = {
         "Lave les fraises, équeute-les, coupe-les en deux ou en quatre selon la taille.",
         "Pèle et coupe la pomme et le kiwi en petits cubes. Coupe la banane en rondelles.",
         "Dans un bol, mélange tous les fruits.",
-        "Arrose du jus de citron vert (évite que les fruits brunissent), ajoute le miel et la vanille. Mélange délicatement.",
+        "Arrose du jus de citron vert (évite que les fruits brunissent), ajoute la vanille. Mélange délicatement.",
         "Cisèle la menthe finement, parsème par-dessus.",
         "Laisse au frais 15 min avant de servir pour que les saveurs s'imprègnent."
       ],
@@ -23354,7 +23417,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.5,
+          1,
           "pincée",
           "spices"
         ]
@@ -23815,7 +23878,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 480,
+      "kcal": 500,
       "tags": [
         "vegetarian",
         "quick"
@@ -23832,13 +23895,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes",
-          70,
+          50,
           "g",
           "pantry"
         ],
         [
           "Courgette",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -23888,7 +23951,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Porte une grande casserole d'eau salée à ébullition. Plonge les pâtes complètes, cuis selon le temps indiqué sur le paquet (≈ 12-13 min, al dente).",
         "Pendant ce temps, prépare le pesto rapide : dans le bol du mixeur ou avec un mortier, broie le basilic, l'ail, les pignons (garde-en quelques-uns pour la déco), le parmesan, l'huile d'olive, sel et poivre. Tu dois obtenir une pâte lisse mais pas trop liquide.",
-        "Coupe la courgette en demi-rondelles fines (pas besoin d'éplucher, la peau est bonne).",
+        "Coupe la courgette en rondelles fines (pas besoin d'éplucher, la peau est bonne).",
         "Dans une grande poêle, fais sauter les rondelles de courgette à feu vif 5 min avec un peu d'huile, jusqu'à ce qu'elles soient dorées mais encore croquantes.",
         "Ajoute les tomates cerises coupées en deux, fais sauter 2 min de plus — elles doivent juste s'attendrir, pas s'écraser.",
         "Égoutte les pâtes en gardant 2-3 c.à.s d'eau de cuisson. Verse-les dans la poêle, ajoute le pesto et un peu d'eau de cuisson pour fluidifier.",
@@ -24310,7 +24373,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 480,
+      "kcal": 600,
       "tags": [],
       "eq": [
         "oven"
@@ -24329,8 +24392,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Patate douce",
-          0.5,
-          "u",
+          150,
+          "g",
           "produce"
         ],
         [
@@ -24391,14 +24454,14 @@ window.__DATA_RECIPES = {
       "steps": [
         "⚠️ Important : le tartare contient de la viande crue. Achète le bœuf chez un boucher de confiance le jour même. Mange-le tout de suite, ne le réchauffe jamais.",
         "Pour les frites : préchauffe le four à 220°C. Lave et brosse la patate douce (pas besoin d'éplucher). Coupe en bâtonnets de 1 cm de section.",
-        "Dans un saladier, mélange les bâtonnets avec 1 c.à.c d'huile d'olive, sel et poivre.",
+        "Dans un saladier, mélange les bâtonnets avec un tiers de l'huile d'olive, sel et poivre.",
         "Étale-les en une seule couche sur une plaque recouverte de papier cuisson — pas en tas, sinon ils ne grillent pas.",
         "Enfourne 25-30 min en remuant à mi-cuisson. Ils doivent être dorés et croustillants à l'extérieur, fondants à l'intérieur.",
         "Pendant ce temps, prépare le tartare : avec un couteau bien aiguisé, hache finement la viande au couteau (= mets sur une planche et coupe en petits dés de 3-4 mm, puis re-coupe en croisillons). Pas au mixeur, ça écrase.",
         "Mets la viande hachée dans un bol. Ajoute l'échalote ciselée fin, les câpres rincées et hachées, les cornichons hachés, la moutarde, sel et poivre.",
-        "Ajoute le jaune d'œuf et 0,5 c.à.s d'huile d'olive. Mélange bien à la fourchette.",
+        "Ajoute le jaune d'œuf et un tiers de l'huile d'olive. Mélange bien à la fourchette.",
         "Goûte et ajuste sel/poivre/moutarde selon ton goût.",
-        "Pour la salade : assaisonne la roquette avec le vinaigre balsamique et 0,5 c.à.s d'huile d'olive.",
+        "Pour la salade : assaisonne la roquette avec le vinaigre balsamique et le reste de l'huile d'olive.",
         "Forme une portion de tartare avec un cercle à pâtisserie (ou avec les mains, en boule aplatie). Sers avec les frites de patate douce et la salade de roquette."
       ],
       "photo": "assets/recipes/d96.webp"
@@ -24620,7 +24683,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 380,
+      "kcal": 330,
       "tags": [
         "vegetarian",
         "quick"
@@ -24639,8 +24702,8 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de sarrasin prête",
-          1,
-          "u",
+          60,
+          "g",
           "bread"
         ],
         [
@@ -24651,7 +24714,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fromage frais type St-Môret",
-          30,
+          40,
           "g",
           "dairy"
         ],
@@ -24678,7 +24741,7 @@ window.__DATA_RECIPES = {
         "Fais chauffer une grande poêle antiadhésive à feu moyen avec une noisette de beurre.",
         "Pose la galette de sarrasin à plat dans la poêle.",
         "Casse l'œuf au centre de la galette. Avec une spatule, étale légèrement le blanc pour qu'il prenne sur la galette.",
-        "Étale le fromage frais autour de l'œuf en petites tâches.",
+        "Étale le fromage frais autour de l'œuf en petites taches.",
         "Lave les pousses d'épinards, dépose-les autour. Sale et poivre.",
         "Replie les 4 bords de la galette vers le centre pour former un carré (l'œuf reste apparent au milieu).",
         "Laisse cuire 5-6 min à feu doux — le blanc d'œuf doit être pris mais le jaune coulant.",
@@ -24710,7 +24773,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "sulphites"
+        "sulphites",
+        "gluten"
       ],
       "ing": [
         [
@@ -24804,7 +24868,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 420,
+      "kcal": 470,
       "tags": [
         "quick",
         "batch-friendly"
@@ -24819,19 +24883,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes",
-          60,
+          45,
           "g",
           "pantry"
         ],
         [
           "Thon naturel en boîte",
-          50,
+          70,
           "g",
           "meat-fish"
         ],
         [
           "Haricots verts",
-          80,
+          120,
           "g",
           "produce"
         ],
@@ -24892,7 +24956,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "l99",
-      "name": "Wrap houmous-falafels-crudités-grenade",
+      "name": "Wrap de sarrasin houmous-falafels-crudités-grenade",
       "type": "lunch",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -24917,7 +24981,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Tortilla de blé complet",
+          "Galette de sarrasin",
           1,
           "u",
           "bread"
@@ -24984,13 +25048,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Si les falafels sont au frigo, réchauffe-les 2 min à la poêle ou 1 min au micro-ondes (selon ce que tu as). Coupe-les en deux.",
+        "Si les falafels sont au frigo, réchauffe-les 2 min à la poêle ou 1 min au micro-ondes (selon ce que tu as). Coupe-les en deux. Réchauffe aussi la galette de sarrasin 20 secondes de chaque côté dans une poêle chaude, sans matière grasse : elle doit être souple pour se rouler sans casser.",
         "Prépare la sauce : dans un bol, mélange le skyr, le jus de citron, le cumin, sel et poivre.",
         "Coupe le concombre en demi-rondelles fines, la tomate en petits dés.",
-        "Sur la tortilla, étale le houmous en laissant 2 cm de marge sur les bords (sinon ça déborde au pliage).",
+        "Sur la galette, étale le houmous en laissant 2 cm de marge sur les bords (sinon ça déborde au pliage).",
         "Dispose en ligne sur le tiers bas : roquette, concombre, tomate, falafels, graines de grenade.",
-        "Verse 1 c.à.s de sauce yaourt par-dessus.",
-        "Roule la tortilla en partant du bas (où sont les ingrédients), serre bien sans écraser.",
+        "Verse une cuillerée de sauce yaourt par-dessus.",
+        "Roule la galette en partant du bas (où sont les ingrédients), serre bien sans écraser.",
         "Coupe en deux en biais. Sers la sauce restante à part."
       ],
       "photo": "assets/recipes/l99.webp"
@@ -25207,7 +25271,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -25278,7 +25343,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.5,
+          1,
           "pincée",
           "spices"
         ]
@@ -25830,7 +25895,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cannelle",
-          0.5,
+          1,
           "pincée",
           "spices"
         ],
@@ -26073,7 +26138,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -26290,7 +26356,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "sulphites"
+        "sulphites",
+        "gluten"
       ],
       "producesLeftovers": [
         "légumes rôtis"
@@ -26483,10 +26550,8 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 480,
-      "tags": [
-        "quick"
-      ],
+      "kcal": 620,
+      "tags": [],
       "eq": [
         "stove"
       ],
@@ -26499,13 +26564,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Linguini complets",
-          70,
+          55,
           "g",
           "pantry"
         ],
         [
           "Moules",
-          250,
+          300,
           "g",
           "meat-fish"
         ],
@@ -26574,7 +26639,7 @@ window.__DATA_RECIPES = {
         "Verse les moules nettoyées, augmente le feu à fort. Verse le vin blanc, couvre.",
         "Laisse 4-5 min — les moules vont s'ouvrir. Secoue la cocotte une fois en cours pour bien répartir.",
         "Jette celles qui restent fermées (signe qu'elles n'étaient pas bonnes).",
-        "Égoutte les linguini en gardant 2 c.à.s d'eau de cuisson. Verse dans la sauteuse aux moules, ajoute le beurre, le persil ciselé, le piment d'Espelette et le jus de citron.",
+        "Égoutte les linguini en gardant 2 c.à.s d'eau de cuisson. Verse dans la sauteuse aux moules, ajoute le beurre, une partie du persil ciselé, le piment d'Espelette et le jus de citron.",
         "Mélange à feu vif 1 min — les pâtes finissent leur cuisson dans le jus des moules.",
         "Sers immédiatement avec un tour de poivre et le reste du persil par-dessus."
       ],
@@ -26943,7 +27008,8 @@ window.__DATA_RECIPES = {
         "fish",
         "soy",
         "sesame",
-        "sulphites"
+        "sulphites",
+        "gluten"
       ],
       "ing": [
         [
@@ -27138,7 +27204,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 460,
+      "kcal": 380,
       "tags": [
         "quick",
         "batch-friendly"
@@ -27152,7 +27218,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pain pita",
+          "Pain pita complet",
           1,
           "u",
           "bread"
@@ -27226,9 +27292,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Coupe le filet de poulet en lanières de 1 cm. Sale, poivre, saupoudre d'origan.",
-        "Pour le tzatziki : râpe la moitié du concombre à la grosse râpe, presse-le dans un torchon pour extraire l'eau. Mélange dans un bol avec le skyr, l'ail râpé fin, la menthe ciselée, sel et poivre.",
-        "Coupe l'autre moitié du concombre en rondelles fines. Coupe la tomate en quartiers.",
-        "Fais chauffer 0,5 c.à.s d'huile dans une poêle à feu vif. Saisis les lanières de poulet 4-5 min en remuant — elles doivent être dorées et cuites à cœur.",
+        "Pour le tzatziki : râpe une partie du concombre à la grosse râpe, presse-le dans un torchon pour extraire l'eau. Mélange dans un bol avec le skyr, l'ail râpé fin, la menthe ciselée, sel et poivre.",
+        "Coupe le reste du concombre en rondelles fines. Coupe la tomate en quartiers.",
+        "Fais chauffer l'huile dans une poêle à feu vif. Saisis les lanières de poulet 4-5 min en remuant — elles doivent être dorées et cuites à cœur.",
         "Réchauffe le pain pita 1 min à la poêle ou 30 sec au micro-ondes — il doit être souple pour ne pas se casser.",
         "Ouvre le pita en deux (= sandwich pocket). Tartine l'intérieur de tzatziki.",
         "Garnis : salade verte, rondelles de concombre, tomate, lanières de poulet.",
@@ -27260,7 +27326,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "usesLeftovers": [
         "porc cuit"
@@ -27464,7 +27531,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 420,
+      "kcal": 460,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -27482,7 +27549,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -27505,8 +27572,14 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
+          "Tofu ferme",
+          80,
+          "g",
+          "dairy"
+        ],
+        [
           "Pois gourmands",
-          50,
+          80,
           "g",
           "produce"
         ],
@@ -27560,7 +27633,7 @@ window.__DATA_RECIPES = {
         "Coupe la carotte nouvelle en julienne, les pois gourmands en deux, les shiitakes en lamelles (jette le pied dur).",
         "Ajoute les légumes au bouillon, laisse mijoter 5 min.",
         "Pendant ce temps, cuis les nouilles soba dans une autre casserole d'eau salée selon le paquet (≈ 5 min).",
-        "Ajoute la sauce soja et les algues wakame au bouillon. Laisse 2 min de plus.",
+        "Coupe le tofu ferme en cubes (de la taille d'un dé à jouer). Ajoute la sauce soja, les algues wakame et le tofu au bouillon. Laisse 2 min de plus.",
         "Égoutte les nouilles, dispose-les dans un grand bol creux. Verse le bouillon avec les légumes par-dessus.",
         "Coupe l'œuf mollet en deux, dépose-le sur le bouillon. Parsème d'oignon nouveau ciselé et d'huile de sésame.",
         "Sers tout de suite — les ramen ne se gardent pas une fois servis."
@@ -27827,7 +27900,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fleur de sel",
-          0.5,
+          1,
           "pincée",
           "spices"
         ],
@@ -28207,7 +28280,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "l110",
-      "name": "Burritos végétariens haricots noirs-quinoa-avocat-pico de gallo",
+      "name": "Burrito bowl végétarien haricots noirs-quinoa-avocat-pico de gallo",
       "type": "lunch",
       "cuisine": "mexicain",
       "seasons": [
@@ -28217,7 +28290,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 480,
+      "kcal": 450,
       "tags": [
         "vegetarian",
         "vegan",
@@ -28226,25 +28299,17 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [
-        "gluten"
-      ],
+      "allergens": [],
       "ing": [
         [
-          "Tortilla de blé complet",
-          1,
-          "u",
-          "bread"
-        ],
-        [
           "Haricots noirs cuits",
-          80,
+          110,
           "g",
           "pantry"
         ],
         [
           "Quinoa",
-          30,
+          45,
           "g",
           "pantry"
         ],
@@ -28311,13 +28376,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Rince et cuis le quinoa dans 2 fois son volume d'eau salée, 12 min à couvert. Égoutte et laisse tiédir.",
-        "Dans une poêle, fais chauffer 0,5 c.à.s d'huile à feu moyen. Ajoute les haricots noirs égouttés, le cumin et le paprika. Réchauffe 3-4 min en écrasant grossièrement les haricots à la fourchette.",
+        "Dans une poêle, fais chauffer l'huile à feu moyen. Ajoute les haricots noirs égouttés, le cumin et le paprika. Réchauffe 3-4 min en écrasant grossièrement les haricots à la fourchette.",
         "Pour le pico de gallo : coupe la tomate en très petits dés (sans les pépins). Émince finement l'oignon rouge. Mélange dans un bol avec la moitié du jus de citron vert, la coriandre ciselée, sel et poivre.",
         "Coupe l'avocat en lamelles, arrose du reste du jus de citron vert (évite qu'il brunisse).",
-        "Réchauffe la tortilla 30 sec à la poêle ou au micro-ondes — elle doit être souple pour ne pas casser au pliage.",
-        "Sur la tortilla, dépose en ligne sur le tiers bas : quinoa, haricots noirs écrasés, avocat, pico de gallo. Saupoudre de piment d'Espelette.",
-        "Replie les côtés de la tortilla vers l'intérieur, puis roule fermement de bas en haut (= technique du burrito : côtés rentrés, puis enroulé bien serré).",
-        "Coupe en deux en biais. Sers tout de suite."
+        "Dans chaque bol, dépose côte à côte (en « rayons », c'est plus joli) : le quinoa, les haricots noirs écrasés, l'avocat et le pico de gallo. Saupoudre de piment d'Espelette.",
+        "C'est un burrito « déstructuré » : tout ce qu'on met d'habitude dans la tortilla, servi dans un bol. Chacun mélange à sa façon.",
+        "Sers tout de suite, pendant que les haricots sont encore chauds."
       ],
       "photo": "assets/recipes/l110.webp"
     },
@@ -28335,7 +28399,7 @@ window.__DATA_RECIPES = {
       "advance": "1h",
       "diff": 1,
       "cost": 3.0,
-      "kcal": 280,
+      "kcal": 400,
       "tags": [
         "quick",
         "no-cook",
@@ -28348,13 +28412,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Melon charentais",
-          0.5,
+          0.3,
           "u",
           "produce"
         ],
         [
+          "Concombre",
+          150,
+          "g",
+          "produce"
+        ],
+        [
           "Jambon cru",
-          30,
+          50,
           "g",
           "meat-fish"
         ],
@@ -28372,7 +28442,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          0.5,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -28385,13 +28455,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Choisis un melon bien mûr (parfumé, lourd, qui sent bon).",
-        "Coupe le melon en deux, retire les pépins. Récupère la chair à la cuillère et coupe-la en gros morceaux. Garde 4-5 petits cubes pour la déco.",
-        "Mets la chair de melon dans le blender avec le jus de citron, l'huile d'olive, sel et poivre. Mixe 30 sec jusqu'à obtenir une soupe lisse.",
+        "Coupe le melon en tranches, retire les pépins et l'écorce, puis coupe la chair en gros morceaux. Épluche le concombre, coupe-le en deux dans la longueur et retire les graines avec une petite cuillère (sinon la soupe devient aqueuse), puis coupe-le en morceaux. Garde quelques petits cubes de melon pour la déco.",
+        "Mets la chair de melon et le concombre dans le blender avec le jus de citron, l'huile d'olive, sel et poivre. Mixe 30 sec jusqu'à obtenir une soupe lisse.",
         "Goûte et ajuste sel/poivre (le melon est sucré, le sel est essentiel pour équilibrer).",
         "Mets au frigo 1 h minimum — c'est essentiel pour que la soupe soit bien froide.",
         "Au moment de servir, verse dans un bol creux. Coupe le jambon cru en lanières fines, dépose en couronne au centre.",
         "Ajoute les petits cubes de melon réservés et le basilic ciselé. Donne un dernier tour de poivre.",
-        "Mange immédiatement, c'est le contraste froid/chaud qui fait l'intérêt — le sel du jambon réveille le sucré du melon."
+        "Mange immédiatement, c'est le contraste sucré/salé qui fait l'intérêt — le sel du jambon réveille le sucré du melon."
       ],
       "photo": "assets/recipes/l111.webp"
     },
@@ -28407,7 +28477,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 460,
+      "kcal": 490,
       "tags": [
         "vegetarian",
         "vegan",
@@ -28419,18 +28489,25 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
           "Tofu ferme",
-          80,
+          120,
           "g",
           "dairy"
         ],
         [
-          "Vermicelles de riz",
+          "Edamame surgelés",
           60,
+          "g",
+          "frozen"
+        ],
+        [
+          "Vermicelles de riz",
+          25,
           "g",
           "pantry"
         ],
@@ -28443,6 +28520,12 @@ window.__DATA_RECIPES = {
         [
           "Concombre",
           50,
+          "g",
+          "produce"
+        ],
+        [
+          "Germes de soja",
+          60,
           "g",
           "produce"
         ],
@@ -28509,12 +28592,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Plonge les vermicelles de riz dans une casserole d'eau bouillante (hors feu) pendant 4-5 min jusqu'à ce qu'ils soient tendres. Égoutte et refroidis sous l'eau froide. Coupe-les grossièrement aux ciseaux pour faciliter la dégustation.",
+        "Plonge les edamame surgelés 3 min dans une petite casserole d'eau bouillante : ils remontent vert vif. Égoutte-les et passe-les sous l'eau froide.",
         "Coupe le tofu en cubes de 1,5 cm. Tamponne-les avec un torchon pour bien les sécher.",
-        "Fais chauffer 0,5 c.à.c d'huile de sésame dans une poêle antiadhésive à feu vif. Saisis les cubes de tofu 5 min en remuant — ils doivent dorer sur toutes les faces.",
+        "Fais chauffer l'huile de sésame dans une poêle antiadhésive à feu vif. Saisis les cubes de tofu 5 min en remuant — ils doivent dorer sur toutes les faces.",
         "Pendant ce temps, prépare la sauce thaï : dans un bol, mélange jus de citron vert, sauce soja, ail et gingembre râpés fin, piment d'Espelette.",
-        "Coupe la carotte en julienne (très fines lanières) ou râpée grosse râpe. Coupe le concombre en demi-rondelles fines.",
+        "Coupe la carotte en julienne (très fines lanières) ou râpée grosse râpe. Coupe le concombre en rondelles fines. Rince les germes de soja à l'eau froide et égoutte-les.",
         "Émince finement la salade verte.",
-        "Dans un grand bol creux, dispose la salade en lit. Ajoute les vermicelles, la carotte, le concombre, le tofu doré.",
+        "Dans un grand bol creux, dispose la salade en lit. Ajoute les vermicelles, la carotte, le concombre, les germes de soja, les edamame et le tofu doré.",
         "Cisèle menthe et coriandre, parsème généreusement par-dessus. Concasse grossièrement les cacahuètes au couteau et ajoute en finition.",
         "Verse la sauce thaï juste avant de servir et mélange — sinon les vermicelles boivent trop la sauce."
       ],
@@ -28643,7 +28727,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 480,
+      "kcal": 560,
       "tags": [
         "batch-friendly"
       ],
@@ -28655,7 +28739,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Tortilla de blé complet",
+          "Tortilla maïs complète",
           2,
           "u",
           "bread"
@@ -28734,11 +28818,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe le poulet en lanières de 1 cm. Mets-les dans un bol avec la moitié du jus de citron vert, l'ail écrasé, le cumin, le paprika fumé, le piment d'Espelette, sel et poivre. Mélange et laisse mariner 10 min.",
+        "Coupe le poulet en lanières de 1 cm. Mets-les dans un bol avec une partie du jus de citron vert, l'ail écrasé, le cumin, le paprika fumé, le piment d'Espelette, sel et poivre. Mélange et laisse mariner 10 min.",
         "Pour le guacamole : écrase l'avocat dans un bol avec un quart du jus de citron vert restant, sel et poivre. Garde un peu de texture.",
         "Pour la salsa : coupe la tomate en très petits dés, émince finement l'oignon rouge. Mélange dans un bol avec le reste du jus de citron vert, sel et poivre.",
         "Cisèle finement la coriandre, garde-en pour la finition.",
-        "Fais chauffer 0,5 c.à.s d'huile dans une poêle à feu vif. Saisis le poulet mariné 5-6 min en remuant — bien doré et cuit à cœur (jus clair).",
+        "Fais chauffer l'huile dans une poêle à feu vif. Saisis le poulet mariné 5-6 min en remuant — bien doré et cuit à cœur (jus clair).",
         "Réchauffe les tortillas 30 sec chacune à la poêle (ou 30 sec au micro-ondes, recouvertes d'un torchon humide).",
         "Monte chaque taco : tortilla, guacamole, lanières de poulet épicées, salsa, coriandre ciselée.",
         "Plie en deux et mange à la main, en penchant la tête pour ne pas en mettre partout."
@@ -29060,7 +29144,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 130,
+      "kcal": 160,
       "tags": [
         "vegetarian",
         "no-cook"
@@ -29076,7 +29160,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Orange",
-          1,
+          0.75,
           "u",
           "produce"
         ],
@@ -29106,7 +29190,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Prépare le sirop menthe : dans une petite casserole, fais chauffer l'eau et le miel jusqu'à ébullition. Hors du feu, ajoute la moitié des feuilles de menthe ciselées. Couvre et laisse infuser 10 min.",
+        "Prépare le sirop menthe : dans une petite casserole, fais chauffer l'eau et le miel jusqu'à ébullition. Hors du feu, ajoute une partie des feuilles de menthe ciselées. Couvre et laisse infuser 10 min.",
         "Pendant ce temps, pèle à vif les agrumes : coupe le haut et le bas, puis enlève la peau et la peau blanche en suivant la courbe du fruit avec un couteau. Sépare les quartiers en passant la lame entre les membranes (= lever les suprêmes).",
         "Recueille le jus qui s'écoule pendant l'opération.",
         "Coupe le citron vert en deux, presse le jus directement sur les suprêmes (= la pulpe sans peau ni pépins).",
@@ -29129,7 +29213,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 380,
+      "kcal": 270,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -29146,19 +29230,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Banane",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Mélange fruits rouges",
-          80,
+          120,
           "g",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          60,
+          100,
           "g",
           "dairy"
         ],
@@ -29185,21 +29269,14 @@ window.__DATA_RECIPES = {
           0.5,
           "c.à.c",
           "pantry"
-        ],
-        [
-          "Miel",
-          0.5,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
-        "Astuce : congèle la banane et la moitié des fruits rouges 1 h avant pour avoir une texture sorbet bien froide (signature açaï bowl).",
-        "Mets dans le blender : banane (gardée surgelée si possible), 50 g de fruits rouges, skyr et lait d'amande.",
+        "Astuce : congèle la banane et une partie des fruits rouges 1 h avant pour avoir une texture sorbet bien froide (signature açaï bowl).",
+        "Mets dans le blender : la banane (gardée surgelée si possible), les fruits rouges congelés, le skyr et le lait d'amande.",
         "Mixe 30 sec à pleine vitesse jusqu'à obtenir une texture épaisse type sorbet. Si trop liquide, ajoute des fruits surgelés.",
         "Verse dans un grand bol creux.",
         "Garnis en motifs : flocons d'avoine, amandes effilées, fruits rouges restants, graines de chia.",
-        "Verse un filet de miel par-dessus.",
         "Mange immédiatement à la cuillère, c'est plus frais quand c'est juste mixé."
       ],
       "photo": "assets/recipes/b43.webp"
@@ -29317,7 +29394,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -29630,7 +29708,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 460,
+      "kcal": 480,
       "tags": [
         "vegetarian",
         "quick",
@@ -29648,7 +29726,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes",
-          70,
+          50,
           "g",
           "pantry"
         ],
@@ -29684,7 +29762,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Roquette",
-          20,
+          40,
           "g",
           "produce"
         ],
@@ -29708,7 +29786,7 @@ window.__DATA_RECIPES = {
         "Égoutte les pâtes en gardant 2 c.à.s d'eau de cuisson.",
         "Dans la casserole hors du feu, mélange les pâtes avec le pesto rouge et l'eau de cuisson pour fluidifier légèrement.",
         "Sers dans une assiette, dispose la roquette par-dessus. Cisèle les feuilles de basilic réservées et parsème.",
-        "Le pesto rouge se garde 1 semaine au frigo dans un bocal couvert d'huile — parfait à faire en batch pour 4-5 portions."
+        "Le pesto rouge se garde 1 semaine au frigo dans un bocal couvert d'huile — parfait à faire en grande quantité."
       ],
       "photo": "assets/recipes/l116.webp"
     },
@@ -29951,7 +30029,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "shellfish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -30232,7 +30311,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.1,
-      "kcal": 320,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -30256,7 +30335,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine complets",
-          60,
+          35,
+          "g",
+          "pantry"
+        ],
+        [
+          "Poudre d'amande",
+          15,
           "g",
           "pantry"
         ],
@@ -30289,22 +30374,16 @@ window.__DATA_RECIPES = {
           1,
           "c.à.c",
           "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          1,
-          "c.à.s",
-          "pantry"
         ]
       ],
       "steps": [
         "Si tu utilises du potiron surgelé : pose les cubes dans un bol au micro-ondes 5 min à 1000 W. Une fois tiède, jette l'eau qui s'est écoulée au fond.",
         "Écrase les cubes à la fourchette (ou mixe-les 10 secondes au blender) pour obtenir une purée grossière, type compote épaisse.",
         "Mixe les flocons d'avoine au blender 30 secondes pour les transformer en une farine grossière (texture sablonneuse — pas une poudre fine).",
-        "Dans un saladier, mélange purée de potiron, œuf, lait, farine d'avoine, levure chimique et cannelle. Tu obtiens une pâte épaisse mais qui s'étale en cuillère.",
+        "Dans un saladier, mélange purée de potiron, œuf, lait, farine d'avoine, poudre d'amande, levure chimique et cannelle. Tu obtiens une pâte épaisse mais qui s'étale en cuillère.",
         "Chauffe une poêle antiadhésive avec un peu d'huile de coco (feu moyen — l'huile doit juste fumer légèrement).",
         "Verse 2-3 c.à.s de pâte par pancake. Cuis 2 min jusqu'à ce que des bulles apparaissent en surface, retourne, encore 1 min sur l'autre face. Les pancakes sont prêts quand ils sont dorés en surface et moelleux dedans.",
-        "Sers tiède arrosé d'un filet de sirop d'érable."
+        "Sers tiède, saupoudré d'une pincée de cannelle : le potiron apporte déjà une douceur naturelle."
       ],
       "photo": "assets/recipes/b45.webp"
     },
@@ -30320,7 +30399,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 290,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "vegan",
@@ -30333,12 +30412,13 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Potiron",
-          150,
+          120,
           "g",
           "produce"
         ],
@@ -30368,7 +30448,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine complets",
-          20,
+          15,
           "g",
           "pantry"
         ],
@@ -30381,7 +30461,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Le potiron surgelé en cubes va directement au blender — c'est lui qui va donner la texture froide et dense du bowl. Pas besoin de décongeler.",
-        "Mets dans le blender les cubes de potiron encore congelés, la demi-banane, la boisson d'amande, la purée d'amande et la cannelle.",
+        "Mets dans le blender les cubes de potiron encore congelés, la banane, la boisson d'amande, la purée d'amande et la cannelle.",
         "Mixe 1 minute jusqu'à obtenir une crème épaisse et lisse, couleur orangée (texture entre yaourt brassé et glace italienne).",
         "Verse dans un bol large, lisse la surface avec une cuillère.",
         "Parsème par-dessus les flocons d'avoine et les amandes effilées en bandes parallèles pour faire joli.",
@@ -30500,7 +30580,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 440,
+      "kcal": 390,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -30516,61 +30596,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Quinoa",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits (en boîte)",
-          120,
+          60,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Paprika doux",
           0.5,
           "c.à.c",
           "spices"
         ],
         [
+          "Paprika doux",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
           "Farine de pois chiche",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Salade verte",
-          50,
+          60,
           "g",
           "produce"
         ],
@@ -30582,7 +30662,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -30600,9 +30680,9 @@ window.__DATA_RECIPES = {
         "Égoutte et rince les pois chiches. Émince finement l'oignon. Écrase l'ail.",
         "Dans un blender, mixe le potiron décongelé, les pois chiches, l'oignon, l'ail, le cumin et le paprika. Tu obtiens une pâte grossière (pas de purée lisse — il faut des morceaux pour la tenue).",
         "Verse dans un saladier, ajoute le quinoa cuit, la farine de pois chiche, sel et poivre. Mélange. La pâte doit être assez consistante pour former des galettes — si elle est trop molle, ajoute 1 c.à.s de farine.",
-        "Forme 4 galettes d'environ 1.5 cm d'épaisseur (avec les mains humides pour ne pas que ça colle). Pose-les sur une plaque garnie de papier cuisson, badigeonne d'huile d'olive au pinceau.",
+        "Forme les galettes d'environ 1,5 cm d'épaisseur (avec les mains humides pour ne pas que ça colle). Pose-les sur une plaque garnie de papier cuisson, badigeonne d'huile d'olive au pinceau.",
         "Enfourne 20-25 min en retournant à mi-cuisson. Les galettes sont prêtes quand elles sont dorées et fermes au toucher.",
-        "Mélange le skyr avec le jus du demi-citron pour faire une sauce.",
+        "Mélange le skyr avec le jus du citron pour faire une sauce.",
         "Sers les galettes tièdes avec la salade verte et la sauce yaourt-citron à part."
       ],
       "photo": "assets/recipes/l118.webp"
@@ -30714,7 +30794,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 410,
+      "kcal": 560,
       "tags": [
         "vegetarian",
         "vegan",
@@ -30731,19 +30811,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          200,
+          80,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits (en boîte)",
-          120,
+          50,
           "g",
           "pantry"
         ],
         [
           "Tahini",
-          1.5,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -30773,20 +30853,20 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          2,
+          1.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Pain pita complet",
-          1,
+          0.5,
           "u",
           "bread"
         ],
         [
           "Carotte",
-          1,
-          "u",
+          40,
+          "g",
           "produce"
         ],
         [
@@ -30797,7 +30877,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Radis",
-          4,
+          6,
           "u",
           "produce"
         ],
@@ -30810,12 +30890,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200 °C.",
-        "Si potiron surgelé : étale les cubes gelés sur une plaque garnie de papier cuisson. Arrose de 1 c.à.s d'huile d'olive, sel, poivre. Mélange à la main.",
+        "Si potiron surgelé : étale les cubes gelés sur une plaque garnie de papier cuisson. Arrose d'un filet d'huile d'olive, sel, poivre. Mélange à la main.",
         "Enfourne 20-25 min en remuant à mi-cuisson — les cubes doivent être tendres et caramélisés sur les bords. Laisse tiédir 5 min hors du four.",
         "Égoutte et rince les pois chiches. Pèle l'ail.",
-        "Dans le blender : potiron rôti tiède, pois chiches, tahini, jus du demi-citron, ail, cumin, paprika, 1 c.à.s d'huile d'olive et 2 c.à.s d'eau.",
+        "Dans le blender : potiron rôti tiède, pois chiches, tahini, jus du citron, ail, cumin, paprika, une partie de l'huile d'olive et un peu d'eau.",
         "Mixe 1-2 min jusqu'à obtenir un houmous lisse et crémeux. Si trop épais, ajoute 1 c.à.s d'eau et re-mixe. Goûte, rectifie en sel/citron.",
-        "Coupe la carotte en bâtonnets, le concombre en rondelles épaisses, les radis en deux.",
+        "Coupe la carotte en bâtonnets, le concombre en rondelles épaisses, les radis en deux (garde un peu de leurs fanes vertes s'ils en ont : ça fait une poignée pratique pour tremper).",
         "Coupe le pita en triangles, fais-les chauffer 2 min au four (pas trop secs, juste tièdes).",
         "Sers le houmous dans un bol, dépose un filet d'huile d'olive et une pincée de paprika sur le dessus. À côté, les crudités et les triangles de pita pour tremper."
       ],
@@ -30833,7 +30913,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 480,
+      "kcal": 550,
       "tags": [
         "vegetarian",
         "vegan",
@@ -30846,73 +30926,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits (en boîte)",
-          150,
+          75,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Tomate concassée",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          1.0,
           "cm",
           "produce"
         ],
         [
           "Pâte de curry doux",
-          1,
+          0.5,
           "c.à.s",
           "spices"
         ],
         [
           "Curcuma en poudre",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.5,
           "c.à.s",
           "produce"
         ],
         [
           "Riz basmati complet",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -30948,7 +31028,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 470,
+      "kcal": 520,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -30963,7 +31043,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          300,
+          200,
           "g",
           "produce"
         ],
@@ -31017,7 +31097,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade verte",
-          50,
+          80,
           "g",
           "produce"
         ],
@@ -31054,7 +31134,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 450,
+      "kcal": 640,
       "tags": [
         "vegetarian",
         "vegan",
@@ -31068,25 +31148,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          250,
+          80,
           "g",
           "produce"
         ],
         [
           "Haricot noir (en boîte)",
-          150,
+          80,
           "g",
           "pantry"
         ],
         [
           "Maïs doux (en boîte)",
-          100,
+          30,
           "g",
           "pantry"
         ],
         [
           "Tomate concassée",
-          250,
+          150,
           "g",
           "pantry"
         ],
@@ -31106,6 +31186,12 @@ window.__DATA_RECIPES = {
           "Poivron rouge",
           0.5,
           "u",
+          "produce"
+        ],
+        [
+          "Courgette",
+          120,
+          "g",
           "produce"
         ],
         [
@@ -31133,15 +31219,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Riz basmati complet",
-          60,
-          "g",
-          "pantry"
-        ],
-        [
           "Coriandre fraîche",
           1,
           "c.à.s",
+          "produce"
+        ],
+        [
+          "Avocat",
+          0.5,
+          "u",
           "produce"
         ],
         [
@@ -31158,15 +31244,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Lance la cuisson du riz basmati complet (2 fois son volume d'eau salée, ébullition puis 20 min à feu doux couvert).",
+        "Coupe la courgette en dés de 1 cm (garde la peau).",
         "Émince l'oignon rouge, l'ail et le poivron rouge en petits dés.",
-        "Chauffe l'huile dans une cocotte à feu moyen. Ajoute oignon et poivron, fais revenir 5 min jusqu'à ce que les légumes soient tendres (mais sans trop colorer).",
+        "Chauffe l'huile dans une cocotte à feu moyen. Ajoute oignon, poivron et courgette, fais revenir 5 min jusqu'à ce que les légumes soient tendres (mais sans trop colorer).",
         "Ajoute ail, cumin, paprika et origan. Remue 30 secondes — les épices doivent libérer leur odeur.",
-        "Verse les tomates concassées, le concentré de tomate et 100 ml d'eau. Ajoute les cubes de potiron (encore gelés OK). Sale, poivre.",
+        "Verse les tomates concassées, le concentré de tomate et un petit verre d'eau (environ 100 ml par portion). Ajoute les cubes de potiron (encore gelés OK). Sale, poivre.",
         "Couvre et laisse cuire 12 min à feu moyen — le potiron doit être presque tendre.",
         "Égoutte et rince les haricots noirs et le maïs. Ajoute-les dans la cocotte. Cuis encore 8 min à découvert pour épaissir la sauce. Le potiron doit être bien tendre, le chili légèrement épaissi.",
-        "Cisèle la coriandre fraîche.",
-        "Sers le chili sur le riz, parsème de coriandre."
+        "Cisèle la coriandre fraîche. Coupe l'avocat en deux, retire le noyau, coupe la chair en dés (elle doit être souple sous le doigt, pas dure).",
+        "Sers le chili bien chaud dans des bols creux, parsème de coriandre et de dés d'avocat."
       ],
       "photo": "assets/recipes/d119.webp"
     },
@@ -31182,7 +31268,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 510,
+      "kcal": 700,
       "tags": [
         "batch-friendly"
       ],
@@ -31197,13 +31283,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cuisse de poulet",
-          0.75,
+          1,
           "u",
           "meat-fish"
         ],
         [
           "Potiron",
-          83,
+          80,
           "g",
           "produce"
         ],
@@ -31215,7 +31301,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pruneaux dénoyautés",
-          20,
+          12,
           "g",
           "pantry"
         ],
@@ -31227,7 +31313,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.75,
+          1,
           "gousse",
           "produce"
         ],
@@ -31257,25 +31343,25 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.5,
           "c.à.s",
           "produce"
         ],
         [
           "Amandes effilées",
-          0.25,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          0.25,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -31287,7 +31373,7 @@ window.__DATA_RECIPES = {
         "Dans la cocotte (sans la nettoyer — les sucs vont parfumer), fais revenir l'oignon 4 min jusqu'à transparence. Ajoute l'ail, remue 30 secondes.",
         "Ajoute le ras el-hanout et la cannelle, remue 30 secondes pour libérer les arômes.",
         "Remets les cuisses dans la cocotte. Verse le bouillon, ajoute le potiron (gelé OK) et les pruneaux. Couvre et laisse mijoter 25 min à feu doux.",
-        "Pendant ce temps, prépare la semoule : verse-la dans un saladier, recouvre d'eau bouillante salée à hauteur, couvre et laisse gonfler 5 min. Égraine à la fourchette avec 1 c.à.c d'huile d'olive.",
+        "Pendant ce temps, prépare la semoule : verse-la dans un saladier, recouvre d'eau bouillante salée à hauteur, couvre et laisse gonfler 5 min. Égraine à la fourchette avec un filet de l'huile d'olive.",
         "Ajoute les pois chiches rincés dans la cocotte, cuis encore 5 min. Le potiron doit être tendre, le poulet bien cuit (le jus qui sort doit être clair, pas rosé).",
         "Cisèle la coriandre. Fais griller à sec les amandes effilées 2 min dans une petite poêle (attention, ça brûle vite — remue sans arrêt).",
         "Sers le tajine sur la semoule, parsème de coriandre et d'amandes grillées."
@@ -31391,7 +31477,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -31898,7 +31984,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 510,
+      "kcal": 670,
       "tags": [],
       "eq": [
         "grill",
@@ -31919,7 +32005,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
@@ -31931,7 +32017,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomme de terre nouvelle",
-          150,
+          100,
           "g",
           "produce"
         ],
@@ -31967,7 +32053,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -31992,13 +32078,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Lance les pommes de terre : lave-les, coupe-les en deux si grosses, plonge-les dans une casserole d'eau froide salée. Porte à ébullition puis cuis 12-15 min — la pointe d'un couteau doit s'enfoncer sans résistance.",
-        "Lance les œufs durs : dépose-les dans une casserole d'eau froide, porte à ébullition, cuis 9 min à partir de l'ébullition. Plonge-les dans un saladier d'eau froide pour stopper la cuisson — la coquille s'enlèvera plus facilement.",
+        "Lance l'œuf dur : dépose-le dans une casserole d'eau froide, porte à ébullition, cuis 9 min à partir de l'ébullition. Plonge-le dans un saladier d'eau froide pour stopper la cuisson — la coquille s'enlèvera plus facilement.",
         "Équeute les haricots verts (casse les deux extrémités). Plonge-les dans l'eau bouillante salée 5 min — ils doivent rester croquants avec une belle couleur verte. Égoutte et plonge dans l'eau glacée.",
         "Sale et poivre le steak de thon des deux côtés. Préchauffe le grill bien chaud.",
         "Cuis le thon 1 min - 1 min 30 de chaque côté pour le garder rosé au centre (saignant). Si tu le veux à point, 2 min de chaque côté. Réserve sur une planche, laisse reposer 3 min.",
-        "Coupe les pommes de terre en deux ou en quartiers. Coupe les œufs en quartiers. Coupe la tomate en quartiers, l'oignon rouge en lamelles fines.",
+        "Coupe les pommes de terre en deux ou en quartiers. Coupe l'œuf en quartiers. Coupe la tomate en quartiers, l'oignon rouge en lamelles fines.",
         "Vinaigrette : dans un bol, mélange moutarde, vinaigre, sel, poivre, puis ajoute l'huile d'olive en filet en fouettant.",
-        "Dans une grande assiette : salade verte au fond, puis pommes de terre, haricots verts, tomate, oignon rouge, olives, anchois. Tranche le thon en lamelles épaisses, dispose-les au centre. Œufs en quartiers tout autour. Verse la vinaigrette au moment de servir."
+        "Dans une grande assiette : salade verte au fond, puis pommes de terre, haricots verts, tomate, oignon rouge, olives, anchois. Tranche le thon en lamelles épaisses, dispose-les au centre. L'œuf en quartiers tout autour. Verse la vinaigrette au moment de servir."
       ],
       "photo": "assets/recipes/l124.webp"
     },
@@ -32522,7 +32608,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 220,
+      "kcal": 270,
       "tags": [
         "vegetarian",
         "quick"
@@ -32538,7 +32624,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pêche",
-          2,
+          1.5,
           "u",
           "produce"
         ],
@@ -32551,7 +32637,7 @@ window.__DATA_RECIPES = {
         [
           "Miel",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -32570,9 +32656,9 @@ window.__DATA_RECIPES = {
       "steps": [
         "Choisis des pêches mûres mais encore fermes (sinon elles se défont au grill). Lave-les, coupe-les en deux, retire le noyau en tournant doucement les deux moitiés en sens opposé.",
         "Préchauffe le grill (ou une poêle-grill) à feu moyen.",
-        "Pose les demi-pêches côté chair sur le grill. Cuis 3-4 min sans bouger pour avoir de belles marques de grill — la chaleur fait caraméliser les sucres naturels du fruit. Retourne côté peau encore 2 min pour les chauffer à cœur.",
+        "Pose les morceaux de pêche côté chair sur le grill. Cuis 3-4 min sans bouger pour avoir de belles marques de grill — la chaleur fait caraméliser les sucres naturels du fruit. Retourne côté peau encore 2 min pour les chauffer à cœur.",
         "Pendant ce temps, fais griller à sec les amandes effilées 1-2 min dans une petite poêle (remue sans arrêt — ça brûle vite).",
-        "Sers les demi-pêches dans des coupes ou bols, ajoute 1 c.à.s de skyr à côté ou sur le dessus, drizzle de miel, parsème de thym effeuillé et d'amandes grillées. Mange tiède."
+        "Sers les pêches grillées dans des coupes ou bols, ajoute le skyr à côté ou sur le dessus, un filet de miel, parsème de thym effeuillé et d'amandes grillées. Mange tiède."
       ],
       "photo": "assets/recipes/des44.webp"
     },
@@ -32602,8 +32688,8 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ananas",
-          0.25,
-          "u",
+          130,
+          "g",
           "produce"
         ],
         [
@@ -32620,7 +32706,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          0.75,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -32632,16 +32718,16 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          1.25,
+          3,
           "feuille",
           "produce"
         ]
       ],
       "steps": [
-        "Le granité demande 2-3 h au congélo, donc lance-le en premier : mélange dans un bol large lait de coco, jus d'un demi-citron vert, 1 c.à.s de sirop d'érable. Place au congélateur, gratte avec une fourchette toutes les 30 min pendant 2-3 h pour casser les cristaux et avoir une texture granuleuse type granité.",
-        "Coupe la moitié d'ananas en deux dans le sens de la longueur. Retire la peau (avec un couteau bien aiguisé en suivant la courbe). Enlève le cœur dur central en faisant deux coupes en V. Coupe en gros tronçons de 3 cm.",
+        "Le granité demande 2-3 h au congélo, donc lance-le en premier : mélange dans un bol large lait de coco, une partie du jus de citron vert et une partie du sirop d'érable. Place au congélateur, gratte avec une fourchette toutes les 30 min pendant 2-3 h pour casser les cristaux et avoir une texture granuleuse type granité.",
+        "Prépare l'ananas : retire la peau (avec un couteau bien aiguisé en suivant la courbe). Enlève le cœur dur central en faisant deux coupes en V. Coupe la quantité voulue en gros tronçons de 3 cm (garde le reste au frais).",
         "Si piques en bois, fais-les tremper 10 min.",
-        "Marine l'ananas : 1 c.à.s sirop d'érable, cannelle, zeste râpé du demi-citron vert restant. Mélange à la main, laisse poser 5 min.",
+        "Marine l'ananas : le reste du sirop d'érable, la cannelle et le zeste râpé du citron vert. Mélange à la main, laisse poser 5 min.",
         "Enfile les morceaux d'ananas sur les piques (4-5 par brochette).",
         "Préchauffe le grill à feu moyen-fort. Cuis les brochettes 2-3 min de chaque côté — l'ananas doit avoir des marques de grill bien dorées (le sucre caramélise).",
         "Au moment de servir, gratte le granité à la fourchette pour bien le casser. Dispose les brochettes dans une assiette, ajoute une boule de granité coco à côté, parsème de menthe ciselée. Mange immédiatement (le granité fond vite)."
@@ -32739,7 +32825,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -32976,7 +33062,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -33007,7 +33093,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 460,
+      "kcal": 640,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -33022,13 +33108,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes",
-          100,
+          80,
           "g",
           "pantry"
         ],
         [
           "Semoule complète",
-          60,
+          20,
           "g",
           "pantry"
         ],
@@ -33052,13 +33138,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate concassée",
-          200,
+          150,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -33094,7 +33180,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1.5,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -33112,8 +33198,8 @@ window.__DATA_RECIPES = {
         "Dans une grande poêle, chauffe l'huile à feu moyen. Fais revenir l'oignon 4 min jusqu'à transparence. Ajoute carotte et ail, remue 2 min.",
         "Ajoute cumin, paprika et coriandre moulue. Remue 30 secondes pour libérer les arômes.",
         "Verse la tomate concassée. Cuis 5 min à feu moyen pour réduire un peu la sauce.",
-        "Égoutte les lentilles (réserve 50 ml d'eau de cuisson). Ajoute-les dans la poêle avec un peu d'eau de cuisson pour rendre l'ensemble onctueux. Sale, poivre. Cuis 5 min.",
-        "Pendant ce temps, prépare la semoule : verse-la dans un saladier, recouvre d'eau bouillante salée à hauteur, couvre 5 min, puis égraine à la fourchette avec 1 c.à.c d'huile d'olive.",
+        "Égoutte les lentilles (réserve un petit verre d'eau de cuisson). Ajoute-les dans la poêle avec un peu d'eau de cuisson pour rendre l'ensemble onctueux. Sale, poivre. Cuis 5 min.",
+        "Pendant ce temps, prépare la semoule : verse-la dans un saladier, recouvre d'eau bouillante salée à hauteur, couvre 5 min, puis égraine à la fourchette avec un filet d'huile d'olive.",
         "Cisèle la coriandre fraîche. Sers les lentilles sur la semoule, ajoute les œufs durs coupés en deux par-dessus. Parsème de coriandre, ajoute un quart de citron à presser."
       ],
       "photo": "assets/recipes/l128.webp"
@@ -33340,7 +33426,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -33376,7 +33462,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 350,
+      "kcal": 380,
       "tags": [
         "no-cook"
       ],
@@ -33389,25 +33475,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de cabillaud (ou daurade)",
-          200,
+          100,
           "g",
           "meat-fish"
         ],
         [
           "Citron vert",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Mangue",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Avocat mûr",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -33419,13 +33505,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          3,
+          1.5,
           "c.à.s",
           "produce"
         ],
@@ -33437,13 +33523,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Tortilla maïs (chips de tortilla complète)",
-          30,
+          15,
           "g",
           "bread"
         ],
@@ -33460,7 +33546,7 @@ window.__DATA_RECIPES = {
         "Presse les citrons verts. Verse le jus dans un bol non métallique (céramique ou verre — l'acide attaque le métal). Plonge les cubes de poisson dedans, ajoute une pincée de sel. Laisse mariner 15-20 minutes au frigo — le poisson va « cuire » dans l'acide (la chair devient blanche et opaque).",
         "Pendant ce temps : émince finement l'oignon rouge en dés très petits. Coupe la mangue et l'avocat en dés de 8 mm. Coupe la tomate en dés (épépine si elle est très juteuse).",
         "Cisèle finement la coriandre.",
-        "Égoutte le poisson (garde 2 c.à.s de jus de citron vert). Dans un saladier, mélange poisson, mangue, avocat, oignon rouge, tomate, coriandre, le jus de citron réservé, l'huile d'olive, le piment d'Espelette, sel et poivre.",
+        "Égoutte le poisson (garde un peu du jus de citron vert). Dans un saladier, mélange poisson, mangue, avocat, oignon rouge, tomate, coriandre, le jus de citron réservé, l'huile d'olive, le piment d'Espelette, sel et poivre.",
         "Goûte, rectifie en sel/citron. Sers très frais immédiatement, dans des bols ou verrines, avec les chips de tortilla pour saucer.",
         "Ne se conserve pas — le poisson continue de « cuire » dans l'acide et devient farineux après 1 h."
       ],
@@ -33577,7 +33663,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -33609,7 +33695,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 480,
+      "kcal": 550,
       "tags": [],
       "eq": [
         "grill",
@@ -33622,49 +33708,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de cabillaud (ou daurade)",
-          200,
+          100,
           "g",
           "meat-fish"
         ],
         [
           "Tortilla maïs complète",
-          4,
+          2.0,
           "u",
           "bread"
         ],
         [
           "Chou rouge",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Avocat mûr",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Citron vert",
-          2,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          3,
+          1.5,
           "c.à.s",
           "produce"
         ],
@@ -33676,13 +33762,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika fumé",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -33694,13 +33780,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -33712,10 +33798,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Marinade poisson : dans un plat creux, mélange jus d'un demi-citron vert, ail écrasé, cumin, paprika, piment, huile d'olive, sel, poivre. Plonge le filet de cabillaud dedans 10 min (pas plus, sinon l'acide commence à le « cuire »).",
+        "Marinade poisson : dans un plat creux, mélange le jus d'une partie du citron vert, ail écrasé, cumin, paprika, piment, huile d'olive, sel, poivre. Plonge le filet de cabillaud dedans 10 min (pas plus, sinon l'acide commence à le « cuire »).",
         "Slaw chou-carotte : émince le chou rouge le plus finement possible (couteau bien aiguisé ou mandoline). Râpe la carotte avec une râpe à gros trous. Émince très finement l'oignon rouge.",
-        "Sauce yaourt-citron : mélange skyr avec jus du second demi-citron vert, sel, poivre.",
-        "Mélange chou + carotte + oignon avec 1 c.à.s de la sauce yaourt-citron, et 1 c.à.s de coriandre cisélée. Le slaw est prêt.",
+        "Sauce yaourt-citron : mélange skyr avec le jus du reste du citron vert (garde un quartier pour servir), sel, poivre.",
+        "Mélange chou + carotte + oignon avec une cuillerée de la sauce yaourt-citron et une partie de la coriandre ciselée. Le slaw est prêt.",
         "Préchauffe le grill bien chaud. Pose le filet de cabillaud (sors-le de la marinade en l'égouttant). Cuis 3-4 min de chaque côté selon épaisseur — la chair doit s'effeuiller à la fourchette mais rester nacrée et juteuse au cœur.",
         "Émince le poisson en gros morceaux à la fourchette directement sur la planche.",
         "Tiédis les tortillas 1 min de chaque côté sur le grill ou dans une poêle à sec — elles doivent être souples et chaudes (rigides = sèches, refroidies = cassantes).",
@@ -33736,7 +33822,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 3.3,
-      "kcal": 540,
+      "kcal": 480,
       "tags": [
         "batch-friendly"
       ],
@@ -33753,12 +33839,12 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Blanc de poulet",
-          83,
+          100,
           "g",
           "meat-fish"
         ],
         [
-          "Tortilla complète (blé ou maïs souple)",
+          "Tortilla maïs complète",
           2.0,
           "u",
           "bread"
@@ -33783,7 +33869,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.75,
+          1,
           "gousse",
           "produce"
         ],
@@ -33831,25 +33917,25 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          0.25,
-          "c.à.s",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
         "Cuis le poulet : dans une casserole, plonge les blancs dans le bouillon froid avec sel, poivre. Porte à frémissement (jamais à grosse ébullition, sinon la chair durcit) et cuis 12-15 min — la chair doit être blanche partout, le jus qui sort à la pointe du couteau est clair.",
-        "Sors le poulet, laisse-le tiédir 5 min, puis effiloche-le à la main en lanières fines. Garde 100 ml du bouillon de cuisson.",
+        "Sors le poulet, laisse-le tiédir 5 min, puis effiloche-le à la main en lanières fines. Garde le bouillon de cuisson.",
         "Sauce verte : émince grossièrement oignon, poivron vert et tomates vertes. Pèle l'ail.",
-        "Dans un blender, mets oignon, poivron, tomates vertes, ail, jus du citron vert, 3 c.à.s de coriandre, cumin, piment, sel, poivre, et le bouillon réservé. Mixe 30 secondes — tu obtiens une sauce verte fluide.",
+        "Dans un blender, mets oignon, poivron, tomates vertes, ail, jus du citron vert, la plus grande partie de la coriandre, cumin, piment, sel, poivre, et le bouillon réservé. Mixe 30 secondes — tu obtiens une sauce verte fluide.",
         "Chauffe l'huile dans une poêle, verse la sauce verte. Cuis 8 min à feu moyen pour réduire et concentrer les saveurs (la couleur fonce et la sauce épaissit).",
         "Préchauffe le four à 180 °C.",
-        "Mélange le poulet effiloché avec 4 c.à.s de la sauce verte (le reste sert pour napper).",
+        "Mélange le poulet effiloché avec environ un tiers de la sauce verte (le reste sert pour napper).",
         "Tiédis les tortillas 30 secondes au micro-ondes ou à la poêle pour qu'elles soient souples (impossible de les rouler froides).",
         "Garnis chaque tortilla d'une portion de poulet, roule serré et pose la jointure dessous dans un plat à gratin légèrement huilé.",
         "Nappe le reste de sauce verte sur les enchiladas roulées. Saupoudre de mozzarella râpée.",
@@ -33988,7 +34074,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -34019,7 +34105,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 0.8,
-      "kcal": 250,
+      "kcal": 310,
       "tags": [
         "vegetarian",
         "quick",
@@ -34037,7 +34123,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          30,
+          25,
           "g",
           "pantry"
         ],
@@ -34050,7 +34136,7 @@ window.__DATA_RECIPES = {
         [
           "Sirop d'érable",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -34073,8 +34159,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.1,
-          "c.à.c",
+          1,
+          "pincée",
           "spices"
         ],
         [
@@ -34602,7 +34688,7 @@ window.__DATA_RECIPES = {
       "cook": 85,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 560,
+      "kcal": 680,
       "tags": [
         "batch-friendly"
       ],
@@ -34626,13 +34712,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pruneaux dénoyautés",
-          4,
+          2,
           "u",
           "pantry"
         ],
         [
           "Patate douce",
-          200,
+          100,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          150,
           "g",
           "produce"
         ],
@@ -34704,11 +34796,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe le bœuf en cubes de 3 cm. Émince l'oignon, écrase l'ail. Coupe la patate douce en cubes de 3 cm (sans la peler si elle est bio, sinon pèle-la).",
+        "Coupe le bœuf en cubes de 3 cm. Émince l'oignon, écrase l'ail. Coupe la patate douce en cubes de 3 cm (sans la peler si elle est bio, sinon pèle-la). Coupe la courgette en gros tronçons de 3 cm.",
         "Dans une cocotte, chauffe l'huile à feu moyen-vif. Dore les cubes de bœuf 4 min en les retournant : ils doivent être bien colorés sur toutes les faces. Réserve.",
         "Baisse à feu moyen. Fais revenir l'oignon 5 min jusqu'à ce qu'il soit doré. Ajoute ail, gingembre, cumin et bâton de cannelle. Remue 30 secondes.",
         "Remets le bœuf, ajoute le bouillon. Couvre, baisse à feu doux. Laisse mijoter 1 heure : la viande doit s'effilocher facilement à la fourchette.",
-        "Ajoute la patate douce et les pruneaux. Continue 25 min à feu doux : la patate douce doit être tendre au couteau.",
+        "Ajoute la patate douce et les pruneaux. Continue 25 min à feu doux : la patate douce doit être tendre au couteau. Ajoute la courgette pour les 12 dernières minutes : elle devient fondante mais garde sa forme.",
         "Pendant ce temps, fais griller à sec les amandes effilées dans une petite poêle 2 min en surveillant (elles brûlent vite : elles doivent être dorées, pas brunes).",
         "Sale, poivre. Retire le bâton de cannelle. Parsème d'amandes grillées, de sésame et de persil ciselé. Sers directement dans la cocotte."
       ],
@@ -35089,7 +35181,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 7.0,
-      "kcal": 480,
+      "kcal": 700,
       "tags": [
         "vegetarian",
         "quick",
@@ -35130,7 +35222,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pain au levain (en tranches)",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -35169,7 +35261,7 @@ window.__DATA_RECIPES = {
         "Sors tous les fromages du frigo 30 min avant le service : à température ambiante, les arômes s'expriment beaucoup mieux.",
         "Sur une grande planche en bois, dispose les 4 fromages en arc de cercle, espacés de 5 cm. L'ordre de dégustation va du plus doux au plus fort : crottin → brie → comté → bleu (le bleu pollue le palais, garde-le pour la fin).",
         "Coupe le pain au levain en tranches fines (1 cm). Tu peux les disposer en éventail à un bout de la planche, ou dans une corbeille à côté.",
-        "Remplis 2 petits ramequins : un avec le miel, l'autre avec la confiture de figue. Pose-les entre les fromages pour le bleu (miel) et le brie (figue).",
+        "Remplis un petit ramequin de miel et un autre de confiture de figue. Pose-les entre les fromages pour le bleu (miel) et le brie (figue).",
         "Pose les noix décortiquées en petit tas, ainsi que la grappe de raisins frais (ou des grains détachés selon préférence).",
         "Au centre ou en bordure de la planche, ajoute une poignée de mâche pour la fraîcheur visuelle et gustative.",
         "Sers avec un couteau par fromage si possible (évite le mélange des saveurs au couteau). Pour un dîner complet, accompagne d'une salade verte simple à part."
@@ -35852,7 +35944,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -36046,7 +36139,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -36186,13 +36279,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Avocat",
-          0.25,
+          0.1,
           "u",
           "produce"
         ],
         [
           "Citron (jus)",
-          0.25,
+          0.1,
           "u",
           "produce"
         ],
@@ -36204,7 +36297,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Aneth frais",
-          0.25,
+          0.01,
           "bouquet",
           "produce"
         ],
@@ -36234,13 +36327,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ciboulette",
-          0.25,
+          0.01,
           "bouquet",
           "produce"
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -36655,10 +36748,8 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 300,
-      "tags": [
-        "quick"
-      ],
+      "kcal": 520,
+      "tags": [],
       "eq": [
         "stove"
       ],
@@ -36680,13 +36771,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poireau",
-          1,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Patate douce",
-          200,
+          150,
           "g",
           "produce"
         ],
@@ -36735,7 +36826,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Pèle la patate douce, coupe-la en cubes de 2 cm. Fais-la cuire à la vapeur 15 min (couteau s'enfonce facilement, pas trop molle).",
-        "Pendant ce temps, lave le poireau, retire la base et le vert dur. Coupe-le en rondelles fines (1 cm). Émince l'échalote.",
+        "Pendant ce temps, lave les poireaux, retire la base et le vert dur. Coupe-les en rondelles fines (1 cm). Émince l'échalote.",
         "Dans une grande poêle, chauffe l'huile + beurre à feu moyen. Fais fondre l'échalote 2 min, ajoute les rondelles de poireau et continue 5 min en remuant : les poireaux s'assouplissent et deviennent translucides (pas colorés).",
         "Verse le vin blanc, laisse réduire 2 min (l'odeur d'alcool s'évapore). Ajoute le bouillon, baisse à feu doux.",
         "Sale et poivre le cabillaud. Pose-le sur le lit de poireaux. Couvre, laisse pocher 6-8 min : le poisson est cuit quand la chair est blanche opaque et s'effiloche à la fourchette.",
@@ -36853,7 +36944,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 390,
+      "kcal": 380,
       "tags": [
         "vegetarian",
         "quick"
@@ -36862,7 +36953,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -36885,7 +36977,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine complets",
-          30,
+          20,
           "g",
           "pantry"
         ],
@@ -36894,12 +36986,6 @@ window.__DATA_RECIPES = {
           100,
           "ml",
           "dairy"
-        ],
-        [
-          "Miel",
-          1,
-          "c.à.c",
-          "pantry"
         ],
         [
           "Graines de chia",
@@ -36928,7 +37014,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Si la pulpe d'açaï est en briquette, casse-la en morceaux pour faciliter le mixage.",
-        "Dans un blender, mets : pulpe d'açaï, la moitié des fruits rouges (garde l'autre moitié pour la déco), la banane épluchée et coupée en rondelles, les flocons d'avoine, le lait d'amande et le miel.",
+        "Dans un blender, mets : pulpe d'açaï, une partie des fruits rouges (garde le reste pour la déco), la banane épluchée et coupée en rondelles, les flocons d'avoine et le lait d'amande.",
         "Mixe 30 sec : la texture doit être épaisse comme un sorbet (épaisse, on tient une cuillère droite dedans). Si trop liquide, ajoute des fruits surgelés ou un peu plus d'açaï. Si trop épais, ajoute un trait de lait d'amande.",
         "Verse dans un bol large peu profond (style 'açaï bowl' : surface large pour les toppings).",
         "Topping : dépose les fruits rouges restants en petites zones (visuel coloré), les fraises coupées en lamelles, les amandes effilées, les copeaux de coco, les graines de chia.",
@@ -37161,7 +37247,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 220,
+      "kcal": 200,
       "tags": [
         "quick",
         "apero-sec"
@@ -37175,13 +37261,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Melon charentais",
-          0.5,
-          "u",
+          150,
+          "g",
           "produce"
         ],
         [
           "Jambon cru (type Parme ou Bayonne)",
-          60,
+          40,
           "g",
           "meat-fish"
         ],
@@ -37194,7 +37280,7 @@ window.__DATA_RECIPES = {
         [
           "Huile d'olive",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -37211,7 +37297,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe le melon en deux, retire les graines à la cuillère et pèle-le. Coupe la chair en cubes de 2 cm de côté (cible : 12-15 cubes par demi-melon).",
+        "Coupe le melon en deux, retire les graines à la cuillère et pèle-le. Coupe la chair en cubes de 2 cm de côté.",
         "Sépare les tranches de jambon cru. Coupe-les en lanières de 3-4 cm de large (juste assez pour envelopper un cube de melon).",
         "Sur chaque pique en bois (cure-dent long), enfile : 1 feuille de basilic pliée en deux, 1 cube de melon enveloppé dans une lanière de jambon.",
         "Dispose les brochettes en cercle ou éventail sur une assiette de service.",
@@ -37438,13 +37524,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.02,
           "bouquet",
           "produce"
         ],
         [
           "Persil plat",
-          0.25,
+          0.02,
           "bouquet",
           "produce"
         ],
@@ -37498,7 +37584,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -37990,7 +38076,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -38332,7 +38419,8 @@ window.__DATA_RECIPES = {
         "soy",
         "nuts",
         "sesame",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -39500,11 +39588,10 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 120,
+      "kcal": 140,
       "tags": [
         "vegetarian",
         "vegan",
-        "quick",
         "batch-friendly"
       ],
       "eq": [
@@ -39514,13 +39601,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme reinette (ou Golden)",
-          1,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Poire conférence",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -39544,7 +39631,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Eau",
-          50,
+          30,
           "ml",
           "pantry"
         ]
@@ -39553,13 +39640,13 @@ window.__DATA_RECIPES = {
         "Cette compote est sans sucre ajouté : la douceur vient des fruits eux-mêmes (la pomme reinette est naturellement bien sucrée). Au choix : pour un dessert, garde la cardamome pour le côté élégant ; pour donner aux enfants, retire la cardamome (peut surprendre) et garde juste la cannelle.",
         "Pèle la pomme et la poire. Retire les trognons et coupe en cubes de 2 cm.",
         "Mets les cubes dans une casserole. Ajoute le jus de citron (évite l'oxydation et apporte de la fraîcheur), la cannelle, et la gousse de cardamome légèrement écrasée au plat du couteau (pour libérer les arômes).",
-        "Verse 50 ml d'eau (les fruits vont rendre leur jus, pas besoin de plus).",
+        "Verse l'eau (juste un fond : les fruits vont rendre leur jus, pas besoin de plus).",
         "Couvre, porte à frémissement à feu moyen. Baisse à feu doux et laisse mijoter 20-25 min : les fruits doivent être très tendres, presque effondrés.",
         "Vérifie en piquant à la fourchette : la pomme doit s'écraser facilement.",
         "Retire la gousse de cardamome (elle a libéré ses arômes, on ne la mange pas).",
         "Selon ta préférence : laisse la compote en morceaux (texture rustique) ou écrase à la fourchette pour un côté plus lisse. Évite le mixer si tu ne veux pas une compote trop liquide style purée.",
         "Sers tiède (idéal en hiver) ou froid (parfait en goûter d'enfant). Conservation : 4 jours au frigo dans un bocal hermétique.",
-        "Astuce dégustation : sers avec 1 c.à.s de yaourt grec et quelques noix concassées pour transformer en dessert plus complet."
+        "Astuce dégustation : sers avec une cuillerée de yaourt grec (ou de yaourt végétal pour rester vegan) et quelques noix concassées pour transformer en dessert plus complet."
       ],
       "photo": "assets/recipes/des49.webp"
     },
@@ -39913,7 +40000,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -40103,7 +40191,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "producesLeftovers": [
         "poulet cuit"
@@ -40269,13 +40358,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Persil plat",
-          0.25,
+          0.01,
           "bouquet",
           "produce"
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -40502,7 +40591,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 240,
+      "kcal": 190,
       "tags": [
         "batch-friendly",
         "apero-dinatoire"
@@ -40519,25 +40608,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Feuilles de brick",
-          4,
+          1,
           "u",
           "pantry"
         ],
         [
           "Thon en boîte au naturel",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
-          "Œuf de caille (ou 2 petits œufs)",
-          8,
+          "Œuf de caille",
+          4,
           "u",
           "dairy"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -40555,19 +40644,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cumin",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -40580,12 +40669,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200°C (chaleur tournante). Cette version est cuite au four pour rester légère (vs version frite traditionnelle).",
-        "Émince finement l'oignon. Fais-le revenir 4 min dans une poêle avec 1/2 c.à.s d'huile à feu moyen jusqu'à translucide. Réserve.",
+        "Émince finement l'oignon. Fais-le revenir 4 min dans une poêle avec un filet d'huile d'olive à feu moyen jusqu'à translucide. Réserve.",
         "Égoutte et émiette le thon. Mélange avec oignon refroidi, coriandre et persil ciselés, cumin, jus de citron, sel et poivre.",
-        "Coupe chaque feuille de brick en quartiers (4 quartiers par feuille = 16 quartiers, mais on n'en utilise que 8 pour ce format mini).",
-        "Sur 8 quartiers, dépose au centre 1 c.à.s de farce thon-oignon. Casse délicatement 1 œuf de caille au-dessus de chaque (juste le jaune et un peu de blanc, attention à ne pas crever le jaune).",
+        "Coupe chaque feuille de brick en quatre quartiers.",
+        "Au centre de chaque quartier, dépose une cuillère de farce thon-oignon. Casse délicatement un œuf de caille au-dessus de chacun (à défaut : 1 petit œuf de poule battu pour 4 œufs de caille, réparti sur les quartiers) (juste le jaune et un peu de blanc, attention à ne pas crever le jaune).",
         "Replie chaque quartier en triangle ou en aumônière, en humectant les bords avec un peu d'eau pour qu'ils collent (la feuille de brick est cassante, sois doux).",
-        "Dépose les mini-bricks sur une plaque recouverte de papier sulfurisé. Badigeonne au pinceau d'1/2 c.à.s d'huile (ça donne le côté doré croustillant sans frire).",
+        "Dépose les mini-bricks sur une plaque recouverte de papier sulfurisé. Badigeonne au pinceau d'un peu d'huile d'olive (ça donne le côté doré croustillant sans frire).",
         "Enfourne 10-12 min : ils doivent être bien dorés et croustillants. Le jaune d'œuf de caille reste légèrement coulant à l'intérieur (effet luxueux).",
         "Sers chaud à la sortie du four. Tu peux accompagner d'un quartier de citron à presser dessus."
       ],
@@ -40653,7 +40742,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -40671,13 +40760,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Aneth frais",
-          0.25,
+          0.02,
           "bouquet",
           "produce"
         ],
         [
           "Poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -41057,7 +41146,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "shellfish",
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "producesLeftovers": [
         "riz cuit"
@@ -41177,7 +41267,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 460,
+      "kcal": 690,
       "tags": [
         "festif",
         "batch-friendly"
@@ -41198,7 +41288,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet mignon de porc",
-          200,
+          150,
           "g",
           "meat-fish"
         ],
@@ -41252,7 +41342,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomme de terre nouvelle",
-          200,
+          100,
           "g",
           "produce"
         ],
@@ -41277,7 +41367,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Sors le filet mignon 30 min avant (cuisson uniforme). Préchauffe le four à 200°C (chaleur tournante).",
-        "Effeuille thym et romarin. Hache finement avec persil et 1 gousse d'ail dégermée.",
+        "Effeuille thym et romarin. Hache finement avec le persil et une partie de l'ail (dégermé : retire le germe vert au centre).",
         "Sale et poivre le filet mignon. Badigeonne-le de moutarde à l'ancienne sur toutes les faces (à la spatule ou au pinceau).",
         "Roule le filet dans les herbes hachées pour bien l'enrober (les herbes adhèrent grâce à la moutarde).",
         "Dans une cocotte allant au four, chauffe le beurre clarifié à feu vif. Saisis le filet 2 min sur chaque face : tu cherches une belle coloration sans cramer les herbes.",
@@ -41285,7 +41375,7 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare les légumes. Pèle les carottes et coupe en rondelles épaisses (1 cm). Lave les pommes de terre nouvelles (ne les pèle pas si bio, c'est meilleur).",
         "Plonge carottes et pommes de terre dans l'eau bouillante salée 12-15 min : un couteau s'enfonce sans résistance. Égoutte.",
         "Dans une poêle, chauffe l'huile d'olive à feu moyen. Ajoute carottes et pommes de terre, fais sauter 3 min en remuant pour les colorer un peu. Sale, poivre.",
-        "Sauce : déglace la cocotte (où était le filet mignon) avec le bouillon, gratte les sucs avec une cuillère en bois. Ajoute l'autre gousse d'ail écrasée et la crème, laisse réduire 3 min jusqu'à consistance nappante.",
+        "Sauce : déglace la cocotte (où était le filet mignon) avec le bouillon, gratte les sucs avec une cuillère en bois. Ajoute le reste de l'ail écrasé et la crème, laisse réduire 3 min jusqu'à consistance nappante.",
         "Tranche le filet en médaillons d'1 cm (à contre-fil). Dispose sur l'assiette avec carottes et pommes de terre. Nappe de sauce. Parsème d'un peu de persil ciselé."
       ],
       "photo": "assets/recipes/d154.webp"
@@ -41432,7 +41522,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 2,
       "cost": 7.0,
-      "kcal": 580,
+      "kcal": 530,
       "tags": [
         "festif",
         "batch-friendly"
@@ -41455,7 +41545,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Abricots secs (non traités)",
-          6,
+          4,
           "u",
           "pantry"
         ],
@@ -41544,12 +41634,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Miel",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Sel, poivre",
           1,
           "pincée",
@@ -41562,7 +41646,7 @@ window.__DATA_RECIPES = {
         "Dans la même cocotte, baisse à feu moyen. Fais revenir l'oignon 5 min jusqu'à doré.",
         "Ajoute ail, gingembre, cumin, curcuma, safran (juste écrasé entre les doigts). Remue 30 sec : les épices doivent dégager leur parfum.",
         "Remets l'agneau, ajoute le bâton de cannelle et le bouillon. Couvre, baisse à feu très doux. Laisse mijoter 70 min : la viande doit s'effilocher facilement.",
-        "20 min avant la fin, ajoute les abricots secs (égouttés) et le miel.",
+        "20 min avant la fin, ajoute les abricots secs (égouttés) : ils apportent leur douceur naturelle à la sauce en fondant.",
         "Pendant ce temps, cuis le boulgour selon paquet (12 min dans 2 fois son volume d'eau salée).",
         "Vérifie la viande : elle doit fondre. Si la sauce est trop liquide, retire viande et abricots à l'écumoire et fais réduire 5 min à feu vif.",
         "Pendant la réduction, fais griller à sec les amandes effilées dans une petite poêle 2 min en surveillant (elles brûlent vite : doré clair).",
@@ -41668,7 +41752,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 290,
+      "kcal": 610,
       "tags": [
         "vegetarian",
         "vegan",
@@ -41689,13 +41773,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate",
-          1,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Mangue mûre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -41743,15 +41827,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe l'avocat en deux, retire le noyau. Prélève la chair à la cuillère et coupe-la en petits dés (5 mm — taille tartare). Place dans un bol et arrose immédiatement de la moitié du jus de citron vert (évite l'oxydation).",
-        "Coupe la tomate en deux, retire les graines et le jus à la cuillère (sinon le tartare devient aqueux). Coupe la chair en petits dés équivalents.",
+        "Coupe l'avocat en deux, retire le noyau. Prélève la chair à la cuillère et coupe-la en petits dés (5 mm — taille tartare). Place dans un bol et arrose immédiatement d'une partie du jus de citron vert (évite l'oxydation).",
+        "Coupe les tomates en deux, retire les graines et le jus à la cuillère (sinon le tartare devient aqueux). Coupe la chair en petits dés équivalents.",
         "Pèle la mangue, retire le noyau. Coupe la chair en petits dés.",
         "Émince très finement l'oignon rouge.",
         "Cisèle la coriandre (garde 2-3 feuilles entières pour la déco).",
         "Dans le bol de l'avocat, ajoute tomate, mangue, oignon rouge, coriandre ciselée, reste du jus de citron vert, huile d'olive, piment d'Espelette, sel et poivre.",
         "Mélange délicatement à la cuillère pour ne pas écraser l'avocat.",
         "Pour le dressage, utilise un emporte-pièce rond (ou un cercle improvisé avec une boîte de conserve sans fond) : pose-le au centre de l'assiette, remplis avec le tartare, tasse légèrement, retire l'emporte-pièce → tu obtiens un beau dôme.",
-        "Décore des feuilles de coriandre. Sers avec 1-2 tranches de pain de seigle toastées à part. Mange immédiatement (l'avocat noircit en 30 min)."
+        "Décore des feuilles de coriandre. Sers avec le pain de seigle coupé en tranches et toasté, à part. Mange immédiatement (l'avocat noircit en 30 min)."
       ],
       "photo": "assets/recipes/l149.webp"
     },
@@ -41778,7 +41862,8 @@ window.__DATA_RECIPES = {
         "shellfish",
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "producesLeftovers": [
         "poisson cuit"
@@ -42174,7 +42259,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 280,
+      "kcal": 320,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -42220,7 +42305,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Farine T80 (semi-complète)",
+          "Poudre d'amande",
           8,
           "g",
           "pantry"
@@ -42239,13 +42324,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sucre de coco",
-          0.25,
-          "c.à.s",
+          0.5,
+          "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -42253,14 +42338,14 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 180°C (chaleur tournante).",
         "Pèle pommes et poires, retire les trognons. Coupe en cubes de 2 cm.",
-        "Dans un saladier, mélange les fruits avec le jus de citron (évite l'oxydation), la cannelle et 1 c.à.c de sucre de coco. Mélange.",
+        "Dans un saladier, mélange les fruits avec le jus de citron (évite l'oxydation), la cannelle et une partie du sucre de coco. Mélange.",
         "Concasse grossièrement les noix au couteau (en 4-5 morceaux par cerneau, pas en poudre).",
-        "Dans un autre saladier, mélange flocons d'avoine, farine T80, noix concassées, sel et le reste du sucre de coco.",
-        "Coupe le beurre froid en très petits cubes. Ajoute au mélange sec. Avec les doigts, sable la pâte (frotte les cubes de beurre avec la farine pour obtenir une texture grumeleuse irrégulière, pas une pâte lisse).",
+        "Dans un autre saladier, mélange flocons d'avoine, poudre d'amande, noix concassées, sel et le reste du sucre de coco.",
+        "Coupe le beurre froid en très petits cubes. Ajoute au mélange sec. Avec les doigts, sable la pâte (frotte les cubes de beurre avec le mélange sec pour obtenir une texture grumeleuse irrégulière, pas une pâte lisse).",
         "Beurre légèrement un plat à four (ou utilise du papier sulfurisé). Verse les fruits au fond.",
         "Recouvre uniformément du sablé crumble (ne tasse pas, garde l'aspect grumeleux).",
         "Enfourne 25-30 min : le dessus doit être bien doré et croustillant, les fruits tendres et parfumés.",
-        "Sors et laisse tiédir 10 min (les fruits sont brûlants à la sortie). Sers tiède (idéal) ou froid. Tu peux ajouter 1 c.à.s de yaourt grec pour une touche fraîcheur."
+        "Sors et laisse tiédir 10 min (les fruits sont brûlants à la sortie). Sers tiède (idéal) ou froid. Tu peux ajouter une cuillerée de yaourt grec pour une touche fraîcheur."
       ],
       "photo": "assets/recipes/des52.webp"
     },
@@ -42548,7 +42633,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 340,
+      "kcal": 460,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -42565,13 +42650,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          60,
+          35,
+          "g",
+          "pantry"
+        ],
+        [
+          "Poudre d'amande",
+          15,
           "g",
           "pantry"
         ],
         [
           "Banane mûre",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -42613,27 +42704,21 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fruits rouges (frais ou surgelés)",
-          80,
+          100,
           "g",
           "produce"
-        ],
-        [
-          "Sirop d'érable (pour servir)",
-          1,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
         "Mixe les flocons d'avoine au blender 30 sec pour obtenir une farine d'avoine grossière (ou utilise farine d'avoine prête).",
         "Dans un saladier, écrase la banane à la fourchette jusqu'à obtenir une purée (pas de gros morceaux). La maturité de la banane = la sucrosité du pancake : prends-la bien mûre (peau tachetée).",
         "Ajoute l'œuf battu, le lait d'amande, la cannelle, sel et levure chimique. Mélange.",
-        "Incorpore la farine d'avoine en pluie en fouettant. Texture cible : pâte épaisse mais coulante (comme une pâte à pancakes US).",
+        "Incorpore la farine d'avoine et la poudre d'amande en pluie en fouettant. Texture cible : pâte épaisse mais coulante (comme une pâte à pancakes US).",
         "Laisse reposer 5 min (la levure agit, l'avoine absorbe le liquide).",
-        "Chauffe une poêle anti-adhésive à feu moyen avec l'huile de coco. Quand chaud, dépose des petites louches de pâte (cible : 6-8 pancakes de 8 cm de diamètre).",
+        "Chauffe une poêle anti-adhésive à feu moyen avec l'huile de coco. Quand chaud, dépose des petites louches de pâte (cible : des petits pancakes de 8 cm de diamètre).",
         "Cuis 1 min 30 du premier côté : des bulles apparaissent, les bords sèchent → retourne. Cuis 1 min de l'autre côté. Les pancakes sont dorés des deux faces.",
         "Empile les pancakes sur une assiette. Décore de fruits rouges (frais ou décongelés).",
-        "Termine par un trait léger de sirop d'érable (pas trop, les pancakes sont déjà sucrés naturellement avec la banane). Mange tiède."
+        "Mange tiède, nature : la banane bien mûre donne déjà toute leur douceur aux pancakes."
       ],
       "photo": "assets/recipes/b57.webp"
     },
@@ -43230,7 +43315,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 580,
+      "kcal": 680,
       "tags": [
         "batch-friendly"
       ],
@@ -43316,7 +43401,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          35,
           "g",
           "pantry"
         ],
@@ -43339,7 +43424,7 @@ window.__DATA_RECIPES = {
         "Dans une casserole, chauffe l'huile à feu moyen-vif. Ajoute le bœuf haché, écrase-le, cuis 5 min (la viande doit être colorée).",
         "Ajoute oignon et poivron, remue 4 min (l'oignon devient translucide).",
         "Ajoute ail, cumin, paprika, origan, piment et cacao non sucré. Remue 30 secondes (le cacao apporte une profondeur sans sucrer).",
-        "Ajoute tomates concassées et haricots rouges rincés. Baisse à feu doux, couvre à moitié. Laisse mijoter 25 min : la sauce épaissit, les saveurs se mélangent.",
+        "Ajoute tomates concassées et haricots rouges rincés. Baisse à feu doux, couvre en laissant le couvercle entrouvert. Laisse mijoter 25 min : la sauce épaissit, les saveurs se mélangent.",
         "Sale, poivre. Goûte : si trop acide, ajoute une pincée de paprika ; pas de sucre.",
         "Sers le chili sur le quinoa, parsème de coriandre ciselée."
       ],
@@ -43486,7 +43571,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 570,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -43499,7 +43584,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -43511,7 +43596,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs en grains (frais ou surgelé)",
-          50,
+          25,
           "g",
           "frozen"
         ],
@@ -43535,7 +43620,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate cerise",
-          80,
+          100,
           "g",
           "produce"
         ],
@@ -43585,7 +43670,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rince le quinoa sous l'eau froide 30 sec dans une passoire fine (enlève l'amertume). Mets-le dans une casserole avec 2 fois son volume d'eau salée. Couvre, porte à ébullition puis baisse à feu doux 12 min : les grains doivent avoir un petit germe blanc visible.",
         "Pendant la cuisson du quinoa, coupe les poivrons en lanières de 1 cm de large. Émince finement l'oignon rouge.",
-        "Dans une poêle, chauffe la moitié de l'huile d'olive à feu vif. Jette les poivrons + cumin + paprika fumé. Saute 6-8 min en remuant : les poivrons doivent garder du croquant mais avoir des marques dorées.",
+        "Dans une poêle, chauffe une partie de l'huile d'olive à feu vif. Jette les poivrons + cumin + paprika fumé. Saute 6-8 min en remuant : les poivrons doivent garder du croquant mais avoir des marques dorées.",
         "Égoutte les haricots noirs et rince-les pour enlever l'eau de conservation. Décongèle le maïs (30 sec micro-ondes ou dans l'eau chaude).",
         "Coupe les tomates cerises en deux et l'avocat en lamelles (juste avant le service pour qu'il ne noircisse pas).",
         "Quand le quinoa est cuit, étale-le 2 min sur une assiette pour qu'il refroidisse un peu (évite que les légumes cuisent au contact).",
@@ -44729,7 +44814,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -44848,7 +44934,8 @@ window.__DATA_RECIPES = {
         "soy",
         "sesame",
         "celery",
-        "fish"
+        "fish",
+        "gluten"
       ],
       "ing": [
         [
@@ -44960,7 +45047,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 360,
+      "kcal": 380,
       "tags": [
         "vegetarian",
         "quick",
@@ -44981,14 +45068,8 @@ window.__DATA_RECIPES = {
           "frozen"
         ],
         [
-          "Banane",
-          0.5,
-          "u",
-          "produce"
-        ],
-        [
           "Skyr (ou yaourt grec)",
-          80,
+          120,
           "g",
           "dairy"
         ],
@@ -45037,7 +45118,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Sors la mangue du congélo 2 min avant pour qu'elle soit mixable mais encore très froide (c'est ce qui donne la texture sorbet du smoothie bowl).",
-        "Dans un blender, mets mangue + demi-banane + skyr + lait d'amande. Mixe 30-45 sec : tu cherches une texture épaisse, qui tient à la cuillère renversée. Si trop liquide ajoute 1 c.à.s de yaourt ; si trop solide pour mixer, ajoute 1 c.à.s de lait.",
+        "Dans un blender, mets mangue + skyr + lait d'amande. Mixe 30-45 sec : tu cherches une texture épaisse, qui tient à la cuillère renversée. Si trop liquide ajoute un peu de skyr ; si trop solide pour mixer, ajoute un trait de lait d'amande.",
         "Verse dans un bol large peu profond (le contraste avec les toppings est plus visuel qu'un bol haut).",
         "Coupe le fruit de la passion en deux et verse la pulpe avec ses graines au centre.",
         "Dispose en cercles autour : myrtilles, amandes effilées, flocons de coco, granola.",
@@ -45310,7 +45391,7 @@ window.__DATA_RECIPES = {
       "advance": "3h",
       "diff": 1,
       "cost": 2.5,
-      "kcal": 350,
+      "kcal": 530,
       "tags": [
         "vegetarian",
         "quick",
@@ -45358,7 +45439,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pain au levain (rassis si possible)",
-          20,
+          10,
           "g",
           "bread"
         ],
@@ -45388,7 +45469,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pain au levain (pour tartines)",
-          60,
+          30,
           "g",
           "bread"
         ],
@@ -45413,12 +45494,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Lave les tomates, retire les pédoncules. Coupe-les en gros morceaux (pas besoin d'éplucher si tu as un blender puissant ; sinon ébouillante 30 sec et la peau s'enlève seule).",
-        "Coupe concombre (pelé ou non selon goût), poivron rouge, oignon rouge en gros morceaux. Écrase l'ail. Trempe les 20g de pain rassis dans un peu d'eau pour le ramollir 2 min.",
-        "Dans le blender : tomates + concombre + poivron + oignon + ail + pain pressé + vinaigre + 1 c.à.s d'huile d'olive + cumin + sel + poivre.",
+        "Coupe concombre (pelé ou non selon goût), poivron rouge, oignon rouge en gros morceaux. Écrase l'ail (garde-en un petit morceau pour frotter les tartines). Trempe le pain rassis dans un peu d'eau pour le ramollir 2 min.",
+        "Dans le blender : tomates + concombre + poivron + oignon + ail + pain pressé + vinaigre + la plus grande partie de l'huile d'olive + cumin + sel + poivre.",
         "Mixe 1 minute à pleine puissance : tu obtiens un velouté rouge-orangé, lisse mais avec encore un peu de texture.",
         "Goûte et corrige : sel, vinaigre (ça doit être un peu acidulé), huile (pour la rondeur). Si trop épais, ajoute un filet d'eau froide.",
         "Mets le gazpacho 30 min minimum au frigo (idéalement 2-3 h ou la veille au soir : les saveurs s'épanouissent).",
-        "Pendant ce temps, prépare les tartines : grille les tranches de pain au grille-pain ou à la poêle 1 min de chaque côté à sec. Frotte-les avec la gousse d'ail restante (si tu en as gardée).",
+        "Pendant ce temps, prépare les tartines : grille les tranches de pain au grille-pain ou à la poêle 1 min de chaque côté à sec. Frotte-les avec le morceau d'ail gardé.",
         "Étale le fromage frais sur les tartines tièdes. Coupe les tomates cerises en deux et dispose-les en pluie. Sale, poivre, filet d'huile d'olive, basilic effeuillé.",
         "Sers le gazpacho dans un bol froid, filet d'huile d'olive en surface, accompagné des tartines.",
         "Astuce batch : le gazpacho se garde 2-3 jours au frigo, encore meilleur le lendemain. Tu peux préparer une grosse jarre pour 3-4 services."
@@ -45804,7 +45885,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 280,
+      "kcal": 290,
       "tags": [
         "vegetarian"
       ],
@@ -45819,13 +45900,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain (en grosses tranches)",
-          50,
+          35,
           "g",
           "bread"
         ],
         [
           "Burrata (ou stracciatella)",
-          50,
+          40,
           "g",
           "dairy"
         ],
@@ -45843,7 +45924,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -45881,7 +45962,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 180 °C chaleur tournante.",
         "Coupe les tomates cerises en deux. Étale-les sur une plaque recouverte de papier sulfurisé, côté coupé vers le haut.",
-        "Arrose-les d'huile d'olive (la moitié), sale, poivre, saupoudre d'origan séché.",
+        "Arrose-les d'huile d'olive (une partie seulement), sale, poivre, saupoudre d'origan séché.",
         "Enfourne 20-25 min : les tomates doivent rétrécir, perdre leur eau et caraméliser légèrement sur les bords. Elles deviennent intensément goûteuses.",
         "Pendant ce temps, grille les tranches de pain au grille-pain ou au four (5 min à 200 °C) jusqu'à doré-croustillant.",
         "Frotte chaque tranche de pain encore tiède avec la gousse d'ail (le pain croustillant râpe l'ail naturellement).",
@@ -45908,7 +45989,7 @@ window.__DATA_RECIPES = {
       "advance": "4h",
       "diff": 2,
       "cost": 2.5,
-      "kcal": 240,
+      "kcal": 350,
       "tags": [
         "vegetarian",
         "festif"
@@ -45925,19 +46006,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fraises fraîches",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Mascarpone",
-          60,
+          30,
           "g",
           "dairy"
         ],
         [
           "Skyr (ou yaourt grec)",
-          80,
+          40,
           "g",
           "dairy"
         ],
@@ -45949,19 +46030,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable (ou sucre de coco)",
-          2,
+          1.0,
           "c.à.c",
           "pantry"
         ],
         [
           "Boudoirs (ou biscuits cuiller)",
-          4,
+          2.0,
           "u",
           "bread"
         ],
         [
           "Jus de citron",
-          1,
+          0.5,
           "c.à.s",
           "produce"
         ],
@@ -45985,14 +46066,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Lave et équeute les fraises. Garde 4-5 belles pour la déco. Écrase grossièrement le reste à la fourchette dans un bol avec 1 c.à.c de sirop d'érable + le jus de citron + 3-4 feuilles de basilic ciselées finement. Laisse macérer 10 min : les fraises rendent leur jus.",
-        "Sépare le blanc du jaune dans deux bols différents (le blanc dans un bol bien sec).",
-        "Dans le bol du jaune, ajoute mascarpone + skyr + 1 c.à.c de sirop d'érable + vanille. Fouette 1 min : tu obtiens une crème lisse, plus légère qu'un tiramisu classique grâce au yaourt.",
+        "Lave et équeute les fraises. Garde quelques belles fraises pour la déco. Écrase grossièrement le reste à la fourchette dans un bol avec une partie du sirop d'érable + le jus de citron + quelques feuilles de basilic ciselées finement (= coupées en fines lanières). Laisse macérer 10 min : les fraises rendent leur jus.",
+        "Sépare le blanc du jaune : le jaune dans un bol, le blanc dans un autre bol bien sec.",
+        "Dans le bol du jaune, ajoute mascarpone + skyr + le reste du sirop d'érable + vanille. Fouette 1 min : tu obtiens une crème lisse, plus légère qu'un tiramisu classique grâce au yaourt.",
         "Bats le blanc en neige ferme (3 min au fouet électrique) : tu peux retourner le bol sans qu'il bouge.",
         "Incorpore le blanc à la crème en deux fois, en soulevant délicatement à la maryse de bas en haut. Garde l'air, c'est ce qui rend léger.",
         "Tape les boudoirs à plat sur le plan : casse-les en 2-3 morceaux (pour un tiramisu en verrines).",
         "Récupère le jus rendu par les fraises macérées dans une assiette creuse. Trempe rapidement les morceaux de boudoirs (1 sec recto, 1 sec verso : si tu trempes trop ils s'effondrent).",
-        "Dans 2 verrines (ou un petit moule de 15×10 cm), monte en couches : moitié des boudoirs trempés au fond, moitié de la compotée de fraises au basilic, moitié de la crème mascarpone-yaourt. Recommence : boudoirs, fraises, crème.",
+        "Dans les verrines, monte en couches : une couche de boudoirs trempés au fond, puis une couche de compotée de fraises au basilic, puis une couche de crème mascarpone-yaourt. Recommence avec ce qui reste : boudoirs, fraises, crème.",
         "Filme et mets au frigo minimum 4 h, idéalement la veille pour le lendemain (les boudoirs s'imbibent, la crème se raffermit).",
         "Au moment de servir, coupe les fraises gardées en lamelles, dispose en éventail sur le dessus. Parsème de pistaches concassées et de petites feuilles de basilic.",
         "C'est plus léger qu'un tiramisu traditionnel (-30% de gras vs version 100% mascarpone), mais l'effet aérien est conservé grâce au blanc en neige."
@@ -46012,7 +46093,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 380,
+      "kcal": 400,
       "tags": [
         "light",
         "quick"
@@ -46030,20 +46111,20 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de riz (22 cm)",
-          4,
+          2,
           "u",
           "pantry"
         ],
         [
           "Crevettes cuites décortiquées",
-          100,
+          120,
           "g",
           "meat-fish"
         ],
         [
           "Mangue",
-          0.5,
-          "u",
+          40,
+          "g",
           "produce"
         ],
         [
@@ -46060,15 +46141,9 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade laitue (feuilles tendres)",
-          4,
+          2,
           "u",
           "produce"
-        ],
-        [
-          "Vermicelles de riz",
-          30,
-          "g",
-          "pantry"
         ],
         [
           "Menthe fraîche",
@@ -46084,7 +46159,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Beurre de cacahuète sans sucre",
-          1.5,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -46113,12 +46188,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sirop d'érable",
-          0.5,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Eau (pour sauce)",
           1,
           "c.à.s",
@@ -46126,17 +46195,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis les vermicelles : plonge-les 3 min dans une casserole d'eau bouillante, égoutte, rince à l'eau froide pour stopper la cuisson, laisse égoutter dans une passoire.",
         "Coupe la mangue en bâtonnets de 5 cm × 5 mm. Idem pour la carotte (épluchée) et le concombre (avec ou sans peau selon goût). Couper en bâtonnets uniformes est ce qui fait l'effet visuel des rouleaux.",
-        "Détache les feuilles de salade, lave-les, sèche-les bien. Garde 4 belles feuilles entières.",
+        "Détache les feuilles de salade, lave-les, sèche-les bien. Garde les plus belles feuilles entières.",
         "Coupe les crevettes en deux dans le sens de la longueur (= deux moitiés roses qu'on voit à travers la galette de riz, c'est joli).",
-        "Prépare la sauce cacahuète : dans un petit bol, fouette beurre de cacahuète + sauce soja + gingembre râpé + jus de la moitié du lime + sirop d'érable + huile de sésame + 1 c.à.s d'eau. Texture : nappante mais coulante. Si trop épaisse, ajoute un peu d'eau.",
+        "Prépare la sauce cacahuète : dans un petit bol, fouette beurre de cacahuète + sauce soja + gingembre râpé + jus du citron vert + huile de sésame + l'eau. Texture : nappante mais coulante. Si trop épaisse, ajoute un peu d'eau.",
         "Prépare le poste de roulage : un saladier d'eau tiède (pas chaude), un torchon humide à plat sur le plan de travail.",
         "Plonge une galette de riz dans l'eau tiède 5 sec (pas plus, elle continue à se réhydrater à l'air). Sors-la en l'égouttant et pose-la sur le torchon : elle devient souple en quelques secondes.",
-        "Au tiers inférieur de la galette, dispose dans cet ordre : feuille de salade, vermicelles (1/4 du total), bâtonnets de mangue, carotte, concombre, herbes (menthe + coriandre).",
-        "Au-dessus de cette ligne, en face où sera l'extérieur du rouleau (côté présentation), pose 4 demi-crevettes côte à côte, partie rose vers le haut.",
+        "Au tiers inférieur de la galette, dispose dans cet ordre : feuille de salade, bâtonnets de mangue, carotte, concombre, herbes (menthe + coriandre).",
+        "Au-dessus de cette ligne, en face où sera l'extérieur du rouleau (côté présentation), pose les moitiés de crevettes côte à côte, partie rose vers le haut.",
         "Roule serré : ramène le bord inférieur sur la garniture, replie les côtés vers l'intérieur, continue de rouler en serrant légèrement (pas trop fort, la galette se déchire).",
-        "Recommence avec les 3 autres galettes.",
+        "Recommence avec la galette restante.",
         "Coupe chaque rouleau en biais en deux pour la présentation. Sers froid avec la sauce cacahuète à part.",
         "Mange les rouleaux à la main en les trempant dans la sauce. Frais, croquant, parfumé : c'est l'été en bouchée."
       ],
@@ -46166,7 +46234,8 @@ window.__DATA_RECIPES = {
         "soy",
         "sesame",
         "fish",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -46833,7 +46902,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 510,
+      "kcal": 600,
       "tags": [
         "vegetarian",
         "quick"
@@ -46855,7 +46924,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomme de terre",
-          200,
+          130,
           "g",
           "produce"
         ],
@@ -46903,7 +46972,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade verte (en accompagnement)",
-          50,
+          80,
           "g",
           "produce"
         ],
@@ -46922,12 +46991,12 @@ window.__DATA_RECIPES = {
         "Dans une grande poêle, chauffe l'huile d'olive à feu moyen-vif. Verse les pommes de terre. Sale, poivre. Saute 8 min en remuant peu (laisse-les dorer face par face) : tu cherches un extérieur croustillant.",
         "Ajoute l'oignon et l'ail. Cuis encore 3 min. Réserve dans une assiette, couvre.",
         "Casse les œufs dans un bol, sale, poivre, bats à la fourchette 30 sec : juste pour mélanger blanc et jaune, pas pour faire mousser.",
-        "Ajoute 2/3 des herbes ciselées dans les œufs.",
+        "Ajoute la plus grande partie des herbes ciselées dans les œufs.",
         "Dans la même poêle (vidée du surplus de gras), fais fondre le beurre à feu moyen. Quand il mousse, verse les œufs.",
         "Laisse prendre 30 sec sans toucher, puis avec une spatule ramène les bords cuits vers le centre, fais glisser les œufs liquides vers les bords. Répète 2-3 fois en 90 sec : tu obtiens une omelette baveuse au centre, prise sur les bords.",
-        "Quand le dessus est encore brillant et un peu coulant (= cuisson \"baveuse\" française), arrête. Glisse-la sur l'assiette en la pliant en demi-lune avec la spatule.",
+        "Quand le dessus est encore brillant et un peu coulant (= cuisson \"baveuse\" française), arrête. Glisse-la sur l'assiette en la pliant en deux avec la spatule.",
         "Pose les pommes de terre sautées à côté. Parsème le reste d'herbes sur l'omelette.",
-        "Sers avec une salade verte vinaigrette à part. 3 œufs + 200 g de pdt = repas complet, 2 € la portion."
+        "Sers avec une salade verte vinaigrette à part. Œufs + pommes de terre + salade = un repas complet et économique."
       ],
       "photo": "assets/recipes/d168.webp"
     },
@@ -46945,7 +47014,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 0.5,
-      "kcal": 110,
+      "kcal": 140,
       "tags": [
         "vegan",
         "vegetarian",
@@ -46960,7 +47029,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme à compote (Boskoop, Reinette ou Golden bien mûre)",
-          2,
+          1.5,
           "u",
           "produce"
         ],
@@ -46992,11 +47061,11 @@ window.__DATA_RECIPES = {
       "steps": [
         "Lave les pommes. Épluche-les (ou pas — avec peau = + fibres mais texture plus rustique, sans peau = compote lisse classique). Enlève le cœur et les pépins.",
         "Coupe-les en cubes de 2 cm.",
-        "Dans une petite casserole, mets les cubes + eau + jus du quart de citron + cannelle + vanille.",
+        "Dans une petite casserole, mets les cubes + eau + jus du citron + cannelle + vanille.",
         "Couvre, porte à ébullition à feu moyen, puis baisse à feu doux. Cuis 12-15 min en remuant 2-3 fois : les pommes vont s'effondrer toutes seules.",
         "Quand elles sont fondantes (un coup de fourchette les écrase), retire du feu.",
         "Selon préférence : laisse rustique (cubes fondants encore visibles) ou écrase à la fourchette pour une compote lisse.",
-        "Sucre naturel des pommes mûres = pas besoin de sucre ajouté. Si tu trouves ça pas assez sucré, ajoute 0.5 c.à.c de sirop d'érable hors du feu — mais teste d'abord, c'est généralement parfait.",
+        "Sucre naturel des pommes mûres = pas besoin de sucre ajouté. Si tu trouves ça pas assez sucré, ajoute une pincée de cannelle en plus hors du feu (elle donne une impression de douceur) — mais goûte d'abord, c'est généralement parfait.",
         "Mange tiède (l'odeur de cannelle-pomme chauffée est l'âme de ce dessert) ou froid (au frigo elle se conserve 4 jours).",
         "Astuce batch : double, triple les quantités. La compote maison se conserve 4 jours au frigo, 3 mois congelée en portions individuelles. Excellente sur un porridge le matin ou un yaourt nature en collation."
       ],
@@ -47016,7 +47085,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 410,
+      "kcal": 500,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -47032,7 +47101,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Épeautre perlé (ou orge)",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -47105,7 +47174,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Émince oignon, ail, céleri branche en petits dés (= mirepoix italienne). Coupe la carotte épluchée en cubes de 5 mm.",
-        "Dans une grande casserole, chauffe l'huile d'olive à feu moyen. Fais revenir l'oignon 4 min, puis ajoute carotte + céleri 3 min, puis ail 30 sec.",
+        "Dans une grande casserole, chauffe la plus grande partie de l'huile d'olive à feu moyen. Fais revenir l'oignon 4 min, puis ajoute carotte + céleri 3 min, puis ail 30 sec.",
         "Ajoute origan, remue 10 sec. Verse les tomates concassées, écrase un peu à la cuillère. Cuis 5 min : la sauce épaissit.",
         "Rince l'épeautre sous l'eau froide. Ajoute-le dans la casserole.",
         "Verse le bouillon, sale, poivre. Couvre, porte à ébullition puis baisse à feu doux. Cuis 25 min : l'épeautre doit être tendre mais encore légèrement croquant à cœur (al dente, comme un risotto).",
@@ -47385,7 +47454,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 540,
+      "kcal": 690,
       "tags": [
         "vegetarian",
         "quick"
@@ -47401,13 +47470,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Linguine complètes (ou spaghetti)",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Courgette",
-          1,
+          2,
           "u",
           "produce"
         ],
@@ -47468,16 +47537,16 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Porte une grande casserole d'eau salée à ébullition.",
-        "Lave la courgette. Coupe-la en demi-lunes très fines de 2-3 mm (mandoline si tu en as, sinon couteau bien aiguisé) — c'est la finesse qui rend ce plat élégant.",
-        "Râpe le zeste du citron (juste la partie jaune, pas le blanc qui amer). Presse le jus.",
+        "Lave les courgettes. Coupe-les en fines lamelles en arc de cercle de 2-3 mm (mandoline si tu en as, sinon couteau bien aiguisé) — c'est la finesse qui rend ce plat élégant.",
+        "Râpe le zeste du citron (juste la partie jaune, pas le blanc qui est amer). Presse le jus.",
         "Plonge les linguine dans l'eau bouillante. Cuis al dente (-1 min vs paquet).",
         "Pendant ce temps, dans une grande poêle, chauffe l'huile d'olive avec l'ail écrasé à feu moyen 90 sec : ail infusé, pas brûlé.",
-        "Jette les courgettes en demi-lunes. Sale légèrement. Saute 4-5 min en remuant : elles doivent rester un peu fermes (al dente aussi), pas en bouillie. Sale, poivre.",
+        "Jette les lamelles de courgette. Sale légèrement. Saute 4-5 min en remuant : elles doivent rester un peu fermes (al dente aussi), pas en bouillie. Sale, poivre.",
         "Quand les pâtes sont prêtes, garde 1 louche d'eau de cuisson, égoutte les pâtes.",
         "Verse les pâtes dans la poêle aux courgettes. Mélange.",
-        "Hors du feu, ajoute la ricotta + zeste + jus de citron + 2-3 c.à.s d'eau de cuisson : la sauce devient crémeuse, citronnée, fraîche.",
+        "Hors du feu, ajoute la ricotta + zeste + jus de citron + un peu d'eau de cuisson : la sauce devient crémeuse, citronnée, fraîche.",
         "Mélange. Si trop sec, ajoute un peu d'eau de cuisson.",
-        "Sers dans 2 assiettes creuses. Parsème parmesan, herbes ciselées (menthe + basilic), pignons grillés à sec si tu en as.",
+        "Sers dans des assiettes creuses. Parsème parmesan, herbes ciselées (menthe + basilic), pignons grillés à sec si tu en as.",
         "Recette emblématique de l'été italien (Capri, côte amalfitaine) : ricotta + citron + courgette = légèreté et fraîcheur. 2.30 € la portion."
       ],
       "photo": "assets/recipes/d170.webp"
@@ -47496,7 +47565,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 410,
+      "kcal": 500,
       "tags": [
         "vegetarian",
         "quick",
@@ -47511,13 +47580,12 @@ window.__DATA_RECIPES = {
         "soy",
         "gluten",
         "sesame",
-        "celery",
-        "fish"
+        "celery"
       ],
       "ing": [
         [
           "Nouilles soba (sarrasin)",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -47528,7 +47596,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon de légumes (ou dashi)",
+          "Bouillon de légumes",
           600,
           "ml",
           "pantry"
@@ -47541,7 +47609,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Champignons shiitakés (frais ou réhydratés)",
-          60,
+          90,
           "g",
           "produce"
         ],
@@ -47603,7 +47671,7 @@ window.__DATA_RECIPES = {
         "Ajoute le tofu en cubes et les pousses d'épinards (ou bok choy émincé). Cuis 2 min : juste pour réchauffer, les épinards fondent.",
         "Hors du feu (important !), prélève une louche de bouillon dans un bol, délaie le miso à la fourchette jusqu'à dissolution complète (sinon grumeaux). Reverse dans la casserole, mélange doucement.",
         "Ajoute sauce soja et huile de sésame.",
-        "Répartis les nouilles cuites dans 2 bols larges. Verse la soupe miso brûlante par-dessus.",
+        "Répartis les nouilles cuites dans les bols larges. Verse la soupe miso brûlante par-dessus.",
         "Parsème graines de sésame et part verte de cébette. Si tu as des feuilles de nori, coupe-les en lanières fines aux ciseaux et mets sur le bol.",
         "Mange chaud, idéalement avec des baguettes (les nouilles soba se mangent en aspirant — les Japonais font même du bruit, c'est encouragé). 2.40 € le bol consistant."
       ],
@@ -47634,7 +47702,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -47756,7 +47825,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 320,
+      "kcal": 500,
       "tags": [
         "vegan",
         "vegetarian",
@@ -47772,7 +47841,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain (en tranches)",
-          60,
+          50,
           "g",
           "bread"
         ],
@@ -47784,7 +47853,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pois chiches cuits (pour topping)",
-          30,
+          40,
           "g",
           "pantry"
         ],
@@ -47833,13 +47902,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Grille les tranches de pain au grille-pain ou à la poêle (sec) 90 sec / face : doré, croustillant en surface, encore moelleux à cœur.",
-        "Coupe les tomates cerises en deux. Coupe le quart de concombre en demi-rondelles fines.",
+        "Coupe les tomates cerises en deux. Coupe le concombre en fines rondelles, puis recoupe chaque rondelle en deux.",
         "Égoutte les pois chiches (en topping additionnel pour la double protéine, en plus de l'houmous lui-même).",
         "Étale généreusement l'houmous sur les tartines tièdes (pas brûlantes : il fondrait).",
         "Dispose en couronne tomates cerises, concombre, pois chiches.",
         "Arrose d'un filet d'huile d'olive + jus de citron, parsème de zaatar généreusement (= mélange thym sauvage + sumac + sésame, signature levantine).",
         "Termine par persil ciselé + sel + poivre du moulin.",
-        "Mange immédiatement, idéalement avec un bol de yaourt grec + miel à côté ou une salade de fruits frais.",
+        "Mange immédiatement, idéalement avec une salade de fruits frais ou un yaourt végétal nature à côté.",
         "Petit-déjeuner salé style méditerranéen oriental : tient toute la matinée grâce aux protéines + fibres des pois chiches."
       ],
       "photo": "assets/recipes/b62.webp"
@@ -47983,7 +48052,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 480,
+      "kcal": 530,
       "tags": [
         "vegan",
         "vegetarian",
@@ -48000,67 +48069,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (bocal, égouttés)",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Tahini (purée de sésame)",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau glacée",
-          30,
+          15,
           "ml",
           "pantry"
         ],
         [
           "Pita complète",
-          1,
+          0.5,
           "u",
           "bread"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Tomate cerise",
-          80,
+          40,
           "g",
           "produce"
         ],
@@ -48072,7 +48141,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Olives Kalamata",
-          6,
+          3,
           "u",
           "pantry"
         ],
@@ -48084,7 +48153,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Persil plat",
-          0.05,
+          0.03,
           "bouquet",
           "produce"
         ],
@@ -48096,16 +48165,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Houmous maison : dans le mixeur, mets pois chiches + tahini + jus du citron + ail écrasé + cumin + 1 c.à.s d'huile d'olive + sel + poivre + 30 ml d'eau glacée. Mixe 1 min puissance max.",
+        "Houmous maison : dans le mixeur, mets pois chiches + tahini + jus du citron + ail écrasé + cumin + une partie de l'huile d'olive + sel + poivre + l'eau glacée. Mixe 1 min puissance max.",
         "Goûte. Ajuste : plus citronné (acide), plus salé, plus tahini (rond), plus eau (texture coulante). Le houmous parfait est lisse, blanc-cassé, légèrement aérien.",
         "Si pas assez lisse, ajoute 1 c.à.s d'eau et mixe 30 sec encore.",
         "Verse dans une assiette creuse, étale en cercle avec le dos d'une cuillère en formant un puits central.",
         "Verse le reste d'huile d'olive dans le puits, saupoudre de paprika doux et persil ciselé.",
         "Coupe le concombre en bâtonnets de 7 cm, la carotte épluchée idem, le poivron en lanières. Coupe les tomates cerises en deux.",
-        "Coupe le pita en triangles de 2 cm (ou laisse entier à déchirer à la main).",
-        "Sers : assiette d'houmous au centre, autour disposes en couronnes les crudités + olives + pita.",
+        "Coupe la pita en triangles de 2 cm (ou laisse entier à déchirer à la main).",
+        "Sers : assiette d'houmous au centre, dispose autour, en couronnes, les crudités + olives + pita.",
         "Mange à la main : trempe pita ou crudités dans l'houmous. Convivial, simple, complet.",
-        "Astuce batch : l'houmous se garde 4 jours au frigo dans une boîte hermétique, en surface lisse pour ne pas qu'il sèche. Tartine le sur du pain au petit-déjeuner pour finir."
+        "Astuce batch : l'houmous se garde 4 jours au frigo dans une boîte hermétique, en surface lisse pour ne pas qu'il sèche. Tartine-le sur du pain au petit-déjeuner pour finir."
       ],
       "photo": "assets/recipes/l164.webp"
     },
@@ -48203,7 +48272,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -48374,7 +48443,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 220,
+      "kcal": 270,
       "tags": [
         "vegan",
         "vegetarian",
@@ -48397,7 +48466,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Gressins complets (grissini)",
-          4,
+          3,
           "u",
           "bread"
         ],
@@ -48441,11 +48510,11 @@ window.__DATA_RECIPES = {
       "steps": [
         "Verse l'houmous dans un petit bol creux ou un ramequin.",
         "Avec le dos d'une cuillère, fais 3-4 sillons concentriques en surface. Verse l'huile d'olive en filet dans les sillons. Saupoudre de paprika fumé.",
-        "Coupe la demi-carotte épluchée en bâtonnets de 7 cm × 5 mm. Idem pour le quart de concombre (avec ou sans peau). Coupe la branche de céleri en bâtonnets.",
+        "Coupe la carotte épluchée en bâtonnets de 7 cm × 5 mm. Idem pour le concombre (avec ou sans peau). Coupe la branche de céleri en bâtonnets.",
         "Coupe les radis en deux ou en quartiers selon taille (les feuilles tendres sont mangeables aussi).",
         "Dispose tous les bâtonnets et les gressins en éventail dans une grande assiette autour du bol d'houmous.",
         "Mange en trempant les crudités et gressins dans l'houmous.",
-        "Goûter sain et complet : protéines pois chiches + sésame, fibres crudités, IG bas. 220 kcal.",
+        "Goûter sain et complet : protéines pois chiches + sésame, fibres des crudités, IG bas.",
         "Astuce : pour préparer 1 semaine de goûters, prépare un grand bol d'houmous dimanche, taille les crudités le matin, conserve-les dans une boîte hermétique avec un fond d'eau (elles restent croquantes 3-4 jours)."
       ],
       "photo": "assets/recipes/s59.webp"
@@ -48464,7 +48533,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 510,
+      "kcal": 670,
       "tags": [],
       "eq": [
         "pan",
@@ -48485,13 +48554,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Amandes effilées",
-          25,
+          15,
           "g",
           "pantry"
         ],
         [
           "Beurre doux",
-          25,
+          12,
           "g",
           "dairy"
         ],
@@ -48509,7 +48578,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomme de terre Charlotte (ou autre à chair ferme)",
-          200,
+          140,
           "g",
           "produce"
         ],
@@ -48547,19 +48616,19 @@ window.__DATA_RECIPES = {
       "steps": [
         "Lance les pommes de terre : lave-les sans éplucher, coupe en cubes de 2 cm. Cuis vapeur 15 min (ou cocotte-minute 8 min) jusqu'à tendres au couteau.",
         "Cuis les haricots verts : 6 min à l'eau bouillante salée si frais, 4 min si surgelés. Plonge dans l'eau glacée 1 min pour fixer le vert vif. Égoutte.",
-        "Sort la truite du frigo 10 min avant cuisson (mieux saisir à température ambiante).",
+        "Sors la truite du frigo 10 min avant cuisson (mieux saisir à température ambiante).",
         "Sèche les filets de truite avec du papier absorbant (sinon la peau colle).",
-        "Sale et poivre la truite. Dépose la farine sur une assiette, y passe rapidement la truite des deux côtés, secoue l'excédent : juste un voile fin.",
+        "Sale et poivre la truite. Dépose la farine sur une assiette, passes-y rapidement la truite des deux côtés, secoue l'excédent : juste un voile fin.",
         "Dans une grande poêle, fais griller à sec les amandes effilées 90 sec : elles passent de blanc à doré clair vite, surveille. Réserve dans une assiette.",
-        "Dans la même poêle, à feu moyen-vif, fais fondre 15 g de beurre + 0.5 c.à.s d'huile d'olive (le beurre seul brûle à haute température, l'huile l'aide à tenir).",
+        "Dans la même poêle, à feu moyen-vif, fais fondre une bonne partie du beurre avec l'huile d'olive (le beurre seul brûle à haute température, l'huile l'aide à tenir).",
         "Quand le beurre mousse, dépose les filets de truite peau dessous. Cuis 3 min sans bouger : la peau doit être croustillante.",
         "Retourne délicatement avec 2 spatules fines. Cuis 2 min sur l'autre face. La chair est cuite quand elle se détache facilement à la fourchette.",
         "Réserve les filets sur une assiette tiède.",
-        "Dans la poêle, ajoute le reste du beurre. Quand il est noisette (couleur dorée et parfum de noisette), ajoute le jus du demi-citron. Ça crépite vivement, c'est normal — ça fait un beurre meunière acidulé.",
+        "Dans la poêle, ajoute le reste du beurre. Quand il est noisette (couleur dorée et parfum de noisette), ajoute le jus du citron. Ça crépite vivement, c'est normal — ça fait un beurre meunière acidulé.",
         "Hors du feu, ajoute amandes grillées + persil ciselé.",
-        "Pendant ce temps, fais sauter brièvement les haricots verts dans une poêle avec ail écrasé + 0.5 c.à.s de beurre du beurre meunière.",
+        "Pendant ce temps, fais sauter brièvement les haricots verts dans une poêle avec l'ail écrasé et une cuillerée du beurre meunière.",
         "Dresse : pommes de terre vapeur d'un côté, haricots verts ail-beurre, truite par-dessus, nappée généreusement du beurre meunière aux amandes.",
-        "Truite = excellent poisson gras (3-4 g oméga-3 / portion). Recette élégante, en 30 min, pour finir la semaine en beauté."
+        "Truite = bonne source d'oméga-3, elle compte comme ta portion de poisson gras de la semaine. Recette élégante, en 30 min, pour finir la semaine en beauté."
       ],
       "photo": "assets/recipes/d174.webp"
     },
@@ -48576,7 +48645,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 540,
+      "kcal": 660,
       "tags": [],
       "eq": [
         "pan",
@@ -48591,7 +48660,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes longues complètes (bucatini, linguine)",
-          100,
+          70,
           "g",
           "pantry"
         ],
@@ -48603,7 +48672,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fenouil bulbe",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -48621,7 +48690,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Raisins secs (sultanines)",
-          15,
+          10,
           "g",
           "pantry"
         ],
@@ -48651,7 +48720,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -48679,15 +48748,15 @@ window.__DATA_RECIPES = {
         "Émince le fenouil très finement (mandoline si possible, sinon couteau aiguisé). Émince l'oignon.",
         "Si tu utilises des sardines fraîches : enlève les arêtes centrales en passant le pouce le long de la colonne. Coupe les filets en morceaux de 3 cm. Si tu utilises des sardines en conserve à l'huile : égoutte légèrement, coupe en gros morceaux.",
         "Porte une grande casserole d'eau salée à ébullition pour les pâtes (à lancer dans l'étape 7).",
-        "Dans une grande poêle, chauffe 1 c.à.s d'huile d'olive. Fais griller la chapelure complète 90 sec en remuant : elle doit être dorée, croustillante. Réserve dans un bol (= la pangrattata, le 'parmesan du pauvre' sicilien).",
+        "Dans une grande poêle, chauffe une partie de l'huile d'olive. Fais griller la chapelure complète 90 sec en remuant : elle doit être dorée, croustillante. Réserve dans un bol (= la pangrattata, le 'parmesan du pauvre' sicilien).",
         "Dans la même poêle, ajoute le reste d'huile. Cuis l'oignon 4 min, ajoute le fenouil, cuis 5 min : il s'attendrit et devient sucré.",
         "Lance les pâtes dans l'eau bouillante (cuis al dente, -1 min vs paquet). Garde 1 louche d'eau de cuisson avant d'égoutter.",
         "Dans la poêle aux légumes, ajoute les anchois écrasés à la fourchette : ils fondent et donnent un fond umami. Ajoute le safran écrasé entre les doigts (juste pour libérer la couleur).",
-        "Égoutte les raisins secs gonflés et ajoute-les à la poêle. Ajoute les pignons (sans griller, ils griller dans la sauce).",
+        "Égoutte les raisins secs gonflés et ajoute-les à la poêle. Ajoute les pignons (sans griller, ils grillent dans la sauce).",
         "Ajoute les morceaux de sardines délicatement. Cuis 2 min : ils doivent juste cuire ou réchauffer (selon frais ou conserve), pas se défaire en bouillie.",
         "Quand les pâtes sont al dente, jette-les dans la poêle avec 2-3 c.à.s d'eau de cuisson. Mélange vivement à feu vif 1 min : l'eau féculée + huile crée une sauce nappante.",
         "Hors du feu, ajoute zeste + jus de citron + persil + plumets de fenouil ciselés. Mélange.",
-        "Dresse dans 2 assiettes creuses. SURTOUT : parsème généreusement la pangrattata par-dessus (= la signature du plat, contraste croquant).",
+        "Dresse dans les assiettes creuses. SURTOUT : parsème généreusement la pangrattata par-dessus (= la signature du plat, contraste croquant).",
         "Plat sicilien classique : poisson gras + légume + fruit sec + croustillant. 3.20 € la portion généreuse."
       ],
       "photo": "assets/recipes/d175.webp"
@@ -48717,7 +48786,8 @@ window.__DATA_RECIPES = {
         "fish",
         "soy",
         "sesame",
-        "sulphites"
+        "sulphites",
+        "gluten"
       ],
       "ing": [
         [
@@ -48977,7 +49047,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 510,
+      "kcal": 470,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -48992,8 +49062,8 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pois chiches secs trempés 12 h (= 100 g secs → ~250 g trempés)",
-          83,
+          "Pois chiches secs trempés 12 h (poids après trempage)",
+          75,
           "g",
           "pantry"
         ],
@@ -49005,19 +49075,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.75,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Persil plat (gros bouquet)",
-          0.25,
+          0.1,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.05,
           "bouquet",
           "produce"
         ],
@@ -49041,8 +49111,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine de pois chiche (ou T80)",
-          0.25,
-          "c.à.s",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
@@ -49053,14 +49123,14 @@ window.__DATA_RECIPES = {
         ],
         [
           "Yaourt nature",
-          33,
+          40,
           "g",
           "dairy"
         ],
         [
           "Tahini (purée de sésame)",
-          0.25,
-          "c.à.s",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
@@ -49071,7 +49141,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade laitue (feuilles)",
-          17,
+          20,
           "g",
           "produce"
         ],
@@ -49089,13 +49159,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          0.25,
-          "c.à.s",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
           "Sel, poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -49104,18 +49174,18 @@ window.__DATA_RECIPES = {
         "Important : utilise des pois chiches SECS trempés 12 h, pas des cuits en bocal (la texture serait trop mouillée et les falafels se déliteraient à la cuisson). Égoutte-les très bien.",
         "Préchauffe le four à 200 °C chaleur tournante.",
         "Dans le mixeur : pois chiches trempés + oignon en gros morceaux + ail + persil + coriandre fraîche + cumin + coriandre poudre + bicarbonate + sel + poivre. Mixe par à-coups (pulse) 30 sec : tu cherches une texture sablée, granuleuse — pas une purée lisse (sinon les falafels deviennent compacts).",
-        "Verse dans un saladier, ajoute la farine de pois chiche. Mélange à la cuillère. La pâte doit se tenir quand tu en serres une poignée. Si elle s'effrite trop, ajoute 1 c.à.s d'eau ou 1 autre c.à.s de farine selon.",
+        "Verse dans un saladier, ajoute la farine de pois chiche. Mélange à la cuillère. La pâte doit se tenir quand tu en serres une poignée. Si elle s'effrite trop, ajoute un filet d'eau ou un peu plus de farine.",
         "Laisse reposer 15 min au frigo : la pâte se raffermit, les falafels seront plus faciles à former.",
-        "Forme 8-10 boulettes de la taille d'une grosse noix entre tes paumes humides. Tape légèrement pour aplatir en galettes (= cuisson plus uniforme au four).",
+        "Forme des boulettes de la taille d'une grosse noix entre tes paumes humides. Tape légèrement pour aplatir en galettes (= cuisson plus uniforme au four).",
         "Pose-les sur une plaque recouverte de papier sulfurisé. Vaporise ou badigeonne d'huile d'olive (les deux faces).",
         "Enfourne 18-22 min en retournant à mi-cuisson : les falafels doivent être dorés, croustillants en surface, moelleux à cœur.",
-        "Pendant la cuisson, prépare la sauce : mélange yaourt + tahini + jus du demi-citron + 1 c.à.s d'eau si trop épais + sel + poivre.",
-        "Coupe la salade en lanières, la tomate en dés, le concombre en demi-rondelles.",
+        "Pendant la cuisson, prépare la sauce : mélange yaourt + tahini + jus du citron + un filet d'eau si trop épais + sel + poivre.",
+        "Coupe la salade en lanières, la tomate en dés, le concombre en fines rondelles.",
         "Réchauffe la pita 2 min au four (avec les falafels en fin de cuisson, ou 30 sec micro-ondes). Coupe-la en deux pour ouvrir une poche.",
-        "Garnis : crudités + 4-5 falafels par demi-pita + sauce tahini-yaourt généreusement.",
+        "Garnis : crudités + quelques falafels dans chaque morceau de pita + sauce tahini-yaourt généreusement.",
         "Mange immédiatement, c'est meilleur tiède.",
         "Astuce batch : la pâte de falafel se garde 24 h crue au frigo. Tu peux aussi cuire tous les falafels d'un coup, conserver 3 jours au frigo, et les réchauffer 5 min au four à 180 °C (ils retrouvent leur croustillant).",
-        "Falafel = la définition du \"complet en protéines végétales bon marché\" : 100 g de pois chiches secs → repas pour 4 à 1 € de base."
+        "Falafel = la définition du \"complet en protéines végétales bon marché\" : les pois chiches secs comptent parmi les protéines les moins chères du rayon."
       ],
       "photo": "assets/recipes/l165.webp"
     },
@@ -49434,7 +49504,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 540,
+      "kcal": 740,
       "tags": [
         "batch-friendly"
       ],
@@ -49449,7 +49519,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          150,
+          120,
           "g",
           "meat-fish"
         ],
@@ -49461,13 +49531,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Haricots rouges cuits (bocal, égouttés)",
-          80,
+          60,
           "g",
           "pantry"
         ],
         [
           "Galettes de sarrasin (en remplacement tortilla)",
-          2,
+          1.5,
           "u",
           "bread"
         ],
@@ -49533,7 +49603,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -49545,19 +49615,19 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis le poulet : dans une casserole, plonge le filet dans 300 ml d'eau frémissante avec 1 demi-oignon + 1 gousse d'ail + sel. Cuis 12 min à feu doux. Sors et effiloche à la fourchette.",
+        "Cuis le poulet : dans une casserole, plonge le filet dans de l'eau frémissante (il doit être recouvert) avec un morceau de l'oignon + un peu de l'ail + sel. Cuis 12 min à feu doux. Sors et effiloche à la fourchette.",
         "Préchauffe le four à 200 °C chaleur tournante.",
         "Prépare la sauce verde (= signature de l'enchilada verde) : émince finement le reste d'oignon, écrase l'ail restant. Coupe le piment en petits morceaux (enlève les graines pour moins de feu).",
         "Dans une poêle, chauffe l'huile à feu moyen. Fais revenir oignon + ail + piment 5 min jusqu'à doré.",
         "Ajoute les tomatillos écrasés (ou tomates vertes en bocal hachées) + cumin + origan + bouillon. Cuis 10 min à feu moyen : ça réduit en sauce verte épaisse et intense.",
-        "Hors du feu, ajoute la moitié de la coriandre + jus de la moitié du lime + sel + poivre. Mixe rapidement au mixeur plongeant 20 sec : sauce lisse-rustique.",
-        "Mélange dans un bol le poulet effiloché + haricots rouges + 4 c.à.s de sauce verde.",
-        "Découpe les galettes de sarrasin en 4 quartiers chacune (= 8 morceaux qui remplaceront les tortillas).",
-        "Dans un plat à gratin, étale 2 c.à.s de sauce verde au fond. Dispose les morceaux de galettes en couche, garniture poulet-haricots par-dessus, autre couche de galettes, reste de sauce.",
+        "Hors du feu, ajoute une partie de la coriandre + une partie du jus de lime + sel + poivre. Mixe rapidement au mixeur plongeant 20 sec : sauce lisse-rustique.",
+        "Mélange dans un bol le poulet effiloché + haricots rouges + environ un tiers de la sauce verde.",
+        "Découpe les galettes de sarrasin en quartiers (ils remplaceront les tortillas).",
+        "Dans un plat à gratin, étale un peu de sauce verde au fond. Dispose les morceaux de galettes en couche, garniture poulet-haricots par-dessus, autre couche de galettes, reste de sauce.",
         "Recouvre de mozzarella râpée. Enfourne 15-18 min : le fromage doit être doré et bouillonner.",
         "Sors, laisse reposer 3 min (la sauce s'épaissit en refroidissant un peu).",
-        "Sers : 2 portions par assiette, nappées de skyr + reste de coriandre fraîche + jus de lime au moment de manger.",
-        "Astuce batch : la sauce verde se conserve 5 jours au frigo, 3 mois congelée. Tu peux faire 2x la sauce et utiliser l'autre moitié pour un autre dîner enchiladas plus tard."
+        "Sers dans les assiettes, nappé de skyr + reste de coriandre fraîche + jus de lime au moment de manger.",
+        "Astuce batch : la sauce verde se conserve 5 jours au frigo, 3 mois congelée. Tu peux en faire le double et garder le surplus pour un autre dîner enchiladas plus tard."
       ],
       "photo": "assets/recipes/d177.webp"
     },
@@ -49624,7 +49694,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fleur de sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -49742,7 +49812,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 470,
+      "kcal": 690,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -49766,7 +49836,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Betterave crue (rouge ou chioggia)",
-          200,
+          140,
           "g",
           "produce"
         ],
@@ -49825,12 +49895,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Miel (ou sirop d'érable)",
-          0.5,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Feuille de laurier",
           1,
           "u",
@@ -49859,8 +49923,8 @@ window.__DATA_RECIPES = {
         "Quand la betterave est cuite, sors-la, laisse refroidir 5 min puis épluche-la avec les doigts (la peau s'enlève en frottant — gants de protection si tu n'aimes pas les mains roses). Coupe en cubes de 1.5 cm.",
         "Concasse les noix grossièrement au couteau.",
         "Coupe la pomme en bâtonnets fins (avec peau).",
-        "Vinaigrette : dans un petit bol, fouette moutarde + miel + vinaigre balsamique + huile de noix + sel + poivre.",
-        "Dans un grand saladier : lentilles tièdes + betterave + échalote égouttée. Verse 2/3 de la vinaigrette. Mélange. Laisse 5 min : les lentilles s'imprègnent.",
+        "Vinaigrette : dans un petit bol, fouette moutarde + vinaigre balsamique + huile de noix + sel + poivre.",
+        "Dans un grand saladier : lentilles tièdes + betterave + échalote égouttée. Verse la plus grande partie de la vinaigrette. Mélange. Laisse 5 min : les lentilles s'imprègnent.",
         "Au moment de servir, ajoute la roquette + bâtonnets de pomme. Mélange délicatement.",
         "Dresse en couronne. Émiette le chèvre frais par-dessus. Parsème noix concassées + persil ciselé + reste de vinaigrette.",
         "Mange tiède ou froid. Les lentilles + betterave se gardent 3 jours au frigo, ajoute pomme/chèvre/roquette à la dernière minute."
@@ -49880,7 +49944,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -49914,7 +49978,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine T80 (semi-complète)",
-          7,
+          5,
           "g",
           "pantry"
         ],
@@ -49933,7 +49997,7 @@ window.__DATA_RECIPES = {
         [
           "Sucre de coco (ou cassonade)",
           0.25,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -49958,14 +50022,14 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 180 °C chaleur tournante.",
         "Lave les pommes et la poire. Épluche-les ou non selon préférence (avec peau = + fibres mais texture rustique). Enlève les cœurs et pépins. Coupe en cubes de 1.5 cm.",
-        "Dans un plat à gratin (ou ramequins individuels), étale les fruits. Verse le jus de citron + saupoudre 0.5 c.à.c de cannelle + vanille. Mélange.",
+        "Dans un plat à gratin (ou ramequins individuels), étale les fruits. Verse le jus de citron + saupoudre une partie de la cannelle + la vanille. Mélange.",
         "Prépare la pâte à crumble : dans un bol, mélange du bout des doigts (pas avec une cuillère, c'est moins efficace) flocons + farine + amandes en poudre + sucre de coco + cannelle restante + beurre coupé en petits dés.",
         "Frotte le mélange entre tes paumes pour incorporer le beurre : tu obtiens une texture sableuse-rustique avec quelques agrégats plus gros (= la signature du vrai crumble : pas trop fin, pas trop gros).",
         "Émiette généreusement le crumble par-dessus les fruits.",
         "Enfourne 25-30 min : le crumble doit être bien doré-brun (pas blond — on veut le caramélisé), les fruits qui bouillonnent légèrement sur les bords.",
         "Sors, laisse tiédir 5-10 min (les jus fruitiers se réabsorbent).",
-        "Mange tiède, idéalement avec une cuillère de yaourt grec ou de fromage blanc 0 % nature à côté. 280 kcal la portion (vs 450+ pour un crumble classique au beurre + sucre).",
-        "Astuce batch : prépare 4 portions individuelles dans des ramequins, conserve 3 jours au frigo, réchauffe 10 min au four à 160 °C avant de servir."
+        "Mange tiède, idéalement avec une cuillère de yaourt grec ou de fromage blanc 0 % nature à côté. Bien plus léger qu'un crumble classique, très chargé en beurre et en sucre.",
+        "Astuce batch : prépare plusieurs portions individuelles dans des ramequins, conserve 3 jours au frigo, réchauffe 10 min au four à 160 °C avant de servir."
       ],
       "photo": "assets/recipes/des59.webp"
     },
@@ -49981,7 +50045,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 440,
+      "kcal": 510,
       "tags": [
         "vegetarian",
         "quick",
@@ -49997,7 +50061,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain (rassis ou un peu sec)",
-          80,
+          45,
           "g",
           "bread"
         ],
@@ -50009,7 +50073,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Concombre",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -50065,7 +50129,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Le pain RASSIS est essentiel : si ton pain est encore frais, coupe-le en cubes de 2 cm et fais-les sécher 20 min au four à 100 °C ou 2 jours à l'air libre. La panzanella aime le pain qui boira les jus.",
         "Coupe les tomates en gros morceaux (1.5 cm). Sale-les au gros sel et laisse 10 min dans un saladier : elles vont rendre leurs jus naturels — qui imbiberont le pain.",
-        "Pendant ce temps, coupe le concombre en demi-rondelles épaisses (avec ou sans peau). Émince très finement l'oignon rouge (mandoline si tu en as, sinon couteau bien aiguisé). Trempe-le 5 min dans de l'eau froide pour adoucir.",
+        "Pendant ce temps, coupe le concombre en rondelles épaisses (avec ou sans peau). Émince très finement l'oignon rouge (mandoline si tu en as, sinon couteau bien aiguisé). Trempe-le 5 min dans de l'eau froide pour adoucir.",
         "Égoutte l'oignon rouge.",
         "Coupe le pain rassis en cubes de 2 cm. Si tu veux plus de croquant, fais-les griller 5 min à 200 °C juste avant.",
         "Frotte la gousse d'ail sur les cubes de pain (le pain rugueux râpe l'ail, qui s'imprègne).",
@@ -50696,7 +50760,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "b64",
-      "name": "Granola maison cranberries, amandes, cannelle (vegan)",
+      "name": "Granola maison cranberries, amandes, cannelle et skyr",
       "type": "breakfast",
       "cuisine": "universel",
       "seasons": [
@@ -50709,7 +50773,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 340,
+      "kcal": 490,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -50725,13 +50789,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          50,
+          30,
           "g",
           "pantry"
         ],
         [
           "Amandes effilées",
-          15,
+          10,
           "g",
           "pantry"
         ],
@@ -50749,20 +50813,20 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cranberries séchées (non sucrées si possible)",
-          15,
+          8,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
           "Huile de coco fondue",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -50800,8 +50864,8 @@ window.__DATA_RECIPES = {
         "Sors la plaque, ajoute les cranberries séchées (ne les cuis pas, elles deviendraient des cailloux). Mélange.",
         "Laisse refroidir COMPLÈTEMENT sur la plaque 30 min : c'est en refroidissant que la granola devient croustillante (les agglomérats se forment).",
         "Casse les gros morceaux à la main, transvase en bocal hermétique : se conserve 3 semaines à T° ambiante.",
-        "Au moment de servir : 50g de granola dans un bol, recouvre de skyr + myrtilles fraîches.",
-        "Astuce batch : double les quantités (1 plaque = ~10 portions). Le ROI est imbattable : 3 € le bocal de 500g vs 6-8 € en magasin pour les bonnes versions sans sucre raffiné."
+        "Au moment de servir : verse la granola dans un bol, recouvre de skyr + myrtilles fraîches.",
+        "Astuce batch : multiplie les quantités pour remplir une plaque entière et garde la granola en bocal. Bien moins chère que les bonnes versions sans sucre raffiné du commerce."
       ],
       "photo": "assets/recipes/b64.webp"
     },
@@ -51095,7 +51159,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 510,
+      "kcal": 690,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -51109,13 +51173,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (bocal, égouttés)",
-          150,
+          110,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -51135,6 +51199,12 @@ window.__DATA_RECIPES = {
           "Tomate",
           1,
           "u",
+          "produce"
+        ],
+        [
+          "Épinards frais",
+          60,
+          "g",
           "produce"
         ],
         [
@@ -51181,7 +51251,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait de coco (boîte)",
-          80,
+          60,
           "ml",
           "dairy"
         ],
@@ -51204,7 +51274,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Huile neutre (ou ghee)",
+          "Huile de colza (ou ghee)",
           1,
           "c.à.s",
           "pantry"
@@ -51219,13 +51289,13 @@ window.__DATA_RECIPES = {
       "steps": [
         "Lance le riz : rince sous l'eau froide jusqu'à eau claire. Mets dans une casserole avec 2x son volume d'eau salée. Couvre, ébullition puis feu doux 25 min. Laisse reposer 5 min couvert.",
         "Pendant ce temps, prépare le curry. Émince finement l'oignon. Râpe ail et gingembre. Coupe la tomate en dés.",
-        "Dans une casserole, chauffe l'huile à feu moyen. Jette les graines de cumin : elles crépitent en 10 sec et libèrent leur parfum.",
+        "Dans une casserole, chauffe l'huile à feu moyen. Jette presque toutes les graines de cumin (garde-en une pincée pour le raita) : elles crépitent en 10 sec et libèrent leur parfum.",
         "Ajoute l'oignon. Cuis 5 min jusqu'à doré clair.",
         "Ajoute ail + gingembre + curcuma + coriandre poudre. Remue 30 sec : ça doit embaumer (couleur orange-jaune brillante).",
         "Ajoute la tomate en dés. Cuis 3 min en écrasant à la spatule : forme une pâte rouge.",
-        "Ajoute les pois chiches égouttés + lait de coco + 80 ml d'eau. Cuis 12 min à feu doux : la sauce épaissit, les pois chiches s'imprègnent.",
-        "Hors du feu, ajoute garam masala + jus du demi-citron + sel + poivre.",
-        "Pendant ce temps, prépare le raita : râpe le concombre (sans peau) sur un torchon, presse pour évacuer l'eau. Mélange dans un bol avec yaourt + menthe ciselée + 1 pincée de cumin moulu + sel.",
+        "Ajoute les pois chiches égouttés + lait de coco + à peu près le même volume d'eau. Cuis 12 min à feu doux : la sauce épaissit, les pois chiches s'imprègnent. Ajoute les épinards pour les 2 dernières minutes : ils « tombent » (réduisent et deviennent vert foncé) en se mélangeant à la sauce.",
+        "Hors du feu, ajoute garam masala + jus du citron + sel + poivre.",
+        "Pendant ce temps, prépare le raita : râpe le concombre (sans peau) sur un torchon, presse pour évacuer l'eau. Mélange dans un bol avec yaourt + menthe ciselée + les graines de cumin gardées, écrasées entre les doigts + sel.",
         "Dresse en bowl thali : riz basmati au centre, curry de pois chiches d'un côté, raita de l'autre. Parsème coriandre fraîche.",
         "Mange à la cuillère, en piochant dans chaque section pour des bouchées variées. C'est l'esprit du thali : un repas complet en plusieurs petites portions. 2 € par personne.",
         "Astuce batch : double curry et riz, conserve 3 jours frigo. Le raita à la minute (le concombre rendrait son eau)."
@@ -51262,43 +51332,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Tahini (purée de sésame)",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron jaune (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
           "Mini-naans complets (ou pain complet à griller)",
-          2,
+          0.75,
           "u",
           "bread"
         ],
@@ -51310,7 +51380,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Graines de sésame noir (ou blond)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
@@ -51484,7 +51554,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 510,
+      "kcal": 710,
       "tags": [
         "batch-friendly",
         "festif"
@@ -51502,13 +51572,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          200,
+          130,
           "g",
           "meat-fish"
         ],
         [
           "Feuilles de pâte filo",
-          4,
+          3,
           "u",
           "bread"
         ],
@@ -51526,7 +51596,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Amandes en poudre",
-          30,
+          20,
           "g",
           "pantry"
         ],
@@ -51553,12 +51623,6 @@ window.__DATA_RECIPES = {
           0.1,
           "c.à.c",
           "spices"
-        ],
-        [
-          "Sucre de coco (ou cassonade)",
-          1,
-          "c.à.c",
-          "pantry"
         ],
         [
           "Eau de fleur d'oranger",
@@ -51600,20 +51664,20 @@ window.__DATA_RECIPES = {
       "steps": [
         "Coupe le poulet en petits morceaux de 1 cm.",
         "Émince finement l'oignon, écrase l'ail.",
-        "Dans une poêle, à feu moyen avec un trait d'huile, fais revenir l'oignon 5 min jusqu'à doré.",
+        "Dans une poêle, à feu moyen avec un peu du beurre clarifié, fais revenir l'oignon 5 min jusqu'à doré.",
         "Ajoute l'ail + cannelle + gingembre + safran (écrasé entre les doigts). Remue 30 sec.",
         "Ajoute le poulet en morceaux. Saute 5 min jusqu'à blanc cuit.",
         "Verse le bouillon. Couvre, baisse à feu doux. Mijote 12 min.",
-        "Hors du feu, ajoute amandes en poudre + sucre de coco + eau de fleur d'oranger + persil + coriandre + sel + poivre. Mélange : la farce devient compacte et parfumée. Goûte.",
+        "Hors du feu, ajoute amandes en poudre + eau de fleur d'oranger + persil + coriandre + sel + poivre. Mélange : la farce devient compacte et parfumée. Goûte.",
         "Préchauffe le four à 200 °C chaleur tournante.",
-        "Pendant que la farce tiédit, prépare le montage. Étale 1 feuille de filo sur le plan de travail, badigeonne très légèrement de beurre clarifié au pinceau (pas trop, sinon trop gras). Pose une 2e feuille en croix par-dessus, badigeonne. Continue avec les 4 feuilles, en croix.",
+        "Pendant que la farce tiédit, prépare le montage. Étale 1 feuille de filo sur le plan de travail, badigeonne très légèrement de beurre clarifié au pinceau (pas trop, sinon trop gras). Pose une 2e feuille en croix par-dessus, badigeonne. Continue avec toutes les feuilles, en croix.",
         "Au centre, dépose la farce poulet-amandes en monticule (forme grossière de boule).",
-        "Replie les coins des feuilles vers le centre comme un baluchon : prends la pointe d'une feuille, ramène-la sur la farce en serrant légèrement. Idem avec les 7 autres pointes (4 feuilles × 2 pointes opposées chacune). Tu obtiens un baluchon doré.",
+        "Replie les coins des feuilles vers le centre comme un baluchon : prends la pointe d'une feuille, ramène-la sur la farce en serrant légèrement. Idem avec toutes les autres pointes. Tu obtiens un baluchon doré.",
         "Pose sur une plaque recouverte de papier sulfurisé, soudure dessous. Badigeonne le dessus très légèrement de beurre. Parsème amandes effilées sur le dessus.",
         "Enfourne 22-25 min : la pastilla doit être bien dorée, croustillante, et l'intérieur tiède-chaud.",
         "Sors. Laisse reposer 5 min (la farce se consolide).",
-        "Saupoudre généreusement de cannelle en poudre + très très fin glaçage de sucre glace (très peu, juste pour le côté festif marocain).",
-        "Sers en parts. Pastilla maison au four = 2/3 du gras d'une pastilla frite traditionnelle. La cannelle salée-sucrée + amandes + poulet est l'âme de cette recette.",
+        "Saupoudre généreusement de cannelle en poudre : c'est la touche festive marocaine, la cannelle parfume et adoucit à elle seule.",
+        "Sers en parts. Pastilla maison au four = bien moins grasse qu'une pastilla frite traditionnelle. Le trio cannelle + amandes + poulet est l'âme de cette recette.",
         "Astuce batch : prépare-la la veille jusqu'à l'étape baluchon (sans cuire), conserve filmée au frigo 24 h. Cuis le jour J pour servir tiède-craquant."
       ],
       "photo": "assets/recipes/d181.webp"
@@ -51632,7 +51696,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 530,
+      "kcal": 770,
       "tags": [
         "batch-friendly"
       ],
@@ -51652,19 +51716,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz brun (semi-complet)",
-          60,
+          45,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits (bocal, égouttés)",
-          100,
+          80,
           "g",
           "pantry"
         ],
         [
           "Maïs en grains (frais ou surgelé)",
-          60,
+          25,
           "g",
           "frozen"
         ],
@@ -51755,14 +51819,14 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Lance le riz brun : rince sous l'eau froide. Mets dans une casserole avec 2.5x son volume d'eau salée. Couvre, ébullition puis feu doux 25 min. Laisse reposer 5 min couvert.",
-        "Coupe le poulet en lanières de 1 cm. Mélange dans un bol avec ail écrasé + cumin + paprika + origan + sel + poivre + jus de la moitié du lime + 0.5 c.à.s d'huile d'olive. Marinade 10 min.",
-        "Pendant ce temps, prépare la salsa verde rapide : émince très finement l'oignon rouge (la moitié) et le quart de piment vert. Mixe rapidement avec les tomatillos + un peu de coriandre + 1 pincée de sel = sauce verte intense (= signature mexicaine).",
-        "Coupe la tomate en dés, l'avocat en cubes (juste avant le service), le reste d'oignon rouge en demi-rondelles fines.",
+        "Coupe le poulet en lanières de 1 cm. Mélange dans un bol avec ail écrasé + cumin + paprika + origan + sel + poivre + une partie du jus du lime + un filet d'huile d'olive. Marinade 10 min.",
+        "Pendant ce temps, prépare la salsa verde rapide : émince très finement une partie de l'oignon rouge et le piment vert. Mixe rapidement avec les tomatillos + un peu de coriandre + 1 pincée de sel = sauce verte intense (= signature mexicaine).",
+        "Coupe la tomate en dés, l'avocat en cubes (juste avant le service), le reste d'oignon rouge en fines lamelles.",
         "Cuis le maïs : 4 min poêle vive sec (si surgelé) — il prend des marques dorées. Ou 30 sec micro-ondes simple décongélation.",
         "Dans une poêle bien chaude, fais sauter le poulet mariné 6-7 min : il doit être doré et bien cuit (chair blanche).",
-        "Mélange dans un bol le riz brun cuit avec un trait du reste d'huile + 1 c.à.s de jus de lime + sel + coriandre.",
+        "Mélange dans un bol le riz brun cuit avec un trait du reste d'huile + un peu du jus de lime + sel + coriandre.",
         "Dresse en bowl : riz au fond, dispose en couronnes visuellement séparées : haricots noirs / maïs grillé / tomate / oignon rouge / avocat / poulet doré.",
-        "Au centre, verse 2 c.à.s de salsa verde + 1 c.à.s de skyr.",
+        "Au centre, verse la salsa verde et le skyr.",
         "Parsème généreusement de coriandre fraîche. Quartier de lime à presser au moment de manger.",
         "Mange en mélangeant pour que chaque bouchée ait riz + protéines + légumes + sauce. C'est l'essence du burrito bowl mexicain modernisé : aussi complet et savoureux qu'un wrap, sans la tortilla raffinée.",
         "Astuce batch : double poulet + riz + salsa verde, conserve 3 jours frigo. Avocat + coriandre à la minute."
@@ -51942,7 +52006,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 470,
+      "kcal": 540,
       "tags": [],
       "eq": [
         "stove"
@@ -51956,13 +52020,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de bœuf (ou bavette tendre, en très fines tranches)",
-          100,
+          120,
           "g",
           "meat-fish"
         ],
         [
           "Nouilles de riz larges (banh pho)",
-          60,
+          25,
           "g",
           "pantry"
         ],
@@ -52021,12 +52085,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sirop d'érable (ou sucre de coco)",
-          0.5,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Cébette (oignon nouveau)",
           2,
           "u",
@@ -52034,7 +52092,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pousses de soja (haricot mungo)",
-          60,
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Pak choï",
+          80,
           "g",
           "produce"
         ],
@@ -52077,17 +52141,17 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Mets le bœuf au congélateur 30 min avant de le couper : il devient ferme et tu peux le trancher en LAMELLES TRÈS FINES (2-3 mm) au couteau bien aiguisé. C'est crucial : le pho cuit le bœuf à la chaleur du bouillon versé dessus, en quelques secondes. Si les tranches sont trop épaisses, c'est cru.",
-        "Prépare le bouillon parfumé : sur une plaque four ou directement sur la flamme du gaz, fais griller la moitié d'oignon + le morceau de gingembre épluché 3-4 min de chaque côté jusqu'à zones noires-brunes (= signature du pho, grille les couches d'oignon caramélisé).",
-        "Dans une casserole, jette le bouillon de bœuf + oignon grillé + gingembre grillé + anis étoilé + bâton de cannelle + clous de girofle + cardamome écrasée + sauce poisson + sauce soja + sirop d'érable.",
+        "Prépare le bouillon parfumé : sur une plaque four ou directement sur la flamme du gaz, fais griller l'oignon coupé en deux + le morceau de gingembre épluché 3-4 min de chaque côté jusqu'à zones noires-brunes (= signature du pho, grille les couches d'oignon caramélisé).",
+        "Dans une casserole, jette le bouillon de bœuf + oignon grillé + gingembre grillé + anis étoilé + bâton de cannelle + clous de girofle + cardamome écrasée + sauce poisson + sauce soja.",
         "Porte à frémissement (PAS ébullition). Couvre, mijote 25 min à feu doux : tu obtiens un bouillon doré, ambré, intensément parfumé.",
         "Pendant ce temps, cuis les nouilles de riz : selon paquet (2-4 min dans l'eau bouillante), ne les surcuis pas. Égoutte et rince à l'eau froide pour stopper la cuisson. Réserve.",
         "Coupe les cébettes : sépare le blanc du vert, émince les deux finement.",
         "Filtre le bouillon (à la passoire fine) pour ne garder que le liquide doré (= étape essentielle, sinon les épices entières dans les bols).",
-        "Remets le bouillon filtré dans la casserole, garde frémissant à feu doux. Goûte, ajuste sel-sauce poisson.",
-        "Dresse 2 bols : nouilles de riz au fond, partie blanche de cébette par-dessus, lamelles de bœuf cru en éventail au centre.",
+        "Remets le bouillon filtré dans la casserole, garde frémissant à feu doux. Coupe le pak choï en quatre dans la longueur et plonge-le 2 min dans le bouillon : les feuilles deviennent vert vif et les tiges blanches juste tendres. Goûte, ajuste sel-sauce poisson.",
+        "Dresse les bols : nouilles de riz au fond, pak choï, partie blanche de cébette par-dessus, lamelles de bœuf cru en éventail au centre.",
         "VERSE le bouillon BRÛLANT directement sur le bœuf : il cuit en 30 secondes (devient gris-rose comme un carpaccio).",
         "Sers AVEC à côté (chacun se sert) : pousses de soja, coriandre, basilic thaï, menthe, quartiers de lime, piment thaï émincé, partie verte de cébette.",
-        "Mange immédiatement : ajoute 1 poignée de pousses de soja (qui restent croquants), des herbes, presse du lime, pioche tout dans le bouillon. C'est le pho authentique : tu construis chaque bouchée à ton goût.",
+        "Mange immédiatement : ajoute une poignée de pousses de soja (qui restent croquantes), des herbes, presse du lime, pioche tout dans le bouillon. C'est le pho authentique : tu construis chaque bouchée à ton goût.",
         "À 4 €/portion, c'est 1/3 du prix d'un pho restaurant."
       ],
       "photo": "assets/recipes/l177.webp"
@@ -52115,7 +52179,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -52312,13 +52377,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -52666,13 +52731,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -52878,7 +52943,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 110,
+      "kcal": 100,
       "tags": [
         "vegan",
         "vegetarian",
@@ -52892,14 +52957,14 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ananas",
-          0.25,
-          "u",
+          90,
+          "g",
           "produce"
         ],
         [
           "Mangue",
-          0.25,
-          "u",
+          70,
+          "g",
           "produce"
         ],
         [
@@ -52910,24 +52975,24 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          1.5,
+          4,
           "feuille",
           "produce"
         ],
         [
           "Gingembre frais",
-          0.25,
+          0.5,
           "cm",
           "produce"
         ]
       ],
       "steps": [
         "Préparer l'ananas : pose-le sur la planche, coupe la couronne de feuilles puis la base. Tiens-le debout et coupe la peau du haut vers le bas, en suivant la forme. Retire les yeux noirs avec la pointe du couteau s'il en reste. Coupe en quartiers, retire le cœur fibreux central, coupe en cubes de 5 mm.",
-        "Préparer la mangue : tiens-la verticale. Coupe de chaque côté du noyau (le noyau est plat et large, au centre). Sur chaque demi-mangue, fais un quadrillage à la peau (sans la transpercer), retourne la peau comme un hérisson, et coupe les cubes obtenus à la base. Ils tombent tout seuls.",
+        "Préparer la mangue : tiens-la verticale. Coupe de chaque côté du noyau (le noyau est plat et large, au centre). Sur chaque morceau de mangue (= « joue »), fais un quadrillage à la peau (sans la transpercer), retourne la peau comme un hérisson, et coupe les cubes obtenus à la base. Ils tombent tout seuls.",
         "Dans un grand bol, mélange les cubes d'ananas et de mangue.",
-        "Râpe finement le gingembre (1 cm épluché à la cuillère). Ajoute aux fruits.",
+        "Râpe finement le gingembre (épluché en grattant la peau avec une cuillère). Ajoute aux fruits.",
         "Râpe le zeste du citron vert (vert seulement, le blanc est amer) et ajoute. Presse le jus, verse sur les fruits.",
-        "Cisèle 6 feuilles de menthe en chiffonnade (= roule les feuilles et coupe en lanières fines aux ciseaux). Ajoute aux fruits. Garde 2 feuilles entières pour la déco.",
+        "Cisèle la plupart des feuilles de menthe en chiffonnade (= roule les feuilles et coupe en lanières fines aux ciseaux). Ajoute aux fruits. Garde quelques feuilles entières pour la déco.",
         "Mélange délicatement à la cuillère pour répartir les saveurs sans écraser les fruits.",
         "Place au frigo 10 minutes avant de servir : les saveurs s'imprègnent et les fruits sont bien frais.",
         "Sers dans des coupes, des verrines ou directement dans la peau de l'ananas vidée (effet festif maximum). Pose une feuille de menthe entière sur chaque part. C'est un dessert ultra-frais, sans sucre ajouté — la mangue mûre apporte naturellement ce qu'il faut de douceur."
@@ -53240,7 +53305,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 320,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "quick"
@@ -53255,7 +53320,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -53267,7 +53332,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -53284,12 +53349,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sirop d'érable",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Citron vert",
           0.25,
           "u",
@@ -53298,13 +53357,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Rince le quinoa sous l'eau froide pendant 30 secondes (= ça enlève la saponine, un revêtement amer naturel).",
-        "Dans une petite casserole, mélange le quinoa, le lait de coco et 60 ml d'eau. Porte à frémissement à feu moyen, puis baisse à feu doux. Couvre et laisse cuire 12-13 minutes : le quinoa absorbe le liquide et devient tendre, les petits germes blancs visibles.",
-        "Hors du feu, ajoute le sirop d'érable. Mélange avec une fourchette pour aérer. Laisse tiédir 5 minutes.",
+        "Dans une petite casserole, mélange le quinoa, le lait de coco et un peu d'eau (à peu près le même volume que le lait de coco). Porte à frémissement à feu moyen, puis baisse à feu doux. Couvre et laisse cuire 12-13 minutes : le quinoa absorbe le liquide et devient tendre, les petits germes blancs visibles.",
+        "Hors du feu, mélange avec une fourchette pour aérer. Laisse tiédir 5 minutes.",
         "Pendant ce temps, prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau plat central. Quadrille la peau (sans transpercer), retourne en hérisson, coupe les cubes obtenus.",
         "Dans une petite poêle sèche, à feu moyen, fais torréfier les graines de sésame noir 1-2 minutes en remuant : elles doivent dégager une odeur grillée (attention, ça brûle vite).",
-        "Verse le quinoa coco dans 2 bols. Pose les cubes de mangue sur le dessus.",
+        "Verse le quinoa coco dans le bol. Pose les cubes de mangue sur le dessus.",
         "Râpe un peu de zeste de citron vert sur les fruits, parsème la noix de coco râpée et les graines de sésame noir torréfiées.",
-        "Sers tiède ou frais selon la saison. Le mélange coco-mangue-sésame, c'est un classique du sud-est asiatique adapté en petit-déjeuner riche en fibres et bons gras."
+        "Sers tiède ou frais selon la saison. La mangue mûre et la coco apportent toute la douceur. Le mélange coco-mangue-sésame, c'est un classique du sud-est asiatique adapté en petit-déjeuner riche en fibres et bons gras."
       ],
       "photo": "assets/recipes/b68.webp"
     },
@@ -53320,14 +53379,12 @@ window.__DATA_RECIPES = {
         "winter"
       ],
       "prep": 25,
-      "cook": 15,
+      "cook": 30,
       "rest": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 240,
-      "tags": [
-        "quick"
-      ],
+      "kcal": 220,
+      "tags": [],
       "eq": [
         "stove",
         "bowl"
@@ -53335,48 +53392,49 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
-          "Riz arborio",
-          100,
+          "Riz rond complet",
+          50,
           "g",
           "pantry"
         ],
         [
           "Saumon fumé",
-          60,
+          30,
           "g",
           "meat-fish"
         ],
         [
           "Avocat",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Feuilles de nori",
-          1,
+          0.5,
           "feuille",
           "pantry"
         ],
         [
           "Vinaigre de riz",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sauce soja",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Graines de sésame",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -53389,15 +53447,15 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Rince le riz à l'eau froide en frottant entre tes mains pendant 1 minute, jusqu'à ce que l'eau soit claire (= ça enlève l'amidon de surface qui rendrait le riz collant).",
-        "Cuis le riz dans 150 ml d'eau salée, à couvert, à feu doux 15 minutes. Hors du feu, laisse reposer 10 minutes sans soulever le couvercle (étape essentielle pour la texture).",
+        "Cuis le riz dans deux fois son volume d'eau salée, à couvert, à feu doux 30 minutes (le riz complet cuit plus longtemps qu'un riz blanc : il est prêt quand l'eau a disparu et que les grains sont tendres). Hors du feu, laisse reposer 10 minutes sans soulever le couvercle (étape essentielle pour la texture).",
         "Verse le vinaigre de riz sur le riz chaud, mélange délicatement à la fourchette de bois pour aérer les grains. Laisse tiédir 15 minutes sur une assiette étalée.",
         "Pendant ce temps, coupe l'avocat en petits dés de 5 mm. Coupe le saumon fumé en lanières fines de 1 cm.",
-        "Dans un petit bol, mélange l'avocat avec la sauce soja et la moitié des graines de sésame. Tasse légèrement à la fourchette pour faire une garniture qui tient.",
+        "Dans un petit bol, mélange l'avocat avec la sauce soja et une partie des graines de sésame. Tasse légèrement à la fourchette pour faire une garniture qui tient.",
         "Coupe la feuille de nori en bandes de 2 cm de large.",
-        "Mouille tes mains avec de l'eau froide salée (évite que le riz colle). Prends 1/4 du riz dans la paume, creuse un puits au centre avec le pouce.",
+        "Mouille tes mains avec de l'eau froide salée (évite que le riz colle). Prends une boule de riz de la taille d'une balle de ping-pong dans la paume, creuse un puits au centre avec le pouce.",
         "Garnis avec une cuillère du mélange avocat + un peu de saumon. Referme le riz autour pour enfermer la garniture, façonne en triangle (les 3 sommets bien marqués) en pressant fermement.",
         "Pose le triangle sur une bande de nori, replie la bande sur 2 côtés (= la base du triangle). Le nori adhère au riz humide.",
-        "Recommence pour 3 autres onigiri. Saupoudre du reste de graines de sésame sur la pointe haute.",
+        "Recommence avec le reste du riz et de la garniture. Saupoudre du reste de graines de sésame sur la pointe haute.",
         "Place au frigo 30 minutes pour que les onigiri se tiennent bien. Sers froid, en encas ou repas léger, accompagné d'un peu de sauce soja à côté."
       ],
       "photo": "assets/recipes/s67.webp"
@@ -53636,7 +53694,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -53654,7 +53712,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -53930,7 +53988,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -53948,7 +54006,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -54194,7 +54252,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Paprika doux",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -54224,7 +54282,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -54327,7 +54385,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 380,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -54343,7 +54401,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Banane",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -54361,7 +54419,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          130,
           "g",
           "dairy"
         ],
@@ -54388,21 +54446,15 @@ window.__DATA_RECIPES = {
           1,
           "c.à.s",
           "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          1,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
-        "Épluche la banane et le kiwi. Coupe-les en rondelles. Garde 3 rondelles de kiwi et 3 rondelles de banane pour la déco.",
+        "Épluche la banane et le kiwi. Coupe-les en rondelles. Garde quelques rondelles de kiwi et de banane pour la déco.",
         "Lave les épinards, sèche-les rapidement (un peu d'eau résiduelle est ok pour le blender).",
-        "Dans le blender, mets : le reste de la banane et du kiwi, les épinards, le skyr, le lait d'amande, le matcha et le sirop d'érable.",
+        "Dans le blender, mets : le reste de la banane et du kiwi, les épinards, le skyr, le lait d'amande et le matcha.",
         "Mixe 30-45 secondes à pleine puissance jusqu'à obtenir une texture lisse, vert clair, épaisse comme un yaourt fluide (= pas une boisson, vraiment un smoothie bowl).",
-        "Si trop épais, ajoute 2-3 c.à.s de lait d'amande supplémentaire et re-mixe. Si trop liquide, ajoute 2 c.à.s de skyr ou de banane congelée.",
-        "Verse dans 1 grand bol. La surface doit être bien lisse.",
+        "Si trop épais, ajoute un petit trait de lait d'amande et re-mixe. Si trop liquide, ajoute une cuillerée de skyr.",
+        "Verse dans un grand bol (un par personne). La surface doit être bien lisse.",
         "Décoration façon Japon : dispose les rondelles de banane et kiwi en cercle, parsème les graines de chia au centre, et les amandes effilées sur le bord.",
         "Mange immédiatement à la cuillère, comme une glace healthy. Le matcha apporte un coup de boost (caféine douce, L-théanine apaisante), les épinards bourrent de minéraux, et les graines de chia ajoutent des oméga-3."
       ],
@@ -54434,7 +54486,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -54710,7 +54763,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 250,
       "tags": [
         "vegetarian",
         "no-cook"
@@ -54725,55 +54778,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (en boîte)",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Tomate",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          8,
+          4.0,
           "feuille",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -54784,12 +54837,6 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sucre de coco",
-          0.5,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Sel",
           1,
           "pincée",
@@ -54797,16 +54844,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Prépare d'abord le chutney coriandre-menthe (la signature du chaat). Lave la coriandre et la menthe. Garde 1/4 du bouquet de coriandre pour la déco.",
-        "Dans le blender : le reste de la coriandre, les 6 feuilles de menthe, le jus d'un demi-citron vert, le sucre de coco, une pincée de sel, et 2-3 c.à.s d'eau froide. Mixe jusqu'à obtenir une pâte verte fluide. Si trop épais, ajoute 1 c.à.s d'eau.",
-        "Goûte : ça doit être très acidulé, légèrement sucré, vert intense, parfumé. Réserve dans un petit bol.",
+        "Prépare d'abord le chutney coriandre-menthe (la signature du chaat). Lave la coriandre et la menthe. Garde quelques brins de coriandre pour la déco.",
+        "Dans le blender : le reste de la coriandre, les feuilles de menthe, une partie du jus de citron vert, une pincée de sel et un petit filet d'eau froide. Mixe jusqu'à obtenir une pâte verte fluide. Si c'est trop épais, ajoute encore un peu d'eau.",
+        "Goûte : ça doit être très acidulé, vert intense, parfumé. Réserve dans un petit bol.",
         "Égoutte les pois chiches, rince à l'eau froide. Verse dans un grand bol.",
-        "Coupe la tomate en petits dés de 5 mm (retire les graines liquides pour pas détremper). Pareil pour le concombre (garde la peau pour le croquant). Émince très finement le demi-oignon rouge.",
+        "Coupe la tomate en petits dés de 5 mm (retire les graines liquides pour ne pas détremper). Pareil pour le concombre (garde la peau pour le croquant). Émince très finement l'oignon rouge.",
         "Ajoute ces 3 légumes aux pois chiches. Saupoudre le cumin moulu, le piment d'Espelette et une pincée de sel. Mélange.",
-        "Arrose du jus du demi-citron vert restant. Mélange à nouveau.",
-        "Dressage : verse dans 4 petits bols ou verrines. Pose 1 belle cuillère de skyr au centre. Verse par-dessus 1 cuillère du chutney vert.",
+        "Arrose du reste du jus de citron vert. Mélange à nouveau.",
+        "Dressage : verse dans des petits bols ou des verrines. Pose une belle cuillère de skyr au centre. Verse par-dessus une cuillère du chutney vert.",
         "Cisèle finement le reste de coriandre, parsème sur le dessus. Optionnel : pour une touche encore plus authentique, ajoute quelques pop chips de sarrasin écrasés pour le croquant.",
-        "Sers immédiatement. C'est l'apéro de rue indien typique — explosion de saveurs (acide, épicé, frais, herbacé), pour réveiller les papilles. Riche en fibres et protéines végétales (~16 g de protéines par 200 g de pois chiches)."
+        "Sers immédiatement. C'est l'apéro de rue indien typique — explosion de saveurs (acide, épicé, frais, herbacé), pour réveiller les papilles. Riche en fibres et en protéines végétales."
       ],
       "photo": "assets/recipes/s72.webp"
     },
@@ -54909,7 +54956,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 275,
+      "kcal": 460,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -54925,13 +54972,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue",
-          1,
-          "u",
+          120,
+          "g",
           "produce"
         ],
         [
           "Fraises",
-          100,
+          150,
           "g",
           "produce"
         ],
@@ -54979,16 +55026,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau plat. Récupère la chair à la cuillère. Garde 4-5 cubes pour la déco.",
-        "Lave les fraises, équeute-les. Garde 3 fraises pour la déco (coupées en deux), mets le reste dans le blender.",
-        "Dans le blender : la mangue (sauf déco), les fraises, le skyr, le lait d'amande, le jus du demi-citron vert et la pincée de piment d'Espelette.",
+        "Prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau plat. Récupère la chair à la cuillère. Garde quelques cubes pour la déco.",
+        "Lave les fraises, équeute-les. Garde quelques fraises pour la déco (coupées en deux), mets le reste dans le blender.",
+        "Dans le blender : la mangue (sauf déco), les fraises, le skyr, le lait d'amande, le jus d'une partie du citron vert et la pincée de piment d'Espelette.",
         "Mixe 30-45 secondes à pleine puissance jusqu'à obtenir une texture lisse, rose-orangée, épaisse comme une glace en train de fondre.",
         "Goûte : le piment doit chauffer subtilement, pas piquer. Si tu trouves ça trop doux, ajoute encore une mini-pincée. La combinaison fruit sucré + chaud est très mexicaine (cf. la « tajín » saupoudrée sur les fruits dans la rue à Mexico).",
-        "Si trop épais, ajoute 2 c.à.s de lait d'amande supplémentaire. Si trop liquide, 1 c.à.s de skyr ou banane congelée (option).",
-        "Verse dans 1 grand bol. Surface bien lisse.",
-        "Dressage : dispose les cubes de mangue et les demi-fraises en rosace. Parsème les graines de chia au centre, la noix de coco râpée en cercle.",
+        "Si trop épais, ajoute un trait de lait d'amande supplémentaire. Si trop liquide, ajoute une cuillerée de skyr.",
+        "Verse dans un grand bol. Surface bien lisse.",
+        "Dressage : dispose les cubes de mangue et les fraises coupées en rosace. Parsème les graines de chia au centre, la noix de coco râpée en cercle.",
         "Concasse grossièrement les pistaches au couteau et saupoudre sur le tout. Le combo fraise rouge + mangue orange + pistache verte + coco blanche, c'est festif et plein de couleurs.",
-        "Mange immédiatement à la cuillère. Apporte le quart de citron vert restant à côté pour ceux qui veulent rajouter de l'acidité."
+        "Mange immédiatement à la cuillère. Apporte le reste du citron vert en quartier à côté pour ceux qui veulent rajouter de l'acidité."
       ],
       "photo": "assets/recipes/b74.webp"
     },
@@ -55007,7 +55054,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 200,
+      "kcal": 180,
       "tags": [
         "vegetarian"
       ],
@@ -55021,19 +55068,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de maïs (masa harina)",
-          25,
+          15,
           "g",
           "pantry"
         ],
         [
           "Eau",
-          28,
+          17,
           "ml",
           "pantry"
         ],
         [
           "Haricots noirs cuits (en boîte)",
-          25,
+          40,
           "g",
           "pantry"
         ],
@@ -55045,13 +55092,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate cerise",
-          1.5,
+          2,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.25,
+          0.05,
           "u",
           "produce"
         ],
@@ -55069,25 +55116,25 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Citron vert",
-          0.25,
+          0.1,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          0.25,
-          "c.à.s",
+          0.5,
+          "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -55095,14 +55142,14 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200 °C chaleur tournante.",
         "Dans un saladier, verse la farine de maïs (masa harina). Ajoute la pincée de sel, mélange.",
-        "Ajoute progressivement l'eau tiède (~30 °C) en mélangeant à la fourchette puis avec les mains. Pétris 2-3 minutes jusqu'à obtenir une pâte lisse, souple, non collante (consistance pâte à modeler). Si trop sèche, ajoute 1 c.à.s d'eau ; si trop collante, 1 c.à.s de farine.",
+        "Ajoute progressivement l'eau tiède (~30 °C) en mélangeant à la fourchette puis avec les mains. Pétris 2-3 minutes jusqu'à obtenir une pâte lisse, souple, non collante (consistance pâte à modeler). Si elle est trop sèche, ajoute un peu d'eau ; si elle est trop collante, un peu de farine.",
         "Laisse reposer la pâte 10 minutes couverte d'un torchon humide (= elle s'hydrate uniformément).",
-        "Divise la pâte en 6 boules de la taille d'une grosse noix. Aplatis chaque boule entre 2 feuilles de papier sulfurisé à 1 cm d'épaisseur et 7 cm de diamètre. Avec les doigts, pince les bords pour former un petit rebord (= une coupelle, c'est ça la signature de la sope).",
-        "Pose les 6 sopes sur une plaque recouverte de papier sulfurisé. Badigeonne très légèrement d'huile d'olive au pinceau. Enfourne 10-12 minutes : elles doivent être dorées et fermes.",
+        "Divise la pâte en petites boules de la taille d'une grosse noix. Aplatis chaque boule entre 2 feuilles de papier sulfurisé à 1 cm d'épaisseur et 7 cm de diamètre. Avec les doigts, pince les bords pour former un petit rebord (= une coupelle, c'est ça la signature de la sope).",
+        "Pose les sopes sur une plaque recouverte de papier sulfurisé. Badigeonne très légèrement d'huile d'olive au pinceau. Enfourne 10-12 minutes : elles doivent être dorées et fermes.",
         "Pendant ce temps, prépare la garniture. Égoutte les haricots noirs, rince. Écrase grossièrement à la fourchette dans un bol avec le cumin et une pincée de sel.",
-        "Coupe les tomates cerises en 4. Émince finement le 1/4 d'oignon rouge. Cisèle 3 branches de coriandre, garde 1 pour la déco.",
-        "Sors les sopes du four. Étale dans chaque coupelle : 1 c.à.c de haricots écrasés, 1 c.à.c de fromage frais, quelques quartiers de tomate, un peu d'oignon rouge et de coriandre.",
-        "Saupoudre une pincée de piment d'Espelette sur chacune. Apporte le demi-citron vert à part en quartiers pour ceux qui veulent rajouter du jus.",
+        "Coupe les tomates cerises en 4. Émince finement l'oignon rouge. Cisèle la coriandre, garde quelques feuilles pour la déco.",
+        "Sors les sopes du four. Étale dans chaque coupelle : les haricots écrasés, le fromage frais, quelques quartiers de tomate, un peu d'oignon rouge et de coriandre.",
+        "Saupoudre le piment d'Espelette sur les sopes. Apporte le citron vert à part en quartiers pour ceux qui veulent rajouter du jus.",
         "Sers immédiatement à l'apéro ou en mini-repas. Les sopes, c'est l'antojito (= grignote mexicaine) traditionnel — plus consistantes qu'une tostada, plus simples qu'un taco."
       ],
       "photo": "assets/recipes/s73.webp"
@@ -55177,7 +55224,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -55392,7 +55439,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -55404,13 +55451,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -55551,7 +55598,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -55631,7 +55679,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 285,
+      "kcal": 350,
       "tags": [
         "vegetarian",
         "vegan",
@@ -55641,12 +55689,19 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          50,
+          30,
+          "g",
+          "pantry"
+        ],
+        [
+          "Graines de chia",
+          10,
           "g",
           "pantry"
         ],
@@ -55664,7 +55719,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poire",
-          1,
+          0.75,
           "u",
           "produce"
         ],
@@ -55679,22 +55734,16 @@ window.__DATA_RECIPES = {
           1,
           "c.à.s",
           "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          1,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
-        "Dans une casserole, mélange les flocons d'avoine et le lait d'amande. Porte à frémissement à feu moyen en remuant.",
-        "Quand ça frémit (= petites bulles aux bords), baisse à feu doux. Laisse cuire 8-10 minutes en remuant régulièrement : le mélange épaissit pour devenir un porridge crémeux.",
+        "Dans une casserole, mélange les flocons d'avoine, les graines de chia et le lait d'amande. Porte à frémissement à feu moyen en remuant.",
+        "Quand ça frémit (= petites bulles aux bords), baisse à feu doux. Laisse cuire 8-10 minutes en remuant régulièrement : le mélange épaissit pour devenir un porridge crémeux (les graines de chia gonflent et forment un petit gel autour d'elles).",
         "Pendant ce temps, lave la poire (garde la peau, elle contient les fibres). Coupe en deux, retire le trognon central, coupe en lamelles fines de 3-4 mm.",
         "Dans une petite poêle sèche, fais torréfier les amandes effilées 2 minutes en remuant constamment : elles doivent dorer. Attention, ça brûle vite. Réserve.",
-        "Hors du feu, ajoute au porridge la cannelle et le sirop d'érable. Mélange.",
-        "Dans un autre petit bol, dissous le matcha dans 1 c.à.s d'eau bouillante. Fouette 20 sec (mini-fouet ou fourchette) jusqu'à obtenir une pâte verte sans grumeaux.",
-        "Verse le porridge dans 1 grand bol. Au centre, dépose 1 c.à.c de pâte de matcha (= petit puits vert). Avec la cuillère, fais des spirales pour mélanger légèrement (effet marbré).",
+        "Hors du feu, ajoute au porridge la cannelle (elle donne une impression de douceur). Mélange.",
+        "Dans un autre petit bol, dissous le matcha dans un fond d'eau bouillante (environ 3 fois son volume). Fouette 20 sec (mini-fouet ou fourchette) jusqu'à obtenir une pâte verte sans grumeaux.",
+        "Verse le porridge dans un grand bol (un par personne). Au centre, dépose la pâte de matcha (= petit puits vert). Avec la cuillère, fais des spirales pour mélanger légèrement (effet marbré).",
         "Dispose les lamelles de poire en éventail sur le dessus. Parsème les amandes torréfiées.",
         "Termine par une pincée supplémentaire de cannelle. Mange tiède. Le mariage avoine-matcha-poire est doux et énergisant — idéal en hiver pour combattre la fatigue (L-théanine du matcha + fibres de l'avoine)."
       ],
@@ -55944,7 +55993,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Safran (filaments)",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -56009,7 +56058,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Safran (filaments)",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -56171,7 +56220,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 295,
+      "kcal": 330,
       "tags": [
         "vegetarian"
       ],
@@ -56187,43 +56236,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Maïs en grains (frais ou surgelés)",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Courgette",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Œuf",
-          2,
+          1.0,
           "u",
           "dairy"
         ],
         [
           "Farine de pois chiche",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Fromage frais type St-Môret",
-          50,
+          25,
           "g",
           "dairy"
         ],
         [
           "Coriandre fraîche",
-          4,
+          2.0,
           "branche",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -56235,13 +56284,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -56260,14 +56309,14 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Lave la courgette (garde la peau, fibres). Râpe-la grossièrement à la râpe (= gros trous). Mets la râpée dans un torchon propre et presse fort pour évacuer un maximum d'eau (= sinon les pancakes seront mous).",
-        "Si le maïs est surgelé, décongèle-le 2 min au micro-ondes. S'il est en boîte, égoutte-le bien. Garde 1 c.à.s de grains pour la déco.",
-        "Cisèle finement 3 branches de coriandre (garde 1 pour la déco).",
-        "Dans un grand bol, casse les œufs. Bats-les à la fourchette. Ajoute la farine de pois chiche, le cumin, le piment d'Espelette, le sel et le poivre. Mélange : tu obtiens une pâte épaisse, sans grumeaux.",
+        "Si le maïs est surgelé, décongèle-le 2 min au micro-ondes. S'il est en boîte, égoutte-le bien. Garde quelques grains pour la déco.",
+        "Cisèle finement la coriandre (garde un brin pour la déco).",
+        "Dans un grand bol, casse l'œuf. Bats-le à la fourchette. Ajoute la farine de pois chiche, le cumin, le piment d'Espelette, le sel et le poivre. Mélange : tu obtiens une pâte épaisse, sans grumeaux.",
         "Incorpore la courgette râpée bien essorée, le maïs et la coriandre ciselée. Mélange : la pâte doit envelopper les légumes mais rester ferme.",
-        "Dans une grande poêle, chauffe 1 c.à.c d'huile d'olive à feu moyen. Quand elle frémit, dépose 2-3 tas de pâte (à la cuillère à soupe), aplatis légèrement avec le dos de la cuillère pour former des galettes de 7-8 cm.",
+        "Dans une grande poêle, chauffe un filet d'huile d'olive à feu moyen. Quand elle frémit, dépose quelques tas de pâte (à la cuillère à soupe), aplatis légèrement avec le dos de la cuillère pour former des galettes de 7-8 cm.",
         "Cuis 3-4 min de chaque côté : retourne avec une spatule, la première face doit être bien dorée. Si la pâte attache, baisse à feu moyen-doux. Recommence pour la pâte restante.",
         "Pendant ce temps, mélange le fromage frais avec une pincée de zeste de citron vert pour parfumer.",
-        "Dressage : 2-3 pancakes par assiette. Pose une cuillère de fromage frais au citron vert sur le côté. Parsème les grains de maïs réservés et 1 branche de coriandre.",
+        "Dressage : dispose les pancakes dans l'assiette. Pose une cuillère de fromage frais au citron vert sur le côté. Parsème les grains de maïs réservés et le brin de coriandre.",
         "Apporte un quartier de citron vert à part. Ces pancakes salés mexicains (= « gorditas » revisités) sont rassasiants, riches en protéines (œufs + pois chiches + fromage) et en fibres (maïs + courgette). Excellent petit-déjeuner salé !"
       ],
       "photo": "assets/recipes/b79.webp"
@@ -56406,7 +56455,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "nuts",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -56639,7 +56689,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -56687,7 +56737,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "lactose"
+        "lactose",
+        "gluten"
       ],
       "ing": [
         [
@@ -56882,7 +56933,8 @@ window.__DATA_RECIPES = {
         "shellfish",
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -57003,7 +57055,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -57200,7 +57253,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 1.7,
-      "kcal": 215,
+      "kcal": 190,
       "tags": [
         "vegetarian",
         "vegan"
@@ -57233,13 +57286,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.25,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          0.25,
+          0.5,
           "cm",
           "produce"
         ],
@@ -57263,13 +57316,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Feuille de pâte filo",
-          1.5,
+          1,
           "u",
           "bread"
         ],
@@ -57287,7 +57340,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -57296,16 +57349,16 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 200 °C chaleur tournante.",
         "Épluche les pommes de terre, coupe-les en petits dés de 1 cm. Cuis-les à la vapeur (ou eau bouillante salée) 10-12 min jusqu'à fondantes mais pas en purée. Égoutte.",
         "Émince l'oignon finement. Écrase l'ail. Râpe le gingembre.",
-        "Dans une grande poêle, à feu moyen, chauffe 1 c.à.s d'huile d'olive. Ajoute l'oignon, fais-le suer 4 min jusqu'à translucide.",
+        "Dans une grande poêle, à feu moyen, chauffe un filet d'huile d'olive. Ajoute l'oignon, fais-le suer 4 min jusqu'à translucide.",
         "Ajoute l'ail, le gingembre, le cumin, le curcuma, la coriandre moulue et le piment d'Espelette. Remue 30 sec — les épices doivent libérer leur arôme sans brûler (= odeur très parfumée).",
         "Ajoute les petits pois (pas besoin de décongeler les surgelés) et les pommes de terre. Mélange. Cuis 3 min en écrasant légèrement les pommes de terre à la fourchette pour qu'elles s'imprègnent des épices. Goûte, sale.",
-        "Hors du feu, cisèle 3 branches de coriandre fraîche, incorpore. Garde 1 branche pour la déco.",
-        "Sors les feuilles de pâte filo (= très fragiles, manipuler avec délicatesse). Coupe chaque feuille en 3 bandes longues de 8-10 cm de large. Tu obtiens 18 bandes.",
-        "Pour chaque samosa : pose 1 c.à.s bombée de farce en haut d'une bande. Plie en triangle façon drapeau : prend l'angle haut-droit, replie sur la farce pour former un triangle. Continue à plier en zigzag jusqu'au bout de la bande, en gardant la forme triangulaire. Tu obtiens 1 samosa fermé.",
-        "Recommence pour les 17 autres bandes (en réalité tu peux faire double épaisseur pour plus de tenue : prends 2 bandes superposées pour 9 samosas plus solides).",
-        "Pose les samosas sur 2 plaques recouvertes de papier sulfurisé, soudure dessous. Badigeonne le dessus d'huile d'olive (1 c.à.s répartie au pinceau) — c'est ce qui donnera le croustillant doré sans friture.",
+        "Hors du feu, cisèle la coriandre fraîche et incorpore-la. Garde quelques feuilles pour la déco.",
+        "Sors les feuilles de pâte filo (= très fragiles, manipuler avec délicatesse). Coupe chaque feuille en 3 bandes longues de 8-10 cm de large.",
+        "Pour chaque samosa : pose une cuillère bombée de farce en haut d'une bande. Plie en triangle façon drapeau : prends l'angle haut-droit, replie-le sur la farce pour former un triangle. Continue à plier en zigzag jusqu'au bout de la bande, en gardant la forme triangulaire. Tu obtiens un samosa fermé.",
+        "Recommence avec les autres bandes (astuce : superpose deux bandes pour des samosas plus solides).",
+        "Pose les samosas sur une plaque recouverte de papier sulfurisé, soudure dessous. Badigeonne le dessus d'huile d'olive au pinceau, en fine couche — c'est ce qui donnera le croustillant doré sans friture.",
         "Enfourne 20-25 min : à mi-cuisson, retourne les samosas avec une spatule. Ils doivent être bien dorés et croustillants.",
-        "Sors, laisse tiédir 2 min. Sers tièdes avec un chutney à la menthe ou un yaourt grec à la coriandre. Cette version au four (= sans friture) divise les calories par 3 par rapport au samosa traditionnel."
+        "Sors, laisse tiédir 2 min. Sers tièdes avec un chutney à la menthe ou un yaourt végétal à la coriandre. Cette version au four (= sans friture) est bien plus légère que le samosa frit traditionnel."
       ],
       "photo": "assets/recipes/s77.webp"
     },
@@ -57383,7 +57436,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -57401,7 +57454,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -57521,7 +57574,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 325,
+      "kcal": 360,
       "tags": [
         "vegetarian"
       ],
@@ -57536,61 +57589,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tortilla de maïs (petite)",
-          4,
+          1.5,
           "u",
           "bread"
         ],
         [
           "Tomate",
-          4,
+          2.0,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Piment doux (jalapeño)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Œuf",
-          2,
+          1.0,
           "u",
           "dairy"
         ],
         [
           "Fromage frais type St-Môret",
-          60,
+          30,
           "g",
           "dairy"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -57603,16 +57656,16 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200 °C chaleur tournante.",
-        "Coupe les tortillas de maïs en 6 triangles chacune (24 triangles total).",
-        "Étale-les sur une plaque, badigeonne très légèrement d'huile d'olive (1 c.à.c étalée au pinceau, juste un voile).",
+        "Coupe chaque tortilla de maïs en triangles, comme on découpe une pizza.",
+        "Étale-les sur une plaque, badigeonne très légèrement d'huile d'olive au pinceau (juste un voile).",
         "Enfourne 8-10 min : ils doivent devenir bien dorés et croustillants (= chips de maïs maison, le secret des chilaquiles).",
         "Pendant ce temps, prépare la sauce verte (« salsa verde »). Coupe les tomates en quartiers, l'oignon en gros morceaux. Mets-les dans une casserole avec l'ail écrasé et le piment jalapeño épépiné.",
         "Couvre d'eau juste à hauteur. Porte à frémissement, baisse à feu doux, cuis 10 min à couvert : les tomates s'attendrissent et libèrent leur jus.",
-        "Égoutte (garde 100 ml de jus de cuisson). Mixe au mixeur plongeant avec la moitié de la coriandre (garde l'autre moitié pour la déco) et le jus du demi-citron vert. Si trop épais, ajoute du jus de cuisson. Sale, goûte : ça doit être bien herbacé, légèrement piquant.",
+        "Égoutte (garde un peu de jus de cuisson). Mixe au mixeur plongeant avec presque toute la coriandre (garde quelques brins pour la déco) et le jus d'une partie du citron vert. Si trop épais, ajoute du jus de cuisson. Sale, goûte : ça doit être bien herbacé, légèrement piquant.",
         "Sors les chips de maïs du four, garde-les dans un grand bol.",
         "Verse la sauce verte chaude par-dessus les chips et mélange délicatement (= les chips s'imbibent légèrement sans se transformer en bouillie).",
-        "Dans une poêle légèrement huilée, casse les 2 œufs et cuis sur le plat 3-4 min : blanc pris, jaune coulant.",
-        "Dressage : répartis les chilaquiles dans 2 grandes assiettes. Pose 1 œuf sur chaque. Émiette le fromage frais par-dessus.",
+        "Dans une poêle légèrement huilée, casse l'œuf et cuis-le sur le plat 3-4 min : blanc pris, jaune coulant.",
+        "Dressage : dispose les chilaquiles dans une grande assiette. Pose l'œuf sur le dessus. Émiette le fromage frais par-dessus.",
         "Cisèle le reste de coriandre, parsème généreusement. Termine par un quartier de citron vert à côté.",
         "Les chilaquiles sont LE petit-déjeuner familial mexicain — réutilisation des tortillas rassies originellement, version « salsa verde » plus fraîche que la rouge. Riche en protéines (œuf + fromage), savoureux, rassasiant."
       ],
@@ -57698,7 +57751,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -57783,7 +57836,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -57807,7 +57860,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -57896,7 +57949,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -57941,7 +57994,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 480,
+      "kcal": 510,
       "tags": [
         "vegetarian",
         "vegan",
@@ -57955,55 +58008,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits (en boîte)",
-          150,
+          75,
           "g",
           "pantry"
         ],
         [
           "Maïs en grains (frais ou surgelé)",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Avocat",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Tomate cerise",
-          8,
-          "u",
-          "produce"
-        ],
-        [
-          "Oignon rouge",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Tomate cerise",
+          4.0,
+          "u",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Coriandre fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
@@ -58015,7 +58068,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
@@ -58024,19 +58077,25 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
         ]
       ],
       "steps": [
         "Rince le quinoa 30 sec sous l'eau froide en remuant (= retire la saponine amère). Égoutte.",
-        "Cuis le quinoa dans 150 ml d'eau salée, couvert à feu doux 12 min. Hors du feu, laisse reposer 5 min couvert. Aère à la fourchette.",
+        "Cuis le quinoa dans deux fois son volume d'eau salée, couvert à feu doux 12 min. Hors du feu, laisse reposer 5 min couvert. Aère à la fourchette.",
         "Pendant ce temps, dans une poêle sèche bien chaude, fais griller le maïs 3-4 min en remuant : il doit colorer par endroits, presque grillé (= signature mexicaine du « elote »). Réserve.",
         "Égoutte les haricots noirs, rince. Chauffe-les 2 min dans une casserole avec le cumin, le piment d'Espelette et une pincée de sel. Écrase légèrement à la fourchette en gardant des morceaux entiers.",
         "Coupe l'avocat en deux, retire le noyau, récupère la chair, coupe en lamelles fines.",
-        "Coupe les tomates cerises en deux. Émince très finement le demi-oignon rouge (laisse-le 5 min sous eau froide pour adoucir, puis égoutte).",
-        "Prépare une vinaigrette mexicaine : dans un petit bol, mélange le jus d'un citron vert, 2 c.à.s d'huile d'olive, sel, poivre. Fouette.",
-        "Cisèle 3/4 de la coriandre, garde le reste pour la déco.",
-        "Dressage : dans 2 grands bols, dispose le quinoa au fond. Place les haricots noirs sur un quart, le maïs grillé sur un autre, l'avocat sur un troisième, et les tomates + oignon rouge sur le dernier (= effet poké bowl).",
-        "Arrose de la vinaigrette uniformément. Parsème la coriandre fraîche ciselée, et un quartier de citron vert restant à côté.",
+        "Coupe les tomates cerises en deux. Émince très finement l'oignon rouge (laisse-le 5 min sous eau froide pour adoucir, puis égoutte).",
+        "Prépare une vinaigrette mexicaine : dans un petit bol, mélange le jus du citron vert, l'huile d'olive, sel, poivre. Fouette.",
+        "Cisèle presque toute la coriandre, garde quelques feuilles pour la déco.",
+        "Dressage : dans les bols, dispose le quinoa au fond. Place les haricots noirs sur un quart, le maïs grillé sur un autre, l'avocat sur un troisième, et les tomates + oignon rouge sur le dernier (= effet poké bowl).",
+        "Arrose de la vinaigrette uniformément. Parsème la coriandre fraîche ciselée, et sers avec un quartier de citron vert à côté.",
         "Sers tiède (le quinoa) ou frais (en laissant refroidir 10 min). Ce bowl IG bas (quinoa vs riz blanc traditionnel) est rassasiant, riche en protéines végétales et fibres."
       ],
       "photo": "assets/recipes/l178.webp"
@@ -58144,7 +58203,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -58156,7 +58215,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -58406,13 +58465,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -58491,7 +58550,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -58760,7 +58819,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -58784,7 +58843,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -58820,7 +58879,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 460,
+      "kcal": 520,
       "tags": [],
       "eq": [
         "stove",
@@ -58834,43 +58893,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Bœuf haché",
-          250,
+          125,
           "g",
           "meat-fish"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1.0,
           "gousse",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Persil plat",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
@@ -58888,31 +58947,31 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour",
-          120,
+          60,
           "g",
           "pantry"
         ],
         [
           "Bouillon de légumes",
-          240,
+          120,
           "ml",
           "pantry"
         ],
         [
           "Tomate",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -58932,15 +58991,15 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200 °C chaleur tournante.",
         "Émince très finement l'oignon (ou râpe-le pour qu'il fonde dans la viande). Écrase l'ail. Cisèle finement coriandre et persil (garde-en pour la déco).",
-        "Dans un grand bol, mélange le bœuf haché, l'oignon, l'ail, 3/4 des herbes ciselées, le cumin, le paprika, le piment d'Espelette, la cannelle (= signature maghrébine), le sel et le poivre. Pétris à la main 1 min pour bien homogénéiser.",
-        "Forme des keftas : prélève 1 c.à.s rase de viande, façonne entre tes paumes humides un boudin allongé de 6 cm × 2 cm (forme de saucisse, c'est la signature des merguez). Tu obtiens 10-12 keftas.",
+        "Dans un grand bol, mélange le bœuf haché, l'oignon, l'ail, la plus grande partie des herbes ciselées, le cumin, le paprika, le piment d'Espelette, la cannelle (= signature maghrébine), le sel et le poivre. Pétris à la main 1 min pour bien homogénéiser.",
+        "Forme des keftas : prélève 1 c.à.s rase de viande, façonne entre tes paumes humides un boudin allongé de 6 cm × 2 cm (forme de saucisse, c'est la signature des merguez).",
         "Pose les keftas sur une plaque recouverte de papier sulfurisé. Badigeonne très légèrement d'huile d'olive au pinceau.",
         "Enfourne 15-18 min : retourne à mi-cuisson (8 min). Les keftas doivent être bien dorées extérieurement et cuites à cœur.",
         "Pendant ce temps, prépare le boulgour. Dans une casserole, mets le boulgour, le bouillon de légumes chaud et une pincée de sel. Porte à frémissement, baisse à feu doux, couvre. Cuis 12-15 min jusqu'à absorption complète.",
         "Hors du feu, laisse reposer 5 min couvert. Aère à la fourchette.",
-        "Coupe les tomates en quartiers. Dans une poêle, à feu moyen-vif, fais sauter les quartiers 4 min avec 1 c.à.c d'huile d'olive — ils doivent légèrement caraméliser. Sale.",
-        "Dressage : verse le boulgour dans 2 assiettes. Pose 5-6 keftas dessus. Dispose les quartiers de tomates poêlés autour. Arrose d'un trait d'huile d'olive et de jus de citron.",
-        "Décore avec les herbes fraîches entières. Apporte 1/2 citron coupé en deux à part. Cette version au four est moins grasse que les keftas traditionnellement frites, mais conserve toute la saveur des épices marocaines."
+        "Coupe les tomates en quartiers. Dans une poêle, à feu moyen-vif, fais sauter les quartiers 4 min avec un filet d'huile d'olive — ils doivent légèrement caraméliser. Sale.",
+        "Dressage : verse le boulgour dans les assiettes. Pose les keftas dessus. Dispose les quartiers de tomates poêlés autour. Arrose d'un trait d'huile d'olive et de jus de citron.",
+        "Décore avec les herbes fraîches entières. Apporte un quartier de citron à part. Cette version au four est moins grasse que les keftas traditionnellement frites, mais conserve toute la saveur des épices marocaines."
       ],
       "photo": "assets/recipes/d186.webp"
     },
@@ -59057,13 +59116,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -59506,7 +59565,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -59541,7 +59600,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 420,
+      "kcal": 410,
       "tags": [
         "vegetarian",
         "vegan",
@@ -59562,13 +59621,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs en grains (boîte sans sucre)",
-          50,
+          30,
           "g",
           "pantry"
         ],
         [
           "Mangue mûre",
-          0.25,
+          0.2,
           "u",
           "produce"
         ],
@@ -59622,13 +59681,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -59638,11 +59697,11 @@ window.__DATA_RECIPES = {
         "Dans une poêle bien chaude sans matière grasse, fais griller le maïs 3-4 min en remuant. Tu cherches des grains qui commencent à dorer et à crépiter. Réserve.",
         "Pendant ce temps, coupe la mangue en cubes de 1 cm (enlève le noyau central, c'est le plus simple : tranche de chaque côté du noyau plat).",
         "Coupe l'avocat en deux, enlève le noyau, détaille la chair en cubes de 1 cm directement dans la peau, puis racle à la cuillère.",
-        "Émince finement l'oignon rouge en demi-rondelles très fines. Si tu trouves ça trop fort, fais-le tremper 5 min dans de l'eau froide puis essore.",
+        "Émince finement l'oignon rouge en lamelles très fines. Si tu trouves ça trop fort, fais-le tremper 5 min dans de l'eau froide puis essore.",
         "Coupe le poivron rouge en petits dés de 5 mm.",
         "Cisèle la coriandre (feuilles et tiges fines).",
         "Dans un grand saladier, mélange les haricots noirs, le maïs grillé, la mangue, le poivron, l'oignon. Ajoute la coriandre.",
-        "Prépare la vinaigrette : presse les 2 citrons verts (tu obtiens ~4 c.à.s de jus), ajoute l'huile d'olive, le cumin, le piment d'Espelette, sel, poivre. Fouette à la fourchette.",
+        "Prépare la vinaigrette : presse les citrons verts, ajoute l'huile d'olive, le cumin, le piment d'Espelette, sel, poivre. Fouette à la fourchette.",
         "Verse sur la salade, mélange délicatement. Ajoute l'avocat en dernier pour qu'il ne s'écrase pas.",
         "Sers immédiatement, ou laisse reposer 15 min au frais pour que les saveurs se mélangent. Cette salade vient de la cuisine tex-mex : haricots noirs (très haut en fibres, IG très bas) + maïs grillé (saveur caramélisée). Riche en protéines végétales, fibres, vitamine C (poivron, lime) et bons gras (avocat)."
       ],
@@ -59661,10 +59720,8 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 480,
-      "tags": [
-        "quick"
-      ],
+      "kcal": 570,
+      "tags": [],
       "eq": [
         "stove",
         "pan"
@@ -59675,73 +59732,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          250,
+          125,
           "g",
           "meat-fish"
         ],
         [
           "Tortilla de blé complet (grande)",
-          2,
+          1.0,
           "u",
           "bread"
         ],
         [
           "Avocat mûr",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Tomate ferme",
-          2,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Salade romaine",
-          4,
+          2.0,
           "feuille",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Ail en poudre",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -59766,12 +59823,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Coupe le filet de poulet en lanières de 1 cm d'épaisseur dans le sens de la longueur.",
-        "Dans un bol, mélange le poulet avec le cumin, le paprika, l'ail en poudre, le piment d'Espelette, sel, poivre et la moitié de l'huile. Laisse mariner 5 min pendant que tu prépares le reste.",
-        "Prépare le pico de gallo (la salsa fraîche mexicaine) : coupe les tomates en deux, enlève les graines, taille en petits dés de 5 mm. Émince finement l'oignon rouge. Cisèle la moitié de la coriandre. Mélange avec le jus d'un demi-citron vert, 1 pincée de sel.",
-        "Prépare le guacamole : écrase la chair d'un avocat à la fourchette avec le jus du demi-citron vert restant, sel, poivre, 1 c.à.s de coriandre cisellée. Garde un peu de texture (pas une purée lisse).",
-        "Chauffe une poêle à feu vif avec le reste d'huile. Cuis le poulet 4-5 min en remuant — il doit être doré et plus rosé à cœur. Laisse reposer 2 min hors du feu.",
+        "Dans un bol, mélange le poulet avec le cumin, le paprika, l'ail en poudre, le piment d'Espelette, sel, poivre et une partie de l'huile. Laisse mariner 5 min pendant que tu prépares le reste.",
+        "Prépare le pico de gallo (la salsa fraîche mexicaine) : coupe la tomate en deux, enlève les graines, taille en petits dés de 5 mm. Émince finement l'oignon rouge. Cisèle une partie de la coriandre. Mélange avec une partie du jus du citron vert et une pincée de sel.",
+        "Prépare le guacamole : écrase la chair de l'avocat à la fourchette avec le reste du jus de citron vert, sel, poivre et un peu de coriandre ciselée. Garde un peu de texture (pas une purée lisse).",
+        "Chauffe une poêle à feu vif avec le reste d'huile. Cuis le poulet 4-5 min en remuant — il doit être doré et plus du tout rosé à cœur. Laisse reposer 2 min hors du feu.",
         "Tiède la tortilla 10 sec de chaque côté dans la poêle (sans matière grasse). Ça la rend souple, indispensable pour rouler sans craquer.",
-        "Sur chaque tortilla : étale une fine couche de guacamole, ajoute 2 feuilles de romaine ciselée, le poulet grillé, généreusement de pico de gallo.",
+        "Sur la tortilla : étale une fine couche de guacamole, ajoute la romaine ciselée, le poulet grillé, généreusement de pico de gallo.",
         "Roule en serrant : rabats les bords gauche/droite vers le centre, puis enroule du bas vers le haut. Coupe en deux en biais.",
         "Sers immédiatement avec le reste de coriandre. Cette technique est inspirée des burritos californiens version saine. Riche en protéines (poulet), fibres (tortilla complète), bons gras (avocat), vitamine C (lime, tomate)."
       ],
@@ -59790,9 +59847,8 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 420,
+      "kcal": 480,
       "tags": [
-        "quick",
         "epicerie-specialisee"
       ],
       "eq": [
@@ -59805,73 +59861,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crevettes décortiquées crues",
-          400,
+          200,
           "g",
           "meat-fish"
         ],
         [
           "Riz brun (long ou complet)",
-          120,
+          60,
           "g",
           "pantry"
         ],
         [
           "Tomate",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          1.5,
           "gousse",
           "produce"
         ],
         [
-          "Piment chipotle séché (ou 1 c.à.c piment fumé doux)",
-          2,
+          "Piment chipotle séché (ou piment fumé doux)",
+          1,
           "u",
           "spices"
         ],
         [
           "Concentré de tomates",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Origan séché",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
@@ -59889,17 +59945,17 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Démarre le riz : rince le riz brun 30 sec à l'eau froide. Cuis dans 280 ml d'eau salée, couvert à feu doux 30 min. Laisse reposer couvert 5 min hors du feu.",
-        "Pendant ce temps, prépare les piments chipotle : fais-les tremper 10 min dans de l'eau chaude pour les réhydrater. Égoutte, retire les graines (porte des gants si tu as la peau sensible) et coupe grossièrement.",
+        "Démarre le riz : rince le riz brun 30 sec à l'eau froide. Cuis dans deux fois et demie son volume d'eau salée, couvert à feu doux 30 min. Laisse reposer couvert 5 min hors du feu.",
+        "Pendant ce temps, prépare le piment chipotle : fais-le tremper 10 min dans de l'eau chaude pour le réhydrater. Égoutte, retire les graines (porte des gants si tu as la peau sensible) et coupe-le grossièrement.",
         "Coupe les tomates en quartiers. Émince grossièrement l'oignon et l'ail.",
-        "Dans une poêle à feu moyen avec 1 c.à.s d'huile, fais revenir l'oignon 3 min, ajoute l'ail 30 sec.",
-        "Ajoute les tomates, les chipotles, le cumin, l'origan, le concentré, sel. Mijote 8 min à feu doux : les tomates doivent s'écraser.",
-        "Verse le tout dans un blender. Mixe 30 sec jusqu'à obtenir une sauce lisse et rouge profond. Goûte : si trop piquant, ajoute 1 c.à.s d'eau.",
+        "Dans une poêle à feu moyen avec une partie de l'huile, fais revenir l'oignon 3 min, ajoute l'ail 30 sec.",
+        "Ajoute les tomates, le chipotle, le cumin, l'origan, le concentré, sel. Mijote 8 min à feu doux : les tomates doivent s'écraser.",
+        "Verse le tout dans un blender. Mixe 30 sec jusqu'à obtenir une sauce lisse et rouge profond. Goûte : si trop piquant, ajoute un peu d'eau.",
         "Sèche les crevettes avec un papier absorbant — c'est crucial pour qu'elles dorent et non bouillent.",
         "Chauffe une grande poêle à feu vif avec le reste d'huile. Saisis les crevettes 1-2 min de chaque côté — elles deviennent roses et opaques.",
         "Baisse à feu moyen, verse la sauce diabla. Mélange pour bien enrober. Mijote 2 min — la sauce doit napper les crevettes.",
         "Hors du feu, ajoute le jus du citron vert et la coriandre ciselée.",
-        "Dressage : sers le riz brun en couronne dans deux assiettes creuses. Pose les crevettes a la diabla au centre avec la sauce. Parsème de coriandre fraîche.",
+        "Dressage : sers le riz brun en couronne dans les assiettes creuses. Pose les crevettes a la diabla au centre avec la sauce. Parsème de coriandre fraîche.",
         "Ce plat est typique de Veracruz (côte est du Mexique) — « a la diabla » = à la diable, la sauce épicée. Riche en protéines (crevettes), fibres (riz brun), antioxydants (tomate, piment, ail) et oméga-3."
       ],
       "photo": "assets/recipes/d189.webp"
@@ -60015,13 +60071,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -60052,7 +60108,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 410,
+      "kcal": 420,
       "tags": [
         "vegetarian",
         "vegan",
@@ -60068,55 +60124,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour complet",
-          150,
+          75,
           "g",
           "pantry"
         ],
         [
           "Persil plat",
-          2,
+          1.0,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Tomate ferme",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon nouveau",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Citron",
-          2,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          3,
+          1.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -60134,13 +60190,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis le boulgour : porte 300 ml d'eau salée à ébullition. Verse le boulgour, baisse à feu doux, couvre 10 min. Laisse refroidir à découvert sur une grande assiette pour qu'il ne colle pas — il doit être tiède et bien aéré.",
+        "Cuis le boulgour : porte à ébullition deux fois le volume du boulgour en eau salée. Verse le boulgour, baisse à feu doux, couvre 10 min. Laisse refroidir à découvert sur une grande assiette pour qu'il ne colle pas — il doit être tiède et bien aéré.",
         "Pendant ce temps, lave et essore très soigneusement le persil et la menthe (technique : tour de salade ou serviette propre, sèche-les vraiment).",
         "Effeuille le persil et la menthe (jette les grosses tiges). Hache-les très finement au couteau — pas au mixeur, ça les pulvérise. Cible : poudre verte parfumée.",
         "Coupe les tomates en deux, retire les graines (sinon le taboulé devient mou). Taille en petits dés de 5 mm.",
         "Coupe le concombre en deux dans la longueur, retire les graines à la cuillère, taille en petits dés.",
         "Émince très finement les oignons nouveaux (blanc et vert tendre).",
-        "Prépare la vinaigrette : presse les 2 citrons (~5 c.à.s de jus). Mélange avec l'huile d'olive, le cumin, sel, poivre.",
+        "Prépare la vinaigrette : presse le citron. Mélange avec l'huile d'olive, le cumin, sel, poivre.",
         "Dans un grand saladier, mélange le boulgour tiède, les herbes, les légumes et la vinaigrette. Goûte : il faut beaucoup de citron, de vert et de fraîcheur.",
         "Réfrigère minimum 30 min — les saveurs se mélangent. Le vrai taboulé maghrébin (libanais à l'origine) est très vert : c'est 2/3 d'herbes pour 1/3 de céréale, l'inverse du taboulé français industriel. Riche en fibres (boulgour complet, herbes, légumes), vitamine K (persil), vitamine C (citron, tomate) et antioxydants."
       ],
@@ -60158,7 +60214,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 480,
+      "kcal": 450,
       "tags": [
         "vegetarian",
         "vegan",
@@ -60174,13 +60230,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Couscous d'orge complet (ou boulgour complet)",
-          50,
+          35,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits (boîte)",
-          80,
+          60,
           "g",
           "pantry"
         ],
@@ -60192,7 +60248,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Petits pois frais (ou surgelés)",
-          50,
+          40,
           "g",
           "produce"
         ],
@@ -60228,7 +60284,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.75,
+          1,
           "gousse",
           "produce"
         ],
@@ -60264,13 +60320,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -60278,14 +60334,14 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200 °C.",
         "Égoutte et rince les pois chiches. Sèche-les bien dans un torchon propre (ça les rend croustillants à la cuisson).",
-        "Étale sur une plaque, arrose d'1 c.à.s d'huile, ajoute cumin, paprika, coriandre moulue, cannelle, sel. Mélange bien. Enfourne 20 min en remuant à mi-cuisson : ils doivent être dorés et croquants.",
-        "Pendant ce temps, cuis le couscous d'orge : porte 300 ml d'eau salée à ébullition, verse le couscous, couvre 10 min hors du feu. Aère à la fourchette.",
+        "Étale sur une plaque, arrose d'une partie de l'huile, ajoute cumin, paprika, coriandre moulue, cannelle, sel. Mélange bien. Enfourne 20 min en remuant à mi-cuisson : ils doivent être dorés et croquants.",
+        "Pendant ce temps, cuis le couscous d'orge : porte à ébullition deux fois le volume du couscous en eau salée, verse le couscous, couvre 10 min hors du feu. Aère à la fourchette.",
         "Casse l'extrémité dure des asperges (elles cassent naturellement au bon endroit). Coupe-les en tronçons de 4 cm.",
-        "Coupe la courgette en demi-rondelles fines. Tranche les radis en très fines lamelles.",
-        "Dans une grande poêle à feu moyen avec 1 c.à.s d'huile, fais sauter les asperges 4 min — elles doivent rester croquantes et vertes. Ajoute la courgette 3 min de plus.",
+        "Coupe la courgette en rondelles fines, puis recoupe chaque rondelle en deux. Tranche les radis en très fines lamelles.",
+        "Dans une grande poêle à feu moyen avec un peu d'huile, fais sauter les asperges 4 min — elles doivent rester croquantes et vertes. Ajoute la courgette 3 min de plus.",
         "Ajoute les petits pois et l'ail écrasé 2 min. Sale, poivre.",
-        "Hors du feu, ajoute le jus du demi-citron et la menthe ciselée.",
-        "Dressage : sers le couscous d'orge dans 2 grands bols. Arrange les légumes sauté, les pois chiches rôtis, les radis crus en lamelles. Décore de coriandre fraîche et de zeste de demi-citron.",
+        "Hors du feu, ajoute une partie du jus du citron et la menthe ciselée.",
+        "Dressage : sers le couscous d'orge dans les bols. Arrange les légumes sautés, les pois chiches rôtis, les radis crus en lamelles. Décore de coriandre fraîche et de zeste de citron.",
         "Arrose d'un filet d'huile d'olive et du reste de jus de citron au moment de servir. Ce bowl s'inspire des couscous légers du Maghreb printaniers : peu de viande, beaucoup de légumes, beaucoup d'herbes. L'orge complet a un IG très bas (~30) et un goût plus noisette que la semoule. Riche en fibres (orge, pois chiches), protéines végétales, vitamine C (asperges, citron) et folates."
       ],
       "photo": "assets/recipes/l187.webp"
@@ -60415,13 +60471,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -60702,13 +60758,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -60739,7 +60795,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 430,
       "tags": [
         "vegetarian",
         "vegan",
@@ -60755,14 +60811,14 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (boîte)",
-          160,
+          140,
           "g",
           "pantry"
         ],
         [
           "Mangue verte ferme (ou mangue mûre)",
-          0.25,
-          "u",
+          50,
+          "g",
           "produce"
         ],
         [
@@ -60833,13 +60889,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -60852,8 +60908,8 @@ window.__DATA_RECIPES = {
         "Émince finement l'oignon rouge. Si tu trouves trop fort, fais-le tremper 5 min dans l'eau froide puis essore.",
         "Si tu utilises le piment vert : fends-le en deux, retire les graines, hache très finement (porte des gants si peau sensible).",
         "Cisèle généreusement la coriandre (feuilles + tiges fines) et la menthe.",
-        "Dans un grand saladier, mélange les pois chiches, la mangue, la tomate, le concombre, l'oignon rouge, le piment et la moitié des herbes.",
-        "Prépare le dressing : mélange l'huile, le jus des 2 citrons verts, le cumin, la coriandre moulue, le chaat masala, sel, poivre.",
+        "Dans un grand saladier, mélange les pois chiches, la mangue, la tomate, le concombre, l'oignon rouge, le piment et une partie des herbes.",
+        "Prépare le dressing : mélange l'huile, le jus des citrons verts, le cumin, la coriandre moulue, le chaat masala, sel, poivre.",
         "Verse sur la salade, mélange bien. Ajoute le reste des herbes.",
         "Laisse reposer 10 min au frais — les pois chiches s'imprègnent.",
         "Sers tel quel ou avec du papadum (galette indienne). Le chaat est un classique de cuisine de rue indienne (Mumbai, Delhi) — mot qui signifie « lécher » à cause du goût acidulé qui pique les lèvres. Le sel noir (kala namak) ou chaat masala donne le goût soufré typique. Riche en fibres (pois chiches), protéines végétales, vitamine C (lime, mangue), magnésium et folates."
@@ -61000,13 +61056,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -61030,7 +61086,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "d194",
-      "name": "Curry d'aubergines et pois chiches au curry doux, naan complet",
+      "name": "Curry d'aubergines et pois chiches au curry doux, chapati complet",
       "type": "dinner",
       "cuisine": "indien",
       "seasons": [
@@ -61042,7 +61098,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 510,
+      "kcal": 540,
       "tags": [
         "vegetarian",
         "vegan",
@@ -61058,13 +61114,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          0.5,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Pois chiches cuits (boîte)",
-          120,
+          100,
           "g",
           "pantry"
         ],
@@ -61088,7 +61144,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.75,
+          1,
           "gousse",
           "produce"
         ],
@@ -61105,7 +61161,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Naan complet (pain plat)",
+          "Chapati complet",
           0.5,
           "u",
           "bread"
@@ -61160,13 +61216,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -61175,15 +61231,15 @@ window.__DATA_RECIPES = {
         "Coupe les aubergines en cubes de 2 cm. Sale légèrement, laisse dégorger 10 min sur du papier absorbant — ça enlève l'amertume et l'excès d'eau.",
         "Égoutte et rince les pois chiches.",
         "Émince finement l'oignon. Écrase l'ail. Râpe le gingembre.",
-        "Sèche les cubes d'aubergine. Dans une grande sauteuse à feu moyen-vif avec 1 c.à.s d'huile de coco, fais dorer les aubergines 8 min en remuant — elles doivent être bien dorées sur toutes les faces. Réserve.",
-        "Dans la même sauteuse, ajoute l'autre c.à.s d'huile. Fais suer l'oignon 5 min à feu moyen.",
+        "Sèche les cubes d'aubergine. Dans une grande sauteuse à feu moyen-vif avec une partie de l'huile de coco, fais dorer les aubergines 8 min en remuant — elles doivent être bien dorées sur toutes les faces. Réserve.",
+        "Dans la même sauteuse, ajoute le reste de l'huile. Fais suer l'oignon 5 min à feu moyen.",
         "Ajoute l'ail, le gingembre, le curry, le cumin, le curcuma, la coriandre moulue, la cardamome, la cannelle, le piment d'Espelette. Remue 30 sec — les épices libèrent leur arôme (et la cuisine sent comme dans un restaurant indien).",
         "Verse la tomate concassée et le lait de coco. Sale, poivre. Mélange. Porte à frémissement.",
         "Remets les aubergines dans la sauteuse. Ajoute les pois chiches. Mélange.",
         "Couvre, baisse à feu doux, laisse mijoter 20 min — les aubergines doivent être ultra-fondantes et la sauce épaisse.",
-        "Pendant ce temps, préchauffe le four à 180 °C. Réchauffe les naans complets 4-5 min — ils doivent être souples et chauds.",
+        "Pendant ce temps, réchauffe les chapatis à sec dans une poêle chaude, 30 secondes de chaque côté — ils doivent être souples et chauds (un chapati = une galette de pain indien sans levure).",
         "Hors du feu, ajoute la coriandre ciselée généreusement.",
-        "Dressage : sers le curry dans 2 grandes assiettes creuses. Place un naan complet à côté. Décore du reste de coriandre.",
+        "Dressage : sers le curry dans des assiettes creuses. Coupe les chapatis en deux et pose une moitié à côté de chaque assiette. Décore du reste de coriandre.",
         "Ce curry s'inspire du baingan chana masala (Inde du Nord) — aubergine + pois chiches dans une sauce épicée crémeuse. Plat complet 100% végétal. Riche en fibres (aubergine, pois chiches), protéines végétales (pois chiches), antioxydants (épices) et bons gras (coco)."
       ],
       "photo": "assets/recipes/d194.webp"
@@ -61302,13 +61358,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -61439,13 +61495,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -61574,13 +61630,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -61617,7 +61673,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 4.5,
-      "kcal": 560,
+      "kcal": 520,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -61635,13 +61691,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          88,
+          100,
           "g",
           "meat-fish"
         ],
         [
-          "Tortilla de blé complet (taille moyenne)",
-          1.5,
+          "Tortilla maïs complète",
+          2,
           "u",
           "bread"
         ],
@@ -61659,7 +61715,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.75,
+          1,
           "gousse",
           "produce"
         ],
@@ -61725,30 +61781,30 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
         "Préchauffe le four à 190 °C.",
-        "Cuis le poulet : dans une casserole, recouvre les filets d'eau salée. Ajoute 1/2 oignon coupé en 2 et 1 gousse d'ail. Porte à frémissement et cuis 15 min — la chair doit être ferme et opaque.",
-        "Sors le poulet et effiloche-le grossièrement à la fourchette. Garde 100 ml de bouillon. Mélange le poulet effiloché avec une pincée de cumin et le cottage cheese (à demi-écrasé). Sale, poivre.",
-        "Prépare la salsa verde : retire l'enveloppe des tomatilles, lave-les, coupe-les en quartiers. Émince le reste de l'oignon et les 2 gousses d'ail restantes. Fends le jalapeño en deux, retire les graines si tu veux moins piquant.",
+        "Cuis le poulet : dans une casserole, recouvre les filets d'eau et émiette le cube de bouillon dedans. Ajoute un morceau de l'oignon et un peu de l'ail. Porte à frémissement et cuis 15 min — la chair doit être ferme et opaque.",
+        "Sors le poulet et effiloche-le grossièrement à la fourchette. Garde un petit verre du bouillon de cuisson. Mélange le poulet effiloché avec une pincée de cumin et le cottage cheese (légèrement écrasé). Sale, poivre.",
+        "Prépare la salsa verde : retire l'enveloppe des tomatilles, lave-les, coupe-les en quartiers. Émince le reste de l'oignon et de l'ail. Fends le jalapeño en deux, retire les graines si tu veux moins piquant.",
         "Dans une poêle bien chaude sans matière grasse, fais griller tomatilles + oignon + ail + jalapeño pendant 6 min — bords noircis = saveur typique.",
-        "Verse dans un blender avec la moitié de la coriandre, le yaourt grec, 100 ml de bouillon, le jus de citron vert, le cumin restant, l'origan, sel, poivre. Mixe 30 sec en sauce verte crémeuse.",
+        "Verse dans un blender avec une partie de la coriandre, le yaourt grec, le bouillon gardé, le jus de citron vert, le cumin restant, l'origan, sel, poivre. Mixe 30 sec en sauce verte crémeuse.",
         "Chauffe une poêle sans matière grasse à feu vif. Tiède les tortillas 10 sec de chaque côté — elles deviennent souples, indispensable pour rouler sans craquer.",
-        "Assemblage : huile légèrement un plat à four (1 c.à.s d'huile). Verse une fine couche de salsa verde au fond. Sur chaque tortilla, étale 1/6 du mélange poulet-cottage, roule en cylindre, dépose dans le plat (couture en dessous).",
+        "Assemblage : huile légèrement un plat à four (avec une partie de l'huile). Verse une fine couche de salsa verde au fond. Sur chaque tortilla, étale une part égale du mélange poulet-cottage, roule en cylindre, dépose dans le plat (couture en dessous).",
         "Nappe les enchiladas du reste de salsa verde. Parsème de mozzarella râpée.",
-        "Enfourne 18-20 min : le fromage doit être doré et bouillonnant. Hors du four, arrose de la dernière c.à.s d'huile et parsème du reste de coriandre.",
-        "Dressage : sers 3 enchiladas par personne dans une assiette, nappe d'un peu de sauce supplémentaire du plat.",
-        "Les enchiladas suizas sont une variante créée à Mexico City vers 1950 (« suisses » à cause de la sauce crémeuse et du fromage gratiné — référence à la cuisine alpine). Version allégée : yaourt grec + cottage cheese remplacent la crème et le fromage gras. Riche en protéines (poulet, cottage, yaourt), calcium, fibres (tortilla complète), antioxydants (tomatille, ail)."
+        "Enfourne 18-20 min : le fromage doit être doré et bouillonnant. Hors du four, arrose du reste d'huile et parsème du reste de coriandre.",
+        "Dressage : sers les enchiladas dans les assiettes, nappe d'un peu de sauce supplémentaire du plat.",
+        "Les enchiladas suizas sont une variante créée à Mexico City vers 1950 (« suisses » à cause de la sauce crémeuse et du fromage gratiné — référence à la cuisine alpine). Version allégée : yaourt grec + cottage cheese remplacent la crème et le fromage gras. Riche en protéines (poulet, cottage, yaourt), calcium, fibres (tortilla de maïs complète), antioxydants (tomatille, ail)."
       ],
       "photo": "assets/recipes/d196.webp"
     },
@@ -61877,13 +61933,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -62022,13 +62078,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -62217,7 +62273,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 3,
       "cost": 5.5,
-      "kcal": 580,
+      "kcal": 570,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -62262,7 +62318,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Courgette",
-          0.5,
+          0.75,
           "u",
           "produce"
         ],
@@ -62280,13 +62336,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          0.75,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Couscous complet (semoule)",
-          40,
+          30,
           "g",
           "pantry"
         ],
@@ -62352,29 +62408,29 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
         "Coupe l'agneau en cubes de 3 cm. Sale, poivre.",
-        "Dans une grande cocotte, chauffe 2 c.à.s d'huile à feu vif. Fais dorer les cubes d'agneau 5 min sur toutes les faces. Réserve.",
-        "Émince finement les oignons. Dans la cocotte, ajoute 1 c.à.s d'huile, fais suer les oignons 6 min jusqu'à dorés. Ajoute l'ail écrasé, le cumin, le carvi, le curcuma, la coriandre moulue, la cannelle, la harissa. Remue 30 sec.",
+        "Dans une grande cocotte, chauffe une partie de l'huile à feu vif. Fais dorer les cubes d'agneau 5 min sur toutes les faces. Réserve.",
+        "Émince finement l'oignon. Dans la cocotte, ajoute un peu d'huile, fais suer l'oignon 6 min jusqu'à dorés. Ajoute l'ail écrasé, le cumin, le carvi, le curcuma, la coriandre moulue, la cannelle, la harissa. Remue 30 sec.",
         "Coupe les tomates en quartiers (retire les graines). Ajoute-les avec le concentré de tomates. Cuis 3 min en écrasant à la fourchette pour faire une base de sauce.",
-        "Remets l'agneau dans la cocotte. Verse 1 L d'eau, ajoute le cube de bouillon émietté, sel modéré (le cube est déjà salé). Porte à frémissement.",
+        "Remets l'agneau dans la cocotte. Verse de l'eau jusqu'à bien recouvrir la viande, ajoute le cube de bouillon émietté, sel modéré (le cube est déjà salé). Porte à frémissement.",
         "Couvre et mijote 40 min à feu doux — l'agneau doit être tendre.",
         "Pendant ce temps, prépare les légumes : épluche les carottes et les navets, coupe en bâtonnets de 2 × 5 cm. Coupe les courgettes en grosses rondelles d'1,5 cm.",
         "À 25 min de cuisson de l'agneau, ajoute carottes et navets. À 15 min, ajoute courgettes et fèves. À 5 min, ajoute petits pois.",
-        "Pendant ce temps, prépare le couscous : dans un grand saladier, mélange la semoule complète avec 1 c.à.s d'huile et 1 pincée de sel. Verse 220 ml d'eau bouillante dessus, couvre, laisse gonfler 5 min. Aère à la fourchette en grains détachés.",
+        "Pendant ce temps, prépare le couscous : dans un grand saladier, mélange la semoule complète avec le reste d'huile et une pincée de sel. Verse dessus le même volume d'eau bouillante que de semoule, couvre, laisse gonfler 5 min. Aère à la fourchette en grains détachés.",
         "Hors du feu, cisèle la coriandre et ajoute généreusement dans la cocotte.",
-        "Dressage : verse la semoule en couronne dans 2 grandes assiettes creuses (sert 4 personnes en tout en réalité). Pose au centre l'agneau, les légumes printaniers, nappe abondamment de bouillon parfumé.",
+        "Dressage : verse la semoule en couronne dans les assiettes creuses. Pose au centre l'agneau, les légumes printaniers, nappe abondamment de bouillon parfumé.",
         "Sers à part un peu de harissa diluée dans du bouillon, pour ceux qui veulent corser. Le couscous printanier tunisien (« kasksou bel khodra ») met à l'honneur les légumes nouveaux : fèves fraîches, petits pois, jeunes carottes. Le carvi est typiquement tunisien (vs cumin marocain). Riche en protéines (agneau), fibres (semoule complète, légumes, légumineuses), folates (fèves), bêta-carotène (carotte), vitamine C."
       ],
       "photo": "assets/recipes/d198.webp"
@@ -62391,7 +62447,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 480,
+      "kcal": 420,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -62405,13 +62461,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots rouges cuits (boîte)",
-          160,
+          140,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -62501,29 +62557,29 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
-        "Démarre le riz : rince le basmati complet 30 sec sous l'eau froide. Cuis dans 280 ml d'eau salée, couvert à feu doux 20 min. Laisse reposer couvert 5 min.",
+        "Démarre le riz : rince le basmati complet 30 sec sous l'eau froide. Cuis dans de l'eau salée (environ 2 fois et demie son volume), couvert à feu doux 20 min. Laisse reposer couvert 5 min.",
         "Égoutte et rince les haricots rouges.",
         "Émince finement l'oignon. Écrase l'ail. Râpe le gingembre. Si tu utilises le piment vert, hache-le finement (porte des gants si peau sensible).",
-        "Coupe les tomates en deux, retire les graines, taille en dés de 1 cm.",
-        "Dans une grande sauteuse à feu moyen avec 1 c.à.s d'huile de coco, fais suer l'oignon 5 min à translucide.",
+        "Coupe la tomate en deux, retire les graines, taille en dés de 1 cm.",
+        "Dans une grande sauteuse à feu moyen avec une partie de l'huile de coco, fais suer l'oignon 5 min à translucide.",
         "Ajoute l'ail, le gingembre, le piment vert, le garam masala, le cumin, le curcuma, la coriandre moulue, le piment d'Espelette. Remue 30 sec — les épices libèrent leur arôme.",
         "Ajoute les dés de tomate, sale modérément. Cuis 6 min à feu moyen : les tomates s'écrasent et se transforment en sauce épaisse rouge profond.",
-        "Verse 200 ml d'eau, mélange. Ajoute les haricots rouges. Mijote 8-10 min à feu doux — la sauce épaissit, les haricots s'imprègnent.",
-        "Pour une texture plus onctueuse, écrase légèrement 1/3 des haricots à la fourchette dans la sauce (technique du « rajma » authentique).",
-        "Hors du feu, ajoute la dernière c.à.s d'huile de coco, le jus du demi-citron, la moitié de la coriandre ciselée.",
-        "Dressage : sers le riz basmati complet dans 2 grands bols. Pose le rajma au centre. Décore d'une cuillère de yaourt nature au milieu, le reste de coriandre, et 2 quartiers du citron restant à arroser à table.",
+        "Verse un grand verre d'eau, mélange. Ajoute les haricots rouges. Mijote 8-10 min à feu doux — la sauce épaissit, les haricots s'imprègnent.",
+        "Pour une texture plus onctueuse, écrase légèrement une partie des haricots à la fourchette dans la sauce (technique du « rajma » authentique).",
+        "Hors du feu, ajoute le reste de l'huile de coco, le jus du citron, une partie de la coriandre ciselée.",
+        "Dressage : sers le riz basmati complet dans un grand bol. Pose le rajma au centre. Décore d'une cuillère de yaourt nature au milieu, le reste de coriandre, et des quartiers de citron à arroser à table.",
         "Le rajma est un plat emblématique du Punjab (nord de l'Inde), traditionnellement servi avec du riz (« rajma chawal »). C'est un comfort food végé du quotidien indien. Riche en protéines végétales (haricots rouges, en haut de l'index protéique des légumineuses), fibres, fer non-hémique (potentialisé par la vitamine C du citron et de la tomate), folates."
       ],
       "photo": "assets/recipes/l194.webp"
@@ -62668,13 +62724,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -62830,13 +62886,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -62994,13 +63050,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -63134,13 +63190,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -63268,19 +63324,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Clou de girofle moulu",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -63411,13 +63467,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -63550,13 +63606,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -63696,13 +63752,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -63831,13 +63887,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -63870,7 +63926,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 510,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -63885,97 +63941,97 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          120,
+          60,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Tomate",
-          2,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          1.5,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          1.0,
           "cm",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          150,
+          75,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Huile de coco",
-          2,
+          1.0,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de cumin (jeera)",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -64000,16 +64056,16 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Démarre le jeera rice : rince le basmati complet 30 sec sous l'eau froide.",
-        "Dans une casserole à feu moyen avec 1 c.à.s d'huile de coco, fais griller les graines de cumin 30 sec — elles doivent crépiter et embaumer.",
-        "Ajoute le riz, remue 30 sec pour l'enrober. Verse 280 ml d'eau salée. Porte à frémissement, baisse à feu doux, couvre 20 min. Laisse reposer couvert 5 min.",
+        "Dans une casserole à feu moyen avec une partie de l'huile de coco, fais griller les graines de cumin 30 sec — elles doivent crépiter et embaumer.",
+        "Ajoute le riz, remue 30 sec pour l'enrober. Verse de l'eau salée (environ 2 fois et demie le volume du riz). Porte à frémissement, baisse à feu doux, couvre 20 min. Laisse reposer couvert 5 min.",
         "Pendant ce temps, prépare le dal : rince les lentilles corail à l'eau froide jusqu'à eau claire.",
-        "Émince finement l'oignon. Écrase l'ail, râpe le gingembre. Coupe les tomates en dés.",
-        "Dans une seconde casserole à feu moyen avec la dernière c.à.s d'huile de coco, fais suer l'oignon 4 min.",
+        "Émince finement l'oignon. Écrase l'ail, râpe le gingembre. Coupe la tomate en dés.",
+        "Dans une seconde casserole à feu moyen avec le reste de l'huile de coco, fais suer l'oignon 4 min.",
         "Ajoute l'ail, le gingembre, le cumin moulu, le curcuma, la coriandre moulue, le piment d'Espelette. Remue 30 sec — les épices libèrent leur arôme.",
         "Ajoute les dés de tomate, cuis 4 min en écrasant.",
-        "Ajoute les lentilles corail rincées et 400 ml d'eau bouillante. Sale. Mijote 15-18 min à feu doux — les lentilles fondent en purée jaune crémeuse (signature du dal).",
+        "Ajoute les lentilles corail rincées et de l'eau bouillante (environ 4 fois leur volume). Sale. Mijote 15-18 min à feu doux — les lentilles fondent en purée jaune crémeuse (signature du dal).",
         "Prépare la raïta : râpe le concombre (peau lavée). Presse dans un torchon. Mélange avec le skyr, la menthe ciselée, sel, poivre.",
-        "Dressage dans 2 grands bols : sépare en 3 sections — jeera rice (un tiers), dal jaune au milieu (un tiers), raïta sur le côté (un tiers). Parsème de coriandre fraîche au centre, ajoute 2 quartiers de citron sur le bord.",
+        "Dressage dans un grand bol : sépare en trois sections — jeera rice, dal jaune au milieu, raïta sur le côté. Parsème de coriandre fraîche au centre, ajoute des quartiers de citron sur le bord.",
         "Le « jeera » signifie cumin en hindi, et « jeera rice » est l'accompagnement riz le plus simple et populaire en Inde du Nord. Le dal de lentilles corail (« masoor dal ») est ultra-rapide (15 min, pas de trempage). Le combo dal + riz est la base nutritionnelle complète de l'Inde rurale. Riche en protéines végétales complètes (combo céréale + légumineuse), fibres, fer non-hémique (potentialisé par vit C du citron)."
       ],
       "photo": "assets/recipes/l200.webp"
@@ -64125,13 +64181,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -64266,13 +64322,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -64472,13 +64528,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -64511,7 +64567,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 240,
+      "kcal": 190,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -64534,8 +64590,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fécule de maïs (Maïzena)",
-          1.0,
-          "c.à.s",
+          8,
+          "g",
           "pantry"
         ],
         [
@@ -64570,16 +64626,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans une casserole à feu moyen-doux, verse 400 ml de lait. Réserve les 100 ml restants.",
-        "Dans un bol, délaye la Maïzena dans les 100 ml de lait froid restant avec un fouet (technique : c'est crucial de ne pas verser la Maïzena directement dans le lait chaud sinon ça fait des grumeaux indissolubles).",
+        "Dans une casserole à feu moyen-doux, verse la plus grande partie du lait. Garde un petit bol de lait froid de côté.",
+        "Dans un bol, délaye la Maïzena dans le lait froid gardé de côté avec un fouet (technique : c'est crucial de ne pas verser la Maïzena directement dans le lait chaud sinon ça fait des grumeaux indissolubles).",
         "Quand le lait est tiède (pas bouillant), verse le mélange Maïzena-lait dedans en remuant constamment au fouet.",
         "Ajoute le sirop d'érable. Continue de remuer au fouet à feu moyen pendant 5-7 min — le mélange épaissit progressivement. Tu cherches une texture crème pâtissière onctueuse, qui nappe la cuillère.",
         "Hors du feu, ajoute l'eau de fleur d'oranger. Mélange.",
-        "Verse dans 4 ramequins individuels (sert 4 portions). Laisse refroidir à température ambiante puis réfrigère 3 h minimum (l'idéal : préparer la veille pour le lendemain).",
-        "Au moment de servir, fais légèrement griller les amandes effilées et les pistaches dans une poêle sèche à feu doux 2-3 min en remuant constamment — ils doivent embaumer (attention ça brûle vite).",
+        "Verse dans les ramequins individuels. Laisse refroidir à température ambiante puis réfrigère 3 h minimum (l'idéal : préparer la veille pour le lendemain).",
+        "Au moment de servir, fais légèrement griller les amandes effilées et les pistaches dans une poêle sèche à feu doux 2-3 min en remuant constamment — elles doivent embaumer (attention ça brûle vite).",
         "Hache grossièrement les pistaches refroidies.",
         "Dressage : sors les m'halbi du frigo. Parsème généreusement d'amandes effilées dorées et de pistaches hachées. Saupoudre d'une pointe de cannelle.",
-        "Le m'halbi (ou « malbi » selon les régions) est un flan au lait emblématique du Maghreb et du Levant — Algérie, Maroc, Tunisie, Liban. Version traditionnelle = beaucoup de sucre. Cette adaptation utilise seulement 2 c.à.s de sirop d'érable pour 4 portions (~150 cal de sucres ajoutés au total), parfumé délicatement à la fleur d'oranger. Riche en calcium (lait), bons gras (oléagineux), protéines (lait, amandes)."
+        "Le m'halbi (ou « malbi » selon les régions) est un flan au lait emblématique du Maghreb et du Levant — Algérie, Maroc, Tunisie, Liban. Version traditionnelle = beaucoup de sucre. Cette adaptation utilise très peu de sirop d'érable et se parfume délicatement à la fleur d'oranger. Riche en calcium (lait), bons gras (oléagineux), protéines (lait, amandes)."
       ],
       "photo": "assets/recipes/des81.webp"
     },
@@ -64595,7 +64651,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 360,
+      "kcal": 300,
       "tags": [
         "vegetarian",
         "quick"
@@ -64605,30 +64661,31 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          35,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          125,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Mangue mûre",
-          0.5,
-          "u",
+          60,
+          "g",
           "produce"
         ],
         [
           "Amande effilée",
-          10,
+          15,
           "g",
           "pantry"
         ],
@@ -64643,12 +64700,6 @@ window.__DATA_RECIPES = {
           0.25,
           "c.à.c",
           "spices"
-        ],
-        [
-          "Sirop d'érable (ou miel)",
-          0.5,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
@@ -64656,8 +64707,8 @@ window.__DATA_RECIPES = {
         "Porte à frémissement en remuant. Baisse à feu doux et cuis 5-7 min en remuant régulièrement à la cuillère en bois — le porridge épaissit progressivement, devient crémeux.",
         "Pendant ce temps, coupe la mangue en cubes de 1 cm (technique : tranche de chaque côté du noyau plat, fais des cubes dans la peau, racle à la cuillère).",
         "Dans une poêle sèche à feu doux, fais griller les amandes effilées 1-2 min en remuant constamment — elles dorent vite et brûlent encore plus vite. Réserve.",
-        "Quand le porridge est crémeux mais encore coulant (il épaissira encore en refroidissant un peu), retire du feu. Ajoute le sirop d'érable, mélange.",
-        "Dressage : verse dans 2 bols. Garnis avec les cubes de mangue et les amandes effilées dorées. Saupoudre d'un peu de cardamome supplémentaire.",
+        "Quand le porridge est crémeux mais encore coulant (il épaissira encore en refroidissant un peu), retire du feu (la mangue mûre apporte toute la douceur).",
+        "Dressage : verse dans le bol. Garnis avec les cubes de mangue et les amandes effilées dorées. Saupoudre d'un peu de cardamome supplémentaire.",
         "Sers tiède. Inspiration indienne : la cardamome verte est une épice douce et florale, traditionnellement utilisée en Inde dans les desserts et boissons (chai, lassi). Combinée à la mangue mûre, c'est un classique d'été. Riche en fibres (avoine, mangue), bons gras (amandes), antioxydants (cardamome), bêta-carotène (mangue)."
       ],
       "photo": "assets/recipes/b88.webp"
@@ -64674,7 +64725,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 340,
+      "kcal": 280,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -64692,37 +64743,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          250,
+          125,
           "g",
           "dairy"
         ],
         [
           "Graines de chia",
-          30,
-          "g",
-          "pantry"
-        ],
-        [
-          "Lait demi-écrémé",
-          100,
-          "ml",
-          "dairy"
-        ],
-        [
-          "Mangue mûre",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Noix de coco râpée",
           15,
           "g",
           "pantry"
         ],
         [
+          "Lait demi-écrémé",
+          50,
+          "ml",
+          "dairy"
+        ],
+        [
+          "Mangue mûre",
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Noix de coco râpée",
+          8,
+          "g",
+          "pantry"
+        ],
+        [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -64731,21 +64782,15 @@ window.__DATA_RECIPES = {
           0.25,
           "c.à.c",
           "spices"
-        ],
-        [
-          "Sirop d'érable",
-          1,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
-        "Dans un bol, mélange les graines de chia avec le lait, le sirop d'érable et la cardamome. Mélange bien au fouet pour éviter les grumeaux (le chia gonfle vite, donc fouetter dès le début).",
+        "Dans un bol, mélange les graines de chia avec le lait et la cardamome. Mélange bien au fouet pour éviter les grumeaux (le chia gonfle vite, donc fouetter dès le début).",
         "Couvre et place au frigo 4 h minimum (idéal : la veille au soir pour le lendemain matin). Le chia absorbe le lait et forme un pudding type tapioca.",
         "Au moment de servir, coupe la mangue en cubes de 1 cm (technique : tranche de part et d'autre du noyau, cubes dans la peau, raclage cuillère).",
         "Mélange la chia au lait avec le skyr pour obtenir une crème onctueuse.",
-        "Dressage dans 2 bols : verse la crème yaourt-chia. Pose les cubes de mangue par-dessus. Parsème de noix de coco râpée. Râpe le zeste du demi-citron vert au-dessus puis presse un filet de jus.",
-        "Sers immédiatement. Ce bowl reprend l'esprit lassi indien (yaourt + mangue + cardamome) en format épais. Le chia (originaire d'Amérique mais maintenant intégré aux superfoods world wide) apporte une texture pudding + 6g de fibres par portion. Riche en protéines (skyr), bons gras (chia, coco), oméga-3 ALA, fibres, vitamine C (citron vert), bêta-carotène (mangue)."
+        "Dressage dans le bol : verse la crème yaourt-chia. Pose les cubes de mangue par-dessus. Parsème de noix de coco râpée. Râpe le zeste du citron vert au-dessus puis presse un filet de jus.",
+        "Sers immédiatement. Ce bowl reprend l'esprit lassi indien (yaourt + mangue + cardamome) en format épais. Le chia (originaire d'Amérique mais maintenant intégré aux superfoods world wide) apporte une texture pudding + beaucoup de fibres. Riche en protéines (skyr), bons gras (chia, coco), oméga-3 ALA, fibres, vitamine C (citron vert), bêta-carotène (mangue)."
       ],
       "photo": "assets/recipes/b89.webp"
     },
@@ -64762,7 +64807,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 300,
       "tags": [
         "vegetarian",
         "vegan",
@@ -64778,67 +64823,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Graines de sarrasin (kasha)",
-          100,
+          40,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Petits pois frais (ou surgelés)",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile de coco",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de cumin",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Graines de moutarde (facultatif)",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "cm",
           "produce"
         ],
@@ -64862,9 +64907,9 @@ window.__DATA_RECIPES = {
         "Ajoute le gingembre râpé, le curcuma, le piment d'Espelette. Remue 30 sec.",
         "Ajoute la carotte en dés, cuis 3 min en remuant.",
         "Ajoute les petits pois et le sarrasin (kasha). Mélange pour bien enrober des épices.",
-        "Verse 250 ml d'eau salée bouillante. Mélange, baisse à feu doux, couvre 10 min — le sarrasin gonfle et absorbe l'eau.",
-        "Hors du feu, ajoute le jus du demi-citron et la coriandre ciselée. Aère à la fourchette.",
-        "Dressage dans 2 bols. Décore d'une cuillère de coriandre fraîche.",
+        "Verse de l'eau salée bouillante (environ deux fois et demie le volume du sarrasin). Mélange, baisse à feu doux, couvre 10 min — le sarrasin gonfle et absorbe l'eau.",
+        "Hors du feu, ajoute le jus du citron et la coriandre ciselée. Aère à la fourchette.",
+        "Dressage dans le bol. Décore d'une cuillère de coriandre fraîche.",
         "L'upma est un petit-déjeuner salé classique d'Inde du Sud, traditionnellement préparé avec de la semoule de blé (« rava »). Cette version utilise du sarrasin (kasha) pour un IG bas et zéro gluten. Un breakfast salé change des céréales sucrées habituelles et tient bien jusqu'à midi. Riche en protéines complètes (sarrasin = profil aminés rare en céréale), fibres, fer, vitamine K (coriandre), antioxydants (curcuma)."
       ],
       "photo": "assets/recipes/b90.webp"
@@ -64976,13 +65021,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -65018,7 +65063,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 410,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "quick"
@@ -65028,49 +65073,44 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
-          "Flocons d'avoine",
-          70,
+          "Flocons d'avoine complets",
+          35,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          250,
+          125,
           "ml",
           "dairy"
         ],
         [
           "Cacao en poudre non sucré",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Banane",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Noix (cerneaux)",
-          20,
+          15,
           "g",
-          "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          1,
-          "c.à.c",
           "pantry"
         ],
         [
@@ -65084,9 +65124,9 @@ window.__DATA_RECIPES = {
         "Dans une casserole à feu moyen, verse le lait avec le cacao, la cannelle et une pincée de sel. Fouette pour dissoudre le cacao (sinon ça fait des grumeaux).",
         "Quand le lait est tiède, ajoute les flocons d'avoine. Mélange. Cuis 5-7 min à feu doux en remuant régulièrement — le porridge épaissit, devient crémeux et chocolaté foncé.",
         "Pendant ce temps, coupe la banane en rondelles. Hache grossièrement les noix.",
-        "Quand le porridge est prêt, hors du feu, ajoute le sirop d'érable. Mélange.",
-        "Dressage dans 2 bols : verse le porridge cacao. Garnis avec les rondelles de banane et les noix hachées. Saupoudre d'un peu de cannelle supplémentaire.",
-        "Sers tiède. L'atole est une boisson chaude traditionnelle mexicaine à base de maïs et de cacao (« champurrado » avec cacao). Cette version porridge transpose les saveurs : cacao non sucré + cannelle = essence mésoamericaine. Le sucre est minimisé (1 c.à.c de sirop d'érable pour 2 portions, soit ~5g de sucres par bol). Riche en fibres (avoine, banane), bons gras (noix), magnésium (cacao + noix), antioxydants (cacao = un des aliments les plus riches en flavonoïdes)."
+        "Quand le porridge est prêt (il nappe la cuillère), retire la casserole du feu et mélange une dernière fois.",
+        "Dressage dans le bol : verse le porridge cacao. Garnis avec les rondelles de banane et les noix hachées. Saupoudre d'un peu de cannelle supplémentaire.",
+        "Sers tiède. L'atole est une boisson chaude traditionnelle mexicaine à base de maïs et de cacao (« champurrado » avec cacao). Cette version porridge transpose les saveurs : cacao non sucré + cannelle = essence mésoamericaine. Pas de sucre ajouté : la banane suffit à adoucir le bol. Riche en fibres (avoine, banane), bons gras (noix), magnésium (cacao + noix), antioxydants (cacao = un des aliments les plus riches en flavonoïdes)."
       ],
       "photo": "assets/recipes/b92.webp"
     },
@@ -65177,13 +65217,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -65305,7 +65345,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 290,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -65321,31 +65361,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          250,
+          125,
           "g",
           "dairy"
         ],
         [
           "Orange",
-          2,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Pistache non salée",
-          25,
+          12,
           "g",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -65357,18 +65397,18 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          4,
+          2,
           "feuille",
           "produce"
         ]
       ],
       "steps": [
-        "Épluche les oranges à vif (technique : coupe le sommet et la base, pose à plat, descends le couteau le long de la chair en suivant la courbe pour enlever toute la peau blanche).",
+        "Épluche l'orange à vif (technique : coupe le sommet et la base, pose à plat, descends le couteau le long de la chair en suivant la courbe pour enlever toute la peau blanche).",
         "Détaille en suprêmes (passe le couteau entre chaque membrane pour libérer les quartiers de chair). Récupère le jus dans un bol.",
         "Hache grossièrement les pistaches. Cisèle les feuilles de menthe.",
-        "Dans un bol, mélange le skyr avec l'eau de fleur d'oranger, le miel, la cannelle, et le jus d'orange récupéré (~2 c.à.s).",
-        "Dressage dans 2 grands bols : verse le yaourt parfumé. Arrange les suprêmes d'orange en éventail au-dessus. Parsème de pistaches hachées et de menthe ciselée.",
-        "Sers immédiatement. Ce breakfast est inspiré de la « salade d'oranges marocaine » classique (oranges + eau de fleur d'oranger + cannelle), version yaourt pour booster les protéines et tenir jusqu'à midi. L'eau de fleur d'oranger est l'arôme signature des desserts maghrébins. Riche en protéines (skyr = 2× plus de protéines qu'un yaourt classique), vitamine C massive (2 oranges), bons gras (pistaches), antioxydants."
+        "Dans un bol, mélange le skyr avec l'eau de fleur d'oranger, le miel, la cannelle, et le jus d'orange récupéré.",
+        "Dressage dans un grand bol : verse le yaourt parfumé. Arrange les suprêmes d'orange en éventail au-dessus. Parsème de pistaches hachées et de menthe ciselée.",
+        "Sers immédiatement. Ce breakfast est inspiré de la « salade d'oranges marocaine » classique (oranges + eau de fleur d'oranger + cannelle), version yaourt pour booster les protéines et tenir jusqu'à midi. L'eau de fleur d'oranger est l'arôme signature des desserts maghrébins. Riche en protéines (skyr = 2× plus de protéines qu'un yaourt classique), vitamine C massive (orange), bons gras (pistaches), antioxydants."
       ],
       "photo": "assets/recipes/b95.webp"
     },
@@ -65466,13 +65506,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -65578,7 +65618,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 390,
+      "kcal": 440,
       "tags": [
         "vegetarian"
       ],
@@ -65593,13 +65633,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de sarrasin",
-          50,
+          40,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          0.5,
+          1,
           "u",
           "dairy"
         ],
@@ -65617,15 +65657,9 @@ window.__DATA_RECIPES = {
         ],
         [
           "Skyr (ou yaourt grec)",
-          50,
+          80,
           "g",
           "dairy"
-        ],
-        [
-          "Sirop d'érable",
-          0.5,
-          "c.à.s",
-          "pantry"
         ],
         [
           "Cannelle",
@@ -65647,22 +65681,22 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.5,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
         "Dans un saladier, mélange la farine de sarrasin, la levure, la cannelle, sel.",
-        "Casse l'œuf au centre, verse la moitié du lait. Fouette pour incorporer la farine progressivement (pour éviter les grumeaux).",
+        "Casse l'œuf au centre, verse une partie du lait. Fouette pour incorporer la farine progressivement (pour éviter les grumeaux).",
         "Ajoute le reste du lait en fouettant. Tu obtiens une pâte fluide, semblable à de la pâte à crêpes.",
         "Laisse reposer 5 min — la farine absorbe et la pâte s'homogénéise.",
-        "Chauffe une grande poêle à feu moyen avec 1/2 c.à.s d'huile. Verse une petite louche de pâte (~80 ml) pour former un pancake de 10 cm. Compte 3-4 pancakes par poêlée.",
-        "Pose 4-5 myrtilles sur chaque pancake en pressant légèrement. Cuis 2 min jusqu'à ce que la surface fasse des bulles et les bords commencent à sécher.",
+        "Chauffe une grande poêle à feu moyen avec l'huile. Verse une petite louche de pâte pour former un pancake de 10 cm. Fais-en plusieurs à la fois, sans qu'ils se touchent.",
+        "Pose quelques myrtilles sur chaque pancake en pressant légèrement. Cuis 2 min jusqu'à ce que la surface fasse des bulles et les bords commencent à sécher.",
         "Retourne avec une spatule. Cuis 1-2 min de l'autre côté — les pancakes doivent être bien dorés et fermes.",
-        "Répète avec le reste de pâte (tu obtiens 6 pancakes au total, soit 3 par personne). Garde au chaud sur une assiette couverte.",
-        "Dressage : empile 3 pancakes par assiette. Verse une cuillère de skyr sur le dessus, parsème du reste de myrtilles fraîches, arrose d'un filet de sirop d'érable. Saupoudre d'un peu de cannelle.",
-        "Le sarrasin (kasha) est un pseudo-céréale sans gluten, IG ~45, riche en protéines complètes. Avec les myrtilles (saison été), c'est un breakfast pour sportifs ou amateurs de petits-déjs nourrissants. Riche en protéines (sarrasin, œuf, skyr), fibres, antioxydants (anthocyanes des myrtilles parmi les plus puissants), magnésium."
+        "Répète avec le reste de pâte. Garde au chaud sur une assiette couverte.",
+        "Dressage : empile les pancakes sur l'assiette. Verse une cuillère de skyr sur le dessus, parsème du reste de myrtilles fraîches. Saupoudre d'un peu de cannelle.",
+        "Le sarrasin (kasha) est une pseudo-céréale sans gluten, IG ~45, riche en protéines complètes. Avec les myrtilles (saison été), c'est un breakfast pour sportifs ou amateurs de petits-déjs nourrissants. Riche en protéines (sarrasin, œuf, skyr), fibres, antioxydants (anthocyanes des myrtilles parmi les plus puissants), magnésium."
       ],
       "photo": "assets/recipes/b98.webp"
     },
@@ -65750,13 +65784,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -65785,7 +65819,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 370,
       "tags": [
         "vegetarian"
       ],
@@ -65801,7 +65835,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          33,
+          28,
           "g",
           "pantry"
         ],
@@ -65813,7 +65847,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Œuf",
-          0.75,
+          1,
           "u",
           "dairy"
         ],
@@ -65836,12 +65870,6 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sirop d'érable",
-          0.25,
-          "c.à.s",
-          "pantry"
-        ],
-        [
           "Levure chimique",
           0.25,
           "c.à.c",
@@ -65849,8 +65877,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          0.25,
-          "c.à.s",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
@@ -65861,19 +65889,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
         "Sépare les blancs et les jaunes d'œufs. Réserve les blancs dans un grand bol.",
-        "Dans un saladier, mélange la ricotta avec les jaunes d'œufs, le zeste râpé du citron, le sirop d'érable, la cannelle. Tu obtiens une crème homogène.",
+        "Dans un saladier, mélange la ricotta avec les jaunes d'œufs, le zeste râpé du citron et la cannelle. Tu obtiens une crème homogène.",
         "Ajoute la farine et la levure tamisées, puis le lait progressivement en fouettant. Tu obtiens une pâte épaisse type pâte à pancakes.",
         "Monte les blancs en neige ferme avec une pincée de sel. Incorpore-les délicatement dans la pâte en soulevant à la spatule (technique : ne casse pas les bulles d'air, c'est ce qui rend les pancakes aériens).",
-        "Chauffe une poêle à feu moyen avec 1/2 c.à.s d'huile. Verse une petite louche de pâte par pancake (~10 cm). Cuis 2-3 min jusqu'à ce que la surface fasse des bulles et que les bords commencent à sécher.",
-        "Pose 3-4 myrtilles sur chaque pancake en pressant légèrement. Retourne avec une spatule et cuis 1-2 min de l'autre côté.",
-        "Empile 3 pancakes par assiette. Décore du reste de myrtilles fraîches, d'un filet de jus de citron et d'une pointe de cannelle.",
+        "Chauffe une poêle à feu moyen avec un filet d'huile. Verse une petite louche de pâte par pancake (~10 cm). Cuis 2-3 min jusqu'à ce que la surface fasse des bulles et que les bords commencent à sécher.",
+        "Pose quelques myrtilles sur chaque pancake en pressant légèrement. Retourne avec une spatule et cuis 1-2 min de l'autre côté.",
+        "Empile les pancakes sur l'assiette. Décore du reste de myrtilles fraîches, d'un filet de jus de citron et d'une pointe de cannelle.",
         "Ces pancakes ricotta sont une variante des pancakes américains revisités à l'italienne (la ricotta est un ingrédient italien classique). Plus moelleux que les pancakes traditionnels grâce aux blancs en neige. Riche en protéines (ricotta, œufs), antioxydants (myrtilles parmi les plus puissants), calcium."
       ],
       "photo": "assets/recipes/b100.webp"
@@ -65960,13 +65988,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -66009,7 +66037,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -66104,7 +66133,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 400,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "vegan",
@@ -66124,19 +66153,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba (sarrasin)",
-          60,
+          35,
           "g",
           "pantry"
         ],
         [
           "Edamame écossés (surgelés)",
-          75,
+          110,
           "g",
           "frozen"
         ],
         [
           "Concombre",
-          0.25,
+          0.5,
           "u",
           "produce"
         ],
@@ -66192,13 +66221,13 @@ window.__DATA_RECIPES = {
       "steps": [
         "Cuis les nouilles soba selon l'emballage (généralement 5-6 min dans l'eau bouillante salée). Égoutte et rince longuement à l'eau froide pour stopper la cuisson et retirer l'amidon (sinon collantes). Réserve.",
         "Plonge les edamame surgelés dans l'eau bouillante 3 min. Égoutte, rince à l'eau froide.",
-        "Coupe le concombre en deux dans la longueur, retire les graines à la cuillère, coupe en demi-rondelles fines.",
+        "Coupe le concombre en deux dans la longueur, retire les graines à la cuillère, coupe en fines tranches en forme de petites lunes.",
         "Émince finement les oignons nouveaux (blanc + vert). Cisèle la coriandre.",
         "Prépare la sauce : dans un petit bol, mélange la sauce soja, le vinaigre de riz, l'huile de sésame, le sirop d'érable, le gingembre râpé finement.",
         "Dans un grand saladier, mélange les nouilles soba refroidies, les edamame, le concombre, l'oignon nouveau.",
         "Verse la sauce, mélange délicatement.",
-        "Dressage dans 2 grands bols : sers froid. Parsème généreusement de graines de sésame grillées et de coriandre fraîche.",
-        "Les nouilles soba sont un emblème de la cuisine japonaise, faites à 100% sarrasin (IG ~40) ou en mix sarrasin-blé. Servies froides l'été (zaru soba), elles sont rafraîchissantes et apportent des protéines complètes (combo sarrasin+edamame). Bowl petit-déj parfait pour les ados qui ne supportent pas le sucré le matin. Riche en protéines végétales, fibres, oméga-3 (sésame), antioxydants (gingembre, soja)."
+        "Dressage dans un grand bol : sers froid. Parsème généreusement de graines de sésame grillées et de coriandre fraîche.",
+        "Les nouilles soba sont un emblème de la cuisine japonaise, faites à 100% sarrasin (IG ~40) ou en mix sarrasin-blé. Servies froides l'été (zaru soba), elles sont rafraîchissantes et apportent des protéines complètes (combo sarrasin+edamame). Bowl petit-déj parfait pour les ados qui ne supportent pas le sucré le matin. Riche en protéines végétales, fibres, bons gras (sésame), antioxydants (gingembre, soja)."
       ],
       "photo": "assets/recipes/b103.webp"
     },
@@ -66304,7 +66333,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -66409,7 +66439,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 180,
+      "kcal": 150,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -66438,13 +66468,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fécule de maïs (Maïzena)",
-          1.0,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          0.75,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -66468,14 +66498,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un bol, délaye le matcha avec 3 c.à.s de lait d'amande froid. Fouette énergiquement avec un petit fouet (ou une cuillère) jusqu'à ce qu'il n'y ait plus de grumeaux. Tu obtiens une pâte verte lisse.",
-        "Dans un autre bol, délaye la Maïzena avec 100 ml de lait d'amande froid. Fouette pour dissoudre complètement.",
-        "Dans une casserole à feu moyen, verse les 300 ml de lait d'amande restant + le sirop d'érable. Chauffe à frémissement.",
+        "Dans un bol, délaye le matcha avec un peu de lait d'amande froid. Fouette énergiquement avec un petit fouet (ou une cuillère) jusqu'à ce qu'il n'y ait plus de grumeaux. Tu obtiens une pâte verte lisse.",
+        "Dans un autre bol, délaye la Maïzena avec une autre partie du lait d'amande froid. Fouette pour dissoudre complètement.",
+        "Dans une casserole à feu moyen, verse le reste du lait d'amande + le sirop d'érable. Chauffe à frémissement.",
         "Ajoute la pâte de matcha en fouettant. Ajoute ensuite le mélange Maïzena-lait. Continue de fouetter constamment à feu doux pendant 5-7 min : le mélange épaissit progressivement jusqu'à napper la cuillère.",
-        "Hors du feu, verse dans 4 ramequins individuels. Laisse refroidir à température ambiante puis réfrigère 2 h minimum (la crème va finir de prendre).",
+        "Hors du feu, verse dans un ramequin. Laisse refroidir à température ambiante puis réfrigère 2 h minimum (la crème va finir de prendre).",
         "Pendant ce temps, fais légèrement griller les amandes effilées dans une poêle sèche 1-2 min en remuant. Réserve.",
-        "Au moment de servir, sors les crèmes du frigo. Dispose les framboises fraîches par-dessus chaque crème. Parsème d'amandes effilées dorées. Râpe un peu de zeste de citron vert sur le dessus.",
-        "Cette crème reprend les codes du dessert japonais matcha (très tendance) en version allégée : pas de gélatine, pas de crème entière, peu de sucre (2 c.à.s sirop d'érable pour 4 portions = ~15 cal de sucre/portion). Le matcha est riche en L-théanine (effet calmant) et en antioxydants EGCG. Combinée avec les framboises (anthocyanes), c'est un dessert super-antioxydants."
+        "Au moment de servir, sors les crèmes du frigo. Dispose les framboises fraîches par-dessus la crème. Parsème d'amandes effilées dorées. Râpe un peu de zeste de citron vert sur le dessus.",
+        "Cette crème reprend les codes du dessert japonais matcha (très tendance) en version allégée : pas de gélatine, pas de crème entière, très peu de sucre. Le matcha est riche en L-théanine (effet calmant) et en antioxydants EGCG. Combinée avec les framboises (anthocyanes), c'est un dessert super-antioxydants."
       ],
       "photo": "assets/recipes/des82.webp"
     },
@@ -66541,7 +66571,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -66746,7 +66776,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 220,
+      "kcal": 180,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -66774,13 +66804,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fécule de maïs (Maïzena)",
-          1.0,
-          "c.à.s",
+          8,
+          "g",
           "pantry"
         ],
         [
           "Sirop d'érable (ou sucre de coco)",
-          0.75,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -66804,7 +66834,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -66816,14 +66846,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un bol, délaye la Maïzena + le cacao dans 100 ml de lait froid. Fouette pour obtenir un mélange lisse sans grumeaux (technique : c'est crucial — si tu mets cacao + Maïzena directement dans lait chaud, tu auras des grumeaux indissolubles).",
-        "Dans une casserole à feu moyen, verse les 300 ml de lait restant + la cannelle + le piment d'Espelette + une pincée de sel. Porte à frémissement (pas bouillant).",
+        "Dans un bol, délaye la Maïzena + le cacao dans un peu du lait froid. Fouette pour obtenir un mélange lisse sans grumeaux (technique : c'est crucial — si tu mets cacao + Maïzena directement dans lait chaud, tu auras des grumeaux indissolubles).",
+        "Dans une casserole à feu moyen, verse le reste du lait + la cannelle + le piment d'Espelette + une pincée de sel. Porte à frémissement (pas bouillant).",
         "Verse le mélange cacao-Maïzena en fouettant constamment. Continue à feu moyen-doux en fouettant pendant 5-7 min : le mélange épaissit progressivement, devient lisse et brillant, nappe la cuillère.",
         "Hors du feu, ajoute le sirop d'érable et la vanille. Mélange.",
-        "Goûte : si trop épais, ajoute 1-2 c.à.s de lait. La crème va encore épaissir en refroidissant.",
-        "Verse dans 4 ramequins individuels. Laisse refroidir à température ambiante 30 min, puis réfrigère 2 h minimum.",
+        "Goûte : si trop épais, ajoute un filet de lait. La crème va encore épaissir en refroidissant.",
+        "Verse dans les ramequins individuels. Laisse refroidir à température ambiante 30 min, puis réfrigère 2 h minimum.",
         "Au moment de servir, sors les crèmes du frigo. Parsème de chocolat noir râpé (utilise une râpe fine ou un économe) et d'une pointe de cannelle.",
-        "Cette crème s'inspire de l'atole mexicain — boisson chaude millénaire à base de maïs et chocolat (champurrado = atole au chocolat). Cette version est crème onctueuse façon dessert. Touche piment d'Espelette = héritage aztèque (le chocolat était consommé épicé). Riche en magnésium (cacao + chocolat noir), antioxydants (flavonoïdes du cacao = parmi les plus puissants), calcium (lait). Sucre minimal (~30g pour 4 portions = ~7g par crème)."
+        "Cette crème s'inspire de l'atole mexicain — boisson chaude millénaire à base de maïs et chocolat (champurrado = atole au chocolat). Cette version est crème onctueuse façon dessert. Touche piment d'Espelette = héritage aztèque (le chocolat était consommé épicé). Riche en magnésium (cacao + chocolat noir), antioxydants (flavonoïdes du cacao = parmi les plus puissants), calcium (lait). Sucre ajouté minimal."
       ],
       "photo": "assets/recipes/des86.webp"
     },
@@ -66839,7 +66869,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 80,
+      "kcal": 100,
       "tags": [
         "vegetarian",
         "vegan",
@@ -66857,8 +66887,8 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ananas frais",
-          0.25,
-          "u",
+          150,
+          "g",
           "produce"
         ],
         [
@@ -66893,21 +66923,21 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
-        "Épluche l'ananas et retire le cœur dur central. Coupe en cubes de 2 cm. Tu obtiens ~400 g de chair.",
-        "Dans le blender, verse : cubes d'ananas + jus des 2 citrons verts + zeste râpé d'un citron vert + sirop d'érable + eau + piment d'Espelette + pincée de sel.",
-        "Mixe 30 sec à puissance max jusqu'à obtenir un jus lisse. Goûte : il faut beaucoup de fraîcheur (lime forte) et juste une pointe de piquant en finale. Ajuste piment si nécessaire (par 1/8 c.à.c).",
+        "Épluche l'ananas et retire le cœur dur central. Coupe en cubes de 2 cm.",
+        "Dans le blender, verse : cubes d'ananas + jus et zeste râpé des citrons verts + sirop d'érable + eau + piment d'Espelette + pincée de sel.",
+        "Mixe 30 sec à puissance max jusqu'à obtenir un jus lisse. Goûte : il faut beaucoup de fraîcheur (lime forte) et juste une pointe de piquant en finale. Ajuste le piment si nécessaire, par toute petite pincée.",
         "Verse dans un grand plat allant au congélateur (large et peu profond, le granité prend plus vite et est plus facile à gratter). Couvre.",
         "Place au congélateur. Toutes les 45-60 min, gratte la surface à la fourchette en formant des cristaux. Répète 3-4 fois (total 3-4 h de congélation).",
         "Le granité est prêt quand l'ensemble est cristalisé en paillettes mais reste émiettable à la fourchette (pas un bloc de glace dur).",
         "Au moment de servir, gratte une dernière fois à la fourchette pour bien aérer. Sers immédiatement dans des coupes ou verres glacés.",
         "Décore chaque coupe avec une feuille de menthe fraîche et une pincée supplémentaire de piment d'Espelette en saupoudrage léger (effet visuel et goût).",
-        "Ce granité s'inspire des paletas mexicaines (sorbets sur bâton) avec saveur tropicale et touche piquante typique : 'agua de piña con chile' (eau d'ananas piquée). Le piment doux n'est pas pour brûler la bouche mais pour réveiller les papilles et faire ressortir le sucré de l'ananas. CG très basse (~5 par portion). Riche en vitamine C massive (ananas + citron vert), bromélaïne (enzyme digestive ananas), antioxydants."
+        "Ce granité s'inspire des paletas mexicaines (sorbets sur bâton) avec saveur tropicale et touche piquante typique : 'agua de piña con chile' (eau d'ananas piquée). Le piment doux n'est pas pour brûler la bouche mais pour réveiller les papilles et faire ressortir le sucré de l'ananas. Charge glycémique maîtrisée grâce à une portion raisonnable d'ananas. Riche en vitamine C massive (ananas + citron vert), bromélaïne (enzyme digestive ananas), antioxydants."
       ],
       "photo": "assets/recipes/des87.webp"
     },
@@ -66995,7 +67025,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -67475,7 +67505,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 220,
+      "kcal": 240,
       "tags": [
         "vegetarian",
         "vegan",
@@ -67490,13 +67520,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme de terre à chair ferme",
-          100,
+          55,
           "g",
           "produce"
         ],
         [
           "Pois cassés jaunes (chana dal cuits, ou pois chiches égouttés)",
-          30,
+          45,
           "g",
           "pantry"
         ],
@@ -67508,7 +67538,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          0.25,
+          0.08,
           "bouquet",
           "produce"
         ],
@@ -67526,7 +67556,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment vert frais (facultatif)",
-          0.25,
+          0.08,
           "u",
           "produce"
         ],
@@ -67587,10 +67617,10 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 220 °C. Tapisse une plaque de papier cuisson.",
         "Dans un saladier, mélange : pommes de terre écrasées + pois cassés/pois chiches + oignons + gingembre + piment + coriandre + menthe + cumin + coriandre moulue + curcuma + garam masala + sel + jus du citron vert + farine de pois chiche.",
         "Goûte (sans le piment cru si tu n'as pas mis de piment !). Ajuste sel ou épices.",
-        "Forme 12 galettes plates de 6 cm de diamètre × 1,5 cm d'épaisseur (huile-toi les mains pour ne pas que ça colle).",
+        "Forme des galettes plates de 6 cm de diamètre × 1,5 cm d'épaisseur (huile-toi les mains pour ne pas que ça colle).",
         "Pose sur la plaque, badigeonne le dessus d'huile d'olive au pinceau.",
         "Enfourne 12 min, retourne délicatement, badigeonne l'autre face, et cuis 10-13 min de plus. Les galettes doivent être bien dorées-craquantes des 2 côtés.",
-        "Sers chaud avec un chutney à la menthe (yaourt + menthe + citron + sel) ou un chutney tamarin pour le côté festif chaat. Les aloo tikki sont LE street food indien (Delhi, Mumbai), normalement frits. Cette version au four divise les graisses par 4. Festif car servis dans les fêtes (Diwali, Holi) avec chutneys + yaourt + grenade en chaat. Riche en fibres (pommes de terre avec peau si bio, pois cassés), protéines végétales (pois cassés), antioxydants (curcuma, garam masala)."
+        "Sers chaud avec un chutney à la menthe (yaourt végétal + menthe + citron + sel) ou un chutney tamarin pour le côté festif chaat. Les aloo tikki sont LE street food indien (Delhi, Mumbai), normalement frits. Cette version au four divise les graisses par 4. Festif car servis dans les fêtes (Diwali, Holi) avec chutneys + yaourt + grenade en chaat. Riche en fibres (pommes de terre avec peau si bio, pois cassés), protéines végétales (pois cassés), antioxydants (curcuma, garam masala)."
       ],
       "photo": "assets/recipes/s88.webp"
     },
@@ -67726,7 +67756,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 230,
+      "kcal": 200,
       "tags": [
         "vegetarian",
         "festif",
@@ -67741,7 +67771,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Maïs en grains frais (ou surgelé)",
-          100,
+          85,
           "g",
           "frozen"
         ],
@@ -67819,7 +67849,7 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute l'ail haché finement + une bonne pincée de sel. Mélange.",
         "Verse le maïs grillé dans un saladier, laisse tiédir 5 min.",
         "Émince finement l'oignon rouge. Cisèle la coriandre (garde quelques feuilles entières pour la déco).",
-        "Prépare la sauce dans un petit bol : skyr + crème fraîche + jus d'un citron vert + 1/2 c.à.c de piment d'Espelette + paprika fumé + 1/2 c.à.c de sel.",
+        "Prépare la sauce dans un petit bol : skyr + crème fraîche + jus du citron vert + une pincée de piment d'Espelette + paprika fumé + une pincée de sel.",
         "Mélange le maïs tiède + oignon rouge + coriandre + sauce. Goûte, ajuste sel ou citron.",
         "Dressage festif : sers dans des bols ou gobelets façon street food. Saupoudre généreusement de feta émiettée par-dessus. Pincée supplémentaire de piment d'Espelette + zeste de citron vert râpé. Ajoute des quartiers de citron vert pour presser à table.",
         "Sers immédiatement (tiède). Les esquites (de 'elote' = maïs) sont LE street snack n°1 au Mexique, vendus dans les gobelets en plastique dans les rues de Mexico, Oaxaca, Puebla. Version festive parfaite pour BBQ d'été, fiesta, cinco de mayo. Riche en fibres (maïs entier), antioxydants (zéaxanthine, lutéine du maïs), probiotiques (yaourt), vitamine C (citron vert)."
@@ -68095,7 +68125,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -68384,13 +68414,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -68440,7 +68470,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -68694,7 +68725,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -69111,7 +69143,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Safran (filaments)",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -69141,7 +69173,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -69332,7 +69364,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -69463,7 +69495,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 220,
+      "kcal": 200,
       "tags": [
         "vegetarian",
         "vegan",
@@ -69523,7 +69555,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pita complet",
-          0.5,
+          0.4,
           "u",
           "bread"
         ],
@@ -69535,16 +69567,16 @@ window.__DATA_RECIPES = {
         ],
         [
           "Persil frais",
-          0.25,
+          0.06,
           "bouquet",
           "produce"
         ]
       ],
       "steps": [
         "Rince les pois chiches sous l'eau froide, égoutte.",
-        "Dans le blender, mixe les pois chiches + betterave coupée en cubes + tahini + ail + jus du citron + 1 c.à.s huile d'olive + cumin + sel + 3 c.à.s d'eau froide jusqu'à crème lisse rose vif (1-2 min).",
+        "Dans le blender, mixe les pois chiches + la betterave coupée en cubes + le tahini + l'ail + le jus du citron + une partie de l'huile d'olive + le cumin + le sel + un petit filet d'eau froide jusqu'à obtenir une crème lisse rose vif (1-2 min).",
         "Goûte, ajuste sel/citron/cumin.",
-        "Coupe chaque pita en 6 triangles, fais-les griller à la poêle sèche 2-3 min de chaque côté jusqu'à coloration dorée et croquant.",
+        "Coupe le pita en triangles, fais-les griller à la poêle sèche 2-3 min de chaque côté jusqu'à coloration dorée et croquant.",
         "Verse le houmous betterave dans un bol de service. Arrose du reste d'huile d'olive, saupoudre de persil ciselé et d'une pincée de cumin.",
         "Sers avec les pita grillés. Le houmous betterave (chmandar en arabe) est un classique festif du Maghreb. Riche en protéines végétales, fibres, bêta-carotène (betterave)."
       ],
@@ -69677,7 +69709,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 1.5,
-      "kcal": 320,
+      "kcal": 310,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -69693,13 +69725,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          50,
+          28,
           "g",
           "pantry"
         ],
         [
-          "Semoule fine de blé dur",
-          25,
+          "Semoule fine de blé",
+          10,
           "g",
           "pantry"
         ],
@@ -69716,12 +69748,6 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sucre roux",
-          0.25,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Beurre clarifié (ou beurre doux fondu)",
           8,
           "g",
@@ -69735,14 +69761,14 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel d'oranger",
-          0.5,
+          0.25,
           "c.à.s",
           "pantry"
         ]
       ],
       "steps": [
-        "Dans un saladier, mélange farine + semoule + sel + sucre. Ajoute l'eau tiède progressivement en pétrissant 8-10 min jusqu'à pâte souple, élastique, non collante (technique : la pâte doit rebondir sous la pression du doigt).",
-        "Divise la pâte en 8 boules. Huile-les généreusement (huile d'olive), couvre et laisse reposer 20 min.",
+        "Dans un saladier, mélange farine + semoule + sel. Ajoute l'eau tiède progressivement en pétrissant 8-10 min jusqu'à pâte souple, élastique, non collante (technique : la pâte doit rebondir sous la pression du doigt).",
+        "Divise la pâte en petites boules de la taille d'une mandarine. Huile-les généreusement (huile d'olive), couvre et laisse reposer 20 min.",
         "Sur un plan de travail bien huilé, étale chaque boule à la main en une crêpe très très fine (presque transparente) — c'est l'art du msemen.",
         "Badigeonne le centre de beurre fondu + 1 pincée de semoule fine sèche. Replie en 4 : rabats les côtés vers le centre pour former un carré.",
         "Cuis chaque msemen dans une poêle chaude (sans matière grasse) 2-3 min par face, en pressant légèrement à la spatule. La pâte doit gonfler et dorer.",
@@ -69947,7 +69973,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 1.5,
-      "kcal": 200,
+      "kcal": 170,
       "tags": [
         "vegetarian",
         "festif"
@@ -69964,7 +69990,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          33,
+          28,
           "g",
           "pantry"
         ],
@@ -69994,7 +70020,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel d'oranger",
-          0.5,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -70024,13 +70050,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Délaye la levure dans 50 ml d'eau tiède + sucre, laisse mousser 10 min.",
+        "Délaye la levure dans une partie de l'eau tiède + sucre, laisse mousser 10 min.",
         "Mélange la farine + sel dans un saladier. Ajoute la levure activée + reste d'eau tiède en pétrissant 5-8 min jusqu'à pâte souple (un peu collante normale).",
         "Couvre, laisse lever 1 h dans un endroit tiède : la pâte doit doubler de volume.",
         "Préchauffe le four à 200 °C. Tapisse une plaque de papier cuisson.",
-        "À la cuillère mouillée, prélève des boules de pâte grosses comme une noix (16-20 boules). Pose sur la plaque, badigeonne d'huile d'olive.",
+        "À la cuillère mouillée, prélève des boules de pâte grosses comme une noix. Pose sur la plaque, badigeonne d'huile d'olive.",
         "Enfourne 10-12 min jusqu'à doré uniforme.",
-        "Pendant ce temps, mélange miel + fleur d'oranger + 2 c.à.s d'eau tiède dans un bol.",
+        "Pendant ce temps, mélange miel + fleur d'oranger + un filet d'eau tiède dans un bol.",
         "Sors les loukoumades, arrose immédiatement du sirop miel-fleur d'oranger. Parsème de sésame + cannelle.",
         "Sers tiède. Ces beignets sont emblématiques de la cuisine maghrébine/grecque/turque (loukoumades en grec, sfenj en marocain). Version au four divise les graisses par 6 vs friture traditionnelle."
       ],
@@ -70051,7 +70077,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 240,
+      "kcal": 200,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70068,19 +70094,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Feuille de brick (ou pâte filo)",
-          2.0,
+          1,
           "u",
           "bread"
         ],
         [
           "Pomme de terre",
-          75,
+          25,
           "g",
           "produce"
         ],
         [
           "Petits pois surgelés",
-          25,
+          40,
           "g",
           "frozen"
         ],
@@ -70128,7 +70154,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.07,
           "bouquet",
           "produce"
         ],
@@ -70146,19 +70172,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert",
-          0.25,
+          0.07,
           "u",
           "produce"
         ]
       ],
       "steps": [
         "Cuis les pommes de terre épluchées coupées en cubes de 1 cm à l'eau bouillante salée 8 min. Égoutte.",
-        "Dans une poêle avec 1 c.à.s d'huile d'olive, fais revenir l'oignon haché 3 min, puis ajoute l'ail et le gingembre hachés. Ajoute toutes les épices et cuis 30 sec (technique : libère les arômes des épices).",
+        "Dans une poêle avec un filet d'huile d'olive, fais revenir l'oignon haché 3 min, puis ajoute l'ail et le gingembre hachés. Ajoute toutes les épices et cuis 30 sec (technique : libère les arômes des épices).",
         "Ajoute les pommes de terre cuites + petits pois (sans décongélation) + sel + jus du citron vert. Écrase grossièrement à la fourchette pour mélanger, garde de la texture. Cuis 3-4 min. Hors du feu, ajoute coriandre fraîche ciselée.",
         "Préchauffe le four à 200 °C. Coupe chaque feuille de brick en 3 bandes.",
-        "Sur chaque bande, dépose 1 c.à.s de farce à l'extrémité. Replie en triangle (technique du drapeau).",
+        "Sur chaque bande, dépose une cuillère de farce à l'extrémité. Replie en triangle (technique du drapeau).",
         "Pose sur plaque, badigeonne d'huile d'olive. Enfourne 15-18 min, en retournant à mi-cuisson, jusqu'à doré croustillant.",
-        "Sers avec chutney menthe (yaourt + menthe + citron). Snack festif iconique indien, version four = healthy."
+        "Sers avec chutney menthe (yaourt végétal + menthe + citron). Snack festif iconique indien, version four = healthy."
       ],
       "photo": "assets/recipes/s95.webp"
     },
@@ -70175,7 +70201,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 200,
+      "kcal": 180,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70191,26 +70217,26 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Riz soufflé (puffed rice, ou Rice Krispies nature)",
-          100,
+          "Galettes de riz (riz soufflé compressé, nature)",
+          12,
           "g",
           "pantry"
         ],
         [
           "Pomme de terre cuite",
-          200,
+          30,
           "g",
           "produce"
         ],
         [
-          "Tomate ferme",
-          2,
+          "Tomate",
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.1,
           "u",
           "produce"
         ],
@@ -70222,60 +70248,54 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Pâte de tamarin",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
-          "Sirop d'érable",
-          0.5,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          0.5,
-          "c.à.c",
+          1,
+          "pincée",
           "spices"
         ],
         [
           "Sel noir kala namak (ou sel fin)",
-          0.5,
-          "c.à.c",
+          1,
+          "pincée",
           "spices"
         ],
         [
           "Cacahuète non salée grillée",
-          30,
+          8,
           "g",
           "pantry"
         ]
       ],
       "steps": [
-        "Coupe en tout petits dés (5 mm) : pomme de terre cuite, tomates épépinées, oignon rouge, concombre. Cisèle finement la coriandre.",
-        "Prépare la sauce tamarin : dans un petit bol, mélange tamarin + sirop d'érable + jus du citron vert + cumin + piment d'Espelette + sel noir + 1 c.à.s d'eau. Tu obtiens une sauce acidulée-épicée-sucrée.",
+        "Coupe en tout petits dés (5 mm) : pomme de terre cuite, tomate épépinée, oignon rouge, concombre. Cisèle finement la coriandre.",
+        "Prépare la sauce tamarin : dans un petit bol, mélange le tamarin + le jus du citron vert + le cumin + le piment d'Espelette + le sel noir + un petit filet d'eau. Tu obtiens une sauce acidulée et épicée.",
         "Concasse grossièrement les cacahuètes au couteau.",
-        "JUSTE AVANT de servir (sinon le riz soufflé ramollit) : dans un grand bol, mélange le riz soufflé + légumes en dés + 3/4 des cacahuètes + 2/3 de la coriandre.",
+        "JUSTE AVANT de servir (sinon le riz soufflé ramollit) : émiette les galettes de riz du bout des doigts en petits morceaux (c'est du riz soufflé compressé : tu retrouves les grains croustillants). Dans un grand bol, mélange-les avec les légumes en dés, la plupart des cacahuètes et la plupart de la coriandre.",
         "Verse la sauce tamarin progressivement en mélangeant délicatement. Le riz soufflé doit être enrobé mais rester croustillant.",
-        "Dressage dans 4 bols : sers immédiatement (croustillance maximale). Parsème du reste de cacahuètes + coriandre. Quartier de citron vert à côté pour presser. Le bhel puri est LE street food n°1 de Bombay/Mumbai. CG basse, ultra-festif, fait toujours sensation à l'apéro."
+        "Dressage dans les bols : sers immédiatement (croustillance maximale). Parsème du reste de cacahuètes et de coriandre. Pose un quartier de citron vert à côté pour presser. Le bhel puri est LE street food n°1 de Bombay/Mumbai, il fait toujours sensation à l'apéro."
       ],
       "photo": "assets/recipes/s96.webp"
     },
@@ -70407,7 +70427,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "mustard",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -70559,13 +70580,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Oignon rouge",
-          0.25,
+          0.05,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.1,
           "bouquet",
           "produce"
         ],
@@ -70623,7 +70644,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 200,
+      "kcal": 150,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70639,7 +70660,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue mûre",
-          0.25,
+          0.15,
           "u",
           "produce"
         ],
@@ -70681,7 +70702,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tortilla de maïs",
-          1.0,
+          0.5,
           "u",
           "bread"
         ],
@@ -70705,7 +70726,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffe le four à 200 °C. Coupe chaque tortilla en 6 triangles, badigeonne d'huile d'olive + saupoudre de cumin + sel. Enfourne 7-9 min jusqu'à doré croustillant.",
+        "Préchauffe le four à 200 °C. Coupe les tortillas en triangles, badigeonne d'huile d'olive + saupoudre de cumin + sel. Enfourne 7-9 min jusqu'à doré croustillant.",
         "Pèle la mangue, retire la chair autour du noyau, coupe en petits dés de 5 mm.",
         "Coupe les tomates en deux, épépine, coupe en petits dés de 5 mm.",
         "Émince très finement l'oignon rouge. Hache finement la coriandre (garde quelques feuilles entières pour la déco). Râpe l'ail finement.",
@@ -71020,7 +71041,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -71055,7 +71076,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 170,
+      "kcal": 150,
       "tags": [
         "vegetarian",
         "festif"
@@ -71071,7 +71092,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          33,
+          28,
           "g",
           "pantry"
         ],
@@ -71101,7 +71122,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel d'oranger",
-          0.5,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -71113,18 +71134,18 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron",
-          0.25,
+          0.07,
           "u",
           "produce"
         ]
       ],
       "steps": [
-        "Mélange farine + levure + sel. Ajoute l'eau tiède + 1 c.à.s d'huile d'olive en pétrissant 5 min jusqu'à pâte souple. Couvre, laisse reposer 30 min.",
+        "Mélange farine + levure + sel. Ajoute l'eau tiède + une partie de l'huile d'olive en pétrissant 5 min jusqu'à pâte souple. Couvre, laisse reposer 30 min.",
         "Préchauffe le four à 220 °C. Tapisse une plaque de papier cuisson.",
-        "Étale la pâte au rouleau sur un plan fariné en un rectangle de 3 mm d'épaisseur. Découpe 16 carrés de 7 × 7 cm.",
-        "Badigeonne les carrés d'un trait d'huile d'olive (reste 1 c.à.s).",
+        "Étale la pâte au rouleau sur un plan fariné en un rectangle de 3 mm d'épaisseur. Découpe des carrés d'environ 7 cm de côté.",
+        "Badigeonne les carrés avec le reste de l'huile d'olive.",
         "Enfourne 10-12 min jusqu'à doré gonflé (les sopapillas vont gonfler comme des coussinets — c'est leur signature).",
-        "Pendant ce temps, fais tiédir le miel + jus du citron + 1 c.à.s d'eau dans une petite casserole.",
+        "Pendant ce temps, fais tiédir le miel + jus du citron + un filet d'eau dans une petite casserole.",
         "Sors les sopapillas, arrose immédiatement du sirop miel. Saupoudre généreusement de cannelle. Sers tiède. Pâtisserie typique du Mexique/Nouveau-Mexique. Version four divise les graisses par 8 vs friture traditionnelle."
       ],
       "photo": "assets/recipes/des101.webp"
@@ -71190,7 +71211,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Safran (filaments)",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -71285,7 +71306,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert",
-          0.25,
+          0.08,
           "u",
           "produce"
         ],
@@ -71395,7 +71416,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -71612,7 +71633,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -71734,7 +71755,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 220,
+      "kcal": 140,
       "tags": [
         "vegetarian",
         "festif",
@@ -71753,25 +71774,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de riz gluant (mochiko)",
-          33,
+          16,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          50,
+          25,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          0.75,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
-          "Cacao en poudre non sucré",
-          0.25,
+          "Cacao en poudre non sucré (pour la pâte et le plan)",
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -71782,25 +71803,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fécule de maïs (Maïzena) pour le plan",
-          1.0,
-          "c.à.s",
-          "pantry"
-        ],
-        [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
-        "Dans un bol micro-ondes-able, mélange : farine de riz gluant + lait d'amande + sirop d'érable + cacao + sel jusqu'à pâte lisse.",
+        "Dans un bol micro-ondes-able, mélange : farine de riz gluant + lait d'amande + sirop d'érable + une pincée de cacao + sel jusqu'à pâte lisse.",
         "Cuis au micro-ondes 1 min à 700 W. Sors, mélange énergiquement à la spatule. Recuis 30 sec, mélange. Recuis 30 sec : la pâte devient brillante, élastique, translucide. Tu obtiens le mochi cuit.",
-        "Saupoudre généreusement de Maïzena un plan de travail (technique : la pâte de mochi colle énormément, il faut beaucoup de fécule).",
+        "Saupoudre un plan de travail du reste de cacao en poudre (technique : la pâte de mochi colle énormément, le cacao l'empêche d'attacher et lui donne un goût chocolaté).",
         "Verse la pâte cuite sur le plan, saupoudre dessus aussi. Laisse tiédir 5 min.",
-        "Forme un boudin, coupe en 8 morceaux. Aplatis chaque morceau en disque (8 cm de diamètre) entre tes mains farinées.",
-        "Au centre de chaque disque, dépose 1/2 c.à.s de pâte à tartiner. Refais une boule en pinçant les bords vers le centre. Roule entre les paumes pour lisser. Pose côté fermé en dessous.",
+        "Forme un boudin et coupe-le en petits morceaux. Aplatis chaque morceau en disque fin entre tes mains poudrées de cacao.",
+        "Au centre de chaque disque, dépose une petite cuillerée de pâte à tartiner. Refais une boule en pinçant les bords vers le centre. Roule entre les paumes pour lisser. Pose côté fermé en dessous.",
         "Réfrigère 1 h minimum (la pâte se raffermit). Sers à température ambiante (sortis 5 min avant). Mochi = friandise japonaise traditionnelle (Daifuku au fourrage). Cette version utilise un fourrage cacao moins sucré. Festif Saint-Valentin / anniversaire / fête asiatique."
       ],
       "photo": "assets/recipes/des104.webp"
@@ -71862,13 +71877,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue mûre",
-          0.25,
+          0.06,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          0.25,
+          0.06,
           "u",
           "produce"
         ],
@@ -71961,7 +71976,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron",
-          0.25,
+          0.08,
           "u",
           "produce"
         ]
@@ -72231,7 +72246,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -72334,7 +72349,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron",
-          0.25,
+          0.08,
           "u",
           "produce"
         ],
@@ -72467,7 +72482,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 380,
+      "kcal": 400,
       "tags": [
         "vegetarian",
         "quick",
@@ -72484,7 +72499,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain (tranche)",
-          1.25,
+          1,
           "u",
           "bread"
         ],
@@ -72502,7 +72517,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel de thym ou miel d'acacia",
-          0.75,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -72526,7 +72541,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -72539,11 +72554,11 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Fais griller les tranches de pain au toaster ou poêle sèche 2-3 min par face.",
-        "Mélange la ricotta avec 1/2 c.à.c de zeste de citron râpé.",
+        "Mélange la ricotta avec un peu de zeste de citron râpé.",
         "Coupe les figues fraîches en quartiers.",
         "Fais légèrement griller les pignons à sec 1 min.",
-        "Tartine chaque toast d'une couche généreuse de ricotta. Dispose 1 figue (4 quartiers) par toast.",
-        "Arrose chaque toast d'1/2 c.à.s de miel + parsème de pignons grillés + feuilles de thym effeuillées + un peu de poivre noir + filet d'huile d'olive. Sers immédiatement. Brunch italien sucré-salé, fin été-début automne quand les figues sont à leur apogée. Combo classique des dolci romain."
+        "Tartine chaque toast d'une couche généreuse de ricotta. Dispose les quartiers de figue par-dessus.",
+        "Arrose d'un mince filet de miel + parsème de pignons grillés + feuilles de thym effeuillées + un peu de poivre noir + filet d'huile d'olive. Sers immédiatement. Brunch italien sucré-salé, fin été-début automne quand les figues sont à leur apogée. Combo classique des dolci romain."
       ],
       "photo": "assets/recipes/b119.webp"
     },
@@ -72562,7 +72577,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 360,
+      "kcal": 300,
       "tags": [
         "festif",
         "batch-friendly"
@@ -72583,7 +72598,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          62,
+          38,
           "g",
           "pantry"
         ],
@@ -72595,15 +72610,9 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait demi-écrémé tiède",
-          32,
+          20,
           "ml",
           "dairy"
-        ],
-        [
-          "Sirop d'érable",
-          0.25,
-          "c.à.s",
-          "pantry"
         ],
         [
           "Sel",
@@ -72619,7 +72628,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Thon naturel en boîte",
-          50,
+          70,
           "g",
           "meat-fish"
         ],
@@ -72631,7 +72640,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Épinards frais",
-          25,
+          40,
           "g",
           "produce"
         ],
@@ -72649,17 +72658,17 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert",
-          0.25,
+          0.1,
           "u",
           "produce"
         ]
       ],
       "steps": [
-        "Délaye la levure dans le lait tiède + sirop d'érable, attends 10 min jusqu'à mousser.",
+        "Délaye la levure dans le lait tiède, attends 10 min : de petites bulles doivent apparaître en surface (la levure est active).",
         "Mélange farine + sel. Ajoute levure activée + huile de sésame. Pétris 8 min jusqu'à pâte souple. Couvre, laisse lever 1 h.",
         "Égoutte le thon. Mélange avec mayonnaise + oignons nouveaux émincés + sauce soja + jus du citron vert.",
         "Fais sauter les épinards 2 min dans une poêle sèche jusqu'à ce qu'ils tombent. Égoutte bien, presse l'eau.",
-        "Étale la pâte en boudin, coupe en 8 morceaux. Étale chaque morceau en disque (10 cm). Garnis le centre de 1 c.à.s farce thon + qq épinards. Replie en boule en pinçant les bords. Pose côté lisse au-dessus sur petit carré papier cuisson.",
+        "Étale la pâte en boudin, coupe-la en morceaux de la taille d'une grosse noix. Étale chaque morceau en disque (10 cm). Garnis le centre de 1 c.à.s farce thon + qq épinards. Replie en boule en pinçant les bords. Pose côté lisse au-dessus sur petit carré papier cuisson.",
         "Laisse lever 30 min sur les carrés papier. Mets de l'eau dans un cuit-vapeur, place les bao espacés (ils gonflent), cuis 12-15 min vapeur (bao moelleux et blancs).",
         "Sers chaud. Le bao bun (gua bao taïwanais, baozi chinois) est le sandwich vapeur asiatique iconique. Version brunch atypique petit-déj salé."
       ],
@@ -72680,7 +72689,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 420,
+      "kcal": 340,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -72691,97 +72700,92 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
           "Riz long complet",
-          150,
+          55,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          4,
+          1.0,
           "u",
           "dairy"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Champignon shiitake (ou de Paris)",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Épinards frais",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          3,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de sésame grillées",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Piment d'Espelette (ou pâte gochujang)",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
-        ],
-        [
-          "Sirop d'érable",
-          0.5,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
-        "Cuis le riz complet : verse-le dans une casserole avec 300 ml d'eau salée. Porte à frémissement, couvre, baisse à feu doux 20-22 min. Laisse reposer 5 min.",
+        "Cuis le riz complet : verse-le dans une casserole avec deux fois son volume d'eau salée. Porte à frémissement, couvre, baisse à feu doux 20-22 min. Laisse reposer 5 min.",
         "Pendant ce temps, prépare les légumes séparément (technique : chaque légume cuit à part, c'est la signature du bibimbap).",
-        "Carotte : coupe en julienne, fais sauter 2 min dans 1/2 c.à.c d'huile de sésame + pincée de sel.",
-        "Concombre : coupe en julienne crue, mélange avec 1 c.à.s de sauce soja + 1 pincée de sel, laisse mariner 5 min, presse pour égoutter.",
-        "Champignons : émince, fais sauter 4 min dans 1/2 c.à.c d'huile + 1 c.à.s sauce soja + sirop d'érable.",
-        "Épinards : fais tomber 2 min à sec, mélange avec 1/2 c.à.c huile sésame + ail haché + 1 pincée sel.",
+        "Carotte : coupe en julienne, fais sauter 2 min dans un peu d'huile de sésame + une pincée de sel.",
+        "Concombre : coupe en julienne crue, mélange avec un trait de sauce soja + une pincée de sel, laisse mariner 5 min, presse pour égoutter.",
+        "Champignons : émince, fais sauter 4 min dans un peu d'huile de sésame + un trait de sauce soja.",
+        "Épinards : fais tomber 2 min à sec, mélange avec le reste d'huile de sésame + ail haché + une pincée de sel.",
         "Cuis les œufs au plat 3 min (blanc pris, jaune coulant).",
-        "Dressage dans 4 grands bols : répartis le riz au fond. Dispose chaque légume en quartiers visibles autour (effet roue de couleur). Pose 1 œuf au plat au centre.",
+        "Dressage dans les grands bols : mets le riz au fond. Dispose chaque légume en quartiers visibles autour (effet roue de couleur). Pose 1 œuf au plat au centre.",
         "Garnis avec oignons nouveaux émincés + graines de sésame + filet de sauce soja + 1 pincée de piment d'Espelette. Sers immédiatement. Bibimbap = plat national coréen, parfait petit-déj copieux et équilibré."
       ],
       "photo": "assets/recipes/b121.webp"
@@ -73024,7 +73028,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 200,
+      "kcal": 190,
       "tags": [
         "vegetarian",
         "vegan",
@@ -73038,7 +73042,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme de terre",
-          120,
+          80,
           "g",
           "produce"
         ],
@@ -73107,8 +73111,8 @@ window.__DATA_RECIPES = {
         "Cuis les pommes de terre épluchées coupées en gros morceaux à l'eau bouillante salée 15 min. Égoutte, écrase grossièrement à la fourchette (purée rustique).",
         "Préchauffe le four à 220 °C. Tapisse une plaque de papier cuisson.",
         "Hache finement persil + coriandre + ail.",
-        "Mélange la purée tiède avec : herbes + cumin + curcuma + paprika + sel + farine de pois chiche. La farine remplace l'œuf : elle sert de « liant » (elle colle la pâte pour que les galettes se tiennent). Si la pâte s'effrite quand tu formes une boule, ajoute 1 c.à.s d'eau.",
-        "Forme 12 galettes plates de 6 cm de diamètre. Pose sur la plaque, badigeonne le dessus d'huile d'olive.",
+        "Mélange la purée tiède avec : herbes + cumin + curcuma + paprika + sel + farine de pois chiche. La farine remplace l'œuf : elle sert de « liant » (elle colle la pâte pour que les galettes se tiennent). Si la pâte s'effrite quand tu formes une boule, ajoute un peu d'eau.",
+        "Forme des galettes plates de 6 cm de diamètre. Pose sur la plaque, badigeonne le dessus d'huile d'olive.",
         "Enfourne 12 min, retourne, badigeonne l'autre face, cuis 10-13 min de plus. Les maakouda doivent être bien dorés croustillants.",
         "Sers chaud avec quartiers de citron à presser + harissa pour les amateurs. Snack typique des marchés algériens et marocains, version four (vs friture traditionnelle) plus saine. Riche en fibres, protéines végétales (pois chiche)."
       ],
@@ -73218,7 +73222,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 280,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "quick",
@@ -73235,7 +73239,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tortilla de blé complet (ou maïs)",
-          0.75,
+          0.5,
           "u",
           "bread"
         ],
@@ -73253,13 +73257,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Épinards frais",
-          16,
+          30,
           "g",
           "produce"
         ],
         [
           "Oignon",
-          0.25,
+          0.1,
           "u",
           "produce"
         ],
@@ -73295,18 +73299,18 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.1,
           "bouquet",
           "produce"
         ]
       ],
       "steps": [
         "Préchauffe le four à 220 °C.",
-        "Dans une poêle, fais revenir oignon haché + ail dans l'huile 2 min. Ajoute haricots noirs + cumin + piment + sel + 2 c.à.s d'eau. Écrase grossièrement à la fourchette. Cuis 3 min.",
+        "Dans une poêle, fais revenir oignon haché + ail dans l'huile 2 min. Ajoute haricots noirs + cumin + piment + sel + un petit filet d'eau. Écrase grossièrement à la fourchette. Cuis 3 min.",
         "Ajoute les épinards frais, mélange 1 min jusqu'à ce qu'ils tombent. Hors du feu, ajoute coriandre ciselée.",
-        "Dispose 2 tortillas sur une plaque. Étale la garniture sur chaque tortilla, parsème de cheddar râpé. Couvre des 2 autres tortillas en pressant.",
+        "Dispose les tortillas sur une plaque. Étale la garniture sur un côté de chaque tortilla, parsème de cheddar râpé, puis replie la tortilla en deux en pressant.",
         "Enfourne 8-10 min : les tortillas doivent être dorées et le fromage fondu.",
-        "Coupe chaque quesadilla en 4. Sers immédiatement. Snack mexicain rapide et nourrissant. Riche en fibres, protéines, calcium."
+        "Coupe les quesadillas en triangles. Sers immédiatement. Snack mexicain rapide et nourrissant. Riche en fibres, protéines, calcium."
       ],
       "photo": "assets/recipes/s105.webp"
     },
@@ -73325,7 +73329,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 300,
+      "kcal": 280,
       "tags": [
         "vegetarian",
         "festif",
@@ -73344,14 +73348,14 @@ window.__DATA_RECIPES = {
       "advance": "30 min de repos",
       "ing": [
         [
-          "Semoule fine",
-          38,
+          "Semoule complète",
+          30,
           "g",
           "pantry"
         ],
         [
           "Farine T80 (semi-complète)",
-          12,
+          10,
           "g",
           "pantry"
         ],
@@ -73380,14 +73384,8 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sucre roux",
-          0.25,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Miel d'oranger",
-          0.75,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -73399,18 +73397,18 @@ window.__DATA_RECIPES = {
         ],
         [
           "Amande effilée",
-          8,
+          15,
           "g",
           "pantry"
         ]
       ],
       "steps": [
-        "Dans le blender, mixe : semoule + farine + levure boulanger + levure chimique + sel + sucre + eau tiède jusqu'à pâte lisse comme une pâte à crêpes liquide.",
+        "Dans le blender, mixe : semoule + farine + levure boulanger + levure chimique + sel + eau tiède jusqu'à pâte lisse comme une pâte à crêpes liquide.",
         "Couvre et laisse reposer 30 min : la pâte doit légèrement mousser/buller en surface (signe d'activation de la levure).",
-        "Chauffe une petite poêle anti-adhésive à feu moyen (pas de matière grasse, c'est la marque du baghrir). Verse une louche de pâte (~80 ml) au centre, ne touche pas, ne retourne pas (technique cruciale : baghrir cuit UNE seule face).",
+        "Chauffe une petite poêle anti-adhésive à feu moyen (pas de matière grasse, c'est la marque du baghrir). Verse une louche de pâte au centre, ne touche pas, ne retourne pas (technique cruciale : baghrir cuit UNE seule face).",
         "Des centaines de petits trous vont se former en surface en 2-3 min. La crêpe est cuite quand la surface est sèche, pas brillante.",
-        "Réserve sous un torchon. Recommence avec le reste de pâte (~12 crêpes).",
-        "Mélange miel + beurre fondu + 1 c.à.s d'eau tiède dans un bol. Au moment de servir, arrose les baghrir de ce sirop. Parsème d'amandes effilées légèrement grillées. Sers tiède. Crêpes traditionnelles marocaines, parfaites pour brunch festif famille."
+        "Réserve sous un torchon. Recommence avec le reste de pâte.",
+        "Mélange le miel + le beurre fondu + un peu d'eau tiède dans un bol. Au moment de servir, arrose les baghrir de ce sirop. Parsème d'amandes effilées légèrement grillées. Sers tiède. Crêpes traditionnelles marocaines, parfaites pour brunch festif famille."
       ],
       "photo": "assets/recipes/b122.webp"
     },
@@ -73540,7 +73538,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 170,
       "tags": [
         "vegetarian",
         "quick",
@@ -73564,8 +73562,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fécule de maïs (Maïzena)",
-          1.0,
-          "c.à.s",
+          8,
+          "g",
           "pantry"
         ],
         [
@@ -73606,11 +73604,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un bol, délaye la Maïzena dans 100 ml de lait froid, fouette pour dissoudre.",
+        "Dans un bol, délaye la Maïzena dans un peu du lait froid, fouette pour dissoudre.",
         "Dans une casserole, fais frémir le reste de lait avec sirop d'érable.",
         "Verse le mélange Maïzena en fouettant constamment. Continue à feu moyen-doux en fouettant 5-7 min jusqu'à crème lisse et brillante qui nappe la cuillère.",
         "Hors du feu, ajoute l'eau de fleur d'oranger. Mélange.",
-        "Verse dans 4 ramequins. Laisse refroidir, puis réfrigère 2 h.",
+        "Verse dans les ramequins. Laisse refroidir, puis réfrigère 2 h.",
         "Au moment de servir, saupoudre généreusement de cannelle (motif en croix ou totalement recouvert = le geste classique). Parsème d'amandes effilées légèrement grillées + pistaches hachées + pétales de rose si tu en as. Dessert ancestral d'Afrique du Nord, ultra-simple, ultra-festif (mariages, ramadan)."
       ],
       "photo": "assets/recipes/des111.webp"
@@ -73663,7 +73661,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Safran (filaments)",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -73777,7 +73775,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -73869,7 +73867,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          0.25,
+          0.06,
           "bouquet",
           "produce"
         ],
@@ -73887,7 +73885,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -74081,7 +74079,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -74273,7 +74271,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.1,
           "bouquet",
           "produce"
         ],
@@ -74422,13 +74420,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Noix de muscade",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -74458,7 +74456,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 380,
+      "kcal": 310,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -74476,7 +74474,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Banane congelée (mûre, en morceaux)",
-          0.75,
+          0.5,
           "u",
           "frozen"
         ],
@@ -74500,7 +74498,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Skyr (ou yaourt grec)",
-          33,
+          60,
           "g",
           "dairy"
         ],
@@ -74529,12 +74527,6 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Banane fraîche en rondelles",
-          0.25,
-          "u",
-          "produce"
-        ],
-        [
           "Sirop d'érable (facultatif)",
           0.25,
           "c.à.c",
@@ -74544,8 +74536,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Dans le blender, mixe : banane congelée + épinards + lait d'amande + beurre d'amande + skyr + vanille + chia jusqu'à smoothie épais et vert pâle (1-2 min).",
         "Goûte : ajoute sirop d'érable si pas assez sucré (bananes très mûres = sucre suffisant).",
-        "Verse dans 2 grands bols. La texture doit être épaisse (cuillerable, pas buvable) — sinon ajoute plus de banane congelée.",
-        "Dressage : sur chaque smoothie bowl, dépose en rangs distincts : 2 c.à.s de granola, 1/2 banane en rondelles, 1/2 des myrtilles.",
+        "Verse dans un grand bol. La texture doit être épaisse (cuillerable, pas buvable) — sinon ajoute plus de banane congelée.",
+        "Dressage : sur le smoothie bowl, dépose en rangs distincts le granola et les myrtilles.",
         "Sers immédiatement à la cuillère. Brunch healthy moderne, parfait été. Riche en potassium, fer (épinards), oméga-3 (chia), fibres."
       ],
       "photo": "assets/recipes/b125.webp"
@@ -74624,7 +74616,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          0.25,
+          0.1,
           "bouquet",
           "produce"
         ],
@@ -74753,7 +74745,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -74906,7 +74898,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 340,
+      "kcal": 330,
       "tags": [
         "vegetarian",
         "vegan",
@@ -74923,8 +74915,8 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Semoule fine de blé",
-          50,
+          "Semoule complète",
+          35,
           "g",
           "pantry"
         ],
@@ -74942,13 +74934,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Carotte",
-          0.25,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Petits pois surgelés",
-          20,
+          50,
           "g",
           "frozen"
         ],
@@ -75166,7 +75158,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -75305,7 +75298,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Persil frais",
-          0.25,
+          0.08,
           "bouquet",
           "produce"
         ],
@@ -75535,7 +75528,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -75627,7 +75620,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -75700,7 +75693,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -75798,7 +75791,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -75830,7 +75823,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 240,
+      "kcal": 220,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -75847,7 +75840,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pruneau dénoyauté",
-          33,
+          28,
           "g",
           "produce"
         ],
@@ -75865,14 +75858,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine T80 (semi-complète)",
-          17,
+          15,
           "g",
-          "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          0.5,
-          "c.à.s",
           "pantry"
         ],
         [
@@ -75895,21 +75882,21 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
-        "Mets les pruneaux dans un bol avec 100 ml d'eau tiède (+ rhum si tu en mets). Laisse-les se réhydrater 15 min.",
-        "Préchauffe le four à 200 °C. Beurre généreusement un moule (plat rectangulaire 20 × 30 cm).",
-        "Dans un saladier, fouette les œufs avec sirop d'érable + sel + vanille jusqu'à mousseux.",
+        "Mets les pruneaux dans un bol avec un peu d'eau tiède (+ rhum si tu en mets). Laisse-les se réhydrater 15 min.",
+        "Préchauffe le four à 200 °C. Beurre un petit plat à four.",
+        "Dans un saladier, fouette les œufs avec le sel et la vanille jusqu'à mousseux.",
         "Ajoute la farine tamisée en fouettant pour éviter les grumeaux.",
         "Ajoute progressivement le lait en fouettant. Tu obtiens un appareil lisse type pâte à crêpes.",
         "Verse l'appareil dans le moule beurré.",
         "Égoutte les pruneaux, répartis-les dans l'appareil (technique : ils coulent un peu mais ce n'est pas grave, l'aspect rustique est la marque du far).",
         "Enfourne 10 min à 200 °C, puis baisse à 180 °C et cuis 35 min de plus jusqu'à doré et la pointe d'un couteau ressort propre.",
-        "Sors du four, laisse tiédir 20 min. Sers tiède ou à température ambiante. Le far breton est emblématique de la gastronomie bretonne (XVIIIe siècle). Version T80 (vs farine blanche) + sirop d'érable (vs sucre raffiné) = IG réduit, plus de fibres."
+        "Sors du four, laisse tiédir 20 min. Sers tiède ou à température ambiante. Le far breton est emblématique de la gastronomie bretonne (XVIIIe siècle). Version T80 (vs farine blanche), adoucie seulement par les pruneaux = IG réduit, plus de fibres."
       ],
       "photo": "assets/recipes/des118.webp"
     },
@@ -75928,7 +75915,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 340,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -75945,7 +75932,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          33,
+          30,
           "g",
           "pantry"
         ],
@@ -75963,7 +75950,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          0.75,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -75987,7 +75974,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -76009,11 +75996,11 @@ window.__DATA_RECIPES = {
         "Dans un saladier, mélange : farine + levure + anis + zeste citron + sel.",
         "Dans un autre saladier, fouette les œufs avec le sirop d'érable jusqu'à mousseux.",
         "Incorpore les ingrédients secs aux humides à la spatule. Ajoute les amandes entières. La pâte est collante, c'est normal.",
-        "Sur le plan fariné, forme 2 boudins plats (20 cm × 6 cm × 2 cm d'épaisseur).",
+        "Sur le plan fariné, forme un boudin plat par portion de pâte (environ 6 cm de large × 2 cm d'épaisseur).",
         "Pose sur la plaque, enfourne 25 min jusqu'à doré ferme.",
         "Sors, laisse tiédir 10 min. Coupe en tranches en biais de 1,5 cm d'épaisseur (technique cantucci : double cuisson).",
         "Repose les tranches à plat sur la plaque, enfourne 8-10 min de plus, en retournant à mi-cuisson, jusqu'à doré sec (consistance biscuit).",
-        "Sers chaque portion : 100 g de skyr dans un bol + 3-4 cantucci à tremper + 1/2 c.à.s de miel d'acacia filé sur le yaourt. Cantucci traditionnels de Prato (Toscane), trempés dans le vin santo ou (version brunch) dans le yaourt. Excellent batch (3 semaines en boîte hermétique)."
+        "Sers chaque portion : le skyr dans un bol + quelques cantucci à tremper + un filet de miel d'acacia sur le yaourt. Cantucci traditionnels de Prato (Toscane), trempés dans le vin santo ou (version brunch) dans le yaourt. Excellent batch (3 semaines en boîte hermétique)."
       ],
       "photo": "assets/recipes/b130.webp"
     },
@@ -76030,7 +76017,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 380,
+      "kcal": 470,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -76048,55 +76035,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mascarpone",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Skyr (ou yaourt grec)",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Fraise fraîche",
-          300,
+          150,
           "g",
           "produce"
         ],
         [
           "Pistache non salée",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Café fort froid (facultatif)",
-          50,
+          25,
           "ml",
           "pantry"
         ],
         [
           "Biscuit cuillère (boudoir)",
-          4,
+          2.0,
           "u",
           "bread"
         ],
         [
           "Cacao en poudre non sucré",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Vanille (extrait)",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ]
@@ -76106,7 +76093,7 @@ window.__DATA_RECIPES = {
         "Équeute et coupe les fraises en quartiers.",
         "Concasse les pistaches au couteau.",
         "Trempe rapidement les biscuits cuillère dans le café froid (3 sec par face — sinon ils se cassent). Si pas de café, saute cette étape.",
-        "Dressage dans 2 grands bols : dépose une couche de crème mascarpone (la moitié), pose 2 biscuits cuillère imbibés cassés en morceaux, ajoute moitié des fraises.",
+        "Dressage dans un grand bol : dépose une première couche de crème mascarpone, pose les biscuits cuillère imbibés cassés en morceaux, ajoute une partie des fraises.",
         "Couvre d'une autre couche de crème mascarpone + reste de fraises + pistaches concassées + saupoudrage de cacao au tamis.",
         "Sers immédiatement. Brunch italien festif inspiré du tiramisu (Trévise, Vénétie, 1960s) revisité petit-déj de printemps. Riche en protéines (mascarpone, yaourt), antioxydants (fraises = anthocyanes), bons gras (pistaches)."
       ],
@@ -76126,7 +76113,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 360,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "quick",
@@ -76142,21 +76129,15 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Polenta fine (semoule de maïs)",
-          33,
+          18,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          167,
+          100,
           "ml",
           "dairy"
-        ],
-        [
-          "Sirop d'érable",
-          0.25,
-          "c.à.s",
-          "pantry"
         ],
         [
           "Vanille (extrait)",
@@ -76166,25 +76147,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fraise fraîche",
-          33,
+          60,
           "g",
           "produce"
         ],
         [
           "Framboise fraîche",
-          27,
-          "g",
-          "produce"
-        ],
-        [
-          "Myrtille fraîche",
-          27,
+          60,
           "g",
           "produce"
         ],
         [
           "Miel de thym (ou miel d'acacia)",
-          0.75,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -76196,24 +76171,24 @@ window.__DATA_RECIPES = {
         ],
         [
           "Amande effilée",
-          7,
+          15,
           "g",
           "pantry"
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
-        "Dans une casserole, fais frémir le lait avec sirop d'érable + vanille + sel.",
+        "Dans une casserole, fais frémir le lait avec la vanille + le sel.",
         "Quand le lait frémit, baisse à feu doux. Verse la polenta en pluie en fouettant constamment (technique : la pluie évite les grumeaux).",
-        "Continue à fouetter 8-10 min à feu doux : la polenta absorbe le lait et devient crémeuse comme du porridge épais. Si trop épaisse, ajoute 50 ml de lait.",
+        "Continue à fouetter 8-10 min à feu doux : la polenta absorbe le lait et devient crémeuse comme du porridge épais. Si trop épaisse, ajoute un trait de lait.",
         "Pendant ce temps, lave les fruits rouges. Coupe les fraises en quartiers.",
         "Fais légèrement griller les amandes effilées à sec.",
-        "Dressage dans 2 grands bols : dépose la polenta crémeuse. Garnis avec moitié des fruits rouges, miel filé en spirale, feuilles de thym effeuillées, amandes effilées.",
+        "Dressage dans un grand bol : dépose la polenta crémeuse. Garnis avec les fruits rouges, miel filé en spirale, feuilles de thym effeuillées, amandes effilées.",
         "Sers immédiatement (la polenta fige vite — si tu prépares en avance, réchauffe avec un peu de lait). Petit-déj rustique italien du Nord (Vénétie, Piémont), traditionnellement salé mais ici version sucrée brunch. Riche en fibres (maïs entier), calcium, antioxydants."
       ],
       "photo": "assets/recipes/b132.webp"
@@ -76233,7 +76208,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 360,
+      "kcal": 330,
       "tags": [
         "vegetarian",
         "quick",
@@ -76250,7 +76225,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine (gros)",
-          27,
+          25,
           "g",
           "pantry"
         ],
@@ -76267,14 +76242,8 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable",
-          0.25,
-          "c.à.s",
-          "pantry"
-        ],
-        [
           "Banane",
-          0.75,
+          0.5,
           "u",
           "produce"
         ],
@@ -76292,7 +76261,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Graines de chia",
-          0.25,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -76304,19 +76273,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
       ],
       "steps": [
-        "Dans un petit bol, fouette le matcha avec 2 c.à.s de lait d'amande tiède jusqu'à pâte verte lisse sans grumeau.",
-        "Dans une casserole, fais frémir le lait d'amande restant avec sirop d'érable + sel + vanille.",
+        "Dans un petit bol, fouette le matcha avec un peu du lait d'amande, tiédi, jusqu'à pâte verte lisse sans grumeau.",
+        "Dans une casserole, fais frémir le lait d'amande restant avec le sel + la vanille.",
         "Ajoute les flocons d'avoine + matcha délayé. Cuis à feu doux 6-8 min en remuant constamment jusqu'à crème onctueuse verte (le porridge épaissit).",
         "Hors du feu, ajoute le beurre d'amande, mélange (ça fond et donne un côté super crémeux).",
         "Fais légèrement griller les amandes effilées à sec 1-2 min.",
-        "Coupe les bananes en rondelles.",
-        "Dressage dans 2 grands bols : verse le porridge matcha. Garnis avec rondelles de banane + amandes effilées + chia + saupoudrage léger de matcha en surface. Sers chaud. Petit-déj japonais-fusion : porridge anglais + matcha. Riche en EGCG (matcha), fibres bêta-glucanes (avoine), oméga-3 (chia), potassium (banane)."
+        "Coupe la banane en rondelles.",
+        "Dressage dans un grand bol : verse le porridge matcha. Garnis avec rondelles de banane + amandes effilées + chia + saupoudrage léger de matcha en surface. Sers chaud. Petit-déj japonais-fusion : porridge anglais + matcha. Riche en EGCG (matcha), fibres bêta-glucanes (avoine), oméga-3 (chia), potassium (banane)."
       ],
       "photo": "assets/recipes/b133.webp"
     },
@@ -76335,7 +76304,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 1.5,
-      "kcal": 340,
+      "kcal": 300,
       "tags": [
         "vegetarian",
         "vegan",
@@ -76355,7 +76324,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          42,
+          36,
           "g",
           "pantry"
         ],
@@ -76373,7 +76342,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Oignon nouveau (tige verte)",
-          1.25,
+          1.5,
           "u",
           "produce"
         ],
@@ -76421,15 +76390,15 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Dans un saladier, mélange la farine + 1/2 c.à.c sel. Ajoute l'eau chaude progressivement en remuant (utiliser l'eau chaude = la signature des galettes chinoises, donne une pâte super souple). Pétris 5 min jusqu'à pâte lisse. Couvre, repose 30 min.",
+        "Dans un saladier, mélange la farine + le sel (garde-en une pincée pour la garniture). Ajoute l'eau chaude progressivement en remuant (utiliser l'eau chaude = la signature des galettes chinoises, donne une pâte super souple). Pétris 5 min jusqu'à pâte lisse. Couvre, repose 30 min.",
         "Émince très finement les oignons nouveaux (vert principal, garde un peu de blanc).",
-        "Divise la pâte en 4 boules. Sur le plan fariné, étale chaque boule en cercle très fin (Ø 25 cm).",
+        "Divise la pâte en boules (une par personne). Sur le plan fariné, étale chaque boule en cercle très fin (Ø 25 cm).",
         "Badigeonne le cercle d'huile de sésame, saupoudre généreusement d'oignons nouveaux + 1 pincée de sel + poivre noir.",
         "Roule en boudin (technique : commence par un bord, roule comme un cigare). Tourne le boudin sur lui-même en spirale pour former une petite tour plate. Aplatis au rouleau en disque (Ø 18 cm × 5 mm d'épaisseur).",
-        "Refais 3 fois (4 galettes au total).",
-        "Chauffe une poêle anti-adhésive à feu moyen-vif. Verse 1 c.à.s d'huile d'olive. Cuis chaque galette 3-4 min par face jusqu'à doré croustillant. Parsème de sésame en fin de cuisson.",
+        "Recommence avec chaque boule de pâte.",
+        "Chauffe une poêle anti-adhésive à feu moyen-vif. Verse un filet d'huile d'olive. Cuis chaque galette 3-4 min par face jusqu'à doré croustillant. Parsème de sésame en fin de cuisson.",
         "Prépare la sauce dip : sauce soja + vinaigre de riz + gingembre râpé.",
-        "Coupe chaque galette en 6 parts. Sers chaud avec la sauce. Petit-déj/brunch chinois iconique des marchés de Shanghai, Pékin, Taipei. Excellent batch (réchauffer 1 min au four)."
+        "Coupe chaque galette en parts, comme une pizza. Sers chaud avec la sauce. Petit-déj/brunch chinois iconique des marchés de Shanghai, Pékin, Taipei. Excellent batch (réchauffer 1 min au four)."
       ],
       "photo": "assets/recipes/b134.webp"
     },
@@ -76448,7 +76417,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "festif"
@@ -76471,7 +76440,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Skyr (ou yaourt grec)",
-          50,
+          60,
           "g",
           "dairy"
         ],
@@ -76483,7 +76452,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine T80 (semi-complète)",
-          40,
+          28,
           "g",
           "pantry"
         ],
@@ -76495,8 +76464,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          1.0,
-          "c.à.s",
+          1,
+          "c.à.c",
           "pantry"
         ],
         [
@@ -76513,7 +76482,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.5,
+          1,
           "pincée",
           "spices"
         ],
@@ -76522,23 +76491,17 @@ window.__DATA_RECIPES = {
           50,
           "g",
           "produce"
-        ],
-        [
-          "Sirop d'érable supplémentaire (pour servir)",
-          1.0,
-          "c.à.s",
-          "pantry"
         ]
       ],
       "steps": [
         "Sépare les blancs et jaunes d'œufs. Place les blancs au frais (technique : blancs froids montent mieux).",
-        "Dans un saladier, fouette les jaunes + skyr + lait + 1 c.à.s sirop érable + vanille. Ajoute farine + levure + sel tamisés, fouette jusqu'à pâte lisse.",
-        "Monte les blancs en neige avec une pincée de sel. Quand ils commencent à mousser, ajoute 1 c.à.s sirop érable. Continue jusqu'à pics fermes et brillants (meringue).",
+        "Dans un saladier, fouette les jaunes + skyr + lait + vanille. Ajoute farine + levure + sel tamisés, fouette jusqu'à pâte lisse.",
+        "Monte les blancs en neige avec une pincée de sel. Quand ils commencent à mousser, ajoute le sirop d'érable. Continue jusqu'à pics fermes et brillants (meringue).",
         "Incorpore 1/3 des blancs à la pâte pour détendre. Incorpore le reste très délicatement à la spatule en soulevant (technique : ne casse pas l'air des blancs, c'est ce qui rend les pancakes 'soufflés').",
         "Chauffe une poêle anti-adhésive à feu TRÈS doux avec un peu de beurre. Verse de gros tas de pâte (4 par fournée) en formant des dômes hauts (5 cm de haut). Couvre la poêle. Cuis 5-6 min à feu doux.",
         "Verse 1 c.à.s d'eau dans la poêle (technique cruciale : la vapeur sous le couvercle cuit le haut sans dorer). Couvre, cuis 4-5 min de plus.",
         "Retourne délicatement les pancakes (ils sont fragiles), couvre, cuis 3-4 min de plus.",
-        "Dressage : 3 pancakes empilés par assiette, myrtilles fraîches dessus, filet de sirop d'érable. Sers immédiatement (ils retombent un peu après 5 min, c'est leur nature). Pancakes japonais (souffle pancakes) inventés par les cafés Tokyo des années 2010. Hyper photogéniques, ado-friendly, festifs."
+        "Dressage : pancakes empilés dans l'assiette, myrtilles fraîches dessus (elles apportent le côté sucré-acidulé). Sers immédiatement (ils retombent un peu après 5 min, c'est leur nature). Pancakes japonais (souffle pancakes) inventés par les cafés Tokyo des années 2010. Hyper photogéniques, ado-friendly, festifs."
       ],
       "photo": "assets/recipes/b135.webp"
     },
@@ -76641,7 +76604,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 220,
+      "kcal": 240,
       "tags": [
         "vegetarian",
         "vegan",
@@ -76657,7 +76620,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Perles de tapioca (taille moyenne, blanc ou rouge)",
-          13,
+          10,
           "g",
           "pantry"
         ],
@@ -76675,8 +76638,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue mûre",
-          0.25,
-          "u",
+          70,
+          "g",
           "produce"
         ],
         [
@@ -76699,7 +76662,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -76711,14 +76674,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Porte 1 L d'eau à ébullition dans une casserole. Verse les perles de tapioca, cuis à frémissement 12-15 min en remuant régulièrement (technique : les perles tombent au fond sinon).",
+        "Porte une grande casserole d'eau à ébullition. Verse les perles de tapioca, cuis à frémissement 12-15 min en remuant régulièrement (technique : les perles tombent au fond sinon).",
         "Égoutte les perles dans une passoire fine, rince à l'eau froide (technique : élimine l'amidon, le tapioca devient bien translucide). Réserve.",
         "Dans une casserole, fais frémir le lait de coco avec sirop d'érable + sel + pandan (si utilisé, noue les feuilles) ou vanille. Laisse infuser à feu doux 5 min.",
         "Retire les feuilles de pandan. Ajoute les perles de tapioca dans le lait de coco parfumé. Mélange. Cuis 2 min à feu doux pour que le tapioca s'imprègne.",
         "Hors du feu, ajoute le jus du citron vert.",
         "Sers tiède immédiatement ou laisse refroidir + frigo 1 h pour version froide.",
         "Pendant ce temps, coupe la mangue en petits cubes.",
-        "Dressage dans 4 coupes : verse le tapioca au coco. Dépose les cubes de mangue dessus. Décore avec menthe fraîche + zeste de citron vert. Dessert thaïlandais classique (sako mamuang), aussi présent au Vietnam, Singapour. CG basse, sucre minimal."
+        "Dressage dans une coupe : verse le tapioca au coco. Dépose les cubes de mangue dessus. Décore avec menthe fraîche + zeste de citron vert. Dessert thaïlandais classique (sako mamuang), aussi présent au Vietnam, Singapour. CG basse, sucre minimal."
       ],
       "photo": "assets/recipes/des120.webp"
     },
@@ -76737,7 +76700,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 240,
+      "kcal": 210,
       "tags": [
         "vegetarian",
         "vegan",
@@ -76754,25 +76717,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de riz gluant (mochiko)",
-          24,
+          18,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          40,
+          30,
           "ml",
           "dairy"
         ],
         [
-          "Sirop d'érable",
-          0.5,
-          "c.à.s",
-          "pantry"
-        ],
-        [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -76808,13 +76765,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Prépare la pâte de sésame noir : mélange la pâte de sésame avec 1 c.à.s de sirop d'érable. Tu obtiens une crème onctueuse sucrée. Réserve.",
-        "Pour la pâte à crêpes mochi : dans un bol, fouette farine de riz gluant + lait d'amande + 2 c.à.s sirop érable + sel + vanille jusqu'à pâte lisse type pâte à crêpes liquide.",
+        "Prépare la pâte de sésame noir : mélange la pâte de sésame avec le sirop d'érable. Tu obtiens une crème onctueuse sucrée. Réserve.",
+        "Pour la pâte à crêpes mochi : dans un bol, fouette farine de riz gluant + lait d'amande + sel + vanille jusqu'à pâte lisse type pâte à crêpes liquide.",
         "Chauffe une petite poêle anti-adhésive (Ø 18 cm) à feu moyen. Badigeonne d'huile de coco.",
-        "Verse 1/4 de la pâte mochi, étale en disque fin (Ø 15 cm). Cuis 1-2 min : la crêpe devient translucide-blanche et se détache. Retourne, cuis 1 min de plus.",
-        "Pose la crêpe sur un plan. Au centre, dépose 1 c.à.s de pâte de sésame noir. Replie en 4 (carré).",
+        "Verse la pâte mochi, étale en disque fin (Ø 15 cm). Cuis 1-2 min : la crêpe devient translucide-blanche et se détache. Retourne, cuis 1 min de plus.",
+        "Pose la crêpe sur un plan. Au centre, dépose la pâte de sésame noir. Replie en 4 (carré).",
         "Remets dans la poêle 1 min par face avec un peu d'huile de coco pour dorer légèrement (technique : extérieur croustillant, intérieur moelleux/fondant).",
-        "Refais 3 fois (4 crêpes mochi au total).",
         "Sers chaud, parsemé de sésame noir et blanc grillé. Le mochi crêpe au sésame noir est une street-food très populaire à Hong Kong et Tokyo. Le sésame noir est super-antioxydant, riche en calcium et fer."
       ],
       "photo": "assets/recipes/des121.webp"
@@ -76892,13 +76848,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -76985,7 +76941,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -77028,7 +76984,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "rest": 30,
       "advance": "30 min au frais",
@@ -77071,7 +77028,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -77242,7 +77199,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Basilic frais",
-          0.25,
+          0.1,
           "bouquet",
           "produce"
         ],
@@ -77266,19 +77223,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron",
-          0.25,
+          0.05,
           "u",
           "produce"
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -77686,7 +77643,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 280,
+      "kcal": 160,
       "tags": [
         "vegetarian",
         "vegan",
@@ -77700,93 +77657,94 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
           "Quinoa",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Edamame écossés",
-          200,
+          50,
           "g",
           "frozen"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Radis",
-          4,
+          1.0,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          8,
+          2.0,
           "feuille",
           "produce"
         ],
         [
           "Citron vert",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Graines de sésame",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Gingembre frais",
-          1,
+          0.25,
           "cm",
           "produce"
         ]
       ],
       "steps": [
         "Rince le quinoa à l'eau froide 30 sec dans une passoire fine (technique : élimine la saponine amère).",
-        "Cuis le quinoa : dans une casserole, verse le quinoa + 200 ml d'eau salée. Porte à frémissement, baisse à feu doux, couvre 12-15 min. Laisse reposer 5 min couvert, aère à la fourchette.",
+        "Cuis le quinoa : dans une casserole, verse le quinoa + deux fois son volume d'eau salée. Porte à frémissement, baisse à feu doux, couvre 12-15 min. Laisse reposer 5 min couvert, aère à la fourchette.",
         "Pendant ce temps, plonge les edamame dans une casserole d'eau bouillante 3 min. Égoutte, rince à l'eau glacée pour stopper la cuisson (couleur vert vif).",
         "Coupe le concombre en petits dés de 5 mm (peau gardée si bio).",
         "Tranche les radis en rondelles très fines (mandoline si tu en as).",
         "Cisèle finement la coriandre et la menthe.",
-        "Prépare la vinaigrette dans un petit bol : sauce soja + huile de sésame + jus des 2 citrons verts + zeste râpé d'1 citron vert + gingembre râpé + piment d'Espelette.",
+        "Prépare la vinaigrette dans un petit bol : sauce soja + huile de sésame + jus des citrons verts + leur zeste râpé + gingembre râpé + piment d'Espelette.",
         "Dans un grand saladier, mélange : quinoa refroidi + edamame + concombre + radis + coriandre + menthe + vinaigrette.",
         "Mélange délicatement pour enrober. Goûte, ajuste citron vert ou piment selon ton goût.",
-        "Dressage dans 4 bols : parsème généreusement de graines de sésame + une nouvelle pincée de piment d'Espelette + qq feuilles de menthe entières. Sers frais. Snack-bowl asiatique-fusion à la mode Bali/Bangkok, ultra protéiné (quinoa = 14 g protéines complètes + edamame 11 g + bons gras sésame). Excellent batch (3 j frais). CG basse, parfait collation sportive."
+        "Dressage dans les bols : parsème généreusement de graines de sésame + une nouvelle pincée de piment d'Espelette + qq feuilles de menthe entières. Sers frais. Snack-bowl asiatique-fusion à la mode Bali/Bangkok, riche en protéines (quinoa + edamame) et en bons gras (sésame). Excellent en batch (3 jours au frais). Charge glycémique maîtrisée, parfait en collation sportive."
       ],
       "photo": "assets/recipes/s120.webp"
     },
@@ -77805,7 +77763,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "festif"
@@ -77820,7 +77778,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          40,
+          28,
           "g",
           "pantry"
         ],
@@ -77838,7 +77796,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Épinards frais",
-          67,
+          80,
           "g",
           "produce"
         ],
@@ -77862,7 +77820,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          0.25,
+          0.08,
           "bouquet",
           "produce"
         ],
@@ -77910,16 +77868,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Prépare la pâte : dans un saladier, mélange farine + 1/4 c.à.c sel. Ajoute l'eau tiède progressivement en pétrissant 5-8 min jusqu'à pâte souple et élastique. Couvre, laisse reposer 15 min.",
+        "Prépare la pâte : dans un saladier, mélange la farine + une pincée de sel. Ajoute l'eau tiède progressivement en pétrissant 5-8 min jusqu'à pâte souple et élastique. Couvre, laisse reposer 15 min.",
         "Pendant ce temps, fais tomber les épinards à sec dans une poêle 2 min jusqu'à ce qu'ils ramollissent. Égoutte bien, presse l'eau entre tes mains, hache grossièrement.",
         "Écrase les pois chiches à la fourchette dans un bol (garde de la texture, pas une purée).",
-        "Émince finement l'oignon. Cisèle la moitié de la coriandre.",
-        "Mélange dans un bol la farce : épinards + pois chiches écrasés + oignon + coriandre + cumin + garam masala + curcuma + 1/4 c.à.c sel + piment d'Espelette.",
-        "Divise la pâte en 4 boules. Sur un plan fariné, étale chaque boule en cercle de 12 cm.",
-        "Dépose 2 c.à.s de farce au centre de chaque cercle. Replie les bords vers le centre comme une bourse, pince fermement pour fermer. Aplatis délicatement la boule farcie à la main puis au rouleau pour former un disque de 18 cm sans déchirer la pâte (technique : si la farce sort, replie la pâte par-dessus).",
-        "Chauffe une poêle anti-adhésive à feu moyen-vif sans matière grasse. Cuis chaque paratha 2-3 min par face en pressant délicatement avec une spatule. Quand bien doré, badigeonne d'1/2 c.à.c de ghee fondu par face.",
-        "Prépare le raita : mélange le yaourt + le reste de coriandre ciselée + la menthe ciselée + jus du demi-citron vert + 1 pincée de sel + 1 pincée de cumin.",
-        "Sers chaud : 1 paratha par personne avec un bol de raita à côté pour tremper. Petit-déj indien du Pendjab traditionnel (lassi + paratha + chutney), super-équilibré. Riche en protéines (pois chiches + yaourt), fibres (épinards + T80), fer (épinards = 3 mg/100 g), antioxydants (épices)."
+        "Émince finement l'oignon. Cisèle une partie de la coriandre (garde le reste pour le raita).",
+        "Mélange dans un bol la farce : épinards + pois chiches écrasés + oignon + coriandre + cumin + garam masala + curcuma + une pincée de sel + piment d'Espelette.",
+        "Divise la pâte en boules (une par personne). Sur un plan fariné, étale chaque boule en cercle de 12 cm.",
+        "Dépose la farce au centre de chaque cercle. Replie les bords vers le centre comme une bourse, pince fermement pour fermer. Aplatis délicatement la boule farcie à la main puis au rouleau pour former un disque de 18 cm sans déchirer la pâte (technique : si la farce sort, replie la pâte par-dessus).",
+        "Chauffe une poêle anti-adhésive à feu moyen-vif sans matière grasse. Cuis chaque paratha 2-3 min par face en pressant délicatement avec une spatule. Quand bien doré, badigeonne chaque face d'un peu de ghee fondu.",
+        "Prépare le raita : mélange le yaourt + le reste de coriandre ciselée + la menthe ciselée + jus du citron vert + 1 pincée de sel + 1 pincée de cumin.",
+        "Sers chaud : un paratha par personne avec le raita à côté pour tremper. Petit-déj indien du Pendjab traditionnel (lassi + paratha + chutney), super-équilibré. Riche en protéines (pois chiches + yaourt), fibres (épinards + T80), fer (épinards = 3 mg/100 g), antioxydants (épices)."
       ],
       "photo": "assets/recipes/b138.webp"
     },
@@ -77954,13 +77912,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de riz",
-          30,
+          12,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail (cuites et écrasées, ou farine de pois chiche)",
-          60,
+          90,
           "g",
           "pantry"
         ],
@@ -78049,13 +78007,13 @@ window.__DATA_RECIPES = {
         "Coupe en tout petits dés (3-4 mm) : tomate épépinée, oignon, poivron vert.",
         "Cisèle la coriandre, râpe le gingembre.",
         "Mélange tous les légumes coupés dans un bol avec gingembre + cumin + curcuma + piment + 1 pincée de sel. Tu obtiens un mélange coloré qui va garnir les uttapams.",
-        "Chauffe une grande poêle anti-adhésive à feu moyen. Verse 1/2 c.à.c d'huile d'olive et étale au papier absorbant (pas trop d'huile, l'uttapam doit cuire dans très peu).",
-        "Verse une louche de pâte (~80 ml) au centre, étale en cercle épais de 12 cm Ø × 8 mm d'épaisseur (plus épais qu'une crêpe, c'est l'identité de l'uttapam).",
-        "Parsème immédiatement 2 c.à.s du mélange légumes par-dessus, en pressant légèrement pour qu'ils adhèrent à la pâte.",
+        "Chauffe une grande poêle anti-adhésive à feu moyen. Verse un filet d'huile d'olive et étale au papier absorbant (pas trop d'huile, l'uttapam doit cuire dans très peu).",
+        "Verse une louche de pâte au centre, étale en cercle épais de 12 cm Ø × 8 mm d'épaisseur (plus épais qu'une crêpe, c'est l'identité de l'uttapam).",
+        "Parsème immédiatement une bonne cuillerée du mélange légumes par-dessus, en pressant légèrement pour qu'ils adhèrent à la pâte.",
         "Couvre la poêle, cuis 3-4 min à feu doux jusqu'à ce que le dessus soit pris.",
-        "Découvre, ajoute 1/2 c.à.c d'huile sur le bord. Retourne délicatement (technique : grande spatule large, glisse sous toute la galette).",
+        "Découvre, ajoute un filet d'huile sur le bord. Retourne délicatement (technique : grande spatule large, glisse sous toute la galette).",
         "Cuis 1-2 min côté légumes pour les caraméliser légèrement.",
-        "Réserve au chaud. Recommence avec le reste de la pâte (4 uttapams au total).",
+        "Réserve au chaud. Recommence avec le reste de la pâte.",
         "Sers chaud avec un chutney coco-coriandre ou raita. Petit-déj du sud de l'Inde (Tamil Nadu, Karnataka), fermentation lactique = facile à digérer + probiotiques + IG plus bas que riz nature. Riche en glucides complexes lents, protéines végétales (lentilles), fibres."
       ],
       "photo": "assets/recipes/b139.webp"
@@ -78073,7 +78031,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.2,
-      "kcal": 200,
+      "kcal": 230,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -78091,13 +78049,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de pois chiche",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Yaourt nature",
-          50,
+          25,
           "g",
           "dairy"
         ],
@@ -78109,58 +78067,58 @@ window.__DATA_RECIPES = {
         ],
         [
           "Gingembre frais",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Graines de moutarde",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Feuilles de curry",
-          2,
+          1.0,
           "g",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Bicarbonate de soude",
-          1,
+          0.5,
           "g",
           "pantry"
         ]
       ],
       "steps": [
-        "Dans un saladier, mélanger au fouet la farine de pois chiche, le yaourt nature, 80 ml d'eau tiède, le curcuma, le sel et le gingembre râpé fin (pâte lisse comme une pâte à crêpe épaisse).",
+        "Dans un saladier, mélanger au fouet la farine de pois chiche, le yaourt nature, de l'eau tiède versée petit à petit, le curcuma, le sel et le gingembre râpé fin (pâte lisse comme une pâte à crêpe épaisse).",
         "Laisser reposer 10 minutes (la farine de pois chiche s'hydrate).",
         "Pendant ce temps, préparer un cuit-vapeur : faire bouillir 3 cm d'eau dans une grande casserole, y déposer un plat carré huilé qui rentre dedans.",
-        "Juste avant de verser, ajouter le jus du demi-citron et le bicarbonate à la pâte, mélanger 5 secondes — la pâte mousse aussitôt. Verser dans le plat huilé sur 2 cm de hauteur.",
+        "Juste avant de verser, ajouter le jus du citron et le bicarbonate à la pâte, mélanger 5 secondes — la pâte mousse aussitôt. Verser dans le plat huilé sur 2 cm de hauteur.",
         "Couvrir la casserole et cuire 15 minutes à la vapeur (une lame de couteau plantée doit ressortir sèche).",
         "Pendant ce temps, faire chauffer l'huile d'olive dans une petite poêle, ajouter les graines de moutarde : elles éclatent (1 minute). Ajouter les feuilles de curry hors du feu.",
         "Démouler le dhokla tiède, le découper en carrés de 4 cm, verser le tempering d'huile-moutarde-curry dessus.",
@@ -78414,7 +78372,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 360,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "quick"
@@ -78430,19 +78388,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits",
-          100,
+          80,
           "g",
           "pantry"
         ],
         [
           "Avocat",
-          60,
+          80,
           "g",
           "produce"
         ],
@@ -78503,10 +78461,10 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffer le four en mode grill à 200°C.",
-        "Égoutter et rincer les haricots noirs, les écraser à la fourchette dans une petite casserole avec l'huile d'olive, le cumin et 2 cuillères à soupe d'eau.",
+        "Égoutter et rincer les haricots noirs, les écraser à la fourchette dans une petite casserole avec l'huile d'olive, le cumin et un petit filet d'eau.",
         "Chauffer à feu doux 4 minutes en remuant : on obtient une purée rustique chaude (consistance qui se tient à la cuillère).",
-        "Préparer la salsa pico de gallo : couper la tomate en petits dés, émincer finement l'oignon rouge, hacher la coriandre. Mélanger avec le jus du demi-citron vert, le piment doux et le sel.",
-        "Couper le pain au levain en 2 tranches épaisses (3 cm), les ouvrir en deux dans l'épaisseur (façon bagel).",
+        "Préparer la salsa pico de gallo : couper la tomate en petits dés, émincer finement l'oignon rouge, hacher la coriandre. Mélanger avec le jus du citron vert, le piment doux et le sel.",
+        "Couper le pain au levain en tranches épaisses (3 cm), puis les ouvrir en deux dans l'épaisseur (façon bagel).",
         "Tartiner chaque tranche d'une bonne couche de haricots écrasés chauds, parsemer de fromage frais émietté.",
         "Enfourner 5-6 minutes sous le grill : le fromage doit colorer légèrement et le pain être croustillant.",
         "Sortir du four, déposer des lamelles d'avocat sur chaque mollete et couronner d'une généreuse cuillère de pico de gallo."
@@ -78526,7 +78484,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 290,
+      "kcal": 400,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78539,18 +78497,19 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Mangue",
-          120,
+          100,
           "g",
           "produce"
         ],
         [
           "Banane",
-          80,
+          40,
           "g",
           "produce"
         ],
@@ -78567,7 +78526,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Flocons d'avoine",
+          "Flocons d'avoine complets",
           15,
           "g",
           "pantry"
@@ -78586,9 +78545,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "La veille (ou 15 min avant), mélanger les graines de chia avec 30 ml de lait de coco dans un petit bol, laisser gonfler au frais (gel épais).",
-        "Éplucher la mangue, retirer le noyau, couper la chair en gros morceaux (en garder 2-3 lamelles pour la déco).",
-        "Éplucher la banane, la casser en morceaux. Mettre la mangue, la banane et le reste du lait de coco dans le blender avec le jus du demi-citron vert.",
+        "La veille (ou 15 min avant), mélanger les graines de chia avec une partie du lait de coco dans un petit bol, laisser gonfler au frais (gel épais).",
+        "Éplucher la mangue, retirer le noyau, couper la chair en gros morceaux (en garder quelques lamelles pour la déco).",
+        "Éplucher la banane, la casser en morceaux. Mettre la mangue, la banane et le reste du lait de coco dans le blender avec le jus du citron vert.",
         "Mixer 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace à l'italienne (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, déposer une cuillère du chia gonflé au centre.",
         "Disposer en couronne les flocons d'avoine, la noix de coco râpée et les lamelles de mangue réservées.",
@@ -78723,37 +78682,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          8,
+          4.0,
           "ml",
           "pantry"
         ],
         [
           "Paprika fumé",
-          2,
+          1.0,
           "g",
           "spices"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Ail en poudre",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ],
@@ -78871,7 +78830,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 130,
+      "kcal": 140,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78887,19 +78846,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ananas frais",
-          120,
+          70,
           "g",
           "produce"
         ],
         [
           "Mangue",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Fraise",
-          80,
+          120,
           "g",
           "produce"
         ],
@@ -78920,20 +78879,14 @@ window.__DATA_RECIPES = {
           0.3,
           "g",
           "spices"
-        ],
-        [
-          "Sirop d'érable",
-          5,
-          "g",
-          "pantry"
         ]
       ],
       "steps": [
         "Éplucher l'ananas et la mangue, retirer le cœur fibreux de l'ananas, le noyau de la mangue.",
         "Couper les deux en cubes de 1,5 cm (taille bouchée à la fourchette).",
         "Équeuter les fraises, les couper en quartiers.",
-        "Mettre tous les fruits dans un saladier, presser le jus d'un citron vert entier au-dessus.",
-        "Saupoudrer du piment doux (la pointe d'une cuillère à café, à doser selon tolérance) et ajouter le sirop d'érable.",
+        "Mettre tous les fruits dans un saladier, presser le jus du citron vert au-dessus.",
+        "Saupoudrer du piment doux (la pointe d'une cuillère à café, à doser selon tolérance).",
         "Mélanger délicatement à la cuillère en bois pour ne pas écraser les fruits.",
         "Ciseler les feuilles de menthe (sans les tiges) et les parsemer sur le dessus.",
         "Servir immédiatement, bien frais — le contraste citron/piment réveille les fruits."
@@ -79568,13 +79521,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Figues séchées",
-          27,
+          18,
           "g",
           "produce"
         ],
         [
           "Amandes en poudre",
-          17,
+          20,
           "g",
           "pantry"
         ],
@@ -79619,11 +79572,11 @@ window.__DATA_RECIPES = {
         "Préchauffer le four à 180°C en chaleur tournante.",
         "Hacher finement les figues séchées au couteau (texture humide collante).",
         "Mélanger dans un bol les figues hachées, la poudre d'amandes, le sirop d'érable, l'eau de fleur d'oranger, la cannelle et le blanc d'œuf (garder le jaune pour dorer).",
-        "On obtient une pâte épaisse et homogène qui se tient (sinon ajouter 1 cuillère à café de poudre d'amandes).",
+        "On obtient une pâte épaisse et homogène qui se tient (sinon ajouter un peu de poudre d'amandes).",
         "Étaler une feuille de brick sur le plan de travail, la badigeonner d'un peu d'huile d'olive au pinceau.",
         "Déposer la pâte de figues en un long boudin sur le bord (1 cm d'épaisseur, 25 cm de long).",
         "Rouler la brick en cigare serré, puis enrouler le cigare en escargot (spirale serrée) sur une plaque cuisson.",
-        "Répéter avec la 2ème brick et placer l'escargot à côté du premier.",
+        "Répéter avec les feuilles de brick restantes et placer les escargots côte à côte.",
         "Badigeonner le dessus du jaune d'œuf battu, parsemer de pistaches concassées.",
         "Enfourner 20-25 minutes : la pâte doit être bien dorée et croustillante.",
         "Laisser tiédir 10 minutes avant de découper en parts (le cœur figues se solidifie en refroidissant)."
@@ -79806,7 +79759,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au frais pour figer",
       "diff": 2,
       "cost": 1.5,
-      "kcal": 170,
+      "kcal": 180,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -79822,37 +79775,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          200,
+          130,
           "ml",
           "dairy"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          15,
+          5,
           "g",
           "pantry"
         ],
         [
           "Citron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Eau de fleur d'oranger",
-          8,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Fécule de maïs",
-          12,
+          6,
           "g",
           "pantry"
         ],
@@ -79865,13 +79818,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Râper finement le zeste du citron au-dessus d'une casserole (juste la partie jaune, pas le blanc amer).",
-        "Verser le lait, presser le jus du citron entier dans un bol séparé.",
+        "Verser le lait, presser le jus du citron dans un bol séparé.",
         "Dans un bol, fouetter l'œuf entier, la fécule de maïs et le sirop d'érable jusqu'à obtenir un mélange homogène (couleur jaune pâle).",
         "Faire chauffer le lait au zeste à feu moyen jusqu'aux premiers frémissements (pas l'ébullition).",
         "Hors du feu, verser le lait chaud sur le mélange œuf-fécule en remuant au fouet sans s'arrêter.",
         "Reverser dans la casserole, ajouter le jus de citron et l'eau de fleur d'oranger.",
         "Faire chauffer à feu doux en remuant constamment 5-8 minutes : la crème doit épaissir et napper le dos d'une cuillère.",
-        "Verser dans 2 ramequins individuels, filmer au contact (le film touche la crème pour éviter la peau).",
+        "Verser dans les ramequins individuels, filmer au contact (le film touche la crème pour éviter la peau).",
         "Laisser tiédir puis placer 2h au frigo pour figer.",
         "Au moment de servir, concasser les pistaches et les parsemer sur le dessus."
       ],
@@ -79892,7 +79845,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.4,
-      "kcal": 320,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -79904,12 +79857,13 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -79921,19 +79875,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Yaourt nature",
-          80,
+          100,
           "g",
           "dairy"
         ],
         [
           "Pomme",
-          100,
+          80,
           "g",
           "produce"
         ],
         [
           "Noisettes décortiquées",
-          12,
+          15,
           "g",
           "pantry"
         ],
@@ -79950,26 +79904,20 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable",
-          5,
-          "g",
-          "pantry"
-        ],
-        [
           "Graines de chia",
-          5,
+          10,
           "g",
           "pantry"
         ]
       ],
       "steps": [
-        "La veille au soir, mélanger dans un bol les flocons d'avoine, le lait d'amande, les graines de chia, la cannelle et le sirop d'érable.",
+        "La veille au soir, mélanger dans un bol les flocons d'avoine, le lait d'amande, les graines de chia et la cannelle.",
         "Couvrir et laisser reposer toute la nuit au frigo (8h minimum) : les flocons gonflent et deviennent crémeux.",
         "Au matin, sortir le bol, mélanger pour aérer.",
-        "Râper la pomme avec sa peau (grille gros côté) directement au-dessus du bol, presser le jus du demi-citron par-dessus pour éviter l'oxydation.",
+        "Râper la pomme avec sa peau (grille gros côté) directement au-dessus du bol, presser le jus du citron par-dessus pour éviter l'oxydation.",
         "Ajouter le yaourt nature, mélanger délicatement (texture crémeuse).",
         "Concasser grossièrement les noisettes au couteau.",
-        "Répartir dans 2 bols, parsemer de noisettes concassées et d'un filet de sirop d'érable optionnel.",
+        "Verser dans le bol et parsemer de noisettes concassées (la pomme râpée apporte la douceur).",
         "Servir frais — peut se garder 2 jours au frigo."
       ],
       "photo": "assets/recipes/b144.webp"
@@ -80174,7 +80122,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -80748,7 +80697,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 350,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "quick"
@@ -80765,31 +80714,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Semoule complète",
-          60,
+          28,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          70,
           "ml",
           "dairy"
         ],
         [
           "Skyr (ou yaourt grec)",
-          80,
+          120,
           "g",
           "dairy"
         ],
         [
           "Amandes effilées",
-          12,
+          15,
           "g",
           "pantry"
         ],
         [
           "Miel d'acacia",
-          8,
+          4,
           "g",
           "pantry"
         ],
@@ -80807,13 +80756,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Raisins secs",
-          12,
+          5,
           "g",
           "produce"
         ],
         [
           "Orange",
-          80,
+          60,
           "g",
           "produce"
         ]
@@ -80825,7 +80774,7 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, faire griller les amandes effilées 2-3 minutes à sec dans une petite poêle (couleur dorée).",
         "Peler l'orange à vif (retirer la peau blanche), détacher les quartiers en suprêmes.",
         "Aérer la semoule à la fourchette : les grains doivent être séparés et moelleux.",
-        "Répartir dans 2 bols, déposer une cuillère de skyr sur le côté, disposer les suprêmes d'orange.",
+        "Verser dans le bol, déposer le skyr sur le côté, disposer les suprêmes d'orange.",
         "Parsemer d'amandes grillées, saupoudrer de cannelle et finir par un filet de miel d'acacia."
       ],
       "photo": "assets/recipes/b147.webp"
@@ -80844,7 +80793,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 250,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -80861,25 +80810,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Semoule complète",
-          50,
-          "g",
-          "pantry"
-        ],
-        [
-          "Tahini",
           25,
           "g",
           "pantry"
         ],
         [
+          "Tahini",
+          12,
+          "g",
+          "pantry"
+        ],
+        [
           "Lait demi-écrémé",
-          150,
+          75,
           "ml",
           "dairy"
         ],
         [
           "Miel d'acacia",
-          15,
+          8,
           "g",
           "pantry"
         ],
@@ -80891,19 +80840,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cardamome moulue",
-          0.3,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Pistaches non salées",
-          12,
+          6,
           "g",
           "pantry"
         ],
         [
           "Eau de fleur d'oranger",
-          5,
+          2.5,
           "ml",
           "pantry"
         ]
@@ -80914,7 +80863,7 @@ window.__DATA_RECIPES = {
         "Hors du feu, verser doucement le lait chaud sur la semoule en remuant pour éviter les grumeaux.",
         "Remettre à feu doux, ajouter le tahini et mélanger 3-5 minutes : la pâte épaissit et se détache des bords (texture pâte à modeler ferme).",
         "Hors du feu, incorporer le miel et l'eau de fleur d'oranger, mélanger.",
-        "Verser dans un moule rectangulaire chemisé de papier cuisson (15 × 10 cm), tasser bien avec le dos d'une cuillère.",
+        "Verser dans un petit moule rectangulaire chemisé de papier cuisson, tasser bien avec le dos d'une cuillère.",
         "Laisser tiédir puis placer 1h au frigo pour que la halwa fige et se découpe nettement.",
         "Au moment de servir, démouler et découper en carrés de 3 cm.",
         "Concasser grossièrement les pistaches au couteau, les parsemer sur chaque part."
@@ -81020,7 +80969,8 @@ window.__DATA_RECIPES = {
         "shellfish",
         "soy",
         "sesame",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -81111,7 +81061,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 310,
+      "kcal": 350,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81124,12 +81074,13 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
           "Banane",
-          120,
+          70,
           "g",
           "produce"
         ],
@@ -81137,6 +81088,12 @@ window.__DATA_RECIPES = {
           "Lait de soja",
           150,
           "ml",
+          "dairy"
+        ],
+        [
+          "Tofu soyeux",
+          60,
+          "g",
           "dairy"
         ],
         [
@@ -81153,19 +81110,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine",
-          20,
-          "g",
-          "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          6,
+          10,
           "g",
           "pantry"
         ],
         [
           "Kiwi",
-          60,
+          50,
           "g",
           "produce"
         ],
@@ -81177,13 +81128,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire torréfier 8g de graines de sésame noir à sec dans une petite poêle 2 minutes (le sésame éclate légèrement et libère un parfum intense).",
-        "Mixer au blender les graines de sésame torréfiées avec la banane épluchée en morceaux, le lait de soja, le sirop d'érable et le gingembre épluché.",
+        "Faire torréfier les graines de sésame noir à sec dans une petite poêle 2 minutes (le sésame éclate légèrement et libère un parfum intense).",
+        "Mixer au blender les deux tiers des graines de sésame torréfiées avec la banane épluchée en morceaux, le lait de soja, le tofu soyeux (il rend le mélange crémeux et nourrissant sans goût marqué) et le gingembre épluché.",
         "Mixer 30 secondes à pleine vitesse : la texture doit être épaisse comme une glace italienne (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, lisser le dessus à la cuillère.",
         "Éplucher le kiwi, le couper en fines rondelles.",
         "Disposer les rondelles de kiwi en couronne sur le smoothie.",
-        "Parsemer les flocons d'avoine, les graines de chia et les 4g de sésame noir restant au centre.",
+        "Parsemer les flocons d'avoine, les graines de chia et le reste du sésame noir au centre.",
         "Servir immédiatement à la cuillère, bien frais."
       ],
       "photo": "assets/recipes/b149.webp"
@@ -81310,7 +81261,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -81678,7 +81630,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 350,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -81689,24 +81641,25 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "nuts",
-        "eggs"
+        "eggs",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          150,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Mangue",
-          100,
+          60,
           "g",
           "produce"
         ],
@@ -81723,14 +81676,8 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
           "Amandes effilées",
-          12,
+          15,
           "g",
           "pantry"
         ],
@@ -81744,9 +81691,9 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffer le four à 180°C en chaleur tournante.",
         "Éplucher la mangue, retirer le noyau, couper la chair en cubes de 1 cm.",
-        "Dans un saladier, mélanger au fouet les flocons d'avoine, le lait d'amande, l'œuf, le sirop d'érable et la cardamome.",
-        "Ajouter la moitié des cubes de mangue, mélanger doucement.",
-        "Répartir dans 2 ramequins individuels (10 cm de diamètre), tasser légèrement à la cuillère.",
+        "Dans un saladier, mélanger au fouet les flocons d'avoine, le lait d'amande, l'œuf et la cardamome.",
+        "Ajouter une partie des cubes de mangue, mélanger doucement.",
+        "Verser dans un ramequin individuel (10 cm de diamètre), tasser légèrement à la cuillère.",
         "Disposer le reste des cubes de mangue sur le dessus, parsemer d'amandes effilées.",
         "Enfourner 22-25 minutes : la surface dore et le mélange est pris (lame de couteau plantée sort sèche).",
         "Sortir, laisser tiédir 5 minutes (la texture continue de se raffermir).",
@@ -82046,7 +81993,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 220,
+      "kcal": 240,
       "tags": [
         "vegetarian",
         "festif"
@@ -82062,7 +82009,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Vermicelles de riz",
-          30,
+          15,
           "g",
           "pantry"
         ],
@@ -82086,7 +82033,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
@@ -82116,12 +82063,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Faire tremper les graines de basilic (sabja) dans 100 ml d'eau froide 20 minutes : elles gonflent et deviennent gélatineuses (texture comme des œufs de poisson).",
+        "Faire tremper les graines de basilic (sabja) dans un bol d'eau froide 20 minutes : elles gonflent et deviennent gélatineuses (texture comme des œufs de poisson).",
         "Cuire les vermicelles de riz dans une casserole d'eau bouillante 3-4 minutes selon les indications du paquet, égoutter et passer sous l'eau froide pour stopper la cuisson.",
         "Faire chauffer le lait avec la cardamome jusqu'aux premiers frémissements, ajouter le sirop d'érable et le sirop de rose. Laisser tiédir 10 minutes puis refroidir au frigo 20 minutes.",
         "Concasser les pistaches au couteau.",
-        "Préparation du verre (par personne) : déposer au fond 1 cuillère à café de sirop de rose, ajouter 2 cuillères à soupe de graines de basilic gonflées, puis une couche de vermicelles.",
-        "Verser le lait rose froid à mi-hauteur, ajouter 3 glaçons.",
+        "Préparation du verre (par personne) : déposer au fond un trait de sirop de rose, ajouter les graines de basilic gonflées et égouttées, puis une couche de vermicelles.",
+        "Verser le lait rose froid à mi-hauteur, ajouter les glaçons.",
         "Compléter avec le reste de lait, finir par une couche de vermicelles flottants.",
         "Parsemer généreusement de pistaches concassées et d'un trait d'eau de rose.",
         "Servir avec une cuillère longue et une paille — à boire et à manger en alternance."
@@ -82141,7 +82088,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 340,
+      "kcal": 430,
       "tags": [
         "vegan",
         "vegetarian",
@@ -82154,19 +82101,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de maïs",
-          60,
+          18,
+          "g",
+          "pantry"
+        ],
+        [
+          "Farine de pois chiche",
+          14,
           "g",
           "pantry"
         ],
         [
           "Eau tiède",
-          80,
+          45,
           "ml",
           "pantry"
         ],
         [
           "Haricots noirs cuits",
-          120,
+          70,
           "g",
           "pantry"
         ],
@@ -82213,6 +82166,12 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
+          "Avocat",
+          50,
+          "g",
+          "produce"
+        ],
+        [
           "Citron vert",
           0.5,
           "u",
@@ -82226,16 +82185,16 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préparer la pâte (masa) : mélanger la farine de maïs avec l'eau tiède et 0,5 g de sel dans un saladier. Pétrir 3-4 minutes jusqu'à obtenir une pâte homogène et souple (pas collante, façonnable).",
+        "Préparer la pâte (masa) : mélanger la farine de maïs et la farine de pois chiche avec l'eau tiède et une pincée de sel dans un saladier. Pétrir 3-4 minutes jusqu'à obtenir une pâte homogène et souple (pas collante, façonnable).",
         "Laisser reposer la pâte 10 minutes couverte d'un torchon humide.",
-        "Pendant ce temps, écraser les haricots noirs à la fourchette dans un bol avec le cumin, le piment, l'ail écrasé et 0,5 g de sel (texture rustique pas en purée).",
+        "Pendant ce temps, écraser les haricots noirs à la fourchette dans un bol avec le cumin, le piment, l'ail écrasé et le reste du sel (texture rustique pas en purée).",
         "Laver et essorer les épinards, les hacher grossièrement.",
-        "Diviser la pâte en 4 boules égales (environ 60 g chacune).",
-        "Aplatir chaque boule entre 2 feuilles de papier cuisson en disque de 12 cm.",
-        "Déposer 1 cuillère à soupe de haricots écrasés au centre, refermer en boule en pinçant les bords, puis ré-aplatir en ovale épais (2 cm).",
-        "Chauffer une poêle anti-adhésive à feu moyen avec 4 ml d'huile, cuire 4 minutes par face : croûte dorée, intérieur cuit.",
-        "Dans la même poêle, sauter les épinards et l'oignon émincé 3 minutes (les épinards tombent).",
-        "Dresser : un tlacoyo dans chaque assiette, garni d'épinards-oignon, parsemé de coriandre ciselée. Presser le jus du demi-citron vert au moment de servir."
+        "Diviser la pâte en boules de la taille d'une balle de ping-pong.",
+        "Aplatir chaque boule entre deux feuilles de papier cuisson en disque fin.",
+        "Déposer une cuillerée de haricots écrasés au centre, refermer en boule en pinçant les bords, puis ré-aplatir en ovale épais (2 cm).",
+        "Chauffer une poêle anti-adhésive à feu moyen avec une partie de l'huile, cuire 4 minutes par face : croûte dorée, intérieur cuit.",
+        "Dans la même poêle, avec le reste de l'huile, sauter les épinards et l'oignon émincé 3 minutes (les épinards tombent).",
+        "Pendant ce temps, couper l'avocat en deux, retirer le noyau, prélever la chair à la cuillère et la couper en fines lamelles. Dresser : les tlacoyos dans l'assiette, garnis d'épinards-oignon et de lamelles d'avocat, parsemés de coriandre ciselée. Presser le jus du citron vert au moment de servir."
       ],
       "photo": "assets/recipes/b152.webp"
     },
@@ -82570,37 +82529,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          55,
+          24,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          2,
+          1.0,
           "u",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          18,
+          6,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          120,
+          60,
           "ml",
           "dairy"
         ],
         [
           "Lait d'amande",
-          80,
+          40,
           "ml",
           "dairy"
         ],
         [
           "Skyr (ou yaourt grec)",
-          100,
+          50,
           "g",
           "dairy"
         ],
@@ -82618,7 +82577,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Levure chimique",
-          3,
+          1.5,
           "g",
           "pantry"
         ],
@@ -82630,19 +82589,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fraise",
-          60,
+          30,
           "g",
           "produce"
         ]
       ],
       "steps": [
-        "Préchauffer le four à 170°C en chaleur tournante. Chemiser un petit moule à manqué (15 cm) de papier cuisson.",
-        "Séparer les blancs des jaunes d'œufs. Fouetter les jaunes avec 15g de sirop d'érable et la vanille jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
+        "Préchauffer le four à 170°C en chaleur tournante. Chemiser un petit moule à manqué de papier cuisson.",
+        "Séparer les blancs des jaunes d'œufs. Fouetter les jaunes avec la plus grande partie du sirop d'érable et la vanille jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
         "Monter les blancs en neige ferme au fouet électrique.",
         "Tamiser la farine T80 et la levure chimique sur les jaunes blanchis, ajouter le zeste de citron râpé, mélanger délicatement à la spatule.",
         "Incorporer les blancs en neige en 3 fois en soulevant la pâte (pas remuer).",
         "Verser dans le moule, enfourner 18-20 minutes : la lame d'un couteau plantée doit ressortir sèche.",
-        "Pendant ce temps, mélanger dans un bol le lait demi-écrémé, le lait d'amande, le skyr, 10g de sirop d'érable et la cannelle (c'est le mélange 'tres leches').",
+        "Pendant ce temps, mélanger dans un bol le lait, le lait d'amande, le skyr, le reste du sirop d'érable et la cannelle (c'est le mélange 'tres leches').",
         "Sortir le gâteau, le démouler tiède dans un plat creux. Piquer toute la surface à la fourchette (trous profonds).",
         "Verser doucement le mélange tres leches en plusieurs fois en laissant absorber entre chaque ajout (le gâteau boit le liquide).",
         "Couvrir et placer 4h minimum au frigo (mieux : une nuit).",
@@ -82914,7 +82873,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 230,
+      "kcal": 190,
       "tags": [
         "vegetarian",
         "festif",
@@ -82931,73 +82890,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine T80 (semi-complète)",
-          60,
+          27,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          50,
+          25,
           "ml",
           "dairy"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          8,
+          4.0,
           "g",
           "pantry"
         ],
         [
           "Cannelle moulue",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Levure chimique",
-          2,
+          1.0,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          8,
+          4.0,
           "ml",
           "pantry"
         ],
         [
           "Zeste d'orange",
-          2,
+          1.0,
           "g",
           "produce"
         ],
         [
           "Sel",
-          0.3,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Anis vert moulu",
-          0.3,
+          0.5,
           "g",
           "spices"
         ]
       ],
       "steps": [
         "Mélanger dans un saladier la farine T80, la levure chimique, le sel, l'anis vert et le zeste d'orange râpé.",
-        "Dans un autre bol, fouetter l'œuf avec le lait, 5g de sirop d'érable et 4 ml d'huile d'olive.",
+        "Dans un autre bol, fouetter l'œuf avec le lait, une partie du sirop d'érable et une partie de l'huile d'olive.",
         "Verser les ingrédients liquides dans les secs, mélanger à la fourchette jusqu'à obtenir une pâte homogène et souple.",
         "Pétrir 2 minutes sur un plan fariné (juste pour rendre lisse, ne pas trop travailler).",
         "Couvrir d'un torchon humide et laisser reposer 30 minutes (le gluten se détend).",
         "Préchauffer le four à 200°C en chaleur tournante.",
-        "Diviser la pâte en 12 boulettes, les abaisser au rouleau en disques fins de 6 cm.",
+        "Diviser la pâte en petites boulettes (de la taille d'une noix), les abaisser au rouleau en disques fins de 6 cm.",
         "Déposer sur une plaque chemisée, badigeonner d'huile d'olive au pinceau et saupoudrer de cannelle.",
         "Enfourner 10-12 minutes : ils doivent être dorés et croustillants comme des bugnes au four.",
         "Sortir, badigeonner légèrement du reste de sirop d'érable encore tiède, saupoudrer du reste de cannelle.",
@@ -83018,7 +82977,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 290,
+      "kcal": 280,
       "tags": [
         "vegetarian",
         "festif",
@@ -83037,7 +82996,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain rassis",
-          40,
+          28,
           "g",
           "pantry"
         ],
@@ -83055,7 +83014,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          9,
+          3,
           "g",
           "pantry"
         ],
@@ -83073,19 +83032,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Raisins secs",
-          10,
+          4,
           "g",
           "produce"
         ],
         [
           "Amandes effilées",
-          8,
+          12,
           "g",
           "pantry"
         ],
         [
           "Pomme",
-          40,
+          50,
           "g",
           "produce"
         ],
@@ -83109,7 +83068,7 @@ window.__DATA_RECIPES = {
         "Retirer la cannelle et l'anis étoilé du lait infusé. Ajouter le sirop d'érable.",
         "Battre l'œuf dans un saladier, verser le lait infusé tiédi par-dessus en fouettant.",
         "Couper la pomme en cubes de 1 cm (peau gardée).",
-        "Disposer les cubes de pain dans un plat à gratin individuel (15 cm), parsemer de cubes de pomme, raisins secs et la moitié des amandes effilées.",
+        "Disposer les cubes de pain dans un plat à gratin individuel, parsemer de cubes de pomme, raisins secs et d'une partie des amandes effilées.",
         "Verser la préparation lait-œuf par-dessus, presser légèrement le pain pour qu'il s'imbibe.",
         "Parsemer du reste d'amandes effilées sur le dessus.",
         "Enfourner 22-25 minutes : la surface dore et le mélange est pris (légèrement tremblotant au centre).",
@@ -83228,7 +83187,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 290,
+      "kcal": 270,
       "tags": [
         "vegan",
         "vegetarian",
@@ -83244,13 +83203,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Dattes Medjool",
-          40,
+          15,
           "g",
           "produce"
         ],
         [
           "Banane",
-          120,
+          80,
           "g",
           "produce"
         ],
@@ -83262,7 +83221,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Amandes effilées",
-          8,
+          12,
           "g",
           "pantry"
         ],
@@ -83280,7 +83239,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Graines de chia",
-          6,
+          10,
           "g",
           "pantry"
         ],
@@ -83294,9 +83253,9 @@ window.__DATA_RECIPES = {
       "steps": [
         "Dénoyauter les dattes Medjool et les couper en 2 dans le sens de la longueur.",
         "Éplucher la banane, la casser en gros morceaux.",
-        "Mettre tous les ingrédients dans le blender sauf 2g d'amandes effilées et 2g de graines de chia (pour la déco).",
+        "Mettre tous les ingrédients dans le blender sauf une pincée d'amandes effilées et de graines de chia (pour la déco).",
         "Mixer 30-40 secondes à pleine vitesse jusqu'à obtention d'une texture lisse et onctueuse (les dattes doivent être complètement intégrées).",
-        "Verser dans 2 grands verres (texture crémeuse, presque comme un milkshake).",
+        "Verser dans un grand verre (texture crémeuse, presque comme un milkshake).",
         "Parsemer des amandes effilées et graines de chia réservées sur le dessus.",
         "Servir immédiatement avec une paille — bien frais, parfait pour démarrer une journée de chaleur."
       ],
@@ -83405,7 +83364,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 350,
+      "kcal": 330,
       "tags": [
         "vegan",
         "vegetarian",
@@ -83416,18 +83375,19 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          40,
+          32,
           "g",
           "pantry"
         ],
         [
           "Amandes effilées",
-          8,
+          12,
           "g",
           "pantry"
         ],
@@ -83445,7 +83405,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Dattes Medjool",
-          15,
+          10,
           "g",
           "produce"
         ],
@@ -83457,7 +83417,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          6,
+          4,
           "g",
           "pantry"
         ],
@@ -83506,7 +83466,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 340,
+      "kcal": 320,
       "tags": [
         "vegan",
         "vegetarian",
@@ -83533,19 +83493,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Orange",
-          150,
+          120,
           "g",
           "produce"
         ],
         [
           "Dattes Medjool",
-          25,
+          10,
           "g",
           "produce"
         ],
         [
           "Amandes effilées",
-          10,
+          14,
           "g",
           "pantry"
         ],
@@ -83576,7 +83536,7 @@ window.__DATA_RECIPES = {
         "Peler l'orange à vif, détacher les quartiers en suprêmes (entre les membranes blanches).",
         "Dénoyauter et hacher les dattes Medjool en petits dés.",
         "Concasser grossièrement les pistaches au couteau.",
-        "Répartir le quinoa au lait d'amande dans 2 bols.",
+        "Verser le quinoa au lait d'amande dans le bol.",
         "Disposer les suprêmes d'orange en couronne, parsemer de dés de dattes, d'amandes effilées et de pistaches concassées.",
         "Servir tiède ou à température ambiante."
       ],
@@ -83611,37 +83571,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de pois chiche",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Lait d'amande",
-          100,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Yaourt nature",
-          40,
+          20,
           "g",
           "dairy"
         ],
         [
           "Zeste d'orange",
-          3,
+          1.5,
           "g",
           "produce"
         ],
         [
           "Eau de fleur d'oranger",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
@@ -83653,47 +83613,47 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Levure chimique",
-          2,
+          1.0,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
         [
           "Orange",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Pistaches non salées",
-          6,
+          3.0,
           "g",
           "pantry"
         ]
       ],
       "steps": [
         "Dans un saladier, mélanger la farine de pois chiche, la levure chimique et la cardamome.",
-        "Dans un autre bol, fouetter l'œuf, le lait d'amande, le yaourt nature, 5g de sirop d'érable, l'eau de fleur d'oranger et le zeste d'orange râpé.",
+        "Dans un autre bol, fouetter l'œuf, le lait d'amande, le yaourt nature, une partie du sirop d'érable, l'eau de fleur d'oranger et le zeste d'orange râpé.",
         "Verser les liquides dans les secs en fouettant progressivement (pâte homogène sans grumeaux, texture pâte à crêpes épaisse).",
         "Laisser reposer 5 minutes (la farine de pois chiche s'hydrate).",
         "Chauffer une poêle anti-adhésive à feu moyen avec un peu d'huile d'olive (la pâte ne doit pas accrocher).",
         "Verser 2 cuillères à soupe de pâte par pancake (diamètre 8 cm), cuire 2 minutes : des bulles apparaissent en surface et le bord se dessine.",
         "Retourner à la spatule, cuire 1-2 minutes l'autre face. Réserver au chaud sur une assiette couverte.",
-        "Continuer jusqu'à épuiser la pâte (environ 6 pancakes).",
+        "Continuer jusqu'à épuiser la pâte.",
         "Peler l'orange à vif, détacher les quartiers en suprêmes.",
         "Concasser les pistaches au couteau.",
-        "Dresser 3 pancakes par assiette, garnir de suprêmes d'orange et de pistaches, finir par un filet du reste de sirop d'érable."
+        "Dresser les pancakes sur l'assiette, garnir de suprêmes d'orange et de pistaches, finir par un filet du reste de sirop d'érable."
       ],
       "photo": "assets/recipes/b159.webp"
     },
@@ -84685,7 +84645,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 400,
+      "kcal": 410,
       "tags": [
         "vegan",
         "vegetarian",
@@ -84700,13 +84660,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Semoule complète",
-          60,
+          25,
           "g",
           "pantry"
         ],
@@ -84724,7 +84684,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          3,
+          1,
           "gousse",
           "produce"
         ],
@@ -84777,10 +84737,10 @@ window.__DATA_RECIPES = {
         "Ajouter l'ail, le cumin et le paprika fumé, mélanger 30 secondes (parfum intense).",
         "Ajouter le concentré de tomate, cuire 1 minute en remuant (il fonce légèrement, perd son acidité).",
         "Ajouter les tomates en dés, cuire 8 minutes à feu moyen : la sauce épaissit.",
-        "Égoutter et rincer les haricots blancs, les ajouter avec 150 ml d'eau et le sel.",
+        "Égoutter et rincer les haricots blancs, les ajouter avec un fond d'eau (juste de quoi les recouvrir) et le sel.",
         "Couvrir et mijoter 15 minutes à feu doux : les haricots s'imprègnent et la sauce nappe (écraser quelques haricots pour épaissir).",
-        "Pendant ce temps, préparer la semoule : verser 90 ml d'eau bouillante salée sur la semoule, couvrir 5 minutes, puis aérer à la fourchette avec un filet d'huile.",
-        "Presser le jus du demi-citron dans la loubia, parsemer de coriandre fraîche.",
+        "Pendant ce temps, préparer la semoule : verser de l'eau bouillante salée sur la semoule, juste à hauteur (l'eau affleure les grains), couvrir 5 minutes, puis aérer à la fourchette avec un filet d'huile.",
+        "Presser le jus du citron dans la loubia, parsemer de coriandre fraîche.",
         "Servir la loubia chaude sur un lit de semoule complète — plat populaire marocain, économique et nourrissant."
       ],
       "photo": "assets/recipes/l206.webp"
@@ -85039,7 +84999,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 360,
+      "kcal": 560,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -85054,7 +85014,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          150,
+          180,
           "g",
           "produce"
         ],
@@ -85090,7 +85050,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Semoule complète",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -85137,8 +85097,8 @@ window.__DATA_RECIPES = {
         "Ajouter l'aubergine, cuire 5 minutes en remuant (elle commence à dorer).",
         "Ajouter le poivron et la courgette, le cumin et le ras el-hanout, mélanger 3 minutes.",
         "Ajouter les tomates en dés et le sel, couvrir et mijoter 12 minutes (les légumes deviennent fondants, c'est une chakchouka de légumes).",
-        "Pendant ce temps, préparer la semoule : verser 75 ml d'eau bouillante salée sur la semoule, couvrir 5 minutes, aérer à la fourchette.",
-        "Quand les légumes sont tendres, creuser 2 puits dans la préparation à l'aide d'une cuillère.",
+        "Pendant ce temps, préparer la semoule : verser sur la semoule une fois et demie son volume d'eau bouillante salée, couvrir 5 minutes, aérer à la fourchette.",
+        "Quand les légumes sont tendres, creuser un puits par œuf dans la préparation à l'aide d'une cuillère.",
         "Casser délicatement 1 œuf dans chaque puits, couvrir et cuire 5-6 minutes à feu doux : le blanc prend, le jaune reste coulant.",
         "Parsemer de coriandre fraîche ciselée.",
         "Servir chaud avec la semoule complète à côté — repas du soir végétarien complet et réconfortant."
@@ -85158,7 +85118,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 410,
+      "kcal": 460,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -85175,13 +85135,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Épeautre",
-          70,
+          55,
           "g",
           "pantry"
         ],
         [
           "Champignons de Paris",
-          150,
+          200,
           "g",
           "produce"
         ],
@@ -85244,11 +85204,11 @@ window.__DATA_RECIPES = {
         "Rincer l'épeautre à l'eau froide. Émincer l'oignon finement, écraser l'ail.",
         "Couper les champignons en lamelles de 5 mm.",
         "Faire chauffer le bouillon dans une casserole et le maintenir frémissant à côté (clé du risotto : bouillon toujours chaud).",
-        "Dans une sauteuse, chauffer 6 ml d'huile à feu moyen, faire revenir l'oignon 4 minutes (translucide).",
+        "Dans une sauteuse, chauffer une partie de l'huile à feu moyen, faire revenir l'oignon 4 minutes (translucide).",
         "Ajouter l'épeautre, mélanger 2 minutes pour le nacrer (les grains deviennent légèrement translucides).",
         "Verser le vin blanc, laisser évaporer en remuant (l'alcool s'évapore, l'acidité reste).",
         "Ajouter le bouillon chaud louche par louche, en attendant que chaque louche soit absorbée avant la suivante, en remuant souvent (25-30 min, l'épeautre reste légèrement al dente).",
-        "Pendant ce temps, dans une poêle à part, saisir les champignons et l'ail dans 4 ml d'huile à feu vif 6 minutes (dorés, l'eau s'est évaporée).",
+        "Pendant ce temps, dans une poêle à part, saisir les champignons et l'ail dans le reste de l'huile à feu vif 6 minutes (dorés, l'eau s'est évaporée).",
         "Quand l'épeautre est cuit et crémeux, incorporer les champignons, le parmesan, le sel et le poivre hors du feu.",
         "Mélanger énergiquement pour rendre le risotto onctueux (mantecatura).",
         "Parsemer de persil ciselé. Servir immédiatement, bien chaud."
@@ -85367,7 +85327,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 380,
+      "kcal": 370,
       "tags": [
         "vegan",
         "vegetarian",
@@ -85382,19 +85342,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Chou-fleur",
-          250,
+          300,
           "g",
           "produce"
         ],
         [
           "Pomme de terre",
-          150,
+          80,
           "g",
           "produce"
         ],
         [
           "Riz basmati complet",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -85403,6 +85363,12 @@ window.__DATA_RECIPES = {
           120,
           "g",
           "produce"
+        ],
+        [
+          "Lait de coco",
+          40,
+          "ml",
+          "pantry"
         ],
         [
           "Oignon jaune",
@@ -85473,7 +85439,7 @@ window.__DATA_RECIPES = {
         "Ajouter l'ail écrasé et le gingembre râpé, faire revenir 1 minute.",
         "Ajouter le cumin et le curcuma, torréfier 30 secondes.",
         "Ajouter les pommes de terre et le chou-fleur, mélanger pour enrober d'épices.",
-        "Ajouter les tomates en dés, le sel et 100 ml d'eau. Couvrir et cuire 18-20 minutes à feu doux (les légumes sont tendres, vérifier avec une pointe de couteau).",
+        "Ajouter les tomates en dés, le lait de coco, le sel et un fond d'eau (juste de quoi couvrir le fond de la sauteuse). Couvrir et cuire 18-20 minutes à feu doux (les légumes sont tendres, vérifier avec une pointe de couteau).",
         "Ajouter le garam masala en fin de cuisson, mélanger délicatement (pour ne pas écraser les légumes).",
         "Parsemer de coriandre fraîche. Servir chaud avec le riz basmati complet."
       ],
@@ -85749,7 +85715,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -85761,13 +85727,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs doux",
-          80,
+          30,
           "g",
           "produce"
         ],
         [
           "Haricots noirs cuits",
-          80,
+          100,
           "g",
           "pantry"
         ],
@@ -85827,14 +85793,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rincer le quinoa à l'eau froide, le cuire dans 150 ml d'eau salée 15 minutes (l'eau est absorbée, les grains éclatent). Réserver.",
+        "Rincer le quinoa à l'eau froide, le cuire dans 2 fois son volume d'eau salée 15 minutes (l'eau est absorbée, les grains éclatent). Réserver.",
         "Couper la courgette en cubes de 1,5 cm, la tomate en dés, émincer l'oignon rouge.",
         "Faire chauffer l'huile d'olive dans une poêle à feu moyen-vif, faire revenir l'oignon et l'ail écrasé 3 minutes.",
         "Ajouter la courgette, saisir 6 minutes à feu vif (dorée mais encore croquante).",
         "Ajouter le maïs, la tomate, le cumin, le piment doux et le sel, cuire 5 minutes (la tomate fond, c'est le calabacitas).",
         "Égoutter et rincer les haricots noirs, les ajouter pour les réchauffer 2 minutes.",
-        "Presser le jus du demi-citron vert, mélanger.",
-        "Dresser le quinoa dans 2 bols, répartir les calabacitas par-dessus.",
+        "Presser le jus du citron vert, mélanger.",
+        "Dresser le quinoa dans les bols, répartir les calabacitas par-dessus.",
         "Parsemer de coriandre fraîche ciselée. Servir chaud ou tiède."
       ],
       "photo": "assets/recipes/l213.webp"
@@ -86185,7 +86151,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 470,
       "tags": [
         "vegan",
         "vegetarian",
@@ -86199,7 +86165,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fèves fraîches écossées",
-          200,
+          120,
           "g",
           "produce"
         ],
@@ -86522,7 +86488,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 320,
+      "kcal": 380,
       "tags": [
         "vegetarian",
         "quick",
@@ -86533,30 +86499,31 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          50,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          150,
           "ml",
           "dairy"
         ],
         [
           "Pomme",
-          100,
+          80,
           "g",
           "produce"
         ],
         [
           "Noix décortiquées",
-          12,
+          15,
           "g",
           "pantry"
         ],
@@ -86567,14 +86534,8 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable",
-          6,
-          "g",
-          "pantry"
-        ],
-        [
           "Graines de lin",
-          5,
+          10,
           "g",
           "pantry"
         ]
@@ -86582,11 +86543,11 @@ window.__DATA_RECIPES = {
       "steps": [
         "Verser les flocons d'avoine et le lait dans une casserole, ajouter la cannelle.",
         "Porter à frémissement à feu moyen en remuant régulièrement (le porridge épaissit en 5-7 minutes).",
-        "Pendant ce temps, râper la moitié de la pomme (avec la peau) et couper l'autre moitié en petits dés.",
-        "Ajouter la pomme râpée dans le porridge en fin de cuisson, mélanger (elle fond et sucre naturellement).",
+        "Pendant ce temps, râper une partie de la pomme (avec la peau) et couper le reste en petits dés.",
+        "Ajouter la pomme râpée dans le porridge en fin de cuisson, mélanger (elle fond et adoucit naturellement le porridge).",
         "Concasser grossièrement les noix au couteau.",
-        "Verser le porridge dans 2 bols, répartir les dés de pomme frais, les noix concassées et les graines de lin.",
-        "Finir par un filet de sirop d'érable. Servir chaud."
+        "Verser le porridge dans le bol, répartir les dés de pomme frais, les noix concassées et les graines de lin.",
+        "Servir chaud : la pomme râpée et la cannelle apportent toute la douceur."
       ],
       "photo": "assets/recipes/b160.webp"
     },
@@ -86603,7 +86564,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 420,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -86620,7 +86581,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          60,
+          30,
           "g",
           "pantry"
         ],
@@ -86632,7 +86593,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fromage blanc",
-          100,
+          130,
           "g",
           "dairy"
         ],
@@ -86644,7 +86605,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Myrtilles",
-          80,
+          50,
+          "g",
+          "produce"
+        ],
+        [
+          "Framboise",
+          40,
           "g",
           "produce"
         ],
@@ -86661,12 +86628,6 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
           "Huile d'olive",
           5,
           "ml",
@@ -86676,13 +86637,13 @@ window.__DATA_RECIPES = {
       "steps": [
         "Mixer les flocons d'avoine au blender pour obtenir une farine grossière.",
         "Dans un saladier, mélanger la farine d'avoine, la levure chimique et la vanille.",
-        "Dans un autre bol, fouetter l'œuf, la moitié du fromage blanc, le lait et 4g de sirop d'érable.",
+        "Dans un autre bol, fouetter l'œuf, une partie du fromage blanc et le lait.",
         "Verser les liquides dans les secs, mélanger jusqu'à obtenir une pâte épaisse et lisse. Laisser reposer 5 minutes.",
-        "Incorporer délicatement la moitié des myrtilles à la pâte.",
+        "Incorporer délicatement une partie des myrtilles à la pâte.",
         "Chauffer une poêle anti-adhésive à feu moyen avec un peu d'huile, verser 2 cuillères à soupe de pâte par pancake.",
         "Cuire 2 minutes : des bulles apparaissent en surface, retourner et cuire 1-2 minutes l'autre face. Réserver au chaud.",
-        "Continuer jusqu'à épuiser la pâte (environ 6 pancakes).",
-        "Dresser les pancakes, garnir du reste de fromage blanc, des myrtilles fraîches et d'un filet du sirop d'érable restant."
+        "Continuer jusqu'à épuiser la pâte.",
+        "Dresser les pancakes, garnir du reste de fromage blanc, des myrtilles restantes et des framboises (rincées et égouttées délicatement, elles s'écrasent vite). Les fruits apportent toute la douceur."
       ],
       "photo": "assets/recipes/b161.webp"
     },
@@ -86786,7 +86747,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 330,
+      "kcal": 320,
       "tags": [
         "vegetarian",
         "quick",
@@ -86797,18 +86758,19 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          150,
           "ml",
           "dairy"
         ],
@@ -86826,19 +86788,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane",
-          100,
+          40,
           "g",
           "produce"
         ],
         [
-          "Sirop d'érable",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
           "Noisettes décortiquées",
-          10,
+          15,
           "g",
           "pantry"
         ],
@@ -86853,10 +86809,10 @@ window.__DATA_RECIPES = {
         "Préparer un expresso (ou café fort) et le laisser tiédir.",
         "Verser les flocons d'avoine, le lait et le café dans une casserole.",
         "Porter à frémissement à feu moyen en remuant, cuire 5-7 minutes (le porridge épaissit, couleur café au lait).",
-        "Ajouter le cacao en poudre et le sirop d'érable, mélanger jusqu'à dissolution complète (texture mousse de cappuccino).",
+        "Ajouter le cacao en poudre, mélanger jusqu'à dissolution complète (texture mousse de cappuccino).",
         "Couper la banane en rondelles.",
         "Concasser grossièrement les noisettes au couteau, les faire griller 2 minutes à sec dans une poêle.",
-        "Verser le porridge dans 2 bols, disposer les rondelles de banane en éventail.",
+        "Verser le porridge dans le bol, disposer les rondelles de banane en éventail.",
         "Parsemer de noisettes grillées et d'une pointe de cannelle façon saupoudrage de cappuccino. Servir chaud."
       ],
       "photo": "assets/recipes/b163.webp"
@@ -86967,7 +86923,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 290,
+      "kcal": 410,
       "tags": [
         "vegetarian",
         "quick",
@@ -86979,7 +86935,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -87008,19 +86965,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Amandes effilées",
-          10,
+          15,
           "g",
           "pantry"
         ],
         [
           "Flocons d'avoine",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Miel d'acacia",
-          6,
+          3,
           "g",
           "pantry"
         ],
@@ -87055,7 +87012,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 220,
+      "kcal": 260,
       "tags": [
         "quick",
         "no-cook",
@@ -87073,13 +87030,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Sardines à l'huile",
-          100,
+          50,
           "g",
           "meat-fish"
         ],
         [
           "Fromage frais",
-          50,
+          40,
           "g",
           "dairy"
         ],
@@ -87109,13 +87066,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pain de seigle",
-          60,
+          40,
           "g",
           "pantry"
         ],
         [
           "Concombre",
-          80,
+          120,
           "g",
           "produce"
         ]
@@ -87124,10 +87081,10 @@ window.__DATA_RECIPES = {
         "Égoutter les sardines, retirer l'arête centrale si présente (elle s'enlève facilement à la fourchette).",
         "Écraser les sardines à la fourchette dans un bol (texture rustique).",
         "Émincer l'échalote très finement, ciseler la ciboulette.",
-        "Ajouter le fromage frais, l'échalote, le jus du demi-citron et le poivre aux sardines.",
+        "Ajouter le fromage frais, l'échalote, le jus du citron et le poivre aux sardines.",
         "Mélanger jusqu'à obtenir une texture de rillettes homogène mais avec des morceaux.",
         "Goûter et ajuster : un peu plus de citron si besoin (les sardines sont déjà salées, pas besoin de sel).",
-        "Ajouter la moitié de la ciboulette dans les rillettes, réserver le reste pour la déco.",
+        "Ajouter une partie de la ciboulette dans les rillettes, réserver le reste pour la déco.",
         "Toaster le pain de seigle, le couper en mouillettes. Couper le concombre en rondelles épaisses.",
         "Servir les rillettes dans un ramequin, parsemées de ciboulette, avec les mouillettes et les rondelles de concombre pour tartiner."
       ],
@@ -87356,7 +87313,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 200,
+      "kcal": 250,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -87370,7 +87327,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          45,
+          40,
           "g",
           "pantry"
         ],
@@ -87388,7 +87345,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          12,
+          6,
           "g",
           "pantry"
         ],
@@ -87412,7 +87369,7 @@ window.__DATA_RECIPES = {
         "Ajouter le riz, baisser à feu très doux et cuire 30-35 minutes en remuant régulièrement (le riz absorbe le lait et devient crémeux).",
         "Surveiller en fin de cuisson : le riz au lait doit rester légèrement coulant (il épaissit en refroidissant).",
         "Hors du feu, ajouter le sirop d'érable et mélanger (le sucre en fin préserve la texture).",
-        "Répartir dans 2 ramequins, saupoudrer d'une pointe de cannelle.",
+        "Répartir dans les ramequins, saupoudrer d'une pointe de cannelle.",
         "Servir tiède ou froid selon préférence. Se conserve 3 jours au frais."
       ],
       "photo": "assets/recipes/des147.webp"
@@ -87430,7 +87387,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 160,
+      "kcal": 240,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -87446,7 +87403,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poire",
-          250,
+          200,
           "g",
           "produce"
         ],
@@ -87470,7 +87427,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          12,
+          6,
           "g",
           "pantry"
         ],
@@ -87495,12 +87452,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Éplucher les poires en gardant la queue si possible (plus joli), les couper en deux et retirer le cœur à la cuillère.",
-        "Dans une casserole, verser 400 ml d'eau, le sirop d'érable, la cannelle, l'anis étoilé, la vanille et le jus du demi-citron.",
-        "Porter à frémissement, déposer les demi-poires dans le sirop épicé.",
+        "Dans une casserole, verser de l'eau (de quoi recouvrir les poires), le sirop d'érable, la cannelle, l'anis étoilé, la vanille et le jus du citron.",
+        "Porter à frémissement, déposer les morceaux de poire dans le sirop épicé.",
         "Pocher à feu doux 20-25 minutes en les retournant à mi-cuisson : les poires sont tendres et translucides (une pointe de couteau s'enfonce sans résistance).",
         "Retirer les poires délicatement, laisser réduire le jus de pochage 5 minutes à feu vif (il devient sirupeux).",
         "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Dresser : une cuillère de skyr dans chaque assiette, déposer les demi-poires par-dessus.",
+        "Dresser : une cuillère de skyr dans chaque assiette, déposer les morceaux de poire par-dessus.",
         "Napper d'un peu de sirop de pochage réduit, parsemer d'amandes effilées grillées. Servir tiède ou frais."
       ],
       "photo": "assets/recipes/des148.webp"
@@ -87805,7 +87762,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -88450,7 +88408,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -88664,7 +88623,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -88675,12 +88634,13 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
-          "Flocons d'avoine",
-          50,
+          "Flocons d'avoine complets",
+          40,
           "g",
           "pantry"
         ],
@@ -88715,12 +88675,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Miel d'acacia",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
           "Eau de fleur d'oranger",
           4,
           "ml",
@@ -88729,13 +88683,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "La veille au soir, mélanger dans un bocal les flocons d'avoine, le skyr, le lait d'amande, les graines de chia et l'eau de fleur d'oranger.",
-        "Couper la moitié de la pêche en petits dés, l'ajouter au mélange.",
+        "Couper une partie de la pêche en petits dés, l'ajouter au mélange.",
         "Fermer le bocal et placer au frigo toute la nuit (8h minimum) : les flocons et le chia gonflent, texture crémeuse.",
         "Le matin, sortir le bocal et mélanger.",
         "Couper le reste de la pêche en lamelles.",
         "Faire griller les amandes effilées 2 minutes à sec dans une poêle.",
-        "Répartir l'overnight oats dans 2 bols (ou servir directement dans le bocal).",
-        "Garnir des lamelles de pêche, des amandes grillées et d'un filet de miel d'acacia. Servir frais."
+        "Verser l'overnight oats dans un bol (ou le servir directement dans le bocal).",
+        "Garnir des lamelles de pêche et des amandes grillées. Servir frais : la pêche bien mûre apporte toute la douceur."
       ],
       "photo": "assets/recipes/b166.webp"
     },
@@ -88763,7 +88717,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -88932,7 +88887,9 @@ window.__DATA_RECIPES = {
         "blender",
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "gluten"
+      ],
       "ing": [
         [
           "Pastèque",
@@ -89007,7 +88964,7 @@ window.__DATA_RECIPES = {
       "advance": "2h pour égoutter le yaourt",
       "diff": 1,
       "cost": 1.7,
-      "kcal": 320,
+      "kcal": 350,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -89018,7 +88975,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -89029,7 +88987,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          120,
+          100,
           "g",
           "produce"
         ],
@@ -89047,13 +89005,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Flocons d'avoine",
-          25,
+          15,
           "g",
           "pantry"
         ],
@@ -89072,11 +89030,11 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Verser le skyr dans une étamine au-dessus d'un bol, laisser égoutter 2h au frais (texture épaisse, base du shrikhand).",
-        "Infuser le safran dans 1 cuillère à café d'eau tiède 10 minutes (couleur jaune dorée).",
-        "Éplucher la mangue, en mixer la moitié en purée, couper l'autre moitié en dés.",
+        "Infuser le safran dans un fond d'eau tiède 10 minutes (couleur jaune dorée).",
+        "Éplucher la mangue, en mixer une partie en purée, couper le reste en dés.",
         "Mélanger le yaourt égoutté avec la purée de mangue, le safran infusé, la cardamome et le sirop d'érable (texture crémeuse jaune).",
         "Préparer un granola express : faire dorer les flocons d'avoine et les amandes effilées 3 minutes à sec dans une poêle.",
-        "Répartir le shrikhand dans 2 bols.",
+        "Verser le shrikhand dans le bol.",
         "Garnir des dés de mangue, du granola d'avoine et des pistaches concassées. Servir frais."
       ],
       "photo": "assets/recipes/b170.webp"
@@ -89093,7 +89051,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 250,
       "tags": [
         "vegan",
         "vegetarian",
@@ -89108,25 +89066,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme",
-          100,
+          120,
           "g",
           "produce"
         ],
         [
           "Banane",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Mangue",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Grenade",
-          50,
+          80,
           "g",
           "produce"
         ],
@@ -89171,9 +89129,9 @@ window.__DATA_RECIPES = {
         "Torréfier le cumin moulu 30 secondes à sec dans une petite poêle (parfum intense, base du chaat masala).",
         "Couper la pomme (avec la peau), la banane et la mangue en cubes de 1,5 cm.",
         "Mettre les fruits dans un saladier.",
-        "Égrener la grenade (taper la demi-grenade au-dessus du bol pour récupérer les grains).",
+        "Égrener la grenade (couper la grenade en deux et taper chaque morceau au-dessus du bol pour récupérer les grains).",
         "Râper finement le gingembre.",
-        "Ajouter aux fruits le cumin torréfié, le gingembre, le piment doux, le sel et le jus du citron vert entier.",
+        "Ajouter aux fruits le cumin torréfié, le gingembre, le piment doux, le sel et le jus du citron vert.",
         "Mélanger délicatement (le citron évite l'oxydation et réveille les fruits).",
         "Parsemer de grenade et de menthe ciselée. Servir immédiatement — le petit-déj fruité et épicé des rues indiennes."
       ],
@@ -89202,7 +89160,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "gluten"
       ],
       "ing": [
         [
@@ -89278,7 +89237,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 260,
       "tags": [
         "vegan",
         "vegetarian",
@@ -89290,7 +89249,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -89301,7 +89261,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane",
-          100,
+          70,
           "g",
           "produce"
         ],
@@ -89319,12 +89279,12 @@ window.__DATA_RECIPES = {
         ],
         [
           "Graines de chia",
-          6,
+          10,
           "g",
           "pantry"
         ],
         [
-          "Flocons d'avoine",
+          "Flocons d'avoine complets",
           20,
           "g",
           "pantry"
@@ -89334,17 +89294,11 @@ window.__DATA_RECIPES = {
           0.3,
           "g",
           "spices"
-        ],
-        [
-          "Sirop d'érable",
-          5,
-          "g",
-          "pantry"
         ]
       ],
       "steps": [
-        "Équeuter les fraises (en garder 2-3 pour la déco). Éplucher la banane et la couper en morceaux.",
-        "Mettre les fraises, la banane, le lait d'amande, le cacao, la cannelle et le sirop d'érable dans le blender.",
+        "Équeuter les fraises (en garder quelques-unes pour la déco). Éplucher la banane et la couper en morceaux.",
+        "Mettre les fraises, la banane, le lait d'amande, le cacao et la cannelle dans le blender.",
         "Mixer 30 secondes à pleine vitesse : texture épaisse (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, lisser le dessus.",
         "Couper les fraises réservées en lamelles, les disposer en éventail.",
@@ -89691,7 +89645,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 230,
+      "kcal": 250,
       "tags": [
         "vegetarian",
         "quick",
@@ -89708,55 +89662,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain",
-          55,
+          28,
           "g",
           "pantry"
         ],
         [
           "Pêche jaune",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Burrata",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Basilic frais",
-          6,
+          3.0,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4.0,
           "ml",
           "pantry"
         ],
         [
           "Vinaigre balsamique",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ]
       ],
       "steps": [
-        "Couper le pain au levain en 4 tranches, les passer 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées et croustillantes.",
+        "Couper le pain au levain en tranches, les passer 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées et croustillantes.",
         "Frotter chaque tranche encore chaude avec la gousse d'ail coupée (parfume sans masquer).",
         "Couper la pêche en fines lamelles.",
         "Déchirer la burrata en morceaux à la main (sa crème coule, c'est voulu).",
@@ -89887,7 +89841,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -89977,7 +89932,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -90072,7 +90028,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 180,
+      "kcal": 150,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90086,12 +90042,18 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme de terre",
-          180,
+          80,
           "g",
           "produce"
         ],
         [
           "Tomate",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Concombre",
           80,
           "g",
           "produce"
@@ -90104,7 +90066,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -90155,9 +90117,9 @@ window.__DATA_RECIPES = {
         "Cuire les pommes de terre entières (avec la peau) 15 minutes à l'eau bouillante salée jusqu'à ce qu'elles soient tendres. Égoutter et laisser refroidir.",
         "Éplucher les pommes de terre refroidies, les couper en cubes de 2 cm.",
         "Torréfier le cumin moulu 30 secondes à sec dans une poêle (parfum intense).",
-        "Couper la tomate en petits dés, émincer l'oignon rouge finement.",
-        "Mettre les pommes de terre, la tomate et l'oignon dans un saladier.",
-        "Ajouter le cumin torréfié, la coriandre moulue, le piment doux, le sel et le jus du citron vert entier.",
+        "Couper la tomate et le concombre en petits dés, émincer l'oignon rouge finement.",
+        "Mettre les pommes de terre, la tomate, le concombre et l'oignon dans un saladier.",
+        "Ajouter le cumin torréfié, la coriandre moulue, le piment doux, le sel et le jus du citron vert.",
         "Mélanger délicatement, laisser reposer 15 minutes au frais (les pommes de terre s'imprègnent).",
         "Parsemer de coriandre et menthe ciselées et de grains de grenade. Servir frais — le chaat de rue indien revisité froid pour l'été."
       ],
@@ -90175,7 +90137,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 110,
+      "kcal": 200,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90192,7 +90154,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue verte (peu mûre)",
-          200,
+          130,
+          "g",
+          "produce"
+        ],
+        [
+          "Concombre",
+          60,
           "g",
           "produce"
         ],
@@ -90246,12 +90214,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Éplucher la mangue verte (encore ferme et acidulée), la couper en fins bâtonnets ou en julienne.",
+        "Éplucher la mangue verte (encore ferme et acidulée), la couper en fins bâtonnets ou en julienne. Couper aussi le concombre en fins bâtonnets (avec la peau, pour le croquant).",
         "Émincer l'oignon rouge très finement.",
         "Torréfier le cumin moulu 30 secondes à sec dans une poêle.",
         "Concasser grossièrement les cacahuètes au couteau.",
-        "Mettre la mangue et l'oignon dans un saladier.",
-        "Ajouter le cumin torréfié, le piment doux, le sel et le jus du demi-citron vert.",
+        "Mettre la mangue, le concombre et l'oignon dans un saladier.",
+        "Ajouter le cumin torréfié, le piment doux, le sel et le jus du citron vert.",
         "Mélanger, laisser reposer 5 minutes.",
         "Parsemer de cacahuètes concassées, de coriandre et menthe ciselées. Servir frais — l'acidité vibrante de la mangue verte épicée."
       ],
@@ -90270,7 +90238,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 200,
+      "kcal": 240,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90284,48 +90252,48 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Perles de tapioca (sagou)",
-          18,
+          9,
           "g",
           "pantry"
         ],
         [
           "Mangue",
-          130,
+          65,
           "g",
           "produce"
         ],
         [
           "Pomelo",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Lait de coco",
-          120,
+          60,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
       ],
       "steps": [
         "Cuire les perles de tapioca dans une grande casserole d'eau bouillante 12-15 minutes en remuant (elles deviennent translucides). Égoutter et rincer à l'eau froide.",
-        "Éplucher la mangue, mixer la moitié en purée lisse, couper l'autre moitié en petits dés.",
-        "Mélanger la purée de mangue avec le lait de coco, le sirop d'érable et le jus du demi-citron vert.",
+        "Éplucher la mangue, mixer une partie en purée lisse, couper le reste en petits dés.",
+        "Mélanger la purée de mangue avec le lait de coco, le sirop d'érable et le jus du citron vert.",
         "Détacher les suprêmes de pomelo et les défaire en petits éclats (texture perlée caractéristique).",
         "Incorporer les perles de tapioca égouttées à la crème mangue-coco.",
-        "Répartir dans 2 bols ou verres, ajouter les dés de mangue et les éclats de pomelo.",
+        "Verser dans un bol ou un verre, ajouter les dés de mangue et les éclats de pomelo.",
         "Placer 1h au frais. Servir bien frais — le dessert star de Hong Kong, frais et texturé."
       ],
       "photo": "assets/recipes/des157.webp"
@@ -90437,7 +90405,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 140,
+      "kcal": 220,
       "tags": [
         "vegetarian",
         "quick",
@@ -90454,13 +90422,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue",
-          200,
+          150,
           "g",
           "produce"
         ],
         [
           "Yaourt nature",
-          80,
+          100,
           "g",
           "dairy"
         ],
@@ -90477,12 +90445,6 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable",
-          5,
-          "g",
-          "pantry"
-        ],
-        [
           "Pistaches non salées",
           10,
           "g",
@@ -90496,11 +90458,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Infuser le safran dans 1 cuillère à café d'eau tiède 10 minutes (couleur dorée).",
+        "Infuser le safran dans un fond d'eau tiède 10 minutes (couleur dorée).",
         "Éplucher la mangue, retirer le noyau, mixer la chair en purée parfaitement lisse au blender.",
-        "Ajouter le yaourt nature, la cardamome, le safran infusé, le sirop d'érable et le jus du quart de citron vert. Mixer 10 secondes pour homogénéiser (texture veloutée).",
-        "Goûter : l'aam ras doit être doux et parfumé (ajuster le sirop si la mangue est peu sucrée).",
-        "Répartir dans 2 coupes, placer 30 minutes au frais.",
+        "Ajouter le yaourt nature, la cardamome, le safran infusé et le jus du citron vert. Mixer 10 secondes pour homogénéiser (texture veloutée).",
+        "Goûter : l'aam ras doit être doux et parfumé (choisis une mangue bien mûre, qui sent fort et cède sous le doigt : c'est elle qui donne toute la douceur).",
+        "Répartir dans les coupes, placer 30 minutes au frais.",
         "Concasser les pistaches au couteau.",
         "Parsemer de pistaches concassées. Servir bien frais — le dessert-doudou de l'été indien, traditionnellement de la saison des mangues."
       ],
@@ -90683,7 +90645,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 130,
+      "kcal": 210,
       "tags": [
         "vegetarian",
         "quick",
@@ -90699,13 +90661,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pêche jaune",
-          200,
+          150,
           "g",
           "produce"
         ],
         [
           "Abricot",
-          150,
+          120,
           "g",
           "produce"
         ],
@@ -90717,7 +90679,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel d'acacia",
-          8,
+          4,
           "g",
           "pantry"
         ],
@@ -90750,7 +90712,7 @@ window.__DATA_RECIPES = {
         "Laver les pêches et les abricots, retirer les noyaux.",
         "Couper les pêches en quartiers, les abricots en deux ou en quartiers selon la taille.",
         "Disposer les fruits dans un saladier large et plat.",
-        "Préparer le sirop parfumé : mélanger le miel d'acacia, l'eau de fleur d'oranger, le jus du demi-citron et la cannelle.",
+        "Préparer le sirop parfumé : mélanger le miel d'acacia, l'eau de fleur d'oranger, le jus du citron et la cannelle.",
         "Verser le sirop sur les fruits, mélanger délicatement.",
         "Laisser macérer 10 minutes au frais (les fruits rendent leur jus et s'imprègnent du parfum).",
         "Concasser grossièrement les pistaches au couteau.",
@@ -90913,7 +90875,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au congélateur pour la mangue",
       "diff": 1,
       "cost": 1.6,
-      "kcal": 130,
+      "kcal": 100,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90928,13 +90890,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue",
-          250,
+          130,
           "g",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -90945,12 +90907,6 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sirop d'érable",
-          6,
-          "g",
-          "pantry"
-        ],
-        [
           "Sel",
           0.3,
           "g",
@@ -90959,10 +90915,10 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Éplucher la mangue, couper la chair en cubes et la congeler 2h (texture nécessaire pour la mangonada glacée).",
-        "Mettre les cubes de mangue congelés dans le blender avec le jus d'un demi-citron vert et le sirop d'érable.",
+        "Mettre les cubes de mangue congelés dans le blender avec une partie du jus de citron vert.",
         "Mixer en pulsant par à-coups jusqu'à obtenir une texture de sorbet épais (ajouter une cuillère d'eau si besoin).",
         "Préparer le mélange chili-lime : mélanger le piment doux et le sel dans une coupelle.",
-        "Verser la mangonada dans 2 verres, en alternant avec une pincée du mélange chili-lime entre les couches (effet marbré épicé).",
+        "Verser la mangonada dans les verres, en alternant avec une pincée du mélange chili-lime entre les couches (effet marbré épicé).",
         "Presser le reste du jus de citron vert sur le dessus.",
         "Saupoudrer d'une dernière pincée de chili-lime. Servir immédiatement à la cuillère ou avec une paille épaisse — la friandise glacée des rues mexicaines."
       ],
@@ -91398,7 +91354,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 290,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "quick",
@@ -91410,7 +91366,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -91439,32 +91396,26 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine",
-          20,
-          "g",
-          "pantry"
-        ],
-        [
-          "Amandes effilées",
           10,
           "g",
           "pantry"
         ],
         [
-          "Graines de chia",
-          5,
+          "Amandes effilées",
+          15,
           "g",
           "pantry"
         ],
         [
-          "Miel d'acacia",
-          6,
+          "Graines de chia",
+          10,
           "g",
           "pantry"
         ]
       ],
       "steps": [
         "Laver les abricots et la pêche, retirer les noyaux. Garder quelques lamelles pour la déco.",
-        "Mettre les fruits, le yaourt nature, le lait d'amande et le miel dans le blender.",
+        "Mettre les fruits, le yaourt nature, et le lait d'amande dans le blender (les fruits mûrs apportent toute la douceur).",
         "Mixer 30 secondes : texture épaisse (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, lisser le dessus.",
         "Disposer les lamelles de fruits réservées.",
@@ -91485,7 +91436,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 280,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "quick"
@@ -91496,7 +91447,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -91525,13 +91477,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine",
-          25,
+          15,
           "g",
           "pantry"
         ],
         [
           "Noisettes décortiquées",
-          10,
+          15,
           "g",
           "pantry"
         ],
@@ -91543,7 +91495,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel d'acacia",
-          8,
+          4,
           "g",
           "pantry"
         ]
@@ -91551,10 +91503,10 @@ window.__DATA_RECIPES = {
       "steps": [
         "Faire griller les flocons d'avoine, les noisettes concassées et les graines de courge 3 minutes à sec dans une poêle (granola express croustillant).",
         "Couper les fraises en quartiers.",
-        "Répartir le fromage blanc dans 2 bols, lisser le dessus.",
+        "Verser le fromage blanc dans le bol, lisser le dessus.",
         "Disposer les fraises, les myrtilles et les framboises en secteurs colorés.",
         "Parsemer du granola express tiède (flocons-noisettes-graines).",
-        "Finir par un filet de miel d'acacia. Servir aussitôt pour garder le croustillant."
+        "Finir par un mince filet de miel d'acacia. Servir aussitôt pour garder le croustillant."
       ],
       "photo": "assets/recipes/b175.webp"
     },
@@ -91570,7 +91522,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 300,
+      "kcal": 390,
       "tags": [
         "vegetarian",
         "quick"
@@ -91586,7 +91538,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain",
-          70,
+          45,
           "g",
           "pantry"
         ],
@@ -91598,7 +91550,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fraise",
-          120,
+          150,
           "g",
           "produce"
         ],
@@ -91610,7 +91562,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel d'acacia",
-          10,
+          5,
           "g",
           "pantry"
         ],
@@ -91628,8 +91580,8 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Couper le pain au levain en 2 tranches épaisses, les passer 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées.",
-        "Mélanger la ricotta avec le zeste du quart de citron et la moitié du miel (texture crémeuse parfumée).",
+        "Couper le pain au levain en tranches épaisses, les passer 3 minutes au four (ou grille-pain) jusqu'à ce qu'elles soient dorées.",
+        "Mélanger la ricotta avec le zeste du citron et une partie du miel (texture crémeuse parfumée).",
         "Couper les fraises en fines lamelles.",
         "Étaler généreusement la ricotta sur les tranches de pain tièdes.",
         "Disposer les lamelles de fraise sur la ricotta.",
@@ -91650,7 +91602,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 290,
+      "kcal": 380,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -91661,7 +91613,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -91678,19 +91631,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel d'acacia",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Amandes effilées",
-          12,
+          15,
           "g",
           "pantry"
         ],
         [
           "Flocons d'avoine",
-          25,
+          15,
           "g",
           "pantry"
         ],
@@ -91710,11 +91663,11 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffer le four à 190°C en chaleur tournante.",
         "Couper les abricots en deux, retirer les noyaux, les disposer face coupée vers le haut sur une plaque.",
-        "Arroser de la moitié du miel et parsemer de quelques aiguilles de romarin.",
+        "Arroser d'une partie du miel et parsemer de quelques aiguilles de romarin.",
         "Enfourner 12 minutes : les abricots deviennent fondants et légèrement caramélisés.",
         "Pendant ce temps, faire griller les amandes effilées et les flocons d'avoine 3 minutes à sec dans une poêle.",
         "Mélanger le skyr avec la vanille et le reste du miel.",
-        "Répartir le yaourt dans 2 bols, déposer les abricots rôtis tièdes.",
+        "Verser le skyr dans le bol, déposer les abricots rôtis tièdes.",
         "Parsemer du mélange amandes-avoine grillé. Servir tiède ou frais — le contraste yaourt froid / abricots tièdes est délicieux."
       ],
       "photo": "assets/recipes/b177.webp"
@@ -91835,7 +91788,8 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "gluten"
       ],
       "ing": [
         [
@@ -91990,7 +91944,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -92080,7 +92035,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.6,
-      "kcal": 320,
+      "kcal": 340,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -92091,18 +92046,19 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Flocons d'avoine",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Yaourt nature",
-          100,
+          130,
           "g",
           "dairy"
         ],
@@ -92114,7 +92070,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          120,
+          70,
           "g",
           "produce"
         ],
@@ -92132,25 +92088,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Graines de chia",
-          6,
-          "g",
-          "pantry"
-        ],
-        [
-          "Miel d'acacia",
-          6,
+          12,
           "g",
           "pantry"
         ]
       ],
       "steps": [
         "La veille, mélanger dans un bocal les flocons d'avoine, le yaourt nature, le lait d'amande, les graines de chia et la cardamome.",
-        "Couper la moitié de la mangue en petits dés, l'ajouter au mélange.",
+        "Couper une partie de la mangue en petits dés, l'ajouter au mélange.",
         "Fermer et placer au frigo toute la nuit (texture crémeuse).",
-        "Le matin, mixer ou écraser l'autre moitié de la mangue en purée.",
+        "Le matin, mixer ou écraser le reste de la mangue en purée.",
         "Faire griller les amandes effilées 2 minutes à sec.",
-        "Répartir l'overnight oats dans 2 bols, napper de purée de mangue.",
-        "Parsemer d'amandes grillées, finir par un filet de miel. Servir frais — le petit-déj indien parfumé à la cardamome."
+        "Verser l'overnight oats dans le bol, napper de purée de mangue.",
+        "Parsemer d'amandes grillées (la purée de mangue adoucit le tout). Servir frais — le petit-déj indien parfumé à la cardamome."
       ],
       "photo": "assets/recipes/b182.webp"
     },
@@ -92166,7 +92116,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 280,
+      "kcal": 300,
       "tags": [
         "vegetarian",
         "quick",
@@ -92178,12 +92128,13 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Mangue",
-          150,
+          120,
           "g",
           "produce"
         ],
@@ -92213,19 +92164,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pistaches non salées",
-          12,
+          15,
           "g",
           "pantry"
         ],
         [
           "Flocons d'avoine",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Miel d'acacia",
-          6,
+          3,
           "g",
           "pantry"
         ]
@@ -92263,7 +92214,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "lactose"
+        "lactose",
+        "gluten"
       ],
       "ing": [
         [
@@ -92274,7 +92226,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane",
-          100,
+          60,
           "g",
           "produce"
         ],
@@ -92285,8 +92237,8 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Flocons d'avoine",
-          25,
+          "Flocons d'avoine complets",
+          20,
           "g",
           "pantry"
         ],
@@ -92301,20 +92253,14 @@ window.__DATA_RECIPES = {
           0.3,
           "g",
           "spices"
-        ],
-        [
-          "Sirop d'érable",
-          5,
-          "g",
-          "pantry"
         ]
       ],
       "steps": [
-        "Équeuter les fraises (en garder 1-2 pour la déco). Éplucher la banane.",
-        "Mettre les fraises, la banane, le lait, les flocons d'avoine, la cannelle, la vanille et le sirop d'érable dans le blender.",
+        "Équeuter les fraises (en garder une pour la déco). Éplucher la banane.",
+        "Mettre les fraises, la banane, le lait, les flocons d'avoine, la cannelle et la vanille dans le blender.",
         "Mixer 40 secondes à pleine vitesse jusqu'à obtenir une boisson épaisse et onctueuse (l'avoine épaissit et rassasie).",
-        "Goûter et ajuster (un peu plus de sirop si les fraises sont acides).",
-        "Verser dans 2 grands verres.",
+        "Goûter : la banane apporte toute la douceur. Si c'est trop épais, ajouter un trait de lait.",
+        "Verser dans un grand verre.",
         "Décorer d'une lamelle de fraise et d'une pincée de cannelle. Servir frais — le smoothie-repas mexicain du matin, crémeux et nourrissant."
       ],
       "photo": "assets/recipes/b184.webp"
@@ -92331,7 +92277,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 260,
+      "kcal": 370,
       "tags": [
         "vegan",
         "vegetarian",
@@ -92343,7 +92289,9 @@ window.__DATA_RECIPES = {
         "blender",
         "bowl"
       ],
-      "allergens": [],
+      "allergens": [
+        "gluten"
+      ],
       "ing": [
         [
           "Pitaya (fruit du dragon)",
@@ -92353,13 +92301,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          100,
+          80,
           "g",
           "produce"
         ],
         [
           "Banane",
-          80,
+          40,
           "g",
           "produce"
         ],
@@ -92382,14 +92330,14 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Flocons d'avoine",
-          20,
+          "Flocons d'avoine complets",
+          15,
           "g",
           "pantry"
         ],
         [
           "Graines de courge",
-          8,
+          12,
           "g",
           "pantry"
         ]
@@ -92397,7 +92345,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Couper le pitaya en deux, prélever la chair à la cuillère (rose vif pour le fruit à chair rouge).",
         "Éplucher la mangue et la banane, couper en morceaux (garder quelques dés de mangue pour la déco).",
-        "Mettre le pitaya, la mangue, la banane, le lait de coco et le jus du demi-citron vert dans le blender.",
+        "Mettre le pitaya, la mangue, la banane, le lait de coco et le jus du citron vert dans le blender.",
         "Mixer 30 secondes : texture épaisse rose vif (ajouter un glaçon si trop liquide).",
         "Verser dans un bol large, lisser le dessus.",
         "Disposer les dés de mangue réservés.",
@@ -92657,7 +92605,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 340,
+      "kcal": 540,
       "tags": [],
       "eq": [
         "grill"
@@ -92669,19 +92617,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crevettes décortiquées crues",
-          160,
+          180,
           "g",
           "meat-fish"
         ],
         [
           "Tortilla maïs",
-          2,
+          1.5,
           "u",
           "pantry"
         ],
         [
           "Mangue",
-          100,
+          60,
           "g",
           "produce"
         ],
@@ -92747,9 +92695,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Décortiquer les crevettes, les sécher. Les mariner 10 minutes avec le paprika fumé, le cumin, le piment doux, la moitié de l'huile et une pincée de sel.",
-        "Préparer la salsa de mangue : couper la mangue en petits dés, émincer l'oignon rouge, mélanger avec le jus d'un demi-citron vert et la moitié de la coriandre.",
-        "Émincer le chou rouge très finement, l'assaisonner avec le jus du demi-citron vert restant, le reste d'huile et une pincée de sel (slaw croquant).",
+        "Rincer les crevettes, les sécher. Les mariner 10 minutes avec le paprika fumé, le cumin, le piment doux, une partie de l'huile et une pincée de sel.",
+        "Préparer la salsa de mangue : couper la mangue en petits dés, émincer l'oignon rouge, mélanger avec le jus d'une partie du citron vert et une partie de la coriandre.",
+        "Émincer le chou rouge très finement, l'assaisonner avec le reste du jus de citron vert, le reste d'huile et une pincée de sel (slaw croquant).",
         "Couper l'avocat en lamelles.",
         "Faire chauffer le grill (ou poêle-gril) à feu vif, griller les crevettes 2-3 minutes par face (roses et marquées).",
         "Réchauffer les tortillas de maïs 30 secondes par face sur le grill (souples avec marques).",
@@ -92893,7 +92841,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -92974,7 +92923,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "lactose",
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -93050,7 +93000,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 200,
+      "kcal": 210,
       "tags": [
         "vegetarian",
         "quick",
@@ -93067,59 +93017,59 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain",
-          70,
+          35,
           "g",
           "pantry"
         ],
         [
           "Asperges vertes",
-          120,
+          60,
           "g",
           "produce"
         ],
         [
           "Ricotta",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4.0,
           "ml",
           "pantry"
         ],
         [
           "Menthe fraîche",
-          4,
+          2.0,
           "g",
           "produce"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ]
       ],
       "steps": [
-        "Couper le pain au levain en 4 tranches, les passer au four (ou grille-pain) 3 minutes jusqu'à ce qu'elles soient dorées.",
+        "Couper le pain au levain en tranches, les passer au four (ou grille-pain) 3 minutes jusqu'à ce qu'elles soient dorées.",
         "Frotter chaque tranche encore chaude avec la gousse d'ail coupée.",
         "Casser la base dure des asperges, les couper en tronçons fins (garder les pointes).",
         "Faire sauter les asperges dans l'huile d'olive 5 minutes à feu moyen-vif (tendres, légèrement dorées).",
-        "Mélanger la ricotta avec le zeste du demi-citron et le poivre (texture crémeuse parfumée).",
+        "Mélanger la ricotta avec le zeste du citron et le poivre (texture crémeuse parfumée).",
         "Étaler la ricotta citronnée sur les crostini.",
         "Disposer les asperges sautées par-dessus, presser un peu de jus de citron.",
         "Parsemer de menthe ciselée. Servir tiède — l'apéro printanier aux asperges."
@@ -93138,7 +93088,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 210,
+      "kcal": 240,
       "tags": [
         "vegetarian",
         "quick",
@@ -93156,55 +93106,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain au levain",
-          55,
+          28,
           "g",
           "pantry"
         ],
         [
           "Petits pois",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Ricotta",
-          60,
+          30,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          6,
+          3.0,
           "g",
           "produce"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4.0,
           "ml",
           "pantry"
         ],
         [
           "Parmesan râpé",
-          12,
+          6,
           "g",
           "dairy"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.5,
           "g",
           "spices"
         ],
@@ -93217,12 +93167,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Cuire les petits pois 4-5 minutes à l'eau bouillante salée (s'ils sont frais), 3 minutes s'ils sont surgelés. Égoutter et rafraîchir à l'eau froide (garde le vert vif).",
-        "Réserver 1 cuillère à soupe de petits pois pour la déco.",
-        "Mixer le reste des petits pois avec la ricotta, la moitié de la menthe, le jus du demi-citron, l'huile d'olive, le sel et le poivre (écrasé grossier, pas une purée lisse).",
-        "Couper le pain au levain en 4 tranches, les toaster 3 minutes au four.",
+        "Réserver quelques petits pois pour la déco.",
+        "Mixer le reste des petits pois avec la ricotta, une partie de la menthe, le jus du citron, l'huile d'olive, le sel et le poivre (écrasé grossier, pas une purée lisse).",
+        "Couper le pain au levain en tranches, les toaster 3 minutes au four.",
         "Frotter chaque tranche chaude avec la gousse d'ail coupée.",
         "Étaler généreusement l'écrasé de petits pois sur les bruschetta.",
-        "Garnir des petits pois réservés, de copeaux de parmesan et du reste de menthe. Servir aussitôt — la fraîcheur printanière des petits pois."
+        "Garnir des petits pois réservés, du parmesan râpé et du reste de menthe. Servir aussitôt — la fraîcheur printanière des petits pois."
       ],
       "photo": "assets/recipes/s159.webp"
     },
@@ -93238,7 +93188,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 180,
+      "kcal": 250,
       "tags": [
         "vegetarian",
         "quick",
@@ -93255,7 +93205,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain de seigle",
-          70,
+          50,
           "g",
           "pantry"
         ],
@@ -93267,7 +93217,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fromage frais",
-          80,
+          60,
           "g",
           "dairy"
         ],
@@ -93311,7 +93261,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Toaster légèrement les tranches de pain de seigle 2 minutes.",
         "Laver les radis, les couper en très fines rondelles (à la mandoline idéalement).",
-        "Mélanger le fromage frais avec le jus du quart de citron, la moitié de la ciboulette et de l'aneth ciselés, le sel et le poivre.",
+        "Mélanger le fromage frais avec le jus du citron, une partie de la ciboulette et de l'aneth ciselés, le sel et le poivre.",
         "Étaler généreusement le fromage frais aux herbes sur les tartines.",
         "Disposer les rondelles de radis en les faisant se chevaucher (effet écailles).",
         "Arroser d'un filet d'huile d'olive.",
@@ -93446,7 +93396,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -93656,7 +93607,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 360,
+      "kcal": 470,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -93672,19 +93623,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Orzo complet",
-          70,
+          40,
           "g",
           "pantry"
         ],
         [
           "Asperges vertes",
-          150,
+          200,
           "g",
           "produce"
         ],
         [
           "Petits pois",
-          100,
+          80,
           "g",
           "produce"
         ],
@@ -93702,7 +93653,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          400,
+          250,
           "ml",
           "pantry"
         ],
@@ -93751,7 +93702,7 @@ window.__DATA_RECIPES = {
         "Verser le bouillon chaud louche par louche en remuant souvent, jusqu'à ce que l'orzo soit cuit et crémeux (15 min, façon risotto).",
         "À mi-cuisson, ajouter les tronçons d'asperges et les petits pois.",
         "Ajouter les pointes d'asperges 4 minutes avant la fin (elles restent croquantes).",
-        "Hors du feu, incorporer le parmesan, le jus du demi-citron, le sel et le poivre. Mélanger pour rendre crémeux.",
+        "Hors du feu, incorporer le parmesan, le jus du citron, le sel et le poivre. Mélanger pour rendre crémeux.",
         "Parsemer de basilic. Servir aussitôt — le dîner printanier crémeux et léger."
       ],
       "photo": "assets/recipes/d218.webp"
@@ -94505,7 +94456,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 430,
+      "kcal": 620,
       "tags": [
         "batch-friendly"
       ],
@@ -94517,7 +94468,8 @@ window.__DATA_RECIPES = {
         "fish",
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -94528,19 +94480,25 @@ window.__DATA_RECIPES = {
         ],
         [
           "Vermicelles de riz",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Concombre",
           100,
+          "g",
+          "produce"
+        ],
+        [
+          "Germes de soja",
+          80,
           "g",
           "produce"
         ],
@@ -94597,22 +94555,16 @@ window.__DATA_RECIPES = {
           6,
           "ml",
           "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          5,
-          "g",
-          "pantry"
         ]
       ],
       "steps": [
-        "Couper le bœuf en fines lanières, les mariner 20 minutes dans la sauce soja, l'ail écrasé et 3 ml d'huile de sésame.",
+        "Couper le bœuf en fines lanières, les mariner 20 minutes dans la sauce soja, l'ail écrasé et l'huile de sésame.",
         "Cuire les vermicelles de riz 3-4 minutes à l'eau bouillante, égoutter et rincer à l'eau froide (ils restent souples sans coller).",
-        "Préparer la sauce nuoc-cham : mélanger le nuoc-mâm, le jus d'un citron vert, le sirop d'érable et 3 cuillères à soupe d'eau.",
-        "Râper la carotte en julienne, couper le concombre en bâtonnets, émincer la salade.",
+        "Préparer la sauce nuoc-cham : mélanger le nuoc-mâm, le jus du citron vert et un peu d'eau (la sauce doit rester bien liquide).",
+        "Râper la carotte en julienne, couper le concombre en bâtonnets, émincer la salade. Rincer les germes de soja à l'eau froide et les égoutter (ils doivent rester blancs et croquants).",
         "Concasser les cacahuètes, les faire griller 2 minutes à sec.",
         "Faire chauffer le grill (ou poêle-gril) à feu vif, saisir les lanières de bœuf 2-3 minutes (juste dorées, encore tendres).",
-        "Monter les bols : vermicelles au fond, salade, carotte, concombre, puis le bœuf grillé chaud.",
+        "Monter les bols : vermicelles au fond, salade, carotte, concombre, germes de soja, puis le bœuf grillé chaud.",
         "Arroser de sauce nuoc-cham, parsemer de menthe, coriandre et cacahuètes. Servir aussitôt — le grand classique vietnamien frais et chaud à la fois."
       ],
       "photo": "assets/recipes/l225.webp"
@@ -95759,7 +95711,8 @@ window.__DATA_RECIPES = {
         "soy",
         "eggs",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -96814,7 +96767,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 410,
+      "kcal": 510,
       "tags": [
         "batch-friendly"
       ],
@@ -96835,7 +96788,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          50,
+          45,
           "g",
           "pantry"
         ],
@@ -96865,7 +96818,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Raisins secs",
-          15,
+          6,
           "g",
           "produce"
         ],
@@ -96903,11 +96856,11 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rincer le riz, le cuire 18-20 minutes à l'eau bouillante salée. Égoutter, laisser refroidir.",
         "Pocher le blanc de poulet 12-15 minutes dans une casserole d'eau frémissante salée (cuit à cœur, moelleux). Égoutter, laisser tiédir puis effilocher ou couper en cubes.",
-        "Préparer la sauce coronation : mélanger le skyr, le curry en poudre, la moitié de la mangue mixée en purée, le jus du demi-citron vert et le sel.",
+        "Préparer la sauce coronation : mélanger le skyr, le curry en poudre, une partie de la mangue mixée en purée, le jus du citron vert et le sel.",
         "Mélanger le poulet avec la sauce coronation, laisser 30 minutes au frais (il s'imprègne).",
         "Faire griller les amandes effilées 2 minutes à sec.",
         "Couper le reste de mangue en dés, émincer l'oignon rouge.",
-        "Dresser le riz et la roquette dans 2 bols, ajouter le poulet coronation.",
+        "Dresser le riz et la roquette dans les bols, ajouter le poulet coronation.",
         "Garnir des dés de mangue, de l'oignon, des raisins secs et des amandes grillées. Parsemer de coriandre. Servir frais — le classique anglo-indien curry-mangue."
       ],
       "photo": "assets/recipes/l234.webp"
@@ -97373,7 +97326,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 330,
+      "kcal": 490,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -97400,13 +97353,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs doux",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Tomate",
-          150,
+          180,
           "g",
           "produce"
         ],
@@ -97472,7 +97425,7 @@ window.__DATA_RECIPES = {
         "Hacher la chair de courgette réservée. Faire chauffer l'huile dans une poêle, faire revenir l'oignon émincé et l'ail écrasé 3 minutes.",
         "Ajouter la chair de courgette hachée, le cumin et le piment doux, cuire 5 minutes.",
         "Ajouter les haricots noirs égouttés (écrasés grossièrement), le maïs, la tomate en dés et le sel, cuire 5 minutes (farce qui se tient).",
-        "Hors du feu, ajouter la moitié de la coriandre et le jus du demi-citron vert.",
+        "Hors du feu, ajouter une partie de la coriandre et le jus du citron vert.",
         "Garnir les coques de courgette de farce, parsemer de fromage frais émietté.",
         "Enfourner 18-20 minutes (les courgettes sont fondantes, le dessus gratiné). Parsemer du reste de coriandre. Servir chaud — les courgettes farcies à la mexicaine."
       ],
@@ -97502,7 +97455,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -97778,7 +97732,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur avec grattages",
       "diff": 2,
       "cost": 1.4,
-      "kcal": 90,
+      "kcal": 100,
       "tags": [
         "vegan",
         "vegetarian",
@@ -97792,7 +97746,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pêche jaune",
-          400,
+          200,
           "g",
           "produce"
         ],
@@ -97804,19 +97758,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          16,
+          8,
           "g",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Eau",
-          60,
+          30,
           "ml",
           "pantry"
         ]
@@ -97824,7 +97778,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Faire chauffer l'eau avec le sirop d'érable et les feuilles de verveine 5 minutes (infusion sirupeuse parfumée). Laisser infuser 5 minutes hors du feu, puis retirer la verveine.",
         "Laver les pêches, retirer les noyaux, couper la chair en morceaux.",
-        "Mixer les pêches avec le sirop à la verveine et le jus du demi-citron jusqu'à purée lisse.",
+        "Mixer les pêches avec le sirop à la verveine et le jus du citron jusqu'à purée lisse.",
         "Verser dans un récipient large à fond plat, placer au congélateur.",
         "Gratter à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : texture sorbet neigeuse.",
         "Au moment de servir, gratter une dernière fois.",
@@ -97946,7 +97900,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 490,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -97960,13 +97914,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Carotte",
-          250,
+          200,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits",
-          150,
+          130,
           "g",
           "pantry"
         ],
@@ -98028,12 +97982,12 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffer le four à 200°C en chaleur tournante.",
         "Couper les carottes en bâtonnets. Égoutter et sécher les pois chiches.",
-        "Mélanger carottes et pois chiches avec 8 ml d'huile, le cumin, le paprika et 0,5 g de sel.",
+        "Mélanger carottes et pois chiches avec la plus grande partie de l'huile, le cumin, le paprika et une pincée de sel.",
         "Étaler sur une plaque, enfourner 22-25 minutes en remuant à mi-cuisson (carottes tendres, pois chiches croustillants).",
-        "Préparer la sauce yaourt : mélanger le skyr, l'ail écrasé, le jus d'un demi-citron et une pincée de sel.",
-        "Étaler la sauce yaourt au fond de 2 assiettes.",
+        "Préparer la sauce yaourt : mélanger le skyr, l'ail écrasé, une partie du jus du citron et une pincée de sel.",
+        "Étaler la sauce yaourt au fond des assiettes.",
         "Déposer les carottes et pois chiches rôtis encore tièdes par-dessus.",
-        "Presser le jus du demi-citron restant, arroser du reste d'huile, parsemer de menthe et coriandre. Servir tiède — le contraste chaud-froid carottes rôties / yaourt frais."
+        "Presser le reste du citron, arroser du reste d'huile, parsemer de menthe et coriandre. Servir tiède — le contraste chaud-froid carottes rôties / yaourt frais."
       ],
       "photo": "assets/recipes/l238.webp"
     },
@@ -98050,7 +98004,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 400,
+      "kcal": 450,
       "tags": [
         "vegan",
         "vegetarian",
@@ -98072,7 +98026,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          100,
+          70,
           "g",
           "produce"
         ],
@@ -98511,7 +98465,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -99709,7 +99664,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 180,
+      "kcal": 220,
       "tags": [
         "vegetarian"
       ],
@@ -99724,40 +99679,40 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crème de marrons non sucrée",
-          120,
+          60,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Œuf",
-          2,
+          1.0,
           "u",
           "dairy"
         ],
         [
           "Fève tonka",
-          0.3,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "ml",
           "pantry"
         ]
       ],
       "steps": [
         "Préchauffe le four à 160°C.",
-        "Dans un saladier, fouette les œufs avec le sirop d'érable jusqu'à ce que le mélange mousse légèrement.",
+        "Dans un saladier, fouette l'œuf avec le sirop d'érable jusqu'à ce que le mélange mousse légèrement.",
         "Ajoute la crème de marrons et le lait, puis râpe un peu de fève tonka par-dessus (elle parfume fort, reste léger). Mélange bien jusqu'à obtenir un appareil homogène.",
-        "Répartis dans des ramequins. Place-les dans un plat et verse de l'eau chaude à mi-hauteur des ramequins (bain-marie : la cuisson reste douce et le flan ne tranche pas).",
+        "Verse dans un ramequin. Place-le dans un plat et verse de l'eau chaude à mi-hauteur du ramequin (bain-marie : la cuisson reste douce et le flan ne tranche pas).",
         "Enfourne 30 à 35 min : le flan est pris quand il est juste tremblotant au centre.",
         "Laisse refroidir puis place au frais au moins 1h avant de servir."
       ],
@@ -99776,7 +99731,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 290,
+      "kcal": 450,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -99797,13 +99752,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Haricots blancs cuits",
-          150,
+          100,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          80,
+          60,
           "g",
           "produce"
         ],
@@ -99821,13 +99776,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomates concassées",
-          150,
+          100,
           "g",
           "pantry"
         ],
         [
           "Pain complet",
-          50,
+          20,
           "g",
           "pantry"
         ],
@@ -99988,7 +99943,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 250,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -100004,7 +99959,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Châtaignes cuites",
-          100,
+          70,
+          "g",
+          "produce"
+        ],
+        [
+          "Céleri-rave",
+          120,
           "g",
           "produce"
         ],
@@ -100027,6 +99988,12 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
+          "Graines de courge",
+          15,
+          "g",
+          "pantry"
+        ],
+        [
           "Huile d'olive",
           5,
           "ml",
@@ -100047,10 +100014,10 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Émince l'oignon et fais-le revenir 4 min dans l'huile d'olive, sans le colorer (juste translucide).",
-        "Ajoute les châtaignes cuites, le romarin et le bouillon. Porte à frémissement.",
+        "Épluche le céleri-rave (la peau est épaisse, enlève-la au couteau) et coupe-le en cubes de 2 cm. Ajoute-le avec les châtaignes cuites, le romarin et le bouillon. Porte à frémissement.",
         "Laisse cuire 20 min à feu doux pour que les châtaignes s'attendrissent et libèrent leur goût.",
         "Retire le brin de romarin. Mixe finement avec la crème jusqu'à obtenir un velouté lisse et onctueux.",
-        "Sale, poivre. Si c'est trop épais, détends avec un peu de bouillon chaud. Sers avec un tour de poivre."
+        "Sale, poivre. Si c'est trop épais, détends avec un peu de bouillon chaud. Fais griller les graines de courge 2-3 min à sec dans une poêle (elles gonflent et crépitent) et parsème-les sur le velouté. Sers avec un tour de poivre."
       ],
       "photo": "assets/recipes/l248.webp"
     },
@@ -100156,7 +100123,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 1.8,
-      "kcal": 340,
+      "kcal": 510,
       "tags": [
         "vegetarian"
       ],
@@ -100172,15 +100139,21 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potimarron",
-          300,
+          200,
           "g",
           "produce"
         ],
         [
           "Farine T80 (semi-complète)",
-          60,
+          25,
           "g",
           "pantry"
+        ],
+        [
+          "Ricotta",
+          60,
+          "g",
+          "dairy"
         ],
         [
           "Parmesan râpé",
@@ -100215,7 +100188,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200°C. Coupe le potimarron en morceaux (la peau se mange une fois cuite) et fais-le rôtir 25 min, jusqu'à ce qu'il soit fondant.",
-        "Écrase la chair en purée, laisse tiédir puis incorpore la farine, le parmesan, du sel, du poivre et une pincée de muscade. Tu dois obtenir une pâte souple, non collante (ajoute un peu de farine si besoin).",
+        "Écrase la chair en purée, laisse tiédir puis incorpore la ricotta (bien égouttée), la farine, le parmesan, du sel, du poivre et une pincée de muscade. Tu dois obtenir une pâte souple, non collante (ajoute un peu de farine si besoin).",
         "Sur un plan fariné, roule la pâte en boudins, coupe des tronçons de 2 cm : ce sont les gnocchi.",
         "Plonge-les par fournées dans une casserole d'eau bouillante salée. Ils sont cuits quand ils remontent à la surface (environ 2 min). Égoutte délicatement.",
         "Concasse les noisettes et torréfie-les 3 min à sec dans une poêle.",
@@ -100969,7 +100942,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101053,7 +101027,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "eggs",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101139,7 +101114,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 340,
+      "kcal": 480,
       "tags": [],
       "eq": [
         "stove"
@@ -101147,7 +101122,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "shellfish",
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101158,13 +101134,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Vermicelles de riz",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          120,
+          80,
           "ml",
           "pantry"
         ],
@@ -101176,13 +101152,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pak choï",
-          100,
+          150,
           "g",
           "produce"
         ],
         [
           "Germes de soja",
-          40,
+          80,
           "g",
           "produce"
         ],
@@ -101233,7 +101209,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 600,
       "tags": [
         "batch-friendly"
       ],
@@ -101242,7 +101218,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101277,7 +101254,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fécule de maïs",
-          10,
+          5,
           "g",
           "pantry"
         ],
@@ -101338,7 +101315,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "eggs",
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101420,7 +101398,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101509,7 +101488,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101594,14 +101574,15 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 330,
+      "kcal": 500,
       "tags": [],
       "eq": [
         "stove"
       ],
       "allergens": [
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -101612,7 +101593,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Vermicelles de riz",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -101630,7 +101611,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Germes de soja",
-          50,
+          100,
           "g",
           "produce"
         ],
@@ -101695,7 +101676,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -101769,7 +101751,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 2.2,
-      "kcal": 310,
+      "kcal": 440,
       "tags": [],
       "eq": [
         "stove"
@@ -101783,7 +101765,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâte à gyoza",
-          70,
+          60,
           "g",
           "pantry"
         ],
@@ -101795,7 +101777,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Chou chinois",
-          120,
+          160,
           "g",
           "produce"
         ],
@@ -101833,7 +101815,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Hache finement le chou chinois, dégorge-le 5 min avec une pincée de sel puis presse-le pour retirer l'eau (sinon la farce serait trop humide).",
         "Mélange le poulet haché, le chou, la ciboule ciselée, le gingembre râpé, l'huile de sésame et un peu de sauce soja.",
-        "Dépose 1 c.à.c de farce au centre de chaque disque de pâte, humidifie le bord et plie en formant des plis pour souder (en demi-lune).",
+        "Dépose une petite cuillère de farce au centre de chaque disque de pâte, humidifie le bord et plie en formant des plis pour souder (en forme de croissant).",
         "Porte le bouillon à frémissement avec un trait de sauce soja. Plonge les gyoza et cuis 6 min : ils remontent quand ils sont cuits.",
         "Sers les gyoza dans le bouillon, parsemés de ciboule."
       ],
@@ -101859,7 +101841,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -102030,7 +102013,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 280,
+      "kcal": 470,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -102045,7 +102028,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Orge perlé",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -102069,7 +102052,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pois chiches cuits",
-          80,
+          50,
           "g",
           "pantry"
         ],
@@ -102125,7 +102108,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 180,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "vegan",
@@ -102141,7 +102124,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          400,
+          300,
           "g",
           "produce"
         ],
@@ -102182,6 +102165,12 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
+          "Graines de courge",
+          15,
+          "g",
+          "pantry"
+        ],
+        [
           "Sel, poivre",
           1,
           "g",
@@ -102193,7 +102182,7 @@ window.__DATA_RECIPES = {
         "Fais revenir l'oignon 4 min dans l'huile, ajoute l'ail écrasé et le cumin, remue 30 sec.",
         "Ajoute le potiron et le bouillon. Couvre et laisse cuire 18 min, jusqu'à ce que le potiron soit fondant.",
         "Mixe finement. Incorpore la harissa petit à petit en goûtant (elle pique, vas-y doucement).",
-        "Sale, poivre. Sers avec un filet d'huile d'olive."
+        "Pendant ce temps, fais griller les graines de courge 2 min à sec dans une petite poêle, en remuant : elles gonflent et crépitent. Sale, poivre le velouté. Sers-le parsemé des graines grillées, avec un filet d'huile d'olive."
       ],
       "photo": "assets/recipes/l260.webp"
     },
@@ -102307,7 +102296,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 320,
+      "kcal": 400,
       "tags": [
         "vegetarian",
         "vegan",
@@ -102320,13 +102309,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Patate douce",
-          250,
+          100,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          150,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits",
-          120,
+          90,
           "g",
           "pantry"
         ],
@@ -102368,9 +102363,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffe le four à 200°C. Épluche la patate douce et coupe-la en cubes de 2 cm.",
-        "Égoutte et éponge les pois chiches. Mélange patate douce, pois chiches, oignon rouge émincé, l'huile et le ras el-hanout sur une plaque.",
-        "Enfourne 25 à 30 min en remuant à mi-cuisson : la patate douce doit être tendre et caraméliser sur les bords, les pois chiches devenir croustillants.",
+        "Préchauffe le four à 200°C. Épluche la patate douce et coupe-la en cubes de 2 cm. Détaille le chou-fleur en petits bouquets (des morceaux de la taille d'une noix) : coupe les branches au couteau à partir du trognon central.",
+        "Égoutte et éponge les pois chiches. Mélange patate douce, chou-fleur, pois chiches, oignon rouge émincé, l'huile et le ras el-hanout sur une plaque.",
+        "Enfourne 25 à 30 min en remuant à mi-cuisson : la patate douce doit être tendre et caraméliser sur les bords, le chou-fleur doré sur les pointes, les pois chiches devenir croustillants.",
         "Verse dans un saladier, arrose de jus de citron.",
         "Parsème de coriandre, sale et poivre. Se mange tiède."
       ],
@@ -102586,7 +102581,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 350,
+      "kcal": 580,
       "tags": [
         "batch-friendly"
       ],
@@ -102605,7 +102600,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Châtaignes cuites",
-          100,
+          60,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          150,
           "g",
           "produce"
         ],
@@ -102668,8 +102669,8 @@ window.__DATA_RECIPES = {
         "Dans une cocotte, fais dorer le poulet dans l'huile sur toutes ses faces (5 min). Réserve.",
         "Émince finement les oignons et fais-les fondre 10 min à feu doux, jusqu'à ce qu'ils deviennent translucides et confits.",
         "Ajoute l'ail écrasé, le gingembre, la cannelle et le safran. Remets le poulet et verse le bouillon.",
-        "Couvre et laisse mijoter 30 min, jusqu'à ce que le poulet soit tendre.",
-        "Ajoute les châtaignes cuites et poursuis 8 min pour qu'elles s'imprègnent de sauce.",
+        "Couvre et laisse mijoter 30 min, jusqu'à ce que le poulet soit tendre. Pendant ce temps, coupe la courgette en rondelles épaisses (2 cm).",
+        "Ajoute les châtaignes cuites et la courgette, poursuis 8 min (la courgette doit être tendre au couteau) pour qu'elles s'imprègnent de sauce.",
         "Sale, poivre, parsème de coriandre et sers."
       ],
       "photo": "assets/recipes/d254.webp"
@@ -102976,7 +102977,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 390,
+      "kcal": 730,
       "tags": [
         "batch-friendly"
       ],
@@ -102990,7 +102991,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Semoule complète",
-          70,
+          35,
           "g",
           "pantry"
         ],
@@ -103002,13 +103003,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Navet",
-          100,
+          150,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          100,
+          70,
           "g",
           "produce"
         ],
@@ -103019,8 +103020,14 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
+          "Courgette",
+          120,
+          "g",
+          "produce"
+        ],
+        [
           "Pois chiches cuits",
-          80,
+          50,
           "g",
           "pantry"
         ],
@@ -103038,7 +103045,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          12,
+          6,
           "ml",
           "pantry"
         ],
@@ -103056,9 +103063,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Épluche navet, carotte et butternut, coupe-les en gros morceaux.",
+        "Épluche navet, carotte et butternut, coupe-les en gros morceaux. Lave la courgette et coupe-la en gros tronçons (garde la peau).",
         "Fais revenir l'oignon émincé 4 min dans l'huile, ajoute le ras el-hanout. Verse le bouillon et porte à frémissement.",
-        "Ajoute les légumes racines et les pois chiches, laisse mijoter 30 min, jusqu'à ce que les légumes soient tendres.",
+        "Ajoute les légumes racines et les pois chiches, laisse mijoter 30 min, jusqu'à ce que les légumes soient tendres. Ajoute la courgette 10 min avant la fin : elle doit rester entière, pas se défaire.",
         "Fais griller les merguez 8 min à la poêle, puis coupe-les en tronçons.",
         "Prépare la semoule complète selon le paquet (gonflée à l'eau chaude + filet d'huile), égraine à la fourchette.",
         "Sers la semoule, dispose les légumes et les merguez par-dessus, arrose de bouillon. Sale, poivre."
@@ -103177,7 +103184,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 230,
+      "kcal": 410,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -103193,7 +103200,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Maïs doux",
-          250,
+          140,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          100,
           "g",
           "produce"
         ],
@@ -103240,6 +103253,12 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
+          "Graines de courge",
+          10,
+          "g",
+          "pantry"
+        ],
+        [
           "Sel, poivre",
           1,
           "g",
@@ -103248,10 +103267,10 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Fais revenir l'oignon émincé et l'ail 4 min dans l'huile, sans colorer.",
-        "Ajoute le maïs (réserve 2 c.à.s pour la déco) et le bouillon. Laisse cuire 12 min.",
+        "Détaille le chou-fleur en petits bouquets. Ajoute le maïs (réserve une petite poignée de grains pour la déco), le chou-fleur et le bouillon. Laisse cuire 12 min : le chou-fleur doit s'écraser facilement sous la pointe d'un couteau.",
         "Mixe finement avec la crème jusqu'à obtenir un velouté lisse. Passe au tamis si tu veux une texture très fine.",
         "Réchauffe, ajoute le piment doux, sale et poivre.",
-        "Sers parsemé des grains de maïs réservés et de coriandre."
+        "Fais griller les graines de courge 2 min à sec dans une petite poêle (elles gonflent et crépitent). Sers parsemé des grains de maïs réservés, des graines de courge et de coriandre."
       ],
       "photo": "assets/recipes/l265.webp"
     },
@@ -104191,7 +104210,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 280,
+      "kcal": 460,
       "tags": [
         "vegetarian",
         "vegan",
@@ -104206,7 +104225,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits",
-          180,
+          150,
           "g",
           "pantry"
         ],
@@ -104895,7 +104914,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 360,
+      "kcal": 660,
       "tags": [
         "batch-friendly"
       ],
@@ -104916,9 +104935,15 @@ window.__DATA_RECIPES = {
         ],
         [
           "Orzo complet",
-          60,
+          45,
           "g",
           "pantry"
+        ],
+        [
+          "Courgette",
+          120,
+          "g",
+          "produce"
         ],
         [
           "Tomates concassées",
@@ -104965,8 +104990,8 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 190°C. Fais dorer le poulet dans l'huile (5 min) dans une cocotte allant au four. Réserve.",
-        "Fais revenir l'oignon émincé 4 min, ajoute l'ail, la cannelle, les tomates et l'origan. Laisse 5 min.",
-        "Ajoute l'orzo cru, le bouillon et remets le poulet. Mélange.",
+        "Fais revenir l'oignon émincé 4 min, ajoute l'ail, la cannelle, les tomates et l'origan. Laisse 5 min. Pendant ce temps, coupe la courgette en dés de 2 cm.",
+        "Ajoute l'orzo cru, la courgette, le bouillon et remets le poulet. Mélange.",
         "Enfourne à découvert 30 min : l'orzo absorbe le bouillon et cuit comme un risotto au four (remue à mi-cuisson, ajoute un peu de bouillon si trop sec).",
         "Sale, poivre et sers."
       ],
@@ -106574,7 +106599,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 300,
+      "kcal": 450,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -106589,19 +106614,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Petites pâtes complètes",
-          50,
+          20,
           "g",
           "pantry"
         ],
         [
           "Haricots blancs cuits",
-          120,
+          75,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          80,
+          60,
           "g",
           "produce"
         ],
@@ -106613,13 +106638,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Chou vert",
-          100,
+          120,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          120,
           "g",
           "produce"
         ],
         [
           "Tomates concassées",
-          150,
+          120,
           "g",
           "pantry"
         ],
@@ -106643,7 +106674,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          600,
+          450,
           "ml",
           "pantry"
         ],
@@ -106657,7 +106688,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Coupe carotte, céleri et oignon en petits dés, fais-les revenir 5 min dans l'huile avec l'ail écrasé.",
         "Ajoute les tomates concassées et le bouillon. Porte à frémissement.",
-        "Ajoute le chou vert en lanières et les haricots blancs. Laisse mijoter 15 min.",
+        "Ajoute le chou vert en lanières, la courgette coupée en dés (cubes de la taille d'un dé à jouer) et les haricots blancs. Laisse mijoter 15 min.",
         "Ajoute les petites pâtes complètes et cuis le temps indiqué (≈10 min), jusqu'à ce qu'elles soient al dente.",
         "Sale, poivre. Sers avec un filet d'huile d'olive crue."
       ],
@@ -106676,7 +106707,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 380,
+      "kcal": 470,
       "tags": [
         "vegetarian",
         "vegan",
@@ -106692,25 +106723,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          40,
           "g",
           "pantry"
         ],
         [
           "Patate douce",
-          150,
+          60,
           "g",
           "produce"
         ],
         [
           "Chou-fleur",
-          120,
+          200,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits",
-          100,
+          80,
           "g",
           "pantry"
         ],
@@ -106852,7 +106883,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 280,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "vegan",
@@ -106867,13 +106898,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits",
-          180,
+          110,
           "g",
           "pantry"
         ],
         [
           "Chou vert",
-          150,
+          220,
           "g",
           "produce"
         ],
@@ -106885,7 +106916,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomme de terre à chair ferme",
-          80,
+          40,
           "g",
           "produce"
         ],
@@ -107187,7 +107218,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 300,
+      "kcal": 570,
       "tags": [
         "vegetarian",
         "vegan",
@@ -107202,7 +107233,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          180,
+          140,
           "g",
           "pantry"
         ],
@@ -107272,7 +107303,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "d281",
-      "name": "Boulettes de lentilles, sauce tomate et purée de potiron",
+      "name": "Boulettes de lentilles, sauce tomate et purée de potiron-chou-fleur",
       "type": "dinner",
       "cuisine": "universel",
       "seasons": [
@@ -107282,7 +107313,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 310,
+      "kcal": 380,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -107297,25 +107328,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes",
-          90,
+          100,
           "g",
           "pantry"
         ],
         [
           "Potiron",
-          300,
+          90,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          200,
           "g",
           "produce"
         ],
         [
           "Flocons d'avoine",
-          30,
+          10,
           "g",
           "pantry"
         ],
         [
           "Tomates concassées",
-          200,
+          120,
           "g",
           "pantry"
         ],
@@ -107351,11 +107388,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis les lentilles 20 min, égoutte et écrase-les grossièrement. Mélange avec les flocons d'avoine, la moitié de l'oignon haché, le cumin, sel et poivre. Laisse reposer 5 min (l'avoine absorbe l'humidité et lie).",
+        "Cuis les lentilles 20 min, égoutte et écrase-les grossièrement. Mélange avec les flocons d'avoine, une partie de l'oignon haché, le cumin, sel et poivre. Laisse reposer 5 min (l'avoine absorbe l'humidité et lie : la pâte doit se tenir quand tu la serres dans la main).",
         "Préchauffe le four à 200°C. Forme des boulettes, dépose-les sur une plaque huilée et enfourne 20 min en les retournant.",
-        "Pendant ce temps, fais cuire le potiron en cubes 15 min à l'eau ou vapeur, puis écrase-le en purée avec un filet d'huile. Sale, poivre.",
+        "Pendant ce temps, fais cuire le potiron en cubes et le chou-fleur en petits bouquets 15 min à l'eau ou vapeur (la pointe du couteau doit s'enfoncer sans résistance), puis écrase-les ensemble en purée avec un filet d'huile. Sale, poivre.",
         "Prépare la sauce : fais revenir le reste d'oignon et l'ail 3 min, ajoute les tomates, laisse mijoter 8 min.",
-        "Dresse la purée de potiron, pose les boulettes, nappe de sauce tomate et sers."
+        "Dresse la purée de potiron-chou-fleur, pose les boulettes, nappe de sauce tomate et sers."
       ],
       "photo": "assets/recipes/d281.webp"
     },
@@ -107464,7 +107501,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poire",
-          250,
+          200,
           "g",
           "produce"
         ],
@@ -107476,7 +107513,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel",
-          12,
+          5,
           "g",
           "pantry"
         ],
@@ -107502,7 +107539,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Épluche les poires en gardant la queue (c'est plus joli) et retire le cœur par le dessous avec une petite cuillère.",
         "Dans une casserole, verse le vin rouge, le miel, le jus d'orange, la cannelle et l'anis étoilé. Porte à frémissement.",
-        "Dépose les poires couchées, couvre à moitié et laisse pocher 25 min en les retournant à mi-cuisson : elles s'imprègnent et prennent une jolie couleur grenat.",
+        "Dépose les poires couchées, pose le couvercle de travers (un petit espace pour laisser sortir la vapeur) et laisse pocher 25 min en les retournant à mi-cuisson : elles s'imprègnent et prennent une jolie couleur grenat.",
         "Retire les poires. Fais réduire le jus 5 min à feu vif jusqu'à ce qu'il devienne sirupeux.",
         "Nappe les poires du sirop épicé. Se mange tiède ou froid."
       ],
@@ -107716,7 +107753,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 160,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -107731,25 +107768,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomme",
-          250,
+          180,
           "g",
           "produce"
         ],
         [
           "Amandes effilées",
-          15,
+          20,
           "g",
           "produce"
         ],
         [
           "Raisins secs",
-          12,
+          6,
           "g",
           "produce"
         ],
         [
           "Miel",
-          10,
+          4,
           "g",
           "pantry"
         ],
@@ -107764,7 +107801,7 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 180°C. Lave les pommes, retire le cœur sans percer le fond (creuse un puits).",
         "Mélange les amandes effilées, les raisins secs, le miel et la cannelle.",
         "Garnis le creux des pommes de ce mélange.",
-        "Dépose dans un plat avec un fond d'eau (2 c.à.s) et enfourne 30 à 35 min, jusqu'à ce que les pommes soient fondantes (la peau se fripe).",
+        "Dépose dans un plat avec un fond d'eau (juste de quoi couvrir le fond) et enfourne 30 à 35 min, jusqu'à ce que les pommes soient fondantes (la peau se fripe).",
         "Arrose du jus de cuisson et sers tiède."
       ],
       "photo": "assets/recipes/des182.webp"
@@ -108268,7 +108305,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 0.8,
-      "kcal": 150,
+      "kcal": 80,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108281,7 +108318,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Châtaignes fraîches",
-          120,
+          50,
           "g",
           "produce"
         ],
@@ -108325,7 +108362,8 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -108446,7 +108484,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain complet",
-          40,
+          30,
           "g",
           "pantry"
         ],
@@ -108458,7 +108496,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane",
-          70,
+          40,
           "g",
           "produce"
         ],
@@ -108490,7 +108528,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 170,
+      "kcal": 140,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -108506,19 +108544,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine",
-          27,
+          16,
           "g",
           "pantry"
         ],
         [
           "Banane",
-          33,
+          25,
           "g",
           "produce"
         ],
         [
           "Pomme",
-          27,
+          40,
           "g",
           "produce"
         ],
@@ -108536,7 +108574,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Raisins secs",
-          5,
+          3,
           "g",
           "produce"
         ]
@@ -108877,7 +108915,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 160,
+      "kcal": 220,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108894,7 +108932,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Dattes",
-          50,
+          25,
           "g",
           "produce"
         ],
@@ -108915,7 +108953,7 @@ window.__DATA_RECIPES = {
         "Ouvre délicatement les dattes sur un côté et retire le noyau.",
         "Garnis chaque datte d'un peu de purée d'amande à l'aide d'une petite cuillère.",
         "Referme légèrement la datte sur la farce.",
-        "Roule la partie ouverte dans les graines de sésame. Déguste (2-3 dattes suffisent, c'est dense en énergie)."
+        "Roule la partie ouverte dans les graines de sésame. Déguste lentement : c'est dense en énergie."
       ],
       "photo": "assets/recipes/s171.webp"
     },
@@ -108932,7 +108970,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 150,
+      "kcal": 190,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108949,7 +108987,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Figues séchées",
-          40,
+          30,
           "g",
           "produce"
         ],
@@ -108968,7 +109006,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Coupe les figues séchées en deux.",
-        "Glisse une amande entière au cœur de chaque demi-figue (ou sers-les côte à côte).",
+        "Glisse une amande entière au cœur de chaque morceau de figue (ou sers-les côte à côte).",
         "Saupoudre d'un voile de cannelle.",
         "Déguste tel quel : un goûter méditerranéen simple, riche en fibres et en bons lipides (portion modeste, c'est concentré en sucres naturels)."
       ],
@@ -108987,7 +109025,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 330,
+      "kcal": 450,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -109002,19 +109040,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes complètes",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          150,
+          90,
           "g",
           "pantry"
         ],
         [
           "Tomates concassées",
-          120,
+          80,
           "g",
           "pantry"
         ],
@@ -109044,7 +109082,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          450,
+          350,
           "ml",
           "pantry"
         ],
@@ -109077,7 +109115,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 300,
+      "kcal": 440,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -109092,31 +109130,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Épeautre (farro)",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Haricots blancs cuits",
-          120,
+          90,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          80,
-          "g",
-          "produce"
-        ],
-        [
-          "Céleri branche",
           50,
           "g",
           "produce"
         ],
         [
+          "Céleri branche",
+          80,
+          "g",
+          "produce"
+        ],
+        [
+          "Courgette",
+          80,
+          "g",
+          "produce"
+        ],
+        [
           "Tomates concassées",
-          120,
+          100,
           "g",
           "pantry"
         ],
@@ -109152,7 +109196,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince l'épeautre. Coupe carotte, céleri et oignon en petits dés.",
+        "Rince l'épeautre. Coupe carotte, céleri, courgette et oignon en petits dés.",
         "Fais revenir les légumes 5 min dans l'huile avec l'ail écrasé.",
         "Ajoute les tomates, l'épeautre, les haricots blancs et le bouillon.",
         "Laisse mijoter 35 min à feu doux, jusqu'à ce que l'épeautre soit tendre mais encore un peu ferme sous la dent (al dente).",
@@ -110036,7 +110080,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 330,
+      "kcal": 420,
       "tags": [
         "vegan",
         "vegetarian",
@@ -110047,14 +110091,15 @@ window.__DATA_RECIPES = {
         "bowl"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "rest": 480,
       "advance": "Une nuit au frais (au moins 6 h)",
       "ing": [
         [
-          "Flocons d'avoine",
-          60,
+          "Flocons d'avoine complets",
+          40,
           "g",
           "pantry"
         ],
@@ -110066,7 +110111,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Graines de chia",
-          20,
+          15,
           "g",
           "pantry"
         ],
@@ -110078,14 +110123,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Amandes effilées",
-          20,
+          15,
           "g",
-          "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          1,
-          "c.à.s",
           "pantry"
         ],
         [
@@ -110097,9 +110136,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Dans un bol ou un bocal, verse les flocons d'avoine, les graines de chia et la cannelle.",
-        "Ajoute le lait d'amande et le sirop d'érable, puis mélange bien à la cuillère pour qu'il n'y ait plus de grumeaux.",
+        "Ajoute le lait d'amande, puis mélange bien à la cuillère pour qu'il n'y ait plus de grumeaux.",
         "Dénoyaute les cerises : coupe chaque cerise en deux et retire le noyau avec les doigts ou la pointe d'un couteau. Garde-en quelques-unes entières pour la déco.",
-        "Ajoute la moitié des cerises dans le bol et mélange.",
+        "Ajoute une partie des cerises dans le bol et mélange.",
         "Couvre et place au réfrigérateur toute la nuit (au moins 6 h) : les flocons et le chia vont gonfler et devenir crémeux.",
         "Le matin, mélange, puis dépose le reste des cerises et les amandes effilées par-dessus avant de déguster."
       ],
@@ -110118,7 +110157,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 175,
+      "kcal": 160,
       "tags": [
         "vegan",
         "vegetarian",
@@ -110130,30 +110169,31 @@ window.__DATA_RECIPES = {
         "blender"
       ],
       "allergens": [
-        "nuts"
+        "nuts",
+        "gluten"
       ],
       "ing": [
         [
           "Cerises",
-          120,
+          80,
           "g",
           "produce"
         ],
         [
           "Banane",
-          1,
-          "u",
+          35,
+          "g",
           "produce"
         ],
         [
           "Lait d'amande",
-          200,
+          150,
           "ml",
           "dairy"
         ],
         [
           "Flocons d'avoine",
-          20,
+          10,
           "g",
           "pantry"
         ],
@@ -110166,7 +110206,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Dénoyaute les cerises : coupe-les en deux et retire les noyaux.",
-        "Épluche la banane et coupe-la en gros morceaux.",
+        "Épluche la banane et coupe le morceau nécessaire en rondelles.",
         "Mets les cerises, la banane, les flocons d'avoine, le lait d'amande et la cannelle dans le blender.",
         "Mixe 30 à 45 secondes, jusqu'à obtenir une texture lisse et mousseuse, sans morceaux.",
         "Si c'est trop épais à ton goût, ajoute un peu d'eau ou de lait d'amande et mixe à nouveau. Sers aussitôt, bien frais."
@@ -110278,7 +110318,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 420,
+      "kcal": 620,
       "tags": [],
       "eq": [
         "stove"
@@ -110290,7 +110330,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          250,
+          150,
           "g",
           "meat-fish"
         ],
@@ -110319,12 +110359,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Miel",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Thym",
           1,
           "c.à.c",
@@ -110338,7 +110372,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -110367,7 +110401,7 @@ window.__DATA_RECIPES = {
         "Dénoyaute les cerises et coupe-les en deux. Émince l'échalote (coupe-la en tout petits dés).",
         "Sale et poivre les filets de poulet. Fais chauffer l'huile d'olive dans une poêle à feu moyen-vif et fais dorer les filets 4 à 5 minutes de chaque côté, jusqu'à ce qu'ils soient bien colorés et cuits à cœur (la chair n'est plus rosée). Réserve-les sur une assiette.",
         "Dans la même poêle, baisse le feu et fais revenir l'échalote 1 minute. Ajoute le vinaigre balsamique pour déglacer (verse-le pour décoller les sucs au fond de la poêle) et laisse réduire 30 secondes.",
-        "Ajoute les cerises, le bouillon de volaille, le miel et le thym. Laisse mijoter 6 à 8 minutes à feu doux : la sauce épaissit et les cerises ramollissent.",
+        "Ajoute les cerises, le bouillon de volaille et le thym (les cerises apportent assez de douceur à la sauce). Laisse mijoter 6 à 8 minutes à feu doux : la sauce épaissit et les cerises ramollissent.",
         "Remets le poulet (et son jus) dans la poêle 1 minute pour le réchauffer dans la sauce. Sers avec le quinoa et les haricots verts."
       ],
       "photo": "assets/recipes/d289.webp"
@@ -110385,7 +110419,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 210,
       "tags": [
         "vegetarian"
       ],
@@ -110399,37 +110433,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cerises",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Thym",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Jus de citron",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Skyr (ou yaourt grec)",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Amandes effilées",
-          15,
+          8,
           "g",
           "pantry"
         ]
@@ -110440,7 +110474,7 @@ window.__DATA_RECIPES = {
         "Arrose-les du miel et du jus de citron, parsème de thym, puis mélange pour bien les enrober.",
         "Enfourne 15 à 18 minutes : les cerises doivent être tendres et avoir rendu un joli jus sirupeux. Laisse tiédir 5 minutes.",
         "Pendant ce temps, fais dorer les amandes effilées à sec dans une poêle 2 minutes à feu moyen, en surveillant pour qu'elles ne brûlent pas.",
-        "Répartis le skyr dans deux coupes, dépose les cerises rôties tièdes et leur jus par-dessus, puis parsème d'amandes grillées."
+        "Verse le skyr dans une coupe, dépose les cerises rôties tièdes et leur jus par-dessus, puis parsème d'amandes grillées."
       ],
       "photo": "assets/recipes/des190.webp"
     },
@@ -110818,7 +110852,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 430,
+      "kcal": 510,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -110837,7 +110871,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Épeautre (grain)",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -110849,7 +110883,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Roquette",
-          40,
+          60,
           "g",
           "produce"
         ],
@@ -110887,11 +110921,11 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200 °C (chaleur tournante).",
         "Rince l'épeautre. Verse-le dans une casserole avec 3 fois son volume d'eau salée et cuis-le 25-30 minutes : les grains doivent être tendres sous la dent mais encore un peu fermes (al dente). Égoutte.",
-        "Pendant ce temps, coupe le demi-poire en quartiers épais. Pose-les sur une plaque avec un papier cuisson, un filet d'huile d'olive, et enfourne 12-15 minutes jusqu'à ce que les bords se colorent légèrement.",
+        "Pendant ce temps, coupe la poire en quartiers épais. Pose-les sur une plaque avec un papier cuisson, un filet d'huile d'olive, et enfourne 12-15 minutes jusqu'à ce que les bords se colorent légèrement.",
         "Prépare la vinaigrette dans un saladier : huile d'olive restante, vinaigre balsamique, sel, poivre.",
         "Verse l'épeautre tiède dans la vinaigrette et mélange.",
         "Ajoute la roquette et les noix concassées, mélange délicatement pour ne pas casser la roquette.",
-        "Dresse dans l'assiette, pose les quartiers de poire rôtie, puis fais des copeaux de parmesan par-dessus avec un économe. Sert tiède ou froid."
+        "Dresse dans l'assiette, pose les quartiers de poire rôtie, puis fais des copeaux de parmesan par-dessus avec un économe. Sers tiède ou froid."
       ],
       "producesLeftovers": true,
       "photo": "assets/recipes/l298.webp"
@@ -111439,7 +111473,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 190,
+      "kcal": 290,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -111475,19 +111509,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine T80 (semi-complète)",
-          20,
+          15,
           "g",
           "pantry"
         ],
         [
           "Poudre d'amandes",
-          12,
+          15,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -111509,7 +111543,7 @@ window.__DATA_RECIPES = {
         "Lave les prunes, coupe-les en deux, retire les noyaux et pose les moitiés côté bombé vers le bas dans le plat.",
         "Dans un saladier, casse l'œuf et fouette-le avec le sirop d'érable et la vanille jusqu'à ce que le mélange soit mousseux.",
         "Ajoute la farine T80 et la poudre d'amandes, mélange au fouet pour éviter les grumeaux (la pâte est épaisse à ce stade).",
-        "Verse le lait demi-écrémé petit à petit tout en fouettant : tu obtiens une pâte lisse et liquide comme une pâte à crêpes.",
+        "Verse le lait petit à petit tout en fouettant : tu obtiens une pâte lisse et liquide comme une pâte à crêpes.",
         "Verse la pâte sur les prunes dans le plat.",
         "Enfourne 30-35 minutes : le clafoutis est cuit quand il est doré et que la lame d'un couteau plantée au centre ressort propre.",
         "Laisse tiédir au moins 15 minutes avant de démouler ou servir : il se tient beaucoup mieux tiède que brûlant."
@@ -111898,7 +111932,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 480,
+      "kcal": 520,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -111926,13 +111960,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Céleri branche",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -111950,7 +111984,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pâtes complètes courtes",
-          30,
+          20,
           "g",
           "pantry"
         ],
@@ -113053,7 +113087,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -113150,7 +113185,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 460,
+      "kcal": 600,
       "tags": [
         "quick"
       ],
@@ -113165,7 +113200,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -113177,7 +113212,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Brocoli",
-          100,
+          160,
           "g",
           "produce"
         ],
@@ -113711,7 +113746,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -113965,7 +114001,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 420,
+      "kcal": 490,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -113977,19 +114013,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots noirs cuits",
-          150,
+          100,
           "g",
           "pantry"
         ],
         [
           "Haricots rouges cuits",
-          80,
+          50,
           "g",
           "pantry"
         ],
         [
           "Maïs doux",
-          60,
+          25,
           "g",
           "pantry"
         ],
@@ -114188,7 +114224,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 390,
+      "kcal": 520,
       "tags": [
         "vegetarian",
         "quick"
@@ -114209,7 +114245,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs doux",
-          70,
+          45,
           "g",
           "pantry"
         ],
@@ -114221,7 +114257,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivron vert",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -114787,7 +114823,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -115102,7 +115139,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 340,
+      "kcal": 490,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -115118,7 +115155,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits",
-          150,
+          100,
           "g",
           "pantry"
         ],
@@ -115154,7 +115191,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pâtes complètes courtes",
-          30,
+          15,
           "g",
           "pantry"
         ],
@@ -115191,7 +115228,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Émince le poireau, la carotte et le céleri en petits dés (brunoise grossière).",
-        "Ciselle l'ail finement. Coupe le chou vert en lanières fines après avoir retiré la côte centrale dure.",
+        "Cisèle l'ail finement. Coupe le chou vert en lanières fines après avoir retiré la côte centrale dure.",
         "Chauffe l'huile d'olive dans une grande casserole à feu moyen, fais suer le poireau, la carotte, le céleri et l'ail 5 minutes jusqu'à ce qu'ils deviennent tendres sans colorer.",
         "Ajoute les tomates concassées et le bouillon de légumes, porte à ébullition.",
         "Ajoute les haricots blancs et le chou vert, laisse mijoter à feu doux 15 minutes.",
@@ -115694,7 +115731,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 320,
+      "kcal": 530,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -115710,13 +115747,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits",
-          130,
+          110,
           "g",
           "pantry"
         ],
         [
           "Chou kale",
-          100,
+          130,
           "g",
           "produce"
         ],
@@ -115752,7 +115789,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pain complet rassis",
-          25,
+          15,
           "g",
           "bread"
         ],
@@ -115782,7 +115819,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Émince l'oignon, la carotte et le céleri en petits dés, ciselle l'ail.",
+        "Émince l'oignon, la carotte et le céleri en petits dés, cisèle l'ail.",
         "Retire les côtes dures du chou kale et coupe les feuilles en lanières.",
         "Chauffe l'huile d'olive dans une cocotte à feu moyen, fais suer l'oignon, la carotte, le céleri et l'ail 5 minutes jusqu'à ce qu'ils soient tendres.",
         "Ajoute les tomates concassées et le bouillon de légumes, porte à ébullition.",
@@ -116085,7 +116122,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 150,
+      "kcal": 130,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -116104,7 +116141,7 @@ window.__DATA_RECIPES = {
         [
           "Sirop d'érable",
           1,
-          "c.à.s",
+          "c.à.c",
           "pantry"
         ],
         [
@@ -116121,7 +116158,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Jus de pomme",
-          100,
+          80,
           "ml",
           "pantry"
         ],
@@ -116136,7 +116173,7 @@ window.__DATA_RECIPES = {
         "Épluche la poire en gardant la queue, coupe-la en deux et retire le cœur avec une petite cuillère.",
         "Verse le jus de pomme dans une petite casserole, ajoute le sirop d'érable, la cannelle, la vanille grattée (graines et gousse) et le zeste de citron.",
         "Porte à frémissement à feu moyen.",
-        "Dépose les demi-poires dans le liquide, côté coupé vers le bas.",
+        "Dépose les morceaux de poire dans le liquide, côté coupé vers le bas.",
         "Laisse pocher à feu doux 15-18 minutes jusqu'à ce que la pointe d'un couteau s'enfonce facilement dans la chair.",
         "Retourne les poires à mi-cuisson pour qu'elles s'imprègnent uniformément.",
         "Retire les poires, fais réduire le sirop 3-4 minutes à feu vif jusqu'à ce qu'il nappe une cuillère.",
@@ -116605,7 +116642,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 440,
+      "kcal": 610,
       "tags": [
         "festif",
         "batch-friendly"
@@ -116625,31 +116662,31 @@ window.__DATA_RECIPES = {
         ],
         [
           "Semoule complète",
-          50,
+          30,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          80,
+          50,
           "g",
           "pantry"
         ],
         [
           "Courgette",
-          100,
+          150,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Navet",
-          60,
+          100,
           "g",
           "produce"
         ],
@@ -116688,9 +116725,9 @@ window.__DATA_RECIPES = {
         "Coupe le poulet en gros morceaux. Émince l'oignon. Épluche carotte et navet, coupe-les en gros tronçons ; coupe la courgette en rondelles épaisses.",
         "Dans une grande casserole, chauffe l'huile et fais dorer le poulet 4 minutes sur toutes les faces. Réserve.",
         "Fais revenir l'oignon 3 minutes jusqu'à ce qu'il devienne translucide, ajoute le ras el hanout et le concentré de tomate, remue 1 minute (les épices embaument).",
-        "Remets le poulet, ajoute carotte et navet, couvre d'eau (environ 400 ml), sale, poivre. Laisse mijoter 25 minutes à couvert.",
+        "Remets le poulet, ajoute carotte et navet, couvre largement d'eau, sale, poivre. Laisse mijoter 25 minutes à couvert.",
         "Ajoute la courgette et les pois chiches, poursuis 15 minutes : les légumes doivent être fondants et le bouillon parfumé.",
-        "Pendant ce temps, verse la semoule complète dans un saladier, couvre-la d'eau bouillante salée à hauteur (+1 c.à.c d'huile), couvre et laisse gonfler 5 minutes, puis égraine-la à la fourchette.",
+        "Pendant ce temps, verse la semoule complète dans un saladier, couvre-la d'eau bouillante salée à hauteur (avec un filet d'huile), couvre et laisse gonfler 5 minutes, puis égraine-la à la fourchette.",
         "Sers la semoule, dispose le poulet et les légumes par-dessus, et arrose d'une louche de bouillon."
       ],
       "producesLeftovers": true,
@@ -117022,7 +117059,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 420,
+      "kcal": 560,
       "tags": [
         "festif",
         "batch-friendly"
@@ -117034,13 +117071,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Rôti de dinde",
-          130,
+          150,
           "g",
           "meat-fish"
         ],
         [
           "Tortilla de maïs complète",
-          2,
+          1.5,
           "u",
           "bread"
         ],
@@ -117052,7 +117089,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Orange (jus)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -117103,7 +117140,7 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 160 °C. Presse l'orange et le citron vert. Mélange les jus avec le paprika fumé, le cumin, l'origan, l'ail écrasé, l'huile, du sel et du poivre : c'est la marinade « pibil ».",
         "Enrobe le rôti de dinde de cette marinade dans un plat, couvre de papier aluminium.",
         "Enfourne 55-60 minutes : la dinde doit devenir très tendre et s'effilocher facilement à la fourchette.",
-        "Pendant ce temps, émince l'oignon rouge en fines lamelles et fais-le mariner dans un bol avec le jus d'un demi-citron vert (garde-en) et une pincée de sel : il rosit et s'adoucit (pickles express).",
+        "Pendant ce temps, émince l'oignon rouge en fines lamelles et fais-le mariner dans un bol avec une partie du jus de citron vert (garde-en) et une pincée de sel : il rosit et s'adoucit (pickles express).",
         "Sors la dinde, laisse-la tiédir 5 minutes puis effiloche-la à la fourchette dans son jus de cuisson.",
         "Réchauffe les tortillas de maïs 20 secondes de chaque côté dans une poêle sèche jusqu'à ce qu'elles soient souples et légèrement dorées.",
         "Garnis chaque tortilla de dinde effilochée et de pickles d'oignon rouge. Sers avec un quartier de citron vert."
@@ -117705,7 +117742,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 430,
+      "kcal": 490,
       "tags": [],
       "eq": [
         "stove"
@@ -117723,7 +117760,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Vermicelles de riz",
-          40,
+          28,
           "g",
           "pantry"
         ],
@@ -117735,13 +117772,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Concombre",
-          80,
+          120,
           "g",
           "produce"
         ],
         [
           "Salade verte",
-          40,
+          60,
           "g",
           "produce"
         ],
@@ -117790,7 +117827,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Plonge les vermicelles de riz dans un saladier d'eau très chaude 5 minutes jusqu'à ce qu'ils soient souples, puis égoutte-les et rince-les à l'eau froide.",
-        "Prépare la sauce : mélange le nuoc-mâm, le jus de citron vert, l'ail écrasé et 2 c.à.s d'eau.",
+        "Prépare la sauce : mélange le nuoc-mâm, le jus de citron vert, l'ail écrasé et un peu d'eau (la sauce doit rester bien liquide).",
         "Taille la carotte et le concombre en fins bâtonnets. Émince la salade et cisèle la menthe.",
         "Coupe la bavette en fines lanières. Dans une poêle bien chaude avec l'huile, saisis-les 2 minutes à feu vif : elles doivent être dorées dehors et rosées dedans.",
         "Concasse grossièrement les cacahuètes et fais-les dorer 1 minute à sec dans la poêle (surveille, ça brûle vite).",
@@ -117812,7 +117849,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 400,
+      "kcal": 610,
       "tags": [
         "batch-friendly"
       ],
@@ -117831,7 +117868,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Frik (blé vert concassé)",
-          40,
+          30,
           "g",
           "pantry"
         ],
@@ -117900,7 +117937,7 @@ window.__DATA_RECIPES = {
         "Coupe l'agneau en petits dés. Émince l'oignon. Coupe carotte et courgette en petits dés.",
         "Dans une grande casserole, chauffe l'huile et fais dorer l'agneau 4 minutes sur toutes les faces.",
         "Ajoute l'oignon et fais-le revenir 3 minutes jusqu'à ce qu'il devienne translucide. Ajoute le ras el hanout et le concentré de tomate, remue 1 minute.",
-        "Verse les tomates concassées et 600 ml d'eau, ajoute la carotte. Sale, poivre, couvre et laisse mijoter 20 minutes.",
+        "Verse les tomates concassées, couvre largement d'eau, ajoute la carotte. Sale, poivre, couvre et laisse mijoter 20 minutes.",
         "Ajoute le frik rincé, la courgette et les pois chiches. Poursuis la cuisson 20 minutes à feu doux : le frik gonfle et épaissit la soupe (ajoute un peu d'eau si trop épais).",
         "Parsème de coriandre ciselée avant de servir, bien chaud."
       ],
@@ -118234,7 +118271,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -119769,19 +119807,20 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 450,
+      "kcal": 630,
       "tags": [],
       "eq": [
         "stove"
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
           "Nouilles de patate douce",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -119816,6 +119855,12 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
+          "Champignons shiitakés (frais ou réhydratés)",
+          80,
+          "g",
+          "produce"
+        ],
+        [
           "Ail",
           1,
           "gousse",
@@ -119841,7 +119886,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sucre roux",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -119860,9 +119905,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Fais tremper les nouilles de patate douce dans l'eau chaude (pas bouillante) pendant 20 minutes jusqu'à ce qu'elles soient souples, puis égoutte-les.",
-        "Pendant ce temps, coupe le bœuf en fines lamelles, émince l'oignon, taille la carotte et le poivron en fins bâtonnets, hache l'ail.",
+        "Pendant ce temps, coupe le bœuf en fines lamelles, émince l'oignon, taille la carotte et le poivron en fins bâtonnets, émince les shiitakés (retire les pieds durs), hache l'ail.",
         "Dans une poêle ou un wok très chaud, verse l'huile de tournesol et saisis le bœuf 2-3 minutes à feu vif jusqu'à ce qu'il soit doré. Réserve.",
-        "Dans la même poêle, fais revenir l'oignon, la carotte et le poivron 4-5 minutes en remuant souvent, jusqu'à ce que les légumes ramollissent légèrement mais restent croquants.",
+        "Dans la même poêle, fais revenir l'oignon, la carotte, le poivron et les shiitakés 4-5 minutes en remuant souvent, jusqu'à ce que les légumes ramollissent légèrement mais restent croquants.",
         "Ajoute les épinards et l'ail, poursuis 1-2 minutes jusqu'à ce que les épinards retombent.",
         "Remets le bœuf dans la poêle avec les nouilles égouttées, la sauce soja, le sucre roux et l'huile de sésame. Mélange bien au wok pendant 2-3 minutes pour que les nouilles s'imprègnent de sauce.",
         "Goûte et rectifie en sauce soja si besoin, puis parsème de graines de sésame avant de servir."
@@ -119882,7 +119927,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 480,
+      "kcal": 650,
       "tags": [],
       "eq": [
         "stove"
@@ -119895,7 +119940,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles de blé chinoises",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -119906,8 +119951,14 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
+          "Pak choï",
+          100,
+          "g",
+          "produce"
+        ],
+        [
           "Lait de coco",
-          150,
+          120,
           "ml",
           "pantry"
         ],
@@ -119955,7 +120006,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sucre de coco",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -119973,12 +120024,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Fais cuire les nouilles aux œufs dans l'eau bouillante selon le temps indiqué sur le paquet, égoutte-les et réserve.",
+        "Fais cuire les nouilles de blé dans l'eau bouillante selon le temps indiqué sur le paquet, égoutte-les et réserve.",
         "Émince l'échalote, hache l'ail et râpe le gingembre. Coupe le poulet en morceaux.",
-        "Dans une casserole, fais chauffer 2 cuillerées de lait de coco bien épais à feu moyen et fais revenir la pâte de curry rouge 1-2 minutes jusqu'à ce qu'elle devienne parfumée et légèrement colorée.",
+        "Dans une casserole, fais chauffer un peu de lait de coco bien épais (la crème du dessus de la boîte) à feu moyen et fais revenir la pâte de curry rouge 1-2 minutes jusqu'à ce qu'elle devienne parfumée et légèrement colorée.",
         "Ajoute l'échalote, l'ail, le gingembre et le curcuma, remue 1 minute.",
         "Ajoute le poulet et fais-le dorer 3-4 minutes sur toutes les faces.",
-        "Verse le reste du lait de coco, le bouillon de volaille et la sauce de poisson. Couvre et laisse mijoter 15 minutes jusqu'à ce que le poulet soit bien cuit.",
+        "Verse le reste du lait de coco, le bouillon de volaille et la sauce de poisson. Couvre et laisse mijoter 15 minutes jusqu'à ce que le poulet soit bien cuit. Coupe le pak choï en quatre dans la longueur et ajoute-le pour les 3 dernières minutes : les feuilles deviennent vert vif et les tiges juste tendres.",
         "Ajoute le sucre de coco, goûte et ajuste l'assaisonnement.",
         "Répartis les nouilles dans les bols, verse la soupe-curry par-dessus, presse le citron vert et parsème de coriandre fraîche avant de servir."
       ],
@@ -119998,7 +120049,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.9,
-      "kcal": 420,
+      "kcal": 520,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -120073,7 +120124,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine de maïs",
-          40,
+          25,
           "g",
           "pantry"
         ],
@@ -120094,7 +120145,7 @@ window.__DATA_RECIPES = {
         "Lave soigneusement les épinards et les feuilles de moutarde, puis fais-les cuire 8-10 minutes dans une grande casserole d'eau bouillante jusqu'à ce qu'ils soient bien tendres.",
         "Égoutte-les en gardant un peu d'eau de cuisson, laisse tiédir puis mixe-les grossièrement au mixeur plongeant (pas besoin d'une purée parfaitement lisse).",
         "Émince l'oignon, hache l'ail et le gingembre, coupe la tomate en petits dés et le piment en fines rondelles.",
-        "Dans une poêle, fais fondre la moitié du beurre et fais revenir l'oignon 4-5 minutes jusqu'à ce qu'il devienne translucide.",
+        "Dans une poêle, fais fondre une partie du beurre et fais revenir l'oignon 4-5 minutes jusqu'à ce qu'il devienne translucide.",
         "Ajoute l'ail, le gingembre, le piment, le cumin et le garam masala, remue 1 minute jusqu'à ce que ça embaume.",
         "Ajoute la tomate et laisse compoter 5 minutes, puis verse la purée d'épinards et de feuilles de moutarde. Mijote à couvert 10 minutes en remuant de temps en temps.",
         "Coupe le paneer en petits cubes et incorpore-les dans le saag, poursuis 3 minutes pour les réchauffer.",
@@ -120437,7 +120488,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.1,
-      "kcal": 400,
+      "kcal": 470,
       "tags": [
         "batch-friendly"
       ],
@@ -120446,7 +120497,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sulphites"
+        "sulphites",
+        "gluten"
       ],
       "ing": [
         [
@@ -120492,12 +120544,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sucre roux",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Bouillon dashi (kombu)",
           250,
           "ml",
@@ -120515,7 +120561,7 @@ window.__DATA_RECIPES = {
         "Dans une cocotte, chauffe l'huile et fais revenir l'oignon 3 minutes jusqu'à ce qu'il devienne translucide.",
         "Ajoute le bœuf en lamelles et fais-le saisir rapidement 2 minutes à feu vif jusqu'à ce qu'il change de couleur.",
         "Ajoute la pomme de terre, la carotte et le gingembre, remue 1 minute pour bien enrober.",
-        "Verse le bouillon dashi, la sauce soja, le mirin et le sucre roux. Porte à ébullition puis baisse le feu.",
+        "Verse le bouillon dashi, la sauce soja et le mirin (il apporte déjà une note douce). Porte à ébullition puis baisse le feu.",
         "Couvre avec un couvercle légèrement entrouvert (ou une feuille de papier cuisson posée directement sur le mijoté) et laisse cuire 20 minutes à feu doux jusqu'à ce que la pomme de terre soit fondante.",
         "Retire le couvercle et laisse réduire 5 minutes à découvert pour que la sauce devienne légèrement sirupeuse.",
         "Goûte et rectifie en sauce soja si besoin avant de servir bien chaud."
@@ -122098,7 +122144,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 400,
+      "kcal": 570,
       "tags": [
         "batch-friendly"
       ],
@@ -122112,7 +122158,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Maïs en grains (hominy pour pozole)",
-          150,
+          115,
           "g",
           "pantry"
         ],
@@ -122160,7 +122206,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Chou vert, émincé finement",
-          30,
+          60,
           "g",
           "produce"
         ],
@@ -122191,7 +122237,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Mets les piments guajillo séchés dans un bol, couvre d'eau bouillante et laisse-les réhydrater 15 minutes jusqu'à ce qu'ils deviennent souples, comme du cuir mou.",
-        "Égoutte les piments, retire la queue et les graines, puis mixe-les avec l'ail et la moitié de l'oignon et un peu d'eau de trempage jusqu'à obtenir une sauce rouge bien lisse.",
+        "Égoutte les piments, retire la queue et les graines, puis mixe-les avec l'ail, une partie de l'oignon et un peu d'eau de trempage jusqu'à obtenir une sauce rouge bien lisse.",
         "Passe cette sauce au tamis pour retirer les petits bouts de peau, puis réserve-la.",
         "Dans une grande casserole, chauffe l'huile d'olive et fais revenir le reste de l'oignon émincé 3-4 minutes jusqu'à ce qu'il devienne translucide.",
         "Verse la sauce de piments, le bouillon de volaille et l'origan séché. Ajoute le blanc de poulet entier et laisse mijoter à couvert 20 minutes, jusqu'à ce que le poulet ne soit plus rose à l'intérieur.",
@@ -122215,7 +122261,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 380,
+      "kcal": 600,
       "tags": [
         "vegetarian"
       ],
@@ -122231,13 +122277,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tortilla de maïs",
-          2,
+          1.5,
           "u",
           "bread"
         ],
         [
           "Haricots noirs cuits",
-          130,
+          90,
           "g",
           "pantry"
         ],
@@ -124688,7 +124734,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "eggs"
+        "eggs",
+        "gluten"
       ],
       "ing": [
         [
@@ -124790,7 +124837,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "celery"
+        "celery",
+        "gluten"
       ],
       "ing": [
         [
@@ -124885,7 +124933,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 340,
+      "kcal": 600,
       "tags": [
         "vegetarian",
         "vegan",
@@ -124901,7 +124949,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Patate douce",
-          170,
+          115,
+          "g",
+          "produce"
+        ],
+        [
+          "Chou-fleur",
+          100,
           "g",
           "produce"
         ],
@@ -124962,9 +125016,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200°C si tu grilles les pois chiches au four, ou prépare une petite poêle pour les griller à feu vif.",
-        "Épluche et coupe la patate douce et l'oignon en morceaux. Écrase l'ail et râpe le gingembre.",
+        "Épluche et coupe la patate douce et l'oignon en morceaux. Détache le chou-fleur en petits bouquets (les petites « fleurs » au bout des tiges). Écrase l'ail et râpe le gingembre.",
         "Chauffe l'huile d'olive dans une casserole à feu moyen. Fais revenir l'oignon 3 minutes jusqu'à ce qu'il devienne translucide, puis ajoute l'ail, le gingembre et le curcuma, remue 30 secondes.",
-        "Ajoute la patate douce, le bouillon de légumes et le lait de coco. Porte à ébullition puis baisse à feu doux, couvre et laisse cuire 20-25 minutes jusqu'à ce que la patate douce s'écrase facilement à la fourchette.",
+        "Ajoute la patate douce, le chou-fleur, le bouillon de légumes et le lait de coco. Porte à ébullition puis baisse à feu doux, couvre et laisse cuire 20-25 minutes jusqu'à ce que la patate douce et le chou-fleur s'écrasent facilement à la fourchette.",
         "Pendant ce temps, éponge les pois chiches cuits avec un torchon, mélange-les avec un filet d'huile et une pincée de sel, et fais-les griller 15 minutes au four ou 8-10 minutes à la poêle à feu moyen-vif en remuant souvent, jusqu'à ce qu'ils soient dorés et croustillants.",
         "Mixe la soupe au blender (ou au mixeur plongeant) jusqu'à obtenir une texture bien lisse et veloutée. Ajuste le sel et le poivre.",
         "Verse dans un bol, parsème de pois chiches grillés juste avant de servir pour garder leur croquant."
@@ -125323,7 +125377,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 440,
+      "kcal": 520,
       "tags": [
         "quick"
       ],
@@ -125333,12 +125387,13 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "shellfish",
-        "eggs"
+        "eggs",
+        "gluten"
       ],
       "ing": [
         [
           "Nouilles de riz plates",
-          45,
+          38,
           "g",
           "pantry"
         ],
@@ -125356,7 +125411,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Germes de soja",
-          80,
+          120,
           "g",
           "produce"
         ],
@@ -125394,7 +125449,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Fais tremper les nouilles de riz dans de l'eau tiède pendant 15-20 minutes (ou selon les indications du paquet), jusqu'à ce qu'elles soient souples mais encore fermes. Égoutte-les bien.",
         "Émince l'ail et coupe la ciboule en tronçons de 3 cm.",
-        "Chauffe la moitié de l'huile dans un wok ou une grande poêle à feu vif. Fais sauter les crevettes 2 minutes jusqu'à ce qu'elles deviennent roses et opaques, puis réserve-les dans une assiette.",
+        "Chauffe une partie de l'huile dans un wok ou une grande poêle à feu vif. Fais sauter les crevettes 2 minutes jusqu'à ce qu'elles deviennent roses et opaques, puis réserve-les dans une assiette.",
         "Dans le même wok, verse le reste de l'huile. Casse l'œuf directement dans le wok et brouille-le rapidement 30 secondes.",
         "Ajoute immédiatement l'ail et les nouilles égouttées. Fais sauter à feu vif 2-3 minutes en remuant sans arrêt avec deux spatules ou des baguettes, pour bien séparer les nouilles sans les casser.",
         "Arrose de sauce soja et remue encore 1 minute pour que les nouilles prennent une couleur homogène.",
@@ -129166,7 +129221,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -129397,7 +129453,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -129493,7 +129550,8 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -129599,7 +129657,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "shellfish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -129939,7 +129998,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 180,
+      "kcal": 210,
       "tags": [
         "festif"
       ],
@@ -129955,19 +130014,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crevettes décortiquées crues",
-          100,
+          70,
           "g",
           "meat-fish"
         ],
         [
           "Pâte à gyoza",
-          6,
+          3,
           "u",
           "pantry"
         ],
         [
           "Châtaigne d'eau",
-          20,
+          15,
           "g",
           "produce"
         ],
@@ -130190,7 +130249,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 95,
+      "kcal": 170,
       "tags": [
         "festif",
         "vegan",
@@ -130206,7 +130265,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Litchis frais (ou en conserve égouttés)",
-          90,
+          70,
           "g",
           "produce"
         ],
@@ -130235,12 +130294,6 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sirop d'érable",
-          0.5,
-          "c.à.c",
-          "pantry"
-        ],
-        [
           "Citron vert (jus)",
           0.25,
           "u",
@@ -130251,7 +130304,7 @@ window.__DATA_RECIPES = {
         "Si tu utilises des litchis frais : appuie sur la peau pour la casser, retire-la avec les doigts, coupe le fruit en deux et retire le noyau central. En conserve, égoutte-les simplement.",
         "Pèle l'orange et le pamplemousse à vif : coupe les deux extrémités, pose le fruit sur une face et fais glisser le couteau entre la peau et la chair en suivant la courbe, pour enlever toute la peau blanche amère. Détache ensuite les segments entre les membranes.",
         "Pèle un petit morceau de gingembre frais, coupe-le en tranches très fines puis en julienne (des bâtonnets fins comme des allumettes).",
-        "Dans un bol, mélange délicatement les litchis, les segments d'orange et de pamplemousse, la julienne de gingembre, le jus de citron vert et le sirop d'érable.",
+        "Dans un bol, mélange délicatement les litchis, les segments d'orange et de pamplemousse, la julienne de gingembre et le jus de citron vert.",
         "Laisse reposer 10 minutes au frais, le temps que les saveurs se mélangent et que le gingembre parfume légèrement les fruits.",
         "Cisèle la menthe fraîche juste avant de servir, parsème sur la salade. Sers bien frais, dans une jolie coupelle pour l'effet festif."
       ],
@@ -130951,7 +131004,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -131523,7 +131577,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.9,
-      "kcal": 400,
+      "kcal": 490,
       "tags": [
         "festif",
         "batch-friendly"
@@ -131539,13 +131593,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Feuille de brick",
-          3,
+          2,
           "u",
           "pantry"
         ],
         [
           "Blanc de poulet",
-          100,
+          120,
           "g",
           "meat-fish"
         ],
@@ -131584,12 +131638,6 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
-        ],
-        [
-          "Miel (facultatif, pour le glaçage)",
-          1,
-          "c.à.c",
-          "pantry"
         ]
       ],
       "steps": [
@@ -131598,9 +131646,8 @@ window.__DATA_RECIPES = {
         "Fais chauffer l'huile d'olive dans une poêle sur feu moyen. Fais revenir l'oignon 3 minutes jusqu'à ce qu'il devienne translucide, puis ajoute le poulet. Fais cuire 6-7 minutes en remuant, jusqu'à ce qu'il soit bien blanc et cuit à cœur (coupe un morceau pour vérifier qu'il n'y a plus de rose).",
         "Hors du feu, ajoute les amandes effilées, la cannelle, le persil, le sel et le poivre. Mélange bien : c'est ta farce.",
         "Étale une feuille de brick sur le plan de travail. Dépose une cuillère à soupe de farce dans un coin et replie en triangle (comme un drapeau qu'on plie) jusqu'au bout de la feuille. Humidifie le dernier coin avec un peu d'eau pour le coller.",
-        "Répète l'opération pour former 3 triangles par portion. Badigeonne légèrement chaque briouate d'huile d'olive au pinceau (ça remplace la friture et leur donne quand même une belle couleur dorée).",
-        "Enfourne 15-18 minutes, jusqu'à ce que les briouates soient bien dorées et croustillantes.",
-        "Si tu utilises le miel, fais-le tiédir 10 secondes au micro-ondes et badigeonne-en un fin filet sur les briouates à la sortie du four."
+        "Répète l'opération avec les autres feuilles jusqu'à épuisement de la farce. Badigeonne légèrement chaque briouate d'huile d'olive au pinceau (ça remplace la friture et leur donne quand même une belle couleur dorée).",
+        "Enfourne 15-18 minutes, jusqu'à ce que les briouates soient bien dorées et croustillantes."
       ],
       "photo": "assets/recipes/l387.webp"
     },
@@ -131885,7 +131932,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 5.8,
-      "kcal": 380,
+      "kcal": 420,
       "tags": [
         "festif"
       ],
@@ -131907,7 +131954,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Filet de cabillaud",
-          90,
+          120,
           "g",
           "meat-fish"
         ],
@@ -131919,7 +131966,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Vermicelles de riz",
-          20,
+          8,
           "g",
           "pantry"
         ],
@@ -131969,7 +132016,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200°C (chaleur tournante). Fais tremper les vermicelles de riz 5 minutes dans de l'eau chaude (pas bouillante), égoutte-les puis coupe-les grossièrement aux ciseaux.",
         "Coupe le filet de cabillaud en gros morceaux et les crevettes en 2 si elles sont grosses. Émince finement l'oignon.",
-        "Fais chauffer la moitié de l'huile d'olive dans une poêle sur feu moyen. Fais revenir l'oignon 3 minutes jusqu'à ce qu'il devienne translucide.",
+        "Fais chauffer une partie de l'huile d'olive dans une poêle sur feu moyen. Fais revenir l'oignon 3 minutes jusqu'à ce qu'il devienne translucide.",
         "Ajoute le cabillaud, les crevettes, le cumin, le paprika, le sel et le poivre. Fais cuire 4-5 minutes en remuant doucement, jusqu'à ce que le poisson s'émiette facilement à la fourchette et que les crevettes soient roses.",
         "Hors du feu, ajoute les vermicelles coupés, la coriandre ciselée et le jus de citron. Mélange délicatement sans écraser le poisson.",
         "Étale une feuille de brick sur le plan de travail, dépose la farce au centre, replie les bords vers l'intérieur comme un paquet carré bien serré. Pose une seconde feuille de brick dessous et replie-la aussi autour du paquet pour bien le fermer (ça évite que ça s'ouvre à la cuisson).",
@@ -133555,7 +133602,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 280,
+      "kcal": 380,
       "tags": [
         "no-cook",
         "quick"
@@ -133569,25 +133616,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de riz (22 cm)",
-          3,
+          2,
           "u",
           "pantry"
         ],
         [
           "Crevettes cuites décortiquées",
-          100,
+          140,
           "g",
           "meat-fish"
         ],
         [
           "Vermicelles de riz",
-          25,
+          10,
           "g",
           "pantry"
         ],
         [
           "Salade laitue",
-          4,
+          2,
           "u",
           "produce"
         ],
@@ -133601,6 +133648,12 @@ window.__DATA_RECIPES = {
           "Concombre",
           0.5,
           "u",
+          "produce"
+        ],
+        [
+          "Avocat",
+          60,
+          "g",
           "produce"
         ],
         [
@@ -133623,7 +133676,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ]
@@ -133631,13 +133684,13 @@ window.__DATA_RECIPES = {
       "steps": [
         "Mets les vermicelles de riz dans un grand bol d'eau froide. Laisse-les tremper 20 minutes jusqu'à ce qu'ils deviennent souples et blancs (comme des spaghettis très fins). Égoutte-les dans une passoire.",
         "Épluche la carotte et coupe-la en très fines lanières (à l'économe ou au couteau, le plus fin possible pour qu'elles passent bien dans le rouleau).",
-        "Coupe le concombre en bâtonnets fins, de la même taille que la carotte. Lave et sèche les feuilles de salade et les feuilles de menthe.",
+        "Coupe le concombre en bâtonnets fins, de la même taille que la carotte. Coupe l'avocat en deux, retire le noyau, prélève la chair à la cuillère et taille-la en lamelles fines (il doit être mûr mais encore ferme, sinon il s'écrase). Lave et sèche les feuilles de salade et les feuilles de menthe.",
         "Prépare la sauce : dans un petit bol, mélange le vinaigre de riz, le gingembre frais râpé et le miel. Fouette à la fourchette jusqu'à ce que le miel soit bien dissous.",
         "Remplis un grand plat creux d'eau tiède (pas chaude, sinon la galette se déchire). Trempe une galette de riz 10-15 secondes, jusqu'à ce qu'elle devienne souple mais encore un peu ferme au toucher. Pose-la sur un torchon propre et humide.",
-        "Au tiers inférieur de la galette, dépose dans l'ordre : une feuille de salade, un peu de vermicelles, des bâtonnets de carotte et de concombre, puis 2-3 feuilles de menthe.",
-        "Juste au-dessus, aligne 4-5 crevettes côte à côte : c'est la rangée qu'on verra à travers la galette une fois roulée, le côté joli du rouleau.",
+        "Au tiers inférieur de la galette, dépose dans l'ordre : une feuille de salade, un peu de vermicelles, des bâtonnets de carotte et de concombre, des lamelles d'avocat, puis 2-3 feuilles de menthe.",
+        "Juste au-dessus, aligne quelques crevettes côte à côte : c'est la rangée qu'on verra à travers la galette une fois roulée, le côté joli du rouleau.",
         "Roule serré : replie le bord du bas sur la garniture, rabats les deux côtés vers l'intérieur, puis continue à rouler en serrant doucement (pas trop fort, la galette se déchire facilement).",
-        "Recommence avec les 3 autres galettes. Coupe chaque rouleau en deux en biais et sers immédiatement avec la sauce à tremper."
+        "Recommence avec les autres galettes jusqu'à épuisement de la garniture. Coupe chaque rouleau en deux en biais et sers immédiatement avec la sauce à tremper."
       ],
       "photo": "assets/recipes/l394.webp"
     },
@@ -133654,7 +133707,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 380,
+      "kcal": 440,
       "tags": [
         "vegan",
         "vegetarian",
@@ -133673,13 +133726,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba",
-          70,
+          40,
           "g",
           "pantry"
         ],
         [
           "Edamame",
-          80,
+          130,
           "g",
           "pantry"
         ],
@@ -133691,7 +133744,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Chou rouge",
-          50,
+          80,
           "g",
           "produce"
         ],
@@ -134062,7 +134115,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "fish",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -134155,7 +134209,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "nuts",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -134522,7 +134577,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 100,
+      "kcal": 130,
       "tags": [
         "vegan",
         "vegetarian",
@@ -134537,13 +134592,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue",
-          120,
+          90,
           "g",
           "produce"
         ],
         [
           "Ananas",
-          70,
+          50,
           "g",
           "produce"
         ],
@@ -134573,12 +134628,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Épluche la mangue : coupe-la en deux de part et d'autre du noyau plat, puis quadrille la chair à l'intérieur de chaque moitié avec un couteau sans percer la peau, et retourne la peau pour détacher les cubes.",
+        "Épluche la mangue : coupe la chair de part et d'autre du noyau plat, puis quadrille-la avec un couteau sans percer la peau, et retourne la peau pour détacher les cubes.",
         "Épluche l'ananas, retire la peau épaisse et le cœur dur du centre, puis coupe la chair en petits cubes de la même taille que la mangue.",
         "Coupe le fruit de la passion en deux et récupère la pulpe et les graines à la cuillère.",
         "Mélange la mangue, l'ananas et la pulpe de fruit de la passion dans un joli bol.",
         "Presse le jus du citron vert dessus. Râpe très finement le gingembre, comme de la poudre, et parsème-le sur les fruits : il réveille le goût sans piquer.",
-        "Ciselle la menthe fraîche (roule les feuilles ensemble et coupe-les en fines lamelles) et ajoute-la juste avant de servir, pour qu'elle garde toute sa fraîcheur.",
+        "Cisèle la menthe fraîche (roule les feuilles ensemble et coupe-les en fines lamelles) et ajoute-la juste avant de servir, pour qu'elle garde toute sa fraîcheur.",
         "Sers immédiatement bien frais, ou laisse reposer 10 min au frais pour que les saveurs se mélangent."
       ],
       "photo": "assets/recipes/des234.webp"
@@ -137025,7 +137080,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -137125,7 +137181,8 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -137432,7 +137489,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "sesame",
-        "peanuts"
+        "peanuts",
+        "gluten"
       ],
       "ing": [
         [
@@ -137638,7 +137696,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "soy",
-        "sesame"
+        "sesame",
+        "gluten"
       ],
       "ing": [
         [
@@ -141051,7 +141110,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 300,
+      "kcal": 310,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -141068,12 +141127,12 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poire",
-          180,
+          160,
           "g",
           "produce"
         ],
         [
-          "Flocons d'avoine",
+          "Flocons d'avoine complets",
           20,
           "g",
           "pantry"
@@ -141455,7 +141514,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -141495,7 +141554,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "fish",
         "sesame",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -141788,7 +141848,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
@@ -142043,13 +142103,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sel",
-          0.25,
+          1,
           "pincée",
           "spices"
         ],
         [
           "Muscade",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -142132,7 +142192,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir",
-          0.25,
+          1,
           "pincée",
           "spices"
         ]
@@ -142532,7 +142592,8 @@ window.__DATA_RECIPES = {
       "eq": [],
       "allergens": [
         "fish",
-        "soy"
+        "soy",
+        "gluten"
       ],
       "ing": [
         [
@@ -144858,7 +144919,7 @@ window.__DATA_RECIPES = {
       "advance": "2h30 au frais",
       "diff": 2,
       "cost": 2.4,
-      "kcal": 165,
+      "kcal": 160,
       "tags": [
         "vegan",
         "vegetarian",
@@ -144874,7 +144935,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue mûre",
-          150,
+          110,
           "g",
           "produce"
         ],
@@ -144886,7 +144947,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ananas frais",
-          60,
+          40,
           "g",
           "produce"
         ],
@@ -144894,12 +144955,6 @@ window.__DATA_RECIPES = {
           "Agar-agar",
           1,
           "g",
-          "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          1,
-          "c.à.c",
           "pantry"
         ],
         [
@@ -144916,10 +144971,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Épluche la mangue mûre avec un économe ou un couteau, détaille la chair en morceaux. Réserve 50 g de côté, coupés en petits dés, pour le lit de fruits, et mets le reste dans un blender.",
-        "Coupe les fruits de la passion en deux, récupère la pulpe et les petites graines noires avec une cuillère. Ajoute la moitié de la pulpe dans le blender avec la mangue, et réserve l'autre moitié pour la déco.",
+        "Épluche la mangue mûre avec un économe ou un couteau, détaille la chair en morceaux. Réserve un petit morceau de côté, coupé en petits dés, pour le lit de fruits, et mets le reste dans un blender.",
+        "Coupe les fruits de la passion en deux, récupère la pulpe et les petites graines noires avec une cuillère. Ajoute une grande partie de la pulpe dans le blender avec la mangue, et réserve le reste pour la déco.",
         "Mixe la mangue et la pulpe de fruit de la passion jusqu'à obtenir une purée bien lisse. Ajoute le jus de citron vert et mixe encore quelques secondes.",
-        "Verse la purée dans une petite casserole, ajoute l'agar-agar en poudre et le sirop d'érable. Mélange au fouet, puis porte à ébullition à feu moyen en remuant sans arrêt. Dès les premiers bouillons, compte 2 minutes de cuisson : c'est ce qui active l'agar-agar.",
+        "Verse la purée dans une petite casserole, ajoute l'agar-agar en poudre. Mélange au fouet, puis porte à ébullition à feu moyen en remuant sans arrêt. Dès les premiers bouillons, compte 2 minutes de cuisson : c'est ce qui active l'agar-agar.",
         "Verse la purée chaude dans un bol large et laisse refroidir à température ambiante 20 à 25 minutes, en remuant de temps en temps : elle doit épaissir et devenir presque froide, mais pas encore totalement figée.",
         "Dès qu'elle commence à prendre (= elle colle légèrement à la cuillère quand tu la soulèves), fouette vigoureusement 2 à 3 minutes au fouet électrique : la purée s'éclaircit et gonfle, c'est la texture mousse qui se forme.",
         "Dispose les dés de mangue réservés et l'ananas frais coupé en petits dés au fond d'un joli verre : c'est le « lit de fruits frais ». Verse la mousse par-dessus délicatement avec une cuillère.",
