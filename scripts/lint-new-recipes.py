@@ -123,8 +123,10 @@ ALLERGEN_TRIGGERS = {
                "semoule", "soba", "épeautre", "epeautre", "seigle", "orge",
                "tortilla", "pita", "brick", "filo", "biscuit", "brioche",
                "baguette", "spaghetti", "tagliatelle", "lasagne", "penne"],
+    # Arachide (cacahuète) : pas un fruit à coque botaniquement, mais le catalogue
+    # la range sous `nuts` faute d'allergène « arachide » dédié (cf. tâches/).
     "nuts": ["amande", "noix", "noisette", "pistache", "cajou", "pécan", "pecan",
-             "macadamia", "praline"],
+             "macadamia", "praline", "cacahuète", "cacahuete", "arachide"],
     "soy": ["soja", "tofu", "tempeh", "miso", "sauce soja", "edamame", "lait de soja"],
     "sesame": ["sésame", "sesame", "tahin", "tahini", "huile de sésame", "huile de sesame"],
     "mustard": ["moutarde"],
@@ -344,7 +346,13 @@ def check_allergens_consistency(recipes, report):
     # (s53/d152 : "Noix de Saint-Jacques" → pas de tag nuts). On NE touche PAS à
     # "noix de coco/cajou/pécan/grenoble", "cerneaux de noix", "huile de noix",
     # qui restent nuts.
-    NON_NUT_NOIX = re.compile(r'noix\s+de\s+(saint-jacques|st-jacques|st\s+jacques|p[ée]toncle|veau|jambon|joue)')
+    NON_NUT_NOIX = re.compile(r'noix\s+de\s+(saint-jacques|st-jacques|st\s+jacques|p[ée]toncle|veau|jambon|joue|muscade|coco)')
+    # V2.128.0 — « Noix de muscade » = épice ; « noix de coco » = hors liste UE
+    # des fruits à coque (règlement INCO 1169/2011, annexe II). « Beurre pour le
+    # moule » = le moule à gâteau, pas le coquillage. « (en remplacement tortilla) »
+    # = mention de l'ingrédient remplacé, absent de la recette.
+    MOULD = re.compile(r"\b(pour\s+le|du|le|au)\s+moule\b")
+    REPLACED = re.compile(r"\(en remplacement[^)]*\)")
 
     for r in recipes:
         rid = r.get("id", "?")
@@ -354,11 +362,14 @@ def check_allergens_consistency(recipes, report):
         for ing_entry in r.get("ing", []):
             if not ing_entry: continue
             ing_name = ing_entry[0].lower()
+            ing_name = REPLACED.sub("", ing_name)
             ing_canon = canonical(ing_entry[0])
 
             for allergen, keywords in ALLERGEN_TRIGGERS.items():
                 for kw in keywords:
-                    if re.search(r'\b' + re.escape(kw) + r'\b', ing_name):
+                    # V2.128.0 — pluriels inclus (« Amandes », « Œufs », « Cacahuètes ») :
+                    # avant, \bamande\b ne trouvait pas « amandes effilées ».
+                    if re.search(r'\b' + re.escape(kw) + r'(?:s|x)?\b', ing_name):
                         # Exceptions fines
                         if allergen == "lactose" and NON_LACTOSE_MILKS.search(ing_name):
                             continue  # lait végétal, pas lactose
@@ -373,6 +384,8 @@ def check_allergens_consistency(recipes, report):
                                 continue  # tortilla de maïs = sans gluten
                         if allergen == "nuts" and kw == "noix" and NON_NUT_NOIX.search(ing_name):
                             continue  # "noix de Saint-Jacques/veau/pétoncle" = pas un fruit à coque
+                        if allergen == "shellfish" and kw == "moule" and MOULD.search(ing_name):
+                            continue  # « beurre pour le moule » = moule à gâteau
                         if allergen == "shellfish" and kw == "moule" and "moule" not in ing_name.split():
                             continue  # éviter de matcher "moelleux"
                         detected.setdefault(allergen, []).append(ing_entry[0])

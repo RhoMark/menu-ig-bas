@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.127.2</title>
+<title>Menu IG Bas — V2.128.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -2208,7 +2208,29 @@ if ("serviceWorker" in navigator) {
       "id": "datte medjool denoyautee",
       "label": "Dattes medjool dénoyautées",
       "category": "pantry",
-      "soldByWeight": true
+      "soldByWeight": true,
+      "weightPerPiece": 24
+    },
+    {
+      "id": "datte medjool",
+      "label": "Dattes medjool",
+      "category": "pantry",
+      "soldByWeight": true,
+      "weightPerPiece": 24
+    },
+    {
+      "id": "datte",
+      "label": "Dattes",
+      "category": "pantry",
+      "soldByWeight": true,
+      "weightPerPiece": 8
+    },
+    {
+      "id": "datte sechee",
+      "label": "Dattes séchées",
+      "category": "pantry",
+      "soldByWeight": true,
+      "weightPerPiece": 8
     },
     {
       "id": "eau",
@@ -2736,7 +2758,8 @@ if ("serviceWorker" in navigator) {
       "id": "pain au levain",
       "label": "Pain complet au levain",
       "category": "bread",
-      "soldByWeight": false
+      "soldByWeight": false,
+      "weightPerPiece": 40
     },
     {
       "id": "pain aux cereale",
@@ -3062,6 +3085,293 @@ if ("serviceWorker" in navigator) {
       "category": "pantry",
       "weightPerPiece": 3,
       "soldByWeight": false
+    },
+    {
+      "id": "tortilla de mais",
+      "label": "Tortilla de maïs",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 30
+    },
+    {
+      "id": "tortilla de mais complete",
+      "label": "Tortilla de maïs complète",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 30
+    },
+    {
+      "id": "tortilla mais complete",
+      "label": "Tortilla maïs complète",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 30
+    },
+    {
+      "id": "tortilla mais",
+      "label": "Tortilla maïs",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 30
+    },
+    {
+      "id": "pain complet au levain",
+      "label": "Pain complet au levain",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 40
+    },
+    {
+      "id": "pain complet",
+      "label": "Pain complet",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 40
+    },
+    {
+      "id": "pain au levain rassis",
+      "label": "Pain au levain rassis",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 40
+    },
+    {
+      "id": "pain de sarrasin",
+      "label": "Pain de sarrasin",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 35
+    },
+    {
+      "id": "banane congelee",
+      "label": "Banane congelée",
+      "category": "frozen",
+      "soldByWeight": false,
+      "weightPerPiece": 120
+    },
+    {
+      "id": "banane fraiche en rondelle",
+      "label": "Banane",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 120
+    },
+    {
+      "id": "galette de mais",
+      "label": "Galette de maïs soufflée",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 8
+    },
+    {
+      "id": "galette de riz complete",
+      "label": "Galette de riz complète",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 9
+    },
+    {
+      "id": "prune fraiche",
+      "label": "Prune",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 40
+    },
+    {
+      "id": "abricot frais",
+      "label": "Abricot",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 40
+    },
+    {
+      "id": "poire conference",
+      "label": "Poire Conférence",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 180
+    },
+    {
+      "id": "pomme reinette",
+      "label": "Pomme reinette",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 150
+    },
+    {
+      "id": "pomme a compote",
+      "label": "Pomme à compote",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 150
+    },
+    {
+      "id": "pomme golden ou reinette",
+      "label": "Pomme golden ou reinette",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 150
+    },
+    {
+      "id": "figue fraiche",
+      "label": "Figue fraîche",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 50
+    },
+    {
+      "id": "coing",
+      "label": "Coing",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 250
+    },
+    {
+      "id": "orange sanguine",
+      "label": "Orange sanguine",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 160
+    },
+    {
+      "id": "orange a dessert",
+      "label": "Orange à dessert",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 180
+    },
+    {
+      "id": "mandarine ou clementine",
+      "label": "Mandarine ou clémentine",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 70
+    },
+    {
+      "id": "mangue verte ferme",
+      "label": "Mangue verte",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 300
+    },
+    {
+      "id": "ananas frais",
+      "label": "Ananas",
+      "category": "produce",
+      "soldByWeight": false,
+      "weightPerPiece": 900
+    },
+    {
+      "id": "pita complete",
+      "label": "Pita complète",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 60
+    },
+    {
+      "id": "pita complet",
+      "label": "Pita complète",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 60
+    },
+    {
+      "id": "pain pita complet pour servir",
+      "label": "Pain pita complet",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 60
+    },
+    {
+      "id": "pate a gyoza",
+      "label": "Pâte à gyoza",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 8
+    },
+    {
+      "id": "biscuit cuillere",
+      "label": "Biscuit cuillère",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 5
+    },
+    {
+      "id": "boudoir",
+      "label": "Boudoir",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 5
+    },
+    {
+      "id": "biscuit cuillere ou speculoos",
+      "label": "Biscuit cuillère ou spéculoos",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 6
+    },
+    {
+      "id": "biscuit au sarrasin sec",
+      "label": "Biscuit au sarrasin",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 10
+    },
+    {
+      "id": "gressin complet",
+      "label": "Gressin complet",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 6
+    },
+    {
+      "id": "falafel",
+      "label": "Falafel",
+      "category": "frozen",
+      "soldByWeight": false,
+      "weightPerPiece": 20
+    },
+    {
+      "id": "pruneaux denoyaute",
+      "label": "Pruneaux dénoyautés",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 10
+    },
+    {
+      "id": "pruneaux",
+      "label": "Pruneaux",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 10
+    },
+    {
+      "id": "abricot sec",
+      "label": "Abricot sec",
+      "category": "pantry",
+      "soldByWeight": false,
+      "weightPerPiece": 8
+    },
+    {
+      "id": "mini naan complet",
+      "label": "Mini naan complet",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 40
+    },
+    {
+      "id": "naan complet",
+      "label": "Naan complet",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 90
+    },
+    {
+      "id": "chapati complet",
+      "label": "Chapati complet",
+      "category": "bread",
+      "soldByWeight": false,
+      "weightPerPiece": 40
     }
   ]
 }
@@ -8155,6 +8465,13 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "pates completes",
+      "ig": 45,
+      "carbsPer100g": 70.0,
+      "proteinPer100g": 14.0,
+      "fatPer100g": 2.0
+    },
+    {
+      "id": "vermicelle de ble complet",
       "ig": 45,
       "carbsPer100g": 70.0,
       "proteinPer100g": 14.0,

@@ -64,9 +64,9 @@ const src = [
   ...["canonicalName", "PRODUCE_PREP_RE", "stripProducePrep", "HERB_BOUQUET_G", "HERB_FEUILLE_G", "HERB_BRANCHE_G",
       "REF", "dataRef", "computeRecipeGlycemic", "CG_TIERS_BY_MEAL", "glycemicTierForMeal",
       ...NEGLIGIBLE_DECLS, "computeRecipeMacros"].map(extract),
-  "return {computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros};",
+  "return {computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros, canonicalName, dataRef};",
 ].join("\n");
-export const { computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros } = new Function("BLOCK", src)(block);
+export const { computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros, canonicalName, dataRef } = new Function("BLOCK", src)(block);
 
 export function recipeCg(recipes) {
   return recipes.map(r => {

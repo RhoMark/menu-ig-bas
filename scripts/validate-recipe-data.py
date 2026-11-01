@@ -224,6 +224,28 @@ def main():
             total_errors += len(errors)
             total_warnings += len(warnings)
 
+    # ── Allergènes déduits des ingrédients (V2.128.0) ─────────────────
+    # L'app ne filtre QUE sur le champ `allergens` : un allergène présent
+    # dans les ingrédients mais non déclaré = recette proposée à un membre
+    # allergique. Même détection que le lint des Lots, sur tout le catalogue.
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "lint_new_recipes", Path(__file__).resolve().parent / "lint-new-recipes.py")
+    lint = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(lint)
+
+    class _Rep:
+        def __init__(self): self.errs = []
+        def err(self, rid, msg): self.errs.append((rid, msg))
+        def warn(self, *a): pass
+        def info(self, *a): pass
+    rep = _Rep()
+    lint.check_allergens_consistency(recipes, rep)
+    for rid, msg in rep.errs:
+        all_results.append({"id": rid, "name": next((r.get("name", "?")[:50] for r in recipes if r.get("id") == rid), "?"),
+                            "errors": [msg], "warnings": []})
+        total_errors += 1
+
     # ── Output ────────────────────────────────────────────────────────
     if args.json:
         print(json.dumps({
