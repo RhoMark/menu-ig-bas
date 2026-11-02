@@ -49,6 +49,10 @@
   --font-ui: "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
   --font-title: "Fraunces Variable", Georgia, ui-serif, serif;
   --radius-card: 1rem;
+  /* Graphiques (V2.135.0) : 4 teintes catégorielles validées (validate_palette,
+   * clair sur la surface #fffcf7 ; contraste < 3:1 pour 2 teintes → libellés et
+   * chiffres toujours affichés à côté). */
+  --viz-1: 42 120 214; --viz-2: 235 104 52; --viz-3: 27 175 122; --viz-4: 237 161 0;
   --shadow-card: 0 1px 2px rgb(43 39 34 / 0.06), 0 4px 16px rgb(43 39 34 / 0.06);
 }
 .dark {
@@ -68,6 +72,7 @@
   --danger-soft: 59 29 26;
   --on-brand: 27 25 22;
   --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 4px 16px rgb(0 0 0 / 0.25);
+  --viz-1: 57 135 229; --viz-2: 217 89 38; --viz-3: 25 158 112; --viz-4: 201 133 0;
 }
 
 /* Interface V3 activée (classe posée sur <html> avant React, cf. index.html) :
@@ -107,3 +112,17 @@ html.ui-v3.dark .dark\:border-slate-700,
 html.ui-v3.dark .dark\:border-slate-600 { border-color: rgb(var(--line)); }
 html.ui-v3 :is(input, select, textarea).border { border-color: rgb(var(--line)); border-radius: 0.6rem; }
 html.ui-v3 .rounded-lg.shadow-sm { border-radius: var(--radius-card); }
+
+/* V2.135.0 — Filtres de la Bibliothèque (nouvelle interface) : pastilles. */
+html.ui-v3 .v3-filters > input,
+html.ui-v3 .v3-filters > select,
+html.ui-v3 .v3-filters > button {
+  border-radius: 9999px;
+  border: 1px solid rgb(var(--line));
+  background-color: rgb(var(--surface));
+  color: rgb(var(--ink));
+  padding: 0.5rem 0.9rem;
+  font-size: 0.875rem;
+}
+html.ui-v3 .v3-filters > input { flex: 1 1 16rem; min-width: 0; }
+@media (max-width: 640px) { html.ui-v3 .v3-filters > input { flex-basis: 100%; } }
