@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.136.0</title>
+<title>Menu IG Bas — V2.136.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -537,7 +537,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "L'écran de mon téléphone se met en veille pendant que je cuisine : comment l'en empêcher ?",
-          "a": "Depuis V2.136.0, ouvre une fiche recette et touche le bouton ☀️ en haut (à côté de l'étoile) : il s'illumine, et l'écran reste allumé tant que la fiche est ouverte. Plus besoin de te laver les mains pour déverrouiller et lire l'étape suivante. Ce choix est mémorisé sur l'appareil : les fois suivantes, l'écran restera allumé dès l'ouverture d'une recette. Touche ☀️ à nouveau (il redevient gris) pour revenir à la mise en veille normale. Dès que tu fermes la fiche ou que tu changes d'app, la mise en veille normale reprend. Fonctionne sur Android (Chrome, Samsung Internet) et sur iPhone / iPad à jour (iOS 18.4 ou plus récent si l'app est installée sur l'écran d'accueil). Si le bouton n’apparaît pas, ton navigateur ne le permet pas."
+          "a": "Depuis V2.136.1, l'écran reste allumé automatiquement tant qu'une fiche recette est ouverte : plus besoin de te laver les mains pour déverrouiller et lire l'étape suivante. Rien à régler. Dès que tu fermes la fiche ou que tu changes d'app, la mise en veille normale reprend. Fonctionne sur Android (Chrome, Samsung Internet) et sur iPhone / iPad à jour (iOS 18.4 ou plus récent si l'app est installée sur l'écran d'accueil). Sur un navigateur qui ne le permet pas, rien ne change."
         },
         {
           "q": "D'où viennent les prix utilisés pour calculer le coût des recettes ?",
@@ -21743,20 +21743,9 @@ const CAN_SHARE = typeof navigator !== "undefined" && typeof navigator.share ===
 // installée sur l'écran d'accueil depuis iOS 18.4). Le verrou est relâché par
 // le système dès que l'app passe en arrière-plan : on le redemande au retour,
 // et au premier toucher si Safari l'a refusé faute de geste de l'utilisateur.
-// Réglage par appareil (« on » / « off »), aucune donnée ne sort.
-// Shadow mode : WAKE_LOCK_DEFAULT = false tant que HedgeX n'a pas validé sur
-// iPhone / iPad / Android → chacun l'active d'un toucher sur ☀️ (mémorisé).
-// Passer à true = activé par défaut (un « off » choisi reste respecté).
-const WAKE_LOCK_DEFAULT = false;
+// Toujours actif (décision HedgeX 2026-11-09, validé sur iPhone et iPad
+// installés) : pas de bouton, pas de réglage. Aucune donnée ne sort.
 const CAN_WAKE_LOCK = typeof navigator !== "undefined" && !!navigator.wakeLock && typeof navigator.wakeLock.request === "function";
-const WAKE_LOCK_PREF_KEY = "menu-ig-bas-ecran-allume";
-function readWakeLockPref() {
-  try { const v = localStorage.getItem(WAKE_LOCK_PREF_KEY); return v === "on" || (v !== "off" && WAKE_LOCK_DEFAULT); }
-  catch (e) { return WAKE_LOCK_DEFAULT; }
-}
-function writeWakeLockPref(on) {
-  try { localStorage.setItem(WAKE_LOCK_PREF_KEY, on ? "on" : "off"); } catch (e) {}
-}
 function useScreenWakeLock(enabled) {
   const [held, setHeld] = useState(false);
   useEffect(() => {
@@ -21786,16 +21775,6 @@ function useScreenWakeLock(enabled) {
     };
   }, [enabled]);
   return held;
-}
-function WakeLockButton({on, held, onToggle, className}) {
-  if (!CAN_WAKE_LOCK) return null;
-  const title = on
-    ? (held ? "Écran maintenu allumé pendant la recette (toucher pour désactiver)" : "Écran allumé : en attente (touche l'écran)")
-    : "Garder l'écran allumé pendant la recette (mains sales en cuisine)";
-  return (
-    <button onClick={onToggle} aria-pressed={on} aria-label={on ? "Ne plus garder l'écran allumé" : "Garder l'écran allumé"}
-      title={title} className={`${className} ${on ? "" : "opacity-40 grayscale"}`}>☀️</button>
-  );
 }
 
 // Icône « partager » façon Apple (carré ouvert + flèche vers le haut).
@@ -21974,9 +21953,8 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
   // prêt est gardé dans `pendingShare` et un 2e bouton le partage.
   const [pendingShare, setPendingShare] = useState(null); // {file: File | null} | null (null = texte)
   const sheetRootRef = useRef(null);
-  const [wakeOn, setWakeOn] = useState(readWakeLockPref);
-  const wakeHeld = useScreenWakeLock(wakeOn);
-  const toggleWake = () => setWakeOn(v => { writeWakeLockPref(!v); return !v; });
+  // V2.136.1 — Écran allumé tant que la fiche est ouverte (toujours, sans réglage).
+  useScreenWakeLock(true);
   useEffect(() => {
     if (!CAN_SHARE) return;
     const t = setTimeout(() => loadHtml2Pdf().catch(() => {}), 1500);
@@ -22204,8 +22182,6 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
               title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris (boost en génération)"}
               className={`w-10 h-10 rounded-full hover:bg-surface-2 text-xl ${isFavorite ? "" : "opacity-60"}`}>{isFavorite ? "⭐" : "☆"}</button>
           )}
-          <WakeLockButton on={wakeOn} held={wakeHeld} onToggle={toggleWake}
-            className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg" />
           {/* V2.132.0 — Partager remplace 🖨️ et 📄 là où il existe (la feuille de
               partage propose Imprimer et Enregistrer) ; sinon (Firefox ordinateur) ils restent. */}
           {CAN_SHARE ? (
@@ -22300,8 +22276,6 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                   {isFavorite ? "⭐" : "☆"}
                 </button>
               )}
-              <WakeLockButton on={wakeOn} held={wakeHeld} onToggle={toggleWake}
-                className="text-2xl transition hover:scale-110" />
               {/* V2.108.0 — Imprimer / exporter la fiche recette. V2.132.0 : Partager
                   les remplace là où il existe (Imprimer / Enregistrer y figurent). */}
               {CAN_SHARE ? (
