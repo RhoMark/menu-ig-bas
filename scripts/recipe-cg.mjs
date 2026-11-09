@@ -47,7 +47,7 @@ export function extract(name) {
     else if (c === "}" || c === ")" || c === "]") {
       depth--;
       if (started && depth === 0 && !isConst && c === "}") return html.slice(m.index, i + 1);
-    } else if (isConst && started && depth === 0 && c === ";") return html.slice(m.index, i + 1);
+    } else if (isConst && depth === 0 && c === ";") return html.slice(m.index, i + 1); // « started » non requis : const X = /regex/;
     void prev;
   }
   throw new Error(`fin introuvable : ${name}`);
@@ -62,11 +62,11 @@ const src = [
   "const console = {error() {}, warn() {}, log() {}};",
   "function loadRefBlock(id, fallback) { return BLOCK(id) || fallback; }",
   ...["canonicalName", "PRODUCE_PREP_RE", "stripProducePrep", "HERB_BOUQUET_G", "HERB_FEUILLE_G", "HERB_BRANCHE_G",
-      "REF", "dataRef", "computeRecipeGlycemic", "CG_TIERS_BY_MEAL", "glycemicTierForMeal",
+      "REF", "dataRef", "COOKED_LINE_RE", "nutriGrams", "computeRecipeGlycemic", "CG_TIERS_BY_MEAL", "glycemicTierForMeal",
       ...NEGLIGIBLE_DECLS, "computeRecipeMacros"].map(extract),
-  "return {computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros, canonicalName, dataRef};",
+  "return {computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros, canonicalName, dataRef, nutriGrams};",
 ].join("\n");
-export const { computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros, canonicalName, dataRef } = new Function("BLOCK", src)(block);
+export const { computeRecipeGlycemic, glycemicTierForMeal, computeRecipeMacros, canonicalName, dataRef, nutriGrams } = new Function("BLOCK", src)(block);
 
 export function recipeCg(recipes) {
   return recipes.map(r => {

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.136.1</title>
+<title>Menu IG Bas — V2.137.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -326,6 +326,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "C'est quoi la CG (Charge Glycémique) ?",
           "a": "La CG = IG × glucides de la portion / 100. Plus pertinente cliniquement que l'IG seul, car elle prend en compte la quantité réelle de glucides consommée. Exemple : la pastèque a un IG élevé (72) mais une CG faible (~4) car peu de glucides par portion. Le projet utilise la CG comme indicateur principal."
+        },
+        {
+          "q": "Comment sont calculées les calories et la CG d'une recette ?",
+          "a": "À partir des ingrédients d'une portion : chaque quantité est convertie en grammes, puis multipliée par les valeurs nutritionnelles de l'ingrédient (glucides, protéines, lipides, IG). Les calories suivent la formule d'Atwater (4 kcal par gramme de glucides ou de protéines, 9 par gramme de lipides). Depuis V2.137.0, les féculents (riz, quinoa, pâtes, boulgour, lentilles, polenta…) sont comptés avec leurs valeurs à l'état SEC, tel que tu les pèses avant cuisson, d'après la table CIQUAL de l'ANSES. Avant, ils étaient comptés avec les valeurs du produit cuit, ce qui sous-estimait la CG d'environ 300 recettes : ces recettes ont été rééquilibrées (moins de féculent, plus de légumes ou de légumineuses). Si une recette indique « cuit » (ex. « Lentilles vertes cuites »), le calcul ramène le poids cuit au poids sec. Les calories affichées sont désormais toujours celles calculées, sauf pour quelques recettes dont un ingrédient n'a pas encore de valeur connue."
         },
         {
           "q": "Quels sont les seuils CG du projet ?",
@@ -832,6 +836,16 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
+    {"id": "oeuf de caille", "label": "Œuf de caille", "category": "dairy", "weightPerPiece": 10, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "radis daikon", "label": "Radis daikon", "category": "produce", "weightPerPiece": 400, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "citron jaune", "label": "Citron jaune", "category": "produce", "weightPerPiece": 100, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "cebette", "label": "Cébette", "category": "produce", "weightPerPiece": 20, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "blanc doeuf", "label": "Blanc d'œuf", "category": "dairy", "weightPerPiece": 33, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "fenouil bulbe", "label": "Fenouil bulbe", "category": "produce", "weightPerPiece": 300, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "endive", "label": "Endive", "category": "produce", "weightPerPiece": 120, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "pamplemousse rose", "label": "Pamplemousse rose", "category": "produce", "weightPerPiece": 350, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "cornichon", "label": "Cornichon", "category": "pantry", "weightPerPiece": 10, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
+    {"id": "citron confit", "label": "Citron confit", "category": "pantry", "weightPerPiece": 80, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {
       "id": "abricot",
       "label": "Abricot",
@@ -3433,6 +3447,32 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
+    { "id": "berkouke", "ig": 45, "carbsPer100g": 70.0, "proteinPer100g": 14.0, "fatPer100g": 2.0, "src": "alias de « pates completes » — pâtes plombs complètes (V2.137.0)" },
+    { "id": "galette pain libanais ou tortilla complete", "ig": 50, "carbsPer100g": 45.0, "proteinPer100g": 9.0, "fatPer100g": 4.0, "src": "alias de « tortilla complete » (V2.137.0)" },
+    { "id": "branche de celeri", "ig": 0, "carbsPer100g": 3.0, "proteinPer100g": 0.7, "fatPer100g": 0.2, "src": "alias de « celeri branche » (V2.137.0)" },
+    { "id": "pousse depinard ou bok choy", "ig": 15, "carbsPer100g": 3.6, "proteinPer100g": 2.9, "fatPer100g": 0.4, "src": "alias de « epinards frais » (V2.137.0)" },
+    { "id": "pousse depinard frais", "ig": 15, "carbsPer100g": 3.6, "proteinPer100g": 2.9, "fatPer100g": 0.4, "src": "alias de « epinards frais » (V2.137.0)" },
+    { "id": "viande hachee de boeuf", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 21.0, "fatPer100g": 5.0, "src": "alias de « boeuf hache 5% » (V2.137.0)" },
+    { "id": "semoule fine de ble complet", "ig": 48, "carbsPer100g": 70.0, "proteinPer100g": 13.0, "fatPer100g": 2.0, "src": "alias de « semoule complete » (V2.137.0)" },
+    { "id": "flocon depeautre", "ig": 55, "carbsPer100g": 59.5, "proteinPer100g": 15.6, "fatPer100g": 2.43, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9001 épeautre cru (proxy flocons) ; IG : proxy « flocon d'avoine » (V2.137.0)" },
+    { "id": "riz souffle non sucre", "ig": 64, "carbsPer100g": 86.3, "proteinPer100g": 7, "fatPer100g": 1.2, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #32006 ; IG : proxy « galette de riz » (non vérifié) (V2.137.0)" },
+    { "id": "tamarin", "ig": 51, "carbsPer100g": 57.4, "proteinPer100g": 2.8, "fatPer100g": 0.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #13080 tamarin cru ; IG : proxy « mangue » (non vérifié) (V2.137.0)" },
+    { "id": "farine dorge complete", "ig": 65, "carbsPer100g": 64.4, "proteinPer100g": 11.3, "fatPer100g": 1.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9550 farine d'orge ; IG : proxy « farine t80 » (non vérifié) (V2.137.0)" },
+    { "id": "jaune doeuf dur", "ig": 0, "carbsPer100g": 1.31, "proteinPer100g": 16, "fatPer100g": 30.1, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #22009 jaune d'œuf cuit (V2.137.0)" },
+    { "id": "roti de veau", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 28.1, "fatPer100g": 3.39, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #6551 veau rôti cuit (V2.137.0)" },
+    { "id": "bresaola", "ig": 0, "carbsPer100g": 0.49, "proteinPer100g": 32.8, "fatPer100g": 4.3, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #28503 (V2.137.0)" },
+    { "id": "crottin de chevre demi sec", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 21.1, "fatPer100g": 29.8, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #12810 chèvre demi-sec (V2.137.0)" },
+    { "id": "viande hachee dagneau", "ig": 0, "carbsPer100g": 0.45, "proteinPer100g": 18.3, "fatPer100g": 10.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #21504 (proxy : agneau haché absent) (V2.137.0)" },
+    { "id": "epaule dagneau en cube", "ig": 0, "carbsPer100g": 0.45, "proteinPer100g": 18.3, "fatPer100g": 10.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #21504 épaule d'agneau crue (V2.137.0)" },
+    { "id": "tomme legere rapee", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 30.4, "fatPer100g": 13.2, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #12760 tomme allégée (V2.137.0)" },
+    { "id": "litchis en conserve egoutte", "ig": 59, "carbsPer100g": 14.3, "proteinPer100g": 0.63, "fatPer100g": 0.19, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #13724 ; IG : proxy « ananas » (non vérifié) (V2.137.0)" },
+    { "id": "chapelure complete", "ig": 75, "carbsPer100g": 74.3, "proteinPer100g": 10.3, "fatPer100g": 1.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #7500 chapelure ; IG : proxy « pain blanc » (prudent) (V2.137.0)" },
+    { "id": "puree de noisette", "ig": 15, "carbsPer100g": 17, "proteinPer100g": 15.0, "fatPer100g": 61.0, "src": "alias de « noisette » — purée absente de CIQUAL (V2.137.0)" },
+    { "id": "puree de cacahuete san sucre", "ig": 14, "carbsPer100g": 17.3, "proteinPer100g": 25.4, "fatPer100g": 51.4, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #15202 ; IG : celui de « beurre de cacahuete » (V2.137.0)" },
+    { "id": "riz noir venere", "ig": 45, "carbsPer100g": 70.6, "proteinPer100g": 8.38, "fatPer100g": 3, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9109 riz rouge cru (proxy : riz noir absent de CIQUAL) — valeurs SEC/cru (V2.137.0)" },
+    { "id": "pate longue complete", "ig": 45, "carbsPer100g": 67.6, "proteinPer100g": 12.6, "fatPer100g": 2.2, "cookedYield": 1.95, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9870 pâtes complètes sèches — valeurs SEC/cru (V2.137.0)" },
+    { "id": "pate courte complete", "ig": 45, "carbsPer100g": 67.6, "proteinPer100g": 12.6, "fatPer100g": 2.2, "cookedYield": 1.95, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9870 pâtes complètes sèches — valeurs SEC/cru (V2.137.0)" },
+    { "id": "spaghetti complet", "ig": 45, "carbsPer100g": 67.6, "proteinPer100g": 12.6, "fatPer100g": 2.2, "cookedYield": 1.95, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9870 pâtes complètes sèches — valeurs SEC/cru (V2.137.0)" },
     { "id": "fromage a raclette", "ig": 0, "carbsPer100g": 0.5, "proteinPer100g": 25.0, "fatPer100g": 29.6 },
     { "id": "viande des grisons", "ig": 0, "carbsPer100g": 0.6, "proteinPer100g": 37.4, "fatPer100g": 5.5 },
     { "id": "truite fumee", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 23.4, "fatPer100g": 8.7 },
@@ -3840,13 +3880,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 0.0,
       "fatPer100g": 0.0
     },
-    {
-      "id": "riz basmati complet",
-      "ig": 45,
-      "carbsPer100g": 28,
-      "proteinPer100g": 3.0,
-      "fatPer100g": 0.7
-    },
+    { "id": "riz basmati complet", "ig": 45, "carbsPer100g": 71.4, "proteinPer100g": 7.38, "fatPer100g": 2.8, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9102 riz complet cru — proxy : basmati complet absent — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "riz basmati",
       "ig": 50,
@@ -3854,13 +3888,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 2.7,
       "fatPer100g": 0.3
     },
-    {
-      "id": "riz arborio",
-      "ig": 65,
-      "carbsPer100g": 28,
-      "proteinPer100g": 2.6,
-      "fatPer100g": 0.4
-    },
+    { "id": "riz arborio", "ig": 65, "carbsPer100g": 77.5, "proteinPer100g": 7.38, "fatPer100g": 0.79, "cookedYield": 2.26, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9100 riz blanc cru — proxy : arborio = riz blanc rond — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "riz",
       "ig": 65,
@@ -3868,41 +3896,11 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 2.7,
       "fatPer100g": 0.3
     },
-    {
-      "id": "quinoa",
-      "ig": 53,
-      "carbsPer100g": 21,
-      "proteinPer100g": 4.4,
-      "fatPer100g": 1.9
-    },
-    {
-      "id": "quinoa rouge",
-      "ig": 53,
-      "carbsPer100g": 21,
-      "proteinPer100g": 4.4,
-      "fatPer100g": 1.9
-    },
-    {
-      "id": "boulgour",
-      "ig": 48,
-      "carbsPer100g": 28,
-      "proteinPer100g": 3.1,
-      "fatPer100g": 0.2
-    },
-    {
-      "id": "semoule de ble",
-      "ig": 65,
-      "carbsPer100g": 25,
-      "proteinPer100g": 3.5,
-      "fatPer100g": 0.3
-    },
-    {
-      "id": "polenta",
-      "ig": 60,
-      "carbsPer100g": 24,
-      "proteinPer100g": 2.0,
-      "fatPer100g": 0.3
-    },
+    { "id": "quinoa", "ig": 53, "carbsPer100g": 58.1, "proteinPer100g": 14.1, "fatPer100g": 6.07, "cookedYield": 2.26, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9340 quinoa cru — valeurs SEC/cru (V2.137.0)" },
+    { "id": "quinoa rouge", "ig": 53, "carbsPer100g": 58.1, "proteinPer100g": 14.1, "fatPer100g": 6.07, "cookedYield": 2.26, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9340 quinoa cru — valeurs SEC/cru (V2.137.0)" },
+    { "id": "boulgour", "ig": 48, "carbsPer100g": 65.8, "proteinPer100g": 12.6, "fatPer100g": 1.42, "cookedYield": 2.72, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9690 boulgour cru — valeurs SEC/cru (V2.137.0)" },
+    { "id": "semoule de ble", "ig": 65, "carbsPer100g": 69.8, "proteinPer100g": 13, "fatPer100g": 1.28, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9610 semoule de blé dur crue — valeurs SEC/cru (V2.137.0)" },
+    { "id": "polenta", "ig": 60, "carbsPer100g": 74, "proteinPer100g": 7.88, "fatPer100g": 1.8, "cookedYield": 4.35, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9614 polenta précuite crue — proxy : semoule de maïs non précuite absente — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "flocon d'avoine",
       "ig": 55,
@@ -3917,13 +3915,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 13.0,
       "fatPer100g": 7.0
     },
-    {
-      "id": "tagliatelles fraiches",
-      "ig": 50,
-      "carbsPer100g": 28,
-      "proteinPer100g": 5.0,
-      "fatPer100g": 1.0
-    },
+    { "id": "tagliatelles fraiches", "ig": 50, "carbsPer100g": 53.8, "proteinPer100g": 11.1, "fatPer100g": 1.87, "cookedYield": 1.75, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9815 pâtes fraîches aux œufs crues — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "tagliatelles",
       "ig": 50,
@@ -3931,20 +3923,8 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 5.0,
       "fatPer100g": 1.0
     },
-    {
-      "id": "spaghetti",
-      "ig": 50,
-      "carbsPer100g": 30,
-      "proteinPer100g": 5.0,
-      "fatPer100g": 1.0
-    },
-    {
-      "id": "pates",
-      "ig": 50,
-      "carbsPer100g": 30,
-      "proteinPer100g": 5.0,
-      "fatPer100g": 1.0
-    },
+    { "id": "spaghetti", "ig": 50, "carbsPer100g": 72.7, "proteinPer100g": 13.1, "fatPer100g": 1.6, "cookedYield": 2.19, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9810 pâtes blanches sèches — valeurs SEC/cru (V2.137.0)" },
+    { "id": "pates", "ig": 50, "carbsPer100g": 72.7, "proteinPer100g": 13.1, "fatPer100g": 1.6, "cookedYield": 2.19, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9810 pâtes blanches sèches — proxy : entrée générique « pâtes » — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "penne",
       "ig": 50,
@@ -4022,34 +4002,10 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 21.0,
       "fatPer100g": 50.0
     },
-    {
-      "id": "lentille",
-      "ig": 30,
-      "carbsPer100g": 20,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 0.4
-    },
-    {
-      "id": "lentille verte",
-      "ig": 30,
-      "carbsPer100g": 20,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 0.4
-    },
-    {
-      "id": "lentille verte du puy",
-      "ig": 30,
-      "carbsPer100g": 20,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 0.4
-    },
-    {
-      "id": "lentille corail",
-      "ig": 30,
-      "carbsPer100g": 20,
-      "proteinPer100g": 8.0,
-      "fatPer100g": 0.4
-    },
+    { "id": "lentille", "ig": 30, "carbsPer100g": 44.5, "proteinPer100g": 25.1, "fatPer100g": 1.8, "cookedYield": 2.57, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #20585 lentilles vertes crues — proxy : entrée générique « lentilles » — valeurs SEC/cru (V2.137.0)" },
+    { "id": "lentille verte", "ig": 30, "carbsPer100g": 44.5, "proteinPer100g": 25.1, "fatPer100g": 1.8, "cookedYield": 2.57, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #20585 lentilles vertes crues — valeurs SEC/cru (V2.137.0)" },
+    { "id": "lentille verte du puy", "ig": 30, "carbsPer100g": 44.5, "proteinPer100g": 25.1, "fatPer100g": 1.8, "cookedYield": 2.57, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #20585 lentilles vertes crues — proxy : pas d'entrée AOP — valeurs SEC/cru (V2.137.0)" },
+    { "id": "lentille corail", "ig": 30, "carbsPer100g": 44.9, "proteinPer100g": 27.7, "fatPer100g": 0.8, "cookedYield": 2.61, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #20535 lentilles corail crues — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "pois chiche",
       "ig": 28,
@@ -5653,13 +5609,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 1.7,
       "fatPer100g": 1.2
     },
-    {
-      "id": "sarrasin",
-      "ig": 45,
-      "carbsPer100g": 21.0,
-      "proteinPer100g": 13.0,
-      "fatPer100g": 3.0
-    },
+    { "id": "sarrasin", "ig": 45, "carbsPer100g": 67.5, "proteinPer100g": 13.3, "fatPer100g": 3.4, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9380 sarrasin complet cru — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "millet",
       "ig": 52,
@@ -5667,13 +5617,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 4.0,
       "fatPer100g": 1.0
     },
-    {
-      "id": "freekeh",
-      "ig": 45,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 4.0,
-      "fatPer100g": 1.0
-    },
+    { "id": "freekeh", "ig": 45, "carbsPer100g": 65.8, "proteinPer100g": 12.6, "fatPer100g": 1.42, "cookedYield": 2.72, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9690 boulgour cru — proxy : freekeh absent (blé dur vert concassé) — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "pain au levain",
       "ig": 54,
@@ -5744,34 +5688,10 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 7.0,
       "fatPer100g": 0.3
     },
-    {
-      "id": "riz brun",
-      "ig": 50,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 2.7,
-      "fatPer100g": 0.9
-    },
-    {
-      "id": "riz noir",
-      "ig": 45,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 8.5,
-      "fatPer100g": 3.0
-    },
-    {
-      "id": "riz rond complet",
-      "ig": 50,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 7.5,
-      "fatPer100g": 2.5
-    },
-    {
-      "id": "riz long complet",
-      "ig": 50,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 7.0,
-      "fatPer100g": 2.5
-    },
+    { "id": "riz brun", "ig": 50, "carbsPer100g": 71.4, "proteinPer100g": 7.38, "fatPer100g": 2.8, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9102 riz complet cru — valeurs SEC/cru (V2.137.0)" },
+    { "id": "riz noir", "ig": 45, "carbsPer100g": 70.6, "proteinPer100g": 8.38, "fatPer100g": 3, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9109 riz rouge cru (proxy : riz noir absent de CIQUAL) — valeurs SEC/cru (V2.137.0)" },
+    { "id": "riz rond complet", "ig": 50, "carbsPer100g": 71.4, "proteinPer100g": 7.38, "fatPer100g": 2.8, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9102 riz complet cru — proxy : rond non distingué — valeurs SEC/cru (V2.137.0)" },
+    { "id": "riz long complet", "ig": 50, "carbsPer100g": 71.4, "proteinPer100g": 7.38, "fatPer100g": 2.8, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9102 riz complet cru — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "riz semi-complet",
       "ig": 55,
@@ -6647,13 +6567,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 2.0,
       "fatPer100g": 0.5
     },
-    {
-      "id": "boulgour fin",
-      "ig": 48,
-      "carbsPer100g": 19.0,
-      "proteinPer100g": 3.1,
-      "fatPer100g": 0.2
-    },
+    { "id": "boulgour fin", "ig": 48, "carbsPer100g": 65.8, "proteinPer100g": 12.6, "fatPer100g": 1.42, "cookedYield": 2.72, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9690 boulgour cru — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "cerise noire",
       "ig": 25,
@@ -8460,13 +8374,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 6.0,
       "fatPer100g": 4.0
     },
-    {
-      "id": "pois casses jaunes",
-      "ig": 25,
-      "carbsPer100g": 22.0,
-      "proteinPer100g": 8.3,
-      "fatPer100g": 0.4
-    },
+    { "id": "pois casses jaunes", "ig": 25, "carbsPer100g": 47.5, "proteinPer100g": 23.8, "fatPer100g": 1.16, "cookedYield": 2.78, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #20515 pois cassés crus — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "pois chiches secs",
       "ig": 28,
@@ -8551,27 +8459,9 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 14.0,
       "fatPer100g": 2.0
     },
-    {
-      "id": "riz complet",
-      "ig": 50,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 3.0,
-      "fatPer100g": 0.7
-    },
-    {
-      "id": "riz complet rond",
-      "ig": 50,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 3.0,
-      "fatPer100g": 0.7
-    },
-    {
-      "id": "riz long",
-      "ig": 60,
-      "carbsPer100g": 28.0,
-      "proteinPer100g": 2.5,
-      "fatPer100g": 0.3
-    },
+    { "id": "riz complet", "ig": 50, "carbsPer100g": 71.4, "proteinPer100g": 7.38, "fatPer100g": 2.8, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9102 riz complet cru — valeurs SEC/cru (V2.137.0)" },
+    { "id": "riz complet rond", "ig": 50, "carbsPer100g": 71.4, "proteinPer100g": 7.38, "fatPer100g": 2.8, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9102 riz complet cru — proxy : rond non distingué — valeurs SEC/cru (V2.137.0)" },
+    { "id": "riz long", "ig": 60, "carbsPer100g": 77.5, "proteinPer100g": 7.38, "fatPer100g": 0.79, "cookedYield": 2.26, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9100 riz blanc cru — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "pain complet au levain",
       "ig": 53,
@@ -8726,13 +8616,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 1.8,
       "fatPer100g": 0.2
     },
-    {
-      "id": "boulgour complet",
-      "ig": 48,
-      "carbsPer100g": 19.0,
-      "proteinPer100g": 3.1,
-      "fatPer100g": 0.2
-    },
+    { "id": "boulgour complet", "ig": 48, "carbsPer100g": 65.8, "proteinPer100g": 12.6, "fatPer100g": 1.42, "cookedYield": 2.72, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9690 boulgour cru — proxy : boulgour complet absent — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "escalope de poulet",
       "ig": 0,
@@ -8747,13 +8631,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 3.0,
       "fatPer100g": 15.0
     },
-    {
-      "id": "pois casses",
-      "ig": 25,
-      "carbsPer100g": 22.0,
-      "proteinPer100g": 8.3,
-      "fatPer100g": 0.4
-    },
+    { "id": "pois casses", "ig": 25, "carbsPer100g": 47.5, "proteinPer100g": 23.8, "fatPer100g": 1.16, "cookedYield": 2.78, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #20515 pois cassés crus — valeurs SEC/cru (V2.137.0)" },
     {
       "id": "farine de chataigne",
       "ig": 65,
@@ -12767,6 +12645,14 @@ const dataRef = {
       const ind = REF.ingredientsById.get(stripped);
       if (ind && ind.weightPerPiece != null) return ind.weightPerPiece;
     }
+    // V2.137.0 — Repli sur l'entrée nutritionnelle trouvée par dataRef.glycemic
+    // (mêmes règles de nettoyage) : 116 lignes « Citron jaune 0,5 u » n'avaient
+    // pas de poids, donc ni glucides ni kcal comptés.
+    const g = dataRef.glycemic(canonName);
+    if (g && g.id !== canonName) {
+      const ind = REF.ingredientsById.get(canonicalName(g.id));
+      if (ind && ind.weightPerPiece != null) return ind.weightPerPiece;
+    }
     return null;
   },
   // ----- Tags -----
@@ -12913,6 +12799,11 @@ const dataRef = {
     if (u === "cm")       return qty * 5;            // gingembre frais : 1 cm ≈ 5 g
     if (u === "tranche")  return qty * 30;           // tranche standard pain ≈ 30 g
     if (u === "étoile")   return qty * 0.5;          // anis étoilé
+    // V2.137.0 — unités jusque-là ignorées (ordres de grandeur) : 280 lignes sans grammes.
+    if (u === "brin" || u === "brins") return qty * (HERB_BRANCHE_G[canon] ?? HERB_BRANCHE_G.default);
+    if (u === "cube")     return qty * 10;           // cube de bouillon ≈ 10 g
+    if (u === "sachet")   return qty * 11;           // sachet de levure chimique ≈ 11 g
+    if (u === "bâton" || u === "baton") return qty * 3; // bâton de cannelle ≈ 3 g
     if (u === "œuf")      return qty * 55;           // dans recettes : équivalent unité œuf
     return null;
   },
@@ -13416,6 +13307,21 @@ function recipeRespectsSkill(recipe, skillLevel) {
 //   - IG moyen = Σ (IG_i × glucides_g_i) / Σ glucides_g_i
 // Renvoie {ig, cg, carbs, covered, total} ou null si aucune donnée exploitable.
 // `covered` = nombre d'ingrédients avec entrée glycémique trouvée.
+// V2.137.0 — Féculents secs (riz, quinoa, lentilles, boulgour, pâtes…) :
+// data-glycemic donne les valeurs du produit SEC, tel qu'acheté et tel que
+// pesé dans les recettes (« Quinoa 60 g » = 60 g secs). Avant, ces entrées
+// portaient les valeurs du produit CUIT → CG et kcal sous-estimées ≈ ×2,5-3.
+// Une ligne écrite « cuit(e)(s) » (« Lentilles vertes cuites 150 g ») est
+// ramenée au poids sec via `cookedYield` (poids cuit / poids sec).
+// Normalisation avant le test : « précuite » (polenta instantanée, vendue
+// sèche) ne doit PAS être prise pour « cuite ».
+const COOKED_LINE_RE = /\b(cuit|cuite|cuits|cuites)\b/;
+function nutriGrams(name, qty, unit, entry) {
+  const grams = dataRef.qtyToGrams(name, qty, unit);
+  if (grams == null || !entry?.cookedYield) return grams;
+  const n = (name || "").toString().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  return COOKED_LINE_RE.test(n) ? grams / entry.cookedYield : grams;
+}
 function computeRecipeGlycemic(recipe) {
   if (!recipe?.ing?.length) return null;
   let weightedIgSum = 0;
@@ -13425,7 +13331,7 @@ function computeRecipeGlycemic(recipe) {
     const canon = canonicalName(name);
     const entry = dataRef.glycemic(canon);
     if (!entry) continue;
-    const grams = dataRef.qtyToGrams(name, qty, unit);
+    const grams = nutriGrams(name, qty, unit, entry);
     if (grams == null || grams <= 0) continue;
     const carbs_g = grams * entry.carbsPer100g / 100;
     if (carbs_g <= 0.1) continue; // ingrédient référencé mais qty négligeable
@@ -13518,6 +13424,8 @@ const NEGLIGIBLE_NUTRI_KEYWORDS = [
   "feuille de gelatine", "gelatine",
   "agar-agar", "bicarbonate de sodium", "bicarbonate",
   "sel", "fleur de sel", "sel fin", "sel noir kala namak",
+  // V2.137.0 — formes canoniques réelles (singulier, apostrophes retirées) jamais reconnues avant.
+  "herbe de provence", "sel marin", "gros sel", "eau glacee", "asafoetida", "sambar masala", "verveine",
   "poivre", "poivre noir", "poivre blanc",
 ];
 function isNutriNegligible(canonName) {
@@ -13549,7 +13457,7 @@ function computeRecipeMacros(recipe) {
     const entry = dataRef.glycemic(canon);
     if (!entry) continue;
     if (entry.proteinPer100g == null || entry.fatPer100g == null) continue;
-    const grams = dataRef.qtyToGrams(name, qty, unit);
+    const grams = nutriGrams(name, qty, unit, entry);
     if (grams == null || grams <= 0) continue;
     totalP += grams * entry.proteinPer100g / 100;
     totalF += grams * entry.fatPer100g / 100;

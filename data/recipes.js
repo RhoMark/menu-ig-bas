@@ -375,7 +375,7 @@ window.__DATA_RECIPES = {
       "cook": 7,
       "diff": 2,
       "cost": 1.75,
-      "kcal": 330,
+      "kcal": 306,
       "tags": [
         "vegetarian",
         "quick"
@@ -506,7 +506,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 520,
+      "kcal": 541,
       "tags": [
         "batch-friendly"
       ],
@@ -518,7 +518,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          45,
           "g",
           "pantry"
         ],
@@ -593,7 +593,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.62,
-      "kcal": 450,
+      "kcal": 689,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -895,7 +895,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 480,
+      "kcal": 600,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -1077,7 +1077,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 460,
+      "kcal": 634,
       "tags": [
         "vegetarian",
         "quick"
@@ -1271,7 +1271,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.25,
-      "kcal": 720,
+      "kcal": 679,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -1330,12 +1330,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Riz basmati complet",
-          30,
-          "g",
-          "pantry"
-        ],
-        [
           "Sel",
           1,
           "pincée",
@@ -1343,12 +1337,11 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Lance la cuisson du riz (20 min à petit feu dans 2 fois son volume d'eau salée).",
-        "Émince l'oignon et écrase l'ail. Fais chauffer l'huile dans une casserole.",
+        "Émince l'oignon (coupe-le en tout petits morceaux) et écrase l'ail avec le plat d'un couteau. Fais chauffer l'huile dans une casserole.",
         "Ajoute l'oignon, remue 3 min. Ajoute l'ail et la pâte de curry, remue 1 min.",
         "Verse les tomates pelées et les pois chiches rincés. Cuis 5 min à feu moyen.",
         "Ajoute le lait de coco. Laisse mijoter 10 minutes à feu doux.",
-        "Ajoute les épinards dans les 2 dernières minutes. Sale si besoin. Sers avec le riz."
+        "Ajoute les épinards dans les 2 dernières minutes. Sale si besoin. Sers bien chaud dans des assiettes creuses."
       ],
       "photo": "assets/recipes/l9.webp"
     },
@@ -1365,7 +1358,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 400,
+      "kcal": 458,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -1462,7 +1455,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.38,
-      "kcal": 510,
+      "kcal": 507,
       "tags": [
         "kid-friendly"
       ],
@@ -1482,7 +1475,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -1636,7 +1629,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 430,
+      "kcal": 535,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -1651,7 +1644,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          30,
           "g",
           "pantry"
         ],
@@ -1732,7 +1725,7 @@ window.__DATA_RECIPES = {
       "prep": 10,
       "cook": 30,
       "diff": 2,
-      "cost": 2.0,
+      "cost": 2,
       "kcal": 450,
       "tags": [
         "vegetarian",
@@ -1745,7 +1738,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots rouges cuits (en boîte)",
-          110,
+          150,
           "g",
           "pantry"
         ],
@@ -1796,21 +1789,14 @@ window.__DATA_RECIPES = {
           1,
           "c.à.s",
           "pantry"
-        ],
-        [
-          "Riz basmati complet",
-          40,
-          "g",
-          "pantry"
         ]
       ],
       "steps": [
-        "Cuis le riz (20 min dans 2 fois son volume d'eau salée).",
-        "Émince l'oignon, l'ail et coupe le poivron en dés.",
+        "Émince l'oignon et l'ail, et coupe le poivron en dés.",
         "Chauffe l'huile dans une casserole. Fais revenir oignon et poivron 5 min.",
         "Ajoute ail, cumin, paprika, piment. Remue 1 min.",
         "Ajoute les tomates et les haricots rouges rincés. Laisse mijoter 20 min à feu doux en remuant de temps en temps.",
-        "Sale. Sers sur le riz."
+        "Sale. Sers bien chaud dans des bols."
       ],
       "photo": "assets/recipes/l14.webp"
     },
@@ -2013,7 +1999,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 380,
+      "kcal": 471,
       "tags": [],
       "eq": [
         "oven"
@@ -2099,7 +2085,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 450,
+      "kcal": 538,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -2457,7 +2443,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 450,
+      "kcal": 763,
       "tags": [
         "kid-friendly"
       ],
@@ -2816,7 +2802,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 490,
+      "kcal": 814,
       "tags": [],
       "eq": [
         "stove"
@@ -2876,7 +2862,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -2908,8 +2894,8 @@ window.__DATA_RECIPES = {
       "prep": 5,
       "cook": 15,
       "diff": 2,
-      "cost": 4.0,
-      "kcal": 480,
+      "cost": 4,
+      "kcal": 538,
       "tags": [
         "quick"
       ],
@@ -2943,7 +2929,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -2988,7 +2974,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 470,
+      "kcal": 520,
       "tags": [
         "kid-friendly"
       ],
@@ -3058,12 +3044,6 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Quinoa (facultatif)",
-          50,
-          "g",
-          "pantry"
-        ],
-        [
           "Sel, poivre",
           1,
           "pincée",
@@ -3076,7 +3056,7 @@ window.__DATA_RECIPES = {
         "Chauffe l'huile dans une sauteuse. Fais dorer les boulettes 5 min en les retournant.",
         "Ajoute le reste d'oignon et d'ail. Remue 1 min.",
         "Verse les tomates et l'origan. Ajoute la courgette coupée en rondelles.",
-        "Couvre et laisse mijoter 15 min à feu doux. Sers seul ou avec du quinoa."
+        "Couvre et laisse mijoter 15 min à feu doux. Sers bien chaud."
       ],
       "photo": "assets/recipes/d14.webp"
     },
@@ -3544,7 +3524,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 296,
       "tags": [
         "vegetarian"
       ],
@@ -3842,8 +3822,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 30,
       "diff": 2,
-      "cost": 2.0,
-      "kcal": 410,
+      "cost": 2,
+      "kcal": 475,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -3907,7 +3887,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz complet",
-          60,
+          25,
           "g",
           "pantry"
         ],
@@ -3941,7 +3921,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 430,
+      "kcal": 501,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -3957,7 +3937,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -4037,7 +4017,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 520,
+      "kcal": 552,
       "tags": [
         "kid-friendly",
         "batch-friendly"
@@ -4097,7 +4077,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -4115,8 +4095,8 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe le poulet en gros cubes. Dans un bol, mélange 40g de yaourt, concentré de tomates, curry, cumin, ail et gingembre râpés. Ajoute le poulet et laisse mariner 10 minutes minimum.",
-        "Lance le riz basmati : 60g dans 120ml d'eau salée, départ à froid, cuisson 12 min puis repos 5 min.",
+        "Coupe le poulet en gros cubes. Dans un bol, mélange la moitié du yaourt, le concentré de tomates, le curry, le cumin, l'ail et le gingembre râpés. Ajoute le poulet et laisse mariner 10 minutes minimum.",
+        "Lance le riz basmati complet : mets-le dans une casserole avec 2 fois son volume d'eau salée, couvre et cuis 20 min à petit feu.",
         "Chauffe l'huile dans une sauteuse. Verse le poulet avec sa marinade, fais cuire 8-10 minutes en remuant, jusqu'à ce que le poulet soit bien doré et cuit.",
         "Sers avec le riz, le reste de yaourt nature à côté et la coriandre ciselée par-dessus."
       ],
@@ -4226,7 +4206,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.62,
-      "kcal": 440,
+      "kcal": 431,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -4499,8 +4479,8 @@ window.__DATA_RECIPES = {
       "prep": 10,
       "cook": 25,
       "diff": 2,
-      "cost": 4.0,
-      "kcal": 510,
+      "cost": 4,
+      "kcal": 627,
       "tags": [],
       "eq": [
         "oven",
@@ -4521,13 +4501,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lentilles vertes du Puy",
-          70,
+          60,
           "g",
           "pantry"
         ],
         [
           "Chapelure de pain complet",
-          2,
+          1,
           "c.à.s",
           "bread"
         ],
@@ -4598,7 +4578,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.75,
-      "kcal": 430,
+      "kcal": 388,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -4612,7 +4592,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Sarrasin (kasha)",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -4654,7 +4634,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          200,
+          115,
           "ml",
           "pantry"
         ],
@@ -4692,7 +4672,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 490,
+      "kcal": 717,
       "tags": [
         "batch-friendly"
       ],
@@ -4787,7 +4767,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 420,
+      "kcal": 462,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -4802,19 +4782,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour complet",
-          70,
+          25,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          120,
+          80,
           "g",
           "pantry"
         ],
         [
           "Épinards frais",
-          80,
+          150,
           "g",
           "produce"
         ],
@@ -4877,7 +4857,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 420,
+      "kcal": 458,
       "tags": [],
       "eq": [
         "stove",
@@ -4889,13 +4869,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Dos de cabillaud",
-          130,
+          150,
           "g",
           "meat-fish"
         ],
         [
           "Quinoa",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -4926,7 +4906,7 @@ window.__DATA_RECIPES = {
         [
           "Huile d'olive",
           1,
-          "c.à.c",
+          "c.à.s",
           "pantry"
         ],
         [
@@ -5045,7 +5025,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 640,
+      "kcal": 635,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -5063,7 +5043,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Haricots rouges",
-          100,
+          130,
           "g",
           "pantry"
         ],
@@ -5110,10 +5090,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Riz complet",
-          35,
-          "g",
-          "pantry"
+          "Sel",
+          1,
+          "pincée",
+          "spices"
         ]
       ],
       "steps": [
@@ -5122,8 +5102,7 @@ window.__DATA_RECIPES = {
         "Ajoute paprika, cumin, poivron, remue 1 min.",
         "Verse tomates concassées et haricots rouges égouttés. Sale légèrement.",
         "Couvre et laisse mijoter 20 minutes à feu doux.",
-        "Pendant ce temps, cuis le riz complet.",
-        "Sers le chili sur le riz."
+        "Sers le chili bien chaud dans des bols."
       ],
       "photo": "assets/recipes/l28.webp"
     },
@@ -5568,7 +5547,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 514,
       "tags": [
         "vegetarian",
         "quick"
@@ -5942,7 +5921,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 410,
+      "kcal": 585,
       "tags": [],
       "eq": [
         "oven"
@@ -6031,7 +6010,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 440,
+      "kcal": 497,
       "tags": [],
       "eq": [
         "stove"
@@ -6226,7 +6205,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.38,
-      "kcal": 440,
+      "kcal": 588,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -6248,7 +6227,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -6311,7 +6290,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 350,
+      "kcal": 694,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -6411,7 +6390,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 595,
       "tags": [
         "batch-friendly"
       ],
@@ -6765,7 +6744,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 155,
+      "kcal": 166,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -7701,7 +7680,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 0.88,
-      "kcal": 210,
+      "kcal": 200,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -8695,7 +8674,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.38,
-      "kcal": 350,
+      "kcal": 291,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -8710,13 +8689,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          50,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          200,
+          120,
           "ml",
           "dairy"
         ],
@@ -8728,7 +8707,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cerneaux de noix",
-          10,
+          15,
           "g",
           "pantry"
         ],
@@ -8972,7 +8951,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 460,
+      "kcal": 474,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -8987,7 +8966,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -9144,8 +9123,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 25,
       "diff": 2,
-      "cost": 5.0,
-      "kcal": 520,
+      "cost": 5,
+      "kcal": 624,
       "tags": [
         "batch-friendly"
       ],
@@ -9168,7 +9147,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz noir (Venere)",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -9237,7 +9216,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.75,
-      "kcal": 410,
+      "kcal": 386,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -9325,7 +9304,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 440,
+      "kcal": 425,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -9340,7 +9319,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          110,
+          130,
           "g",
           "pantry"
         ],
@@ -9349,12 +9328,6 @@ window.__DATA_RECIPES = {
           80,
           "g",
           "produce"
-        ],
-        [
-          "Quinoa",
-          40,
-          "g",
-          "pantry"
         ],
         [
           "Roquette",
@@ -9396,9 +9369,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200°C. Égoutte les pois chiches, mélange avec huile, cumin, sel.",
         "Étale sur une plaque, enfourne 20-25 min jusqu'à croustillance.",
-        "Cuis le quinoa 12 min dans 2x son volume d'eau salée.",
-        "Mélange tahini avec jus de citron et 1 c.à.s d'eau pour une sauce.",
-        "Compose le bowl : quinoa, roquette, betterave en dés, pois chiches. Nappe de sauce."
+        "Pendant ce temps, mélange tahini avec jus de citron et 1 c.à.s d'eau pour faire une sauce.",
+        "Compose le bowl : roquette au fond, betterave en dés, pois chiches rôtis. Nappe de sauce."
       ],
       "photo": "assets/recipes/l34.webp"
     },
@@ -9494,7 +9466,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 480,
+      "kcal": 525,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -9763,7 +9735,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.12,
-      "kcal": 560,
+      "kcal": 533,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -9826,19 +9798,12 @@ window.__DATA_RECIPES = {
           0.5,
           "c.à.c",
           "spices"
-        ],
-        [
-          "Riz basmati complet",
-          25,
-          "g",
-          "pantry"
         ]
       ],
       "steps": [
-        "Cuis le riz 18-20 min.",
-        "Émince oignon, ail, gingembre. Fais revenir 3 min.",
+        "Émince oignon, ail et gingembre (coupe-les en tout petits morceaux). Fais-les revenir 3 min dans une casserole.",
         "Ajoute épices, tomates, pois chiches, lait de coco. Mijote 10 min.",
-        "Ajoute les épinards, laisse fondre 2-3 min. Sers avec le riz."
+        "Ajoute les épinards, laisse fondre 2-3 min. Sers bien chaud dans des assiettes creuses."
       ],
       "photo": "assets/recipes/l39.webp"
     },
@@ -9855,7 +9820,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 380,
+      "kcal": 372,
       "tags": [
         "batch-friendly"
       ],
@@ -10298,7 +10263,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 470,
+      "kcal": 533,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -10320,7 +10285,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -10460,8 +10425,8 @@ window.__DATA_RECIPES = {
       "prep": 10,
       "cook": 30,
       "diff": 1,
-      "cost": 2.0,
-      "kcal": 488,
+      "cost": 2,
+      "kcal": 480,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -10478,19 +10443,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Spaghetti complets",
-          45,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lentilles vertes cuites",
-          100,
+          70,
           "g",
           "pantry"
         ],
         [
           "Tomates concassées",
-          200,
+          150,
           "g",
           "pantry"
         ],
@@ -10508,7 +10473,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Courgette",
-          120,
+          250,
           "g",
           "produce"
         ],
@@ -11379,7 +11344,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 531,
       "tags": [
         "batch-friendly"
       ],
@@ -11394,7 +11359,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -11754,7 +11719,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.75,
-      "kcal": 490,
+      "kcal": 595,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -11844,8 +11809,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 20,
       "diff": 2,
-      "cost": 5.0,
-      "kcal": 530,
+      "cost": 5,
+      "kcal": 619,
       "tags": [],
       "eq": [
         "stove"
@@ -11859,7 +11824,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -12023,7 +11988,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 460,
+      "kcal": 637,
       "tags": [
         "vegetarian"
       ],
@@ -12037,7 +12002,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -12369,7 +12334,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 510,
+      "kcal": 482,
       "tags": [],
       "eq": [
         "stove",
@@ -12409,7 +12374,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
@@ -12454,7 +12419,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 420,
+      "kcal": 546,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -12718,7 +12683,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 450,
+      "kcal": 425,
       "tags": [],
       "eq": [
         "stove"
@@ -14337,7 +14302,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 540,
+      "kcal": 663,
       "tags": [
         "batch-friendly"
       ],
@@ -14350,7 +14315,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour fin",
-          80,
+          45,
           "g",
           "pantry"
         ],
@@ -14398,7 +14363,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Fais bouillir 200 ml d'eau salée. Verse le boulgour, coupe le feu, couvre et laisse gonfler 10 min.",
+        "Fais bouillir 2 fois le volume du boulgour en eau salée. Verse le boulgour, coupe le feu, couvre et laisse gonfler 10 min.",
         "Pendant ce temps, lave la courgette et coupe-la en petits cubes.",
         "Dans une poêle, fais chauffer l'huile d'olive. Ajoute la courgette et le cumin, fais revenir 6-8 min jusqu'à ce qu'elle soit tendre.",
         "Dans une autre poêle, fais cuire les merguez à feu moyen 8-10 min en les retournant pour qu'elles dorent partout.",
@@ -14420,7 +14385,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 620,
+      "kcal": 634,
       "tags": [
         "batch-friendly"
       ],
@@ -14434,7 +14399,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          35,
           "g",
           "pantry"
         ],
@@ -14452,8 +14417,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          0.25,
-          "u",
+          60,
+          "g",
           "produce"
         ],
         [
@@ -14697,7 +14662,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 590,
+      "kcal": 662,
       "tags": [
         "batch-friendly"
       ],
@@ -14711,7 +14676,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour fin",
-          50,
+          35,
           "g",
           "pantry"
         ],
@@ -14922,7 +14887,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 552,
+      "kcal": 555,
       "tags": [
         "kid-friendly"
       ],
@@ -14930,43 +14895,42 @@ window.__DATA_RECIPES = {
         "stove"
       ],
       "allergens": [
-        "lactose",
-        "gluten"
+        "lactose"
       ],
       "ing": [
         [
           "Polenta précuite",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Eau",
-          200,
+          50,
           "ml",
           "pantry"
         ],
         [
           "Parmesan râpé",
-          20,
+          25,
           "g",
           "dairy"
         ],
         [
           "Escalope de veau",
-          120,
+          150,
           "g",
           "meat-fish"
         ],
         [
           "Roquette",
-          30,
+          60,
           "g",
           "produce"
         ],
@@ -14975,12 +14939,6 @@ window.__DATA_RECIPES = {
           10,
           "g",
           "dairy"
-        ],
-        [
-          "Farine T80 (semi-complète)",
-          1,
-          "c.à.s",
-          "pantry"
         ],
         [
           "Citron",
@@ -15005,7 +14963,7 @@ window.__DATA_RECIPES = {
         "Dans une casserole, porte à ébullition le lait + l'eau avec une pincée de sel.",
         "Verse la polenta en pluie en fouettant. Baisse le feu et remue 5 min jusqu'à ce que ça épaississe.",
         "Hors du feu, ajoute le parmesan et la moitié du beurre. Mélange et garde au chaud.",
-        "Sale, poivre l'escalope. Farine-la légèrement des deux côtés.",
+        "Sale et poivre l'escalope.",
         "Fais chauffer le reste de beurre dans une poêle. Cuis l'escalope 2-3 min de chaque côté à feu vif.",
         "Sers la polenta dans une assiette creuse. Pose l'escalope dessus, puis la roquette assaisonnée d'un trait de citron et d'un filet d'huile d'olive."
       ],
@@ -15023,7 +14981,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 600,
+      "kcal": 616,
       "tags": [
         "kid-friendly",
         "batch-friendly"
@@ -15038,7 +14996,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes du Puy",
-          80,
+          55,
           "g",
           "pantry"
         ],
@@ -15098,10 +15056,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince les lentilles. Mets-les dans une casserole avec 500 ml d'eau, le bouillon cube, l'oignon coupé en quatre et le cumin.",
+        "Rince les lentilles. Mets-les dans une casserole avec 4 fois leur volume d'eau, le bouillon cube, l'oignon coupé en quatre et le cumin.",
         "Porte à ébullition puis baisse à feu doux. Cuis 25 min jusqu'à ce que les lentilles soient tendres mais pas en purée.",
         "Pendant ce temps, épluche et coupe les carottes en rondelles épaisses.",
-        "Dans une sauteuse, fais fondre le beurre, ajoute les carottes, le sucre, sale, et 100 ml d'eau. Couvre et cuis 15 min jusqu'à ce que l'eau s'évapore et que les carottes soient brillantes.",
+        "Dans une sauteuse, fais fondre le beurre, ajoute les carottes, le sucre, sale, et un petit verre d'eau. Couvre et cuis 15 min jusqu'à ce que l'eau s'évapore et que les carottes soient brillantes.",
         "Dans une poêle, cuis les chipolatas 8-10 min en les retournant pour qu'elles dorent.",
         "Sers les lentilles égouttées avec les carottes glacées, les chipolatas et le persil ciselé."
       ],
@@ -15293,7 +15251,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 6.25,
-      "kcal": 600,
+      "kcal": 617,
       "tags": [],
       "eq": [
         "stove"
@@ -15310,7 +15268,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz brun",
-          80,
+          40,
           "g",
           "pantry"
         ],
@@ -15385,8 +15343,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 25,
       "diff": 2,
-      "cost": 3.0,
-      "kcal": 510,
+      "cost": 3,
+      "kcal": 511,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -15402,13 +15360,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour",
-          80,
+          30,
           "g",
           "pantry"
         ],
         [
           "Petits pois frais ou surgelés",
-          80,
+          70,
           "g",
           "frozen"
         ],
@@ -15471,7 +15429,7 @@ window.__DATA_RECIPES = {
         "Émince l'oignon nouveau, écrase l'ail. Coupe la base des asperges, puis coupe-les en tronçons de 3 cm.",
         "Fais chauffer l'huile dans une casserole. Ajoute oignon et ail, fais suer 2 min sans colorer.",
         "Verse le boulgour et remue 1 min pour qu'il se nacre.",
-        "Ajoute 200 ml d'eau bouillante avec le bouillon cube émietté, sel et poivre. Couvre et baisse à feu doux. Cuis 10 min.",
+        "Ajoute 2 fois le volume du boulgour en eau bouillante avec le bouillon cube émietté, sel et poivre. Couvre et baisse à feu doux. Cuis 10 min.",
         "Ajoute les asperges et les petits pois sur le boulgour sans mélanger. Couvre encore 5-7 min, jusqu'à ce que les asperges soient tendres et le boulgour cuit.",
         "Hors du feu, ajoute le jus de citron, mélange délicatement.",
         "Sers en parsemant de feta émiettée et de menthe ciselée."
@@ -15570,7 +15528,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 530,
+      "kcal": 670,
       "tags": [
         "batch-friendly"
       ],
@@ -15584,7 +15542,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          35,
           "g",
           "pantry"
         ],
@@ -15596,7 +15554,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fèves fraîches écossées",
-          100,
+          70,
           "g",
           "produce"
         ],
@@ -15632,7 +15590,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa. Fais-le cuire dans 200 ml d'eau salée 12 min à couvert. Égoutte si besoin.",
+        "Rince le quinoa. Fais-le cuire dans 2 fois son volume d'eau salée 12 min à couvert. Égoutte si besoin.",
         "Pendant ce temps, fais bouillir une casserole d'eau, plonge les fèves 2 min puis rafraîchis-les à l'eau froide. Si elles ont une seconde peau épaisse, retire-la.",
         "Frotte le poulet avec le cumin, sel et poivre. Cuis-le à la poêle avec un peu d'huile, 5 min de chaque côté à feu moyen. Découpe en lamelles.",
         "Dans un grand bol, mélange quinoa tiède, fèves, jus et zeste de citron, huile d'olive.",
@@ -15652,7 +15610,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 560,
+      "kcal": 701,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -15676,7 +15634,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait de coco",
-          150,
+          80,
           "ml",
           "dairy"
         ],
@@ -15718,7 +15676,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -15859,7 +15817,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 590,
+      "kcal": 707,
       "tags": [
         "batch-friendly"
       ],
@@ -15874,7 +15832,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Sarrasin en grains",
-          70,
+          45,
           "g",
           "pantry"
         ],
@@ -15929,7 +15887,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Coupe le saumon en cubes de 1 cm. Mélange avec le jus et zeste de citron, aneth ciselé, sel et poivre. Réserve au frais 15 min (le citron va le pré-cuire légèrement, comme un ceviche).",
-        "Pendant ce temps, rince le sarrasin. Cuis-le dans 200 ml d'eau salée 12-15 min à feu doux à couvert. Égoutte si besoin.",
+        "Pendant ce temps, rince le sarrasin. Cuis-le dans 2 fois son volume d'eau salée 12-15 min à feu doux à couvert. Égoutte si besoin.",
         "Coupe le concombre en demi-rondelles, l'avocat en cubes.",
         "Compose le bowl : sarrasin tiède au fond, puis saumon mariné, concombre et avocat.",
         "Arrose d'un filet d'huile d'olive et de sauce soja."
@@ -16031,7 +15989,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 580,
+      "kcal": 581,
       "tags": [
         "kid-friendly",
         "batch-friendly"
@@ -16046,8 +16004,8 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Riz long",
-          80,
+          "Riz basmati complet",
+          35,
           "g",
           "pantry"
         ],
@@ -16059,7 +16017,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Petits pois surgelés",
-          80,
+          60,
           "g",
           "frozen"
         ],
@@ -16101,7 +16059,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Fais cuire le riz dans 200 ml d'eau salée 10 min à feu doux à couvert. Laisse tiédir (idéal : riz de la veille refroidi).",
+        "Fais cuire le riz basmati complet dans 2 fois son volume d'eau salée : 20 min à feu doux à couvert. Laisse tiédir (idéal : riz de la veille refroidi).",
         "Coupe le poulet en petits cubes. Râpe le gingembre. Émince l'oignon nouveau (garde le vert pour la fin).",
         "Bats l'œuf avec une pincée de sel.",
         "Fais chauffer l'huile dans un wok ou grande poêle à feu vif. Verse l'œuf battu, mélange rapidement pour faire des morceaux brouillés. Réserve.",
@@ -16236,7 +16194,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.75,
-      "kcal": 580,
+      "kcal": 731,
       "tags": [
         "batch-friendly"
       ],
@@ -16256,7 +16214,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Semoule de blé moyenne",
-          70,
+          30,
           "g",
           "pantry"
         ],
@@ -16345,7 +16303,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 510,
+      "kcal": 575,
       "tags": [
         "quick"
       ],
@@ -16359,7 +16317,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour",
-          80,
+          45,
           "g",
           "pantry"
         ],
@@ -16407,7 +16365,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Mets le boulgour dans une casserole avec 200 ml d'eau salée. Porte à ébullition, baisse le feu, couvre et cuis 10 min.",
+        "Mets le boulgour dans une casserole avec 2 fois son volume d'eau salée. Porte à ébullition, baisse le feu, couvre et cuis 10 min.",
         "Pendant ce temps, écrase l'ail. Cisèle le persil.",
         "Fais chauffer l'huile dans une poêle à feu vif. Quand elle est bien chaude, ajoute l'ail, fais blondir 30 sec.",
         "Ajoute les crevettes, le piment d'Espelette, sale. Fais sauter 3-4 min jusqu'à ce qu'elles deviennent rosées.",
@@ -16428,7 +16386,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 7.5,
-      "kcal": 613,
+      "kcal": 640,
       "tags": [],
       "eq": [
         "stove"
@@ -16441,7 +16399,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Spaghetti",
-          90,
+          45,
           "g",
           "pantry"
         ],
@@ -16611,7 +16569,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 590,
+      "kcal": 644,
       "tags": [
         "kid-friendly"
       ],
@@ -16629,8 +16587,8 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Riz arborio",
-          80,
+          "Riz complet rond",
+          40,
           "g",
           "pantry"
         ],
@@ -16642,13 +16600,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Asperges vertes",
-          5,
+          8,
           "u",
           "produce"
         ],
         [
           "Bouillon de volaille",
-          500,
+          280,
           "ml",
           "pantry"
         ],
@@ -16696,7 +16654,7 @@ window.__DATA_RECIPES = {
         "Dans une sauteuse, fais chauffer l'huile. Saisis le poulet 3 min jusqu'à ce qu'il soit doré. Réserve.",
         "Dans la même sauteuse, ajoute l'échalote et le riz, remue 2 min jusqu'à ce que le riz soit nacré.",
         "Verse le vin blanc, laisse évaporer.",
-        "Ajoute le bouillon louche par louche, en remuant souvent, pendant 18 min. Le riz doit être crémeux mais encore al dente.",
+        "Ajoute le bouillon louche par louche (si le riz est encore dur quand il n'y a plus de bouillon, ajoute un peu d'eau chaude), en remuant souvent, pendant 30 à 35 min (le riz complet cuit plus longtemps que le riz blanc). Le riz doit être crémeux mais encore al dente.",
         "Réincorpore le poulet et les asperges. Hors du feu, ajoute le beurre, le parmesan, sel et poivre. Mélange et sers immédiatement."
       ],
       "photo": "assets/recipes/l62.webp"
@@ -16715,7 +16673,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 4.38,
-      "kcal": 540,
+      "kcal": 674,
       "tags": [
         "batch-friendly"
       ],
@@ -16730,7 +16688,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes du Puy",
-          80,
+          60,
           "g",
           "pantry"
         ],
@@ -16742,7 +16700,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Betterave cuite",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -16899,8 +16857,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 30,
       "diff": 2,
-      "cost": 6.0,
-      "kcal": 540,
+      "cost": 6,
+      "kcal": 672,
       "tags": [],
       "eq": [
         "stove",
@@ -16913,7 +16871,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour",
-          80,
+          40,
           "g",
           "pantry"
         ],
@@ -16975,7 +16933,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 180 °C. Coupe les tomates cerises en deux, étale-les sur une plaque avec l'ail écrasé, l'origan, l'huile d'olive, sel et poivre.",
         "Enfourne 25 min : les tomates doivent être ratatinées et confites.",
-        "Pendant ce temps, mets le boulgour dans une casserole avec 200 ml d'eau salée bouillante, couvre et laisse gonfler 10 min hors du feu.",
+        "Pendant ce temps, mets le boulgour dans une casserole avec 1,5 fois son volume d'eau salée bouillante, couvre et laisse gonfler 10 min hors du feu.",
         "Sale et poivre la dorade. Cuis-la à la poêle avec un peu d'huile, peau dessous d'abord, 4 min puis retourne et cuis 2 min de plus.",
         "Égrène le boulgour, ajoute les tomates confites avec leur jus, les olives dénoyautées et coupées, les câpres.",
         "Sers la dorade sur le boulgour, arrose d'un trait de citron."
@@ -17087,8 +17045,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 20,
       "diff": 2,
-      "cost": 4.0,
-      "kcal": 750,
+      "cost": 4,
+      "kcal": 781,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -17105,7 +17063,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa rouge",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -17117,7 +17075,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Betterave cuite",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -17185,7 +17143,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 705,
+      "kcal": 700,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -17202,7 +17160,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tagliatelles fraîches",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -17214,7 +17172,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate concassée",
-          200,
+          150,
           "g",
           "pantry"
         ],
@@ -17226,13 +17184,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Courgette",
-          120,
+          180,
           "g",
           "produce"
         ],
@@ -17303,7 +17261,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 540,
+      "kcal": 707,
       "tags": [
         "batch-friendly"
       ],
@@ -17327,9 +17285,21 @@ window.__DATA_RECIPES = {
         ],
         [
           "Semoule de blé moyenne",
-          70,
+          30,
           "g",
           "pantry"
+        ],
+        [
+          "Courgette",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Poivron rouge",
+          0.5,
+          "u",
+          "produce"
         ],
         [
           "Citron (jus + zeste)",
@@ -17387,10 +17357,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe le poulet en cubes de 3 cm. Marine 15 min avec le yaourt, ail écrasé, paprika, origan, le jus de la moitié du citron, sel et poivre.",
+        "Coupe le poulet en cubes de 3 cm. Marine 15 min avec le yaourt, ail écrasé, paprika, origan, le jus de la moitié du citron, sel et poivre. Coupe aussi la courgette et le poivron en morceaux de 3 cm.",
         "Pendant ce temps, mets la semoule dans un bol, recouvre d'eau bouillante salée à hauteur, ajoute 1 c.à.s d'huile d'olive. Couvre et laisse gonfler 5 min.",
         "Égrène la semoule à la fourchette. Ajoute le zeste et le reste de jus de citron, le persil et la coriandre ciselés, un trait d'huile d'olive.",
-        "Enfile les cubes de poulet sur des piques. Cuis-les sur un grill ou une poêle bien chaude 3-4 min par face.",
+        "Enfile en alternance les cubes de poulet, la courgette et le poivron sur des piques. Cuis-les sur un grill ou une poêle bien chaude 3-4 min par face.",
         "Sers les brochettes sur la semoule, avec un quartier de citron."
       ],
       "photo": "assets/recipes/d63.webp"
@@ -17589,7 +17559,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 6.88,
-      "kcal": 580,
+      "kcal": 759,
       "tags": [],
       "eq": [
         "stove"
@@ -17600,7 +17570,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          80,
+          40,
           "g",
           "pantry"
         ],
@@ -17612,13 +17582,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait de coco",
-          150,
+          120,
           "ml",
           "dairy"
         ],
         [
           "Oignon nouveau",
-          2,
+          1,
           "u",
           "produce"
         ],
@@ -17666,13 +17636,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le riz basmati. Cuis-le dans 200 ml d'eau salée 10 min à couvert à feu doux. Laisse gonfler 5 min hors du feu.",
-        "Émince les oignons nouveaux (sépare blanc et vert), écrase l'ail, râpe le gingembre.",
-        "Fais chauffer l'huile de coco dans une sauteuse. Ajoute ail, gingembre, blanc des oignons et la pâte de curry. Remue 1 min.",
+        "Rince le riz basmati. Cuis-le dans 2 fois son volume d'eau salée 15 min à couvert à feu doux. Laisse gonfler 5 min hors du feu.",
+        "Émince l'oignon nouveau (sépare blanc et vert), écrase l'ail, râpe le gingembre.",
+        "Fais chauffer l'huile de coco dans une sauteuse. Ajoute ail, gingembre, blanc de l'oignon et la pâte de curry. Remue 1 min.",
         "Verse le lait de coco, laisse frémir 3 min.",
         "Ajoute les gambas, cuis 4-5 min jusqu'à ce qu'elles deviennent rosées et opaques.",
         "Hors du feu, ajoute le jus du citron vert.",
-        "Sers sur le riz basmati, parsème de coriandre ciselée et du vert des oignons nouveaux."
+        "Sers sur le riz basmati, parsème de coriandre ciselée et du vert de l'oignon nouveau."
       ],
       "photo": "assets/recipes/d66.webp"
     },
@@ -17688,7 +17658,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 540,
+      "kcal": 613,
       "tags": [
         "vegetarian",
         "vegan",
@@ -17895,7 +17865,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 510,
+      "kcal": 616,
       "tags": [
         "vegan",
         "vegetarian",
@@ -17908,19 +17878,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          70,
+          20,
           "g",
           "pantry"
         ],
         [
           "Lentilles vertes",
-          70,
+          65,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          2,
+          1.5,
           "u",
           "produce"
         ],
@@ -17958,7 +17928,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rince les lentilles. Cuis-les 18 min dans une casserole d'eau salée. Égoutte.",
         "Émince les oignons en lamelles fines. Fais-les revenir 15 min dans 2 c.à.s d'huile d'olive à feu doux : ils doivent devenir bien dorés et fondants (caramélisés).",
-        "Pendant ce temps, cuis le riz basmati complet 15 min dans 150 ml d'eau salée à couvert.",
+        "Pendant ce temps, cuis le riz basmati complet 15 min dans 2 fois son volume d'eau salée, à couvert.",
         "Mélange riz + lentilles + cumin + cannelle dans la casserole. Sale, poivre.",
         "Sers avec les oignons caramélisés par-dessus et le persil ciselé."
       ],
@@ -18356,7 +18326,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 595,
+      "kcal": 599,
       "tags": [
         "vegetarian",
         "quick",
@@ -18372,7 +18342,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Spaghetti complets",
-          100,
+          45,
           "g",
           "pantry"
         ],
@@ -18442,7 +18412,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 460,
+      "kcal": 468,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -18459,7 +18429,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          50,
           "g",
           "pantry"
         ],
@@ -18513,7 +18483,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa. Cuis-le dans 150 ml d'eau salée 12-15 min à couvert à feu doux. Réserve.",
+        "Rince le quinoa. Cuis-le dans 2 fois son volume d'eau salée 12-15 min à couvert à feu doux. Réserve.",
         "Coupe la base dure des asperges. Cuis-les 4 min dans une casserole d'eau bouillante salée — elles doivent rester croquantes. Égoutte et coupe en tronçons de 3 cm.",
         "Œuf mollet : plonge l'œuf dans l'eau bouillante, cuis exactement 6 min, puis plonge-le dans l'eau froide. Écale délicatement.",
         "Vinaigrette : fouette moutarde, jus de citron, huile d'olive, sel et poivre.",
@@ -18535,7 +18505,7 @@ window.__DATA_RECIPES = {
       "cook": 22,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 480,
+      "kcal": 709,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -18627,7 +18597,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 460,
+      "kcal": 497,
       "tags": [
         "kid-friendly",
         "quick",
@@ -18647,9 +18617,15 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          80,
+          30,
           "g",
           "pantry"
+        ],
+        [
+          "Chou-fleur",
+          100,
+          "g",
+          "produce"
         ],
         [
           "Œuf",
@@ -18659,19 +18635,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Petits pois",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          1,
           "u",
           "produce"
         ],
@@ -18701,12 +18677,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis le riz 15 min dans 150 ml d'eau salée à couvert. Laisse refroidir 5 min.",
-        "Coupe la carotte en petits dés. Émince les oignons nouveaux (sépare blanc et vert). Coupe le jambon en lanières.",
+        "Cuis le riz 20 min dans 2 fois son volume d'eau salée, à couvert. Laisse refroidir 5 min. Pendant ce temps, râpe le chou-fleur avec une râpe à gros trous : ça donne de petits grains qui ressemblent à du riz.",
+        "Coupe la carotte en petits dés. Émince l'oignon nouveau (sépare blanc et vert). Coupe le jambon en lanières.",
         "Si tu pars de petits pois surgelés, plonge-les 3 min dans l'eau bouillante, égoutte.",
         "Bats l'œuf dans un bol avec une pincée de sel.",
         "Dans un wok ou grande poêle bien chaude, fais cuire l'œuf battu 1 min en remuant pour casser en petits morceaux. Réserve.",
-        "Dans le même wok, ajoute l'huile, fais sauter carotte et blanc d'oignon 2 min. Ajoute petits pois et jambon, 1 min.",
+        "Dans le même wok, ajoute l'huile, fais sauter la carotte et le blanc d'oignon 2 min. Ajoute les petits pois, le chou-fleur râpé et le jambon, 2 min de plus.",
         "Ajoute le riz refroidi, mélange bien. Verse la sauce soja, remue 1 min.",
         "Réincorpore l'œuf. Hors du feu, ajoute le vert d'oignon. Sers."
       ],
@@ -19163,7 +19139,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 348,
       "tags": [
         "vegan",
         "vegetarian",
@@ -19256,7 +19232,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 540,
+      "kcal": 707,
       "tags": [
         "vegan",
         "vegetarian",
@@ -19272,13 +19248,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          25,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          80,
+          60,
           "g",
           "pantry"
         ],
@@ -19308,7 +19284,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Courgette",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -19346,7 +19322,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200 °C.",
         "Coupe l'aubergine, la courgette et le poivron en cubes de 2 cm. Étale sur une plaque avec 1 c.à.s d'huile, le cumin, sel et poivre. Enfourne 20-25 min en remuant à mi-cuisson.",
-        "Pendant ce temps, rince le quinoa, cuis-le dans 150 ml d'eau salée 12-15 min à couvert.",
+        "Pendant ce temps, rince le quinoa, cuis-le dans 2 fois son volume d'eau salée 12-15 min à couvert.",
         "Houmous express : mixe les pois chiches égouttés avec le tahini, le jus de citron, l'ail écrasé, 1 c.à.s d'huile d'olive et 2 c.à.s d'eau. Sale.",
         "Dans un grand bol : quinoa au fond, légumes rôtis, roquette, et une grosse cuillère de houmous au centre.",
         "Sers tiède."
@@ -19460,7 +19436,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 650,
+      "kcal": 652,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -19474,19 +19450,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          20,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          100,
+          90,
           "g",
           "pantry"
         ],
         [
           "Concombre",
-          0.5,
+          1,
           "u",
           "produce"
         ],
@@ -19652,7 +19628,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 600,
+      "kcal": 584,
       "tags": [
         "vegan"
       ],
@@ -19671,13 +19647,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          50,
+          20,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          100,
+          90,
           "g",
           "pantry"
         ],
@@ -19773,7 +19749,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 460,
+      "kcal": 783,
       "tags": [
         "vegetarian"
       ],
@@ -19866,7 +19842,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 540,
+      "kcal": 525,
       "tags": [
         "vegan",
         "no-cook",
@@ -19882,13 +19858,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour",
-          50,
+          20,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          100,
+          90,
           "g",
           "pantry"
         ],
@@ -19912,13 +19888,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.1,
           "bouquet",
           "produce"
         ],
         [
           "Persil plat",
-          0.05,
+          0.25,
           "bouquet",
           "produce"
         ],
@@ -20162,7 +20138,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 530,
+      "kcal": 834,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -20179,7 +20155,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          100,
+          40,
           "g",
           "pantry"
         ],
@@ -20694,7 +20670,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 2.7,
-      "kcal": 460,
+      "kcal": 463,
       "tags": [
         "vegetarian",
         "quick",
@@ -20879,7 +20855,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 480,
+      "kcal": 698,
       "tags": [
         "vegan",
         "vegetarian"
@@ -20904,7 +20880,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -20958,7 +20934,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis le riz basmati complet dans 140 ml d'eau salée 15-18 min à couvert.",
+        "Cuis le riz basmati complet dans 1,5 fois son volume d'eau salée, 15-18 min à couvert.",
         "Coupe le tofu en cubes de 2 cm. Détache les fleurettes de brocoli, coupe-les en bouchées.",
         "Râpe le gingembre, écrase l'ail.",
         "Fais chauffer une grande poêle ou wok à feu très vif avec l'huile de tournesol. Fais sauter les cubes de tofu 5 min jusqu'à ce qu'ils soient bien dorés sur toutes les faces. Réserve.",
@@ -21065,7 +21041,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 490,
+      "kcal": 360,
       "tags": [
         "kid-friendly"
       ],
@@ -21161,7 +21137,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 610,
+      "kcal": 609,
       "tags": [
         "vegan"
       ],
@@ -21172,19 +21148,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          50,
+          20,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          100,
+          90,
           "g",
           "pantry"
         ],
         [
           "Épinard frais",
-          75,
+          120,
           "g",
           "produce"
         ],
@@ -21208,7 +21184,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
@@ -21220,7 +21196,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Curry en poudre",
-          1.0,
+          1,
           "c.à.c",
           "spices"
         ],
@@ -21367,7 +21343,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 550,
+      "kcal": 645,
       "tags": [
         "vegetarian"
       ],
@@ -21462,8 +21438,8 @@ window.__DATA_RECIPES = {
       "prep": 20,
       "cook": 45,
       "diff": 2,
-      "cost": 2.0,
-      "kcal": 460,
+      "cost": 2,
+      "kcal": 514,
       "tags": [
         "vegetarian"
       ],
@@ -21505,13 +21481,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Boulgour",
-          50,
+          35,
           "g",
           "pantry"
         ],
@@ -21574,7 +21550,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 550,
+      "kcal": 641,
       "tags": [
         "vegan",
         "batch-friendly",
@@ -21587,13 +21563,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          50,
+          15,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail",
-          75,
+          65,
           "g",
           "pantry"
         ],
@@ -21617,7 +21593,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
@@ -21785,7 +21761,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 480,
+      "kcal": 428,
       "tags": [
         "batch-friendly"
       ],
@@ -21998,7 +21974,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 580,
+      "kcal": 540,
       "tags": [
         "batch-friendly"
       ],
@@ -22106,7 +22082,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.9,
-      "kcal": 640,
+      "kcal": 691,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -22118,7 +22094,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          50,
+          35,
           "g",
           "pantry"
         ],
@@ -22130,7 +22106,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Courgette",
-          1.0,
+          1,
           "u",
           "produce"
         ],
@@ -22142,7 +22118,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
@@ -22166,7 +22142,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Curry en poudre",
-          1.0,
+          1,
           "c.à.c",
           "spices"
         ],
@@ -22769,7 +22745,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 360,
+      "kcal": 383,
       "tags": [
         "vegetarian",
         "vegan",
@@ -22863,7 +22839,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 410,
+      "kcal": 394,
       "tags": [
         "vegetarian",
         "vegan",
@@ -22967,7 +22943,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 480,
+      "kcal": 539,
       "tags": [
         "batch-friendly"
       ],
@@ -23071,7 +23047,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 410,
+      "kcal": 381,
       "tags": [
         "batch-friendly"
       ],
@@ -23175,7 +23151,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 480,
+      "kcal": 522,
       "tags": [
         "vegetarian"
       ],
@@ -23193,19 +23169,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet rond",
-          70,
+          40,
           "g",
           "pantry"
         ],
         [
           "Courgette",
-          0.7,
+          1,
           "u",
           "produce"
         ],
         [
           "Bouillon de légumes",
-          350,
+          200,
           "ml",
           "pantry"
         ],
@@ -23223,7 +23199,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Parmesan râpé",
-          15,
+          25,
           "g",
           "dairy"
         ],
@@ -23236,12 +23212,12 @@ window.__DATA_RECIPES = {
         [
           "Huile d'olive",
           1,
-          "c.à.c",
+          "c.à.s",
           "pantry"
         ],
         [
           "Beurre doux",
-          5,
+          10,
           "g",
           "dairy"
         ],
@@ -23258,8 +23234,8 @@ window.__DATA_RECIPES = {
         "Dans une grande casserole ou sauteuse, fais chauffer l'huile à feu moyen. Fais suer l'échalote 2-3 min sans coloration (= devient translucide).",
         "Ajoute le riz, remue pendant 1-2 min jusqu'à ce que les grains deviennent légèrement nacrés.",
         "Verse le vin blanc, remue jusqu'à absorption complète.",
-        "Commence à incorporer le bouillon louche par louche : verse, remue jusqu'à ce qu'il soit absorbé, puis remets une louche. Continue 18-20 min.",
-        "À mi-cuisson (≈ 10 min), ajoute les dés de courgette : ils cuisent dans le risotto.",
+        "Commence à incorporer le bouillon louche par louche : verse, remue jusqu'à ce qu'il soit absorbé, puis remets une louche. Continue 30 à 35 min (le riz complet cuit plus longtemps que le riz blanc).",
+        "À mi-cuisson (≈ 15 min), ajoute les dés de courgette : ils cuisent dans le risotto.",
         "À la fin, hors du feu, ajoute le beurre, le parmesan, le zeste de citron râpé fin et 2-3 gouttes de jus de citron. Mélange vigoureusement (= mantécature, ça donne le crémeux).",
         "Sale, poivre, sers tout de suite — un risotto n'attend pas."
       ],
@@ -23278,7 +23254,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.9,
-      "kcal": 520,
+      "kcal": 625,
       "tags": [
         "batch-friendly"
       ],
@@ -23299,7 +23275,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -23788,7 +23764,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 320,
+      "kcal": 401,
       "tags": [
         "vegetarian",
         "vegan",
@@ -24075,7 +24051,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 4.2,
-      "kcal": 480,
+      "kcal": 590,
       "tags": [
         "batch-friendly"
       ],
@@ -24101,7 +24077,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -24160,8 +24136,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 35,
       "diff": 2,
-      "cost": 2.0,
-      "kcal": 420,
+      "cost": 2,
+      "kcal": 523,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -24197,19 +24173,25 @@ window.__DATA_RECIPES = {
         ],
         [
           "Polenta précuite",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Parmesan râpé",
-          15,
+          25,
+          "g",
+          "dairy"
+        ],
+        [
+          "Ricotta",
+          60,
           "g",
           "dairy"
         ],
@@ -24247,7 +24229,7 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, prépare la polenta crémeuse : porte le lait à frémissement avec une pincée de sel. Verse la polenta en pluie en remuant au fouet. Continue 5 min jusqu'à ce qu'elle épaississe et se détache des bords.",
         "Hors du feu, incorpore le parmesan râpé. Réajuste sel.",
         "Retire le papier du tian, prolonge 5 min au four pour dorer le dessus.",
-        "Sers le tian sur un lit de polenta crémeuse — c'est un plat doux, parfait pour les soirs sans envie de viande."
+        "Sers le tian sur un lit de polenta crémeuse, avec une cuillère de ricotta par-dessus — c'est un plat doux, parfait pour les soirs sans envie de viande."
       ],
       "photo": "assets/recipes/d94.webp"
     },
@@ -24264,7 +24246,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 420,
+      "kcal": 530,
       "tags": [
         "vegetarian",
         "vegan",
@@ -24277,7 +24259,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          100,
+          90,
           "g",
           "pantry"
         ],
@@ -24301,7 +24283,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          50,
+          20,
           "g",
           "pantry"
         ],
@@ -24605,7 +24587,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 220,
+      "kcal": 146,
       "tags": [
         "vegetarian",
         "vegan",
@@ -24683,7 +24665,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 332,
+      "kcal": 341,
       "tags": [
         "vegetarian",
         "quick"
@@ -24761,7 +24743,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 498,
       "tags": [
         "vegetarian",
         "vegan",
@@ -24785,13 +24767,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          35,
           "g",
           "pantry"
         ],
         [
           "Mangue",
-          80,
+          60,
           "g",
           "produce"
         ],
@@ -25261,7 +25243,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 480,
+      "kcal": 618,
       "tags": [
         "vegetarian",
         "vegan",
@@ -25319,7 +25301,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          50,
+          40,
           "g",
           "pantry"
         ],
@@ -25374,7 +25356,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 473,
+      "kcal": 469,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -25494,8 +25476,8 @@ window.__DATA_RECIPES = {
       "prep": 30,
       "cook": 15,
       "diff": 2,
-      "cost": 5.0,
-      "kcal": 390,
+      "cost": 5,
+      "kcal": 456,
       "tags": [],
       "eq": [
         "stove"
@@ -25508,7 +25490,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Spaghetti complets",
-          70,
+          50,
           "g",
           "pantry"
         ],
@@ -25562,7 +25544,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Avant tout, dégorge les palourdes : mets-les dans un grand bol d'eau salée (30 g de gros sel par litre d'eau) pendant 30 min minimum. Elles vont rejeter le sable. Rince à l'eau claire 2-3 fois.",
+        "Avant tout, dégorge les palourdes : mets-les dans un grand bol d'eau salée (environ 2 c.à.s de gros sel par litre d'eau) pendant 30 min minimum. Elles vont rejeter le sable. Rince à l'eau claire 2-3 fois.",
         "Élimine les palourdes mortes (= celles qui restent ouvertes ou cassées). Une palourde fraîche se referme quand on la tape.",
         "Porte une grande casserole d'eau salée à ébullition. Plonge les spaghetti, cuis al dente selon le paquet (≈ 11 min, 1 min de moins que le temps indiqué).",
         "Pendant ce temps, hache l'ail très finement.",
@@ -26033,7 +26015,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 420,
+      "kcal": 498,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -26341,8 +26323,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 35,
       "diff": 2,
-      "cost": 2.0,
-      "kcal": 420,
+      "cost": 2,
+      "kcal": 470,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -26369,9 +26351,21 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz noir",
-          50,
+          35,
           "g",
           "pantry"
+        ],
+        [
+          "Tofu ferme",
+          120,
+          "g",
+          "dairy"
+        ],
+        [
+          "Edamame surgelés",
+          50,
+          "g",
+          "frozen"
         ],
         [
           "Pâte de miso",
@@ -26431,13 +26425,14 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200°C.",
         "Rince le riz noir. Cuis-le dans 2,5 fois son volume d'eau salée, 30-35 min à couvert (le riz noir prend plus de temps que le riz blanc).",
-        "Coupe l'aubergine en deux dans la longueur. Avec la pointe d'un couteau, fais des entailles en croisillons dans la chair (sans percer la peau) — ça permet à la marinade de pénétrer.",
+        "Coupe l'aubergine en deux dans la longueur. Avec la pointe d'un couteau, fais des entailles en croisillons dans la chair (sans percer la peau) — ça permet à la marinade de pénétrer. Coupe le tofu en cubes de 2 cm et tamponne-les avec un torchon pour les sécher.",
         "Prépare la marinade miso-soja : dans un petit bol, mélange la pâte de miso, la sauce soja, le vinaigre de cidre, le miel, l'ail râpé fin, le gingembre râpé fin et l'huile de sésame.",
-        "Badigeonne généreusement la chair des aubergines avec la marinade (garde 1 c.à.s pour la finition).",
-        "Pose les moitiés sur une plaque (peau vers le bas), enfourne 25-30 min — la chair doit être bien fondante (un couteau s'enfonce sans résistance).",
+        "Badigeonne généreusement la chair des aubergines avec la marinade, puis enrobe les cubes de tofu avec un peu de marinade (garde 1 c.à.s pour la finition).",
+        "Pose les moitiés d'aubergine sur une plaque (peau vers le bas) et éparpille les cubes de tofu à côté. Enfourne 25-30 min, en remuant le tofu à mi-cuisson — la chair de l'aubergine doit être bien fondante (un couteau s'enfonce sans résistance) et le tofu doré.",
+        "Pendant ce temps, plonge les edamame surgelés 3 min dans une casserole d'eau bouillante salée. Égoutte.",
         "Si la marinade brûle un peu sur le dessus, c'est normal — c'est ça qui donne le goût caramélisé.",
         "Au moment de servir, badigeonne avec le reste de marinade. Parsème de graines de sésame et d'oignon nouveau ciselé.",
-        "Sers sur un lit de riz noir."
+        "Sers sur un lit de riz noir, avec le tofu et les edamame."
       ],
       "photo": "assets/recipes/d102.webp"
     },
@@ -26922,7 +26917,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 250,
+      "kcal": 215,
       "tags": [
         "vegetarian",
         "vegan",
@@ -26995,7 +26990,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 480,
+      "kcal": 433,
       "tags": [
         "batch-friendly"
       ],
@@ -27018,7 +27013,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
@@ -27108,7 +27103,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 456,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -27313,7 +27308,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 420,
+      "kcal": 482,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -27333,13 +27328,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          70,
+          35,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          1,
+          2,
           "u",
           "dairy"
         ],
@@ -27351,7 +27346,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Edamame surgelés",
-          20,
+          40,
           "g",
           "frozen"
         ],
@@ -27393,14 +27388,14 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile de colza",
-          0.5,
+          1,
           "c.à.c",
           "pantry"
         ]
       ],
       "steps": [
         "Astuce : utilise du riz cuit la veille pour un riz cantonais authentique (le riz fraîchement cuit colle trop). Sinon, cuis le riz dans 2 fois son volume d'eau salée, 25 min, et étale-le sur une plaque pour le faire refroidir vite.",
-        "Pendant la cuisson du riz, casse l'œuf dans un bol et bats à la fourchette avec une pincée de sel.",
+        "Pendant la cuisson du riz, casse les œufs dans un bol et bats-les à la fourchette avec une pincée de sel.",
         "Coupe la carotte en très petits dés. Émince l'oignon nouveau (garde séparés vert et blanc). Râpe le gingembre, écrase l'ail.",
         "Plonge les petits pois et edamame 3 min dans l'eau bouillante salée. Égoutte.",
         "Fais chauffer un wok ou grande poêle à feu très vif avec l'huile de colza.",
@@ -27425,7 +27420,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 480,
+      "kcal": 620,
       "tags": [
         "batch-friendly"
       ],
@@ -28014,7 +28009,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 263,
       "tags": [
         "vegetarian",
         "quick"
@@ -28288,7 +28283,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 450,
+      "kcal": 487,
       "tags": [
         "vegetarian",
         "vegan",
@@ -28307,7 +28302,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          45,
+          25,
           "g",
           "pantry"
         ],
@@ -28615,7 +28610,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 490,
+      "kcal": 451,
       "tags": [
         "batch-friendly"
       ],
@@ -28839,7 +28834,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 460,
+      "kcal": 484,
       "tags": [
         "batch-friendly"
       ],
@@ -28936,7 +28931,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 460,
+      "kcal": 405,
       "tags": [
         "vegetarian",
         "vegan",
@@ -28952,7 +28947,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Semoule fine de blé complet",
-          60,
+          25,
           "g",
           "pantry"
         ],
@@ -29292,7 +29287,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 360,
+      "kcal": 375,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -29613,7 +29608,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 380,
+      "kcal": 282,
       "tags": [
         "quick",
         "no-cook"
@@ -29892,7 +29887,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 480,
+      "kcal": 590,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -29902,7 +29897,6 @@ window.__DATA_RECIPES = {
       ],
       "allergens": [
         "eggs",
-        "gluten",
         "lactose"
       ],
       "producesLeftovers": [
@@ -29917,7 +29911,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -29934,14 +29928,8 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Chapelure de pain complet",
-          1,
-          "c.à.s",
-          "bread"
-        ],
-        [
           "Parmesan râpé",
-          10,
+          20,
           "g",
           "dairy"
         ],
@@ -29989,10 +29977,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis le riz basmati dans 1,5 fois son volume d'eau salée, 18 min à couvert.",
+        "Cuis le riz basmati dans 1,5 fois son volume d'eau salée, 20 min à couvert.",
         "Pendant ce temps, mets le poulet dans le mixeur, mixe 20 sec pour le hacher (ou demande à ton boucher de le hacher).",
-        "Dans un bol, mélange le poulet haché, l'œuf battu, la chapelure, le parmesan, le persil ciselé, sel et poivre.",
-        "Forme 5-6 boulettes de la taille d'une noix avec les mains humides.",
+        "Dans un bol, mélange le poulet haché, l'œuf battu, le parmesan, le persil ciselé, sel et poivre. Malaxe bien à la main : c'est l'œuf et le parmesan qui font tenir les boulettes.",
+        "Forme 5-6 boulettes de la taille d'une noix avec les mains humides. Si la pâte colle trop aux doigts, mets-la 15 min au frigo avant.",
         "Émince finement l'oignon, écrase l'ail.",
         "Dans une grande poêle, fais chauffer 0,5 c.à.s d'huile à feu moyen. Saisis les boulettes 5-6 min en les tournant pour qu'elles dorent uniformément.",
         "Réserve les boulettes dans une assiette. Dans la même poêle, fais suer l'oignon et l'ail 3 min.",
@@ -30015,8 +30003,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 12,
       "diff": 2,
-      "cost": 4.0,
-      "kcal": 420,
+      "cost": 4,
+      "kcal": 428,
       "tags": [
         "quick",
         "batch-friendly"
@@ -30033,13 +30021,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crevettes crues décortiquées",
-          120,
+          150,
           "g",
           "meat-fish"
         ],
         [
           "Riz basmati complet",
-          50,
+          40,
           "g",
           "pantry"
         ],
@@ -30099,7 +30087,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile de colza",
-          0.5,
+          1,
           "c.à.c",
           "pantry"
         ],
@@ -30478,8 +30466,8 @@ window.__DATA_RECIPES = {
       "prep": 10,
       "cook": 30,
       "diff": 2,
-      "cost": 2.0,
-      "kcal": 460,
+      "cost": 2,
+      "kcal": 659,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -30495,13 +30483,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          250,
+          150,
           "g",
           "produce"
         ],
         [
           "Lentilles vertes",
-          70,
+          55,
           "g",
           "pantry"
         ],
@@ -30568,7 +30556,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "l118",
-      "name": "Galettes potiron-quinoa-pois chiches au four",
+      "name": "Galettes potiron et pois chiches au four",
       "type": "lunch",
       "cuisine": "mediterraneen",
       "seasons": [
@@ -30578,7 +30566,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 390,
+      "kcal": 426,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -30594,19 +30582,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          100,
+          90,
           "g",
           "produce"
         ],
         [
-          "Quinoa",
-          30,
-          "g",
-          "pantry"
-        ],
-        [
           "Pois chiches cuits (en boîte)",
-          60,
+          100,
           "g",
           "pantry"
         ],
@@ -30636,7 +30618,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Farine de pois chiche",
-          1.0,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -30654,7 +30636,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Skyr (ou yaourt grec)",
-          80,
+          100,
           "g",
           "dairy"
         ],
@@ -30673,11 +30655,10 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Si potiron surgelé : décongèle les cubes au micro-ondes 5 min à 1000 W. Égoutte l'eau qui s'est écoulée.",
-        "Lance la cuisson du quinoa : dans une casserole, verse-le avec 2 fois son volume d'eau salée. Porte à ébullition, couvre et laisse cuire 12 min à feu doux. Quand il a absorbé toute l'eau et que les petits germes blancs sont visibles, c'est cuit. Réserve.",
         "Préchauffe le four à 200 °C.",
         "Égoutte et rince les pois chiches. Émince finement l'oignon. Écrase l'ail.",
         "Dans un blender, mixe le potiron décongelé, les pois chiches, l'oignon, l'ail, le cumin et le paprika. Tu obtiens une pâte grossière (pas de purée lisse — il faut des morceaux pour la tenue).",
-        "Verse dans un saladier, ajoute le quinoa cuit, la farine de pois chiche, sel et poivre. Mélange. La pâte doit être assez consistante pour former des galettes — si elle est trop molle, ajoute 1 c.à.s de farine.",
+        "Verse dans un saladier, ajoute la farine de pois chiche, sel et poivre. Mélange. La pâte doit être assez consistante pour former des galettes — si elle est trop molle, ajoute 1 c.à.s de farine de pois chiche.",
         "Forme les galettes d'environ 1,5 cm d'épaisseur (avec les mains humides pour ne pas que ça colle). Pose-les sur une plaque garnie de papier cuisson, badigeonne d'huile d'olive au pinceau.",
         "Enfourne 20-25 min en retournant à mi-cuisson. Les galettes sont prêtes quand elles sont dorées et fermes au toucher.",
         "Mélange le skyr avec le jus du citron pour faire une sauce.",
@@ -30911,7 +30892,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 550,
+      "kcal": 544,
       "tags": [
         "vegetarian",
         "vegan",
@@ -30930,7 +30911,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pois chiches cuits (en boîte)",
-          75,
+          90,
           "g",
           "pantry"
         ],
@@ -30954,13 +30935,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          1.0,
+          1,
           "cm",
           "produce"
         ],
@@ -30983,12 +30964,6 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Riz basmati complet",
-          25,
-          "g",
-          "pantry"
-        ],
-        [
           "Huile d'olive",
           0.5,
           "c.à.s",
@@ -31002,15 +30977,13 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Lance la cuisson du riz basmati complet : dans une casserole, 2 fois son volume d'eau salée, porte à ébullition, baisse à feu doux et couvre 20 min.",
         "Le potiron surgelé peut aller directement dans la cocotte sans décongeler — la chaleur du curry s'en chargera.",
         "Émince finement l'oignon. Écrase l'ail. Râpe le gingembre.",
         "Chauffe l'huile dans une grande cocotte à feu moyen. Ajoute l'oignon et fais-le revenir 4-5 min jusqu'à ce qu'il devienne translucide (presque transparent).",
         "Ajoute ail, gingembre, pâte de curry et curcuma. Remue 1 min — ça doit sentir fortement les épices.",
         "Verse les tomates concassées et le potiron (gelé OK). Mélange, couvre et laisse cuire 8 min à feu moyen pour décongeler le potiron.",
         "Ajoute pois chiches rincés et lait de coco. Sale, poivre. Laisse mijoter 10-12 min à feu doux à découvert — la sauce doit épaissir et le potiron doit être tendre (la pointe d'un couteau s'enfonce sans résistance).",
-        "Cisèle la coriandre fraîche.",
-        "Sers le curry sur le riz, parsème de coriandre fraîche au moment de servir."
+        "Cisèle la coriandre fraîche. Sers le curry dans un bol et parsème de coriandre au dernier moment."
       ],
       "photo": "assets/recipes/d117.webp"
     },
@@ -31026,7 +30999,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 520,
+      "kcal": 711,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -31041,13 +31014,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Potiron",
-          200,
+          130,
           "g",
           "produce"
         ],
         [
           "Lentilles vertes",
-          80,
+          55,
           "g",
           "pantry"
         ],
@@ -31774,7 +31747,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 470,
+      "kcal": 705,
       "tags": [],
       "eq": [
         "grill",
@@ -31792,7 +31765,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          80,
+          45,
           "g",
           "pantry"
         ],
@@ -32413,7 +32386,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 510,
+      "kcal": 756,
       "tags": [
         "batch-friendly"
       ],
@@ -33091,7 +33064,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 640,
+      "kcal": 656,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -33106,13 +33079,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes",
-          80,
+          45,
           "g",
           "pantry"
         ],
         [
           "Semoule complète",
-          20,
+          15,
           "g",
           "pantry"
         ],
@@ -33214,7 +33187,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 520,
+      "kcal": 641,
       "tags": [],
       "eq": [
         "stove"
@@ -34195,8 +34168,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 20,
       "diff": 2,
-      "cost": 2.0,
-      "kcal": 540,
+      "cost": 2,
+      "kcal": 478,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -34210,13 +34183,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          25,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          80,
+          60,
           "g",
           "pantry"
         ],
@@ -34246,7 +34219,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -34285,14 +34258,20 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
+        ],
+        [
+          "Chou-fleur",
+          120,
+          "g",
+          "produce"
         ]
       ],
       "steps": [
         "Rince le quinoa 30 secondes sous l'eau froide pour enlever l'amertume. Égoutte.",
-        "Coupe carotte, navet et courgette en cubes de 2 cm. Émince l'oignon et coupe la tomate en dés.",
+        "Coupe carotte, navet et courgette en cubes de 2 cm. Coupe le chou-fleur en petits bouquets (de la taille d'une grosse noix). Émince l'oignon et coupe la tomate en dés.",
         "Dans une casserole moyenne, fais chauffer l'huile d'olive sur feu moyen. Ajoute l'oignon et fais-le revenir 3 min jusqu'à ce qu'il devienne translucide.",
         "Ajoute carotte et navet, remue 2 min. Saupoudre ras el-hanout et cumin, mélange 30 secondes pour libérer les arômes (ça doit sentir fort).",
-        "Ajoute tomate, courgette, pois chiches rincés et bouillon. Porte à frémissement, baisse à feu doux et couvre. Laisse mijoter 15 min : les légumes doivent être tendres au couteau.",
+        "Ajoute tomate, courgette, chou-fleur, pois chiches rincés et bouillon. Porte à frémissement, baisse à feu doux et couvre. Laisse mijoter 15 min : les légumes doivent être tendres au couteau.",
         "Pendant ce temps, cuis le quinoa : dans une autre casserole, mets-le avec 2 fois son volume d'eau salée. Porte à ébullition, baisse, couvre et laisse 12 min jusqu'à ce que les grains soient gonflés et translucides.",
         "Sale et poivre les légumes. Sers le quinoa dans une assiette creuse, dépose les légumes dessus avec leur jus. Saupoudre de coriandre ciselée."
       ],
@@ -34311,7 +34290,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 475,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -34435,7 +34414,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 360,
+      "kcal": 463,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -34561,7 +34540,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 520,
+      "kcal": 629,
       "tags": [
         "batch-friendly"
       ],
@@ -34650,7 +34629,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -35751,7 +35730,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 320,
+      "kcal": 293,
       "tags": [
         "quick"
       ],
@@ -37695,7 +37674,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "d144",
-      "name": "Bourguignon allégé sans farine, polenta crémeuse",
+      "name": "Bourguignon allégé sans farine, polenta-chou-fleur crémeuse",
       "type": "dinner",
       "cuisine": "francais",
       "seasons": [
@@ -37706,7 +37685,7 @@ window.__DATA_RECIPES = {
       "cook": 150,
       "diff": 3,
       "cost": 5.5,
-      "kcal": 800,
+      "kcal": 783,
       "tags": [
         "festif",
         "batch-friendly"
@@ -37743,7 +37722,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Carotte",
-          2,
+          1,
           "u",
           "produce"
         ],
@@ -37785,13 +37764,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Polenta précuite",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Bouillon de volaille (pour la polenta)",
-          250,
+          150,
           "ml",
           "pantry"
         ],
@@ -37818,6 +37797,12 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
+        ],
+        [
+          "Chou-fleur",
+          150,
+          "g",
+          "produce"
         ]
       ],
       "steps": [
@@ -37829,10 +37814,10 @@ window.__DATA_RECIPES = {
         "Remets le bœuf dans la cocotte. Ajoute le bouillon, le bouquet garni. La viande doit être presque immergée (ajoute un peu d'eau si besoin).",
         "Couvre, baisse à feu très doux. Laisse mijoter 2 heures : la viande doit s'effilocher facilement à la fourchette.",
         "30 min avant la fin, ajoute les champignons (ils libèrent de l'eau qui détend la sauce).",
-        "Pendant ce temps, prépare la polenta. Porte le bouillon de volaille à frémissement dans une casserole. Verse la polenta en pluie en remuant à la cuillère en bois. Cuis 5-8 min selon paquet (texture crémeuse, pas grumeleuse). Hors du feu, ajoute le parmesan, sale et poivre. Couvre.",
+        "Pendant ce temps, prépare la polenta-chou-fleur. Coupe le chou-fleur en petits bouquets et fais-les cuire 10 min dans le bouillon de volaille frémissant, jusqu'à ce qu'ils s'écrasent à la fourchette. Écrase-les grossièrement directement dans la casserole. Verse la polenta en pluie en remuant à la cuillère en bois. Cuis 5-8 min selon paquet (texture crémeuse, pas grumeleuse). Hors du feu, ajoute le parmesan, sale et poivre. Couvre.",
         "Vérifie la sauce du bourguignon : si trop liquide, sors la viande à l'écumoire et fais réduire la sauce 5-10 min à feu vif. Si bonne consistance (nappe le dos d'une cuillère), parfait.",
         "Retire le bouquet garni. Sale, poivre. Goûte et ajuste.",
-        "Sers : un nuage de polenta crémeuse au fond de l'assiette creuse, une louche de bourguignon par-dessus. Parsème de persil ciselé."
+        "Sers : un nuage de polenta-chou-fleur crémeuse au fond de l'assiette creuse, une louche de bourguignon par-dessus. Parsème de persil ciselé."
       ],
       "photo": "assets/recipes/d144.webp"
     },
@@ -37847,8 +37832,8 @@ window.__DATA_RECIPES = {
       "prep": 10,
       "cook": 18,
       "diff": 2,
-      "cost": 3.0,
-      "kcal": 290,
+      "cost": 3,
+      "kcal": 584,
       "tags": [
         "vegetarian",
         "quick"
@@ -37865,7 +37850,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -38173,7 +38158,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 320,
+      "kcal": 641,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -38197,7 +38182,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -39738,7 +39723,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 255,
+      "kcal": 295,
       "tags": [
         "quick",
         "apero-sec"
@@ -39982,7 +39967,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 315,
+      "kcal": 294,
       "tags": [
         "quick",
         "apero-sec"
@@ -39999,49 +39984,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de saumon frais (qualité sushi)",
-          120,
+          60,
           "g",
           "meat-fish"
         ],
         [
           "Avocat ferme",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Citron vert (jus)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Huile de sésame",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Gingembre frais",
-          0.5,
+          0.25,
           "c.à.c",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Graines de sésame noir",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ]
@@ -40050,8 +40035,8 @@ window.__DATA_RECIPES = {
         "Place le saumon 30 min au congélateur avant de commencer (ça raffermit la chair pour une découpe nette).",
         "Sors le saumon, sèche-le avec du papier absorbant. Coupe-le en cubes de 2 cm.",
         "Marinade : dans un bol, mélange jus de citron vert, sauce soja, huile de sésame, gingembre râpé. Verse sur les cubes de saumon, mélange. Laisse mariner 10 min au frais (le saumon va légèrement opacifier — c'est l'effet du citron, pas une cuisson).",
-        "Pendant ce temps, coupe l'avocat en deux, retire le noyau et la peau. Coupe la chair en cubes de 2 cm (cible : 12 cubes).",
-        "Sur chaque pique en bois, enfile en alternance : 1 cube de saumon mariné, 1 cube d'avocat, 1 feuille de coriandre. 12 piques au total.",
+        "Pendant ce temps, coupe l'avocat en deux, retire le noyau et la peau. Coupe la chair en cubes de 2 cm.",
+        "Sur chaque pique en bois, enfile en alternance : 1 cube de saumon mariné, 1 cube d'avocat, 1 feuille de coriandre. Compte environ 6 piques par personne.",
         "Dispose les brochettes sur une assiette. Saupoudre de graines de sésame noir (effet visuel contrastant avec le rose du saumon et le vert de l'avocat).",
         "Sers frais immédiatement (le saumon mariné continue de \"cuire\" sous l'effet du citron, ne pas attendre)."
       ],
@@ -40481,7 +40466,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 240,
+      "kcal": 274,
       "tags": [
         "apero-dinatoire"
       ],
@@ -40583,7 +40568,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 191,
+      "kcal": 253,
       "tags": [
         "batch-friendly",
         "apero-dinatoire"
@@ -40907,7 +40892,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 8.0,
-      "kcal": 561,
+      "kcal": 577,
       "tags": [
         "festif",
         "batch-friendly"
@@ -41012,7 +40997,7 @@ window.__DATA_RECIPES = {
       "cook": 28,
       "diff": 3,
       "cost": 9.5,
-      "kcal": 530,
+      "kcal": 624,
       "tags": [
         "festif"
       ],
@@ -41031,7 +41016,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz arborio (riz à risotto)",
-          80,
+          30,
           "g",
           "pantry"
         ],
@@ -41043,7 +41028,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de volaille",
-          600,
+          225,
           "ml",
           "pantry"
         ],
@@ -41126,8 +41111,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 20,
       "diff": 2,
-      "cost": 7.0,
-      "kcal": 510,
+      "cost": 7,
+      "kcal": 948,
       "tags": [
         "festif",
         "batch-friendly"
@@ -41153,7 +41138,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
@@ -41213,13 +41198,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile de coco",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -41385,7 +41370,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 3,
       "cost": 6.5,
-      "kcal": 520,
+      "kcal": 765,
       "tags": [
         "festif",
         "batch-friendly"
@@ -41462,7 +41447,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -41513,8 +41498,8 @@ window.__DATA_RECIPES = {
       "prep": 20,
       "cook": 90,
       "diff": 2,
-      "cost": 7.0,
-      "kcal": 530,
+      "cost": 7,
+      "kcal": 850,
       "tags": [
         "festif",
         "batch-friendly"
@@ -41537,7 +41522,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Abricots secs (non traités)",
-          4,
+          2,
           "u",
           "pantry"
         ],
@@ -41615,7 +41600,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -42354,7 +42339,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 105,
+      "kcal": 140,
       "tags": [
         "vegetarian",
         "quick"
@@ -42729,7 +42714,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 380,
+      "kcal": 424,
       "tags": [
         "vegetarian",
         "quick"
@@ -42837,7 +42822,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 590,
+      "kcal": 593,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -42854,13 +42839,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          50,
+          30,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits (en boîte)",
-          100,
+          80,
           "g",
           "pantry"
         ],
@@ -42872,7 +42857,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -43306,8 +43291,8 @@ window.__DATA_RECIPES = {
       "prep": 10,
       "cook": 35,
       "diff": 2,
-      "cost": 3.0,
-      "kcal": 680,
+      "cost": 3,
+      "kcal": 671,
       "tags": [
         "batch-friendly"
       ],
@@ -43327,7 +43312,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Haricots rouges cuits (en boîte)",
-          120,
+          90,
           "g",
           "pantry"
         ],
@@ -43393,7 +43378,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          35,
+          20,
           "g",
           "pantry"
         ],
@@ -43434,8 +43419,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 12,
       "diff": 2,
-      "cost": 5.0,
-      "kcal": 480,
+      "cost": 5,
+      "kcal": 688,
       "tags": [
         "quick"
       ],
@@ -43526,7 +43511,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -43563,7 +43548,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 570,
+      "kcal": 568,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -43576,19 +43561,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits (en bocal, égouttés)",
-          80,
+          70,
           "g",
           "pantry"
         ],
         [
           "Maïs en grains (frais ou surgelé)",
-          25,
+          10,
           "g",
           "frozen"
         ],
@@ -44046,7 +44031,7 @@ window.__DATA_RECIPES = {
       "advance": "2h",
       "diff": 2,
       "cost": 5.5,
-      "kcal": 638,
+      "kcal": 659,
       "tags": [
         "batch-friendly"
       ],
@@ -44292,7 +44277,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 523,
+      "kcal": 544,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -44430,7 +44415,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 540,
+      "kcal": 790,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -44459,7 +44444,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -44559,7 +44544,7 @@ window.__DATA_RECIPES = {
         "Ajoute toutes les épices (cumin, curcuma, coriandre, piment). Remue 30 sec sur feu vif (les épices doivent dégager leur parfum mais pas brûler).",
         "Ajoute la tomate concassée. Cuis 3 min en écrasant à la spatule : ça forme une pâte rouge.",
         "Incorpore les épinards. Remue 2 min : ils prennent les épices.",
-        "Ajoute la crème de coco + 50 ml d'eau. Mixe la moitié de la sauce au mixeur plongeant pour une texture entre rustique et veloutée. Remets le paneer doré dans la sauce.",
+        "Ajoute la crème de coco + un demi-verre d'eau. Mixe la moitié de la sauce au mixeur plongeant pour une texture entre rustique et veloutée. Remets le paneer doré dans la sauce.",
         "Ajoute garam masala et le jus du quart de citron. Mijote 5 min à couvert : les saveurs se lient.",
         "Sale, poivre. Le riz doit être prêt en parallèle.",
         "Dresse : riz d'un côté, saag paneer de l'autre. Parsème de coriandre fraîche ciselée."
@@ -44676,7 +44661,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 519,
+      "kcal": 540,
       "tags": [
         "quick",
         "batch-friendly"
@@ -44795,7 +44780,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 6.5,
-      "kcal": 460,
+      "kcal": 463,
       "tags": [
         "light"
       ],
@@ -44818,7 +44803,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz noir (Venere ou similaire)",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -44912,7 +44897,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 320,
+      "kcal": 343,
       "tags": [
         "vegetarian",
         "light",
@@ -45131,8 +45116,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 15,
       "diff": 1,
-      "cost": 4.0,
-      "kcal": 510,
+      "cost": 4,
+      "kcal": 849,
       "tags": [
         "batch-friendly"
       ],
@@ -45152,7 +45137,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          60,
+          55,
           "g",
           "pantry"
         ],
@@ -45256,7 +45241,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.8,
-      "kcal": 480,
+      "kcal": 549,
       "tags": [
         "batch-friendly"
       ],
@@ -45511,7 +45496,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 6.5,
-      "kcal": 460,
+      "kcal": 602,
       "tags": [
         "light"
       ],
@@ -45581,7 +45566,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -45633,7 +45618,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 480,
+      "kcal": 643,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -45682,13 +45667,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          60,
+          35,
           "g",
           "pantry"
         ],
         [
           "Bouillon de légumes",
-          250,
+          145,
           "ml",
           "pantry"
         ],
@@ -45759,7 +45744,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 5.5,
-      "kcal": 721,
+      "kcal": 771,
       "tags": [
         "vegetarian",
         "quick",
@@ -46548,7 +46533,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 380,
+      "kcal": 598,
       "tags": [
         "vegan",
         "vegetarian",
@@ -46676,7 +46661,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 560,
+      "kcal": 570,
       "tags": [
         "vegetarian",
         "quick"
@@ -47005,7 +46990,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 0.5,
-      "kcal": 142,
+      "kcal": 152,
       "tags": [
         "vegan",
         "vegetarian",
@@ -47190,7 +47175,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 480,
+      "kcal": 717,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -47314,8 +47299,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 25,
       "diff": 1,
-      "cost": 2.0,
-      "kcal": 572,
+      "cost": 2,
+      "kcal": 570,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -47332,7 +47317,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits (bocal, égouttés)",
-          100,
+          80,
           "g",
           "pantry"
         ],
@@ -47374,7 +47359,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pâtes courtes complètes (ditali ou coquillettes)",
-          30,
+          20,
           "g",
           "pantry"
         ],
@@ -47445,7 +47430,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 690,
+      "kcal": 701,
       "tags": [
         "vegetarian",
         "quick"
@@ -47461,7 +47446,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Linguine complètes (ou spaghetti)",
-          50,
+          42,
           "g",
           "pantry"
         ],
@@ -47556,7 +47541,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 503,
+      "kcal": 517,
       "tags": [
         "vegetarian",
         "quick",
@@ -47681,7 +47666,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 520,
+      "kcal": 554,
       "tags": [
         "light",
         "batch-friendly"
@@ -47705,7 +47690,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz brun (ou semi-complet)",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -47816,7 +47801,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 500,
+      "kcal": 508,
       "tags": [
         "vegan",
         "vegetarian",
@@ -47918,7 +47903,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 420,
+      "kcal": 670,
       "tags": [
         "vegan",
         "vegetarian",
@@ -48102,7 +48087,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pita complète",
-          0.5,
+          0.35,
           "u",
           "bread"
         ],
@@ -48182,7 +48167,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 520,
+      "kcal": 531,
       "tags": [
         "light"
       ],
@@ -48297,8 +48282,8 @@ window.__DATA_RECIPES = {
       "prep": 12,
       "cook": 18,
       "diff": 1,
-      "cost": 3.0,
-      "kcal": 460,
+      "cost": 3,
+      "kcal": 732,
       "tags": [
         "light",
         "quick"
@@ -48314,7 +48299,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de maquereau (ou maquereau entier vidé)",
-          200,
+          150,
           "g",
           "meat-fish"
         ],
@@ -48368,7 +48353,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -48380,7 +48365,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1.5,
+          0.75,
           "c.à.s",
           "pantry"
         ],
@@ -48415,7 +48400,7 @@ window.__DATA_RECIPES = {
         "Pose sur une plaque, enfourne 12-15 min : le poisson est cuit quand sa chair est nacrée et se détache à la fourchette.",
         "Au moment de servir, ouvre la papillote sur l'assiette (vapeur parfumée garantie). Arrose du jus du demi-citron restant. Parsème de persil.",
         "Sers le quinoa à côté, qui a profité du bouillon parfumé.",
-        "Le maquereau est l'un des meilleurs poissons gras pour les oméga-3 : 3-5 g/100 g, soit l'apport hebdo recommandé en 1 portion."
+        "Le maquereau est l'un des meilleurs poissons gras pour les oméga-3, et une seule portion couvre l'apport hebdomadaire recommandé."
       ],
       "photo": "assets/recipes/d173.webp"
     },
@@ -48524,7 +48509,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 672,
+      "kcal": 693,
       "tags": [],
       "eq": [
         "pan",
@@ -48636,7 +48621,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 660,
+      "kcal": 776,
       "tags": [],
       "eq": [
         "pan",
@@ -48651,7 +48636,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pâtes longues complètes (bucatini, linguine)",
-          70,
+          28,
           "g",
           "pantry"
         ],
@@ -48681,7 +48666,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Raisins secs (sultanines)",
-          10,
+          5,
           "g",
           "pantry"
         ],
@@ -48699,7 +48684,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Chapelure complète",
-          1.5,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -48767,7 +48752,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 5.5,
-      "kcal": 540,
+      "kcal": 643,
       "tags": [],
       "eq": [
         "pan",
@@ -48789,7 +48774,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz noir Venere (ou riz brun)",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -48892,7 +48877,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 460,
+      "kcal": 702,
       "tags": [
         "vegan",
         "vegetarian",
@@ -48917,7 +48902,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sarrasin grillé (kasha) ou riz sauvage",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -49038,7 +49023,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 470,
+      "kcal": 443,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -49054,7 +49039,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches secs trempés 12 h (poids après trempage)",
-          75,
+          65,
           "g",
           "pantry"
         ],
@@ -49182,7 +49167,7 @@ window.__DATA_RECIPES = {
     },
     {
       "id": "l166",
-      "name": "Dahl tadka aux 3 lentilles et riz basmati complet",
+      "name": "Dahl tadka aux 3 lentilles et épinards",
       "type": "lunch",
       "cuisine": "indien",
       "seasons": [
@@ -49194,7 +49179,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 470,
+      "kcal": 644,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -49222,12 +49207,6 @@ window.__DATA_RECIPES = {
         [
           "Lentilles noires (Beluga ou Kala)",
           20,
-          "g",
-          "pantry"
-        ],
-        [
-          "Riz basmati complet",
-          60,
           "g",
           "pantry"
         ],
@@ -49280,7 +49259,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Asafoetida (hing) facultatif",
+          "Asafoetida (hing) sans gluten, facultatif",
           0.05,
           "c.à.c",
           "spices"
@@ -49320,23 +49299,28 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
+        ],
+        [
+          "Épinards frais",
+          100,
+          "g",
+          "produce"
         ]
       ],
       "steps": [
         "Mets les 3 types de lentilles dans une passoire fine, rince-les ensemble sous l'eau froide.",
-        "Mets-les dans une casserole avec 700 ml d'eau froide + curcuma + 1 gousse d'ail entière + 1 morceau de gingembre. Porte à ébullition, écume la mousse blanche qui se forme.",
+        "Mets-les dans une casserole avec de l'eau froide à 3 cm au-dessus des lentilles + curcuma + 1 gousse d'ail entière + 1 morceau de gingembre. Porte à ébullition, écume la mousse blanche qui se forme.",
         "Baisse à feu doux, couvre. Cuis 25-30 min : les corail se désagrègent, les vertes restent entières, les noires gardent leur croquant — c'est ce mix de textures qui fait la richesse du dahl tadka.",
-        "Pendant ce temps, lance le riz basmati complet : rince-le sous l'eau froide jusqu'à eau claire. Mets dans une casserole avec 2 fois son volume d'eau salée. Couvre, ébullition puis feu doux 25 min.",
         "Aussi pendant la cuisson : émince finement l'oignon. Hache l'ail (2 gousses restantes) et le gingembre. Coupe la tomate en gros dés, le piment en très fines rondelles (enlève les graines pour moins de feu).",
         "À 5 min de la fin de la cuisson des lentilles, sale-les. Vérifie la consistance : doit être épais comme un velouté, pas liquide. Si trop liquide, retire le couvercle et laisse réduire 5 min.",
         "Prépare le tadka (= la signature du dahl indien — beurre épicé crépitant) : dans une petite poêle, chauffe le ghee à feu vif. Quand il est très chaud (test : 1 graine de cumin doit pétiller dès qu'elle touche), jette le cumin en graines. Ils crépitent et brunissent en 10 sec.",
         "Ajoute immédiatement (sans laisser brûler) : oignon + ail + gingembre. Remue. Cuis 4 min à feu moyen jusqu'à doré.",
         "Ajoute coriandre poudre + asafoetida (si tu en as) + feuilles de curry. Remue 30 sec.",
         "Ajoute la tomate et le piment. Cuis 3 min : la tomate s'écrase et fait une pâte rouge.",
-        "Verse ce tadka chaud sur les lentilles cuites — ÇA CRÉPITE — c'est le moment théâtral du dahl tadka. Mélange.",
+        "Verse ce tadka chaud sur les lentilles cuites — ÇA CRÉPITE — c'est le moment théâtral du dahl tadka. Mélange. Ajoute les épinards lavés, remue 2 min : ils doivent « tomber » (ramollir et réduire de volume) dans la chaleur du dahl.",
         "Hors du feu, ajoute garam masala + jus du demi-citron. Goûte, rectifie sel.",
-        "Sers : riz basmati d'un côté, dahl de l'autre. Parsème généreusement de coriandre fraîche.",
-        "Tradition : on mange dahl + riz à la cuillère ou avec un peu de pain naan/chapati. 1.80 € le bol consistant et complet en acides aminés (lentilles + riz = pendant des protéines végétales)."
+        "Sers : dahl dans un grand bol creux. Parsème généreusement de coriandre fraîche.",
+        "Tradition : on mange le dahl à la cuillère ou avec un peu de pain naan/chapati. bol consistant et riche en protéines végétales (lentilles + épinards)."
       ],
       "photo": "assets/recipes/l166.webp"
     },
@@ -49803,7 +49787,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 690,
+      "kcal": 722,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -49821,13 +49805,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes du Puy",
-          80,
+          50,
           "g",
           "pantry"
         ],
         [
           "Betterave crue (rouge ou chioggia)",
-          140,
+          100,
           "g",
           "produce"
         ],
@@ -49935,7 +49919,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 260,
+      "kcal": 266,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -50146,7 +50130,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 6.5,
-      "kcal": 602,
+      "kcal": 662,
       "tags": [
         "light"
       ],
@@ -50162,7 +50146,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Spaghetti complets",
-          100,
+          55,
           "g",
           "pantry"
         ],
@@ -50246,7 +50230,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 520,
+      "kcal": 531,
       "tags": [
         "vegan",
         "vegetarian",
@@ -50371,7 +50355,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 540,
+      "kcal": 502,
       "tags": [
         "batch-friendly"
       ],
@@ -50509,7 +50493,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 460,
+      "kcal": 580,
       "tags": [],
       "eq": [
         "pan",
@@ -50626,8 +50610,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 25,
       "diff": 2,
-      "cost": 5.0,
-      "kcal": 470,
+      "cost": 5,
+      "kcal": 630,
       "tags": [
         "light"
       ],
@@ -50679,7 +50663,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate",
-          2,
+          1.5,
           "u",
           "produce"
         ],
@@ -50697,7 +50681,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz long complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
@@ -50967,7 +50951,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 428,
+      "kcal": 439,
       "tags": [
         "vegan",
         "vegetarian",
@@ -51060,7 +51044,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 470,
+      "kcal": 464,
       "tags": [
         "vegan",
         "vegetarian",
@@ -51149,8 +51133,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 25,
       "diff": 1,
-      "cost": 2.0,
-      "kcal": 690,
+      "cost": 2,
+      "kcal": 628,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -51164,13 +51148,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (bocal, égouttés)",
-          110,
+          80,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          40,
+          15,
           "g",
           "pantry"
         ],
@@ -51194,7 +51178,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Épinards frais",
-          60,
+          100,
           "g",
           "produce"
         ],
@@ -51242,7 +51226,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait de coco (boîte)",
-          60,
+          40,
           "ml",
           "dairy"
         ],
@@ -51307,7 +51291,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 280,
+      "kcal": 286,
       "tags": [
         "vegan",
         "vegetarian",
@@ -51411,7 +51395,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 460,
+      "kcal": 558,
       "tags": [
         "vegan",
         "vegetarian",
@@ -51433,25 +51417,25 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Bouillon de légumes",
-          130,
+          55,
           "ml",
           "pantry"
         ],
         [
           "Pois chiches cuits (bocal, égouttés)",
-          60,
+          40,
           "g",
           "pantry"
         ],
         [
           "Citron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -51514,6 +51498,12 @@ window.__DATA_RECIPES = {
           1,
           "pincée",
           "spices"
+        ],
+        [
+          "Graines de courge",
+          15,
+          "g",
+          "pantry"
         ]
       ],
       "steps": [
@@ -51522,12 +51512,12 @@ window.__DATA_RECIPES = {
         "Mets-les dans une casserole avec de l'eau bouillante salée. Cuis 8-10 min : elles doivent être tendres mais encore fermes (un couteau y pénètre avec un peu de résistance, pas en bouillie).",
         "Égoutte les carottes. Étale-les sur un torchon pour les sécher rapidement.",
         "Pendant que les carottes refroidissent un peu, prépare la sauce : dans un bol, écrase l'ail. Mélange avec jus du citron + cumin + coriandre poudre + paprika + harissa + l'huile d'olive + sel + poivre.",
-        "Égoutte le boulgour cuit. Étale-le 2 min sur une assiette pour qu'il refroidisse un peu (la salade doit être tiède-froide, pas chaude).",
+        "Étale le boulgour cuit 2 min sur une assiette pour qu'il refroidisse un peu (la salade doit être tiède-froide, pas chaude).",
         "Dans un grand saladier : carottes tièdes + boulgour + pois chiches égouttés-rincés + olives noires.",
         "Verse la sauce, mélange. Laisse mariner 10 min : les saveurs s'imprègnent dans les légumes encore tièdes (= la touche cuisine maghrébine).",
-        "Au moment de servir, parsème généreusement coriandre + menthe ciselées à la main.",
+        "Au moment de servir, parsème généreusement coriandre + menthe ciselées à la main, puis les graines de courge (elles apportent du croquant et des bons gras).",
         "Mange tiède ou frais. Astuce batch : double les quantités, conserve 3 jours au frigo. Excellente lunch box (les saveurs se développent).",
-        "Cette salade marocaine est typique des mezze : économique (1.80 €), couleur orange éclatante, IG bas grâce au boulgour complet."
+        "Cette salade marocaine est typique des mezze : économique, couleur orange éclatante, IG bas grâce au boulgour complet."
       ],
       "photo": "assets/recipes/l175.webp"
     },
@@ -51687,7 +51677,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 770,
+      "kcal": 759,
       "tags": [
         "batch-friendly"
       ],
@@ -51707,19 +51697,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz brun (semi-complet)",
-          45,
+          25,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits (bocal, égouttés)",
-          80,
+          70,
           "g",
           "pantry"
         ],
         [
           "Maïs en grains (frais ou surgelé)",
-          25,
+          10,
           "g",
           "frozen"
         ],
@@ -51749,7 +51739,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert (lime)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -51837,8 +51827,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 35,
       "diff": 2,
-      "cost": 4.0,
-      "kcal": 480,
+      "cost": 4,
+      "kcal": 888,
       "tags": [
         "batch-friendly",
         "festif"
@@ -51859,7 +51849,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz noir (Venere) ou riz brun",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -51967,7 +51957,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis le poulet : dans une casserole, plonge le filet dans 500 ml d'eau frémissante avec 1/2 oignon + 1 gousse d'ail + sel + 1 feuille de laurier. Cuis 15 min à feu doux. Sors, laisse refroidir 5 min, EFFILOCHE le poulet à la fourchette ou aux doigts (= la signature de la tinga).",
+        "Cuis le poulet : dans une casserole, plonge le filet dans de l'eau frémissante (qui couvre juste le filet) avec 1/2 oignon + 1 gousse d'ail + sel + 1 feuille de laurier. Cuis 15 min à feu doux. Sors, laisse refroidir 5 min, EFFILOCHE le poulet à la fourchette ou aux doigts (= la signature de la tinga).",
         "Lance le riz noir : rince sous l'eau froide. Mets dans une casserole avec 2.5x son volume d'eau salée. Couvre, ébullition puis feu doux 25 min.",
         "Pendant la cuisson du riz, prépare le chou rouge mariné rapide : émince le chou rouge en lanières fines. Dans un bol : chou + vinaigre de pomme + sirop d'érable + sel + jus de la moitié du lime. Masse 30 sec aux mains pour ramollir. Laisse mariner 15 min : il devient rose vif et tendre.",
         "Émince finement l'autre demi-oignon. Écrase l'ail restant.",
@@ -51997,7 +51987,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 540,
+      "kcal": 553,
       "tags": [],
       "eq": [
         "stove"
@@ -52162,7 +52152,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 540,
+      "kcal": 829,
       "tags": [],
       "eq": [
         "pan",
@@ -52182,7 +52172,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz brun (semi-complet)",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -53296,7 +53286,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 440,
+      "kcal": 464,
       "tags": [
         "vegetarian",
         "quick"
@@ -53311,7 +53301,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          50,
+          25,
           "g",
           "pantry"
         ],
@@ -53374,7 +53364,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 220,
+      "kcal": 239,
       "tags": [],
       "eq": [
         "stove",
@@ -53389,7 +53379,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -53542,7 +53532,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 290,
+      "kcal": 337,
       "tags": [
         "vegetarian",
         "quick"
@@ -54550,7 +54540,7 @@ window.__DATA_RECIPES = {
       "advance": "1h",
       "diff": 2,
       "cost": 1.7,
-      "kcal": 240,
+      "kcal": 262,
       "tags": [
         "vegan",
         "vegetarian"
@@ -54564,7 +54554,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz arborio",
-          20,
+          15,
           "g",
           "pantry"
         ],
@@ -54581,14 +54571,8 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sirop d'érable",
-          0.25,
-          "c.à.s",
-          "pantry"
-        ],
-        [
           "Mangue",
-          0.25,
+          0.2,
           "u",
           "produce"
         ],
@@ -54606,7 +54590,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Menthe fraîche",
-          1.0,
+          1,
           "feuille",
           "produce"
         ]
@@ -54614,13 +54598,13 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rince le riz sous l'eau froide en remuant 30 secondes (= ça enlève l'amidon excédentaire pour une texture moins collante).",
         "Dans une casserole, mélange le riz, le lait de coco et l'eau. Porte à frémissement à feu moyen, puis baisse à feu doux.",
-        "Couvre partiellement (laisse une fente pour la vapeur). Laisse cuire 20-22 minutes en remuant toutes les 5 minutes pour éviter que ça attache au fond. Le riz doit être tendre, et la texture épaisse comme un riz au lait crémeux.",
-        "Hors du feu, ajoute le sirop d'érable et le zeste râpé du demi-citron vert. Mélange. Goûte : si trop ferme, ajoute encore 50 ml de lait de coco et chauffe 2 min.",
-        "Verse dans 4 ramequins ou coupes. Couvre de film alimentaire au contact (= film posé directement sur le riz) et place au frigo minimum 1 heure : la texture devient plus dense et la fraîcheur idéale.",
-        "Pendant ce temps, prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau. Sur chaque demi-mangue, quadrille la peau, retourne en hérisson, récupère les cubes à la base.",
+        "Couvre partiellement (laisse une fente pour la vapeur). Laisse cuire 20 minutes en remuant toutes les 5 minutes (si ça attache, ajoute 2 c.à.s d'eau) pour éviter que ça attache au fond. Le riz doit être tendre, et la texture épaisse comme un riz au lait crémeux.",
+        "Hors du feu, ajoute le zeste râpé du quart de citron vert. Mélange. Goûte : le lait de coco et la mangue apportent déjà leur douceur ; si trop ferme, ajoute encore un peu de lait de coco et chauffe 2 min.",
+        "Verse dans une coupe ou un ramequin. Couvre de film alimentaire au contact (= film posé directement sur le riz) et place au frigo minimum 1 heure : la texture devient plus dense et la fraîcheur idéale.",
+        "Pendant ce temps, prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau. Épluche la mangue et coupe la chair en petits cubes.",
         "Dans une petite poêle sèche, à feu moyen, fais torréfier les amandes effilées 2 minutes en remuant : elles doivent dorer et embaumer. Réserve.",
-        "Au moment de servir, sors les coupes du frigo. Pose les cubes de mangue sur le dessus du riz (~1/4 de mangue par portion).",
-        "Parsème les amandes torréfiées et 1 feuille de menthe ciselée par coupe. Termine par un zeste de citron vert râpé.",
+        "Au moment de servir, sors les coupes du frigo. Pose les cubes de mangue sur le dessus du riz.",
+        "Parsème les amandes torréfiées et 1 feuille de menthe ciselée.",
         "C'est un grand classique thaï (« khao niao mamuang ») revisité moins sucré. Le contraste tiède-froid du riz crémeux + mangue juteuse + amandes croquantes est festif sans être bourratif."
       ],
       "photo": "assets/recipes/des70.webp"
@@ -54640,7 +54624,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 260,
+      "kcal": 281,
       "tags": [
         "vegan",
         "vegetarian"
@@ -54865,7 +54849,7 @@ window.__DATA_RECIPES = {
       "advance": "2h",
       "diff": 2,
       "cost": 1.8,
-      "kcal": 240,
+      "kcal": 312,
       "tags": [
         "vegetarian"
       ],
@@ -55927,7 +55911,7 @@ window.__DATA_RECIPES = {
       "advance": "2h",
       "diff": 2,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 229,
       "tags": [
         "vegetarian"
       ],
@@ -56105,7 +56089,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 366,
       "tags": [
         "vegetarian"
       ],
@@ -57141,7 +57125,7 @@ window.__DATA_RECIPES = {
       "advance": "1h",
       "diff": 3,
       "cost": 1.5,
-      "kcal": 270,
+      "kcal": 304,
       "tags": [
         "vegetarian"
       ],
@@ -57155,13 +57139,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          80,
+          30,
           "g",
           "pantry"
         ],
         [
           "Sarrasin",
-          40,
+          20,
           "g",
           "pantry"
         ],
@@ -57173,7 +57157,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Eau",
-          80,
+          60,
           "ml",
           "pantry"
         ],
@@ -57225,7 +57209,7 @@ window.__DATA_RECIPES = {
         "Cuis à la vapeur 12-15 min : pour vérifier, plante un cure-dent au centre — il doit ressortir propre.",
         "Démoule délicatement (passe une lame de couteau autour si ça colle). Les idli sont blancs, légers, ronds.",
         "Sers tièdes dans 2 assiettes (4-5 idli par personne), avec 2-3 cuillères de chutney coriandre à côté. Décore avec une branche de coriandre.",
-        "Les idli sont le petit-déjeuner classique du sud de l'Inde (originellement à la semoule de riz fermentée). Cette version quinoa-sarrasin est IG plus bas, riche en protéines végétales (~12 g par portion). Léger mais rassasiant."
+        "Les idli sont le petit-déjeuner classique du sud de l'Inde (originellement à la semoule de riz fermentée). Cette version quinoa-sarrasin est IG plus bas et riche en protéines végétales. Léger mais rassasiant."
       ],
       "photo": "assets/recipes/b85.webp"
     },
@@ -57985,7 +57969,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 510,
+      "kcal": 526,
       "tags": [
         "vegetarian",
         "vegan",
@@ -57999,7 +57983,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          40,
+          25,
           "g",
           "pantry"
         ],
@@ -58011,7 +57995,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs en grains (frais ou surgelé)",
-          50,
+          25,
           "g",
           "produce"
         ],
@@ -58023,7 +58007,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate cerise",
-          4.0,
+          4,
           "u",
           "produce"
         ],
@@ -58059,7 +58043,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1.0,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -58361,7 +58345,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 420,
+      "kcal": 534,
       "tags": [],
       "eq": [
         "stove"
@@ -58723,7 +58707,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 368,
       "tags": [
         "vegetarian",
         "vegan",
@@ -58870,7 +58854,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 520,
+      "kcal": 575,
       "tags": [],
       "eq": [
         "stove",
@@ -58896,7 +58880,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
@@ -58938,13 +58922,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour",
-          60,
+          40,
           "g",
           "pantry"
         ],
         [
           "Bouillon de légumes",
-          120,
+          80,
           "ml",
           "pantry"
         ],
@@ -59008,7 +58992,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 3,
       "cost": 3.2,
-      "kcal": 480,
+      "kcal": 527,
       "tags": [
         "festif"
       ],
@@ -59150,7 +59134,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 420,
+      "kcal": 506,
       "tags": [
         "vegetarian",
         "vegan",
@@ -59449,7 +59433,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 380,
+      "kcal": 500,
       "tags": [],
       "eq": [
         "stove"
@@ -59711,7 +59695,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 572,
+      "kcal": 597,
       "tags": [],
       "eq": [
         "stove",
@@ -59838,7 +59822,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 480,
+      "kcal": 536,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -59858,7 +59842,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz brun (long ou complet)",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -59918,7 +59902,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1.0,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -60098,8 +60082,8 @@ window.__DATA_RECIPES = {
       "prep": 25,
       "cook": 10,
       "diff": 1,
-      "cost": 2.0,
-      "kcal": 420,
+      "cost": 2,
+      "kcal": 516,
       "tags": [
         "vegetarian",
         "vegan",
@@ -60115,13 +60099,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour complet",
-          75,
+          40,
           "g",
           "pantry"
         ],
         [
           "Persil plat",
-          1.0,
+          1,
           "bouquet",
           "produce"
         ],
@@ -60151,7 +60135,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron",
-          1.0,
+          1,
           "u",
           "produce"
         ],
@@ -60349,7 +60333,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 500,
+      "kcal": 515,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -60500,7 +60484,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 460,
+      "kcal": 791,
       "tags": [],
       "eq": [
         "oven",
@@ -60922,7 +60906,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 540,
+      "kcal": 638,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -61523,7 +61507,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 410,
+      "kcal": 492,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -61811,7 +61795,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 460,
+      "kcal": 495,
       "tags": [
         "vegetarian",
         "vegan",
@@ -61827,7 +61811,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (boîte)",
-          160,
+          120,
           "g",
           "pantry"
         ],
@@ -61845,7 +61829,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
@@ -61875,13 +61859,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          40,
+          20,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          1.0,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -61935,7 +61919,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Cuis le boulgour : porte 240 ml d'eau salée à ébullition. Verse le boulgour, baisse à feu doux, couvre 10 min. Aère à la fourchette.",
+        "Cuis le boulgour : porte à ébullition deux fois le volume du boulgour en eau salée. Verse le boulgour, baisse à feu doux, couvre 10 min. Aère à la fourchette.",
         "Pendant ce temps, égoutte et rince les pois chiches.",
         "Émince finement l'oignon. Écrase l'ail. Coupe les tomates en deux, retire les graines, taille en dés de 1 cm.",
         "Rince le citron confit, retire la pulpe interne (garde uniquement la peau qui est la partie aromatique). Coupe en petits dés. Si tu utilises de l'écorce de citron : prélève les zestes du citron, blanchis 1 min dans l'eau bouillante pour adoucir l'amertume.",
@@ -61943,7 +61927,7 @@ window.__DATA_RECIPES = {
         "Dans une grande sauteuse à feu moyen avec 2 c.à.s d'huile, fais suer l'oignon 4 min jusqu'à translucide.",
         "Ajoute l'ail, le cumin, le gingembre, le curcuma, la coriandre moulue, la cannelle, le piment d'Espelette. Remue 30 sec — les épices libèrent leur arôme.",
         "Ajoute les dés de tomate, sale, poivre. Cuis 5 min à feu moyen — les tomates se défont en sauce.",
-        "Ajoute les pois chiches et le citron confit. Mélange, verse 100 ml d'eau. Mijote 8 min à feu doux pour que les pois chiches s'imprègnent.",
+        "Ajoute les pois chiches et le citron confit. Mélange, verse un petit verre d'eau. Mijote 8 min à feu doux pour que les pois chiches s'imprègnent.",
         "Incorpore les épinards par poignées (ils réduisent énormément). Mélange entre chaque ajout. En 3-4 min, tous les épinards sont fondus dans le tajine.",
         "Hors du feu, ajoute la dernière c.à.s d'huile, la coriandre et le persil ciselés. Mélange.",
         "Dressage : sers le boulgour dans 2 grandes assiettes creuses. Pose le tajine de pois chiches au centre, parsème du reste d'herbes.",
@@ -61963,7 +61947,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 387,
+      "kcal": 414,
       "tags": [
         "vegetarian",
         "vegan",
@@ -62106,7 +62090,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 510,
+      "kcal": 641,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -62437,7 +62421,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 420,
+      "kcal": 399,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -62451,13 +62435,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots rouges cuits (boîte)",
-          140,
+          110,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          35,
+          20,
           "g",
           "pantry"
         ],
@@ -62469,19 +62453,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomate",
-          1.0,
+          1,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1.0,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          1.0,
+          1,
           "cm",
           "produce"
         ],
@@ -62586,7 +62570,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 530,
+      "kcal": 493,
       "tags": [
         "vegetarian",
         "epicerie-specialisee"
@@ -62753,7 +62737,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 510,
+      "kcal": 592,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -62918,7 +62902,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 460,
+      "kcal": 570,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -63217,7 +63201,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 430,
+      "kcal": 452,
       "tags": [
         "batch-friendly"
       ],
@@ -63361,7 +63345,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 520,
+      "kcal": 549,
       "tags": [
         "batch-friendly"
       ],
@@ -63634,7 +63618,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 490,
+      "kcal": 503,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -63780,7 +63764,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 537,
       "tags": [],
       "eq": [
         "stove"
@@ -63915,7 +63899,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 440,
+      "kcal": 508,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -63930,19 +63914,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail",
-          50,
+          40,
           "g",
           "pantry"
         ],
         [
           "Tomate",
-          1.0,
+          1,
           "u",
           "produce"
         ],
@@ -63960,7 +63944,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Gingembre frais",
-          1.0,
+          1,
           "cm",
           "produce"
         ],
@@ -63996,7 +63980,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile de coco",
-          1.0,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -64208,7 +64192,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.8,
-      "kcal": 470,
+      "kcal": 555,
       "tags": [],
       "eq": [
         "stove"
@@ -65244,7 +65228,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 480,
+      "kcal": 441,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -65260,19 +65244,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Semoule de blé complète (fine)",
-          30,
+          20,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          135,
           "ml",
           "dairy"
         ],
         [
           "Datte Medjool",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -66014,7 +65998,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 334,
       "tags": [
         "batch-friendly"
       ],
@@ -66507,8 +66491,8 @@ window.__DATA_RECIPES = {
       "prep": 10,
       "cook": 35,
       "diff": 2,
-      "cost": 3.0,
-      "kcal": 240,
+      "cost": 3,
+      "kcal": 248,
       "tags": [
         "vegetarian",
         "vegan"
@@ -66522,7 +66506,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz noir (riz interdit / venere)",
-          25,
+          15,
           "g",
           "pantry"
         ],
@@ -66534,13 +66518,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue mûre",
-          0.25,
+          0.2,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable (ou sucre de coco)",
-          0.5,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -66565,13 +66549,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Rince le riz noir à l'eau froide jusqu'à ce que l'eau soit claire. Fais-le tremper 1 h si possible (accélère la cuisson, sinon ça marche aussi sans).",
-        "Cuis le riz noir : dans une casserole, verse le riz + 250 ml d'eau + une pincée de sel. Porte à frémissement, baisse à feu doux, couvre 30-35 min. Le riz noir doit être tendre mais garder un peu de mâche (al dente). Laisse reposer 5 min couvert.",
-        "Pendant ce temps, prépare la sauce coco : dans une petite casserole, verse 150 ml de lait de coco + le sirop d'érable + une pincée de sel. Chauffe à frémissement, mélange jusqu'à dissolution. Réserve 1/3 de la sauce pour le service.",
+        "Cuis le riz noir : dans une casserole, verse le riz + environ dix fois son volume d'eau + une pincée de sel. Porte à frémissement, baisse à feu doux, couvre 30-35 min. Le riz noir doit être tendre mais garder un peu de mâche (al dente). Laisse reposer 5 min couvert.",
+        "Pendant ce temps, prépare la sauce coco : dans une petite casserole, verse le lait de coco + le sirop d'érable + une pincée de sel. Chauffe à frémissement, mélange jusqu'à dissolution. Réserve 1/3 de la sauce pour le service.",
         "Verse les 2/3 de sauce coco chaude sur le riz noir cuit. Mélange délicatement. Le riz absorbe la sauce et devient crémeux. Laisse infuser 10 min.",
         "Coupe la mangue : tranche de chaque côté du noyau plat, fais des incisions en croisillon dans la chair sans percer la peau, retourne la peau et coupe les cubes (technique 'hérisson' mangue).",
         "Dressage dans 2 assiettes creuses : dépose une portion de riz noir crémeux d'un côté, les cubes de mangue de l'autre.",
         "Arrose le tout du dernier tiers de sauce coco réservée. Parsème de graines de sésame grillées. Râpe un peu de zeste de citron vert.",
-        "Sers tiède ou à température ambiante. La version originale thaïlandaise (khao niao mamuang) utilise du riz gluant blanc (IG ~95, très haut) sucré au sucre de palme (gros pic glycémique). Cette version remplace par du riz noir (IG ~42) + sirop d'érable minimal (~30g de sucres ajoutés pour 4 portions). Riche en antioxydants (anthocyanes du riz noir = parmi les plus puissants connus), fibres, bons gras (coco, sésame), bêta-carotène (mangue)."
+        "Sers tiède ou à température ambiante. La version originale thaïlandaise (khao niao mamuang) utilise du riz gluant blanc (IG ~95, très haut) sucré au sucre de palme (gros pic glycémique). Cette version remplace par du riz noir (IG ~42) + sirop d'érable minimal (très peu de sucre ajouté). Riche en antioxydants (anthocyanes du riz noir = parmi les plus puissants connus), fibres, bons gras (coco, sésame), bêta-carotène (mangue)."
       ],
       "photo": "assets/recipes/des83.webp"
     },
@@ -67049,7 +67033,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 180,
+      "kcal": 299,
       "tags": [
         "vegetarian",
         "vegan",
@@ -67492,7 +67476,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 241,
+      "kcal": 233,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68144,7 +68128,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 130,
+      "kcal": 137,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68162,49 +68146,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pêche blanche bien mûre",
-          6,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Sachet de thé vert (genmaicha, sencha ou jasmin)",
-          2,
+          0.5,
           "u",
           "pantry"
         ],
         [
           "Eau chaude (80 °C)",
-          300,
+          75,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Basilic frais",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Framboise fraîche",
-          100,
+          25,
           "g",
           "produce"
         ],
         [
           "Gingembre frais (facultatif)",
-          1,
+          0.25,
           "cm",
           "produce"
         ]
@@ -68213,7 +68197,7 @@ window.__DATA_RECIPES = {
         "Fais infuser les sachets de thé vert dans l'eau à 80 °C (pas bouillante, sinon amertume) pendant 4 min. Retire les sachets en pressant légèrement. Laisse refroidir à température ambiante.",
         "Pendant ce temps, prépare les pêches : porte une grande casserole d'eau à ébullition. Fais une petite croix au couteau à la base de chaque pêche (technique pour faciliter l'épluchage).",
         "Plonge les pêches 30-40 sec dans l'eau bouillante, puis immédiatement dans un bol d'eau glacée. La peau s'enlève toute seule en tirant doucement.",
-        "Dénoyaute les pêches. Garde 1 pêche pour la déco (coupe en quartiers), mets les 5 autres dans le blender.",
+        "Dénoyaute les pêches. Garde un quartier de pêche pour la déco, mets le reste dans le blender.",
         "Cisèle finement la moitié du basilic. Garde l'autre moitié (les belles feuilles) pour la déco.",
         "Dans le blender : pêches + thé vert refroidi + sirop d'érable + jus d'1/2 citron + basilic ciselé + gingembre râpé (si utilisé).",
         "Mixe 30-40 sec jusqu'à obtention d'une soupe lisse et onctueuse. Goûte : ajuste citron ou sirop d'érable selon la maturité des pêches.",
@@ -68997,7 +68981,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 130,
+      "kcal": 131,
       "tags": [
         "vegetarian",
         "vegan",
@@ -69093,7 +69077,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 240,
+      "kcal": 276,
       "tags": [
         "vegetarian",
         "festif",
@@ -69112,7 +69096,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet (ou riz basmati complet)",
-          27,
+          20,
           "g",
           "pantry"
         ],
@@ -69124,7 +69108,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable (ou miel)",
-          0.75,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -69167,16 +69151,16 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Trempe le riz dans un bol d'eau froide 30 min minimum (technique indienne traditionnelle : facilite la cuisson et la texture crémeuse).",
-        "Égoutte le riz et place-le dans le blender avec 100 ml du lait froid. Mixe 20-30 sec jusqu'à obtenir un mélange grossièrement broyé (pas une pâte lisse, garde du grain — c'est la différence phirni vs kheer : phirni utilise du riz broyé, plus crémeux et plus fin).",
+        "Égoutte le riz et place-le dans le blender avec le tiers du lait froid. Mixe 20-30 sec jusqu'à obtenir un mélange grossièrement broyé (pas une pâte lisse, garde du grain — c'est la différence phirni vs kheer : phirni utilise du riz broyé, plus crémeux et plus fin).",
         "Pendant ce temps, prépare le safran : émiette les filaments dans 1 c.à.s de lait tiède. Laisse infuser 10 min (l'eau devient dorée).",
         "Ouvre les gousses de cardamome, récupère les graines noires-brunes, pile-les finement au mortier ou écrase-les à la lame de couteau.",
-        "Dans une grande casserole à fond épais (anti-adhésion), verse les 500 ml de lait restants + une pincée de sel. Porte à frémissement.",
+        "Dans une grande casserole à fond épais (anti-adhésion), verse le lait restant + une pincée de sel. Porte à frémissement.",
         "Ajoute le mélange riz-lait broyé. Baisse à feu doux. Cuis 20-25 min en remuant régulièrement au fouet (technique : si tu ne remues pas, le riz attache au fond et la phirni cuit grumeuleuse).",
         "Quand le mélange épaissit et que le riz est totalement cuit (test : aucun grain ne croque sous la dent), ajoute le sirop d'érable + cardamome pilée + lait safrané + filaments de safran + eau de rose si tu en mets. Mélange 1 min de plus.",
         "Verse dans 4 ramequins individuels. Laisse refroidir à température ambiante 30 min, puis réfrigère 2 h minimum.",
         "Pendant ce temps, fais griller les pistaches et amandes effilées séparément dans une poêle sèche 1-2 min. Hache grossièrement les pistaches au couteau.",
         "Au moment de servir, sors les phirni du frigo. Parsème généreusement de pistaches concassées + amandes effilées dorées. Ajoute quelques filaments de safran entiers (facultatif, pour l'esthétique festive).",
-        "Sers très frais. Le phirni est un dessert ancestral du nord de l'Inde (Punjab, Delhi), traditionnellement servi dans des bols en argile (matka) qui parfument le dessert. Cette version remplace le riz blanc (IG 73) par du riz complet (IG ~50) et le sucre raffiné par du sirop d'érable. Sucre minimal (2 c.à.s pour 4 portions = 8 g sucre par portion). Festif pour Diwali, Eid, mariage, anniversaire. Riche en calcium (lait), antioxydants (safran, cardamome), bons gras (pistaches, amandes)."
+        "Sers très frais. Le phirni est un dessert ancestral du nord de l'Inde (Punjab, Delhi), traditionnellement servi dans des bols en argile (matka) qui parfument le dessert. Cette version remplace le riz blanc (IG 73) par du riz complet (IG ~50) et le sucre raffiné par du sirop d'érable. Sucre minimal : un demi-filet de sirop par portion. Festif pour Diwali, Eid, mariage, anniversaire. Riche en calcium (lait), antioxydants (safran, cardamome), bons gras (pistaches, amandes)."
       ],
       "photo": "assets/recipes/des94.webp"
     },
@@ -69194,7 +69178,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 220,
+      "kcal": 214,
       "tags": [
         "vegetarian",
         "festif",
@@ -71151,7 +71135,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 290,
+      "kcal": 288,
       "tags": [
         "vegetarian",
         "festif",
@@ -71244,7 +71228,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 130,
+      "kcal": 131,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -71740,8 +71724,8 @@ window.__DATA_RECIPES = {
       "prep": 30,
       "cook": 8,
       "diff": 3,
-      "cost": 3.0,
-      "kcal": 136,
+      "cost": 3,
+      "kcal": 141,
       "tags": [
         "vegetarian",
         "festif",
@@ -71760,7 +71744,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine de riz gluant (mochiko)",
-          16,
+          10,
           "g",
           "pantry"
         ],
@@ -71784,7 +71768,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pâte à tartiner chocolat-noisette maison (cacao + purée noisette + sirop)",
-          1.25,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -72468,7 +72452,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 400,
+      "kcal": 401,
       "tags": [
         "vegetarian",
         "quick",
@@ -72675,7 +72659,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 340,
+      "kcal": 375,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -72692,13 +72676,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet",
-          55,
+          35,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          1.0,
+          1,
           "u",
           "dairy"
         ],
@@ -73116,7 +73100,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 180,
+      "kcal": 147,
       "tags": [
         "vegetarian",
         "vegan",
@@ -73161,7 +73145,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tortilla de maïs complète",
-          1.25,
+          0.75,
           "u",
           "bread"
         ],
@@ -73612,7 +73596,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 120,
+      "kcal": 153,
       "tags": [
         "vegetarian",
         "vegan",
@@ -73709,7 +73693,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 288,
+      "kcal": 291,
       "tags": [
         "vegetarian",
         "quick"
@@ -73794,7 +73778,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 280,
+      "kcal": 267,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -73994,7 +73978,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 220,
+      "kcal": 217,
       "tags": [
         "vegetarian",
         "vegan",
@@ -75453,7 +75437,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 143,
+      "kcal": 144,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -76099,7 +76083,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 260,
+      "kcal": 259,
       "tags": [
         "vegetarian",
         "quick",
@@ -76870,7 +76854,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 360,
+      "kcal": 333,
       "tags": [
         "vegetarian",
         "quick"
@@ -77629,7 +77613,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 160,
+      "kcal": 211,
       "tags": [
         "vegetarian",
         "vegan",
@@ -77882,7 +77866,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 342,
+      "kcal": 341,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -78017,7 +78001,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.2,
-      "kcal": 230,
+      "kcal": 241,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -78892,7 +78876,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 365,
+      "kcal": 375,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79092,7 +79076,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 160,
+      "kcal": 130,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79191,7 +79175,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 199,
+      "kcal": 221,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79284,7 +79268,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 235,
+      "kcal": 245,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79377,7 +79361,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 220,
+      "kcal": 379,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79392,7 +79376,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois cassés secs",
-          100,
+          80,
           "g",
           "pantry"
         ],
@@ -79583,7 +79567,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur minimum",
       "diff": 1,
       "cost": 1.7,
-      "kcal": 90,
+      "kcal": 96,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79652,7 +79636,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 220,
+      "kcal": 230,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -79745,7 +79729,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au frais pour figer",
       "diff": 2,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 196,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -79831,7 +79815,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.4,
-      "kcal": 370,
+      "kcal": 389,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -79921,7 +79905,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 240,
+      "kcal": 204,
       "tags": [
         "quick",
         "no-cook",
@@ -80096,7 +80080,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 365,
+      "kcal": 375,
       "tags": [
         "vegetarian",
         "quick",
@@ -80297,7 +80281,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 218,
+      "kcal": 271,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -80870,7 +80854,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 2,
       "cost": 1.7,
-      "kcal": 90,
+      "kcal": 92,
       "tags": [
         "vegan",
         "vegetarian",
@@ -80946,7 +80930,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 320,
+      "kcal": 334,
       "tags": [],
       "eq": [
         "stove"
@@ -80961,7 +80945,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -81236,7 +81220,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 240,
+      "kcal": 259,
       "tags": [
         "light",
         "festif"
@@ -81348,7 +81332,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 1,
       "cost": 1.9,
-      "kcal": 100,
+      "kcal": 84,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81503,7 +81487,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 340,
+      "kcal": 362,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81519,7 +81503,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
@@ -81531,7 +81515,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Eau",
-          400,
+          280,
           "ml",
           "pantry"
         ],
@@ -81700,7 +81684,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 180,
+      "kcal": 350,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81796,7 +81780,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 151,
+      "kcal": 228,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81815,7 +81799,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz soufflé non sucré",
-          50,
+          20,
           "g",
           "pantry"
         ],
@@ -82497,7 +82481,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au frais après cuisson",
       "diff": 3,
       "cost": 1.7,
-      "kcal": 260,
+      "kcal": 267,
       "tags": [
         "vegetarian",
         "festif",
@@ -82775,7 +82759,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur",
       "diff": 1,
       "cost": 1.3,
-      "kcal": 150,
+      "kcal": 156,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -83076,7 +83060,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 360,
+      "kcal": 340,
       "tags": [
         "vegan",
         "vegetarian",
@@ -83094,7 +83078,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Farine d'orge complète",
-          40,
+          20,
           "g",
           "pantry"
         ],
@@ -83112,7 +83096,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Dattes Medjool",
-          30,
+          15,
           "g",
           "produce"
         ],
@@ -83260,7 +83244,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 395,
+      "kcal": 405,
       "tags": [
         "vegetarian",
         "quick"
@@ -83452,7 +83436,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 320,
+      "kcal": 330,
       "tags": [
         "vegan",
         "vegetarian",
@@ -83467,25 +83451,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          50,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          200,
+          120,
           "ml",
           "dairy"
         ],
         [
           "Orange",
-          120,
+          90,
           "g",
           "produce"
         ],
         [
           "Dattes Medjool",
-          10,
+          8,
           "g",
           "produce"
         ],
@@ -83656,7 +83640,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 420,
+      "kcal": 433,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -83671,25 +83655,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          70,
+          35,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Haricots verts",
           80,
-          "g",
-          "produce"
-        ],
-        [
-          "Petits pois",
-          60,
           "g",
           "produce"
         ],
@@ -83758,17 +83736,23 @@ window.__DATA_RECIPES = {
           1.5,
           "g",
           "spices"
+        ],
+        [
+          "Courgette",
+          100,
+          "g",
+          "produce"
         ]
       ],
       "steps": [
         "Rince le riz basmati complet à l'eau froide jusqu'à ce que l'eau soit claire, puis le faire tremper 15 minutes.",
-        "Pendant ce temps, coupe la carotte en petits dés, les haricots verts en tronçons de 2 cm, émince l'oignon finement.",
+        "Pendant ce temps, coupe la carotte et la courgette en dés, les haricots verts en tronçons de 2 cm, émince l'oignon finement.",
         "Fais chauffer l'huile d'olive dans une cocotte à feu moyen, ajoute l'oignon et fais dorer 5 minutes (couleur dorée, bords caramélisés).",
         "Ajoute l'ail écrasé et le gingembre râpé, fais revenir 1 minute (parfum intense).",
         "Ajoute le garam masala, le curcuma et la cardamome, mélange 30 secondes pour torréfier les épices.",
         "Ajoute tous les légumes et le sel, fais revenir 5 minutes en remuant.",
         "Incorpore le yaourt nature hors du feu (évite qu'il tranche), mélange.",
-        "Égoutte le riz, ajoute-le dans la cocotte avec 180 ml d'eau chaude, mélange délicatement.",
+        "Égoutte le riz, ajoute-le dans la cocotte avec deux fois le volume du riz en eau chaude, mélange délicatement.",
         "Couvre hermétiquement, cuis à feu très doux 18-20 minutes sans soulever le couvercle (cuisson vapeur, le riz absorbe tout).",
         "Pendant ce temps, fais griller les amandes effilées 2 minutes à sec dans une poêle.",
         "Hors du feu, laisse reposer 5 minutes couvert, puis aère le riz à la fourchette.",
@@ -83789,7 +83773,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 390,
+      "kcal": 382,
       "tags": [
         "vegan",
         "vegetarian",
@@ -83804,25 +83788,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail",
-          50,
+          45,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          80,
+          50,
           "g",
           "produce"
         ],
         [
           "Courgette",
-          100,
+          150,
           "g",
           "produce"
         ],
@@ -83888,7 +83872,7 @@ window.__DATA_RECIPES = {
         "Ajoute le gingembre râpé et les feuilles de curry, fais revenir 30 secondes.",
         "Ajoute le cumin et le curcuma, mélange 10 secondes.",
         "Ajoute la tomate, cuis 2 minutes jusqu'à ce qu'elle se défasse.",
-        "Ajoute le riz, les lentilles, la carotte, la courgette, le sel et 500 ml d'eau chaude.",
+        "Ajoute le riz, les lentilles, la carotte, la courgette, le sel et de l'eau chaude (environ cinq fois le volume du riz et des lentilles).",
         "Porte à ébullition, baisse à feu doux, couvre et cuis 18-20 minutes : le riz et les lentilles sont fondants, texture comme un risotto épais (ajoute un peu d'eau si trop sec).",
         "Goûte et rectifie le sel.",
         "Hors du feu, parsème généreusement de coriandre fraîche ciselée. Sers chaud, plat-doudou indien complet."
@@ -84035,7 +84019,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 533,
+      "kcal": 505,
       "tags": [
         "vegan",
         "vegetarian",
@@ -84048,7 +84032,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          200,
+          170,
           "g",
           "pantry"
         ],
@@ -84158,7 +84142,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 2.4,
-      "kcal": 440,
+      "kcal": 637,
       "tags": [
         "batch-friendly"
       ],
@@ -84179,7 +84163,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz brun",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -84265,8 +84249,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rince le riz brun, cuis-le dans une casserole d'eau bouillante salée 25 minutes (texture tendre mais ferme). Égoutte.",
         "Pendant ce temps, prépare le mole : émince l'oignon, coupe les tomates en quartiers.",
-        "Fais chauffer 4 ml d'huile dans une poêle, fais revenir l'oignon, l'ail, les tomates 8 minutes (les légumes compotent).",
-        "Transfère dans le blender, ajoute la poudre d'amandes, le cacao, la cannelle, le cumin, le piment doux et 100 ml d'eau. Mixe en sauce lisse.",
+        "Fais chauffer la moitié de l'huile dans une poêle, fais revenir l'oignon, l'ail, les tomates 8 minutes (les légumes compotent).",
+        "Transfère dans le blender, ajoute la poudre d'amandes, le cacao, la cannelle, le cumin, le piment doux et un petit verre d'eau. Mixe en sauce lisse.",
         "Reverse la sauce mole dans la poêle, ajoute le chocolat noir cassé en morceaux, le sel. Mijote 5 minutes à feu doux : le chocolat fond et lie la sauce (couleur brun profond, signature du mole).",
         "Coupe le poulet en lanières. Fais chauffer le reste d'huile dans une autre poêle, saisis le poulet 6-7 minutes à feu moyen-vif (doré et cuit à cœur).",
         "Verse la sauce mole sur le poulet, mélange pour enrober, prolonge 2 minutes.",
@@ -84289,7 +84273,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 410,
+      "kcal": 534,
       "tags": [
         "batch-friendly"
       ],
@@ -84308,13 +84292,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz brun",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits",
-          80,
+          70,
           "g",
           "pantry"
         ],
@@ -84519,7 +84503,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 512,
+      "kcal": 582,
       "tags": [
         "batch-friendly"
       ],
@@ -84631,7 +84615,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 410,
+      "kcal": 399,
       "tags": [
         "vegan",
         "vegetarian",
@@ -84646,13 +84630,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits",
-          100,
+          90,
           "g",
           "pantry"
         ],
         [
           "Semoule complète",
-          25,
+          20,
           "g",
           "pantry"
         ],
@@ -84744,7 +84728,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 420,
+      "kcal": 472,
       "tags": [
         "vegan",
         "vegetarian",
@@ -84760,13 +84744,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Freekeh",
-          60,
+          25,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          100,
+          80,
           "g",
           "pantry"
         ],
@@ -84826,7 +84810,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -84841,8 +84825,8 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 210°C en chaleur tournante.",
         "Rince le freekeh (blé vert fumé), cuis-le dans une casserole d'eau bouillante salée 20-25 minutes (texture al dente, légèrement croquante). Égoutte.",
         "Pendant ce temps, coupe la courgette, le poivron et l'aubergine en cubes de 2 cm.",
-        "Dispose les légumes sur une plaque, arrose de 6 ml d'huile, saupoudre de paprika fumé et d'une pincée de sel. Enfourne 18-20 minutes (dorés et tendres).",
-        "Prépare la chermoula : mixe ou hacher très finement la coriandre, le persil, l'ail, le cumin, le jus d'un demi-citron, 8 ml d'huile et une pincée de sel (sauce verte parfumée).",
+        "Dispose les légumes sur une plaque, arrose de la moitié de l'huile, saupoudre de paprika fumé et d'une pincée de sel. Enfourne 18-20 minutes (dorés et tendres).",
+        "Prépare la chermoula : mixe ou hacher très finement la coriandre, le persil, l'ail, le cumin, le jus d'un demi-citron, le reste de l'huile et une pincée de sel (sauce verte parfumée).",
         "Égoutte et rince les pois chiches, mélange-les aux légumes grillés en fin de cuisson (juste réchauffer 2 minutes au four).",
         "Mélange le freekeh avec la moitié de la chermoula.",
         "Dresse le freekeh dans 2 bols, répartis les légumes grillés et pois chiches.",
@@ -84863,7 +84847,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 437,
+      "kcal": 458,
       "tags": [
         "batch-friendly"
       ],
@@ -85313,7 +85297,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 370,
+      "kcal": 382,
       "tags": [
         "vegan",
         "vegetarian",
@@ -85334,13 +85318,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomme de terre",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Riz basmati complet",
-          30,
+          20,
           "g",
           "pantry"
         ],
@@ -85444,7 +85428,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 400,
+      "kcal": 409,
       "tags": [
         "vegan",
         "vegetarian",
@@ -85459,13 +85443,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles corail",
-          70,
+          50,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          50,
+          15,
           "g",
           "pantry"
         ],
@@ -85495,7 +85479,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tamarin (pâte)",
-          8,
+          6,
           "g",
           "pantry"
         ],
@@ -85544,9 +85528,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Rince le riz basmati complet, cuis-le dans une casserole d'eau bouillante salée 18-20 minutes. Égoutte.",
-        "Rince les lentilles corail, cuis-les dans 400 ml d'eau avec le curcuma 12 minutes (elles se défont en purée jaune).",
+        "Rince les lentilles corail, cuis-les dans de l'eau (environ 4 fois leur volume) avec le curcuma 12 minutes (elles se défont en purée jaune).",
         "Pendant ce temps, coupe l'aubergine en cubes de 2 cm, les gombos en tronçons de 1,5 cm (ne pas trop les couper, ça libère du mucilage), la tomate en dés.",
-        "Délaye la pâte de tamarin dans 50 ml d'eau chaude (jus acidulé, signature du sambar).",
+        "Délaye la pâte de tamarin dans un petit verre d'eau chaude (jus acidulé, signature du sambar).",
         "Ajoute l'aubergine, les gombos, la tomate, le jus de tamarin, le sambar masala et le sel aux lentilles cuites. Mijote 15 minutes (les légumes sont tendres, les gombos fondants).",
         "Prépare le tempering : chauffe l'huile dans une petite poêle, ajoute les graines de moutarde, attends qu'elles éclatent (30 sec).",
         "Ajoute les feuilles de curry, fais revenir 20 secondes (parfum intense).",
@@ -85688,7 +85672,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 390,
+      "kcal": 371,
       "tags": [
         "vegan",
         "vegetarian",
@@ -85701,7 +85685,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          40,
+          20,
           "g",
           "pantry"
         ],
@@ -85713,13 +85697,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs doux",
-          30,
+          15,
           "g",
           "produce"
         ],
         [
           "Haricots noirs cuits",
-          100,
+          80,
           "g",
           "pantry"
         ],
@@ -86020,7 +86004,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 410,
+      "kcal": 436,
       "tags": [
         "vegan",
         "vegetarian",
@@ -86035,13 +86019,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Berkoukes (pâtes plombs complets)",
-          70,
+          25,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          100,
+          80,
           "g",
           "pantry"
         ],
@@ -86053,7 +86037,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Carotte",
-          80,
+          50,
           "g",
           "produce"
         ],
@@ -86116,7 +86100,7 @@ window.__DATA_RECIPES = {
         "Émince l'oignon, coupe la carotte en petits dés, la courgette en demi-lunes, la tomate en dés.",
         "Fais chauffer l'huile d'olive dans une cocotte à feu moyen, fais revenir l'oignon 4 minutes.",
         "Ajoute le concentré de tomate, le cumin, le paprika et le ras el-hanout, mélange 1 minute (les épices torréfient).",
-        "Ajoute la carotte, la tomate en dés et 500 ml d'eau, le sel. Porte à ébullition.",
+        "Ajoute la carotte, la tomate en dés et un grand bol d'eau (de quoi couvrir largement les légumes), le sel. Porte à ébullition.",
         "Ajoute les berkoukes (gros grains de pâte roulée), cuis 12 minutes en remuant de temps en temps (ils gonflent comme un risotto).",
         "Ajoute la courgette et les pois chiches égouttés, prolonge 8 minutes (la courgette est tendre, la texture nappe).",
         "Ajuste la consistance : ajoute un peu d'eau chaude si trop épais (le berkoukes doit rester légèrement soupe).",
@@ -86137,7 +86121,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 470,
+      "kcal": 509,
       "tags": [
         "vegan",
         "vegetarian",
@@ -86242,7 +86226,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 597,
+      "kcal": 618,
       "tags": [
         "batch-friendly"
       ],
@@ -86362,7 +86346,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 511,
+      "kcal": 532,
       "tags": [
         "vegan",
         "vegetarian",
@@ -86998,7 +86982,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 263,
+      "kcal": 284,
       "tags": [
         "quick",
         "no-cook",
@@ -87090,7 +87074,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au frais pour servir bien froid",
       "diff": 1,
       "cost": 1.2,
-      "kcal": 130,
+      "kcal": 118,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -87191,7 +87175,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 190,
+      "kcal": 175,
       "tags": [
         "vegan",
         "vegetarian",
@@ -87299,7 +87283,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 250,
+      "kcal": 164,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -87313,13 +87297,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          40,
+          20,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          350,
+          175,
           "ml",
           "dairy"
         ],
@@ -87331,7 +87315,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Sirop d'érable",
-          6,
+          4,
           "g",
           "pantry"
         ],
@@ -87373,7 +87357,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 243,
+      "kcal": 264,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -87646,7 +87630,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 168,
+      "kcal": 178,
       "tags": [
         "vegetarian",
         "quick",
@@ -87923,7 +87907,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 160,
+      "kcal": 200,
       "tags": [
         "quick",
         "no-cook",
@@ -88012,7 +87996,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 1,
       "cost": 1.4,
-      "kcal": 85,
+      "kcal": 106,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88075,7 +88059,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur avec grattages",
       "diff": 1,
       "cost": 1.0,
-      "kcal": 60,
+      "kcal": 177,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88383,8 +88367,8 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "rest": 15,
       "diff": 2,
-      "cost": 3.0,
-      "kcal": 440,
+      "cost": 3,
+      "kcal": 636,
       "tags": [
         "batch-friendly"
       ],
@@ -88406,13 +88390,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz rond complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Mangue",
-          80,
+          50,
           "g",
           "produce"
         ],
@@ -88503,7 +88487,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 592,
+      "kcal": 613,
       "tags": [
         "vegetarian",
         "festif"
@@ -88861,7 +88845,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 321,
+      "kcal": 293,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88891,7 +88875,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane",
-          80,
+          40,
           "g",
           "produce"
         ],
@@ -88909,7 +88893,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine",
-          20,
+          10,
           "g",
           "pantry"
         ],
@@ -89383,7 +89367,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 2,
       "cost": 1.5,
-      "kcal": 90,
+      "kcal": 98,
       "tags": [
         "vegan",
         "vegetarian",
@@ -89450,7 +89434,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 120,
+      "kcal": 100,
       "tags": [
         "vegan",
         "vegetarian",
@@ -89544,7 +89528,7 @@ window.__DATA_RECIPES = {
       "advance": "2h pour égoutter le yaourt en labneh",
       "diff": 1,
       "cost": 1.3,
-      "kcal": 130,
+      "kcal": 125,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -89719,7 +89703,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 180,
+      "kcal": 347,
       "tags": [
         "quick",
         "no-cook",
@@ -89904,7 +89888,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 180,
+      "kcal": 183,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90564,7 +90548,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur avec grattages",
       "diff": 1,
       "cost": 0.8,
-      "kcal": 50,
+      "kcal": 70,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90631,7 +90615,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 214,
+      "kcal": 235,
       "tags": [
         "vegetarian",
         "quick",
@@ -90720,7 +90704,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur avec grattages",
       "diff": 1,
       "cost": 1.4,
-      "kcal": 130,
+      "kcal": 140,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -91105,7 +91089,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 147,
+      "kcal": 157,
       "tags": [
         "vegetarian",
         "quick",
@@ -91192,7 +91176,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 90,
+      "kcal": 84,
       "tags": [
         "vegan",
         "vegetarian",
@@ -91260,7 +91244,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 157,
+      "kcal": 162,
       "tags": [
         "vegetarian",
         "quick",
@@ -91508,7 +91492,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 393,
+      "kcal": 403,
       "tags": [
         "vegetarian",
         "quick"
@@ -91670,7 +91654,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 386,
+      "kcal": 397,
       "tags": [
         "vegetarian",
         "quick"
@@ -91920,7 +91904,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 340,
+      "kcal": 474,
       "tags": [
         "vegetarian"
       ],
@@ -91936,7 +91920,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -92351,7 +92335,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 400,
+      "kcal": 635,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -92463,7 +92447,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 280,
+      "kcal": 279,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -92705,7 +92689,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 580,
+      "kcal": 622,
       "tags": [
         "festif"
       ],
@@ -92817,7 +92801,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 392,
+      "kcal": 403,
       "tags": [
         "vegetarian",
         "quick"
@@ -92986,7 +92970,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 210,
+      "kcal": 217,
       "tags": [
         "vegetarian",
         "quick",
@@ -93074,7 +93058,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 242,
+      "kcal": 253,
       "tags": [
         "vegetarian",
         "quick",
@@ -93174,7 +93158,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 250,
+      "kcal": 249,
       "tags": [
         "vegetarian",
         "quick",
@@ -93191,7 +93175,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pain de seigle",
-          50,
+          45,
           "g",
           "pantry"
         ],
@@ -93371,7 +93355,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 400,
+      "kcal": 499,
       "tags": [
         "vegan",
         "vegetarian",
@@ -93388,7 +93372,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -93451,7 +93435,7 @@ window.__DATA_RECIPES = {
         "Rince le riz complet, cuis-le dans une casserole d'eau bouillante salée 18-20 minutes. Égoutte.",
         "Coupe le tofu en cubes, sèche-les avec un papier absorbant.",
         "Casse la base dure des asperges, coupe-les en tronçons de 4 cm en biais (les pointes entières).",
-        "Fais chauffer 3 ml d'huile de sésame dans une poêle ou wok à feu vif, saisis le tofu 6 minutes en le retournant (doré sur les faces). Réserve.",
+        "Fais chauffer la moitié de l'huile de sésame dans une poêle ou wok à feu vif, saisis le tofu 6 minutes en le retournant (doré sur les faces). Réserve.",
         "Dans le même wok, ajoute le reste d'huile, l'ail émincé et le gingembre râpé, fais revenir 30 secondes.",
         "Ajoute les asperges, saute 5 minutes à feu vif (croquantes, légèrement dorées).",
         "Remets le tofu, ajoute la sauce soja, mélange 2 minutes pour enrober.",
@@ -93471,7 +93455,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 410,
+      "kcal": 688,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -93485,7 +93469,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Petits pois",
-          150,
+          110,
           "g",
           "produce"
         ],
@@ -93503,7 +93487,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          50,
+          25,
           "g",
           "pantry"
         ],
@@ -93570,11 +93554,11 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Rince le riz basmati complet, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte.",
-        "Coupe le paneer en cubes. Fais chauffer 4 ml d'huile dans une poêle, dore les cubes de paneer sur les faces 4 minutes. Réserve.",
+        "Coupe le paneer en cubes. Fais chauffer la moitié de l'huile dans une poêle, dore les cubes de paneer sur les faces 4 minutes. Réserve.",
         "Émince l'oignon, fais revenir dans le reste d'huile 5 minutes (doré).",
         "Ajoute l'ail écrasé et le gingembre râpé, puis le cumin, le curcuma, mélange 30 secondes.",
         "Ajoute la tomate en dés, cuis 5 minutes (sauce épaissie).",
-        "Ajoute les petits pois et 100 ml d'eau, le sel, mijote 8 minutes.",
+        "Ajoute les petits pois et un petit verre d'eau, le sel, mijote 8 minutes.",
         "Ajoute les épinards, laisse tomber 3 minutes (ils réduisent).",
         "Remets le paneer doré, ajoute le garam masala, mélange délicatement 2 minutes.",
         "Parsème de coriandre fraîche. Sers avec le riz basmati complet — le curry printanier petits pois-épinards."
@@ -93593,7 +93577,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 470,
+      "kcal": 487,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -93705,7 +93689,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 604,
+      "kcal": 625,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -93822,7 +93806,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 144,
+      "kcal": 149,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -93991,7 +93975,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 400,
+      "kcal": 442,
       "tags": [
         "vegan",
         "vegetarian",
@@ -94007,19 +93991,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          70,
+          35,
           "g",
           "pantry"
         ],
         [
           "Petits pois",
-          80,
+          60,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          80,
+          60,
           "g",
           "produce"
         ],
@@ -94104,7 +94088,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 410,
+      "kcal": 471,
       "tags": [
         "batch-friendly"
       ],
@@ -94125,7 +94109,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -94197,10 +94181,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Prépare la marinade tandoori : mélange 40g de yaourt avec le gingembre râpé, l'ail écrasé, le garam masala, le paprika fumé, le jus d'un demi-citron vert et 1 g de sel.",
+        "Prépare la marinade tandoori : mélange 2/5 du yaourt avec le gingembre râpé, l'ail écrasé, le garam masala, le paprika fumé, le jus d'un demi-citron vert et une pincée de sel.",
         "Enrobe les crevettes de marinade, laisse 30 minutes au frais.",
         "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte, laisse tiédir.",
-        "Prépare la raïta : râpe la moitié du concombre, presse, mélange avec le reste du yaourt (60g), la moitié de la menthe ciselée et une pincée de sel.",
+        "Prépare la raïta : râpe la moitié du concombre, presse, mélange avec le reste du yaourt, la moitié de la menthe ciselée et une pincée de sel.",
         "Coupe l'autre moitié du concombre en demi-lunes, la tomate en dés.",
         "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les crevettes 2-3 minutes par face (roses et marquées).",
         "Dresse le riz tiède dans 2 bols, répartis le concombre et la tomate.",
@@ -94221,7 +94205,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 390,
+      "kcal": 429,
       "tags": [
         "vegan",
         "vegetarian",
@@ -94237,7 +94221,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour complet",
-          70,
+          35,
           "g",
           "pantry"
         ],
@@ -94311,7 +94295,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Cuis le boulgour : couvre-le d'eau bouillante salée (1,5 fois son volume), couvre et laisse gonfler 12 minutes, puis aère à la fourchette.",
         "Coupe la courgette, l'aubergine en rondelles épaisses, le poivron en larges lanières.",
-        "Badigeonne les légumes de 8 ml d'huile d'olive et d'une pincée de sel.",
+        "Badigeonne les légumes de la moitié de l'huile d'olive et d'une pincée de sel.",
         "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les légumes 10-12 minutes en les retournant (marques de grill, tendres).",
         "Coupe les légumes grillés en morceaux de 2 cm, coupe la tomate fraîche en dés, émince l'oignon rouge.",
         "Prépare la vinaigrette : fouette le reste d'huile, le jus du citron entier, le cumin et le sel.",
@@ -94332,7 +94316,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 687,
+      "kcal": 659,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -94346,7 +94330,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          200,
+          170,
           "g",
           "pantry"
         ],
@@ -94406,7 +94390,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -94691,7 +94675,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 436,
+      "kcal": 478,
       "tags": [
         "batch-friendly"
       ],
@@ -94799,7 +94783,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 530,
+      "kcal": 551,
       "tags": [
         "vegan",
         "vegetarian",
@@ -95006,7 +94990,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 313,
+      "kcal": 334,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -95350,7 +95334,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 420,
+      "kcal": 666,
       "tags": [
         "vegetarian"
       ],
@@ -95370,7 +95354,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
@@ -95382,7 +95366,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          100,
+          70,
           "g",
           "produce"
         ],
@@ -95442,7 +95426,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Coupe le paneer en cubes de 2,5 cm. Marine-les 20 minutes dans le yaourt, le garam masala, le paprika, le gingembre râpé, le jus d'un demi-citron vert et 0,5 g de sel.",
+        "Coupe le paneer en cubes de 2,5 cm. Marine-les 20 minutes dans le yaourt, le garam masala, le paprika, le gingembre râpé, le jus d'un demi-citron vert et une pincée de sel.",
         "Rince le riz, cuis-le 18-20 minutes à l'eau bouillante salée. Égoutte, laisse tiédir.",
         "Coupe la mangue en dés, le concombre en demi-lunes.",
         "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les cubes de paneer marinés 3 minutes par face (dorés et marqués).",
@@ -95581,7 +95565,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 350,
+      "kcal": 651,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -95643,7 +95627,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -95662,8 +95646,8 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 190°C en chaleur tournante.",
-        "Rince le quinoa, cuis-le dans 150 ml d'eau salée 15 minutes (eau absorbée). Étale-le au fond d'un plat à gratin (base qui absorbe les jus).",
-        "Émince l'oignon, fais-le fondre dans 6 ml d'huile à la poêle 6 minutes, étale-le sur le quinoa.",
+        "Rince le quinoa, cuis-le dans deux fois son volume d'eau salée 15 minutes (eau absorbée). Étale-le au fond d'un plat à gratin (base qui absorbe les jus).",
+        "Émince l'oignon, fais-le fondre dans un tiers de l'huile à la poêle 6 minutes, étale-le sur le quinoa.",
         "Coupe la courgette, l'aubergine et la tomate en fines rondelles (5 mm, régulières).",
         "Dispose les rondelles en les alternant et les serrant debout en rangées sur le quinoa (effet tian coloré).",
         "Glisse des lamelles d'ail entre les rangées, arrose du reste d'huile, sale, poivre et parsème de thym.",
@@ -95685,7 +95669,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 607,
+      "kcal": 797,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -95811,7 +95795,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 380,
+      "kcal": 422,
       "tags": [
         "batch-friendly"
       ],
@@ -95914,7 +95898,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 525,
+      "kcal": 546,
       "tags": [
         "festif"
       ],
@@ -96368,7 +96352,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur avec grattages",
       "diff": 2,
       "cost": 1.4,
-      "kcal": 90,
+      "kcal": 91,
       "tags": [
         "vegan",
         "vegetarian",
@@ -96525,7 +96509,7 @@ window.__DATA_RECIPES = {
       "cook": 22,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 420,
+      "kcal": 591,
       "tags": [
         "batch-friendly"
       ],
@@ -96541,7 +96525,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet",
-          70,
+          30,
           "g",
           "pantry"
         ],
@@ -96559,7 +96543,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs doux",
-          60,
+          30,
           "g",
           "produce"
         ],
@@ -96642,7 +96626,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 503,
+      "kcal": 545,
       "tags": [
         "batch-friendly",
         "light"
@@ -96753,7 +96737,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 510,
+      "kcal": 524,
       "tags": [
         "batch-friendly"
       ],
@@ -96774,7 +96758,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          45,
+          25,
           "g",
           "pantry"
         ],
@@ -96786,7 +96770,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          80,
+          60,
           "g",
           "produce"
         ],
@@ -97211,7 +97195,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 492,
+      "kcal": 535,
       "tags": [
         "batch-friendly",
         "festif"
@@ -97430,7 +97414,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 380,
+      "kcal": 655,
       "tags": [
         "batch-friendly"
       ],
@@ -97453,7 +97437,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz rond complet",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -97718,7 +97702,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur avec grattages",
       "diff": 2,
       "cost": 1.4,
-      "kcal": 105,
+      "kcal": 116,
       "tags": [
         "vegan",
         "vegetarian",
@@ -97784,7 +97768,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 390,
+      "kcal": 571,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -97798,7 +97782,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -97864,7 +97848,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa, cuis-le dans 150 ml d'eau salée 15 minutes (eau absorbée, grains éclatés). Laisse refroidir.",
+        "Rince le quinoa, cuis-le dans deux fois son volume d'eau salée 15 minutes (eau absorbée, grains éclatés). Laisse refroidir.",
         "Coupe le concombre en demi-lunes, la tomate en dés, émince l'oignon rouge.",
         "Prépare la vinaigrette : fouette l'huile d'olive, le jus du citron entier et le sel.",
         "Dans un grand saladier, mélange le quinoa froid, le concombre, la tomate et l'oignon.",
@@ -97886,7 +97870,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 490,
+      "kcal": 530,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -97990,7 +97974,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 450,
+      "kcal": 430,
       "tags": [
         "vegan",
         "vegetarian",
@@ -98006,13 +97990,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          70,
+          30,
           "g",
           "pantry"
         ],
         [
           "Mangue",
-          70,
+          40,
           "g",
           "produce"
         ],
@@ -98048,7 +98032,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -98077,7 +98061,7 @@ window.__DATA_RECIPES = {
         "Ajoute les noix de cajou, dore-les 2 minutes, ajoute le curry en poudre hors du feu (parfum).",
         "Coupe la mangue en dés, le poivron en petits dés, émince l'oignon rouge.",
         "Dans un grand saladier, mélange le riz froid, la mangue, le poivron, l'oignon et le mélange cajou-moutarde-curry.",
-        "Presse le jus du citron vert entier, ajoute le sel, mélange.",
+        "Presse le jus du demi citron vert, ajoute le sel, mélange.",
         "Laisse reposer 20 minutes au frais. Parsème de coriandre. Sers frais — la salade de riz indienne fruitée et croquante."
       ],
       "photo": "assets/recipes/l239.webp"
@@ -98206,7 +98190,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 522,
+      "kcal": 543,
       "tags": [
         "batch-friendly"
       ],
@@ -98441,7 +98425,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 504,
+      "kcal": 694,
       "tags": [
         "batch-friendly",
         "festif"
@@ -100020,7 +100004,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 280,
+      "kcal": 477,
       "tags": [
         "vegetarian",
         "vegan",
@@ -100391,7 +100375,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 330,
+      "kcal": 447,
       "tags": [
         "vegetarian"
       ],
@@ -100405,7 +100389,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Polenta (semoule de maïs)",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -100447,7 +100431,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          350,
+          205,
           "ml",
           "pantry"
         ],
@@ -100479,8 +100463,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 30,
       "diff": 2,
-      "cost": 2.0,
-      "kcal": 350,
+      "cost": 2,
+      "kcal": 385,
       "tags": [
         "vegetarian"
       ],
@@ -100495,19 +100479,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          70,
+          30,
           "g",
           "pantry"
         ],
         [
           "Potimarron",
-          180,
+          120,
           "g",
           "produce"
         ],
         [
           "Radicchio",
-          80,
+          120,
           "g",
           "produce"
         ],
@@ -100537,7 +100521,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          500,
+          215,
           "ml",
           "pantry"
         ],
@@ -100918,7 +100902,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 290,
+      "kcal": 400,
       "tags": [
         "batch-friendly"
       ],
@@ -100934,13 +100918,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          60,
+          45,
           "g",
           "pantry"
         ],
         [
           "Blanc de poulet",
-          90,
+          110,
           "g",
           "meat-fish"
         ],
@@ -100964,13 +100948,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          700,
+          600,
           "ml",
           "pantry"
         ],
         [
           "Huile de sésame",
-          4,
+          5,
           "ml",
           "pantry"
         ],
@@ -101195,7 +101179,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 600,
+      "kcal": 634,
       "tags": [
         "batch-friendly"
       ],
@@ -101216,7 +101200,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          35,
           "g",
           "pantry"
         ],
@@ -101240,7 +101224,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fécule de maïs",
-          5,
+          2,
           "g",
           "pantry"
         ],
@@ -101291,7 +101275,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 360,
+      "kcal": 518,
       "tags": [
         "quick"
       ],
@@ -101319,7 +101303,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz rond complet",
-          70,
+          40,
           "g",
           "pantry"
         ],
@@ -101654,7 +101638,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 340,
+      "kcal": 586,
       "tags": [
         "quick"
       ],
@@ -101680,7 +101664,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          50,
           "g",
           "pantry"
         ],
@@ -101820,7 +101804,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 360,
+      "kcal": 456,
       "tags": [],
       "eq": [
         "stove"
@@ -101839,7 +101823,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz rond complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -102185,7 +102169,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 260,
+      "kcal": 486,
       "tags": [
         "vegetarian",
         "vegan",
@@ -102774,7 +102758,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 370,
+      "kcal": 688,
       "tags": [
         "batch-friendly"
       ],
@@ -102794,13 +102778,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pain complet rassis",
-          60,
+          40,
           "g",
           "pantry"
         ],
         [
           "Lentilles vertes",
-          70,
+          50,
           "g",
           "pantry"
         ],
@@ -103273,7 +103257,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 290,
+      "kcal": 412,
       "tags": [
         "batch-friendly"
       ],
@@ -104286,7 +104270,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 260,
+      "kcal": 529,
       "tags": [
         "vegetarian",
         "vegan",
@@ -104468,7 +104452,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 280,
+      "kcal": 520,
       "tags": [],
       "eq": [
         "stove"
@@ -104486,7 +104470,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz rond complet",
-          50,
+          40,
           "g",
           "pantry"
         ],
@@ -104549,7 +104533,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 290,
+      "kcal": 390,
       "tags": [
         "vegetarian",
         "vegan",
@@ -104570,7 +104554,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz long complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -104606,7 +104590,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          350,
+          235,
           "ml",
           "pantry"
         ],
@@ -104639,7 +104623,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.1,
-      "kcal": 330,
+      "kcal": 445,
       "tags": [
         "vegetarian",
         "vegan",
@@ -104654,19 +104638,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes",
-          80,
-          "g",
-          "pantry"
-        ],
-        [
-          "Riz long complet",
           60,
           "g",
           "pantry"
         ],
         [
+          "Riz long complet",
+          20,
+          "g",
+          "pantry"
+        ],
+        [
           "Oignon jaune",
-          150,
+          120,
           "g",
           "produce"
         ],
@@ -104684,13 +104668,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          16,
+          14,
           "ml",
           "pantry"
         ],
         [
           "Bouillon de légumes",
-          400,
+          230,
           "ml",
           "pantry"
         ],
@@ -105167,7 +105151,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 3,
       "cost": 1.6,
-      "kcal": 290,
+      "kcal": 472,
       "tags": [
         "vegetarian"
       ],
@@ -105187,7 +105171,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz rond complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -105262,7 +105246,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 270,
+      "kcal": 631,
       "tags": [
         "vegetarian",
         "vegan",
@@ -106420,7 +106404,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 270,
+      "kcal": 504,
       "tags": [
         "vegetarian",
         "vegan",
@@ -106693,7 +106677,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 470,
+      "kcal": 446,
       "tags": [
         "vegetarian",
         "vegan",
@@ -106709,13 +106693,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          40,
+          25,
           "g",
           "pantry"
         ],
         [
           "Patate douce",
-          60,
+          30,
           "g",
           "produce"
         ],
@@ -106727,7 +106711,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pois chiches cuits",
-          80,
+          60,
           "g",
           "pantry"
         ],
@@ -106959,7 +106943,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 320,
+      "kcal": 622,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -107299,7 +107283,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 380,
+      "kcal": 475,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -107314,31 +107298,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles vertes",
-          100,
+          55,
           "g",
           "pantry"
         ],
         [
           "Potiron",
-          90,
+          50,
           "g",
           "produce"
         ],
         [
           "Chou-fleur",
-          200,
+          250,
           "g",
           "produce"
         ],
         [
           "Flocons d'avoine",
-          10,
+          8,
           "g",
           "pantry"
         ],
         [
           "Tomates concassées",
-          120,
+          100,
           "g",
           "pantry"
         ],
@@ -107371,14 +107355,20 @@ window.__DATA_RECIPES = {
           1,
           "g",
           "spices"
+        ],
+        [
+          "Graines de courge",
+          15,
+          "g",
+          "pantry"
         ]
       ],
       "steps": [
         "Cuis les lentilles 20 min, égoutte et écrase-les grossièrement. Mélange avec les flocons d'avoine, une partie de l'oignon haché, le cumin, sel et poivre. Laisse reposer 5 min (l'avoine absorbe l'humidité et lie : la pâte doit se tenir quand tu la serres dans la main).",
         "Préchauffe le four à 200°C. Forme des boulettes, dépose-les sur une plaque huilée et enfourne 20 min en les retournant.",
-        "Pendant ce temps, fais cuire le potiron en cubes et le chou-fleur en petits bouquets 15 min à l'eau ou vapeur (la pointe du couteau doit s'enfoncer sans résistance), puis écrase-les ensemble en purée avec un filet d'huile. Sale, poivre.",
+        "Pendant ce temps, fais cuire le potiron en cubes et le chou-fleur en petits bouquets 15 min à l'eau ou vapeur (la pointe du couteau doit s'enfoncer sans résistance), puis écrase-les ensemble en purée avec un filet d'huile. Sale, poivre. Fais dorer les graines de courge 2 min dans une poêle sèche, en les secouant : elles gonflent et commencent à craquer.",
         "Prépare la sauce : fais revenir le reste d'oignon et l'ail 3 min, ajoute les tomates, laisse mijoter 8 min.",
-        "Dresse la purée de potiron-chou-fleur, pose les boulettes, nappe de sauce tomate et sers."
+        "Dresse la purée de potiron-chou-fleur, pose les boulettes, nappe de sauce tomate, parsème de graines de courge toastées et sers."
       ],
       "photo": "assets/recipes/d281.webp"
     },
@@ -107395,7 +107385,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 330,
+      "kcal": 672,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -108154,7 +108144,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 180,
+      "kcal": 178,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -109203,7 +109193,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 350,
+      "kcal": 427,
       "tags": [
         "vegetarian"
       ],
@@ -109218,13 +109208,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          70,
+          40,
           "g",
           "pantry"
         ],
         [
           "Champignons de Paris",
-          180,
+          200,
           "g",
           "produce"
         ],
@@ -109260,7 +109250,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          500,
+          285,
           "ml",
           "pantry"
         ],
@@ -109293,7 +109283,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 340,
+      "kcal": 443,
       "tags": [
         "vegetarian"
       ],
@@ -109307,13 +109297,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Polenta (semoule de maïs)",
-          60,
+          35,
           "g",
           "pantry"
         ],
         [
           "Fontina",
-          40,
+          50,
           "g",
           "dairy"
         ],
@@ -109325,7 +109315,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Lait demi-écrémé",
-          100,
+          80,
           "ml",
           "dairy"
         ],
@@ -109337,7 +109327,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          300,
+          120,
           "ml",
           "pantry"
         ],
@@ -109346,13 +109336,19 @@ window.__DATA_RECIPES = {
           1,
           "g",
           "spices"
+        ],
+        [
+          "Épinards frais",
+          150,
+          "g",
+          "produce"
         ]
       ],
       "steps": [
         "Porte le bouillon et le lait à frémissement dans une casserole. Verse la polenta en pluie en fouettant pour éviter les grumeaux.",
         "Baisse le feu et remue régulièrement 12 min, jusqu'à ce que la polenta épaississe et se détache des parois.",
-        "Hors du feu, incorpore la fontina coupée en dés et le parmesan : ils fondent et rendent la polenta filante et crémeuse (« concia » = assaisonnée au fromage).",
-        "Ajoute les feuilles de sauge ciselées. Sale, poivre.",
+        "Pendant ce temps, fais tomber les épinards lavés 2 min dans une poêle à sec, jusqu'à ce qu'ils soient flétris (réduits et souples) ; presse-les pour enlever l'eau et hache-les. Hors du feu, incorpore la fontina coupée en dés et le parmesan : ils fondent et rendent la polenta filante et crémeuse (« concia » = assaisonnée au fromage).",
+        "Ajoute les épinards et les feuilles de sauge ciselées. Sale, poivre.",
         "Sers aussitôt, bien chaud (la polenta concia fige vite en refroidissant)."
       ],
       "photo": "assets/recipes/l291.webp"
@@ -109978,7 +109974,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 360,
+      "kcal": 691,
       "tags": [
         "batch-friendly"
       ],
@@ -110304,7 +110300,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 620,
+      "kcal": 616,
       "tags": [],
       "eq": [
         "stove"
@@ -110322,7 +110318,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cerises",
-          150,
+          80,
           "g",
           "produce"
         ],
@@ -110358,7 +110354,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          30,
           "g",
           "pantry"
         ],
@@ -110550,7 +110546,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 420,
+      "kcal": 634,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -110749,7 +110745,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 390,
+      "kcal": 587,
       "tags": [
         "vegan",
         "vegetarian",
@@ -111549,7 +111545,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 209,
+      "kcal": 215,
       "tags": [
         "vegetarian",
         "quick"
@@ -111618,7 +111614,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 566,
+      "kcal": 568,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -111729,7 +111725,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 480,
+      "kcal": 576,
       "tags": [
         "vegan",
         "vegetarian",
@@ -111918,7 +111914,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 525,
+      "kcal": 529,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -112140,7 +112136,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 405,
+      "kcal": 408,
       "tags": [],
       "eq": [
         "oven"
@@ -112747,7 +112743,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 400,
+      "kcal": 678,
       "tags": [
         "vegan",
         "vegetarian",
@@ -112963,7 +112959,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 420,
+      "kcal": 424,
       "tags": [
         "vegetarian"
       ],
@@ -113062,7 +113058,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 430,
+      "kcal": 628,
       "tags": [
         "vegan",
         "vegetarian",
@@ -113391,7 +113387,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 350,
+      "kcal": 558,
       "tags": [
         "batch-friendly"
       ],
@@ -113621,7 +113617,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 230,
+      "kcal": 193,
       "tags": [
         "vegan",
         "vegetarian",
@@ -113908,7 +113904,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 143,
+      "kcal": 146,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -114309,7 +114305,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 380,
+      "kcal": 581,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -115237,7 +115233,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 569,
+      "kcal": 573,
       "tags": [
         "vegetarian"
       ],
@@ -115344,7 +115340,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 524,
+      "kcal": 516,
       "tags": [
         "vegetarian"
       ],
@@ -115522,7 +115518,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 340,
+      "kcal": 548,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -115536,13 +115532,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles corail",
-          60,
+          45,
           "g",
           "pantry"
         ],
         [
           "Pois chiches cuits",
-          100,
+          90,
           "g",
           "pantry"
         ],
@@ -115830,7 +115826,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 409,
+      "kcal": 414,
       "tags": [],
       "eq": [
         "oven"
@@ -115919,7 +115915,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 360,
+      "kcal": 327,
       "tags": [],
       "eq": [
         "stove"
@@ -116003,7 +115999,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 380,
+      "kcal": 642,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -116536,7 +116532,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 418,
+      "kcal": 435,
       "tags": [
         "festif"
       ],
@@ -116732,7 +116728,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 3,
       "cost": 4.3,
-      "kcal": 420,
+      "kcal": 494,
       "tags": [
         "festif"
       ],
@@ -116747,19 +116743,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          55,
+          35,
           "g",
           "pantry"
         ],
         [
           "Fruits de mer mélangés",
-          120,
+          140,
           "g",
           "meat-fish"
         ],
         [
           "Poivron rouge",
-          60,
+          90,
           "g",
           "produce"
         ],
@@ -116783,7 +116779,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Petits pois surgelés",
-          40,
+          30,
           "g",
           "frozen"
         ],
@@ -116801,7 +116797,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Bouillon de légumes",
-          200,
+          170,
           "ml",
           "pantry"
         ],
@@ -116940,7 +116936,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 3,
       "cost": 3.1,
-      "kcal": 450,
+      "kcal": 561,
       "tags": [
         "festif",
         "batch-friendly"
@@ -117241,7 +117237,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 4.4,
-      "kcal": 529,
+      "kcal": 538,
       "tags": [
         "festif",
         "batch-friendly"
@@ -117632,7 +117628,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 400,
+      "kcal": 458,
       "tags": [
         "vegan",
         "vegetarian",
@@ -117645,13 +117641,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          40,
+          20,
           "g",
           "pantry"
         ],
         [
           "Lentilles corail",
-          40,
+          50,
           "g",
           "pantry"
         ],
@@ -117708,7 +117704,7 @@ window.__DATA_RECIPES = {
         "Rince le riz et les lentilles corail ensemble sous l'eau froide jusqu'à ce que l'eau soit claire.",
         "Émince l'oignon et râpe le gingembre. Coupe la carotte en petits dés.",
         "Dans une casserole, chauffe l'huile et fais revenir l'oignon 3 minutes. Ajoute le gingembre, le curcuma et le cumin, remue 30 secondes.",
-        "Ajoute le riz, les lentilles et la carotte, puis verse 400 ml d'eau. Sale, porte à ébullition.",
+        "Ajoute le riz, les lentilles et la carotte, puis verse de l'eau jusqu'à recouvrir de 2 doigts. Sale, porte à ébullition.",
         "Baisse le feu, couvre et laisse cuire 20-22 minutes à petits frémissements : le mélange devient fondant, presque comme une bouillie (c'est le principe du kitchari).",
         "Ajoute les épinards en fin de cuisson et laisse-les tomber 2 minutes. Rectifie le sel, poivre et sers bien chaud."
       ],
@@ -118580,8 +118576,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 30,
       "diff": 1,
-      "cost": 2.0,
-      "kcal": 400,
+      "cost": 2,
+      "kcal": 415,
       "tags": [
         "vegan",
         "vegetarian",
@@ -118594,13 +118590,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs cuits",
-          140,
+          130,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          25,
+          15,
           "g",
           "pantry"
         ],
@@ -118665,7 +118661,7 @@ window.__DATA_RECIPES = {
         "Dans une casserole, chauffe l'huile d'olive à feu moyen et fais revenir l'oignon 4-5 minutes jusqu'à ce qu'il devienne translucide et commence à dorer sur les bords.",
         "Ajoute l'ail et le poivron, remue 2 minutes jusqu'à ce que le poivron s'attendrisse légèrement.",
         "Ajoute le concentré de tomate et le paprika, remue 1 minute pour bien enrober les légumes : la sauce doit sentir légèrement grillé.",
-        "Verse les tomates concassées et 100 ml d'eau. Égoutte et rince les haricots blancs sous l'eau froide, puis ajoute-les à la casserole. Sale, poivre.",
+        "Verse les tomates concassées et un petit verre d'eau. Égoutte et rince les haricots blancs sous l'eau froide, puis ajoute-les à la casserole. Sale, poivre.",
         "Couvre et laisse mijoter à feu doux 20 minutes en remuant de temps en temps, jusqu'à ce que la sauce ait épaissi et nappe bien les haricots.",
         "Sers les haricots bien chauds sur le riz basmati, parsemés de persil frais ciselé."
       ],
@@ -118685,7 +118681,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 390,
+      "kcal": 529,
       "tags": [
         "light"
       ],
@@ -118705,7 +118701,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -118783,7 +118779,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 449,
+      "kcal": 453,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -118895,7 +118891,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 489,
+      "kcal": 492,
       "tags": [
         "vegan",
         "vegetarian",
@@ -118994,7 +118990,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 385,
+      "kcal": 603,
       "tags": [
         "vegan",
         "vegetarian",
@@ -119101,7 +119097,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 403,
+      "kcal": 406,
       "tags": [
         "vegan",
         "vegetarian",
@@ -119211,7 +119207,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 3.4,
-      "kcal": 392,
+      "kcal": 396,
       "tags": [
         "light"
       ],
@@ -119315,7 +119311,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 446,
+      "kcal": 450,
       "tags": [
         "batch-friendly"
       ],
@@ -119421,7 +119417,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 494,
+      "kcal": 498,
       "tags": [
         "batch-friendly"
       ],
@@ -119531,7 +119527,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 400,
+      "kcal": 530,
       "tags": [
         "batch-friendly"
       ],
@@ -121125,7 +121121,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 360,
+      "kcal": 527,
       "tags": [
         "batch-friendly"
       ],
@@ -121211,7 +121207,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 401,
+      "kcal": 405,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -121880,7 +121876,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 340,
+      "kcal": 609,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -122365,7 +122361,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 430,
+      "kcal": 576,
       "tags": [
         "vegan",
         "vegetarian",
@@ -122381,19 +122377,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Pâtes complètes (coudes courtes)",
-          30,
+          10,
           "g",
           "pantry"
         ],
         [
           "Lentilles vertes",
-          30,
+          35,
           "g",
           "pantry"
         ],
@@ -122478,7 +122474,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 360,
+      "kcal": 523,
       "tags": [
         "batch-friendly"
       ],
@@ -122918,7 +122914,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 522,
+      "kcal": 533,
       "tags": [
         "batch-friendly"
       ],
@@ -123302,7 +123298,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 170,
+      "kcal": 128,
       "tags": [
         "vegetarian",
         "quick",
@@ -123653,7 +123649,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 360,
+      "kcal": 423,
       "tags": [
         "vegetarian"
       ],
@@ -124049,7 +124045,7 @@ window.__DATA_RECIPES = {
       "cook": 55,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 405,
       "tags": [
         "batch-friendly"
       ],
@@ -124613,7 +124609,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 485,
       "tags": [
         "vegetarian",
         "vegan",
@@ -124628,13 +124624,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          45,
+          25,
           "g",
           "pantry"
         ],
         [
           "Lentilles mung (moong dal)",
-          30,
+          35,
           "g",
           "pantry"
         ],
@@ -124646,7 +124642,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Petits pois",
-          40,
+          30,
           "g",
           "produce"
         ],
@@ -124670,7 +124666,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cacahuètes non salées",
-          10,
+          15,
           "g",
           "pantry"
         ],
@@ -124690,7 +124686,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Rince le riz complet et les lentilles mung sous l'eau froide jusqu'à ce que l'eau qui coule devienne claire : ça enlève l'amidon en surface.",
         "Épluche et coupe la carotte en petits dés. Râpe le gingembre.",
-        "Dans une casserole, verse le riz, les lentilles, la carotte et 350 ml d'eau. Porte à ébullition puis baisse à feu doux, couvre, et laisse cuire 20 minutes en remuant de temps en temps, jusqu'à obtenir une texture bien fondante, presque comme un porridge épais.",
+        "Dans une casserole, verse le riz, les lentilles, la carotte et de l'eau à hauteur (environ 3 fois le volume du mélange). Porte à ébullition puis baisse à feu doux, couvre, et laisse cuire 20 minutes en remuant de temps en temps, jusqu'à obtenir une texture bien fondante, presque comme un porridge épais.",
         "Ajoute les petits pois dans les 5 dernières minutes de cuisson.",
         "Pendant ce temps, fais chauffer l'huile de coco dans une petite poêle à feu moyen. Ajoute les graines de cumin et les cacahuètes, fais-les dorer 1-2 minutes en remuant sans arrêt (surveille bien, ça brûle vite).",
         "Ajoute le gingembre râpé et le poivre noir dans la poêle, remue 30 secondes pour libérer les arômes.",
@@ -124711,7 +124707,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 480,
+      "kcal": 570,
       "tags": [
         "quick"
       ],
@@ -124726,7 +124722,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          50,
+          35,
           "g",
           "pantry"
         ],
@@ -124816,7 +124812,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 460,
+      "kcal": 497,
       "tags": [],
       "eq": [
         "stove"
@@ -125024,7 +125020,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 460,
+      "kcal": 653,
       "tags": [
         "batch-friendly"
       ],
@@ -125457,7 +125453,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 665,
       "tags": [
         "batch-friendly"
       ],
@@ -125496,7 +125492,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Boulgour complet",
-          45,
+          35,
           "g",
           "pantry"
         ],
@@ -125549,7 +125545,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 210,
+      "kcal": 229,
       "tags": [
         "vegetarian"
       ],
@@ -125796,7 +125792,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 503,
+      "kcal": 496,
       "tags": [
         "batch-friendly"
       ],
@@ -126521,7 +126517,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 3,
       "cost": 2.2,
-      "kcal": 420,
+      "kcal": 572,
       "tags": [
         "festif"
       ],
@@ -126534,7 +126530,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          50,
+          40,
           "g",
           "pantry"
         ],
@@ -126850,7 +126846,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 430,
+      "kcal": 587,
       "tags": [],
       "eq": [
         "stove",
@@ -127956,7 +127952,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 180,
+      "kcal": 162,
       "tags": [
         "vegetarian"
       ],
@@ -128572,7 +128568,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 6.0,
-      "kcal": 310,
+      "kcal": 580,
       "tags": [
         "festif"
       ],
@@ -129302,7 +129298,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 381,
+      "kcal": 402,
       "tags": [
         "festif"
       ],
@@ -129861,7 +129857,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 357,
+      "kcal": 378,
       "tags": [
         "festif"
       ],
@@ -131073,7 +131069,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 120,
+      "kcal": 153,
       "tags": [
         "festif",
         "light",
@@ -131390,7 +131386,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 140,
+      "kcal": 132,
       "tags": [
         "festif",
         "light"
@@ -131650,7 +131646,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 264,
+      "kcal": 334,
       "tags": [
         "festif",
         "no-cook",
@@ -132653,7 +132649,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 290,
+      "kcal": 413,
       "tags": [
         "vegan",
         "vegetarian",
@@ -133998,7 +133994,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 320,
+      "kcal": 471,
       "tags": [
         "vegetarian",
         "quick"
@@ -134014,7 +134010,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          45,
           "g",
           "pantry"
         ],
@@ -134068,7 +134064,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa sous l'eau froide. Mets-le dans une casserole avec deux fois son volume d'eau (environ 120 ml). Porte à ébullition, puis baisse le feu et laisse cuire 12-15 min à couvert, jusqu'à ce que les grains soient translucides avec un petit germe blanc visible et que l'eau soit absorbée.",
+        "Rince le quinoa sous l'eau froide. Mets-le dans une casserole avec deux fois son volume d'eau (un petit verre). Porte à ébullition, puis baisse le feu et laisse cuire 12-15 min à couvert, jusqu'à ce que les grains soient translucides avec un petit germe blanc visible et que l'eau soit absorbée.",
         "Pendant ce temps, porte une petite casserole d'eau à ébullition pour l'œuf mollet. Quand l'eau bout, plonge délicatement l'œuf (à température ambiante) à la cuillère. Cuis exactement 6 minutes à partir de la reprise de l'ébullition.",
         "Dès les 6 minutes écoulées, transfère immédiatement l'œuf dans un bol d'eau glacée pour stopper la cuisson. Laisse refroidir 2 min avant d'écailler (le jaune doit rester coulant, le blanc juste ferme).",
         "Lave les asperges, casse la base dure, puis coupe-les en tronçons. Fais-les cuire 4-5 min dans une poêle avec un peu d'eau, jusqu'à ce qu'elles soient tendres mais croquantes.",
@@ -135208,7 +135204,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 474,
+      "kcal": 516,
       "tags": [
         "quick"
       ],
@@ -135632,7 +135628,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 360,
+      "kcal": 795,
       "tags": [
         "vegetarian"
       ],
@@ -135671,7 +135667,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Quinoa",
-          50,
+          45,
           "g",
           "pantry"
         ],
@@ -135695,7 +135691,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -136695,7 +136691,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 475,
+      "kcal": 566,
       "tags": [],
       "eq": [
         "grill",
@@ -136711,7 +136707,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          55,
+          45,
           "g",
           "pantry"
         ],
@@ -137055,7 +137051,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.6,
-      "kcal": 420,
+      "kcal": 549,
       "tags": [
         "light"
       ],
@@ -137156,7 +137152,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 400,
+      "kcal": 486,
       "tags": [
         "quick",
         "light"
@@ -137373,7 +137369,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 3.8,
-      "kcal": 400,
+      "kcal": 437,
       "tags": [
         "light"
       ],
@@ -137387,7 +137383,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          45,
+          35,
           "g",
           "pantry"
         ],
@@ -137399,13 +137395,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Mangue",
-          70,
+          50,
           "g",
           "produce"
         ],
         [
           "Avocat",
-          50,
+          70,
           "g",
           "produce"
         ],
@@ -137670,7 +137666,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 380,
+      "kcal": 361,
       "tags": [
         "quick",
         "light"
@@ -137759,7 +137755,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 420,
+      "kcal": 539,
       "tags": [
         "light"
       ],
@@ -137856,7 +137852,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 3.9,
-      "kcal": 340,
+      "kcal": 408,
       "tags": [
         "quick",
         "light"
@@ -137871,7 +137867,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crevettes décortiquées crues",
-          160,
+          180,
           "g",
           "meat-fish"
         ],
@@ -137907,7 +137903,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz complet",
-          55,
+          40,
           "g",
           "pantry"
         ],
@@ -139160,7 +139156,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.6,
-      "kcal": 513,
+      "kcal": 503,
       "tags": [
         "quick"
       ],
@@ -139256,8 +139252,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 15,
       "diff": 2,
-      "cost": 3.0,
-      "kcal": 330,
+      "cost": 3,
+      "kcal": 427,
       "tags": [
         "quick"
       ],
@@ -139272,13 +139268,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz complet",
-          70,
+          40,
           "g",
           "pantry"
         ],
         [
           "Thon au naturel égoutté",
-          70,
+          90,
           "g",
           "meat-fish"
         ],
@@ -139296,7 +139292,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Maïs doux en grains (boîte, égoutté)",
-          20,
+          15,
           "g",
           "pantry"
         ],
@@ -139631,7 +139627,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 560,
+      "kcal": 602,
       "tags": [],
       "eq": [
         "stove",
@@ -139908,7 +139904,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 390,
+      "kcal": 532,
       "tags": [],
       "eq": [
         "grill",
@@ -139956,7 +139952,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz complet",
-          60,
+          40,
           "g",
           "pantry"
         ],
@@ -140139,7 +140135,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 363,
+      "kcal": 366,
       "tags": [
         "batch-friendly"
       ],
@@ -140241,7 +140237,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 430,
+      "kcal": 425,
       "tags": [],
       "eq": [
         "stove",
@@ -140332,7 +140328,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 5.3,
-      "kcal": 460,
+      "kcal": 459,
       "tags": [
         "vegetarian"
       ],
@@ -140535,7 +140531,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 455,
+      "kcal": 457,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -140633,7 +140629,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 6.8,
-      "kcal": 499,
+      "kcal": 504,
       "tags": [],
       "eq": [
         "stove",
@@ -140724,7 +140720,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 7.2,
-      "kcal": 475,
+      "kcal": 463,
       "tags": [],
       "eq": [
         "stove"
@@ -140908,7 +140904,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 3.6,
-      "kcal": 430,
+      "kcal": 614,
       "tags": [
         "batch-friendly"
       ],
@@ -141004,7 +141000,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 7.0,
-      "kcal": 485,
+      "kcal": 488,
       "tags": [],
       "eq": [
         "oven",
@@ -141353,7 +141349,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 163,
+      "kcal": 174,
       "tags": [
         "festif",
         "vegan",
@@ -141786,7 +141782,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 169,
+      "kcal": 179,
       "tags": [
         "festif",
         "quick",
@@ -141870,7 +141866,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 193,
+      "kcal": 203,
       "tags": [
         "festif",
         "vegan",
@@ -143824,7 +143820,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 420,
+      "kcal": 516,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -144481,7 +144477,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 480,
+      "kcal": 660,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -145288,7 +145284,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 480,
+      "kcal": 594,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -145410,7 +145406,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 470,
+      "kcal": 639,
       "tags": [
         "vegan"
       ],
@@ -145645,7 +145641,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 460,
+      "kcal": 444,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -145658,7 +145654,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz basmati complet",
-          40,
+          20,
           "g",
           "pantry"
         ],
@@ -145676,7 +145672,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Petits pois surgelés",
-          60,
+          50,
           "g",
           "frozen"
         ],
@@ -145772,7 +145768,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 338,
+      "kcal": 348,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -146045,8 +146041,8 @@ window.__DATA_RECIPES = {
       "prep": 15,
       "cook": 25,
       "diff": 2,
-      "cost": 3.0,
-      "kcal": 430,
+      "cost": 3,
+      "kcal": 473,
       "tags": [
         "vegan",
         "epicerie-specialisee"
@@ -146063,19 +146059,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet",
-          45,
+          25,
           "g",
           "pantry"
         ],
         [
           "Tofu ferme",
-          120,
+          150,
           "g",
           "pantry"
         ],
         [
           "Potimarron",
-          120,
+          80,
           "g",
           "produce"
         ],
@@ -146105,7 +146101,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pâte de soja fermentée (doenjang)",
-          1,
+          0.75,
           "c.à.s",
           "pantry"
         ],
@@ -146123,8 +146119,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Oignon nouveau (cébette)",
-          1,
-          "u",
+          25,
+          "g",
           "produce"
         ],
         [
@@ -146158,7 +146154,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.3,
-      "kcal": 500,
+      "kcal": 480,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -146183,19 +146179,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz long complet",
-          45,
+          30,
           "g",
           "pantry"
         ],
         [
           "Potimarron",
-          150,
+          100,
           "g",
           "produce"
         ],
         [
           "Bouillon dashi (ou bouillon de légumes)",
-          200,
+          135,
           "ml",
           "pantry"
         ],
@@ -146219,7 +146215,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Brocoli",
-          80,
+          120,
           "g",
           "produce"
         ],
@@ -146373,7 +146369,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 450,
+      "kcal": 522,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -146387,19 +146383,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour complet",
-          45,
+          25,
           "g",
           "pantry"
         ],
         [
           "Blettes",
-          200,
+          250,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits (en bocal, égouttés)",
-          120,
+          90,
           "g",
           "pantry"
         ],
@@ -146463,7 +146459,7 @@ window.__DATA_RECIPES = {
         "Coupe l'oignon en petits dés et écrase l'ail. Rince et égoutte les pois chiches.",
         "Fais chauffer l'huile d'olive dans une sauteuse à feu moyen. Ajoute l'oignon et les côtes de blettes, fais revenir 6 minutes en remuant, jusqu'à ce que l'oignon devienne translucide.",
         "Ajoute l'ail, le concentré de tomate, la harissa, le cumin et le carvi. Remue 1 minute : le concentré doit foncer légèrement et coller un peu au fond, c'est ce qui donne du goût.",
-        "Ajoute les pois chiches et 200 ml d'eau en grattant le fond avec la cuillère pour décoller les sucs (les petits morceaux caramélisés). Couvre et laisse mijoter 15 minutes à feu doux.",
+        "Ajoute les pois chiches et un grand verre d'eau en grattant le fond avec la cuillère pour décoller les sucs (les petits morceaux caramélisés). Couvre et laisse mijoter 15 minutes à feu doux.",
         "Pendant ce temps, fais cuire le boulgour : mets-le dans une casserole avec 2 fois son volume d'eau salée, porte à ébullition puis laisse gonfler 10 minutes à couvert, feu éteint.",
         "Ajoute les feuilles de blettes dans le ragoût et laisse cuire 5 minutes à découvert : elles doivent devenir souples et vert foncé. La sauce doit être épaisse ; si elle est trop liquide, laisse réduire 2 minutes de plus.",
         "Goûte, sale, poivre, ajoute le jus de citron et sers avec le boulgour. Encore meilleur réchauffé le lendemain."
@@ -146483,7 +146479,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 530,
+      "kcal": 551,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -146587,7 +146583,7 @@ window.__DATA_RECIPES = {
       "rest": 15,
       "diff": 1,
       "cost": 3.8,
-      "kcal": 487,
+      "kcal": 508,
       "tags": [],
       "eq": [
         "oven",
@@ -146699,7 +146695,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 450,
+      "kcal": 479,
       "tags": [],
       "eq": [
         "stove",
@@ -146942,7 +146938,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 520,
+      "kcal": 701,
       "tags": [],
       "eq": [
         "stove",
@@ -147165,7 +147161,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 340,
+      "kcal": 381,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -147291,7 +147287,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 3.9,
-      "kcal": 473,
+      "kcal": 494,
       "tags": [],
       "eq": [
         "stove",
@@ -147401,7 +147397,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 233,
+      "kcal": 244,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -147726,7 +147722,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 241,
+      "kcal": 244,
       "tags": [
         "vegetarian"
       ],
@@ -147798,7 +147794,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 147,
+      "kcal": 158,
       "tags": [
         "vegan",
         "light"
@@ -147868,7 +147864,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 505,
+      "kcal": 549,
       "tags": [],
       "eq": [
         "stove",
@@ -147887,7 +147883,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Riz basmati complet",
-          45,
+          30,
           "g",
           "pantry"
         ],
@@ -148099,7 +148095,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 583,
+      "kcal": 604,
       "tags": [],
       "eq": [
         "stove"
@@ -148206,7 +148202,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 492,
+      "kcal": 503,
       "tags": [
         "kid-friendly"
       ],
@@ -148437,7 +148433,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 450,
+      "kcal": 501,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -148683,7 +148679,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 175,
+      "kcal": 185,
       "tags": [
         "vegetarian",
         "light",
@@ -149051,7 +149047,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 175,
+      "kcal": 186,
       "tags": [
         "vegetarian",
         "vegan",
