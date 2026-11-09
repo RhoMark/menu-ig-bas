@@ -13,7 +13,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 390,
+      "kcal": 388,
       "tags": [
         "vegetarian",
         "quick",
@@ -80,7 +80,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 329,
       "tags": [
         "vegetarian"
       ],
@@ -159,7 +159,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 310,
+      "kcal": 332,
       "tags": [
         "vegetarian",
         "quick",
@@ -223,7 +223,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.25,
-      "kcal": 370,
+      "kcal": 371,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -441,7 +441,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 370,
+      "kcal": 372,
       "tags": [
         "vegetarian",
         "quick",
@@ -694,7 +694,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 3.12,
-      "kcal": 490,
+      "kcal": 488,
       "tags": [
         "kid-friendly",
         "quick"
@@ -787,7 +787,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 530,
+      "kcal": 533,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -994,7 +994,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.88,
-      "kcal": 380,
+      "kcal": 441,
       "tags": [
         "vegetarian",
         "quick"
@@ -1168,7 +1168,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 460,
+      "kcal": 431,
       "tags": [
         "quick"
       ],
@@ -1545,7 +1545,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 660,
+      "kcal": 662,
       "tags": [
         "kid-friendly",
         "quick"
@@ -1826,7 +1826,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 290,
+      "kcal": 291,
       "tags": [
         "vegetarian",
         "quick",
@@ -1918,7 +1918,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.75,
-      "kcal": 320,
+      "kcal": 378,
       "tags": [
         "vegetarian",
         "quick"
@@ -2193,7 +2193,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.75,
-      "kcal": 360,
+      "kcal": 513,
       "tags": [
         "vegetarian",
         "quick"
@@ -2272,7 +2272,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 1.88,
-      "kcal": 400,
+      "kcal": 436,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -2371,7 +2371,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.25,
-      "kcal": 410,
+      "kcal": 661,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -2547,7 +2547,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 433,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -2634,7 +2634,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.38,
-      "kcal": 420,
+      "kcal": 358,
       "tags": [
         "quick",
         "no-cook"
@@ -2723,7 +2723,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 470,
+      "kcal": 473,
       "tags": [
         "vegetarian"
       ],
@@ -3092,7 +3092,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 370,
+      "kcal": 373,
       "tags": [
         "vegetarian",
         "quick",
@@ -3172,7 +3172,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 310,
+      "kcal": 307,
       "rest": 480,
       "advance": "veille",
       "tags": [
@@ -3245,7 +3245,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 360,
+      "kcal": 308,
       "tags": [
         "quick"
       ],
@@ -3317,7 +3317,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.38,
-      "kcal": 330,
+      "kcal": 277,
       "tags": [
         "vegetarian",
         "quick"
@@ -3379,7 +3379,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.75,
-      "kcal": 340,
+      "kcal": 433,
       "tags": [
         "vegetarian"
       ],
@@ -3460,7 +3460,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.25,
-      "kcal": 320,
+      "kcal": 307,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -3615,7 +3615,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 350,
+      "kcal": 331,
       "tags": [
         "vegetarian",
         "quick"
@@ -3693,7 +3693,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.75,
-      "kcal": 300,
+      "kcal": 483,
       "rest": 480,
       "advance": "veille",
       "tags": [
@@ -3765,7 +3765,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 360,
+      "kcal": 365,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -4135,7 +4135,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.62,
-      "kcal": 420,
+      "kcal": 553,
       "tags": [
         "vegetarian",
         "quick",
@@ -4238,61 +4238,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles corail",
-          70,
+          35,
           "g",
           "pantry"
         ],
         [
           "Courgette",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Lait de coco cuisine",
-          120,
+          60,
           "ml",
           "dairy"
         ],
         [
           "Tomates concassées",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Curry en poudre",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Riz complet",
-          50,
+          25,
           "g",
           "pantry"
         ]
@@ -4319,7 +4319,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.88,
-      "kcal": 460,
+      "kcal": 465,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -4402,7 +4402,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.75,
-      "kcal": 490,
+      "kcal": 493,
       "tags": [
         "vegetarian",
         "quick"
@@ -4958,7 +4958,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 440,
+      "kcal": 577,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -5140,7 +5140,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.88,
-      "kcal": 470,
+      "kcal": 450,
       "tags": [
         "kid-friendly"
       ],
@@ -5225,7 +5225,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.62,
-      "kcal": 340,
+      "kcal": 342,
       "tags": [
         "vegetarian"
       ],
@@ -5311,7 +5311,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 330,
+      "kcal": 590,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -5394,7 +5394,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 370,
+      "kcal": 369,
       "tags": [
         "kid-friendly"
       ],
@@ -5476,7 +5476,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 1.75,
-      "kcal": 310,
+      "kcal": 405,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -5667,7 +5667,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 530,
+      "kcal": 532,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -5769,7 +5769,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.75,
-      "kcal": 330,
+      "kcal": 357,
       "tags": [
         "vegetarian",
         "quick"
@@ -5849,7 +5849,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 290,
+      "kcal": 602,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -6120,7 +6120,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.25,
-      "kcal": 480,
+      "kcal": 477,
       "tags": [
         "vegetarian",
         "quick"
@@ -6505,7 +6505,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.38,
-      "kcal": 420,
+      "kcal": 532,
       "tags": [
         "quick"
       ],
@@ -6600,7 +6600,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 1.0,
-      "kcal": 220,
+      "kcal": 242,
       "rest": 120,
       "advance": "2h",
       "tags": [
@@ -6658,7 +6658,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 0.62,
-      "kcal": 90,
+      "kcal": 139,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -6714,7 +6714,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 180,
+      "kcal": 164,
       "tags": [
         "vegetarian",
         "quick",
@@ -6765,7 +6765,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 150,
+      "kcal": 155,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -6836,7 +6836,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.38,
-      "kcal": 290,
+      "kcal": 287,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -6915,7 +6915,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 295,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -6932,37 +6932,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Chocolat noir 70%",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Avocat mûr",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Banane mûre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Cacao non sucré",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          20,
+          10,
           "g",
           "pantry"
         ]
@@ -6971,7 +6971,7 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 180°C.",
         "Fais fondre le chocolat au bain-marie.",
         "Dans un blender, mixe avocat, banane, œuf, cacao, poudre d'amande avec le chocolat fondu.",
-        "Verse dans un petit ramequin beurré.",
+        "Verse dans des petits ramequins beurrés (un par personne).",
         "Enfourne 10-12 minutes : le cœur doit rester légèrement coulant."
       ],
       "photo": "assets/recipes/des6.webp"
@@ -6988,7 +6988,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.38,
-      "kcal": 230,
+      "kcal": 358,
       "rest": 120,
       "advance": "2h",
       "tags": [
@@ -7069,7 +7069,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.75,
-      "kcal": 110,
+      "kcal": 87,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -7139,7 +7139,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 1.25,
-      "kcal": 180,
+      "kcal": 72,
       "rest": 120,
       "advance": "2h",
       "tags": [
@@ -7205,7 +7205,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 220,
+      "kcal": 221,
       "rest": 180,
       "advance": "3h",
       "tags": [
@@ -7220,25 +7220,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Graines de chia",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          150,
+          75,
           "ml",
           "dairy"
         ],
         [
           "Mangue",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Noix de coco râpée",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ]
@@ -7263,7 +7263,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 170,
+      "kcal": 204,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -7328,7 +7328,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.75,
-      "kcal": 150,
+      "kcal": 135,
       "rest": 480,
       "advance": "veille",
       "tags": [
@@ -7382,7 +7382,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.12,
-      "kcal": 200,
+      "kcal": 257,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -7402,55 +7402,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette râpée",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Farine de sarrasin",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Poudre d'amande",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Cacao non sucré",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Œuf",
-          0.5,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Miel",
-          1,
-          "c.à.c",
-          "pantry"
-        ],
-        [
-          "Levure chimique",
           0.5,
           "c.à.c",
           "pantry"
         ],
         [
+          "Levure chimique",
+          0.25,
+          "c.à.c",
+          "pantry"
+        ],
+        [
           "Chocolat noir 70% (pépites)",
-          10,
+          5,
           "g",
           "pantry"
         ]
@@ -7460,7 +7460,7 @@ window.__DATA_RECIPES = {
         "Râpe finement la courgette, presse-la dans un torchon pour retirer l'eau.",
         "Mélange tous les ingrédients secs dans un bol.",
         "Ajoute œuf, huile, miel, courgette. Mélange. Incorpore les pépites.",
-        "Répartis dans 2 caissettes. Enfourne 18-20 minutes."
+        "Répartis dans des caissettes (une par personne). Enfourne 18-20 minutes."
       ],
       "photo": "assets/recipes/des13.webp"
     },
@@ -7476,7 +7476,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.62,
-      "kcal": 250,
+      "kcal": 438,
       "rest": 120,
       "advance": "2h",
       "tags": [
@@ -7557,7 +7557,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.62,
-      "kcal": 340,
+      "kcal": 342,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -7639,7 +7639,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.38,
-      "kcal": 160,
+      "kcal": 197,
       "rest": 30,
       "advance": "30min",
       "tags": [
@@ -7845,7 +7845,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.25,
-      "kcal": 200,
+      "kcal": 191,
       "tags": [
         "vegetarian"
       ],
@@ -7906,7 +7906,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 180,
+      "kcal": 149,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -7970,7 +7970,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.88,
-      "kcal": 200,
+      "kcal": 188,
       "tags": [
         "vegetarian",
         "quick",
@@ -8015,7 +8015,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 180,
+      "kcal": 186,
       "tags": [
         "vegetarian",
         "quick",
@@ -8064,7 +8064,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 170,
+      "kcal": 150,
       "tags": [
         "vegetarian",
         "quick",
@@ -8113,7 +8113,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.75,
-      "kcal": 220,
+      "kcal": 219,
       "tags": [
         "vegetarian",
         "quick",
@@ -8164,7 +8164,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.62,
-      "kcal": 180,
+      "kcal": 159,
       "tags": [
         "vegetarian",
         "quick",
@@ -8212,7 +8212,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 230,
+      "kcal": 195,
       "tags": [
         "vegetarian",
         "quick",
@@ -8270,7 +8270,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.38,
-      "kcal": 180,
+      "kcal": 139,
       "tags": [
         "vegetarian",
         "quick",
@@ -8330,7 +8330,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 210,
+      "kcal": 217,
       "tags": [
         "vegetarian",
         "quick",
@@ -8378,7 +8378,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.12,
-      "kcal": 170,
+      "kcal": 166,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -8443,7 +8443,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.88,
-      "kcal": 150,
+      "kcal": 102,
       "tags": [
         "vegetarian",
         "quick",
@@ -8498,7 +8498,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 170,
+      "kcal": 173,
       "tags": [
         "vegetarian",
         "quick"
@@ -8554,7 +8554,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 0.75,
-      "kcal": 210,
+      "kcal": 214,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -8621,7 +8621,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 320,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -8767,7 +8767,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.75,
-      "kcal": 290,
+      "kcal": 258,
       "tags": [
         "vegetarian"
       ],
@@ -8831,7 +8831,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 240,
+      "kcal": 164,
       "tags": [
         "vegetarian",
         "quick",
@@ -8901,7 +8901,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 290,
+      "kcal": 208,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -9060,7 +9060,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 480,
+      "kcal": 371,
       "tags": [
         "batch-friendly"
       ],
@@ -9251,55 +9251,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles corail",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Bouillon de légumes",
-          400,
+          200,
           "ml",
           "pantry"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Carotte",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Curry en poudre",
-          1,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Gingembre frais",
-          5,
-          "g",
-          "produce"
-        ],
-        [
-          "Citron vert (jus)",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Curry en poudre",
+          0.5,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Gingembre frais",
+          2.5,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron vert (jus)",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Coriandre fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ]
@@ -9415,7 +9415,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 380,
+      "kcal": 401,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -9586,7 +9586,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 370,
+      "kcal": 369,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -9676,7 +9676,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.75,
-      "kcal": 440,
+      "kcal": 459,
       "tags": [
         "batch-friendly",
         "quick"
@@ -9948,7 +9948,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 710,
+      "kcal": 708,
       "tags": [
         "batch-friendly"
       ],
@@ -10031,7 +10031,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.75,
-      "kcal": 360,
+      "kcal": 380,
       "tags": [],
       "eq": [
         "oven"
@@ -10111,7 +10111,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 480,
+      "kcal": 556,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -10206,7 +10206,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 520,
+      "kcal": 519,
       "tags": [
         "batch-friendly"
       ],
@@ -10387,7 +10387,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.75,
-      "kcal": 460,
+      "kcal": 398,
       "tags": [
         "batch-friendly"
       ],
@@ -10461,7 +10461,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 490,
+      "kcal": 488,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -10563,7 +10563,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 200,
+      "kcal": 198,
       "rest": 60,
       "advance": "1h",
       "tags": [
@@ -10627,7 +10627,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 176,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -10689,7 +10689,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 220,
+      "kcal": 322,
       "tags": [
         "vegetarian",
         "quick",
@@ -10758,7 +10758,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.88,
-      "kcal": 170,
+      "kcal": 136,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -10814,7 +10814,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 180,
+      "kcal": 169,
       "tags": [
         "vegetarian",
         "quick",
@@ -10878,7 +10878,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 220,
+      "kcal": 330,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -10959,7 +10959,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 160,
+      "kcal": 164,
       "rest": 30,
       "advance": "30min",
       "tags": [
@@ -11028,7 +11028,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 300,
+      "kcal": 296,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -11101,7 +11101,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 310,
+      "kcal": 218,
       "tags": [
         "vegetarian",
         "quick"
@@ -11169,7 +11169,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 290,
+      "kcal": 289,
       "rest": 480,
       "advance": "veille",
       "tags": [
@@ -11236,7 +11236,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 350,
+      "kcal": 279,
       "tags": [
         "vegetarian",
         "quick"
@@ -11308,7 +11308,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 300,
+      "kcal": 556,
       "rest": 480,
       "advance": "veille",
       "tags": [
@@ -11481,7 +11481,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 380,
+      "kcal": 366,
       "rest": 60,
       "advance": "1h",
       "tags": [
@@ -11580,7 +11580,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 350,
+      "kcal": 298,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -11667,7 +11667,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 4.38,
-      "kcal": 440,
+      "kcal": 528,
       "tags": [
         "quick"
       ],
@@ -11940,7 +11940,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 410,
+      "kcal": 547,
       "tags": [
         "vegetarian",
         "kid-friendly",
@@ -12117,7 +12117,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 420,
+      "kcal": 538,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -12200,7 +12200,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 470,
+      "kcal": 632,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -12294,7 +12294,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 3.75,
-      "kcal": 340,
+      "kcal": 313,
       "tags": [
         "quick"
       ],
@@ -12537,7 +12537,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 380,
+      "kcal": 473,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -12625,7 +12625,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 380,
+      "kcal": 459,
       "tags": [],
       "eq": [
         "stove",
@@ -12803,7 +12803,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 420,
+      "kcal": 477,
       "tags": [
         "no-cook",
         "quick"
@@ -12891,7 +12891,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 380,
+      "kcal": 413,
       "tags": [
         "quick"
       ],
@@ -12990,7 +12990,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 470,
+      "kcal": 530,
       "tags": [
         "batch-friendly"
       ],
@@ -13084,7 +13084,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 390,
+      "kcal": 484,
       "tags": [
         "vegetarian",
         "quick"
@@ -13166,7 +13166,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 370,
+      "kcal": 415,
       "tags": [],
       "eq": [
         "stove"
@@ -13246,7 +13246,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 400,
+      "kcal": 449,
       "tags": [
         "batch-friendly"
       ],
@@ -13336,7 +13336,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 140,
+      "kcal": 100,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -13404,7 +13404,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 130,
+      "kcal": 148,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -13485,7 +13485,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 80,
+      "kcal": 84,
       "rest": 120,
       "advance": "2h",
       "tags": [
@@ -13538,7 +13538,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 198,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -13596,7 +13596,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.12,
-      "kcal": 110,
+      "kcal": 117,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -13659,7 +13659,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.62,
-      "kcal": 190,
+      "kcal": 289,
       "rest": 30,
       "advance": "30min",
       "tags": [
@@ -13780,7 +13780,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 140,
+      "kcal": 144,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -13844,7 +13844,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 1.38,
-      "kcal": 200,
+      "kcal": 219,
       "rest": 180,
       "advance": "3h",
       "tags": [
@@ -13907,7 +13907,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 334,
       "tags": [
         "vegetarian"
       ],
@@ -14061,7 +14061,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 120,
+      "kcal": 160,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -14134,7 +14134,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 150,
+      "kcal": 161,
       "rest": 60,
       "advance": "1h",
       "tags": [
@@ -14200,7 +14200,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.25,
-      "kcal": 190,
+      "kcal": 144,
       "rest": 180,
       "advance": "3h",
       "tags": [
@@ -14266,7 +14266,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 1.75,
-      "kcal": 180,
+      "kcal": 167,
       "tags": [
         "vegetarian",
         "quick"
@@ -14509,7 +14509,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 390,
+      "kcal": 391,
       "tags": [
         "kid-friendly"
       ],
@@ -14605,7 +14605,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 480,
+      "kcal": 486,
       "tags": [
         "kid-friendly"
       ],
@@ -14787,7 +14787,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 2.75,
-      "kcal": 580,
+      "kcal": 578,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -14922,7 +14922,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 580,
+      "kcal": 552,
       "tags": [
         "kid-friendly"
       ],
@@ -15120,7 +15120,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.25,
-      "kcal": 650,
+      "kcal": 652,
       "tags": [
         "quick",
         "kid-friendly"
@@ -15204,7 +15204,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 550,
+      "kcal": 547,
       "tags": [],
       "eq": [
         "oven",
@@ -15491,7 +15491,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.38,
-      "kcal": 630,
+      "kcal": 628,
       "tags": [
         "quick",
         "kid-friendly"
@@ -15751,7 +15751,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 710,
+      "kcal": 712,
       "tags": [
         "batch-friendly"
       ],
@@ -15948,7 +15948,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.12,
-      "kcal": 480,
+      "kcal": 429,
       "tags": [
         "vegetarian",
         "quick",
@@ -15963,43 +15963,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Haricots blancs en bocal",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Tomates cerises",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Mozzarella di bufala",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Oignon rouge",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Basilic frais",
-          0.1,
+          0.05,
           "bouquet",
           "produce"
         ],
         [
           "Vinaigre balsamique",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -16123,7 +16123,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 4.38,
-      "kcal": 450,
+      "kcal": 447,
       "tags": [
         "kid-friendly",
         "batch-friendly"
@@ -16428,7 +16428,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 7.5,
-      "kcal": 590,
+      "kcal": 613,
       "tags": [],
       "eq": [
         "stove"
@@ -16511,7 +16511,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.75,
-      "kcal": 580,
+      "kcal": 578,
       "tags": [
         "vegetarian",
         "vegan",
@@ -16811,7 +16811,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.25,
-      "kcal": 500,
+      "kcal": 503,
       "tags": [
         "kid-friendly"
       ],
@@ -16994,7 +16994,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 510,
+      "kcal": 626,
       "tags": [
         "kid-friendly"
       ],
@@ -17185,7 +17185,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 700,
+      "kcal": 705,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -17409,7 +17409,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 5.62,
-      "kcal": 640,
+      "kcal": 642,
       "tags": [],
       "eq": [
         "stove",
@@ -17701,67 +17701,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentilles corail",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Riz basmati complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Tomate concassée",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          10,
+          5,
           "g",
           "produce"
         ],
         [
           "Curry en poudre",
-          1,
+          0.5,
           "c.à.s",
           "spices"
         ],
         [
           "Curcuma",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Huile de coco",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -17776,9 +17776,9 @@ window.__DATA_RECIPES = {
         "Émince finement l'oignon, écrase l'ail, râpe le gingembre.",
         "Fais chauffer l'huile dans une casserole. Ajoute l'oignon et fais-le suer 5 min jusqu'à ce qu'il soit translucide.",
         "Ajoute ail, gingembre, curry et curcuma. Remue 1 min.",
-        "Verse les lentilles corail rincées, la tomate concassée, le lait de coco et 200 ml d'eau. Sale, poivre.",
+        "Verse les lentilles corail rincées, la tomate concassée, le lait de coco et autant d'eau. Sale, poivre.",
         "Couvre et laisse mijoter 20 min à feu doux. Les lentilles s'écrasent et forment un dahl crémeux.",
-        "Pendant ce temps, cuis le riz basmati dans une autre casserole avec 150 ml d'eau salée, 10 min à couvert à feu doux.",
+        "Pendant ce temps, cuis le riz basmati dans une autre casserole dans 2 fois son volume d'eau salée, 10 min à couvert à feu doux.",
         "Sers le dahl sur le riz, parsème de coriandre ciselée."
       ],
       "photo": "assets/recipes/d67.webp"
@@ -17977,7 +17977,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 430,
+      "kcal": 431,
       "tags": [
         "vegetarian",
         "quick",
@@ -18080,7 +18080,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 460,
+      "kcal": 708,
       "tags": [
         "vegetarian",
         "quick",
@@ -18178,7 +18178,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 380,
+      "kcal": 477,
       "tags": [
         "vegetarian",
         "quick"
@@ -18271,7 +18271,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 440,
+      "kcal": 475,
       "tags": [
         "quick",
         "no-cook",
@@ -18356,7 +18356,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 470,
+      "kcal": 595,
       "tags": [
         "vegetarian",
         "quick",
@@ -18725,7 +18725,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 630,
+      "kcal": 626,
       "tags": [
         "quick",
         "kid-friendly",
@@ -18823,7 +18823,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 280,
+      "kcal": 192,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -18838,43 +18838,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Échalote",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Bouillon de légumes",
-          400,
-          "ml",
-          "pantry"
-        ],
-        [
-          "Skyr (ou yaourt grec)",
-          100,
-          "g",
-          "dairy"
-        ],
-        [
-          "Menthe fraîche",
-          0.1,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Citron (jus)",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Bouillon de légumes",
+          200,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Skyr (ou yaourt grec)",
+          50,
+          "g",
+          "dairy"
+        ],
+        [
+          "Menthe fraîche",
+          0.05,
+          "bouquet",
+          "produce"
+        ],
+        [
+          "Citron (jus)",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -18909,7 +18909,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 340,
+      "kcal": 341,
       "tags": [
         "vegetarian",
         "quick",
@@ -18989,7 +18989,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 390,
+      "kcal": 394,
       "tags": [
         "vegetarian",
         "kid-friendly",
@@ -19083,7 +19083,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 380,
+      "kcal": 299,
       "tags": [
         "vegetarian",
         "quick"
@@ -19179,49 +19179,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Boulgour",
-          70,
+          35,
           "g",
           "pantry"
         ],
         [
           "Tomate",
-          2,
-          "u",
-          "produce"
-        ],
-        [
-          "Concombre",
-          0.5,
-          "u",
-          "produce"
-        ],
-        [
-          "Persil plat",
-          0.2,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Menthe fraîche",
-          0.1,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Oignon nouveau",
-          2,
-          "u",
-          "produce"
-        ],
-        [
-          "Citron (jus)",
           1,
           "u",
           "produce"
         ],
         [
+          "Concombre",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Persil plat",
+          0.1,
+          "bouquet",
+          "produce"
+        ],
+        [
+          "Menthe fraîche",
+          0.05,
+          "bouquet",
+          "produce"
+        ],
+        [
+          "Oignon nouveau",
+          1,
+          "u",
+          "produce"
+        ],
+        [
+          "Citron (jus)",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -19233,7 +19233,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Trempe le boulgour dans 100 ml d'eau froide salée pendant 15 min — il va gonfler sans cuisson (c'est la version libanaise traditionnelle).",
+        "Trempe le boulgour dans un volume d'eau froide salée égal à environ 1,5 fois celui du boulgour pendant 15 min — il va gonfler sans cuisson (c'est la version libanaise traditionnelle).",
         "Coupe les tomates en très petits dés (1 cm), de même pour le concombre.",
         "Cisèle finement persil, menthe et oignons nouveaux.",
         "Égoutte le boulgour dans une passoire fine, presse-le pour enlever l'excès d'eau.",
@@ -19366,7 +19366,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.9,
-      "kcal": 510,
+      "kcal": 527,
       "tags": [
         "quick",
         "kid-friendly"
@@ -19551,7 +19551,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.9,
-      "kcal": 520,
+      "kcal": 618,
       "tags": [
         "quick",
         "kid-friendly"
@@ -19966,7 +19966,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 520,
+      "kcal": 521,
       "tags": [
         "vegan",
         "kid-friendly"
@@ -20070,7 +20070,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 280,
+      "kcal": 223,
       "tags": [
         "vegan",
         "no-cook",
@@ -20088,43 +20088,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tomate",
-          5,
+          1.75,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.167,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.25,
           "gousse",
           "produce"
         ],
         [
           "Pain complet rassis",
-          30,
+          10,
           "g",
           "bread"
         ],
         [
           "Vinaigre de vin",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          3,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -20141,7 +20141,7 @@ window.__DATA_RECIPES = {
         "Coupe le concombre en gros morceaux (pas besoin d'éplucher).",
         "Épépine le poivron : coupe-le en deux dans le sens de la longueur, retire le pédoncule et les graines blanches. Coupe en gros morceaux.",
         "Mets le pain rassis dans un petit bol, couvre-le d'eau et laisse-le ramollir 2 min. Égoutte-le et presse pour enlever l'eau.",
-        "Dans le bol du mixeur, mets tous les légumes, l'ail épluché, le pain ramolli, le vinaigre, 2 c.à.s d'huile d'olive, du sel et du poivre.",
+        "Dans le bol du mixeur, mets tous les légumes, l'ail épluché, le pain ramolli, le vinaigre, la majeure partie de l'huile d'olive, du sel et du poivre.",
         "Mixe pendant 2 min jusqu'à obtenir un velouté lisse. Si c'est trop épais, ajoute un peu d'eau froide.",
         "Goûte et ajuste : plus de sel, plus de vinaigre selon ton goût.",
         "Verse dans un grand bol, couvre et mets au frigo au moins 2 h (le froid réveille les saveurs — c'est une étape clé).",
@@ -20270,7 +20270,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 490,
+      "kcal": 365,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -20289,49 +20289,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          6,
+          2,
           "u",
           "dairy"
         ],
         [
           "Asperges vertes",
-          200,
+          65,
           "g",
           "produce"
         ],
         [
           "Petits pois",
-          100,
+          33,
           "g",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Feta",
-          80,
+          27,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.017,
           "bouquet",
           "produce"
         ],
         [
           "Crème liquide légère",
-          2,
+          0.75,
           "c.à.s",
           "dairy"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -20369,7 +20369,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 220,
+      "kcal": 308,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -20386,43 +20386,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Concombre",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          400,
+          200,
           "g",
           "dairy"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.1,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Aneth",
           0.05,
           "bouquet",
           "produce"
         ],
         [
+          "Aneth",
+          0.025,
+          "bouquet",
+          "produce"
+        ],
+        [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -20457,7 +20457,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 470,
+      "kcal": 473,
       "tags": [
         "kid-friendly"
       ],
@@ -20591,7 +20591,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 540,
+      "kcal": 479,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -20709,55 +20709,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Tomates cerises",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Feta",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Olives noires",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Origan",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Quinoa",
-          60,
+          30,
           "g",
           "pantry"
         ],
@@ -20769,9 +20769,9 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa, cuis-le dans 130 ml d'eau salée 12-15 min à couvert.",
+        "Rince le quinoa, cuis-le dans 2 fois son volume d'eau salée 12-15 min à couvert.",
         "Coupe les courgettes en demi-rondelles. Coupe les tomates cerises en deux. Émince oignon et ail finement.",
-        "Fais chauffer 2 c.à.s d'huile d'olive dans une grande poêle. Fais revenir l'oignon 3 min jusqu'à transparence.",
+        "Fais chauffer l'huile d'olive dans une grande poêle. Fais revenir l'oignon 3 min jusqu'à transparence.",
         "Ajoute l'ail et les courgettes, sale, poivre. Cuis 8 min à feu vif en remuant — les courgettes doivent être tendres mais encore fermes.",
         "Ajoute les tomates cerises et l'origan. Cuis 5 min de plus jusqu'à ce que les tomates commencent à fondre.",
         "Hors du feu, émiette la feta par-dessus, parsème les olives. Sers sur le quinoa."
@@ -20791,7 +20791,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 480,
+      "kcal": 515,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -20808,43 +20808,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Œuf",
-          4,
+          2,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Fromage de chèvre",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Farine de sarrasin",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Thym séché",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -20857,7 +20857,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 180 °C.",
-        "Lave et coupe les courgettes en demi-rondelles fines. Fais-les revenir 8 min à la poêle dans 1 c.à.s d'huile avec sel et poivre — elles doivent être tendres. Égoutte sur du papier absorbant.",
+        "Lave et coupe les courgettes en demi-rondelles fines. Fais-les revenir 8 min à la poêle dans un peu d'huile avec sel et poivre — elles doivent être tendres. Égoutte sur du papier absorbant.",
         "Dans un grand bol, fouette les œufs avec le lait, la farine de sarrasin, sel, poivre et thym jusqu'à ce que le mélange soit homogène.",
         "Huile légèrement un moule à tarte ou plat à four. Étale les courgettes au fond. Verse l'appareil aux œufs par-dessus.",
         "Émiette ou coupe le fromage de chèvre en morceaux, dispose-les sur la quiche.",
@@ -20981,7 +20981,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 410,
+      "kcal": 486,
       "tags": [],
       "eq": [
         "oven"
@@ -20992,43 +20992,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Sardine fraîche",
-          4,
+          2,
           "u",
           "meat-fish"
         ],
         [
           "Courgette",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Tomate cerise",
-          150,
-          "g",
-          "produce"
-        ],
-        [
-          "Citron",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Tomate cerise",
+          75,
+          "g",
+          "produce"
+        ],
+        [
+          "Citron",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Thym séché",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -21043,7 +21043,7 @@ window.__DATA_RECIPES = {
         "Préchauffe le four à 200°C (chaleur tournante).",
         "Demande au poissonnier de vider et écailler les sardines (= il enlève les viscères et les écailles), ou fais-le toi-même : passe-les sous l'eau froide et frotte-les dans le sens contraire des écailles avec le dos d'un couteau.",
         "Coupe la courgette en demi-rondelles fines (~3 mm). Coupe les tomates cerises en deux. Émince très finement la gousse d'ail.",
-        "Découpe 4 grands carrés (~30×30 cm) de papier sulfurisé.",
+        "Découpe un grand carré par sardine (~30×30 cm) de papier sulfurisé.",
         "Au centre de chaque carré, dépose une couche de demi-rondelles de courgette, puis quelques tomates, puis 1 sardine. Saupoudre d'ail émincé, de thym, sale et poivre.",
         "Coupe le citron en fines tranches, pose 1 tranche sur chaque sardine. Arrose d'1/2 c.à.s d'huile d'olive par papillote.",
         "Replie le papier en formant une papillote bien fermée : ramène les côtés au-dessus puis vrille les extrémités comme un bonbon.",
@@ -21077,55 +21077,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de poulet",
-          200,
+          100,
           "g",
           "meat-fish"
         ],
         [
           "Poivron rouge",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Courgette",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Oignon",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Citron (jus)",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Courgette",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Oignon",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Citron (jus)",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Paprika doux",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Herbes de Provence",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -21138,7 +21138,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Coupe les filets de poulet en cubes d'environ 3 cm.",
-        "Dans un saladier, prépare la marinade : 2 c.à.s d'huile d'olive, le jus de citron, l'ail écrasé, le paprika, les herbes de Provence, sel et poivre. Mélange.",
+        "Dans un saladier, prépare la marinade : l'huile d'olive, le jus de citron, l'ail écrasé, le paprika, les herbes de Provence, sel et poivre. Mélange.",
         "Ajoute le poulet, mélange bien pour que tous les morceaux soient enrobés. Couvre et laisse mariner 30 min au frigo (1 h c'est encore mieux).",
         "Pendant ce temps, prépare les légumes : épépine le poivron (= coupe-le en deux, retire le pédoncule et les graines blanches), coupe-le en gros carrés (~3 cm). Coupe la courgette en grosses rondelles. Coupe l'oignon en quartiers et sépare les couches en pétales.",
         "Si tu utilises des brochettes en bois, fais-les tremper 20 min dans l'eau (sinon elles brûlent à la cuisson).",
@@ -21268,7 +21268,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 470,
+      "kcal": 417,
       "tags": [
         "vegetarian"
       ],
@@ -21282,55 +21282,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Feta",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Farine de sarrasin",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Aneth",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Salade verte",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -21347,7 +21347,7 @@ window.__DATA_RECIPES = {
         "Mets la courgette râpée dans une passoire avec une bonne pincée de sel. Laisse dégorger 10 min puis presse fortement avec les mains pour extraire un maximum d'eau (étape clé : sinon les galettes seront molles et fades).",
         "Pendant ce temps, casse les œufs dans un saladier, bats-les rapidement à la fourchette. Ajoute la farine de sarrasin, mélange : tu obtiens une pâte épaisse.",
         "Émiette la feta dans le saladier. Cisèle l'aneth (enlève les grosses tiges) et écrase l'ail. Ajoute-les avec la courgette pressée. Sale (peu, la feta sale déjà), poivre. Mélange bien.",
-        "Recouvre une plaque de cuisson de papier sulfurisé. Forme 6 à 8 galettes de la taille d'une paume avec une cuillère à soupe, en les espaçant de 2 cm. Aplatis légèrement avec le dos de la cuillère.",
+        "Recouvre une plaque de cuisson de papier sulfurisé. Forme 3 à 4 galettes par personne de la taille d'une paume avec une cuillère à soupe, en les espaçant de 2 cm. Aplatis légèrement avec le dos de la cuillère.",
         "Arrose d'un filet d'huile d'olive. Enfourne 20 à 25 min : les galettes doivent être dorées dessus et tenir quand tu les soulèves avec une spatule.",
         "Pendant ce temps, lave la salade. Assaisonne-la d'huile d'olive, jus de citron, sel, poivre.",
         "Sers les galettes chaudes avec la salade à côté."
@@ -21367,7 +21367,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 580,
+      "kcal": 550,
       "tags": [
         "vegetarian"
       ],
@@ -21384,49 +21384,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Spaghetti complets",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Roquette",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Cerneaux de noix",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Parmesan râpé",
-          30,
+          15,
           "g",
           "dairy"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Tomate cerise",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          4,
+          2,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron (jus)",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
@@ -21439,9 +21439,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Préchauffe le four à 200°C.",
-        "Coupe les tomates cerises en deux. Étale-les sur une plaque de cuisson, sale, poivre, arrose d'1 c.à.s d'huile d'olive. Enfourne 15 min : elles doivent être ridées et confites.",
+        "Coupe les tomates cerises en deux. Étale-les sur une plaque de cuisson, sale, poivre, arrose d'un filet d'huile d'olive. Enfourne 15 min : elles doivent être ridées et confites.",
         "Pendant ce temps, fais bouillir une grande casserole d'eau salée pour les pâtes (compte 1 L d'eau et 8 g de sel pour 100 g de pâtes — environ 1 c.à.c bombée).",
-        "Prépare le pesto : dans un mixeur, mets la roquette, les cerneaux de noix, l'ail épluché, le parmesan, 3 c.à.s d'huile d'olive et le jus de citron. Mixe par à-coups (pulse) — le pesto doit rester un peu granuleux, pas une purée trop lisse.",
+        "Prépare le pesto : dans un mixeur, mets la roquette, les cerneaux de noix, l'ail épluché, le parmesan, le reste de l'huile d'olive et le jus de citron. Mixe par à-coups (pulse) — le pesto doit rester un peu granuleux, pas une purée trop lisse.",
         "Goûte et ajuste : sel, poivre, plus d'huile si trop épais.",
         "Cuis les spaghetti selon le temps indiqué sur le paquet (généralement 9 à 11 min pour les complets, à goûter — ils doivent être 'al dente', un peu fermes au cœur quand on les croque).",
         "Avant d'égoutter, prélève une petite louche d'eau de cuisson et mets-la de côté.",
@@ -21698,7 +21698,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 510,
+      "kcal": 467,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -21894,7 +21894,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 361,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -22014,61 +22014,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Thon au naturel",
-          150,
+          75,
           "g",
           "meat-fish"
         ],
         [
           "Avocat",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Carotte",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Concombre",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Carotte",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Concombre",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Roquette",
-          40,
+          20,
           "g",
           "produce"
         ],
         [
           "Tahini",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron (jus)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Graines de sésame",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -22229,7 +22229,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 236,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -22297,7 +22297,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 200,
+      "kcal": 205,
       "tags": [
         "vegetarian",
         "no-cook"
@@ -22367,7 +22367,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 160,
+      "kcal": 162,
       "tags": [
         "vegetarian",
         "quick",
@@ -22443,7 +22443,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 310,
+      "kcal": 230,
       "tags": [
         "vegetarian",
         "quick",
@@ -22524,7 +22524,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 220,
+      "kcal": 174,
       "tags": [
         "vegetarian",
         "quick",
@@ -22596,7 +22596,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 295,
       "tags": [
         "vegetarian",
         "quick",
@@ -22682,7 +22682,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 380,
+      "kcal": 417,
       "tags": [
         "quick",
         "no-cook"
@@ -23374,7 +23374,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 0.7,
-      "kcal": 180,
+      "kcal": 230,
       "tags": [
         "vegetarian",
         "vegan",
@@ -23445,7 +23445,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 200,
+      "kcal": 169,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -23520,7 +23520,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 350,
+      "kcal": 365,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -23606,7 +23606,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 380,
+      "kcal": 294,
       "tags": [
         "vegetarian",
         "quick"
@@ -23680,7 +23680,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 380,
+      "kcal": 363,
       "tags": [
         "quick",
         "batch-friendly"
@@ -23972,7 +23972,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 420,
+      "kcal": 514,
       "tags": [
         "quick",
         "batch-friendly"
@@ -24373,7 +24373,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 600,
+      "kcal": 598,
       "tags": [],
       "eq": [
         "oven"
@@ -24478,7 +24478,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 220,
+      "kcal": 177,
       "tags": [
         "vegetarian",
         "quick",
@@ -24539,7 +24539,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 70,
+      "kcal": 45,
       "tags": [
         "vegetarian",
         "quick",
@@ -24683,7 +24683,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 330,
+      "kcal": 332,
       "tags": [
         "vegetarian",
         "quick"
@@ -24868,7 +24868,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 470,
+      "kcal": 468,
       "tags": [
         "quick",
         "batch-friendly"
@@ -24967,7 +24967,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 460,
+      "kcal": 464,
       "tags": [
         "vegetarian",
         "quick",
@@ -25073,7 +25073,7 @@ window.__DATA_RECIPES = {
       "advance": "2h",
       "diff": 1,
       "cost": 1.2,
-      "kcal": 220,
+      "kcal": 273,
       "tags": [
         "vegetarian",
         "vegan",
@@ -25179,7 +25179,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 480,
+      "kcal": 578,
       "tags": [
         "batch-friendly"
       ],
@@ -25374,7 +25374,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 480,
+      "kcal": 473,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -25495,7 +25495,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 480,
+      "kcal": 390,
       "tags": [],
       "eq": [
         "stove"
@@ -25589,7 +25589,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 0.8,
-      "kcal": 150,
+      "kcal": 192,
       "tags": [
         "vegetarian",
         "vegan",
@@ -25661,7 +25661,7 @@ window.__DATA_RECIPES = {
       "advance": "4h",
       "diff": 2,
       "cost": 1.3,
-      "kcal": 180,
+      "kcal": 131,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -25741,7 +25741,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 349,
       "tags": [
         "vegetarian",
         "quick",
@@ -25829,7 +25829,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 450,
+      "kcal": 433,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -25942,7 +25942,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 480,
+      "kcal": 566,
       "tags": [
         "quick",
         "no-cook"
@@ -26127,7 +26127,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 320,
+      "kcal": 231,
       "tags": [
         "vegetarian",
         "no-cook"
@@ -26227,7 +26227,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 480,
+      "kcal": 356,
       "tags": [
         "batch-friendly"
       ],
@@ -26454,7 +26454,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 446,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -26656,7 +26656,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 180,
+      "kcal": 267,
       "tags": [
         "vegetarian",
         "vegan",
@@ -26752,7 +26752,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 280,
+      "kcal": 299,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -26845,7 +26845,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 280,
+      "kcal": 269,
       "tags": [
         "vegetarian",
         "vegan",
@@ -27202,7 +27202,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 384,
       "tags": [
         "quick",
         "batch-friendly"
@@ -27529,7 +27529,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 460,
+      "kcal": 464,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -27651,7 +27651,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 477,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -27762,7 +27762,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 510,
+      "kcal": 509,
       "tags": [],
       "eq": [
         "stove",
@@ -27934,7 +27934,7 @@ window.__DATA_RECIPES = {
       "advance": "1h",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 221,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -28098,7 +28098,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 280,
+      "kcal": 248,
       "tags": [
         "vegetarian",
         "quick",
@@ -28397,7 +28397,7 @@ window.__DATA_RECIPES = {
       "advance": "1h",
       "diff": 1,
       "cost": 3.0,
-      "kcal": 400,
+      "kcal": 395,
       "tags": [
         "quick",
         "no-cook",
@@ -28475,7 +28475,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 490,
+      "kcal": 489,
       "tags": [
         "vegetarian",
         "vegan",
@@ -28725,7 +28725,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 560,
+      "kcal": 557,
       "tags": [
         "batch-friendly"
       ],
@@ -29067,7 +29067,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 240,
+      "kcal": 187,
       "tags": [
         "vegetarian",
         "quick",
@@ -29142,7 +29142,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 160,
+      "kcal": 163,
       "tags": [
         "vegetarian",
         "no-cook"
@@ -29211,7 +29211,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 270,
+      "kcal": 267,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -29292,7 +29292,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 320,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -29383,7 +29383,7 @@ window.__DATA_RECIPES = {
       "advance": "30min",
       "diff": 2,
       "cost": 4.5,
-      "kcal": 420,
+      "kcal": 294,
       "tags": [
         "no-cook",
         "batch-friendly"
@@ -29488,7 +29488,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 480,
+      "kcal": 481,
       "tags": [
         "vegetarian",
         "vegan",
@@ -29706,7 +29706,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 480,
+      "kcal": 475,
       "tags": [
         "vegetarian",
         "quick",
@@ -29800,7 +29800,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 4.5,
-      "kcal": 480,
+      "kcal": 542,
       "tags": [],
       "eq": [
         "stove"
@@ -30138,7 +30138,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 220,
+      "kcal": 321,
       "tags": [
         "vegetarian",
         "vegan",
@@ -30241,7 +30241,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 153,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -30309,7 +30309,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.1,
-      "kcal": 440,
+      "kcal": 439,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -30697,7 +30697,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 610,
+      "kcal": 608,
       "tags": [
         "vegetarian",
         "quick"
@@ -30792,7 +30792,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 560,
+      "kcal": 556,
       "tags": [
         "vegetarian",
         "vegan",
@@ -31132,7 +31132,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 640,
+      "kcal": 643,
       "tags": [
         "vegetarian",
         "vegan",
@@ -31266,7 +31266,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 700,
+      "kcal": 703,
       "tags": [
         "batch-friendly"
       ],
@@ -31390,7 +31390,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 0.7,
-      "kcal": 220,
+      "kcal": 229,
       "tags": [
         "vegetarian",
         "kid-friendly",
@@ -31505,7 +31505,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 240,
+      "kcal": 229,
       "rest": 240,
       "advance": "4h",
       "tags": [
@@ -31593,7 +31593,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 412,
       "tags": [
         "vegetarian",
         "quick",
@@ -31675,7 +31675,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 480,
+      "kcal": 673,
       "tags": [],
       "eq": [
         "grill",
@@ -31882,7 +31882,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 410,
+      "kcal": 640,
       "tags": [
         "vegetarian",
         "quick"
@@ -31982,7 +31982,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 670,
+      "kcal": 667,
       "tags": [],
       "eq": [
         "grill",
@@ -32099,7 +32099,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 480,
+      "kcal": 675,
       "tags": [],
       "eq": [
         "grill"
@@ -32195,73 +32195,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Épaule d'agneau désossée",
-          200,
+          100,
           "g",
           "meat-fish"
         ],
         [
           "Skyr (ou yaourt grec)",
-          150,
+          75,
           "g",
           "dairy"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Menthe fraîche",
-          1,
+          0.5,
           "c.à.s",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Pain pita complet",
-          1,
+          0.5,
           "u",
           "bread"
         ],
         [
           "Roquette",
-          30,
+          15,
           "g",
           "produce"
         ],
@@ -32275,8 +32275,8 @@ window.__DATA_RECIPES = {
       "steps": [
         "Si piques en bois, mets-les à tremper 10 min dans l'eau froide.",
         "Coupe l'agneau en cubes de 3 cm de côté (réguliers pour cuisson uniforme).",
-        "Marinade : dans un bol, mélange 1 c.à.s d'huile d'olive, cumin, paprika, coriandre, 1 gousse d'ail écrasée, jus du demi-citron, sel, poivre. Ajoute les cubes d'agneau, mélange à la main pour bien enrober. Laisse mariner 15 min minimum (ou jusqu'à 4h au frigo).",
-        "Tzatziki : râpe le demi-concombre avec une râpe à gros trous. Mets-le dans une passoire avec une bonne pincée de sel, laisse dégorger 10 min, presse à la main pour évacuer l'eau. Cisèle la menthe. Écrase l'autre gousse d'ail. Mélange avec le skyr, sel, poivre, 1 c.à.s d'huile d'olive.",
+        "Marinade : dans un bol, mélange la moitié de l'huile d'olive, cumin, paprika, coriandre, 1 gousse d'ail écrasée, jus du citron, sel, poivre. Ajoute les cubes d'agneau, mélange à la main pour bien enrober. Laisse mariner 15 min minimum (ou jusqu'à 4h au frigo).",
+        "Tzatziki : râpe le concombre avec une râpe à gros trous. Mets-le dans une passoire avec une bonne pincée de sel, laisse dégorger 10 min, presse à la main pour évacuer l'eau. Cisèle la menthe. Écrase l'autre gousse d'ail. Mélange avec le skyr, sel, poivre, le reste de l'huile d'olive.",
         "Enfile les cubes d'agneau sur les piques (5 cubes par brochette, espacés d'1 cm pour laisser passer la chaleur).",
         "Préchauffe le grill bien chaud. Cuis les brochettes 2-3 min de chaque côté pour avoir l'extérieur grillé et l'intérieur rosé. 4 min de chaque côté pour bien cuit. L'agneau cuit vite, ne pas trop cuire sinon ça devient sec.",
         "Coupe le pita en deux et fais-le tiédir 1 min sur le grill.",
@@ -32310,67 +32310,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Sardines fraîches vidées",
-          6,
+          2,
           "u",
           "meat-fish"
         ],
         [
           "Coriandre fraîche",
-          3,
+          1,
           "c.à.s",
           "produce"
         ],
         [
           "Persil plat",
-          2,
+          0.75,
           "c.à.s",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          3,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Tomate",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.167,
           "u",
           "produce"
         ],
         [
           "Vinaigre de vin",
-          0.5,
+          0.167,
           "c.à.c",
           "pantry"
         ],
@@ -32389,9 +32389,9 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Demande au poissonnier de vider les sardines (ou fais-le toi : ouvre le ventre avec un couteau pointu, retire les viscères, rince à l'eau froide, sèche au papier absorbant).",
-        "Chermoula : dans un bol ou petit blender, mixe coriandre, persil, ail, cumin, paprika, jus d'un demi-citron, 2 c.à.s d'huile d'olive, sel, poivre. Tu obtiens une pâte verte parfumée.",
+        "Chermoula : dans un bol ou petit blender, mixe coriandre, persil, ail, cumin, paprika, jus de citron, une partie de l'huile d'olive, sel, poivre. Tu obtiens une pâte verte parfumée.",
         "Étale la chermoula sur les sardines (intérieur et extérieur), masse délicatement. Laisse mariner 15 min au frigo.",
-        "Salade : coupe les tomates en quartiers, l'oignon rouge en lamelles très fines (au couteau bien aiguisé ou à la mandoline). Mélange avec 1 c.à.s d'huile d'olive, le vinaigre de vin, sel, poivre. Laisse reposer 10 min — l'oignon perd son côté trop cru.",
+        "Salade : coupe les tomates en quartiers, l'oignon rouge en lamelles très fines (au couteau bien aiguisé ou à la mandoline). Mélange avec le reste de l'huile d'olive, le vinaigre de vin, sel, poivre. Laisse reposer 10 min — l'oignon perd son côté trop cru.",
         "Préchauffe la plancha (ou une grande poêle en fonte) à feu fort.",
         "Pose les sardines sur la plancha bien chaude (pas besoin d'huile supplémentaire — la chermoula contient déjà du gras). Cuis 2-3 min de chaque côté — la peau doit être bien dorée et la chair se détacher facilement à l'arête.",
         "Toaste la tranche de pain complet sur la plancha les 2 dernières minutes pour profiter des sucs.",
@@ -32427,79 +32427,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cuisse de poulet",
-          2,
+          1,
           "u",
           "meat-fish"
         ],
         [
           "Yaourt grec",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Curry doux",
-          1,
+          0.5,
           "c.à.s",
           "spices"
         ],
         [
           "Curcuma en poudre",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Gingembre frais",
-          2,
+          1,
           "cm",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Courgette",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Oignon rouge",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Courgette",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Riz basmati complet",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.5,
           "c.à.s",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -32511,7 +32511,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Marinade poulet (idéalement la veille, ou 30 min minimum) : dans un bol, mélange yaourt grec, curry, curcuma, gingembre râpé, ail écrasé, jus du demi-citron, sel, poivre. Plonge les cuisses de poulet (entaillées 2-3 fois sur la peau pour que la marinade pénètre). Couvre et place au frigo.",
+        "Marinade poulet (idéalement la veille, ou 30 min minimum) : dans un bol, mélange yaourt grec, curry, curcuma, gingembre râpé, ail écrasé, jus du citron, sel, poivre. Plonge les cuisses de poulet (entaillées 2-3 fois sur la peau pour que la marinade pénètre). Couvre et place au frigo.",
         "Lance le riz basmati complet : 2 fois son volume d'eau salée, ébullition, puis 20 min à feu doux couvert.",
         "Coupe poivron en lanières larges, courgette en rondelles épaisses (1 cm), oignon en quartiers gardant la base pour qu'ils ne se défassent pas. Badigeonne les légumes d'huile d'olive, sel, poivre.",
         "Préchauffe le grill à feu moyen-fort.",
@@ -32533,7 +32533,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 180,
+      "kcal": 279,
       "tags": [
         "vegetarian",
         "quick",
@@ -32606,7 +32606,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 270,
+      "kcal": 271,
       "tags": [
         "vegetarian",
         "quick"
@@ -32673,7 +32673,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 230,
+      "kcal": 232,
       "tags": [
         "vegetarian",
         "vegan"
@@ -32746,7 +32746,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 280,
+      "kcal": 259,
       "tags": [
         "vegetarian",
         "vegan",
@@ -32852,7 +32852,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 579,
       "tags": [],
       "eq": [
         "stove"
@@ -32960,7 +32960,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 380,
+      "kcal": 352,
       "tags": [
         "batch-friendly"
       ],
@@ -33226,67 +33226,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Viande hachée d'agneau",
-          250,
+          125,
           "g",
           "meat-fish"
         ],
         [
           "Œuf",
-          4,
+          2,
           "u",
           "dairy"
         ],
         [
           "Tomate concassée",
-          400,
+          200,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Persil plat",
-          3,
+          1.5,
           "c.à.s",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          2,
+          1,
           "c.à.s",
           "produce"
         ],
         [
           "Cumin moulu",
-          1.5,
+          0.75,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Cannelle en poudre",
-          0.25,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Harissa",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -33298,7 +33298,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -33335,7 +33335,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 540,
+      "kcal": 555,
       "tags": [
         "batch-friendly"
       ],
@@ -33460,7 +33460,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 380,
+      "kcal": 382,
       "tags": [
         "no-cook"
       ],
@@ -33563,7 +33563,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 480,
+      "kcal": 394,
       "tags": [
         "vegetarian",
         "vegan",
@@ -33693,7 +33693,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 550,
+      "kcal": 547,
       "tags": [],
       "eq": [
         "grill",
@@ -33954,7 +33954,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 480,
+      "kcal": 430,
       "tags": [
         "batch-friendly"
       ],
@@ -34103,7 +34103,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 0.8,
-      "kcal": 310,
+      "kcal": 306,
       "tags": [
         "vegetarian",
         "quick",
@@ -34817,7 +34817,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 250,
+      "kcal": 361,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -34922,7 +34922,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 180,
+      "kcal": 174,
       "tags": [
         "vegetarian",
         "quick",
@@ -34938,31 +34938,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tomate cerise",
-          12,
+          6,
           "u",
           "produce"
         ],
         [
           "Mozzarella billes (mini)",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Basilic frais",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Vinaigre balsamique",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -34975,7 +34975,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Lave les tomates cerises et égoutte les mozzarellas billes (s'ils sont en saumure, rince-les rapidement à l'eau froide).",
-        "Sur des piques en bois (style cure-dents longs), enfile dans l'ordre : 1 tomate cerise, 1 feuille de basilic pliée en deux, 1 mozzarella bille. Compte 4 piques par pinchos donc 12 piques au total pour cette portion.",
+        "Sur des piques en bois (style cure-dents longs), enfile dans l'ordre : 1 tomate cerise, 1 feuille de basilic pliée en deux, 1 mozzarella bille. Compte 6 piques pour cette portion.",
         "Pose les pinchos sur une assiette de service.",
         "Dans un petit bol, mélange l'huile d'olive et le vinaigre balsamique. Sale et poivre.",
         "Au moment de servir, badigeonne les pinchos au pinceau (ou arrose à la cuillère) avec la vinaigrette. Sert immédiatement (sinon le basilic noircit)."
@@ -34997,7 +34997,7 @@ window.__DATA_RECIPES = {
       "cook": 9,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 220,
+      "kcal": 357,
       "tags": [
         "vegetarian",
         "quick",
@@ -35080,7 +35080,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 280,
+      "kcal": 330,
       "tags": [
         "quick",
         "apero-dinatoire"
@@ -35094,55 +35094,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de saumon frais (qualité sushi)",
-          100,
+          50,
           "g",
           "meat-fish"
         ],
         [
           "Avocat",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Citron (jus)",
-          0.5,
-          "u",
-          "produce"
-        ],
-        [
-          "Citron vert (jus)",
-          0.5,
-          "u",
-          "produce"
-        ],
-        [
-          "Aneth frais",
-          0.05,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Coriandre fraîche",
-          0.05,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Oignon rouge",
           0.25,
           "u",
           "produce"
         ],
         [
+          "Citron vert (jus)",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Aneth frais",
+          0.025,
+          "bouquet",
+          "produce"
+        ],
+        [
+          "Coriandre fraîche",
+          0.025,
+          "bouquet",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          0.125,
+          "u",
+          "produce"
+        ],
+        [
           "Tomate",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -35279,7 +35279,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 3,
       "cost": 6.0,
-      "kcal": 280,
+      "kcal": 443,
       "tags": [],
       "eq": [
         "stove"
@@ -35367,7 +35367,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 250,
+      "kcal": 403,
       "tags": [
         "vegetarian",
         "quick",
@@ -35460,7 +35460,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 7.0,
-      "kcal": 310,
+      "kcal": 401,
       "tags": [
         "quick"
       ],
@@ -35547,7 +35547,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 290,
+      "kcal": 458,
       "tags": [
         "quick"
       ],
@@ -35638,7 +35638,7 @@ window.__DATA_RECIPES = {
       "cook": 22,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 280,
+      "kcal": 301,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -35851,7 +35851,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 310,
+      "kcal": 483,
       "tags": [
         "quick"
       ],
@@ -35931,7 +35931,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 250,
+      "kcal": 282,
       "tags": [
         "quick",
         "batch-friendly"
@@ -36047,7 +36047,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 250,
+      "kcal": 287,
       "tags": [
         "vegetarian",
         "vegan",
@@ -36167,7 +36167,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 200,
+      "kcal": 239,
       "tags": [
         "quick",
         "apero-sec"
@@ -36248,7 +36248,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 280,
+      "kcal": 251,
       "tags": [
         "quick",
         "apero-dinatoire"
@@ -36358,7 +36358,7 @@ window.__DATA_RECIPES = {
       "cook": 75,
       "diff": 3,
       "cost": 8.0,
-      "kcal": 520,
+      "kcal": 509,
       "tags": [
         "festif",
         "batch-friendly"
@@ -36373,55 +36373,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Gigot d'agneau (tranche ou portion)",
-          200,
+          100,
           "g",
           "meat-fish"
         ],
         [
           "Ail",
-          4,
+          2,
           "gousse",
           "produce"
         ],
         [
           "Romarin frais",
-          2,
+          1,
           "branche",
           "produce"
         ],
         [
           "Thym frais",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Flageolets cuits (en bocal)",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Bouillon de volaille",
-          100,
+          50,
           "ml",
           "pantry"
         ],
         [
           "Persil plat",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
@@ -36437,10 +36437,10 @@ window.__DATA_RECIPES = {
         "Avec un couteau pointu, fais 8 entailles de 2 cm dans le gigot, à intervalles réguliers.",
         "Coupe 2 gousses d'ail en 4 morceaux dans la longueur. Effeuille la moitié du romarin et du thym.",
         "Insère dans chaque entaille un morceau d'ail + une feuille de romarin ou un brin de thym (la viande s'imprègne en cuisant).",
-        "Frotte la viande avec 1 c.à.s d'huile, sale et poivre généreusement sur toutes les faces.",
+        "Frotte la viande avec une partie de l'huile, sale et poivre généreusement sur toutes les faces.",
         "Pose la viande dans un plat à four, ajoute le reste de romarin et thym entiers autour. Enfourne 15 min à 220°C pour saisir, puis baisse à 180°C et continue 25 min (rosé) ou 35 min (à point) pour 200g. Pour gigot plus gros, compte 12 min/500g de cuisson totale après la saisie.",
         "Pendant ce temps : émince l'oignon. Écrase les 2 gousses d'ail restantes.",
-        "Dans une casserole, chauffe 1 c.à.s d'huile à feu moyen. Fais revenir l'oignon 4 min jusqu'à translucide, ajoute l'ail écrasé, remue 30 sec.",
+        "Dans une casserole, chauffe le reste de l'huile à feu moyen. Fais revenir l'oignon 4 min jusqu'à translucide, ajoute l'ail écrasé, remue 30 sec.",
         "Ajoute les flageolets rincés et le bouillon. Couvre, baisse, laisse mijoter 15 min : les flageolets vont absorber les saveurs.",
         "Sors la viande du four. Couvre de papier alu et laisse reposer 10 min (la viande se détend, les jus se répartissent — étape cruciale, ne saute pas).",
         "Sale et poivre les flageolets. Coupe la viande en tranches fines à contre-fil (perpendiculaire aux fibres).",
@@ -36461,7 +36461,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 290,
+      "kcal": 339,
       "tags": [
         "vegetarian",
         "quick"
@@ -36476,49 +36476,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette (petite)",
-          2,
-          "u",
-          "produce"
-        ],
-        [
-          "Ricotta",
-          80,
-          "g",
-          "dairy"
-        ],
-        [
-          "Citron (zeste + jus)",
           1,
           "u",
           "produce"
         ],
         [
+          "Ricotta",
+          40,
+          "g",
+          "dairy"
+        ],
+        [
+          "Citron (zeste + jus)",
+          0.5,
+          "u",
+          "produce"
+        ],
+        [
           "Pignons de pin",
-          15,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Basilic frais",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Parmesan râpé",
-          10,
+          5,
           "g",
           "dairy"
         ],
@@ -36535,7 +36535,7 @@ window.__DATA_RECIPES = {
         "Pendant ce temps, fais griller les pignons à sec dans une petite poêle 2 min en surveillant (ils brûlent vite : ils doivent être dorés clairs, pas marron).",
         "Égoutte les courgettes de leur jus (sinon elles relâcheront trop d'eau). Tamponne avec du papier absorbant.",
         "Ajoute aux courgettes : zeste de citron râpé, basilic et menthe ciselés, huile d'olive, poivre. Mélange délicatement.",
-        "Dresse dans un saladier individuel. Émiette la ricotta dessus avec les doigts (gros morceaux irréguliers). Parsème de pignons et de copeaux de parmesan.",
+        "Dresse dans des saladiers ou assiettes individuels. Émiette la ricotta dessus avec les doigts (gros morceaux irréguliers). Parsème de pignons et de copeaux de parmesan.",
         "Termine par une pincée de fleur de sel et un dernier tour de poivre. Sers immédiatement."
       ],
       "photo": "assets/recipes/l141.webp"
@@ -36552,7 +36552,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 270,
+      "kcal": 529,
       "tags": [
         "vegetarian",
         "quick"
@@ -36652,7 +36652,7 @@ window.__DATA_RECIPES = {
       "cook": 22,
       "diff": 2,
       "cost": 6.0,
-      "kcal": 310,
+      "kcal": 379,
       "tags": [],
       "eq": [
         "oven"
@@ -36744,7 +36744,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 520,
+      "kcal": 522,
       "tags": [],
       "eq": [
         "stove"
@@ -36846,7 +36846,7 @@ window.__DATA_RECIPES = {
       "cook": 4,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 476,
       "tags": [
         "quick",
         "vegetarian"
@@ -36940,7 +36940,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 380,
+      "kcal": 376,
       "tags": [
         "vegetarian",
         "quick"
@@ -37033,7 +37033,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 380,
+      "kcal": 477,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -37152,7 +37152,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 340,
       "tags": [
         "vegetarian",
         "quick"
@@ -37243,7 +37243,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 200,
+      "kcal": 201,
       "tags": [
         "quick",
         "apero-sec"
@@ -37314,7 +37314,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 180,
+      "kcal": 214,
       "tags": [
         "vegetarian",
         "quick",
@@ -37329,31 +37329,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Feta",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -37367,7 +37367,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Retire les pépins de la pastèque (ou choisis une pastèque sans pépins). Coupe la chair en cubes de 2 cm.",
         "Coupe la feta en cubes de 1,5 cm (légèrement plus petits que la pastèque pour l'équilibre visuel).",
-        "Sur chaque pique en bois, enfile : 1 cube de pastèque, 1 feuille de menthe, 1 cube de feta. Compte 12 piques pour cette portion.",
+        "Sur chaque pique en bois, enfile : 1 cube de pastèque, 1 feuille de menthe, 1 cube de feta. Compte 6 piques pour cette portion.",
         "Dispose les piques sur une assiette plate. Au dernier moment, arrose d'un trait de jus de citron vert et d'huile d'olive (pas avant, sinon la feta se délite).",
         "Termine par un tour de poivre noir (le poivre rehausse la pastèque, contraste classique de la salade pastèque-feta).",
         "Sers immédiatement, bien frais."
@@ -37389,7 +37389,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 290,
+      "kcal": 333,
       "tags": [
         "quick",
         "apero-dinatoire"
@@ -37404,49 +37404,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de saumon frais (qualité sushi)",
-          100,
+          50,
           "g",
           "meat-fish"
         ],
         [
           "Avocat mûr",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          30,
+          15,
           "g",
           "dairy"
         ],
         [
           "Aneth frais",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Échalote",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -37485,7 +37485,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 320,
+      "kcal": 298,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -37613,7 +37613,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 3,
       "cost": 8.0,
-      "kcal": 480,
+      "kcal": 650,
       "tags": [
         "festif"
       ],
@@ -37706,7 +37706,7 @@ window.__DATA_RECIPES = {
       "cook": 150,
       "diff": 3,
       "cost": 5.5,
-      "kcal": 540,
+      "kcal": 800,
       "tags": [
         "festif",
         "batch-friendly"
@@ -37951,7 +37951,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 250,
+      "kcal": 554,
       "tags": [
         "batch-friendly"
       ],
@@ -38060,7 +38060,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 310,
+      "kcal": 393,
       "tags": [
         "vegetarian",
         "quick"
@@ -38285,7 +38285,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 290,
+      "kcal": 421,
       "tags": [],
       "eq": [
         "stove"
@@ -38398,7 +38398,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 280,
+      "kcal": 403,
       "tags": [
         "vegetarian",
         "vegan",
@@ -38530,7 +38530,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 150,
+      "kcal": 177,
       "tags": [
         "quick",
         "apero-sec"
@@ -38619,7 +38619,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 250,
+      "kcal": 274,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -38636,49 +38636,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          2,
+          0.75,
           "u",
           "dairy"
         ],
         [
           "Crème liquide légère 15%",
-          100,
+          33,
           "ml",
           "dairy"
         ],
         [
           "Poireau",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Fromage de chèvre frais",
-          80,
+          27,
           "g",
           "dairy"
         ],
         [
           "Farine de pois chiche",
-          30,
+          10,
           "g",
           "pantry"
         ],
         [
           "Muscade râpée",
-          0.25,
+          0.083,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Persil plat",
-          0.05,
+          0.017,
           "bouquet",
           "produce"
         ],
@@ -38718,7 +38718,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 9.0,
-      "kcal": 480,
+      "kcal": 699,
       "tags": [
         "festif"
       ],
@@ -38831,7 +38831,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 280,
+      "kcal": 308,
       "tags": [
         "vegetarian",
         "vegan",
@@ -38849,61 +38849,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courge butternut",
-          350,
+          175,
           "g",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "c.à.s",
           "produce"
         ],
         [
           "Lait de coco",
-          100,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Bouillon de légumes",
-          400,
+          200,
           "ml",
           "pantry"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron vert (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -38916,7 +38916,7 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Pèle la courge butternut (peau dure, utilise un économe robuste ou un couteau de chef). Coupe-la en deux dans la longueur, retire les graines à la cuillère. Coupe la chair en cubes de 2 cm.",
-        "Émince l'oignon. Écrase l'ail. Râpe le gingembre (1 c.à.s, conserve son jus).",
+        "Émince l'oignon. Écrase l'ail. Râpe le gingembre (conserve son jus).",
         "Dans une grande casserole, chauffe l'huile à feu moyen. Fais revenir l'oignon 4 min jusqu'à translucide.",
         "Ajoute ail, gingembre râpé et curcuma. Remue 30 sec (les épices doivent dégager leur parfum, pas brûler).",
         "Ajoute les cubes de butternut, mélange pour les enrober. Verse le bouillon de légumes (les cubes doivent être juste recouverts).",
@@ -38940,7 +38940,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 310,
+      "kcal": 406,
       "tags": [
         "vegetarian",
         "vegan",
@@ -38954,61 +38954,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits (en bocal)",
-          150,
+          75,
           "g",
           "pantry"
         ],
         [
           "Tomate cerise",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Avocat",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Persil plat",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Paprika fumé",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          1.5,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Roquette ou jeunes pousses",
-          30,
+          15,
           "g",
           "produce"
         ],
@@ -39022,7 +39022,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Préchauffe le four à 200°C (chaleur tournante).",
         "Rince et égoutte les pois chiches. Sèche-les avec du papier absorbant (très important : sinon ils ne deviendront pas croustillants).",
-        "Dans un bol, mélange pois chiches secs avec 1 c.à.s d'huile d'olive, paprika fumé, cumin, sel et poivre.",
+        "Dans un bol, mélange pois chiches secs avec une partie de l'huile d'olive, paprika fumé, cumin, sel et poivre.",
         "Étale en couche unique sur une plaque recouverte de papier sulfurisé. Enfourne 15 min en remuant à mi-cuisson : ils doivent être bien dorés et croustillants à l'extérieur, fondants dedans.",
         "Pendant la cuisson : coupe les tomates cerises en deux. Émince finement l'oignon rouge. Cisèle le persil.",
         "Coupe l'avocat en deux, retire le noyau. Prélève la chair à la cuillère et coupe-la en cubes.",
@@ -39048,7 +39048,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 6.0,
-      "kcal": 330,
+      "kcal": 663,
       "tags": [
         "quick"
       ],
@@ -39162,7 +39162,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 3.0,
-      "kcal": 290,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "vegan",
@@ -39244,7 +39244,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 350,
+      "kcal": 309,
       "tags": [
         "vegetarian",
         "quick"
@@ -39348,7 +39348,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 353,
       "tags": [
         "vegetarian",
         "quick"
@@ -39438,7 +39438,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 2,
       "cost": 2.5,
-      "kcal": 80,
+      "kcal": 111,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -39508,7 +39508,7 @@ window.__DATA_RECIPES = {
       "advance": "4h",
       "diff": 3,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 224,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -39524,25 +39524,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Chocolat noir 70% (au moins)",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Café fort (espresso)",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -39563,7 +39563,7 @@ window.__DATA_RECIPES = {
         "Monte les blancs en neige avec une pincée de sel : commence à vitesse lente, augmente progressivement. Les blancs sont prêts quand ils forment des pics fermes (tu peux retourner le saladier sans qu'ils tombent).",
         "Incorpore 1/3 des blancs au chocolat en remuant énergiquement (ça assouplit le mélange).",
         "Ajoute le reste des blancs en plusieurs fois, en mélangeant délicatement à la spatule en bois, mouvements de bas en haut (l'objectif : ne PAS casser les blancs, garder l'air dedans).",
-        "Verse dans 4 ramequins ou verrines individuels. Couvre de film alimentaire et place au frigo 4 h minimum (l'idéal : une nuit).",
+        "Verse dans des ramequins ou verrines individuels. Couvre de film alimentaire et place au frigo 4 h minimum (l'idéal : une nuit).",
         "Sers très frais. Décore : quelques copeaux de chocolat noir, un grain de café espresso, ou rien (la mousse parle pour elle-même)."
       ],
       "photo": "assets/recipes/des48.webp"
@@ -39581,7 +39581,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 140,
+      "kcal": 139,
       "tags": [
         "vegetarian",
         "vegan",
@@ -39656,7 +39656,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 240,
+      "kcal": 258,
       "tags": [
         "vegetarian",
         "quick",
@@ -39671,37 +39671,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Halloumi",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Poivron rouge",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Origan séché",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
@@ -39717,7 +39717,7 @@ window.__DATA_RECIPES = {
         "Chauffe une poêle à griller (ou plancha) à feu moyen-vif sans matière grasse — le halloumi rend déjà sa graisse.",
         "Pose les cubes de halloumi dans la poêle, fais-les griller 2 min de chaque côté : ils doivent dorer et présenter de belles marques de gril (signature visuelle).",
         "Ajoute les cubes de poivron rouge dans la poêle vers la fin (1-2 min) pour qu'ils restent un peu croquants tout en colorant légèrement.",
-        "Sors halloumi et poivrons. Sur des piques en bois, enfile en alternance : 1 cube halloumi, 1 cube poivron, 1 feuille de menthe, etc. (12 piques).",
+        "Sors halloumi et poivrons. Sur des piques en bois, enfile en alternance : 1 cube halloumi, 1 cube poivron, 1 feuille de menthe, etc.",
         "Dans un petit bol, mélange jus de citron, huile d'olive, origan, poivre. Pas de sel (le halloumi est très salé).",
         "Au moment de servir : pinceau ou cuillère par-dessus les pinchos. Sers tiède (le halloumi devient caoutchouteux quand froid)."
       ],
@@ -39738,7 +39738,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 200,
+      "kcal": 255,
       "tags": [
         "quick",
         "apero-sec"
@@ -39818,7 +39818,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 4.5,
-      "kcal": 190,
+      "kcal": 211,
       "tags": [
         "quick",
         "apero-sec"
@@ -39832,31 +39832,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Asperges vertes (fines)",
-          12,
+          6,
           "u",
           "produce"
         ],
         [
           "Prosciutto (jambon de Parme en fines tranches)",
-          60,
+          30,
           "g",
           "meat-fish"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron (zeste)",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Parmesan râpé",
-          10,
+          5,
           "g",
           "dairy"
         ],
@@ -39893,7 +39893,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 170,
+      "kcal": 236,
       "tags": [
         "quick",
         "apero-sec"
@@ -39982,7 +39982,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 270,
+      "kcal": 315,
       "tags": [
         "quick",
         "apero-sec"
@@ -40072,7 +40072,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 280,
+      "kcal": 211,
       "tags": [
         "quick",
         "apero-dinatoire"
@@ -40087,49 +40087,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filet de saumon frais (qualité sushi)",
-          130,
+          43,
           "g",
           "meat-fish"
         ],
         [
           "Avocat",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron (jus)",
-          0.5,
+          0.167,
           "u",
           "produce"
         ],
         [
           "Citron vert (jus)",
-          0.5,
+          0.167,
           "u",
           "produce"
         ],
         [
           "Échalote",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Aneth frais",
-          0.05,
+          0.017,
           "bouquet",
           "produce"
         ],
         [
           "Ciboulette",
-          0.05,
+          0.017,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -40141,7 +40141,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Graines de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ]
@@ -40174,7 +40174,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 250,
+      "kcal": 218,
       "tags": [
         "batch-friendly",
         "apero-dinatoire"
@@ -40193,61 +40193,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Blanc de poulet",
-          150,
+          75,
           "g",
           "meat-fish"
         ],
         [
           "Sauce soja",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "c.à.c",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Huile de sésame",
-          0.5,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Graines de sésame",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          0.5,
+          0.25,
           "c.à.s",
           "pantry"
         ]
@@ -40256,7 +40256,7 @@ window.__DATA_RECIPES = {
         "Coupe le blanc de poulet en cubes de 2 cm.",
         "Marinade : dans un bol, mélange sauce soja, miel, gingembre râpé, ail écrasé, huile de sésame.",
         "Ajoute les cubes de poulet, mélange pour bien enrober. Laisse mariner 30 min minimum au frais (1 h c'est mieux).",
-        "Trempe 6 piques en bois 10 min dans l'eau (sinon elles brûlent à la cuisson).",
+        "Trempe les piques en bois 10 min dans l'eau (sinon elles brûlent à la cuisson).",
         "Enfile 3-4 cubes de poulet par pique.",
         "Chauffe une poêle (ou plancha) à feu moyen-vif avec l'huile d'olive. Cuis les brochettes 4 min de chaque côté (8-10 min total) : le poulet doit être doré et bien cuit à cœur (chair blanche).",
         "Hors du feu, déglace la poêle avec le reste de marinade pendant 30 sec à feu vif (ça forme une sauce caramélisée qui va napper les brochettes).",
@@ -40280,7 +40280,7 @@ window.__DATA_RECIPES = {
       "cook": 22,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 220,
+      "kcal": 240,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -40387,7 +40387,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 3,
       "cost": 7.0,
-      "kcal": 230,
+      "kcal": 174,
       "tags": [
         "quick",
         "apero-dinatoire"
@@ -40402,43 +40402,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Noix de Saint-Jacques (sans corail)",
-          100,
+          50,
           "g",
           "meat-fish"
         ],
         [
           "Petits pois (frais ou surgelés)",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Crème liquide légère 15%",
-          1,
+          0.5,
           "c.à.s",
           "dairy"
         ],
         [
           "Beurre clarifié",
-          5,
+          2.5,
           "g",
           "dairy"
         ],
         [
           "Citron (jus)",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          0.5,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -40495,55 +40495,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Crevettes décortiquées (cuites)",
-          80,
+          40,
           "g",
           "meat-fish"
         ],
         [
           "Tomate",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Concombre",
           0.5,
           "u",
           "produce"
         ],
         [
-          "Persil plat",
-          0.1,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Menthe fraîche",
-          0.05,
-          "bouquet",
-          "produce"
-        ],
-        [
-          "Oignon rouge",
+          "Concombre",
           0.25,
           "u",
           "produce"
         ],
         [
+          "Persil plat",
+          0.05,
+          "bouquet",
+          "produce"
+        ],
+        [
+          "Menthe fraîche",
+          0.025,
+          "bouquet",
+          "produce"
+        ],
+        [
+          "Oignon rouge",
+          0.125,
+          "u",
+          "produce"
+        ],
+        [
           "Citron (jus + zeste)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1.5,
+          0.75,
           "c.à.s",
           "pantry"
         ],
@@ -40583,7 +40583,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 190,
+      "kcal": 191,
       "tags": [
         "batch-friendly",
         "apero-dinatoire"
@@ -40687,7 +40687,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 230,
+      "kcal": 222,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -40789,7 +40789,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 9.0,
-      "kcal": 540,
+      "kcal": 510,
       "tags": [
         "festif"
       ],
@@ -40805,67 +40805,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Carré d'agneau (4 côtelettes)",
-          250,
+          125,
           "g",
           "meat-fish"
         ],
         [
           "Ail",
-          3,
+          1.5,
           "gousse",
           "produce"
         ],
         [
           "Romarin frais",
-          2,
+          1,
           "branche",
           "produce"
         ],
         [
           "Thym frais",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Moutarde de Dijon",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Petits pois (frais ou surgelés)",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
         [
           "Crème liquide légère 15%",
-          1,
+          0.5,
           "c.à.s",
           "dairy"
         ],
         [
           "Beurre clarifié",
-          10,
+          5,
           "g",
           "dairy"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron (jus)",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
@@ -40907,7 +40907,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 8.0,
-      "kcal": 480,
+      "kcal": 561,
       "tags": [
         "festif",
         "batch-friendly"
@@ -40925,31 +40925,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Saumon entier vidé (avec peau)",
-          400,
+          200,
           "g",
           "meat-fish"
         ],
         [
           "Gros sel marin",
-          600,
+          300,
           "g",
           "pantry"
         ],
         [
           "Blanc d'œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Aneth frais",
-          0.1,
+          0.05,
           "bouquet",
           "produce"
         ],
         [
           "Persil plat",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
@@ -40961,19 +40961,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive (pour servir)",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
@@ -41259,7 +41259,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 690,
+      "kcal": 687,
       "tags": [
         "festif",
         "batch-friendly"
@@ -41659,7 +41659,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 260,
+      "kcal": 506,
       "tags": [
         "vegetarian",
         "quick"
@@ -41744,7 +41744,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 610,
+      "kcal": 611,
       "tags": [
         "vegetarian",
         "vegan",
@@ -41843,7 +41843,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 6.0,
-      "kcal": 280,
+      "kcal": 395,
       "tags": [
         "quick"
       ],
@@ -41975,7 +41975,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 7.0,
-      "kcal": 310,
+      "kcal": 587,
       "tags": [
         "quick"
       ],
@@ -42078,7 +42078,7 @@ window.__DATA_RECIPES = {
       "advance": "4h",
       "diff": 2,
       "cost": 2.5,
-      "kcal": 150,
+      "kcal": 147,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -42092,55 +42092,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Gélatine en feuille",
-          2,
+          1,
           "u",
           "pantry"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Extrait de vanille",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Fraises fraîches",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Framboises fraîches",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Citron (jus)",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ]
@@ -42151,8 +42151,8 @@ window.__DATA_RECIPES = {
         "Hors du feu, ajoute les feuilles de gélatine essorées (presse-les entre tes mains pour retirer l'eau). Remue jusqu'à dissolution complète.",
         "Dans un saladier, mélange skyr et miel à la fourchette pour bien dissoudre le miel.",
         "Verse le lait tiède (avec gélatine) sur le yaourt en filet, en fouettant doucement pour homogénéiser.",
-        "Verse dans 4 verrines ou ramequins individuels. Place au frigo 4 h minimum (idéalement une nuit) pour que la panna cotta prenne.",
-        "Coulis : dans un blender, mixe 80g de fraises et toutes les framboises avec le jus de citron. Passe au tamis si tu veux retirer les pépins (optionnel).",
+        "Verse dans des verrines ou ramequins individuels. Place au frigo 4 h minimum (idéalement une nuit) pour que la panna cotta prenne.",
+        "Coulis : dans un blender, mixe la majeure partie des fraises et toutes les framboises avec le jus de citron. Passe au tamis si tu veux retirer les pépins (optionnel).",
         "Au moment de servir, démoule (option) ou laisse en verrines. Verse le coulis dessus. Décore des fraises restantes coupées en lamelles et de feuilles de menthe."
       ],
       "photo": "assets/recipes/des50.webp"
@@ -42172,7 +42172,7 @@ window.__DATA_RECIPES = {
       "advance": "2h",
       "diff": 2,
       "cost": 2.5,
-      "kcal": 180,
+      "kcal": 194,
       "tags": [
         "vegetarian",
         "vegan",
@@ -42251,7 +42251,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 318,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -42354,7 +42354,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 100,
+      "kcal": 105,
       "tags": [
         "vegetarian",
         "quick"
@@ -42436,7 +42436,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 350,
+      "kcal": 460,
       "tags": [
         "vegetarian",
         "quick"
@@ -42531,7 +42531,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 380,
+      "kcal": 441,
       "tags": [
         "quick"
       ],
@@ -42625,7 +42625,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 460,
+      "kcal": 459,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -42955,7 +42955,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 420,
+      "kcal": 629,
       "tags": [
         "batch-friendly"
       ],
@@ -43078,7 +43078,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 340,
+      "kcal": 418,
       "tags": [
         "quick"
       ],
@@ -43194,7 +43194,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 520,
+      "kcal": 589,
       "tags": [
         "quick"
       ],
@@ -43686,7 +43686,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.8,
-      "kcal": 460,
+      "kcal": 605,
       "tags": [
         "vegetarian",
         "quick"
@@ -43797,7 +43797,7 @@ window.__DATA_RECIPES = {
       "advance": "3h",
       "diff": 2,
       "cost": 1.8,
-      "kcal": 240,
+      "kcal": 397,
       "tags": [
         "vegetarian",
         "festif"
@@ -43881,7 +43881,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 570,
+      "kcal": 569,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -44046,7 +44046,7 @@ window.__DATA_RECIPES = {
       "advance": "2h",
       "diff": 2,
       "cost": 5.5,
-      "kcal": 520,
+      "kcal": 638,
       "tags": [
         "batch-friendly"
       ],
@@ -44198,7 +44198,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 260,
+      "kcal": 258,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -44292,7 +44292,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 460,
+      "kcal": 523,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -44580,7 +44580,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 385,
       "tags": [
         "vegetarian",
         "quick"
@@ -44676,7 +44676,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 420,
+      "kcal": 519,
       "tags": [
         "quick",
         "batch-friendly"
@@ -45038,7 +45038,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 382,
       "tags": [
         "vegetarian",
         "quick",
@@ -45382,7 +45382,7 @@ window.__DATA_RECIPES = {
       "advance": "3h",
       "diff": 1,
       "cost": 2.5,
-      "kcal": 530,
+      "kcal": 526,
       "tags": [
         "vegetarian",
         "quick",
@@ -45759,7 +45759,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 5.5,
-      "kcal": 420,
+      "kcal": 721,
       "tags": [
         "vegetarian",
         "quick",
@@ -45876,7 +45876,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 290,
+      "kcal": 292,
       "tags": [
         "vegetarian"
       ],
@@ -45980,7 +45980,7 @@ window.__DATA_RECIPES = {
       "advance": "4h",
       "diff": 2,
       "cost": 2.5,
-      "kcal": 350,
+      "kcal": 346,
       "tags": [
         "vegetarian",
         "festif"
@@ -46084,7 +46084,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 400,
+      "kcal": 403,
       "tags": [
         "light",
         "quick"
@@ -46214,7 +46214,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 2,
       "cost": 6.0,
-      "kcal": 460,
+      "kcal": 557,
       "tags": [
         "light"
       ],
@@ -46375,7 +46375,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 140,
+      "kcal": 131,
       "tags": [
         "vegetarian",
         "vegan",
@@ -46474,7 +46474,7 @@ window.__DATA_RECIPES = {
       "cook": 7,
       "diff": 1,
       "cost": 0.8,
-      "kcal": 380,
+      "kcal": 383,
       "tags": [
         "vegetarian",
         "quick"
@@ -46893,7 +46893,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 600,
+      "kcal": 603,
       "tags": [
         "vegetarian",
         "quick"
@@ -47005,7 +47005,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 0.5,
-      "kcal": 140,
+      "kcal": 142,
       "tags": [
         "vegan",
         "vegetarian",
@@ -47076,7 +47076,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 500,
+      "kcal": 497,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -47315,7 +47315,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 420,
+      "kcal": 572,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -47556,7 +47556,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 500,
+      "kcal": 503,
       "tags": [
         "vegetarian",
         "quick",
@@ -48182,7 +48182,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 520,
       "tags": [
         "light"
       ],
@@ -48434,7 +48434,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 270,
+      "kcal": 274,
       "tags": [
         "vegan",
         "vegetarian",
@@ -48524,7 +48524,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 670,
+      "kcal": 672,
       "tags": [],
       "eq": [
         "pan",
@@ -49354,7 +49354,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 480,
+      "kcal": 763,
       "tags": [],
       "eq": [
         "pan",
@@ -49635,7 +49635,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 130,
+      "kcal": 98,
       "tags": [
         "vegan",
         "vegetarian",
@@ -49719,7 +49719,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 289,
       "tags": [
         "vegan",
         "vegetarian",
@@ -50146,7 +50146,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 6.5,
-      "kcal": 540,
+      "kcal": 602,
       "tags": [
         "light"
       ],
@@ -50246,7 +50246,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 480,
+      "kcal": 520,
       "tags": [
         "vegan",
         "vegetarian",
@@ -50386,85 +50386,85 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Viande hachée de bœuf (5 % MG)",
-          130,
+          65,
           "g",
           "meat-fish"
         ],
         [
           "Tomates concassées (boîte)",
-          200,
+          100,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Yaourt grec",
-          100,
+          50,
           "g",
           "dairy"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Feta émiettée",
-          30,
+          15,
           "g",
           "dairy"
         ],
         [
           "Cannelle en poudre",
-          0.25,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Origan séché",
-          0.5,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Cumin",
           0.25,
           "c.à.c",
           "spices"
         ],
         [
+          "Cumin",
+          0.125,
+          "c.à.c",
+          "spices"
+        ],
+        [
           "Concentré de tomate",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive",
-          2,
+          1,
           "c.à.s",
           "pantry"
         ],
         [
           "Persil plat",
-          0.05,
+          0.025,
           "bouquet",
           "produce"
         ],
@@ -50764,7 +50764,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 490,
+      "kcal": 486,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -50877,7 +50877,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 290,
+      "kcal": 473,
       "tags": [
         "vegan",
         "vegetarian",
@@ -50967,7 +50967,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 320,
+      "kcal": 428,
       "tags": [
         "vegan",
         "vegetarian",
@@ -51545,7 +51545,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 710,
+      "kcal": 707,
       "tags": [
         "batch-friendly",
         "festif"
@@ -52316,7 +52316,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 130,
+      "kcal": 133,
       "tags": [
         "vegetarian",
         "festif"
@@ -52407,7 +52407,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 195,
+      "kcal": 149,
       "tags": [
         "festif",
         "no-cook"
@@ -52422,37 +52422,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Saumon fumé",
-          80,
+          27,
           "g",
           "meat-fish"
         ],
         [
           "Avocat",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Fromage frais type St-Môret",
-          50,
+          17,
           "g",
           "dairy"
         ],
         [
           "Aneth frais",
-          4,
+          1,
           "branche",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
@@ -52474,7 +52474,7 @@ window.__DATA_RECIPES = {
         "Écrase l'avocat à la fourchette dans un bol — pas en purée parfaite, garde quelques morceaux pour la texture. Ajoute le jus d'un demi-citron vert, 1 c.à.c d'huile d'olive, sel, poivre. Mélange.",
         "Coupe le saumon fumé en lanières de 1 cm de large, puis en petits morceaux. Réserve.",
         "Dans un autre bol, mélange le fromage frais avec le zeste de la moitié du citron vert (frotte le citron sur la râpe fine) et 2 branches d'aneth ciselées (= coupées finement aux ciseaux).",
-        "Prends 4 verrines (ou petits verres). Première couche : 2 cuillères à café d'avocat écrasé au fond, bien tassé. Deuxième couche : 1 cuillère à café de fromage frais. Troisième couche : un peu de saumon fumé en morceaux.",
+        "Prends des verrines (ou petits verres). Première couche : 2 cuillères à café d'avocat écrasé au fond, bien tassé. Deuxième couche : 1 cuillère à café de fromage frais. Troisième couche : un peu de saumon fumé en morceaux.",
         "Recommence si tu as la place : avocat, fromage, saumon. Termine par le saumon visible sur le dessus.",
         "Décore avec une branche d'aneth entière piquée au centre et un fin zeste de citron vert.",
         "Couvre de film et place 15 min au frigo avant de servir : les saveurs se mélangent et c'est meilleur frais. Apporte le 2e demi-citron vert coupé en quartiers sur la table pour ceux qui veulent rajouter du jus."
@@ -52493,7 +52493,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 180,
+      "kcal": 167,
       "tags": [
         "vegetarian",
         "festif",
@@ -52509,31 +52509,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tomate cerise (multicolore)",
-          200,
+          50,
           "g",
           "produce"
         ],
         [
           "Burrata",
-          1,
+          0.25,
           "u",
           "dairy"
         ],
         [
           "Basilic frais",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Vinaigre balsamique",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -52576,7 +52576,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 170,
+      "kcal": 154,
       "tags": [
         "vegetarian",
         "festif"
@@ -52591,37 +52591,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Parmesan",
-          30,
+          7.5,
           "g",
           "dairy"
         ],
         [
           "Pignons de pin",
-          20,
+          5,
           "g",
           "pantry"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Basilic frais",
-          6,
+          2,
           "feuille",
           "produce"
         ],
@@ -52664,7 +52664,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 145,
+      "kcal": 147,
       "tags": [
         "vegetarian",
         "festif"
@@ -52760,7 +52760,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 165,
+      "kcal": 131,
       "tags": [
         "festif",
         "no-cook"
@@ -52774,31 +52774,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Noix de Saint-Jacques fraîches",
-          200,
+          50,
           "g",
           "meat-fish"
         ],
         [
           "Citron vert",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Aneth frais",
-          4,
+          1,
           "branche",
           "produce"
         ],
         [
           "Échalote",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -52860,49 +52860,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crème liquide entière",
-          200,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          100,
+          25,
           "ml",
           "dairy"
         ],
         [
           "Feuille de gélatine",
-          2,
+          0.5,
           "feuille",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Fève tonka",
-          0.5,
+          0.125,
           "u",
           "spices"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Fruits rouges (frais ou surgelés)",
-          200,
+          50,
           "g",
           "produce"
         ],
         [
           "Citron",
-          0.5,
+          0.125,
           "u",
           "produce"
         ]
@@ -52913,7 +52913,7 @@ window.__DATA_RECIPES = {
         "Chauffe à feu moyen-doux. Quand le mélange frémit (= juste avant l'ébullition, petites bulles aux bords), retire du feu. Ne pas faire bouillir, sinon la crème tourne.",
         "Ajoute le sirop d'érable, remue.",
         "Essore les feuilles de gélatine entre tes mains (= presse-les pour enlever l'eau). Plonge-les dans la crème chaude. Remue avec un fouet jusqu'à ce qu'elles fondent complètement (30 secondes).",
-        "Verse le mélange dans 4 ramequins ou petites verrines. Laisse refroidir 15 minutes à température ambiante, puis place au frigo minimum 4 heures (idéalement la veille).",
+        "Verse le mélange dans des ramequins ou petites verrines. Laisse refroidir 15 minutes à température ambiante, puis place au frigo minimum 4 heures (idéalement la veille).",
         "Pour le coulis : si tu utilises des fruits surgelés, mets-les dans une casserole sans décongeler. Pour les frais, lave et équeute. Ajoute le jus du demi-citron.",
         "Chauffe à feu doux 5 minutes en écrasant à la fourchette : tu obtiens une compote rustique. Si tu veux un coulis lisse, mixe au mixeur plongeant puis passe au tamis (optionnel). Laisse refroidir.",
         "Au moment de servir, sors les panna cottas du frigo. Si tu veux les démouler : passe le ramequin 5 secondes dans de l'eau chaude, retourne sur une assiette, secoue légèrement. Sinon, sers directement dans le ramequin.",
@@ -52934,7 +52934,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 100,
+      "kcal": 104,
       "tags": [
         "vegan",
         "vegetarian",
@@ -53006,7 +53006,7 @@ window.__DATA_RECIPES = {
       "advance": "1h",
       "diff": 2,
       "cost": 2.4,
-      "kcal": 220,
+      "kcal": 166,
       "tags": [
         "vegetarian",
         "festif"
@@ -53022,37 +53022,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mascarpone",
-          80,
+          20,
           "g",
           "dairy"
         ],
         [
           "Skyr (ou yaourt grec)",
-          120,
+          30,
           "g",
           "dairy"
         ],
         [
           "Framboises (fraîches ou surgelées)",
-          150,
+          38,
           "g",
           "produce"
         ],
         [
           "Amandes effilées",
-          30,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.25,
+          0.063,
           "c.à.c",
           "spices"
         ]
@@ -53061,9 +53061,9 @@ window.__DATA_RECIPES = {
         "Sors le mascarpone du frigo 10 minutes avant : il sera plus facile à travailler.",
         "Dans une poêle sèche, à feu moyen, fais torréfier les amandes effilées 2-3 minutes en remuant constamment : elles doivent devenir dorées et dégager une odeur de noisette grillée. Attention, ça brûle vite. Retire-les dès qu'elles colorent. Réserve sur une assiette pour qu'elles refroidissent.",
         "Si tu utilises des framboises surgelées : décongèle-les 10 min à température ambiante. Pour les fraîches : lave-les délicatement, sèche-les.",
-        "Sépare 12 belles framboises (3 par verrine) pour la déco. Écrase les autres à la fourchette dans un bol — pas en purée, garde des morceaux.",
+        "Sépare 3 belles framboises par verrine pour la déco. Écrase les autres à la fourchette dans un bol — pas en purée, garde des morceaux.",
         "Dans un autre grand bol, mélange le mascarpone, le skyr, le sirop d'érable et la vanille. Fouette au fouet manuel 1 minute jusqu'à obtenir une crème lisse, brillante et homogène.",
-        "Dans 4 verrines (ou petits verres) : verse au fond 1 c.à.s de framboises écrasées. Couvre de 2 c.à.s de crème mascarpone-yaourt. Recommence : framboises écrasées, crème.",
+        "Dans des verrines (ou petits verres) : verse au fond 1 c.à.s de framboises écrasées. Couvre de 2 c.à.s de crème mascarpone-yaourt. Recommence : framboises écrasées, crème.",
         "Termine par une couche de crème bien lisse sur le dessus, à 1 cm du bord (laisse de la place pour la déco).",
         "Place au frigo minimum 1 heure (les saveurs se mélangent et la crème prend de la tenue).",
         "Au moment de servir : décore chaque verrine avec 3 framboises entières placées en triangle au centre, parsème généreusement d'amandes torréfiées sur le dessus. Le croquant des amandes contre la douceur de la crème et l'acidité des framboises, c'est le combo gagnant."
@@ -53085,7 +53085,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 1.2,
-      "kcal": 60,
+      "kcal": 47,
       "tags": [
         "vegan",
         "vegetarian",
@@ -53100,25 +53100,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fraises",
-          500,
+          125,
           "g",
           "produce"
         ],
         [
           "Citron",
-          0.5,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Basilic frais",
-          6,
+          2,
           "feuille",
           "produce"
         ],
         [
           "Eau",
-          100,
+          25,
           "ml",
           "pantry"
         ]
@@ -53169,25 +53169,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Chocolat noir 70%",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          3,
+          0.75,
           "u",
           "dairy"
         ],
         [
           "Crème liquide entière",
-          30,
+          7.5,
           "ml",
           "dairy"
         ],
         [
           "Fève tonka",
-          0.5,
+          0.125,
           "u",
           "spices"
         ],
@@ -53203,11 +53203,11 @@ window.__DATA_RECIPES = {
         "Casse le chocolat en morceaux dans un bol qui passe au bain-marie (= un bol résistant à la chaleur). Remplis une casserole de 2 cm d'eau, porte à frémissement, baisse le feu. Pose le bol sur la casserole — important : le bol ne doit pas toucher l'eau.",
         "Remue le chocolat à la cuillère en bois jusqu'à ce qu'il soit lisse et brillant. Hors du feu, râpe directement la demi-fève tonka dedans (râpe très fine, le goût est puissant). Ajoute la crème, mélange. La pâte doit être tiède (test du doigt, pas brûlante).",
         "Sépare les blancs et les jaunes dans deux bols différents. Le bol des blancs doit être PARFAITEMENT sec et sans trace de gras (sinon les blancs ne montent pas). Bonus : essuie-le avec un peu de jus de citron.",
-        "Quand le chocolat est tiède, incorpore les 3 jaunes d'œuf un par un en remuant énergiquement au fouet entre chaque ajout. Le mélange devient plus brillant et plus épais.",
-        "Bats les 3 blancs en neige : commence lentement au fouet électrique puis accélère. Ajoute la pincée de fleur de sel à mi-parcours (la salinité stabilise les blancs). Les blancs sont prêts quand tu peux retourner le bol au-dessus de ta tête sans qu'ils bougent (3-4 min).",
+        "Quand le chocolat est tiède, incorpore les jaunes d'œuf un par un en remuant énergiquement au fouet entre chaque ajout. Le mélange devient plus brillant et plus épais.",
+        "Bats les blancs en neige : commence lentement au fouet électrique puis accélère. Ajoute la pincée de fleur de sel à mi-parcours (la salinité stabilise les blancs). Les blancs sont prêts quand tu peux retourner le bol au-dessus de ta tête sans qu'ils bougent (3-4 min).",
         "Incorpore 1/3 des blancs dans le chocolat en mélangeant énergiquement au fouet : ça allège la masse chocolatée.",
         "Ajoute le reste des blancs en deux fois, avec une maryse (spatule souple). Mouvement clé : soulève de bas en haut en tournant le bol d'un quart à chaque mouvement. SURTOUT ne pas écraser — il faut garder l'air pour une mousse aérienne.",
-        "Verse dans 4 ramequins ou verrines individuelles. Lisse le dessus à la spatule. Couvre de film au contact (= film posé directement sur la mousse pour éviter qu'elle croûte).",
+        "Verse dans des ramequins ou verrines individuelles. Lisse le dessus à la spatule. Couvre de film au contact (= film posé directement sur la mousse pour éviter qu'elle croûte).",
         "Mets au frigo minimum 3 heures, idéalement la veille pour le lendemain : la mousse prend et les saveurs se développent.",
         "Au moment de servir, saupoudre d'une micro-pincée de fleur de sel et râpe encore un peu de fève tonka sur le dessus. C'est sombre, intense, festif sans sucre ajouté — le chocolat 70% suffit."
       ],
@@ -53226,7 +53226,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 75,
+      "kcal": 53,
       "tags": [
         "vegan",
         "vegetarian",
@@ -53241,13 +53241,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fraises",
-          400,
+          100,
           "g",
           "produce"
         ],
         [
           "Vinaigre balsamique",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
@@ -53259,13 +53259,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Basilic frais",
-          6,
+          2,
           "feuille",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ]
@@ -53274,7 +53274,7 @@ window.__DATA_RECIPES = {
         "Verse le vinaigre balsamique dans une petite casserole, à feu moyen. Laisse réduire 4-5 minutes en remuant de temps en temps : tu obtiens un sirop épais, brillant, qui nappe le dos d'une cuillère. Réserve hors du feu : il va encore épaissir en refroidissant.",
         "Lave délicatement les fraises sous un filet d'eau (ne les laisse pas tremper, elles boivent). Sèche-les sur un linge propre. Équeute (= retire la tige verte).",
         "Choisis les plus belles fraises pour le carpaccio. Pose-les sur la planche, et coupe-les en lamelles ULTRA-FINES (2-3 mm) à l'aide d'un couteau bien aiguisé. Si tu as une mandoline, encore mieux.",
-        "Sur 4 assiettes plates, dispose les lamelles de fraises en rosace, comme des pétales de fleur. Couvre toute la surface, sans trop superposer.",
+        "Sur des assiettes plates (une par personne), dispose les lamelles de fraises en rosace, comme des pétales de fleur. Couvre toute la surface, sans trop superposer.",
         "Saisis le moulin à poivre et fais 4-5 tours sur chaque assiette : le poivre noir réveille le sucré naturel des fraises — c'est une combinaison étonnante qui marche depuis des siècles en cuisine italienne.",
         "Arrose chaque assiette d'un fin filet de réduction de balsamique (= dessine des arabesques à la cuillère). Termine par quelques gouttes d'huile d'olive : ça apporte du gras qui équilibre l'acidité.",
         "Cisèle finement 4 feuilles de basilic, parsème sur chaque assiette. Garde 2 feuilles entières pour la déco (une feuille au centre de chaque assiette, debout).",
@@ -53466,7 +53466,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 95,
+      "kcal": 137,
       "tags": [
         "vegan",
         "vegetarian",
@@ -53480,48 +53480,48 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait de coco",
-          200,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Thé matcha en poudre",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Fruits rouges (frais ou surgelés)",
-          150,
+          38,
           "g",
           "produce"
         ],
         [
           "Eau",
-          100,
+          25,
           "ml",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.125,
           "u",
           "produce"
         ]
       ],
       "steps": [
-        "Dans un bol, mélange 50 ml d'eau bouillante avec le matcha. Fouette au fouet en bambou (chasen) ou au mini-fouet électrique 30 secondes jusqu'à obtenir une mousse verte intense, sans grumeaux (le matcha doit être complètement dissous).",
+        "Dans un bol, mélange un peu d'eau bouillante avec le matcha. Fouette au fouet en bambou (chasen) ou au mini-fouet électrique 30 secondes jusqu'à obtenir une mousse verte intense, sans grumeaux (le matcha doit être complètement dissous).",
         "Ajoute le reste d'eau froide, le lait de coco, le sirop d'érable et le jus du demi-citron vert. Mélange. Goûte : ça doit être amer-sucré, herbacé, avec la rondeur de la coco.",
         "Verse la préparation dans un plat large à fond plat (type plat à gratin) sur 2-3 cm d'épaisseur — plus c'est fin, plus le granité prend vite.",
         "Couvre de film alimentaire et place au congélateur. Toutes les 45 minutes pendant 4 heures, sors le plat et gratte la surface à la fourchette en partant des bords vers le centre. Tu détaches des cristaux glacés vert pâle.",
         "Au bout de 4 grattages, tu obtiens une masse de cristaux légers et aérés (= la texture granité authentique).",
-        "Au moment de servir, gratte une dernière fois pour aérer. Dans 4 coupes ou verrines bien froides (mets-les 5 min au congélateur avant), dépose 2-3 cuillères de fruits rouges au fond.",
+        "Au moment de servir, gratte une dernière fois pour aérer. Dans des coupes ou verrines bien froides (mets-les 5 min au congélateur avant), dépose 2-3 cuillères de fruits rouges au fond.",
         "Recouvre de 2-3 cuillères de granité matcha-coco par-dessus. Le contraste froid + rouge des baies + vert du matcha est visuellement très festif.",
         "Sers immédiatement (un granité fond vite). Apporte une cuillère longue à café pour récolter le jus mélangé au fond."
       ],
@@ -53630,7 +53630,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 180,
+      "kcal": 192,
       "tags": [
         "vegetarian",
         "vegan"
@@ -53736,7 +53736,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 130,
+      "kcal": 122,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -53811,7 +53811,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 340,
+      "kcal": 357,
       "tags": [
         "vegetarian"
       ],
@@ -53825,31 +53825,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de sarrasin",
-          2,
+          1,
           "u",
           "bread"
         ],
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Tomate",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
@@ -53861,31 +53861,31 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Avocat",
-          0.5,
-          "u",
-          "produce"
-        ],
-        [
-          "Citron vert",
           0.25,
           "u",
           "produce"
         ],
         [
+          "Citron vert",
+          0.125,
+          "u",
+          "produce"
+        ],
+        [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -53898,13 +53898,13 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Prépare la sauce ranchera : épluche et émince l'oignon rouge finement. Écrase l'ail. Coupe les tomates en petits dés.",
-        "Dans une poêle, chauffe 1 c.à.s d'huile d'olive à feu moyen. Ajoute l'oignon, fais-le suer 3 minutes jusqu'à translucide. Ajoute l'ail, le cumin et le piment d'Espelette. Remue 30 secondes (les épices doivent libérer leur arôme sans brûler).",
+        "Dans une poêle, chauffe l'huile d'olive à feu moyen. Ajoute l'oignon, fais-le suer 3 minutes jusqu'à translucide. Ajoute l'ail, le cumin et le piment d'Espelette. Remue 30 secondes (les épices doivent libérer leur arôme sans brûler).",
         "Ajoute les dés de tomate, le sel. Baisse à feu doux, laisse mijoter 8 minutes en écrasant légèrement à la fourchette : tu obtiens une sauce épaisse, rouge-orangé, parfumée.",
-        "Pendant ce temps, prépare l'avocat : coupe en deux, retire le noyau, récupère la chair. Écrase à la fourchette dans un bol avec le jus du quart de citron vert et une pincée de sel.",
+        "Pendant ce temps, prépare l'avocat : coupe en deux, retire le noyau, récupère la chair. Écrase à la fourchette dans un bol avec le jus du citron vert et une pincée de sel.",
         "Quand la sauce ranchera est presque prête, fais cuire les œufs. Casse-les 1 par 1 dans une autre poêle légèrement huilée à feu moyen-doux. Laisse cuire 3-4 minutes : le blanc est pris, le jaune encore liquide et brillant.",
         "Réchauffe rapidement les galettes de sarrasin 30 secondes par face dans une poêle sèche.",
         "Dressage : pose une galette de sarrasin sur chaque assiette. Étale dessus une bonne cuillère d'avocat écrasé. Couvre généreusement de sauce ranchera. Pose 1 œuf sur le dessus.",
-        "Cisèle 3 branches de coriandre, parsème sur l'œuf. Garde 1 branche entière pour la déco.",
+        "Cisèle la coriandre (garde quelques brins entiers pour la déco), parsème sur l'œuf.",
         "Sers immédiatement avec un quartier de citron vert à côté pour pimper. Les huevos rancheros, c'est LE petit-déjeuner mexicain costaud — protéines (œuf), bons gras (avocat), antioxydants (tomate), épices anti-inflammatoires."
       ],
       "photo": "assets/recipes/b70.webp"
@@ -53924,7 +53924,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 195,
+      "kcal": 211,
       "tags": [
         "vegetarian",
         "vegan"
@@ -54029,7 +54029,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 0.9,
-      "kcal": 60,
+      "kcal": 21,
       "tags": [
         "vegan",
         "vegetarian"
@@ -54042,39 +54042,39 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Café fort",
-          300,
+          75,
           "ml",
           "pantry"
         ],
         [
           "Cacao non sucré",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Cannelle en poudre",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau",
-          100,
+          25,
           "ml",
           "pantry"
         ]
       ],
       "steps": [
-        "Prépare un café fort (espresso ou cafetière italienne) : 300 ml bien serrés. Verse-le encore chaud dans un grand bol.",
+        "Prépare un café fort (espresso ou cafetière italienne) : bien serré. Verse-le encore chaud dans un grand bol.",
         "Ajoute immédiatement le cacao non sucré, la cannelle et le sirop d'érable au café chaud. Fouette énergiquement au fouet jusqu'à dissolution complète : le mélange devient lisse, brun foncé, brillant.",
-        "Ajoute les 100 ml d'eau froide pour stopper la chaleur. Goûte : ça doit être amer-doux, parfumé à la cannelle (typiquement mexicain, inspiré du chocolat de Oaxaca aztèque).",
+        "Ajoute l'eau froide pour stopper la chaleur. Goûte : ça doit être amer-doux, parfumé à la cannelle (typiquement mexicain, inspiré du chocolat de Oaxaca aztèque).",
         "Verse la préparation dans un plat large à fond plat sur 2-3 cm d'épaisseur — plus c'est fin, mieux ça prend.",
         "Couvre de film alimentaire et place au congélateur. Toutes les 45 minutes pendant 4 heures, sors le plat et gratte la surface à la fourchette en partant des bords : tu détaches des cristaux glacés brun foncé.",
         "Au bout de 4 grattages, tu obtiens une masse de cristaux légers, aérés, intensément aromatiques.",
@@ -54098,7 +54098,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 430,
+      "kcal": 429,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -54183,7 +54183,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 220,
+      "kcal": 238,
       "tags": [
         "vegetarian",
         "vegan",
@@ -54304,7 +54304,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 70,
+      "kcal": 93,
       "tags": [
         "vegan",
         "vegetarian",
@@ -54320,42 +54320,42 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque",
-          500,
+          125,
           "g",
           "produce"
         ],
         [
           "Menthe fraîche",
-          8,
+          2,
           "feuille",
           "produce"
         ],
         [
           "Eau de fleur d'oranger",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Pistaches non salées",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ]
       ],
       "steps": [
-        "Sors la pastèque du frigo 10 minutes avant : trop froide, elle perd ses arômes. Coupe une grosse tranche de pastèque (~500 g), retire la peau verte au couteau.",
+        "Sors la pastèque du frigo 10 minutes avant : trop froide, elle perd ses arômes. Coupe une grosse tranche de pastèque (~125 g par personne), retire la peau verte au couteau.",
         "Pose la tranche bien à plat sur la planche. À l'aide d'un couteau bien aiguisé, coupe la pastèque en tranches ULTRA-FINES (2-3 mm) — c'est ça qui fait le carpaccio.",
-        "Sur 4 assiettes plates, dispose les tranches de pastèque en rosace, comme des pétales de fleur. Couvre toute la surface, sans trop superposer.",
+        "Sur des assiettes plates (une par personne), dispose les tranches de pastèque en rosace, comme des pétales de fleur. Couvre toute la surface, sans trop superposer.",
         "Dans un petit bol, mélange l'eau de fleur d'oranger avec le jus du demi-citron vert. Trempe un pinceau et badigeonne légèrement chaque tranche de pastèque (= tu apportes le parfum sans détremper).",
         "Concasse grossièrement les pistaches au couteau (= des morceaux irréguliers, pas en poudre). Parsème sur le carpaccio.",
-        "Cisèle 6 feuilles de menthe en chiffonnade (= roule-les et coupe en lanières fines aux ciseaux). Parsème sur la pastèque. Garde 2 feuilles entières pour la déco au centre.",
+        "Cisèle les feuilles de menthe en chiffonnade (= roule-les et coupe en lanières fines aux ciseaux). Parsème sur la pastèque. Garde 2 feuilles entières pour la déco au centre.",
         "Râpe un peu de zeste de citron vert sur l'ensemble pour la touche fraîche finale.",
         "Sers immédiatement, à peine sortant du frigo (10 min). C'est l'incarnation de l'été méditerranéen-maghrébin : ultra-rafraîchissant, parfumé fleur d'oranger (un classique des desserts marocains), croquant pistache, sans sucre ajouté car la pastèque est naturellement sucrée. CG quasi nulle."
       ],
@@ -54466,7 +54466,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 145,
+      "kcal": 224,
       "tags": [
         "vegan",
         "vegetarian",
@@ -54483,25 +54483,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Edamame surgelés",
-          250,
+          125,
           "g",
           "frozen"
         ],
         [
           "Graines de sésame",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Sauce soja",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -54519,7 +54519,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citron vert",
-          0.25,
+          0.125,
           "u",
           "produce"
         ]
@@ -54654,67 +54654,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Sarrasin",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Carotte",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Petits pois (frais ou surgelés)",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Graines de moutarde noire",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Huile de coco",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau",
-          250,
+          125,
           "ml",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -54735,7 +54735,7 @@ window.__DATA_RECIPES = {
         "Ajoute les petits pois et l'eau. Porte à frémissement, couvre, baisse à feu doux. Laisse cuire 10-12 minutes : le sarrasin absorbe le liquide et devient tendre.",
         "Hors du feu, laisse reposer 3 minutes couvert (= la vapeur résiduelle finit la cuisson en douceur).",
         "Cisèle la coriandre fraîche, ajoute-la avec le jus du demi-citron vert. Mélange à la fourchette en aérant les grains.",
-        "Verse dans 2 bols. C'est un petit-déjeuner indien du sud très répandu (originellement à la semoule de blé, ici en sarrasin pour rester IG bas). Riche en fibres et protéines végétales — tu tiens facile jusqu'au déjeuner."
+        "Verse dans des bols. C'est un petit-déjeuner indien du sud très répandu (originellement à la semoule de blé, ici en sarrasin pour rester IG bas). Riche en fibres et protéines végétales — tu tiens facile jusqu'au déjeuner."
       ],
       "photo": "assets/recipes/b73.webp"
     },
@@ -54754,7 +54754,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 250,
+      "kcal": 246,
       "tags": [
         "vegetarian",
         "no-cook"
@@ -54947,7 +54947,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 460,
+      "kcal": 462,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -55045,7 +55045,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 164,
       "tags": [
         "vegetarian"
       ],
@@ -55160,7 +55160,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 175,
+      "kcal": 166,
       "tags": [
         "vegan",
         "vegetarian",
@@ -55252,7 +55252,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 295,
+      "kcal": 249,
       "tags": [
         "vegetarian"
       ],
@@ -55265,43 +55265,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Tomate",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Poivron rouge",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -55313,13 +55313,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Coriandre fraîche",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -55344,7 +55344,7 @@ window.__DATA_RECIPES = {
         "Ajoute le poivron en lanières. Augmente légèrement à feu moyen-vif. Fais sauter 5 minutes en remuant : le poivron doit colorer mais rester ferme (= pas mou).",
         "Ajoute l'ail écrasé, le cumin, le paprika doux et le piment d'Espelette. Remue 30 secondes pour que les épices libèrent leur arôme (sans brûler).",
         "Ajoute les tomates, le sel et le poivre. Baisse à feu doux. Laisse mijoter 10-12 minutes en écrasant légèrement à la fourchette : la sauce épaissit, devient orange-rouge profond, parfumée.",
-        "Goûte : ajuste sel et épices. Avec le dos de la cuillère, creuse 2 puits dans la sauce. Casse délicatement 1 œuf dans chaque puits (= sans crever le jaune).",
+        "Goûte : ajuste sel et épices. Avec le dos de la cuillère, creuse un puits par personne dans la sauce. Casse délicatement 1 œuf dans chaque puits (= sans crever le jaune).",
         "Couvre la poêle, laisse cuire 4-5 minutes à feu doux : les blancs doivent être pris et opaques, les jaunes encore liquides et brillants.",
         "Pendant ce temps, cisèle la coriandre fraîche.",
         "Sors du feu. Parsème généreusement de coriandre fraîche. Sers IMMÉDIATEMENT directement à la poêle au centre de la table (= servive familial à la marocaine/tunisienne), accompagné d'une tranche de pain au levain.",
@@ -55367,7 +55367,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 195,
+      "kcal": 165,
       "tags": [
         "festif"
       ],
@@ -55486,7 +55486,7 @@ window.__DATA_RECIPES = {
       "advance": "3h",
       "diff": 2,
       "cost": 1.6,
-      "kcal": 185,
+      "kcal": 217,
       "tags": [
         "vegetarian"
       ],
@@ -55578,7 +55578,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 215,
+      "kcal": 191,
       "tags": [
         "vegan",
         "vegetarian",
@@ -55595,43 +55595,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tofu ferme",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Gingembre frais",
-          1,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Ciboulette",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Graines de sésame",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -55650,7 +55650,7 @@ window.__DATA_RECIPES = {
         "Ajoute le tofu émietté, le curcuma et le poivre. Mélange : le tofu se colore en jaune doré, ressemble à des œufs brouillés.",
         "Cuis 5-6 minutes en remuant régulièrement à la spatule, à feu moyen. Le tofu doit se raffermir un peu sur les bords et dégager une bonne odeur d'épices.",
         "Hors du feu, arrose de sauce soja. Ajoute les 3/4 de la ciboulette ciselée. Mélange.",
-        "Verse dans 2 assiettes (ou bols pour version Asie). Parsème les graines de sésame et le reste de ciboulette.",
+        "Répartis dans les assiettes (ou bols pour version Asie). Parsème les graines de sésame et le reste de ciboulette.",
         "Sers immédiatement avec une tranche de pain au levain ou un riz brun cuit la veille. C'est l'équivalent vegan des œufs brouillés, riche en protéines végétales (~14 g) avec curcuma anti-inflammatoire."
       ],
       "photo": "assets/recipes/b76.webp"
@@ -55670,7 +55670,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 350,
+      "kcal": 346,
       "tags": [
         "vegetarian",
         "vegan",
@@ -55755,7 +55755,7 @@ window.__DATA_RECIPES = {
       "advance": "1h",
       "diff": 1,
       "cost": 1.7,
-      "kcal": 130,
+      "kcal": 85,
       "tags": [
         "vegan",
         "vegetarian",
@@ -55773,37 +55773,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tofu soyeux",
-          300,
+          75,
           "g",
           "dairy"
         ],
         [
           "Fruit de la passion",
-          3,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.25,
+          0.063,
           "c.à.c",
           "spices"
         ],
         [
           "Graines de sésame noir",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ]
@@ -55813,7 +55813,7 @@ window.__DATA_RECIPES = {
         "Dans le blender, mets : le tofu soyeux, le reste de la pulpe de fruit de la passion, le zeste râpé d'un demi-citron vert, le jus du citron vert entier, le sirop d'érable et la vanille.",
         "Mixe 30 secondes à pleine puissance jusqu'à obtenir une mousse lisse, jaune pâle, légèrement mousseuse en surface.",
         "Goûte : ça doit être acidulé-doux, parfumé. Si trop acide, ajoute 1 c.à.c de sirop d'érable. Si trop doux, ajoute du jus de citron vert.",
-        "Verse dans 4 ramequins ou verrines individuelles. Lisse la surface à la spatule.",
+        "Verse dans des ramequins ou verrines individuelles. Lisse la surface à la spatule.",
         "Couvre de film alimentaire et place au frigo minimum 1 heure : la mousse prend en consistance et les saveurs se développent.",
         "Au moment de servir, sors du frigo. Dépose 1 c.à.c de pulpe de fruit de la passion réservée au centre de chaque coupe (= des grains noirs sur fond jaune, très visuel).",
         "Parsème les graines de sésame noir sur le bord. Râpe un peu de zeste de citron vert au-dessus pour la touche fraîche finale.",
@@ -55834,7 +55834,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 245,
+      "kcal": 181,
       "tags": [
         "vegan",
         "vegetarian",
@@ -56015,7 +56015,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 145,
+      "kcal": 138,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -56118,49 +56118,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Haricots noirs cuits (en boîte)",
-          100,
+          50,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Avocat",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Tomate cerise",
-          8,
+          4,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -56172,7 +56172,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -56184,12 +56184,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Rince le quinoa sous l'eau froide 30 sec. Cuis-le dans 120 ml d'eau salée, couvert, à feu doux 12 minutes. Hors du feu, laisse reposer 5 min couvert (la vapeur finit la cuisson).",
+        "Rince le quinoa sous l'eau froide 30 sec. Cuis-le dans 2 fois son volume d'eau salée, couvert, à feu doux 12 minutes. Hors du feu, laisse reposer 5 min couvert (la vapeur finit la cuisson).",
         "Pendant ce temps, égoutte les haricots noirs et rince-les. Dans une casserole, chauffe à feu doux 2 min avec le cumin et une pincée de sel. Écrase légèrement à la fourchette en gardant des morceaux entiers.",
         "Coupe les tomates cerises en deux. Coupe le demi-avocat en lamelles fines.",
-        "Dans une poêle légèrement huilée, casse les 2 œufs. Cuis-les sur le plat à feu moyen-doux, 3-4 min : le blanc doit être pris, le jaune encore brillant et coulant.",
+        "Dans une poêle légèrement huilée, casse les œufs. Cuis-les sur le plat à feu moyen-doux, 3-4 min : le blanc doit être pris, le jaune encore brillant et coulant.",
         "Cisèle 3 branches de coriandre, garde 1 pour la déco.",
-        "Dressage : dans 2 bols, étale d'abord 1/2 quinoa au fond. Pose 1/2 haricots noirs sur un côté. Place 1 œuf au centre. Dispose les lamelles d'avocat de l'autre côté.",
+        "Dressage : dans chaque bol, étale d'abord une part de quinoa au fond. Pose une part de haricots noirs sur un côté. Place 1 œuf au centre. Dispose les lamelles d'avocat de l'autre côté.",
         "Parsème les tomates cerises tout autour. Ajoute la coriandre ciselée.",
         "Saupoudre une pincée de piment d'Espelette sur l'œuf (= signature mexicaine). Termine par un trait de jus de citron vert sur l'avocat (= pour éviter qu'il brunisse et pour la fraîcheur).",
         "Sers immédiatement avec un quartier de citron vert à côté. Ce bowl combine 4 sources de protéines (quinoa + haricots + œuf + avocat indirectement), riche en fibres et bons gras — tu tiens facile la matinée."
@@ -56327,7 +56327,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 245,
+      "kcal": 240,
       "tags": [
         "vegetarian",
         "quick"
@@ -56341,55 +56341,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          3,
+          1.5,
           "u",
           "dairy"
         ],
         [
           "Tomate",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon nouveau",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Persil plat",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Menthe fraîche",
-          6,
+          3,
           "feuille",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Paprika doux",
           0.25,
           "c.à.c",
           "spices"
         ],
         [
+          "Paprika doux",
+          0.125,
+          "c.à.c",
+          "spices"
+        ],
+        [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -56410,12 +56410,12 @@ window.__DATA_RECIPES = {
         "Coupe la tomate en deux, retire les graines liquides à la cuillère (= sinon l'omelette est aqueuse). Coupe la chair en petits dés de 5 mm.",
         "Émince finement l'oignon nouveau (= partie blanche + verte, jusqu'aux feuilles).",
         "Cisèle finement la coriandre, le persil et la menthe (= chiffonnade) — c'est généreux en herbes, ça fait toute la différence d'une omelette berbère vs classique.",
-        "Dans un bol, casse les 3 œufs. Bats-les à la fourchette 30 sec jusqu'à ce que le blanc et le jaune soient bien mélangés. Ajoute le cumin, le paprika, le sel et le poivre.",
+        "Dans un bol, casse les œufs. Bats-les à la fourchette 30 sec jusqu'à ce que le blanc et le jaune soient bien mélangés. Ajoute le cumin, le paprika, le sel et le poivre.",
         "Incorpore les dés de tomate, l'oignon nouveau et les herbes cisélées. Mélange : la préparation est colorée, verte-rouge.",
         "Dans une poêle, chauffe 1 c.à.s d'huile d'olive à feu moyen. Quand elle frémit, verse la préparation dans la poêle. Étale uniformément avec une spatule.",
         "Cuis 4-5 min à feu moyen sans toucher : les bords doivent être pris, le centre encore légèrement humide.",
         "À l'aide d'une assiette : pose-la sur la poêle, retourne le tout d'un mouvement sec. L'omelette est sur l'assiette, côté cuit dessus. Fais-la glisser dans la poêle pour cuire le second côté 2-3 min.",
-        "Coupe en 4 parts. Sers tièdes avec une tranche de pain au levain, et un petit bol d'olives noires marinées en accompagnement.",
+        "Coupe en parts. Sers tièdes avec une tranche de pain au levain, et un petit bol d'olives noires marinées en accompagnement.",
         "C'est l'omelette du matin maghrébine, généreuse en herbes fraîches et épicée doucement. Riche en protéines (~20 g) et en antioxydants (les herbes apportent beaucoup de polyphénols)."
       ],
       "photo": "assets/recipes/b80.webp"
@@ -56435,7 +56435,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 480,
+      "kcal": 484,
       "tags": [
         "vegetarian",
         "quick"
@@ -56529,7 +56529,7 @@ window.__DATA_RECIPES = {
       "advance": "3h",
       "diff": 2,
       "cost": 1.7,
-      "kcal": 195,
+      "kcal": 231,
       "tags": [
         "vegetarian"
       ],
@@ -56622,7 +56622,7 @@ window.__DATA_RECIPES = {
       "advance": "30min",
       "diff": 2,
       "cost": 1.2,
-      "kcal": 155,
+      "kcal": 152,
       "tags": [
         "vegetarian"
       ],
@@ -56717,7 +56717,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 320,
+      "kcal": 315,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -56816,7 +56816,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 245,
+      "kcal": 417,
       "tags": [
         "vegan",
         "vegetarian",
@@ -56911,7 +56911,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 195,
+      "kcal": 200,
       "tags": [
         "no-cook",
         "festif"
@@ -57036,7 +57036,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 440,
+      "kcal": 436,
       "tags": [
         "vegetarian",
         "vegan",
@@ -57244,7 +57244,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 1.7,
-      "kcal": 190,
+      "kcal": 189,
       "tags": [
         "vegetarian",
         "vegan"
@@ -57366,7 +57366,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 220,
+      "kcal": 213,
       "tags": [
         "vegetarian",
         "vegan",
@@ -57481,7 +57481,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 140,
+      "kcal": 138,
       "tags": [
         "vegetarian",
         "vegan"
@@ -57565,7 +57565,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 360,
+      "kcal": 361,
       "tags": [
         "vegetarian"
       ],
@@ -57675,7 +57675,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 165,
+      "kcal": 211,
       "tags": [
         "vegan",
         "vegetarian"
@@ -57777,7 +57777,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 245,
+      "kcal": 253,
       "tags": [
         "vegetarian"
       ],
@@ -57888,7 +57888,7 @@ window.__DATA_RECIPES = {
       "advance": "30min",
       "diff": 2,
       "cost": 1.4,
-      "kcal": 290,
+      "kcal": 267,
       "tags": [
         "vegetarian"
       ],
@@ -58106,7 +58106,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 340,
+      "kcal": 282,
       "tags": [
         "vegetarian"
       ],
@@ -58241,7 +58241,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 420,
+      "kcal": 539,
       "tags": [],
       "eq": [
         "stove",
@@ -58251,61 +58251,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Bœuf haché",
-          250,
+          125,
           "g",
           "meat-fish"
         ],
         [
           "Chou rouge",
-          8,
+          4,
           "feuille",
           "produce"
         ],
         [
           "Avocat",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -58317,7 +58317,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -58335,14 +58335,14 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Sépare 8 belles feuilles de chou rouge (les plus tendres, vers l'extérieur). Rince, sèche au torchon. Ces feuilles remplacent les tortillas blanches (IG bas, croquant) — pas de cuisson nécessaire, elles servent crues.",
+        "Sépare 4 belles feuilles par convive de chou rouge (les plus tendres, vers l'extérieur). Rince, sèche au torchon. Ces feuilles remplacent les tortillas blanches (IG bas, croquant) — pas de cuisson nécessaire, elles servent crues.",
         "Prépare le guacamole : coupe l'avocat, retire le noyau, écrase la chair à la fourchette dans un bol. Ajoute le jus d'un demi-citron vert, 1 gousse d'ail écrasée, une pincée de sel. Mélange — garde un peu de texture.",
         "Prépare le pico de gallo : coupe les tomates en deux, retire les graines, coupe la chair en petits dés. Émince très finement le demi-oignon rouge. Cisèle 3/4 de la coriandre. Dans un bol, mélange tomates + oignon + coriandre + jus du demi-citron vert + sel.",
         "Dans une poêle, à feu moyen-vif, chauffe 1 c.à.s d'huile d'olive. Ajoute le bœuf haché, écrase à la spatule. Cuis 5 min en remuant : le bœuf doit colorer.",
         "Ajoute le cumin, le paprika, le piment d'Espelette, sel et poivre. Mélange 1 min — les épices libèrent leur arôme.",
         "Hors du feu, laisse tiédir 2 min (= plus facile à manipuler).",
         "Dressage façon street food : sur chaque feuille de chou, dépose 1 c.à.s de bœuf épicé. Recouvre de 1 c.à.c de guacamole et 1 c.à.s de pico de gallo. Décore de coriandre entière.",
-        "Sers immédiatement, à manger avec les mains (= comme des tacos). 2 feuilles par convive (= 1 portion de 4 tacos pour 2). Apporte 1/2 citron vert restant à part."
+        "Sers immédiatement, à manger avec les mains (= comme des tacos). 4 feuilles par convive. Apporte 1/2 citron vert restant à part."
       ],
       "photo": "assets/recipes/d184.webp"
     },
@@ -58498,7 +58498,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 1,
       "cost": 1.7,
-      "kcal": 195,
+      "kcal": 209,
       "tags": [
         "vegan",
         "vegetarian",
@@ -58585,7 +58585,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 380,
+      "kcal": 601,
       "tags": [],
       "eq": [
         "oven",
@@ -58598,91 +58598,91 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poivron rouge",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Poivron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Tomate",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Thon en boîte au naturel",
-          160,
+          80,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Olive noire",
-          12,
+          6,
           "u",
           "pantry"
         ],
         [
           "Câpres",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Persil plat",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          4,
+          2,
           "branche",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Harissa",
           0.5,
           "c.à.c",
           "spices"
         ],
         [
+          "Harissa",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
           "Huile d'olive",
-          3,
+          1.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron",
-          1,
+          0.5,
           "u",
           "produce"
         ],
@@ -58700,7 +58700,7 @@ window.__DATA_RECIPES = {
         "Sors les légumes du four, mets-les dans un sac plastique fermé 5 min : la vapeur facilite l'épluchage.",
         "Pèle les poivrons (retire la peau noircie), épépine-les, coupe la chair en lanières. Pèle les tomates, coupe-les en quartiers.",
         "Émince finement l'oignon. Écrase l'ail. Cisèle 3 branches de persil et 3 branches de coriandre (garde 1 de chaque pour la déco).",
-        "Dans un saladier, mélange les lanières de poivrons, les quartiers de tomates, l'oignon, l'ail, le cumin, la harissa, 3 c.à.s d'huile d'olive et le jus du citron. Sale. Mélange.",
+        "Dans un saladier, mélange les lanières de poivrons, les quartiers de tomates, l'oignon, l'ail, le cumin, la harissa, l'huile d'olive et le jus du citron. Sale. Mélange.",
         "Laisse reposer 10 min (les saveurs se mélangent et l'huile s'imprègne des arômes des légumes grillés).",
         "Égoutte le thon. Émiette-le en gros morceaux sur la salade.",
         "Dressage : verse la salade mechouia dans 2 grandes assiettes. Pose les quartiers d'œufs durs en étoile, parsème les olives noires et les câpres.",
@@ -59163,103 +59163,103 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lentille verte du Puy",
-          150,
+          75,
           "g",
           "pantry"
         ],
         [
           "Tomate",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Concentré de tomate",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          3,
+          1.5,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          1,
           "cm",
           "produce"
         ],
         [
           "Lait de coco",
-          100,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Curcuma",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cardamome en poudre",
-          0.25,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Cannelle en poudre",
-          0.25,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Huile de coco",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau",
-          600,
+          300,
           "ml",
           "pantry"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -59274,10 +59274,10 @@ window.__DATA_RECIPES = {
         "Rince les lentilles vertes sous l'eau froide. Égoutte.",
         "Émince finement l'oignon. Écrase l'ail. Râpe le gingembre frais.",
         "Coupe les tomates en deux, retire les graines, coupe la chair en dés.",
-        "Dans une grande casserole, fais fondre 1 c.à.s d'huile de coco à feu moyen. Ajoute l'oignon, fais suer 5 min jusqu'à translucide-doré.",
+        "Dans une grande casserole, fais fondre l'huile de coco à feu moyen. Ajoute l'oignon, fais suer 5 min jusqu'à translucide-doré.",
         "Ajoute l'ail, le gingembre, le cumin, la coriandre moulue, le curcuma, le piment d'Espelette, la cardamome et la cannelle (= le mélange typique du dal makhani). Remue 30 sec — les épices doivent libérer leur arôme intense.",
         "Ajoute les dés de tomate et le concentré de tomate. Mélange et cuis 5 min à feu moyen — la tomate confit, devient pâteuse.",
-        "Ajoute les lentilles rincées et 600 ml d'eau chaude. Sale légèrement. Porte à frémissement.",
+        "Ajoute les lentilles rincées et l'eau chaude. Sale légèrement. Porte à frémissement.",
         "Baisse à feu doux, couvre partiellement (avec une fente). Mijote 35-40 min en remuant toutes les 10 min : les lentilles s'attendrissent et libèrent leur amidon — la texture devient progressivement crémeuse.",
         "Quand les lentilles sont bien tendres, ajoute le lait de coco. Mélange. Continue de cuire 5 min à feu doux. Goûte : ajuste sel, ajoute le jus du demi-citron pour l'acidité.",
         "Hors du feu, écrase légèrement quelques lentilles à la fourchette contre le bord de la casserole — ça épaissit la sauce et lui donne la texture « makhani » authentique (= veloutée).",
@@ -59301,7 +59301,7 @@ window.__DATA_RECIPES = {
       "advance": "30min",
       "diff": 2,
       "cost": 2.2,
-      "kcal": 350,
+      "kcal": 384,
       "tags": [
         "vegetarian"
       ],
@@ -59317,79 +59317,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tofu ferme",
-          250,
+          125,
           "g",
           "dairy"
         ],
         [
           "Yaourt grec nature",
-          60,
+          30,
           "g",
           "dairy"
         ],
         [
           "Tomate",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Oignon rouge",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Paprika doux",
-          1,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Curcuma",
           0.5,
           "c.à.c",
           "spices"
         ],
         [
+          "Curcuma",
+          0.25,
+          "c.à.c",
+          "spices"
+        ],
+        [
           "Cumin moulu",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Gingembre frais",
-          2,
+          1,
           "cm",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
@@ -59401,13 +59401,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Pousses d'épinards",
-          50,
+          25,
           "g",
           "produce"
         ],
@@ -59591,7 +59591,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 410,
+      "kcal": 407,
       "tags": [
         "vegetarian",
         "vegan",
@@ -59711,7 +59711,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 570,
+      "kcal": 572,
       "tags": [],
       "eq": [
         "stove",
@@ -60205,7 +60205,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 450,
+      "kcal": 451,
       "tags": [
         "vegetarian",
         "vegan",
@@ -60512,73 +60512,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Filets de loup (ou bar)",
-          350,
+          175,
           "g",
           "meat-fish"
         ],
         [
           "Lentilles vertes",
-          130,
+          65,
           "g",
           "pantry"
         ],
         [
           "Fenouil bulbe",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Tomate cerise",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Citron",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Ail",
-          3,
+          1.5,
           "gousse",
           "produce"
         ],
         [
           "Oignon",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          3,
+          1.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -60600,13 +60600,13 @@ window.__DATA_RECIPES = {
         "Cuis les lentilles : porte une grande casserole d'eau froide non salée à ébullition. Verse les lentilles, baisse à frémissement, cuis 20-25 min. Goûte : elles doivent être tendres mais entières. Sale en fin de cuisson seulement. Égoutte.",
         "Pendant ce temps, prépare les fenouils : coupe les tiges et les frondes (garde les frondes pour la déco). Coupe le bulbe en deux verticalement, puis en quartiers d'1,5 cm en gardant le pied (sinon ça tombe en morceaux).",
         "Émince finement l'oignon en demi-rondelles. Écrase l'ail.",
-        "Dans un plat à four, dispose les quartiers de fenouil, l'oignon, les tomates cerises et l'ail. Arrose de 2 c.à.s d'huile, saupoudre du cumin, de la coriandre moulue, du paprika, sel, poivre. Mélange.",
+        "Dans un plat à four, dispose les quartiers de fenouil, l'oignon, les tomates cerises et l'ail. Arrose de une partie de l'huile, saupoudre du cumin, de la coriandre moulue, du paprika, sel, poivre. Mélange.",
         "Enfourne 20 min : les fenouils doivent commencer à dorer.",
         "Sèche les filets de loup avec du papier absorbant. Sale, poivre.",
-        "Sors le plat du four. Pose les filets de poisson sur les légumes, arrose du jus d'1/2 citron et de la dernière c.à.s d'huile. Dispose des rondelles fines du 1/2 citron restant sur les filets.",
+        "Sors le plat du four. Pose les filets de poisson sur les légumes, arrose du jus d'1/2 citron et de le reste de l'huile. Dispose des rondelles fines du 1/2 citron restant sur les filets.",
         "Enfourne encore 10-12 min : la chair du poisson doit être opaque et se défaire facilement à la fourchette.",
         "Pendant ce temps, prépare la coriandre : effeuille et hache grossièrement.",
-        "Dressage : sers les lentilles tièdes dans 2 assiettes creuses. Pose les filets de loup, les fenouils, les tomates cerises et leur jus de cuisson. Parsème de coriandre fraîche et de frondes de fenouil.",
+        "Dressage : sers les lentilles tièdes dans des assiettes creuses. Pose les filets de loup, les fenouils, les tomates cerises et leur jus de cuisson. Parsème de coriandre fraîche et de frondes de fenouil.",
         "Ce plat fait honneur à la cuisine côtière maghrébine (Tanger, Bizerte) : poisson + citron + cumin + lentilles. Riche en protéines (poisson, lentilles), oméga-3, fibres (lentilles, fenouil), folates et fer."
       ],
       "photo": "assets/recipes/d192.webp"
@@ -60624,7 +60624,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 470,
+      "kcal": 550,
       "tags": [
         "batch-friendly"
       ],
@@ -60786,7 +60786,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 430,
+      "kcal": 432,
       "tags": [
         "vegetarian",
         "vegan",
@@ -61089,7 +61089,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 540,
+      "kcal": 538,
       "tags": [
         "vegetarian",
         "vegan",
@@ -61247,7 +61247,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 470,
+      "kcal": 469,
       "tags": [
         "quick"
       ],
@@ -61664,7 +61664,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 4.5,
-      "kcal": 520,
+      "kcal": 524,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -61963,7 +61963,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 387,
       "tags": [
         "vegetarian",
         "vegan",
@@ -62121,79 +62121,79 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Cuisses de poulet (avec peau)",
-          4,
+          1,
           "u",
           "meat-fish"
         ],
         [
           "Citron confit",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Olive violette ou verte dénoyautée",
-          100,
+          25,
           "g",
           "pantry"
         ],
         [
           "Oignon",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          4,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          3,
+          0.75,
           "cm",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Persil plat",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Bouillon de poulet (cube)",
-          1,
+          0.25,
           "u",
           "pantry"
         ],
         [
           "Boulgour complet",
-          120,
+          30,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Curcuma",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Gingembre moulu",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
@@ -62205,19 +62205,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Coriandre moulue",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Cannelle",
-          0.25,
+          0.063,
           "c.à.c",
           "spices"
         ],
@@ -62237,14 +62237,14 @@ window.__DATA_RECIPES = {
       "steps": [
         "Émince finement les oignons. Écrase l'ail et le gingembre frais en purée.",
         "Mélange le curcuma, le gingembre moulu, le cumin, la coriandre moulue, la cannelle, le safran (émietté). Frotte les cuisses de poulet avec la moitié de ce mélange, sel, poivre.",
-        "Dans une cocotte (ou grande sauteuse à fond épais), chauffe 2 c.à.s d'huile à feu moyen-vif. Fais dorer les cuisses de poulet côté peau 5 min — la peau doit être bien colorée. Retourne et dore 3 min de l'autre côté. Réserve.",
-        "Dans la même cocotte, ajoute la dernière c.à.s d'huile. Fais suer les oignons 7 min à feu moyen — ils doivent être tendres et translucides.",
+        "Dans une cocotte (ou grande sauteuse à fond épais), chauffe une partie de l'huile à feu moyen-vif. Fais dorer les cuisses de poulet côté peau 5 min — la peau doit être bien colorée. Retourne et dore 3 min de l'autre côté. Réserve.",
+        "Dans la même cocotte, ajoute le reste de l'huile. Fais suer les oignons 7 min à feu moyen — ils doivent être tendres et translucides.",
         "Ajoute l'ail, le gingembre frais, le reste du mélange d'épices. Remue 30 sec.",
-        "Remets le poulet dans la cocotte. Émiette le cube de bouillon et ajoute 250 ml d'eau chaude. Mélange.",
+        "Remets le poulet dans la cocotte. Émiette le cube de bouillon et ajoute de l'eau chaude (environ 60 ml par convive). Mélange.",
         "Pendant la cuisson, prépare le citron confit : rince-le, sépare la peau de la pulpe. Coupe la peau en lanières fines (la partie aromatique). Jette la pulpe (trop salée).",
         "Couvre la cocotte, baisse à feu doux. Mijote 30 min — le poulet doit être très tendre, presque tomber de l'os.",
         "À 25 min, ajoute la peau de citron confit et les olives (rincées si très salées). Couvre et finis les 5 dernières minutes.",
-        "Pendant la fin de cuisson, cuis le boulgour : porte 240 ml d'eau salée à ébullition, verse le boulgour, couvre 10 min hors du feu. Aère à la fourchette.",
+        "Pendant la fin de cuisson, cuis le boulgour : porte de l'eau salée (2 fois le volume du boulgour) à ébullition, verse le boulgour, couvre 10 min hors du feu. Aère à la fourchette.",
         "Hors du feu, ajoute la coriandre et le persil ciselés généreusement dans la cocotte. Mélange délicatement.",
         "Dressage : sers le boulgour dans 4 assiettes creuses (oui ce tajine en sert 4). Pose 1 cuisse par assiette, nappe abondamment de sauce avec oignons, olives, citron confit. Décore d'herbes fraîches supplémentaires.",
         "Ce plat est le tajine emblématique du Maroc (« djaj makhlul » = poulet désossé, ou « djaj mqalli » = sauce dorée), traditionnellement cuit dans le tajine en argile mais une cocotte à fond épais donne un excellent résultat. Le safran et le citron confit sont les deux signatures. Riche en protéines (poulet), antioxydants (curcuma, gingembre, ail), fibres (boulgour complet, oignon)."
@@ -63080,7 +63080,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 460,
+      "kcal": 429,
       "tags": [
         "quick",
         "batch-friendly"
@@ -63498,7 +63498,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 450,
+      "kcal": 480,
       "tags": [
         "vegetarian"
       ],
@@ -64071,7 +64071,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 410,
+      "kcal": 472,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -64348,7 +64348,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 160,
+      "kcal": 106,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -64363,31 +64363,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Yaourt nature",
-          300,
+          150,
           "g",
           "dairy"
         ],
         [
           "Concombre",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -64399,7 +64399,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Glaçons",
-          6,
+          3,
           "u",
           "produce"
         ]
@@ -64426,7 +64426,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 220,
+      "kcal": 244,
       "tags": [
         "vegetarian",
         "vegan",
@@ -64554,7 +64554,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 190,
+      "kcal": 192,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -64638,7 +64638,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 300,
+      "kcal": 302,
       "tags": [
         "vegetarian",
         "quick"
@@ -64712,7 +64712,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 280,
+      "kcal": 283,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -64794,7 +64794,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 300,
+      "kcal": 305,
       "tags": [
         "vegetarian",
         "vegan",
@@ -64915,7 +64915,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 420,
+      "kcal": 497,
       "tags": [
         "vegetarian",
         "quick"
@@ -65050,7 +65050,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 370,
+      "kcal": 371,
       "tags": [
         "vegetarian",
         "quick"
@@ -65129,7 +65129,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 350,
+      "kcal": 338,
       "tags": [
         "vegetarian",
         "quick"
@@ -65332,7 +65332,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 260,
+      "kcal": 257,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -65414,7 +65414,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 380,
+      "kcal": 350,
       "tags": [
         "vegetarian",
         "vegan"
@@ -65532,7 +65532,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 350,
+      "kcal": 288,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -65548,37 +65548,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          250,
+          125,
           "g",
           "dairy"
         ],
         [
           "Grenade (graines)",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Pistache non salée",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Miel",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Citron",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          4,
+          2,
           "feuille",
           "produce"
         ]
@@ -65587,8 +65587,8 @@ window.__DATA_RECIPES = {
         "Égrène la grenade : coupe en deux, tiens une moitié au-dessus d'un bol côté coupé vers le bas, tape la peau avec une cuillère — les graines tombent en quelques secondes.",
         "Hache grossièrement les pistaches.",
         "Cisèle les feuilles de menthe.",
-        "Dans un bol, mélange le skyr avec le miel et le zeste râpé du quart de citron (technique : râpe seulement la partie colorée, pas la partie blanche amère).",
-        "Dressage dans 2 bols : verse le yaourt au miel. Couronne de graines de grenade (couleur rubis éclatante), parsème de pistaches hachées et de menthe ciselée.",
+        "Dans un bol, mélange le skyr avec le miel et le zeste râpé du citron (technique : râpe seulement la partie colorée, pas la partie blanche amère).",
+        "Dressage dans des bols : verse le yaourt au miel. Couronne de graines de grenade (couleur rubis éclatante), parsème de pistaches hachées et de menthe ciselée.",
         "Sers immédiatement. Ce bowl est inspiré de la cuisine grecque/levantine ancestrale (yaourt + miel = combo millénaire), avec la grenade qui apporte la fraîcheur, l'acidulé et le côté ancestral (fruit présent dans tous les textes anciens méditerranéens). La grenade est de saison automne-hiver-début printemps. Riche en protéines (skyr), antioxydants exceptionnels (anthocyanes de grenade, polyphénols pistache), bons gras (pistaches), calcium."
       ],
       "photo": "assets/recipes/b97.webp"
@@ -65605,7 +65605,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 440,
+      "kcal": 436,
       "tags": [
         "vegetarian"
       ],
@@ -65700,7 +65700,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 313,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -65806,7 +65806,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 370,
+      "kcal": 369,
       "tags": [
         "vegetarian"
       ],
@@ -65905,7 +65905,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 410,
+      "kcal": 371,
       "tags": [
         "vegetarian",
         "quick"
@@ -66030,55 +66030,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz long complet",
-          80,
+          40,
           "g",
           "pantry"
         ],
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Oignon nouveau",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          1,
           "cm",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Graines de sésame noir (ou blanc)",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
@@ -66097,12 +66097,12 @@ window.__DATA_RECIPES = {
       ],
       "steps": [
         "Rince le riz brun à l'eau froide 30 sec (élimine l'amidon de surface). Pèle et tranche le gingembre en fines lamelles. Écrase l'ail.",
-        "Dans une grande casserole, verse le riz + 1 L d'eau + le gingembre + l'ail + 1/2 c.à.c de sel. Porte à ébullition.",
+        "Dans une grande casserole, verse le riz + de l'eau (environ 500 ml par personne) + le gingembre + l'ail + 1/2 c.à.c de sel. Porte à ébullition.",
         "Baisse à feu doux, couvre partiellement (laisse échapper la vapeur). Mijote 40-45 min en remuant toutes les 10 min pour éviter que le riz attache au fond.",
         "Le congee est prêt quand le riz est totalement éclaté et que la consistance est crémeuse, comme un porridge épais. Si trop épais, ajoute un peu d'eau bouillante. Retire l'ail et le gingembre (option : tu peux laisser le gingembre haché).",
         "Pendant les 10 dernières min, prépare les œufs mollets : porte une petite casserole d'eau à ébullition. Plonge les œufs délicatement, cuis 6 min. Refroidis à l'eau glacée pour stopper la cuisson, puis écale.",
         "Émince finement les oignons nouveaux (blanc et vert). Cisèle la coriandre.",
-        "Dressage : verse le congee dans 2 grands bols. Coupe les œufs mollets en deux et pose 2 demi-œufs par bol.",
+        "Dressage : verse le congee dans de grands bols. Coupe les œufs mollets en deux et pose 2 demi-œufs par bol.",
         "Garnis chaque bol avec : oignons nouveaux, coriandre, graines de sésame, un filet d'huile de sésame, 1/2 c.à.s de sauce soja, poivre.",
         "Sers immédiatement. Le congee est un porridge de riz traditionnel en Chine et Asie du Sud-Est, consommé au petit-déj depuis 2000+ ans. Cette version utilise du riz complet (IG bas ~50) au lieu du riz blanc (IG 73). Riche en protéines (œufs), fibres (riz complet), antioxydants (gingembre, ail), vitamines B."
       ],
@@ -66120,7 +66120,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 440,
+      "kcal": 435,
       "tags": [
         "vegetarian",
         "vegan",
@@ -66233,7 +66233,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 160,
       "tags": [
         "vegetarian",
         "vegan",
@@ -66250,37 +66250,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Edamame avec cosses (surgelés)",
-          400,
+          100,
           "g",
           "frozen"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "5 épices chinoises (ou mélange cannelle-anis-girofle)",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Sel",
-          1,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Piment d'Espelette",
           0.25,
           "c.à.c",
           "spices"
         ],
         [
+          "Piment d'Espelette",
+          0.063,
+          "c.à.c",
+          "spices"
+        ],
+        [
           "Citron vert",
-          0.5,
+          0.125,
           "u",
           "produce"
         ]
@@ -66309,7 +66309,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 220,
+      "kcal": 222,
       "tags": [
         "no-cook",
         "quick"
@@ -66426,7 +66426,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 150,
+      "kcal": 147,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -66590,7 +66590,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 200,
+      "kcal": 130,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -66609,19 +66609,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          400,
+          100,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable (ou miel)",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Cardamome en poudre",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
@@ -66633,19 +66633,19 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pistache non salée",
-          25,
+          6.5,
           "g",
           "pantry"
         ],
         [
           "Amande effilée",
-          10,
+          2.5,
           "g",
           "pantry"
         ],
         [
           "Eau de rose (facultatif)",
-          0.5,
+          0.125,
           "c.à.c",
           "pantry"
         ]
@@ -66656,10 +66656,10 @@ window.__DATA_RECIPES = {
         "Hache grossièrement les pistaches (garde quelques entières pour la déco).",
         "Dans un saladier, mélange le skyr égoutté avec le sirop d'érable, la cardamome, l'eau de safran (filaments inclus), l'eau de rose si tu en utilises. Mélange doucement jusqu'à couleur homogène jaune-doré.",
         "Ajoute la moitié des pistaches hachées dans le mélange. Mélange.",
-        "Verse dans 4 ramequins individuels. Couvre et réfrigère 1 h minimum (idéal : préparer le matin pour le soir, le goût se développe).",
+        "Verse dans des ramequins individuels. Couvre et réfrigère 1 h minimum (idéal : préparer le matin pour le soir, le goût se développe).",
         "Au moment de servir, fais légèrement griller les amandes effilées dans une poêle sèche 1 min. Réserve.",
         "Dressage : sors les shrikhand du frigo. Parsème généreusement du reste de pistaches hachées + amandes effilées dorées + quelques pistaches entières + une nouvelle pincée de cardamome.",
-        "Le shrikhand est un dessert ancestral de l'Inde de l'Ouest (Maharashtra, Gujarat), traditionnellement servi avec des puri (pains plats frits). Cette version allégée utilise du skyr moderne (raccourci pratique vs chakka traditionnel = yaourt fait-maison égoutté 12h). Sucre minimal (1 c.à.s pour 4 portions). Riche en protéines (skyr, 2× plus que yaourt classique), calcium, antioxydants (safran, cardamome), bons gras (pistaches, amandes)."
+        "Le shrikhand est un dessert ancestral de l'Inde de l'Ouest (Maharashtra, Gujarat), traditionnellement servi avec des puri (pains plats frits). Cette version allégée utilise du skyr moderne (raccourci pratique vs chakka traditionnel = yaourt fait-maison égoutté 12h). Sucre minimal (environ 1 c.à.c par portion). Riche en protéines (skyr, 2× plus que yaourt classique), calcium, antioxydants (safran, cardamome), bons gras (pistaches, amandes)."
       ],
       "photo": "assets/recipes/des84.webp"
     },
@@ -66675,7 +66675,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 160,
+      "kcal": 159,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -66763,7 +66763,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 180,
+      "kcal": 181,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -66856,7 +66856,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 100,
+      "kcal": 103,
       "tags": [
         "vegetarian",
         "vegan",
@@ -66941,7 +66941,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 200,
+      "kcal": 231,
       "tags": [
         "vegetarian",
         "festif"
@@ -67068,61 +67068,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tomate cœur de bœuf (ou ronde) mûre",
-          6,
+          2,
           "u",
           "produce"
         ],
         [
           "Boulgour fin",
-          80,
+          27,
           "g",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Persil frais",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Paprika doux",
-          0.5,
-          "c.à.c",
-          "spices"
-        ],
-        [
-          "Piment d'Espelette",
           0.25,
           "c.à.c",
           "spices"
         ],
         [
+          "Paprika doux",
+          0.167,
+          "c.à.c",
+          "spices"
+        ],
+        [
+          "Piment d'Espelette",
+          0.083,
+          "c.à.c",
+          "spices"
+        ],
+        [
           "Huile d'olive",
-          4,
+          1.25,
           "c.à.s",
           "pantry"
         ],
@@ -67134,7 +67134,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Olives noires dénoyautées",
-          30,
+          10,
           "g",
           "pantry"
         ]
@@ -67142,11 +67142,11 @@ window.__DATA_RECIPES = {
       "steps": [
         "Coupe le chapeau des tomates (1 cm du dessus). Évide-les délicatement à la cuillère : récupère la chair + jus dans un bol, jette les graines dures. Sale légèrement l'intérieur, retourne sur du papier absorbant 15 min (technique : sortir l'eau de végétation, sinon la farce détrempe).",
         "Cuis le boulgour : porte 200 ml d'eau salée à ébullition, verse le boulgour, retire du feu, couvre 10 min. Le boulgour absorbe l'eau et gonfle. Aère à la fourchette.",
-        "Prépare la chermoula : dans un mortier (ou mixeur), pile/mixe la coriandre + le persil + l'ail + le cumin + le paprika + le piment d'Espelette + le jus du citron + 3 c.à.s d'huile d'olive + 1 pincée de sel. Tu obtiens une sauce verte parfumée et un peu épaisse.",
+        "Prépare la chermoula : dans un mortier (ou mixeur), pile/mixe la coriandre + le persil + l'ail + le cumin + le paprika + le piment d'Espelette + le jus du citron + la majeure partie de l'huile d'olive + 1 pincée de sel. Tu obtiens une sauce verte parfumée et un peu épaisse.",
         "Hache la chair de tomate récupérée. Hache les olives noires en petits morceaux.",
         "Dans un saladier, mélange le boulgour + chermoula + chair de tomate + olives. Goûte, ajuste sel/citron/piment.",
         "Farcis les tomates évidées avec ce mélange en tassant légèrement. Replace les chapeaux.",
-        "Place dans un plat, arrose du reste d'huile d'olive (1 c.à.s).",
+        "Place dans un plat, arrose du reste d'huile d'olive.",
         "Couvre et réfrigère 2 h minimum (le boulgour s'imprègne, les saveurs se mélangent).",
         "Sers froid à l'apéro ou en entrée festive. Variante mezze : avec des feuilles de salade et du pain pita complet. La chermoula est la sauce-marinade emblématique du Maghreb (Maroc, Tunisie, Algérie). Cette version tomate-farcie froide est typique des grandes tables d'été et des fêtes (ramadan, mariages, ftour). Riche en fibres (boulgour, légumes), antioxydants (chermoula = bombe d'herbes), bons gras (huile olive)."
       ],
@@ -67165,7 +67165,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 380,
+      "kcal": 378,
       "tags": [
         "vegetarian",
         "festif"
@@ -67277,7 +67277,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 350,
+      "kcal": 418,
       "tags": [
         "vegetarian",
         "festif",
@@ -67294,55 +67294,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          4,
+          2,
           "u",
           "dairy"
         ],
         [
           "Asperge verte",
-          12,
+          6,
           "u",
           "produce"
         ],
         [
           "Chèvre frais (bûche fraîche, type Petit Billy)",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Crème fraîche épaisse 15%",
-          2,
+          1,
           "c.à.s",
           "dairy"
         ],
         [
           "Basilic frais",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Ciboulette fraîche",
-          0.5,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Citron",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
@@ -67366,10 +67366,10 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Préchauffe le four à 180 °C. Beurre légèrement (avec 1/2 c.à.c d'huile d'olive) 4 petits ramequins.",
+        "Préchauffe le four à 180 °C. Beurre légèrement (avec 1/2 c.à.c d'huile d'olive) des petits ramequins (2 par personne).",
         "Casse la base ligneuse des asperges (technique : plie l'asperge, elle casse naturellement à la limite tendre/dure). Coupe-les en tronçons de 3 cm.",
-        "Fais sauter les asperges dans une poêle avec 1/2 c.à.s d'huile d'olive + l'ail écrasé, 3-4 min à feu vif. Elles doivent rester croquantes (al dente). Sel, poivre.",
-        "Répartis les asperges dans les 4 ramequins. Émiette le chèvre frais par-dessus en gros morceaux.",
+        "Fais sauter les asperges dans une poêle avec un peu d'huile d'olive + l'ail écrasé, 3-4 min à feu vif. Elles doivent rester croquantes (al dente). Sel, poivre.",
+        "Répartis les asperges dans les ramequins. Émiette le chèvre frais par-dessus en gros morceaux.",
         "Dans chaque ramequin, ajoute 1/2 c.à.s de crème fraîche au centre, puis casse 1 œuf en faisant glisser délicatement (sans casser le jaune).",
         "Sel, poivre, muscade râpée légère sur chaque œuf.",
         "Place les ramequins dans un grand plat creux. Verse de l'eau chaude jusqu'à mi-hauteur des ramequins (bain-marie : cuisson homogène, blancs cuits + jaunes coulants).",
@@ -67391,7 +67391,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 110,
+      "kcal": 108,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -67407,55 +67407,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Yaourt nature",
-          300,
+          150,
           "g",
           "dairy"
         ],
         [
           "Concombre",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Eau froide",
-          200,
+          100,
           "ml",
           "pantry"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Graines de cumin entières",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Sel noir kala namak (ou sel rose, ou sel fin)",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Glaçons",
-          6,
+          3,
           "u",
           "produce"
         ],
@@ -67474,7 +67474,7 @@ window.__DATA_RECIPES = {
         "Mixe 30-40 sec à puissance max jusqu'à boisson lisse et homogène (vert très pâle).",
         "Goûte : le lassi salé doit être franchement salé-acide-cuminé. Ajuste sel ou citron si besoin.",
         "Ajoute les glaçons, mixe 15 sec de plus pour les concasser légèrement.",
-        "Verse dans 4 verres. Saupoudre chaque verre avec une pincée de cumin grillé + 2 feuilles de menthe entières + une pincée de sel noir si tu en as (couleur sombre = effet festif).",
+        "Verse dans des verres. Saupoudre chaque verre avec une pincée de cumin grillé + 2 feuilles de menthe entières + une pincée de sel noir si tu en as (couleur sombre = effet festif).",
         "Sers très frais immédiatement. Le lassi salé (paani lassi ou namkeen lassi) est la boisson rafraîchissante de l'été indien, consommée dans le nord et au Pakistan en pleine canicule. Le sel noir kala namak (sulfureux, salé-œuf) signe la version festive. Cette version (vs lassi sucré classique) = beaucoup moins de sucre, beaucoup plus rafraîchissant. Riche en probiotiques (yaourt), électrolytes, hydratation."
       ],
       "photo": "assets/recipes/s87.webp"
@@ -67492,7 +67492,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 240,
+      "kcal": 241,
       "tags": [
         "vegetarian",
         "vegan",
@@ -67624,7 +67624,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 280,
+      "kcal": 345,
       "tags": [
         "vegetarian",
         "vegan",
@@ -67743,7 +67743,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 200,
+      "kcal": 201,
       "tags": [
         "vegetarian",
         "festif",
@@ -67858,7 +67858,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 280,
+      "kcal": 278,
       "tags": [
         "vegetarian",
         "festif",
@@ -67964,7 +67964,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 180,
+      "kcal": 179,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68238,7 +68238,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 310,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -68254,55 +68254,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          6,
+          1.5,
           "u",
           "dairy"
         ],
         [
           "Courgette",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ricotta",
-          100,
+          25,
           "g",
           "dairy"
         ],
         [
           "Parmesan râpé",
-          30,
+          7.5,
           "g",
           "dairy"
         ],
         [
           "Basilic frais",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.25,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
@@ -68337,7 +68337,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 390,
+      "kcal": 404,
       "tags": [
         "vegetarian",
         "quick"
@@ -68463,94 +68463,94 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Quinoa",
-          120,
+          30,
           "g",
           "pantry"
         ],
         [
           "Eau",
-          240,
+          60,
           "ml",
           "pantry"
         ],
         [
           "Vinaigre de riz",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          0.5,
+          0.125,
           "c.à.c",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
         [
           "Feuille de nori (algue grillée)",
-          4,
+          1,
           "u",
           "pantry"
         ],
         [
           "Saumon fumé",
-          120,
+          30,
           "g",
           "meat-fish"
         ],
         [
           "Avocat mûr",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          0.5,
+          0.125,
           "c.à.c",
           "pantry"
         ],
         [
           "Graines de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.125,
           "u",
           "produce"
         ]
       ],
       "steps": [
         "Rince le quinoa à l'eau froide 30 sec dans une passoire fine (élimine la saponine amère).",
-        "Verse le quinoa + 240 ml d'eau + 1/2 c.à.c de sel dans une casserole. Porte à ébullition, baisse à feu doux, couvre 12-15 min. Laisse reposer 5 min couvert. Aère à la fourchette.",
+        "Verse le quinoa + 2 fois son volume d'eau + une pincée de sel dans une casserole. Porte à ébullition, baisse à feu doux, couvre 12-15 min. Laisse reposer 5 min couvert. Aère à la fourchette.",
         "Pendant que c'est encore tiède, assaisonne le quinoa avec le vinaigre de riz + sirop d'érable + huile de sésame. Mélange et laisse refroidir (technique sushi-style : on assaisonne tiède pour bien imprégner, on déguste froid).",
         "Coupe l'avocat en tranches fines (3 mm), arrose du jus du demi-citron vert.",
         "Coupe le concombre en lanières fines (julienne longue de 5 cm).",
-        "Place une feuille de nori à plat sur un film alimentaire (face brillante en bas). Au centre, étale en carré (~10 × 10 cm) une couche de quinoa (1/4 du quinoa par sandwich).",
-        "Garnis le carré quinoa avec : 1/4 du saumon fumé, 1/4 de l'avocat, 1/4 du concombre. Saupoudre de quelques graines de sésame. Ajoute un filet de sauce soja sur la garniture.",
-        "Recouvre la garniture d'une autre couche de quinoa (~1/4 du restant), bien tassée.",
+        "Place une feuille de nori à plat sur un film alimentaire (face brillante en bas). Au centre, étale en carré (~10 × 10 cm) une couche de quinoa (une part du quinoa par sandwich).",
+        "Garnis le carré quinoa avec : une part du saumon fumé, de l'avocat et du concombre. Saupoudre de quelques graines de sésame. Ajoute un filet de sauce soja sur la garniture.",
+        "Recouvre la garniture d'une autre couche de quinoa (autant que la première couche), bien tassée.",
         "Replie les 4 coins de la feuille de nori vers le centre comme une enveloppe. Tu obtiens un carré fermé. Enveloppe dans le film alimentaire, laisse reposer 5 min (le nori s'humidifie légèrement et devient souple).",
-        "Recommence avec les 3 autres feuilles de nori.",
+        "Recommence avec les autres feuilles de nori (une par sandwich).",
         "Au moment de servir, ouvre le film, coupe chaque onigirazu en deux en diagonale (effet de coupe avec strates visibles = signature japonaise).",
         "L'onigirazu (おにぎらず = 'pas pressé') est une création japonaise moderne (2014, manga 'Cooking Papa'), version sandwich du onigiri classique. Cette version remplace le riz blanc (IG 73) par du quinoa (IG ~35-50). Idéal petit-déj salé batch (prépare-en plusieurs, ça se conserve 24h au frais bien enveloppé). Riche en protéines complètes (quinoa = 8 aa essentiels), oméga-3 (saumon), bons gras (avocat, sésame), fibres."
       ],
@@ -68588,99 +68588,99 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Baguette complète (ou pain complet sandwich)",
-          4,
+          1,
           "morceau",
           "bread"
         ],
         [
           "Tofu ferme",
-          250,
+          65,
           "g",
           "produce"
         ],
         [
           "Sauce soja",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Ail",
-          2,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Carotte",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Radis daikon (ou radis rose)",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Vinaigre de riz",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Mayonnaise allégée",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ]
       ],
       "steps": [
         "Égoutte le tofu, presse-le entre 2 assiettes recouvertes de papier absorbant pendant 10 min (technique : sortir l'eau du tofu pour qu'il croustille à la cuisson).",
-        "Pendant ce temps, prépare les pickles. Coupe la carotte et le daikon en très fine julienne (mandoline ou couteau précis). Place dans un bol avec le vinaigre de riz + 1 c.à.c de sirop d'érable + 1/2 c.à.c de sel + 100 ml d'eau. Laisse mariner au frais 20 min minimum.",
+        "Pendant ce temps, prépare les pickles. Coupe la carotte et le daikon en très fine julienne (mandoline ou couteau précis). Place dans un bol avec le vinaigre de riz + le sirop d'érable + une pincée de sel + de l'eau (de quoi couvrir). Laisse mariner au frais 20 min minimum.",
         "Coupe le tofu en bâtonnets de 1 cm × 1 cm × 8 cm.",
-        "Prépare la marinade : 2 c.à.s sauce soja + ail haché + gingembre râpé + 1/2 c.à.c d'huile de sésame. Plonge le tofu, retourne pour bien enrober. Laisse mariner 10 min.",
-        "Chauffe une poêle anti-adhésive avec 1/2 c.à.c d'huile de sésame. Fais sauter le tofu 6-8 min à feu moyen-vif en retournant pour dorer tous les côtés. À la fin, verse le reste de marinade dans la poêle pour caraméliser (1 min).",
+        "Prépare la marinade : la majeure partie de la sauce soja + ail haché + gingembre râpé + la moitié de l'huile de sésame. Plonge le tofu, retourne pour bien enrober. Laisse mariner 10 min.",
+        "Chauffe une poêle anti-adhésive avec le reste de l'huile de sésame. Fais sauter le tofu 6-8 min à feu moyen-vif en retournant pour dorer tous les côtés. À la fin, verse le reste de marinade dans la poêle pour caraméliser (1 min).",
         "Pendant ce temps, coupe la baguette en deux dans la longueur. Toaste rapidement au grille-pain pour la croûte. Tartine chaque tranche du bas avec la mayonnaise allégée.",
         "Coupe le concombre en lanières (julienne courte). Effeuille la coriandre.",
-        "Garnis chaque sandwich : 1/4 du tofu mariné caramélisé, 1/4 des pickles bien égouttés, lanières de concombre, beaucoup de coriandre fraîche.",
-        "Arrose d'un trait de sauce soja (1/4 c.à.s) et d'un trait de jus de citron vert. Referme.",
+        "Garnis chaque sandwich : une part du tofu mariné caramélisé, une part des pickles bien égouttés, lanières de concombre, beaucoup de coriandre fraîche.",
+        "Arrose d'un trait de sauce soja et d'un trait de jus de citron vert. Referme.",
         "Sers immédiatement. Le banh mi est le sandwich emblématique vietnamien (héritage colonial français + cuisine vietnamienne = baguette française fourrée à l'asiatique). Cette version végé brunch remplace le porc/pâté traditionnel par du tofu mariné teriyaki-style. Riche en protéines végétales complètes (tofu + pain), fibres (légumes + pain complet), antioxydants (coriandre, gingembre, ail)."
       ],
       "photo": "assets/recipes/b109.webp"
@@ -68698,7 +68698,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 60,
+      "kcal": 105,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68718,67 +68718,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Concombre",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.25,
           "c.à.s",
           "spices"
         ],
         [
           "Ail",
-          2,
+          0.75,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          0.75,
           "cm",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Vinaigre de riz",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Piment d'Espelette (ou gochugaru coréen)",
-          1,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Graines de sésame grillées",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          0.5,
+          0.167,
           "c.à.c",
           "pantry"
         ]
@@ -68810,7 +68810,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 220,
+      "kcal": 212,
       "tags": [
         "festif",
         "batch-friendly"
@@ -68917,7 +68917,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 80,
+      "kcal": 42,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68935,46 +68935,46 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Thé matcha en poudre",
-          2,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Eau",
-          500,
+          125,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Basilic thaï (ou basilic classique)",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Gingembre frais",
-          1,
+          0.25,
           "cm",
           "produce"
         ]
       ],
       "steps": [
         "Dans un petit bol, mélange le matcha avec 3 c.à.s d'eau tiède (~70 °C, pas bouillante sinon le matcha devient amer). Fouette énergiquement avec un petit fouet (ou cuillère) jusqu'à ce qu'il n'y ait plus de grumeaux. Tu obtiens une pâte verte lisse.",
-        "Dans une casserole, fais frémir les 500 ml d'eau restants. Hors du feu, ajoute le sirop d'érable + le gingembre râpé + 4-5 feuilles de basilic ciselées. Laisse infuser 5 min.",
+        "Dans une casserole, fais frémir l'eau restante. Hors du feu, ajoute le sirop d'érable + le gingembre râpé + 4-5 feuilles de basilic ciselées. Laisse infuser 5 min.",
         "Filtre l'infusion (élimine les morceaux de basilic et gingembre). Ajoute la pâte de matcha dans le liquide tiède, fouette pour homogénéiser.",
-        "Ajoute le jus des 2 citrons verts + le zeste râpé d'1 citron vert. Mélange. Goûte : doit être franchement matcha-citron-rafraîchissant. Ajuste sirop si besoin (mais reste léger).",
+        "Ajoute le jus des citrons verts + leur zeste râpé. Mélange. Goûte : doit être franchement matcha-citron-rafraîchissant. Ajuste sirop si besoin (mais reste léger).",
         "Verse dans un plat large et peu profond allant au congélateur (technique : le granité prend plus vite et est plus facile à gratter dans un plat large). Couvre.",
         "Place au congélateur. Toutes les 45-60 min, gratte la surface à la fourchette en formant des cristaux. Répète 3-4 fois (total ~3-4 h).",
         "Le granité est prêt quand l'ensemble est cristalisé en paillettes vert pâle mais reste émiettable à la fourchette (pas un bloc dur).",
@@ -69296,7 +69296,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 140,
+      "kcal": 122,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -69383,7 +69383,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 70,
+      "kcal": 90,
       "tags": [
         "vegetarian",
         "vegan",
@@ -69400,37 +69400,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque mûre",
-          800,
+          200,
           "g",
           "produce"
         ],
         [
           "Citron vert",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Basilic frais",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          4,
+          1,
           "feuille",
           "produce"
         ],
         [
           "Sirop d'érable",
-          0.5,
+          0.125,
           "c.à.s",
           "pantry"
         ],
         [
           "Piment d'Espelette (ou chile en polvo)",
-          0.25,
+          0.063,
           "c.à.c",
           "spices"
         ],
@@ -69442,26 +69442,26 @@ window.__DATA_RECIPES = {
         ],
         [
           "Eau froide",
-          200,
+          50,
           "ml",
           "pantry"
         ],
         [
           "Glaçons",
-          8,
+          2,
           "u",
           "produce"
         ]
       ],
       "steps": [
-        "Coupe la pastèque en morceaux, retire la croûte et les éventuels pépins noirs (les blancs sont mangeables). Tu dois obtenir ~600 g de chair.",
+        "Coupe la pastèque en morceaux, retire la croûte et les éventuels pépins noirs (les blancs sont mangeables). Tu dois obtenir de la chair rouge sans croûte.",
         "Garde quelques petits cubes de pastèque (~1/2 verre) pour la déco. Mets le reste dans le blender.",
-        "Ajoute au blender : jus des 2 citrons verts + 4-5 feuilles de basilic (garde le reste pour la déco) + 2 feuilles de menthe + sirop d'érable + pincée de sel + 100 ml d'eau froide.",
+        "Ajoute au blender : jus des citrons verts + 4-5 feuilles de basilic (garde le reste pour la déco) + 2 feuilles de menthe + sirop d'érable + pincée de sel + la moitié de l'eau froide.",
         "Mixe 30 sec à puissance max jusqu'à obtenir un jus rouge-rose vif, lisse et léger.",
         "Filtre dans un grand pichet à travers une passoire fine (élimine les fibres et pulpe pour avoir une boisson limpide — c'est le principe de l'agua fresca). Si tu aimes la texture pulpeuse, saute cette étape.",
-        "Ajoute les 100 ml d'eau froide restants. Goûte et ajuste : citron vert si besoin, pincée de sel si trop fade.",
+        "Ajoute le reste de l'eau froide. Goûte et ajuste : citron vert si besoin, pincée de sel si trop fade.",
         "Mets au frais 30 min minimum (l'agua fresca doit être glacé).",
-        "Au moment de servir, dépose les glaçons + cubes de pastèque réservés dans 4 grands verres.",
+        "Au moment de servir, dépose les glaçons + cubes de pastèque réservés dans de grands verres.",
         "Verse l'agua fresca par-dessus. Décore avec 1-2 feuilles de basilic entières + 1 feuille de menthe + un zeste de citron vert + une mini pincée de piment d'Espelette saupoudrée sur le dessus (technique : le piment doux mexicain en surface = le petit chic typique 'salt and chile' qui réveille les papilles).",
         "Plante une paille dans chaque verre. Sers immédiatement glacé. Les aguas frescas (eaux fraîches) sont les boissons-desserts iconiques de la rue mexicaine — vendues dans tous les marchés (Mercado de la Merced, Mexico) dans des grandes jarras (carafes en verre). Sandía (pastèque) est avec hibiscus (Jamaica) et chia la plus populaire. Festif été pour BBQ, fiesta, apéritif sans alcool (technique pour transformer en cocktail : 30 ml de tequila ou mezcal = 'sandía margarita'). Ultra hydratant (pastèque = 91 % eau), 70 kcal seulement, CG basse. Riche en lycopène (antioxydant, plus que la tomate cuite !), citrulline (récupération musculaire), vitamine C, antioxydants (basilic, menthe, piment)."
       ],
@@ -69482,7 +69482,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 200,
+      "kcal": 202,
       "tags": [
         "vegetarian",
         "vegan",
@@ -69584,7 +69584,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 240,
+      "kcal": 269,
       "tags": [
         "vegetarian",
         "vegan",
@@ -69777,7 +69777,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 283,
       "tags": [
         "vegetarian",
         "vegan",
@@ -69869,7 +69869,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 220,
+      "kcal": 230,
       "tags": [
         "vegetarian",
         "festif",
@@ -69960,7 +69960,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 1.5,
-      "kcal": 170,
+      "kcal": 171,
       "tags": [
         "vegetarian",
         "festif"
@@ -70064,7 +70064,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 200,
+      "kcal": 195,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70188,7 +70188,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 180,
+      "kcal": 172,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70402,7 +70402,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 320,
+      "kcal": 338,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70523,7 +70523,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 220,
+      "kcal": 229,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70631,7 +70631,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 150,
+      "kcal": 153,
       "tags": [
         "vegetarian",
         "vegan",
@@ -70738,7 +70738,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 368,
       "tags": [
         "vegetarian",
         "festif"
@@ -70850,7 +70850,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 400,
+      "kcal": 361,
       "tags": [
         "vegetarian",
         "festif",
@@ -70968,7 +70968,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 180,
+      "kcal": 197,
       "tags": [
         "vegetarian",
         "festif",
@@ -71063,7 +71063,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 150,
+      "kcal": 144,
       "tags": [
         "vegetarian",
         "festif"
@@ -71330,7 +71330,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 360,
+      "kcal": 322,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -71444,7 +71444,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 344,
       "tags": [
         "vegetarian",
         "festif"
@@ -71646,7 +71646,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 200,
+      "kcal": 185,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -71663,43 +71663,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tomate cerise rouge et jaune",
-          300,
+          50,
           "g",
           "produce"
         ],
         [
           "Mozzarella di bufala mini billes",
-          200,
+          33,
           "g",
           "dairy"
         ],
         [
           "Basilic frais",
-          1,
+          0.167,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive vierge",
-          3,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Vinaigre balsamique",
-          1,
+          0.167,
           "c.à.s",
           "pantry"
         ],
         [
           "Pesto vert",
-          1,
+          0.167,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.083,
           "c.à.c",
           "spices"
         ],
@@ -71711,14 +71711,14 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pignons de pin",
-          1,
+          0.167,
           "c.à.s",
           "pantry"
         ]
       ],
       "steps": [
         "Lave les tomates cerises, sèche-les bien. Égoutte la mozzarella.",
-        "Sur des piques en bois (16 piques) : pique 1 tomate cerise + 1 boule de mozzarella + 1 feuille de basilic + 1 tomate cerise. Alterne couleurs pour l'effet visuel festif.",
+        "Sur des piques en bois  : pique 1 tomate cerise + 1 boule de mozzarella + 1 feuille de basilic + 1 tomate cerise. Alterne couleurs pour l'effet visuel festif.",
         "Dispose les brochettes en éventail sur un grand plat de service.",
         "Prépare la vinaigrette balsamique : mélange huile d'olive + vinaigre balsamique + pesto + sel + poivre.",
         "Au moment de servir, arrose les brochettes de la vinaigrette (technique : pas trop tôt, sinon le balsamique tache la mozzarella).",
@@ -71741,7 +71741,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 140,
+      "kcal": 136,
       "tags": [
         "vegetarian",
         "festif",
@@ -71821,7 +71821,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 200,
+      "kcal": 193,
       "tags": [
         "vegetarian",
         "vegan",
@@ -71909,7 +71909,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 220,
+      "kcal": 235,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -71992,7 +71992,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 90,
+      "kcal": 88,
       "tags": [
         "vegetarian",
         "vegan",
@@ -72080,7 +72080,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 130,
+      "kcal": 172,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -72098,43 +72098,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque mûre",
-          600,
+          150,
           "g",
           "produce"
         ],
         [
           "Feta",
-          100,
+          25,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Olives noires Kalamata",
-          30,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Vinaigre balsamique",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile d'olive vierge",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.125,
           "u",
           "produce"
         ],
@@ -72150,7 +72150,7 @@ window.__DATA_RECIPES = {
         "Émiette la feta en gros morceaux. Hache grossièrement les olives.",
         "Dans un grand plat festif, dispose la pastèque en couche puis la feta en gros morceaux par-dessus.",
         "Parsème d'olives + feuilles de menthe entières.",
-        "Arrose de vinaigre balsamique + huile d'olive + jus du demi-citron vert + poivre. Sers immédiatement très frais. Dessert/entrée mediterranéen festif d'été (Grèce, Italie, Liban). Le contraste sucré-salé est addictif. Ultra hydratant, light (130 kcal)."
+        "Arrose de vinaigre balsamique + huile d'olive + jus du citron vert + poivre. Sers immédiatement très frais. Dessert/entrée mediterranéen festif d'été (Grèce, Italie, Liban). Le contraste sucré-salé est addictif. Ultra hydratant, light (130 kcal)."
       ],
       "photo": "assets/recipes/des108.webp"
     },
@@ -72166,7 +72166,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 220,
+      "kcal": 207,
       "tags": [
         "vegetarian",
         "festif",
@@ -72267,7 +72267,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 250,
+      "kcal": 222,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -72370,7 +72370,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 360,
+      "kcal": 315,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -72563,7 +72563,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 300,
+      "kcal": 294,
       "tags": [
         "festif",
         "batch-friendly"
@@ -72791,7 +72791,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 260,
+      "kcal": 249,
       "tags": [
         "festif",
         "batch-friendly"
@@ -72901,7 +72901,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 160,
+      "kcal": 206,
       "tags": [
         "vegetarian",
         "vegan",
@@ -73014,7 +73014,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 190,
+      "kcal": 192,
       "tags": [
         "vegetarian",
         "vegan",
@@ -73208,7 +73208,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 260,
+      "kcal": 255,
       "tags": [
         "vegetarian",
         "quick",
@@ -73315,7 +73315,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 275,
       "tags": [
         "vegetarian",
         "festif",
@@ -73413,7 +73413,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 330,
+      "kcal": 344,
       "tags": [
         "vegetarian",
         "quick"
@@ -73427,67 +73427,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          6,
+          2,
           "u",
           "dairy"
         ],
         [
           "Tomate",
-          2,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Oignon nouveau",
-          3,
+          1,
           "u",
           "produce"
         ],
         [
           "Persil frais",
-          1,
+          0.25,
           "bouquet",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.167,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          0.5,
+          0.167,
           "bouquet",
           "produce"
         ],
         [
           "Cumin moulu",
-          0.5,
+          0.167,
           "c.à.c",
           "spices"
         ],
         [
           "Paprika doux",
-          0.5,
+          0.167,
           "c.à.c",
           "spices"
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          0.083,
           "c.à.c",
           "spices"
         ],
         [
           "Huile d'olive",
-          2,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Sel",
-          0.5,
+          0.167,
           "c.à.c",
           "spices"
         ],
@@ -73524,7 +73524,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 170,
+      "kcal": 168,
       "tags": [
         "vegetarian",
         "quick",
@@ -73709,7 +73709,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 280,
+      "kcal": 288,
       "tags": [
         "vegetarian",
         "quick"
@@ -73900,7 +73900,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 180,
+      "kcal": 207,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -73918,49 +73918,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette tendre",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Parmesan en copeaux",
-          40,
+          10,
           "g",
           "dairy"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive vierge",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Pignons de pin",
-          2,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Basilic frais",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Menthe fraîche",
-          4,
+          1,
           "feuille",
           "produce"
         ],
         [
           "Sel",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
@@ -74102,7 +74102,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 220,
+      "kcal": 217,
       "tags": [
         "vegetarian",
         "vegan",
@@ -74213,7 +74213,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 200,
+      "kcal": 224,
       "tags": [
         "vegetarian",
         "vegan",
@@ -74336,7 +74336,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 430,
+      "kcal": 468,
       "tags": [
         "quick",
         "festif"
@@ -74442,7 +74442,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 310,
+      "kcal": 306,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -74543,7 +74543,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 440,
+      "kcal": 471,
       "tags": [
         "vegetarian",
         "quick",
@@ -74662,7 +74662,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 380,
+      "kcal": 388,
       "tags": [
         "vegetarian",
         "quick"
@@ -74767,7 +74767,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 320,
+      "kcal": 353,
       "tags": [
         "vegetarian",
         "quick"
@@ -74884,7 +74884,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 327,
       "tags": [
         "vegetarian",
         "vegan",
@@ -75132,7 +75132,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 240,
+      "kcal": 260,
       "tags": [
         "no-cook",
         "festif",
@@ -75150,61 +75150,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Saumon frais qualité sashimi",
-          250,
+          65,
           "g",
           "meat-fish"
         ],
         [
           "Avocat mûr",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sauce soja",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Gingembre frais",
-          1,
+          0.25,
           "cm",
           "produce"
         ],
         [
           "Oignon nouveau",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Graines de sésame noir et blanc",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Wasabi (facultatif)",
-          0.25,
+          0.063,
           "c.à.c",
           "spices"
         ],
@@ -75240,7 +75240,7 @@ window.__DATA_RECIPES = {
       "cook": 22,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 220,
+      "kcal": 229,
       "tags": [
         "vegetarian",
         "vegan",
@@ -75355,7 +75355,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 220,
+      "kcal": 202,
       "tags": [
         "vegetarian",
         "festif",
@@ -75453,7 +75453,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 140,
+      "kcal": 143,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -75636,7 +75636,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 220,
+      "kcal": 226,
       "tags": [
         "vegetarian",
         "festif",
@@ -75722,7 +75722,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 200,
+      "kcal": 194,
       "tags": [
         "vegetarian",
         "festif",
@@ -75809,7 +75809,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 220,
+      "kcal": 216,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -76003,7 +76003,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 470,
+      "kcal": 467,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -76194,7 +76194,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 330,
+      "kcal": 326,
       "tags": [
         "vegetarian",
         "quick",
@@ -76290,7 +76290,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 1.5,
-      "kcal": 300,
+      "kcal": 305,
       "tags": [
         "vegetarian",
         "vegan",
@@ -76403,7 +76403,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 2.5,
-      "kcal": 360,
+      "kcal": 356,
       "tags": [
         "vegetarian",
         "festif"
@@ -76506,7 +76506,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 160,
+      "kcal": 176,
       "tags": [
         "vegetarian",
         "vegan",
@@ -76590,7 +76590,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 240,
+      "kcal": 238,
       "tags": [
         "vegetarian",
         "vegan",
@@ -76686,7 +76686,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 210,
+      "kcal": 208,
       "tags": [
         "vegetarian",
         "vegan",
@@ -76776,7 +76776,7 @@ window.__DATA_RECIPES = {
       "cook": 6,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 340,
+      "kcal": 364,
       "tags": [
         "vegetarian",
         "quick"
@@ -76958,7 +76958,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 160,
+      "kcal": 186,
       "tags": [
         "vegetarian",
         "vegan",
@@ -77052,7 +77052,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.0,
-      "kcal": 220,
+      "kcal": 261,
       "tags": [
         "no-cook",
         "quick",
@@ -77068,43 +77068,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Avocat mûr",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Saumon fumé",
-          120,
+          30,
           "g",
           "meat-fish"
         ],
         [
           "Citron",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Fromage frais",
-          80,
+          20,
           "g",
           "dairy"
         ],
         [
           "Aneth",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Ciboulette fraîche",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive vierge",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
@@ -77122,7 +77122,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Câpres (facultatif)",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ]
@@ -77151,7 +77151,7 @@ window.__DATA_RECIPES = {
       "cook": 4,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 200,
+      "kcal": 223,
       "tags": [
         "vegetarian",
         "quick",
@@ -77250,7 +77250,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 240,
+      "kcal": 281,
       "tags": [
         "vegetarian",
         "festif",
@@ -77268,49 +77268,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          2,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Pesto",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Pignons de pin",
-          30,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Parmesan en copeaux",
-          30,
+          7.5,
           "g",
           "dairy"
         ],
         [
           "Basilic frais",
-          0.5,
+          0.125,
           "bouquet",
           "produce"
         ],
         [
           "Huile d'olive vierge",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Citron",
-          0.5,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Sel",
-          0.5,
+          0.125,
           "c.à.c",
           "spices"
         ],
@@ -77346,7 +77346,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 60,
+      "kcal": 67,
       "tags": [
         "vegetarian",
         "vegan",
@@ -77365,31 +77365,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Concombre",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          1,
+          0.5,
           "bouquet",
           "produce"
         ],
         [
           "Citron vert",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Eau froide",
-          200,
+          100,
           "ml",
           "pantry"
         ],
@@ -77403,7 +77403,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Lave le concombre. Garde la peau (riche en fibres et antioxydants si bio, sinon pèle). Coupe-le en gros morceaux, retire les graines centrales à la cuillère si tu veux un granité plus net.",
         "Effeuille la menthe (garde 4 belles feuilles pour la déco).",
-        "Dans le blender, verse : morceaux de concombre + menthe + jus des 2 citrons verts + zeste râpé d'1 citron vert + sirop d'érable + eau froide + pincée de sel.",
+        "Dans le blender, verse : morceaux de concombre + menthe + jus des citrons verts + zeste râpé d'un citron vert + sirop d'érable + eau froide + pincée de sel.",
         "Mixe 30-40 sec à puissance max jusqu'à obtenir un jus vert pâle parfaitement lisse.",
         "Goûte : doit être franchement frais, mentholé, juste à peine sucré (la fraîcheur prime sur le sucre dans un granité). Ajuste citron vert si besoin.",
         "Verse dans un grand plat large allant au congélateur (technique : large = surface d'évaporation, prise plus rapide et grattage plus facile).",
@@ -77426,7 +77426,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 220,
+      "kcal": 242,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -77516,7 +77516,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 200,
+      "kcal": 197,
       "tags": [
         "vegetarian",
         "vegan",
@@ -77536,67 +77536,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tofu ferme",
-          300,
+          75,
           "g",
           "produce"
         ],
         [
           "Sauce soja",
-          3,
+          0.75,
           "c.à.s",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Ail",
-          2,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Gingembre frais",
-          2,
+          0.5,
           "cm",
           "produce"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Vinaigre de riz",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Graines de sésame",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Oignon nouveau",
-          3,
+          0.75,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          0.5,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Piment d'Espelette",
-          0.25,
+          0.063,
           "c.à.c",
           "spices"
         ]
@@ -77749,7 +77749,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 2.5,
-      "kcal": 360,
+      "kcal": 363,
       "tags": [
         "vegetarian",
         "festif"
@@ -77882,7 +77882,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 340,
+      "kcal": 342,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -78207,7 +78207,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au frais pour égoutter le yaourt",
       "diff": 1,
       "cost": 1.6,
-      "kcal": 160,
+      "kcal": 133,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -78224,37 +78224,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Mangue",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Cardamome moulue",
-          0.5,
+          0.25,
           "g",
           "spices"
         ],
         [
           "Pistaches non salées",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Safran",
-          0.05,
+          0.03,
           "g",
           "spices"
         ]
@@ -78266,7 +78266,7 @@ window.__DATA_RECIPES = {
         "Mélange dans un bol le yaourt égoutté, la purée de mangue, le sirop d'érable, la cardamome et le safran infusé.",
         "Fouette au fouet manuel 1 minute pour aérer (texture mousseuse, pas liquide).",
         "Concasse les pistaches au couteau (pas trop fines, on veut garder du croquant).",
-        "Répartis dans 2 verrines, parsème de pistaches concassées sur le dessus.",
+        "Répartis dans des verrines, parsème de pistaches concassées sur le dessus.",
         "Sers bien frais, idéalement après 30 minutes au frigo pour que les saveurs se marient."
       ],
       "photo": "assets/recipes/des124.webp"
@@ -78284,7 +78284,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 180,
+      "kcal": 203,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -78358,7 +78358,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 440,
+      "kcal": 445,
       "tags": [
         "vegetarian",
         "quick"
@@ -78470,7 +78470,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 400,
+      "kcal": 398,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78554,7 +78554,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 220,
+      "kcal": 274,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78654,7 +78654,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 200,
+      "kcal": 205,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78734,7 +78734,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 220,
+      "kcal": 161,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78751,43 +78751,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Avocat",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Cacao en poudre non sucré",
-          15,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          15,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Lait d'amande",
-          60,
+          30,
           "ml",
           "dairy"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Sel",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Framboise",
-          30,
+          15,
           "g",
           "produce"
         ]
@@ -78797,7 +78797,7 @@ window.__DATA_RECIPES = {
         "Mets la chair d'avocat dans le blender avec le cacao, le sirop d'érable, le lait d'amande, la vanille et la pincée de sel.",
         "Mixe 30 secondes à pleine vitesse, racle les parois, remixe 20 secondes (texture parfaitement lisse, comme une mousse au chocolat classique).",
         "Goûte : le mélange doit être chocolaté, légèrement sucré, sans goût d'avocat (sinon ajouter 1 cuillère à café de cacao).",
-        "Répartis dans 2 verrines, lisse le dessus à la cuillère.",
+        "Répartis dans des verrines, lisse le dessus à la cuillère.",
         "Laisse reposer 30 minutes au frigo pour que la texture se raffermisse.",
         "Au moment de servir, dépose 3-4 framboises fraîches sur chaque verrine."
       ],
@@ -78816,7 +78816,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 140,
+      "kcal": 143,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78892,7 +78892,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 300,
+      "kcal": 365,
       "tags": [
         "vegan",
         "vegetarian",
@@ -78987,7 +78987,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 320,
+      "kcal": 373,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -79107,61 +79107,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poivron rouge",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Poivron vert",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Tomate",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Cumin moulu",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Coriandre fraîche",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Olives noires dénoyautées",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ]
@@ -79191,7 +79191,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 140,
+      "kcal": 199,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79284,7 +79284,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 130,
+      "kcal": 235,
       "tags": [
         "vegan",
         "vegetarian",
@@ -79484,7 +79484,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 1.9,
-      "kcal": 250,
+      "kcal": 254,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -79598,31 +79598,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Melon",
-          400,
+          200,
           "g",
           "produce"
         ],
         [
           "Menthe fraîche",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Eau de fleur d'oranger",
-          8,
+          4,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
@@ -79938,55 +79938,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Olives noires dénoyautées",
-          80,
-          "g",
-          "pantry"
-        ],
-        [
-          "Câpres",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
-          "Anchois à l'huile",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
-          "Ail",
-          1,
-          "gousse",
-          "produce"
-        ],
-        [
-          "Huile d'olive",
-          15,
-          "ml",
-          "pantry"
-        ],
-        [
-          "Citron jaune",
-          0.5,
-          "u",
-          "produce"
-        ],
-        [
-          "Thym frais",
-          2,
-          "g",
-          "produce"
-        ],
-        [
-          "Pain complet (gressins)",
           40,
           "g",
           "pantry"
         ],
         [
+          "Câpres",
+          4,
+          "g",
+          "pantry"
+        ],
+        [
+          "Anchois à l'huile",
+          4,
+          "g",
+          "pantry"
+        ],
+        [
+          "Ail",
+          0.5,
+          "gousse",
+          "produce"
+        ],
+        [
+          "Huile d'olive",
+          7.5,
+          "ml",
+          "pantry"
+        ],
+        [
+          "Citron jaune",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
+          "Thym frais",
+          1,
+          "g",
+          "produce"
+        ],
+        [
+          "Pain complet (gressins)",
+          20,
+          "g",
+          "pantry"
+        ],
+        [
           "Carotte",
-          80,
+          40,
           "g",
           "produce"
         ]
@@ -80016,7 +80016,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 1.6,
-      "kcal": 180,
+      "kcal": 176,
       "tags": [
         "vegetarian",
         "festif"
@@ -80032,37 +80032,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          2,
+          1,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          15,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.5,
+          0.25,
           "g",
           "spices"
         ],
         [
           "Fève tonka",
-          0.2,
+          0.1,
           "g",
           "spices"
         ],
         [
           "Amandes effilées",
-          8,
+          4,
           "g",
           "pantry"
         ]
@@ -80070,15 +80070,15 @@ window.__DATA_RECIPES = {
       "steps": [
         "Sépare les blancs des jaunes (très soigneusement, pas une trace de jaune dans les blancs sinon ils ne montent pas).",
         "Prépare la crème anglaise : fais chauffer le lait dans une casserole avec la vanille et la fève tonka râpée (juste 2 tours de râpe) jusqu'aux premiers frémissements.",
-        "Fouette les jaunes avec 10g de sirop d'érable dans un bol jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
+        "Fouette les jaunes avec les deux tiers du sirop d'érable dans un bol jusqu'à blanchiment (couleur jaune pâle, texture mousseuse).",
         "Verse le lait chaud sur les jaunes en remuant au fouet, reverse dans la casserole.",
         "Cuis à feu très doux en remuant à la cuillère en bois 5 minutes : la crème nappe le dos de la cuillère (le doigt qui glisse laisse une trace nette).",
         "Filtre la crème dans une assiette creuse, laisse tiédir.",
-        "Monte les blancs en neige ferme au fouet électrique, ajoute les 5g de sirop d'érable restants en pluie à la fin.",
+        "Monte les blancs en neige ferme au fouet électrique, ajoute le sirop d'érable restant en pluie à la fin.",
         "Fais chauffer une grande casserole d'eau frémissante (pas bouillante).",
-        "Forme 4 quenelles de blancs avec 2 cuillères à soupe, poche-les 1 minute par face dans l'eau frémissante (elles doublent de volume).",
+        "Forme des quenelles de blancs avec 2 cuillères à soupe, poche-les 1 minute par face dans l'eau frémissante (elles doublent de volume).",
         "Égoutte délicatement sur un papier absorbant.",
-        "Dépose les blancs pochés sur la crème anglaise dans 2 assiettes, parsème d'amandes effilées grillées à sec.",
+        "Dépose les blancs pochés sur la crème anglaise dans des assiettes, parsème d'amandes effilées grillées à sec.",
         "Sers immédiatement, à température ambiante."
       ],
       "photo": "assets/recipes/des132.webp"
@@ -80096,7 +80096,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 280,
+      "kcal": 365,
       "tags": [
         "vegetarian",
         "quick",
@@ -80181,7 +80181,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 180,
+      "kcal": 183,
       "tags": [
         "vegan",
         "vegetarian",
@@ -80199,73 +80199,73 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Céleri branche",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Oignon jaune",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Tomate",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Olives vertes dénoyautées",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Câpres",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Vinaigre de cidre",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          5,
+          2.5,
           "g",
           "pantry"
         ],
         [
           "Huile d'olive",
-          12,
+          6,
           "ml",
           "pantry"
         ],
         [
           "Pignons de pin",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Basilic frais",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ]
@@ -80297,7 +80297,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 210,
+      "kcal": 218,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -80315,61 +80315,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Aubergine",
-          300,
+          150,
           "g",
           "produce"
         ],
         [
           "Ricotta",
-          60,
+          30,
           "g",
           "dairy"
         ],
         [
           "Parmesan râpé",
-          20,
+          10,
           "g",
           "dairy"
         ],
         [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Chapelure complète",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Basilic frais",
-          8,
+          4,
           "g",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ]
@@ -80415,49 +80415,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pêche jaune",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Amaretti",
-          25,
+          13,
           "g",
           "pantry"
         ],
         [
           "Amandes en poudre",
-          15,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
-          "Cacao en poudre non sucré",
           4,
           "g",
           "pantry"
         ],
         [
+          "Cacao en poudre non sucré",
+          2,
+          "g",
+          "pantry"
+        ],
+        [
           "Œuf",
-          1,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Amandes effilées",
-          6,
+          3,
           "g",
           "pantry"
         ]
@@ -80509,49 +80509,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          200,
+          65,
           "g",
           "dairy"
         ],
         [
           "Mascarpone",
-          60,
+          20,
           "g",
           "dairy"
         ],
         [
           "Amaretti",
-          30,
+          10,
           "g",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          12,
+          4,
           "g",
           "pantry"
         ],
         [
           "Fraise",
-          100,
+          33,
           "g",
           "produce"
         ],
         [
           "Framboise",
-          80,
+          27,
           "g",
           "produce"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.1,
           "g",
           "spices"
         ],
         [
           "Citron jaune",
-          0.25,
+          0.083,
           "u",
           "produce"
         ]
@@ -80583,7 +80583,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 290,
+      "kcal": 386,
       "tags": [
         "vegetarian",
         "quick"
@@ -80683,7 +80683,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 360,
+      "kcal": 359,
       "tags": [
         "vegetarian",
         "quick"
@@ -80779,7 +80779,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 260,
+      "kcal": 255,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -80884,37 +80884,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Rhubarbe",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Fraise",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable",
-          18,
+          9,
           "g",
           "pantry"
         ],
         [
           "Cardamome moulue",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Eau",
-          50,
+          25,
           "ml",
           "pantry"
         ]
@@ -80924,7 +80924,7 @@ window.__DATA_RECIPES = {
         "Mets la rhubarbe dans une casserole avec l'eau, le sirop d'érable et la cardamome.",
         "Cuis 8-10 minutes à feu moyen : la rhubarbe se défait en compote (acidité naturelle préservée).",
         "Pendant ce temps, équeute et coupe les fraises en quartiers.",
-        "Hors du feu, ajoute les fraises et le jus du demi-citron à la rhubarbe chaude, laisse tiédir 10 minutes (les fraises confisent légèrement).",
+        "Hors du feu, ajoute les fraises et le jus du citron à la rhubarbe chaude, laisse tiédir 10 minutes (les fraises confisent légèrement).",
         "Mixe le tout au blender 30 secondes : purée lisse rose foncé.",
         "Verse le mélange dans un récipient large à fond plat (type plat à gratin), place au congélateur.",
         "Sors toutes les 30 minutes pendant 2h et gratte à la fourchette pour casser les cristaux (texture sorbet onctueux).",
@@ -81047,7 +81047,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 350,
+      "kcal": 348,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81139,7 +81139,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 60,
+      "kcal": 65,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81156,55 +81156,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Concombre",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Radis rose",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Vinaigre de riz",
-          60,
+          30,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          8,
-          "g",
-          "pantry"
-        ],
-        [
-          "Sel",
-          1,
-          "g",
-          "spices"
-        ],
-        [
-          "Gingembre frais",
-          8,
-          "g",
-          "produce"
-        ],
-        [
-          "Graines de sésame",
           4,
           "g",
           "pantry"
         ],
         [
+          "Sel",
+          0.5,
+          "g",
+          "spices"
+        ],
+        [
+          "Gingembre frais",
+          4,
+          "g",
+          "produce"
+        ],
+        [
+          "Graines de sésame",
+          2,
+          "g",
+          "pantry"
+        ],
+        [
           "Algue nori",
-          1,
+          0.5,
           "g",
           "pantry"
         ]
@@ -81253,67 +81253,67 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Blanc de poulet",
-          150,
+          75,
           "g",
           "meat-fish"
         ],
         [
           "Laitue iceberg",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Carotte",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Purée de cacahuète sans sucre",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Sauce soja",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Gingembre frais",
-          8,
+          4,
           "g",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile de sésame",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Cacahuètes non salées",
-          12,
+          6,
           "g",
           "pantry"
         ]
@@ -81363,31 +81363,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Litchis en conserve égouttés",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Eau de rose",
-          6,
+          3,
           "ml",
           "pantry"
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          4,
+          2,
           "g",
           "produce"
         ]
@@ -81397,9 +81397,9 @@ window.__DATA_RECIPES = {
         "Étale les litchis en une seule couche sur une plaque chemisée de papier cuisson.",
         "Place la plaque au congélateur au moins 4h, idéalement une nuit (les litchis doivent être totalement durs).",
         "Au moment de servir, sors les litchis congelés et mets-les dans le blender.",
-        "Ajoute l'eau de rose, le sirop d'érable, le jus du citron vert entier.",
+        "Ajoute l'eau de rose, le sirop d'érable, le jus du citron vert.",
         "Mixe en pulsant par à-coups (5 sec × 4 fois), racle les parois entre chaque : texture sorbet onctueuse rose pâle.",
-        "Verse dans 2 coupes glacées, décore d'une feuille de menthe et d'un zeste de citron vert.",
+        "Verse dans des coupes glacées, décore d'une feuille de menthe et d'un zeste de citron vert.",
         "Sers immédiatement (si le sorbet est trop dur, laisse tempérer 5 minutes au frais avant de mixer)."
       ],
       "photo": "assets/recipes/des137.webp"
@@ -81419,7 +81419,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au frais pour figer",
       "diff": 2,
       "cost": 1.8,
-      "kcal": 180,
+      "kcal": 122,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81436,43 +81436,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait de soja",
-          250,
+          125,
           "ml",
           "dairy"
         ],
         [
           "Thé matcha en poudre",
-          3,
+          1.5,
           "g",
           "spices"
         ],
         [
           "Sirop d'érable",
-          12,
+          6,
           "g",
           "pantry"
         ],
         [
           "Agar-agar",
-          2,
+          1,
           "g",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Amandes effilées",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Framboise",
-          60,
+          30,
           "g",
           "produce"
         ]
@@ -81482,7 +81482,7 @@ window.__DATA_RECIPES = {
         "Verse le lait de soja dans une casserole, ajoute le sirop d'érable, la vanille et l'agar-agar préalablement dispersé dans 1 cuillère à soupe d'eau froide.",
         "Porte à frémissement à feu moyen en remuant constamment au fouet : il faut bien faire bouillir 1 minute pour activer l'agar-agar.",
         "Hors du feu, incorpore le matcha dilué en fouettant pour mélanger.",
-        "Répartis dans 2 ramequins individuels (8 cm de diamètre), laisse tiédir 10 minutes.",
+        "Répartis dans des ramequins individuels (8 cm de diamètre), laisse tiédir 10 minutes.",
         "Place 4h au frigo : la pannacotta fige et devient tremblante.",
         "Pendant ce temps, fais griller les amandes effilées 2-3 minutes à sec dans une petite poêle (dorées).",
         "Au moment de servir, démoule en passant le ramequin 5 sec dans un fond d'eau chaude, retourne sur l'assiette.",
@@ -81616,7 +81616,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 370,
+      "kcal": 373,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -81796,7 +81796,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 150,
+      "kcal": 151,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81895,7 +81895,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 160,
+      "kcal": 162,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -81911,43 +81911,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ricotta",
-          200,
+          65,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          15,
+          5,
           "g",
           "pantry"
         ],
         [
           "Cardamome moulue",
-          0.5,
+          0.17,
           "g",
           "spices"
         ],
         [
           "Eau de rose",
-          5,
+          1.5,
           "ml",
           "pantry"
         ],
         [
           "Pistaches non salées",
-          12,
+          4,
           "g",
           "pantry"
         ],
         [
           "Safran",
-          0.05,
+          0.02,
           "g",
           "spices"
         ],
         [
           "Amandes effilées",
-          6,
+          2,
           "g",
           "pantry"
         ]
@@ -81959,7 +81959,7 @@ window.__DATA_RECIPES = {
         "Cuis 4-5 minutes en remuant constamment à la cuillère en bois : la pâte doit légèrement épaissir et se détacher des bords (pas de coloration, juste assécher l'eau résiduelle).",
         "Hors du feu, ajoute la cardamome, l'eau de rose et le safran infusé. Mélange.",
         "Laisse tiédir 10 minutes.",
-        "Façonne 6 petites boules de 3 cm avec les mains légèrement humides (texture pâte à modeler ferme).",
+        "Façonne de petites boules de 3 cm avec les mains légèrement humides (texture pâte à modeler ferme).",
         "Aplatis légèrement chaque boule du bout du pouce pour faire un creux au centre.",
         "Place 1 petite pistache concassée au centre de chaque sandesh, parsème d'amandes effilées autour.",
         "Réfrigère 1h pour que les sandesh se raffermissent. Sers frais en mignardise."
@@ -81979,7 +81979,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 240,
+      "kcal": 243,
       "tags": [
         "vegetarian",
         "festif"
@@ -82197,7 +82197,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 320,
+      "kcal": 405,
       "tags": [
         "vegetarian",
         "quick"
@@ -82298,7 +82298,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 130,
+      "kcal": 173,
       "tags": [
         "quick",
         "no-cook",
@@ -82314,61 +82314,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Dos de cabillaud frais",
-          150,
+          75,
           "g",
           "meat-fish"
         ],
         [
           "Citron vert",
-          2,
+          1,
           "u",
           "produce"
         ],
         [
           "Mangue",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Tomate",
-          60,
-          "g",
-          "produce"
-        ],
-        [
-          "Oignon rouge",
           30,
           "g",
           "produce"
         ],
         [
+          "Oignon rouge",
+          15,
+          "g",
+          "produce"
+        ],
+        [
           "Coriandre fraîche",
-          6,
+          3,
           "g",
           "produce"
         ],
         [
           "Piment doux moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Huile d'olive",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Avocat",
-          40,
+          20,
           "g",
           "produce"
         ]
@@ -82416,55 +82416,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Jicama (ou pomme verte)",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Orange",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Concombre",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Piment doux moulu",
-          0.5,
+          0.25,
           "g",
           "spices"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "g",
           "spices"
         ],
         [
           "Huile d'olive",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
         [
           "Graines de chia",
-          4,
+          2,
           "g",
           "pantry"
         ]
@@ -82611,7 +82611,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au frais pour démouler proprement",
       "diff": 2,
       "cost": 1.6,
-      "kcal": 200,
+      "kcal": 140,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -82628,59 +82628,59 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Œuf",
-          2,
+          0.5,
           "u",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          200,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Lait de coco",
-          100,
+          25,
           "ml",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          20,
+          5,
           "g",
           "pantry"
         ],
         [
           "Cannelle moulue",
-          0.5,
+          0.13,
           "g",
           "spices"
         ],
         [
           "Vanille en poudre",
-          0.5,
+          0.13,
           "g",
           "spices"
         ],
         [
           "Zeste d'orange",
-          2,
+          0.5,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable (caramel)",
-          12,
+          3,
           "g",
           "pantry"
         ]
       ],
       "steps": [
         "Préchauffe le four à 160°C en chaleur tournante. Prépare un bain-marie : verse 2 cm d'eau dans un plat allant au four.",
-        "Prépare le caramel express : verse 12g de sirop d'érable dans une petite casserole, chauffe 2 minutes à feu moyen jusqu'à ce qu'il bouillonne et caramélise légèrement (couleur ambrée).",
-        "Répartis le caramel dans le fond de 4 ramequins individuels (8 cm de diamètre).",
+        "Prépare le caramel express : verse le sirop d'érable (caramel) dans une petite casserole, chauffe 2 minutes à feu moyen jusqu'à ce qu'il bouillonne et caramélise légèrement (couleur ambrée).",
+        "Répartis le caramel dans le fond de ramequins individuels (8 cm de diamètre).",
         "Fais chauffer le lait demi-écrémé et le lait de coco avec la cannelle, la vanille et le zeste d'orange jusqu'aux premiers frémissements (pas l'ébullition). Laisse tiédir 5 minutes.",
-        "Dans un saladier, fouette les œufs avec 20g de sirop d'érable jusqu'à mélange homogène (sans faire mousser, sinon des bulles dans le flan).",
+        "Dans un saladier, fouette les œufs avec le sirop d'érable jusqu'à mélange homogène (sans faire mousser, sinon des bulles dans le flan).",
         "Verse doucement le lait tiédi sur les œufs en remuant au fouet (pour éviter qu'ils ne cuisent).",
         "Filtre le mélange à travers un tamis fin pour retirer le zeste et toute trace mousseuse.",
         "Répartis dans les ramequins sur le caramel.",
@@ -82704,7 +82704,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 1,
       "cost": 1.4,
-      "kcal": 70,
+      "kcal": 95,
       "tags": [
         "vegan",
         "vegetarian",
@@ -82719,31 +82719,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque",
-          400,
+          200,
           "g",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Piment doux moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Menthe fraîche",
-          4,
+          2,
           "g",
           "produce"
         ]
@@ -82753,9 +82753,9 @@ window.__DATA_RECIPES = {
         "Étale les cubes en une seule couche sur une plaque chemisée de papier cuisson.",
         "Place la plaque au congélateur au moins 4h (les cubes doivent être totalement durs et glacés).",
         "Au moment de servir, sors les cubes congelés et mets-les dans le blender.",
-        "Ajoute le sirop d'érable, le piment doux et le jus du citron vert entier.",
+        "Ajoute le sirop d'érable, le piment doux et le jus du citron vert.",
         "Mixe en pulsant par à-coups (5 sec × 5 fois), racle les parois entre chaque : texture sorbet onctueuse rose vif.",
-        "Verse dans 2 coupes glacées, décore d'une feuille de menthe et d'une pincée supplémentaire de piment doux pour les amateurs.",
+        "Verse dans des coupes glacées, décore d'une feuille de menthe et d'une pincée supplémentaire de piment doux pour les amateurs.",
         "Sers immédiatement (si le sorbet est trop dur, laisse tempérer 5 minutes avant de mixer)."
       ],
       "photo": "assets/recipes/des143.webp"
@@ -82775,7 +82775,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur",
       "diff": 1,
       "cost": 1.3,
-      "kcal": 130,
+      "kcal": 150,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -82791,43 +82791,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          300,
+          150,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          15,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Cannelle moulue",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Cacao en poudre non sucré",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Chocolat noir 70%",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.25,
+          0.125,
           "u",
           "produce"
         ]
@@ -82859,7 +82859,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 190,
+      "kcal": 192,
       "tags": [
         "vegetarian",
         "festif",
@@ -82963,7 +82963,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 280,
+      "kcal": 281,
       "tags": [
         "vegetarian",
         "festif",
@@ -83173,7 +83173,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 270,
+      "kcal": 271,
       "tags": [
         "vegan",
         "vegetarian",
@@ -83260,7 +83260,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 310,
+      "kcal": 395,
       "tags": [
         "vegetarian",
         "quick"
@@ -83541,7 +83541,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 290,
+      "kcal": 293,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -83908,7 +83908,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 387,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -84035,7 +84035,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 300,
+      "kcal": 533,
       "tags": [
         "vegan",
         "vegetarian",
@@ -84271,7 +84271,7 @@ window.__DATA_RECIPES = {
         "Coupe le poulet en lanières. Fais chauffer le reste d'huile dans une autre poêle, saisis le poulet 6-7 minutes à feu moyen-vif (doré et cuit à cœur).",
         "Verse la sauce mole sur le poulet, mélange pour enrober, prolonge 2 minutes.",
         "Fais griller les graines de sésame 1 minute à sec.",
-        "Dresse le riz brun dans 2 bols, dépose le poulet au mole par-dessus.",
+        "Dresse le riz brun dans un bol, dépose le poulet au mole par-dessus.",
         "Parsème de graines de sésame grillées et de coriandre ciselée. Sers chaud."
       ],
       "photo": "assets/recipes/l204.webp"
@@ -84406,7 +84406,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 330,
+      "kcal": 484,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -84519,7 +84519,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 340,
+      "kcal": 512,
       "tags": [
         "batch-friendly"
       ],
@@ -84863,7 +84863,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 290,
+      "kcal": 437,
       "tags": [
         "batch-friendly"
       ],
@@ -84985,7 +84985,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 560,
+      "kcal": 563,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -85104,7 +85104,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 460,
+      "kcal": 462,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -85213,7 +85213,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 350,
+      "kcal": 613,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -85569,7 +85569,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 360,
+      "kcal": 566,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -85671,7 +85671,7 @@ window.__DATA_RECIPES = {
         "Mixe la moitié de la soupe au blender (ou mixeur plongeant), puis reverse dans la casserole : texture mi-veloutée, mi-rustique avec des haricots entiers.",
         "Ajoute le jus d'un demi-citron vert, goûte et rectifie.",
         "Coupe l'avocat en dés, cisèle la coriandre.",
-        "Verse la soupe dans 2 bols, garnis de dés d'avocat, fromage frais émietté et coriandre.",
+        "Verse la soupe dans un bol, garnis de dés d'avocat, fromage frais émietté et coriandre.",
         "Sers chaud avec un quartier de citron vert à presser."
       ],
       "photo": "assets/recipes/l212.webp"
@@ -85804,7 +85804,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 270,
+      "kcal": 368,
       "tags": [
         "quick"
       ],
@@ -85903,7 +85903,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 280,
+      "kcal": 424,
       "tags": [
         "batch-friendly"
       ],
@@ -86242,7 +86242,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 330,
+      "kcal": 597,
       "tags": [
         "batch-friendly"
       ],
@@ -86362,7 +86362,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 310,
+      "kcal": 511,
       "tags": [
         "vegan",
         "vegetarian",
@@ -86474,7 +86474,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 380,
+      "kcal": 385,
       "tags": [
         "vegetarian",
         "quick",
@@ -86550,7 +86550,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 420,
+      "kcal": 421,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -86646,7 +86646,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 280,
+      "kcal": 370,
       "tags": [
         "vegetarian",
         "quick"
@@ -86733,7 +86733,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 320,
+      "kcal": 324,
       "tags": [
         "vegetarian",
         "quick",
@@ -86816,7 +86816,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 270,
+      "kcal": 344,
       "tags": [
         "vegetarian",
         "quick"
@@ -86909,7 +86909,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 410,
+      "kcal": 407,
       "tags": [
         "vegetarian",
         "quick",
@@ -86998,7 +86998,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 260,
+      "kcal": 263,
       "tags": [
         "quick",
         "no-cook",
@@ -87108,61 +87108,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          300,
+          150,
           "g",
           "produce"
         ],
         [
           "Oignon jaune",
-          40,
+          20,
           "g",
           "produce"
         ],
         [
           "Bouillon de légumes",
-          300,
+          150,
           "ml",
           "pantry"
         ],
         [
           "Fromage frais",
-          40,
+          20,
           "g",
           "dairy"
         ],
         [
           "Basilic frais",
-          8,
+          4,
           "g",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4,
           "ml",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ]
@@ -87373,7 +87373,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 240,
+      "kcal": 243,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -87461,7 +87461,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 190,
+      "kcal": 179,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -87552,7 +87552,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 120,
+      "kcal": 170,
       "tags": [
         "quick",
         "no-cook",
@@ -87568,55 +87568,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Crevettes décortiquées crues",
-          150,
+          75,
           "g",
           "meat-fish"
         ],
         [
           "Citron vert",
-          3,
+          1.5,
           "u",
           "produce"
         ],
         [
           "Concombre",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          8,
+          4,
           "g",
           "produce"
         ],
         [
           "Oignon rouge",
-          30,
+          15,
           "g",
           "produce"
         ],
         [
           "Piment doux moulu",
-          0.5,
+          0.25,
           "g",
           "spices"
         ],
         [
           "Avocat",
-          50,
+          25,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          5,
+          2.5,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ]
@@ -87646,7 +87646,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 140,
+      "kcal": 168,
       "tags": [
         "vegetarian",
         "quick",
@@ -87663,49 +87663,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Concombre",
-          120,
+          60,
           "g",
           "produce"
         ],
         [
           "Feta",
-          50,
+          25,
           "g",
           "dairy"
         ],
         [
           "Menthe fraîche",
-          6,
+          3,
           "g",
           "produce"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4,
           "ml",
           "pantry"
         ],
         [
           "Olives noires dénoyautées",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ]
@@ -87735,7 +87735,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 90,
+      "kcal": 139,
       "tags": [
         "vegan",
         "vegetarian",
@@ -87831,7 +87831,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 80,
+      "kcal": 90,
       "tags": [
         "vegan",
         "vegetarian",
@@ -87939,49 +87939,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Melon",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Bresaola",
-          50,
+          25,
           "g",
           "meat-fish"
         ],
         [
           "Roquette",
-          40,
+          20,
           "g",
           "produce"
         ],
         [
           "Parmesan râpé",
-          15,
+          7.5,
           "g",
           "dairy"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          8,
+          4,
           "ml",
           "pantry"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Pignons de pin",
-          8,
+          4,
           "g",
           "pantry"
         ]
@@ -88012,7 +88012,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 1,
       "cost": 1.4,
-      "kcal": 80,
+      "kcal": 85,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88027,25 +88027,25 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Melon",
-          400,
+          200,
           "g",
           "produce"
         ],
         [
           "Basilic frais",
-          6,
+          3,
           "g",
           "produce"
         ],
         [
           "Citron jaune",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ]
@@ -88056,7 +88056,7 @@ window.__DATA_RECIPES = {
         "Place au congélateur au moins 4h (les cubes doivent être totalement durs).",
         "Au moment de servir, mets les cubes congelés dans le blender avec les feuilles de basilic, le jus du citron et le sirop d'érable.",
         "Mixe en pulsant par à-coups (5 sec × 5 fois), racle les parois entre chaque : texture sorbet onctueuse.",
-        "Verse dans 2 coupes glacées, décore d'une feuille de basilic.",
+        "Verse dans des coupes glacées, décore d'une feuille de basilic.",
         "Sers immédiatement (si trop dur, laisse tempérer 5 minutes avant de mixer) — le basilic relève subtilement la douceur du melon."
       ],
       "photo": "assets/recipes/des150.webp"
@@ -88139,7 +88139,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au frais pour figer les 2 couches",
       "diff": 2,
       "cost": 1.6,
-      "kcal": 130,
+      "kcal": 149,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88216,7 +88216,7 @@ window.__DATA_RECIPES = {
       "advance": "6h au congélateur (idéalement une nuit)",
       "diff": 2,
       "cost": 1.7,
-      "kcal": 170,
+      "kcal": 148,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -88301,7 +88301,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 90,
+      "kcal": 130,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88318,43 +88318,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Melon",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Pastèque",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Eau de fleur d'oranger",
-          6,
+          3,
           "ml",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Menthe fraîche",
-          6,
+          3,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable",
-          5,
+          2.5,
           "g",
           "pantry"
         ],
         [
           "Amandes effilées",
-          8,
+          4,
           "g",
           "pantry"
         ]
@@ -88485,7 +88485,7 @@ window.__DATA_RECIPES = {
         "Mélange les cubes de saumon à la marinade, laisse 15 minutes au frais.",
         "Pendant ce temps, cuis les edamame 4 minutes à l'eau bouillante salée, égoutte et rafraîchis.",
         "Coupe la mangue en cubes, le concombre en demi-lunes, l'avocat en lamelles.",
-        "Répartis le riz vinaigré dans 2 bols.",
+        "Répartis le riz vinaigré dans un bol.",
         "Dispose harmonieusement par secteurs : saumon mariné, mangue, edamame, concombre, avocat.",
         "Arrose d'un peu de marinade restante, parsème de graines de sésame et d'oignons nouveaux ciselés. Sers frais."
       ],
@@ -88503,7 +88503,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 320,
+      "kcal": 592,
       "tags": [
         "vegetarian",
         "festif"
@@ -88609,7 +88609,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 360,
+      "kcal": 364,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -88691,7 +88691,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 290,
+      "kcal": 334,
       "tags": [
         "vegetarian",
         "quick",
@@ -88781,7 +88781,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.8,
-      "kcal": 300,
+      "kcal": 350,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88797,43 +88797,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Graines de chia",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Mangue",
-          120,
+          60,
           "g",
           "produce"
         ],
         [
           "Fruit de la passion",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Noix de coco râpée",
-          6,
+          3,
           "g",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
@@ -88843,7 +88843,7 @@ window.__DATA_RECIPES = {
         "Attends 5 minutes, fouette à nouveau (le chia commence à gonfler, ce 2e mélange évite qu'il se prenne en bloc).",
         "Couvre et place au frigo toute la nuit (le chia gonfle et fige, texture pudding).",
         "Le matin, épluche la mangue et mixe-la en purée avec le jus du demi-citron vert.",
-        "Répartis le chia pudding dans 2 verres, verse la purée de mangue par-dessus.",
+        "Répartis le chia pudding dans des verres, verse la purée de mangue par-dessus.",
         "Ouvre le fruit de la passion, prélève la pulpe à la cuillère et répartis-la sur la mangue.",
         "Parsème de noix de coco râpée. Sers frais — le petit-déj tropical d'Asie du Sud-Est."
       ],
@@ -88861,7 +88861,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 250,
+      "kcal": 321,
       "tags": [
         "vegan",
         "vegetarian",
@@ -89037,7 +89037,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 250,
+      "kcal": 251,
       "tags": [
         "vegan",
         "vegetarian",
@@ -89135,7 +89135,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 260,
+      "kcal": 388,
       "tags": [
         "vegetarian",
         "quick",
@@ -89203,7 +89203,7 @@ window.__DATA_RECIPES = {
         "Coupe la papaye en deux, retire les graines noires à la cuillère, prélève la chair et coupe-la en cubes.",
         "Coupe la banane en rondelles.",
         "Fais griller les graines de courge 2 minutes à sec dans une poêle (elles gonflent et craquent).",
-        "Verse le yaourt nature dans 2 bols, lisse le dessus.",
+        "Verse le yaourt nature dans un bol, lisse le dessus.",
         "Dispose les cubes de papaye et les rondelles de banane.",
         "Presse le jus du citron vert sur la papaye (le lime sur la papaye est la combinaison mexicaine classique).",
         "Parsème de graines de courge grillées, de flocons d'avoine et d'une pointe de cannelle.",
@@ -89223,7 +89223,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 260,
+      "kcal": 261,
       "tags": [
         "vegan",
         "vegetarian",
@@ -89307,7 +89307,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur pour le yaourt glacé",
       "diff": 1,
       "cost": 1.3,
-      "kcal": 130,
+      "kcal": 121,
       "tags": [
         "vegetarian",
         "quick",
@@ -89323,37 +89323,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          250,
+          125,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          12,
+          6,
           "g",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Café expresso",
-          60,
+          30,
           "ml",
           "pantry"
         ],
         [
           "Amandes effilées",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Cacao en poudre non sucré",
-          2,
+          1,
           "g",
           "pantry"
         ]
@@ -89361,7 +89361,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Mélange le skyr avec le sirop d'érable et la vanille.",
         "Verse dans un récipient plat, place au congélateur 3h en grattant à la fourchette toutes les heures (texture glace onctueuse).",
-        "Prépare 2 expressos bien serrés et chauds, laisse-les tiédir 2 minutes (pas brûlants).",
+        "Prépare des expressos bien serrés et chauds, laisse-les tiédir 2 minutes (pas brûlants).",
         "Fais griller les amandes effilées 2 minutes à sec dans une poêle.",
         "Forme 2 boules de yaourt glacé à la cuillère à glace, dépose-les dans des verres ou coupes.",
         "Au moment de servir, verse l'expresso chaud sur le yaourt glacé (le contraste chaud-froid est la signature de l'affogato).",
@@ -89465,55 +89465,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Courgette",
-          300,
+          150,
           "g",
           "produce"
         ],
         [
           "Ail",
-          2,
+          1,
           "gousse",
           "produce"
         ],
         [
           "Carvi moulu",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Coriandre moulue",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Harissa",
-          4,
+          2,
           "g",
           "spices"
         ],
         [
           "Huile d'olive",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          6,
+          3,
           "g",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ]
@@ -89561,49 +89561,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Concombre",
-          120,
+          60,
           "g",
           "produce"
         ],
         [
           "Menthe fraîche",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Zaatar",
-          3,
+          1.5,
           "g",
           "spices"
         ],
         [
           "Huile d'olive",
-          8,
+          4,
           "ml",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "g",
           "spices"
         ]
@@ -89631,7 +89631,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 250,
+      "kcal": 247,
       "tags": [
         "vegetarian",
         "quick",
@@ -89815,7 +89815,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 70,
+      "kcal": 96,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90014,7 +90014,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 150,
+      "kcal": 148,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90123,7 +90123,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 200,
+      "kcal": 199,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90224,7 +90224,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 240,
+      "kcal": 236,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90296,7 +90296,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 150,
+      "kcal": 146,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90391,7 +90391,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 220,
+      "kcal": 217,
       "tags": [
         "vegetarian",
         "quick",
@@ -90468,7 +90468,7 @@ window.__DATA_RECIPES = {
       "advance": "6h au congélateur",
       "diff": 2,
       "cost": 1.7,
-      "kcal": 150,
+      "kcal": 115,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -90485,55 +90485,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait demi-écrémé",
-          250,
+          85,
           "ml",
           "dairy"
         ],
         [
           "Amandes",
-          20,
+          6.5,
           "g",
           "pantry"
         ],
         [
           "Pistaches non salées",
-          12,
+          4,
           "g",
           "pantry"
         ],
         [
           "Cardamome moulue",
-          0.5,
+          0.17,
           "g",
           "spices"
         ],
         [
           "Safran",
-          0.05,
+          0.02,
           "g",
           "spices"
         ],
         [
           "Fenouil (graines)",
-          2,
+          0.67,
           "g",
           "spices"
         ],
         [
           "Poivre noir moulu",
-          0.2,
+          0.07,
           "g",
           "spices"
         ],
         [
           "Sirop d'érable",
-          15,
+          5,
           "g",
           "pantry"
         ],
         [
           "Eau de rose",
-          4,
+          1.5,
           "ml",
           "pantry"
         ]
@@ -90631,7 +90631,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 210,
+      "kcal": 214,
       "tags": [
         "vegetarian",
         "quick",
@@ -90720,7 +90720,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur avec grattages",
       "diff": 1,
       "cost": 1.4,
-      "kcal": 120,
+      "kcal": 130,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -90736,31 +90736,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Skyr (ou yaourt grec)",
-          250,
+          125,
           "g",
           "dairy"
         ],
         [
           "Fraise",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Basilic frais",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable",
-          14,
+          7,
           "g",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ]
@@ -90787,7 +90787,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 110,
+      "kcal": 115,
       "tags": [
         "vegetarian",
         "quick",
@@ -90801,46 +90801,46 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pêche jaune",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Framboise",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Basilic frais",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Miel d'acacia",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Pignons de pin",
-          8,
+          4,
           "g",
           "pantry"
         ]
       ],
       "steps": [
         "Lave les pêches, retire les noyaux, coupe-les en très fines lamelles (carpaccio).",
-        "Dispose les lamelles de pêche en rosace sur 2 grandes assiettes plates, en les faisant se chevaucher légèrement.",
+        "Dispose les lamelles de pêche en rosace sur de grandes assiettes plates, en les faisant se chevaucher légèrement.",
         "Répartis les framboises entières entre les lamelles de pêche.",
-        "Prépare le sirop : mélange le miel d'acacia avec le jus du demi-citron vert.",
+        "Prépare le sirop : mélange le miel d'acacia avec le jus du citron vert.",
         "Arrose le carpaccio du sirop citron-miel au pinceau ou à la cuillère.",
         "Fais griller les pignons de pin 2 minutes à sec dans une poêle.",
         "Parsème de pignons grillés et de feuilles de basilic ciselées. Sers frais, idéalement après 15 minutes au frais."
@@ -90861,7 +90861,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au congélateur pour la mangue",
       "diff": 1,
       "cost": 1.6,
-      "kcal": 100,
+      "kcal": 98,
       "tags": [
         "vegan",
         "vegetarian",
@@ -90922,7 +90922,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 90,
+      "kcal": 108,
       "tags": [
         "vegetarian",
         "quick",
@@ -90939,49 +90939,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Concombre",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Oignon rouge",
-          30,
+          15,
           "g",
           "produce"
         ],
         [
           "Coriandre fraîche",
-          8,
+          4,
           "g",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Piment doux moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Feta",
-          30,
+          15,
           "g",
           "dairy"
         ],
         [
           "Sel",
-          0.3,
+          0.15,
           "g",
           "spices"
         ]
@@ -91011,7 +91011,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au frais pour servir bien froid",
       "diff": 1,
       "cost": 1.2,
-      "kcal": 90,
+      "kcal": 98,
       "tags": [
         "vegan",
         "vegetarian",
@@ -91029,55 +91029,55 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Tomate",
-          300,
+          150,
           "g",
           "produce"
         ],
         [
           "Poivron rouge",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Concombre",
-          80,
+          40,
           "g",
           "produce"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Basilic frais",
-          6,
+          3,
           "g",
           "produce"
         ],
         [
           "Huile d'olive",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Vinaigre de cidre",
-          6,
+          3,
           "ml",
           "pantry"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ]
@@ -91105,7 +91105,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 130,
+      "kcal": 147,
       "tags": [
         "vegetarian",
         "quick",
@@ -91122,49 +91122,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Concombre",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Fromage de chèvre frais",
-          80,
+          40,
           "g",
           "dairy"
         ],
         [
           "Aneth frais",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Ciboulette",
-          5,
+          2.5,
           "g",
           "produce"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          6,
+          3,
           "ml",
           "pantry"
         ],
         [
           "Poivre noir moulu",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Sel",
-          0.5,
+          0.25,
           "g",
           "spices"
         ]
@@ -91208,31 +91208,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fraise",
-          350,
+          175,
           "g",
           "produce"
         ],
         [
           "Menthe fraîche",
-          6,
+          3,
           "g",
           "produce"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Eau",
-          50,
+          25,
           "ml",
           "pantry"
         ]
@@ -91260,7 +91260,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 150,
+      "kcal": 157,
       "tags": [
         "vegetarian",
         "quick",
@@ -91277,43 +91277,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fromage blanc",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Framboise",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Myrtilles",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Amandes effilées",
-          10,
+          5,
           "g",
           "pantry"
         ],
         [
           "Citron jaune",
-          0.25,
+          0.125,
           "u",
           "produce"
         ]
@@ -91340,7 +91340,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 360,
+      "kcal": 358,
       "tags": [
         "vegetarian",
         "quick",
@@ -91508,7 +91508,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 390,
+      "kcal": 393,
       "tags": [
         "vegetarian",
         "quick"
@@ -91588,7 +91588,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 380,
+      "kcal": 383,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -91670,7 +91670,7 @@ window.__DATA_RECIPES = {
       "cook": 2,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 290,
+      "kcal": 386,
       "tags": [
         "vegetarian",
         "quick"
@@ -91762,7 +91762,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 250,
+      "kcal": 316,
       "tags": [
         "vegetarian",
         "quick",
@@ -91846,7 +91846,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.7,
-      "kcal": 290,
+      "kcal": 326,
       "tags": [
         "vegan",
         "vegetarian",
@@ -91862,48 +91862,48 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Graines de chia",
-          30,
+          15,
           "g",
           "pantry"
         ],
         [
           "Lait de coco",
-          200,
+          100,
           "ml",
           "dairy"
         ],
         [
           "Thé matcha en poudre",
-          2,
+          1,
           "g",
           "spices"
         ],
         [
           "Kiwi",
-          100,
+          50,
           "g",
           "produce"
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Noix de coco râpée",
-          6,
+          3,
           "g",
           "pantry"
         ]
       ],
       "steps": [
-        "Délaye le matcha dans 2 cuillères à soupe d'eau tiède en fouettant énergiquement (aucun grumeau, vert vif).",
+        "Délaye le matcha dans un peu d'eau tiède en fouettant énergiquement (aucun grumeau, vert vif).",
         "La veille, mélange dans un bol les graines de chia, le lait de coco, le matcha dilué et le sirop d'érable. Fouette bien.",
         "Attends 5 minutes, fouette à nouveau (évite que le chia se prenne en bloc).",
         "Couvre et place au frigo toute la nuit (le chia gonfle et fige, couleur vert pâle).",
         "Le matin, épluche le kiwi et coupe-le en rondelles ou en dés.",
-        "Répartis le chia pudding dans 2 verres, garnis de kiwi.",
+        "Répartis le chia pudding dans des verres, garnis de kiwi.",
         "Parsème de noix de coco râpée. Sers frais — le petit-déj antioxydant matcha-coco."
       ],
       "photo": "assets/recipes/b180.webp"
@@ -92102,7 +92102,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 300,
+      "kcal": 301,
       "tags": [
         "vegetarian",
         "quick",
@@ -92190,7 +92190,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 280,
+      "kcal": 276,
       "tags": [
         "vegetarian",
         "quick",
@@ -92263,7 +92263,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 370,
+      "kcal": 371,
       "tags": [
         "vegan",
         "vegetarian",
@@ -92591,7 +92591,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 540,
+      "kcal": 539,
       "tags": [],
       "eq": [
         "grill"
@@ -92705,7 +92705,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 330,
+      "kcal": 580,
       "tags": [
         "festif"
       ],
@@ -92817,7 +92817,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 392,
       "tags": [
         "vegetarian",
         "quick"
@@ -92878,7 +92878,7 @@ window.__DATA_RECIPES = {
         "Équeute les fraises et coupe-les en quartiers.",
         "Fais griller les amandes effilées et les flocons d'avoine 3 minutes à sec dans une poêle (granola express croustillant).",
         "Mélange le fromage blanc avec le zeste du quart de citron (parfume sans acidifier).",
-        "Répartis le fromage blanc dans 2 bols, lisse le dessus.",
+        "Répartis le fromage blanc dans un bol, lisse le dessus.",
         "Dispose les quartiers de fraise.",
         "Parsème du mélange amandes-avoine grillé.",
         "Finis par un filet de miel et quelques feuilles de menthe ciselées. Sers aussitôt — petit-déj printanier frais et croustillant."
@@ -92897,7 +92897,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 344,
       "tags": [
         "vegetarian",
         "quick"
@@ -93074,7 +93074,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 240,
+      "kcal": 242,
       "tags": [
         "vegetarian",
         "quick",
@@ -93267,7 +93267,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 350,
+      "kcal": 486,
       "tags": [
         "vegetarian"
       ],
@@ -93353,9 +93353,9 @@ window.__DATA_RECIPES = {
         "Concasse et fais griller les noisettes 2 minutes à sec dans une poêle.",
         "Prépare la vinaigrette : fouette la moutarde, le vinaigre de cidre, l'huile d'olive, le sel et le poivre.",
         "Pour pocher les œufs : porte de l'eau à frémissement avec 1 cuillère à soupe de vinaigre. Casse chaque œuf dans un ramequin, glisse-le dans l'eau, cuis 3 minutes (blanc pris, jaune coulant). Égoutte.",
-        "Dispose la salade verte dans 2 assiettes, répartis les asperges et les radis en fines rondelles.",
+        "Dispose la salade verte dans une assiette, répartis les asperges et les radis en fines rondelles.",
         "Arrose de vinaigrette.",
-        "Dépose un œuf poché sur chaque assiette, parsème de noisettes grillées et de ciboulette. Sers tiède — le jaune coulant fait la sauce."
+        "Dépose les œufs pochés sur l'assiette, parsème de noisettes grillées et de ciboulette. Sers tiède — le jaune coulant fait la sauce."
       ],
       "photo": "assets/recipes/l218.webp"
     },
@@ -93705,7 +93705,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 320,
+      "kcal": 604,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -93822,7 +93822,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 130,
+      "kcal": 144,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -93838,43 +93838,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Rhubarbe",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Fraise",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
-          150,
+          75,
           "g",
           "dairy"
         ],
         [
           "Sirop d'érable",
-          14,
+          7,
           "g",
           "pantry"
         ],
         [
           "Vanille en poudre",
-          0.3,
+          0.15,
           "g",
           "spices"
         ],
         [
           "Citron jaune",
-          0.25,
+          0.125,
           "u",
           "produce"
         ],
         [
           "Amandes effilées",
-          10,
+          5,
           "g",
           "pantry"
         ]
@@ -93886,7 +93886,7 @@ window.__DATA_RECIPES = {
         "Ajoute les fraises coupées en quartiers, prolonge 2 minutes hors du feu (elles confisent légèrement sans se défaire totalement).",
         "Laisse tiédir puis place 30 minutes au frais.",
         "Fais griller les amandes effilées 2 minutes à sec.",
-        "Répartis le skyr dans 2 verrines, ajoute la compote rhubarbe-fraise.",
+        "Répartis le skyr dans des verrines, ajoute la compote rhubarbe-fraise.",
         "Parsème d'amandes effilées grillées. Sers frais — l'acidité de la rhubarbe équilibre la douceur des fraises."
       ],
       "photo": "assets/recipes/des167.webp"
@@ -93903,7 +93903,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 220,
+      "kcal": 227,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -94332,7 +94332,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 400,
+      "kcal": 687,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -94442,7 +94442,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 620,
+      "kcal": 625,
       "tags": [
         "batch-friendly"
       ],
@@ -94567,7 +94567,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 400,
+      "kcal": 552,
       "tags": [
         "batch-friendly"
       ],
@@ -94673,7 +94673,7 @@ window.__DATA_RECIPES = {
         "Coupe la mangue en fins bâtonnets.",
         "Concasse les cacahuètes, fais-les griller 2 minutes à sec.",
         "Dans un grand saladier, mélange le chou, la carotte, le concombre et la mangue avec la sauce.",
-        "Dresse dans 2 assiettes, dépose le poulet grillé émincé.",
+        "Dresse dans une assiette, dépose le poulet grillé émincé.",
         "Parsème de cacahuètes, coriandre et menthe. Sers aussitôt — la salade thaï croquante, sucrée-acidulée et fraîche."
       ],
       "photo": "assets/recipes/l226.webp"
@@ -94691,7 +94691,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 300,
+      "kcal": 436,
       "tags": [
         "batch-friendly"
       ],
@@ -94799,7 +94799,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 320,
+      "kcal": 530,
       "tags": [
         "vegan",
         "vegetarian",
@@ -94907,7 +94907,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 280,
+      "kcal": 509,
       "tags": [
         "vegetarian",
         "quick"
@@ -95006,7 +95006,7 @@ window.__DATA_RECIPES = {
       "advance": "8h au frais (préparer la veille)",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 280,
+      "kcal": 313,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -95088,7 +95088,7 @@ window.__DATA_RECIPES = {
       "advance": "6h au congélateur",
       "diff": 1,
       "cost": 1.3,
-      "kcal": 80,
+      "kcal": 84,
       "tags": [
         "vegan",
         "vegetarian",
@@ -95103,31 +95103,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Fraise",
-          250,
+          125,
           "g",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          12,
+          6,
           "g",
           "pantry"
         ],
         [
           "Graines de chia",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Eau",
-          80,
+          40,
           "ml",
           "pantry"
         ]
@@ -95157,7 +95157,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur avec grattages",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 130,
+      "kcal": 134,
       "tags": [
         "vegan",
         "vegetarian",
@@ -95173,43 +95173,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Lait de coco",
-          200,
+          50,
           "ml",
           "dairy"
         ],
         [
           "Citron vert",
-          1.5,
+          0.5,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          14,
+          3.5,
           "g",
           "pantry"
         ],
         [
           "Noix de coco râpée",
-          8,
+          2,
           "g",
           "pantry"
         ],
         [
           "Menthe fraîche",
-          4,
+          1,
           "g",
           "produce"
         ],
         [
           "Eau",
-          60,
+          15,
           "ml",
           "pantry"
         ]
       ],
       "steps": [
-        "Mélange le lait de coco, l'eau, le jus d'un citron vert et demi, le sirop d'érable et le zeste d'un citron vert.",
+        "Mélange le lait de coco, l'eau, le jus des citrons verts, le sirop d'érable et leur zeste.",
         "Goûte et ajuste (un peu plus de sirop si trop acide).",
         "Verse dans un récipient large à fond plat, place au congélateur.",
         "Gratte à la fourchette toutes les 40 minutes pendant 3-4h (3-4 grattages) : on obtient des cristaux légers façon sorbet mexicain (nieve).",
@@ -95231,7 +95231,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 360,
+      "kcal": 551,
       "tags": [
         "vegan",
         "vegetarian",
@@ -95447,7 +95447,7 @@ window.__DATA_RECIPES = {
         "Coupe la mangue en dés, le concombre en demi-lunes.",
         "Fais chauffer le grill (ou poêle-gril) à feu vif, grille les cubes de paneer marinés 3 minutes par face (dorés et marqués).",
         "Prépare la vinaigrette : fouette l'huile d'olive, le jus du demi-citron vert restant et une pincée de sel.",
-        "Dresse le riz tiède dans 2 bols, ajoute la roquette, la mangue et le concombre.",
+        "Dresse le riz tiède dans un bol, ajoute la roquette, la mangue et le concombre.",
         "Dépose le paneer grillé, arrose de vinaigrette.",
         "Parsème de menthe ciselée. Sers tiède — le bowl indien grillé, fruité et frais."
       ],
@@ -95465,7 +95465,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 360,
+      "kcal": 674,
       "tags": [
         "batch-friendly"
       ],
@@ -95685,7 +95685,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 420,
+      "kcal": 607,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -95792,7 +95792,7 @@ window.__DATA_RECIPES = {
         "Cuis à la vapeur les haricots verts (6 min), le chou émincé (4 min) et la carotte en bâtonnets (4 min) : ils restent croquants.",
         "Blanchis les pousses de soja 1 minute. Coupe le concombre en bâtonnets (cru).",
         "Prépare la sauce cacahuète : délaye la purée de cacahuète avec la sauce soja, le jus d'un citron vert, l'ail écrasé, le gingembre râpé, le piment doux et 3 cuillères à soupe d'eau chaude (sauce nappante).",
-        "Dresse dans 2 grandes assiettes : dispose harmonieusement par secteurs les légumes vapeur, le concombre, les pousses de soja, le tofu et les œufs.",
+        "Dresse dans une grande assiette : dispose harmonieusement par secteurs les légumes vapeur, le concombre, les pousses de soja, le tofu et les œufs.",
         "Nappe généreusement de sauce cacahuète.",
         "Sers tiède — la grande salade composée indonésienne, complète et gourmande."
       ],
@@ -95811,7 +95811,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 280,
+      "kcal": 380,
       "tags": [
         "batch-friendly"
       ],
@@ -95914,7 +95914,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 340,
+      "kcal": 525,
       "tags": [
         "festif"
       ],
@@ -96035,7 +96035,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 290,
+      "kcal": 300,
       "tags": [
         "batch-friendly"
       ],
@@ -96156,7 +96156,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 330,
+      "kcal": 503,
       "tags": [
         "batch-friendly",
         "festif"
@@ -96263,7 +96263,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 280,
+      "kcal": 408,
       "tags": [
         "batch-friendly"
       ],
@@ -96444,7 +96444,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 150,
+      "kcal": 139,
       "tags": [
         "vegetarian",
         "quick",
@@ -96461,43 +96461,43 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pêche jaune",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Yaourt nature",
-          150,
+          75,
           "g",
           "dairy"
         ],
         [
           "Lait demi-écrémé",
-          50,
+          25,
           "ml",
           "dairy"
         ],
         [
           "Cardamome moulue",
-          0.5,
+          0.25,
           "g",
           "spices"
         ],
         [
           "Sirop d'érable",
-          8,
+          4,
           "g",
           "pantry"
         ],
         [
           "Pistaches non salées",
-          12,
+          6,
           "g",
           "pantry"
         ],
         [
           "Glaçons",
-          4,
+          2,
           "u",
           "pantry"
         ]
@@ -96507,7 +96507,7 @@ window.__DATA_RECIPES = {
         "Mets les pêches, le yaourt nature, le lait, la cardamome, le sirop d'érable et les glaçons dans le blender.",
         "Mixe 30-40 secondes jusqu'à obtenir une texture épaisse et glacée (lassi onctueux).",
         "Goûte et ajuste (un peu plus de sirop si les pêches sont peu sucrées).",
-        "Verse dans 2 verres ou coupes, place 1h au frais pour servir bien glacé.",
+        "Verse dans des verres ou coupes, place 1h au frais pour servir bien glacé.",
         "Concasse les pistaches au couteau.",
         "Garnis des dés de pêche réservés et des pistaches concassées. Sers bien frais — le lassi à la pêche, dessert-boisson rafraîchissant de l'été indien."
       ],
@@ -96642,7 +96642,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 320,
+      "kcal": 503,
       "tags": [
         "batch-friendly",
         "light"
@@ -96863,7 +96863,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 320,
+      "kcal": 488,
       "tags": [
         "batch-friendly",
         "light"
@@ -96973,7 +96973,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 410,
+      "kcal": 571,
       "tags": [
         "batch-friendly"
       ],
@@ -97069,7 +97069,7 @@ window.__DATA_RECIPES = {
         "Égoutte et rince les haricots noirs.",
         "Coupe la tomate en dés, l'avocat en lamelles, émince l'oignon rouge.",
         "Prépare la vinaigrette : fouette le reste d'huile, le jus du demi-citron vert restant et le sel.",
-        "Dans 2 grands bols, dispose la salade verte, le maïs grillé, les haricots noirs, la tomate et l'oignon.",
+        "Dans un grand bol, dispose la salade verte, le maïs grillé, les haricots noirs, la tomate et l'oignon.",
         "Ajoute le poisson grillé émietté et les lamelles d'avocat.",
         "Arrose de vinaigrette, parsème de coriandre. Sers aussitôt — le taco déconstruit en salade, frais et fumé."
       ],
@@ -97087,7 +97087,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 300,
+      "kcal": 493,
       "tags": [
         "vegan",
         "vegetarian",
@@ -97211,7 +97211,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 320,
+      "kcal": 492,
       "tags": [
         "batch-friendly",
         "festif"
@@ -97312,7 +97312,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 490,
+      "kcal": 494,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -97536,7 +97536,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 320,
+      "kcal": 604,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -97649,7 +97649,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au congélateur avec grattages",
       "diff": 1,
       "cost": 1.1,
-      "kcal": 60,
+      "kcal": 67,
       "tags": [
         "vegan",
         "vegetarian",
@@ -97664,31 +97664,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pastèque",
-          450,
+          150,
           "g",
           "produce"
         ],
         [
           "Eau de fleur d'oranger",
-          6,
+          2,
           "ml",
           "pantry"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Sirop d'érable",
-          8,
+          2.5,
           "g",
           "pantry"
         ],
         [
           "Menthe fraîche",
-          5,
+          1.5,
           "g",
           "produce"
         ]
@@ -97718,7 +97718,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur avec grattages",
       "diff": 2,
       "cost": 1.4,
-      "kcal": 100,
+      "kcal": 105,
       "tags": [
         "vegan",
         "vegetarian",
@@ -98096,7 +98096,7 @@ window.__DATA_RECIPES = {
       "advance": "1h au frais pour servir glacé",
       "diff": 1,
       "cost": 1.8,
-      "kcal": 340,
+      "kcal": 509,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -98206,7 +98206,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 320,
+      "kcal": 522,
       "tags": [
         "batch-friendly"
       ],
@@ -98325,7 +98325,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 300,
+      "kcal": 528,
       "tags": [
         "batch-friendly"
       ],
@@ -98441,7 +98441,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 360,
+      "kcal": 504,
       "tags": [
         "batch-friendly",
         "festif"
@@ -98557,7 +98557,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 350,
+      "kcal": 645,
       "tags": [
         "batch-friendly"
       ],
@@ -98662,7 +98662,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 1,
       "cost": 1.5,
-      "kcal": 90,
+      "kcal": 84,
       "tags": [
         "vegan",
         "vegetarian",
@@ -98724,7 +98724,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 290,
+      "kcal": 623,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -98812,7 +98812,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 240,
+      "kcal": 641,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -98894,7 +98894,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 230,
+      "kcal": 438,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -98981,7 +98981,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 280,
+      "kcal": 523,
       "tags": [
         "batch-friendly"
       ],
@@ -99057,7 +99057,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 2.0,
-      "kcal": 300,
+      "kcal": 391,
       "tags": [
         "vegetarian"
       ],
@@ -99155,7 +99155,7 @@ window.__DATA_RECIPES = {
       "cook": 120,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 360,
+      "kcal": 508,
       "tags": [
         "batch-friendly"
       ],
@@ -99250,7 +99250,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.9,
-      "kcal": 320,
+      "kcal": 426,
       "tags": [],
       "eq": [
         "stove",
@@ -99335,7 +99335,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 300,
+      "kcal": 537,
       "tags": [
         "batch-friendly"
       ],
@@ -99421,7 +99421,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 3.4,
-      "kcal": 290,
+      "kcal": 427,
       "tags": [
         "festif"
       ],
@@ -99500,7 +99500,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 350,
+      "kcal": 547,
       "tags": [
         "batch-friendly"
       ],
@@ -99584,7 +99584,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 150,
+      "kcal": 256,
       "tags": [
         "vegetarian",
         "quick"
@@ -99650,7 +99650,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 220,
+      "kcal": 218,
       "tags": [
         "vegetarian"
       ],
@@ -99717,7 +99717,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 450,
+      "kcal": 451,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -99820,7 +99820,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 460,
+      "kcal": 465,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -99929,7 +99929,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 360,
+      "kcal": 356,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -100109,7 +100109,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 1.8,
-      "kcal": 510,
+      "kcal": 508,
       "tags": [
         "vegetarian"
       ],
@@ -100195,7 +100195,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 310,
+      "kcal": 501,
       "tags": [
         "batch-friendly"
       ],
@@ -100283,7 +100283,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 320,
+      "kcal": 492,
       "tags": [
         "batch-friendly"
       ],
@@ -100571,7 +100571,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 290,
+      "kcal": 375,
       "tags": [
         "quick"
       ],
@@ -100647,7 +100647,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 360,
+      "kcal": 618,
       "tags": [
         "batch-friendly"
       ],
@@ -100743,7 +100743,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 550,
+      "kcal": 546,
       "tags": [
         "vegetarian",
         "quick"
@@ -100828,7 +100828,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 2.4,
-      "kcal": 280,
+      "kcal": 383,
       "tags": [],
       "eq": [
         "stove"
@@ -101003,7 +101003,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 230,
+      "kcal": 376,
       "tags": [
         "vegetarian"
       ],
@@ -101100,7 +101100,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 480,
+      "kcal": 477,
       "tags": [],
       "eq": [
         "stove"
@@ -101375,7 +101375,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 270,
+      "kcal": 426,
       "tags": [
         "batch-friendly"
       ],
@@ -101465,7 +101465,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 300,
+      "kcal": 549,
       "tags": [
         "quick"
       ],
@@ -101560,7 +101560,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 500,
+      "kcal": 502,
       "tags": [],
       "eq": [
         "stove"
@@ -101737,7 +101737,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 2.2,
-      "kcal": 440,
+      "kcal": 442,
       "tags": [],
       "eq": [
         "stove"
@@ -101914,7 +101914,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 270,
+      "kcal": 499,
       "tags": [
         "vegetarian",
         "vegan",
@@ -101999,7 +101999,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 470,
+      "kcal": 473,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -102094,7 +102094,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 370,
+      "kcal": 372,
       "tags": [
         "vegetarian",
         "vegan",
@@ -102282,7 +102282,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 400,
+      "kcal": 397,
       "tags": [
         "vegetarian",
         "vegan",
@@ -102370,7 +102370,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 460,
+      "kcal": 456,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -102472,7 +102472,7 @@ window.__DATA_RECIPES = {
       "cook": 75,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 360,
+      "kcal": 558,
       "tags": [
         "batch-friendly"
       ],
@@ -102567,7 +102567,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 580,
+      "kcal": 582,
       "tags": [
         "batch-friendly"
       ],
@@ -102673,7 +102673,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 340,
+      "kcal": 538,
       "tags": [
         "batch-friendly"
       ],
@@ -102870,7 +102870,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 2.0,
-      "kcal": 320,
+      "kcal": 546,
       "tags": [],
       "eq": [
         "stove"
@@ -102963,7 +102963,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 730,
+      "kcal": 734,
       "tags": [
         "batch-friendly"
       ],
@@ -103071,7 +103071,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 270,
+      "kcal": 448,
       "tags": [
         "batch-friendly"
       ],
@@ -103170,7 +103170,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 410,
+      "kcal": 408,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -103367,7 +103367,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 280,
+      "kcal": 342,
       "tags": [
         "batch-friendly"
       ],
@@ -103455,7 +103455,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 590,
+      "kcal": 594,
       "tags": [
         "vegetarian"
       ],
@@ -103557,7 +103557,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 300,
+      "kcal": 370,
       "tags": [
         "batch-friendly"
       ],
@@ -103648,7 +103648,7 @@ window.__DATA_RECIPES = {
       "cook": 100,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 340,
+      "kcal": 575,
       "tags": [
         "batch-friendly"
       ],
@@ -103748,7 +103748,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 350,
+      "kcal": 441,
       "tags": [
         "batch-friendly"
       ],
@@ -103833,7 +103833,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 290,
+      "kcal": 451,
       "tags": [
         "vegetarian"
       ],
@@ -103915,7 +103915,7 @@ window.__DATA_RECIPES = {
       "cook": 110,
       "diff": 3,
       "cost": 2.7,
-      "kcal": 350,
+      "kcal": 438,
       "tags": [
         "batch-friendly"
       ],
@@ -104015,7 +104015,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 320,
+      "kcal": 547,
       "tags": [
         "batch-friendly"
       ],
@@ -104115,7 +104115,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 252,
       "tags": [
         "vegetarian",
         "vegan"
@@ -104196,7 +104196,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 460,
+      "kcal": 465,
       "tags": [
         "vegetarian",
         "vegan",
@@ -104383,7 +104383,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 270,
+      "kcal": 525,
       "tags": [
         "vegetarian",
         "vegan",
@@ -104723,7 +104723,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 300,
+      "kcal": 481,
       "tags": [
         "vegetarian",
         "vegan",
@@ -104805,7 +104805,7 @@ window.__DATA_RECIPES = {
       "cook": 100,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 350,
+      "kcal": 557,
       "tags": [
         "batch-friendly"
       ],
@@ -104900,7 +104900,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 660,
+      "kcal": 657,
       "tags": [
         "batch-friendly"
       ],
@@ -104995,7 +104995,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 250,
+      "kcal": 356,
       "tags": [
         "vegetarian",
         "vegan",
@@ -105079,7 +105079,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 240,
+      "kcal": 423,
       "tags": [
         "vegetarian",
         "vegan",
@@ -105365,7 +105365,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 0.9,
-      "kcal": 120,
+      "kcal": 203,
       "tags": [
         "vegetarian",
         "vegan",
@@ -105460,7 +105460,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.2,
-      "kcal": 210,
+      "kcal": 301,
       "tags": [
         "vegetarian",
         "vegan"
@@ -105548,7 +105548,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 280,
+      "kcal": 405,
       "tags": [
         "vegetarian",
         "vegan",
@@ -105642,7 +105642,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 1.3,
-      "kcal": 290,
+      "kcal": 344,
       "tags": [
         "vegetarian"
       ],
@@ -105736,7 +105736,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 230,
+      "kcal": 272,
       "tags": [
         "vegetarian",
         "vegan"
@@ -105834,7 +105834,7 @@ window.__DATA_RECIPES = {
       "cook": 75,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 360,
+      "kcal": 528,
       "tags": [
         "batch-friendly"
       ],
@@ -105935,7 +105935,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 350,
+      "kcal": 489,
       "tags": [
         "batch-friendly"
       ],
@@ -106029,7 +106029,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 310,
+      "kcal": 465,
       "tags": [
         "batch-friendly"
       ],
@@ -106127,7 +106127,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 300,
+      "kcal": 486,
       "tags": [
         "vegetarian"
       ],
@@ -106221,7 +106221,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 330,
+      "kcal": 632,
       "tags": [
         "vegetarian"
       ],
@@ -106321,7 +106321,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 361,
       "tags": [
         "vegetarian",
         "vegan"
@@ -106505,7 +106505,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 230,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -106585,7 +106585,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 450,
+      "kcal": 449,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -106784,7 +106784,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 200,
+      "kcal": 319,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -106869,7 +106869,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 440,
+      "kcal": 439,
       "tags": [
         "vegetarian",
         "vegan",
@@ -107049,7 +107049,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 310,
+      "kcal": 469,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -107128,7 +107128,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 480,
+      "kcal": 481,
       "tags": [
         "vegetarian"
       ],
@@ -107204,7 +107204,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 570,
+      "kcal": 567,
       "tags": [
         "vegetarian",
         "vegan",
@@ -107473,7 +107473,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 150,
+      "kcal": 151,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -107544,7 +107544,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 190,
+      "kcal": 188,
       "tags": [
         "vegetarian"
       ],
@@ -107608,7 +107608,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 190,
+      "kcal": 167,
       "tags": [
         "vegetarian",
         "vegan"
@@ -107680,7 +107680,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 160,
+      "kcal": 207,
       "tags": [
         "vegetarian"
       ],
@@ -107739,7 +107739,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 260,
+      "kcal": 264,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -107805,7 +107805,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 200,
+      "kcal": 219,
       "tags": [
         "vegetarian"
       ],
@@ -107884,7 +107884,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 100,
+      "kcal": 97,
       "tags": [
         "vegetarian",
         "vegan",
@@ -107949,7 +107949,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 220,
+      "kcal": 195,
       "tags": [
         "vegetarian"
       ],
@@ -108021,7 +108021,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 190,
+      "kcal": 309,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -108087,7 +108087,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 180,
+      "kcal": 176,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108169,31 +108169,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz rond complet",
-          35,
+          18,
           "g",
           "pantry"
         ],
         [
           "Lait demi-écrémé",
-          300,
+          150,
           "ml",
           "dairy"
         ],
         [
           "Cardamome moulue",
-          1,
+          0.5,
           "g",
           "spices"
         ],
         [
           "Sirop d'érable",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Amandes effilées",
-          10,
+          5,
           "g",
           "produce"
         ]
@@ -108220,7 +108220,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 120,
+      "kcal": 122,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -108291,7 +108291,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 0.8,
-      "kcal": 80,
+      "kcal": 82,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108337,7 +108337,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 160,
+      "kcal": 164,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108399,7 +108399,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 0.6,
-      "kcal": 100,
+      "kcal": 180,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108453,7 +108453,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 200,
+      "kcal": 204,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108514,7 +108514,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 140,
+      "kcal": 141,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -108587,7 +108587,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 160,
+      "kcal": 210,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -108648,7 +108648,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 180,
+      "kcal": 284,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108709,7 +108709,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 150,
+      "kcal": 195,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -108770,7 +108770,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 170,
+      "kcal": 249,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -108830,7 +108830,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 0.7,
-      "kcal": 110,
+      "kcal": 152,
       "tags": [
         "vegetarian",
         "quick",
@@ -108901,7 +108901,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 220,
+      "kcal": 217,
       "tags": [
         "vegetarian",
         "vegan",
@@ -108956,7 +108956,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 190,
+      "kcal": 188,
       "tags": [
         "vegetarian",
         "vegan",
@@ -109011,7 +109011,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 450,
+      "kcal": 454,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -109101,7 +109101,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 440,
+      "kcal": 437,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -109369,7 +109369,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 360,
+      "kcal": 637,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -109456,7 +109456,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 210,
+      "kcal": 345,
       "tags": [
         "vegetarian",
         "quick",
@@ -109524,7 +109524,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 330,
+      "kcal": 536,
       "tags": [
         "batch-friendly"
       ],
@@ -109617,7 +109617,7 @@ window.__DATA_RECIPES = {
       "cook": 120,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 360,
+      "kcal": 547,
       "tags": [
         "batch-friendly"
       ],
@@ -109712,7 +109712,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 340,
+      "kcal": 549,
       "tags": [
         "batch-friendly"
       ],
@@ -109801,7 +109801,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 300,
+      "kcal": 408,
       "tags": [
         "batch-friendly"
       ],
@@ -109889,7 +109889,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 300,
+      "kcal": 592,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -110066,7 +110066,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 420,
+      "kcal": 418,
       "tags": [
         "vegan",
         "vegetarian",
@@ -110143,7 +110143,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 160,
+      "kcal": 163,
       "tags": [
         "vegan",
         "vegetarian",
@@ -110212,7 +110212,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 330,
+      "kcal": 784,
       "tags": [
         "vegetarian",
         "quick"
@@ -110405,7 +110405,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 210,
+      "kcal": 208,
       "tags": [
         "vegetarian"
       ],
@@ -110477,7 +110477,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 240,
+      "kcal": 304,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -110493,46 +110493,46 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Ricotta",
-          200,
+          100,
           "g",
           "dairy"
         ],
         [
           "Cerises",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Pistaches",
-          20,
+          10,
           "g",
           "pantry"
         ],
         [
           "Miel",
-          2,
+          1,
           "c.à.c",
           "pantry"
         ],
         [
           "Zeste de citron",
-          1,
+          0.5,
           "c.à.c",
           "spices"
         ],
         [
           "Extrait de vanille",
-          0.25,
+          0.125,
           "c.à.c",
           "spices"
         ]
       ],
       "steps": [
-        "Dans un bol, fouette la ricotta avec 1 cuillère à café de miel, le zeste de citron et l'extrait de vanille, jusqu'à obtenir une crème lisse.",
+        "Dans un bol, fouette la ricotta avec la moitié du miel, le zeste de citron et l'extrait de vanille, jusqu'à obtenir une crème lisse.",
         "Dénoyaute les cerises et coupe-les en quatre. Garde-en quelques morceaux pour la déco.",
         "Concasse grossièrement les pistaches (coupe-les au couteau ou écrase-les dans un torchon avec le plat d'un verre).",
-        "Dans deux verrines, dépose une couche de crème de ricotta, puis une couche de cerises, et répète une fois.",
+        "Dans des verrines, dépose une couche de crème de ricotta, puis une couche de cerises, et répète une fois.",
         "Termine par quelques cerises, les pistaches concassées et un filet du miel restant. Place 10 minutes au frais avant de servir si tu as le temps."
       ],
       "photo": "assets/recipes/des191.webp"
@@ -110653,7 +110653,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 400,
+      "kcal": 340,
       "tags": [
         "batch-friendly"
       ],
@@ -110838,7 +110838,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 510,
+      "kcal": 512,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -110929,7 +110929,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 410,
+      "kcal": 563,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -111022,7 +111022,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 400,
+      "kcal": 368,
       "tags": [],
       "eq": [
         "stove"
@@ -111112,7 +111112,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 430,
+      "kcal": 412,
       "tags": [
         "festif"
       ],
@@ -111191,7 +111191,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 360,
+      "kcal": 284,
       "tags": [
         "quick"
       ],
@@ -111274,7 +111274,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 3.1,
-      "kcal": 400,
+      "kcal": 501,
       "tags": [
         "batch-friendly"
       ],
@@ -111384,7 +111384,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 350,
+      "kcal": 411,
       "tags": [],
       "eq": [
         "oven"
@@ -111549,7 +111549,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 180,
+      "kcal": 209,
       "tags": [
         "vegetarian",
         "quick"
@@ -111618,7 +111618,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 460,
+      "kcal": 566,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -111826,7 +111826,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 430,
+      "kcal": 531,
       "tags": [
         "vegetarian",
         "quick"
@@ -111918,7 +111918,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 520,
+      "kcal": 525,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -112037,7 +112037,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 434,
       "tags": [
         "vegan",
         "vegetarian",
@@ -112140,7 +112140,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 380,
+      "kcal": 405,
       "tags": [],
       "eq": [
         "oven"
@@ -112223,7 +112223,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 450,
+      "kcal": 520,
       "tags": [
         "quick"
       ],
@@ -112309,7 +112309,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 520,
+      "kcal": 663,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -112405,7 +112405,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 430,
+      "kcal": 516,
       "tags": [],
       "eq": [
         "oven",
@@ -112492,7 +112492,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 440,
+      "kcal": 570,
       "tags": [
         "vegan",
         "vegetarian",
@@ -112610,7 +112610,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 140,
+      "kcal": 165,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -112678,7 +112678,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 220,
+      "kcal": 194,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -112860,7 +112860,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 390,
+      "kcal": 430,
       "tags": [
         "vegan",
         "vegetarian",
@@ -113171,7 +113171,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 600,
+      "kcal": 604,
       "tags": [
         "quick"
       ],
@@ -113269,7 +113269,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 380,
+      "kcal": 652,
       "tags": [
         "vegan",
         "vegetarian",
@@ -113513,7 +113513,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 370,
+      "kcal": 577,
       "tags": [],
       "eq": [
         "stove"
@@ -113723,7 +113723,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 400,
+      "kcal": 533,
       "tags": [
         "quick"
       ],
@@ -113823,7 +113823,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 180,
+      "kcal": 201,
       "tags": [
         "vegetarian"
       ],
@@ -113908,7 +113908,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 110,
+      "kcal": 143,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -113987,7 +113987,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 490,
+      "kcal": 491,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -114102,7 +114102,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 480,
+      "kcal": 674,
       "tags": [
         "quick"
       ],
@@ -114210,7 +114210,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 520,
+      "kcal": 518,
       "tags": [
         "vegetarian",
         "quick"
@@ -114408,7 +114408,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 410,
+      "kcal": 500,
       "tags": [
         "vegetarian"
       ],
@@ -114499,7 +114499,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 430,
+      "kcal": 584,
       "tags": [
         "batch-friendly"
       ],
@@ -114601,7 +114601,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 440,
+      "kcal": 540,
       "tags": [
         "quick"
       ],
@@ -114696,7 +114696,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 420,
+      "kcal": 561,
       "tags": [],
       "eq": [
         "stove"
@@ -114798,7 +114798,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 340,
+      "kcal": 352,
       "tags": [
         "vegan",
         "quick"
@@ -114898,7 +114898,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 400,
+      "kcal": 538,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -114986,7 +114986,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 180,
+      "kcal": 251,
       "tags": [
         "vegan",
         "no-cook",
@@ -115058,7 +115058,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 120,
+      "kcal": 173,
       "tags": [
         "vegan",
         "batch-friendly",
@@ -115125,7 +115125,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 490,
+      "kcal": 486,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -115237,7 +115237,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 380,
+      "kcal": 569,
       "tags": [
         "vegetarian"
       ],
@@ -115344,7 +115344,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 380,
+      "kcal": 524,
       "tags": [
         "vegetarian"
       ],
@@ -115437,7 +115437,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 380,
+      "kcal": 330,
       "tags": [],
       "eq": [
         "oven",
@@ -115633,7 +115633,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 350,
+      "kcal": 449,
       "tags": [
         "quick"
       ],
@@ -115717,7 +115717,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 530,
+      "kcal": 533,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -115830,7 +115830,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 340,
+      "kcal": 409,
       "tags": [],
       "eq": [
         "oven"
@@ -116108,7 +116108,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 130,
+      "kcal": 127,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -116180,7 +116180,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 185,
+      "kcal": 240,
       "tags": [
         "vegan",
         "vegetarian"
@@ -116338,7 +116338,7 @@ window.__DATA_RECIPES = {
       "cook": 70,
       "diff": 3,
       "cost": 4.2,
-      "kcal": 400,
+      "kcal": 322,
       "tags": [
         "festif",
         "batch-friendly"
@@ -116431,7 +116431,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 380,
+      "kcal": 408,
       "tags": [
         "festif",
         "batch-friendly"
@@ -116536,7 +116536,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 340,
+      "kcal": 418,
       "tags": [
         "festif"
       ],
@@ -116628,7 +116628,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 610,
+      "kcal": 607,
       "tags": [
         "festif",
         "batch-friendly"
@@ -116842,7 +116842,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 410,
+      "kcal": 498,
       "tags": [
         "festif"
       ],
@@ -117045,7 +117045,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 560,
+      "kcal": 556,
       "tags": [
         "festif",
         "batch-friendly"
@@ -117147,7 +117147,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 400,
+      "kcal": 544,
       "tags": [
         "festif"
       ],
@@ -117241,7 +117241,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 4.4,
-      "kcal": 440,
+      "kcal": 529,
       "tags": [
         "festif",
         "batch-friendly"
@@ -117325,7 +117325,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 410,
+      "kcal": 372,
       "tags": [
         "festif"
       ],
@@ -117417,7 +117417,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 410,
+      "kcal": 499,
       "tags": [
         "no-cook",
         "quick",
@@ -117509,7 +117509,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 390,
+      "kcal": 432,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -117728,7 +117728,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 490,
+      "kcal": 494,
       "tags": [],
       "eq": [
         "stove"
@@ -117835,7 +117835,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 610,
+      "kcal": 614,
       "tags": [
         "batch-friendly"
       ],
@@ -117943,7 +117943,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 320,
+      "kcal": 374,
       "tags": [],
       "eq": [
         "stove"
@@ -118036,7 +118036,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 380,
+      "kcal": 491,
       "tags": [
         "batch-friendly"
       ],
@@ -118139,7 +118139,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.3,
-      "kcal": 370,
+      "kcal": 447,
       "tags": [
         "batch-friendly"
       ],
@@ -118247,7 +118247,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 350,
+      "kcal": 544,
       "tags": [
         "vegan",
         "vegetarian"
@@ -118351,7 +118351,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 300,
+      "kcal": 393,
       "tags": [
         "batch-friendly"
       ],
@@ -118448,7 +118448,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 190,
+      "kcal": 380,
       "tags": [
         "vegan",
         "vegetarian",
@@ -118514,7 +118514,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 180,
+      "kcal": 257,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -118783,7 +118783,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 390,
+      "kcal": 449,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -118895,7 +118895,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 405,
+      "kcal": 489,
       "tags": [
         "vegan",
         "vegetarian",
@@ -119101,7 +119101,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 355,
+      "kcal": 403,
       "tags": [
         "vegan",
         "vegetarian",
@@ -119211,7 +119211,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 3.4,
-      "kcal": 340,
+      "kcal": 392,
       "tags": [
         "light"
       ],
@@ -119315,7 +119315,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 390,
+      "kcal": 446,
       "tags": [
         "batch-friendly"
       ],
@@ -119421,7 +119421,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.7,
-      "kcal": 450,
+      "kcal": 494,
       "tags": [
         "batch-friendly"
       ],
@@ -119640,7 +119640,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 150,
+      "kcal": 147,
       "tags": [
         "vegetarian",
         "light"
@@ -119719,7 +119719,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 220,
+      "kcal": 196,
       "tags": [
         "vegetarian",
         "light"
@@ -119793,7 +119793,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 630,
+      "kcal": 631,
       "tags": [],
       "eq": [
         "stove"
@@ -119913,7 +119913,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 650,
+      "kcal": 651,
       "tags": [],
       "eq": [
         "stove"
@@ -120035,7 +120035,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.9,
-      "kcal": 520,
+      "kcal": 517,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -120154,7 +120154,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 380,
+      "kcal": 494,
       "tags": [
         "quick",
         "vegetarian"
@@ -120259,7 +120259,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 400,
+      "kcal": 462,
       "tags": [
         "batch-friendly"
       ],
@@ -120370,7 +120370,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 460,
+      "kcal": 870,
       "tags": [
         "batch-friendly"
       ],
@@ -120474,7 +120474,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.1,
-      "kcal": 470,
+      "kcal": 469,
       "tags": [
         "batch-friendly"
       ],
@@ -120568,7 +120568,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 410,
+      "kcal": 509,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -120679,7 +120679,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.3,
-      "kcal": 380,
+      "kcal": 337,
       "tags": [
         "batch-friendly"
       ],
@@ -120789,7 +120789,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 420,
+      "kcal": 537,
       "tags": [
         "batch-friendly"
       ],
@@ -120893,7 +120893,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 140,
+      "kcal": 217,
       "tags": [
         "vegan",
         "vegetarian",
@@ -120959,7 +120959,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 180,
+      "kcal": 161,
       "tags": [
         "vegetarian",
         "no-cook"
@@ -121033,7 +121033,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 380,
+      "kcal": 489,
       "tags": [
         "batch-friendly"
       ],
@@ -121211,7 +121211,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 360,
+      "kcal": 401,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -121318,7 +121318,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.9,
-      "kcal": 340,
+      "kcal": 505,
       "tags": [
         "batch-friendly"
       ],
@@ -121410,7 +121410,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 420,
+      "kcal": 590,
       "tags": [
         "kid-friendly"
       ],
@@ -121497,7 +121497,7 @@ window.__DATA_RECIPES = {
       "cook": 150,
       "diff": 3,
       "cost": 3.8,
-      "kcal": 380,
+      "kcal": 508,
       "tags": [
         "batch-friendly"
       ],
@@ -121598,7 +121598,7 @@ window.__DATA_RECIPES = {
       "cook": 150,
       "diff": 3,
       "cost": 3.6,
-      "kcal": 390,
+      "kcal": 488,
       "tags": [
         "batch-friendly"
       ],
@@ -121688,7 +121688,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 3,
       "cost": 4.5,
-      "kcal": 320,
+      "kcal": 387,
       "tags": [],
       "eq": [
         "stove"
@@ -121792,7 +121792,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 380,
+      "kcal": 537,
       "tags": [
         "kid-friendly"
       ],
@@ -121982,7 +121982,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 150,
+      "kcal": 190,
       "tags": [
         "vegetarian",
         "light"
@@ -122057,7 +122057,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 180,
+      "kcal": 238,
       "tags": [
         "vegan",
         "quick",
@@ -122130,7 +122130,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 570,
+      "kcal": 571,
       "tags": [
         "batch-friendly"
       ],
@@ -122247,7 +122247,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 600,
+      "kcal": 595,
       "tags": [
         "vegetarian"
       ],
@@ -122578,7 +122578,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 360,
+      "kcal": 475,
       "tags": [
         "batch-friendly"
       ],
@@ -122682,7 +122682,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 420,
+      "kcal": 669,
       "tags": [
         "batch-friendly"
       ],
@@ -122799,7 +122799,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 3,
       "cost": 3.6,
-      "kcal": 480,
+      "kcal": 741,
       "tags": [
         "batch-friendly"
       ],
@@ -122918,7 +122918,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 400,
+      "kcal": 522,
       "tags": [
         "batch-friendly"
       ],
@@ -123020,7 +123020,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 430,
+      "kcal": 623,
       "tags": [],
       "eq": [
         "stove"
@@ -123116,7 +123116,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 380,
+      "kcal": 677,
       "tags": [
         "vegan",
         "vegetarian",
@@ -123226,7 +123226,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 140,
+      "kcal": 184,
       "tags": [
         "vegan",
         "vegetarian",
@@ -123377,7 +123377,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 460,
+      "kcal": 710,
       "tags": [
         "vegetarian"
       ],
@@ -123463,7 +123463,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 320,
+      "kcal": 349,
       "tags": [
         "vegan",
         "vegetarian",
@@ -123560,7 +123560,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.3,
-      "kcal": 430,
+      "kcal": 327,
       "tags": [
         "kid-friendly"
       ],
@@ -123752,7 +123752,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 410,
+      "kcal": 536,
       "tags": [
         "batch-friendly"
       ],
@@ -123848,7 +123848,7 @@ window.__DATA_RECIPES = {
       "cook": 180,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 390,
+      "kcal": 495,
       "tags": [
         "batch-friendly"
       ],
@@ -123950,7 +123950,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 2.9,
-      "kcal": 400,
+      "kcal": 465,
       "tags": [
         "batch-friendly"
       ],
@@ -124148,7 +124148,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3.1,
-      "kcal": 310,
+      "kcal": 301,
       "tags": [],
       "eq": [
         "stove"
@@ -124245,7 +124245,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 390,
+      "kcal": 487,
       "tags": [
         "batch-friendly"
       ],
@@ -124341,7 +124341,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 330,
+      "kcal": 414,
       "tags": [
         "vegetarian"
       ],
@@ -124422,7 +124422,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 260,
+      "kcal": 232,
       "tags": [
         "vegetarian",
         "quick"
@@ -124503,7 +124503,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 340,
+      "kcal": 363,
       "tags": [
         "vegetarian",
         "vegan",
@@ -124919,7 +124919,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 600,
+      "kcal": 605,
       "tags": [
         "vegetarian",
         "vegan",
@@ -125138,7 +125138,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 380,
+      "kcal": 402,
       "tags": [
         "batch-friendly"
       ],
@@ -125246,7 +125246,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 3,
       "cost": 4.2,
-      "kcal": 420,
+      "kcal": 839,
       "tags": [
         "batch-friendly"
       ],
@@ -125363,7 +125363,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 520,
+      "kcal": 517,
       "tags": [
         "quick"
       ],
@@ -125625,7 +125625,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 190,
+      "kcal": 270,
       "tags": [
         "vegetarian",
         "vegan",
@@ -125698,7 +125698,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 380,
+      "kcal": 492,
       "tags": [
         "batch-friendly"
       ],
@@ -125796,7 +125796,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.3,
-      "kcal": 380,
+      "kcal": 503,
       "tags": [
         "batch-friendly"
       ],
@@ -125900,7 +125900,7 @@ window.__DATA_RECIPES = {
       "cook": 14,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 490,
+      "kcal": 568,
       "tags": [
         "vegetarian",
         "quick"
@@ -126006,7 +126006,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 480,
+      "kcal": 475,
       "tags": [
         "vegetarian",
         "quick"
@@ -126101,7 +126101,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 380,
+      "kcal": 466,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -126207,7 +126207,7 @@ window.__DATA_RECIPES = {
       "cook": 28,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 325,
+      "kcal": 453,
       "tags": [
         "batch-friendly"
       ],
@@ -126323,7 +126323,7 @@ window.__DATA_RECIPES = {
       "cook": 58,
       "diff": 3,
       "cost": 2.8,
-      "kcal": 380,
+      "kcal": 444,
       "tags": [
         "batch-friendly"
       ],
@@ -126420,7 +126420,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 300,
+      "kcal": 405,
       "tags": [],
       "eq": [
         "stove"
@@ -126625,7 +126625,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 340,
+      "kcal": 384,
       "tags": [
         "vegetarian",
         "quick"
@@ -126711,7 +126711,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 0.6,
-      "kcal": 200,
+      "kcal": 202,
       "tags": [
         "vegetarian",
         "light"
@@ -126948,7 +126948,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 380,
+      "kcal": 405,
       "tags": [
         "vegetarian",
         "quick"
@@ -127059,7 +127059,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 290,
+      "kcal": 483,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -127170,7 +127170,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 380,
+      "kcal": 383,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -127281,7 +127281,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 260,
+      "kcal": 421,
       "tags": [
         "vegan",
         "vegetarian",
@@ -127382,7 +127382,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 3,
       "cost": 4.0,
-      "kcal": 520,
+      "kcal": 511,
       "tags": [
         "batch-friendly"
       ],
@@ -127486,7 +127486,7 @@ window.__DATA_RECIPES = {
       "cook": 65,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 380,
+      "kcal": 433,
       "tags": [
         "batch-friendly"
       ],
@@ -127603,7 +127603,7 @@ window.__DATA_RECIPES = {
       "cook": 110,
       "diff": 3,
       "cost": 3.2,
-      "kcal": 360,
+      "kcal": 408,
       "tags": [
         "batch-friendly"
       ],
@@ -127734,7 +127734,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 410,
+      "kcal": 514,
       "tags": [
         "batch-friendly"
       ],
@@ -127839,7 +127839,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.3,
-      "kcal": 340,
+      "kcal": 270,
       "tags": [],
       "eq": [
         "stove"
@@ -128021,7 +128021,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 190,
+      "kcal": 179,
       "tags": [
         "vegetarian",
         "quick"
@@ -128096,7 +128096,7 @@ window.__DATA_RECIPES = {
       "advance": "la veille (8h au frais minimum)",
       "diff": 2,
       "cost": 4.2,
-      "kcal": 290,
+      "kcal": 367,
       "tags": [
         "festif"
       ],
@@ -128190,7 +128190,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.5,
-      "kcal": 230,
+      "kcal": 418,
       "tags": [
         "festif",
         "no-cook"
@@ -128272,7 +128272,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 260,
+      "kcal": 291,
       "tags": [
         "festif",
         "quick"
@@ -128367,7 +128367,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 320,
+      "kcal": 497,
       "tags": [
         "festif"
       ],
@@ -128459,7 +128459,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 3,
       "cost": 5.5,
-      "kcal": 420,
+      "kcal": 526,
       "tags": [
         "festif",
         "batch-friendly"
@@ -128678,7 +128678,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 300,
+      "kcal": 408,
       "tags": [
         "festif"
       ],
@@ -128778,7 +128778,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 190,
+      "kcal": 244,
       "tags": [
         "festif",
         "quick"
@@ -128865,7 +128865,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 150,
+      "kcal": 186,
       "tags": [
         "festif",
         "no-cook",
@@ -128943,7 +128943,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au frais (idéalement la veille)",
       "diff": 1,
       "cost": 1.3,
-      "kcal": 186,
+      "kcal": 195,
       "tags": [
         "festif"
       ],
@@ -129032,7 +129032,7 @@ window.__DATA_RECIPES = {
       "advance": "2h au frais pour qu'elle prenne bien",
       "diff": 2,
       "cost": 1.6,
-      "kcal": 140,
+      "kcal": 132,
       "tags": [
         "festif",
         "vegetarian"
@@ -129112,7 +129112,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 95,
+      "kcal": 109,
       "tags": [
         "festif",
         "no-cook",
@@ -129195,7 +129195,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 280,
+      "kcal": 342,
       "tags": [
         "festif",
         "quick"
@@ -129302,7 +129302,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 310,
+      "kcal": 381,
       "tags": [
         "festif"
       ],
@@ -129427,7 +129427,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.8,
-      "kcal": 320,
+      "kcal": 439,
       "tags": [
         "festif",
         "no-cook",
@@ -129528,7 +129528,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 3,
       "cost": 5.5,
-      "kcal": 420,
+      "kcal": 593,
       "tags": [
         "festif"
       ],
@@ -129738,7 +129738,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 3.2,
-      "kcal": 400,
+      "kcal": 766,
       "tags": [
         "festif",
         "vegetarian"
@@ -129861,7 +129861,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 290,
+      "kcal": 357,
       "tags": [
         "festif"
       ],
@@ -129984,7 +129984,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 210,
+      "kcal": 211,
       "tags": [
         "festif"
       ],
@@ -130071,7 +130071,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 170,
+      "kcal": 185,
       "tags": [
         "festif",
         "vegan",
@@ -130084,37 +130084,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Chou-fleur",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Farine de pois chiche",
-          50,
+          25,
           "g",
           "pantry"
         ],
         [
           "Oignon jaune",
-          40,
+          20,
           "g",
           "produce"
         ],
         [
           "Curcuma en poudre",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Cumin en poudre",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
         [
           "Garam masala",
-          0.5,
+          0.25,
           "c.à.c",
           "spices"
         ],
@@ -130126,13 +130126,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Huile d'olive",
-          1,
+          0.5,
           "c.à.s",
           "pantry"
         ],
         [
           "Coriandre fraîche",
-          0.1,
+          0.05,
           "bouquet",
           "produce"
         ],
@@ -130167,7 +130167,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 180,
+      "kcal": 189,
       "tags": [
         "festif",
         "vegetarian"
@@ -130235,7 +130235,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 170,
+      "kcal": 171,
       "tags": [
         "festif",
         "vegan",
@@ -130309,7 +130309,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.1,
-      "kcal": 200,
+      "kcal": 269,
       "tags": [
         "festif",
         "vegetarian"
@@ -130384,7 +130384,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 2,
       "cost": 3.6,
-      "kcal": 380,
+      "kcal": 513,
       "tags": [
         "festif",
         "light"
@@ -130496,7 +130496,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 310,
+      "kcal": 335,
       "tags": [
         "festif",
         "light"
@@ -130595,7 +130595,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 4.8,
-      "kcal": 330,
+      "kcal": 380,
       "tags": [
         "festif",
         "light",
@@ -130697,7 +130697,7 @@ window.__DATA_RECIPES = {
       "cook": 75,
       "diff": 2,
       "cost": 4.9,
-      "kcal": 460,
+      "kcal": 402,
       "tags": [
         "festif"
       ],
@@ -130802,7 +130802,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 490,
+      "kcal": 425,
       "tags": [
         "festif"
       ],
@@ -130892,7 +130892,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 6.4,
-      "kcal": 270,
+      "kcal": 284,
       "tags": [
         "festif",
         "light"
@@ -130978,7 +130978,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 5.8,
-      "kcal": 350,
+      "kcal": 373,
       "tags": [
         "festif",
         "light"
@@ -131152,7 +131152,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 230,
+      "kcal": 251,
       "tags": [
         "festif",
         "quick"
@@ -131242,7 +131242,7 @@ window.__DATA_RECIPES = {
       "advance": "3h",
       "diff": 2,
       "cost": 1.1,
-      "kcal": 320,
+      "kcal": 321,
       "tags": [
         "festif"
       ],
@@ -131311,7 +131311,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 140,
+      "kcal": 158,
       "tags": [
         "festif",
         "light"
@@ -131478,7 +131478,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 230,
+      "kcal": 254,
       "tags": [
         "festif",
         "no-cook",
@@ -131650,7 +131650,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 210,
+      "kcal": 264,
       "tags": [
         "festif",
         "no-cook",
@@ -131731,7 +131731,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 280,
+      "kcal": 314,
       "tags": [
         "festif",
         "quick"
@@ -131822,7 +131822,7 @@ window.__DATA_RECIPES = {
       "cook": 180,
       "diff": 3,
       "cost": 6.5,
-      "kcal": 500,
+      "kcal": 564,
       "tags": [
         "festif",
         "batch-friendly"
@@ -131918,7 +131918,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 5.8,
-      "kcal": 420,
+      "kcal": 421,
       "tags": [
         "festif"
       ],
@@ -132024,7 +132024,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 7.2,
-      "kcal": 560,
+      "kcal": 604,
       "tags": [
         "festif"
       ],
@@ -132116,7 +132116,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 180,
+      "kcal": 201,
       "tags": [
         "festif",
         "no-cook",
@@ -132202,7 +132202,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 190,
+      "kcal": 219,
       "tags": [
         "festif",
         "no-cook",
@@ -132275,7 +132275,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 220,
+      "kcal": 216,
       "tags": [
         "festif",
         "no-cook",
@@ -132341,7 +132341,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 160,
+      "kcal": 166,
       "tags": [
         "festif",
         "no-cook",
@@ -132403,7 +132403,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 140,
+      "kcal": 141,
       "tags": [
         "festif",
         "no-cook",
@@ -132478,7 +132478,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 240,
+      "kcal": 369,
       "tags": [
         "vegetarian",
         "quick"
@@ -132564,7 +132564,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 310,
+      "kcal": 387,
       "tags": [
         "vegetarian"
       ],
@@ -132744,7 +132744,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 230,
+      "kcal": 425,
       "tags": [
         "vegetarian",
         "quick"
@@ -132837,7 +132837,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 310,
+      "kcal": 405,
       "tags": [
         "vegetarian"
       ],
@@ -132944,7 +132944,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 360,
+      "kcal": 505,
       "tags": [
         "quick"
       ],
@@ -133047,7 +133047,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 400,
+      "kcal": 543,
       "tags": [
         "batch-friendly"
       ],
@@ -133156,7 +133156,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 330,
+      "kcal": 544,
       "tags": [],
       "eq": [
         "oven",
@@ -133241,7 +133241,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 280,
+      "kcal": 555,
       "tags": [
         "vegan",
         "vegetarian",
@@ -133351,7 +133351,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 3.3,
-      "kcal": 290,
+      "kcal": 328,
       "tags": [
         "quick"
       ],
@@ -133461,7 +133461,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 170,
+      "kcal": 174,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -133528,7 +133528,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 85,
+      "kcal": 77,
       "tags": [
         "vegan",
         "vegetarian",
@@ -133693,7 +133693,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 440,
+      "kcal": 439,
       "tags": [
         "vegan",
         "vegetarian",
@@ -133795,7 +133795,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 220,
+      "kcal": 397,
       "tags": [
         "vegetarian",
         "quick"
@@ -133895,7 +133895,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 260,
+      "kcal": 628,
       "tags": [
         "vegan",
         "vegetarian",
@@ -134092,7 +134092,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 230,
+      "kcal": 382,
       "tags": [
         "quick"
       ],
@@ -134186,7 +134186,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 380,
+      "kcal": 445,
       "tags": [
         "quick"
       ],
@@ -134279,7 +134279,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 310,
+      "kcal": 483,
       "tags": [
         "batch-friendly"
       ],
@@ -134390,7 +134390,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 350,
+      "kcal": 659,
       "tags": [
         "quick"
       ],
@@ -134479,7 +134479,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 3.8,
-      "kcal": 260,
+      "kcal": 343,
       "tags": [
         "quick"
       ],
@@ -134563,7 +134563,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 130,
+      "kcal": 129,
       "tags": [
         "vegan",
         "vegetarian",
@@ -134637,7 +134637,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 200,
+      "kcal": 249,
       "tags": [
         "vegetarian"
       ],
@@ -134715,7 +134715,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 320,
+      "kcal": 400,
       "tags": [
         "light"
       ],
@@ -134808,7 +134808,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 210,
+      "kcal": 446,
       "tags": [
         "no-cook",
         "quick",
@@ -134902,7 +134902,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 340,
+      "kcal": 618,
       "tags": [
         "quick"
       ],
@@ -134999,7 +134999,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 380,
+      "kcal": 563,
       "tags": [
         "vegetarian"
       ],
@@ -135115,7 +135115,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 180,
+      "kcal": 359,
       "tags": [
         "no-cook",
         "quick",
@@ -135208,7 +135208,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 290,
+      "kcal": 474,
       "tags": [
         "quick"
       ],
@@ -135313,7 +135313,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 310,
+      "kcal": 425,
       "tags": [],
       "eq": [
         "grill",
@@ -135426,7 +135426,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 4.8,
-      "kcal": 260,
+      "kcal": 352,
       "tags": [
         "quick"
       ],
@@ -135529,7 +135529,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 4.6,
-      "kcal": 270,
+      "kcal": 437,
       "tags": [],
       "eq": [
         "grill",
@@ -135738,7 +135738,7 @@ window.__DATA_RECIPES = {
       "advance": "5h au congélateur",
       "diff": 1,
       "cost": 1.8,
-      "kcal": 85,
+      "kcal": 76,
       "tags": [
         "vegan",
         "vegetarian",
@@ -135754,41 +135754,41 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Mangue mûre",
-          150,
+          75,
           "g",
           "produce"
         ],
         [
           "Fruit de la passion",
-          1,
-          "u",
-          "produce"
-        ],
-        [
-          "Citron vert",
           0.5,
           "u",
           "produce"
         ],
         [
+          "Citron vert",
+          0.25,
+          "u",
+          "produce"
+        ],
+        [
           "Sirop d'érable",
-          1,
+          0.5,
           "c.à.c",
           "pantry"
         ],
         [
           "Eau",
-          30,
+          15,
           "ml",
           "pantry"
         ]
       ],
       "steps": [
-        "Pèle la mangue mûre et coupe la chair autour du noyau plat en gros morceaux. Tu dois obtenir environ 150 g de chair.",
+        "Pèle la mangue mûre et coupe la chair autour du noyau plat en gros morceaux. Tu dois obtenir la quantité de chair indiquée dans les ingrédients.",
         "Coupe le fruit de la passion en deux et récupère la pulpe et les graines avec une petite cuillère.",
         "Mets la chair de mangue, la pulpe de fruit de la passion, le jus de citron vert, le sirop d'érable et l'eau dans le blender.",
         "Mixe 30 secondes jusqu'à obtenir un mélange bien lisse (les petites graines du fruit de la passion restent, c'est normal, elles apportent du croquant).",
-        "Verse le mélange dans 4 moules à paletas (ou moules à esquimaux), en laissant un peu d'espace en haut car le mélange gonfle légèrement en gelant.",
+        "Verse le mélange dans des moules à paletas (ou moules à esquimaux), en laissant un peu d'espace en haut car le mélange gonfle légèrement en gelant.",
         "Plante un bâton en bois dans chaque moule. Si le mélange est trop liquide pour que le bâton tienne droit, mets les moules 30 minutes au congélateur avant de planter les bâtons.",
         "Place au congélateur 5 heures minimum, jusqu'à ce que les paletas soient complètement dures.",
         "Pour démouler, passe rapidement les moules sous l'eau tiède 5-10 secondes et tire doucement sur le bâton. Sers immédiatement."
@@ -135807,7 +135807,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 150,
+      "kcal": 161,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -135879,7 +135879,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 350,
+      "kcal": 353,
       "tags": [
         "quick"
       ],
@@ -135973,7 +135973,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 580,
+      "kcal": 585,
       "tags": [
         "quick",
         "vegetarian"
@@ -136068,7 +136068,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 355,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "vegan",
@@ -136155,7 +136155,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 530,
+      "kcal": 533,
       "tags": [
         "quick"
       ],
@@ -136242,7 +136242,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 520,
+      "kcal": 478,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -136342,7 +136342,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 405,
+      "kcal": 407,
       "tags": [],
       "eq": [
         "stove",
@@ -136425,7 +136425,7 @@ window.__DATA_RECIPES = {
       "cook": 90,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 560,
+      "kcal": 561,
       "tags": [
         "batch-friendly"
       ],
@@ -136521,7 +136521,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 445,
+      "kcal": 451,
       "tags": [
         "quick"
       ],
@@ -136608,7 +136608,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 430,
+      "kcal": 394,
       "tags": [
         "quick"
       ],
@@ -136789,7 +136789,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 205,
+      "kcal": 209,
       "tags": [
         "vegetarian"
       ],
@@ -136877,7 +136877,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 155,
+      "kcal": 153,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -136943,7 +136943,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.4,
-      "kcal": 380,
+      "kcal": 417,
       "tags": [
         "quick",
         "light"
@@ -137268,7 +137268,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 320,
+      "kcal": 400,
       "tags": [
         "vegetarian",
         "quick",
@@ -137464,7 +137464,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 430,
+      "kcal": 367,
       "tags": [
         "light"
       ],
@@ -137577,7 +137577,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.4,
-      "kcal": 290,
+      "kcal": 389,
       "tags": [
         "no-cook",
         "quick",
@@ -137942,7 +137942,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.1,
-      "kcal": 95,
+      "kcal": 136,
       "tags": [
         "vegan",
         "vegetarian",
@@ -138008,7 +138008,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 120,
+      "kcal": 147,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -138075,7 +138075,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 320,
+      "kcal": 352,
       "tags": [
         "quick"
       ],
@@ -138148,7 +138148,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 290,
+      "kcal": 536,
       "tags": [
         "quick"
       ],
@@ -138235,7 +138235,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 270,
+      "kcal": 505,
       "tags": [
         "quick"
       ],
@@ -138321,7 +138321,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 310,
+      "kcal": 451,
       "tags": [],
       "eq": [
         "grill",
@@ -138423,7 +138423,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 290,
+      "kcal": 408,
       "tags": [
         "quick"
       ],
@@ -138509,7 +138509,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 340,
+      "kcal": 385,
       "tags": [
         "quick"
       ],
@@ -138586,7 +138586,7 @@ window.__DATA_RECIPES = {
       "rest": 10,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 390,
+      "kcal": 623,
       "tags": [],
       "eq": [
         "grill",
@@ -138670,7 +138670,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 260,
+      "kcal": 337,
       "tags": [
         "quick"
       ],
@@ -138749,7 +138749,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 4.3,
-      "kcal": 400,
+      "kcal": 579,
       "tags": [
         "quick"
       ],
@@ -138844,7 +138844,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 350,
+      "kcal": 512,
       "tags": [
         "quick"
       ],
@@ -138942,7 +138942,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur (racler à la fourchette toutes les 30-45 min)",
       "diff": 1,
       "cost": 1.0,
-      "kcal": 45,
+      "kcal": 59,
       "tags": [
         "vegan",
         "no-cook"
@@ -138994,7 +138994,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 180,
+      "kcal": 158,
       "tags": [
         "vegetarian",
         "quick"
@@ -139055,7 +139055,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 410,
+      "kcal": 460,
       "tags": [
         "quick"
       ],
@@ -139160,7 +139160,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.6,
-      "kcal": 470,
+      "kcal": 513,
       "tags": [
         "quick"
       ],
@@ -139355,7 +139355,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 375,
+      "kcal": 423,
       "tags": [
         "vegetarian",
         "quick"
@@ -139454,7 +139454,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 3.4,
-      "kcal": 445,
+      "kcal": 545,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -139542,7 +139542,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 425,
+      "kcal": 494,
       "tags": [],
       "eq": [
         "oven",
@@ -139724,7 +139724,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 415,
+      "kcal": 472,
       "tags": [],
       "eq": [
         "stove",
@@ -139813,7 +139813,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.3,
-      "kcal": 300,
+      "kcal": 378,
       "tags": [],
       "eq": [
         "oven",
@@ -140004,7 +140004,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 75,
+      "kcal": 87,
       "tags": [
         "vegan",
         "vegetarian",
@@ -140079,7 +140079,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur (racler à la fourchette toutes les 30-45 min)",
       "diff": 2,
       "cost": 1.0,
-      "kcal": 20,
+      "kcal": 14,
       "tags": [
         "vegan",
         "vegetarian"
@@ -140139,7 +140139,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 350,
+      "kcal": 363,
       "tags": [
         "batch-friendly"
       ],
@@ -140241,7 +140241,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 410,
+      "kcal": 430,
       "tags": [],
       "eq": [
         "stove",
@@ -140438,7 +140438,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.9,
-      "kcal": 430,
+      "kcal": 488,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -140535,7 +140535,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 430,
+      "kcal": 455,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -140633,7 +140633,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 6.8,
-      "kcal": 465,
+      "kcal": 499,
       "tags": [],
       "eq": [
         "stove",
@@ -140821,7 +140821,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 8.5,
-      "kcal": 530,
+      "kcal": 503,
       "tags": [
         "quick"
       ],
@@ -141004,7 +141004,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 7.0,
-      "kcal": 480,
+      "kcal": 485,
       "tags": [],
       "eq": [
         "oven",
@@ -141096,7 +141096,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 310,
+      "kcal": 309,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -141266,7 +141266,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 140,
+      "kcal": 179,
       "tags": [
         "festif",
         "no-cook",
@@ -141281,37 +141281,37 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Saumon frais (qualité sashimi)",
-          160,
+          40,
           "g",
           "meat-fish"
         ],
         [
           "Avocat mûr",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Citron vert",
-          1,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Échalote",
-          20,
-          "g",
-          "produce"
-        ],
-        [
-          "Ciboulette fraîche",
           5,
           "g",
           "produce"
         ],
         [
+          "Ciboulette fraîche",
+          1.5,
+          "g",
+          "produce"
+        ],
+        [
           "Huile d'olive",
-          2,
+          0.5,
           "c.à.c",
           "pantry"
         ],
@@ -141353,7 +141353,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 160,
+      "kcal": 163,
       "tags": [
         "festif",
         "vegan",
@@ -141455,7 +141455,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 130,
+      "kcal": 139,
       "tags": [
         "festif",
         "no-cook",
@@ -141528,7 +141528,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 120,
+      "kcal": 115,
       "tags": [
         "festif",
         "no-cook",
@@ -141546,49 +141546,49 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Thon rouge (qualité sashimi)",
-          150,
+          50,
           "g",
           "meat-fish"
         ],
         [
           "Gingembre frais",
-          2,
+          0.75,
           "cm",
           "produce"
         ],
         [
           "Graines de sésame noir et blanc",
-          1,
+          0.25,
           "c.à.s",
           "pantry"
         ],
         [
           "Huile de sésame",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Sauce soja",
-          1,
+          0.25,
           "c.à.c",
           "pantry"
         ],
         [
           "Citron vert",
-          0.5,
+          0.167,
           "u",
           "produce"
         ],
         [
           "Ciboulette fraîche",
-          3,
+          1,
           "g",
           "produce"
         ],
         [
           "Radis rose",
-          40,
+          13,
           "g",
           "produce"
         ]
@@ -141617,7 +141617,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.2,
-      "kcal": 180,
+      "kcal": 197,
       "tags": [
         "festif",
         "vegan",
@@ -141710,7 +141710,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 130,
+      "kcal": 184,
       "tags": [
         "festif"
       ],
@@ -141786,7 +141786,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 160,
+      "kcal": 169,
       "tags": [
         "festif",
         "quick",
@@ -141870,7 +141870,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 150,
+      "kcal": 193,
       "tags": [
         "festif",
         "vegan",
@@ -141887,61 +141887,61 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Carotte",
-          200,
+          100,
           "g",
           "produce"
         ],
         [
           "Pois chiches cuits",
-          60,
+          30,
           "g",
           "pantry"
         ],
         [
           "Tahini",
-          15,
+          7.5,
           "g",
           "pantry"
         ],
         [
           "Cumin moulu",
-          2,
+          1,
           "g",
           "spices"
         ],
         [
           "Ail",
-          1,
+          0.5,
           "gousse",
           "produce"
         ],
         [
           "Citron jaune",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
         [
           "Huile d'olive",
-          10,
+          5,
           "ml",
           "pantry"
         ],
         [
           "Concombre",
-          60,
+          30,
           "g",
           "produce"
         ],
         [
           "Radis rose",
-          50,
+          25,
           "g",
           "produce"
         ],
         [
           "Sel",
-          1,
+          0.5,
           "g",
           "spices"
         ]
@@ -141971,7 +141971,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 70,
+      "kcal": 129,
       "tags": [
         "festif",
         "vegetarian",
@@ -142041,7 +142041,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.3,
-      "kcal": 115,
+      "kcal": 105,
       "tags": [
         "festif",
         "vegetarian"
@@ -142125,7 +142125,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 130,
+      "kcal": 136,
       "tags": [
         "festif",
         "vegetarian"
@@ -142208,7 +142208,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 100,
+      "kcal": 114,
       "tags": [
         "festif",
         "no-cook",
@@ -142224,31 +142224,31 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Concombre",
-          200,
+          65,
           "g",
           "produce"
         ],
         [
           "Fromage de chèvre frais",
-          80,
+          27,
           "g",
           "dairy"
         ],
         [
           "Saumon fumé",
-          60,
+          20,
           "g",
           "meat-fish"
         ],
         [
           "Aneth frais",
-          3,
+          1,
           "g",
           "produce"
         ],
         [
           "Jus de citron",
-          1,
+          0.25,
           "c.à.c",
           "produce"
         ],
@@ -142284,7 +142284,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 230,
+      "kcal": 344,
       "tags": [
         "festif",
         "batch-friendly"
@@ -142399,7 +142399,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 190,
+      "kcal": 266,
       "tags": [
         "festif",
         "no-cook",
@@ -142491,7 +142491,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 1,
       "cost": 4.5,
-      "kcal": 260,
+      "kcal": 357,
       "tags": [
         "festif",
         "quick"
@@ -142570,7 +142570,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 6.0,
-      "kcal": 220,
+      "kcal": 219,
       "tags": [
         "festif",
         "no-cook"
@@ -142644,7 +142644,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 210,
+      "kcal": 286,
       "tags": [
         "festif"
       ],
@@ -142749,7 +142749,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.5,
-      "kcal": 230,
+      "kcal": 265,
       "tags": [
         "festif",
         "no-cook",
@@ -142843,7 +142843,7 @@ window.__DATA_RECIPES = {
       "cook": 60,
       "diff": 3,
       "cost": 8.0,
-      "kcal": 430,
+      "kcal": 442,
       "tags": [
         "festif"
       ],
@@ -142955,7 +142955,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 3,
       "cost": 9.0,
-      "kcal": 400,
+      "kcal": 405,
       "tags": [
         "festif"
       ],
@@ -143054,7 +143054,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 3,
       "cost": 9.5,
-      "kcal": 440,
+      "kcal": 536,
       "tags": [
         "festif"
       ],
@@ -143175,7 +143175,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 7.0,
-      "kcal": 310,
+      "kcal": 405,
       "tags": [
         "festif"
       ],
@@ -143261,7 +143261,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 6.5,
-      "kcal": 290,
+      "kcal": 322,
       "tags": [
         "festif",
         "quick"
@@ -143342,7 +143342,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 400,
+      "kcal": 597,
       "tags": [
         "festif"
       ],
@@ -143444,7 +143444,7 @@ window.__DATA_RECIPES = {
       "cook": 5,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 480,
+      "kcal": 501,
       "tags": [
         "vegetarian",
         "quick"
@@ -143538,7 +143538,7 @@ window.__DATA_RECIPES = {
       "cook": 7,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 520,
+      "kcal": 524,
       "tags": [
         "quick"
       ],
@@ -143614,7 +143614,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 430,
+      "kcal": 523,
       "tags": [
         "batch-friendly"
       ],
@@ -143711,7 +143711,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 390,
+      "kcal": 449,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -143966,7 +143966,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2.7,
-      "kcal": 540,
+      "kcal": 683,
       "tags": [
         "vegan",
         "batch-friendly"
@@ -144066,7 +144066,7 @@ window.__DATA_RECIPES = {
       "cook": 180,
       "diff": 2,
       "cost": 4.6,
-      "kcal": 520,
+      "kcal": 610,
       "tags": [
         "batch-friendly"
       ],
@@ -144172,7 +144172,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 400,
+      "kcal": 601,
       "tags": [
         "batch-friendly"
       ],
@@ -144271,7 +144271,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.6,
-      "kcal": 420,
+      "kcal": 556,
       "tags": [
         "vegetarian",
         "light"
@@ -144365,7 +144365,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 6.8,
-      "kcal": 420,
+      "kcal": 467,
       "tags": [
         "light"
       ],
@@ -144605,7 +144605,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 440,
+      "kcal": 539,
       "tags": [
         "batch-friendly",
         "festif"
@@ -144726,7 +144726,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur (idéalement une nuit)",
       "diff": 2,
       "cost": 2.3,
-      "kcal": 220,
+      "kcal": 216,
       "tags": [
         "vegetarian",
         "festif",
@@ -144822,7 +144822,7 @@ window.__DATA_RECIPES = {
       "advance": "3h30 au frais (idéalement une nuit)",
       "diff": 2,
       "cost": 1.6,
-      "kcal": 180,
+      "kcal": 246,
       "tags": [
         "vegetarian",
         "festif"
@@ -144905,7 +144905,7 @@ window.__DATA_RECIPES = {
       "advance": "2h30 au frais",
       "diff": 2,
       "cost": 2.4,
-      "kcal": 160,
+      "kcal": 157,
       "tags": [
         "vegan",
         "vegetarian",
@@ -144983,7 +144983,7 @@ window.__DATA_RECIPES = {
       "advance": "3h au frais (idéalement une nuit)",
       "diff": 2,
       "cost": 2.0,
-      "kcal": 300,
+      "kcal": 323,
       "tags": [
         "vegetarian",
         "festif"
@@ -145059,7 +145059,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 1.3,
-      "kcal": 100,
+      "kcal": 98,
       "tags": [
         "vegan",
         "vegetarian",
@@ -145129,7 +145129,7 @@ window.__DATA_RECIPES = {
       "advance": "veille",
       "diff": 2,
       "cost": 7.5,
-      "kcal": 760,
+      "kcal": 823,
       "tags": [
         "festif",
         "kid-friendly"
@@ -145530,7 +145530,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 4.2,
-      "kcal": 380,
+      "kcal": 462,
       "tags": [],
       "eq": [
         "oven",
@@ -145772,7 +145772,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 3.0,
-      "kcal": 280,
+      "kcal": 338,
       "tags": [
         "batch-friendly",
         "kid-friendly"
@@ -145907,7 +145907,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.1,
-      "kcal": 360,
+      "kcal": 484,
       "tags": [
         "vegetarian"
       ],
@@ -146266,7 +146266,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 410,
+      "kcal": 415,
       "tags": [
         "epicerie-specialisee"
       ],
@@ -146483,7 +146483,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 380,
+      "kcal": 530,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -146587,7 +146587,7 @@ window.__DATA_RECIPES = {
       "rest": 15,
       "diff": 1,
       "cost": 3.8,
-      "kcal": 360,
+      "kcal": 487,
       "tags": [],
       "eq": [
         "oven",
@@ -146820,7 +146820,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 400,
+      "kcal": 363,
       "tags": [
         "kid-friendly"
       ],
@@ -147046,7 +147046,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 430,
+      "kcal": 567,
       "tags": [],
       "eq": [
         "stove",
@@ -147291,7 +147291,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 3,
       "cost": 3.9,
-      "kcal": 330,
+      "kcal": 473,
       "tags": [],
       "eq": [
         "stove",
@@ -147401,7 +147401,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.6,
-      "kcal": 210,
+      "kcal": 233,
       "tags": [
         "vegetarian",
         "kid-friendly"
@@ -147476,7 +147476,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 230,
+      "kcal": 288,
       "tags": [
         "vegetarian",
         "kid-friendly",
@@ -147564,7 +147564,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.7,
-      "kcal": 120,
+      "kcal": 184,
       "tags": [
         "vegan",
         "no-cook",
@@ -147648,7 +147648,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 190,
+      "kcal": 164,
       "tags": [
         "vegan"
       ],
@@ -147726,7 +147726,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 220,
+      "kcal": 241,
       "tags": [
         "vegetarian"
       ],
@@ -147798,7 +147798,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 110,
+      "kcal": 147,
       "tags": [
         "vegan",
         "light"
@@ -147979,7 +147979,7 @@ window.__DATA_RECIPES = {
       "advance": "Fèves à faire tremper la veille (8 h dans l'eau froide)",
       "diff": 1,
       "cost": 1.8,
-      "kcal": 535,
+      "kcal": 537,
       "tags": [
         "vegetarian",
         "vegan",
@@ -148099,7 +148099,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 580,
+      "kcal": 583,
       "tags": [],
       "eq": [
         "stove"
@@ -148206,7 +148206,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 3.2,
-      "kcal": 490,
+      "kcal": 492,
       "tags": [
         "kid-friendly"
       ],
@@ -148341,7 +148341,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 485,
+      "kcal": 487,
       "tags": [],
       "eq": [
         "stove",
@@ -148560,7 +148560,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 180,
+      "kcal": 182,
       "tags": [
         "vegetarian",
         "vegan",
@@ -148831,7 +148831,7 @@ window.__DATA_RECIPES = {
       "rest": 60,
       "diff": 2,
       "cost": 0.8,
-      "kcal": 175,
+      "kcal": 178,
       "tags": [
         "vegetarian",
         "light",
@@ -148982,7 +148982,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 0.9,
-      "kcal": 150,
+      "kcal": 151,
       "tags": [
         "vegetarian",
         "vegan",
@@ -149145,7 +149145,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 185,
+      "kcal": 186,
       "tags": [
         "vegetarian",
         "quick",
