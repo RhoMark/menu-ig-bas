@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.137.0</title>
+<title>Menu IG Bas — V2.138.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -330,6 +330,10 @@ if ("serviceWorker" in navigator) {
         {
           "q": "Comment sont calculées les calories et la CG d'une recette ?",
           "a": "À partir des ingrédients d'une portion : chaque quantité est convertie en grammes, puis multipliée par les valeurs nutritionnelles de l'ingrédient (glucides, protéines, lipides, IG). Les calories suivent la formule d'Atwater (4 kcal par gramme de glucides ou de protéines, 9 par gramme de lipides). Depuis V2.137.0, les féculents (riz, quinoa, pâtes, boulgour, lentilles, polenta…) sont comptés avec leurs valeurs à l'état SEC, tel que tu les pèses avant cuisson, d'après la table CIQUAL de l'ANSES. Avant, ils étaient comptés avec les valeurs du produit cuit, ce qui sous-estimait la CG d'environ 300 recettes : ces recettes ont été rééquilibrées (moins de féculent, plus de légumes ou de légumineuses). Si une recette indique « cuit » (ex. « Lentilles vertes cuites »), le calcul ramène le poids cuit au poids sec. Les calories affichées sont désormais toujours celles calculées, sauf pour quelques recettes dont un ingrédient n'a pas encore de valeur connue."
+        },
+        {
+          "q": "Pourquoi la liste de courses indique moins de lentilles (ou de riz) que la recette ?",
+          "a": "Depuis V2.138.0, quand une recette demande un féculent déjà cuit (ex. « Lentilles vertes cuites 150 g »), la liste de courses le convertit en poids SEC à acheter (≈ 58 g de lentilles sèches, qui donnent 150 g une fois cuites) et l'additionne aux autres recettes qui utilisent le même produit sec. Avant, 150 g cuits + 70 g secs s'additionnaient en 220 g, soit beaucoup trop. Les légumineuses en conserve (pois chiches, haricots) ne sont pas concernées : elles s'achètent déjà cuites. De même, les oignons nouveaux (vendus en botte) apparaissent maintenant à part des oignons classiques."
         },
         {
           "q": "Quels sont les seuils CG du projet ?",
@@ -839,7 +843,6 @@ if ("serviceWorker" in navigator) {
     {"id": "oeuf de caille", "label": "Œuf de caille", "category": "dairy", "weightPerPiece": 10, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {"id": "radis daikon", "label": "Radis daikon", "category": "produce", "weightPerPiece": 400, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {"id": "citron jaune", "label": "Citron jaune", "category": "produce", "weightPerPiece": 100, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
-    {"id": "cebette", "label": "Cébette", "category": "produce", "weightPerPiece": 20, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {"id": "blanc doeuf", "label": "Blanc d'œuf", "category": "dairy", "weightPerPiece": 33, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {"id": "fenouil bulbe", "label": "Fenouil bulbe", "category": "produce", "weightPerPiece": 300, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {"id": "endive", "label": "Endive", "category": "produce", "weightPerPiece": 120, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
@@ -12768,6 +12771,13 @@ const dataRef = {
       const p = REF.pricesById.get(stripped);
       if (p) return p;
     }
+    // V2.138.0 — Repli sur le produit de base (« oignon nouveau » → prix de
+    // « oignon »), mêmes règles de nettoyage que l'entrée nutritionnelle.
+    const g = dataRef.glycemic(canonName);
+    if (g && canonicalName(g.id) !== canonName) {
+      const p = REF.pricesById.get(canonicalName(g.id));
+      if (p) return p;
+    }
     return null;
   },
   // Convertit (qty, unit, name) en grammes. Renvoie null si non convertible.
@@ -14077,7 +14087,8 @@ function computeRecipeCost(recipe) {
   const missing = [];
   for (const ing of (recipe.ing || [])) {
     const [name, qty, unit] = ing;
-    const g = dataRef.qtyToGrams(name, qty, unit);
+    // V2.138.0 — « Lentilles vertes cuites 150 g » = ≈ 58 g de lentilles sèches achetées.
+    const g = nutriGrams(name, qty, unit, dataRef.glycemic(canonicalName(name)));
     if (g == null || g <= 0) continue;
     totalG += g;
     const p = dataRef.price(canonicalName(name));
@@ -14195,7 +14206,11 @@ function canonicalName(name) {
   // recettes utilisent toujours les variantes cuites pour les légumineuses
   // — pois chiches/haricots — qui se trouvent au même rayon), egoutte (action
   // de prépa), moulu, bio, taille (gros/petit/jeune).
-  const descriptors = /\b(mur|mure|murs|mures|cuit|cuite|cuits|cuites|degoutte|degouttee|egoutte|egouttee|moulu|moulue|moulus|moulues|bio|jeune|nouveau|nouvelle|grosse|gros|petite|petit)\b/g;
+  // V2.138.0 — « nouveau / nouvelle » ne sont plus retirés : un oignon nouveau
+  // (vendu en botte, ≈ 40 g) n'est pas un oignon (≈ 100 g), ni en liste de
+  // courses ni en poids. Pluriels ramenés au singulier (« nouveaux » → « nouveau »).
+  n = n.replace(/\bnouveaux\b/g, "nouveau").replace(/\bnouvelles\b/g, "nouvelle");
+  const descriptors = /\b(mur|mure|murs|mures|cuit|cuite|cuits|cuites|degoutte|degouttee|egoutte|egouttee|moulu|moulue|moulus|moulues|bio|jeune|grosse|gros|petite|petit)\b/g;
   n = n.replace(descriptors, " ");
   // collapse spaces
   n = n.replace(/\s+/g, " ").trim();
@@ -16882,6 +16897,17 @@ function aggregateShoppingList(weekMenu, profile) {
           }
         }
       }
+      // V2.138.0 — Féculent acheté SEC mais écrit « cuit » dans la recette
+      // (« Lentilles vertes cuites 150 g ») : converti en poids sec à acheter,
+      // fusionné avec « Lentilles vertes ». Avant, 150 g cuits + 70 g secs
+      // s'additionnaient en « 220 g de lentilles ». Les légumineuses en
+      // conserve (pois chiches, haricots : pas de cookedYield) ne bougent pas.
+      let cookedToDry = false;
+      if (cUnit === "g" || cUnit === "kg") {
+        const gly = dataRef.glycemic(cName);
+        const dry = gly?.cookedYield ? nutriGrams(name, cQty, cUnit, gly) : null;
+        if (dry != null && dry !== dataRef.qtyToGrams(name, cQty, cUnit)) { cQty = dry; cUnit = "g"; cookedToDry = true; }
+      }
       const conv = unitConvertForAggregation(cQty, cUnit, cName, category);
       if (conv) { cQty = conv.qty; cUnit = conv.unit; }
       const key = `${cName}|${cUnit}|${category}`;
@@ -16889,7 +16915,7 @@ function aggregateShoppingList(weekMenu, profile) {
         // `name` reste la clé stable (cases cochées, sous-groupes) ; `label` = affichage.
         agg[key] = {name: displayCanonName(cName), canon: cName, labels: {}, qty: 0, unit: cUnit, category};
       }
-      agg[key].labels[name] = (agg[key].labels[name] || 0) + 1;
+      if (!cookedToDry) agg[key].labels[name] = (agg[key].labels[name] || 0) + 1; // « cuites » ≠ ce qu'on achète
       agg[key].qty += scaleQty(cQty, mult, cName, category);
     });
   };

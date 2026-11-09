@@ -1812,7 +1812,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 291,
+      "kcal": 263,
       "tags": [
         "vegetarian",
         "quick",
@@ -1851,7 +1851,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon nouveau / ciboule",
+          "Oignon nouveau (ou ciboule)",
           1,
           "u",
           "produce"
@@ -5042,7 +5042,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Haricots rouges",
+          "Haricots rouges cuits (en boîte)",
           130,
           "g",
           "pantry"
@@ -5547,7 +5547,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 514,
+      "kcal": 486,
       "tags": [
         "vegetarian",
         "quick"
@@ -6099,7 +6099,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.25,
-      "kcal": 477,
+      "kcal": 449,
       "tags": [
         "vegetarian",
         "quick"
@@ -11905,7 +11905,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 547,
+      "kcal": 519,
       "tags": [
         "vegetarian",
         "kid-friendly",
@@ -12856,7 +12856,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 413,
+      "kcal": 357,
       "tags": [
         "quick"
       ],
@@ -14662,7 +14662,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 662,
+      "kcal": 634,
       "tags": [
         "batch-friendly"
       ],
@@ -15344,7 +15344,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3,
-      "kcal": 511,
+      "kcal": 483,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -15989,7 +15989,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 581,
+      "kcal": 553,
       "tags": [
         "kid-friendly",
         "batch-friendly"
@@ -17559,7 +17559,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 6.88,
-      "kcal": 759,
+      "kcal": 731,
       "tags": [],
       "eq": [
         "stove"
@@ -18597,7 +18597,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 497,
+      "kcal": 468,
       "tags": [
         "kid-friendly",
         "quick",
@@ -19139,7 +19139,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 348,
+      "kcal": 320,
       "tags": [
         "vegan",
         "vegetarian",
@@ -19842,7 +19842,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 525,
+      "kcal": 497,
       "tags": [
         "vegan",
         "no-cook",
@@ -20246,7 +20246,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 365,
+      "kcal": 344,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -23764,7 +23764,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 401,
+      "kcal": 387,
       "tags": [
         "vegetarian",
         "vegan",
@@ -26324,7 +26324,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2,
-      "kcal": 470,
+      "kcal": 463,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -26990,7 +26990,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 433,
+      "kcal": 426,
       "tags": [
         "batch-friendly"
       ],
@@ -27308,7 +27308,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 482,
+      "kcal": 468,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -27524,7 +27524,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 464,
+      "kcal": 454,
       "tags": [
         "batch-friendly",
         "epicerie-specialisee"
@@ -28931,7 +28931,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 1.6,
-      "kcal": 405,
+      "kcal": 409,
       "tags": [
         "vegetarian",
         "vegan",
@@ -30004,7 +30004,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 4,
-      "kcal": 428,
+      "kcal": 418,
       "tags": [
         "quick",
         "batch-friendly"
@@ -44780,7 +44780,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 6.5,
-      "kcal": 463,
+      "kcal": 468,
       "tags": [
         "light"
       ],
@@ -44856,7 +44856,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cébette (oignon nouveau)",
+          "Oignon nouveau (cébette)",
           1,
           "u",
           "produce"
@@ -44897,7 +44897,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 343,
+      "kcal": 355,
       "tags": [
         "vegetarian",
         "light",
@@ -44951,7 +44951,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cébette (oignon nouveau)",
+          "Oignon nouveau (cébette)",
           2,
           "u",
           "produce"
@@ -47541,7 +47541,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 517,
+      "kcal": 529,
       "tags": [
         "vegetarian",
         "quick",
@@ -47596,7 +47596,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cébette (oignon nouveau)",
+          "Oignon nouveau (cébette)",
           2,
           "u",
           "produce"
@@ -47666,7 +47666,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 554,
+      "kcal": 560,
       "tags": [
         "light",
         "batch-friendly"
@@ -47725,7 +47725,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cébette (oignon nouveau)",
+          "Oignon nouveau (cébette)",
           1,
           "u",
           "produce"
@@ -48752,7 +48752,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 5.5,
-      "kcal": 643,
+      "kcal": 649,
       "tags": [],
       "eq": [
         "pan",
@@ -48827,7 +48827,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cébette (oignon nouveau)",
+          "Oignon nouveau (cébette)",
           1,
           "u",
           "produce"
@@ -48877,7 +48877,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 702,
+      "kcal": 708,
       "tags": [
         "vegan",
         "vegetarian",
@@ -48979,7 +48979,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cébette",
+          "Oignon nouveau (cébette)",
           1,
           "u",
           "produce"
@@ -51987,7 +51987,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 553,
+      "kcal": 564,
       "tags": [],
       "eq": [
         "stove"
@@ -52066,7 +52066,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cébette (oignon nouveau)",
+          "Oignon nouveau (cébette)",
           2,
           "u",
           "produce"
@@ -52152,7 +52152,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 829,
+      "kcal": 835,
       "tags": [],
       "eq": [
         "pan",
@@ -52255,7 +52255,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cébette",
+          "Oignon nouveau (cébette)",
           1,
           "u",
           "produce"
@@ -54526,90 +54526,6 @@ window.__DATA_RECIPES = {
       "photo": "assets/recipes/s71.webp"
     },
     {
-      "id": "des70",
-      "name": "Riz coco-mangue et pétales d'amande",
-      "type": "dessert",
-      "cuisine": "asiatique",
-      "seasons": [
-        "spring",
-        "summer"
-      ],
-      "prep": 10,
-      "cook": 25,
-      "rest": 60,
-      "advance": "1h",
-      "diff": 2,
-      "cost": 1.7,
-      "kcal": 262,
-      "tags": [
-        "vegan",
-        "vegetarian"
-      ],
-      "eq": [
-        "stove"
-      ],
-      "allergens": [
-        "nuts"
-      ],
-      "ing": [
-        [
-          "Riz arborio",
-          15,
-          "g",
-          "pantry"
-        ],
-        [
-          "Lait de coco",
-          50,
-          "ml",
-          "dairy"
-        ],
-        [
-          "Eau",
-          25,
-          "ml",
-          "pantry"
-        ],
-        [
-          "Mangue",
-          0.2,
-          "u",
-          "produce"
-        ],
-        [
-          "Amandes effilées",
-          0.5,
-          "c.à.s",
-          "pantry"
-        ],
-        [
-          "Citron vert",
-          0.25,
-          "u",
-          "produce"
-        ],
-        [
-          "Menthe fraîche",
-          1,
-          "feuille",
-          "produce"
-        ]
-      ],
-      "steps": [
-        "Rince le riz sous l'eau froide en remuant 30 secondes (= ça enlève l'amidon excédentaire pour une texture moins collante).",
-        "Dans une casserole, mélange le riz, le lait de coco et l'eau. Porte à frémissement à feu moyen, puis baisse à feu doux.",
-        "Couvre partiellement (laisse une fente pour la vapeur). Laisse cuire 20 minutes en remuant toutes les 5 minutes (si ça attache, ajoute 2 c.à.s d'eau) pour éviter que ça attache au fond. Le riz doit être tendre, et la texture épaisse comme un riz au lait crémeux.",
-        "Hors du feu, ajoute le zeste râpé du quart de citron vert. Mélange. Goûte : le lait de coco et la mangue apportent déjà leur douceur ; si trop ferme, ajoute encore un peu de lait de coco et chauffe 2 min.",
-        "Verse dans une coupe ou un ramequin. Couvre de film alimentaire au contact (= film posé directement sur le riz) et place au frigo minimum 1 heure : la texture devient plus dense et la fraîcheur idéale.",
-        "Pendant ce temps, prépare la mangue : tiens-la verticale, coupe de chaque côté du noyau. Épluche la mangue et coupe la chair en petits cubes.",
-        "Dans une petite poêle sèche, à feu moyen, fais torréfier les amandes effilées 2 minutes en remuant : elles doivent dorer et embaumer. Réserve.",
-        "Au moment de servir, sors les coupes du frigo. Pose les cubes de mangue sur le dessus du riz.",
-        "Parsème les amandes torréfiées et 1 feuille de menthe ciselée.",
-        "C'est un grand classique thaï (« khao niao mamuang ») revisité moins sucré. Le contraste tiède-froid du riz crémeux + mangue juteuse + amandes croquantes est festif sans être bourratif."
-      ],
-      "photo": "assets/recipes/des70.webp"
-    },
-    {
       "id": "b73",
       "name": "Upma de sarrasin aux légumes croquants",
       "type": "breakfast",
@@ -56311,7 +56227,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 240,
+      "kcal": 226,
       "tags": [
         "vegetarian",
         "quick"
@@ -60083,7 +59999,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2,
-      "kcal": 516,
+      "kcal": 474,
       "tags": [
         "vegetarian",
         "vegan",
@@ -65113,7 +65029,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 338,
+      "kcal": 317,
       "tags": [
         "vegetarian",
         "quick"
@@ -65398,7 +65314,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 350,
+      "kcal": 329,
       "tags": [
         "vegetarian",
         "vegan"
@@ -65998,7 +65914,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 334,
+      "kcal": 291,
       "tags": [
         "batch-friendly"
       ],
@@ -66104,7 +66020,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 435,
+      "kcal": 407,
       "tags": [
         "vegetarian",
         "vegan",
@@ -66479,85 +66395,6 @@ window.__DATA_RECIPES = {
         "Cette crème reprend les codes du dessert japonais matcha (très tendance) en version allégée : pas de gélatine, pas de crème entière, très peu de sucre. Le matcha est riche en L-théanine (effet calmant) et en antioxydants EGCG. Combinée avec les framboises (anthocyanes), c'est un dessert super-antioxydants."
       ],
       "photo": "assets/recipes/des82.webp"
-    },
-    {
-      "id": "des83",
-      "name": "Mangue thaï sticky rice version IG bas (riz noir et coco)",
-      "type": "dessert",
-      "cuisine": "asiatique",
-      "seasons": [
-        "summer"
-      ],
-      "prep": 10,
-      "cook": 35,
-      "diff": 2,
-      "cost": 3,
-      "kcal": 248,
-      "tags": [
-        "vegetarian",
-        "vegan"
-      ],
-      "eq": [
-        "stove"
-      ],
-      "allergens": [
-        "sesame"
-      ],
-      "ing": [
-        [
-          "Riz noir (riz interdit / venere)",
-          15,
-          "g",
-          "pantry"
-        ],
-        [
-          "Lait de coco",
-          50,
-          "ml",
-          "dairy"
-        ],
-        [
-          "Mangue mûre",
-          0.2,
-          "u",
-          "produce"
-        ],
-        [
-          "Sirop d'érable (ou sucre de coco)",
-          0.25,
-          "c.à.s",
-          "pantry"
-        ],
-        [
-          "Graines de sésame grillées",
-          0.25,
-          "c.à.s",
-          "pantry"
-        ],
-        [
-          "Citron vert",
-          0.25,
-          "u",
-          "produce"
-        ],
-        [
-          "Sel",
-          1,
-          "pincée",
-          "spices"
-        ]
-      ],
-      "steps": [
-        "Rince le riz noir à l'eau froide jusqu'à ce que l'eau soit claire. Fais-le tremper 1 h si possible (accélère la cuisson, sinon ça marche aussi sans).",
-        "Cuis le riz noir : dans une casserole, verse le riz + environ dix fois son volume d'eau + une pincée de sel. Porte à frémissement, baisse à feu doux, couvre 30-35 min. Le riz noir doit être tendre mais garder un peu de mâche (al dente). Laisse reposer 5 min couvert.",
-        "Pendant ce temps, prépare la sauce coco : dans une petite casserole, verse le lait de coco + le sirop d'érable + une pincée de sel. Chauffe à frémissement, mélange jusqu'à dissolution. Réserve 1/3 de la sauce pour le service.",
-        "Verse les 2/3 de sauce coco chaude sur le riz noir cuit. Mélange délicatement. Le riz absorbe la sauce et devient crémeux. Laisse infuser 10 min.",
-        "Coupe la mangue : tranche de chaque côté du noyau plat, fais des incisions en croisillon dans la chair sans percer la peau, retourne la peau et coupe les cubes (technique 'hérisson' mangue).",
-        "Dressage dans 2 assiettes creuses : dépose une portion de riz noir crémeux d'un côté, les cubes de mangue de l'autre.",
-        "Arrose le tout du dernier tiers de sauce coco réservée. Parsème de graines de sésame grillées. Râpe un peu de zeste de citron vert.",
-        "Sers tiède ou à température ambiante. La version originale thaïlandaise (khao niao mamuang) utilise du riz gluant blanc (IG ~95, très haut) sucré au sucre de palme (gros pic glycémique). Cette version remplace par du riz noir (IG ~42) + sirop d'érable minimal (très peu de sucre ajouté). Riche en antioxydants (anthocyanes du riz noir = parmi les plus puissants connus), fibres, bons gras (coco, sésame), bêta-carotène (mangue)."
-      ],
-      "photo": "assets/recipes/des83.webp"
     },
     {
       "id": "des84",
@@ -67476,7 +67313,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 233,
+      "kcal": 219,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68222,7 +68059,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 310,
+      "kcal": 296,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -68682,7 +68519,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 105,
+      "kcal": 83,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68794,7 +68631,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 212,
+      "kcal": 198,
       "tags": [
         "festif",
         "batch-friendly"
@@ -72547,7 +72384,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 294,
+      "kcal": 280,
       "tags": [
         "festif",
         "batch-friendly"
@@ -72659,7 +72496,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 375,
+      "kcal": 361,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -72775,7 +72612,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 249,
+      "kcal": 228,
       "tags": [
         "festif",
         "batch-friendly"
@@ -73397,7 +73234,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 344,
+      "kcal": 316,
       "tags": [
         "vegetarian",
         "quick"
@@ -74527,7 +74364,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 471,
+      "kcal": 457,
       "tags": [
         "vegetarian",
         "quick",
@@ -75116,7 +74953,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 260,
+      "kcal": 246,
       "tags": [
         "no-cook",
         "festif",
@@ -76274,7 +76111,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 1.5,
-      "kcal": 305,
+      "kcal": 263,
       "tags": [
         "vegetarian",
         "vegan",
@@ -77500,7 +77337,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 197,
+      "kcal": 176,
       "tags": [
         "vegetarian",
         "vegan",
@@ -80930,7 +80767,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.4,
-      "kcal": 334,
+      "kcal": 332,
       "tags": [],
       "eq": [
         "stove"
@@ -87719,7 +87556,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 1,
       "cost": 1.0,
-      "kcal": 139,
+      "kcal": 138,
       "tags": [
         "vegan",
         "vegetarian",
@@ -88368,7 +88205,7 @@ window.__DATA_RECIPES = {
       "rest": 15,
       "diff": 2,
       "cost": 3,
-      "kcal": 636,
+      "kcal": 635,
       "tags": [
         "batch-friendly"
       ],
@@ -91904,7 +91741,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 474,
+      "kcal": 473,
       "tags": [
         "vegetarian"
       ],
@@ -93355,7 +93192,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 499,
+      "kcal": 496,
       "tags": [
         "vegan",
         "vegetarian",
@@ -97414,7 +97251,7 @@ window.__DATA_RECIPES = {
       "rest": 20,
       "diff": 2,
       "cost": 2.8,
-      "kcal": 655,
+      "kcal": 654,
       "tags": [
         "batch-friendly"
       ],
@@ -98080,7 +97917,7 @@ window.__DATA_RECIPES = {
       "advance": "1h au frais pour servir glacé",
       "diff": 1,
       "cost": 1.8,
-      "kcal": 509,
+      "kcal": 507,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -114794,7 +114631,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 352,
+      "kcal": 324,
       "tags": [
         "vegan",
         "quick"
@@ -116838,7 +116675,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 498,
+      "kcal": 442,
       "tags": [
         "festif"
       ],
@@ -118243,7 +118080,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 544,
+      "kcal": 488,
       "tags": [
         "vegan",
         "vegetarian"
@@ -129423,7 +129260,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.8,
-      "kcal": 439,
+      "kcal": 411,
       "tags": [
         "festif",
         "no-cook",
@@ -129628,7 +129465,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 6.0,
-      "kcal": 260,
+      "kcal": 232,
       "tags": [
         "festif",
         "quick"
@@ -129980,7 +129817,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 211,
+      "kcal": 183,
       "tags": [
         "festif"
       ],
@@ -130974,7 +130811,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 5.8,
-      "kcal": 373,
+      "kcal": 371,
       "tags": [
         "festif",
         "light"
@@ -132560,7 +132397,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 387,
+      "kcal": 386,
       "tags": [
         "vegetarian"
       ],
@@ -133237,7 +133074,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 2,
       "cost": 2.2,
-      "kcal": 555,
+      "kcal": 553,
       "tags": [
         "vegan",
         "vegetarian",
@@ -133689,7 +133526,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 439,
+      "kcal": 411,
       "tags": [
         "vegan",
         "vegetarian",
@@ -134088,7 +133925,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 382,
+      "kcal": 325,
       "tags": [
         "quick"
       ],
@@ -134182,7 +134019,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 445,
+      "kcal": 417,
       "tags": [
         "quick"
       ],
@@ -134386,7 +134223,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 659,
+      "kcal": 631,
       "tags": [
         "quick"
       ],
@@ -141782,7 +141619,7 @@ window.__DATA_RECIPES = {
       "cook": 3,
       "diff": 1,
       "cost": 2.3,
-      "kcal": 179,
+      "kcal": 172,
       "tags": [
         "festif",
         "quick",
@@ -146042,7 +145879,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3,
-      "kcal": 473,
+      "kcal": 471,
       "tags": [
         "vegan",
         "epicerie-specialisee"
