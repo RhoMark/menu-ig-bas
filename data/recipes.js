@@ -1358,7 +1358,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.88,
-      "kcal": 458,
+      "kcal": 464,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -10426,7 +10426,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 2,
-      "kcal": 480,
+      "kcal": 483,
       "tags": [
         "vegetarian",
         "batch-friendly",
@@ -34290,7 +34290,7 @@ window.__DATA_RECIPES = {
       "cook": 30,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 475,
+      "kcal": 481,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -34414,7 +34414,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 463,
+      "kcal": 469,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -36026,7 +36026,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 287,
+      "kcal": 292,
       "tags": [
         "vegetarian",
         "vegan",
@@ -37936,7 +37936,7 @@ window.__DATA_RECIPES = {
       "cook": 50,
       "diff": 1,
       "cost": 3.5,
-      "kcal": 554,
+      "kcal": 566,
       "tags": [
         "batch-friendly"
       ],
@@ -48419,7 +48419,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.2,
-      "kcal": 274,
+      "kcal": 277,
       "tags": [
         "vegan",
         "vegetarian",
@@ -48459,9 +48459,9 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Branche de céleri",
+          "Céleri branche",
           0.5,
-          "u",
+          "branche",
           "produce"
         ],
         [
@@ -54173,7 +54173,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 238,
+      "kcal": 241,
       "tags": [
         "vegetarian",
         "vegan",
@@ -58623,7 +58623,7 @@ window.__DATA_RECIPES = {
       "cook": 40,
       "diff": 2,
       "cost": 1.8,
-      "kcal": 368,
+      "kcal": 373,
       "tags": [
         "vegetarian",
         "vegan",
@@ -64326,7 +64326,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 244,
+      "kcal": 247,
       "tags": [
         "vegetarian",
         "vegan",
@@ -74832,7 +74832,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 240,
+      "kcal": 254,
       "tags": [
         "vegetarian",
         "vegan",
@@ -74851,7 +74851,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de spring roll (pâte chinoise)",
-          3.0,
+          1.5,
           "u",
           "bread"
         ],
@@ -74878,12 +74878,6 @@ window.__DATA_RECIPES = {
           8,
           "g",
           "produce"
-        ],
-        [
-          "Vermicelles de soja",
-          8,
-          "g",
-          "pantry"
         ],
         [
           "Oignon nouveau",
@@ -74929,12 +74923,12 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "Si tu utilises des champignons noirs séchés et vermicelles : trempe-les 15 min dans l'eau chaude. Égoutte. Hache les champignons. Coupe les vermicelles en morceaux courts (5 cm).",
+        "Si tu utilises des champignons noirs séchés : trempe-les 15 min dans l'eau chaude. Égoutte, puis hache-les.",
         "Émiette le tofu à la fourchette (effet 'haché').",
         "Émince finement chou + carotte + oignons nouveaux. Hache ail + gingembre.",
         "Dans une grande poêle, chauffe 1 c.à.s d'huile d'olive. Fais sauter tofu 3 min, puis ajoute ail + gingembre + sauce soja + huile sésame. Continue 1 min.",
-        "Ajoute chou + carotte + champignons + vermicelles + oignons nouveaux + sel. Fais sauter 4-5 min : les légumes doivent être tendres mais garder du croquant. Laisse tiédir 10 min.",
-        "Préchauffe le four à 220 °C. Sur chaque galette de spring roll, dépose 2 c.à.s de farce en bande au centre-bas. Replie le bas sur la farce, replie les côtés, roule en serrant. Humidifie le bord pour fermer.",
+        "Ajoute chou + carotte + champignons + oignons nouveaux + sel. Fais sauter 4-5 min : les légumes doivent être tendres mais garder du croquant. Laisse tiédir 10 min.",
+        "Préchauffe le four à 220 °C. Sur chaque galette de spring roll, dépose 4 c.à.s de farce en bande au centre-bas. Replie le bas sur la farce, replie les côtés, roule en serrant. Humidifie le bord pour fermer.",
         "Pose sur plaque, badigeonne d'1 c.à.s huile d'olive. Enfourne 15-18 min, en retournant à mi-cuisson, jusqu'à doré croustillant.",
         "Sers chaud avec sauce dip (sauce soja + vinaigre riz + gingembre râpé). Snack festif chinois revisité au four (vs friture). CG basse, batch-friendly."
       ],
@@ -77946,7 +77940,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 150,
+      "kcal": 131,
       "tags": [
         "vegan",
         "vegetarian",
@@ -77962,7 +77956,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Makhana (graines de lotus)",
-          40,
+          22,
           "g",
           "pantry"
         ],
@@ -80221,7 +80215,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 1.9,
-      "kcal": 210,
+      "kcal": 226,
       "tags": [
         "vegetarian",
         "festif"
@@ -80312,7 +80306,7 @@ window.__DATA_RECIPES = {
       "advance": "4h au congélateur",
       "diff": 2,
       "cost": 1.8,
-      "kcal": 200,
+      "kcal": 195,
       "tags": [
         "vegetarian",
         "no-cook",
@@ -81617,7 +81611,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.1,
-      "kcal": 228,
+      "kcal": 239,
       "tags": [
         "vegan",
         "vegetarian",
@@ -81636,13 +81630,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Riz soufflé non sucré",
-          20,
+          15,
           "g",
           "pantry"
         ],
         [
           "Cacahuètes non salées",
-          15,
+          20,
           "g",
           "pantry"
         ],
@@ -81800,7 +81794,7 @@ window.__DATA_RECIPES = {
       "rest": 30,
       "diff": 2,
       "cost": 1.7,
-      "kcal": 243,
+      "kcal": 274,
       "tags": [
         "vegetarian",
         "festif"
@@ -81816,7 +81810,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Vermicelles de riz",
-          15,
+          12,
           "g",
           "pantry"
         ],
@@ -81835,12 +81829,6 @@ window.__DATA_RECIPES = {
         [
           "Sirop de rose maison",
           10,
-          "g",
-          "pantry"
-        ],
-        [
-          "Sirop d'érable",
-          4,
           "g",
           "pantry"
         ],
@@ -81872,7 +81860,7 @@ window.__DATA_RECIPES = {
       "steps": [
         "Fais tremper les graines de basilic (sabja) dans un bol d'eau froide 20 minutes : elles gonflent et deviennent gélatineuses (texture comme des œufs de poisson).",
         "Cuis les vermicelles de riz dans une casserole d'eau bouillante 3-4 minutes selon les indications du paquet, égoutte et passe sous l'eau froide pour stopper la cuisson.",
-        "Fais chauffer le lait avec la cardamome jusqu'aux premiers frémissements, ajoute le sirop d'érable et le sirop de rose. Laisse tiédir 10 minutes puis refroidis au frigo 20 minutes.",
+        "Fais chauffer le lait avec la cardamome jusqu'aux premiers frémissements, ajoute le sirop de rose (garde-en quelques gouttes pour le fond du verre). Laisse tiédir 10 minutes puis refroidis au frigo 20 minutes.",
         "Concasse les pistaches au couteau.",
         "Préparation du verre (par personne) : dépose au fond un trait de sirop de rose, ajoute les graines de basilic gonflées et égouttées, puis une couche de vermicelles.",
         "Verse le lait rose froid à mi-hauteur, ajoute les glaçons.",
@@ -82221,7 +82209,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 110,
+      "kcal": 100,
       "tags": [
         "vegan",
         "vegetarian",
@@ -92084,7 +92072,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 371,
+      "kcal": 413,
       "tags": [
         "vegan",
         "vegetarian",
@@ -92102,19 +92090,19 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pitaya (fruit du dragon)",
-          150,
+          120,
           "g",
           "produce"
         ],
         [
           "Mangue",
-          80,
+          50,
           "g",
           "produce"
         ],
         [
           "Banane",
-          40,
+          25,
           "g",
           "produce"
         ],
@@ -92138,13 +92126,13 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine complets",
-          15,
+          10,
           "g",
           "pantry"
         ],
         [
           "Graines de courge",
-          12,
+          18,
           "g",
           "pantry"
         ]

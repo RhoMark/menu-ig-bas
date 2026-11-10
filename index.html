@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.138.0</title>
+<title>Menu IG Bas — V2.138.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -840,6 +840,7 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
+    {"id": "galette de spring roll", "label": "Galette de spring roll", "category": "bread", "weightPerPiece": 15, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.138.1)"},
     {"id": "oeuf de caille", "label": "Œuf de caille", "category": "dairy", "weightPerPiece": 10, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {"id": "radis daikon", "label": "Radis daikon", "category": "produce", "weightPerPiece": 400, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
     {"id": "citron jaune", "label": "Citron jaune", "category": "produce", "weightPerPiece": 100, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.137.0)"},
@@ -989,13 +990,6 @@ if ("serviceWorker" in navigator) {
       "label": "Carottes nouvelles",
       "category": "produce",
       "weightPerPiece": 100,
-      "soldByWeight": false
-    },
-    {
-      "id": "celeri branche",
-      "label": "Céleri branche",
-      "category": "produce",
-      "weightPerPiece": 50,
       "soldByWeight": false
     },
     {
@@ -1353,7 +1347,8 @@ if ("serviceWorker" in navigator) {
       "label": "Oignon nouveau",
       "category": "produce",
       "weightPerPiece": 40,
-      "soldByWeight": false
+      "soldByWeight": false,
+      "src": "estimation non vérifiée pour l'oignon blanc botte à bulbe renflé ; la cébette fine pèse 15 à 25 g (USDA #170005, lu sur un miroir) — à remplacer par une pesée (V2.138.1)"
     },
     {
       "id": "oignon nouveaux",
@@ -1648,7 +1643,8 @@ if ("serviceWorker" in navigator) {
       "label": "Céleri branche",
       "category": "produce",
       "weightPerPiece": 40,
-      "soldByWeight": true
+      "soldByWeight": true,
+      "src": "USDA FoodData Central : côte moyenne ≈ 40 g, non vérifié (V2.138.1)"
     },
     {
       "id": "tomate de variete ancienne",
@@ -3450,6 +3446,13 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
+    { "id": "sirop de rose maison", "ig": 65, "carbsPer100g": 65, "proteinPer100g": 0, "fatPer100g": 0, "src": "estimation non vérifiée : sirop de sucre à 65 %, IG du saccharose (V2.138.1)" },
+    { "id": "galette de spring roll", "ig": 75, "carbsPer100g": 60.0, "proteinPer100g": 10.0, "fatPer100g": 1.0, "src": "proxy « feuille de brick » (pâte de blé fine), non vérifié (V2.138.1)" },
+    { "id": "graine de basilic", "ig": 1, "carbsPer100g": 42, "proteinPer100g": 17.0, "fatPer100g": 31.0, "src": "proxy « graines de chia », non vérifié — aucune table de composition fiable (V2.138.1)" },
+    { "id": "makhana", "ig": 62, "carbsPer100g": 79.8, "proteinPer100g": 8.7, "fatPer100g": 0.5, "src": "revue sur Euryale ferox (makhana soufflé), lue via extrait de recherche, non vérifié ; IG : 61,5 estimé in vitro, non vérifié (V2.138.1)" },
+    { "id": "amaretti", "ig": 65, "carbsPer100g": 83.3, "proteinPer100g": 6.67, "fatPer100g": 6.67, "src": "USDA FoodData Central Branded #1126984 (étiquette d'une marque) ; IG : 65 = saccharose, estimation non vérifiée (V2.138.1)" },
+    { "id": "pitaya", "ig": 51, "carbsPer100g": 12.1, "proteinPer100g": 0.36, "fatPer100g": 0.14, "src": "USDA FoodData Central #2344729 (glucides 15,23 − fibres 3,10) ; IG : proxy « mangue », non vérifié — aucune mesure publiée (V2.138.1)" },
+    { "id": "jicama", "ig": 35, "carbsPer100g": 3.9, "proteinPer100g": 0.72, "fatPer100g": 0.09, "src": "USDA FoodData Central #170073 (glucides 8,82 − fibres 4,90) ; IG : proxy « carotte », non vérifié (V2.138.1)" },
     { "id": "berkouke", "ig": 45, "carbsPer100g": 70.0, "proteinPer100g": 14.0, "fatPer100g": 2.0, "src": "alias de « pates completes » — pâtes plombs complètes (V2.137.0)" },
     { "id": "galette pain libanais ou tortilla complete", "ig": 50, "carbsPer100g": 45.0, "proteinPer100g": 9.0, "fatPer100g": 4.0, "src": "alias de « tortilla complete » (V2.137.0)" },
     { "id": "branche de celeri", "ig": 0, "carbsPer100g": 3.0, "proteinPer100g": 0.7, "fatPer100g": 0.2, "src": "alias de « celeri branche » (V2.137.0)" },
@@ -3457,10 +3460,10 @@ if ("serviceWorker" in navigator) {
     { "id": "pousse depinard frais", "ig": 15, "carbsPer100g": 3.6, "proteinPer100g": 2.9, "fatPer100g": 0.4, "src": "alias de « epinards frais » (V2.137.0)" },
     { "id": "viande hachee de boeuf", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 21.0, "fatPer100g": 5.0, "src": "alias de « boeuf hache 5% » (V2.137.0)" },
     { "id": "semoule fine de ble complet", "ig": 48, "carbsPer100g": 70.0, "proteinPer100g": 13.0, "fatPer100g": 2.0, "src": "alias de « semoule complete » (V2.137.0)" },
-    { "id": "flocon depeautre", "ig": 55, "carbsPer100g": 59.5, "proteinPer100g": 15.6, "fatPer100g": 2.43, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9001 épeautre cru (proxy flocons) ; IG : proxy « flocon d'avoine » (V2.137.0)" },
-    { "id": "riz souffle non sucre", "ig": 64, "carbsPer100g": 86.3, "proteinPer100g": 7, "fatPer100g": 1.2, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #32006 ; IG : proxy « galette de riz » (non vérifié) (V2.137.0)" },
-    { "id": "tamarin", "ig": 51, "carbsPer100g": 57.4, "proteinPer100g": 2.8, "fatPer100g": 0.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #13080 tamarin cru ; IG : proxy « mangue » (non vérifié) (V2.137.0)" },
-    { "id": "farine dorge complete", "ig": 65, "carbsPer100g": 64.4, "proteinPer100g": 11.3, "fatPer100g": 1.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9550 farine d'orge ; IG : proxy « farine t80 » (non vérifié) (V2.137.0)" },
+    { "id": "flocon depeautre", "ig": 63, "carbsPer100g": 59.5, "proteinPer100g": 15.6, "fatPer100g": 2.43, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9001 épeautre cru (proxy flocons) ; IG : 63, proxy épeautre perlé (Scazzina 2009) et pain d'épeautre complet (Goletzke 2016), base IG de l'Université de Sydney (glycemicindex.com), consultée le 2026-11-10 — aucune mesure des flocons (V2.138.1)" },
+    { "id": "riz souffle non sucre", "ig": 77, "carbsPer100g": 86.3, "proteinPer100g": 7, "fatPer100g": 1.2, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #32006 ; IG : 77, « Puffed rice squares », Chlup et al. 2006, base IG de l'Université de Sydney (glycemicindex.com), consultée le 2026-11-10 (galettes de riz soufflé : 61 à 91 selon la variété) (V2.138.1)" },
+    { "id": "tamarin", "ig": 51, "carbsPer100g": 57.4, "proteinPer100g": 2.8, "fatPer100g": 0.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #13080 tamarin cru ; IG : proxy « mangue », non vérifié — aucune mesure publiée trouvée (recherche du 2026-11-10) (V2.138.1)" },
+    { "id": "farine dorge complete", "ig": 65, "carbsPer100g": 64.4, "proteinPer100g": 11.3, "fatPer100g": 1.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9550 farine d'orge ; IG : 65, estimation non vérifiée, encadrée par deux produits à la farine d'orge (muffin 55, pain à 40 % d'orge 72, Rieder 2019), base IG de l'Université de Sydney (glycemicindex.com), consultée le 2026-11-10 — aucune mesure de la farine seule (V2.138.1)" },
     { "id": "jaune doeuf dur", "ig": 0, "carbsPer100g": 1.31, "proteinPer100g": 16, "fatPer100g": 30.1, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #22009 jaune d'œuf cuit (V2.137.0)" },
     { "id": "roti de veau", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 28.1, "fatPer100g": 3.39, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #6551 veau rôti cuit (V2.137.0)" },
     { "id": "bresaola", "ig": 0, "carbsPer100g": 0.49, "proteinPer100g": 32.8, "fatPer100g": 4.3, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #28503 (V2.137.0)" },
@@ -3468,8 +3471,8 @@ if ("serviceWorker" in navigator) {
     { "id": "viande hachee dagneau", "ig": 0, "carbsPer100g": 0.45, "proteinPer100g": 18.3, "fatPer100g": 10.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #21504 (proxy : agneau haché absent) (V2.137.0)" },
     { "id": "epaule dagneau en cube", "ig": 0, "carbsPer100g": 0.45, "proteinPer100g": 18.3, "fatPer100g": 10.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #21504 épaule d'agneau crue (V2.137.0)" },
     { "id": "tomme legere rapee", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 30.4, "fatPer100g": 13.2, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #12760 tomme allégée (V2.137.0)" },
-    { "id": "litchis en conserve egoutte", "ig": 59, "carbsPer100g": 14.3, "proteinPer100g": 0.63, "fatPer100g": 0.19, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #13724 ; IG : proxy « ananas » (non vérifié) (V2.137.0)" },
-    { "id": "chapelure complete", "ig": 75, "carbsPer100g": 74.3, "proteinPer100g": 10.3, "fatPer100g": 1.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #7500 chapelure ; IG : proxy « pain blanc » (prudent) (V2.137.0)" },
+    { "id": "litchis en conserve egoutte", "ig": 79, "carbsPer100g": 14.3, "proteinPer100g": 0.63, "fatPer100g": 0.19, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #13724 ; IG : 79, « Lychee, canned in syrup and drained », Chan et al. 2001, base IG de l'Université de Sydney (glycemicindex.com), consultée le 2026-11-10 (V2.138.1)" },
+    { "id": "chapelure complete", "ig": 75, "carbsPer100g": 74.3, "proteinPer100g": 10.3, "fatPer100g": 1.6, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #7500 chapelure ; IG : 75, proxy pain complet de blé (63 à 75 selon les mesures), base IG de l'Université de Sydney (glycemicindex.com), consultée le 2026-11-10 — aucune mesure de la chapelure, valeur haute retenue (V2.138.1)" },
     { "id": "puree de noisette", "ig": 15, "carbsPer100g": 17, "proteinPer100g": 15.0, "fatPer100g": 61.0, "src": "alias de « noisette » — purée absente de CIQUAL (V2.137.0)" },
     { "id": "puree de cacahuete san sucre", "ig": 14, "carbsPer100g": 17.3, "proteinPer100g": 25.4, "fatPer100g": 51.4, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #15202 ; IG : celui de « beurre de cacahuete » (V2.137.0)" },
     { "id": "riz noir venere", "ig": 45, "carbsPer100g": 70.6, "proteinPer100g": 8.38, "fatPer100g": 3, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9109 riz rouge cru (proxy : riz noir absent de CIQUAL) — valeurs SEC/cru (V2.137.0)" },
@@ -3512,7 +3515,7 @@ if ("serviceWorker" in navigator) {
     { "id": "gambas decortiquees crues", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 20.0, "fatPer100g": 1.5 },
     { "id": "huile de noisette", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 0.0, "fatPer100g": 100.0 },
     { "id": "jarret de veau", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 20.0, "fatPer100g": 6.0 },
-    { "id": "litchis frais", "ig": 50, "carbsPer100g": 16, "proteinPer100g": 0.8, "fatPer100g": 0.4 },
+    { "id": "litchis frais", "ig": 57, "carbsPer100g": 16, "proteinPer100g": 0.8, "fatPer100g": 0.4, "src": "IG : 57, litchi frais (mesure non publiée 2009, n=9), base IG de l'Université de Sydney (glycemicindex.com), consultée le 2026-11-10 (V2.138.1)" },
     { "id": "meringue", "ig": 65, "carbsPer100g": 95.0, "proteinPer100g": 4.0, "fatPer100g": 0.0 },
     { "id": "morilles sechees", "ig": 15, "carbsPer100g": 30, "proteinPer100g": 25.0, "fatPer100g": 2.0 },
     { "id": "noix de saint-jacques fraiches", "ig": 0, "carbsPer100g": 3, "proteinPer100g": 17.0, "fatPer100g": 1.0 },
@@ -6928,13 +6931,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 17.0,
       "fatPer100g": 54.0
     },
-    {
-      "id": "pate de tamarin",
-      "ig": 0,
-      "carbsPer100g": 60.0,
-      "proteinPer100g": 2.8,
-      "fatPer100g": 0.6
-    },
+    { "id": "pate de tamarin", "ig": 51, "carbsPer100g": 60.0, "proteinPer100g": 2.8, "fatPer100g": 0.6, "src": "IG : proxy « mangue », non vérifié, aligné sur l'entrée « tamarin » (avant : 0, donc glucides ignorés dans la CG) (V2.138.1)" },
     {
       "id": "perles de tapioca",
       "ig": 70,
@@ -14274,7 +14271,8 @@ function isLiquidAromatic(canonName) {
 // herbe inconnue : valeurs moyennes.
 const HERB_BOUQUET_G = {default: 30, "menthe": 30, "menthe fraiche": 30, "persil": 40, "persil plat": 40, "basilic": 30, "coriandre": 30, "coriandre fraiche": 30, "ciboulette": 25, "estragon": 25, "aneth": 30};
 const HERB_FEUILLE_G = {default: 0.3, "basilic": 0.5, "menthe": 0.3, "menthe fraiche": 0.3, "coriandre fraiche": 0.2, "laurier": 0.2, "feuille de laurier": 0.2};
-const HERB_BRANCHE_G = {default: 4, "thym": 2, "thym frais": 2, "thym seche": 2, "romarin": 3, "romarin frais": 3, "romarin seche": 3, "persil plat": 3, "menthe": 5, "menthe fraiche": 5};
+// V2.138.1 — « Céleri branche, 1 branche » était compté 4 g (poids d'un brin d'herbe) au lieu d'une côte de céleri.
+const HERB_BRANCHE_G = {default: 4, "celeri branche": 40, "thym": 2, "thym frais": 2, "thym seche": 2, "romarin": 3, "romarin frais": 3, "romarin seche": 3, "persil plat": 3, "menthe": 5, "menthe fraiche": 5};
 const HERB_KEYWORDS = ["menthe", "persil", "basilic", "coriandre", "ciboulette", "estragon", "aneth", "thym", "romarin", "cerfeuil", "laurier"];
 function isHerbFresh(canonName) {
   if (!canonName) return false;
