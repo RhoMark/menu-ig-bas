@@ -1812,7 +1812,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 263,
+      "kcal": 261,
       "tags": [
         "vegetarian",
         "quick",
@@ -5547,7 +5547,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 486,
+      "kcal": 484,
       "tags": [
         "vegetarian",
         "quick"
@@ -6099,7 +6099,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.25,
-      "kcal": 449,
+      "kcal": 447,
       "tags": [
         "vegetarian",
         "quick"
@@ -11905,7 +11905,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.25,
-      "kcal": 519,
+      "kcal": 517,
       "tags": [
         "vegetarian",
         "kid-friendly",
@@ -12856,7 +12856,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 357,
+      "kcal": 353,
       "tags": [
         "quick"
       ],
@@ -14662,7 +14662,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 2,
       "cost": 3.12,
-      "kcal": 634,
+      "kcal": 632,
       "tags": [
         "batch-friendly"
       ],
@@ -15344,7 +15344,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 3,
-      "kcal": 483,
+      "kcal": 481,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -15989,7 +15989,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.75,
-      "kcal": 553,
+      "kcal": 551,
       "tags": [
         "kid-friendly",
         "batch-friendly"
@@ -17559,7 +17559,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 6.88,
-      "kcal": 731,
+      "kcal": 729,
       "tags": [],
       "eq": [
         "stove"
@@ -18597,7 +18597,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 468,
+      "kcal": 467,
       "tags": [
         "kid-friendly",
         "quick",
@@ -19139,7 +19139,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 320,
+      "kcal": 319,
       "tags": [
         "vegan",
         "vegetarian",
@@ -19842,7 +19842,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.9,
-      "kcal": 497,
+      "kcal": 495,
       "tags": [
         "vegan",
         "no-cook",
@@ -20246,7 +20246,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.6,
-      "kcal": 344,
+      "kcal": 342,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -23764,7 +23764,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 387,
+      "kcal": 386,
       "tags": [
         "vegetarian",
         "vegan",
@@ -26324,7 +26324,7 @@ window.__DATA_RECIPES = {
       "cook": 35,
       "diff": 2,
       "cost": 2,
-      "kcal": 463,
+      "kcal": 462,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -26990,7 +26990,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 426,
+      "kcal": 425,
       "tags": [
         "batch-friendly"
       ],
@@ -27308,7 +27308,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 1.4,
-      "kcal": 468,
+      "kcal": 467,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -44780,7 +44780,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 6.5,
-      "kcal": 468,
+      "kcal": 467,
       "tags": [
         "light"
       ],
@@ -44897,7 +44897,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 3.2,
-      "kcal": 355,
+      "kcal": 352,
       "tags": [
         "vegetarian",
         "light",
@@ -47541,7 +47541,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.4,
-      "kcal": 529,
+      "kcal": 526,
       "tags": [
         "vegetarian",
         "quick",
@@ -47666,7 +47666,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 560,
+      "kcal": 558,
       "tags": [
         "light",
         "batch-friendly"
@@ -48752,7 +48752,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 1,
       "cost": 5.5,
-      "kcal": 649,
+      "kcal": 647,
       "tags": [],
       "eq": [
         "pan",
@@ -48877,7 +48877,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 708,
+      "kcal": 706,
       "tags": [
         "vegan",
         "vegetarian",
@@ -52152,7 +52152,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 4.5,
-      "kcal": 835,
+      "kcal": 833,
       "tags": [],
       "eq": [
         "pan",
@@ -56227,7 +56227,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 1.4,
-      "kcal": 226,
+      "kcal": 225,
       "tags": [
         "vegetarian",
         "quick"
@@ -59999,7 +59999,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 2,
-      "kcal": 474,
+      "kcal": 471,
       "tags": [
         "vegetarian",
         "vegan",
@@ -65029,7 +65029,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 1,
       "cost": 1.8,
-      "kcal": 317,
+      "kcal": 316,
       "tags": [
         "vegetarian",
         "quick"
@@ -65314,7 +65314,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 329,
+      "kcal": 327,
       "tags": [
         "vegetarian",
         "vegan"
@@ -65914,7 +65914,7 @@ window.__DATA_RECIPES = {
       "cook": 45,
       "diff": 2,
       "cost": 1.5,
-      "kcal": 291,
+      "kcal": 289,
       "tags": [
         "batch-friendly"
       ],
@@ -66020,7 +66020,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 407,
+      "kcal": 406,
       "tags": [
         "vegetarian",
         "vegan",
@@ -67313,7 +67313,7 @@ window.__DATA_RECIPES = {
       "cook": 25,
       "diff": 2,
       "cost": 2.0,
-      "kcal": 219,
+      "kcal": 218,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68059,7 +68059,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 296,
+      "kcal": 295,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -68519,7 +68519,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 1,
       "cost": 1.5,
-      "kcal": 83,
+      "kcal": 82,
       "tags": [
         "vegetarian",
         "vegan",
@@ -68631,7 +68631,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 198,
+      "kcal": 197,
       "tags": [
         "festif",
         "batch-friendly"
@@ -72384,7 +72384,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 280,
+      "kcal": 279,
       "tags": [
         "festif",
         "batch-friendly"
@@ -72496,7 +72496,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 361,
+      "kcal": 360,
       "tags": [
         "vegetarian",
         "batch-friendly"
@@ -72612,7 +72612,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.5,
-      "kcal": 228,
+      "kcal": 226,
       "tags": [
         "festif",
         "batch-friendly"
@@ -73234,7 +73234,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 1,
       "cost": 2.0,
-      "kcal": 316,
+      "kcal": 314,
       "tags": [
         "vegetarian",
         "quick"
@@ -74364,7 +74364,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.5,
-      "kcal": 457,
+      "kcal": 456,
       "tags": [
         "vegetarian",
         "quick",
@@ -74832,7 +74832,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 3.0,
-      "kcal": 254,
+      "kcal": 253,
       "tags": [
         "vegetarian",
         "vegan",
@@ -74947,7 +74947,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.0,
-      "kcal": 246,
+      "kcal": 245,
       "tags": [
         "no-cook",
         "festif",
@@ -76105,7 +76105,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 1.5,
-      "kcal": 263,
+      "kcal": 260,
       "tags": [
         "vegetarian",
         "vegan",
@@ -77331,7 +77331,7 @@ window.__DATA_RECIPES = {
       "cook": 18,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 176,
+      "kcal": 175,
       "tags": [
         "vegetarian",
         "vegan",
@@ -114619,7 +114619,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 1,
       "cost": 2.8,
-      "kcal": 324,
+      "kcal": 323,
       "tags": [
         "vegan",
         "quick"
@@ -116663,7 +116663,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 442,
+      "kcal": 438,
       "tags": [
         "festif"
       ],
@@ -118068,7 +118068,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 2.5,
-      "kcal": 488,
+      "kcal": 484,
       "tags": [
         "vegan",
         "vegetarian"
@@ -129248,7 +129248,7 @@ window.__DATA_RECIPES = {
       "cook": 0,
       "diff": 2,
       "cost": 5.8,
-      "kcal": 411,
+      "kcal": 410,
       "tags": [
         "festif",
         "no-cook",
@@ -129453,7 +129453,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 6.0,
-      "kcal": 232,
+      "kcal": 230,
       "tags": [
         "festif",
         "quick"
@@ -129805,7 +129805,7 @@ window.__DATA_RECIPES = {
       "cook": 12,
       "diff": 3,
       "cost": 3.0,
-      "kcal": 183,
+      "kcal": 182,
       "tags": [
         "festif"
       ],
@@ -133514,7 +133514,7 @@ window.__DATA_RECIPES = {
       "cook": 8,
       "diff": 1,
       "cost": 2.6,
-      "kcal": 411,
+      "kcal": 410,
       "tags": [
         "vegan",
         "vegetarian",
@@ -133913,7 +133913,7 @@ window.__DATA_RECIPES = {
       "cook": 15,
       "diff": 2,
       "cost": 4.0,
-      "kcal": 325,
+      "kcal": 322,
       "tags": [
         "quick"
       ],
@@ -134007,7 +134007,7 @@ window.__DATA_RECIPES = {
       "cook": 10,
       "diff": 2,
       "cost": 3.8,
-      "kcal": 417,
+      "kcal": 415,
       "tags": [
         "quick"
       ],
@@ -134211,7 +134211,7 @@ window.__DATA_RECIPES = {
       "cook": 20,
       "diff": 2,
       "cost": 3.5,
-      "kcal": 631,
+      "kcal": 629,
       "tags": [
         "quick"
       ],

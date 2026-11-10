@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.138.1</title>
+<title>Menu IG Bas — V2.138.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -1346,15 +1346,15 @@ if ("serviceWorker" in navigator) {
       "id": "oignon nouveau",
       "label": "Oignon nouveau",
       "category": "produce",
-      "weightPerPiece": 40,
+      "weightPerPiece": 35,
       "soldByWeight": false,
-      "src": "estimation non vérifiée pour l'oignon blanc botte à bulbe renflé ; la cébette fine pèse 15 à 25 g (USDA #170005, lu sur un miroir) — à remplacer par une pesée (V2.138.1)"
+      "src": "pesée de HedgeX le 2026-11-10 : 32 g, arrondi à 35 g à sa demande (V2.138.2)"
     },
     {
       "id": "oignon nouveaux",
       "label": "Oignons nouveaux",
       "category": "produce",
-      "weightPerPiece": 100,
+      "weightPerPiece": 35,
       "soldByWeight": false
     },
     {
@@ -14204,7 +14204,7 @@ function canonicalName(name) {
   // — pois chiches/haricots — qui se trouvent au même rayon), egoutte (action
   // de prépa), moulu, bio, taille (gros/petit/jeune).
   // V2.138.0 — « nouveau / nouvelle » ne sont plus retirés : un oignon nouveau
-  // (vendu en botte, ≈ 40 g) n'est pas un oignon (≈ 100 g), ni en liste de
+  // (vendu en botte, ≈ 35 g) n'est pas un oignon (≈ 100 g), ni en liste de
   // courses ni en poids. Pluriels ramenés au singulier (« nouveaux » → « nouveau »).
   n = n.replace(/\bnouveaux\b/g, "nouveau").replace(/\bnouvelles\b/g, "nouvelle");
   const descriptors = /\b(mur|mure|murs|mures|cuit|cuite|cuits|cuites|degoutte|degouttee|egoutte|egouttee|moulu|moulue|moulus|moulues|bio|jeune|grosse|gros|petite|petit)\b/g;
