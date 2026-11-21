@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.149.0</title>
+<title>Menu IG Bas — V2.150.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.149.0">
+<link rel="stylesheet" href="tailwind.css?v=2.150.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.149.0"></script>
+<script src="data/recipes.js?v=2.150.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -19790,27 +19790,8 @@ function SetupView({state, update, updateProfile, onDone}) {
           <p className="text-xs text-slate-500 dark:text-slate-400 mb-2">
             Choisis jusqu'à 3 cuisines pour booster leur présence dans les menus. Modifiable plus tard dans Paramètres.
           </p>
-          <div className="flex flex-wrap gap-2">
-            {dataRef.cuisines().filter(c => c.id !== "universel").map(c => {
-              const cur = p.preferredCuisines || [];
-              const selected = cur.includes(c.id);
-              const atMax = cur.length >= 3;
-              const disabled = !selected && atMax;
-              return (
-                <button key={c.id}
-                  type="button"
-                  disabled={disabled}
-                  onClick={() => updateProfile({preferredCuisines: selected ? cur.filter(x => x !== c.id) : [...cur, c.id]})}
-                  className={`px-3 py-2 rounded-md border text-sm transition ${
-                    selected ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200 font-semibold"
-                    : disabled ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
-                    : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
-                  }`}>
-                  <span className="mr-1">{c.emoji}</span>{c.label}{selected && <span className="ml-1 text-xs">✓</span>}
-                </button>
-              );
-            })}
-          </div>
+          <CuisineTiles selected={p.preferredCuisines || []}
+            onToggle={(id, active) => { const cur = p.preferredCuisines || []; updateProfile({preferredCuisines: active ? cur.filter(x => x !== id) : [...cur, id]}); }} />
         </div>
       </div>
     )},
@@ -23967,18 +23948,31 @@ const EQUIPMENT_ICON = {
   wok: "🥡", "pressure-cooker": "🎚", "multi-cooker": "🔌", "air-fryer": "🌀", steamer: "☁", "cast-iron": "🥘", bowl: "🥗",
 };
 function EquipmentTiles({selected = [], onToggle}) {
+  return <IconToggleTiles items={dataRef.equipment().map(e => ({...e, icon: EQUIPMENT_ICON[e.id] || "🍳"}))}
+    selected={selected} onToggle={onToggle} />;
+}
+function CuisineTiles({selected, onToggle}) {
+  return <IconToggleTiles max={3} selected={selected} onToggle={onToggle}
+    items={dataRef.cuisines().filter(c => c.id !== "universel").map(c => ({id: c.id, label: c.label, icon: c.emoji}))} />;
+}
+// V2.150.0 — Grille d'icônes à cocher (équipement, cuisines). max = nombre
+// maximal de cases cochées (les autres se grisent une fois le max atteint).
+function IconToggleTiles({items, selected = [], onToggle, max}) {
+  const atMax = max ? selected.length >= max : false;
   return (
     <div className="flex flex-wrap gap-x-1 gap-y-2">
-      {dataRef.equipment().map(({id, label}) => {
+      {items.map(({id, label, icon}) => {
         const active = selected.includes(id);
+        const disabled = !active && atMax;
         return (
-          <button key={id} type="button" aria-pressed={active} title={label} aria-label={label}
+          <button key={id} type="button" aria-pressed={active} aria-label={label} disabled={disabled}
+            title={disabled ? `Maximum ${max} : désélectionnes-en une avant d'en ajouter une autre.` : label}
             onClick={() => onToggle(id, active)}
-            className="w-[72px] flex flex-col items-center gap-1 focus:outline-none group">
+            className="w-[72px] flex flex-col items-center gap-1 focus:outline-none group disabled:opacity-40 disabled:cursor-not-allowed">
             <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[26px] transition-transform group-active:scale-90 ${active
               ? "bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-300 dark:ring-emerald-700"
               : "text-slate-400 dark:text-slate-500 group-hover:bg-slate-100 dark:group-hover:bg-white/5"}`}>
-              {EQUIPMENT_ICON[id] || "🍳"}
+              {icon}
               {active && <span className="absolute -top-1 -right-1 w-[18px] h-[18px] rounded-full bg-emerald-500 text-white text-[10px] font-bold leading-[14px] text-center border-2 border-white dark:border-slate-800">✓</span>}
             </span>
             <span className={`text-[11px] leading-tight text-center w-full ${active ? "text-emerald-800 dark:text-emerald-200 font-semibold" : "text-slate-600 dark:text-slate-300"}`}>
@@ -25012,33 +25006,8 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
         <p className="text-xs text-slate-500 dark:text-slate-400">
           Choisis jusqu'à 3 cuisines préférées du foyer. Les recettes de ces cuisines seront mises en avant lors de la génération (boost ×2, cible ~50 % des plats). Aucune sélection = pondération neutre.
         </p>
-        <div className="flex flex-wrap gap-2">
-          {dataRef.cuisines().filter(c => c.id !== "universel").map(c => {
-            const selected = (p.preferredCuisines || []).includes(c.id);
-            const atMax = (p.preferredCuisines || []).length >= 3;
-            const disabled = !selected && atMax;
-            return (
-              <button key={c.id}
-                disabled={disabled}
-                onClick={() => {
-                  const cur = p.preferredCuisines || [];
-                  const next = selected
-                    ? cur.filter(x => x !== c.id)
-                    : [...cur, c.id];
-                  updateProfile({preferredCuisines: next});
-                }}
-                className={`px-3 py-2 rounded-md border text-sm transition ${
-                  selected ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200 font-semibold"
-                  : disabled ? "bg-slate-50 dark:bg-slate-900 border-slate-200 dark:border-slate-700 text-slate-400 dark:text-slate-600 cursor-not-allowed"
-                  : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
-                }`}
-                title={disabled ? "Maximum 3 cuisines — désélectionne-en une avant d'en ajouter une autre." : (selected ? "Cliquer pour désélectionner" : "Cliquer pour sélectionner")}>
-                <span className="mr-1">{c.emoji}</span>{c.label}
-                {selected && <span className="ml-2 text-xs">✓</span>}
-              </button>
-            );
-          })}
-        </div>
+        <CuisineTiles selected={p.preferredCuisines || []}
+          onToggle={(id, active) => { const cur = p.preferredCuisines || []; updateProfile({preferredCuisines: active ? cur.filter(x => x !== id) : [...cur, id]}); }} />
         <p className="text-xs text-slate-500 dark:text-slate-400">
           Les recettes « universel » (sans signature culturelle marquée) gardent toujours une pondération neutre — elles assurent la diversité du fond de pool.
         </p>
