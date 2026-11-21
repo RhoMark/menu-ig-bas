@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.146.0</title>
+<title>Menu IG Bas — V2.146.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.146.0">
+<link rel="stylesheet" href="tailwind.css?v=2.146.1">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.146.0"></script>
+<script src="data/recipes.js?v=2.146.1"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -23825,10 +23825,20 @@ function useAnchoredBubble() {
     const box = boxRef.current;
     if (!box || !el) return;
     const b = box.getBoundingClientRect(), a = el.getBoundingClientRect();
-    const vw = document.documentElement.clientWidth || window.innerWidth;
-    const w = Math.min(340, vw - 16);
+    // V2.146.1 — Bornes = écran, ou le premier parent qui rogne son contenu
+    // (fenêtre de la fiche recette en overflow) : sinon la bulle était coupée.
+    let lo = 0, hi = document.documentElement.clientWidth || window.innerWidth;
+    for (let el2 = box.parentElement; el2 && el2 !== document.body; el2 = el2.parentElement) {
+      const cs = getComputedStyle(el2);
+      if (/(hidden|auto|scroll|clip)/.test(cs.overflowX + cs.overflow)) {
+        const r = el2.getBoundingClientRect();
+        lo = Math.max(lo, r.left); hi = Math.min(hi, r.right);
+        break;
+      }
+    }
+    const w = Math.min(340, hi - lo - 16);
     const center = a.left + a.width / 2;
-    const vLeft = Math.max(8, Math.min(vw - w - 8, center - w / 2));
+    const vLeft = Math.max(lo + 8, Math.min(hi - w - 8, center - w / 2));
     setPos({key, top: a.bottom - b.top + 10, left: vLeft - b.left, width: w, arrow: center - vLeft});
   };
   return {openKey: pos?.key || null, pos, boxRef, toggle};
