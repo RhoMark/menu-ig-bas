@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.143.0</title>
+<title>Menu IG Bas — V2.143.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.143.0">
+<link rel="stylesheet" href="tailwind.css?v=2.143.1">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.143.0"></script>
+<script src="data/recipes.js?v=2.143.1"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -20193,41 +20193,42 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                   ? `bg-surface rounded-card shadow-card border border-line ${displayIdx !== v3Sel ? "hidden md:block" : ""}`
                   : "bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700"} overflow-hidden ${isAllExternal ? "opacity-60" : ""}`}>
                 <div className={window.__V3_UI ? "bg-surface-2 text-ink px-3 py-2" : "bg-slate-800 text-white px-3 py-2"}>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <p className="font-bold capitalize">{ordered.daysShort[displayIdx]}</p>
+                  {/* V2.143.1 — En-tête du jour : « Ven – 20 nov. » sur une ligne,
+                      puis les icônes (sortie, compétition, festif) et la CG du jour. */}
+                  <p className="font-bold leading-tight whitespace-nowrap">
+                    <span className="capitalize">{ordered.daysShort[displayIdx]}</span>
+                    <span className={`font-normal text-sm ${window.__V3_UI ? "text-muted" : "text-slate-300"}`}> – {formatShort(date)}</span>
+                  </p>
+                  <div className="flex items-center gap-1 mt-1.5">
                       <button onClick={() => toggleDayExternal(day)}
+                        aria-label={isAllExternal ? "Restaurer la journée" : "Journée à l'extérieur"}
                         title={isAllExternal
                           ? "Restaurer la présence sur toute la journée (tous les repas redeviennent à préparer)"
                           : "Marquer toute la journée comme repas pris à l'extérieur (rien à préparer, exclu des courses et du budget)"}
-                        className={`text-base transition ${isAllExternal ? "opacity-100" : "opacity-75 hover:opacity-100"}`}>
+                        className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition ${isAllExternal ? "opacity-100 ring-1 ring-current" : "opacity-75 hover:opacity-100"}`}>
                         🌃
                       </button>
-                      {/* V2.77.0 (#81) — Indicateurs jour festif / compensation */}
-                      {isFeastDay && <span title="Repas festif aujourd'hui (cible CG relâchée temporairement, +25%)" className="text-base">🍾</span>}
-                      {isCompDay && <span title={`Compensation glycémique (J±1 d'un repas festif). Cible CG réduite à ${adjustedCgTarget.low}/j (vs ${cgTarget.low}/j normal). Référence : ADA 2023.`} className="text-base">↘️</span>}
-                      {/* V2.85.0 (#76 L3) — Badge phase compétition (si dans la fenêtre J-3..J+2) */}
+                      {isFeastDay && <span title="Repas festif aujourd'hui (cible CG relâchée temporairement, +25%)" className="w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition">🍾</span>}
+                      {isCompDay && <span title={`Compensation glycémique (J±1 d'un repas festif). Cible CG réduite à ${adjustedCgTarget.low}/j (vs ${cgTarget.low}/j normal). Référence : ADA 2023.`} className="w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition">↘️</span>}
                       {compPhase && (
                         <button onClick={() => setCompetitionPanel({day: compPhase.eventDay})}
                           title={`${competitionPhaseLabel(compPhase.phase)} — ${compPhase.event.note || COMPETITION_TYPES.find(t => t.key === compPhase.event.type)?.label || ""} (clic pour éditer)`}
-                          className="text-base hover:opacity-70">
+                          className="w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition hover:opacity-70">
                           {competitionPhaseIcon(compPhase.phase)}
                         </button>
                       )}
-                      {/* V2.85.0 (#76 L3) — Bouton "+ Compé" si aucune compé sur ce jour ni dans sa fenêtre */}
                       {!compPhase && (
                         <button onClick={() => setCompetitionPanel({day})}
+                          aria-label="Jour de compétition"
                           title="Marquer ce jour comme jour de compétition (modulation J-3 à J+2 automatique)"
-                          className="text-base opacity-75 hover:opacity-100 transition">
+                          className="w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition opacity-75 hover:opacity-100">
                           🏆
                         </button>
                       )}
-                    </div>
-                    <span className={`text-[10px] font-bold text-white px-1.5 py-0.5 rounded ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${adjustedCgTarget.low}${isFeastDay ? " — festif" : isCompDay ? " — compensation" : ""})`}>
+                    <span className={`ml-auto whitespace-nowrap text-[11px] font-bold text-white px-2 py-1 rounded-lg ${tierClass}`} title={`Charge glycémique du jour : ${cgDisplay} (tier ${tierLabel}, cible ≤ ${adjustedCgTarget.low}${isFeastDay ? " — festif" : isCompDay ? " — compensation" : ""})`}>
                       {cgDisplay}
                     </span>
                   </div>
-                  <p className={window.__V3_UI ? "text-xs text-muted" : "text-xs text-slate-300"}>{formatShort(date)}</p>
                 </div>
                 <div className="p-2 space-y-2">
                   {/* V2.76.0 (#80) — Card apéro réutilisable, placée à la position du dinner
