@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.145.2</title>
+<title>Menu IG Bas — V2.146.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.145.2">
+<link rel="stylesheet" href="tailwind.css?v=2.146.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -685,7 +685,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pictogrammes du modal recette (fiche détaillée)",
-          "a": "⏱ temps de préparation actif. 🔥 temps de cuisson. ❄ repos passif (frigo, marinade, prise au froid). ⏰ délai d'avance minimum requis (ex : 3h à l'avance) ou 🌙 la veille. 📊 niveau de difficulté (étoiles 1 à 3). 🔢 calories par portion. 🗓 saison(s) où la recette est proposée. ⚠ hors saison (en rouge orangé) si la recette ne correspond pas à la saison courante mais le filtre saisonnier est désactivé. 🍱 recette préparable à l'avance (batch-friendly, conservable 3-4 jours). 🖨 imprimer la fiche (ou « Enregistrer en PDF » depuis la fenêtre d'impression). 📄 télécharger directement la fiche en PDF. ❤ badge « Prénom ❤ ingrédient » : un membre aime un ingrédient de cette recette (affiché à l'écran seulement, jamais imprimé)."
+          "a": "Sur la fiche, chaque repère est une icône : touche-la pour afficher le détail dans une bulle. ⏱ temps total (préparation + cuisson). 🔥 calories par portion. 💪 💧 🌾 protéines, lipides, glucides par portion. 📈 index et charge glycémiques. 💰 coût par personne. ❄ repos passif (frigo, marinade, prise au froid). ⏰ délai d'avance minimum requis (ex : 3h à l'avance) ou 🌙 la veille. 📊 niveau de difficulté (1 à 3 points). 🔁 nombre de fois servie ces 15 derniers jours. 🗓 saison(s) où la recette est proposée. ⚠ hors saison (en rouge orangé) si la recette ne correspond pas à la saison courante mais le filtre saisonnier est désactivé. 🍱 recette préparable à l'avance (batch-friendly, conservable 3-4 jours). 🖨 imprimer la fiche (ou « Enregistrer en PDF » depuis la fenêtre d'impression). 📄 télécharger directement la fiche en PDF. ❤ badge « Prénom ❤ ingrédient » : un membre aime un ingrédient de cette recette (affiché à l'écran seulement, jamais imprimé)."
         },
         {
           "q": "Pictogrammes de navigation et vues",
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.145.2"></script>
+<script src="data/recipes.js?v=2.146.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -21728,42 +21728,8 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
               {dataRef.cuisineLabel(recipe.cuisine)} · {ALL_MEALS.find(m => m.key === recipe.type)?.label || recipe.type}
             </p>
             <h2 className="font-title text-2xl md:text-3xl font-semibold leading-tight">{recipe.name}</h2>
-            <div className="flex flex-wrap gap-2 text-sm">
-              {(() => {
-                const chip = "inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-2 text-ink";
-                const gly = computeRecipeGlycemic(recipe);
-                const tier = gly ? glycemicTier(gly.cg) : null;
-                const m = computeRecipeMacros(recipe);
-                return (
-                  <>
-                    <span className={chip}>⏱ {recipe.prep + recipe.cook} min <span className="text-muted">({recipe.prep} prép. · {recipe.cook} cuisson)</span></span>
-                    {recipe.rest > 0 && <span className={chip}>❄ Repos {recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10} h` : `${recipe.rest} min`}</span>}
-                    <span className={chip}>🔢 {recipeKcal(recipe)} kcal</span>
-                    {m && <span className={chip} title={`Calculé sur ${m.covered}/${m.total} ingrédients référencés. Précision Ciqual ±10-15 %.`}>P {m.protein} g · L {m.fat} g · G {m.carbs} g</span>}
-                    {gly && (
-                      <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-semibold ${tier === "low" ? "bg-brand-soft text-brand" : tier === "medium" ? "bg-terracotta-soft text-terracotta" : "bg-danger-soft text-danger"}`}
-                        title={`IG moyen pondéré : ${gly.ig} · CG : ${gly.cg} (≤10 bas, 11-19 modéré, ≥20 élevé — Harvard). Calculé sur ${gly.covered}/${gly.total} ingrédients.`}>
-                        {tier === "low" ? "IG bas ✓" : tier === "medium" ? "IG modéré" : "IG élevé ⚠"} · CG {gly.cg}
-                      </span>
-                    )}
-                    <span className={chip}>💰 ~{recipeEffectiveCost(recipe).toFixed(2)} €/pers</span>
-                    <span className={chip}>Difficulté {"●".repeat(recipe.diff)}<span className="text-line">{"●".repeat(3 - recipe.diff)}</span></span>
-                    {recentUsageCount > 0 && <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-terracotta-soft text-terracotta font-semibold" title="Nombre de fois où cette recette a été servie ces 15 derniers jours.">🔁 {recentUsageCount}× / 15 j</span>}
-                    {season && recipeIsOutOfSeason(recipe, season) && <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-terracotta-soft text-terracotta font-semibold">⚠ Hors saison</span>}
-                  </>
-                );
-              })()}
-            </div>
-            {recipeAdvanceInfo(recipe) && (
-              <p className="inline-flex items-center gap-2 bg-terracotta-soft text-terracotta px-3 py-1.5 rounded-full text-sm font-semibold">
-                {recipeAdvanceInfo(recipe).icon} À commencer {recipeAdvanceInfo(recipe).label} avant le repas
-              </p>
-            )}
-            {recipe.tags?.length > 0 && (
-              <div className="flex flex-wrap gap-1">
-                {recipe.tags.map(t => <span key={t} className="px-2 py-0.5 rounded-full text-xs border border-line text-muted">{t}</span>)}
-              </div>
-            )}
+            {/* V2.146.0 — Repères de la recette en icônes (détail dans une bulle au tap). */}
+            <RecipeStatTiles recipe={recipe} season={season} recentUsageCount={recentUsageCount} />
           </div>
           {likedBlock}
           {allergensBlock}
@@ -23904,6 +23870,82 @@ function BubbleHeader({icon, title, value, level, levelText}) {
 function AlertBadge({level}) {
   if (!level || level === "ok") return null;
   return <span className={`absolute -top-1 -right-1 w-[18px] h-[18px] rounded-full text-white text-[11px] font-bold leading-[14px] text-center border-2 border-white dark:border-slate-800 ${BUBBLE_LEVEL[level].badge}`}>!</span>;
+}
+
+// V2.146.0 — Fiche recette : temps, calories, macros, IG, coût, difficulté,
+// alertes et étiquettes en icônes au trait colorées ; le détail s'ouvre dans
+// une bulle au tap (même modèle que les repères nutritionnels).
+const RECIPE_TAG_TILES = {
+  "batch-friendly": {icon: "🍱", name: "Batch", c: ["#b45309", "#fcd34d"], detail: "Se prépare à l'avance et se conserve 3 à 4 jours au frigo : idéale pour une session de batch cooking."},
+  vegetarian: {icon: "🌿", name: "Végétarien", c: ["#15803d", "#86efac"], detail: "Sans viande ni poisson."},
+  vegan: {icon: "🌱", name: "Végan", c: ["#15803d", "#86efac"], detail: "Sans aucun produit d'origine animale (ni viande, ni poisson, ni lait, ni œuf, ni miel)."},
+  quick: {icon: "⚡", name: "Rapide", c: ["#a16207", "#fde047"], detail: "Prête rapidement : peu de préparation et de cuisson."},
+  "no-cook": {icon: "❄", name: "Sans cuisson", c: ["#0369a1", "#7dd3fc"], detail: "Aucune cuisson nécessaire."},
+  "kid-friendly": {icon: "🧒", name: "Enfants", c: ["#be185d", "#f9a8d4"], detail: "Plat qui plaît généralement aux enfants."},
+};
+function RecipeStatTiles({recipe, season, recentUsageCount}) {
+  const {openKey, pos, boxRef, toggle} = useAnchoredBubble();
+  const gly = computeRecipeGlycemic(recipe);
+  const tier = gly ? glycemicTier(gly.cg) : null;
+  const m = computeRecipeMacros(recipe);
+  const adv = recipeAdvanceInfo(recipe);
+  const restLbl = recipe.rest >= 60 ? `${Math.round(recipe.rest / 60 * 10) / 10} h` : `${recipe.rest} min`;
+  const macroNote = m ? `Par portion. Calculé sur ${m.covered}/${m.total} ingrédients référencés (table Ciqual, précision ±10-15 %).` : "";
+  const g = v => `${Math.round(v)} g`;
+  const tiles = [
+    {key: "time", icon: "⏱", value: `${recipe.prep + recipe.cook} min`, name: "Temps", c: ["#0369a1", "#7dd3fc"],
+      detail: `Préparation : ${recipe.prep} min (travail actif). Cuisson : ${recipe.cook} min.`},
+    recipe.rest > 0 && {key: "rest", icon: "❄", value: restLbl, name: "Repos", c: ["#0e7490", "#67e8f9"],
+      detail: "Temps d'attente passif (frigo, marinade, prise au froid) : rien à faire pendant ce temps."},
+    adv && {key: "advance", icon: adv.icon, value: adv.shortLabel, name: "À l'avance", c: ["#4338ca", "#a5b4fc"], level: "warning",
+      detail: `À commencer ${adv.label} avant le repas.`},
+    {key: "kcal", icon: "🔥", value: `${recipeKcal(recipe)}`, name: "kcal", c: ["#c2410c", "#fdba74"], detail: "Calories par portion."},
+    m && {key: "prot", icon: "💪", value: g(m.protein), name: "Protéines", c: ["#6d28d9", "#c4b5fd"], detail: macroNote},
+    m && {key: "fat", icon: "💧", value: g(m.fat), name: "Lipides", c: ["#4d7c0f", "#bef264"], detail: macroNote},
+    m && {key: "carb", icon: "🌾", value: g(m.carbs), name: "Glucides", c: ["#a16207", "#fde047"], detail: macroNote},
+    gly && {key: "ig", icon: "📈", value: `CG ${gly.cg}`, name: tier === "low" ? "IG bas" : tier === "medium" ? "IG modéré" : "IG élevé",
+      c: tier === "low" ? ["#15803d", "#86efac"] : tier === "medium" ? ["#b45309", "#fcd34d"] : ["#b91c1c", "#fca5a5"],
+      level: tier === "low" ? "ok" : tier === "medium" ? "warning" : "over",
+      levelText: tier === "low" ? "Bas" : tier === "medium" ? "Modéré" : "Élevé",
+      detail: `IG moyen pondéré : ${gly.ig}. Charge glycémique par portion : ${gly.cg} (≤ 10 bas, 11-19 modéré, ≥ 20 élevé — Harvard). Calculé sur ${gly.covered}/${gly.total} ingrédients.`},
+    {key: "cost", icon: "💰", value: `${recipeEffectiveCost(recipe).toFixed(2)} €`, name: "par pers.", c: ["#15803d", "#86efac"],
+      detail: "Coût estimé par personne, sur les prix médians français (Open Prices, Carrefour Drive, INSEE)."},
+    {key: "diff", icon: "📊", value: <>{"●".repeat(recipe.diff)}<span className="opacity-30">{"●".repeat(Math.max(0, 3 - recipe.diff))}</span></>,
+      name: "Difficulté", c: ["#475569", "#cbd5e1"], detail: `Niveau ${recipe.diff} sur 3 : ${["facile", "facile", "intermédiaire", "confirmé"][recipe.diff] || ""}.`},
+    recentUsageCount > 0 && {key: "recent", icon: "🔁", value: `${recentUsageCount}×`, name: "en 15 jours", c: ["#c2410c", "#fdba74"], level: "warning",
+      detail: `Servie ${recentUsageCount} fois ces 15 derniers jours.`},
+    season && recipeIsOutOfSeason(recipe, season) && {key: "season", icon: "⚠", value: null, name: "Hors saison", c: ["#b91c1c", "#fca5a5"], level: "warning",
+      detail: "Cette recette n'est pas de saison (le filtre saisonnier est désactivé dans les réglages)."},
+    ...(recipe.tags || []).map(t => RECIPE_TAG_TILES[t] && {key: `tag-${t}`, value: null, ...RECIPE_TAG_TILES[t]}),
+  ].filter(Boolean);
+  const open = tiles.find(t => t.key === openKey);
+  return (
+    <div ref={boxRef} className="relative flex flex-wrap gap-x-1 gap-y-3">
+      {tiles.map(t => {
+        const tint = {"--ic": t.c[0], "--ic-dark": t.c[1]};
+        const active = openKey === t.key;
+        return (
+          <button key={t.key} type="button" onClick={e => toggle(t.key, e.currentTarget)} aria-expanded={active}
+            aria-label={`${t.name}${t.value && typeof t.value === "string" ? ` : ${t.value}` : ""}`}
+            className="w-[64px] sm:w-[70px] flex flex-col items-center gap-0.5 focus:outline-none group">
+            <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[28px] transition-transform group-active:scale-90 ic-tint ${active ? "bg-slate-100 dark:bg-white/10" : ""}`} style={tint}>
+              {t.icon}
+              <AlertBadge level={t.level} />
+            </span>
+            <span className="text-sm font-bold leading-tight mt-0.5 ic-tint whitespace-nowrap" style={tint}>{t.value !== null ? t.value : "\u00a0"}</span>
+            <span className="text-[11px] leading-tight text-muted text-center w-full truncate">{t.name}</span>
+          </button>
+        );
+      })}
+      {open && (
+        <AnchoredBubble pos={pos} label={open.name}>
+          <BubbleHeader icon={open.icon} title={open.key === "ig" ? "Index et charge glycémiques" : open.key === "kcal" ? "Calories" : open.key === "cost" ? "Coût" : open.name}
+            value={open.value} level={open.level === "ok" || open.key === "ig" ? open.level : null} levelText={open.levelText} />
+          <p className="mt-2 leading-relaxed">{open.detail}</p>
+        </AnchoredBubble>
+      )}
+    </div>
+  );
 }
 
 function NutritionBanner({currentMenu, profile}) {
