@@ -1,0 +1,21 @@
+# Sauvegarde quotidienne de la base de synchro (déclenchée par le .timer)
+[Unit]
+Description=La Mijoterie — sauvegarde de la base de synchro
+
+[Service]
+Type=oneshot
+User=mijoterie-sync
+Group=mijoterie-sync
+StateDirectory=mijoterie-sync
+StateDirectoryMode=0700
+# Sauvegardes dans /var/lib/mijoterie-sync/backups (7 jours), même propriétaire que la base
+Environment=MIJOTERIE_SYNC_DB=/var/lib/mijoterie-sync/sync.db
+Environment=MIJOTERIE_SYNC_BACKUP_DIR=/var/lib/mijoterie-sync/backups
+Environment=KEEP=7
+ExecStart=/usr/local/bin/node --disable-warning=ExperimentalWarning /opt/mijoterie-sync/backup.mjs
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateNetwork=true
+UMask=0077

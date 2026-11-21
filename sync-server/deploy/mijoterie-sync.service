@@ -1,0 +1,55 @@
+# ============================================================================
+# Serveur de synchro « La Mijoterie » — VPS (Phase 2·C, étape C2)
+# Serveur AVEUGLE : foyers chiffrés + clés publiques d'appareils, rien d'autre.
+# Écoute 127.0.0.1:8787 uniquement ; Caddy (HTTPS) lui transmet /api/*.
+# Isolé du reste du VPS (Matrix, Nexus) : utilisateur système dédié, système en
+# lecture seule, pas d'accès à /home, mémoire plafonnée.
+# Installation : cf. sync-server/deploy/README.md
+# ============================================================================
+[Unit]
+Description=La Mijoterie — serveur de synchro aveugle (Phase 2·C)
+After=network.target
+
+[Service]
+Type=simple
+User=mijoterie-sync
+Group=mijoterie-sync
+StateDirectory=mijoterie-sync
+StateDirectoryMode=0700
+Environment=MIJOTERIE_SYNC_PORT=8787
+Environment=MIJOTERIE_SYNC_DB=/var/lib/mijoterie-sync/sync.db
+Environment=MIJOTERIE_SYNC_TRUST_PROXY=1
+# Adresse(s) de l'app autorisée(s) à appeler l'API (séparées par des virgules)
+Environment=MIJOTERIE_SYNC_ORIGINS=https://rhomark.github.io
+ExecStart=/usr/local/bin/node --disable-warning=ExperimentalWarning /opt/mijoterie-sync/server.mjs
+Restart=on-failure
+RestartSec=3
+
+# Durcissement
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectKernelLogs=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+RestrictNamespaces=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
+SystemCallArchitectures=native
+CapabilityBoundingSet=
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+IPAddressDeny=any
+IPAddressAllow=localhost
+MemoryMax=256M
+TasksMax=64
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target
