@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.153.0</title>
+<title>Menu IG Bas — V2.154.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.153.0">
+<link rel="stylesheet" href="tailwind.css?v=2.154.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.153.0"></script>
+<script src="data/recipes.js?v=2.154.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -24003,6 +24003,54 @@ function IconToggleTiles({items, selected = [], onToggle, max}) {
   );
 }
 
+// V2.154.0 — Fiche membre épurée : Allergies / Évite / Aime en icônes avec
+// compteur ; un tap ouvre l'éditeur correspondant (un seul à la fois).
+function MemberPrefsTiles({name, counts, profile, startOpen, allergies, excl, likes}) {
+  const [open, setOpen] = useState(startOpen || null);
+  const tiles = [
+    {key: "profile", icon: "✏", label: "Profil", c: ["#475569", "#cbd5e1"], n: null, body: profile},
+    {key: "allergies", icon: "⚠", label: "Allergies", c: ["#dc2626", "#f87171"], n: counts.allergies, body: allergies},
+    {key: "excl", icon: "🚫", label: "Évite", c: ["#b45309", "#fcd34d"], n: counts.excl, body: excl},
+    {key: "likes", icon: "❤", label: "Aime", c: ["#e11d48", "#fb7185"], n: counts.likes, body: likes},
+  ];
+  const cur = tiles.find(t => t.key === open);
+  return (
+    <div>
+      <div className="flex items-start gap-1">
+        {tiles.map(t => {
+          const tint = {"--ic": t.c[0], "--ic-dark": t.c[1]};
+          const active = open === t.key;
+          return (
+            <button key={t.key} type="button" onClick={() => setOpen(active ? null : t.key)} aria-expanded={active}
+              aria-label={t.n === null ? `Modifier le profil de ${name}` : `${t.label} : ${t.n}`}
+              className="w-[68px] flex flex-col items-center gap-0.5 focus:outline-none group">
+              <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[26px] transition-transform group-active:scale-90 ic-tint ${active ? "bg-slate-100 dark:bg-white/10" : ""}`} style={tint}>
+                {t.icon}
+              </span>
+              <span className="text-sm font-bold leading-tight ic-tint" style={tint}>{t.n === null ? "\u00a0" : t.n}</span>
+              <span className="text-[11px] leading-tight text-slate-600 dark:text-slate-300">{t.label}</span>
+            </button>
+          );
+        })}
+        <InfoTip title={`Préférences de ${name}`} className="ml-auto">
+          <p><strong>Profil</strong> : prénom, année de naissance, sexe et profil santé (il fixe le seuil de charge glycémique ; pour le foyer, le profil le plus contraignant gagne).</p>
+          <p className="mt-2"><strong>Allergies</strong> : aucune recette contenant l'allergène (ou ses traces) n'est proposée. Une confirmation est demandée à l'ajout.</p>
+          <p className="mt-2"><strong>Évite</strong> : ingrédients que ce membre préfère éviter par goût. Une recette n'est écartée que si <strong>tous les membres présents</strong> au repas évitent l'ingrédient.</p>
+          <p className="mt-2"><strong>Aime</strong> : jusqu'à 10 ingrédients favoris. Les recettes qui en contiennent reviennent un peu plus souvent (au plus ~1 repas sur 3), sans jamais passer devant les allergies, les exclusions ni les repères nutritionnels.</p>
+        </InfoTip>
+      </div>
+      {cur && (
+        <div className="mt-2 rounded-xl border border-slate-200 dark:border-slate-700 p-3 text-sm">
+          <p className="text-xs font-semibold text-slate-700 dark:text-slate-200 mb-2">
+            {cur.key === "profile" ? `Profil de ${name}` : cur.key === "allergies" ? `Allergies / intolérances de ${name}` : cur.key === "excl" ? `Ce que ${name} évite` : `Ce que ${name} aime`}
+          </p>
+          {cur.body}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function NutritionBanner({currentMenu, profile}) {
   // V2.141.0 — Grille d'icônes façon iOS : un tap ouvre une bulle de détail.
   const {openKey, pos, boxRef, toggle: toggleBubble} = useAnchoredBubble();
@@ -25012,6 +25060,11 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
                   )}
                 </div>
               )}
+              {/* V2.154.0 — Préférences du membre en 3 icônes (Allergies / Évite / Aime) :
+                  le tap ouvre l'éditeur dessous ; explications dans la bulle « i ». */}
+              <MemberPrefsTiles name={m.name || "ce membre"}
+                startOpen={!m.name ? "profile" : null}
+                profile={<div className="space-y-2">
               <div className="flex flex-wrap gap-2 items-end">
                 <input value={m.name} disabled={!full} title={lockTitle} onChange={e=>updateMember(m.id,{name:e.target.value})} className="border rounded px-2 py-1 flex-1 min-w-[140px]" />
                 <div className="flex items-center gap-1">
@@ -25073,37 +25126,17 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
                   </div>
                 </fieldset>
               )}
-              <details className="text-sm" open={memberAllergies.length > 0}>
-                <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
-                  <span className="text-red-600 dark:text-red-400">⚠</span> Allergies / intolérances de {m.name || "ce membre"}
-                  {memberAllergies.length > 0 && <span className="ml-1 text-red-700 dark:text-red-300 font-medium">({memberAllergies.length})</span>}
-                </summary>
-                <div className="mt-2">
-                  <AllergenTiles selected={memberAllergies}
+                </div>}
+                counts={{allergies: memberAllergies.length, excl: (m.exclusions || []).length, likes: (m.likes || []).length}}
+                allergies={<AllergenTiles selected={memberAllergies}
                     isLocked={active => active ? !full : !canTaste(m.id)}
-                    onToggle={(k, active) => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)} />
-                </div>
-              </details>
-              <details className="text-sm" open={(m.exclusions || []).length > 0}>
-                <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
-                  🚫 Exclusions préférentielles de {m.name || "ce membre"}
-                  {(m.exclusions || []).length > 0 && <span className="ml-1 text-amber-700 dark:text-amber-300 font-medium">({(m.exclusions || []).length})</span>}
-                </summary>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre préfère éviter (par goût, pas allergique). Une recette est exclue uniquement si <strong>tous les membres présents</strong> au repas excluent l'ingrédient — sinon elle reste proposée.</p>
-                <fieldset disabled={!canTaste(m.id)} className="mt-2 min-w-0">
-                  <ExclusionsEditor listKey={m.id} value={m.exclusions || []} onChange={(arr) => updateMember(m.id, {exclusions: arr})} />
-                </fieldset>
-              </details>
-              <details className="text-sm" open={(m.likes || []).length > 0}>
-                <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
-                  <span className="text-rose-500 dark:text-rose-400">❤</span> Ce que {m.name || "ce membre"} aime
-                  {(m.likes || []).length > 0 && <span className="ml-1 text-emerald-700 dark:text-emerald-300 font-medium">({(m.likes || []).length})</span>}
-                </summary>
-                <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre adore. Les recettes qui en contiennent sont <strong>favorisées</strong> dans les menus (plus le foyer est nombreux à aimer, plus l'effet est marqué), sans jamais être imposées : au plus ~1 repas sur 3 en profite, pour garder de la variété.</p>
-                <fieldset disabled={!canTaste(m.id)} className="mt-2 min-w-0">
-                  <LikesEditor memberId={m.id} value={m.likes || []} onChange={(arr) => updateMember(m.id, {likes: arr})} />
-                </fieldset>
-              </details>
+                    onToggle={(k, active) => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)} />}
+                excl={<fieldset disabled={!canTaste(m.id)} className="min-w-0">
+                    <ExclusionsEditor listKey={m.id} value={m.exclusions || []} onChange={(arr) => updateMember(m.id, {exclusions: arr})} />
+                  </fieldset>}
+                likes={<fieldset disabled={!canTaste(m.id)} className="min-w-0">
+                    <LikesEditor memberId={m.id} value={m.likes || []} onChange={(arr) => updateMember(m.id, {likes: arr})} />
+                  </fieldset>} />
             </div>
           );
         })}
