@@ -131,6 +131,13 @@ INGREDIENT_RENAMES = {
     "Petites pâtes complètes": "Pâtes complètes (petites)",
     "Anchois (facultatif)": "Anchois à l'huile (facultatif)",
     "Lait demi-écrémé tiède": "Lait demi-écrémé (tiède)",
+    # V2.140.3 — En français courant « citron » = citron jaune ; on précise seulement
+    # les autres (citron vert, zeste de citron…). Demande HedgeX 2026-11-21.
+    "Citron jaune": "Citron",
+    "Citron jaune (jus)": "Citron (jus)",
+    "Citron jaune (zeste)": "Citron (zeste)",
+    "Citron jaune (zeste + jus)": "Citron (zeste + jus)",
+    "Citron jaune (bio si possible, on utilise le zeste)": "Citron (bio si possible, on utilise le zeste)",
     "Zeste de citron jaune": "Zeste de citron",
     "Fleur d'oranger": "Eau de fleur d'oranger",
     "Fleur d'oranger (eau)": "Eau de fleur d'oranger",

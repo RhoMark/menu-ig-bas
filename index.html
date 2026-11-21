@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.140.2</title>
+<title>Menu IG Bas — V2.140.3</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.140.2">
+<link rel="stylesheet" href="tailwind.css?v=2.140.3">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12496,7 +12496,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.140.2"></script>
+<script src="data/recipes.js?v=2.140.3"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -16913,8 +16913,8 @@ function aggregateShoppingList(weekMenu, profile) {
       let cQty = qty;
       // V2.140.2 — Jus d'agrume écrit en volume (« Jus de citron 1 c.à.s ») :
       // au magasin on achète des fruits → converti en citrons, fusionné avec
-      // « Citron jaune » (sinon 3 lignes : Citron, Jus de citron, Citron (jus)).
-      // « Citron » des recettes = citron jaune au magasin (données nutritionnelles inchangées).
+      // « Citron » (sinon 3 lignes : Citron, Jus de citron, Citron (jus)).
+      // « Citron jaune » éventuel = « Citron » (le citron jaune, en français courant).
       if (category === "produce" && SHOPPING_ALIASES[cName]) cName = SHOPPING_ALIASES[cName];
       const juice = citrusJuiceToFruit(cName, cQty, cUnit, category);
       if (juice) { cName = juice.fruit; cQty = juice.qty; cUnit = "u"; }
@@ -17010,10 +17010,11 @@ function aggregateShoppingList(weekMenu, profile) {
   return byCat;
 }
 // V2.140.2 — Jus moyen d'un fruit, en ml (ordres de grandeur, non vérifiés).
-const JUICE_ML_PER_FRUIT = {"citron jaune": 40, "citron vert": 25, "orange": 80, "pamplemousse": 150};
+const JUICE_ML_PER_FRUIT = {"citron": 40, "citron vert": 25, "orange": 80, "pamplemousse": 150};
 const VOLUME_TO_ML = {"ml": 1, "cl": 10, "l": 1000, "c.à.s": 15, "c.à.c": 5};
 // Même article au magasin, nom différent dans les recettes (liste de courses seulement).
-const SHOPPING_ALIASES = {"citron": "citron jaune"};
+// En français courant « citron » = citron jaune (V2.140.3).
+const SHOPPING_ALIASES = {"citron jaune": "citron"};
 function citrusJuiceToFruit(canon, qty, unit, category) {
   if (category !== "produce" || VOLUME_TO_ML[unit] == null) return null;
   let fruit = canon.replace(/^jus d(?:e |')?/, "");

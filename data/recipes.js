@@ -45768,7 +45768,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -46049,7 +46049,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -46237,7 +46237,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -46456,7 +46456,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -46924,7 +46924,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -47066,7 +47066,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -47287,7 +47287,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -48390,7 +48390,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -48500,7 +48500,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -48822,7 +48822,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -49036,7 +49036,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -49281,7 +49281,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune (bio si possible, on utilise le zeste)",
+          "Citron (bio si possible, on utilise le zeste)",
           1,
           "u",
           "produce"
@@ -49682,7 +49682,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           0.25,
           "u",
           "produce"
@@ -49892,7 +49892,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -50035,7 +50035,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -50182,7 +50182,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -50401,7 +50401,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -50549,7 +50549,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (zeste + jus)",
+          "Citron (zeste + jus)",
           0.5,
           "u",
           "produce"
@@ -50982,7 +50982,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -51167,7 +51167,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -51884,7 +51884,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           0.25,
           "u",
           "produce"
@@ -52089,7 +52089,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -52218,7 +52218,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -52926,7 +52926,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -53181,7 +53181,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -53262,7 +53262,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           0.25,
           "u",
           "produce"
@@ -53384,7 +53384,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -79853,7 +79853,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -80739,7 +80739,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -80943,7 +80943,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -81042,7 +81042,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -81129,7 +81129,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -81240,7 +81240,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -81416,7 +81416,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -81493,7 +81493,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -81573,7 +81573,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -81673,7 +81673,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -81762,7 +81762,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -81938,7 +81938,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -82345,7 +82345,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.083,
           "u",
           "produce"
@@ -82702,7 +82702,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -84357,7 +84357,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -84615,7 +84615,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.125,
           "u",
           "produce"
@@ -85106,7 +85106,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -85908,7 +85908,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -86494,7 +86494,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -86614,7 +86614,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -86736,7 +86736,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -87993,7 +87993,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -88113,7 +88113,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -88224,7 +88224,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -88816,7 +88816,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -88938,7 +88938,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.125,
           "u",
           "produce"
@@ -89026,7 +89026,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -89207,7 +89207,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -89475,7 +89475,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -89751,7 +89751,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -89827,7 +89827,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -89878,7 +89878,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Citron jaune",
+          "Citron",
           3,
           "u",
           "produce"
@@ -90335,7 +90335,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -91203,7 +91203,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -91289,7 +91289,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -91385,7 +91385,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -91555,7 +91555,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -92391,7 +92391,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -92459,7 +92459,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -92548,7 +92548,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -92934,7 +92934,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -93008,7 +93008,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -93101,7 +93101,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.125,
           "u",
           "produce"
@@ -93342,7 +93342,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -93516,7 +93516,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -94338,7 +94338,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -94570,7 +94570,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -94657,7 +94657,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -94809,7 +94809,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -94904,7 +94904,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -95009,7 +95009,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -95439,7 +95439,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -95573,7 +95573,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -95656,7 +95656,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.125,
           "u",
           "produce"
@@ -96085,7 +96085,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -96194,7 +96194,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -96552,7 +96552,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -96660,7 +96660,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -96834,7 +96834,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -97666,7 +97666,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -97787,7 +97787,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -98190,7 +98190,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -98499,7 +98499,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -99053,7 +99053,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -99538,7 +99538,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -99640,7 +99640,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -99742,7 +99742,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -100077,7 +100077,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -125655,7 +125655,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -126127,7 +126127,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -132775,7 +132775,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           0.5,
           "u",
           "produce"
@@ -133351,7 +133351,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           0.5,
           "u",
           "produce"
@@ -138816,7 +138816,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           1,
           "u",
           "produce"
@@ -139283,7 +139283,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -145151,7 +145151,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -145584,7 +145584,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -145685,7 +145685,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -146107,7 +146107,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           1,
           "c.à.c",
           "produce"
@@ -146210,7 +146210,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           1,
           "c.à.c",
           "produce"
@@ -149789,7 +149789,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -150167,7 +150167,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -150389,7 +150389,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -150500,7 +150500,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -150607,7 +150607,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -151337,7 +151337,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -151431,7 +151431,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (zeste)",
+          "Citron (zeste)",
           0.25,
           "u",
           "produce"
@@ -151767,7 +151767,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (jus)",
+          "Citron (jus)",
           1,
           "c.à.c",
           "produce"
@@ -151836,7 +151836,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune (zeste)",
+          "Citron (zeste)",
           0.25,
           "u",
           "produce"
@@ -152173,7 +152173,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.5,
           "u",
           "produce"
@@ -152319,7 +152319,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
@@ -152754,7 +152754,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Citron jaune (zeste)",
+          "Citron (zeste)",
           0.25,
           "u",
           "produce"
@@ -153137,7 +153137,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Citron jaune",
+          "Citron",
           0.25,
           "u",
           "produce"
