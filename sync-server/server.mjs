@@ -37,7 +37,7 @@
 
 import http from "node:http";
 import { DatabaseSync } from "node:sqlite";
-import { createHash, timingSafeEqual, webcrypto } from "node:crypto";
+import { createHash, randomBytes, timingSafeEqual, webcrypto } from "node:crypto";
 import { mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { homedir } from "node:os";
@@ -50,6 +50,15 @@ export const RETENTION_MS = 30 * 24 * 3600e3; // 30 jours
 export const CLOCK_SKEW_MS = 120e3;           // ±2 min
 const MAX_BODY = 2.5 * 1024 * 1024;           // corps HTTP max
 const MAX_ENVELOPE = 2 * 1024 * 1024;         // enveloppe foyer max
+// Phase 2·C — exposition sur Internet (VPS) : limites anti-abus. Valeurs par
+// défaut prudentes, ajustables par variables d'environnement au lancement.
+export const DEFAULT_LIMITS = {
+  perMinute: 300,            // requêtes / minute / IP (8 appareils derrière une box : ~20/min en usage normal)
+  createPerHour: 20,         // créations de foyer + demandes de jonction / heure / IP
+  maxHouseholds: 5000,       // foyers au total sur le serveur
+  maxTotalBytes: 2 * 1024 ** 3, // 2 Go d'enveloppes chiffrées au total
+  abandonMs: 180 * 24 * 3600e3, // foyer sans aucun appareil vu depuis 6 mois → supprimé
+};
 
 const sha256 = buf => createHash("sha256").update(buf).digest();
 const b64url = buf => Buffer.from(buf).toString("base64url");
@@ -88,8 +97,9 @@ function openDb(path) {
   return db;
 }
 
-export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
+export function createSyncServer({ dbPath, now = () => Date.now(), origins = [], trustProxy = false, limits = {} } = {}) {
   const db = openDb(dbPath);
+  const L = { ...DEFAULT_LIMITS, ...limits };
   const q = {
     household: db.prepare("SELECT * FROM households WHERE hid = ?"),
     householdByVerifier: db.prepare("SELECT * FROM households WHERE join_verifier = ?"),
@@ -115,7 +125,62 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
       (SELECT version FROM blobs WHERE hid = ? ORDER BY version DESC LIMIT ?)`),
     pruneExpired: db.prepare(`DELETE FROM blobs WHERE updated_at < ? AND version <
       (SELECT MAX(version) FROM blobs b2 WHERE b2.hid = blobs.hid)`),
+    countHouseholds: db.prepare("SELECT COUNT(*) AS n FROM households"),
+    totalBytes: db.prepare("SELECT COALESCE(SUM(byte_size), 0) AS n FROM blobs"),
+    abandoned: db.prepare(`SELECT hid FROM households WHERE created_at < ?
+      AND hid NOT IN (SELECT hid FROM devices WHERE last_seen >= ?)`),
   };
+  // Suppression complète d'un foyer (droit à l'effacement, foyers abandonnés).
+  const deleteHousehold = hid => {
+    db.exec("BEGIN");
+    try {
+      for (const t of ["key_wraps", "blobs", "devices", "households"]) db.prepare(`DELETE FROM ${t} WHERE hid = ?`).run(hid);
+      db.exec("COMMIT");
+    } catch (e) { db.exec("ROLLBACK"); throw e; }
+  };
+  const purgeAbandoned = () => {
+    const cutoff = now() - L.abandonMs;
+    for (const { hid } of q.abandoned.all(cutoff, cutoff)) deleteHousehold(hid);
+  };
+  const requireCapacity = (extraBytes = 0) => {
+    if (q.totalBytes.get().n + extraBytes > L.maxTotalBytes) bad(507, "CAPACITY");
+  };
+
+  // ── Limites de requêtes (mémoire seulement, jamais écrites ni journalisées) ──
+  // L'IP n'est gardée que sous forme d'empreinte salée (sel aléatoire par
+  // démarrage) le temps de la fenêtre de comptage.
+  const salt = randomBytes(16);
+  const buckets = new Map(); // empreinte → {min, minCount, hour, hourCount}
+  function clientKey(req) {
+    let ip = req.socket.remoteAddress || "";
+    const loopback = ip === "127.0.0.1" || ip === "::1" || ip === "::ffff:127.0.0.1";
+    if (trustProxy && loopback && typeof req.headers["x-forwarded-for"] === "string") {
+      ip = req.headers["x-forwarded-for"].split(",").pop().trim(); // ajouté par Caddy = vrai client
+    }
+    return createHash("sha256").update(salt).update(ip).digest("base64url").slice(0, 16);
+  }
+  function rateLimit(req, isCreate) {
+    const k = clientKey(req), t = now();
+    const b = buckets.get(k) || { min: 0, minCount: 0, hour: 0, hourCount: 0 };
+    const m = Math.floor(t / 60e3), h = Math.floor(t / 3600e3);
+    if (b.min !== m) { b.min = m; b.minCount = 0; }
+    if (b.hour !== h) { b.hour = h; b.hourCount = 0; }
+    b.minCount++;
+    if (isCreate) b.hourCount++;
+    buckets.set(k, b);
+    if (b.minCount > L.perMinute || (isCreate && b.hourCount > L.createPerHour)) bad(429, "RATE_LIMITED");
+  }
+  const sweepBuckets = () => { const h = Math.floor(now() / 3600e3); for (const [k, b] of buckets) if (b.hour < h - 1) buckets.delete(k); };
+
+  // ── CORS : l'app publique (autre domaine) appelle l'API ───────────────
+  // Autorisé : les origines listées + la même origine que l'API (mijoterie.local).
+  function allowedOrigin(req) {
+    const o = req.headers.origin;
+    if (typeof o !== "string") return null; // pas un navigateur cross-origin (curl, même origine en GET)
+    if (origins.includes(o)) return o;
+    try { if (new URL(o).host === req.headers.host) return o; } catch { /* origine illisible */ }
+    return false;
+  }
 
   // ── Vérification de signature ─────────────────────────────────────────
   async function verifySig(rawPubB64, req, bodyBuf) {
@@ -170,12 +235,17 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
     const r = p.slice(2);
     const M = req.method;
 
+    // GET /api/v1/health — surveillance (aucune donnée)
+    if (M === "GET" && r.length === 1 && r[0] === "health") return [200, { ok: true }];
+    rateLimit(req, M === "POST" && r.length === 1 && (r[0] === "households" || r[0] === "join"));
+
     // POST /api/v1/households — le fondateur crée le foyer (devient admin approuvé)
     if (M === "POST" && r.length === 1 && r[0] === "households") {
       const b = parseJson(bodyBuf);
       if (!isHid(b.hid) || !isB64(b.pubkey, 200) || !/^[0-9a-f]{64}$/.test(b.joinVerifier || "")) bad(400, "FIELDS_INVALID");
       await verifySig(b.pubkey, req, bodyBuf);
       if (q.household.get(b.hid)) bad(409, "HOUSEHOLD_EXISTS");
+      if (q.countHouseholds.get().n >= L.maxHouseholds) bad(507, "CAPACITY");
       const deviceId = deviceIdOf(Buffer.from(b.pubkey, "base64url"));
       const t = now();
       db.exec("BEGIN");
@@ -209,6 +279,13 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
     const house = q.household.get(hid);
     if (!house) bad(404, "HOUSEHOLD_UNKNOWN");
 
+    // DELETE /households/:hid — admin : efface TOUT le foyer du serveur (droit à
+    // l'effacement). Les données restent sur les appareils.
+    if (M === "DELETE" && r.length === 2) {
+      requireAdmin(await authDevice(hid, req, bodyBuf));
+      deleteHousehold(hid);
+      return [200, { ok: true }];
+    }
     // GET /households/:hid/me — statut de MON appareil (autorisé même en attente)
     if (M === "GET" && r.length === 3 && r[2] === "me") {
       const dev = await authDevice(hid, req, bodyBuf, { requireApproved: false });
@@ -315,6 +392,7 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
       const dev = await authDevice(hid, req, bodyBuf);
       const b = parseJson(bodyBuf);
       const envText = checkEnvelope(b.envelope, hid, house.epoch);
+      requireCapacity(envText.length);
       const last = q.latestBlob.get(hid);
       const current = last ? last.version : 0;
       if (Number(b.baseVersion) !== current) bad(409, "CONFLICT");
@@ -328,6 +406,19 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
   }
 
   const server = http.createServer((req, res) => {
+    const origin = allowedOrigin(req);
+    if (origin === false) { send(res, 403, { error: "ORIGIN_DENIED" }); req.resume(); return; }
+    if (origin) {
+      res.setHeader("Access-Control-Allow-Origin", origin);
+      res.setHeader("Vary", "Origin");
+    }
+    if (req.method === "OPTIONS") { // pré-vérification CORS du navigateur
+      res.writeHead(204, origin ? {
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
+        "Access-Control-Allow-Headers": "Content-Type, X-Mij-Device, X-Mij-Ts, X-Mij-Sig",
+        "Access-Control-Max-Age": "600" } : {});
+      res.end(); req.resume(); return;
+    }
     const chunks = []; let size = 0, aborted = false;
     req.on("data", c => {
       size += c.length;
@@ -345,7 +436,10 @@ export function createSyncServer({ dbPath, now = () => Date.now() } = {}) {
       }
     });
   });
-  const purgeTimer = setInterval(() => { try { q.pruneExpired.run(now() - RETENTION_MS); } catch { /* noop */ } }, 3600e3);
+  const purgeTimer = setInterval(() => {
+    try { q.pruneExpired.run(now() - RETENTION_MS); purgeAbandoned(); sweepBuckets(); } catch { /* noop */ }
+  }, 3600e3);
+  server.purgeNow = () => { q.pruneExpired.run(now() - RETENTION_MS); purgeAbandoned(); }; // tests
   purgeTimer.unref();
   server.on("close", () => { clearInterval(purgeTimer); db.close(); });
   return server;
@@ -362,6 +456,15 @@ function send(res, status, body) {
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const port = Number(process.env.MIJOTERIE_SYNC_PORT || 8787);
   const dbPath = process.env.MIJOTERIE_SYNC_DB || join(homedir(), ".local/share/mijoterie/sync.db");
-  createSyncServer({ dbPath }).listen(port, "127.0.0.1", () =>
+  // Phase 2·C : MIJOTERIE_SYNC_ORIGINS="https://rhomark.github.io" (séparées par des virgules),
+  // MIJOTERIE_SYNC_TRUST_PROXY=1 derrière Caddy (IP du client lue dans X-Forwarded-For).
+  const origins = (process.env.MIJOTERIE_SYNC_ORIGINS || "").split(",").map(s => s.trim()).filter(Boolean);
+  const trustProxy = process.env.MIJOTERIE_SYNC_TRUST_PROXY === "1";
+  const limits = {};
+  for (const [k, env] of [["perMinute", "MIJOTERIE_SYNC_PER_MINUTE"], ["createPerHour", "MIJOTERIE_SYNC_CREATE_PER_HOUR"],
+                          ["maxHouseholds", "MIJOTERIE_SYNC_MAX_HOUSEHOLDS"], ["maxTotalBytes", "MIJOTERIE_SYNC_MAX_BYTES"]]) {
+    if (process.env[env]) limits[k] = Number(process.env[env]);
+  }
+  createSyncServer({ dbPath, origins, trustProxy, limits }).listen(port, "127.0.0.1", () =>
     console.log(`[sync] La Mijoterie — serveur aveugle sur 127.0.0.1:${port}`));
 }

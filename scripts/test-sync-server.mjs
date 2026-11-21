@@ -248,6 +248,94 @@ await check("base serveur aveugle : aucun prénom / allergie / menu / libellé e
 });
 
 server.close();
+
+// ── Phase 2·C — exposition sur Internet : CORS, limites, effacement, purge ──
+const APP = "https://rhomark.github.io";
+const db2 = join(mkdtempSync(join(tmpdir(), "mij-sync2-")), "sync.db");
+const srv2 = createSyncServer({ dbPath: db2, now: () => clock, origins: [APP], trustProxy: true,
+  limits: { perMinute: 1000, createPerHour: 3, maxHouseholds: 2 } });
+await new Promise(r => srv2.listen(0, "127.0.0.1", r));
+const B2URL = `http://127.0.0.1:${srv2.address().port}`;
+async function call2(dev, method, path, body, { ip = "203.0.113.1", origin = APP } = {}) {
+  const text = body === undefined ? "" : JSON.stringify(body);
+  const t = Math.max(clock, dev.lastTs + 1); dev.lastTs = t;
+  // Comme le client avec une base ABSOLUE : on signe le chemin de l'URL.
+  const url = new URL(B2URL + path);
+  const sig = new Uint8Array(await crypto.subtle.sign({ name: "ECDSA", hash: "SHA-256" }, dev.kp.privateKey,
+    new TextEncoder().encode(await hc.signingString(method, url.pathname + url.search, t, text))));
+  const res = await fetch(url, { method, body: text || undefined, headers: { "Content-Type": "application/json", Origin: origin,
+    "X-Forwarded-For": ip, "X-Mij-Device": dev.id, "X-Mij-Ts": String(t), "X-Mij-Sig": hc.toB64url(sig) } });
+  return { status: res.status, body: await res.json().catch(() => ({})), headers: res.headers };
+}
+const newHouse = async (dev, opts) => {
+  const h = hc.newHid(), k = hc.newKey();
+  const r = await call2(dev, "POST", "/api/v1/households", { hid: h, pubkey: dev.pub, joinVerifier: await hc.joinVerifier(await hc.joinSecret(k)) }, opts);
+  return { r, h, k };
+};
+
+await check("C2 · /health répond sans authentification ni donnée", async () => {
+  const res = await fetch(`${B2URL}/api/v1/health`);
+  assert.equal(res.status, 200); assert.deepEqual(await res.json(), { ok: true });
+});
+await check("C2 · pré-vérification CORS : origine de l'app autorisée, en-têtes X-Mij-* permis", async () => {
+  const res = await fetch(`${B2URL}/api/v1/join`, { method: "OPTIONS", headers: { Origin: APP, "Access-Control-Request-Method": "POST" } });
+  assert.equal(res.status, 204);
+  assert.equal(res.headers.get("access-control-allow-origin"), APP);
+  assert.match(res.headers.get("access-control-allow-headers"), /X-Mij-Sig/);
+});
+await check("C2 · origine inconnue refusée (403 ORIGIN_DENIED)", async () => {
+  const res = await fetch(`${B2URL}/api/v1/join`, { method: "OPTIONS", headers: { Origin: "https://evil.example" } });
+  assert.equal(res.status, 403);
+});
+await check("C2 · même origine que l'API acceptée (mijoterie.local), base absolue signée par le chemin", async () => {
+  const P = await newDevice();
+  const { r } = await newHouse(P, { origin: B2URL, ip: "198.51.100.9" });
+  assert.equal(r.status, 201); assert.equal(r.headers.get("access-control-allow-origin"), B2URL);
+});
+const E = await newDevice();
+let eHouse;
+await check("C2 · plafond de foyers atteint → 507 CAPACITY", async () => {
+  eHouse = await newHouse(E, { ip: "198.51.100.10" });
+  assert.equal(eHouse.r.status, 201);
+  const third = await newHouse(await newDevice(), { ip: "198.51.100.11" });
+  assert.equal(third.r.status, 507); assert.equal(third.r.body.error, "CAPACITY");
+});
+await check("C2 · limite de créations par IP (429), une autre IP n'est pas bloquée", async () => {
+  const X = await newDevice();
+  const codes = [];
+  for (let i = 0; i < 4; i++) codes.push((await call2(X, "POST", "/api/v1/join", { pubkey: X.pub, joinSecret: hc.toB64url(hc.newKey()) }, { ip: "192.0.2.50" })).status);
+  assert.deepEqual(codes, [403, 403, 403, 429]);
+  const other = await call2(X, "POST", "/api/v1/join", { pubkey: X.pub, joinSecret: hc.toB64url(hc.newKey()) }, { ip: "192.0.2.51" });
+  assert.equal(other.status, 403); // refus normal (mauvais code), pas 429
+});
+await check("C2 · effacement du foyer : membre refusé, admin accepté, plus rien côté serveur", async () => {
+  const s = await hc.joinSecret(eHouse.k);
+  const F = await newDevice();
+  await call2(F, "POST", "/api/v1/join", { pubkey: F.pub, joinSecret: s }, { ip: "198.51.100.12" });
+  await call2(E, "POST", `/api/v1/households/${eHouse.h}/devices/${F.id}/approve`);
+  assert.equal((await call2(F, "DELETE", `/api/v1/households/${eHouse.h}`)).body.error, "ADMIN_ONLY");
+  await call2(E, "PUT", `/api/v1/households/${eHouse.h}/blob`, { baseVersion: 0, envelope: await hc.seal(household, eHouse.h, eHouse.k) });
+  assert.equal((await call2(E, "DELETE", `/api/v1/households/${eHouse.h}`)).status, 200);
+  const db = new DatabaseSync(db2);
+  for (const t of ["households", "devices", "blobs", "key_wraps"]) assert.equal(db.prepare(`SELECT COUNT(*) AS n FROM ${t} WHERE hid = ?`).get(eHouse.h).n, 0, t);
+  db.close();
+  assert.equal((await call2(E, "GET", `/api/v1/households/${eHouse.h}/me`)).status, 404);
+});
+await check("C2 · foyer abandonné (aucun appareil vu depuis 6 mois) purgé, foyer actif gardé", async () => {
+  const G = await newDevice();
+  const g = await newHouse(G, { ip: "198.51.100.13" }); // place libérée par l'effacement
+  assert.equal(g.r.status, 201);
+  clock += 181 * 24 * 3600e3;
+  const H = await newDevice();
+  const hh = await newHouse(H, { ip: "198.51.100.14" });
+  assert.equal(hh.r.status, 507); // plafond : 2 foyers (le premier test + G)
+  srv2.purgeNow();
+  const db = new DatabaseSync(db2);
+  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM households").get().n, 0);
+  db.close();
+  assert.equal((await newHouse(H, { ip: "198.51.100.14" })).r.status, 201);
+});
+srv2.close();
 console.log("━".repeat(28));
 if (process.exitCode) { console.error("❌ serveur de sync : échec"); process.exit(1); }
 console.log(`✅ serveur de sync : ${ok} vérifications OK`);

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.140.0</title>
+<title>Menu IG Bas — V2.140.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -17910,17 +17910,21 @@ const deviceKeys = (() => {
 //   createHousehold(hid, labelCt, joinVerifier) · join(joinSecret, labelCt)
 //   me(hid) · listDevices(hid) · approve(hid, id) · remove(hid, id)
 //   pull(hid, sinceVersion) → {version, envelope|unchanged} · push(hid, baseVersion, envelope) → {version}
+//   deleteHousehold(hid) (Phase 2·C, admin : efface le foyer du serveur)
 function createLocalHomeTransport(base = "/api/v1") {
   let lastTs = 0;
   async function call(method, path, body) {
     const dev = await deviceKeys.get();
     const text = body === undefined ? "" : JSON.stringify(body);
     const ts = Math.max(Date.now(), lastTs + 1); lastTs = ts;
+    // Phase 2·C — la base peut être absolue (serveur en ligne, autre domaine) :
+    // on signe le CHEMIN seul (/api/v1/…), comme le serveur le voit.
+    const url = new URL(base + path, window.location.href);
     const sig = new Uint8Array(await crypto.subtle.sign({name: "ECDSA", hash: "SHA-256"}, dev.kp.privateKey,
-      new TextEncoder().encode(await householdCrypto.signingString(method, base + path, ts, text))));
+      new TextEncoder().encode(await householdCrypto.signingString(method, url.pathname + url.search, ts, text))));
     let res;
     try {
-      res = await fetch(base + path, {method, body: text || undefined, cache: "no-store",
+      res = await fetch(url.href, {method, body: text || undefined, cache: "no-store",
         headers: {"Content-Type": "application/json", "X-Mij-Device": dev.id, "X-Mij-Ts": String(ts), "X-Mij-Sig": householdCrypto.toB64url(sig)}});
     } catch (e) { const err = new Error("OFFLINE"); err.code = "OFFLINE"; throw err; }
     let data = {};
@@ -17943,6 +17947,7 @@ function createLocalHomeTransport(base = "/api/v1") {
     approve: (hid, id) => call("POST", `/households/${hid}/devices/${id}/approve`),
     remove: (hid, id) => call("DELETE", `/households/${hid}/devices/${id}`),
     setAdmin: (hid, id, isAdmin) => call("POST", `/households/${hid}/devices/${id}/admin`, {isAdmin}),
+    deleteHousehold: hid => call("DELETE", `/households/${hid}`),
     pull: (hid, since) => call("GET", `/households/${hid}/blob${since ? `?since=${since}` : ""}`),
     push: (hid, baseVersion, envelope) => call("PUT", `/households/${hid}/blob`, {baseVersion, envelope}),
   };
@@ -17964,6 +17969,10 @@ const SYNC_ERRORS = {
   UNWRAP_FAILED: "Nouvelle clé du foyer illisible pour cet appareil : rescanne le QR du foyer.",
   LAST_ADMIN: "Impossible de retirer le dernier appareil administrateur.",
   TARGET_NOT_APPROVED: "Approuve d'abord cet appareil avant de le rendre administrateur.",
+  // Phase 2·C — serveur en ligne
+  RATE_LIMITED: "Trop de demandes en peu de temps : patiente une minute puis réessaie.",
+  CAPACITY: "Le serveur de synchro est plein pour le moment. Tes données restent sur cet appareil ; réessaie plus tard.",
+  ORIGIN_DENIED: "Le serveur de synchro refuse cette adresse de l'app. Ouvre l'app depuis son adresse officielle.",
 };
 const syncErrorText = e => SYNC_ERRORS[e?.code] || `Erreur serveur maison : ${e?.code || e?.message || e}`;
 function guessDeviceLabel() {
