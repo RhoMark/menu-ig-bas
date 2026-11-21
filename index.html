@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.150.1</title>
+<title>Menu IG Bas — V2.151.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.150.1">
+<link rel="stylesheet" href="tailwind.css?v=2.151.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.150.1"></script>
+<script src="data/recipes.js?v=2.151.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -23952,6 +23952,23 @@ function EquipmentTiles({selected = [], onToggle}) {
   return <IconToggleTiles items={dataRef.equipment().map(e => ({...e, icon: EQUIPMENT_ICON[e.id] || "🍳"}))}
     selected={selected} onToggle={onToggle} />;
 }
+// V2.151.0 — Bouton « i » autonome : ouvre une bulle d'explications au tap.
+function InfoTip({title, children, className = ""}) {
+  const {openKey, pos, boxRef, toggle} = useAnchoredBubble();
+  return (
+    <span ref={boxRef} className={`relative inline-block ${className}`}>
+      <button type="button" onClick={e => toggle("info", e.currentTarget)} aria-label={`En savoir plus : ${title}`} aria-expanded={openKey === "info"}
+        className="w-7 h-7 rounded-full text-lg leading-none text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700">ℹ</button>
+      {openKey === "info" && (
+        <AnchoredBubble pos={pos} label={title}>
+          <div className="font-semibold text-sm text-slate-800 dark:text-slate-100 mb-1">{title}</div>
+          <div className="leading-relaxed">{children}</div>
+        </AnchoredBubble>
+      )}
+    </span>
+  );
+}
+
 function CuisineTiles({selected, onToggle}) {
   return <IconToggleTiles max={3} selected={selected} onToggle={onToggle}
     items={dataRef.cuisines().filter(c => c.id !== "universel").map(c => ({id: c.id, label: c.label, icon: c.emoji}))} />;
@@ -24998,20 +25015,17 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
   const tileCuisines = (<>
       {/* V2.40.0 (issue #2) — Cuisines préférées : multi-select max 3, hors universel */}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
-        <div className="flex items-center justify-between flex-wrap gap-2">
-          <h3 className="font-bold text-slate-800 dark:text-slate-100">🌍 Cuisines préférées</h3>
-          <span className="text-xs text-slate-500 dark:text-slate-400">
-            {(p.preferredCuisines || []).length}/3 sélectionnée{(p.preferredCuisines || []).length > 1 ? "s" : ""}
-          </span>
+        {/* V2.151.0 — Épuré : titre + compteur, explications dans la bulle « i ». */}
+        <div className="flex items-center gap-2">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">Cuisines préférées</h3>
+          <span className="text-xs text-slate-500 dark:text-slate-400">· {(p.preferredCuisines || []).length}/3</span>
+          <InfoTip title="Cuisines préférées" className="ml-auto">
+            <p>Choisis jusqu'à 3 cuisines préférées du foyer. Les recettes de ces cuisines sont mises en avant lors de la génération (boost ×2, cible ~50 % des plats). Aucune sélection = pondération neutre.</p>
+            <p className="mt-2">Les recettes « universel » (sans signature culturelle marquée) gardent toujours une pondération neutre : elles assurent la diversité des menus.</p>
+          </InfoTip>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          Choisis jusqu'à 3 cuisines préférées du foyer. Les recettes de ces cuisines seront mises en avant lors de la génération (boost ×2, cible ~50 % des plats). Aucune sélection = pondération neutre.
-        </p>
         <CuisineTiles selected={p.preferredCuisines || []}
           onToggle={(id, active) => { const cur = p.preferredCuisines || []; updateProfile({preferredCuisines: active ? cur.filter(x => x !== id) : [...cur, id]}); }} />
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          Les recettes « universel » (sans signature culturelle marquée) gardent toujours une pondération neutre — elles assurent la diversité du fond de pool.
-        </p>
       </div>
   </>);
   return (
