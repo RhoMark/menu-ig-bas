@@ -1248,7 +1248,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           8,
           "u",
           "pantry"
@@ -2852,7 +2852,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon de légumes chaud",
+          "Bouillon de légumes",
           400,
           "ml",
           "pantry"
@@ -3605,7 +3605,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fromage frais nature",
+          "Fromage frais",
           40,
           "g",
           "dairy"
@@ -4385,7 +4385,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Lait de coco cuisine",
+          "Lait de coco",
           60,
           "ml",
           "pantry"
@@ -5502,7 +5502,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon",
+          "Bouillon de légumes",
           400,
           "ml",
           "pantry"
@@ -6073,13 +6073,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Lait de coco cuisine",
+          "Lait de coco",
           80,
           "ml",
           "pantry"
         ],
         [
-          "Bouillon",
+          "Bouillon de légumes",
           400,
           "ml",
           "pantry"
@@ -6572,7 +6572,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Bouillon",
+          "Bouillon de légumes",
           300,
           "ml",
           "pantry"
@@ -7009,7 +7009,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Badiane",
+          "Anis étoilé",
           1,
           "étoile",
           "spices"
@@ -7397,10 +7397,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Framboises fraîches ou surgelées",
+          "Framboises (fraîches ou surgelées)",
           60,
           "g",
-          "frozen"
+          "produce"
         ]
       ],
       "steps": [
@@ -8092,7 +8092,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Badiane",
+          "Anis étoilé",
           1,
           "étoile",
           "spices"
@@ -8736,7 +8736,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Fromage frais nature",
+          "Fromage frais",
           50,
           "g",
           "dairy"
@@ -9241,7 +9241,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -9856,7 +9856,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Châtaignes cuites sous vide",
+          "Châtaignes cuites",
           25,
           "g",
           "pantry"
@@ -10490,7 +10490,9 @@ window.__DATA_RECIPES = {
       "eq": [
         "stove"
       ],
-      "allergens": [],
+      "allergens": [
+        "gluten"
+      ],
       "ing": [
         [
           "Agneau haché",
@@ -10547,8 +10549,8 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Boulghour",
-          50,
+          "Boulgour",
+          25,
           "g",
           "pantry"
         ]
@@ -10558,7 +10560,7 @@ window.__DATA_RECIPES = {
         "Dore les boulettes 5 min dans l'huile. Réserve.",
         "Fais revenir oignon, ajoute courgette en dés, tomates, eau si besoin.",
         "Remets les boulettes, mijote 20 min couvert.",
-        "Cuis le boulghour selon paquet. Sers avec le tajine, jus de citron, coriandre."
+        "Cuis le boulgour selon paquet. Sers avec le tajine, jus de citron, coriandre."
       ],
       "photo": "assets/recipes/d34.webp"
     },
@@ -12189,7 +12191,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Saumon frais (qualité sushi)",
+          "Filet de saumon (qualité sushi)",
           100,
           "g",
           "meat-fish"
@@ -13202,7 +13204,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Saumon frais (qualité sushi)",
+          "Filet de saumon (qualité sushi)",
           120,
           "g",
           "meat-fish"
@@ -16371,7 +16373,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Sarrasin en grains",
+          "Sarrasin",
           45,
           "g",
           "pantry"
@@ -17482,7 +17484,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Filet de dorade",
+          "Filet de daurade",
           130,
           "g",
           "meat-fish"
@@ -17779,7 +17781,8 @@ window.__DATA_RECIPES = {
         "gluten",
         "lactose",
         "celery",
-        "sulphites"
+        "sulphites",
+        "eggs"
       ],
       "ing": [
         [
@@ -24198,7 +24201,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           20,
           "g",
           "pantry"
@@ -24614,7 +24617,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -25224,7 +25227,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Lait de coco cuisine",
+          "Lait de coco",
           80,
           "ml",
           "pantry"
@@ -25860,7 +25863,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -26260,7 +26263,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Lait de coco cuisine",
+          "Lait de coco",
           100,
           "ml",
           "pantry"
@@ -27588,7 +27591,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Linguini complets",
+          "Linguine complètes",
           55,
           "g",
           "pantry"
@@ -28179,7 +28182,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -30062,7 +30065,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Semoule fine de blé complet",
+          "Semoule complète fine",
           25,
           "g",
           "pantry"
@@ -32477,7 +32480,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pruneaux dénoyautés",
+          "Pruneaux (dénoyautés)",
           12,
           "g",
           "pantry"
@@ -33235,7 +33238,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           30,
           "g",
           "pantry"
@@ -33403,7 +33406,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Épaule d'agneau désossée",
+          "Épaule d'agneau (désossée)",
           100,
           "g",
           "meat-fish"
@@ -34001,7 +34004,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           10,
           "g",
           "pantry"
@@ -34250,7 +34253,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           10,
           "g",
           "pantry"
@@ -34476,7 +34479,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Viande hachée d'agneau",
+          "Agneau haché",
           125,
           "g",
           "meat-fish"
@@ -35918,7 +35921,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Olives vertes dénoyautées",
+          "Olives vertes (dénoyautées)",
           30,
           "g",
           "pantry"
@@ -36032,7 +36035,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Pruneaux dénoyautés",
+          "Pruneaux (dénoyautés)",
           2,
           "u",
           "pantry"
@@ -36080,7 +36083,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sésame grillé",
+          "Graines de sésame grillées",
           5,
           "g",
           "pantry"
@@ -36660,7 +36663,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           20,
           "g",
           "pantry"
@@ -37594,7 +37597,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fromage frais nature",
+          "Fromage frais",
           80,
           "g",
           "dairy"
@@ -37791,7 +37794,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Gigot d'agneau (tranche ou portion)",
+          "Gigot d'agneau (tranche)",
           100,
           "g",
           "meat-fish"
@@ -39233,7 +39236,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Vin rouge sec",
+          "Vin rouge",
           200,
           "ml",
           "pantry"
@@ -40305,7 +40308,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Beurre clarifié",
+          "Beurre clarifié (ghee)",
           10,
           "g",
           "dairy"
@@ -40666,7 +40669,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           20,
           "g",
           "pantry"
@@ -41327,7 +41330,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Fromage frais nature",
+          "Fromage frais",
           100,
           "g",
           "dairy"
@@ -42006,7 +42009,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Beurre clarifié",
+          "Beurre clarifié (ghee)",
           2.5,
           "g",
           "dairy"
@@ -42445,7 +42448,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Beurre clarifié",
+          "Beurre clarifié (ghee)",
           5,
           "g",
           "dairy"
@@ -42532,7 +42535,7 @@ window.__DATA_RECIPES = {
           "Gros sel marin",
           300,
           "g",
-          "pantry"
+          "spices"
         ],
         [
           "Blanc d'œuf",
@@ -42665,7 +42668,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Beurre clarifié",
+          "Beurre clarifié (ghee)",
           15,
           "g",
           "dairy"
@@ -42944,7 +42947,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Beurre clarifié",
+          "Beurre clarifié (ghee)",
           10,
           "g",
           "dairy"
@@ -43078,7 +43081,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Beurre clarifié",
+          "Beurre clarifié (ghee)",
           10,
           "g",
           "dairy"
@@ -43147,7 +43150,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Épaule d'agneau en cubes",
+          "Épaule d'agneau (en cubes)",
           180,
           "g",
           "meat-fish"
@@ -43213,7 +43216,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sésame grillé",
+          "Graines de sésame grillées",
           10,
           "g",
           "pantry"
@@ -43319,7 +43322,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           20,
           "g",
           "pantry"
@@ -43557,7 +43560,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cacahuètes nature",
+          "Cacahuètes non salées",
           10,
           "g",
           "pantry"
@@ -43636,7 +43639,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Parmesan râpé en copeaux",
+          "Parmesan en copeaux",
           15,
           "g",
           "dairy"
@@ -43672,7 +43675,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Beurre clarifié",
+          "Beurre clarifié (ghee)",
           5,
           "g",
           "dairy"
@@ -44863,7 +44866,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Bœuf haché 5% MG",
+          "Bœuf haché 5%",
           120,
           "g",
           "meat-fish"
@@ -44985,7 +44988,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Bœuf haché 5% MG",
+          "Bœuf haché 5%",
           100,
           "g",
           "meat-fish"
@@ -45928,7 +45931,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           10,
           "g",
           "pantry"
@@ -46198,7 +46201,7 @@ window.__DATA_RECIPES = {
           "Crème de coco (ou crème allégée)",
           30,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Garam masala",
@@ -46426,7 +46429,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           8,
           "u",
           "pantry"
@@ -47269,7 +47272,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de daurade royale",
+          "Filet de daurade",
           150,
           "g",
           "meat-fish"
@@ -47293,7 +47296,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           6,
           "u",
           "pantry"
@@ -47781,10 +47784,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Boudoirs (ou biscuits cuiller)",
+          "Biscuits cuillère (boudoirs)",
           2.0,
           "u",
-          "bread"
+          "pantry"
         ],
         [
           "Jus de citron",
@@ -49916,13 +49919,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau glacée",
+          "Eau",
           15,
           "ml",
           "pantry"
         ],
         [
-          "Pita complète",
+          "Pain pita complet",
           0.35,
           "u",
           "bread"
@@ -50639,7 +50642,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Riz noir Venere (ou riz brun)",
+          "Riz noir (Venere) ou riz brun",
           40,
           "g",
           "pantry"
@@ -50964,7 +50967,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pita complète",
+          "Pain pita complet",
           0.25,
           "u",
           "bread"
@@ -51149,13 +51152,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Feuilles de curry séchées (facultatif)",
+          "Feuilles de curry",
           6,
-          "u",
+          "feuille",
           "spices"
         ],
         [
-          "Ghee (beurre clarifié) ou huile neutre",
+          "Beurre clarifié (ghee) ou huile neutre",
           1.5,
           "c.à.s",
           "dairy"
@@ -51461,7 +51464,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Bouillon de poulet",
+          "Bouillon de volaille",
           100,
           "ml",
           "pantry"
@@ -51860,7 +51863,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           7,
           "g",
           "pantry"
@@ -51967,7 +51970,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Olives noires Kalamata dénoyautées",
+          "Olives Kalamata (dénoyautées)",
           8,
           "u",
           "pantry"
@@ -52295,7 +52298,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Viande hachée de bœuf (5 % MG)",
+          "Bœuf haché 5%",
           65,
           "g",
           "meat-fish"
@@ -52331,7 +52334,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Feta émiettée",
+          "Feta",
           15,
           "g",
           "dairy"
@@ -53532,7 +53535,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           20,
           "g",
           "pantry"
@@ -53568,7 +53571,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bouillon de poulet",
+          "Bouillon de volaille",
           100,
           "ml",
           "pantry"
@@ -53864,7 +53867,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Bouillon de poulet",
+          "Bouillon de volaille",
           200,
           "ml",
           "pantry"
@@ -57392,7 +57395,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Maïzena",
+          "Fécule de maïs (Maïzena)",
           0.5,
           "c.à.s",
           "pantry"
@@ -58435,7 +58438,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Maïzena",
+          "Fécule de maïs (Maïzena)",
           0.25,
           "c.à.s",
           "pantry"
@@ -60281,7 +60284,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olive verte",
+          "Olives vertes",
           17,
           "g",
           "pantry"
@@ -60923,7 +60926,7 @@ window.__DATA_RECIPES = {
           "Pruneaux",
           2.0,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes",
@@ -61202,7 +61205,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Yaourt grec nature",
+          "Yaourt grec",
           30,
           "g",
           "dairy"
@@ -61491,7 +61494,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Maïs en grains (boîte sans sucre)",
+          "Maïs doux (boîte, sans sucre ajouté)",
           30,
           "g",
           "pantry"
@@ -62845,7 +62848,7 @@ window.__DATA_RECIPES = {
           "Lait de coco light",
           33,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Oignon",
@@ -63440,7 +63443,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olive verte dénoyautée",
+          "Olives vertes (dénoyautées)",
           27,
           "g",
           "pantry"
@@ -63869,7 +63872,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olive noire dénoyautée",
+          "Olives noires (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -64157,7 +64160,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Épaule d'agneau désossée",
+          "Épaule d'agneau (désossée)",
           70,
           "g",
           "meat-fish"
@@ -64987,7 +64990,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Maïs en grains (boîte sans sucre)",
+          "Maïs doux (boîte, sans sucre ajouté)",
           30,
           "g",
           "pantry"
@@ -65023,7 +65026,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olive noire dénoyautée",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -67139,7 +67142,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Semoule de blé complète (fine)",
+          "Semoule complète fine",
           20,
           "g",
           "pantry"
@@ -68141,7 +68144,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "5 épices chinoises (ou mélange cannelle-anis-girofle)",
+          "Cinq-épices (ou mélange cannelle-anis-girofle)",
           0.125,
           "c.à.c",
           "spices"
@@ -68934,7 +68937,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           10,
           "g",
           "pantry"
@@ -69225,7 +69228,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Eau froide",
+          "Eau",
           100,
           "ml",
           "pantry"
@@ -69237,7 +69240,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Graines de cumin entières",
+          "Graines de cumin",
           0.25,
           "c.à.c",
           "spices"
@@ -69379,7 +69382,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Huile d'olive (ou ghee)",
+          "Huile d'olive",
           0.5,
           "c.à.s",
           "pantry"
@@ -69968,13 +69971,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sachet de thé vert (genmaicha, sencha ou jasmin)",
-          0.5,
-          "u",
+          "Thé vert (genmaicha, sencha ou jasmin)",
+          1.0,
+          "g",
           "pantry"
         ],
         [
-          "Eau chaude (80 °C)",
+          "Eau",
           75,
           "ml",
           "pantry"
@@ -70375,7 +70378,6 @@ window.__DATA_RECIPES = {
       "kcal": 420,
       "tags": [
         "vegetarian",
-        "vegan",
         "festif"
       ],
       "eq": [
@@ -70384,7 +70386,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "soy",
         "gluten",
-        "sesame"
+        "sesame",
+        "eggs"
       ],
       "ing": [
         [
@@ -71242,7 +71245,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Eau froide",
+          "Eau",
           50,
           "ml",
           "pantry"
@@ -71342,7 +71345,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Pita complet",
+          "Pain pita complet",
           0.4,
           "u",
           "bread"
@@ -71447,7 +71450,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Bicarbonate de sodium",
+          "Bicarbonate de soude",
           0.25,
           "c.à.c",
           "pantry"
@@ -71524,7 +71527,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau tiède",
+          "Eau",
           45,
           "ml",
           "pantry"
@@ -71694,7 +71697,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amande non salée",
+          "Amandes entières",
           10,
           "g",
           "pantry"
@@ -71730,7 +71733,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sucre glace pour la déco",
+          "Sucre glace",
           0.25,
           "c.à.s",
           "pantry"
@@ -71789,7 +71792,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau tiède",
+          "Eau",
           22,
           "ml",
           "pantry"
@@ -72071,7 +72074,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Cacahuètes grillées non salées",
+          "Cacahuètes non salées",
           8,
           "g",
           "pantry"
@@ -72142,7 +72145,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bicarbonate de sodium",
+          "Bicarbonate de soude",
           0.25,
           "c.à.c",
           "pantry"
@@ -72602,7 +72605,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Feta émiettée",
+          "Feta",
           12,
           "g",
           "dairy"
@@ -72722,7 +72725,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Feta émiettée",
+          "Feta",
           15,
           "g",
           "dairy"
@@ -72834,7 +72837,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sucre glace pour la déco",
+          "Sucre glace",
           0.25,
           "c.à.s",
           "pantry"
@@ -72897,7 +72900,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Eau tiède",
+          "Eau",
           17,
           "ml",
           "pantry"
@@ -72986,7 +72989,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amande non salée",
+          "Amandes entières",
           8,
           "g",
           "pantry"
@@ -73154,7 +73157,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amande non salée",
+          "Amandes entières",
           6,
           "g",
           "pantry"
@@ -73321,7 +73324,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Noix concassée",
+          "Cerneaux de noix concassés",
           8,
           "g",
           "pantry"
@@ -73835,7 +73838,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pistache non salée hachée",
+          "Pistaches non salées (hachées)",
           6,
           "g",
           "pantry"
@@ -73916,7 +73919,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires Kalamata",
+          "Olives Kalamata",
           7.5,
           "g",
           "pantry"
@@ -74026,7 +74029,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Beurre doux pour le moule",
+          "Beurre doux",
           1.0,
           "g",
           "dairy"
@@ -74123,10 +74126,10 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Biscuits cuillère (boudoir) ou speculoos",
+          "Biscuits cuillère (ou speculoos)",
           2.0,
           "u",
-          "bread"
+          "pantry"
         ],
         [
           "Sucre roux",
@@ -74783,7 +74786,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Pain pita complet pour servir",
+          "Pain pita complet",
           0.5,
           "u",
           "bread"
@@ -75159,7 +75162,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau tiède",
+          "Eau",
           100,
           "ml",
           "pantry"
@@ -75378,7 +75381,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pistache hachée",
+          "Pistaches non salées (hachées)",
           4.0,
           "g",
           "pantry"
@@ -75471,7 +75474,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Pistache hachée",
+          "Pistaches non salées (hachées)",
           5,
           "g",
           "pantry"
@@ -75543,7 +75546,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Noix de Grenoble",
+          "Cerneaux de noix",
           8,
           "g",
           "pantry"
@@ -75659,7 +75662,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           6,
           "g",
           "pantry"
@@ -76170,7 +76173,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Jambon blanc tranche",
+          "Jambon blanc",
           33,
           "g",
           "meat-fish"
@@ -76708,7 +76711,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau bouillante",
+          "Eau",
           125,
           "ml",
           "pantry"
@@ -76944,7 +76947,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Saumon frais qualité sashimi",
+          "Filet de saumon (qualité sushi)",
           65,
           "g",
           "meat-fish"
@@ -77102,7 +77105,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Bicarbonate de sodium",
+          "Bicarbonate de soude",
           0.25,
           "c.à.c",
           "pantry"
@@ -77216,7 +77219,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pistache hachée",
+          "Pistaches non salées (hachées)",
           5,
           "g",
           "pantry"
@@ -77623,7 +77626,7 @@ window.__DATA_RECIPES = {
           "Pruneaux",
           28,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Lait demi-écrémé",
@@ -77718,7 +77721,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amande entière non salée",
+          "Amandes entières",
           25,
           "g",
           "pantry"
@@ -77811,7 +77814,8 @@ window.__DATA_RECIPES = {
       "allergens": [
         "lactose",
         "nuts",
-        "gluten"
+        "gluten",
+        "eggs"
       ],
       "ing": [
         [
@@ -77851,7 +77855,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Biscuit cuillère (boudoir)",
+          "Biscuits cuillère (boudoirs)",
           2.0,
           "u",
           "pantry"
@@ -78140,7 +78144,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Graines de sésame blanc",
+          "Graines de sésame",
           0.25,
           "c.à.s",
           "pantry"
@@ -78344,7 +78348,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cacahuètes grillées non salées (facultatif)",
+          "Cacahuètes non salées (facultatif)",
           7,
           "g",
           "pantry"
@@ -79183,7 +79187,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau froide",
+          "Eau",
           100,
           "ml",
           "pantry"
@@ -79564,7 +79568,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau tiède",
+          "Eau",
           27,
           "ml",
           "pantry"
@@ -79722,7 +79726,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Bicarbonate de sodium",
+          "Bicarbonate de soude",
           0.25,
           "c.à.c",
           "pantry"
@@ -80727,7 +80731,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -80949,7 +80953,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           10,
           "g",
           "pantry"
@@ -81099,7 +81103,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           30,
           "g",
           "pantry"
@@ -81186,7 +81190,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Pois cassés secs",
+          "Pois cassés",
           80,
           "g",
           "pantry"
@@ -81307,7 +81311,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           20,
           "g",
           "pantry"
@@ -81469,7 +81473,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Noix décortiquées",
+          "Cerneaux de noix",
           20,
           "g",
           "pantry"
@@ -81585,7 +81589,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fécule de maïs",
+          "Fécule de maïs (Maïzena)",
           6,
           "g",
           "pantry"
@@ -81732,7 +81736,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           40,
           "g",
           "pantry"
@@ -82017,7 +82021,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives vertes dénoyautées",
+          "Olives vertes (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -82221,7 +82225,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           7.5,
           "g",
           "pantry"
@@ -82410,7 +82414,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           20,
           "g",
           "pantry"
@@ -83887,7 +83891,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Eau tiède",
+          "Eau",
           45,
           "ml",
           "pantry"
@@ -85997,7 +86001,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           15,
           "g",
           "pantry"
@@ -86688,7 +86692,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives vertes dénoyautées",
+          "Olives vertes (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -87283,7 +87287,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Tamarin (pâte)",
+          "Pâte de tamarin",
           6,
           "g",
           "pantry"
@@ -88077,7 +88081,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Olives vertes dénoyautées",
+          "Olives vertes (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -88297,7 +88301,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Noix décortiquées",
+          "Cerneaux de noix",
           15,
           "g",
           "pantry"
@@ -89267,7 +89271,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           15,
           "g",
           "pantry"
@@ -89487,7 +89491,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           10,
           "g",
           "pantry"
@@ -92303,7 +92307,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Fenouil (graines)",
+          "Graines de fenouil",
           0.67,
           "g",
           "spices"
@@ -95731,7 +95735,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Amandes en poudre",
+          "Poudre d'amande",
           8,
           "g",
           "pantry"
@@ -96308,7 +96312,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sauce nuoc-mâm",
+          "Sauce de poisson (nuoc-mâm)",
           10,
           "ml",
           "pantry"
@@ -96418,7 +96422,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sauce nuoc-mâm",
+          "Sauce de poisson (nuoc-mâm)",
           10,
           "ml",
           "pantry"
@@ -96492,7 +96496,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de dorade",
+          "Filet de daurade",
           180,
           "g",
           "meat-fish"
@@ -98065,7 +98069,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de dorade",
+          "Filet de daurade",
           180,
           "g",
           "meat-fish"
@@ -98083,7 +98087,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           30,
           "g",
           "pantry"
@@ -98481,7 +98485,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -98709,7 +98713,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sauce nuoc-mâm",
+          "Sauce de poisson (nuoc-mâm)",
           12,
           "ml",
           "pantry"
@@ -99610,7 +99614,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           30,
           "g",
           "pantry"
@@ -100035,7 +100039,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Olives vertes dénoyautées",
+          "Olives vertes (dénoyautées)",
           30,
           "g",
           "pantry"
@@ -100395,7 +100399,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -101296,7 +101300,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Saint-Jacques décoquillées",
+          "Noix de Saint-Jacques",
           120,
           "g",
           "meat-fish"
@@ -101391,7 +101395,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pruneaux dénoyautés",
+          "Pruneaux (dénoyautés)",
           30,
           "g",
           "pantry"
@@ -102349,7 +102353,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Polenta (semoule de maïs)",
+          "Polenta",
           35,
           "g",
           "pantry"
@@ -103059,7 +103063,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fécule de maïs",
+          "Fécule de maïs (Maïzena)",
           8,
           "g",
           "pantry"
@@ -103238,7 +103242,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Fécule de maïs",
+          "Fécule de maïs (Maïzena)",
           2,
           "g",
           "pantry"
@@ -103520,7 +103524,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fécule de maïs",
+          "Fécule de maïs (Maïzena)",
           8,
           "g",
           "pantry"
@@ -110005,7 +110009,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fécule de maïs",
+          "Fécule de maïs (Maïzena)",
           8,
           "g",
           "pantry"
@@ -111767,7 +111771,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Polenta (semoule de maïs)",
+          "Polenta",
           35,
           "g",
           "pantry"
@@ -112051,7 +112055,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -112352,7 +112356,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           25,
           "g",
           "pantry"
@@ -114005,7 +114009,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de dorade",
+          "Filet de daurade",
           130,
           "g",
           "meat-fish"
@@ -114803,7 +114807,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de dorade",
+          "Filet de daurade",
           130,
           "g",
           "meat-fish"
@@ -118625,7 +118629,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de dorade",
+          "Filet de daurade",
           140,
           "g",
           "meat-fish"
@@ -120127,7 +120131,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Tranche de gigot d'agneau",
+          "Gigot d'agneau (tranche)",
           120,
           "g",
           "meat-fish"
@@ -120686,7 +120690,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sauce nuoc-mâm",
+          "Sauce de poisson (nuoc-mâm)",
           1,
           "c.à.s",
           "pantry"
@@ -120770,7 +120774,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Frik (blé vert concassé)",
+          "Freekeh",
           30,
           "g",
           "pantry"
@@ -121311,7 +121315,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Encornets (calamars)",
+          "Calamars",
           140,
           "g",
           "meat-fish"
@@ -122213,7 +122217,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de dorade",
+          "Filet de daurade",
           150,
           "g",
           "meat-fish"
@@ -122676,7 +122680,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Maïzena",
+          "Fécule de maïs (Maïzena)",
           4,
           "g",
           "pantry"
@@ -123449,7 +123453,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cacahuètes grillées non salées",
+          "Cacahuètes non salées",
           15,
           "g",
           "pantry"
@@ -128081,7 +128085,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon de poulet",
+          "Bouillon de volaille",
           400,
           "ml",
           "pantry"
@@ -129210,7 +129214,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Feta émiettée",
+          "Feta",
           20,
           "g",
           "dairy"
@@ -130840,7 +130844,7 @@ window.__DATA_RECIPES = {
           "Piment ancho séché",
           4,
           "g",
-          "pantry"
+          "spices"
         ],
         [
           "Courgette",
@@ -131758,7 +131762,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           20,
           "g",
           "pantry"
@@ -132077,7 +132081,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de dorade",
+          "Filet de daurade",
           90,
           "g",
           "meat-fish"
@@ -132378,7 +132382,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Biscuit cuillère",
+          "Biscuits cuillère",
           8,
           "g",
           "pantry"
@@ -133656,7 +133660,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Fécule de maïs",
+          "Fécule de maïs (Maïzena)",
           1,
           "c.à.c",
           "pantry"
@@ -133781,7 +133785,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Ghee (beurre clarifié)",
+          "Beurre clarifié (ghee)",
           1,
           "c.à.c",
           "dairy"
@@ -134943,7 +134947,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de daurade extra-frais (qualité ceviche)",
+          "Filet de daurade (extra-frais, qualité ceviche)",
           120,
           "g",
           "meat-fish"
@@ -135302,7 +135306,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Épaule d'agneau désossée",
+          "Épaule d'agneau (désossée)",
           130,
           "g",
           "meat-fish"
@@ -135866,7 +135870,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pistaches décortiquées non salées",
+          "Pistaches non salées",
           6,
           "g",
           "pantry"
@@ -136097,7 +136101,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Feta émiettée",
+          "Feta",
           40,
           "g",
           "dairy"
@@ -136594,7 +136598,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Épaule d'agneau désossée",
+          "Épaule d'agneau (désossée)",
           130,
           "g",
           "meat-fish"
@@ -136971,7 +136975,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -138246,7 +138250,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Ghee (beurre clarifié)",
+          "Beurre clarifié (ghee)",
           1,
           "c.à.c",
           "dairy"
@@ -138602,7 +138606,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives vertes dénoyautées",
+          "Olives vertes (dénoyautées)",
           20,
           "g",
           "pantry"
@@ -139148,7 +139152,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -140062,7 +140066,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Épaule d'agneau désossée",
+          "Épaule d'agneau (désossée)",
           150,
           "g",
           "meat-fish"
@@ -140644,7 +140648,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cacahuètes grillées non salées",
+          "Cacahuètes non salées",
           10,
           "g",
           "pantry"
@@ -141195,7 +141199,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cacahuètes grillées non salées",
+          "Cacahuètes non salées",
           8,
           "g",
           "pantry"
@@ -142333,11 +142337,12 @@ window.__DATA_RECIPES = {
         "cast-iron"
       ],
       "allergens": [
-        "shellfish"
+        "shellfish",
+        "molluscs"
       ],
       "ing": [
         [
-          "Calmar, coupé en anneaux",
+          "Calamars",
           180,
           "g",
           "meat-fish"
@@ -142415,7 +142420,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Épaule d'agneau désossée, coupée en cubes",
+          "Épaule d'agneau (désossée, en cubes)",
           150,
           "g",
           "meat-fish"
@@ -142761,7 +142766,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           10,
           "g",
           "pantry"
@@ -142962,13 +142967,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Maïs doux en grains (boîte, égoutté)",
+          "Maïs doux (boîte, égoutté)",
           15,
           "g",
           "pantry"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -145578,7 +145583,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Fromage frais nature",
+          "Fromage frais",
           17,
           "g",
           "dairy"
@@ -145762,7 +145767,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fromage frais nature",
+          "Fromage frais",
           80,
           "g",
           "dairy"
@@ -147189,7 +147194,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Pistaches décortiquées non salées",
+          "Pistaches non salées",
           15,
           "g",
           "pantry"
@@ -148267,13 +148272,13 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Lieu noir (filet)",
+          "Filet de lieu noir",
           100,
           "g",
           "meat-fish"
         ],
         [
-          "Merlu (filet)",
+          "Filet de merlu",
           60,
           "g",
           "meat-fish"
@@ -148569,7 +148574,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bouillon de poulet",
+          "Bouillon de volaille",
           150,
           "ml",
           "pantry"
@@ -148655,7 +148660,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Biscuit cuillère",
+          "Biscuits cuillère",
           1,
           "u",
           "pantry"
@@ -150619,7 +150624,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Olives vertes dénoyautées",
+          "Olives vertes (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -150672,7 +150677,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Lieu noir (filet)",
+          "Filet de lieu noir",
           130,
           "g",
           "meat-fish"
@@ -150801,7 +150806,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Lieu noir (filet)",
+          "Filet de lieu noir",
           140,
           "g",
           "meat-fish"
@@ -152241,7 +152246,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Frik (blé vert concassé)",
+          "Freekeh",
           20,
           "g",
           "pantry"
@@ -152392,7 +152397,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Olives noires dénoyautées",
+          "Olives noires (dénoyautées)",
           15,
           "g",
           "pantry"
@@ -152736,7 +152741,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pruneaux dénoyautés",
+          "Pruneaux (dénoyautés)",
           12,
           "g",
           "pantry"

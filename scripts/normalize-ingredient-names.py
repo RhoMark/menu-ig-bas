@@ -52,6 +52,7 @@ SALTS = {"sel", "fleur de sel"}
 UNIT_FIXES = {
     ("Amandes effilées", "u"): (lambda q: q * 5, "g"),
     ("Amande effilée", "u"): (lambda q: q * 5, "g"),
+    ("Thé vert", "u"): (lambda q: q * 2, "g"),                  # 1 sachet de thé ≈ 2 g (ordre de grandeur)
     ("Tomatille", "g"): (lambda q: q / 40, "u"),                # 1 tomatille ≈ 40 g (ordre de grandeur)
     ("Piment guajillo séché", "g"): (lambda q: q / 5, "u"),    # 1 piment guajillo séché ≈ 5 g (ordre de grandeur)
     ("Piment jalapeño", "g"): (lambda q: q / 20, "u"),          # 1 jalapeño ≈ 20 g (ordre de grandeur)
@@ -90,6 +91,8 @@ CATEGORY_OVERRIDES = {
     "Maïs en grains (frais ou surgelé)": "frozen", "Maïs en grains (boîte sans sucre)": "pantry",
     "Maïs en grains (hominy pour pozole)": "pantry",
     "Tofu soyeux nature": "dairy",
+    "Piment ancho séché": "spices", "Gros sel marin": "spices",
+    "Lait de coco light": "pantry", "Crème de coco (ou crème allégée)": "pantry",
     "Jus d'orange": "produce",   # avec les agrumes : jus pressé ou en bouteille, au choix (V2.140.5)
 }
 
@@ -105,6 +108,7 @@ CATEGORY_BY_BASE = {
     "Haricots verts": "produce", "Mangue": "produce", "Mangue surgelée": "frozen",
     "Piment guajillo séché": "spices",
     "Fruits rouges": "produce", "Fruits rouges surgelés": "frozen",
+    "Biscuits cuillère": "pantry", "Edamame écossés": "frozen", "Framboises": "produce", "Pruneaux": "pantry",
 }
 
 # Renommage qui dépend de l'unité (« Cannelle » 1 bâton = la cannelle en bâton, pas en poudre).

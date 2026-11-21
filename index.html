@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.140.5</title>
+<title>Menu IG Bas — V2.140.6</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.140.5">
+<link rel="stylesheet" href="tailwind.css?v=2.140.6">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -3442,7 +3442,8 @@ if ("serviceWorker" in navigator) {
     {"id": "citronnelle", "label": "Citronnelle", "category": "produce", "weightPerPiece": 20, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
     {"id": "pomelo", "label": "Pomelo", "category": "produce", "weightPerPiece": 1000, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
     {"id": "feve tonka", "label": "Fève tonka", "category": "spices", "weightPerPiece": 1.5, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
-    {"id": "clou de girofle", "label": "Clou de girofle", "category": "spices", "weightPerPiece": 0.1, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"}
+    {"id": "clou de girofle", "label": "Clou de girofle", "category": "spices", "weightPerPiece": 0.1, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "olive kalamata", "label": "Olives Kalamata", "category": "pantry", "weightPerPiece": 4, "soldByWeight": false, "src": "comme olive noire (4 g), ordre de grandeur non vérifié (V2.140.6)"}
   ]
 }
 </script>
@@ -12496,7 +12497,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.140.5"></script>
+<script src="data/recipes.js?v=2.140.6"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -16787,38 +16788,44 @@ const SUBGROUPS = {
     {id:"fruits", label:"Fruits frais", order:8, re:/\b(pomme|poire|banane|fraise|framboise|myrtille|cassis|mure|abricot|peche|nectarine|prune|pruneau|raisin|citron|citron vert|orange|pamplemousse|pomelo|clementine|mandarine|kiwi|mangue|ananas|melon|pasteque|figue|grenade|datte|cerise|litchi|papaye|pitaya|fruit|coing|rhubarbe|airelle|chataigne|zeste|zeste dorange|dorange)\b/},
   ],
   "meat-fish": [
-    {id:"volailles", label:"Volailles", order:1, re:/\b(poulet|dinde|canard|pintade|caille|chapon)\b/},
-    {id:"viandes-rouges", label:"Viandes rouges", order:2, re:/\b(boeuf|agneau|porc|veau|mouton|gibier|biche|cerf|sanglier)\b/},
-    {id:"charcuteries", label:"Charcuteries", order:3, re:/\b(jambon|lardon|bacon|chorizo|saucisson|saucisse|pancetta|coppa|rosette|merguez)\b/},
+    {id:"volailles", label:"Volailles", order:1, re:/\b(poulet|dinde|canard|pintade|caille|chapon|volaille|poularde)\b/},
+    {id:"viandes-rouges", label:"Viandes rouges", order:2, re:/\b(boeuf|agneau|porc|veau|mouton|gibier|biche|cerf|sanglier|gigot)\b/},
+    {id:"charcuteries", label:"Charcuteries", order:3, re:/\b(jambon|lardon|bacon|chorizo|saucisson|saucisse|pancetta|coppa|rosette|merguez|chipolata|bresaola|prosciutto|grisons|grison|poitrine fumee|allumette)\b/},
     {id:"poissons-gras", label:"Poissons gras", order:4, re:/\b(saumon|sardine|maquereau|thon|hareng|anchois)\b/},
-    {id:"poissons-maigres", label:"Poissons maigres", order:5, re:/\b(cabillaud|lieu|merlu|sole|dorade|bar|loup|julienne|colin|raie|turbot|saint-pierre|truite|carrelet)\b/},
-    {id:"fruits-de-mer", label:"Fruits de mer", order:6, re:/\b(crevette|moule|huitre|saint-jacques|calamar|encornet|poulpe|seiche|gambas|langoustine|crabe|homard|tourteau|bigorneau)\b/},
+    {id:"poissons-maigres", label:"Poissons maigres", order:5, re:/\b(cabillaud|lieu|merlu|sole|dorade|daurade|bar|loup|julienne|colin|raie|turbot|saint-pierre|truite|carrelet|tilapia|lotte|morue|haddock|espadon|merlan|eglefin|poisson)\b/},
+    {id:"fruits-de-mer", label:"Fruits de mer", order:6, re:/\b(crevette|moule|huitre|saint-jacques|saint jacque|calamar|calmar|encornet|poulpe|seiche|gambas|langoustine|crabe|homard|tourteau|bigorneau|bulot|palourde|coque|fruit de mer)\b/},
   ],
   dairy: [
     {id:"oeufs", label:"Œufs et substituts", order:1, re:/\b(oeuf|oeufs|blanc d'oeuf|jaune d'oeuf)\b/},
-    {id:"laits", label:"Laits et boissons", order:2, re:/\b(lait|boisson d'amande|boisson d'avoine|boisson de soja|boisson de riz|lait de coco|lait d'amande|lait de soja|lait d'avoine|lait de riz)\b/},
+    {id:"laits", label:"Laits et boissons", order:2, re:/^(lait|boisson|boisson d'amande|boisson d'avoine|boisson de soja|boisson de riz|lait de coco|lait d'amande|lait de soja|lait d'avoine|lait de riz)\b/},
     {id:"yaourts", label:"Yaourts et faisselles", order:3, re:/\b(yaourt|faisselle|fromage blanc|skyr|kefir)\b/},
-    {id:"fromages", label:"Fromages", order:4, re:/\b(fromage|parmesan|feta|mozzarella|chevre|comte|gruyere|ricotta|emmental|brie|camembert|roquefort|bleu|halloumi|burrata|mascarpone|cheddar|raclette|reblochon)\b/},
+    {id:"fromages", label:"Fromages", order:4, re:/\b(fromage|parmesan|feta|mozzarella|chevre|comte|gruyere|ricotta|emmental|brie|camembert|roquefort|bleu|halloumi|burrata|mascarpone|cheddar|raclette|reblochon|crottin|fontina|taleggio|tomme|pecorino|paneer|cottage|labneh|cancoillotte)\b/},
     {id:"cremes-beurres", label:"Crèmes et beurres", order:5, re:/\b(creme|beurre|ghee)\b/},
-    {id:"vege", label:"Tofu & dérivés végé", order:6, re:/\b(tofu|tempeh|seitan)\b/},
+    {id:"vege", label:"Tofu, houmous & végé", order:6, re:/\b(tofu|tempeh|seitan|houmous|falafel)\b/},
   ],
   pantry: [
-    {id:"feculents-secs", label:"Féculents secs", order:1, re:/\b(riz|pates|quinoa|sarrasin|lentille|pois chiche|haricot sec|haricot rouge|haricot noir|haricot blanc|boulgour|orge|polenta|semoule|avoine|millet|epeautre|kasha|tapioca)\b/},
-    {id:"conserves", label:"Conserves", order:2, re:/\b(tomates? (concassees?|pelees?)|tomate en boite|concentre de tomates?|en boite|en bocal|boite de|bocal de)\b/},
-    {id:"huiles-vinaigres", label:"Huiles et vinaigres", order:3, re:/\b(huile|vinaigre|mirin)\b/},
-    {id:"sauces-condiments", label:"Sauces et condiments", order:4, re:/\b(sauce|moutarde|miso|harissa|tahini|ketchup|mayo|wasabi|sambal|sriracha|cornichon|caprier|caper)\b/},
-    {id:"oleagineux", label:"Oléagineux et graines", order:5, re:/\b(amande|noix|noisette|pignon|pistache|cajou|graine|sesame|tournesol|chia|lin|courge|pavot|pecan)\b/},
-    {id:"sucres-chocolats", label:"Sucres et chocolats", order:6, re:/\b(sucre|miel|sirop|chocolat|cacao|cassonade|stevia|erythritol|xylitol)\b/},
+    // V2.140.6 — Ordre du tableau = ordre de TEST (premier qui correspond) ; l'ordre
+    // d'AFFICHAGE est le champ `order`. « Huile d'olive » doit être testée avant « olive ».
+    {id:"huiles-vinaigres", label:"Huiles et vinaigres", order:3, re:/^(huile|vinaigre|mirin|melasse)\b/}, // « Thon à l'huile » : pas une huile
+    {id:"patisserie", label:"Farines et pâtisserie", order:7, re:/\b(farine|fecule|maizena|levure|bicarbonate|agar|gelatine|chapelure|extrait de vanille|eau de fleur|eau de rose|colorant|pate damande|pate d amande|meringue|biscuit|amaretti|pate a won|won ton|pate a gyoza)\b/},
+    {id:"feculents-secs", label:"Féculents secs", order:1, re:/\b(riz|pates|pate complete|pates completes|quinoa|sarrasin|lentille|pois chiche|pois casse|haricot|flageolet|feve|boulgour|boulghour|orge|polenta|semoule|couscous|avoine|millet|epeautre|kasha|tapioca|freekeh|berkouke|crozet|orzo|orecchiette|spaghetti|linguine|tagliatelle|nouille|vermicelle|soba|flocon|makhana|edamame)\b/},
+    {id:"boissons", label:"Boissons", order:9, re:/\b(the|cafe|vin|biere|cidre|rhum|jus|eau de coco|eau)\b/},
+    {id:"conserves", label:"Conserves et bocaux", order:2, re:/\b(tomates? (concassees?|pelees?|sechees?|confites?)|tomate en boite|concentre de tomates?|en boite|en bocal|boite de|bocal de|olive|thon|anchois|sardine|mais doux|mais en grain|choucroute|feuille de vigne|chataigne|lait de coco|pousse de bambou|citron confit|oignon grelot|chipotle|capre|falafel)\b/},
+    {id:"sucres-chocolats", label:"Sucres et chocolats", order:6, re:/\b(sucre|miel|sirop|chocolat|cacao|cassonade|stevia|erythritol|xylitol|confiture|creme de marron|granola)\b/},
+    {id:"sauces-condiments", label:"Sauces et condiments", order:4, re:/\b(sauce|moutarde|miso|harissa|tahini|ketchup|mayo|mayonnaise|vinaigrette|pesto|wasabi|sambal|sriracha|cornichon|caprier|caper|gochujang|doenjang|pate de soja|pate de curry|curry|tamarin|tikka|melasse|bouillon|cube|dashi)\b/},
+    {id:"oleagineux", label:"Oléagineux et fruits secs", order:5, re:/\b(amande|noix|noisette|pignon|pistache|cajou|graine|sesame|tournesol|chia|lin|courge|pavot|pecan|cacahuete|coco|abricot sec|raisin sec|raisins sec|pruneau|datte|figue sechee|figues sechee|cranberrie|cranberry|goji|baie)\b/},
+    {id:"algues-champignons", label:"Algues et champignons secs", order:8, re:/\b(algue|nori|wakame|cepe|morille|champignon|konjac)\b/},
   ],
   spices: [
-    {id:"epices", label:"Épices", order:1, re:/\b(cumin|curcuma|paprika|cannelle|cardamome|gingembre|muscade|girofle|safran|coriandre moulue|fenugrec|sumac|piment|espelette|chipotle|ras-el-hanout|ras el hanout|garam masala|curry|tandoori|colombo|baharat|zaatar|chaat masala)\b/},
-    {id:"herbes-sechees", label:"Herbes séchées", order:2, re:/\b(thym|romarin|origan|laurier|sauge|estragon|herbes? de provence|menthe sechee|basilic seche)\b/},
+    {id:"epices", label:"Épices", order:1, re:/\b(cumin|curcuma|paprika|cannelle|cardamome|gingembre|muscade|girofle|safran|coriandre|fenugrec|sumac|piment|espelette|chipotle|ras-el-hanout|ras el hanout|garam masala|curry|tandoori|colombo|baharat|zaatar|chaat masala|ail en poudre|anis|badiane|carvi|cinq epices|fenouil|moutarde|asafoetida|sambar|masala|tonka|harissa|achiote|wasabi|matcha|epice)\b/},
+    {id:"herbes-sechees", label:"Herbes séchées", order:2, re:/\b(thym|romarin|origan|laurier|sauge|estragon|herbes? de provence|menthe sechee|basilic seche|aneth|pandan|petale de rose|basilic)\b/},
     {id:"sel-poivre", label:"Sel, poivre & basique", order:3, re:/\b(sel|fleur de sel|poivre|piment d'espelette|vanille|levure|bicarbonate)\b/},
   ],
   bread: [
     {id:"pains-frais", label:"Pains frais", order:1, re:/\b(pain (?!complet)|baguette|miche|tartine)\b/},
     {id:"pains-speciaux", label:"Pains spéciaux", order:2, re:/\b(pain complet|pain au levain|pain de seigle|pain de mie complet|pain integral|pain aux cereales|naan|pita|tortilla|wrap|chapati|focaccia)\b/},
-    {id:"crackers", label:"Crackers & biscottes", order:3, re:/\b(cracker|biscotte|cracotte|tartelette|toast)\b/},
+    {id:"crackers", label:"Crackers & biscottes", order:3, re:/\b(cracker|biscotte|cracotte|tartelette|toast|gressin)\b/},
+    {id:"pates-galettes", label:"Pâtes à rouler & galettes", order:4, re:/\b(brick|filo|galette|spring roll|gyoza|won ton|pate a)\b/},
   ],
   // frozen + autres : pas de sous-groupes, render flat
 };
@@ -16827,9 +16834,13 @@ function inferSubgroup(name, category) {
   if (!cat) return null;
   const canon = canonicalName(name);
   // V2.140.5 — aussi au singulier (« Poireaux » partait dans « Divers »).
-  const sing = canon.split(" ").map(w => (w.length > 3 ? w.replace(/[sx]$/, "") : w)).join(" ");
+  const singular = str => str.split(" ").map(w => (w.length > 3 ? w.replace(/[sx]$/, "") : w)).join(" ");
+  const sing = singular(canon);
+  // V2.140.6 — et sur le nom brut, apostrophe = espace (« Épaule d'agneau », « Blanc d'œuf »).
+  const loose = singular(String(name).toLowerCase().replace(/œ/g, "oe").normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "").replace(/['’ʼ‘]/g, " ").replace(/-/g, " ").replace(/\s+/g, " ").trim());
   for (const sg of cat) {
-    if (sg.re.test(canon) || sg.re.test(sing)) return {id: sg.id, label: sg.label, order: sg.order};
+    if (sg.re.test(canon) || sg.re.test(sing) || sg.re.test(loose)) return {id: sg.id, label: sg.label, order: sg.order};
   }
   return null; // → bucket "Divers" en fin de catégorie
 }
@@ -16926,6 +16937,11 @@ function aggregateShoppingList(weekMenu, profile) {
       let cName = canonicalName(name);
       let cUnit = dataRef.canonicalUnit(unit);
       let cQty = qty;
+      // V2.140.6 — Même article au magasin, mais fiches nutritionnelles distinctes
+      // (valeurs à réconcilier) : on regroupe seulement dans la liste de courses.
+      if (SHOPPING_ALIASES[cName]) cName = SHOPPING_ALIASES[cName];
+      // V2.140.6 — L'eau du robinet ne s'achète pas : pas de ligne « Eau ».
+      if (/^eau( (bouillante|chaude|froide|glacee|tiede|fraiche))?$/.test(cName)) return;
       // V2.140.5 — Agrumes : jus seul, zeste ou fruit entier = 3 achats différents.
       const citrus = citrusUse(name, cQty, cUnit, category);
       if (citrus) { cName = citrus.canon; cQty = citrus.qty; cUnit = citrus.unit; }
@@ -17031,6 +17047,11 @@ function aggregateShoppingList(weekMenu, profile) {
 const JUICE_ML_PER_FRUIT = {"citron": 40, "citron vert": 25, "orange": 80, "pamplemousse": 150};
 const ZEST_G_PER_FRUIT = {"citron": 2, "citron vert": 1.5, "orange": 4, "pamplemousse": 6};
 const VOLUME_TO_ML = {"ml": 1, "cl": 10, "l": 1000, "c.à.s": 15, "c.à.c": 5};
+// V2.140.6 — Alias de liste de courses (noms canoniques) : même achat, données
+// nutritionnelles différentes non réconciliées (cf. tâches : doublons de fiches).
+const SHOPPING_ALIASES = {"edamame surgele": "edamame ecosse", "edamame decortique": "edamame ecosse",
+  "flocon davoine complet": "flocon davoine", "flocon de noix de coco": "noix de coco rapee",
+  "flocon de noix de coco rapee": "noix de coco rapee"};
 const ZEST_SPOON_G = {"g": 1, "c.à.c": 2, "c.à.s": 6, "pincée": 0.5};
 function citrusUse(name, qty, unit, category) {
   if (category !== "produce" || !name) return null;
@@ -22666,7 +22687,7 @@ function groupItemsBySubgroup(category, items) {
   if (!items?.length) return [];
   const buckets = new Map();
   items.forEach(it => {
-    const sg = inferSubgroup(it.name, category);
+    const sg = inferSubgroup(it.label || it.name, category); // libellé : garde les apostrophes (V2.140.6)
     const key = sg ? sg.id : "_divers";
     if (!buckets.has(key)) {
       buckets.set(key, {

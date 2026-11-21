@@ -115,14 +115,18 @@ ALLERGEN_TRIGGERS = {
     "fish": ["saumon", "thon", "sardine", "maquereau", "cabillaud", "morue",
              "lieu", "merlu", "haddock", "anchois", "hareng", "truite", "loup",
              "dorade", "rouget", "sole", "limande", "bar", "carrelet", "poisson",
-             "dashi", "bonite", "nuoc", "nuoc-mâm", "nuoc mam"],
+             "dashi", "bonite", "nuoc", "nuoc-mâm", "nuoc mam",
+             # V2.140.6 — variantes trouvées en unifiant les noms de la liste de courses
+             "daurade", "tilapia", "lotte", "espadon", "colin", "turbot", "raie",
+             "églefin", "eglefin", "sandre", "brochet", "mulet", "flétan", "fletan", "surimi", "tarama"],
     # V2.129.0 — liste UE des 14 allergènes (règlement INCO 1169/2011, annexe II) :
     # crustacés et mollusques séparés, + arachide, céleri, lupin, sulfites.
     "shellfish": ["crevette", "gambas", "crabe", "homard", "langouste", "langoustine",
                   "écrevisse", "ecrevisse", "fruits de mer"],
     "molluscs": ["huître", "huitre", "moule", "coquillage", "calamar", "encornet", "poulpe",
                  "seiche", "saint-jacques", "pétoncle", "petoncle", "palourde", "coque",
-                 "bulot", "bigorneau", "escargot", "sauce d'huître", "fruits de mer"],
+                 "bulot", "bigorneau", "escargot", "sauce d'huître", "fruits de mer",
+                 "calmar", "saint jacques", "st-jacques"],
     "peanuts": ["cacahuète", "cacahuete", "arachide"],
     # Céleri : aussi dans les bouillons du commerce (cubes, fonds) → `bouillon`.
     "celery": ["céleri", "celeri", "bouillon", "fond de volaille", "fond de veau"],
@@ -133,11 +137,16 @@ ALLERGEN_TRIGGERS = {
                   "vinaigre de xérès", "vinaigre de xeres", "vinaigre de framboise",
                   "abricot sec", "abricots secs", "raisins secs", "raisin sec", "sultanine",
                   "moutarde", "mirin", "cornichon"],
-    "eggs": ["œuf", "oeuf", "jaune d'œuf", "blanc d'œuf", "jaune d'oeuf", "blanc d'oeuf"],
+    "eggs": ["œuf", "oeuf", "jaune d'œuf", "blanc d'œuf", "jaune d'oeuf", "blanc d'oeuf",
+             "mayonnaise", "mayo", "meringue", "boudoir", "biscuit cuillère", "biscuits cuillère",
+             "tagliatelles fraîches", "pâtes fraîches", "pates fraiches"],
     "lactose": ["lait", "yaourt", "skyr", "fromage", "crème", "creme", "beurre", "mascarpone",
                 "ricotta", "feta", "parmesan", "comté", "comte", "mozzarella", "burrata",
                 "chèvre", "chevre", "brebis", "emmental", "gruyère", "gruyere",
-                "cheddar", "manchego"],
+                "cheddar", "manchego",
+                "ghee", "paneer", "labneh", "kéfir", "kefir", "halloumi", "cottage", "taleggio",
+                "fontina", "pecorino", "tomme", "reblochon", "crottin", "brie", "raclette",
+                "cancoillotte", "kashkaval", "cotija", "faisselle", "petit-suisse"],
     "gluten": ["farine", "pain", "pâtes", "pates", "boulgour", "couscous",
                "semoule", "soba", "épeautre", "epeautre", "seigle", "orge",
                "tortilla", "pita", "brick", "filo", "biscuit", "brioche",
@@ -145,11 +154,18 @@ ALLERGEN_TRIGGERS = {
                # V2.130.0 — avoine = céréale à gluten (règlement INCO 1169/2011,
                # annexe II) sauf avoine certifiée « sans gluten » ; sauce soja
                # classique = brassée avec du blé (le tamari, souvent sans blé, est exclu).
-               "avoine", "sauce soja", "ponzu"],
+               "avoine", "sauce soja", "ponzu",
+               # V2.140.6 — « Boulghour » n'était pas reconnu (d34 sans gluten !)
+               "boulghour", "bulgur", "freekeh", "frik", "blé", "chapelure", "crozet", "orzo",
+               "orecchiette", "linguine", "linguini", "bucatini", "nouilles de blé",
+               "vermicelles de blé", "berkoukes", "gressin", "naan", "chapati", "won-ton",
+               "gyoza", "seitan", "ramen", "udon", "panko", "speculoos", "boudoir", "gochujang"],
     "nuts": ["amande", "noix", "noisette", "pistache", "cajou", "pécan", "pecan",
-             "macadamia", "praline"],
-    "soy": ["soja", "tofu", "tempeh", "miso", "sauce soja", "edamame", "lait de soja"],
-    "sesame": ["sésame", "sesame", "tahin", "tahini", "huile de sésame", "huile de sesame"],
+             "macadamia", "praline", "praliné", "gianduja", "amaretti", "frangipane"],
+    "soy": ["soja", "tofu", "tempeh", "miso", "sauce soja", "edamame", "lait de soja",
+            "shoyu", "natto", "doenjang", "gochujang"],
+    "sesame": ["sésame", "sesame", "tahin", "tahini", "huile de sésame", "huile de sesame",
+               "zaatar", "za'atar", "gomasio", "halva"],
     "mustard": ["moutarde"],
 }
 

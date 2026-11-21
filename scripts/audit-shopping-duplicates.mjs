@@ -30,7 +30,7 @@ const RECIPES = win.__DATA_RECIPES.items;
 const names = ["canonicalName", "PRODUCE_PREP_RE", "stripProducePrep", "HERB_BOUQUET_G", "HERB_FEUILLE_G", "HERB_BRANCHE_G",
   "REF", "dataRef", "COOKED_LINE_RE", "nutriGrams", "SPOON_TO_GRAMS", "SPOON_TO_ML", "LIQUID_AROMATIC_KEYS", "isLiquidAromatic",
   "HERB_KEYWORDS", "isHerbFresh", "ROOT_FRESH_KEYWORDS", "ROOT_CM_TO_G", "isFreshRoot", "unitConvertForAggregation",
-  "displayCanonName", "pickDisplayLabel", "JUICE_ML_PER_FRUIT", "ZEST_G_PER_FRUIT", "VOLUME_TO_ML", "ZEST_SPOON_G", "citrusUse", "pluralFruit", "mergeSameItemLines", "formatQty", "formatSpoonHint", "formatQtyShopping", "aggregateShoppingList", "SUBGROUPS", "inferSubgroup"];
+  "displayCanonName", "pickDisplayLabel", "JUICE_ML_PER_FRUIT", "ZEST_G_PER_FRUIT", "VOLUME_TO_ML", "SHOPPING_ALIASES", "ZEST_SPOON_G", "citrusUse", "pluralFruit", "mergeSameItemLines", "formatQty", "formatSpoonHint", "formatQtyShopping", "aggregateShoppingList", "SUBGROUPS", "inferSubgroup"];
 const src = [
   "const console = {error() {}, warn() {}, log() {}};",
   "function loadRefBlock(id, fallback) { return BLOCK(id) || fallback; }",
@@ -74,11 +74,11 @@ if (process.argv.includes("--candidates")) {
 // --divers : articles sans sous-rayon (rangés dans « Divers ») — revue des expressions SUBGROUPS.
 if (process.argv.includes("--divers")) {
   for (const [cat, items] of Object.entries(byCat)) for (const it of items)
-    if (!app.inferSubgroup(it.name, cat)) console.log(`· [${cat}] ${it.label}`);
+    if (!app.inferSubgroup(it.label || it.name, cat)) console.log(`· [${cat}] ${it.label}`);
 }
 // --groups <rayon> : chaque article et son sous-rayon (contrôle visuel).
 const gi = process.argv.indexOf("--groups");
-if (gi > 0) for (const it of byCat[process.argv[gi + 1]] || []) console.log(`${app.inferSubgroup(it.name, process.argv[gi + 1])?.label || "Divers"} · ${it.label}`);
+if (gi > 0) for (const it of byCat[process.argv[gi + 1]] || []) console.log(`${app.inferSubgroup(it.label || it.name, process.argv[gi + 1])?.label || "Divers"} · ${it.label}`);
 let problems = 0;
 for (const [cat, items] of Object.entries(byCat)) {
   const byName = {}, byNorm = {};
@@ -106,6 +106,13 @@ for (const [n, set] of Object.entries(cats)) {
   if (set.size < 2) continue;
   problems++;
   console.log(`❌ « ${n} » dans ${set.size} rayons : ${[...set].join(", ")}`);
+}
+// 4. Article sans sous-rayon (« Divers ») dans un rayon qui en a (V2.140.6) : compléter SUBGROUPS.
+const SUBGROUPED = ["produce", "pantry", "dairy", "meat-fish", "spices", "bread"];
+for (const cat of SUBGROUPED) for (const it of byCat[cat] || []) {
+  if (app.inferSubgroup(it.label || it.name, cat)) continue;
+  problems++;
+  console.log(`❌ [${cat}] « ${it.label} » rangé dans « Divers » : ajouter un mot-clé dans SUBGROUPS (index.html)`);
 }
 if (verbose) console.log(Object.values(byCat).flat().length, "lignes au total");
 console.log(problems ? `\n${problems} doublon(s) dans la liste de courses.` : "✅ Liste de courses : aucun doublon.");
