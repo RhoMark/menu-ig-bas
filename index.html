@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.142.1</title>
+<title>Menu IG Bas — V2.143.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.142.1">
+<link rel="stylesheet" href="tailwind.css?v=2.143.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.142.1"></script>
+<script src="data/recipes.js?v=2.143.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -24406,42 +24406,73 @@ function BatchPreparation({currentMenu, profile, currentWeek, onSelectRecipe}) {
   );
 }
 
+// V2.143.0 — Recettes éligibles en grille d'icônes façon iOS (même style que
+// les Repères nutritionnels) : un tap sur un type de repas ouvre une bulle.
 function PoolDiagnostic({profile, currentWeek}) {
   const pool = useMemo(() => computePoolSizes(profile, currentWeek), [profile, currentWeek]);
-  const low = Math.min(pool.lunch, pool.dinner) < 7;
-  const tightRotation = !low && (pool.lunch < ROTATION_TARGET_RECENT || pool.dinner < ROTATION_TARGET_RECENT);
-  const tone = low ? "bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700" : tightRotation ? "bg-sky-50 dark:bg-sky-950 border-sky-200 dark:border-sky-800" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700";
+  const {openKey, pos, boxRef, toggle} = useAnchoredBubble();
+  const filtersHint = "Pour élargir le choix : retire des allergies ou exclusions, ajoute de l'équipement, ou augmente le temps de préparation maximum dans les réglages du foyer.";
+  const meals = [
+    {key: "breakfast", icon: "☀️", name: "Petits-déj", full: "Petits-déjeuners", min: 3, colors: ["#fef9c3", "#fde68a"]},
+    {key: "lunch", icon: "🥗", name: "Déjeuners", full: "Déjeuners", min: 7, colors: ["#dcfce7", "#86efac"], rotation: true},
+    {key: "dinner", icon: "🌙", name: "Dîners", full: "Dîners", min: 7, colors: ["#e0e7ff", "#a5b4fc"], rotation: true},
+    {key: "dessert", icon: "🍰", name: "Desserts", full: "Desserts", min: 5, colors: ["#fce7f3", "#f9a8d4"]},
+    ...(profile.snackEnabled ? [{key: "snack", icon: "🍪", name: "Goûters", full: "Goûters", min: 4, colors: ["#ffedd5", "#fdba74"]}] : []),
+  ].map(m => {
+    const n = pool[m.key];
+    const level = n < m.min ? "over" : (m.rotation && n < ROTATION_TARGET_RECENT) ? "warning" : "ok";
+    const detail = level === "over"
+      ? `Moins de ${m.min} recettes possibles : certaines se répéteront dans la semaine. ${filtersHint}`
+      : level === "warning"
+      ? `Pour ne jamais revoir la même recette pendant 2 semaines, il en faudrait ${ROTATION_TARGET_RECENT}. Le menu reprendra d'abord celles servies il y a le plus longtemps.`
+      : `Assez de choix pour varier les menus (minimum conseillé : ${m.min}).`;
+    return {...m, n, level, detail};
+  });
+  const alerts = meals.filter(m => m.level !== "ok").length;
+  const open = meals.find(m => m.key === openKey);
   return (
-    <div className={`rounded-lg p-3 text-sm border ${tone}`}>
-      <div className="flex flex-wrap items-center gap-3">
-        <span className="font-medium text-slate-700 dark:text-slate-200">🎯 Recettes éligibles ({SEASON_FR[pool.season]}) :</span>
-        <PoolBadge label="Petits-déjeuners" n={pool.breakfast} min={3} />
-        <PoolBadge label="Déjeuners" n={pool.lunch} min={7} />
-        <PoolBadge label="Dîners" n={pool.dinner} min={7} />
-        <PoolBadge label="Desserts" n={pool.dessert} min={5} />
-        {profile.snackEnabled && <PoolBadge label="Goûters" n={pool.snack} min={4} />}
+    <section ref={boxRef} className="relative bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-3 no-print">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">🎯 Recettes éligibles</span>
+        <span className="text-xs text-slate-500 dark:text-slate-400">
+          · {SEASON_FR[pool.season]}{alerts > 0 ? ` · ${alerts} à surveiller` : ""}
+        </span>
+        <button type="button" onClick={e => toggle("info", e.currentTarget)}
+          aria-label="Qu'est-ce que les recettes éligibles ?" aria-expanded={openKey === "info"}
+          className="ml-auto w-6 h-6 rounded-full text-xs font-semibold text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700">i</button>
       </div>
-      {low && (
-        <p className="mt-2 text-amber-800 dark:text-amber-200 text-xs">
-          ⚠️ Votre pool est inférieur à 7 recettes pour au moins un type de repas : des recettes se répéteront dans la semaine.
-          Pour élargir le choix : retirez des allergies ou exclusions, ajoutez de l'équipement, ou augmentez le temps max de préparation dans <strong>Paramètres</strong>.
-        </p>
+      <div className="flex flex-wrap gap-x-1 gap-y-3">
+        {meals.map(m => (
+          <button key={m.key} type="button" onClick={e => toggle(m.key, e.currentTarget)}
+            aria-label={`${m.full} : ${m.n} recettes — ${BUBBLE_LEVEL[m.level].txt}`} aria-expanded={openKey === m.key}
+            className="w-[74px] flex flex-col items-center gap-0.5 focus:outline-none group">
+            <span className={`relative w-12 h-12 rounded-[14px] flex items-center justify-center text-2xl shadow-sm transition-transform group-active:scale-95 ${openKey === m.key ? "ring-2 ring-offset-2 ring-sky-500 dark:ring-offset-slate-800" : ""}`}
+              style={{background: `linear-gradient(145deg, ${m.colors[0]}, ${m.colors[1]})`}}>
+              {m.icon}
+              <AlertBadge level={m.level} />
+            </span>
+            <span className="text-sm font-bold text-slate-800 dark:text-slate-100 leading-tight mt-0.5">{m.n}</span>
+            <span className="text-[11px] leading-tight text-slate-600 dark:text-slate-300 text-center w-full truncate">{m.name}</span>
+          </button>
+        ))}
+      </div>
+      {openKey === "info" && (
+        <AnchoredBubble pos={pos} label="Recettes éligibles">
+          <BubbleHeader icon="🎯" title="Recettes éligibles" value={`Saison : ${SEASON_FR[pool.season]}`} />
+          <p className="mt-2 leading-relaxed">
+            Nombre de recettes parmi lesquelles le menu peut choisir cette semaine : celles de la saison qui
+            respectent les allergies et exclusions du foyer, ton équipement, ton niveau et le temps de préparation maximum.
+          </p>
+        </AnchoredBubble>
       )}
-      {tightRotation && (
-        <p className="mt-2 text-sky-800 dark:text-sky-200 text-xs">
-          ℹ️ Pour ne jamais répéter une recette pendant 15 jours (V2.33.0), la cible est <strong>{ROTATION_TARGET_RECENT} déjeuners et {ROTATION_TARGET_RECENT} dîners</strong> éligibles ; vous en avez {pool.lunch} et {pool.dinner}.
-          L'algorithme priorise les recettes les plus anciennes lorsqu'il doit en réutiliser une.
-        </p>
+      {open && (
+        <AnchoredBubble pos={pos} label={open.full}>
+          <BubbleHeader icon={open.icon} title={open.full} value={`${open.n} recette${open.n > 1 ? "s" : ""} possible${open.n > 1 ? "s" : ""}`}
+            level={open.level} levelText={open.level === "over" ? "Trop peu" : open.level === "warning" ? "Juste" : "Suffisant"} />
+          <p className="mt-2 leading-relaxed">{open.detail}</p>
+        </AnchoredBubble>
       )}
-    </div>
-  );
-}
-function PoolBadge({label, n, min}) {
-  const ok = n >= min;
-  return (
-    <span className={`px-2 py-0.5 rounded text-xs ${ok ? "bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200" : "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200"}`}>
-      {label} : <strong>{n}</strong>{!ok && ` (min ${min} conseillé)`}
-    </span>
+    </section>
   );
 }
 
