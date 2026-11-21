@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.148.0</title>
+<title>Menu IG Bas — V2.149.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.148.0">
+<link rel="stylesheet" href="tailwind.css?v=2.149.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.148.0"></script>
+<script src="data/recipes.js?v=2.149.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -19779,21 +19779,8 @@ function SetupView({state, update, updateProfile, onDone}) {
         </div>
         <div>
           <label className="text-sm font-medium block mb-2">Équipement disponible</label>
-          <div className="flex flex-wrap gap-2">
-            {dataRef.equipment().map(eq => (
-              <label key={eq.id} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-                p.equipment.includes(eq.id) ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 text-emerald-800 dark:text-emerald-200" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
-              }`}>
-                <input type="checkbox" checked={p.equipment.includes(eq.id)}
-                  onChange={e => updateProfile({
-                    equipment: e.target.checked
-                      ? [...p.equipment, eq.id]
-                      : p.equipment.filter(x => x !== eq.id)
-                  })} />
-                {eq.label}
-              </label>
-            ))}
-          </div>
+          <EquipmentTiles selected={p.equipment}
+            onToggle={(id, active) => updateProfile({equipment: active ? p.equipment.filter(x => x !== id) : [...p.equipment, id]})} />
         </div>
         {/* V2.40.0 (issue #2) — Cuisines préférées dans onboarding (parité avec Settings, leçon #18) */}
         <div>
@@ -23973,6 +23960,37 @@ function AllergenTiles({selected = [], onToggle, isLocked}) {
   );
 }
 
+// V2.149.0 — Équipement en icônes au trait : coché = icône verte sur fond vert
+// pâle + pastille ✓ ; non coché = icône grise.
+const EQUIPMENT_ICON = {
+  stove: "🔥", oven: "🎛", microwave: "📟", blender: "🧃", "stand-mixer": "🧁", grill: "🍖", bbq: "🪵",
+  wok: "🥡", "pressure-cooker": "🎚", "multi-cooker": "🔌", "air-fryer": "🌀", steamer: "☁", "cast-iron": "🥘", bowl: "🥗",
+};
+function EquipmentTiles({selected = [], onToggle}) {
+  return (
+    <div className="flex flex-wrap gap-x-1 gap-y-2">
+      {dataRef.equipment().map(({id, label}) => {
+        const active = selected.includes(id);
+        return (
+          <button key={id} type="button" aria-pressed={active} title={label} aria-label={label}
+            onClick={() => onToggle(id, active)}
+            className="w-[72px] flex flex-col items-center gap-1 focus:outline-none group">
+            <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[26px] transition-transform group-active:scale-90 ${active
+              ? "bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-300 dark:ring-emerald-700"
+              : "text-slate-400 dark:text-slate-500 group-hover:bg-slate-100 dark:group-hover:bg-white/5"}`}>
+              {EQUIPMENT_ICON[id] || "🍳"}
+              {active && <span className="absolute -top-1 -right-1 w-[18px] h-[18px] rounded-full bg-emerald-500 text-white text-[10px] font-bold leading-[14px] text-center border-2 border-white dark:border-slate-800">✓</span>}
+            </span>
+            <span className={`text-[11px] leading-tight text-center w-full ${active ? "text-emerald-800 dark:text-emerald-200 font-semibold" : "text-slate-600 dark:text-slate-300"}`}>
+              {label.replace(/\s*\(.*\)/, "")}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 function NutritionBanner({currentMenu, profile}) {
   // V2.141.0 — Grille d'icônes façon iOS : un tap ouvre une bulle de détail.
   const {openKey, pos, boxRef, toggle: toggleBubble} = useAnchoredBubble();
@@ -25335,17 +25353,8 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
         </div>
         <div className={p.campingMode ? "opacity-50 pointer-events-none" : ""}>
           <label className="text-sm block mb-2">Équipement{p.campingMode ? " — ignoré en mode camping (réchaud + saladier)" : ""}</label>
-          <div className="flex flex-wrap gap-2">
-            {dataRef.equipment().map(eq => (
-              <label key={eq.id} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-                p.equipment.includes(eq.id) ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
-              }`}>
-                <input type="checkbox" checked={p.equipment.includes(eq.id)}
-                  onChange={e=>updateProfile({equipment: e.target.checked ? [...p.equipment, eq.id] : p.equipment.filter(x=>x!==eq.id)})} />
-                {eq.label}
-              </label>
-            ))}
-          </div>
+          <EquipmentTiles selected={p.equipment}
+            onToggle={(id, active) => updateProfile({equipment: active ? p.equipment.filter(x => x !== id) : [...p.equipment, id]})} />
         </div>
       </div>
       {/* V2.75.0 (#79) — Section Ratios invités */}

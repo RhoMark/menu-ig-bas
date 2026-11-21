@@ -64,6 +64,9 @@ MAP = {
     "🧘": ["activity"], "🚴": ["bike"], "🏊": ["waves"], "⚖": ["scale"], "🤖": ["bot"],
     "🌰": ["tree-deciduous", "nut"], "🐚": ["shell"], "🫛": ["bean"], "🫓": ["circle-ellipsis"],
     "🌭": ["flask-round"], "🥒": ["leafy-green", "leaf"], "🪻": ["flower-2", "flower"],
+    "🎛": ["heater"], "📟": ["microwave"], "🧃": ["blender", "blend"], "🧁": ["cupcake", "cake"],
+    "🍖": ["egg-fried"], "🪵": ["flame-kindling", "flame"], "🥡": ["soup"], "🎚": ["gauge"],
+    "🔌": ["plug-zap"], "🌀": ["fan", "wind"],
     "👨": ["user"], "👩": ["user"], "👧": ["user-round"], "👦": ["user-round"],
 }
 

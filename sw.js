@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.148.0";
+const CACHE_VERSION = "menu-ig-bas-v2.149.0";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -24,7 +24,7 @@ const CRITICAL_ASSETS = [
   "./icon-192.png",
   "./icon-512.png",
   // V2.87.0 (issue #94) — Tailwind CSS bundlé localement (était CDN avant).
-  "./tailwind.css?v=2.148.0",
+  "./tailwind.css?v=2.149.0",
   // V3.0 Phase 2·L (S0) — React/ReactDOM/Babel vendorisés en local (étaient
   // sur cdnjs, en best-effort dans CDN_ASSETS). Désormais CRITIQUES : mis en
   // cache dès l'install → l'app boote 100% hors-ligne au 1er lancement, plus
@@ -35,11 +35,11 @@ const CRITICAL_ASSETS = [
   // V2.115.0 — Catalogue de recettes sorti d'index.html (limite 5 Mo).
   // V2.140.2 — URL versionnée (?v=, bumpée avec CACHE_VERSION) : une page à jour ne
   // peut plus recevoir le catalogue de l'ancienne version (bug « Sel, poivre » en V2.140.0).
-  "./data/recipes.js?v=2.148.0",
+  "./data/recipes.js?v=2.149.0",
   // Refonte design (1A) — polices auto-hébergées (OFL), utilisées par l'interface V3.
   "./vendor/fonts/nunito-latin-wght-normal.woff2",
   "./vendor/fonts/fraunces-latin-soft-normal.woff2",
-  "./vendor/fonts/app-icons.woff2?h=a6178422", // ?h= empreinte du fichier (audit-emoji-icons.py)
+  "./vendor/fonts/app-icons.woff2?h=56bfb639", // ?h= empreinte du fichier (audit-emoji-icons.py)
 ];
 
 // V3.0 Phase 2·L (S0) — Plus aucune dépendance CDN runtime. React/Babel/Tailwind
