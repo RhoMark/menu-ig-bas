@@ -139,3 +139,7 @@ html.ui-v3 .v3-filters > button {
 }
 html.ui-v3 .v3-filters > input { flex: 1 1 16rem; min-width: 0; }
 @media (max-width: 640px) { html.ui-v3 .v3-filters > input { flex-basis: 100%; } }
+
+/* V2.145.0 — Icône au trait teintée : --ic en clair, --ic-dark en sombre. */
+.ic-tint { color: var(--ic); }
+.dark .ic-tint { color: var(--ic-dark, var(--ic)); }
