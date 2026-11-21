@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.150.0</title>
+<title>Menu IG Bas — V2.150.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.150.0">
+<link rel="stylesheet" href="tailwind.css?v=2.150.1">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.150.0"></script>
+<script src="data/recipes.js?v=2.150.1"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -22111,14 +22111,15 @@ function ShoppingListV3({currentWeek, entries, totalItems, checkedCount, useSubg
     <div className="space-y-4">
       <div className="bg-surface rounded-card shadow-card border border-line p-4 space-y-3">
         <div className="flex flex-wrap items-center gap-2">
-          <h2 className="font-title text-2xl font-semibold text-ink flex-1">Liste de courses</h2>
+          <h2 className="font-title text-2xl font-semibold text-ink flex-1 min-w-0">Liste de courses</h2>
           {CAN_SHARE && entries.length > 0 && (
-            <button onClick={onShare} aria-label="Partager la liste de courses"
-              title="Envoyer la liste (articles restants) par message, mail…"
-              className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2"><ShareIcon /> Partager</button>
+            <ToolIcon icon={<ShareIcon />} label="Partager" onClick={onShare}
+              title="Envoyer la liste (articles restants) par message, mail…" />
           )}
-          <button onClick={onPrint} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2">🖨 Imprimer</button>
-          <button onClick={onPdf} disabled={pdfBusy} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2 disabled:opacity-50">{pdfBusy ? "⏳ PDF…" : "📄 PDF"}</button>
+          {/* V2.150.1 — Mêmes icônes d'outils que la barre du planning. */}
+          <ToolIcon icon="🖨" label="Imprimer" onClick={onPrint} title="Imprimer la liste de courses" />
+          <ToolIcon icon={pdfBusy ? "⏳" : "📄"} label="PDF" onClick={onPdf} disabled={pdfBusy}
+            title="Télécharger la liste de courses en PDF (.pdf)" />
         </div>
         <p className="text-sm text-muted">Semaine du {formatShort(currentWeek)} · {all} article{all > 1 ? "s" : ""}</p>
         <div>
