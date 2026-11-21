@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.145.0</title>
+<title>Menu IG Bas — V2.145.1</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.145.0">
+<link rel="stylesheet" href="tailwind.css?v=2.145.1">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -473,7 +473,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment dire à l'app ce que ma famille aime ?",
-          "a": "Depuis V2.109.0, dans Paramètres → Membres, chaque membre a une rubrique « ❤ Ce que … aime » : ajoute jusqu'à 10 ingrédients (saumon, lentilles, potiron…), avec suggestions automatiques. Les recettes qui en contiennent sont favorisées dans les menus, d'autant plus que plusieurs membres les aiment — mais jamais imposées : l'effet est volontairement doux et plafonné pour qu'au plus ~1 repas sur 3 en profite (variété garantie). Les « j'aime » ne passent jamais devant les allergies, les exclusions, les repères nutritionnels (viande rouge ≤ 500 g/pers/sem, œufs…), la charge glycémique ni la saison. « Pomme » ne déclenche pas « pomme de terre » ; « saumon » reconnaît « pavé de saumon » ou « saumon fumé ». Dans la bibliothèque, le bouton « 💚 Ce qu'on aime » filtre ces recettes, et la fiche recette indique qui aime quoi (à l'écran seulement : l'impression et le PDF n'affichent aucun prénom)."
+          "a": "Depuis V2.109.0, dans Paramètres → Membres, chaque membre a une rubrique « ❤ Ce que … aime » : ajoute jusqu'à 10 ingrédients (saumon, lentilles, potiron…), avec suggestions automatiques. Les recettes qui en contiennent sont favorisées dans les menus, d'autant plus que plusieurs membres les aiment — mais jamais imposées : l'effet est volontairement doux et plafonné pour qu'au plus ~1 repas sur 3 en profite (variété garantie). Les « j'aime » ne passent jamais devant les allergies, les exclusions, les repères nutritionnels (viande rouge ≤ 500 g/pers/sem, œufs…), la charge glycémique ni la saison. « Pomme » ne déclenche pas « pomme de terre » ; « saumon » reconnaît « pavé de saumon » ou « saumon fumé ». Dans la bibliothèque, le bouton « ❤ Ce qu'on aime » filtre ces recettes, et la fiche recette indique qui aime quoi (à l'écran seulement : l'impression et le PDF n'affichent aucun prénom)."
         }
       ]
     },
@@ -689,7 +689,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pictogrammes de navigation et vues",
-          "a": "📅 / 🗓 vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %). ⭐ filtre favoris de la bibliothèque. 💚 filtre « Ce qu'on aime » : uniquement les recettes contenant un ingrédient aimé par un membre (visible dès qu'un « J'aime » est renseigné)."
+          "a": "📅 / 🗓 vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %). ⭐ filtre favoris de la bibliothèque. ❤ filtre « Ce qu'on aime » : uniquement les recettes contenant un ingrédient aimé par un membre (visible dès qu'un « J'aime » est renseigné)."
         }
       ]
     },
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.145.0"></script>
+<script src="data/recipes.js?v=2.145.1"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -17140,7 +17140,7 @@ const TUTORIAL_STEPS = [
     emoji: "📖",
     title: "Fiche recette & filtres",
     body: "Clique sur un slot pour ouvrir la recette : ingrédients, étapes (style « ado qui cuisine », gestes définis), badges CG/IG, allergènes, kcal, temps. Note tes recettes (1-5★) — les ≤2★ sont exclues. Imprime-la (🖨) ou télécharge-la en PDF (📄).",
-    highlight: "Dis aussi ce que chacun aime (Paramètres → Membres → ❤) : ces recettes reviennent plus souvent. Bibliothèque consultable indépendamment du menu, avec filtres (type, favoris ⭐, « 💚 Ce qu'on aime ») et recherche multi-ingrédients (noix + poire).",
+    highlight: "Dis aussi ce que chacun aime (Paramètres → Membres → ❤) : ces recettes reviennent plus souvent. Bibliothèque consultable indépendamment du menu, avec filtres (type, favoris ⭐, « ❤ Ce qu'on aime ») et recherche multi-ingrédients (noix + poire).",
   },
   {
     emoji: "🛒",
@@ -21544,7 +21544,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
               <div className="flex flex-wrap gap-1 text-sm">
                 {liked.map(({member, likes}) => (
                   <span key={member.id} className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200">
-                    {member.name} ❤ {likes.join(", ")}
+                    {member.name} <span className="text-rose-500 dark:text-rose-400">❤</span> {likes.join(", ")}
                   </span>
                 ))}
               </div>
@@ -22023,7 +22023,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
                 ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200"
                 : "border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
             }`}>
-            💚 Ce qu'on aime
+            <span className="text-rose-500 dark:text-rose-400">❤</span> Ce qu'on aime
           </button>
         )}
         <select value={filter} onChange={e=>setFilter(e.target.value)} className="border rounded px-3 py-2">
@@ -23394,7 +23394,7 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
 
 // Textarea contrôlé pour exclusions : conserve le texte brut (newlines autorisés)
 // et ne nettoie en tableau qu'à chaque changement, sans bloquer la saisie.
-function ExclusionsTextarea({value, onChange}) {
+function ExclusionsTextarea({value = [], onChange}) {
   const [raw, setRaw] = useState(value.join("\n"));
   // Resynchronise si la prop externe change (ex: reset)
   useEffect(() => {
@@ -23440,7 +23440,7 @@ function LikesEditor({value, onChange, memberId}) {
       <div className="flex flex-wrap gap-1">
         {value.map(l => (
           <span key={l} className="text-xs px-2 py-1 rounded border bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200 inline-flex items-center gap-1">
-            ❤ {l}
+            <span className="text-rose-500 dark:text-rose-400">❤</span> {l}
             <button onClick={() => onChange(value.filter(x => x !== l))} aria-label={`Retirer ${l}`} className="opacity-60 hover:opacity-100">✕</button>
           </span>
         ))}
@@ -25062,7 +25062,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               )}
               <details className="text-sm" open={memberAllergies.length > 0}>
                 <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
-                  ⚠ Allergies / intolérances de {m.name || "ce membre"}
+                  <span className="text-red-600 dark:text-red-400">⚠</span> Allergies / intolérances de {m.name || "ce membre"}
                   {memberAllergies.length > 0 && <span className="ml-1 text-red-700 dark:text-red-300 font-medium">({memberAllergies.length})</span>}
                 </summary>
                 <div className="mt-2 flex flex-wrap gap-1">
@@ -25091,7 +25091,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               </details>
               <details className="text-sm" open={(m.likes || []).length > 0}>
                 <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
-                  ❤ Ce que {m.name || "ce membre"} aime
+                  <span className="text-rose-500 dark:text-rose-400">❤</span> Ce que {m.name || "ce membre"} aime
                   {(m.likes || []).length > 0 && <span className="ml-1 text-emerald-700 dark:text-emerald-300 font-medium">({(m.likes || []).length})</span>}
                 </summary>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre adore. Les recettes qui en contiennent sont <strong>favorisées</strong> dans les menus (plus le foyer est nombreux à aimer, plus l'effet est marqué), sans jamais être imposées : au plus ~1 repas sur 3 en profite, pour garder de la variété.</p>
