@@ -347,6 +347,17 @@ def check_generic_names(recipes, report):
                     report.err(rid, f"dénomination générique interdite : '{ing_entry[0]}' "
                                     f"(qualifier requis parmi : {qualifiers[:3]}...)")
 
+def check_one_name_per_item(recipes, report):
+    # V2.140.0 — Un article = un nom dans la liste de courses (cf. vocab.INGREDIENT_RENAMES).
+    for r in recipes:
+        rid = r.get("id", "?")
+        for ing in r.get("ing", []):
+            if not ing: continue
+            if ing[0] in vocab.INGREDIENT_RENAMES:
+                report.err(rid, f"synonyme : '{ing[0]}' → utiliser « {vocab.INGREDIENT_RENAMES[ing[0]]} »")
+            if re.match(vocab.COMPOUND_SPICES_RE, ing[0].strip(), re.I):
+                report.err(rid, f"composé : '{ing[0]}' → un ingrédient par ligne (« Sel » + « Poivre noir »)")
+
 def check_allergens_consistency(recipes, report):
     # V2.99.19 — Détection allergens fine, ingrédient par ingrédient (pas
     # concat global) pour éviter les faux positifs ("lait de coco" ≠ lactose).
@@ -666,6 +677,7 @@ def main():
     check_ids_format(lot, existing_recipes, report)
     check_cell(lot, args.cell, report)
     check_generic_names(lot, report)
+    check_one_name_per_item(lot, report)
     check_allergens_consistency(lot, report)
     check_ingredient_category(lot, report)
     check_tags_consistency(lot, report)

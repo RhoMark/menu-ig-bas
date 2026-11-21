@@ -70,6 +70,74 @@ def cuisines(index_path=None):
 
 # ── 2. Vocabulaire d'authoring (défini une seule fois) ────────────────────
 
+# V2.140.0 — Un article = un nom (liste de courses). Nom interdit → nom à
+# utiliser. Appliqué une fois par normalize-ingredient-names.py, puis bloquant
+# dans validate-recipe-data.py et lint-new-recipes.py (le synonyme ne revient pas).
+INGREDIENT_RENAMES = {
+    # Crèmes : 4 produits du rayon frais
+    "Crème fraîche liquide": "Crème liquide légère",
+    "Crème liquide légère 15%": "Crème liquide légère",
+    "Crème fraîche légère": "Crème liquide légère",
+    "Crème fraîche allégée": "Crème fraîche épaisse légère",
+    "Crème fraîche épaisse 15%": "Crème fraîche épaisse légère",
+    "Crème fraîche": "Crème fraîche épaisse légère",
+    # Herbes
+    "Persil frais": "Persil plat",
+    "Persil plat frais": "Persil plat",
+    "Persil plat frais (ciselé)": "Persil plat (ciselé)",
+    # Épices entières ≠ moulues (canonicalName retire « moulu » / « en poudre »)
+    "Bâton de cannelle": "Cannelle en bâton",
+    "Cannelle (bâton)": "Cannelle en bâton",
+    "Cannelle bâton": "Cannelle en bâton",
+    "Cardamome": "Cardamome en gousses",
+    "Cardamome (gousse)": "Cardamome en gousses",
+    "Cardamome verte": "Cardamome en gousses",
+    "Cardamome verte (gousses)": "Cardamome en gousses",
+    "Clou de girofle moulu": "Girofle moulu",
+    "Vanille (extrait)": "Extrait de vanille",
+    "Vanille (extrait, ou gousse)": "Extrait de vanille",
+    "Vanille (extrait, si pas de pandan)": "Extrait de vanille",
+    "Vanille (gousse, ou extrait)": "Gousse de vanille",
+    "Vanille": "Vanille en poudre",
+    "Vanille en gousse": "Vanille en poudre",
+    "Poivre": "Poivre noir",
+    "Poivre du moulin": "Poivre noir",
+    "Poivre noir du moulin": "Poivre noir",
+    "Poivre noir moulu": "Poivre noir",
+    "Sel fin": "Sel",
+    "Laurier": "Feuille de laurier",
+    "Noix de muscade": "Muscade",
+    "Muscade râpée": "Muscade",
+    "Thym": "Thym séché",
+    "Origan": "Origan séché",
+    # Même article, autre libellé
+    "Bouillon de bœuf (cube)": "Cube de bouillon de bœuf",
+    "Bouillon de poulet (cube)": "Cube de bouillon de poulet",
+    "Feuille de gélatine (2 g/feuille)": "Feuille de gélatine",
+    "Feuille de gélatine (2 g)": "Feuille de gélatine",
+    "Feuilles de nori": "Feuille de nori",
+    "Feuille de nori (algue grillée)": "Feuille de nori",
+    "Feuille de curry (facultatif)": "Feuilles de curry",
+    "Feuilles de curry (facultatif)": "Feuilles de curry",
+    "Piment doux (jalapeño)": "Piment jalapeño",
+    "Piment doux (facultatif)": "Piment doux frais",
+    "Piment doux (épépiné, émincé)": "Piment doux frais",
+    "Sardines fraîches vidées": "Sardines fraîches",
+    "Petits oignons grelots": "Oignons grelots",
+    "Petit pois": "Petits pois",
+    "Petits pois frais": "Petits pois",
+    "Petits pois frais (ou surgelés)": "Petits pois (frais ou surgelés)",
+    "Petits pois frais ou surgelés": "Petits pois (frais ou surgelés)",
+    "Petites pâtes complètes": "Pâtes complètes (petites)",
+    "Anchois (facultatif)": "Anchois à l'huile (facultatif)",
+    "Lait demi-écrémé tiède": "Lait demi-écrémé (tiède)",
+    "Tomatillo": "Tomatille",
+    "Tomatillos (ou tomate verte)": "Tomatille (ou tomate verte)",
+}
+
+# Composés interdits : un ingrédient par ligne (« Sel, poivre » → Sel + Poivre noir).
+COMPOUND_SPICES_RE = r"^(sel|fleur de sel|poivre|muscade|thym|laurier|romarin|cumin|origan séché|basilic séché|sauge fraîche)(\s*,\s*(sel|fleur de sel|poivre|muscade|thym|laurier|romarin|cumin|origan séché|basilic séché|sauge fraîche))+$"
+
 TYPES = frozenset({"breakfast", "lunch", "dinner", "snack", "dessert"})
 
 # Saisons concrètes (pour les heuristiques de couverture saisonnière) ;

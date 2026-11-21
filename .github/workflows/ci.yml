@@ -121,6 +121,10 @@ jobs:
       - name: Recipe CG (code de l'app)
         run: node scripts/recipe-cg.mjs --catalogue > /dev/null
 
+      # ── Liste de courses : un article = une ligne (V2.140.0) ──
+      - name: Shopping list duplicates (code de l'app)
+        run: node scripts/audit-shopping-duplicates.mjs
+
       # ── 5. HTML basique ─────────────────────────────────────────────
       - name: HTML basic checks
         run: |

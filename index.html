@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.139.0</title>
+<title>Menu IG Bas — V2.140.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -484,7 +484,7 @@ if ("serviceWorker" in navigator) {
       "qa": [
         {
           "q": "Comment les ingrédients sont agrégés ?",
-          "a": "Par clé (nom canonique + unité + catégorie). Exemple : « Tomate », « Tomates » et « Tomates mûres » fusionnent vers « tomate » (singulier, descripteurs strippés). Les unités c.à.c, c.à.s, pincée, bouquet, branche, feuille, cm sont converties vers g ou ml selon l'ingrédient (ex : 1 c.à.s d'huile = 15 ml). Les produces avec poids référencé (tomate, courgette…) convergent vers « u » (pièce) pour fusion."
+          "a": "Par clé (nom canonique + unité + catégorie). Exemple : « Tomate », « Tomates » et « Tomates mûres » fusionnent vers « tomate » (singulier, descripteurs strippés). Les unités c.à.c, c.à.s, pincée, bouquet, branche, feuille, cm sont converties vers g ou ml selon l'ingrédient (ex : 1 c.à.s d'huile = 15 ml). Les produces avec poids référencé (tomate, courgette…) convergent vers « u » (pièce) pour fusion. Depuis la V2.140.0, un même article écrit dans des unités différentes selon les recettes (« 50 g » et « 1 bouquet » de persil, « 1 bâton » et « 3 g » de cannelle) tient sur une seule ligne, et les herbes fraîches s'affichent en bouquets. « Sel, poivre » est devenu deux ingrédients : Sel et Poivre noir."
         },
         {
           "q": "Pourquoi mon ingrédient apparaît plusieurs fois ?",
@@ -810,7 +810,11 @@ if ("serviceWorker" in navigator) {
     {"id": "œuf",     "label": "œuf",     "type": "discrete"},
     {"id": "c.à.c",   "label": "c.à.c",   "type": "discrete"},
     {"id": "c.à.s",   "label": "c.à.s",   "type": "discrete"},
-    {"id": "cm",      "label": "cm",      "type": "discrete"}
+    {"id": "cm",      "label": "cm",      "type": "discrete"},
+    {"id": "bâton",   "label": "bâton",   "type": "discrete"},
+    {"id": "brin",    "label": "brin",    "type": "discrete"},
+    {"id": "cube",    "label": "cube",    "type": "discrete"},
+    {"id": "sachet",  "label": "sachet",  "type": "discrete"}
   ],
   "aliases": {
     "gousses":     "gousse",
@@ -3430,7 +3434,15 @@ if ("serviceWorker" in navigator) {
       "category": "bread",
       "soldByWeight": false,
       "weightPerPiece": 40
-    }
+    },
+    {"id": "tomatille", "label": "Tomatilles", "category": "produce", "weightPerPiece": 40, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "piment jalapeno", "label": "Piment jalapeño", "category": "produce", "weightPerPiece": 20, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "piment rouge frais", "label": "Piment rouge frais", "category": "produce", "weightPerPiece": 10, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "salade laitue", "label": "Salade laitue", "category": "produce", "weightPerPiece": 300, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "citronnelle", "label": "Citronnelle", "category": "produce", "weightPerPiece": 20, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "pomelo", "label": "Pomelo", "category": "produce", "weightPerPiece": 1000, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "feve tonka", "label": "Fève tonka", "category": "spices", "weightPerPiece": 1.5, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"},
+    {"id": "clou de girofle", "label": "Clou de girofle", "category": "spices", "weightPerPiece": 0.1, "soldByWeight": false, "src": "poids moyen, ordre de grandeur non vérifié (V2.140.0)"}
   ]
 }
 </script>
@@ -8417,6 +8429,13 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 15.0
     },
     {
+      "id": "creme fraiche epaisse legere",
+      "ig": 30,
+      "carbsPer100g": 3.5,
+      "proteinPer100g": 2.5,
+      "fatPer100g": 15.0
+    },
+    {
       "id": "pates completes",
       "ig": 45,
       "carbsPer100g": 70.0,
@@ -12798,7 +12817,8 @@ const dataRef = {
     // ingrédients : 1059 occurrences listées pré-fix, dont sel/herbes/ail).
     const canon = canonicalName(name);
     if (u === "pincée")   return qty * 0.5;          // sel, poivre, fleur de sel, piment, muscade
-    if (u === "gousse")   return qty * 4;            // ail : 1 gousse ≈ 4 g
+    // V2.140.0 — gousse d'ail ≈ 4 g, mais gousse de cardamome ≈ 0,2 g et de vanille ≈ 3 g (ordres de grandeur)
+    if (u === "gousse")   return qty * (canon.includes("cardamome") ? 0.2 : canon.includes("vanille") ? 3 : 4);
     if (u === "bouquet")  return qty * (HERB_BOUQUET_G[canon] ?? HERB_BOUQUET_G.default);
     if (u === "branche")  return qty * (HERB_BRANCHE_G[canon] ?? HERB_BRANCHE_G.default);
     if (u === "feuille")  return qty * (HERB_FEUILLE_G[canon] ?? HERB_FEUILLE_G.default);
@@ -14380,6 +14400,14 @@ function formatQtyShopping(qty, unit, name, category) {
   const u = dataRef.canonicalUnit(unit);
   const canon = name ? canonicalName(name) : null;
   const weight = canon ? dataRef.produceUnitWeight(canon) : null;
+  // V2.140.0 — Herbes fraîches : on les achète en bouquet. « 2 bouquets (≈ 70 g) ».
+  if (u === "g" && category === "produce" && canon && isHerbFresh(canon)) {
+    const bq = HERB_BOUQUET_G[canon] ?? Object.entries(HERB_BOUQUET_G).find(([k]) => k !== "default" && canon.startsWith(k))?.[1];
+    if (bq) {
+      const n = Math.max(1, Math.ceil(qty / bq - 0.15)); // 1,1 bouquet → 1 (tolérance)
+      return `${n} bouquet${n > 1 ? "s" : ""} (≈ ${Math.round(qty)} g)`;
+    }
+  }
   // Produce "vendu au poids" → arrondi aux paliers 50g / 100g (avant conversion kg)
   if (u === "g" && category === "produce") {
     let rounded;
@@ -16881,7 +16909,10 @@ function aggregateShoppingList(weekMenu, profile) {
       let cName = canonicalName(name);
       let cUnit = dataRef.canonicalUnit(unit);
       let cQty = qty;
-      if (category === "produce") {
+      // V2.140.0 — Herbes fraîches exclues : elles s'achètent en bouquet et
+      // restent en grammes (sinon « 50 g » devenait « 0,5 pièce de 100 g »
+      // et ne fusionnait plus avec « 1 bouquet » converti en grammes).
+      if (category === "produce" && !isHerbFresh(cName)) {
         const weight = dataRef.produceUnitWeight(cName);
         if (weight != null) {
           const stripped = stripProducePrep(cName);
@@ -16957,6 +16988,7 @@ function aggregateShoppingList(weekMenu, profile) {
       });
     }
   });
+  mergeSameItemLines(agg);
   // group by category
   const byCat = {};
   Object.values(agg).forEach(item => {
@@ -16968,6 +17000,34 @@ function aggregateShoppingList(weekMenu, profile) {
   Object.values(byCat).forEach(list => list.sort((a,b) => a.name.localeCompare(b.name, "fr")));
   return byCat;
 }
+// V2.140.0 — Un même article saisi dans des unités différentes selon les
+// recettes (« Persil plat 50 g » + « 1 bouquet », « Olive noire 20 pièces » +
+// « 275 g ») donnait 2 lignes dans la liste de courses. On fusionne les lignes
+// de même nom et même rayon : tout est converti en grammes (dataRef.qtyToGrams,
+// les mêmes conversions que les calories), puis ramené à l'unité la plus
+// parlante : pièces si l'article a un poids à la pièce, ml pour un liquide,
+// sinon grammes. Une quantité impossible à convertir reste sur sa ligne.
+function mergeSameItemLines(agg) {
+  const groups = {};
+  for (const [key, it] of Object.entries(agg)) (groups[`${it.canon}|${it.category}`] ||= []).push(key);
+  for (const keys of Object.values(groups)) {
+    if (keys.length < 2) continue;
+    const {canon, category} = agg[keys[0]];
+    const conv = keys.map(k => ({k, g: dataRef.qtyToGrams(canon, agg[k].qty, agg[k].unit)})).filter(x => x.g != null);
+    if (conv.length < 2) continue;
+    const items = conv.map(x => agg[x.k]);
+    const w = isHerbFresh(canon) ? null : dataRef.produceUnitWeight(canon);
+    const grams = conv.reduce((s, x) => s + x.g, 0);
+    const unit = w && items.some(it => it.unit === "u") ? "u"
+      : items.some(it => it.unit === "ml" || it.unit === "l" || it.unit === "cl") ? "ml" : "g";
+    const labels = {};
+    items.forEach(it => Object.entries(it.labels).forEach(([l, n]) => { labels[l] = (labels[l] || 0) + n; }));
+    conv.forEach(x => delete agg[x.k]);
+    const key = `${canon}|${unit}|${category}`;
+    agg[key] = {...items[0], labels, unit, qty: unit === "u" ? grams / w : grams};
+  }
+}
+
 // V2.99.1 (#71 fix) — Estime le coût hebdo moyen projeté du catalogue pour
 // un profil donné. Sert au bandeau "Pourquoi ce dépassement ?" et au check
 // budget-vs-catalogue de generateWeek. Calcul : pour chaque type de slot

@@ -124,7 +124,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -280,7 +286,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fruits rouges frais (fraises, framboises, myrtilles)",
+          "Fruits rouges (fraises, framboises, myrtilles)",
           60,
           "g",
           "produce"
@@ -395,7 +401,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Pousses d'épinards frais",
+          "Pousses d'épinards",
           50,
           "g",
           "produce"
@@ -413,7 +419,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -565,7 +577,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -623,7 +641,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -638,7 +656,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Épinards frais ou surgelés",
@@ -759,7 +777,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -961,11 +985,17 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           1,
-          "u",
+          "feuille",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -1049,7 +1079,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -1110,7 +1146,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -1242,7 +1278,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "feuilles",
           "produce"
@@ -1309,7 +1345,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Épinards frais ou surgelés",
@@ -1510,7 +1546,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -1559,7 +1601,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pavé de saumon frais",
+          "Pavé de saumon",
           100,
           "g",
           "meat-fish"
@@ -1577,7 +1619,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche légère",
+          "Crème liquide légère",
           2,
           "c.à.s",
           "dairy"
@@ -1595,7 +1637,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -1697,7 +1745,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -1875,7 +1929,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -1953,7 +2007,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           6,
           "feuilles",
           "produce"
@@ -1971,7 +2025,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2057,7 +2117,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2150,7 +2216,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2229,7 +2301,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2329,7 +2407,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2409,7 +2493,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2498,7 +2588,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2562,7 +2658,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -2577,7 +2673,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -2592,7 +2688,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2657,7 +2759,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1,
           "c.à.s",
           "produce"
@@ -2681,7 +2783,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2774,7 +2876,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -2840,7 +2948,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           150,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Sauce nuoc-mâm (ou soja)",
@@ -2946,7 +3054,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -3044,7 +3158,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -3264,7 +3384,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -3645,7 +3765,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -3698,7 +3824,7 @@ window.__DATA_RECIPES = {
           "Lait de coco (cuisine)",
           150,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Lait d'amande",
@@ -3892,7 +4018,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -3984,13 +4116,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Origan",
+          "Origan séché",
           1,
           "c.à.c",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -4070,7 +4208,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -4180,7 +4318,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -4244,7 +4388,7 @@ window.__DATA_RECIPES = {
           "Lait de coco cuisine",
           60,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomates concassées",
@@ -4259,7 +4403,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -4348,7 +4492,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -4645,7 +4795,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -4720,7 +4876,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -4829,7 +4985,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -4910,7 +5072,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5175,7 +5343,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5256,7 +5430,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5340,7 +5520,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5428,7 +5614,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5520,7 +5712,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5586,7 +5784,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -5703,7 +5901,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petites pâtes complètes",
+          "Pâtes complètes (petites)",
           15,
           "g",
           "pantry"
@@ -5793,7 +5991,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5857,7 +6061,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -5872,7 +6076,7 @@ window.__DATA_RECIPES = {
           "Lait de coco cuisine",
           80,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Bouillon",
@@ -5893,7 +6097,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -5974,7 +6184,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -6071,7 +6287,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -6262,7 +6484,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -6335,7 +6563,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Curry",
@@ -6440,7 +6668,7 @@ window.__DATA_RECIPES = {
           "Bouquet garni",
           1,
           "u",
-          "spices"
+          "produce"
         ],
         [
           "Moutarde",
@@ -6455,7 +6683,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -6552,7 +6786,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -6763,7 +7003,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cannelle",
+          "Cannelle en bâton",
           1,
           "bâton",
           "spices"
@@ -7147,7 +7387,7 @@ window.__DATA_RECIPES = {
         [
           "Gousse de vanille",
           0.25,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -7207,7 +7447,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           75,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Mangue",
@@ -7593,7 +7833,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -7799,7 +8039,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -8279,7 +8519,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -8783,7 +9023,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre, muscade",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Muscade",
           1,
           "pincée",
           "spices"
@@ -8903,7 +9155,7 @@ window.__DATA_RECIPES = {
           "Houmous",
           30,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Radis",
@@ -8924,7 +9176,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9013,7 +9265,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9096,7 +9354,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9238,7 +9502,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Bouillon de légumes",
@@ -9265,7 +9529,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2.5,
           "g",
           "produce"
@@ -9360,7 +9624,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9434,7 +9704,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9604,7 +9880,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Noix de muscade",
+          "Muscade",
           1,
           "pincée",
           "spices"
@@ -9622,7 +9898,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9709,7 +9991,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9767,7 +10055,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Oignon",
@@ -9782,7 +10070,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -9886,7 +10174,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -9968,7 +10262,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -10048,7 +10348,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -10143,7 +10449,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -10314,7 +10626,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -10326,7 +10638,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -10400,7 +10718,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -10490,7 +10814,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.5,
           "c.à.c",
           "spices"
@@ -11096,7 +11420,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "feuilles",
           "produce"
@@ -11108,7 +11432,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -11245,7 +11575,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -11304,10 +11640,10 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           150,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
-          "Abricots frais",
+          "Abricots",
           2,
           "u",
           "produce"
@@ -11400,7 +11736,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "feuilles",
           "produce"
@@ -11418,7 +11754,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -11518,7 +11860,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -11605,7 +11953,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -11782,7 +12136,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -11877,7 +12237,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -11960,7 +12320,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12013,7 +12379,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petits pois frais (ou surgelés)",
+          "Petits pois (frais ou surgelés)",
           60,
           "g",
           "produce"
@@ -12055,7 +12421,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12107,7 +12479,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           5,
           "feuilles",
           "produce"
@@ -12137,7 +12509,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fleur de sel, poivre",
+          "Fleur de sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12232,7 +12610,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12307,7 +12691,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12391,7 +12781,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12475,7 +12871,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12534,7 +12936,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.1,
           "bouquet",
           "produce"
@@ -12564,7 +12966,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12655,7 +13063,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12716,7 +13130,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crème fraîche légère",
+          "Crème liquide légère",
           30,
           "ml",
           "dairy"
@@ -12740,7 +13154,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12830,7 +13250,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -12909,7 +13335,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -13022,7 +13448,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -13068,7 +13500,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petits pois frais (ou surgelés)",
+          "Petits pois (frais ou surgelés)",
           80,
           "g",
           "produce"
@@ -13104,7 +13536,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -13166,7 +13604,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche légère",
+          "Crème liquide légère",
           20,
           "ml",
           "dairy"
@@ -13184,7 +13622,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -13273,7 +13717,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -13523,7 +13973,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Abricots frais",
+          "Abricots",
           2,
           "u",
           "produce"
@@ -13600,7 +14050,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           3,
           "u",
-          "pantry"
+          "frozen"
         ]
       ],
       "steps": [
@@ -13662,7 +14112,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "feuilles",
           "produce"
@@ -13825,7 +14275,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Agar-agar",
@@ -13964,7 +14414,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Abricots frais",
+          "Abricots",
           2.0,
           "u",
           "produce"
@@ -14003,7 +14453,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.5,
           "c.à.c",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -14141,7 +14591,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.5,
           "c.à.c",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -14199,7 +14649,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "feuilles",
           "produce"
@@ -14356,7 +14806,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -14446,7 +14902,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -14542,7 +15004,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -14615,7 +15083,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -14633,7 +15101,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -14723,7 +15197,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -14857,7 +15337,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -14953,7 +15439,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15049,7 +15541,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15134,7 +15632,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15222,7 +15726,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15315,7 +15825,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -15365,10 +15875,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Petits pois frais ou surgelés",
+          "Petits pois (frais ou surgelés)",
           70,
           "g",
-          "frozen"
+          "produce"
         ],
         [
           "Asperges vertes",
@@ -15419,7 +15929,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15500,7 +16016,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15583,7 +16105,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15636,7 +16164,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           80,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Oignon",
@@ -15651,7 +16179,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -15681,7 +16209,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15789,7 +16323,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15837,7 +16377,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Filet de saumon frais",
+          "Filet de saumon",
           120,
           "g",
           "meat-fish"
@@ -15849,7 +16389,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -15879,7 +16419,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -15944,7 +16490,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -15962,7 +16508,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16046,13 +16598,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16164,7 +16722,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16273,7 +16837,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16358,7 +16928,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16404,7 +16980,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Palourdes fraîches",
+          "Palourdes",
           300,
           "g",
           "meat-fish"
@@ -16440,7 +17016,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16497,7 +17079,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Oignon",
@@ -16512,7 +17094,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -16542,7 +17124,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16641,7 +17229,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16741,7 +17335,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16829,7 +17429,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -16924,7 +17530,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17000,7 +17612,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -17018,7 +17630,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17116,7 +17734,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17213,7 +17837,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -17231,7 +17855,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17350,7 +17980,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17405,12 +18041,12 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pak choï",
-          3,
-          "u",
+          150,
+          "g",
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           15,
           "g",
           "produce"
@@ -17531,7 +18167,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17584,7 +18226,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           120,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Oignon nouveau",
@@ -17599,7 +18241,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -17685,7 +18327,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate concassée",
@@ -17706,7 +18348,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -17736,7 +18378,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17837,7 +18485,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -17913,7 +18567,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18119,7 +18779,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18211,7 +18877,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18298,7 +18970,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18383,7 +19061,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18476,7 +19160,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18568,7 +19258,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18670,7 +19366,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18725,7 +19427,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           110,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Citron (jus + zeste)",
@@ -18770,7 +19472,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -18855,7 +19563,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19111,7 +19825,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19202,7 +19922,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19313,7 +20039,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19389,7 +20121,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -19407,7 +20139,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19497,7 +20235,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19598,7 +20342,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19811,7 +20561,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -19911,7 +20667,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20105,7 +20867,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20163,7 +20931,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           120,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Œuf",
@@ -20214,7 +20982,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20312,7 +21086,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20403,7 +21183,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20532,7 +21318,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20638,7 +21430,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20720,7 +21518,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.5,
           "c.à.c",
           "spices"
@@ -20738,7 +21536,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20825,7 +21629,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -20876,7 +21686,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           150,
           "g",
-          "meat-fish"
+          "dairy"
         ],
         [
           "Riz basmati complet",
@@ -20891,7 +21701,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           15,
           "g",
           "produce"
@@ -21009,7 +21819,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21106,7 +21922,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21168,7 +21990,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate concassée",
@@ -21189,7 +22011,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -21311,7 +22133,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21407,7 +22235,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21516,7 +22350,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21577,7 +22417,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate concassée",
@@ -21598,7 +22438,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -21727,7 +22567,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21835,7 +22681,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21939,7 +22791,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -21998,7 +22856,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           75,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Avocat",
@@ -22049,7 +22907,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -22123,7 +22987,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -22132,7 +22996,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate concassée",
@@ -22171,7 +23035,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -22471,7 +23341,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fruits rouges frais (topping)",
+          "Fruits rouges (topping)",
           30,
           "g",
           "produce"
@@ -22531,7 +23401,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2,
           "feuille",
           "produce"
@@ -22627,7 +23497,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -22808,7 +23684,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -22913,7 +23795,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23011,13 +23899,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.5,
           "c.à.c",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23120,7 +24014,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23222,7 +24122,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23322,7 +24228,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23608,7 +24520,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2,
           "feuille",
           "produce"
@@ -23626,7 +24538,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23732,7 +24650,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23824,7 +24748,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -23894,7 +24824,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           5,
           "feuille",
           "produce"
@@ -23918,7 +24848,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -24019,7 +24955,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -24064,7 +25006,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pavé de saumon frais",
+          "Pavé de saumon",
           130,
           "g",
           "meat-fish"
@@ -24106,7 +25048,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -24214,7 +25162,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -24273,7 +25227,7 @@ window.__DATA_RECIPES = {
           "Lait de coco cuisine",
           80,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate concassée",
@@ -24300,7 +25254,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -24324,7 +25278,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -24427,7 +25387,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -24539,7 +25505,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "feuille",
           "produce"
@@ -24600,7 +25566,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Pousses d'épinards frais",
+          "Pousses d'épinards",
           30,
           "g",
           "produce"
@@ -24624,7 +25590,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -24701,7 +25667,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Pousses d'épinards frais",
+          "Pousses d'épinards",
           30,
           "g",
           "produce"
@@ -24713,7 +25679,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -24918,7 +25890,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -25023,7 +26001,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -25125,13 +26109,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2,
           "feuille",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -25212,7 +26202,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -25267,7 +26263,7 @@ window.__DATA_RECIPES = {
           "Lait de coco cuisine",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Pâte de curry vert",
@@ -25444,7 +26440,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -25537,7 +26539,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -25678,7 +26686,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Miel",
@@ -25883,7 +26891,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Skyr (ou yaourt grec)",
@@ -25937,7 +26945,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pavé de saumon frais",
+          "Pavé de saumon",
           100,
           "g",
           "meat-fish"
@@ -25985,7 +26993,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -26078,7 +27092,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -26171,7 +27191,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -26292,7 +27312,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -26392,7 +27418,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -26511,7 +27537,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -26616,7 +27648,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -26712,7 +27750,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Sel",
@@ -26813,7 +27851,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -26889,7 +27927,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -26951,7 +27995,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pousses d'épinards frais",
+          "Pousses d'épinards",
           30,
           "g",
           "produce"
@@ -27165,7 +28209,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -27271,13 +28321,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.25,
           "c.à.c",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -27339,7 +28395,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Petits pois frais",
+          "Petits pois",
           50,
           "g",
           "produce"
@@ -27375,7 +28431,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -27434,7 +28490,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pavé de saumon frais",
+          "Pavé de saumon",
           130,
           "g",
           "meat-fish"
@@ -27488,13 +28544,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.25,
           "c.à.c",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -27595,7 +28657,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -27726,7 +28788,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -27816,7 +28884,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -27874,7 +28948,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "feuille",
           "produce"
@@ -27970,7 +29044,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Sel",
@@ -28034,7 +29108,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pousses d'épinards frais",
+          "Pousses d'épinards",
           30,
           "g",
           "produce"
@@ -28064,7 +29138,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -28241,10 +29321,10 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Anchois (facultatif)",
+          "Anchois à l'huile (facultatif)",
           1,
           "u",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -28253,7 +29333,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -28361,7 +29447,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -28422,7 +29514,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "feuille",
           "produce"
@@ -28440,7 +29532,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -28565,7 +29663,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -28687,7 +29785,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -28804,7 +29908,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -28898,7 +30008,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -29030,7 +30146,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -29308,7 +30430,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Pousses d'épinards frais",
+          "Pousses d'épinards",
           50,
           "g",
           "produce"
@@ -29344,7 +30466,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -29392,7 +30520,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pavé de saumon frais",
+          "Pavé de saumon",
           100,
           "g",
           "meat-fish"
@@ -29446,7 +30574,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -29575,7 +30703,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -29670,7 +30804,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -29742,7 +30882,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           5,
           "feuille",
           "produce"
@@ -29766,7 +30906,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -29807,7 +30953,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pavé de saumon frais",
+          "Pavé de saumon",
           130,
           "g",
           "meat-fish"
@@ -29855,7 +31001,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -29940,7 +31092,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "feuille",
           "produce"
@@ -29964,13 +31116,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.25,
           "c.à.c",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -30056,7 +31214,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -30196,7 +31354,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -30271,7 +31435,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -30536,7 +31700,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -30647,7 +31817,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -30736,7 +31912,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -30861,7 +32043,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -30919,7 +32107,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate concassée",
@@ -30940,7 +32128,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -30970,7 +32158,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -31055,7 +32249,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Noix de muscade",
+          "Muscade",
           1,
           "pincée",
           "spices"
@@ -31073,7 +32267,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -31208,7 +32408,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -31331,7 +32537,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -31505,7 +32717,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Graines de chia",
@@ -31529,7 +32741,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Gingembre en poudre",
@@ -31716,7 +32928,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -31824,7 +33042,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -31925,7 +33149,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32014,7 +33244,7 @@ window.__DATA_RECIPES = {
           "Anchois à l'huile",
           4,
           "u",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Oignon rouge",
@@ -32041,7 +33271,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32124,7 +33360,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32239,7 +33475,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32282,7 +33524,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Sardines fraîches vidées",
+          "Sardines fraîches",
           2,
           "u",
           "meat-fish"
@@ -32354,7 +33596,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32423,7 +33671,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -32477,7 +33725,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32551,7 +33805,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32667,7 +33921,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Citron vert",
@@ -32795,7 +34049,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32846,7 +34106,7 @@ window.__DATA_RECIPES = {
           "Thon naturel (en boîte)",
           100,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Œuf",
@@ -32903,7 +34163,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -32975,7 +34241,7 @@ window.__DATA_RECIPES = {
           "Thon naturel (en boîte)",
           33,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Œuf",
@@ -33032,7 +34298,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -33156,7 +34428,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -33276,7 +34554,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -33396,7 +34680,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -33505,7 +34795,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -33633,7 +34929,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -33762,7 +35064,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -33893,7 +35201,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34044,7 +35358,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34254,7 +35574,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34384,7 +35710,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34472,7 +35804,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "c.à.c",
           "produce"
@@ -34508,7 +35840,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34592,7 +35930,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -34634,7 +35972,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34718,9 +36062,9 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bâton de cannelle",
+          "Cannelle en bâton",
           0.5,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -34766,7 +36110,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34867,10 +36217,16 @@ window.__DATA_RECIPES = {
           "Pain complet",
           30,
           "g",
-          "pantry"
+          "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -34928,7 +36284,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.025,
           "bouquet",
           "produce"
@@ -34946,7 +36302,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35027,7 +36389,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35072,7 +36440,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de saumon frais (qualité sushi)",
+          "Filet de saumon (qualité sushi)",
           50,
           "g",
           "meat-fish"
@@ -35096,7 +36464,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.025,
           "bouquet",
           "produce"
@@ -35126,7 +36494,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35201,7 +36575,7 @@ window.__DATA_RECIPES = {
           "Pain au levain (en tranches)",
           30,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Noix",
@@ -35316,7 +36690,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35379,7 +36759,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -35409,7 +36789,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35495,7 +36881,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35586,7 +36978,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35698,7 +37096,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35752,7 +37156,7 @@ window.__DATA_RECIPES = {
           "Galette de sarrasin (toute prête)",
           1,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Blanc de poulet",
@@ -35797,7 +37201,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35866,7 +37276,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -35878,7 +37288,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -35932,7 +37348,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.s",
           "produce"
@@ -35950,7 +37366,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Champignons shiitakés frais",
+          "Champignons shiitakés",
           50,
           "g",
           "produce"
@@ -35986,13 +37402,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment doux (facultatif)",
+          "Piment doux frais",
           0.5,
           "u",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36115,7 +37537,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36184,7 +37612,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -36196,7 +37624,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36273,7 +37707,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.01,
           "bouquet",
           "produce"
@@ -36309,7 +37743,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36405,7 +37845,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36478,7 +37924,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.025,
           "bouquet",
           "produce"
@@ -36502,7 +37948,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36600,7 +38052,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36689,7 +38147,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36781,7 +38245,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -36793,7 +38257,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36843,7 +38313,7 @@ window.__DATA_RECIPES = {
           "Pain de seigle (tranche épaisse)",
           1,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Avocat",
@@ -36888,7 +38358,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -36936,7 +38412,7 @@ window.__DATA_RECIPES = {
           "Pulpe d'açaï surgelée",
           100,
           "g",
-          "pantry"
+          "frozen"
         ],
         [
           "Banane",
@@ -36981,7 +38457,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fraises fraîches",
+          "Fraises",
           50,
           "g",
           "produce"
@@ -37084,7 +38560,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.1,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Yaourt nature",
@@ -37162,7 +38638,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -37247,7 +38723,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -37265,7 +38741,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -37382,7 +38858,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de saumon frais (qualité sushi)",
+          "Filet de saumon (qualité sushi)",
           50,
           "g",
           "meat-fish"
@@ -37412,7 +38888,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.025,
           "bouquet",
           "produce"
@@ -37430,7 +38906,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -37558,7 +39040,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -37642,7 +39130,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Haricots verts frais",
+          "Haricots verts",
           200,
           "g",
           "produce"
@@ -37654,7 +39142,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -37793,7 +39287,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -37903,7 +39403,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38006,7 +39512,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38115,7 +39627,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "c.à.c",
           "produce"
@@ -38127,7 +39639,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38235,7 +39753,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38313,7 +39837,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -38349,7 +39873,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38414,7 +39944,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Champignons shiitakés frais",
+          "Champignons shiitakés",
           60,
           "g",
           "produce"
@@ -38432,7 +39962,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.s",
           "produce"
@@ -38474,13 +40004,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment doux (facultatif)",
+          "Piment doux frais",
           1,
           "u",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38560,7 +40096,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -38572,7 +40108,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38626,7 +40168,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Crème liquide légère 15%",
+          "Crème liquide légère",
           33,
           "ml",
           "dairy"
@@ -38650,7 +40192,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Muscade râpée",
+          "Muscade",
           0.083,
           "c.à.c",
           "spices"
@@ -38668,7 +40210,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38763,7 +40311,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Haricots verts frais",
+          "Haricots verts",
           200,
           "g",
           "produce"
@@ -38781,7 +40329,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38851,7 +40405,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "c.à.s",
           "produce"
@@ -38860,7 +40414,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Bouillon de légumes",
@@ -38893,7 +40447,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -38998,7 +40558,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -39064,7 +40630,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -39112,7 +40678,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -39169,7 +40741,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Sirop d'érable",
@@ -39181,7 +40753,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Mangue mûre",
@@ -39300,7 +40872,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -39352,7 +40930,7 @@ window.__DATA_RECIPES = {
           "Pain de seigle (en tranches)",
           2,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Œuf",
@@ -39382,7 +40960,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.1,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Huile de coco",
@@ -39434,7 +41012,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Fraises fraîches",
+          "Fraises",
           200,
           "g",
           "produce"
@@ -39452,7 +41030,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -39596,9 +41174,9 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Cardamome (gousse)",
+          "Cardamome en gousses",
           1,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -39691,7 +41269,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -39755,7 +41333,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -39773,7 +41351,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -39846,7 +41424,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -39929,13 +41507,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -39983,7 +41567,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de saumon frais (qualité sushi)",
+          "Filet de saumon (qualité sushi)",
           60,
           "g",
           "meat-fish"
@@ -40013,7 +41597,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "c.à.c",
           "produce"
@@ -40071,7 +41655,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Filet de saumon frais (qualité sushi)",
+          "Filet de saumon (qualité sushi)",
           43,
           "g",
           "meat-fish"
@@ -40101,7 +41685,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.017,
           "bouquet",
           "produce"
@@ -40119,7 +41703,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -40195,7 +41785,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "c.à.c",
           "produce"
@@ -40341,7 +41931,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -40404,7 +42000,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème liquide légère 15%",
+          "Crème liquide légère",
           0.5,
           "c.à.s",
           "dairy"
@@ -40434,7 +42030,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -40533,7 +42129,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -40587,7 +42189,7 @@ window.__DATA_RECIPES = {
           "Feuilles de brick",
           1,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Thon en boîte au naturel",
@@ -40638,7 +42240,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -40727,7 +42335,7 @@ window.__DATA_RECIPES = {
           "Houmous (en pot ou maison)",
           33,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Radis roses",
@@ -40736,13 +42344,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.02,
           "bouquet",
           "produce"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -40831,7 +42439,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème liquide légère 15%",
+          "Crème liquide légère",
           0.5,
           "c.à.s",
           "dairy"
@@ -40855,7 +42463,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -40927,7 +42541,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -40963,7 +42577,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -41075,7 +42689,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -41140,7 +42760,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Pâte de curry rouge thaï",
@@ -41161,7 +42781,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -41300,7 +42920,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème liquide légère 15%",
+          "Crème liquide légère",
           50,
           "ml",
           "dairy"
@@ -41336,7 +42956,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -41398,7 +43024,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Champignons shiitakés frais",
+          "Champignons shiitakés",
           60,
           "g",
           "produce"
@@ -41434,7 +43060,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crème liquide légère 15%",
+          "Crème liquide légère",
           50,
           "ml",
           "dairy"
@@ -41464,7 +43090,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -41545,9 +43177,9 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bâton de cannelle",
+          "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -41611,7 +43243,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -41794,10 +43432,16 @@ window.__DATA_RECIPES = {
           "Pain de seigle (pour servir)",
           30,
           "g",
-          "pantry"
+          "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -41865,7 +43509,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -41925,7 +43569,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -42028,7 +43678,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -42103,16 +43759,16 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
-          "Fraises fraîches",
+          "Fraises",
           50,
           "g",
           "produce"
         ],
         [
-          "Framboises fraîches",
+          "Framboises",
           40,
           "g",
           "produce"
@@ -42178,7 +43834,7 @@ window.__DATA_RECIPES = {
           "Lait de coco (cuisine)",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Sirop d'érable",
@@ -42385,7 +44041,7 @@ window.__DATA_RECIPES = {
           "Eau de fleur d'oranger",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Pistaches non salées",
@@ -42532,7 +44188,7 @@ window.__DATA_RECIPES = {
           "Pain de seigle (en tranches)",
           2,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Avocat",
@@ -42553,7 +44209,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.05,
           "bouquet",
           "produce"
@@ -42777,13 +44433,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Myrtilles fraîches",
+          "Myrtilles",
           50,
           "g",
           "produce"
         ],
         [
-          "Framboises fraîches",
+          "Framboises",
           30,
           "g",
           "produce"
@@ -42910,7 +44566,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43030,7 +44692,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43129,7 +44797,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Clou de girofle moulu",
+          "Girofle moulu",
           1,
           "pincée",
           "spices"
@@ -43147,7 +44815,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43261,7 +44935,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43389,7 +45069,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43516,7 +45202,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43638,7 +45330,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43746,7 +45444,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -43994,7 +45698,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -44148,7 +45858,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -44357,7 +46073,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -44381,7 +46097,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -44461,7 +46183,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -44527,7 +46249,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -44629,7 +46357,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Clou de girofle moulu",
+          "Girofle moulu",
           0.05,
           "c.à.c",
           "spices"
@@ -44722,7 +46450,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -44746,7 +46474,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -44814,7 +46548,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -44862,7 +46596,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -44924,10 +46664,10 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           80,
           "g",
-          "produce"
+          "dairy"
         ],
         [
-          "Champignons shiitakés frais",
+          "Champignons shiitakés",
           80,
           "g",
           "produce"
@@ -44957,7 +46697,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -45086,7 +46826,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Myrtilles fraîches",
+          "Myrtilles",
           30,
           "g",
           "produce"
@@ -45208,7 +46948,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -45309,12 +47055,12 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade laitue (ou roquette)",
-          50,
-          "g",
+          0.167,
+          "u",
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -45332,7 +47078,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -45438,7 +47190,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -45462,7 +47220,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -45583,7 +47341,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -45702,13 +47466,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -45813,7 +47583,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Basilic frais (grandes feuilles)",
+          "Basilic (grandes feuilles)",
           0.1,
           "bouquet",
           "produce"
@@ -45825,7 +47595,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -45917,7 +47687,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -45981,7 +47751,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Fraises fraîches",
+          "Fraises",
           100,
           "g",
           "produce"
@@ -46023,7 +47793,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais (petites feuilles)",
+          "Basilic (petites feuilles)",
           0.05,
           "bouquet",
           "produce"
@@ -46152,7 +47922,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -46252,8 +48022,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade laitue (variée)",
-          60,
-          "g",
+          0.2,
+          "u",
           "produce"
         ],
         [
@@ -46299,7 +48069,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -46323,7 +48093,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -46602,7 +48378,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -46626,7 +48402,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -46730,7 +48512,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -46842,7 +48630,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -46923,7 +48717,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           0.05,
           "bouquet",
           "produce"
@@ -46953,7 +48747,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -47118,7 +48918,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.1,
           "bouquet",
           "produce"
@@ -47142,7 +48942,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -47256,7 +49062,7 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           1,
-          "u",
+          "feuille",
           "spices"
         ],
         [
@@ -47266,7 +49072,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -47388,13 +49200,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -47493,7 +49311,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.05,
           "bouquet",
           "produce"
@@ -47505,7 +49323,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -47569,7 +49393,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           100,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Bouillon de légumes",
@@ -47602,7 +49426,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -47755,7 +49579,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -47825,7 +49649,7 @@ window.__DATA_RECIPES = {
           "Houmous (maison ou bocal)",
           60,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Pois chiches cuits (pour topping)",
@@ -47870,7 +49694,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -47925,7 +49755,7 @@ window.__DATA_RECIPES = {
           "Lait de coco (boîte)",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomates concassées (boîte)",
@@ -47946,7 +49776,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -47994,7 +49824,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -48134,7 +49970,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -48247,7 +50089,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -48382,7 +50230,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -48438,7 +50292,7 @@ window.__DATA_RECIPES = {
           "Houmous (maison ou bocal)",
           60,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Gressins complets (grissini)",
@@ -48583,7 +50437,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -48713,7 +50573,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -48803,7 +50669,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -48839,7 +50705,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -48898,7 +50770,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           150,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Sarrasin grillé (kasha) ou riz sauvage",
@@ -48943,7 +50815,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -49083,7 +50955,7 @@ window.__DATA_RECIPES = {
           "Bicarbonate de soude",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Farine de pois chiche (ou T80)",
@@ -49117,8 +50989,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade laitue (feuilles)",
-          20,
-          "g",
+          0.067,
+          "u",
           "produce"
         ],
         [
@@ -49140,7 +51012,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -49223,7 +51101,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -49265,7 +51143,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Piment vert frais",
+          "Piment vert",
           0.5,
           "u",
           "produce"
@@ -49295,7 +51173,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -49445,7 +51329,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -49583,7 +51473,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -49638,7 +51534,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           50,
           "g",
           "produce"
@@ -49758,7 +51654,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           4,
           "u",
-          "produce"
+          "frozen"
         ]
       ],
       "steps": [
@@ -49872,7 +51768,7 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           1,
-          "u",
+          "feuille",
           "spices"
         ],
         [
@@ -49882,7 +51778,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -50071,7 +51973,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais (gros bouquet)",
+          "Basilic (gros bouquet)",
           0.2,
           "bouquet",
           "produce"
@@ -50095,7 +51997,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -50151,7 +52059,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Palourdes fraîches (en coquilles)",
+          "Palourdes (en coquilles)",
           250,
           "g",
           "meat-fish"
@@ -50193,7 +52101,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -50253,7 +52167,7 @@ window.__DATA_RECIPES = {
           "Houmous",
           60,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Falafel cuit (ou tofu mariné si pas de falafel)",
@@ -50281,8 +52195,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Salade laitue (feuilles)",
-          30,
-          "g",
+          0.1,
+          "u",
           "produce"
         ],
         [
@@ -50322,7 +52236,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -50453,7 +52373,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -50574,7 +52500,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -50710,7 +52642,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -50823,7 +52761,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Myrtilles fraîches (pour servir)",
+          "Myrtilles (pour servir)",
           50,
           "g",
           "produce"
@@ -50886,7 +52824,7 @@ window.__DATA_RECIPES = {
           "Lait de coco (boîte, partie liquide)",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Lait d'amande (ou autre boisson végétale)",
@@ -51195,7 +53133,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -51228,7 +53166,7 @@ window.__DATA_RECIPES = {
           "Lait de coco (boîte)",
           40,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Coriandre fraîche",
@@ -51255,7 +53193,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -51360,7 +53304,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -51494,7 +53444,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -51636,7 +53592,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -51780,7 +53742,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Piment vert frais",
+          "Piment vert",
           0.25,
           "u",
           "produce"
@@ -51792,7 +53754,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -51892,7 +53860,7 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           1,
-          "u",
+          "feuille",
           "spices"
         ],
         [
@@ -51950,7 +53918,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52024,7 +53998,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais (gros morceau)",
+          "Gingembre (gros morceau)",
           5,
           "cm",
           "produce"
@@ -52032,13 +54006,13 @@ window.__DATA_RECIPES = {
         [
           "Anis étoilé",
           1,
-          "u",
+          "étoile",
           "spices"
         ],
         [
-          "Bâton de cannelle",
+          "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -52048,9 +54022,9 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Cardamome verte (gousses)",
+          "Cardamome en gousses",
           2,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -52108,7 +54082,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment thaï frais (pour servir)",
+          "Piment thaï (pour servir)",
           0.5,
           "u",
           "produce"
@@ -52243,7 +54217,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -52267,7 +54241,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52363,7 +54343,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52435,7 +54415,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1,
           "branche",
           "produce"
@@ -52453,7 +54433,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52510,7 +54490,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.25,
           "bouquet",
           "produce"
@@ -52534,7 +54514,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52610,7 +54590,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2,
           "feuille",
           "produce"
@@ -52622,7 +54602,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52681,7 +54661,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.25,
           "bouquet",
           "produce"
@@ -52717,7 +54697,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52763,7 +54743,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Noix de Saint-Jacques fraîches",
+          "Noix de Saint-Jacques",
           50,
           "g",
           "meat-fish"
@@ -52775,7 +54755,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1,
           "branche",
           "produce"
@@ -52799,7 +54779,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -52961,7 +54941,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -53101,7 +55081,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2,
           "feuille",
           "produce"
@@ -53242,13 +55222,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2,
           "feuille",
           "produce"
@@ -53309,7 +55289,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Mangue",
@@ -53396,7 +55376,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Feuilles de nori",
+          "Feuille de nori",
           0.5,
           "feuille",
           "pantry"
@@ -53472,13 +55452,13 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Thé matcha en poudre",
           0.25,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Sirop d'érable",
@@ -53569,7 +55549,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -53587,7 +55567,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -54414,7 +56394,7 @@ window.__DATA_RECIPES = {
           "Thé matcha en poudre",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Graines de chia",
@@ -54577,7 +56557,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -55102,7 +57082,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment doux (jalapeño)",
+          "Piment jalapeño",
           0.25,
           "u",
           "produce"
@@ -55230,7 +57210,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -55347,7 +57327,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -55506,7 +57486,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -55536,7 +57516,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -55606,7 +57586,7 @@ window.__DATA_RECIPES = {
           "Thé matcha en poudre",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Poire",
@@ -55764,7 +57744,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           33,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Fruits rouges (frais ou surgelés)",
@@ -56192,7 +58172,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -56300,7 +58280,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -56749,7 +58729,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -56889,7 +58869,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "cm",
           "produce"
@@ -56975,19 +58955,19 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
         ],
         [
-          "Clou de girofle moulu",
+          "Girofle moulu",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -57096,7 +59076,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -57182,7 +59162,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -57509,7 +59489,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment doux (jalapeño)",
+          "Piment jalapeño",
           0.25,
           "u",
           "produce"
@@ -57590,7 +59570,7 @@ window.__DATA_RECIPES = {
           "Tomatillos (ou tomates vertes en bocal)",
           50,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Tortilla de maïs (petite)",
@@ -57611,7 +59591,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment doux (jalapeño)",
+          "Piment jalapeño",
           0.25,
           "u",
           "produce"
@@ -57913,7 +59893,7 @@ window.__DATA_RECIPES = {
           "Maïs en grains (frais ou surgelé)",
           25,
           "g",
-          "produce"
+          "frozen"
         ],
         [
           "Avocat",
@@ -58228,7 +60208,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -58361,7 +60341,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -58419,7 +60399,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           40,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Mangue",
@@ -58697,7 +60677,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "cm",
           "produce"
@@ -58873,7 +60853,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -58958,7 +60938,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -59012,7 +60992,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -59092,7 +61072,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -59101,7 +61081,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Cumin moulu",
@@ -59282,7 +61262,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -59374,7 +61354,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate",
@@ -59395,7 +61375,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.75,
           "cm",
           "produce"
@@ -59889,7 +61869,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Tomatille fraîche (ou tomate verte ferme)",
+          "Tomatille (ou tomate verte ferme)",
           1.25,
           "u",
           "produce"
@@ -59907,7 +61887,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment jalapeño frais",
+          "Piment jalapeño",
           0.25,
           "u",
           "produce"
@@ -60138,7 +62118,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petits pois frais (ou surgelés)",
+          "Petits pois (frais ou surgelés)",
           40,
           "g",
           "produce"
@@ -60606,7 +62586,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.75,
           "cm",
           "produce"
@@ -60880,7 +62860,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1.0,
           "cm",
           "produce"
@@ -61025,7 +63005,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Oignon",
@@ -61040,7 +63020,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.75,
           "cm",
           "produce"
@@ -61313,7 +63293,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomatille fraîche (ou tomate verte ferme)",
+          "Tomatille (ou tomate verte ferme)",
           2.0,
           "u",
           "produce"
@@ -61331,7 +63311,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment jalapeño frais",
+          "Piment jalapeño",
           0.25,
           "u",
           "produce"
@@ -61343,7 +63323,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon de poulet (cube)",
+          "Cube de bouillon de poulet",
           0.25,
           "u",
           "pantry"
@@ -61516,7 +63496,7 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           0.25,
-          "u",
+          "feuille",
           "spices"
         ],
         [
@@ -61593,7 +63573,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Tomatille fraîche (ou tomate verte ferme)",
+          "Tomatille (ou tomate verte ferme)",
           2.0,
           "u",
           "produce"
@@ -61611,7 +63591,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment jalapeño frais",
+          "Piment jalapeño",
           0.25,
           "u",
           "produce"
@@ -61647,7 +63627,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon de poulet (cube)",
+          "Cube de bouillon de poulet",
           0.25,
           "u",
           "pantry"
@@ -61759,7 +63739,7 @@ window.__DATA_RECIPES = {
           "Citron confit (ou écorce de citron blanchie)",
           0.25,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Coriandre fraîche",
@@ -62029,7 +64009,7 @@ window.__DATA_RECIPES = {
           "Citron confit",
           0.25,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Olive violette ou verte dénoyautée",
@@ -62050,7 +64030,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.75,
           "cm",
           "produce"
@@ -62068,7 +64048,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon de poulet (cube)",
+          "Cube de bouillon de poulet",
           0.25,
           "u",
           "pantry"
@@ -62189,7 +64169,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petits pois frais (ou surgelés)",
+          "Petits pois (frais ou surgelés)",
           30,
           "g",
           "produce"
@@ -62243,7 +64223,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bouillon de bœuf (cube)",
+          "Cube de bouillon de bœuf",
           0.25,
           "u",
           "pantry"
@@ -62380,7 +64360,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -62571,7 +64551,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -62703,7 +64683,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1.0,
           "cm",
           "produce"
@@ -62852,7 +64832,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate",
@@ -62873,7 +64853,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1.0,
           "cm",
           "produce"
@@ -62885,10 +64865,10 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Feuille de curry (facultatif)",
+          "Feuilles de curry",
           2.75,
           "feuille",
-          "produce"
+          "spices"
         ],
         [
           "Citron vert",
@@ -63183,7 +65163,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Bouillon de poulet (cube)",
+          "Cube de bouillon de poulet",
           0.25,
           "u",
           "pantry"
@@ -63213,7 +65193,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Clou de girofle moulu",
+          "Girofle moulu",
           1,
           "pincée",
           "spices"
@@ -63352,7 +65332,7 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           0.25,
-          "u",
+          "feuille",
           "spices"
         ],
         [
@@ -63692,8 +65672,8 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Sardines fraîches (vidées)",
-          125,
-          "g",
+          1.562,
+          "u",
           "meat-fish"
         ],
         [
@@ -63859,7 +65839,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -64133,7 +66113,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Tomate",
@@ -64154,7 +66134,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1.0,
           "cm",
           "produce"
@@ -64301,7 +66281,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           3,
           "u",
-          "produce"
+          "frozen"
         ]
       ],
       "steps": [
@@ -64727,7 +66707,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petits pois frais (ou surgelés)",
+          "Petits pois (frais ou surgelés)",
           40,
           "g",
           "produce"
@@ -64769,7 +66749,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -65537,7 +67517,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Myrtilles fraîches",
+          "Myrtilles",
           75,
           "g",
           "produce"
@@ -65745,7 +67725,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Myrtilles fraîches",
+          "Myrtilles",
           50,
           "g",
           "produce"
@@ -65844,7 +67824,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.25,
           "bouquet",
           "produce"
@@ -65947,7 +67927,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -66087,7 +68067,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -66291,7 +68271,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "cm",
           "produce"
@@ -66366,7 +68346,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Framboises fraîches",
+          "Framboises",
           50,
           "g",
           "produce"
@@ -66544,7 +68524,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           2.75,
           "u",
-          "produce"
+          "frozen"
         ],
         [
           "Pistache non salée",
@@ -66635,7 +68615,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -66694,7 +68674,7 @@ window.__DATA_RECIPES = {
       "advance": "4 h au congélateur",
       "ing": [
         [
-          "Ananas frais",
+          "Ananas",
           150,
           "g",
           "produce"
@@ -66796,7 +68776,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.25,
           "bouquet",
           "produce"
@@ -66906,7 +68886,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.25,
           "bouquet",
           "produce"
@@ -67020,7 +69000,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -67050,7 +69030,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           100,
           "g",
           "produce"
@@ -67132,19 +69112,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Crème fraîche épaisse 15%",
+          "Crème fraîche épaisse légère",
           1,
           "c.à.s",
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.25,
           "bouquet",
           "produce"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           0.25,
           "bouquet",
           "produce"
@@ -67180,7 +69160,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Noix de muscade",
+          "Muscade",
           1,
           "pincée",
           "spices"
@@ -67278,7 +69258,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           3,
           "u",
-          "produce"
+          "frozen"
         ],
         [
           "Poivre noir",
@@ -67357,13 +69337,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
         ],
         [
-          "Piment vert frais (facultatif)",
+          "Piment vert (facultatif)",
           0.08,
           "u",
           "produce"
@@ -67578,7 +69558,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Maïs en grains frais (ou surgelé)",
+          "Maïs en grains (ou surgelé)",
           85,
           "g",
           "frozen"
@@ -67596,7 +69576,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Crème fraîche épaisse 15%",
+          "Crème fraîche épaisse légère",
           0.25,
           "c.à.s",
           "dairy"
@@ -67709,9 +69689,9 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Feuille de gélatine (2 g/feuille)",
+          "Feuille de gélatine",
           0.75,
-          "u",
+          "feuille",
           "pantry"
         ],
         [
@@ -67733,7 +69713,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait, ou gousse)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -67742,7 +69722,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool dénoyautées",
           1,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Pistache non salée",
@@ -67914,13 +69894,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
         ],
         [
-          "Basilic frais (ou menthe)",
+          "Basilic (ou menthe)",
           1.25,
           "feuille",
           "produce"
@@ -68012,19 +69992,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.25,
           "bouquet",
           "produce"
         ],
         [
-          "Framboise fraîche",
+          "Framboise",
           25,
           "g",
           "produce"
         ],
         [
-          "Gingembre frais (facultatif)",
+          "Gingembre (facultatif)",
           0.25,
           "cm",
           "produce"
@@ -68098,7 +70078,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.125,
           "bouquet",
           "produce"
@@ -68313,9 +70293,9 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Feuille de nori (algue grillée)",
+          "Feuille de nori",
           1,
-          "u",
+          "feuille",
           "pantry"
         ],
         [
@@ -68417,7 +70397,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           65,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Sauce soja",
@@ -68438,7 +70418,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -68556,7 +70536,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.75,
           "cm",
           "produce"
@@ -68683,7 +70663,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -68785,7 +70765,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "cm",
           "produce"
@@ -68856,9 +70836,9 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cardamome verte (gousses)",
+          "Cardamome en gousses",
           1.0,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -68956,9 +70936,9 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Cardamome verte (gousses)",
+          "Cardamome en gousses",
           1.25,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -69049,9 +71029,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cardamome verte (gousses)",
+          "Cardamome en gousses",
           0.75,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -69079,7 +71059,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -69165,7 +71145,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -69232,7 +71212,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.125,
           "bouquet",
           "produce"
@@ -69271,7 +71251,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           2,
           "u",
-          "produce"
+          "frozen"
         ]
       ],
       "steps": [
@@ -69374,7 +71354,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.06,
           "bouquet",
           "produce"
@@ -69431,7 +71411,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.25,
           "bouquet",
           "produce"
@@ -69931,7 +71911,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -70180,9 +72160,9 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Feuilles de curry (facultatif)",
+          "Feuilles de curry",
           2.0,
-          "u",
+          "feuille",
           "spices"
         ],
         [
@@ -70288,7 +72268,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Piment vert frais (facultatif)",
+          "Piment vert (facultatif)",
           0.25,
           "u",
           "produce"
@@ -70695,8 +72675,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Tomatille (ou tomate verte + jus citron vert)",
-          75,
-          "g",
+          1.875,
+          "u",
           "produce"
         ],
         [
@@ -70842,7 +72822,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -71003,7 +72983,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool dénoyautées",
           1,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Amande non salée",
@@ -71024,9 +73004,9 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Cardamome verte (gousses)",
+          "Cardamome en gousses",
           1.0,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -71101,9 +73081,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cardamome verte (gousses)",
+          "Cardamome en gousses",
           0.5,
-          "u",
+          "gousse",
           "spices"
         ],
         [
@@ -71216,7 +73196,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -71317,7 +73297,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -71403,7 +73383,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.25,
           "bouquet",
           "produce"
@@ -71495,7 +73475,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.167,
           "bouquet",
           "produce"
@@ -71662,7 +73642,7 @@ window.__DATA_RECIPES = {
           "Lait de coco (light)",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Graines de chia",
@@ -72040,7 +74020,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait, ou gousse)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -72131,13 +74111,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           67,
           "g",
           "produce"
@@ -72218,19 +74198,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           50,
           "g",
           "produce"
         ],
         [
-          "Framboise fraîche",
+          "Framboise",
           33,
           "g",
           "produce"
         ],
         [
-          "Myrtille fraîche",
+          "Myrtille",
           33,
           "g",
           "produce"
@@ -72260,7 +74240,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -72416,7 +74396,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Lait demi-écrémé tiède",
+          "Lait demi-écrémé (tiède)",
           20,
           "ml",
           "dairy"
@@ -72657,7 +74637,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.75,
           "cm",
           "produce"
@@ -72761,7 +74741,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.25,
           "bouquet",
           "produce"
@@ -72854,7 +74834,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.25,
           "bouquet",
           "produce"
@@ -73265,7 +75245,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.25,
           "bouquet",
           "produce"
@@ -73768,7 +75748,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.125,
           "bouquet",
           "produce"
@@ -73891,7 +75871,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.25,
           "bouquet",
           "produce"
@@ -74071,7 +76051,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -74214,7 +76194,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           0.25,
           "bouquet",
           "produce"
@@ -74232,7 +76212,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Noix de muscade",
+          "Muscade",
           1,
           "pincée",
           "spices"
@@ -74310,7 +76290,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -74328,7 +76308,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Myrtille fraîche",
+          "Myrtille",
           33,
           "g",
           "produce"
@@ -74620,7 +76600,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment vert frais (facultatif)",
+          "Piment vert (facultatif)",
           0.25,
           "u",
           "produce"
@@ -74632,7 +76612,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "cm",
           "produce"
@@ -74752,13 +76732,13 @@ window.__DATA_RECIPES = {
           "frozen"
         ],
         [
-          "Piment vert frais (facultatif)",
+          "Piment vert (facultatif)",
           0.25,
           "u",
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -74859,7 +76839,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           50,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Chou chinois (ou chou blanc)",
@@ -74892,7 +76872,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -74994,7 +76974,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "cm",
           "produce"
@@ -75098,7 +77078,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.08,
           "bouquet",
           "produce"
@@ -75200,9 +77180,9 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Feuille de gélatine (2 g)",
+          "Feuille de gélatine",
           0.75,
-          "u",
+          "feuille",
           "pantry"
         ],
         [
@@ -75218,19 +77198,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           62,
           "g",
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           1.5,
           "feuille",
           "produce"
@@ -75304,15 +77284,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cardamome verte (gousses)",
+          "Cardamome en gousses",
           0.5,
-          "u",
+          "gousse",
           "spices"
         ],
         [
           "Amande effilée",
-          2.0,
-          "u",
+          10.0,
+          "g",
           "pantry"
         ],
         [
@@ -75322,7 +77302,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -75402,13 +77382,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cannelle bâton",
+          "Cannelle en bâton",
           0.25,
-          "u",
+          "bâton",
           "spices"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -75499,7 +77479,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -75579,10 +77559,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (gousse, ou extrait)",
+          "Gousse de vanille",
           0.25,
-          "u",
-          "pantry"
+          "gousse",
+          "spices"
         ],
         [
           "Sucre roux (pour le caramel)",
@@ -75664,7 +77644,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -75847,7 +77827,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           150,
           "g",
           "produce"
@@ -75874,7 +77854,7 @@ window.__DATA_RECIPES = {
           "Biscuit cuillère (boudoir)",
           2.0,
           "u",
-          "bread"
+          "pantry"
         ],
         [
           "Cacao en poudre non sucré",
@@ -75883,7 +77863,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -75941,19 +77921,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           60,
           "g",
           "produce"
         ],
         [
-          "Framboise fraîche",
+          "Framboise",
           60,
           "g",
           "produce"
@@ -76067,7 +78047,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -76184,7 +78164,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais (pour servir)",
+          "Gingembre (pour servir)",
           0.25,
           "cm",
           "produce"
@@ -76270,7 +78250,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.5,
           "c.à.c",
           "pantry"
@@ -76288,7 +78268,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Myrtille fraîche (pour servir)",
+          "Myrtille (pour servir)",
           50,
           "g",
           "produce"
@@ -76346,7 +78326,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1.75,
           "cm",
           "produce"
@@ -76429,7 +78409,7 @@ window.__DATA_RECIPES = {
           "Lait de coco (light)",
           67,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Sirop d'érable",
@@ -76456,7 +78436,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Vanille (extrait, si pas de pandan)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -76535,7 +78515,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -76618,13 +78598,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.25,
           "bouquet",
           "produce"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           0.25,
           "bouquet",
           "produce"
@@ -76795,7 +78775,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool dénoyautées",
           20,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Noisette",
@@ -76822,7 +78802,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -76912,7 +78892,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           0.125,
           "bouquet",
           "produce"
@@ -76999,7 +78979,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.1,
           "bouquet",
           "produce"
@@ -77106,7 +79086,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           0.125,
           "bouquet",
           "produce"
@@ -77269,13 +79249,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Fraise fraîche",
+          "Fraise",
           75,
           "g",
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2.0,
           "feuille",
           "produce"
@@ -77299,7 +79279,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.25,
           "c.à.c",
           "pantry"
@@ -77353,7 +79333,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           75,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Sauce soja",
@@ -77374,7 +79354,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -77529,7 +79509,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.25,
           "cm",
           "produce"
@@ -77772,7 +79752,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -77867,7 +79847,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2.5,
           "g",
           "produce"
@@ -78191,7 +80171,7 @@ window.__DATA_RECIPES = {
           "Pain au levain",
           40,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Haricots noirs cuits",
@@ -78318,7 +80298,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           80,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Graines de chia",
@@ -78646,7 +80626,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Ananas frais",
+          "Ananas",
           70,
           "g",
           "produce"
@@ -78726,7 +80706,7 @@ window.__DATA_RECIPES = {
           "Pain complet",
           80,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Huile d'olive",
@@ -78765,7 +80745,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           4,
           "g",
           "produce"
@@ -78840,7 +80820,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           4,
           "g",
           "produce"
@@ -78873,7 +80853,7 @@ window.__DATA_RECIPES = {
           "Pain au levain",
           60,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Sel",
@@ -79131,7 +81111,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           5,
           "g",
           "produce"
@@ -79230,7 +81210,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           5,
           "g",
           "produce"
@@ -79318,13 +81298,13 @@ window.__DATA_RECIPES = {
           "Feuilles de brick",
           0.75,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Figues séchées",
           18,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes en poudre",
@@ -79486,7 +81466,7 @@ window.__DATA_RECIPES = {
           "Feuilles de brick",
           0.75,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Noix décortiquées",
@@ -79797,7 +81777,7 @@ window.__DATA_RECIPES = {
           "Pain complet (gressins)",
           20,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Carotte",
@@ -79871,8 +81851,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fève tonka",
-          0.1,
-          "g",
+          0.067,
+          "u",
           "spices"
         ],
         [
@@ -80073,7 +82053,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2.5,
           "g",
           "produce"
@@ -80159,7 +82139,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "g",
           "produce"
@@ -80183,7 +82163,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.15,
           "g",
           "spices"
@@ -80454,7 +82434,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "g",
           "produce"
@@ -80466,7 +82446,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -80559,7 +82539,7 @@ window.__DATA_RECIPES = {
           "Raisins secs",
           5,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Orange",
@@ -80787,7 +82767,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -80922,7 +82902,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           3,
           "g",
           "produce"
@@ -81006,7 +82986,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           4,
           "g",
           "produce"
@@ -81097,7 +83077,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           4,
           "g",
           "produce"
@@ -81351,7 +83331,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -81387,7 +83367,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.5,
           "g",
           "spices"
@@ -81555,7 +83535,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -81854,7 +83834,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           6,
           "u",
-          "pantry"
+          "frozen"
         ]
       ],
       "steps": [
@@ -82029,7 +84009,7 @@ window.__DATA_RECIPES = {
           "Tortilla maïs",
           1,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Tomate",
@@ -82122,7 +84102,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dos de cabillaud frais",
+          "Dos de cabillaud",
           75,
           "g",
           "meat-fish"
@@ -82451,7 +84431,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           25,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Sirop d'érable",
@@ -82793,7 +84773,7 @@ window.__DATA_RECIPES = {
           "Pain au levain rassis",
           28,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Lait demi-écrémé",
@@ -82815,8 +84795,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cannelle en bâton",
-          1.0,
-          "g",
+          0.333,
+          "bâton",
           "spices"
         ],
         [
@@ -82829,7 +84809,7 @@ window.__DATA_RECIPES = {
           "Raisins secs",
           4,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes effilées",
@@ -83042,7 +85022,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           4,
           "u",
-          "pantry"
+          "frozen"
         ]
       ],
       "steps": [
@@ -83087,7 +85067,7 @@ window.__DATA_RECIPES = {
           "Pain complet",
           80,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Fromage frais",
@@ -83509,7 +85489,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -83642,7 +85622,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -83774,7 +85754,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -83880,7 +85860,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -84244,7 +86224,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           60,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Tomate",
@@ -84604,7 +86584,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -84684,7 +86664,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dos de cabillaud frais",
+          "Dos de cabillaud",
           180,
           "g",
           "meat-fish"
@@ -84720,7 +86700,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -84971,7 +86951,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
@@ -84983,7 +86963,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.5,
           "g",
           "spices"
@@ -85071,7 +87051,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           10,
           "g",
           "produce"
@@ -85172,7 +87152,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -85524,7 +87504,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           15,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Haricots noirs cuits",
@@ -85724,15 +87704,15 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dos de cabillaud frais",
+          "Dos de cabillaud",
           180,
           "g",
           "meat-fish"
         ],
         [
-          "Tomatillos (ou tomate verte)",
-          120,
-          "g",
+          "Tomatille (ou tomate verte)",
+          3.0,
+          "u",
           "produce"
         ],
         [
@@ -85989,7 +87969,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           10,
           "g",
           "produce"
@@ -86103,7 +88083,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -86232,7 +88212,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
@@ -86487,7 +88467,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           5,
           "g",
           "produce"
@@ -86505,7 +88485,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -86663,7 +88643,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           6,
           "g",
           "produce"
@@ -86681,7 +88661,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -86854,7 +88834,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -86863,7 +88843,7 @@ window.__DATA_RECIPES = {
           "Pain de seigle",
           40,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Concombre",
@@ -86940,7 +88920,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "g",
           "produce"
@@ -86964,7 +88944,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.15,
           "g",
           "spices"
@@ -87210,8 +89190,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Cannelle en bâton",
-          2,
-          "g",
+          0.667,
+          "bâton",
           "spices"
         ],
         [
@@ -87513,7 +89493,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.15,
           "g",
           "spices"
@@ -87592,7 +89572,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -87783,7 +89763,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.15,
           "g",
           "spices"
@@ -87841,7 +89821,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "g",
           "produce"
@@ -87965,7 +89945,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Mangue",
@@ -88229,7 +90209,7 @@ window.__DATA_RECIPES = {
           "Edamame écossés",
           60,
           "g",
-          "produce"
+          "frozen"
         ],
         [
           "Concombre",
@@ -88274,7 +90254,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -88385,7 +90365,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.5,
           "g",
           "spices"
@@ -88614,7 +90594,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Mangue",
@@ -88896,7 +90876,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           4,
           "g",
           "produce"
@@ -89459,7 +91439,7 @@ window.__DATA_RECIPES = {
           "Pain au levain",
           28,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Pêche jaune",
@@ -89474,7 +91454,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3.0,
           "g",
           "produce"
@@ -89492,7 +91472,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.5,
           "g",
           "spices"
@@ -89554,7 +91534,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           60,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Skyr (ou yaourt grec)",
@@ -89587,13 +91567,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           5,
           "g",
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -89677,7 +91657,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -89735,13 +91715,13 @@ window.__DATA_RECIPES = {
           "Galettes de riz",
           1.25,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Tofu ferme",
           33,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Mangue",
@@ -90059,15 +92039,15 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomelo",
-          40,
-          "g",
+          0.04,
+          "u",
           "produce"
         ],
         [
           "Lait de coco",
           60,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Sirop d'érable",
@@ -90122,7 +92102,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Ananas frais",
+          "Ananas",
           40,
           "g",
           "produce"
@@ -90149,7 +92129,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           27,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Citron vert",
@@ -90329,7 +92309,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.07,
           "g",
           "spices"
@@ -90556,7 +92536,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2.5,
           "g",
           "produce"
@@ -90621,7 +92601,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2.5,
           "g",
           "produce"
@@ -90861,7 +92841,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "g",
           "produce"
@@ -90885,7 +92865,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.15,
           "g",
           "spices"
@@ -90942,7 +92922,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           2.5,
           "g",
           "produce"
@@ -90966,7 +92946,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.15,
           "g",
           "spices"
@@ -91335,7 +93315,7 @@ window.__DATA_RECIPES = {
           "Pain au levain",
           45,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Ricotta",
@@ -91350,7 +93330,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "g",
           "produce"
@@ -91497,7 +93477,7 @@ window.__DATA_RECIPES = {
           "Pain complet",
           80,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Fromage frais",
@@ -91679,7 +93659,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Thé matcha en poudre",
@@ -92110,7 +94090,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           60,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Citron vert",
@@ -92211,7 +94191,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -92232,7 +94212,7 @@ window.__DATA_RECIPES = {
           "Moutarde",
           5,
           "g",
-          "spices"
+          "pantry"
         ],
         [
           "Vinaigre de cidre",
@@ -92322,7 +94302,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -92420,7 +94400,7 @@ window.__DATA_RECIPES = {
           "Tortilla maïs",
           1.5,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Mangue",
@@ -92554,7 +94534,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -92814,7 +94794,7 @@ window.__DATA_RECIPES = {
           "Pain au levain",
           35,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Asperges vertes",
@@ -92847,7 +94827,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.5,
           "g",
           "spices"
@@ -92903,7 +94883,7 @@ window.__DATA_RECIPES = {
           "Pain au levain",
           28,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Petits pois",
@@ -92948,7 +94928,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.5,
           "g",
           "spices"
@@ -93002,7 +94982,7 @@ window.__DATA_RECIPES = {
           "Pain de seigle",
           45,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Radis rose",
@@ -93023,7 +95003,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           4,
           "g",
           "produce"
@@ -93041,7 +95021,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -93124,7 +95104,7 @@ window.__DATA_RECIPES = {
           "Moutarde",
           5,
           "g",
-          "spices"
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -93151,7 +95131,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -93211,7 +95191,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           120,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Oignons nouveaux",
@@ -93226,7 +95206,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -93335,7 +95315,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -93471,13 +95451,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           6,
           "g",
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -93863,7 +95843,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -93957,7 +95937,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -94087,7 +96067,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -94190,7 +96170,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
@@ -94450,7 +96430,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -94542,7 +96522,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -94766,7 +96746,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           5,
           "g",
           "produce"
@@ -94775,10 +96755,10 @@ window.__DATA_RECIPES = {
           "Pain complet",
           50,
           "g",
-          "pantry"
+          "bread"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -94984,7 +96964,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           50,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Citron vert",
@@ -95220,7 +97200,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -95357,7 +97337,7 @@ window.__DATA_RECIPES = {
           "Pain complet",
           60,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Sel",
@@ -95457,7 +97437,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.5,
           "g",
           "spices"
@@ -95514,7 +97494,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           120,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Œuf",
@@ -95577,7 +97557,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -95650,7 +97630,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           12,
           "g",
           "produce"
@@ -95747,7 +97727,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           10,
           "g",
           "produce"
@@ -95857,7 +97837,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dos de cabillaud frais",
+          "Dos de cabillaud",
           180,
           "g",
           "meat-fish"
@@ -95869,7 +97849,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -95982,7 +97962,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Ananas frais",
+          "Ananas",
           120,
           "g",
           "produce"
@@ -96115,7 +98095,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           10,
           "g",
           "produce"
@@ -96139,7 +98119,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -96308,7 +98288,7 @@ window.__DATA_RECIPES = {
           "Glaçons",
           2,
           "u",
-          "pantry"
+          "frozen"
         ]
       ],
       "steps": [
@@ -96358,7 +98338,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           100,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Poivron rouge",
@@ -96370,7 +98350,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           30,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Œuf",
@@ -96400,7 +98380,7 @@ window.__DATA_RECIPES = {
           "Moutarde",
           5,
           "g",
-          "spices"
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -96415,7 +98395,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
@@ -96492,7 +98472,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           80,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Œuf",
@@ -96615,7 +98595,7 @@ window.__DATA_RECIPES = {
           "Raisins secs",
           6,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Oignon rouge",
@@ -96794,7 +98774,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dos de cabillaud frais",
+          "Dos de cabillaud",
           160,
           "g",
           "meat-fish"
@@ -96809,7 +98789,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           80,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Haricots noirs cuits",
@@ -96931,7 +98911,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Oignon jaune",
@@ -96946,7 +98926,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -97150,7 +99130,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           40,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Tomate",
@@ -97270,7 +99250,7 @@ window.__DATA_RECIPES = {
           "Edamame écossés",
           80,
           "g",
-          "produce"
+          "frozen"
         ],
         [
           "Sauce soja",
@@ -97279,7 +99259,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -97395,7 +99375,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           8,
           "g",
           "produce"
@@ -97419,7 +99399,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -97648,7 +99628,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
@@ -97971,7 +99951,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           60,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Piment doux moulu",
@@ -98067,7 +100047,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -98147,7 +100127,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dos de cabillaud frais",
+          "Dos de cabillaud",
           180,
           "g",
           "meat-fish"
@@ -98162,10 +100142,10 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           80,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -98280,7 +100260,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           80,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Sauce soja",
@@ -98301,7 +100281,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -98409,7 +100389,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           8,
           "g",
           "produce"
@@ -98433,7 +100413,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -98564,7 +100544,7 @@ window.__DATA_RECIPES = {
           "Pain complet",
           60,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Comté râpé",
@@ -98591,9 +100571,15 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -98664,7 +100650,7 @@ window.__DATA_RECIPES = {
           "Noisettes",
           20,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -98673,9 +100659,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre, muscade",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Muscade",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -98734,7 +100732,7 @@ window.__DATA_RECIPES = {
           "Cerneaux de noix",
           25,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Yaourt nature",
@@ -98761,9 +100759,15 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -98824,7 +100828,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           10,
           "g",
           "produce"
@@ -98836,9 +100840,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -98934,9 +100944,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre, thym",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Thym séché",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99019,20 +101041,26 @@ window.__DATA_RECIPES = {
         ],
         [
           "Clou de girofle",
-          0.3,
-          "g",
+          3,
+          "u",
           "spices"
         ],
         [
-          "Laurier",
-          0.3,
-          "g",
+          "Feuille de laurier",
+          1,
+          "feuille",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99093,7 +101121,7 @@ window.__DATA_RECIPES = {
           "Noisettes",
           15,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Échalote",
@@ -99114,9 +101142,21 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre, muscade",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Muscade",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99200,9 +101240,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre, muscade",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Muscade",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99274,15 +101326,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           5,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99336,7 +101394,7 @@ window.__DATA_RECIPES = {
           "Pruneaux dénoyautés",
           30,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Oignon jaune",
@@ -99363,9 +101421,27 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, laurier, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99434,7 +101510,7 @@ window.__DATA_RECIPES = {
           "Cerneaux de noix",
           10,
           "g",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -99492,8 +101568,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Fève tonka",
-          0.5,
-          "g",
+          0.333,
+          "u",
           "spices"
         ],
         [
@@ -99579,7 +101655,7 @@ window.__DATA_RECIPES = {
           "Pain complet",
           20,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Ail",
@@ -99600,9 +101676,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre, thym",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Thym séché",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99709,9 +101797,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99756,7 +101850,7 @@ window.__DATA_RECIPES = {
           "Châtaignes cuites",
           70,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Céleri-rave",
@@ -99801,9 +101895,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           0.5,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99891,9 +101991,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Laurier, sel, poivre",
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -99966,7 +102078,7 @@ window.__DATA_RECIPES = {
           "Noisettes",
           15,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Sauge fraîche",
@@ -99975,9 +102087,21 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre, muscade",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Muscade",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100064,9 +102188,15 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100153,7 +102283,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -100171,9 +102301,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100243,7 +102379,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
@@ -100261,9 +102397,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100351,9 +102493,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100428,9 +102576,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100523,9 +102677,27 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Romarin, laurier, sel, poivre",
+          "Romarin séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100608,9 +102780,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100669,7 +102847,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -100699,9 +102877,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100754,7 +102938,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -100784,9 +102968,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -100830,7 +103020,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           120,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Champignons shiitakés",
@@ -100863,7 +103053,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -100943,7 +103133,7 @@ window.__DATA_RECIPES = {
           "Pâte de curry rouge",
           15,
           "g",
-          "pantry"
+          "spices"
         ],
         [
           "Pak choï",
@@ -100958,7 +103148,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -101060,7 +103250,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -101151,7 +103341,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -101219,7 +103409,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           80,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Carotte",
@@ -101234,7 +103424,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -101291,7 +103481,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           200,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Bœuf haché 5%",
@@ -101306,7 +103496,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -101394,8 +103584,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citronnelle",
-          10,
-          "g",
+          0.5,
+          "u",
           "produce"
         ],
         [
@@ -101411,7 +103601,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -101494,7 +103684,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -101562,7 +103752,7 @@ window.__DATA_RECIPES = {
           "Pâte à gyoza",
           60,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Poulet haché",
@@ -101583,7 +103773,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -101671,7 +103861,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -101692,7 +103882,7 @@ window.__DATA_RECIPES = {
           "Graines de sésame",
           4,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Ciboule (oignon vert)",
@@ -101780,9 +103970,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -101876,9 +104072,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -101939,7 +104141,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           6,
           "g",
-          "pantry"
+          "spices"
         ],
         [
           "Cumin moulu",
@@ -101966,9 +104168,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102063,9 +104271,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102151,9 +104365,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102253,9 +104473,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102347,9 +104573,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102397,7 +104629,7 @@ window.__DATA_RECIPES = {
           "Châtaignes cuites",
           60,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Courgette",
@@ -102454,9 +104686,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102554,9 +104792,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102605,7 +104849,7 @@ window.__DATA_RECIPES = {
           "Pain complet rassis",
           40,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Lentilles vertes",
@@ -102650,9 +104894,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102719,7 +104969,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -102743,9 +104993,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102851,9 +105107,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102952,9 +105214,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -102997,7 +105265,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           140,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Chou-fleur",
@@ -103054,9 +105322,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103148,9 +105422,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre, cumin",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Cumin moulu",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103219,8 +105505,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment jalapeño",
-          10,
-          "g",
+          0.5,
+          "u",
           "produce"
         ],
         [
@@ -103236,9 +105522,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103281,12 +105573,12 @@ window.__DATA_RECIPES = {
           "Tortilla de maïs",
           60,
           "g",
-          "pantry"
+          "bread"
         ],
         [
-          "Tomatillo",
-          200,
-          "g",
+          "Tomatille",
+          5.0,
+          "u",
           "produce"
         ],
         [
@@ -103309,8 +105601,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment jalapeño",
-          10,
-          "g",
+          0.5,
+          "u",
           "produce"
         ],
         [
@@ -103338,9 +105630,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103430,9 +105728,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103490,7 +105794,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           80,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Chou vert",
@@ -103529,9 +105833,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103576,7 +105886,7 @@ window.__DATA_RECIPES = {
           "Pâte d'achiote (rocou)",
           12,
           "g",
-          "pantry"
+          "spices"
         ],
         [
           "Orange",
@@ -103615,9 +105925,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103664,7 +105980,7 @@ window.__DATA_RECIPES = {
           "Maïs doux",
           100,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Oignon jaune",
@@ -103697,9 +106013,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103778,9 +106100,9 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Laurier",
-          0.3,
-          "g",
+          "Feuille de laurier",
+          1,
+          "feuille",
           "spices"
         ],
         [
@@ -103796,9 +106118,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103896,9 +106224,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -103977,9 +106311,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104067,9 +106407,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan séché, sel, poivre",
+          "Origan séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104146,9 +106498,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Laurier",
-          0.3,
-          "g",
+          "Feuille de laurier",
+          1,
+          "feuille",
           "spices"
         ],
         [
@@ -104164,9 +106516,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan séché, sel, poivre",
+          "Origan séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104249,9 +106613,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104324,15 +106694,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           5,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104402,7 +106778,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           6,
           "g",
           "produce"
@@ -104420,9 +106796,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104504,9 +106886,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104575,7 +106963,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -104587,9 +106975,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan séché, sel, poivre",
+          "Origan séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104657,15 +107057,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cannelle (bâton)",
-          1,
-          "g",
+          "Cannelle en bâton",
+          0.333,
+          "bâton",
           "spices"
         ],
         [
-          "Laurier",
-          0.3,
-          "g",
+          "Feuille de laurier",
+          1,
+          "feuille",
           "spices"
         ],
         [
@@ -104681,9 +107081,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104777,9 +107183,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan séché, sel, poivre",
+          "Origan séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104843,7 +107261,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -104861,9 +107279,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -104948,9 +107372,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Origan séché, sel, poivre",
+          "Origan séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105019,13 +107455,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           6,
           "g",
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
@@ -105043,9 +107479,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105122,7 +107564,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -105146,9 +107588,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105212,7 +107660,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           1,
           "g",
           "spices"
@@ -105305,7 +107753,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -105329,9 +107777,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105393,7 +107847,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -105423,9 +107877,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105500,7 +107960,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           6,
           "g",
           "produce"
@@ -105518,9 +107978,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105586,7 +108052,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -105616,9 +108082,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105686,7 +108158,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -105716,9 +108188,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105792,7 +108270,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -105810,9 +108288,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105878,7 +108362,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -105908,9 +108392,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -105972,7 +108462,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -106002,9 +108492,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106078,7 +108574,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -106102,9 +108598,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106171,7 +108673,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -106201,9 +108703,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106286,9 +108794,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Laurier, sel, poivre",
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106351,7 +108871,7 @@ window.__DATA_RECIPES = {
           "Noisettes",
           20,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -106366,9 +108886,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre, muscade",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Muscade",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106408,7 +108940,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Petites pâtes complètes",
+          "Pâtes complètes (petites)",
           20,
           "g",
           "pantry"
@@ -106474,9 +109006,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106565,9 +109103,15 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106632,7 +109176,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -106650,9 +109194,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106740,9 +109290,27 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, laurier, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106830,9 +109398,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106909,9 +109489,21 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre, muscade",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Muscade",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -106979,15 +109571,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           6,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -107081,9 +109679,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -107176,9 +109780,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ],
         [
@@ -107260,9 +109870,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -107319,9 +109941,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cannelle (bâton)",
-          1,
-          "g",
+          "Cannelle en bâton",
+          0.333,
+          "bâton",
           "spices"
         ],
         [
@@ -107446,13 +110068,13 @@ window.__DATA_RECIPES = {
           "Cerneaux de noix",
           5,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Raisins secs",
           5,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Romarin frais",
@@ -107577,13 +110199,13 @@ window.__DATA_RECIPES = {
           "Amandes effilées",
           20,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Raisins secs",
           6,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Miel",
@@ -107662,7 +110284,7 @@ window.__DATA_RECIPES = {
           "Poudre d'amande",
           8,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Sirop d'érable",
@@ -107671,7 +110293,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille",
+          "Vanille en poudre",
           0.5,
           "g",
           "spices"
@@ -107724,7 +110346,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Vanille",
+          "Vanille en poudre",
           1,
           "g",
           "spices"
@@ -107805,7 +110427,7 @@ window.__DATA_RECIPES = {
           "Poudre d'amande",
           5,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Cannelle moulue",
@@ -107865,7 +110487,7 @@ window.__DATA_RECIPES = {
           "Cerneaux de noix",
           15,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Miel",
@@ -107944,7 +110566,7 @@ window.__DATA_RECIPES = {
           "Amandes effilées",
           10,
           "g",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -108010,7 +110632,7 @@ window.__DATA_RECIPES = {
           "Amandes effilées",
           5,
           "g",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -108177,7 +110799,7 @@ window.__DATA_RECIPES = {
           "Cerneaux de noix",
           10,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Flocons d'avoine",
@@ -108244,7 +110866,7 @@ window.__DATA_RECIPES = {
           "Cerneaux de noix",
           10,
           "g",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -108287,7 +110909,7 @@ window.__DATA_RECIPES = {
           "Pain complet",
           30,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Purée d'amande",
@@ -108377,7 +110999,7 @@ window.__DATA_RECIPES = {
           "Raisins secs",
           3,
           "g",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -108433,7 +111055,7 @@ window.__DATA_RECIPES = {
           "Amandes effilées",
           12,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Cannelle moulue",
@@ -108487,19 +111109,19 @@ window.__DATA_RECIPES = {
           "Amandes entières",
           12,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Noisettes",
           8,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Raisins secs",
           10,
           "g",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -108555,7 +111177,7 @@ window.__DATA_RECIPES = {
           "Noisettes",
           12,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Cannelle moulue",
@@ -108618,7 +111240,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.3,
           "g",
           "spices"
@@ -108671,7 +111293,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -108689,7 +111311,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           0.2,
           "g",
           "spices"
@@ -108747,7 +111369,7 @@ window.__DATA_RECIPES = {
           "Graines de sésame",
           4,
           "g",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -108790,13 +111412,13 @@ window.__DATA_RECIPES = {
           "Figues séchées",
           30,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes entières",
           20,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Cannelle moulue",
@@ -108888,9 +111510,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -108990,9 +111618,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sauge fraîche, sel, poivre",
+          "Sauge fraîche",
+          1,
+          "feuille",
+          "produce"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109080,9 +111720,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109157,9 +111803,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ],
         [
@@ -109222,7 +111874,7 @@ window.__DATA_RECIPES = {
           "Cerneaux de noix",
           20,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Roquette",
@@ -109249,9 +111901,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109317,9 +111975,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Muscade, sel, poivre",
+          "Muscade",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109411,9 +112081,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109487,9 +112163,15 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Laurier, romarin",
-          0.5,
-          "g",
+          "Feuille de laurier",
+          2,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Romarin séché",
+          1,
+          "pincée",
           "spices"
         ],
         [
@@ -109505,9 +112187,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109582,7 +112270,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -109594,9 +112282,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic séché, sel, poivre",
+          "Basilic séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109670,7 +112370,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           8,
           "g",
           "produce"
@@ -109682,9 +112382,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109771,9 +112477,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -109859,9 +112571,21 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Laurier, sel, poivre",
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
           1,
           "g",
+          "spices"
+        ],
+        [
+          "Poivre noir",
+          1,
+          "pincée",
           "spices"
         ]
       ],
@@ -110166,7 +112890,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym",
+          "Thym séché",
           1,
           "c.à.c",
           "spices"
@@ -110251,7 +112975,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym",
+          "Thym séché",
           0.25,
           "c.à.c",
           "spices"
@@ -110260,7 +112984,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           0.5,
           "c.à.c",
-          "pantry"
+          "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
@@ -110340,13 +113064,13 @@ window.__DATA_RECIPES = {
           "Zeste de citron",
           0.5,
           "c.à.c",
-          "spices"
+          "produce"
         ],
         [
           "Extrait de vanille",
           0.125,
           "c.à.c",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -110442,7 +113166,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -110530,7 +113260,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.c",
-          "pantry"
+          "produce"
         ],
         [
           "Mâche",
@@ -110539,7 +113269,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -110628,7 +113364,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -110719,7 +113461,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -110798,7 +113546,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.s",
-          "pantry"
+          "produce"
         ],
         [
           "Huile d'olive",
@@ -110813,7 +113561,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -110885,7 +113639,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche allégée",
+          "Crème fraîche épaisse légère",
           1,
           "c.à.s",
           "dairy"
@@ -110903,7 +113657,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -110981,7 +113747,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Thym, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111066,7 +113844,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111174,7 +113958,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111251,7 +114041,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111333,7 +114135,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Vanille (extrait)",
+          "Extrait de vanille",
           0.5,
           "c.à.c",
           "pantry"
@@ -111507,7 +114309,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1,
           "brin",
           "produce"
@@ -111519,7 +114321,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111597,7 +114405,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           1,
           "bouquet",
           "produce"
@@ -111615,7 +114423,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111708,7 +114522,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111826,7 +114646,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -111930,7 +114756,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -112013,7 +114845,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -112099,7 +114937,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -112164,7 +115008,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           60,
           "ml",
           "dairy"
@@ -112194,7 +115038,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -112252,7 +115102,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           1,
           "bouquet",
           "produce"
@@ -112261,7 +115111,7 @@ window.__DATA_RECIPES = {
           "Chapelure de pain complet",
           15,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Ail",
@@ -112282,7 +115132,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -112400,7 +115256,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -112606,7 +115468,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -112633,7 +115495,7 @@ window.__DATA_RECIPES = {
           "Graines de moutarde",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Huile de coco",
@@ -112717,7 +115579,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -112753,7 +115615,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -112908,7 +115776,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           130,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Chou chinois",
@@ -112929,7 +115797,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -113030,7 +115898,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -113138,7 +116006,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -113266,7 +116134,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -113369,7 +116237,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -113396,7 +116264,7 @@ window.__DATA_RECIPES = {
           "Graines de moutarde",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Paprika doux",
@@ -113461,7 +116329,7 @@ window.__DATA_RECIPES = {
           "Tofu soyeux",
           100,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Pâte miso",
@@ -113494,7 +116362,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -113576,7 +116444,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           12,
           "g",
           "produce"
@@ -113612,7 +116480,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -113663,25 +116531,25 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Cardamome verte",
+          "Cardamome en gousses",
           2,
           "gousse",
-          "pantry"
+          "spices"
         ],
         [
           "Cannelle en bâton",
           1,
-          "u",
-          "pantry"
+          "bâton",
+          "spices"
         ],
         [
           "Clou de girofle",
           2,
           "u",
-          "pantry"
+          "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -113759,7 +116627,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -113891,7 +116759,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -113979,7 +116853,7 @@ window.__DATA_RECIPES = {
           "Jus de citron vert",
           1,
           "c.à.s",
-          "pantry"
+          "produce"
         ],
         [
           "Cumin en poudre",
@@ -114000,7 +116874,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114084,7 +116964,7 @@ window.__DATA_RECIPES = {
           "Jus de citron vert",
           1,
           "c.à.s",
-          "pantry"
+          "produce"
         ],
         [
           "Huile d'olive",
@@ -114099,7 +116979,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114197,7 +117083,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114289,7 +117181,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114390,7 +117288,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114459,13 +117363,13 @@ window.__DATA_RECIPES = {
           "Tortilla de maïs complète",
           2,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Jus de citron vert",
           1,
           "c.à.s",
-          "pantry"
+          "produce"
         ],
         [
           "Cumin en poudre",
@@ -114486,7 +117390,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114537,7 +117447,7 @@ window.__DATA_RECIPES = {
           "Tortilla de maïs complète",
           2,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Chou blanc",
@@ -114555,7 +117465,7 @@ window.__DATA_RECIPES = {
           "Jus de citron vert",
           1,
           "c.à.s",
-          "pantry"
+          "produce"
         ],
         [
           "Skyr (ou yaourt grec)",
@@ -114588,7 +117498,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114638,7 +117554,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           120,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Champignons de Paris",
@@ -114677,7 +117593,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -114775,7 +117691,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -114846,7 +117768,7 @@ window.__DATA_RECIPES = {
           "Jus de citron vert",
           1,
           "c.à.c",
-          "pantry"
+          "produce"
         ],
         [
           "Sel",
@@ -114912,7 +117834,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.c",
-          "pantry"
+          "produce"
         ],
         [
           "Eau",
@@ -115027,7 +117949,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115128,13 +118056,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115227,7 +118161,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115288,7 +118228,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche allégée",
+          "Crème fraîche épaisse légère",
           40,
           "g",
           "dairy"
@@ -115312,7 +118252,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115422,7 +118368,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115508,7 +118460,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115619,7 +118577,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115709,7 +118673,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115769,13 +118739,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche allégée",
+          "Crème fraîche épaisse légère",
           40,
           "g",
           "dairy"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
@@ -115793,7 +118763,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -115873,7 +118849,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -115897,7 +118873,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116128,7 +119110,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116203,7 +119191,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           1,
           "c.à.s",
           "dairy"
@@ -116212,7 +119200,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.c",
-          "pantry"
+          "produce"
         ],
         [
           "Bouillon de volaille",
@@ -116221,7 +119209,25 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, laurier, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116326,7 +119332,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116418,7 +119430,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116522,7 +119540,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116633,7 +119657,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116718,7 +119748,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -116730,7 +119760,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116804,7 +119840,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -116834,7 +119870,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -116937,7 +119979,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117009,7 +120057,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.1,
           "bouquet",
           "produce"
@@ -117021,7 +120069,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           1,
           "c.à.s",
           "dairy"
@@ -117033,7 +120081,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117115,7 +120169,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117208,7 +120268,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117261,7 +120333,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           80,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Tomates séchées",
@@ -117285,7 +120357,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.s",
-          "pantry"
+          "produce"
         ],
         [
           "Huile d'olive",
@@ -117300,7 +120372,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117392,7 +120470,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -117422,7 +120500,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117495,7 +120579,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -117519,7 +120603,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117605,7 +120695,7 @@ window.__DATA_RECIPES = {
           "Jus de citron vert",
           1,
           "c.à.s",
-          "pantry"
+          "produce"
         ],
         [
           "Ail",
@@ -117626,7 +120716,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117734,7 +120830,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117828,7 +120930,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -117930,7 +121038,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118002,7 +121116,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -118020,7 +121134,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           1,
           "c.à.s",
           "dairy"
@@ -118038,7 +121152,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118086,7 +121206,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           120,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Aubergine",
@@ -118113,7 +121233,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -118143,7 +121263,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118239,7 +121365,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118468,13 +121600,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118567,13 +121705,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118657,7 +121801,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Cumin",
@@ -118678,13 +121822,19 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118753,7 +121903,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118783,7 +121939,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
@@ -118884,13 +122040,19 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -118994,13 +122156,19 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -119093,19 +122261,25 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.5,
           "c.à.c",
           "spices"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -119180,7 +122354,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
@@ -119206,11 +122380,17 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           1,
-          "u",
+          "feuille",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -119299,7 +122479,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Huile d'olive",
@@ -119314,13 +122494,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -119399,7 +122585,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil plat frais",
+          "Persil plat",
           2,
           "brin",
           "produce"
@@ -119425,11 +122611,17 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           1,
-          "u",
+          "feuille",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -119499,7 +122691,7 @@ window.__DATA_RECIPES = {
           "Eau de fleur d'oranger",
           1,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Pistaches concassées",
@@ -119704,7 +122896,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -119794,7 +122992,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -119906,7 +123104,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -119942,7 +123140,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -120013,7 +123217,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -120049,7 +123253,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -120129,7 +123339,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -120159,7 +123369,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -120241,11 +123457,11 @@ window.__DATA_RECIPES = {
         [
           "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ],
         [
-          "Cardamome",
+          "Cardamome en gousses",
           2,
           "gousse",
           "spices"
@@ -120333,7 +123549,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -120438,7 +123654,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -120548,7 +123764,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -120664,13 +123880,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym",
+          "Thym séché",
           1,
           "branche",
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
@@ -120682,7 +123898,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -120908,7 +124130,25 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, laurier, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -121000,7 +124240,25 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, laurier, sel, poivre",
+          "Thym séché",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -121187,7 +124445,25 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Laurier, cumin, sel, poivre",
+          "Feuille de laurier",
+          1,
+          "feuille",
+          "spices"
+        ],
+        [
+          "Cumin moulu",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -121269,7 +124545,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           2,
           "c.à.s",
           "dairy"
@@ -121381,9 +124657,15 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thym, laurier",
+          "Thym séché",
           1,
           "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
           "spices"
         ],
         [
@@ -121477,9 +124759,15 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Thym, laurier",
+          "Thym séché",
           1,
           "pincée",
+          "spices"
+        ],
+        [
+          "Feuille de laurier",
+          1,
+          "feuille",
           "spices"
         ]
       ],
@@ -121643,7 +124931,7 @@ window.__DATA_RECIPES = {
           "Chapelure de pain complet",
           30,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Parmesan râpé",
@@ -121670,7 +124958,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -121828,7 +125122,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Vanille en gousse",
+          "Vanille en poudre",
           1,
           "pincée",
           "spices"
@@ -121849,7 +125143,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.c",
-          "pantry"
+          "produce"
         ]
       ],
       "steps": [
@@ -121898,7 +125192,7 @@ window.__DATA_RECIPES = {
           "Tofu soyeux",
           100,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Chocolat noir 70%",
@@ -122036,7 +125330,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122155,7 +125455,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122261,13 +125567,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.1,
           "bouquet",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122349,7 +125661,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.1,
           "bouquet",
           "produce"
@@ -122367,7 +125679,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122465,13 +125783,19 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122528,9 +125852,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomatillo",
-          100,
-          "g",
+          "Tomatille",
+          2.5,
+          "u",
           "produce"
         ],
         [
@@ -122588,7 +125912,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122673,7 +126003,7 @@ window.__DATA_RECIPES = {
           "Beurre doux",
           1,
           "c.à.c",
-          "pantry"
+          "dairy"
         ],
         [
           "Farine T80 (semi-complète)",
@@ -122694,7 +126024,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.1,
           "bouquet",
           "produce"
@@ -122706,7 +126036,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122809,7 +126145,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -122894,7 +126236,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           0.1,
           "bouquet",
           "produce"
@@ -122906,7 +126248,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123015,7 +126363,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123073,9 +126427,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bâton de cannelle",
+          "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -123235,7 +126589,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123352,7 +126712,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123419,7 +126785,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche allégée",
+          "Crème fraîche épaisse légère",
           20,
           "g",
           "dairy"
@@ -123443,7 +126809,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123513,7 +126885,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crème fraîche",
+          "Crème fraîche épaisse légère",
           15,
           "g",
           "dairy"
@@ -123543,7 +126915,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123639,7 +127017,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123728,7 +127112,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
@@ -123840,7 +127224,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -123915,7 +127305,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
@@ -123939,7 +127329,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -124029,13 +127425,19 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -124131,7 +127533,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -124338,7 +127746,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Gombos frais",
+          "Gombos",
           180,
           "g",
           "produce"
@@ -124362,7 +127770,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -124472,13 +127880,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
         ],
         [
-          "Poivre noir moulu",
+          "Poivre noir",
           1,
           "g",
           "spices"
@@ -124661,7 +128069,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -124779,7 +128187,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.s",
           "produce"
@@ -124815,7 +128223,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -124892,7 +128306,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.s",
           "produce"
@@ -124994,7 +128408,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.s",
           "produce"
@@ -125104,7 +128518,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.s",
           "produce"
@@ -125112,7 +128526,7 @@ window.__DATA_RECIPES = {
         [
           "Citronnelle",
           1,
-          "branche",
+          "u",
           "produce"
         ],
         [
@@ -125130,7 +128544,7 @@ window.__DATA_RECIPES = {
         [
           "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -125340,7 +128754,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -125417,8 +128837,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Zeste de citron vert",
-          0.25,
-          "u",
+          0.5,
+          "g",
           "produce"
         ]
       ],
@@ -125491,8 +128911,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Zeste de citron vert",
-          0.25,
-          "u",
+          0.5,
+          "g",
           "produce"
         ]
       ],
@@ -125561,7 +128981,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
@@ -125579,13 +128999,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           3,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -125671,7 +129097,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
@@ -125689,7 +129115,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -125784,7 +129216,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           3,
           "g",
           "produce"
@@ -125796,7 +129228,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -125891,7 +129329,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -125972,7 +129416,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           5,
           "g",
           "produce"
@@ -125996,7 +129440,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -126094,7 +129544,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
@@ -126106,13 +129556,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           3,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -126191,7 +129647,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           3,
           "g",
           "produce"
@@ -126209,7 +129665,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -126305,13 +129767,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Persil frais",
+          "Persil plat",
           3,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -126414,7 +129882,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -126501,7 +129975,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -126567,14 +130047,14 @@ window.__DATA_RECIPES = {
         ],
         [
           "Zeste de citron",
-          0.5,
-          "u",
+          1.0,
+          "g",
           "produce"
         ],
         [
           "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ]
       ],
@@ -126642,7 +130122,7 @@ window.__DATA_RECIPES = {
         [
           "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ]
       ],
@@ -126739,7 +130219,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -126927,7 +130413,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           1,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Concentré de tomate",
@@ -126960,7 +130446,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -127173,7 +130665,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -127261,7 +130759,7 @@ window.__DATA_RECIPES = {
           "Bouquet garni",
           1,
           "u",
-          "spices"
+          "produce"
         ],
         [
           "Huile d'olive",
@@ -127276,7 +130774,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -127393,7 +130897,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -127476,13 +130986,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Clou de girofle moulu",
+          "Girofle moulu",
           0.1,
           "c.à.c",
           "spices"
         ],
         [
-          "Laurier",
+          "Feuille de laurier",
           1,
           "feuille",
           "spices"
@@ -127524,7 +131034,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -127629,7 +131145,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -127746,7 +131268,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -127940,7 +131468,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel (boîte, égoutté)",
           30,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Skyr (ou yaourt grec)",
@@ -127979,7 +131507,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128061,7 +131595,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128156,7 +131696,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128248,7 +131794,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128361,7 +131913,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128467,7 +132025,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128567,7 +132131,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128655,7 +132225,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -128719,7 +132295,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1,
           "c.à.c",
           "produce"
@@ -128731,7 +132307,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129093,7 +132675,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129181,7 +132769,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -129217,7 +132805,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129265,7 +132859,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pavé de saumon frais (qualité tartare)",
+          "Pavé de saumon (qualité tartare)",
           110,
           "g",
           "meat-fish"
@@ -129319,7 +132913,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129392,7 +132992,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -129422,7 +133022,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129481,7 +133087,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.s",
           "produce"
@@ -129616,7 +133222,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -129628,7 +133234,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           1,
           "c.à.s",
           "dairy"
@@ -129652,7 +133258,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129733,7 +133345,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -129775,7 +133387,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129829,7 +133447,7 @@ window.__DATA_RECIPES = {
           "Pâte à gyoza",
           3,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Châtaigne d'eau",
@@ -129844,7 +133462,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "c.à.c",
           "produce"
@@ -129862,7 +133480,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -129958,7 +133582,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130089,7 +133719,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais (en fine julienne)",
+          "Gingembre (en fine julienne)",
           1,
           "cm",
           "produce"
@@ -130221,7 +133851,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pavé de saumon frais (sans peau)",
+          "Pavé de saumon (sans peau)",
           100,
           "g",
           "meat-fish"
@@ -130239,7 +133869,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Aneth fraîche",
+          "Aneth",
           5,
           "g",
           "produce"
@@ -130287,7 +133917,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130374,13 +134004,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel fin",
+          "Sel",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130483,13 +134113,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel fin",
+          "Sel",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130586,13 +134216,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel fin",
+          "Sel",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130677,13 +134307,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel fin",
+          "Sel",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130764,13 +134394,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel fin",
+          "Sel",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130816,7 +134446,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Steak de thon frais",
+          "Steak de thon",
           120,
           "g",
           "meat-fish"
@@ -130864,7 +134494,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -130932,7 +134562,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           2,
           "g",
           "produce"
@@ -130944,7 +134574,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -130999,7 +134629,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel (égoutté)",
           40,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Moutarde de Dijon",
@@ -131014,7 +134644,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           2,
           "g",
           "produce"
@@ -131026,13 +134656,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel fin",
+          "Sel",
           1,
           "pincée",
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131101,7 +134731,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel fin",
+          "Sel",
           1,
           "pincée",
           "spices"
@@ -131171,7 +134801,7 @@ window.__DATA_RECIPES = {
         [
           "Cannelle en bâton",
           1,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -131183,7 +134813,7 @@ window.__DATA_RECIPES = {
         [
           "Anis étoilé (badiane)",
           1,
-          "u",
+          "étoile",
           "spices"
         ]
       ],
@@ -131338,8 +134968,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment rouge frais (haché fin, facultatif)",
-          3,
-          "g",
+          0.3,
+          "u",
           "produce"
         ],
         [
@@ -131355,7 +134985,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131402,7 +135038,7 @@ window.__DATA_RECIPES = {
           "Feuille de brick",
           2,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Blanc de poulet",
@@ -131429,7 +135065,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Persil plat frais (ciselé)",
+          "Persil plat (ciselé)",
           5,
           "g",
           "produce"
@@ -131441,7 +135077,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131486,7 +135128,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Noix de Saint-Jacques fraîches (sans corail)",
+          "Noix de Saint-Jacques (sans corail)",
           90,
           "g",
           "meat-fish"
@@ -131510,7 +135152,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Ciboulette fraîche (ciselée)",
+          "Ciboulette (ciselée)",
           3,
           "g",
           "produce"
@@ -131522,7 +135164,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131584,8 +135226,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment rouge frais (haché fin)",
-          2,
-          "g",
+          0.2,
+          "u",
           "produce"
         ],
         [
@@ -131595,7 +135237,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Persil plat frais (ciselé)",
+          "Persil plat (ciselé)",
           5,
           "g",
           "produce"
@@ -131613,7 +135255,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131708,7 +135356,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131757,7 +135411,7 @@ window.__DATA_RECIPES = {
           "Feuille de brick",
           2,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Filet de cabillaud",
@@ -131814,7 +135468,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131906,7 +135566,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -131993,7 +135659,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132062,13 +135734,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Ciboulette fraîche (ciselée)",
+          "Ciboulette (ciselée)",
           2,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132355,7 +136033,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132431,7 +136115,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           3,
           "g",
           "produce"
@@ -132443,7 +136127,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132504,7 +136194,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           3,
           "g",
           "produce"
@@ -132534,7 +136224,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132627,7 +136323,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132732,7 +136434,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132802,13 +136510,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           3,
           "g",
           "produce"
         ],
         [
-          "Origan",
+          "Origan séché",
           0.5,
           "c.à.c",
           "spices"
@@ -132838,7 +136546,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132918,7 +136632,7 @@ window.__DATA_RECIPES = {
         [
           "Feuille de laurier",
           1,
-          "u",
+          "feuille",
           "spices"
         ],
         [
@@ -132946,7 +136660,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -132990,16 +136710,16 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Sardines fraîches vidées",
-          150,
-          "g",
+          "Sardines fraîches",
+          1.875,
+          "u",
           "meat-fish"
         ],
         [
           "Chapelure de pain complet",
           20,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Persil plat",
@@ -133032,7 +136752,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -133140,7 +136866,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -133251,7 +136983,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -133476,7 +137214,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -133580,7 +137318,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -133764,7 +137502,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -133933,7 +137671,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           10,
           "g",
           "produce"
@@ -134051,7 +137789,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -134137,7 +137875,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -134422,7 +138160,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.5,
           "cm",
           "produce"
@@ -134598,7 +138336,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -134900,13 +138644,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -135000,7 +138750,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -135072,7 +138828,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           5,
           "g",
           "produce"
@@ -135102,7 +138858,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -135404,7 +139166,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "g",
           "produce"
@@ -135422,7 +139184,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -135527,7 +139295,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -135763,7 +139537,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -135859,7 +139639,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -135946,7 +139732,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136014,7 +139806,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "feuille",
           "produce"
@@ -136032,7 +139824,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Poivre",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136132,7 +139924,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136216,7 +140014,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136276,7 +140080,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petit pois",
+          "Petits pois",
           80,
           "g",
           "produce"
@@ -136312,7 +140116,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136380,7 +140190,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "feuille",
           "produce"
@@ -136398,7 +140208,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136485,7 +140301,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136579,7 +140401,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -136664,7 +140492,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           0.25,
           "c.à.c",
-          "spices"
+          "pantry"
         ],
         [
           "Sel",
@@ -136730,7 +140558,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "feuille",
           "produce"
@@ -136788,7 +140616,7 @@ window.__DATA_RECIPES = {
         [
           "Citronnelle (tige fraîche)",
           1,
-          "branche",
+          "u",
           "produce"
         ],
         [
@@ -137255,7 +141083,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -137308,8 +141142,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Citronnelle (tige fraîche)",
-          10,
-          "g",
+          0.5,
+          "u",
           "produce"
         ],
         [
@@ -137319,7 +141153,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -137431,10 +141265,10 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Piment doux (épépiné, émincé)",
+          "Piment doux frais",
           0.5,
           "u",
-          "spices"
+          "produce"
         ],
         [
           "Oignon rouge",
@@ -137464,7 +141298,7 @@ window.__DATA_RECIPES = {
           "Galette de riz (papier de riz vietnamien)",
           3,
           "u",
-          "pantry"
+          "bread"
         ]
       ],
       "steps": [
@@ -137520,7 +141354,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -137601,7 +141435,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           100,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Mangue (verte, encore ferme)",
@@ -137622,7 +141456,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -137631,7 +141465,7 @@ window.__DATA_RECIPES = {
           "Pâte de curry doux",
           1,
           "c.à.s",
-          "pantry"
+          "spices"
         ],
         [
           "Coriandre fraîche",
@@ -137798,7 +141632,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           30,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Menthe fraîche",
@@ -138169,7 +142003,7 @@ window.__DATA_RECIPES = {
           "Thon au naturel",
           100,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Œuf dur",
@@ -138199,7 +142033,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Persil plat",
@@ -138269,7 +142103,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           10,
           "g",
           "produce"
@@ -138590,7 +142424,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           1,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Poivron vert",
@@ -138725,7 +142559,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           5,
           "g",
           "produce"
@@ -138939,7 +142773,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "g",
           "produce"
@@ -138951,7 +142785,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139030,7 +142870,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           3,
           "g",
           "produce"
@@ -139048,7 +142888,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139221,7 +143067,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           6,
           "g",
           "produce"
@@ -139245,7 +143091,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139321,7 +143173,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           4,
           "g",
           "produce"
@@ -139333,7 +143185,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139422,7 +143280,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139515,7 +143379,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139580,7 +143450,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           6,
           "g",
           "produce"
@@ -139604,7 +143474,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139794,7 +143670,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -139862,13 +143744,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           3,
           "g",
           "produce"
         ],
         [
-          "Eau fraîche",
+          "Eau",
           50,
           "ml",
           "pantry"
@@ -140000,7 +143882,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           30,
           "ml",
           "dairy"
@@ -140030,7 +143912,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140123,7 +144011,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140228,7 +144122,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140325,7 +144225,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140424,7 +144330,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140490,7 +144402,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           30,
           "ml",
           "dairy"
@@ -140514,7 +144426,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140593,7 +144511,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           25,
           "ml",
           "dairy"
@@ -140611,7 +144529,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140698,7 +144622,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140795,7 +144725,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -140886,7 +144822,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -141125,7 +145067,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           1.5,
           "g",
           "produce"
@@ -141308,7 +145250,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           1.0,
           "g",
           "produce"
@@ -141372,7 +145314,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           0.75,
           "cm",
           "produce"
@@ -141402,7 +145344,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           1,
           "g",
           "produce"
@@ -141455,7 +145397,7 @@ window.__DATA_RECIPES = {
           "Tortilla de maïs",
           0.5,
           "u",
-          "pantry"
+          "bread"
         ],
         [
           "Avocat mûr",
@@ -141570,7 +145512,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.c",
-          "pantry"
+          "produce"
         ],
         [
           "Huile d'olive",
@@ -141579,7 +145521,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -141642,7 +145590,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1.5,
           "g",
           "produce"
@@ -141820,7 +145768,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           4,
           "g",
           "produce"
@@ -141989,7 +145937,7 @@ window.__DATA_RECIPES = {
           "Chapelure de pain complet",
           6,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Huile d'olive",
@@ -142062,7 +146010,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1,
           "g",
           "produce"
@@ -142165,7 +146113,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           1,
           "g",
           "produce"
@@ -142189,7 +146137,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -142268,7 +146222,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           2,
           "g",
           "produce"
@@ -142280,7 +146234,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Poivre du moulin",
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -142361,7 +146315,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -142434,7 +146394,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           1,
           "g",
           "produce"
@@ -142534,13 +146494,19 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Ciboulette fraîche",
+          "Ciboulette",
           2,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -142628,12 +146594,18 @@ window.__DATA_RECIPES = {
         ],
         [
           "Piment rouge frais",
-          2,
-          "g",
+          0.2,
+          "u",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -142726,7 +146698,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Petits oignons grelots",
+          "Oignons grelots",
           30,
           "g",
           "produce"
@@ -142744,7 +146716,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -142845,7 +146823,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -142901,7 +146885,7 @@ window.__DATA_RECIPES = {
           "Chapelure de pain complet",
           10,
           "g",
-          "pantry"
+          "bread"
         ],
         [
           "Moutarde de Dijon",
@@ -142964,7 +146948,13 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143019,7 +147009,7 @@ window.__DATA_RECIPES = {
           "Gros sel",
           300,
           "g",
-          "pantry"
+          "spices"
         ],
         [
           "Blancs d'œufs",
@@ -143052,7 +147042,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143114,7 +147110,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           8,
           "g",
           "produce"
@@ -143132,7 +147128,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143205,7 +147207,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crème fraîche liquide",
+          "Crème liquide légère",
           1,
           "c.à.s",
           "dairy"
@@ -143220,7 +147222,7 @@ window.__DATA_RECIPES = {
           "Jus de citron",
           1,
           "c.à.c",
-          "pantry"
+          "produce"
         ],
         [
           "Huile d'olive",
@@ -143229,13 +147231,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           0.1,
           "bouquet",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143329,7 +147337,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143405,7 +147419,13 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143474,7 +147494,7 @@ window.__DATA_RECIPES = {
           "Ail",
           1,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
           "Bouillon de volaille",
@@ -143501,7 +147521,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143592,7 +147618,7 @@ window.__DATA_RECIPES = {
           "Ail",
           1,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
           "Parmesan râpé",
@@ -143613,7 +147639,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143692,10 +147724,10 @@ window.__DATA_RECIPES = {
           "Ail",
           1,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           3,
           "g",
           "produce"
@@ -143755,7 +147787,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143829,7 +147867,7 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           60,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Bouillon de légumes",
@@ -143856,7 +147894,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -143922,7 +147966,7 @@ window.__DATA_RECIPES = {
           "Ail",
           2,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
           "Vin rouge",
@@ -143961,7 +148005,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -144027,7 +148077,7 @@ window.__DATA_RECIPES = {
           "Ail",
           1,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
           "Bouillon de volaille",
@@ -144060,7 +148110,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -144125,7 +148181,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Basilic frais",
+          "Basilic",
           10,
           "g",
           "produce"
@@ -144140,7 +148196,7 @@ window.__DATA_RECIPES = {
           "Ail",
           1,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
           "Huile d'olive",
@@ -144155,7 +148211,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -144271,7 +148333,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -144349,16 +148417,16 @@ window.__DATA_RECIPES = {
           "Lait de coco",
           60,
           "ml",
-          "dairy"
+          "pantry"
         ],
         [
           "Ail",
           1,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "g",
           "produce"
@@ -144394,7 +148462,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -144462,7 +148536,7 @@ window.__DATA_RECIPES = {
           "Ail",
           1,
           "gousse",
-          "pantry"
+          "produce"
         ],
         [
           "Miel",
@@ -144477,7 +148551,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           3,
           "g",
           "produce"
@@ -144513,7 +148587,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -144578,7 +148658,7 @@ window.__DATA_RECIPES = {
           "Biscuit cuillère",
           1,
           "u",
-          "bread"
+          "pantry"
         ],
         [
           "Fraises (ou surgelées)",
@@ -144753,7 +148833,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Ananas frais",
+          "Ananas",
           40,
           "g",
           "produce"
@@ -144893,7 +148973,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Ananas frais",
+          "Ananas",
           150,
           "g",
           "produce"
@@ -145201,7 +149281,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -145321,7 +149407,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -145436,7 +149528,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -145514,7 +149612,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -145562,7 +149660,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -145643,7 +149747,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -145697,7 +149801,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -145765,7 +149875,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -145837,7 +149947,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -145892,7 +150008,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           150,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Potimarron",
@@ -146033,7 +150149,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -146057,7 +150173,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -146113,7 +150235,7 @@ window.__DATA_RECIPES = {
           "Tofu ferme",
           80,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Chou chinois",
@@ -146246,7 +150368,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Cumin moulu",
@@ -146273,7 +150395,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -146351,7 +150479,7 @@ window.__DATA_RECIPES = {
           "Harissa",
           0.5,
           "c.à.c",
-          "pantry"
+          "spices"
         ],
         [
           "Huile d'olive",
@@ -146378,7 +150506,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -146491,7 +150625,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -146568,7 +150708,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           1,
           "cm",
           "produce"
@@ -146610,7 +150750,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -146733,7 +150879,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -146836,7 +150988,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -146940,8 +151098,8 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poivre noir en grains",
-          4,
-          "u",
+          0.2,
+          "g",
           "spices"
         ],
         [
@@ -146957,7 +151115,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -147083,7 +151247,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -147185,13 +151355,19 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Aneth frais",
+          "Aneth",
           3,
           "g",
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -147270,7 +151446,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           1,
           "pincée",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -147485,7 +151661,7 @@ window.__DATA_RECIPES = {
           "Tofu soyeux",
           100,
           "g",
-          "pantry"
+          "dairy"
         ],
         [
           "Chocolat noir 70%",
@@ -147521,7 +151697,7 @@ window.__DATA_RECIPES = {
           "Extrait de vanille",
           1,
           "pincée",
-          "spices"
+          "pantry"
         ]
       ],
       "steps": [
@@ -147636,7 +151812,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -147767,7 +151943,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -147888,7 +152070,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -147997,7 +152185,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -148131,7 +152325,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -148228,7 +152428,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -148302,7 +152508,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           2,
           "cm",
           "produce"
@@ -148350,7 +152556,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -148399,7 +152611,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           3,
           "cm",
           "produce"
@@ -148468,7 +152680,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Gingembre frais",
+          "Gingembre",
           5,
           "cm",
           "produce"
@@ -148530,9 +152742,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bâton de cannelle",
+          "Cannelle en bâton",
           0.5,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -148604,9 +152816,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bâton de cannelle",
+          "Cannelle en bâton",
           0.5,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -148687,9 +152899,9 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Bâton de cannelle",
+          "Cannelle en bâton",
           0.5,
-          "u",
+          "bâton",
           "spices"
         ],
         [
@@ -148843,7 +153055,13 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -148937,7 +153155,13 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"
@@ -149058,7 +153282,13 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sel, poivre",
+          "Sel",
+          1,
+          "pincée",
+          "spices"
+        ],
+        [
+          "Poivre noir",
           1,
           "pincée",
           "spices"

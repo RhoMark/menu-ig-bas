@@ -163,6 +163,16 @@ def validate_recipe(r, V):
                     f"ing[{i}] '{name}' générique seul (V2.43.0+). "
                     f"Utiliser : {alt_list}…")
 
+    # ── 5bis. Un article = un nom (V2.140.0) : synonymes et composés ───
+    for i, ing in enumerate(r.get("ing", [])):
+        if not isinstance(ing, list) or not ing:
+            continue
+        if ing[0] in vocab.INGREDIENT_RENAMES:
+            errors.append(f"ing[{i}] '{ing[0]}' : synonyme, utiliser « {vocab.INGREDIENT_RENAMES[ing[0]]} » "
+                          f"(sinon 2 lignes dans la liste de courses)")
+        if re.match(vocab.COMPOUND_SPICES_RE, ing[0].strip(), re.I):
+            errors.append(f"ing[{i}] '{ing[0]}' : un ingrédient par ligne (ex. « Sel » + « Poivre noir »)")
+
     # ── 6. rest >= 120 implique advance renseigné ──────────────────────
     rest = r.get("rest", 0)
     if rest and rest >= 120:
