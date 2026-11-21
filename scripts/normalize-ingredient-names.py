@@ -53,6 +53,7 @@ UNIT_FIXES = {
     ("Amandes effilées", "u"): (lambda q: q * 5, "g"),
     ("Amande effilée", "u"): (lambda q: q * 5, "g"),
     ("Tomatille", "g"): (lambda q: q / 40, "u"),                # 1 tomatille ≈ 40 g (ordre de grandeur)
+    ("Piment guajillo séché", "g"): (lambda q: q / 5, "u"),    # 1 piment guajillo séché ≈ 5 g (ordre de grandeur)
     ("Piment jalapeño", "g"): (lambda q: q / 20, "u"),          # 1 jalapeño ≈ 20 g (ordre de grandeur)
     ("Piment rouge frais", "g"): (lambda q: q / 10, "u"),       # 1 piment rouge ≈ 10 g (ordre de grandeur)          # 1 « u » saisi = 1 petite poignée ≈ 5 g (ordre de grandeur)
     ("Feuille de gélatine", "u"): (lambda q: q, "feuille"),
@@ -86,16 +87,22 @@ CATEGORY_OVERRIDES = {
     "Galette de sarrasin (toute prête)": "bread", "Feuille de brick": "bread", "Feuilles de brick": "bread",
     "Jus de citron vert": "produce",
     "Anchois à l'huile (facultatif)": "pantry",
+    "Maïs en grains (frais ou surgelé)": "frozen", "Maïs en grains (boîte sans sucre)": "pantry",
+    "Maïs en grains (hominy pour pozole)": "pantry",
 }
 
 # Même article (nom sans parenthèses) → un seul rayon, quelle que soit la précision
 # entre parenthèses (« Lait de coco » et « Lait de coco (cuisine) »).
 CATEGORY_BY_BASE = {
-    "Lait de coco": "pantry", "Thon au naturel": "pantry", "Thon naturel (en boîte)": "pantry", "Lait de coco cuisine": "pantry", "Houmous": "dairy",
+    "Lait de coco": "pantry", "Thon au naturel": "pantry", "Lait de coco cuisine": "pantry", "Houmous": "dairy",
     "Pain au levain": "bread", "Pain au levain rassis": "bread", "Pain complet": "bread", "Pain de seigle": "bread",
     "Tortilla maïs": "bread", "Tortilla de maïs": "bread", "Pâte à gyoza": "bread", "Pâtes à gyoza": "bread",
     "Citron confit": "pantry", "Citrons confits": "pantry", "Biscuit cuillère": "pantry", "Biscuits cuillère": "pantry",
-    "Pâte d'achiote": "spices", "Thon au naturel": "pantry", "Bouquet garni": "produce", "Maïs doux": "pantry",
+    "Pâte d'achiote": "spices", "Bouquet garni": "produce", "Maïs doux": "pantry",
+    "Dattes Medjool": "pantry", "Dattes Medjool dénoyautées": "pantry", "Falafels": "pantry",
+    "Haricots verts": "produce", "Mangue": "produce", "Mangue surgelée": "frozen",
+    "Piment guajillo séché": "spices",
+    "Fruits rouges": "produce", "Fruits rouges surgelés": "frozen",
 }
 
 # Renommage qui dépend de l'unité (« Cannelle » 1 bâton = la cannelle en bâton, pas en poudre).

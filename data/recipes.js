@@ -185,7 +185,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Mélange fruits rouges (fraises, framboises, myrtilles)",
+          "Fruits rouges (fraises, framboises, myrtilles)",
           100,
           "g",
           "produce"
@@ -647,7 +647,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Tomates pelées en boîte",
+          "Tomates pelées",
           100,
           "g",
           "pantry"
@@ -1230,7 +1230,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Haricots verts frais ou surgelés",
+          "Haricots verts (frais ou surgelés)",
           80,
           "g",
           "produce"
@@ -2552,7 +2552,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Haricots verts frais ou surgelés",
+          "Haricots verts (frais ou surgelés)",
           150,
           "g",
           "produce"
@@ -2741,7 +2741,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Pain complet de seigle",
+          "Pain de seigle complet",
           2,
           "tranches",
           "bread"
@@ -3491,7 +3491,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           200,
           "g",
           "pantry"
@@ -7934,7 +7934,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Riz complet rond",
+          "Riz rond complet",
           30,
           "g",
           "pantry"
@@ -8140,7 +8140,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Fruits rouges congelés",
+          "Fruits rouges surgelés",
           100,
           "g",
           "frozen"
@@ -8613,7 +8613,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dattes medjool dénoyautées",
+          "Dattes Medjool dénoyautées",
           20,
           "g",
           "pantry"
@@ -9949,10 +9949,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thon naturel en boîte",
+          "Thon au naturel",
           80,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Tomates séchées à l'huile",
@@ -11700,10 +11700,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thon en boîte (au naturel)",
+          "Thon au naturel",
           80,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Œuf",
@@ -12556,7 +12556,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pois chiches en conserve",
+          "Pois chiches cuits",
           150,
           "g",
           "pantry"
@@ -12918,7 +12918,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Haricots blancs en conserve",
+          "Haricots blancs cuits",
           150,
           "g",
           "pantry"
@@ -15247,7 +15247,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pois chiches en bocal",
+          "Pois chiches cuits",
           80,
           "g",
           "pantry"
@@ -15986,7 +15986,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pesto basilic",
+          "Pesto au basilic",
           2,
           "c.à.s",
           "pantry"
@@ -16466,7 +16466,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Haricots blancs en bocal",
+          "Haricots blancs cuits",
           100,
           "g",
           "pantry"
@@ -16892,7 +16892,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           150,
           "g",
           "meat-fish"
@@ -17064,7 +17064,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Pois chiches en bocal",
+          "Pois chiches cuits",
           125,
           "g",
           "pantry"
@@ -17175,7 +17175,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Riz complet rond",
+          "Riz rond complet",
           40,
           "g",
           "pantry"
@@ -18217,7 +18217,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Gambas décortiquées crues",
+          "Gambas crues décortiquées",
           150,
           "g",
           "meat-fish"
@@ -23305,13 +23305,13 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Mangue surgelée ou fraîche",
+          "Mangue (fraîche ou surgelée)",
           100,
           "g",
           "produce"
         ],
         [
-          "Mélange fruits rouges (frais ou surgelés)",
+          "Fruits rouges (frais ou surgelés)",
           80,
           "g",
           "produce"
@@ -24068,7 +24068,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Riz complet rond",
+          "Riz rond complet",
           40,
           "g",
           "pantry"
@@ -24274,7 +24274,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Pois chiches en conserve",
+          "Pois chiches cuits",
           100,
           "g",
           "pantry"
@@ -24596,10 +24596,10 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Thon naturel en boîte",
+          "Thon au naturel",
           60,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Haricots verts",
@@ -25842,10 +25842,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thon naturel en boîte",
+          "Thon au naturel",
           70,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Haricots verts",
@@ -25956,7 +25956,7 @@ window.__DATA_RECIPES = {
           "Falafels",
           3,
           "u",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Concombre",
@@ -26595,7 +26595,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Dattes medjool dénoyautées",
+          "Dattes Medjool dénoyautées",
           25,
           "g",
           "pantry"
@@ -27711,7 +27711,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Dattes medjool dénoyautées",
+          "Dattes Medjool dénoyautées",
           25,
           "g",
           "pantry"
@@ -27806,7 +27806,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Mélange fruits rouges (frais ou surgelés)",
+          "Fruits rouges (frais ou surgelés)",
           60,
           "g",
           "produce"
@@ -29836,7 +29836,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Tortilla maïs complète",
+          "Tortilla de maïs complète",
           2,
           "u",
           "bread"
@@ -30350,7 +30350,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Mélange fruits rouges",
+          "Fruits rouges",
           120,
           "g",
           "produce"
@@ -30625,7 +30625,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pois chiches en conserve",
+          "Pois chiches cuits",
           100,
           "g",
           "pantry"
@@ -30762,10 +30762,10 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Thon naturel en boîte",
+          "Thon au naturel",
           80,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Fromage frais type St-Môret",
@@ -31300,7 +31300,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pois chiches en conserve",
+          "Pois chiches cuits",
           80,
           "g",
           "pantry"
@@ -31414,7 +31414,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Mélange fruits rouges",
+          "Fruits rouges",
           100,
           "g",
           "produce"
@@ -32976,7 +32976,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           200,
           "g",
           "meat-fish"
@@ -34103,7 +34103,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Thon naturel (en boîte)",
+          "Thon au naturel",
           100,
           "g",
           "pantry"
@@ -34238,7 +34238,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Thon naturel (en boîte)",
+          "Thon au naturel",
           33,
           "g",
           "pantry"
@@ -34789,7 +34789,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tortilla maïs (chips de tortilla complète)",
+          "Tortilla de maïs (chips de tortilla complète)",
           15,
           "g",
           "bread"
@@ -34923,7 +34923,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tortilla maïs complète",
+          "Tortilla de maïs complète",
           0.25,
           "u",
           "bread"
@@ -34986,7 +34986,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tortilla maïs complète",
+          "Tortilla de maïs complète",
           2.0,
           "u",
           "bread"
@@ -35123,7 +35123,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tortilla maïs complète",
+          "Tortilla de maïs complète",
           2.0,
           "u",
           "bread"
@@ -35262,7 +35262,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tortilla maïs complète",
+          "Tortilla de maïs complète",
           0.75,
           "u",
           "bread"
@@ -38421,7 +38421,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fruits rouges mélangés (frais ou surgelés)",
+          "Fruits rouges (frais ou surgelés)",
           100,
           "g",
           "produce"
@@ -40072,7 +40072,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Thon en boîte au naturel",
+          "Thon au naturel",
           80,
           "g",
           "pantry"
@@ -41477,7 +41477,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Thon en boîte au naturel",
+          "Thon au naturel",
           100,
           "g",
           "pantry"
@@ -42081,7 +42081,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crevettes décortiquées (cuites)",
+          "Crevettes cuites décortiquées",
           40,
           "g",
           "meat-fish"
@@ -42192,7 +42192,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Thon en boîte au naturel",
+          "Thon au naturel",
           50,
           "g",
           "pantry"
@@ -43744,9 +43744,9 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Gélatine en feuille",
+          "Feuille de gélatine",
           1,
-          "u",
+          "feuille",
           "pantry"
         ],
         [
@@ -44620,7 +44620,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tomatillos en boîte",
+          "Tomatillos en bocal",
           200,
           "g",
           "pantry"
@@ -46778,7 +46778,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Mangue surgelée en cubes",
+          "Mangue surgelée",
           100,
           "g",
           "frozen"
@@ -47012,10 +47012,10 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Haricots verts frais (ou surgelés)",
+          "Haricots verts (frais ou surgelés)",
           100,
           "g",
-          "frozen"
+          "produce"
         ],
         [
           "Tomate",
@@ -48051,7 +48051,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sauce poisson (nuoc mam)",
+          "Sauce de poisson (nuoc-mâm)",
           1,
           "c.à.c",
           "pantry"
@@ -49170,7 +49170,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pâtes courtes complètes (ditali ou coquillettes)",
+          "Pâtes complètes courtes (ditali ou coquillettes)",
           20,
           "g",
           "pantry"
@@ -49507,7 +49507,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Thon en boîte au naturel (égoutté)",
+          "Thon au naturel (égoutté)",
           80,
           "g",
           "pantry"
@@ -50413,10 +50413,10 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Haricots verts frais (ou surgelés)",
+          "Haricots verts (frais ou surgelés)",
           150,
           "g",
-          "frozen"
+          "produce"
         ],
         [
           "Persil plat",
@@ -51389,7 +51389,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tomatillos (ou tomates vertes en bocal)",
+          "Tomatillos en bocal (ou tomates vertes)",
           200,
           "g",
           "pantry"
@@ -52170,7 +52170,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Falafel cuit (ou tofu mariné si pas de falafel)",
+          "Falafels (ou tofu mariné)",
           80,
           "g",
           "pantry"
@@ -52845,10 +52845,10 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Mangue (fraîche ou surgelée décongelée)",
+          "Mangue (fraîche ou surgelée)",
           80,
           "g",
-          "frozen"
+          "produce"
         ],
         [
           "Flocons de noix de coco râpée",
@@ -53736,7 +53736,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Tomatillos en bocal (= salsa verde maison rapide)",
+          "Tomatillos en bocal",
           80,
           "g",
           "pantry"
@@ -54028,7 +54028,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Sauce poisson (nuoc mam)",
+          "Sauce de poisson (nuoc-mâm)",
           1,
           "c.à.s",
           "pantry"
@@ -56093,7 +56093,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool",
           1,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes effilées",
@@ -57261,7 +57261,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Thon en boîte au naturel",
+          "Thon au naturel",
           40,
           "g",
           "pantry"
@@ -58106,10 +58106,10 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Maïs en grains (frais ou surgelés)",
+          "Maïs en grains (frais ou surgelé)",
           75,
           "g",
-          "produce"
+          "frozen"
         ],
         [
           "Courgette",
@@ -58346,7 +58346,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool",
           0.5,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes effilées",
@@ -58988,7 +58988,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool",
           1,
           "u",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -59567,7 +59567,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Tomatillos (ou tomates vertes en bocal)",
+          "Tomatillos en bocal (ou tomates vertes)",
           50,
           "g",
           "pantry"
@@ -60507,7 +60507,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Thon en boîte au naturel",
+          "Thon au naturel",
           80,
           "g",
           "pantry"
@@ -61731,7 +61731,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           200,
           "g",
           "meat-fish"
@@ -63567,7 +63567,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tortilla maïs complète",
+          "Tortilla de maïs complète",
           2,
           "u",
           "bread"
@@ -64975,7 +64975,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Thon naturel (en boîte)",
+          "Thon au naturel",
           50,
           "g",
           "pantry"
@@ -66098,7 +66098,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           133,
           "g",
           "meat-fish"
@@ -67151,10 +67151,10 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Datte Medjool",
+          "Dattes Medjool",
           0.5,
           "u",
-          "produce"
+          "pantry"
         ],
         [
           "Amande effilée",
@@ -69558,7 +69558,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Maïs en grains (ou surgelé)",
+          "Maïs en grains (frais ou surgelé)",
           85,
           "g",
           "frozen"
@@ -69812,10 +69812,10 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Datte Medjool dénoyautée (facultatif)",
+          "Dattes Medjool dénoyautées (facultatif)",
           0.5,
           "u",
-          "produce"
+          "pantry"
         ]
       ],
       "steps": [
@@ -70177,7 +70177,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pesto vert (basilic-pignons)",
+          "Pesto au basilic",
           0.75,
           "c.à.s",
           "pantry"
@@ -72071,7 +72071,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Cacahuète non salée grillée",
+          "Cacahuètes grillées non salées",
           8,
           "g",
           "pantry"
@@ -73493,7 +73493,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Pesto vert",
+          "Pesto au basilic",
           0.167,
           "c.à.s",
           "pantry"
@@ -74414,10 +74414,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thon naturel en boîte",
+          "Thon au naturel",
           70,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Mayonnaise allégée",
@@ -78344,7 +78344,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Cacahuète non salée grillée (facultatif)",
+          "Cacahuètes grillées non salées (facultatif)",
           7,
           "g",
           "pantry"
@@ -79068,7 +79068,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pesto",
+          "Pesto au basilic",
           0.75,
           "c.à.s",
           "pantry"
@@ -82761,7 +82761,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Crevettes décortiquées cuites",
+          "Crevettes cuites décortiquées",
           80,
           "g",
           "meat-fish"
@@ -84006,7 +84006,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Tortilla maïs",
+          "Tortilla de maïs",
           1,
           "u",
           "bread"
@@ -84903,7 +84903,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool",
           15,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes effilées",
@@ -84980,7 +84980,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool",
           15,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Banane",
@@ -85182,7 +85182,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool",
           10,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Huile d'olive",
@@ -85276,7 +85276,7 @@ window.__DATA_RECIPES = {
           "Dattes Medjool",
           8,
           "g",
-          "produce"
+          "pantry"
         ],
         [
           "Amandes effilées",
@@ -86090,7 +86090,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           150,
           "g",
           "meat-fish"
@@ -87605,7 +87605,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           180,
           "g",
           "meat-fish"
@@ -89356,7 +89356,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           75,
           "g",
           "meat-fish"
@@ -94391,13 +94391,13 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           180,
           "g",
           "meat-fish"
         ],
         [
-          "Tortilla maïs",
+          "Tortilla de maïs",
           1.5,
           "u",
           "bread"
@@ -95907,7 +95907,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           150,
           "g",
           "meat-fish"
@@ -97268,7 +97268,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           150,
           "g",
           "meat-fish"
@@ -98673,7 +98673,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Crevettes décortiquées cuites",
+          "Crevettes cuites décortiquées",
           120,
           "g",
           "meat-fish"
@@ -106064,10 +106064,10 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Piments séchés (guajillo)",
-          12,
-          "g",
-          "pantry"
+          "Piment guajillo séché",
+          2.4,
+          "u",
+          "spices"
         ],
         [
           "Tomate",
@@ -114604,7 +114604,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           100,
           "g",
           "pantry"
@@ -114702,7 +114702,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           120,
           "g",
           "pantry"
@@ -115208,7 +115208,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           80,
           "g",
           "pantry"
@@ -115561,7 +115561,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           120,
           "g",
           "pantry"
@@ -116332,7 +116332,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Pâte miso",
+          "Pâte de miso",
           1,
           "c.à.s",
           "pantry"
@@ -119278,7 +119278,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -120776,7 +120776,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           120,
           "g",
           "pantry"
@@ -120888,7 +120888,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -120996,7 +120996,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -121098,7 +121098,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -121317,7 +121317,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           180,
           "g",
           "pantry"
@@ -121558,7 +121558,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           80,
           "g",
           "pantry"
@@ -122366,7 +122366,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -122440,7 +122440,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           130,
           "g",
           "pantry"
@@ -122597,7 +122597,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           120,
           "g",
           "pantry"
@@ -130831,10 +130831,10 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Piments guajillo séchés",
-          6,
-          "g",
-          "pantry"
+          "Piment guajillo séché",
+          1.2,
+          "u",
+          "spices"
         ],
         [
           "Piment ancho séché",
@@ -130956,10 +130956,10 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Piments guajillo séchés",
-          8,
-          "g",
-          "pantry"
+          "Piment guajillo séché",
+          1.6,
+          "u",
+          "spices"
         ],
         [
           "Oignon jaune",
@@ -132733,7 +132733,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           50,
           "g",
           "meat-fish"
@@ -133075,7 +133075,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Gambas décortiquées crues",
+          "Gambas crues décortiquées",
           130,
           "g",
           "meat-fish"
@@ -133204,7 +133204,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -133438,7 +133438,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           70,
           "g",
           "meat-fish"
@@ -135207,7 +135207,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           130,
           "g",
           "meat-fish"
@@ -135420,7 +135420,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           60,
           "g",
           "meat-fish"
@@ -137851,7 +137851,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           140,
           "g",
           "meat-fish"
@@ -138388,7 +138388,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           150,
           "g",
           "meat-fish"
@@ -141283,7 +141283,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Sauce poisson (nuoc-mam)",
+          "Sauce de poisson (nuoc-mâm)",
           1,
           "c.à.c",
           "pantry"
@@ -141525,7 +141525,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           180,
           "g",
           "meat-fish"
@@ -141611,7 +141611,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Mangue mûre (surgelée)",
+          "Mangue surgelée",
           60,
           "g",
           "frozen"
@@ -142731,10 +142731,10 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Thon au naturel égoutté",
+          "Thon au naturel (égoutté)",
           60,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Œuf dur",
@@ -142944,10 +142944,10 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Thon au naturel égoutté",
+          "Thon au naturel (égoutté)",
           90,
           "g",
-          "meat-fish"
+          "pantry"
         ],
         [
           "Tomate cerise",
@@ -146279,7 +146279,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Gambas décortiquées crues",
+          "Gambas crues décortiquées",
           130,
           "g",
           "meat-fish"
@@ -146557,7 +146557,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Crevettes décortiquées crues",
+          "Crevettes crues décortiquées",
           70,
           "g",
           "meat-fish"
@@ -147092,7 +147092,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Gambas décortiquées crues",
+          "Gambas crues décortiquées",
           140,
           "g",
           "meat-fish"
@@ -147751,7 +147751,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Datte medjool",
+          "Dattes Medjool",
           1,
           "u",
           "pantry"
@@ -149221,7 +149221,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomatillo (en conserve, égouttés)",
+          "Tomatillos en bocal (égouttés)",
           100,
           "g",
           "pantry"
@@ -152004,7 +152004,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -152253,7 +152253,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           120,
           "g",
           "pantry"
@@ -152386,7 +152386,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           150,
           "g",
           "pantry"
@@ -152496,7 +152496,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Tomates concassées en boîte",
+          "Tomates concassées",
           120,
           "g",
           "pantry"

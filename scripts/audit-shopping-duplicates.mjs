@@ -59,6 +59,18 @@ if (showIdx > 0) {
   for (const [cat, items] of Object.entries(byCat)) for (const it of items)
     if (app.canonicalName(it.name).includes(w)) console.log(`[${cat}] ${it.label} — ${app.formatQtyShopping(it.qty, it.unit, it.name, cat)}`);
 }
+// --candidates : groupes de lignes qui ne diffèrent que par des mots « neutres »
+// (frais, en boîte, égoutté, cuit, de…), tous rayons confondus — revue manuelle.
+const NEUTRAL_WORDS = new Set(["frais", "fraiche", "fraiches", "en", "boite", "conserve", "bocal", "egoutte", "egouttes",
+  "egouttee", "egouttees", "au", "naturel", "cuit", "cuits", "cuite", "cuites", "de", "d", "du", "des", "la", "le", "les", "a", "l"]);
+if (process.argv.includes("--candidates")) {
+  const groups = {};
+  for (const [cat, items] of Object.entries(byCat)) for (const it of items) {
+    const k = app.canonicalName(it.label).split(/\s+/).filter(w => w && !NEUTRAL_WORDS.has(w)).sort().join(" ");
+    (groups[k] ||= []).push(`${it.label} [${cat}]`);
+  }
+  for (const [k, list] of Object.entries(groups)) if (list.length > 1) console.log(`? ${k} : ${list.join(" | ")}`);
+}
 let problems = 0;
 for (const [cat, items] of Object.entries(byCat)) {
   const byName = {}, byNorm = {};
