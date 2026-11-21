@@ -101,6 +101,12 @@ jobs:
             echo "   → Utiliser ./scripts/bump-version.sh pour bumper ensemble"
             exit 1
           fi
+          # V2.140.2 — catalogue + CSS versionnés (?v=) = même version partout
+          N=$(cat index.html sw.js | grep -cE "(recipes\.js|tailwind\.css)\?v=$TITLE_VER")
+          if [ "$N" -ne 4 ]; then
+            echo "❌ Assets ?v= désynchronisés ($N/4 à V$TITLE_VER) → scripts/bump-version.sh"
+            exit 1
+          fi
           echo "✅ Version cohérente V$TITLE_VER"
 
       # ── 4. Schéma recettes ──────────────────────────────────────────

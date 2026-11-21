@@ -14227,7 +14227,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fleur d'oranger",
+          "Eau de fleur d'oranger",
           0.5,
           "c.à.c",
           "pantry"
@@ -89125,7 +89125,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Zeste de citron jaune",
+          "Zeste de citron",
           2,
           "g",
           "produce"
@@ -110557,7 +110557,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Fleur d'oranger (eau)",
+          "Eau de fleur d'oranger",
           5,
           "ml",
           "pantry"
@@ -110688,7 +110688,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fleur d'oranger (eau)",
+          "Eau de fleur d'oranger",
           8,
           "ml",
           "pantry"

@@ -131,6 +131,9 @@ INGREDIENT_RENAMES = {
     "Petites pâtes complètes": "Pâtes complètes (petites)",
     "Anchois (facultatif)": "Anchois à l'huile (facultatif)",
     "Lait demi-écrémé tiède": "Lait demi-écrémé (tiède)",
+    "Zeste de citron jaune": "Zeste de citron",
+    "Fleur d'oranger": "Eau de fleur d'oranger",
+    "Fleur d'oranger (eau)": "Eau de fleur d'oranger",
     "Tomatillo": "Tomatille",
     "Tomatillos (ou tomate verte)": "Tomatille (ou tomate verte)",
 }

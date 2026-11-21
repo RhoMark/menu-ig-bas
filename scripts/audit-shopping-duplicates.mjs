@@ -30,7 +30,7 @@ const RECIPES = win.__DATA_RECIPES.items;
 const names = ["canonicalName", "PRODUCE_PREP_RE", "stripProducePrep", "HERB_BOUQUET_G", "HERB_FEUILLE_G", "HERB_BRANCHE_G",
   "REF", "dataRef", "COOKED_LINE_RE", "nutriGrams", "SPOON_TO_GRAMS", "SPOON_TO_ML", "LIQUID_AROMATIC_KEYS", "isLiquidAromatic",
   "HERB_KEYWORDS", "isHerbFresh", "ROOT_FRESH_KEYWORDS", "ROOT_CM_TO_G", "isFreshRoot", "unitConvertForAggregation",
-  "displayCanonName", "pickDisplayLabel", "mergeSameItemLines", "formatQty", "formatSpoonHint", "formatQtyShopping", "aggregateShoppingList"];
+  "displayCanonName", "pickDisplayLabel", "JUICE_ML_PER_FRUIT", "VOLUME_TO_ML", "SHOPPING_ALIASES", "citrusJuiceToFruit", "mergeSameItemLines", "formatQty", "formatSpoonHint", "formatQtyShopping", "aggregateShoppingList"];
 const src = [
   "const console = {error() {}, warn() {}, log() {}};",
   "function loadRefBlock(id, fallback) { return BLOCK(id) || fallback; }",

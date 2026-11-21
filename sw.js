@@ -14,7 +14,7 @@
 // Versioning du cache : bumper CACHE_VERSION à chaque release qui modifie
 // les ressources critiques. Les anciens caches sont purgés à l'activation.
 
-const CACHE_VERSION = "menu-ig-bas-v2.140.1";
+const CACHE_VERSION = "menu-ig-bas-v2.140.2";
 
 const CRITICAL_ASSETS = [
   "./",
@@ -24,7 +24,7 @@ const CRITICAL_ASSETS = [
   "./icon-192.png",
   "./icon-512.png",
   // V2.87.0 (issue #94) — Tailwind CSS bundlé localement (était CDN avant).
-  "./tailwind.css",
+  "./tailwind.css?v=2.140.2",
   // V3.0 Phase 2·L (S0) — React/ReactDOM/Babel vendorisés en local (étaient
   // sur cdnjs, en best-effort dans CDN_ASSETS). Désormais CRITIQUES : mis en
   // cache dès l'install → l'app boote 100% hors-ligne au 1er lancement, plus
@@ -33,7 +33,9 @@ const CRITICAL_ASSETS = [
   "./vendor/react-dom.production.min.js",
   "./vendor/babel.min.js",
   // V2.115.0 — Catalogue de recettes sorti d'index.html (limite 5 Mo).
-  "./data/recipes.js",
+  // V2.140.2 — URL versionnée (?v=, bumpée avec CACHE_VERSION) : une page à jour ne
+  // peut plus recevoir le catalogue de l'ancienne version (bug « Sel, poivre » en V2.140.0).
+  "./data/recipes.js?v=2.140.2",
   // Refonte design (1A) — polices auto-hébergées (OFL), utilisées par l'interface V3.
   "./vendor/fonts/nunito-latin-wght-normal.woff2",
   "./vendor/fonts/fraunces-latin-soft-normal.woff2",
@@ -47,7 +49,9 @@ self.addEventListener("install", (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_VERSION);
     // Critique : doit réussir, sinon le SW ne s'installe pas.
-    await cache.addAll(CRITICAL_ASSETS);
+    // V2.140.2 — cache: "reload" : on contourne le cache HTTP du navigateur (GitHub Pages
+    // garde les fichiers 10 min), sinon la nouvelle version pouvait stocker l'ancien catalogue.
+    await cache.addAll(CRITICAL_ASSETS.map(u => new Request(u, {cache: "reload"})));
     // CDN : best effort, on log les échecs sans bloquer l'install
     // (request "no-cors" → opaque response, mais le browser peut quand même la
     // restituer aux <script src="..."> tant que c'est servi depuis le cache).

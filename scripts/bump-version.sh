@@ -122,6 +122,13 @@ sed -i "s|<title>Menu IG Bas — V[0-9]\+\.[0-9]\+\.[0-9]\+</title>|<title>Menu 
 # Remplacement sw.js
 sed -i "s|CACHE_VERSION = \"menu-ig-bas-v[0-9]\+\.[0-9]\+\.[0-9]\+\"|CACHE_VERSION = \"menu-ig-bas-$NEW_CACHE\"|" "$SW"
 
+# V2.140.2 — Assets versionnés (?v=) : catalogue et CSS, dans index.html ET sw.js
+sed -i "s#\(recipes\.js\|tailwind\.css\)?v=[0-9]\+\.[0-9]\+\.[0-9]\+#\1?v=$NEW_VERSION#g" "$INDEX" "$SW"
+if [[ $(cat "$INDEX" "$SW" | grep -cE "(recipes\.js|tailwind\.css)\?v=$NEW_VERSION") -ne 4 ]]; then
+  echo "${R}❌ Échec sed sur les assets versionnés (?v=)${X}"
+  exit 1
+fi
+
 # Vérification post-sed
 NEW_TITLE_CHECK=$(grep -oE '<title>Menu IG Bas — V[0-9]+\.[0-9]+\.[0-9]+</title>' "$INDEX" | grep -oE 'V[0-9]+\.[0-9]+\.[0-9]+')
 NEW_CACHE_CHECK=$(grep -oE 'CACHE_VERSION = "menu-ig-bas-v[0-9]+\.[0-9]+\.[0-9]+"' "$SW" | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+')
