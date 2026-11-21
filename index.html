@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.154.0</title>
+<title>Menu IG Bas — V2.155.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.154.0">
+<link rel="stylesheet" href="tailwind.css?v=2.155.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.154.0"></script>
+<script src="data/recipes.js?v=2.155.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -24005,14 +24005,15 @@ function IconToggleTiles({items, selected = [], onToggle, max}) {
 
 // V2.154.0 — Fiche membre épurée : Allergies / Évite / Aime en icônes avec
 // compteur ; un tap ouvre l'éditeur correspondant (un seul à la fois).
-function MemberPrefsTiles({name, counts, profile, startOpen, allergies, excl, likes}) {
+function MemberPrefsTiles({name, counts, profile, startOpen, allergies, excl, likes, info,
+    profileIcon = "✏", profileLabel = "Profil", panelTitles = {}}) {
   const [open, setOpen] = useState(startOpen || null);
   const tiles = [
-    {key: "profile", icon: "✏", label: "Profil", c: ["#475569", "#cbd5e1"], n: null, body: profile},
+    {key: "profile", icon: profileIcon, label: profileLabel, c: ["#475569", "#cbd5e1"], n: null, body: profile},
     {key: "allergies", icon: "⚠", label: "Allergies", c: ["#dc2626", "#f87171"], n: counts.allergies, body: allergies},
     {key: "excl", icon: "🚫", label: "Évite", c: ["#b45309", "#fcd34d"], n: counts.excl, body: excl},
     {key: "likes", icon: "❤", label: "Aime", c: ["#e11d48", "#fb7185"], n: counts.likes, body: likes},
-  ];
+  ].filter(t => t.body !== undefined);
   const cur = tiles.find(t => t.key === open);
   return (
     <div>
@@ -24022,7 +24023,7 @@ function MemberPrefsTiles({name, counts, profile, startOpen, allergies, excl, li
           const active = open === t.key;
           return (
             <button key={t.key} type="button" onClick={() => setOpen(active ? null : t.key)} aria-expanded={active}
-              aria-label={t.n === null ? `Modifier le profil de ${name}` : `${t.label} : ${t.n}`}
+              aria-label={t.n === null ? `${t.label} : ${name}` : `${t.label} : ${t.n}`}
               className="w-[68px] flex flex-col items-center gap-0.5 focus:outline-none group">
               <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[26px] transition-transform group-active:scale-90 ic-tint ${active ? "bg-slate-100 dark:bg-white/10" : ""}`} style={tint}>
                 {t.icon}
@@ -24033,16 +24034,18 @@ function MemberPrefsTiles({name, counts, profile, startOpen, allergies, excl, li
           );
         })}
         <InfoTip title={`Préférences de ${name}`} className="ml-auto">
+          {info || <>
           <p><strong>Profil</strong> : prénom, année de naissance, sexe et profil santé (il fixe le seuil de charge glycémique ; pour le foyer, le profil le plus contraignant gagne).</p>
           <p className="mt-2"><strong>Allergies</strong> : aucune recette contenant l'allergène (ou ses traces) n'est proposée. Une confirmation est demandée à l'ajout.</p>
           <p className="mt-2"><strong>Évite</strong> : ingrédients que ce membre préfère éviter par goût. Une recette n'est écartée que si <strong>tous les membres présents</strong> au repas évitent l'ingrédient.</p>
           <p className="mt-2"><strong>Aime</strong> : jusqu'à 10 ingrédients favoris. Les recettes qui en contiennent reviennent un peu plus souvent (au plus ~1 repas sur 3), sans jamais passer devant les allergies, les exclusions ni les repères nutritionnels.</p>
+          </>}
         </InfoTip>
       </div>
       {cur && (
         <div className="mt-2 rounded-xl border border-slate-200 dark:border-slate-700 p-3 text-sm">
           <p className="text-xs font-semibold text-slate-700 dark:text-slate-200 mb-2">
-            {cur.key === "profile" ? `Profil de ${name}` : cur.key === "allergies" ? `Allergies / intolérances de ${name}` : cur.key === "excl" ? `Ce que ${name} évite` : `Ce que ${name} aime`}
+            {panelTitles[cur.key] ? panelTitles[cur.key] : cur.key === "profile" ? `Profil de ${name}` : cur.key === "allergies" ? `Allergies / intolérances de ${name}` : cur.key === "excl" ? `Ce que ${name} évite` : `Ce que ${name} aime`}
           </p>
           {cur.body}
         </div>
@@ -25141,28 +25144,38 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
           );
         })}
         {full && <button onClick={addMember} className="text-emerald-700 dark:text-emerald-300 text-sm font-medium">+ Ajouter un membre</button>}
-        <div className="mt-3">
-          <label className="text-xs text-slate-500 dark:text-slate-400 block">Localisation</label>
-          <input value={p.location} disabled={!full} onChange={e=>updateProfile({location:e.target.value})}
-            placeholder="Ex. Lyon, France" className="border rounded px-3 py-2 w-full" />
-        </div>
       </div>
 
       {/* S6 — Réglages du foyer (allergies communes, structure des menus) : admin / co-admin (INV-3) */}
       <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
-        <h3 className="font-bold text-red-800 dark:text-red-200 mb-3">⚠ Allergies / intolérances de toute la famille</h3>
-        <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
-          Ces allergies s'appliquent à tous les membres. Pour une allergie qui ne concerne qu'une personne, utilise le bloc « Allergies » sous chaque membre dans la section Famille ci-dessus.
-        </p>
-        <AllergenTiles selected={p.globalAllergies}
-          onToggle={(k, active) => active ? removeGlobalAllergy(k) : tryAddGlobalAllergy(k)} />
-      </div>
-
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
-        <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-3">Exclusions préférentielles</h3>
-        {section === "foyer" && <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">Ingrédients évités pour toute la famille, par goût (ce ne sont pas des allergies). Pour un seul membre, utilise ses « Exclusions préférentielles » dans sa fiche ci-dessus.</p>}
-        <ExclusionsEditor listKey="global" value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
+      {/* V2.155.0 — Carte « Toute la famille » sur le modèle de la fiche membre :
+          en-tête + icônes Lieu / Allergies / Évite, éditeur au tap, explications dans la bulle « i ». */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-4 space-y-3">
+        <div className="flex items-center gap-3">
+          <span aria-hidden="true" className="w-11 h-11 rounded-full flex items-center justify-center text-xl flex-shrink-0 bg-brand-soft text-brand">👪</span>
+          <div className="flex-1 min-w-0">
+            <p className="font-title text-lg font-semibold leading-tight truncate">Toute la famille</p>
+            <p className="text-sm text-muted truncate">{p.members.length} membre{p.members.length > 1 ? "s" : ""}{p.location ? ` · ${p.location}` : ""}</p>
+          </div>
+          {(p.globalAllergies || []).length > 0 && (
+            <span className="px-2.5 py-1 rounded-full bg-danger text-white text-xs font-bold" title={p.globalAllergies.map(a => dataRef.allergenLabel(a)).join(", ")}>
+              🚫 {p.globalAllergies.length} allergie{p.globalAllergies.length > 1 ? "s" : ""}
+            </span>
+          )}
+        </div>
+        <MemberPrefsTiles name="toute la famille" profileIcon="📍" profileLabel="Lieu"
+          counts={{allergies: (p.globalAllergies || []).length, excl: (p.globalExclusions || []).length}}
+          panelTitles={{profile: "Localisation du foyer", allergies: "Allergies / intolérances de toute la famille", excl: "Ce que toute la famille évite"}}
+          profile={<input value={p.location} disabled={!full} onChange={e=>updateProfile({location:e.target.value})}
+            placeholder="Ex. Lyon, France" className="border rounded px-3 py-2 w-full" />}
+          allergies={<AllergenTiles selected={p.globalAllergies}
+            onToggle={(k, active) => active ? removeGlobalAllergy(k) : tryAddGlobalAllergy(k)} />}
+          excl={<ExclusionsEditor listKey="global" value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />}
+          info={<>
+            <p><strong>Lieu</strong> : la ville du foyer, pour adapter les ingrédients aux produits disponibles dans ta région.</p>
+            <p className="mt-2"><strong>Allergies</strong> : elles s'appliquent à tous les membres. Pour une allergie qui ne concerne qu'une personne, utilise l'icône Allergies de sa fiche.</p>
+            <p className="mt-2"><strong>Évite</strong> : ingrédients évités pour toute la famille, par goût (ce ne sont pas des allergies). Pour un seul membre, utilise l'icône Évite de sa fiche.</p>
+          </>} />
       </div>
       </fieldset>
       {/* Nouvelle interface : le foyer partagé (labo) termine « Mon foyer ». */}
