@@ -7,6 +7,7 @@ Reconstruire (après ajout d'un emoji dans MAP) :
   python3 -m venv .venv && .venv/bin/pip install fonttools brotli
   .venv/bin/python scripts/build-icon-font.py package vendor/fonts/app-icons.woff2 /tmp/range.txt
   puis recopier /tmp/range.txt dans unicode-range (tailwind-input.css) et rebuild Tailwind.
+  Mettre à jour l'empreinte ?h= de l'URL (tailwind-input.css + sw.js) : l'audit la donne.
 Contrôle : python3 scripts/audit-emoji-icons.py"""
 import json, sys
 from fontTools.ttLib import TTFont

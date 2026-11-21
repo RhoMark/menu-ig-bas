@@ -31,6 +31,14 @@ for path in ("index.html", "data/recipes.js"):
             if ch in TEXT_OK or ord(ch) in covered:
                 continue
             missing.setdefault(ch, []).append(f"{path}:{i}")
+# V2.147.1 — L'URL de la police porte son empreinte (?h=) : sans elle, un ancien
+# service worker resservait l'ancienne police (ex. 🦐 affiché en poisson).
+import hashlib
+h = hashlib.md5(open("vendor/fonts/app-icons.woff2", "rb").read()).hexdigest()[:8]
+for path in ("tailwind-input.css", "sw.js"):
+    if f"app-icons.woff2?h={h}" not in open(path, encoding="utf-8").read():
+        print(f"❌ {path} : mettre l'URL de la police à app-icons.woff2?h={h}")
+        sys.exit(1)
 if missing:
     for ch, where in sorted(missing.items()):
         print(f"❌ {ch} (U+{ord(ch):X}) sans icône — {', '.join(where[:3])}{' …' if len(where) > 3 else ''}")
