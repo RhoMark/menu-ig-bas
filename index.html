@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.140.4</title>
+<title>Menu IG Bas — V2.140.5</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.140.4">
+<link rel="stylesheet" href="tailwind.css?v=2.140.5">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -484,7 +484,7 @@ if ("serviceWorker" in navigator) {
       "qa": [
         {
           "q": "Comment les ingrédients sont agrégés ?",
-          "a": "Par clé (nom canonique + unité + catégorie). Exemple : « Tomate », « Tomates » et « Tomates mûres » fusionnent vers « tomate » (singulier, descripteurs strippés). Les unités c.à.c, c.à.s, pincée, bouquet, branche, feuille, cm sont converties vers g ou ml selon l'ingrédient (ex : 1 c.à.s d'huile = 15 ml). Les produces avec poids référencé (tomate, courgette…) convergent vers « u » (pièce) pour fusion. Depuis la V2.140.0, un même article écrit dans des unités différentes selon les recettes (« 50 g » et « 1 bouquet » de persil, « 1 bâton » et « 3 g » de cannelle) tient sur une seule ligne, et les herbes fraîches s'affichent en bouquets. « Sel, poivre » est devenu deux ingrédients : Sel et Poivre noir."
+          "a": "Par clé (nom canonique + unité + catégorie). Exemple : « Tomate », « Tomates » et « Tomates mûres » fusionnent vers « tomate » (singulier, descripteurs strippés). Les unités c.à.c, c.à.s, pincée, bouquet, branche, feuille, cm sont converties vers g ou ml selon l'ingrédient (ex : 1 c.à.s d'huile = 15 ml). Les produces avec poids référencé (tomate, courgette…) convergent vers « u » (pièce) pour fusion. Depuis la V2.140.0, un même article écrit dans des unités différentes selon les recettes (« 50 g » et « 1 bouquet » de persil, « 1 bâton » et « 3 g » de cannelle) tient sur une seule ligne, et les herbes fraîches s'affichent en bouquets. « Sel, poivre » est devenu deux ingrédients : Sel et Poivre noir. Pour les agrumes, la liste sépare le jus (« Jus de citron 70 ml (≈ 2 citrons) » : tu peux acheter du jus en bouteille), le zeste (« Citron pour le zeste », à prendre avec une peau non traitée) et le fruit entier."
         },
         {
           "q": "Pourquoi mon ingrédient apparaît plusieurs fois ?",
@@ -12496,7 +12496,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.140.4"></script>
+<script src="data/recipes.js?v=2.140.5"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -14403,6 +14403,18 @@ function formatQtyShopping(qty, unit, name, category) {
   const u = dataRef.canonicalUnit(unit);
   const canon = name ? canonicalName(name) : null;
   const weight = canon ? dataRef.produceUnitWeight(canon) : null;
+  // V2.140.5 — Agrumes : jus en ml avec l'équivalent en fruits ; zeste = fruits non traités.
+  if (canon && category === "produce") {
+    const jm = canon.match(/^jus d(?:e )?(.+)$/); // « jus de citron », « jus dorange »
+    if (jm && JUICE_ML_PER_FRUIT[jm[1]] && u === "ml") {
+      const n = Math.max(1, Math.ceil(qty / JUICE_ML_PER_FRUIT[jm[1]] - 0.15));
+      return `${Math.round(qty)} ml (≈ ${n} ${pluralFruit(jm[1], n)})`;
+    }
+    if (/ pour le zeste$/.test(canon) && u === "u") {
+      const n = Math.max(1, Math.ceil(qty - 0.15));
+      return `${n} (peau non traitée)`;
+    }
+  }
   // V2.140.0 — Herbes fraîches : on les achète en bouquet. « 2 bouquets (≈ 70 g) ».
   if (u === "g" && category === "produce" && canon && isHerbFresh(canon)) {
     const bq = HERB_BOUQUET_G[canon] ?? Object.entries(HERB_BOUQUET_G).find(([k]) => k !== "default" && canon.startsWith(k))?.[1];
@@ -16765,14 +16777,14 @@ function optimizeForNutritionMins({days, profile, season, ratings, recentlyUsed}
 // fallback "Divers" en fin de catégorie.
 const SUBGROUPS = {
   produce: [
-    {id:"herbes", label:"Herbes fraîches", order:1, re:/\b(basilic|persil|coriandre|menthe|thym|romarin|ciboulette|estragon|aneth|sauge|laurier|cerfeuil|origan frais)\b/},
+    {id:"herbes", label:"Herbes fraîches", order:1, re:/\b(basilic|persil|coriandre|menthe|thym|romarin|ciboulette|estragon|aneth|sauge|laurier|cerfeuil|origan frais|bouquet garni|verveine|citronnelle|herbe|feuille de curry|feuille de fenugrec)\b/},
     {id:"alliacees", label:"Alliacées", order:2, re:/\b(oignon|ail|echalote|poireau|cebette|ciboule|oignon rouge|oignon blanc|oignon nouveau|oignon vert)\b/},
-    {id:"feuilles", label:"Légumes-feuilles", order:3, re:/\b(epinard|salade|laitue|kale|blette|mache|roquette|chou|chou kale|chou rouge|chou blanc|chou vert|chou frise|cresson|endive|pak choi|chou pak)\b/},
-    {id:"racines", label:"Légumes-racines", order:4, re:/\b(carotte|betterave|panais|navet|celeri|topinambour|radis|rave|patate douce|pomme de terre|gingembre|raifort|crosne|rutabaga)\b/},
-    {id:"fruits-legumes", label:"Légumes-fruits", order:5, re:/\b(tomate|courgette|aubergine|poivron|concombre|courge|potiron|butternut|potimarron|avocat|fenouil|artichaut|asperge|maïs|mais|olives?)\b/},
-    {id:"legumineuses-fraiches", label:"Légumineuses fraîches", order:6, re:/\b(petits? pois|feve|haricot vert|haricot beurre|edamame|mange-tout|pois gourmand|pois mange-tout)\b/},
+    {id:"feuilles", label:"Légumes-feuilles", order:3, re:/\b(epinard|depinard|salade|laitue|kale|blette|mache|roquette|chou|chou kale|chou rouge|chou blanc|chou vert|chou frise|cresson|endive|pak choi|chou pak|bok choy|brocoli|radicchio|feuille de moutarde|kimchi)\b/},
+    {id:"racines", label:"Légumes-racines", order:4, re:/\b(carotte|betterave|panais|navet|celeri|topinambour|radis|rave|patate douce|pomme de terre|gingembre|raifort|crosne|rutabaga|jicama|chataigne deau)\b/},
+    {id:"fruits-legumes", label:"Légumes-fruits", order:5, re:/\b(tomate|tomatille|courgette|aubergine|poivron|piment|concombre|courge|potiron|butternut|potimarron|avocat|fenouil|artichaut|dartichaut|asperge|gombo|maïs|mais|olives?)\b/},
+    {id:"legumineuses-fraiches", label:"Légumineuses fraîches", order:6, re:/\b(petits? pois|pois|feve|haricot vert|haricot beurre|edamame|mange-tout|mange tout|pois gourmand|pois mange-tout|germe de soja|pousse de soja|lentille germee)\b/},
     {id:"champignons", label:"Champignons", order:7, re:/\b(champignon|cepe|girolle|shiitake|pleurote|morille|truffe|portobello)\b/},
-    {id:"fruits", label:"Fruits frais", order:8, re:/\b(pomme|poire|banane|fraise|framboise|myrtille|cassis|mure|abricot|peche|nectarine|prune|raisin|citron|citron vert|orange|pamplemousse|clementine|mandarine|kiwi|mangue|ananas|melon|pasteque|figue|grenade|datte|cerise)\b/},
+    {id:"fruits", label:"Fruits frais", order:8, re:/\b(pomme|poire|banane|fraise|framboise|myrtille|cassis|mure|abricot|peche|nectarine|prune|pruneau|raisin|citron|citron vert|orange|pamplemousse|pomelo|clementine|mandarine|kiwi|mangue|ananas|melon|pasteque|figue|grenade|datte|cerise|litchi|papaye|pitaya|fruit|coing|rhubarbe|airelle|chataigne|zeste|zeste dorange|dorange)\b/},
   ],
   "meat-fish": [
     {id:"volailles", label:"Volailles", order:1, re:/\b(poulet|dinde|canard|pintade|caille|chapon)\b/},
@@ -16814,8 +16826,10 @@ function inferSubgroup(name, category) {
   const cat = SUBGROUPS[category];
   if (!cat) return null;
   const canon = canonicalName(name);
+  // V2.140.5 — aussi au singulier (« Poireaux » partait dans « Divers »).
+  const sing = canon.split(" ").map(w => (w.length > 3 ? w.replace(/[sx]$/, "") : w)).join(" ");
   for (const sg of cat) {
-    if (sg.re.test(canon)) return {id: sg.id, label: sg.label, order: sg.order};
+    if (sg.re.test(canon) || sg.re.test(sing)) return {id: sg.id, label: sg.label, order: sg.order};
   }
   return null; // → bucket "Divers" en fin de catégorie
 }
@@ -16912,13 +16926,9 @@ function aggregateShoppingList(weekMenu, profile) {
       let cName = canonicalName(name);
       let cUnit = dataRef.canonicalUnit(unit);
       let cQty = qty;
-      // V2.140.2 — Jus d'agrume écrit en volume (« Jus de citron 1 c.à.s ») :
-      // au magasin on achète des fruits → converti en citrons, fusionné avec
-      // « Citron » (sinon 3 lignes : Citron, Jus de citron, Citron (jus)).
-      // « Citron jaune » éventuel = « Citron » (le citron jaune, en français courant).
-      if (category === "produce" && SHOPPING_ALIASES[cName]) cName = SHOPPING_ALIASES[cName];
-      const juice = citrusJuiceToFruit(cName, cQty, cUnit, category);
-      if (juice) { cName = juice.fruit; cQty = juice.qty; cUnit = "u"; }
+      // V2.140.5 — Agrumes : jus seul, zeste ou fruit entier = 3 achats différents.
+      const citrus = citrusUse(name, cQty, cUnit, category);
+      if (citrus) { cName = citrus.canon; cQty = citrus.qty; cUnit = citrus.unit; }
       // V2.140.0 — Herbes fraîches exclues : elles s'achètent en bouquet et
       // restent en grammes (sinon « 50 g » devenait « 0,5 pièce de 100 g »
       // et ne fusionnait plus avec « 1 bouquet » converti en grammes).
@@ -17010,19 +17020,39 @@ function aggregateShoppingList(weekMenu, profile) {
   Object.values(byCat).forEach(list => list.sort((a,b) => a.name.localeCompare(b.name, "fr")));
   return byCat;
 }
-// V2.140.2 — Jus moyen d'un fruit, en ml (ordres de grandeur, non vérifiés).
+// V2.140.5 — Agrumes dans la liste de courses (retour HedgeX) : savoir si une
+// recette veut le JUS (on peut acheter du jus en bouteille), le ZESTE (il faut
+// des fruits non traités) ou le fruit entier (rondelles, quartiers).
+//   « Jus de citron 2 c.à.s », « Citron (jus) 1 »      → « Jus de citron  70 ml (≈ 2 citrons) »
+//   « Zeste de citron 1 c.à.c », « Citron (zeste + jus) » → « Citron pour le zeste  2 (peau non traitée) »
+//   « Citron 1 », « Citron jaune 1 »                    → « Citron  2 »
+// En français courant « citron » = citron jaune.
+// Jus et zeste moyens d'un fruit : ordres de grandeur, non vérifiés.
 const JUICE_ML_PER_FRUIT = {"citron": 40, "citron vert": 25, "orange": 80, "pamplemousse": 150};
+const ZEST_G_PER_FRUIT = {"citron": 2, "citron vert": 1.5, "orange": 4, "pamplemousse": 6};
 const VOLUME_TO_ML = {"ml": 1, "cl": 10, "l": 1000, "c.à.s": 15, "c.à.c": 5};
-// Même article au magasin, nom différent dans les recettes (liste de courses seulement).
-// En français courant « citron » = citron jaune (V2.140.3).
-const SHOPPING_ALIASES = {"citron jaune": "citron"};
-function citrusJuiceToFruit(canon, qty, unit, category) {
-  if (category !== "produce" || VOLUME_TO_ML[unit] == null) return null;
-  let fruit = canon.replace(/^jus d(?:e |')?/, "");
-  fruit = SHOPPING_ALIASES[fruit] || fruit;
-  const perFruit = JUICE_ML_PER_FRUIT[fruit];
-  return perFruit ? {fruit, qty: qty * VOLUME_TO_ML[unit] / perFruit} : null;
+const ZEST_SPOON_G = {"g": 1, "c.à.c": 2, "c.à.s": 6, "pincée": 0.5};
+function citrusUse(name, qty, unit, category) {
+  if (category !== "produce" || !name) return null;
+  const raw = name.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/['’]/g, " ").trim();
+  const m = raw.match(/^(?:(jus|zestes?)\s+d(?:e\s+|\s+))?(citron vert|citron jaune|citron|orange|pamplemousse)\b(.*)$/);
+  if (!m) return null;
+  const fruit = m[2] === "citron jaune" ? "citron" : m[2];
+  const rest = m[3].trim();
+  if (rest && !rest.startsWith("(")) return null; // « Orange sanguine », « Citron confit »… : article à part
+  const paren = (rest.match(/\(([^)]*)\)/) || [null, ""])[1];
+  const kind = m[1] === "jus" ? "juice" : m[1] ? "zest" : /zeste/.test(paren) ? "zest" : /^jus\b/.test(paren) ? "juice" : "whole";
+  if (kind === "juice") {
+    const ml = VOLUME_TO_ML[unit] != null ? qty * VOLUME_TO_ML[unit] : unit === "u" ? qty * JUICE_ML_PER_FRUIT[fruit] : null;
+    return ml == null ? null : {canon: fruit === "orange" ? "jus d'orange" : `jus de ${fruit}`, qty: ml, unit: "ml"};
+  }
+  if (kind === "zest") {
+    const fruits = unit === "u" ? qty : ZEST_SPOON_G[unit] != null ? qty * ZEST_SPOON_G[unit] / ZEST_G_PER_FRUIT[fruit] : null;
+    return fruits == null ? null : {canon: `${fruit} pour le zeste`, qty: fruits, unit: "u"};
+  }
+  return {canon: fruit, qty, unit};
 }
+const pluralFruit = (fruit, n) => (n > 1 ? fruit.split(" ").map(w => w + "s").join(" ") : fruit);
 
 // V2.140.0 — Un même article saisi dans des unités différentes selon les
 // recettes (« Persil plat 50 g » + « 1 bouquet », « Olive noire 20 pièces » +

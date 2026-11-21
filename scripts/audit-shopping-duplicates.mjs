@@ -30,7 +30,7 @@ const RECIPES = win.__DATA_RECIPES.items;
 const names = ["canonicalName", "PRODUCE_PREP_RE", "stripProducePrep", "HERB_BOUQUET_G", "HERB_FEUILLE_G", "HERB_BRANCHE_G",
   "REF", "dataRef", "COOKED_LINE_RE", "nutriGrams", "SPOON_TO_GRAMS", "SPOON_TO_ML", "LIQUID_AROMATIC_KEYS", "isLiquidAromatic",
   "HERB_KEYWORDS", "isHerbFresh", "ROOT_FRESH_KEYWORDS", "ROOT_CM_TO_G", "isFreshRoot", "unitConvertForAggregation",
-  "displayCanonName", "pickDisplayLabel", "JUICE_ML_PER_FRUIT", "VOLUME_TO_ML", "SHOPPING_ALIASES", "citrusJuiceToFruit", "mergeSameItemLines", "formatQty", "formatSpoonHint", "formatQtyShopping", "aggregateShoppingList"];
+  "displayCanonName", "pickDisplayLabel", "JUICE_ML_PER_FRUIT", "ZEST_G_PER_FRUIT", "VOLUME_TO_ML", "ZEST_SPOON_G", "citrusUse", "pluralFruit", "mergeSameItemLines", "formatQty", "formatSpoonHint", "formatQtyShopping", "aggregateShoppingList", "SUBGROUPS", "inferSubgroup"];
 const src = [
   "const console = {error() {}, warn() {}, log() {}};",
   "function loadRefBlock(id, fallback) { return BLOCK(id) || fallback; }",
@@ -40,7 +40,7 @@ const src = [
   "const slotIsAperoDinatoireOnMeal = () => false; const slotFeastObj = () => null; const slotApero = () => null;",
   "const mealEquivalents = () => 1; const scaleQty = (q, m) => q * m;",
   ...names.map(extract),
-  "return {aggregateShoppingList, formatQtyShopping, canonicalName};",
+  "return {aggregateShoppingList, formatQtyShopping, canonicalName, inferSubgroup};",
 ].join("\n");
 const app = new Function("BLOCK", "RECIPES", src)(block, RECIPES);
 
@@ -71,6 +71,14 @@ if (process.argv.includes("--candidates")) {
   }
   for (const [k, list] of Object.entries(groups)) if (list.length > 1) console.log(`? ${k} : ${list.join(" | ")}`);
 }
+// --divers : articles sans sous-rayon (rangés dans « Divers ») — revue des expressions SUBGROUPS.
+if (process.argv.includes("--divers")) {
+  for (const [cat, items] of Object.entries(byCat)) for (const it of items)
+    if (!app.inferSubgroup(it.name, cat)) console.log(`· [${cat}] ${it.label}`);
+}
+// --groups <rayon> : chaque article et son sous-rayon (contrôle visuel).
+const gi = process.argv.indexOf("--groups");
+if (gi > 0) for (const it of byCat[process.argv[gi + 1]] || []) console.log(`${app.inferSubgroup(it.name, process.argv[gi + 1])?.label || "Divers"} · ${it.label}`);
 let problems = 0;
 for (const [cat, items] of Object.entries(byCat)) {
   const byName = {}, byNorm = {};

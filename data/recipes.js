@@ -659,7 +659,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Épinards frais ou surgelés",
+          "Épinards frais (ou surgelés)",
           80,
           "g",
           "produce"
@@ -1348,7 +1348,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Épinards frais ou surgelés",
+          "Épinards frais (ou surgelés)",
           150,
           "g",
           "produce"
@@ -2168,7 +2168,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Poireaux",
+          "Poireau",
           2,
           "u",
           "produce"
@@ -2505,7 +2505,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Salade verte pour accompagner",
+          "Salade verte",
           40,
           "g",
           "produce"
@@ -2834,7 +2834,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Champignons (Paris ou mélangés)",
+          "Champignons de Paris (ou mélangés)",
           180,
           "g",
           "produce"
@@ -2957,7 +2957,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Feuilles de basilic thaï",
+          "Basilic thaï",
           6,
           "feuilles",
           "produce"
@@ -4270,7 +4270,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Betteraves cuites sous vide",
+          "Betterave cuite",
           150,
           "g",
           "produce"
@@ -4852,7 +4852,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Brocolis",
+          "Brocoli",
           150,
           "g",
           "produce"
@@ -5394,7 +5394,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Poireaux",
+          "Poireau",
           1.5,
           "u",
           "produce"
@@ -5484,7 +5484,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Butternut",
+          "Courge butternut",
           400,
           "g",
           "produce"
@@ -5766,7 +5766,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Brocolis",
+          "Brocoli",
           100,
           "g",
           "produce"
@@ -13311,7 +13311,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Mange-tout (pois gourmands)",
+          "Pois gourmands",
           60,
           "g",
           "produce"
@@ -16075,7 +16075,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Fèves fraîches écossées",
+          "Fèves fraîches (écossées)",
           70,
           "g",
           "produce"
@@ -37258,7 +37258,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Brocolis",
+          "Brocoli",
           200,
           "g",
           "produce"
@@ -39693,7 +39693,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Aubergine moyenne",
+          "Aubergine",
           1,
           "u",
           "produce"
@@ -48582,7 +48582,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Salade mâche (ou roquette)",
+          "Mâche (ou roquette)",
           60,
           "g",
           "produce"
@@ -50507,7 +50507,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Fenouil bulbe",
+          "Fenouil",
           1,
           "u",
           "produce"
@@ -54046,7 +54046,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pousses de soja (haricot mungo)",
+          "Germes de soja",
           80,
           "g",
           "produce"
@@ -62403,7 +62403,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Fenouil bulbe",
+          "Fenouil",
           1,
           "u",
           "produce"
@@ -62550,7 +62550,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Salade roquette",
+          "Roquette",
           33,
           "g",
           "produce"
@@ -63863,7 +63863,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fenouil bulbe",
+          "Fenouil",
           0.25,
           "u",
           "produce"
@@ -63881,7 +63881,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Salade roquette",
+          "Roquette",
           25,
           "g",
           "produce"
@@ -69864,7 +69864,7 @@ window.__DATA_RECIPES = {
       "advance": "2 h au frais",
       "ing": [
         [
-          "Fraise fraîche bien mûre",
+          "Fraises (bien mûres)",
           133,
           "g",
           "produce"
@@ -71306,7 +71306,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Betterave rouge cuite",
+          "Betterave cuite",
           19,
           "g",
           "produce"
@@ -75718,7 +75718,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Courgette tendre",
+          "Courgette",
           0.5,
           "u",
           "produce"
@@ -77620,7 +77620,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Pruneau dénoyauté",
+          "Pruneaux",
           28,
           "g",
           "produce"
@@ -78323,7 +78323,7 @@ window.__DATA_RECIPES = {
           "Tofu soyeux nature",
           133,
           "g",
-          "produce"
+          "dairy"
         ],
         [
           "Gingembre",
@@ -81192,7 +81192,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -82005,7 +82005,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           30,
           "g",
           "produce"
@@ -85477,7 +85477,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -85742,7 +85742,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -85848,7 +85848,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -85979,7 +85979,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -86340,7 +86340,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -86452,7 +86452,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -86812,7 +86812,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -86921,7 +86921,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -87039,7 +87039,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -87146,7 +87146,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -87277,7 +87277,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -87379,7 +87379,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -87853,7 +87853,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -87939,7 +87939,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Fèves fraîches écossées",
+          "Fèves fraîches (écossées)",
           120,
           "g",
           "produce"
@@ -88059,7 +88059,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -88182,7 +88182,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -88902,7 +88902,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           20,
           "g",
           "produce"
@@ -95303,7 +95303,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -95415,7 +95415,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -95507,7 +95507,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Fèves fraîches écossées",
+          "Fèves fraîches (écossées)",
           180,
           "g",
           "produce"
@@ -95525,7 +95525,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -96624,7 +96624,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -96728,7 +96728,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -97401,7 +97401,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -97527,7 +97527,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pousses de soja",
+          "Germes de soja",
           60,
           "g",
           "produce"
@@ -97721,7 +97721,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -98914,7 +98914,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -99381,7 +99381,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -100023,7 +100023,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -100529,7 +100529,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Oignon jaune",
+          "Oignon",
           350,
           "g",
           "produce"
@@ -100816,7 +100816,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -101028,7 +101028,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -101397,7 +101397,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -101640,7 +101640,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -101755,7 +101755,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -101859,7 +101859,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           30,
           "g",
           "produce"
@@ -101961,7 +101961,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -102158,7 +102158,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -102253,7 +102253,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -102463,7 +102463,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -102641,7 +102641,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -103226,7 +103226,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -103323,7 +103323,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -103589,7 +103589,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -104036,7 +104036,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -104126,7 +104126,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -104229,7 +104229,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -104437,7 +104437,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -104531,7 +104531,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -104638,7 +104638,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           120,
           "g",
           "produce"
@@ -104744,7 +104744,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -104858,7 +104858,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           100,
           "g",
           "produce"
@@ -104951,7 +104951,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -105083,7 +105083,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -105190,7 +105190,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -105274,7 +105274,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -105398,7 +105398,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -105492,7 +105492,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -105588,7 +105588,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -105698,7 +105698,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -105809,7 +105809,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -105983,7 +105983,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -106076,7 +106076,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -106188,7 +106188,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -106377,7 +106377,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -106468,7 +106468,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -106577,7 +106577,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -106760,7 +106760,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -106856,7 +106856,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           120,
           "g",
           "produce"
@@ -106945,7 +106945,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -107153,7 +107153,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -107243,7 +107243,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           120,
           "g",
           "produce"
@@ -107354,7 +107354,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -107437,7 +107437,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -107546,7 +107546,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -107741,7 +107741,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -107835,7 +107835,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -107942,7 +107942,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -108034,7 +108034,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -108140,7 +108140,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           100,
           "g",
           "produce"
@@ -108258,7 +108258,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -108350,7 +108350,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -108450,7 +108450,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           90,
           "g",
           "produce"
@@ -108562,7 +108562,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -108661,7 +108661,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -108770,7 +108770,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -108856,7 +108856,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -108982,7 +108982,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -109158,7 +109158,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -109266,7 +109266,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -109374,7 +109374,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -109559,7 +109559,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -109649,7 +109649,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -109756,7 +109756,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -109852,7 +109852,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -111480,7 +111480,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -111594,7 +111594,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -111684,7 +111684,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -112045,7 +112045,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -112145,7 +112145,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           80,
           "g",
           "produce"
@@ -112258,7 +112258,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -112346,7 +112346,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -112453,7 +112453,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -112547,7 +112547,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -113621,7 +113621,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -113910,7 +113910,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -114708,7 +114708,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -115567,7 +115567,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -119080,7 +119080,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -119179,7 +119179,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -119296,7 +119296,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -119516,7 +119516,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -119615,7 +119615,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -119828,7 +119828,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -120157,7 +120157,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -120458,7 +120458,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -120573,7 +120573,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -120794,7 +120794,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -120894,7 +120894,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -121008,7 +121008,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -121104,7 +121104,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -121329,7 +121329,7 @@ window.__DATA_RECIPES = {
           "frozen"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -121570,7 +121570,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -121669,7 +121669,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           120,
           "g",
           "produce"
@@ -121780,7 +121780,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -121998,7 +121998,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -122132,7 +122132,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -122225,7 +122225,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -122336,7 +122336,7 @@ window.__DATA_RECIPES = {
           "bread"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -122452,7 +122452,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -122573,7 +122573,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -122842,7 +122842,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -123086,7 +123086,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -123199,7 +123199,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -123333,7 +123333,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -123443,7 +123443,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -123543,7 +123543,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -123642,7 +123642,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -123746,7 +123746,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           70,
           "g",
           "produce"
@@ -123862,7 +123862,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -124118,7 +124118,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -124228,7 +124228,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -124329,7 +124329,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -124433,7 +124433,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -124551,7 +124551,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           30,
           "g",
           "produce"
@@ -124621,7 +124621,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -124723,7 +124723,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           100,
           "g",
           "produce"
@@ -124834,7 +124834,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -125035,7 +125035,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -125282,7 +125282,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -125395,7 +125395,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           30,
           "g",
           "produce"
@@ -125531,7 +125531,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           100,
           "g",
           "produce"
@@ -125637,7 +125637,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -125747,7 +125747,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -125858,7 +125858,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -125970,7 +125970,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -126097,7 +126097,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -126218,7 +126218,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -126315,7 +126315,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -127752,7 +127752,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -127984,7 +127984,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -128175,7 +128175,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -128288,7 +128288,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -128390,7 +128390,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           100,
           "g",
           "produce"
@@ -128718,7 +128718,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -128963,7 +128963,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -129073,7 +129073,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -129514,7 +129514,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -129623,7 +129623,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -129737,7 +129737,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -129840,7 +129840,7 @@ window.__DATA_RECIPES = {
           "meat-fish"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -130288,7 +130288,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -130392,7 +130392,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -130623,7 +130623,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -130738,7 +130738,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -130861,7 +130861,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -130962,7 +130962,7 @@ window.__DATA_RECIPES = {
           "spices"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -131109,7 +131109,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           30,
           "g",
           "produce"
@@ -131865,7 +131865,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -131995,7 +131995,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fenouil bulbe",
+          "Fenouil",
           80,
           "g",
           "produce"
@@ -133210,7 +133210,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -133540,7 +133540,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           20,
           "g",
           "produce"
@@ -134482,7 +134482,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Pois mange-tout",
+          "Pois gourmands",
           50,
           "g",
           "produce"
@@ -135991,7 +135991,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Fèves fraîches écossées",
+          "Fèves fraîches (écossées)",
           120,
           "g",
           "produce"
@@ -136275,7 +136275,7 @@ window.__DATA_RECIPES = {
       ],
       "ing": [
         [
-          "Fèves fraîches écossées",
+          "Fèves fraîches (écossées)",
           100,
           "g",
           "produce"
@@ -136800,7 +136800,7 @@ window.__DATA_RECIPES = {
       "allergens": [],
       "ing": [
         [
-          "Fèves fraîches écossées",
+          "Fèves fraîches (écossées)",
           100,
           "g",
           "produce"
@@ -138946,7 +138946,7 @@ window.__DATA_RECIPES = {
           "Jus d'orange",
           30,
           "ml",
-          "pantry"
+          "produce"
         ],
         [
           "Vinaigre de cidre",
@@ -139049,7 +139049,7 @@ window.__DATA_RECIPES = {
           "Jus d'orange",
           30,
           "ml",
-          "pantry"
+          "produce"
         ],
         [
           "Citron vert",
@@ -144288,7 +144288,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -144804,7 +144804,7 @@ window.__DATA_RECIPES = {
           "dairy"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           20,
           "g",
           "produce"
@@ -146297,7 +146297,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Salade roquette",
+          "Roquette",
           20,
           "g",
           "produce"
@@ -148303,7 +148303,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Fenouil bulbe",
+          "Fenouil",
           40,
           "g",
           "produce"
@@ -148851,7 +148851,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Feuilles de menthe fraîche",
+          "Menthe fraîche",
           2,
           "feuille",
           "produce"
@@ -148997,7 +148997,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Feuilles de menthe fraîche",
+          "Menthe fraîche",
           4,
           "feuille",
           "produce"
@@ -149600,7 +149600,7 @@ window.__DATA_RECIPES = {
           "frozen"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -149741,7 +149741,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           50,
           "g",
           "produce"
@@ -149863,7 +149863,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -150029,7 +150029,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"
@@ -150347,7 +150347,7 @@ window.__DATA_RECIPES = {
           "pantry"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           60,
           "g",
           "produce"
@@ -151325,7 +151325,7 @@ window.__DATA_RECIPES = {
           "produce"
         ],
         [
-          "Oignon jaune",
+          "Oignon",
           40,
           "g",
           "produce"

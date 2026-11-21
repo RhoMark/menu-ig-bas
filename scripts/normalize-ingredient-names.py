@@ -89,6 +89,8 @@ CATEGORY_OVERRIDES = {
     "Anchois à l'huile (facultatif)": "pantry",
     "Maïs en grains (frais ou surgelé)": "frozen", "Maïs en grains (boîte sans sucre)": "pantry",
     "Maïs en grains (hominy pour pozole)": "pantry",
+    "Tofu soyeux nature": "dairy",
+    "Jus d'orange": "produce",   # avec les agrumes : jus pressé ou en bouteille, au choix (V2.140.5)
 }
 
 # Même article (nom sans parenthèses) → un seul rayon, quelle que soit la précision
