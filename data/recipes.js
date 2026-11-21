@@ -30,7 +30,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -4549,7 +4549,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -6345,7 +6345,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Nouilles soba",
-          45,
+          40,
           "g",
           "pantry"
         ],
@@ -19700,7 +19700,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          30,
+          20,
           "g",
           "pantry"
         ],
@@ -21238,7 +21238,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pois chiches cuits",
-          100,
+          60,
           "g",
           "pantry"
         ],
@@ -21338,7 +21338,7 @@ window.__DATA_RECIPES = {
         "Égoutte les pois chiches et sèche-les sur du papier absorbant.",
         "Dans le mixeur, mets les pois chiches, le tahini, l'ail épluché, le persil, la coriandre, le cumin, la farine de sarrasin, sel, poivre. Mixe par à-coups (= pulse, petites pressions courtes) — la pâte doit rester un peu granuleuse, pas en purée lisse, sinon les falafels seront pâteux.",
         "Si la pâte est trop humide, ajoute un peu de farine de sarrasin pour qu'elle se tienne. Tu dois pouvoir former des boulettes qui ne s'écroulent pas.",
-        "Forme des boulettes de la taille d'une grosse noix (environ 4 par personne), aplatis-les légèrement en galettes.",
+        "Forme des boulettes de la taille d'une grosse noix (environ 3 par personne), aplatis-les légèrement en galettes.",
         "Pose-les sur une plaque recouverte de papier sulfurisé. Badigeonne-les d'huile d'olive avec un pinceau (ou les doigts).",
         "Enfourne 15 à 18 min en les retournant à mi-cuisson — elles doivent être bien dorées sur les deux faces.",
         "Pendant ce temps, prépare la sauce : mélange le skyr, le jus de citron, sel et poivre.",
@@ -24427,7 +24427,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -25945,7 +25945,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de sarrasin",
-          1,
+          0.75,
           "u",
           "bread"
         ],
@@ -26752,7 +26752,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -27816,7 +27816,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine complets",
-          25,
+          20,
           "g",
           "pantry"
         ],
@@ -28607,7 +28607,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -31488,7 +31488,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Flocons d'avoine complets",
-          35,
+          30,
           "g",
           "pantry"
         ],
@@ -38507,7 +38507,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          30,
+          20,
           "g",
           "pantry"
         ],
@@ -43918,7 +43918,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Poire conférence",
-          0.5,
+          0.25,
           "u",
           "produce"
         ],
@@ -44286,7 +44286,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          35,
+          30,
           "g",
           "pantry"
         ],
@@ -44389,7 +44389,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          30,
+          25,
           "g",
           "pantry"
         ],
@@ -45388,7 +45388,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de sarrasin (toute prête)",
-          2,
+          1.5,
           "u",
           "bread"
         ],
@@ -48253,7 +48253,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          35,
+          25,
           "g",
           "pantry"
         ],
@@ -49388,7 +49388,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba (sarrasin)",
-          45,
+          40,
           "g",
           "pantry"
         ],
@@ -50411,7 +50411,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Pomme de terre Charlotte (ou autre à chair ferme)",
-          140,
+          75,
           "g",
           "produce"
         ],
@@ -51405,7 +51405,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Galettes de sarrasin (en remplacement tortilla)",
-          1.5,
+          0.75,
           "u",
           "bread"
         ],
@@ -53001,7 +53001,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -59674,7 +59674,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Galette de sarrasin",
-          1.25,
+          1,
           "u",
           "bread"
         ],
@@ -66949,7 +66949,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Flocons d'avoine complets",
-          35,
+          30,
           "g",
           "pantry"
         ],
@@ -70816,13 +70816,13 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Pomelo (ou pamplemousse rose)",
-          0.25,
-          "u",
+          100,
+          "g",
           "produce"
         ],
         [
           "Litchis frais (ou en conserve égouttés)",
-          62,
+          40,
           "g",
           "produce"
         ],
@@ -94005,7 +94005,7 @@ window.__DATA_RECIPES = {
         ],
         [
           "Banane",
-          60,
+          55,
           "g",
           "produce"
         ],
@@ -115879,7 +115879,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Nouilles soba",
-          40,
+          35,
           "g",
           "pantry"
         ],
@@ -144881,7 +144881,7 @@ window.__DATA_RECIPES = {
       "ing": [
         [
           "Poire",
-          160,
+          145,
           "g",
           "produce"
         ],

@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.140.6</title>
+<title>Menu IG Bas — V2.140.7</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.140.6">
+<link rel="stylesheet" href="tailwind.css?v=2.140.7">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -3458,6 +3458,17 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
+    {"id": "lait de soja", "ig": 34, "carbsPer100g": 1.87, "proteinPer100g": 3.19, "fatPer100g": 2.1, "src": "CIQUAL 2025 #18900 « Boisson au soja, nature, non enrichie » ; IG Atkinson 2008 : 34 « Soy milk » — V2.140.7 (avant : fiche du lait de vache)"},
+    {"id": "lait de coco light", "ig": 40, "carbsPer100g": 4.29, "proteinPer100g": 1.94, "fatPer100g": 19.2, "src": "proxy : CIQUAL 2025 #18041 « Lait de coco » ENTIER (aucune table pour l'allégé : surestime les lipides), non vérifié — V2.140.7 (avant : fiche du lait de vache)"},
+    {"id": "lait concentre non sucre ecreme", "ig": 34, "carbsPer100g": 11.4, "proteinPer100g": 7.55, "fatPer100g": 0.2, "src": "USDA FDC 170878 « Milk, canned, evaporated, nonfat » ; IG : aucune mesure publiée, celui du lait (34), non vérifié — V2.140.7"},
+    {"id": "tomate sechee a lhuile", "ig": 35, "carbsPer100g": 7.98, "proteinPer100g": 5.06, "fatPer100g": 13.2, "src": "CIQUAL 2025 #20256 « Tomate, séchée, à l'huile » ; IG non vérifié — V2.140.7 (avant : fiche de la tomate fraîche)"},
+    {"id": "tomate confite", "ig": 35, "carbsPer100g": 7.98, "proteinPer100g": 5.06, "fatPer100g": 13.2, "src": "proxy : CIQUAL 2025 #20256 « Tomate, séchée, à l'huile » ; non vérifié — V2.140.7 (avant : fiche de la tomate fraîche)"},
+    {"id": "pate de soja pimentee", "ig": 0, "carbsPer100g": 32, "proteinPer100g": 6, "fatPer100g": 4, "src": "alias de « gochujang » (même produit ; avant : mauvaise fiche par dépouillement du nom) — V2.140.7"},
+    {"id": "pate de soja fermentee", "ig": 30, "carbsPer100g": 26, "proteinPer100g": 12, "fatPer100g": 6, "src": "alias de « pate de miso » (même produit ; avant : mauvaise fiche par dépouillement du nom) — V2.140.7"},
+    {"id": "pomme de terre charlotte", "ig": 65, "carbsPer100g": 17, "proteinPer100g": 2, "fatPer100g": 0.1, "src": "alias de « pomme de terre » (même produit ; avant : mauvaise fiche par dépouillement du nom) — V2.140.7"},
+    {"id": "beurre de cacahuete san sucre", "ig": 14, "carbsPer100g": 17.3, "proteinPer100g": 25.4, "fatPer100g": 51.4, "src": "alias de « puree de cacahuete san sucre » (même produit ; avant : mauvaise fiche par dépouillement du nom) — V2.140.7 ; CIQUAL 2025 (ANSES, table du 2025-11-03) #15202 ; IG : celui de « beurre de cacahuete » (V2.137.0)"},
+    {"id": "pate de piment coreenne ou sriracha", "ig": 0, "carbsPer100g": 32, "proteinPer100g": 6, "fatPer100g": 4, "src": "alias de « gochujang » (même produit ; avant : mauvaise fiche par dépouillement du nom) — V2.140.7"},
+    {"id": "pate a tartiner chocolat noisette maison", "ig": 15, "carbsPer100g": 17, "proteinPer100g": 15, "fatPer100g": 61, "src": "alias de « puree de noisette » (même produit ; avant : mauvaise fiche par dépouillement du nom) — V2.140.7 ; alias de « noisette » — purée absente de CIQUAL (V2.137.0)"},
     { "id": "sirop de rose maison", "ig": 65, "carbsPer100g": 65, "proteinPer100g": 0, "fatPer100g": 0, "src": "estimation non vérifiée : sirop de sucre à 65 %, IG du saccharose (V2.138.1)" },
     { "id": "galette de spring roll", "ig": 75, "carbsPer100g": 60.0, "proteinPer100g": 10.0, "fatPer100g": 1.0, "src": "proxy « feuille de brick » (pâte de blé fine), non vérifié (V2.138.1)" },
     { "id": "graine de basilic", "ig": 1, "carbsPer100g": 42, "proteinPer100g": 17.0, "fatPer100g": 31.0, "src": "proxy « graines de chia », non vérifié — aucune table de composition fiable (V2.138.1)" },
@@ -3489,7 +3500,6 @@ if ("serviceWorker" in navigator) {
     { "id": "puree de cacahuete san sucre", "ig": 14, "carbsPer100g": 17.3, "proteinPer100g": 25.4, "fatPer100g": 51.4, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #15202 ; IG : celui de « beurre de cacahuete » (V2.137.0)" },
     { "id": "riz noir venere", "ig": 45, "carbsPer100g": 70.6, "proteinPer100g": 8.38, "fatPer100g": 3, "cookedYield": 1.9, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9109 riz rouge cru (proxy : riz noir absent de CIQUAL) — valeurs SEC/cru (V2.137.0)" },
     { "id": "pate longue complete", "ig": 45, "carbsPer100g": 67.6, "proteinPer100g": 12.6, "fatPer100g": 2.2, "cookedYield": 1.95, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9870 pâtes complètes sèches — valeurs SEC/cru (V2.137.0)" },
-    { "id": "pate courte complete", "ig": 45, "carbsPer100g": 67.6, "proteinPer100g": 12.6, "fatPer100g": 2.2, "cookedYield": 1.95, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9870 pâtes complètes sèches — valeurs SEC/cru (V2.137.0)" },
     { "id": "spaghetti complet", "ig": 45, "carbsPer100g": 67.6, "proteinPer100g": 12.6, "fatPer100g": 2.2, "cookedYield": 1.95, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9870 pâtes complètes sèches — valeurs SEC/cru (V2.137.0)" },
     { "id": "fromage a raclette", "ig": 0, "carbsPer100g": 0.5, "proteinPer100g": 25.0, "fatPer100g": 29.6 },
     { "id": "viande des grisons", "ig": 0, "carbsPer100g": 0.6, "proteinPer100g": 37.4, "fatPer100g": 5.5 },
@@ -3506,13 +3516,11 @@ if ("serviceWorker" in navigator) {
     { "id": "lotte", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 18.0, "fatPer100g": 1.0 },
     { "id": "mais doux en grains", "ig": 55, "carbsPer100g": 19, "proteinPer100g": 3.0, "fatPer100g": 1.2 },
     { "id": "supreme de pintade", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 23.0, "fatPer100g": 4.0 },
-    { "id": "thon au naturel egoutte", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 26.0, "fatPer100g": 1.0 },
     { "id": "tomate bien mure", "ig": 30, "carbsPer100g": 3.5, "proteinPer100g": 0.9, "fatPer100g": 0.2 },
     { "id": "coeurs d'artichaut", "ig": 20, "carbsPer100g": 5, "proteinPer100g": 3.0, "fatPer100g": 0.2 },
     { "id": "espadon", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 20.0, "fatPer100g": 4.0 },
     { "id": "feuilles de vigne", "ig": 15, "carbsPer100g": 4, "proteinPer100g": 4.0, "fatPer100g": 0.5 },
     { "id": "lentilles germees", "ig": 25, "carbsPer100g": 20.0, "proteinPer100g": 9.0, "fatPer100g": 0.5 },
-    { "id": "olives vertes denoyautees", "ig": 15, "carbsPer100g": 1, "proteinPer100g": 1.0, "fatPer100g": 15.0 },
     { "id": "sardines fraiches videes", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 20.0, "fatPer100g": 10.0 },
     { "id": "bar entier", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 18.0, "fatPer100g": 3.0 },
     { "id": "bulots cuits", "ig": 0, "carbsPer100g": 2, "proteinPer100g": 21.0, "fatPer100g": 0.4 },
@@ -3530,7 +3538,6 @@ if ("serviceWorker" in navigator) {
     { "id": "litchis frais", "ig": 57, "carbsPer100g": 16, "proteinPer100g": 0.8, "fatPer100g": 0.4, "src": "IG : 57, litchi frais (mesure non publiée 2009, n=9), base IG de l'Université de Sydney (glycemicindex.com), consultée le 2026-11-10 (V2.138.1)" },
     { "id": "meringue", "ig": 65, "carbsPer100g": 95.0, "proteinPer100g": 4.0, "fatPer100g": 0.0 },
     { "id": "morilles sechees", "ig": 15, "carbsPer100g": 30, "proteinPer100g": 25.0, "fatPer100g": 2.0 },
-    { "id": "noix de saint-jacques fraiches", "ig": 0, "carbsPer100g": 3, "proteinPer100g": 17.0, "fatPer100g": 1.0 },
     { "id": "oignon grelot", "ig": 15, "carbsPer100g": 9, "proteinPer100g": 1.0, "fatPer100g": 0.1 },
     { "id": "pate d'amande", "ig": 35, "carbsPer100g": 50.0, "proteinPer100g": 9.0, "fatPer100g": 25.0 },
     { "id": "pave de thon rouge", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 23.0, "fatPer100g": 5.0 },
@@ -3569,7 +3576,7 @@ if ("serviceWorker" in navigator) {
     { "id": "pomme de terre grenaille", "ig": 65, "carbsPer100g": 17, "proteinPer100g": 2.0, "fatPer100g": 0.1 },
     { "id": "sauce de poisson", "ig": 0, "carbsPer100g": 3, "proteinPer100g": 8.0, "fatPer100g": 0.0 },
     { "id": "zeste d'orange", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 0.0, "fatPer100g": 0.0 },
-    { "id": "tomates sechees", "ig": 35, "carbsPer100g": 40, "proteinPer100g": 10.0, "fatPer100g": 3.0 },
+    {"id": "tomates sechees", "ig": 35, "carbsPer100g": 43.5, "proteinPer100g": 14.1, "fatPer100g": 2.97, "src": "CIQUAL 2025 #20189 « Tomate, séchée » ; IG : aucune mesure publiée, 35 conservé, non vérifié — V2.140.7"},
     { "id": "cacahuetes non salees", "ig": 15, "carbsPer100g": 16, "proteinPer100g": 26.0, "fatPer100g": 49.0 },
     { "id": "frik", "ig": 43, "carbsPer100g": 66, "proteinPer100g": 13.0, "fatPer100g": 2.0 },
     { "id": "cuisse de poulet fermier", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 20.0, "fatPer100g": 11.0 },
@@ -3582,11 +3589,8 @@ if ("serviceWorker" in navigator) {
     { "id": "cepes seches", "ig": 15, "carbsPer100g": 30, "proteinPer100g": 25.0, "fatPer100g": 3.0 },
     { "id": "gros sel", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 0.0, "fatPer100g": 0.0 },
     { "id": "cinq-epices", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 0.0, "fatPer100g": 0.0 },
-    { "id": "tomates concassees en boite", "ig": 30, "carbsPer100g": 4, "proteinPer100g": 1.5, "fatPer100g": 0.3 },
     { "id": "pates completes courtes", "ig": 45, "carbsPer100g": 70.0, "proteinPer100g": 14.0, "fatPer100g": 2.0 },
-    { "id": "creme fraiche liquide", "ig": 0, "carbsPer100g": 3.0, "proteinPer100g": 2.5, "fatPer100g": 20.0 },
     { "id": "petits pois surgeles", "ig": 35, "carbsPer100g": 14, "proteinPer100g": 5.0, "fatPer100g": 0.4 },
-    { "id": "pate miso", "ig": 0, "carbsPer100g": 26.0, "proteinPer100g": 12.0, "fatPer100g": 6.0 },
     { "id": "cannelle en baton", "ig": 5, "carbsPer100g": 0, "proteinPer100g": 0.0, "fatPer100g": 0.0 },
     { "id": "pistaches concassees", "ig": 15, "carbsPer100g": 28.0, "proteinPer100g": 20.0, "fatPer100g": 45.0 },
     { "id": "hache de dinde", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 18.0, "fatPer100g": 9.0 },
@@ -3606,10 +3610,10 @@ if ("serviceWorker" in navigator) {
     { "id": "compote de pomme sans sucre", "ig": 35, "carbsPer100g": 12, "proteinPer100g": 0.3, "fatPer100g": 0.1 },
     { "id": "epices a pain d'epices", "ig": 0, "carbsPer100g": 0, "proteinPer100g": 0.0, "fatPer100g": 0.0 },
     { "id": "figues sechees", "ig": 60, "carbsPer100g": 58, "proteinPer100g": 3.0, "fatPer100g": 1.0 },
-    { "id": "amandes entieres", "ig": 15, "carbsPer100g": 5, "proteinPer100g": 21.0, "fatPer100g": 50.0 },
+    {"id": "amandes entieres", "ig": 15, "carbsPer100g": 9.51, "proteinPer100g": 18.8, "fatPer100g": 51.3, "src": "= amande (CIQUAL 2025 #15000) — V2.140.7"},
     { "id": "raisins secs", "ig": 65, "carbsPer100g": 75, "proteinPer100g": 3.0, "fatPer100g": 0.5 },
     { "id": "vin blanc moelleux", "ig": 0, "carbsPer100g": 5, "proteinPer100g": 0.0, "fatPer100g": 0.0 },
-    { "id": "fruits rouges surgeles", "ig": 25, "carbsPer100g": 10, "proteinPer100g": 1.0, "fatPer100g": 0.3 },
+    {"id": "fruits rouges surgeles", "ig": 25, "carbsPer100g": 7, "proteinPer100g": 1, "fatPer100g": 0.5, "src": "= fruit rouge (CIQUAL 2025 #13997) — V2.140.7"},
     { "id": "fecule de riz", "ig": 90, "carbsPer100g": 85, "proteinPer100g": 0.5, "fatPer100g": 0.1 },
     {
       "id": "puree de sesame",
@@ -3631,13 +3635,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 17,
       "proteinPer100g": 8.0,
       "fatPer100g": 0.5
-    },
-    {
-      "id": "oignons grelots",
-      "ig": 15,
-      "carbsPer100g": 9,
-      "proteinPer100g": 1.1,
-      "fatPer100g": 0.1
     },
     {
       "id": "orzo complet",
@@ -3685,13 +3682,6 @@ if ("serviceWorker" in navigator) {
       "id": "jus de citron",
       "ig": 20,
       "carbsPer100g": 2,
-      "proteinPer100g": 0.0,
-      "fatPer100g": 0.0
-    },
-    {
-      "id": "ras el-hanout",
-      "ig": 0,
-      "carbsPer100g": 0,
       "proteinPer100g": 0.0,
       "fatPer100g": 0.0
     },
@@ -3793,13 +3783,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 8.0,
       "fatPer100g": 0.5
     },
-    {
-      "id": "chataignes cuites",
-      "ig": 60,
-      "carbsPer100g": 36,
-      "proteinPer100g": 2.0,
-      "fatPer100g": 1.4
-    },
+    {"id": "chataignes cuites", "ig": 58, "carbsPer100g": 28.8, "proteinPer100g": 1.96, "fatPer100g": 1.4, "src": "= chataigne (CIQUAL 2025 #15039) — V2.140.7"},
     {
       "id": "saucisse de volaille",
       "ig": 0,
@@ -3919,13 +3903,7 @@ if ("serviceWorker" in navigator) {
     { "id": "boulgour", "ig": 48, "carbsPer100g": 65.8, "proteinPer100g": 12.6, "fatPer100g": 1.42, "cookedYield": 2.72, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9690 boulgour cru — valeurs SEC/cru (V2.137.0)" },
     { "id": "semoule de ble", "ig": 65, "carbsPer100g": 69.8, "proteinPer100g": 13, "fatPer100g": 1.28, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9610 semoule de blé dur crue — valeurs SEC/cru (V2.137.0)" },
     { "id": "polenta", "ig": 60, "carbsPer100g": 74, "proteinPer100g": 7.88, "fatPer100g": 1.8, "cookedYield": 4.35, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9614 polenta précuite crue — proxy : semoule de maïs non précuite absente — valeurs SEC/cru (V2.137.0)" },
-    {
-      "id": "flocon d'avoine",
-      "ig": 55,
-      "carbsPer100g": 66,
-      "proteinPer100g": 13.0,
-      "fatPer100g": 7.0
-    },
+    {"id": "flocon d'avoine", "ig": 55, "carbsPer100g": 57.7, "proteinPer100g": 10.6, "fatPer100g": 7.82, "src": "CIQUAL 2025 #32140 « Flocons d'avoine » ; IG Atkinson 2008 : 55 « Porridge, rolled oats » — V2.140.7"},
     {
       "id": "avoine",
       "ig": 55,
@@ -3934,13 +3912,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 7.0
     },
     { "id": "tagliatelles fraiches", "ig": 50, "carbsPer100g": 53.8, "proteinPer100g": 11.1, "fatPer100g": 1.87, "cookedYield": 1.75, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9815 pâtes fraîches aux œufs crues — valeurs SEC/cru (V2.137.0)" },
-    {
-      "id": "tagliatelles",
-      "ig": 50,
-      "carbsPer100g": 30,
-      "proteinPer100g": 5.0,
-      "fatPer100g": 1.0
-    },
     { "id": "spaghetti", "ig": 50, "carbsPer100g": 72.7, "proteinPer100g": 13.1, "fatPer100g": 1.6, "cookedYield": 2.19, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9810 pâtes blanches sèches — valeurs SEC/cru (V2.137.0)" },
     { "id": "pates", "ig": 50, "carbsPer100g": 72.7, "proteinPer100g": 13.1, "fatPer100g": 1.6, "cookedYield": 2.19, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9810 pâtes blanches sèches — proxy : entrée générique « pâtes » — valeurs SEC/cru (V2.137.0)" },
     {
@@ -4312,13 +4283,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.2
     },
     {
-      "id": "banane mure",
-      "ig": 62,
-      "carbsPer100g": 23,
-      "proteinPer100g": 1.1,
-      "fatPer100g": 0.2
-    },
-    {
       "id": "orange",
       "ig": 43,
       "carbsPer100g": 12,
@@ -4339,34 +4303,10 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 0.7,
       "fatPer100g": 0.2
     },
-    {
-      "id": "fraise",
-      "ig": 25,
-      "carbsPer100g": 7,
-      "proteinPer100g": 0.7,
-      "fatPer100g": 0.3
-    },
-    {
-      "id": "framboise",
-      "ig": 25,
-      "carbsPer100g": 5,
-      "proteinPer100g": 1.2,
-      "fatPer100g": 0.7
-    },
-    {
-      "id": "fruit rouge",
-      "ig": 25,
-      "carbsPer100g": 8,
-      "proteinPer100g": 1.0,
-      "fatPer100g": 0.4
-    },
-    {
-      "id": "myrtille",
-      "ig": 53,
-      "carbsPer100g": 14,
-      "proteinPer100g": 0.7,
-      "fatPer100g": 0.3
-    },
+    {"id": "fraise", "ig": 40, "carbsPer100g": 6.03, "proteinPer100g": 0.63, "fatPer100g": 0.5, "src": "CIQUAL 2025 #13014 « Fraise, crue » (lipides < 0,5) ; IG Sydney 40 « Strawberries, fresh, raw » — V2.140.7"},
+    {"id": "framboise", "ig": 25, "carbsPer100g": 5.83, "proteinPer100g": 1.19, "fatPer100g": 0.8, "src": "CIQUAL 2025 #13015 « Framboise, crue » ; IG : aucune mesure publiée, 25 conservé, non vérifié — V2.140.7"},
+    {"id": "fruit rouge", "ig": 25, "carbsPer100g": 7, "proteinPer100g": 1, "fatPer100g": 0.5, "src": "CIQUAL 2025 #13997 « Fruits rouges, crus (framboises, fraises, groseilles, cassis) » ; IG : aucune mesure pour le mélange, 25 conservé, non vérifié — V2.140.7"},
+    {"id": "myrtille", "ig": 53, "carbsPer100g": 10.6, "proteinPer100g": 0.87, "fatPer100g": 0.33, "src": "CIQUAL 2025 #13028 « Myrtille, crue » ; IG Sydney 53 « Blueberries, wild » — V2.140.7"},
     {
       "id": "kiwi",
       "ig": 50,
@@ -4422,13 +4362,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 75,
       "proteinPer100g": 2.5,
       "fatPer100g": 0.4
-    },
-    {
-      "id": "figue",
-      "ig": 35,
-      "carbsPer100g": 18,
-      "proteinPer100g": 0.8,
-      "fatPer100g": 0.3
     },
     {
       "id": "cerise",
@@ -4501,13 +4434,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 35.0
     },
     {
-      "id": "compote de pomme",
-      "ig": 35,
-      "carbsPer100g": 12,
-      "proteinPer100g": 0.3,
-      "fatPer100g": 0.2
-    },
-    {
       "id": "compote sans sucre",
       "ig": 35,
       "carbsPer100g": 12,
@@ -4521,13 +4447,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 3.3,
       "fatPer100g": 1.6
     },
-    {
-      "id": "lait entier",
-      "ig": 31,
-      "carbsPer100g": 5,
-      "proteinPer100g": 3.2,
-      "fatPer100g": 3.6
-    },
+    {"id": "lait entier", "ig": 39, "carbsPer100g": 5, "proteinPer100g": 3.2, "fatPer100g": 3.6, "src": "IG Atkinson 2008 : 39 « Milk, full fat » ; macros inchangées — V2.140.7"},
     {
       "id": "lait d'amande",
       "ig": 25,
@@ -4598,20 +4518,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 18.0,
       "fatPer100g": 16.0
     },
-    {
-      "id": "amande",
-      "ig": 15,
-      "carbsPer100g": 9,
-      "proteinPer100g": 21.0,
-      "fatPer100g": 50.0
-    },
-    {
-      "id": "amandes effilees",
-      "ig": 15,
-      "carbsPer100g": 9,
-      "proteinPer100g": 21.0,
-      "fatPer100g": 50.0
-    },
+    {"id": "amande", "ig": 15, "carbsPer100g": 9.51, "proteinPer100g": 18.8, "fatPer100g": 51.3, "src": "CIQUAL 2025 #15000 « Amande, avec peau, sans sel ajouté » ; IG : aucune mesure publiée, 15 conservé, non vérifié — V2.140.7"},
     {
       "id": "noix",
       "ig": 15,
@@ -4731,13 +4638,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 0.7,
       "fatPer100g": 0.2
     },
-    {
-      "id": "chataigne",
-      "ig": 65,
-      "carbsPer100g": 36,
-      "proteinPer100g": 2.0,
-      "fatPer100g": 1.4
-    },
+    {"id": "chataigne", "ig": 58, "carbsPer100g": 28.8, "proteinPer100g": 1.96, "fatPer100g": 1.4, "src": "CIQUAL 2025 #15039 « Châtaigne ou marron, appertisé » ; IG Sydney 58 « Chestnuts, steamed for 25 min » (Kim 2019) — V2.140.7"},
     {
       "id": "epeautre",
       "ig": 40,
@@ -4745,13 +4646,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 5.0,
       "fatPer100g": 1.5
     },
-    {
-      "id": "nouille soba",
-      "ig": 50,
-      "carbsPer100g": 70,
-      "proteinPer100g": 5.0,
-      "fatPer100g": 0.5
-    },
+    {"id": "nouille soba", "ig": 59, "carbsPer100g": 70, "proteinPer100g": 14.4, "fatPer100g": 0.71, "src": "IG Sydney 59 « Buckwheat noodles » (Yang 2006) ; protéines/lipides USDA FDC 168906 (soba sec) ; glucides disponibles non calculables (USDA sans fibres), 70 conservé, non vérifié — V2.140.7"},
     {
       "id": "cracker sarrasin",
       "ig": 40,
@@ -5033,21 +4928,7 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 5.0
     },
     {
-      "id": "thon en boite",
-      "ig": 0,
-      "carbsPer100g": 0,
-      "proteinPer100g": 24.0,
-      "fatPer100g": 1.0
-    },
-    {
       "id": "thon au naturel",
-      "ig": 0,
-      "carbsPer100g": 0,
-      "proteinPer100g": 24.0,
-      "fatPer100g": 1.0
-    },
-    {
-      "id": "thon naturel",
       "ig": 0,
       "carbsPer100g": 0,
       "proteinPer100g": 24.0,
@@ -5208,13 +5089,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 11.0
     },
     {
-      "id": "blanc d'oeuf",
-      "ig": 0,
-      "carbsPer100g": 0.5,
-      "proteinPer100g": 11.0,
-      "fatPer100g": 0.2
-    },
-    {
       "id": "jaune d'oeuf",
       "ig": 0,
       "carbsPer100g": 0.5,
@@ -5292,13 +5166,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 30.0
     },
     {
-      "id": "creme liquide",
-      "ig": 0,
-      "carbsPer100g": 3.0,
-      "proteinPer100g": 2.5,
-      "fatPer100g": 30.0
-    },
-    {
       "id": "creme fraiche",
       "ig": 0,
       "carbsPer100g": 3.0,
@@ -5347,20 +5214,8 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 19.0,
       "fatPer100g": 11.0
     },
-    {
-      "id": "edamame",
-      "ig": 0,
-      "carbsPer100g": 8.0,
-      "proteinPer100g": 11.0,
-      "fatPer100g": 5.0
-    },
-    {
-      "id": "edamame surgeles",
-      "ig": 0,
-      "carbsPer100g": 8.0,
-      "proteinPer100g": 11.0,
-      "fatPer100g": 5.0
-    },
+    {"id": "edamame", "ig": 18, "carbsPer100g": 3.7, "proteinPer100g": 11.9, "fatPer100g": 5.2, "src": "USDA FDC 168411 « Edamame, frozen, prepared » (glucides disponibles = 8,91 totaux − 5,2 fibres) ; IG : aucune mesure publiée (Sydney, Atkinson 2008), 18 conservé, non vérifié — V2.140.7"},
+    {"id": "edamame surgeles", "ig": 18, "carbsPer100g": 3.7, "proteinPer100g": 11.9, "fatPer100g": 5.2, "src": "= edamame (USDA FDC 168411) — V2.140.7"},
     {
       "id": "boisson d'amande",
       "ig": 0,
@@ -5657,13 +5512,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 10.0,
       "fatPer100g": 4.0
     },
-    {
-      "id": "galette de sarrasin",
-      "ig": 45,
-      "carbsPer100g": 18.0,
-      "proteinPer100g": 5.0,
-      "fatPer100g": 2.0
-    },
+    {"id": "galette de sarrasin", "ig": 45, "carbsPer100g": 30.5, "proteinPer100g": 5.32, "fatPer100g": 1.74, "src": "CIQUAL 2025 #23801 « Galette de sarrasin, nature, souple, préemballée » ; IG : aucune mesure pour la galette française, 45 conservé, non vérifié — V2.140.7"},
     {
       "id": "feuille de brick",
       "ig": 75,
@@ -5942,21 +5791,7 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 15.0
     },
     {
-      "id": "olives noires",
-      "ig": 0,
-      "carbsPer100g": 6.0,
-      "proteinPer100g": 0.8,
-      "fatPer100g": 15.0
-    },
-    {
       "id": "olive verte",
-      "ig": 0,
-      "carbsPer100g": 3.8,
-      "proteinPer100g": 1.0,
-      "fatPer100g": 11.0
-    },
-    {
-      "id": "olives vertes",
       "ig": 0,
       "carbsPer100g": 3.8,
       "proteinPer100g": 1.0,
@@ -6033,13 +5868,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.0
     },
     {
-      "id": "sauce poisson",
-      "ig": 0,
-      "carbsPer100g": 4.0,
-      "proteinPer100g": 7.0,
-      "fatPer100g": 0.0
-    },
-    {
       "id": "sauce huitre",
       "ig": 0,
       "carbsPer100g": 14.0,
@@ -6073,13 +5901,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 0,
       "proteinPer100g": 0.0,
       "fatPer100g": 0.0
-    },
-    {
-      "id": "bouillon de legumes",
-      "ig": 0,
-      "carbsPer100g": 0.5,
-      "proteinPer100g": 0.2,
-      "fatPer100g": 0.1
     },
     {
       "id": "bouillon de volaille",
@@ -6278,13 +6099,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 5.0
     },
     {
-      "id": "feuilles de nori",
-      "ig": 0,
-      "carbsPer100g": 44.0,
-      "proteinPer100g": 41.0,
-      "fatPer100g": 5.0
-    },
-    {
       "id": "noix de coco rapee",
       "ig": 0,
       "carbsPer100g": 23.0,
@@ -6327,20 +6141,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.2
     },
     {
-      "id": "graines de chia",
-      "ig": 1,
-      "carbsPer100g": 42,
-      "proteinPer100g": 17.0,
-      "fatPer100g": 31.0
-    },
-    {
-      "id": "graines de sesame",
-      "ig": 35,
-      "carbsPer100g": 23,
-      "proteinPer100g": 18.0,
-      "fatPer100g": 50.0
-    },
-    {
       "id": "epinards frais",
       "ig": 15,
       "carbsPer100g": 3.6,
@@ -6355,40 +6155,13 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 4.3
     },
     {
-      "id": "avocat mur",
-      "ig": 15,
-      "carbsPer100g": 8.5,
-      "proteinPer100g": 2.0,
-      "fatPer100g": 15.0
-    },
-    {
       "id": "citron jaune",
       "ig": 30,
       "carbsPer100g": 9,
       "proteinPer100g": 0.9,
       "fatPer100g": 0.3
     },
-    {
-      "id": "yaourt grec nature",
-      "ig": 11,
-      "carbsPer100g": 4,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 5.0
-    },
-    {
-      "id": "flocons d'avoine complets",
-      "ig": 40,
-      "carbsPer100g": 60,
-      "proteinPer100g": 13.0,
-      "fatPer100g": 7.0
-    },
-    {
-      "id": "flocons d'avoine",
-      "ig": 40,
-      "carbsPer100g": 60,
-      "proteinPer100g": 13.0,
-      "fatPer100g": 7.0
-    },
+    {"id": "flocons d'avoine complets", "ig": 55, "carbsPer100g": 57.7, "proteinPer100g": 10.6, "fatPer100g": 7.82, "src": "= flocon d'avoine (CIQUAL 2025 #32140 ; IG Atkinson 2008 : 55) ; avant IG 40 non sourcé — V2.140.7"},
     {
       "id": "eau de fleur d'oranger",
       "ig": 0,
@@ -6425,34 +6198,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 13.0
     },
     {
-      "id": "tomates concassees",
-      "ig": 30,
-      "carbsPer100g": 4,
-      "proteinPer100g": 1.5,
-      "fatPer100g": 0.3
-    },
-    {
-      "id": "olives noires denoyautees",
-      "ig": 15,
-      "carbsPer100g": 6,
-      "proteinPer100g": 0.8,
-      "fatPer100g": 11.0
-    },
-    {
-      "id": "fraises",
-      "ig": 25,
-      "carbsPer100g": 7,
-      "proteinPer100g": 0.7,
-      "fatPer100g": 0.3
-    },
-    {
-      "id": "pignons de pin",
-      "ig": 15,
-      "carbsPer100g": 13,
-      "proteinPer100g": 14.0,
-      "fatPer100g": 68.0
-    },
-    {
       "id": "graines de tournesol",
       "ig": 35,
       "carbsPer100g": 20,
@@ -6466,33 +6211,13 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 0,
       "fatPer100g": 0
     },
-    {
-      "id": "amande effilee",
-      "ig": 15,
-      "carbsPer100g": 22,
-      "proteinPer100g": 21.0,
-      "fatPer100g": 49.0
-    },
+    {"id": "amande effilee", "ig": 15, "carbsPer100g": 9.51, "proteinPer100g": 18.8, "fatPer100g": 51.3, "src": "= amande (CIQUAL 2025 #15000) ; avant 22 g de glucides — V2.140.7"},
     {
       "id": "garam masala",
       "ig": 0,
       "carbsPer100g": 50,
       "proteinPer100g": 10.0,
       "fatPer100g": 15.0
-    },
-    {
-      "id": "mangue mure",
-      "ig": 60,
-      "carbsPer100g": 15,
-      "proteinPer100g": 0.8,
-      "fatPer100g": 0.4
-    },
-    {
-      "id": "lentilles corail",
-      "ig": 25,
-      "carbsPer100g": 60,
-      "proteinPer100g": 25.0,
-      "fatPer100g": 1.0
     },
     {
       "id": "thym seche",
@@ -6608,27 +6333,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.5
     },
     {
-      "id": "champignons de paris",
-      "ig": 15,
-      "carbsPer100g": 3.3,
-      "proteinPer100g": 3.1,
-      "fatPer100g": 0.3
-    },
-    {
-      "id": "champignons shiitake",
-      "ig": 15,
-      "carbsPer100g": 7.0,
-      "proteinPer100g": 2.2,
-      "fatPer100g": 0.5
-    },
-    {
-      "id": "champignons shiitakes",
-      "ig": 15,
-      "carbsPer100g": 7.0,
-      "proteinPer100g": 2.2,
-      "fatPer100g": 0.5
-    },
-    {
       "id": "couscous complet",
       "ig": 45,
       "carbsPer100g": 70.0,
@@ -6641,13 +6345,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 3.5,
       "proteinPer100g": 2.5,
       "fatPer100g": 30.0
-    },
-    {
-      "id": "crevettes decortiquees",
-      "ig": 0,
-      "carbsPer100g": 0,
-      "proteinPer100g": 22.0,
-      "fatPer100g": 1.0
     },
     {
       "id": "curry",
@@ -6677,13 +6374,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 1.8,
       "fatPer100g": 0.2
     },
-    {
-      "id": "edamame ecosses",
-      "ig": 18,
-      "carbsPer100g": 9.9,
-      "proteinPer100g": 11.0,
-      "fatPer100g": 5.0
-    },
+    {"id": "edamame ecosses", "ig": 18, "carbsPer100g": 3.7, "proteinPer100g": 11.9, "fatPer100g": 5.2, "src": "= edamame (USDA FDC 168411) — V2.140.7"},
     {
       "id": "farine de mais",
       "ig": 70,
@@ -6704,13 +6395,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 40.0,
       "proteinPer100g": 41.0,
       "fatPer100g": 2.0
-    },
-    {
-      "id": "feuilles de brick",
-      "ig": 70,
-      "carbsPer100g": 65.0,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 1.0
     },
     {
       "id": "feuilles de curry",
@@ -6741,34 +6425,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.2
     },
     {
-      "id": "fruits rouges",
-      "ig": 25,
-      "carbsPer100g": 10.0,
-      "proteinPer100g": 1.0,
-      "fatPer100g": 0.4
-    },
-    {
-      "id": "galettes de riz",
-      "ig": 85,
-      "carbsPer100g": 82.0,
-      "proteinPer100g": 7.5,
-      "fatPer100g": 1.0
-    },
-    {
-      "id": "graines de courge",
-      "ig": 25,
-      "carbsPer100g": 11.0,
-      "proteinPer100g": 30.0,
-      "fatPer100g": 49.0
-    },
-    {
-      "id": "graines de lin",
-      "ig": 35,
-      "carbsPer100g": 29.0,
-      "proteinPer100g": 18.0,
-      "fatPer100g": 42.0
-    },
-    {
       "id": "graines de moutarde",
       "ig": 0,
       "carbsPer100g": 28.0,
@@ -6790,13 +6446,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.5
     },
     {
-      "id": "haricots verts",
-      "ig": 15,
-      "carbsPer100g": 7.0,
-      "proteinPer100g": 1.8,
-      "fatPer100g": 0.2
-    },
-    {
       "id": "huile d'argan",
       "ig": 0,
       "carbsPer100g": 0,
@@ -6809,20 +6458,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 0.5,
       "proteinPer100g": 17.0,
       "fatPer100g": 28.0
-    },
-    {
-      "id": "lentilles vertes",
-      "ig": 30,
-      "carbsPer100g": 20.0,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 0.4
-    },
-    {
-      "id": "lentilles vertes du puy",
-      "ig": 30,
-      "carbsPer100g": 20.0,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 0.4
     },
     {
       "id": "mais en grains",
@@ -6900,13 +6535,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 14.0,
       "proteinPer100g": 9.0,
       "fatPer100g": 72.0
-    },
-    {
-      "id": "nouilles soba",
-      "ig": 46,
-      "carbsPer100g": 25.0,
-      "proteinPer100g": 5.0,
-      "fatPer100g": 0.1
     },
     {
       "id": "orange sanguine",
@@ -7043,13 +6671,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 5.0
     },
     {
-      "id": "thon naturel en boite",
-      "ig": 0,
-      "carbsPer100g": 0,
-      "proteinPer100g": 26.0,
-      "fatPer100g": 0.9
-    },
-    {
       "id": "vermicelles de soja",
       "ig": 39,
       "carbsPer100g": 86.0,
@@ -7127,13 +6748,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 4.0
     },
     {
-      "id": "crackers sarrasin",
-      "ig": 40,
-      "carbsPer100g": 70.0,
-      "proteinPer100g": 12.0,
-      "fatPer100g": 4.0
-    },
-    {
       "id": "noix de muscade",
       "ig": 0,
       "carbsPer100g": 49.0,
@@ -7197,13 +6811,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 22.0
     },
     {
-      "id": "vermicelles de riz",
-      "ig": 58,
-      "carbsPer100g": 80.0,
-      "proteinPer100g": 6.0,
-      "fatPer100g": 0.5
-    },
-    {
       "id": "citron confit",
       "ig": 20,
       "carbsPer100g": 12.0,
@@ -7211,25 +6818,11 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.5
     },
     {
-      "id": "baton de cannelle",
-      "ig": 0,
-      "carbsPer100g": 80.0,
-      "proteinPer100g": 4.0,
-      "fatPer100g": 1.2
-    },
-    {
       "id": "citronnelle",
       "ig": 0,
       "carbsPer100g": 25.0,
       "proteinPer100g": 1.8,
       "fatPer100g": 0.5
-    },
-    {
-      "id": "amandes",
-      "ig": 15,
-      "carbsPer100g": 21.0,
-      "proteinPer100g": 21.0,
-      "fatPer100g": 49.0
     },
     {
       "id": "basilic thai",
@@ -7330,13 +6923,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.0
     },
     {
-      "id": "cuisses de poulet",
-      "ig": 0,
-      "carbsPer100g": 0,
-      "proteinPer100g": 19.0,
-      "fatPer100g": 11.0
-    },
-    {
       "id": "pecorino",
       "ig": 27,
       "carbsPer100g": 0,
@@ -7363,20 +6949,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 64.0,
       "proteinPer100g": 14.0,
       "fatPer100g": 0.4
-    },
-    {
-      "id": "algues nori",
-      "ig": 0,
-      "carbsPer100g": 40.0,
-      "proteinPer100g": 41.0,
-      "fatPer100g": 2.0
-    },
-    {
-      "id": "galettes de sarrasin",
-      "ig": 40,
-      "carbsPer100g": 60.0,
-      "proteinPer100g": 9.0,
-      "fatPer100g": 1.5
     },
     {
       "id": "anis etoile",
@@ -7426,13 +6998,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 69.0,
       "proteinPer100g": 9.0,
       "fatPer100g": 4.3
-    },
-    {
-      "id": "fromage frais nature",
-      "ig": 27,
-      "carbsPer100g": 4.0,
-      "proteinPer100g": 8.0,
-      "fatPer100g": 5.0
     },
     {
       "id": "creme fraiche legere",
@@ -7496,13 +7061,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 7.3,
       "proteinPer100g": 1.2,
       "fatPer100g": 0.2
-    },
-    {
-      "id": "poireaux",
-      "ig": 32,
-      "carbsPer100g": 14.0,
-      "proteinPer100g": 1.5,
-      "fatPer100g": 0.3
     },
     {
       "id": "tomate coeur de boeuf",
@@ -7750,13 +7308,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 1.0
     },
     {
-      "id": "galette de riz nature",
-      "ig": 85,
-      "carbsPer100g": 82.0,
-      "proteinPer100g": 7.5,
-      "fatPer100g": 1.0
-    },
-    {
       "id": "crackers",
       "ig": 70,
       "carbsPer100g": 72.0,
@@ -7952,13 +7503,7 @@ if ("serviceWorker" in navigator) {
       "proteinPer100g": 22.0,
       "fatPer100g": 3.0
     },
-    {
-      "id": "lait",
-      "ig": 31,
-      "carbsPer100g": 4.8,
-      "proteinPer100g": 3.4,
-      "fatPer100g": 1.5
-    },
+    {"id": "lait", "ig": 34, "carbsPer100g": 5, "proteinPer100g": 3.48, "fatPer100g": 1.56, "src": "CIQUAL 2025 #19041 « Lait demi-écrémé, UHT » ; IG Sydney 34 « Milk, semi-skimmed, pasteurized » (Henry 2005) — V2.140.7"},
     {
       "id": "olive",
       "ig": 15,
@@ -8087,13 +7632,6 @@ if ("serviceWorker" in navigator) {
     },
     {
       "id": "pesto vert",
-      "ig": 15,
-      "carbsPer100g": 4.0,
-      "proteinPer100g": 4.0,
-      "fatPer100g": 42.0
-    },
-    {
-      "id": "pesto basilic",
       "ig": 15,
       "carbsPer100g": 4.0,
       "proteinPer100g": 4.0,
@@ -8552,13 +8090,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 1.5
     },
     {
-      "id": "graines de lin moulues",
-      "ig": 35,
-      "carbsPer100g": 29.0,
-      "proteinPer100g": 18.0,
-      "fatPer100g": 42.0
-    },
-    {
       "id": "emmental rape",
       "ig": 27,
       "carbsPer100g": 1.0,
@@ -8594,13 +8125,6 @@ if ("serviceWorker" in navigator) {
       "fatPer100g": 0.3
     },
     {
-      "id": "fraise fraiche",
-      "ig": 25,
-      "carbsPer100g": 7.7,
-      "proteinPer100g": 0.7,
-      "fatPer100g": 0.3
-    },
-    {
       "id": "poivron vert",
       "ig": 15,
       "carbsPer100g": 4.6,
@@ -8627,13 +8151,6 @@ if ("serviceWorker" in navigator) {
       "carbsPer100g": 0.5,
       "proteinPer100g": 0.0,
       "fatPer100g": 0.0
-    },
-    {
-      "id": "blettes",
-      "ig": 15,
-      "carbsPer100g": 4.0,
-      "proteinPer100g": 1.8,
-      "fatPer100g": 0.2
     },
     { "id": "boulgour complet", "ig": 48, "carbsPer100g": 65.8, "proteinPer100g": 12.6, "fatPer100g": 1.42, "cookedYield": 2.72, "src": "CIQUAL 2025 (ANSES, table du 2025-11-03) #9690 boulgour cru — proxy : boulgour complet absent — valeurs SEC/cru (V2.137.0)" },
     {
@@ -12497,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.140.6"></script>
+<script src="data/recipes.js?v=2.140.7"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1

@@ -131,6 +131,10 @@ jobs:
       - name: Shopping list duplicates (code de l'app)
         run: node scripts/audit-shopping-duplicates.mjs
 
+      # ── Fiches nutritionnelles : aucun nom sur la fiche d'un autre produit (V2.140.7) ──
+      - name: Nutrition records (mauvaise fiche)
+        run: node scripts/audit-nutrition-duplicates.mjs --check
+
       # ── 5. HTML basique ─────────────────────────────────────────────
       - name: HTML basic checks
         run: |
