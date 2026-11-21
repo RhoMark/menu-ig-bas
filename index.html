@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.145.1</title>
+<title>Menu IG Bas — V2.145.2</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.145.1">
+<link rel="stylesheet" href="tailwind.css?v=2.145.2">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.145.1"></script>
+<script src="data/recipes.js?v=2.145.2"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -20391,7 +20391,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                               </span>
                             )}
                             <span className="flex items-start gap-1">
-                              <span className="flex-1">{cookedEntry(slot, m.key, recipe.id) && <span title="Cuisiné" className="mr-0.5">✅</span>}{recipe.name}</span>
+                              <span className="flex-1">{cookedEntry(slot, m.key, recipe.id) && <span title="Cuisiné" className="mr-0.5 text-emerald-600 dark:text-emerald-400">✅</span>}{recipe.name}</span>
                               {recipeAdvanceInfo(recipe) && (
                                 <span title={`À préparer ${recipeAdvanceInfo(recipe).label}`}
                                       className="text-amber-600 text-sm flex-shrink-0">
@@ -20479,7 +20479,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                                   </span>
                                 )}
                                 <span className="flex items-start gap-1">
-                                  <span className="flex-1 font-medium">{cookedEntry(slot, "dessert", dessertRecipe.id) && <span title="Cuisiné" className="mr-0.5">✅</span>}{dessertRecipe.name}</span>
+                                  <span className="flex-1 font-medium">{cookedEntry(slot, "dessert", dessertRecipe.id) && <span title="Cuisiné" className="mr-0.5 text-emerald-600 dark:text-emerald-400">✅</span>}{dessertRecipe.name}</span>
                                   {recipeAdvanceInfo(dessertRecipe) && (
                                     <span title={`À préparer ${recipeAdvanceInfo(dessertRecipe).label}`}
                                           className="text-amber-600 flex-shrink-0">
