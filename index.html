@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.152.0</title>
+<title>Menu IG Bas — V2.153.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.152.0">
+<link rel="stylesheet" href="tailwind.css?v=2.153.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.152.0"></script>
+<script src="data/recipes.js?v=2.153.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -24897,101 +24897,45 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
           la pré-config avant activation. Ordre jours aligné sur shoppingDay
           (lundi en premier). Doc inline "Comment ça marche". */}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
-        <h3 className="font-bold text-slate-800 dark:text-slate-100">🍱 Mode batch cooking</h3>
-        <p className="text-xs text-slate-500 dark:text-slate-400">
-          Préparer plusieurs repas en une session le week-end pour gagner du temps en semaine. Quand activé, le générateur privilégie les recettes <em>batch-friendly</em> (préparables à l'avance, conservables 3-4 jours au frigo) sur le nombre de jours choisi. Réglage par défaut du foyer ; chaque semaine peut être basculée individuellement depuis le planning.
-        </p>
-        <div>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={!!p.batchCookingEnabled}
-              onChange={e => updateProfile({batchCookingEnabled: e.target.checked})} />
-            <span className="text-sm font-medium">Activer le mode batch cooking par défaut</span>
+        {/* V2.153.0 — Épuré : icônes à cocher + réglages compacts, explications dans la bulle « i ». */}
+        <div className="flex items-center gap-2">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">Batch cooking et courses</h3>
+          <InfoTip title="Batch cooking et courses" className="ml-auto">
+            <p><strong>Batch</strong> : préparer plusieurs repas en une session pour gagner du temps en semaine. Activé par défaut, le menu privilégie les recettes à préparer à l'avance (3-4 jours au frigo) sur le nombre de jours choisi (<strong>cible</strong>) ; les autres jours gardent la variété. Le bouton Batch du planning l'active ou le coupe juste pour une semaine.</p>
+            <p className="mt-2"><strong>Session</strong> : le jour où tu cuisines (souvent samedi ou dimanche, ou le lendemain des courses).</p>
+            <p className="mt-2"><strong>Restes</strong> : quand un plat laisse des restes (poulet rôti, riz cuit, soupe…), propose le lendemain une recette qui les utilise. Coupé les semaines en mode batch.</p>
+            <p className="mt-2"><strong>Rayons</strong> : dans la liste de courses, regroupe les articles par rayon (herbes fraîches, légumes-racines, poissons gras…) pour suivre l'ordre du magasin.</p>
+            <p className="mt-2"><strong>Grande surface</strong> : évite (sans les interdire) les recettes qui demandent une épicerie spécialisée (paneer, miso, sumac…). Utile sans épicerie du monde à proximité.</p>
+            <p className="mt-2 italic">Conservation : 3-4 jours au frigo en boîtes hermétiques ; plats mijotés et soupes se congèlent bien (3 mois max).</p>
+          </InfoTip>
+        </div>
+        <IconToggleTiles
+          selected={[p.batchCookingEnabled && "batch", p.leftoverSuggestionsEnabled !== false && "leftovers",
+            p.shoppingSubgroups !== false && "aisles", p.preferCommonIngredients && "common"].filter(Boolean)}
+          items={[{id: "batch", label: "Batch", icon: "🍱"}, {id: "leftovers", label: "Restes", icon: "♻"},
+            {id: "aisles", label: "Rayons", icon: "🏷"}, {id: "common", label: "Grande surface", icon: "🛒"}]}
+          onToggle={(id, active) => updateProfile({
+            batch: {batchCookingEnabled: !active}, leftovers: {leftoverSuggestionsEnabled: !active},
+            aisles: {shoppingSubgroups: !active}, common: {preferCommonIngredients: !active},
+          }[id])} />
+        <div className={`flex flex-wrap items-center gap-x-5 gap-y-2 text-sm ${p.batchCookingEnabled ? "" : "opacity-70"}`}>
+          <label className="flex items-center gap-2">
+            <span className="text-lg text-slate-500 dark:text-slate-400" aria-hidden="true">🎯</span>Cible
+            <input type="range" min="3" max="7" step="1" value={p.batchCookingTarget ?? 5}
+              onChange={e => updateProfile({batchCookingTarget: parseInt(e.target.value, 10)})} className="w-28" />
+            <strong className="whitespace-nowrap">{p.batchCookingTarget ?? 5}/7 j</strong>
+          </label>
+          <label className="flex items-center gap-2">
+            <span className="text-lg text-slate-500 dark:text-slate-400" aria-hidden="true">📅</span>Session
+            <select value={p.batchCookingDay ?? 2}
+              onChange={e => updateProfile({batchCookingDay: parseInt(e.target.value, 10)})}
+              className="border rounded px-3 py-1.5">
+              {[1,2,3,4,5,6,0].map(d => (
+                <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
+              ))}
+            </select>
           </label>
         </div>
-        <div>
-          <label className="text-sm block mb-1">Cible : nombre de jours batch-friendly sur 7</label>
-          <input type="range" min="3" max="7" step="1"
-            value={p.batchCookingTarget ?? 5}
-            onChange={e => updateProfile({batchCookingTarget: parseInt(e.target.value, 10)})}
-            className="w-48" />
-          <span className="ml-3 text-sm font-semibold">{p.batchCookingTarget ?? 5} / 7 jours</span>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-            Au-delà du seuil, les jours restants utilisent le pool normal (variété). Si le sous-pool batch-friendly est trop pauvre pour la saison, l'algo bascule gracieusement sur le pool global.
-          </p>
-        </div>
-        <div>
-          <label className="text-sm block mb-1">📅 Jour de la session de préparation</label>
-          <select value={p.batchCookingDay ?? 2}
-            onChange={e => updateProfile({batchCookingDay: parseInt(e.target.value, 10)})}
-            className="border rounded px-3 py-2 w-48"
-            title="Jour où vous prévoyez de cuisiner les recettes batch. Le lendemain des courses est intuitif, mais le samedi ou dimanche convient aussi.">
-            {[1,2,3,4,5,6,0].map(d => (
-              <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
-            ))}
-          </select>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Conseil : les week-ends (samedi / dimanche) sont les plus courants pour une session batch.</p>
-        </div>
-        {/* V2.50.0 (issue #13) — Toggle suggestions de réutilisation des
-            restes. Placé dans la même section que batch cooking car les 2
-            fonctionnent en complément (mode batch = restes désactivés
-            cohérence). */}
-        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={p.leftoverSuggestionsEnabled !== false}
-              onChange={e => updateProfile({leftoverSuggestionsEnabled: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">♻ Suggestions de recettes utilisant les restes</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Quand certaines recettes du planning produisent des restes typiques (poulet rôti, riz cuit, soupes, ratatouille…), suggère pour le lendemain ou le surlendemain une recette qui les consomme. Affichage en haut du planning, suggestion non-bloquante (tu peux toujours ignorer). Désactivé automatiquement quand le mode batch cooking est actif pour la semaine.
-              </span>
-            </span>
-          </label>
-        </div>
-        {/* V2.92.0 (issue #93) — Toggle sous-groupes liste de courses */}
-        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={p.shoppingSubgroups !== false}
-              onChange={e => updateProfile({shoppingSubgroups: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">🏷 Sous-groupes dans la liste de courses</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Au sein de chaque catégorie (légumes, viandes, épicerie…), regroupe les articles par rayon : <em>herbes fraîches</em>, <em>alliacées</em>, <em>légumes-racines</em>, <em>légumes-fruits</em>, <em>poissons gras</em> vs <em>maigres</em>, <em>fromages</em> vs <em>yaourts</em>, <em>féculents secs</em>, etc. Pratique pour faire les courses dans l'ordre des rayons. Désactive pour revenir à une liste plate alphabétique par catégorie.
-              </span>
-            </span>
-          </label>
-        </div>
-        {/* V2.97.0 (issue #3) — Toggle filtre ingrédients locaux / épicerie commune */}
-        <div className="border-t border-slate-200 dark:border-slate-700 pt-3 mt-2">
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={!!p.preferCommonIngredients}
-              onChange={e => updateProfile({preferCommonIngredients: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">🌍 Privilégier les ingrédients locaux / grande surface</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Pénalise (×0.3 sur la pondération de pioche) les recettes qui nécessitent une épicerie spécialisée — celles taggées <em>epicerie-specialisee</em> (~22 recettes avec ≥2 ingrédients non trouvables en grande surface française standard : tomatille mexicaine, paneer indien, citron confit, chaat masala, miso, ras el-hanout, sumac, feuille de curry, etc.). Pas un filtre dur : ces recettes restent accessibles en bibliothèque, mais l'algo les évite à la génération. Désactivé par défaut — active si tu n'as pas d'épicerie internationale à proximité.
-              </span>
-            </span>
-          </label>
-        </div>
-        {/* V2.47.1 — doc inline "Comment ça marche" pour expliquer le flux
-            d'utilisation. Sera repris dans la FAQ globale (issue #84). */}
-        <details className="text-xs text-slate-600 dark:text-slate-300 mt-2">
-          <summary className="cursor-pointer font-medium hover:text-emerald-700 dark:hover:text-emerald-300">📖 Comment ça marche ?</summary>
-          <ol className="list-decimal pl-5 mt-2 space-y-1">
-            <li>Active le toggle ci-dessus pour mettre le mode batch ON par défaut sur toutes les semaines à venir.</li>
-            <li>Choisis ta cible (par ex. 5 jours / 7) : le générateur s'efforcera d'avoir au moins ce nombre de jours avec lunch ET dinner batch-friendly. Les jours restants restent libres pour la variété.</li>
-            <li>Choisis le jour où tu prévois ta session de préparation (typiquement samedi ou dimanche, ou le lendemain des courses).</li>
-            <li>Régénère le menu de la semaine depuis l'écran Planning : les slots concernés afficheront un 🍱.</li>
-            <li>Sur l'écran Planning, l'icône <strong>🍱 Batch</strong> en haut (entourée quand le mode est actif) permet de basculer le mode juste pour la semaine courante (override sans toucher à la préférence globale).</li>
-            <li><em>Bientôt en V2.48.0 :</em> page <strong>Préparation [Jour]</strong> avec to-do séquentielle des étapes regroupées et estimation du temps total.</li>
-          </ol>
-          <p className="mt-2 italic text-slate-500 dark:text-slate-400">
-            Conseils conservation : 3-4 jours au frigo dans des boîtes hermétiques. Réchauffer doucement (poêle ou micro-ondes 50%). Plats mijotés et soupes se congèlent généralement bien (3 mois max).
-          </p>
-        </details>
       </div>
   </>);
   const tileJournal = (<>
@@ -25230,87 +25174,79 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
       </div>
 {section === "all" ? (<>{tileBatch}{tileJournal}{tileCuisines}</>) : (<>{tileCuisines}{tileBatch}</>)}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
-        <h3 className="font-bold text-slate-800 dark:text-slate-100">Contraintes pratiques</h3>
-        <div>
-          <label className="text-sm block mb-1">Budget hebdomadaire (€)</label>
-          <input type="number" value={p.budgetWeekly} onChange={e=>updateProfile({budgetWeekly: parseInt(e.target.value)||0})}
-            className="border rounded px-3 py-2 w-40" />
-          {/* V2.99.33 — Recommandation contextuelle CAF 2023 */}
-          {(() => {
-            const rec = recommendedWeeklyBudget(p);
-            const userBudget = p.budgetWeekly || 0;
-            const pctOfAvg = rec.avg > 0 ? Math.round(100 * userBudget / rec.avg) : 0;
-            let positioning = null;
-            if (userBudget > 0) {
-              if (pctOfAvg < 75) positioning = `économique (${pctOfAvg} % de la moyenne)`;
-              else if (pctOfAvg <= 110) positioning = `dans la fourchette moyenne (${pctOfAvg} %)`;
-              else if (pctOfAvg <= 150) positioning = `au-dessus de la moyenne (${pctOfAvg} %)`;
-              else positioning = `confortable (${pctOfAvg} % de la moyenne)`;
-            }
-            return (
-              <p className="text-xs text-slate-600 dark:text-slate-400 mt-2 leading-relaxed max-w-xl">
-                💡 Selon les statistiques officielles<sup>*</sup>, le budget alimentaire moyen
-                pour votre foyer ({rec.uc.toFixed(1)} unité{rec.uc >= 2 ? 's' : ''} de consommation)
-                est de <strong>{rec.avg} €/sem corrigé de l'inflation</strong> (médiane : {rec.median} €).
-                {positioning && <> Votre budget est <strong>{positioning}</strong>.</>}
-                <br />
-                <span className="text-[10px] italic text-slate-500 dark:text-slate-500">
-                  <sup>*</sup> CAF Enquête Budget de Famille 2023 — échelle d'équivalence OCDE
-                  (1er adulte = 1 UC, adulte/ado ≥ 14 ans = 0,5 UC, enfant &lt; 14 ans = 0,3 UC).
-                  Données 2023 ; l'inflation alimentaire cumulée 2023-2025 est d'environ +14 %
-                  (+12,2 % en 2023, +1,3 % en 2024, INSEE), appliquée automatiquement.
-                </span>
-              </p>
-            );
-          })()}
-        </div>
-        <div>
-          <label className="text-sm block mb-1">
-            Tolérance budget
-            <span className="text-xs text-slate-500 dark:text-slate-400 ml-2">l'optimiseur ne dépassera pas ce seuil</span>
-          </label>
-          <select
-            value={p.budgetTolerance ?? 10}
-            onChange={e=>updateProfile({budgetTolerance: parseInt(e.target.value)||0})}
-            className="border rounded px-3 py-2 w-56">
-            <option value={0}>Strict (sous le budget)</option>
-            <option value={5}>± 5 %</option>
-            <option value={10}>± 10 %</option>
-            <option value={15}>± 15 %</option>
-            <option value={20}>± 20 %</option>
-          </select>
-        </div>
-        <div>
-          <label className="text-sm block mb-1">Temps préparation max / repas (min)</label>
-          <div className="flex gap-3 items-end">
-            <div>
-              <span className="text-xs text-slate-500 dark:text-slate-400 block">Semaine</span>
-              <input type="number" value={p.maxPrepMinutes} onChange={e=>updateProfile({maxPrepMinutes: parseInt(e.target.value)||45})}
-                className="border rounded px-3 py-2 w-28" />
+        {/* V2.153.0 — Épuré : champs compacts, explications et source du budget dans la bulle « i ». */}
+        {(() => {
+          // V2.99.33 — Recommandation contextuelle CAF 2023
+          const rec = recommendedWeeklyBudget(p);
+          const userBudget = p.budgetWeekly || 0;
+          const pctOfAvg = rec.avg > 0 ? Math.round(100 * userBudget / rec.avg) : 0;
+          let positioning = null;
+          if (userBudget > 0) {
+            if (pctOfAvg < 75) positioning = "économique";
+            else if (pctOfAvg <= 110) positioning = "dans la moyenne";
+            else if (pctOfAvg <= 150) positioning = "au-dessus de la moyenne";
+            else positioning = "confortable";
+          }
+          return (<>
+            <div className="flex items-center gap-2">
+              <h3 className="font-bold text-slate-800 dark:text-slate-100">Contraintes pratiques</h3>
+              <InfoTip title="Contraintes pratiques" className="ml-auto">
+                <p><strong>Budget</strong> : selon les statistiques officielles, le budget alimentaire moyen d'un foyer comme le tien ({rec.uc.toFixed(1)} unité{rec.uc >= 2 ? "s" : ""} de consommation) est de <strong>{rec.avg} €/semaine</strong> (médiane : {rec.median} €), inflation comprise{positioning ? <> ; ton budget est à {pctOfAvg} % de cette moyenne</> : null}.</p>
+                <p className="mt-1 text-[11px] italic">Source : CAF, Enquête Budget de Famille 2023, échelle OCDE (1er adulte = 1 UC, adulte/ado ≥ 14 ans = 0,5 UC, enfant &lt; 14 ans = 0,3 UC) ; inflation alimentaire 2023-2025 d'environ +14 % (INSEE), appliquée automatiquement.</p>
+                <p className="mt-2"><strong>Tolérance</strong> : de combien le menu peut dépasser le budget au maximum.</p>
+                <p className="mt-2"><strong>Temps max</strong> : temps de préparation maximum par repas, en semaine et le week-end.</p>
+                <p className="mt-2"><strong>Camping</strong> : avec des moyens de cuisson réduits (réchaud, pas de four), le menu se limite aux recettes réchaud + saladier et met en avant les recettes sans cuisson. Ton équipement habituel revient dès que tu le désactives.</p>
+              </InfoTip>
             </div>
-            <div>
-              <span className="text-xs text-slate-500 dark:text-slate-400 block">Weekend</span>
-              <input type="number" value={p.maxPrepMinutesWeekend ?? p.maxPrepMinutes ?? 90} onChange={e=>updateProfile({maxPrepMinutesWeekend: parseInt(e.target.value)||90})}
-                className="border rounded px-3 py-2 w-28" />
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm">
+              <label className="flex items-center gap-2">
+                <span className="text-lg text-slate-500 dark:text-slate-400" aria-hidden="true">💰</span>Budget
+                <input type="number" value={p.budgetWeekly} onChange={e=>updateProfile({budgetWeekly: parseInt(e.target.value)||0})}
+                  className="border rounded px-2 py-1.5 w-20" />
+                <span className="text-slate-500 dark:text-slate-400">€/sem</span>
+              </label>
+              <label className="flex items-center gap-2">
+                Tolérance
+                <select value={p.budgetTolerance ?? 10} onChange={e=>updateProfile({budgetTolerance: parseInt(e.target.value)||0})}
+                  className="border rounded px-2 py-1.5">
+                  <option value={0}>Stricte</option>
+                  <option value={5}>± 5 %</option>
+                  <option value={10}>± 10 %</option>
+                  <option value={15}>± 15 %</option>
+                  <option value={20}>± 20 %</option>
+                </select>
+              </label>
             </div>
-          </div>
-        </div>
-        {/* V3.0 (issue #98) — Mode Vacances / camping (cuisine limitée) */}
-        <div>
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={!!p.campingMode}
-              onChange={e => updateProfile({campingMode: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">⛺ Mode vacances / camping (cuisine limitée)</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                À activer quand tu pars avec des moyens de cuisson réduits (un réchaud à gaz, pas de four). Le générateur se limite alors aux recettes réalisables au <strong>réchaud + saladier</strong> et met en avant les recettes <strong>sans cuisson</strong> pour les fortes chaleurs. Ton équipement habituel est conservé et revient dès que tu désactives le mode.
+            <p className="text-xs text-slate-500 dark:text-slate-400 -mt-1">
+              Moyenne pour ton foyer : {rec.avg} €/sem{positioning ? ` · ton budget est ${positioning}` : ""}
+            </p>
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm">
+              <span className="flex items-center gap-2"><span className="text-lg text-slate-500 dark:text-slate-400" aria-hidden="true">⏱</span>Temps max</span>
+              <span className="flex items-center gap-3">
+              <label className="flex items-center gap-1.5 whitespace-nowrap">Semaine
+                <input type="number" value={p.maxPrepMinutes} onChange={e=>updateProfile({maxPrepMinutes: parseInt(e.target.value)||45})}
+                  className="border rounded px-2 py-1.5 w-16" />
+              </label>
+              <label className="flex items-center gap-1.5 whitespace-nowrap">Week-end
+                <input type="number" value={p.maxPrepMinutesWeekend ?? p.maxPrepMinutes ?? 90} onChange={e=>updateProfile({maxPrepMinutesWeekend: parseInt(e.target.value)||90})}
+                  className="border rounded px-2 py-1.5 w-16" />
+              </label>
+              <span className="text-slate-500 dark:text-slate-400">min</span>
               </span>
-            </span>
-          </label>
+            </div>
+          </>);
+        })()}
+        <div className="flex items-center gap-2 text-sm">
+          <span>Équipement{p.campingMode ? " : réchaud + saladier" : ""}</span>
+          <button type="button" onClick={() => updateProfile({campingMode: !p.campingMode})} aria-pressed={!!p.campingMode}
+            title="Mode vacances / camping : cuisine limitée au réchaud + saladier (explications dans la bulle « i »)"
+            className={`ml-auto inline-flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-medium ${p.campingMode
+              ? "bg-emerald-100 dark:bg-emerald-900/60 border-emerald-400 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200"
+              : "border-slate-200 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-white/5"}`}>
+            <span className="text-base">⛺</span> Camping{p.campingMode ? " ✓" : ""}
+          </button>
         </div>
         <div className={p.campingMode ? "opacity-50 pointer-events-none" : ""}>
-          <label className="text-sm block mb-2">Équipement{p.campingMode ? " — ignoré en mode camping (réchaud + saladier)" : ""}</label>
           <EquipmentTiles selected={p.equipment}
             onToggle={(id, active) => updateProfile({equipment: active ? p.equipment.filter(x => x !== id) : [...p.equipment, id]})} />
         </div>
