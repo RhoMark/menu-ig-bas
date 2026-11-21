@@ -57,10 +57,12 @@ MAP = {
     "🌡": ["thermometer"], "⭕": ["circle"], "❌": ["circle-x"], "❗": ["circle-alert"], "🎁": ["gift"],
     "🍋": ["citrus"], "🍓": ["cherry"], "🍌": ["banana"], "🍇": ["grape"], "🥜": ["nut"],
     "🌶": ["flame"], "🧄": ["leaf"], "🧅": ["leaf"], "🍅": ["apple"], "🥦": ["leaf"], "🍄": ["leaf"],
-    "🐔": ["drumstick"], "🍗": ["drumstick"], "🦐": ["fish"], "🦑": ["fish"], "🐄": ["beef"],
+    "🐔": ["drumstick"], "🍗": ["drumstick"], "🦐": ["shrimp", "fish"], "🦑": ["fish"], "🐄": ["beef"],
     "🏡": ["house"], "📍": ["map-pin"], "🗺": ["map"], "⌛": ["hourglass"], "🕐": ["clock"],
     "⏲": ["timer"], "🌊": ["waves"], "🌞": ["sun"], "🍂": ["leaf"], "🌸": ["flower"], "🌼": ["flower"],
     "🧘": ["activity"], "🚴": ["bike"], "🏊": ["waves"], "⚖": ["scale"], "🤖": ["bot"],
+    "🌰": ["tree-deciduous", "nut"], "🐚": ["shell"], "🫛": ["bean"], "🫓": ["circle-ellipsis"],
+    "🌭": ["flask-round"], "🥒": ["leafy-green", "leaf"], "🪻": ["flower-2", "flower"],
     "👨": ["user"], "👩": ["user"], "👧": ["user-round"], "👦": ["user-round"],
 }
 

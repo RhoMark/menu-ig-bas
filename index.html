@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.146.1</title>
+<title>Menu IG Bas — V2.147.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.146.1">
+<link rel="stylesheet" href="tailwind.css?v=2.147.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.146.1"></script>
+<script src="data/recipes.js?v=2.147.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -19732,21 +19732,10 @@ function SetupView({state, update, updateProfile, onDone}) {
           <p className="text-amber-900 dark:text-amber-100 text-sm font-medium">⚠ Allergies et intolérances — enjeu de sécurité</p>
           <p className="text-amber-800 dark:text-amber-200 text-xs mt-1">Étape facultative : ne coche que si nécessaire. Les allergènes sélectionnés passent en rouge et les recettes les contenant seront strictement exclues.</p>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {dataRef.allergens().map(({id: k, label: v}) => (
-            <label key={k} className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              p.globalAllergies.includes(k) ? "bg-red-100 dark:bg-red-900 border-red-400 text-red-800 dark:text-red-200" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700"
-            }`}>
-              <input type="checkbox" checked={p.globalAllergies.includes(k)}
-                onChange={e => updateProfile({
-                  globalAllergies: e.target.checked
-                    ? [...p.globalAllergies, k]
-                    : p.globalAllergies.filter(x => x !== k)
-                })} />
-              {v}
-            </label>
-          ))}
-        </div>
+        <AllergenTiles selected={p.globalAllergies}
+          onToggle={(k, active) => updateProfile({
+            globalAllergies: active ? p.globalAllergies.filter(x => x !== k) : [...p.globalAllergies, k]
+          })} />
       </div>
     )},
     {title:"Exclusions (goûts, préférences)", content: (
@@ -23958,6 +23947,41 @@ function RecipeStatTiles({recipe, season, recentUsageCount}) {
   );
 }
 
+// V2.147.0 — Allergènes en icônes au trait (grille façon iOS). Coché = icône
+// et nom en rouge sur fond rouge pâle + pastille « ! » (alerte visuelle rouge
+// exigée pour les allergies) ; non coché = icône grise.
+const ALLERGEN_ICON = {
+  gluten: "🌾", lactose: "🥛", eggs: "🥚", nuts: "🌰", peanuts: "🥜", fish: "🐟", shellfish: "🦐",
+  molluscs: "🐚", soy: "🫛", sesame: "🫓", mustard: "🌭", celery: "🥒", lupin: "🪻", sulphites: "🍷",
+};
+function AllergenTiles({selected = [], onToggle, isLocked}) {
+  return (
+    <div className="flex flex-wrap gap-x-1 gap-y-2">
+      {dataRef.allergens().map(({id: k, label: v}) => {
+        const active = selected.includes(k);
+        const locked = isLocked ? isLocked(active) : false;
+        return (
+          <button key={k} type="button" disabled={locked} aria-pressed={active}
+            title={locked ? "Réservé à l'admin et aux co-admins du foyer" : v}
+            aria-label={`${v}${active ? " : allergie cochée" : ""}`}
+            onClick={() => onToggle(k, active)}
+            className="w-[68px] flex flex-col items-center gap-1 focus:outline-none group disabled:cursor-not-allowed disabled:opacity-60">
+            <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[26px] transition-transform group-active:scale-90 ${active
+              ? "bg-red-100 dark:bg-red-900/60 text-red-600 dark:text-red-300 ring-1 ring-red-300 dark:ring-red-700"
+              : "text-slate-400 dark:text-slate-500 group-hover:bg-slate-100 dark:group-hover:bg-white/5"}`}>
+              {ALLERGEN_ICON[k] || "⚠"}
+              {active && <AlertBadge level="over" />}
+            </span>
+            <span className={`text-[11px] leading-tight text-center w-full ${active ? "text-red-700 dark:text-red-300 font-semibold" : "text-slate-600 dark:text-slate-300"}`}>
+              {v.replace(/\s*\(.*\)/, "")}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  );
+}
+
 function NutritionBanner({currentMenu, profile}) {
   // V2.141.0 — Grille d'icônes façon iOS : un tap ouvre une bulle de détail.
   const {openKey, pos, boxRef, toggle: toggleBubble} = useAnchoredBubble();
@@ -25117,18 +25141,10 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
                   <span className="text-red-600 dark:text-red-400">⚠</span> Allergies / intolérances de {m.name || "ce membre"}
                   {memberAllergies.length > 0 && <span className="ml-1 text-red-700 dark:text-red-300 font-medium">({memberAllergies.length})</span>}
                 </summary>
-                <div className="mt-2 flex flex-wrap gap-1">
-                  {dataRef.allergens().map(({id: k, label: v}) => {
-                    const active = memberAllergies.includes(k);
-                    const locked = active ? !full : !canTaste(m.id);
-                    return (
-                      <button key={k} disabled={locked} title={locked ? "Réservé à l'admin et aux co-admins du foyer" : undefined}
-                        onClick={() => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)}
-                        className={`text-xs px-2 py-1 rounded border disabled:cursor-not-allowed ${active ? "bg-red-100 dark:bg-red-900 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600"}`}>
-                        {active ? "⚠ " : ""}{v}
-                      </button>
-                    );
-                  })}
+                <div className="mt-2">
+                  <AllergenTiles selected={memberAllergies}
+                    isLocked={active => active ? !full : !canTaste(m.id)}
+                    onToggle={(k, active) => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)} />
                 </div>
               </details>
               <details className="text-sm" open={(m.exclusions || []).length > 0}>
@@ -25169,20 +25185,8 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
         <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
           Ces allergies s'appliquent à tous les membres. Pour une allergie qui ne concerne qu'une personne, utilise le bloc « Allergies » sous chaque membre dans la section Famille ci-dessus.
         </p>
-        <div className="flex flex-wrap gap-2">
-          {dataRef.allergens().map(({id: k, label: v}) => {
-            const active = p.globalAllergies.includes(k);
-            return (
-              <button key={k} type="button"
-                onClick={() => active ? removeGlobalAllergy(k) : tryAddGlobalAllergy(k)}
-                className={`flex items-center gap-2 px-3 py-2 rounded border ${
-                  active ? "bg-red-100 dark:bg-red-900 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600"
-                }`}>
-                {active ? "⚠ " : ""}{v}
-              </button>
-            );
-          })}
-        </div>
+        <AllergenTiles selected={p.globalAllergies}
+          onToggle={(k, active) => active ? removeGlobalAllergy(k) : tryAddGlobalAllergy(k)} />
       </div>
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
