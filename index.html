@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.155.0</title>
+<title>Menu IG Bas — V2.156.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.155.0">
+<link rel="stylesheet" href="tailwind.css?v=2.156.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.155.0"></script>
+<script src="data/recipes.js?v=2.156.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -21512,31 +21512,36 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             const familyHits = (profile.globalAllergies || []).filter(a => recipe.allergens.includes(a));
             const isCritical = concerned.length > 0 || familyHits.length > 0;
             return (
-              <div className={`border p-3 rounded text-sm ${isCritical ? "bg-red-100 dark:bg-red-900 border-red-500 text-red-900 dark:text-red-100" : "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"}`}>
-                <div className="flex gap-2 items-start">
-                  <span className="text-xl leading-none">{isCritical ? "🚫" : "⚠"}</span>
-                  <div className="flex-1 space-y-1">
-                    <div className="font-semibold">Contient :</div>
-                    <div className="flex flex-wrap gap-1">
-                      {recipe.allergens.map(a => {
-                        const memberHits = concerned.filter(m => (m.allergies || []).includes(a));
-                        const isFamilyHit = familyHits.includes(a);
-                        const isHit = isFamilyHit || memberHits.length > 0;
-                        return (
-                          <span key={a} className={`px-2 py-0.5 rounded text-xs border inline-flex items-center gap-1 ${isHit ? "bg-red-600 text-white border-red-700 font-bold" : "bg-white dark:bg-slate-800 text-red-700 dark:text-red-300 border-red-300 dark:border-red-700"}`}>
-                            <span>{isHit ? "🚫" : "⚠"}</span>
-                            <span>{dataRef.allergenLabel(a)}</span>
-                            {memberHits.length > 0 && <span className="italic font-normal text-red-100">— {memberHits.map(m => m.name).join(", ")}</span>}
-                            {isFamilyHit && memberHits.length === 0 && <span className="italic font-normal text-red-100">— famille</span>}
-                          </span>
-                        );
-                      })}
-                    </div>
-                    {isCritical && (
-                      <p className="font-bold mt-2">⚠ Allergène incompatible avec votre foyer — cette recette ne devrait pas être proposée par la génération.</p>
-                    )}
-                  </div>
+              /* V2.156.0 — Allergènes en icônes, comme dans Mon foyer (même icône par allergène).
+                 Allergène d'un membre / de la famille = tuile rouge pleine + « ! » + prénom. */
+              <div className={`border p-3 rounded-2xl text-sm ${isCritical ? "bg-red-50 dark:bg-red-950/60 border-red-500" : "border-red-200 dark:border-red-900"}`}>
+                <div className="flex items-center gap-2 mb-2 font-semibold text-red-700 dark:text-red-300">
+                  <span className="text-lg leading-none">⚠</span>Contient
                 </div>
+                <div className="flex flex-wrap gap-x-1 gap-y-2">
+                  {recipe.allergens.map(a => {
+                    const memberHits = concerned.filter(m => (m.allergies || []).includes(a));
+                    const isFamilyHit = familyHits.includes(a);
+                    const isHit = isFamilyHit || memberHits.length > 0;
+                    const who = memberHits.length > 0 ? memberHits.map(m => m.name).join(", ") : isFamilyHit ? "famille" : null;
+                    const label = dataRef.allergenLabel(a);
+                    return (
+                      <div key={a} className="w-[68px] flex flex-col items-center gap-1" title={who ? `${label} — allergie : ${who}` : label}>
+                        <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[26px] ${isHit
+                          ? "bg-red-600 text-white"
+                          : "bg-red-100 dark:bg-red-900/60 text-red-600 dark:text-red-300 ring-1 ring-red-300 dark:ring-red-700"}`}>
+                          {ALLERGEN_ICON[a] || "⚠"}
+                          {isHit && <AlertBadge level="over" />}
+                        </span>
+                        <span className="text-[11px] leading-tight text-center w-full text-red-700 dark:text-red-300 font-semibold">{label.replace(/\s*\(.*\)/, "")}</span>
+                        {who && <span className="text-[10px] leading-tight text-center w-full text-red-600 dark:text-red-400 italic">{who}</span>}
+                      </div>
+                    );
+                  })}
+                </div>
+                {isCritical && (
+                  <p className="font-bold mt-3 text-red-800 dark:text-red-200">⚠ Allergène incompatible avec votre foyer : cette recette ne devrait pas être proposée par la génération.</p>
+                )}
               </div>
             );
           })();
