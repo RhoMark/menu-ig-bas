@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.151.0</title>
+<title>Menu IG Bas — V2.152.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.151.0">
+<link rel="stylesheet" href="tailwind.css?v=2.152.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.151.0"></script>
+<script src="data/recipes.js?v=2.152.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -25198,61 +25198,35 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
       <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
 
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
-        <h3 className="font-bold text-slate-800 dark:text-slate-100">Repas et rythme</h3>
-        <div>
-          <label className="text-sm font-medium block mb-2">Moment du dessert</label>
-          <div className="flex gap-2">
-            <label className={`flex-1 flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              (p.dessertTime || "dinner") === "lunch" ? "bg-rose-100 dark:bg-rose-900 border-rose-400 text-rose-800 dark:text-rose-200" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
-            }`}>
-              <input type="radio" checked={(p.dessertTime || "dinner") === "lunch"}
-                onChange={() => updateProfile({dessertTime: "lunch"})} />
-              🥗 Au déjeuner
-            </label>
-            <label className={`flex-1 flex items-center gap-2 px-3 py-2 rounded border cursor-pointer ${
-              (p.dessertTime || "dinner") === "dinner" ? "bg-rose-100 dark:bg-rose-900 border-rose-400 text-rose-800 dark:text-rose-200" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700"
-            }`}>
-              <input type="radio" checked={(p.dessertTime || "dinner") === "dinner"}
-                onChange={() => updateProfile({dessertTime: "dinner"})} />
-              🌙 Au dîner (défaut)
-            </label>
-          </div>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Le dessert reste unique dans la journée et apparaît à l'endroit choisi.</p>
+        {/* V2.152.0 — Épuré : icônes à cocher, explications dans la bulle « i ». */}
+        <div className="flex items-center gap-2">
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">Repas et rythme</h3>
+          <InfoTip title="Repas et rythme" className="ml-auto">
+            <p><strong>Dessert midi / soir</strong> : le dessert reste unique dans la journée et apparaît au repas choisi (soir par défaut).</p>
+            <p className="mt-2"><strong>Goûter</strong> : ajoute un goûter chaque jour, entre le déjeuner et le dîner.</p>
+            <p className="mt-2"><strong>Hors saison</strong> : par défaut, le menu et la bibliothèque ne proposent que des recettes de saison (ratatouille en été…). Active-le pour cuisiner hors saison (légumes surgelés, envies) : ces recettes portent alors un badge ⚠.</p>
+            <p className="mt-2"><strong>Jour des courses</strong> : le planning commence ce jour-là (si tu fais tes courses le jeudi, choisis Jeudi).</p>
+          </InfoTip>
         </div>
-        <div>
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input type="checkbox" checked={!!p.snackEnabled}
-              onChange={e => updateProfile({snackEnabled: e.target.checked})} />
-            <span className="text-sm font-medium">🍪 Ajouter un goûter chaque jour</span>
-          </label>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Active un slot de goûter entre le déjeuner et le dîner.</p>
+        <div className="flex flex-wrap items-start gap-x-1 gap-y-2">
+          <IconToggleTiles selected={[p.dessertTime || "dinner"]}
+            items={[{id: "lunch", label: "Dessert midi", icon: "☀"}, {id: "dinner", label: "Dessert soir", icon: "🌙"}]}
+            onToggle={id => updateProfile({dessertTime: id})} />
+          <IconToggleTiles selected={[p.snackEnabled && "snack", p.includeOutOfSeason && "season"].filter(Boolean)}
+            items={[{id: "snack", label: "Goûter", icon: "🍪"}, {id: "season", label: "Hors saison", icon: "❄"}]}
+            onToggle={(id, active) => updateProfile(id === "snack" ? {snackEnabled: !active} : {includeOutOfSeason: !active})} />
         </div>
-        {/* V2.65.0 (issue #4) — Forçage hors saison */}
-        <div>
-          <label className="flex items-start gap-2 cursor-pointer">
-            <input type="checkbox" checked={!!p.includeOutOfSeason}
-              onChange={e => updateProfile({includeOutOfSeason: e.target.checked})}
-              className="mt-1" />
-            <span>
-              <span className="text-sm font-medium">⚠ Inclure les recettes hors saison</span>
-              <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Par défaut, le générateur et la bibliothèque ne proposent que les recettes alignées sur la saison de la semaine (par ex. ratatouille uniquement en été). Active cette option si tu veux pouvoir cuisiner hors saison (légumes congelés, importations, envies). Les recettes hors saison s'affichent alors avec un badge ⚠ saisonnalité pour que tu saches ce que tu choisis.
-              </span>
-            </span>
-          </label>
-        </div>
-        <div>
-          <label className="text-sm block mb-1">🛒 Jour des courses (= début de semaine de menu)</label>
+        <label className="flex items-center gap-2 text-sm">
+          <span className="text-lg text-slate-500 dark:text-slate-400" aria-hidden="true">🛒</span>
+          Jour des courses
           <select value={p.shoppingDay ?? 1}
             onChange={e => updateProfile({shoppingDay: parseInt(e.target.value, 10)})}
-            className="border rounded px-3 py-2 w-48"
-            title="Détermine le 1er jour affiché dans le planning. Si vous faites vos courses le jeudi, choisissez Jeudi — la vue planning commencera ce jour-là.">
+            className="border rounded px-3 py-1.5 ml-1">
             {[1,2,3,4,5,6,0].map(d => (
               <option key={d} value={d}>{SHOPPING_DAY_LABELS[d]}</option>
             ))}
           </select>
-          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">L'ordre d'affichage des jours du planning commence ce jour-là. Le stockage interne des menus reste inchangé.</p>
-        </div>
+        </label>
       </div>
 {section === "all" ? (<>{tileBatch}{tileJournal}{tileCuisines}</>) : (<>{tileCuisines}{tileBatch}</>)}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5 space-y-3">
