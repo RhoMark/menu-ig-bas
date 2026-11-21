@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.138.2</title>
+<title>Menu IG Bas — V2.139.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -107,13 +107,12 @@ if ("serviceWorker" in navigator) {
   // via ?ui=v3 (et revenir via ?ui=classic) pour dogfooder sur la prod réelle.
   // Lu ici, AVANT React, pour être disponible dès le premier rendu.
   // V2.135.0 — 3 états : 'on' (choisie), 'off' (classique CHOISIE : jamais
-  // rebasculée), absent (= défaut). V3_DEFAULT reste false tant que la bascule
-  // n'est pas validée (shadow mode) : ?ui=default simule le défaut sur CE
-  // navigateur seulement (pilote), ?ui=classic / ?ui=v3 fixent un choix.
+  // rebasculée), absent (= défaut). V2.139.0 : V3_DEFAULT = true (bascule
+  // validée après pilote ?ui=default) ; ?ui=classic / ?ui=v3 fixent un choix.
   (function resolveV3UI() {
     try {
       var KEY = 'menu-ig-bas-v3ui', PILOT = 'menu-ig-bas-v3-pilot';
-      var V3_DEFAULT = false;
+      var V3_DEFAULT = true; // V2.139.0 : bascule validée par HedgeX, nouvelle interface pour tous
       var ui = new URLSearchParams(window.location.search).get('ui');
       if (ui === 'v3') localStorage.setItem(KEY, 'on');
       else if (ui === 'classic') localStorage.setItem(KEY, 'off');
@@ -746,8 +745,8 @@ if ("serviceWorker" in navigator) {
       "icon": "ℹ️",
       "qa": [
         {
-          "q": "✨ Nouvelle interface : comment l'essayer, et revenir en arrière ?",
-          "a": "Dans l'interface classique : Technique (ou Paramètres) → « ✨ Interface » → « Essayer la nouvelle interface », ou le bandeau en haut du planning. Tes données ne changent pas : menus, notes, liste de courses et cases cochées sont les mêmes. Pour revenir : menu Technique → « Revenir à l'interface classique ». Ce choix est retenu sur l'appareil : si tu choisis l'interface classique, elle reste affichée même quand la nouvelle deviendra celle par défaut. Le choix est propre à chaque appareil."
+          "q": "✨ Nouvelle interface : qu'est-ce qui change, et comment revenir à l'ancienne ?",
+          "a": "La nouvelle interface est maintenant celle par défaut : plus lisible, avec les photos des recettes, le planning jour par jour sur téléphone et l'onglet Suivi. Tes données ne changent pas : menus, notes, liste de courses et cases cochées sont les mêmes. Pour revenir à l'ancienne : menu Technique → « ✨ Interface » → « Revenir à l'interface classique ». Ce choix est retenu sur l'appareil, et tu peux revenir à la nouvelle interface au même endroit. Le choix est propre à chaque appareil : si tu avais déjà choisi l'interface classique, elle reste affichée."
         },
         {
           "q": "Que montre le tableau de bord (Suivi) ?",
@@ -20236,7 +20235,7 @@ function NewUiAnnouncement() {
     <div className="no-print bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 rounded-lg p-4 flex flex-wrap items-center gap-3">
       <span className="text-2xl" aria-hidden="true">✨</span>
       <p className="flex-1 min-w-[220px] text-sm text-emerald-900 dark:text-emerald-100">
-        <strong>Nouvelle interface disponible (bêta)</strong> : plus lisible, photos des recettes, planning jour par jour sur téléphone.
+        <strong>Nouvelle interface disponible</strong> : plus lisible, photos des recettes, planning jour par jour sur téléphone.
         Tes données restent les mêmes et tu peux revenir en arrière à tout moment.
       </p>
       <button onClick={tryIt} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">Essayer</button>
