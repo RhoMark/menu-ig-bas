@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.143.2</title>
+<title>Menu IG Bas — V2.144.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.143.2">
+<link rel="stylesheet" href="tailwind.css?v=2.144.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -170,7 +170,7 @@ if ("serviceWorker" in navigator) {
         var b = document.createElement('div');
         b.id = 'tailwind-blocked-banner';
         b.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:99999;background:#dc2626;color:white;padding:14px 18px;font-family:system-ui,sans-serif;font-size:14px;line-height:1.5;box-shadow:0 2px 10px rgba(0,0,0,0.4);';
-        b.innerHTML = "⚠️ <strong>Le CSS de l'application n'a pas chargé.</strong><br>" +
+        b.innerHTML = "⚠ <strong>Le CSS de l'application n'a pas chargé.</strong><br>" +
           "Cause possible : <code style=\"background:rgba(255,255,255,0.2);padding:1px 5px;border-radius:3px;\">tailwind.css</code> introuvable (404) ou corrompu dans le cache. " +
           "<strong>Action :</strong> vide le cache (Outils développeur → Application → Effacer les données) puis recharge (Ctrl+Shift+R)." +
           " <button onclick=\"this.parentElement.remove()\" style=\"margin-left:12px;background:white;color:#dc2626;border:none;padding:5px 12px;border-radius:4px;cursor:pointer;font-weight:bold;font-family:inherit;font-size:13px;\">Fermer</button>";
@@ -180,7 +180,7 @@ if ("serviceWorker" in navigator) {
   });
 </script>
 <style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
+  body { font-family: "App Icons", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
   /* V2.16.0 — Impression : on force le thème clair quel que soit le mode UI.
      Les pages PrintMenuPage / PrintShoppingPage ne portent volontairement pas
      de classes dark: ; ce reset ne sert qu'à neutraliser un éventuel <html
@@ -367,7 +367,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment l'app gère un foyer avec plusieurs profils ?",
-          "a": "Le seuil CG du foyer = MIN des seuils par membre. Logique : un menu compatible avec le membre le plus contraignant convient automatiquement à tous les autres ; l'inverse est faux. Même règle que pour les allergènes. Exemple : foyer 2 adultes (sain × 1, SOPK × 1) + 2 ados (sain × 2) → seuil famille = 80 CG/jour (à cause du SOPK). Pour les goûts, la logique est inverse et volontairement souple : une exclusion préférentielle n'écarte une recette que si TOUS les membres l'excluent, et un « ❤️ J'aime » favorise une recette d'autant plus que de membres l'aiment (Paramètres → Membres), sans jamais passer devant les allergies ni les repères nutritionnels."
+          "a": "Le seuil CG du foyer = MIN des seuils par membre. Logique : un menu compatible avec le membre le plus contraignant convient automatiquement à tous les autres ; l'inverse est faux. Même règle que pour les allergènes. Exemple : foyer 2 adultes (sain × 1, SOPK × 1) + 2 ados (sain × 2) → seuil famille = 80 CG/jour (à cause du SOPK). Pour les goûts, la logique est inverse et volontairement souple : une exclusion préférentielle n'écarte une recette que si TOUS les membres l'excluent, et un « ❤ J'aime » favorise une recette d'autant plus que de membres l'aiment (Paramètres → Membres), sans jamais passer devant les allergies ni les repères nutritionnels."
         },
         {
           "q": "Diabète T1, T2, gestationnel : différences ?",
@@ -386,7 +386,7 @@ if ("serviceWorker" in navigator) {
     {
       "id": "allergenes",
       "label": "Allergènes & intolérances",
-      "icon": "⚠️",
+      "icon": "⚠",
       "qa": [
         {
           "q": "Comment l'app vérifie les allergènes ?",
@@ -417,11 +417,11 @@ if ("serviceWorker" in navigator) {
     {
       "id": "generation",
       "label": "Génération du menu",
-      "icon": "🍽️",
+      "icon": "🍽",
       "qa": [
         {
           "q": "Pourquoi telle recette n'est jamais proposée ?",
-          "a": "Vérifie : (1) Note attribuée ≥ 3★ — les recettes ≤ 2★ sont exclues automatiquement. (2) Saison — la recette est-elle compatible avec la saison courante ? (3) Allergènes — un membre est-il allergique à un ingrédient ? (4) Équipement — la recette demande-t-elle un four/blender que tu n'as pas coché ? (5) Anti-récurrence 14 jours — récemment proposée. (6) Niveau de cuisine. (7) Exclusions préférentielles — tous les membres excluent-ils un de ses ingrédients ? (8) Repères nutritionnels — la semaine a-t-elle déjà atteint le plafond de viande rouge, d'œufs ou de charcuterie ? À l'inverse, un « ❤️ J'aime » rend une recette plus probable mais ne la garantit pas. Si malgré tout absente, ouvre la fiche depuis la Bibliothèque pour voir les filtres bloquants."
+          "a": "Vérifie : (1) Note attribuée ≥ 3★ — les recettes ≤ 2★ sont exclues automatiquement. (2) Saison — la recette est-elle compatible avec la saison courante ? (3) Allergènes — un membre est-il allergique à un ingrédient ? (4) Équipement — la recette demande-t-elle un four/blender que tu n'as pas coché ? (5) Anti-récurrence 14 jours — récemment proposée. (6) Niveau de cuisine. (7) Exclusions préférentielles — tous les membres excluent-ils un de ses ingrédients ? (8) Repères nutritionnels — la semaine a-t-elle déjà atteint le plafond de viande rouge, d'œufs ou de charcuterie ? À l'inverse, un « ❤ J'aime » rend une recette plus probable mais ne la garantit pas. Si malgré tout absente, ouvre la fiche depuis la Bibliothèque pour voir les filtres bloquants."
         },
         {
           "q": "Anti-récurrence : ça marche comment ?",
@@ -445,7 +445,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Mode restes : comment ça fonctionne ?",
-          "a": "Activation via Paramètres → ♻️ Suggestions de recettes utilisant les restes (défaut OFF). Désactivé automatiquement si préparation groupée actif (cohérence). Quand un menu contient une recette qui produit des restes typiques (poulet rôti → poulet cuit, ratatouille → ratatouille, etc.), l'app suggère pour le lendemain ou surlendemain une recette qui les consomme. Suggestion non-bloquante : encadré en haut du planning avec bouton « Appliquer & verrouiller » (remplacement la case) ou « Ignorer »."
+          "a": "Activation via Paramètres → ♻ Suggestions de recettes utilisant les restes (défaut OFF). Désactivé automatiquement si préparation groupée actif (cohérence). Quand un menu contient une recette qui produit des restes typiques (poulet rôti → poulet cuit, ratatouille → ratatouille, etc.), l'app suggère pour le lendemain ou surlendemain une recette qui les consomme. Suggestion non-bloquante : encadré en haut du planning avec bouton « Appliquer & verrouiller » (remplacement la case) ou « Ignorer »."
         },
         {
           "q": "Je pars en vacances / camping avec juste un réchaud : comment adapter les menus ?",
@@ -473,7 +473,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment dire à l'app ce que ma famille aime ?",
-          "a": "Depuis V2.109.0, dans Paramètres → Membres, chaque membre a une rubrique « ❤️ Ce que … aime » : ajoute jusqu'à 10 ingrédients (saumon, lentilles, potiron…), avec suggestions automatiques. Les recettes qui en contiennent sont favorisées dans les menus, d'autant plus que plusieurs membres les aiment — mais jamais imposées : l'effet est volontairement doux et plafonné pour qu'au plus ~1 repas sur 3 en profite (variété garantie). Les « j'aime » ne passent jamais devant les allergies, les exclusions, les repères nutritionnels (viande rouge ≤ 500 g/pers/sem, œufs…), la charge glycémique ni la saison. « Pomme » ne déclenche pas « pomme de terre » ; « saumon » reconnaît « pavé de saumon » ou « saumon fumé ». Dans la bibliothèque, le bouton « 💚 Ce qu'on aime » filtre ces recettes, et la fiche recette indique qui aime quoi (à l'écran seulement : l'impression et le PDF n'affichent aucun prénom)."
+          "a": "Depuis V2.109.0, dans Paramètres → Membres, chaque membre a une rubrique « ❤ Ce que … aime » : ajoute jusqu'à 10 ingrédients (saumon, lentilles, potiron…), avec suggestions automatiques. Les recettes qui en contiennent sont favorisées dans les menus, d'autant plus que plusieurs membres les aiment — mais jamais imposées : l'effet est volontairement doux et plafonné pour qu'au plus ~1 repas sur 3 en profite (variété garantie). Les « j'aime » ne passent jamais devant les allergies, les exclusions, les repères nutritionnels (viande rouge ≤ 500 g/pers/sem, œufs…), la charge glycémique ni la saison. « Pomme » ne déclenche pas « pomme de terre » ; « saumon » reconnaît « pavé de saumon » ou « saumon fumé ». Dans la bibliothèque, le bouton « 💚 Ce qu'on aime » filtre ces recettes, et la fiche recette indique qui aime quoi (à l'écran seulement : l'impression et le PDF n'affichent aucun prénom)."
         }
       ]
     },
@@ -516,19 +516,19 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "À quoi servent les sous-groupes dans la liste de courses ?",
-          "a": "Au sein de chaque catégorie shopping (🥬 Fruits et légumes, 🥩 Viandes et poissons, etc.), les articles sont regroupés par rayon plus fin : « Herbes fraîches » vs « Alliacées » vs « Légumes-racines » vs « Légumes-fruits » vs « Fruits frais », « Poissons gras » vs « Poissons maigres » vs « Fruits de mer », « Yaourts » vs « Fromages » vs « Tofu et dérivés végé », « Féculents secs » vs « Huiles et vinaigres » vs « Oléagineux et graines », « Épices » vs « Herbes séchées » vs « Sel/poivre/basique », etc. C'est utile pour faire les courses dans l'ordre des rayons. Activable / désactivable dans Paramètres → 🏷️ Sous-groupes (défaut ON). L'inférence est automatique par règle (pas de tag manuel sur chaque ingrédient). Les articles non identifiés tombent dans un sous-groupe « Divers » en fin de catégorie."
+          "a": "Au sein de chaque catégorie shopping (🥬 Fruits et légumes, 🥩 Viandes et poissons, etc.), les articles sont regroupés par rayon plus fin : « Herbes fraîches » vs « Alliacées » vs « Légumes-racines » vs « Légumes-fruits » vs « Fruits frais », « Poissons gras » vs « Poissons maigres » vs « Fruits de mer », « Yaourts » vs « Fromages » vs « Tofu et dérivés végé », « Féculents secs » vs « Huiles et vinaigres » vs « Oléagineux et graines », « Épices » vs « Herbes séchées » vs « Sel/poivre/basique », etc. C'est utile pour faire les courses dans l'ordre des rayons. Activable / désactivable dans Paramètres → 🏷 Sous-groupes (défaut ON). L'inférence est automatique par règle (pas de tag manuel sur chaque ingrédient). Les articles non identifiés tombent dans un sous-groupe « Divers » en fin de catégorie."
         },
         {
           "q": "Comment ajouter à la main un produit hors recettes (hygiène, entretien…) ?",
-          "a": "Dans la Liste de courses, une zone « ✍️ Mes ajouts » te laisse noter en texte libre tout ce qui n'est pas dans les recettes (dentifrice, lessive, croquettes du chat, pharmacie…) : une ligne = un article. Ces ajouts s'impriment avec la liste et apparaissent dans le PDF exporté → tu n'as qu'UNE seule liste au magasin, plus besoin d'un deuxième support. Les ajouts sont propres à chaque semaine (ils repartent à zéro la semaine suivante, une fois les produits achetés) et restent 100 % en local sur ton appareil, chiffrés comme le reste de tes données."
+          "a": "Dans la Liste de courses, une zone « ✍ Mes ajouts » te laisse noter en texte libre tout ce qui n'est pas dans les recettes (dentifrice, lessive, croquettes du chat, pharmacie…) : une ligne = un article. Ces ajouts s'impriment avec la liste et apparaissent dans le PDF exporté → tu n'as qu'UNE seule liste au magasin, plus besoin d'un deuxième support. Les ajouts sont propres à chaque semaine (ils repartent à zéro la semaine suivante, une fois les produits achetés) et restent 100 % en local sur ton appareil, chiffrés comme le reste de tes données."
         },
         {
           "q": "Pourquoi une recette contient un ingrédient que j'ai exclu ?",
-          "a": "Si le badge ⚠️🚫 apparaît sur une recette, c'est que l'algorithme a appliqué le fallback exclusions (issue #10). Cas typique : tes exclusions sont si nombreuses qu'il restait moins de 3 recettes éligibles pour ce repas dans la saison. Plutôt que de laisser la case vide, l'app a pioché quand même et te signale la situation. Une bannière apparaît en haut du planning listant les conflits. Solution : assouplis tes exclusions (Paramètres → Membres → Exclusions) ou enrichis ton catalogue. ⚠️ Important : les ALLERGIES médicales ne sont jamais relâchées — seules les préférences de goût (exclusions) peuvent l'être."
+          "a": "Si le badge ⚠🚫 apparaît sur une recette, c'est que l'algorithme a appliqué le fallback exclusions (issue #10). Cas typique : tes exclusions sont si nombreuses qu'il restait moins de 3 recettes éligibles pour ce repas dans la saison. Plutôt que de laisser la case vide, l'app a pioché quand même et te signale la situation. Une bannière apparaît en haut du planning listant les conflits. Solution : assouplis tes exclusions (Paramètres → Membres → Exclusions) ou enrichis ton catalogue. ⚠ Important : les ALLERGIES médicales ne sont jamais relâchées — seules les préférences de goût (exclusions) peuvent l'être."
         },
         {
           "q": "Comment envoyer une recette par message (WhatsApp, Signal, mail…) ?",
-          "a": "Ouvre la recette et touche le bouton « Partager » (le carré avec une flèche vers le haut, en haut de la fiche). L'app fabrique la fiche en PDF, avec les quantités de ce repas, puis ouvre la fenêtre de partage de ton téléphone ou de ton ordinateur : tu choisis l'app (WhatsApp, Signal, Messages, Mail…), « Imprimer » ou « Enregistrer dans Fichiers ». Le PDF est fabriqué sur ton appareil et remis directement à l'app choisie : il ne passe par aucun serveur. Comme sur la fiche imprimée, il ne contient jamais les prénoms de ta famille. Si la fiche met un peu de temps à se préparer, un petit bandeau « La fiche PDF est prête » s'affiche : touche « Partager ». Sur ces appareils, le bouton Partager remplace 🖨️ et 📄 : imprimer et enregistrer en PDF se font depuis la fenêtre de partage. Les navigateurs qui ne savent pas partager (Firefox sur ordinateur, par exemple) gardent 🖨️ Imprimer et 📄 PDF ; pour envoyer la recette, télécharge le PDF puis joins le fichier à ton message."
+          "a": "Ouvre la recette et touche le bouton « Partager » (le carré avec une flèche vers le haut, en haut de la fiche). L'app fabrique la fiche en PDF, avec les quantités de ce repas, puis ouvre la fenêtre de partage de ton téléphone ou de ton ordinateur : tu choisis l'app (WhatsApp, Signal, Messages, Mail…), « Imprimer » ou « Enregistrer dans Fichiers ». Le PDF est fabriqué sur ton appareil et remis directement à l'app choisie : il ne passe par aucun serveur. Comme sur la fiche imprimée, il ne contient jamais les prénoms de ta famille. Si la fiche met un peu de temps à se préparer, un petit bandeau « La fiche PDF est prête » s'affiche : touche « Partager ». Sur ces appareils, le bouton Partager remplace 🖨 et 📄 : imprimer et enregistrer en PDF se font depuis la fenêtre de partage. Les navigateurs qui ne savent pas partager (Firefox sur ordinateur, par exemple) gardent 🖨 Imprimer et 📄 PDF ; pour envoyer la recette, télécharge le PDF puis joins le fichier à ton message."
         },
         {
           "q": "Comment envoyer la liste de courses à la personne qui fait les courses ?",
@@ -536,11 +536,11 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment exporter le menu ou la liste de courses en PDF ?",
-          "a": "Deux modes : (1) bouton 🖨️ « Imprimer » → ouvre le dialogue d'impression du navigateur ; tu peux y choisir « Enregistrer au format PDF » comme imprimante (option disponible sur tous les navigateurs et OS). (2) bouton 📄 « PDF » → téléchargement direct sans dialogue, fichier daté automatiquement (ex : menu-2026-05-15.pdf, liste-courses-2026-05-15.pdf). La 1re utilisation télécharge la bibliothèque html2pdf (~900 Ko, bundle local, pas de CDN) ; ensuite c'est instantané grâce au cache hors-ligne. Tout reste 100 % local : aucune donnée n'est envoyée nulle part. Sur iPhone / iPad : une fois le dialogue d'impression fermé, la page A4 reste affichée — touche l'écran pour revenir à l'app (iOS rend la main avant d'avoir fini de préparer l'impression, l'app attend donc ton retour)."
+          "a": "Deux modes : (1) bouton 🖨 « Imprimer » → ouvre le dialogue d'impression du navigateur ; tu peux y choisir « Enregistrer au format PDF » comme imprimante (option disponible sur tous les navigateurs et OS). (2) bouton 📄 « PDF » → téléchargement direct sans dialogue, fichier daté automatiquement (ex : menu-2026-05-15.pdf, liste-courses-2026-05-15.pdf). La 1re utilisation télécharge la bibliothèque html2pdf (~900 Ko, bundle local, pas de CDN) ; ensuite c'est instantané grâce au cache hors-ligne. Tout reste 100 % local : aucune donnée n'est envoyée nulle part. Sur iPhone / iPad : une fois le dialogue d'impression fermé, la page A4 reste affichée — touche l'écran pour revenir à l'app (iOS rend la main avant d'avoir fini de préparer l'impression, l'app attend donc ton retour)."
         },
         {
           "q": "Comment imprimer une recette ou l'enregistrer en PDF ?",
-          "a": "Depuis V2.108.0, ouvre la fiche d'une recette : deux boutons apparaissent en haut à droite, à côté de ✕. 🖨️ ouvre la fenêtre d'impression de ton appareil avec une fiche A4 propre (sur iPhone/iPad et Mac, cette fenêtre propose aussi « Enregistrer en PDF » ou « Partager »). 📄 télécharge directement un fichier PDF nommé d'après la recette. La fiche contient : temps, difficulté, kcal, CG, les allergènes présents, les ingrédients avec des cases à cocher, et les étapes numérotées. Les quantités sont celles affichées dans la fiche au moment de l'export : si tu l'ouvres depuis ton menu, elles tiennent compte des présents et des invités de ce repas ; depuis la bibliothèque, elles sont calculées pour toute la famille. Confidentialité : le PDF liste les allergènes de la recette mais jamais les prénoms des membres concernés, pour que tu puisses le partager sans exposer de données de santé. Le fichier est généré entièrement sur ton appareil, rien n'est envoyé sur Internet."
+          "a": "Depuis V2.108.0, ouvre la fiche d'une recette : deux boutons apparaissent en haut à droite, à côté de ✕. 🖨 ouvre la fenêtre d'impression de ton appareil avec une fiche A4 propre (sur iPhone/iPad et Mac, cette fenêtre propose aussi « Enregistrer en PDF » ou « Partager »). 📄 télécharge directement un fichier PDF nommé d'après la recette. La fiche contient : temps, difficulté, kcal, CG, les allergènes présents, les ingrédients avec des cases à cocher, et les étapes numérotées. Les quantités sont celles affichées dans la fiche au moment de l'export : si tu l'ouvres depuis ton menu, elles tiennent compte des présents et des invités de ce repas ; depuis la bibliothèque, elles sont calculées pour toute la famille. Confidentialité : le PDF liste les allergènes de la recette mais jamais les prénoms des membres concernés, pour que tu puisses le partager sans exposer de données de santé. Le fichier est généré entièrement sur ton appareil, rien n'est envoyé sur Internet."
         },
         {
           "q": "L'écran de mon téléphone se met en veille pendant que je cuisine : comment l'en empêcher ?",
@@ -575,7 +575,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Apéro 🥂 — sec ou dînatoire/déjeunatoire ?",
-          "a": "Apéro sec : 3-5 amuses-bouches en plus du repas — pour des invités de passage avant le déjeuner ou le dîner. Apéro dînatoire (soir) ou déjeunatoire (midi) : 8-10 bouchées-apéritives qui remplacent entièrement le repas — tu reçois pour la soirée/le midi et tout le monde grignote. Choisis le repas hôte (☀️ déjeuner / 🌙 dîner) et le mode dans l'éditeur."
+          "a": "Apéro sec : 3-5 amuses-bouches en plus du repas — pour des invités de passage avant le déjeuner ou le dîner. Apéro dînatoire (soir) ou déjeunatoire (midi) : 8-10 bouchées-apéritives qui remplacent entièrement le repas — tu reçois pour la soirée/le midi et tout le monde grignote. Choisis le repas hôte (☀ déjeuner / 🌙 dîner) et le mode dans l'éditeur."
         },
         {
           "q": "Ensemble de recettes apéro — d'où viennent-elles ?",
@@ -586,8 +586,8 @@ if ("serviceWorker" in navigator) {
           "a": "Activable sur déjeuner ET dîner (un seul des deux par jour). Le bouton 🍾 pioche une recette de la sélection festive (17 recettes type viandes en croûte, magret, gigot, bourguignon allégé). La case redevient standard si tu désactives (clic 🍾) : un nouveau repas standard est automatiquement pioché, et la compensation CG J-1/J+1 disparaît. Bouton 🎲 sur case festive → repioche dans la sélection festive uniquement."
         },
         {
-          "q": "Compensation glycémique J-1/J+1 ↘️ — c'est quoi ?",
-          "a": "Quand un jour est marqué festif 🍾, l'app applique automatiquement deux ajustements : (1) Le seuil CG du jour festif est relâché à +25 % (le repas festif consomme cette marge). (2) Les jours J-1 et J+1 voient leur seuil CG réduit de 15 % (badge ↘️ sur le header du jour). Référence : ADA 2023 Standards of Care, tolérance des écarts ponctuels. Pas de mémoire cross-semaine en V1 (un festif le dimanche ne compense pas le lundi suivant)."
+          "q": "Compensation glycémique J-1/J+1 ↘ — c'est quoi ?",
+          "a": "Quand un jour est marqué festif 🍾, l'app applique automatiquement deux ajustements : (1) Le seuil CG du jour festif est relâché à +25 % (le repas festif consomme cette marge). (2) Les jours J-1 et J+1 voient leur seuil CG réduit de 15 % (badge ↘ sur le header du jour). Référence : ADA 2023 Standards of Care, tolérance des écarts ponctuels. Pas de mémoire cross-semaine en V1 (un festif le dimanche ne compense pas le lundi suivant)."
         },
         {
           "q": "Maximum 2 jours festifs par semaine ?",
@@ -595,7 +595,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "fenêtre Remplacer 🔀 sur un repas festif — pourquoi filtré ?",
-          "a": "Quand le mode fête est actif, chaque part (🥗 entrée, 🍽️ plat, 🍰 dessert) a son propre bouton 🔀 Remplacer qui ouvre la liste festive du bon type (entrées festives, plats festifs, desserts festifs), et un 🎲 pour repiocher au hasard. Cohérence : tu restes dans la sélection festive. Exception pratique pour le 🍰 dessert : une case « Inclure aussi les desserts non festifs » permet de finir sur une note plus légère (un dessert normal) sans quitter le mode fête. Pour tout voir sur l'entrée/le plat : désactive le mode fête d'abord (clic 🍾)."
+          "a": "Quand le mode fête est actif, chaque part (🥗 entrée, 🍽 plat, 🍰 dessert) a son propre bouton 🔀 Remplacer qui ouvre la liste festive du bon type (entrées festives, plats festifs, desserts festifs), et un 🎲 pour repiocher au hasard. Cohérence : tu restes dans la sélection festive. Exception pratique pour le 🍰 dessert : une case « Inclure aussi les desserts non festifs » permet de finir sur une note plus légère (un dessert normal) sans quitter le mode fête. Pour tout voir sur l'entrée/le plat : désactive le mode fête d'abord (clic 🍾)."
         },
         {
           "q": "Astérisque budget *  — qu'est-ce que ça signale ?",
@@ -622,7 +622,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Profils sportifs : endurance / intermittent / force, quelle différence ?",
-          "a": "🏃 Endurance (course, vélo, natation, triathlon) : seuil CG non pertinent (timing > total), protéines 1.3 g/kg/j. 🎾 Intermittent (tennis, padel, squash, sports collectifs, crossfit) : seuil CG 110/150, protéines 1.5 g/kg/j. 🏋️ Force (haltérophilie, sprint, sports de saut) : seuil CG 130/180 (tolère plus de glucides, l'insulinosensibilité musculaire est meilleure), protéines 1.8 g/kg/j. Le seuil CG du foyer = MIN des profils des membres (le plus contraignant gagne)."
+          "a": "🏃 Endurance (course, vélo, natation, triathlon) : seuil CG non pertinent (timing > total), protéines 1.3 g/kg/j. 🎾 Intermittent (tennis, padel, squash, sports collectifs, crossfit) : seuil CG 110/150, protéines 1.5 g/kg/j. 🏋 Force (haltérophilie, sprint, sports de saut) : seuil CG 130/180 (tolère plus de glucides, l'insulinosensibilité musculaire est meilleure), protéines 1.8 g/kg/j. Le seuil CG du foyer = MIN des profils des membres (le plus contraignant gagne)."
         },
         {
           "q": "Champs « poids » et « heures de sport » — à quoi ça sert ?",
@@ -634,11 +634,11 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Mode compétition 🏆 — comment ça marche ?",
-          "a": "Sur le header d'un jour, clic 🏆 ouvre l'éditeur de compétition : choix du type (endurance / intermittent / force / combat), durée prévue en minutes, note libre (ex « Marathon Paris »). L'app marque automatiquement les jours adjacents avec leur phase nutritionnelle : ↗️ carb-load J-3 à J-1 (uniquement endurance ≥ 90 min), 📋 veille de compé, 🏆 jour J, 🔋 récupération J+1 et J+2."
+          "a": "Sur le header d'un jour, clic 🏆 ouvre l'éditeur de compétition : choix du type (endurance / intermittent / force / combat), durée prévue en minutes, note libre (ex « Marathon Paris »). L'app marque automatiquement les jours adjacents avec leur phase nutritionnelle : ↗ carb-load J-3 à J-1 (uniquement endurance ≥ 90 min), 📋 veille de compé, 🏆 jour J, 🔋 récupération J+1 et J+2."
         },
         {
           "q": "Carb-load J-3 à J-1 — à quoi ça sert ?",
-          "a": "Pour les épreuves d'endurance longues (≥ 90 min : marathon, triathlon, cyclosportive, long ski de fond), saturer les réserves musculaires en glycogène permet de retarder le « mur » et tenir plus longtemps. Cible : 8-12 g/kg/j de glucides ces 3 jours (vs 5-7 g/kg/j hors compé). Le bandeau ↗️ apparaît mais sans filtre strict — c'est à l'athlète d'augmenter ses portions de céréales complètes / quinoa / patate douce / fruits."
+          "a": "Pour les épreuves d'endurance longues (≥ 90 min : marathon, triathlon, cyclosportive, long ski de fond), saturer les réserves musculaires en glycogène permet de retarder le « mur » et tenir plus longtemps. Cible : 8-12 g/kg/j de glucides ces 3 jours (vs 5-7 g/kg/j hors compé). Le bandeau ↗ apparaît mais sans filtre strict — c'est à l'athlète d'augmenter ses portions de céréales complètes / quinoa / patate douce / fruits."
         },
         {
           "q": "Repas pré-compé 🏆 — pourquoi peu fibres / lipides ?",
@@ -673,7 +673,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pictogrammes types de repas",
-          "a": "☀️ petit-déjeuner. 🥗 déjeuner. 🌙 dîner. 🍪 goûter (optionnel). 🍰 dessert (optionnel, attaché au déjeuner ou au dîner selon préférence). 🥗 / 🍽️ / 🍰 sont aussi utilisés dans la card du mode fête pour distinguer entrée / plat / dessert."
+          "a": "☀ petit-déjeuner. 🥗 déjeuner. 🌙 dîner. 🍪 goûter (optionnel). 🍰 dessert (optionnel, attaché au déjeuner ou au dîner selon préférence). 🥗 / 🍽 / 🍰 sont aussi utilisés dans la card du mode fête pour distinguer entrée / plat / dessert."
         },
         {
           "q": "Pictogrammes du bandeau nutrition",
@@ -681,15 +681,15 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pictogrammes du bandeau budget et historique",
-          "a": "💰 coût estimé / cible budget. * astérisque rose : événements spéciaux (invités, apéro, fête) ajustent le coût. ⭐ / ☆ favori (étoile pleine = favori du foyer, augmente la probabilité de pioche). 📊 historique. 🛒 jour des courses / liste de courses agrégée. 🖨️ imprimer le menu (dialogue navigateur). 📄 télécharger en PDF (fichier daté, sans dialogue)."
+          "a": "💰 coût estimé / cible budget. * astérisque rose : événements spéciaux (invités, apéro, fête) ajustent le coût. ⭐ / ☆ favori (étoile pleine = favori du foyer, augmente la probabilité de pioche). 📊 historique. 🛒 jour des courses / liste de courses agrégée. 🖨 imprimer le menu (dialogue navigateur). 📄 télécharger en PDF (fichier daté, sans dialogue)."
         },
         {
           "q": "Pictogrammes du modal recette (fiche détaillée)",
-          "a": "⏱ temps de préparation actif. 🔥 temps de cuisson. ❄️ repos passif (frigo, marinade, prise au froid). ⏰ délai d'avance minimum requis (ex : 3h à l'avance) ou 🌙 la veille. 📊 niveau de difficulté (étoiles 1 à 3). 🔢 calories par portion. 🗓 saison(s) où la recette est proposée. ⚠️ hors saison (en rouge orangé) si la recette ne correspond pas à la saison courante mais le filtre saisonnier est désactivé. 🍱 recette préparable à l'avance (batch-friendly, conservable 3-4 jours). 🖨️ imprimer la fiche (ou « Enregistrer en PDF » depuis la fenêtre d'impression). 📄 télécharger directement la fiche en PDF. ❤️ badge « Prénom ❤️ ingrédient » : un membre aime un ingrédient de cette recette (affiché à l'écran seulement, jamais imprimé)."
+          "a": "⏱ temps de préparation actif. 🔥 temps de cuisson. ❄ repos passif (frigo, marinade, prise au froid). ⏰ délai d'avance minimum requis (ex : 3h à l'avance) ou 🌙 la veille. 📊 niveau de difficulté (étoiles 1 à 3). 🔢 calories par portion. 🗓 saison(s) où la recette est proposée. ⚠ hors saison (en rouge orangé) si la recette ne correspond pas à la saison courante mais le filtre saisonnier est désactivé. 🍱 recette préparable à l'avance (batch-friendly, conservable 3-4 jours). 🖨 imprimer la fiche (ou « Enregistrer en PDF » depuis la fenêtre d'impression). 📄 télécharger directement la fiche en PDF. ❤ badge « Prénom ❤ ingrédient » : un membre aime un ingrédient de cette recette (affiché à l'écran seulement, jamais imprimé)."
         },
         {
           "q": "Pictogrammes de navigation et vues",
-          "a": "📅 / 🗓️ vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘️ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %). ⭐ filtre favoris de la bibliothèque. 💚 filtre « Ce qu'on aime » : uniquement les recettes contenant un ingrédient aimé par un membre (visible dès qu'un « J'aime » est renseigné)."
+          "a": "📅 / 🗓 vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %). ⭐ filtre favoris de la bibliothèque. 💚 filtre « Ce qu'on aime » : uniquement les recettes contenant un ingrédient aimé par un membre (visible dès qu'un « J'aime » est renseigné)."
         }
       ]
     },
@@ -742,7 +742,7 @@ if ("serviceWorker" in navigator) {
     {
       "id": "about",
       "label": "À propos",
-      "icon": "ℹ️",
+      "icon": "ℹ",
       "qa": [
         {
           "q": "✨ Nouvelle interface : qu'est-ce qui change, et comment revenir à l'ancienne ?",
@@ -778,8 +778,8 @@ if ("serviceWorker" in navigator) {
 {
   "schema": 1,
   "items": [
-    {"id": "francais", "label": "Français", "emoji": "🇫🇷"},
-    {"id": "italien", "label": "Italien", "emoji": "🇮🇹"},
+    {"id": "francais", "label": "Français", "emoji": "🥖"},
+    {"id": "italien", "label": "Italien", "emoji": "🍕"},
     {"id": "mediterraneen", "label": "Méditerranéen", "emoji": "🫒"},
     {"id": "asiatique", "label": "Asiatique", "emoji": "🥢"},
     {"id": "indien", "label": "Indien", "emoji": "🍛"},
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.143.2"></script>
+<script src="data/recipes.js?v=2.144.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -12052,7 +12052,7 @@ function daysOrderedFor(shoppingDay = 1) {
   return {days, daysShort, offsetDays};
 }
 const ALL_MEALS = [
-  {key:"breakfast", label:"Petit-déjeuner", icon:"☀️"},
+  {key:"breakfast", label:"Petit-déjeuner", icon:"☀"},
   {key:"lunch",     label:"Déjeuner",       icon:"🥗"},
   {key:"snack",     label:"Goûter",         icon:"🍪"},
   {key:"dinner",    label:"Dîner",          icon:"🌙"},
@@ -12061,7 +12061,7 @@ const ALL_MEALS = [
 // Repas "plats principaux" (hors dessert rattaché) pour la génération et l'affichage principal
 function getMealsForProfile(profile) {
   const meals = [
-    {key:"breakfast", label:"Petit-déjeuner", icon:"☀️"},
+    {key:"breakfast", label:"Petit-déjeuner", icon:"☀"},
     {key:"lunch",     label:"Déjeuner",       icon:"🥗"},
   ];
   if (profile?.snackEnabled) meals.push({key:"snack", label:"Goûter", icon:"🍪"});
@@ -12078,7 +12078,7 @@ function getAllActiveSlots(profile) {
 }
 // Compatibilité : conservé pour certains helpers existants
 const MEALS = [
-  {key:"breakfast", label:"Petit-déjeuner", icon:"☀️"},
+  {key:"breakfast", label:"Petit-déjeuner", icon:"☀"},
   {key:"lunch",     label:"Déjeuner",       icon:"🥗"},
   {key:"dinner",    label:"Dîner",          icon:"🌙"},
 ];
@@ -12380,7 +12380,7 @@ function validateRecipeCatalog(recipes, catalog) {
     return {ok: true, missing: []};
   }
   const list = [...missing.entries()].sort((a, b) => b[1].count - a[1].count);
-  console.warn(`[catalogue] ⚠️ ${missing.size} ingrédient(s) sans entrée catalogue (sur ${catalog.length} entrées) :`);
+  console.warn(`[catalogue] ⚠ ${missing.size} ingrédient(s) sans entrée catalogue (sur ${catalog.length} entrées) :`);
   list.forEach(([k, info]) => console.warn(`  • "${info.original}" → canon="${k}" — utilisé ${info.count}× (recettes : ${[...info.recipes].slice(0,3).join(", ")}${info.recipes.size>3?", …":""})`));
   return {ok: false, missing: list.map(([k, info]) => ({canon: k, original: info.original, count: info.count, recipes: [...info.recipes]}))};
 }
@@ -12402,7 +12402,7 @@ function validateCuisineDistribution(recipes, cuisines) {
     const c = r.cuisine;
     if (!c) untagged++;
     else if (counts.has(c)) counts.set(c, counts.get(c) + 1);
-    else console.warn(`[cuisines] ⚠️ recette ${r.id} a une cuisine inconnue : "${c}"`);
+    else console.warn(`[cuisines] ⚠ recette ${r.id} a une cuisine inconnue : "${c}"`);
   });
   const lines = [`[cuisines] 📊 Distribution sur ${total} recettes :`];
   cuisines.forEach(c => {
@@ -12410,7 +12410,7 @@ function validateCuisineDistribution(recipes, cuisines) {
     const pct = (100 * n / total).toFixed(1);
     lines.push(`  ${c.emoji || ""} ${c.label.padEnd(15)} : ${String(n).padStart(3)} (${pct}%)`);
   });
-  if (untagged > 0) lines.push(`  ⚠️ ${untagged} recette(s) sans champ "cuisine"`);
+  if (untagged > 0) lines.push(`  ⚠ ${untagged} recette(s) sans champ "cuisine"`);
   console.log(lines.join("\n"));
   const warnings = [];
   cuisines.forEach(c => {
@@ -12421,7 +12421,7 @@ function validateCuisineDistribution(recipes, cuisines) {
     else if (c.id !== "universel" && n > 0 && n < 15) warnings.push(`"${c.label}" à ${n} recettes : pool insuffisant (cible ≥ 15 par cuisine).`);
   });
   if (warnings.length > 0) {
-    console.warn("[cuisines] ⚠️ Déséquilibres détectés :");
+    console.warn("[cuisines] ⚠ Déséquilibres détectés :");
     warnings.forEach(w => console.warn("  • " + w));
   }
   return {ok: warnings.length === 0, distribution: Object.fromEntries(counts), warnings};
@@ -12468,7 +12468,7 @@ function getSeason(date) {
 function matchesSeason(recipe, season, profile) {
   // V2.65.0 (#4) — Si profile.includeOutOfSeason, ne filtre plus rien.
   // L'utilisateur signale qu'il accepte de cuisiner hors saison ; un badge
-  // ⚠️ saisonnalité est affiché sur les recettes correspondantes (cards,
+  // ⚠ saisonnalité est affiché sur les recettes correspondantes (cards,
   // modal, planning) pour qu'il sache ce qu'il consomme.
   if (profile && profile.includeOutOfSeason) return true;
   return recipe.seasons.includes("all") || recipe.seasons.includes(season);
@@ -12720,7 +12720,7 @@ function recipeHasExcluded(recipe, exclusions) {
   );
 }
 // V2.92.0 (issue #10) — Retourne la liste des ingrédients d'une recette qui
-// matchent une exclusion (sert au badge ⚠️ et à la bannière fallback).
+// matchent une exclusion (sert au badge ⚠ et à la bannière fallback).
 // Retourne [] si aucun conflit.
 function recipeExclusionConflicts(recipe, exclusions) {
   if (!recipe || !exclusions?.length) return [];
@@ -12756,7 +12756,7 @@ function effectiveExclusions(profile, attendees) {
   }
   return [...new Set([...global, ...(intersection || [])])];
 }
-// V2.109.0 (issue #100) — Préférences positives « ❤️ J'aime » par membre.
+// V2.109.0 (issue #100) — Préférences positives « ❤ J'aime » par membre.
 // member.likes = libellés d'ingrédients saisis (max LIKES_MAX). Effet = BOOST
 // DOUX en génération (weightedPick), jamais un filtre : allergies, exclusions,
 // plafonds nutritionnels, CG et saison sont appliqués en amont et gagnent
@@ -13121,7 +13121,7 @@ const COMPETITION_TYPES = [
     desc: "Course, vélo, natation, triathlon, ski de fond — effort continu > 30 min"},
   {key: "intermittent", label: "Intermittent", icon: "🎾",
     desc: "Tennis, padel, squash, sports collectifs, crossfit — efforts répétés"},
-  {key: "force",        label: "Force / explosif", icon: "🏋️",
+  {key: "force",        label: "Force / explosif", icon: "🏋",
     desc: "Haltérophilie, sprint, sports de saut, lancer — effort court intense"},
   {key: "combat",       label: "Combat / catégorie de poids", icon: "🥊",
     desc: "Boxe, judo, MMA, lutte — gestion poids + récupération post-pesée"},
@@ -13188,7 +13188,7 @@ function competitionPhaseLabel(phase) {
 // Icône courte pour le header du jour
 function competitionPhaseIcon(phase) {
   switch (phase) {
-    case "carb-load":          return "↗️";  // augmentation glucides
+    case "carb-load":          return "↗";  // augmentation glucides
     case "pre-compe-eve":      return "📋";  // pré-compé léger
     case "compe":              return "🏆";  // jour J
     case "recovery-immediate": return "🔋";  // recharge immédiate
@@ -14124,7 +14124,7 @@ function emptyHouseholdPreferences() {
     // Si OFF (défaut) : matchesSeason filtre dur sur la saison de la
     // semaine courante. Si ON : pas de filtre saison ; les recettes hors
     // saison apparaissent dans les pools de génération + bibliothèque,
-    // avec un badge ⚠️ saisonnalité affiché sur leurs cartes / fiche
+    // avec un badge ⚠ saisonnalité affiché sur leurs cartes / fiche
     // pour informer l'utilisateur du choix qu'il fait.
     includeOutOfSeason: false,
     // V2.75.0 (issue #79 Module Réception) — Ratios portion des 4 catégories
@@ -15211,7 +15211,7 @@ function weightedPick(list, ratings, profile, favorites, costBias = 0, mealType 
   if (costBias > 0 && list.length > 0) {
     poolMeanCost = list.reduce((s, r) => s + recipeEffectiveCost(r), 0) / list.length;
   }
-  // V2.109.0 (#100) — Boost « ❤️ J'aime ». likeShare(r) = part des membres du
+  // V2.109.0 (#100) — Boost « ❤ J'aime ». likeShare(r) = part des membres du
   // foyer qui aiment ≥1 ingrédient de r (même granularité foyer que les
   // exclusions en génération). Boost max auto-limité par la prévalence p des
   // recettes « aimées » dans la liste : bMax = min(1.5, (1-p)/(2p)) garantit
@@ -17131,7 +17131,7 @@ const TUTORIAL_STEPS = [
     highlight: "Tour rapide en 6 étapes (≈ 2 min). Tu peux passer à tout moment et reprendre depuis Paramètres.",
   },
   {
-    emoji: "🍽️",
+    emoji: "🍽",
     title: "Génère ton menu",
     body: "L'app crée 7 jours × 5 services (petit-déj / déjeuner / dîner / goûter / dessert) en respectant : profils santé, allergènes, saison, équipement, niveau, budget, anti-récurrence sur 14 jours.",
     highlight: "Bouton « Générer » sur le planning. Tu peux régénérer à tout moment, verrouiller des slots 🔒 pour qu'ils soient préservés, ou remplacer manuellement.",
@@ -17139,14 +17139,14 @@ const TUTORIAL_STEPS = [
   {
     emoji: "📖",
     title: "Fiche recette & filtres",
-    body: "Clique sur un slot pour ouvrir la recette : ingrédients, étapes (style « ado qui cuisine », gestes définis), badges CG/IG, allergènes, kcal, temps. Note tes recettes (1-5★) — les ≤2★ sont exclues. Imprime-la (🖨️) ou télécharge-la en PDF (📄).",
-    highlight: "Dis aussi ce que chacun aime (Paramètres → Membres → ❤️) : ces recettes reviennent plus souvent. Bibliothèque consultable indépendamment du menu, avec filtres (type, favoris ⭐, « 💚 Ce qu'on aime ») et recherche multi-ingrédients (noix + poire).",
+    body: "Clique sur un slot pour ouvrir la recette : ingrédients, étapes (style « ado qui cuisine », gestes définis), badges CG/IG, allergènes, kcal, temps. Note tes recettes (1-5★) — les ≤2★ sont exclues. Imprime-la (🖨) ou télécharge-la en PDF (📄).",
+    highlight: "Dis aussi ce que chacun aime (Paramètres → Membres → ❤) : ces recettes reviennent plus souvent. Bibliothèque consultable indépendamment du menu, avec filtres (type, favoris ⭐, « 💚 Ce qu'on aime ») et recherche multi-ingrédients (noix + poire).",
   },
   {
     emoji: "🛒",
     title: "Liste de courses agrégée",
     body: "À partir du planning, l'app calcule automatiquement la liste de courses : ingrédients fusionnés par nom canonique, quantités scalées par membre/présence, regroupés par catégorie (épicerie, fruits/légumes, viande/poisson…).",
-    highlight: "Coche les articles déjà chez toi pour les exclure. Boutons 🖨️ « Imprimer » (dialogue navigateur) ou 📄 « PDF » (téléchargement direct, fichier daté). Budget total estimé affiché.",
+    highlight: "Coche les articles déjà chez toi pour les exclure. Boutons 🖨 « Imprimer » (dialogue navigateur) ou 📄 « PDF » (téléchargement direct, fichier daté). Budget total estimé affiché.",
   },
   {
     emoji: "🍱",
@@ -17155,7 +17155,7 @@ const TUTORIAL_STEPS = [
     highlight: "L'icône 🍱 « Batch » du planning l'active ou le désactive juste pour la semaine courante. Une page « Préparation [Jour] » apparaît avec to-do séquentielle et estimation du temps total.",
   },
   {
-    emoji: "♻️📔",
+    emoji: "♻📔",
     title: "Restes & journal bien-être (optionnel)",
     body: "Mode restes (Paramètres) : suggère pour le lendemain ou surlendemain une recette qui consomme les restes typiques (poulet rôti, riz cuit, ratatouille…). Journal bien-être (Paramètres) : saisie hebdo de 3 indicateurs (énergie, digestion, sommeil) + notes.",
     highlight: "Ces 2 modes sont opt-in et désactivés par défaut. Active-les si pertinent pour toi.",
@@ -17250,7 +17250,7 @@ function ConsentModal({onConsent}) {
           </div>
 
           <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3">
-            <div className="font-semibold text-amber-900 dark:text-amber-100 mb-1">⚠️ Ce que ça implique</div>
+            <div className="font-semibold text-amber-900 dark:text-amber-100 mb-1">⚠ Ce que ça implique</div>
             <ul className="list-disc list-inside text-slate-700 dark:text-slate-200 space-y-0.5">
               <li><strong>Pas de synchronisation</strong> automatique entre tes appareils (une option arrivera plus tard, opt-in).</li>
               <li>Si tu vides le cache de ton navigateur, <strong>tes données disparaissent</strong>.</li>
@@ -18109,7 +18109,7 @@ function FoyerLabCard({state, update}) {
           )}
           {srv?.approved && srv.isAdmin && adminCount === 1 && (
             <p className="text-sm border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-100 rounded p-3">
-              ⚠️ Cet appareil est le <strong>seul administrateur</strong>. Si son navigateur est effacé (nettoyage, réinitialisation, « supprimer les données à la fermeture »), plus personne ne pourra approuver de nouvel appareil. Ouvre « 📱 Appareils » ci-dessous et clique « Rendre admin » sur un 2ᵉ appareil d'adulte.
+              ⚠ Cet appareil est le <strong>seul administrateur</strong>. Si son navigateur est effacé (nettoyage, réinitialisation, « supprimer les données à la fermeture »), plus personne ne pourra approuver de nouvel appareil. Ouvre « 📱 Appareils » ci-dessous et clique « Rendre admin » sur un 2ᵉ appareil d'adulte.
             </p>
           )}
           <div className="flex flex-wrap gap-2">
@@ -18119,7 +18119,7 @@ function FoyerLabCard({state, update}) {
           {invite && (
             <div className="border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950 rounded p-3 space-y-2">
               <p className="text-sm text-amber-900 dark:text-amber-100 font-medium">
-                ⚠️ Ce QR code et ce code ouvrent TOUTES les données du foyer (allergies, santé). Ne les montre qu'à un appareil de la famille, ne les photographie pas, ne les envoie pas. Masquage automatique dans 2 minutes.
+                ⚠ Ce QR code et ce code ouvrent TOUTES les données du foyer (allergies, santé). Ne les montre qu'à un appareil de la famille, ne les photographie pas, ne les envoie pas. Masquage automatique dans 2 minutes.
               </p>
               <QrCodeSvg text={invite.qr} />
               <p className="text-xs text-slate-600 dark:text-slate-300">Code de secours (si la caméra ne marche pas) :</p>
@@ -18129,7 +18129,7 @@ function FoyerLabCard({state, update}) {
           )}
 
           <div className="border-t border-slate-200 dark:border-slate-700 pt-3 space-y-2">
-            <p className="text-sm font-medium text-slate-700 dark:text-slate-200">☁️ Serveur maison (mini-PC)</p>
+            <p className="text-sm font-medium text-slate-700 dark:text-slate-200">☁ Serveur maison (mini-PC)</p>
             {!srv && (
               <>
                 <p className="text-sm text-slate-600 dark:text-slate-300">
@@ -18138,7 +18138,7 @@ function FoyerLabCard({state, update}) {
                 <div className="flex flex-wrap gap-2 items-center">
                   <input value={labelInput} onChange={e => setLabelInput(e.target.value)} placeholder="Nom de cet appareil"
                     className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm flex-1" />
-                  <button onClick={activateServer} disabled={busy} className={btnMain}>☁️ Activer le serveur maison</button>
+                  <button onClick={activateServer} disabled={busy} className={btnMain}>☁ Activer le serveur maison</button>
                 </div>
               </>
             )}
@@ -18154,9 +18154,9 @@ function FoyerLabCard({state, update}) {
                   {sync.state === "syncing" ? "🔄 Synchronisation…"
                     : sync.state === "pending" ? "⏳ Modifications en attente d'envoi…"
                     : sync.state === "offline" ? "📴 Hors du WiFi de la maison : tes modifications sont gardées et partiront au retour."
-                    : sync.state === "error" ? `⚠️ ${sync.error}`
-                    : sync.state === "ok" ? `☁️ Synchronisé ${sync.at ? `il y a ${Math.max(0, Math.round((Date.now() - sync.at) / 1000))} s` : ""}`
-                    : "☁️ Synchro automatique activée"}
+                    : sync.state === "error" ? `⚠ ${sync.error}`
+                    : sync.state === "ok" ? `☁ Synchronisé ${sync.at ? `il y a ${Math.max(0, Math.round((Date.now() - sync.at) / 1000))} s` : ""}`
+                    : "☁ Synchro automatique activée"}
                 </p>
                 {sync.info && <p className="text-xs text-amber-800 dark:text-amber-200">{sync.info}</p>}
                 <p className="text-xs text-slate-500 dark:text-slate-400">
@@ -18165,7 +18165,7 @@ function FoyerLabCard({state, update}) {
                 <div className="flex flex-wrap gap-2">
                   <button onClick={syncNow} disabled={busy || sync.state === "syncing"} className={btnAlt}>🔄 Synchroniser maintenant</button>
                   <button onClick={loadDevices} disabled={busy} className={btnAlt}>📱 Appareils</button>
-                  {srv.isAdmin && <button onClick={deleteServerHousehold} disabled={busy} className={btnAlt}>🗑️ Supprimer le foyer du serveur</button>}
+                  {srv.isAdmin && <button onClick={deleteServerHousehold} disabled={busy} className={btnAlt}>🗑 Supprimer le foyer du serveur</button>}
                 </div>
               </>
             )}
@@ -18245,7 +18245,7 @@ function FoyerLabCard({state, update}) {
             <div className="flex flex-wrap gap-2 items-center">
               <input value={labelInput} onChange={e => setLabelInput(e.target.value)} placeholder="Nom de cet appareil"
                 className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm flex-1" />
-              <button onClick={requestServerJoin} disabled={busy} className={btnMain}>☁️ Demander l'accès au serveur maison</button>
+              <button onClick={requestServerJoin} disabled={busy} className={btnMain}>☁ Demander l'accès au serveur maison</button>
             </div>
             <p className="text-xs text-slate-500 dark:text-slate-400">ou, en secours, avec le fichier foyer chiffré (foyer-mijoterie-….json) :</p>
             <label className={`${btnAlt} cursor-pointer inline-flex items-center`}>
@@ -18268,14 +18268,14 @@ function FoyerLabCard({state, update}) {
             <p className="text-sm text-slate-700 dark:text-slate-200">
               Foyer déchiffré : <strong>{join.house.members.length} membre(s)</strong>, {Object.keys(join.house.menus || {}).length} semaine(s) de menus
               {join.sealedAt ? ` (fichier du ${join.sealedAt.slice(0, 10)})` : ""}.
-              ⚠️ Il remplacera sur cet appareil la version actuelle de ce foyer (une copie de secours est faite avant).
+              ⚠ Il remplacera sur cet appareil la version actuelle de ce foyer (une copie de secours est faite avant).
             </p>
             <p className="text-sm font-medium text-slate-700 dark:text-slate-200">Qui es-tu ?</p>
             <div className="flex flex-wrap gap-2">
               {join.house.members.map(m => (
                 <button key={m.id} onClick={() => confirmJoin(m.id, "personal")} className={btnMain}>{m.name}</button>
               ))}
-              <button onClick={() => confirmJoin(null, "shared")} className={btnAlt}>👨‍👩‍👧 Appareil partagé (famille)</button>
+              <button onClick={() => confirmJoin(null, "shared")} className={btnAlt}>👪 Appareil partagé (famille)</button>
             </div>
             <div><button onClick={cancelJoin} className={btnAlt}>Annuler</button></div>
           </div>
@@ -18438,7 +18438,7 @@ function RecoveryView({onResolved}) {
           </div>
 
           <div className="border border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-950 rounded p-3">
-            <div className="font-semibold text-red-900 dark:text-red-100 mb-2">🗑️ Tout réinitialiser</div>
+            <div className="font-semibold text-red-900 dark:text-red-100 mb-2">🗑 Tout réinitialiser</div>
             <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
               Si tu n'as pas de backup, tu peux repartir à zéro. Toutes les données chiffrées
               seront supprimées définitivement.
@@ -18857,7 +18857,7 @@ function App({initialState}) {
     let pool = RECIPES.filter(r => passHardFilters(r) && !recipeHasExcluded(r, exclusions));
     // Fallback issue #10 : si <3 recettes éligibles après application des
     // exclusions, on relâche les exclusions (filtres durs restent en place).
-    // La recette pioché aura recipeExclusionConflicts() non-vide → badge ⚠️
+    // La recette pioché aura recipeExclusionConflicts() non-vide → badge ⚠
     // sur la slot + bannière de tête expliquant la situation à l'utilisateur.
     if (pool.length < 3) {
       const fallbackPool = RECIPES.filter(passHardFilters);
@@ -19338,7 +19338,7 @@ function ThemeToggle({className = "no-print px-3 py-2 rounded-md text-sm font-me
     return () => mq.removeEventListener("change", handler);
   }, [theme]);
   const cycle = () => setTheme(t => t === "auto" ? "light" : t === "light" ? "dark" : "auto");
-  const icon  = theme === "auto" ? "🌓" : theme === "dark" ? "🌙" : "☀️";
+  const icon  = theme === "auto" ? "🌓" : theme === "dark" ? "🌙" : "☀";
   const label = theme === "auto" ? "Auto" : theme === "dark" ? "Sombre" : "Clair";
   return (
     <button onClick={cycle}
@@ -19450,12 +19450,12 @@ function FaqView() {
 function TopBar({view, setView}) {
   const tabs = [
     {key:"menu",     label:"Planning",      icon:"📅"},
-    {key:"month",    label:"Vue mensuelle", icon:"🗓️"},
+    {key:"month",    label:"Vue mensuelle", icon:"🗓"},
     {key:"shopping", label:"Liste courses", icon:"🛒"},
     {key:"library",  label:"Recettes",      icon:"📖"},
     {key:"history",  label:"Historique",    icon:"📊"},
     {key:"faq",      label:"Aide",          icon:"❓"},
-    {key:"settings", label:"Paramètres",    icon:"⚙️"},
+    {key:"settings", label:"Paramètres",    icon:"⚙"},
   ];
   return (
     <header className="no-print bg-gradient-to-r from-emerald-700 to-teal-600 dark:from-emerald-900 dark:to-teal-900 text-white shadow-lg">
@@ -19729,7 +19729,7 @@ function SetupView({state, update, updateProfile, onDone}) {
     {title:"Allergies & intolérances", content: (
       <div className="space-y-3">
         <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3">
-          <p className="text-amber-900 dark:text-amber-100 text-sm font-medium">⚠️ Allergies et intolérances — enjeu de sécurité</p>
+          <p className="text-amber-900 dark:text-amber-100 text-sm font-medium">⚠ Allergies et intolérances — enjeu de sécurité</p>
           <p className="text-amber-800 dark:text-amber-200 text-xs mt-1">Étape facultative : ne coche que si nécessaire. Les allergènes sélectionnés passent en rouge et les recettes les contenant seront strictement exclues.</p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -19891,7 +19891,7 @@ function AllergenNoticeBanner({profile, onDismiss, onOpen}) {
   if (!Array.isArray(notice) || !notice.length) return null;
   return (
     <div role="alert" className="no-print mb-4 bg-red-50 dark:bg-red-950 border border-red-300 dark:border-red-700 rounded-lg p-4 text-sm text-red-900 dark:text-red-100">
-      <p className="font-bold mb-1">⚠️ Allergies : la liste suit maintenant les 14 allergènes européens</p>
+      <p className="font-bold mb-1">⚠ Allergies : la liste suit maintenant les 14 allergènes européens</p>
       <p className="mb-2">« Arachide (cacahuète) » et « Mollusques » ont leur propre case (avant, ils étaient compris dans « Fruits à coque » et « Crustacés »). Ont été ajoutés <strong>par prudence</strong>, pour que rien ne change dans les menus :</p>
       <ul className="list-disc pl-5 mb-2">
         {notice.map((n, i) => (
@@ -20010,7 +20010,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
       {/* V2.80.2 (#65) — Bandeau d'avertissement si menu chargé via fallback rétrocompat shoppingDay */}
       {isShoppingDayFallback && (
         <div className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded-md p-3 flex items-start gap-2">
-          <span className="text-2xl flex-shrink-0">⚠️</span>
+          <span className="text-2xl flex-shrink-0">⚠</span>
           <div className="flex-1">
             <p className="text-sm text-amber-900 dark:text-amber-100">
               <strong>Menu en mode rétrocompat.</strong> Ce menu a été généré pour une fenêtre lundi-dimanche.
@@ -20094,7 +20094,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                     : "Mode batch désactivé cette semaine. Touche pour l'activer : le menu privilégiera les plats à préparer à l'avance."} />
               );
             })()}
-            <ToolIcon icon="🖨️" label="Imprimer" onClick={onPrint} title="Imprimer le menu de la semaine" />
+            <ToolIcon icon="🖨" label="Imprimer" onClick={onPrint} title="Imprimer le menu de la semaine" />
             <ToolIcon icon={pdfBusy ? "⏳" : "📄"} label="PDF" onClick={onPdf} disabled={pdfBusy}
               title="Télécharger le menu de la semaine en PDF (.pdf)" />
           </div>
@@ -20209,7 +20209,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                         🌃
                       </button>
                       {isFeastDay && <span title="Repas festif aujourd'hui (cible CG relâchée temporairement, +25%)" className="w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition">🍾</span>}
-                      {isCompDay && <span title={`Compensation glycémique (J±1 d'un repas festif). Cible CG réduite à ${adjustedCgTarget.low}/j (vs ${cgTarget.low}/j normal). Référence : ADA 2023.`} className="w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition">↘️</span>}
+                      {isCompDay && <span title={`Compensation glycémique (J±1 d'un repas festif). Cible CG réduite à ${adjustedCgTarget.low}/j (vs ${cgTarget.low}/j normal). Référence : ADA 2023.`} className="w-7 h-7 rounded-lg flex items-center justify-center text-sm bg-black/5 dark:bg-white/10 transition">↘</span>}
                       {compPhase && (
                         <button onClick={() => setCompetitionPanel({day: compPhase.eventDay})}
                           title={`${competitionPhaseLabel(compPhase.phase)} — ${compPhase.event.note || COMPETITION_TYPES.find(t => t.key === compPhase.event.type)?.label || ""} (clic pour éditer)`}
@@ -20250,9 +20250,9 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                             🥂 Apéro {label} {apero.note && <span className="font-normal italic">· {apero.note}</span>}
                           </span>
                           <div className="flex gap-1.5 mb-1 flex-wrap">
-                            <button title="Éditer invités / mode" onClick={()=>setAperoPanel({day, meal: aperoHostMeal})} className="text-xs hover:opacity-70">✏️</button>
+                            <button title="Éditer invités / mode" onClick={()=>setAperoPanel({day, meal: aperoHostMeal})} className="text-xs hover:opacity-70">✏</button>
                             <button title="Régénérer les amuses-bouches" onClick={()=>regenerateSlotApero(day)} className="text-xs hover:opacity-70">🎲</button>
-                            <button title="Supprimer l'apéro" onClick={()=>{ if (confirm("Supprimer l'apéro de ce jour ?")) clearSlotApero(day); }} className="text-xs hover:opacity-70">🗑️</button>
+                            <button title="Supprimer l'apéro" onClick={()=>{ if (confirm("Supprimer l'apéro de ce jour ?")) clearSlotApero(day); }} className="text-xs hover:opacity-70">🗑</button>
                             {aperoGuestN > 0 && <span className="text-xs text-fuchsia-700 dark:text-fuchsia-300 font-bold">🎉 +{aperoGuestN}</span>}
                           </div>
                           <ul className="text-xs space-y-0.5">
@@ -20314,7 +20314,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                           </div>
                           {feastNote && <div className="text-[11px] italic text-rose-700 dark:text-rose-300 mb-1">{feastNote}</div>}
                           {subCard("entry", "🥗", "Entrée", entryR)}
-                          {subCard("main", "🍽️", "Plat", mainR)}
+                          {subCard("main", "🍽", "Plat", mainR)}
                           {subCard("dessert", "🍰", "Dessert", dessertR)}
                         </div>
                       );
@@ -20399,12 +20399,12 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                                   {recipeAdvanceInfo(recipe).icon}
                                 </span>
                               )}
-                              {/* V2.65.0 (issue #4) — Badge ⚠️ saisonnalité */}
+                              {/* V2.65.0 (issue #4) — Badge ⚠ saisonnalité */}
                               {recipeIsOutOfSeason(recipe, season) && (
                                 <span title={`Hors saison (${SEASON_FR[season]} en cours).`}
-                                      className="text-amber-600 text-sm flex-shrink-0">⚠️</span>
+                                      className="text-amber-600 text-sm flex-shrink-0">⚠</span>
                               )}
-                              {/* V2.92.0 (#10) — Badge ⚠️ exclusion (fallback : pool éligible <3) */}
+                              {/* V2.92.0 (#10) — Badge ⚠ exclusion (fallback : pool éligible <3) */}
                               {(() => {
                                 if (m.key !== "lunch" && m.key !== "dinner") return null;
                                 const excl = effectiveExclusions(state.profile, null);
@@ -20412,7 +20412,7 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                                 if (conflicts.length === 0) return null;
                                 return (
                                   <span title={`Cette recette contient un ingrédient exclus : ${conflicts.join(", ")}.\nL'algo a relâché les exclusions car le pool éligible était <3 recettes.`}
-                                        className="text-orange-600 dark:text-orange-400 text-sm flex-shrink-0 font-bold">⚠️🚫</span>
+                                        className="text-orange-600 dark:text-orange-400 text-sm flex-shrink-0 font-bold">⚠🚫</span>
                                 );
                               })()}
                             </span>
@@ -20487,10 +20487,10 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
                                       {recipeAdvanceInfo(dessertRecipe).icon}
                                     </span>
                                   )}
-                                  {/* V2.65.0 (issue #4) — Badge ⚠️ saisonnalité */}
+                                  {/* V2.65.0 (issue #4) — Badge ⚠ saisonnalité */}
                                   {recipeIsOutOfSeason(dessertRecipe, season) && (
                                     <span title={`Hors saison (${SEASON_FR[season]} en cours).`}
-                                          className="text-amber-600 flex-shrink-0">⚠️</span>
+                                          className="text-amber-600 flex-shrink-0">⚠</span>
                                   )}
                                 </span>
                                 <span className="block text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
@@ -20787,7 +20787,7 @@ function AperoEditorDialog({day, meal, profile, currentApero, onSave, onClose}) 
         <div className="flex gap-2 mb-3">
           <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "lunch" ? "bg-amber-50 dark:bg-amber-950 border-amber-400 dark:border-amber-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
             <input type="radio" name="aperoMeal" checked={selectedMeal === "lunch"} onChange={() => setSelectedMeal("lunch")} />
-            <span className="text-sm font-medium">☀️ Déjeuner</span>
+            <span className="text-sm font-medium">☀ Déjeuner</span>
           </label>
           <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "dinner" ? "bg-indigo-50 dark:bg-indigo-950 border-indigo-400 dark:border-indigo-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
             <input type="radio" name="aperoMeal" checked={selectedMeal === "dinner"} onChange={() => setSelectedMeal("dinner")} />
@@ -20807,7 +20807,7 @@ function AperoEditorDialog({day, meal, profile, currentApero, onSave, onClose}) 
             <input type="radio" name="aperoMode" checked={mode === "dinatoire"} onChange={() => setMode("dinatoire")} className="mt-1" />
             <div className="flex-1">
               <div className="font-medium">Apéro {dinatoireLabel}</div>
-              <div className="text-[11px] text-slate-500 dark:text-slate-400">8-10 finger food qui remplacent le {mealLabel}. ⚠️ Le slot {mealLabel} sera supprimé.</div>
+              <div className="text-[11px] text-slate-500 dark:text-slate-400">8-10 finger food qui remplacent le {mealLabel}. ⚠ Le slot {mealLabel} sera supprimé.</div>
             </div>
           </label>
         </div>
@@ -20895,7 +20895,7 @@ function FeastEditorDialog({day, meal, profile, onSave, onClose}) {
         <div className="flex gap-2 mb-3">
           <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "lunch" ? "bg-amber-50 dark:bg-amber-950 border-amber-400 dark:border-amber-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
             <input type="radio" name="feastMeal" checked={selectedMeal === "lunch"} onChange={() => setSelectedMeal("lunch")} />
-            <span className="text-sm font-medium">☀️ Déjeuner</span>
+            <span className="text-sm font-medium">☀ Déjeuner</span>
           </label>
           <label className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded border cursor-pointer ${selectedMeal === "dinner" ? "bg-indigo-50 dark:bg-indigo-950 border-indigo-400 dark:border-indigo-600" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
             <input type="radio" name="feastMeal" checked={selectedMeal === "dinner"} onChange={() => setSelectedMeal("dinner")} />
@@ -20908,7 +20908,7 @@ function FeastEditorDialog({day, meal, profile, onSave, onClose}) {
           <label className={`flex items-start gap-2 px-3 py-2 rounded border cursor-pointer ${services === 2 ? "bg-rose-50 dark:bg-rose-950 border-rose-300 dark:border-rose-700" : "bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700"}`}>
             <input type="radio" name="feastServices" checked={services === 2} onChange={() => setServices(2)} className="mt-1" />
             <div className="flex-1">
-              <div className="font-medium">🍽️ 2 services — plat + dessert</div>
+              <div className="font-medium">🍽 2 services — plat + dessert</div>
               <div className="text-[11px] text-slate-500 dark:text-slate-400">Formule simple, repas familial festif.</div>
             </div>
           </label>
@@ -21006,7 +21006,7 @@ function CompetitionEditorDialog({day, currentEvent, onSave, onClear, onClose}) 
             onChange={e => setDurationMin(parseInt(e.target.value) || 0)}
             className="w-full px-3 py-2 text-sm rounded border bg-white dark:bg-slate-900 border-slate-300 dark:border-slate-600 focus:outline-none focus:border-amber-500"/>
           <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
-            {willCarbLoad ? "↗️ Carb-load automatique J-3 à J-1 (endurance ≥ 90 min)." : "Pas de carb-load (réservé endurance ≥ 90 min)."}
+            {willCarbLoad ? "↗ Carb-load automatique J-3 à J-1 (endurance ≥ 90 min)." : "Pas de carb-load (réservé endurance ≥ 90 min)."}
           </p>
         </div>
         <div className="mb-3">
@@ -21019,7 +21019,7 @@ function CompetitionEditorDialog({day, currentEvent, onSave, onClear, onClose}) 
         <div className="p-2 rounded bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 text-xs">
           <strong>Modulation auto J-3 à J+2 :</strong>
           <ul className="mt-1 ml-3 list-disc">
-            {willCarbLoad && <li>J-3 à J-1 : carb-load (↗️ glucides 8-12 g/kg/j)</li>}
+            {willCarbLoad && <li>J-3 à J-1 : carb-load (↗ glucides 8-12 g/kg/j)</li>}
             <li>Veille (J-1) : repas léger, peu fibres / lipides</li>
             <li>Jour J : repas pré-compé 3-4 h avant, filtré low-fibres</li>
             <li>J+1 à J+2 : récupération (🔋 ratio glucides:protéines 3:1)</li>
@@ -21029,7 +21029,7 @@ function CompetitionEditorDialog({day, currentEvent, onSave, onClear, onClose}) 
         <div className="flex justify-between gap-2 mt-4">
           {currentEvent ? (
             <button onClick={onClear} className="px-4 py-2 text-red-600 hover:bg-red-50 dark:hover:bg-red-950 rounded text-sm font-medium">
-              🗑️ Supprimer
+              🗑 Supprimer
             </button>
           ) : <span />}
           <div className="flex gap-2">
@@ -21246,7 +21246,7 @@ function printThenOnReturn(onReturn) {
 // V2.131.0 — Partage natif (Web Share API) : la feuille de partage du système
 // propose les apps installées (WhatsApp, Signal, Mail…), Imprimer et
 // Enregistrer dans Fichiers. Absente de certains navigateurs (Firefox sur
-// ordinateur notamment) → bouton masqué, 🖨️ et 📄 restent.
+// ordinateur notamment) → bouton masqué, 🖨 et 📄 restent.
 const CAN_SHARE = typeof navigator !== "undefined" && typeof navigator.share === "function";
 
 // V2.136.0 — Écran allumé pendant qu'une recette est ouverte (mains sales en
@@ -21364,7 +21364,7 @@ function RecipePrintSheet({recipe, mult, qtyLabel}) {
   const meta = [
     `⏱ Préparation ${recipe.prep} min`,
     `🔥 Cuisson ${recipe.cook} min`,
-    recipe.rest > 0 ? `❄️ Repos ${recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10} h` : `${recipe.rest} min`}` : null,
+    recipe.rest > 0 ? `❄ Repos ${recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10} h` : `${recipe.rest} min`}` : null,
     `📊 Difficulté ${"★".repeat(recipe.diff)}${"☆".repeat(Math.max(0, 3 - recipe.diff))}`,
     `🔢 ${recipeKcal(recipe)} kcal/pers`,
     gly ? `📈 CG ${gly.cg} (${glycemicTier(gly.cg) === "low" ? "bas" : glycemicTier(gly.cg) === "medium" ? "modéré" : "élevé"})` : null,
@@ -21381,7 +21381,7 @@ function RecipePrintSheet({recipe, mult, qtyLabel}) {
       </div>
       {recipe.allergens?.length > 0 && (
         <div style={{border: "1.5px solid #dc2626", background: "#fef2f2", color: "#991b1b", borderRadius: "2mm", padding: "2mm 3mm", marginBottom: "4mm", fontWeight: 600}}>
-          ⚠️ Contient : {recipe.allergens.map(a => dataRef.allergenLabel(a)).join(", ")}
+          ⚠ Contient : {recipe.allergens.map(a => dataRef.allergenLabel(a)).join(", ")}
         </div>
       )}
       <h2 style={{fontSize: "13pt", fontWeight: 700, margin: "0 0 1.5mm"}}>
@@ -21399,7 +21399,7 @@ function RecipePrintSheet({recipe, mult, qtyLabel}) {
           ))}
         </tbody>
       </table>
-      <h2 style={{fontSize: "13pt", fontWeight: 700, margin: "0 0 1.5mm"}}>👨‍🍳 Étapes</h2>
+      <h2 style={{fontSize: "13pt", fontWeight: 700, margin: "0 0 1.5mm"}}>🍳 Étapes</h2>
       <ol style={{margin: 0, paddingLeft: 0, listStyle: "none"}}>
         {recipe.steps.map((s, i) => (
           <li key={i} style={{display: "flex", gap: "3mm", marginBottom: "2.5mm", breakInside: "avoid", pageBreakInside: "avoid"}}>
@@ -21431,7 +21431,7 @@ function RecipeHero({recipe, className = "h-44 md:h-64"}) {
   }
   return (
     <div className="relative h-28 md:h-36 bg-gradient-to-br from-sage-soft via-surface-2 to-terracotta-soft flex items-center justify-center" aria-hidden="true">
-      <span className="text-5xl md:text-6xl opacity-80">{(c && c.id !== "universel" && c.emoji) || "🍽️"}</span>
+      <span className="text-5xl md:text-6xl opacity-80">{(c && c.id !== "universel" && c.emoji) || "🍽"}</span>
     </div>
   );
 }
@@ -21500,7 +21500,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
       cancelled = true; setExportMode(null);
       // Partage : on propose d'envoyer la recette en texte plutôt que d'échouer.
       if (exportMode === "share") { setPendingShare({file: null}); return; }
-      alert("La préparation de la fiche prend trop de temps sur cet appareil. Réessaie, ou utilise 🖨️ puis « Enregistrer en PDF » depuis la fenêtre d'impression.");
+      alert("La préparation de la fiche prend trop de temps sur cet appareil. Réessaie, ou utilise 🖨 puis « Enregistrer en PDF » depuis la fenêtre d'impression.");
     }, exportMode === "share" ? 20000 : 45000);
     (async () => {
       try {
@@ -21527,7 +21527,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
         }
       } catch (e) {
         console.error("[pdf] export recette failed", e);
-        alert("Échec de l'export PDF : " + (e.message || "erreur inconnue") + "\nL'impression (🖨️) reste disponible, avec l'option « Enregistrer en PDF ».");
+        alert("Échec de l'export PDF : " + (e.message || "erreur inconnue") + "\nL'impression (🖨) reste disponible, avec l'option « Enregistrer en PDF ».");
       } finally {
         clearTimeout(watchdog);
         if (!cancelled) setExportMode(null);
@@ -21545,7 +21545,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
               <div className="flex flex-wrap gap-1 text-sm">
                 {liked.map(({member, likes}) => (
                   <span key={member.id} className="px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950 border border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200">
-                    {member.name} ❤️ {likes.join(", ")}
+                    {member.name} ❤ {likes.join(", ")}
                   </span>
                 ))}
               </div>
@@ -21558,7 +21558,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             return (
               <div className={`border p-3 rounded text-sm ${isCritical ? "bg-red-100 dark:bg-red-900 border-red-500 text-red-900 dark:text-red-100" : "bg-red-50 dark:bg-red-950 border-red-200 dark:border-red-800 text-red-800 dark:text-red-200"}`}>
                 <div className="flex gap-2 items-start">
-                  <span className="text-xl leading-none">{isCritical ? "🚫" : "⚠️"}</span>
+                  <span className="text-xl leading-none">{isCritical ? "🚫" : "⚠"}</span>
                   <div className="flex-1 space-y-1">
                     <div className="font-semibold">Contient :</div>
                     <div className="flex flex-wrap gap-1">
@@ -21568,7 +21568,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                         const isHit = isFamilyHit || memberHits.length > 0;
                         return (
                           <span key={a} className={`px-2 py-0.5 rounded text-xs border inline-flex items-center gap-1 ${isHit ? "bg-red-600 text-white border-red-700 font-bold" : "bg-white dark:bg-slate-800 text-red-700 dark:text-red-300 border-red-300 dark:border-red-700"}`}>
-                            <span>{isHit ? "🚫" : "⚠️"}</span>
+                            <span>{isHit ? "🚫" : "⚠"}</span>
                             <span>{dataRef.allergenLabel(a)}</span>
                             {memberHits.length > 0 && <span className="italic font-normal text-red-100">— {memberHits.map(m => m.name).join(", ")}</span>}
                             {isFamilyHit && memberHits.length === 0 && <span className="italic font-normal text-red-100">— famille</span>}
@@ -21577,7 +21577,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                       })}
                     </div>
                     {isCritical && (
-                      <p className="font-bold mt-2">⚠️ Allergène incompatible avec votre foyer — cette recette ne devrait pas être proposée par la génération.</p>
+                      <p className="font-bold mt-2">⚠ Allergène incompatible avec votre foyer — cette recette ne devrait pas être proposée par la génération.</p>
                     )}
                   </div>
                 </div>
@@ -21605,7 +21605,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
   );
   const stepsBlock = (
           <div>
-            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">👨‍🍳 Étapes</h3>
+            <h3 className="font-bold text-slate-800 dark:text-slate-100 mb-2">🍳 Étapes</h3>
             <ol className="space-y-3">
               {recipe.steps.map((s,i) => (
                 <li key={i} className="flex gap-3">
@@ -21705,7 +21705,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
               title={isFavorite ? "Retirer des favoris" : "Ajouter aux favoris (boost en génération)"}
               className={`w-10 h-10 rounded-full hover:bg-surface-2 text-xl ${isFavorite ? "" : "opacity-60"}`}>{isFavorite ? "⭐" : "☆"}</button>
           )}
-          {/* V2.132.0 — Partager remplace 🖨️ et 📄 là où il existe (la feuille de
+          {/* V2.132.0 — Partager remplace 🖨 et 📄 là où il existe (la feuille de
               partage propose Imprimer et Enregistrer) ; sinon (Firefox ordinateur) ils restent. */}
           {CAN_SHARE ? (
             <button onClick={() => setExportMode("share")} disabled={!!exportMode} aria-label="Partager la recette"
@@ -21715,7 +21715,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
             <>
               <button onClick={() => setExportMode("print")} disabled={!!exportMode} aria-label="Imprimer la recette"
                 title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
-                className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">🖨️</button>
+                className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">🖨</button>
               <button onClick={() => setExportMode("pdf")} disabled={!!exportMode} aria-label="Télécharger la recette en PDF"
                 title="Télécharger la recette en PDF (quantités de ce repas)"
                 className="w-10 h-10 rounded-full hover:bg-surface-2 text-lg disabled:opacity-40">📄</button>
@@ -21738,19 +21738,19 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                 return (
                   <>
                     <span className={chip}>⏱ {recipe.prep + recipe.cook} min <span className="text-muted">({recipe.prep} prép. · {recipe.cook} cuisson)</span></span>
-                    {recipe.rest > 0 && <span className={chip}>❄️ Repos {recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10} h` : `${recipe.rest} min`}</span>}
+                    {recipe.rest > 0 && <span className={chip}>❄ Repos {recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10} h` : `${recipe.rest} min`}</span>}
                     <span className={chip}>🔢 {recipeKcal(recipe)} kcal</span>
                     {m && <span className={chip} title={`Calculé sur ${m.covered}/${m.total} ingrédients référencés. Précision Ciqual ±10-15 %.`}>P {m.protein} g · L {m.fat} g · G {m.carbs} g</span>}
                     {gly && (
                       <span className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full font-semibold ${tier === "low" ? "bg-brand-soft text-brand" : tier === "medium" ? "bg-terracotta-soft text-terracotta" : "bg-danger-soft text-danger"}`}
                         title={`IG moyen pondéré : ${gly.ig} · CG : ${gly.cg} (≤10 bas, 11-19 modéré, ≥20 élevé — Harvard). Calculé sur ${gly.covered}/${gly.total} ingrédients.`}>
-                        {tier === "low" ? "IG bas ✓" : tier === "medium" ? "IG modéré" : "IG élevé ⚠️"} · CG {gly.cg}
+                        {tier === "low" ? "IG bas ✓" : tier === "medium" ? "IG modéré" : "IG élevé ⚠"} · CG {gly.cg}
                       </span>
                     )}
                     <span className={chip}>💰 ~{recipeEffectiveCost(recipe).toFixed(2)} €/pers</span>
                     <span className={chip}>Difficulté {"●".repeat(recipe.diff)}<span className="text-line">{"●".repeat(3 - recipe.diff)}</span></span>
                     {recentUsageCount > 0 && <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-terracotta-soft text-terracotta font-semibold" title="Nombre de fois où cette recette a été servie ces 15 derniers jours.">🔁 {recentUsageCount}× / 15 j</span>}
-                    {season && recipeIsOutOfSeason(recipe, season) && <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-terracotta-soft text-terracotta font-semibold">⚠️ Hors saison</span>}
+                    {season && recipeIsOutOfSeason(recipe, season) && <span className="inline-flex items-center px-2.5 py-1 rounded-full bg-terracotta-soft text-terracotta font-semibold">⚠ Hors saison</span>}
                   </>
                 );
               })()}
@@ -21811,7 +21811,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                   <button onClick={() => setExportMode("print")} disabled={!!exportMode}
                     title="Imprimer la recette (ou « Enregistrer en PDF » depuis la fenêtre d'impression)"
                     aria-label="Imprimer la recette"
-                    className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">🖨️</button>
+                    className="text-2xl transition hover:scale-110 opacity-80 hover:opacity-100 disabled:opacity-40">🖨</button>
                   <button onClick={() => setExportMode("pdf")} disabled={!!exportMode}
                     title="Télécharger la recette en PDF (quantités de ce repas)"
                     aria-label="Télécharger la recette en PDF"
@@ -21828,7 +21828,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                 <span>⏱ Préparation {recipe.prep} min</span>
                 <span>🔥 Cuisson {recipe.cook} min</span>
                 {recipe.rest > 0 && (
-                  <span>❄️ Repos {recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10}h` : `${recipe.rest} min`}</span>
+                  <span>❄ Repos {recipe.rest >= 60 ? `${Math.round(recipe.rest/60*10)/10}h` : `${recipe.rest} min`}</span>
                 )}
                 <span>📊 Difficulté {"⭐".repeat(recipe.diff)}</span>
                 <span>🔢 {recipeKcal(recipe)} kcal/pers</span>
@@ -21858,7 +21858,7 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                     : "bg-red-500 text-white";
                   const label = tier === "low" ? "IG bas ✓"
                     : tier === "medium" ? "IG modéré"
-                    : "IG élevé ⚠️ ";
+                    : "IG élevé ⚠ ";
                   // V2.95.0 (#83) — En tooltip, montre aussi le tier circadien
                   // par repas (lunch ≤14 / dinner ≤10).
                   const lunchTier = glycemicTierForMeal(gly.cg, "lunch");
@@ -21872,11 +21872,11 @@ function RecipeModal({recipe, profile, season = null, attendees, guests = null, 
                     </span>
                   );
                 })()}
-                {/* V2.65.0 (issue #4) — Badge ⚠️ saisonnalité */}
+                {/* V2.65.0 (issue #4) — Badge ⚠ saisonnalité */}
                 {season && recipeIsOutOfSeason(recipe, season) && (
                   <span className="bg-amber-500 text-white px-2 py-0.5 rounded-full font-semibold"
                     title={`Cette recette n'est pas alignée sur la saison courante. Ses saisons préférées : ${(recipe.seasons || []).map(s => SEASON_FR?.[s] || s).join(", ")}.`}>
-                    ⚠️ Hors saison
+                    ⚠ Hors saison
                   </span>
                 )}
               </div>
@@ -21928,7 +21928,7 @@ function LibraryCardV3({r, isFav, currentSeason, ratings, profile, onOpen}) {
         {r.photo
           ? <img src={r.photo} alt="" loading="lazy" className="w-full aspect-[16/9] object-cover bg-surface-2" />
           : <div className="w-full aspect-[16/9] bg-gradient-to-br from-sage-soft via-surface-2 to-terracotta-soft flex items-center justify-center text-4xl" aria-hidden="true">
-              {((dataRef.cuisines() || []).find(c => c.id === r.cuisine && c.id !== "universel") || {}).emoji || "🍽️"}
+              {((dataRef.cuisines() || []).find(c => c.id === r.cuisine && c.id !== "universel") || {}).emoji || "🍽"}
             </div>}
         {isFav && <span className="absolute left-2 top-2 bg-surface/90 rounded-full w-8 h-8 flex items-center justify-center text-base" title="Recette favorite">⭐</span>}
         {r.photo && <span className="absolute right-2 bottom-2 text-[10px] bg-black/55 text-white px-1.5 py-0.5 rounded-full">Image générée par IA</span>}
@@ -21977,7 +21977,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
   const favSet = new Set(state.favorites || []);
   // V2.65.0 (issue #4) — Saison courante (basée sur aujourd'hui pour la
   // bibliothèque, vs currentWeek dans le planning). Sert à afficher le
-  // badge ⚠️ Hors saison sur les cartes.
+  // badge ⚠ Hors saison sur les cartes.
   const currentSeason = getSeason(new Date());
   const filtered = RECIPES.filter(r => {
     if (filter !== "all" && r.type !== filter) return false;
@@ -22080,7 +22080,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
                 )}
               </h3>
               <span className="text-xs bg-slate-100 dark:bg-slate-700 px-2 py-0.5 rounded">{
-                r.type === "breakfast" ? "☀️ PD"
+                r.type === "breakfast" ? "☀ PD"
                 : r.type === "lunch" ? "🥗 Déj"
                 : r.type === "dinner" ? "🌙 Dîn"
                 : r.type === "dessert" ? "🍰 Des"
@@ -22091,11 +22091,11 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
             <div className="flex flex-wrap gap-1 text-xs text-slate-500 dark:text-slate-400 mb-2 items-center">
               {r.seasons.includes("all") ? <span>🗓 Toute saison</span> :
                 r.seasons.map(s => <span key={s}>🗓 {SEASON_FR[s]}</span>)}
-              {/* V2.65.0 (issue #4) — Badge ⚠️ saisonnalité */}
+              {/* V2.65.0 (issue #4) — Badge ⚠ saisonnalité */}
               {recipeIsOutOfSeason(r, currentSeason) && (
                 <span className="bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 px-1.5 py-0.5 rounded font-semibold border border-amber-300 dark:border-amber-700"
                   title={`Hors saison (saison courante : ${SEASON_FR[currentSeason]}).`}>
-                  ⚠️ Hors saison
+                  ⚠ Hors saison
                 </span>
               )}
             </div>
@@ -22117,7 +22117,7 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
                   ));
                 })()}
               </div>
-              {r.allergens.length > 0 && <span className="text-xs text-red-500">⚠️ {r.allergens.length}</span>}
+              {r.allergens.length > 0 && <span className="text-xs text-red-500">⚠ {r.allergens.length}</span>}
             </div>
           </div>
         ))}
@@ -22195,7 +22195,7 @@ function ShoppingListV3({currentWeek, entries, totalItems, checkedCount, useSubg
               title="Envoyer la liste (articles restants) par message, mail…"
               className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2"><ShareIcon /> Partager</button>
           )}
-          <button onClick={onPrint} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2">🖨️ Imprimer</button>
+          <button onClick={onPrint} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2">🖨 Imprimer</button>
           <button onClick={onPdf} disabled={pdfBusy} className="px-3 py-2 rounded-full border border-line text-sm font-semibold text-ink hover:bg-surface-2 disabled:opacity-50">{pdfBusy ? "⏳ PDF…" : "📄 PDF"}</button>
         </div>
         <p className="text-sm text-muted">Semaine du {formatShort(currentWeek)} · {all} article{all > 1 ? "s" : ""}</p>
@@ -22350,7 +22350,7 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
             className="bg-emerald-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium"><ShareIcon /> Partager</button>
         )}
         <button onClick={onPrint} className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
-          🖨️ Imprimer la liste
+          🖨 Imprimer la liste
         </button>
         <button onClick={onPdf} disabled={pdfBusy}
           className="bg-rose-600 hover:bg-rose-700 disabled:bg-slate-400 disabled:cursor-wait text-white px-4 py-2 rounded-md text-sm font-medium"
@@ -22420,7 +22420,7 @@ function ShoppingView({currentWeek, currentMenu, profile, pantryChecks, onToggle
           persisté localement (chiffré), repris dans le PDF / l'impression. */}
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4">
         <div className="flex flex-wrap items-center gap-2 mb-2">
-          <h3 className="font-bold text-slate-800 dark:text-slate-100">✍️ Mes ajouts</h3>
+          <h3 className="font-bold text-slate-800 dark:text-slate-100">✍ Mes ajouts</h3>
           {manualLineCount > 0 && (
             <span className="text-xs bg-teal-100 dark:bg-teal-900 text-teal-800 dark:text-teal-200 px-2 py-0.5 rounded-full">
               {manualLineCount} ligne{manualLineCount > 1 ? "s" : ""}
@@ -22876,7 +22876,7 @@ function HistoryView({state, setCurrentWeek, onGo}) {
         <h2 className="text-xl font-bold mb-3">📊 Historique & suivi</h2>
         {hiddenCount > 0 && (
           <p className="text-xs bg-sky-50 dark:bg-sky-950 border border-sky-200 dark:border-sky-800 text-sky-800 dark:text-sky-200 rounded p-2 mb-3">
-            ℹ️ {hiddenCount} semaine{hiddenCount > 1 ? "s" : ""} stockée{hiddenCount > 1 ? "s" : ""} sous un autre jour de courses sont masquée{hiddenCount > 1 ? "s" : ""}. Bascule le paramètre « Jour des courses » pour les voir — aucune donnée n'a été supprimée.
+            ℹ {hiddenCount} semaine{hiddenCount > 1 ? "s" : ""} stockée{hiddenCount > 1 ? "s" : ""} sous un autre jour de courses sont masquée{hiddenCount > 1 ? "s" : ""}. Bascule le paramètre « Jour des courses » pour les voir — aucune donnée n'a été supprimée.
           </p>
         )}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -22950,7 +22950,7 @@ function HistoryView({state, setCurrentWeek, onGo}) {
                   stats.avgDayCg == null ? "—"
                   : stats.avgDayCg <= stats.cgTarget.low ? <span className="text-emerald-700 dark:text-emerald-300 font-semibold">dans la cible ✓</span>
                   : stats.avgDayCg <= stats.cgTarget.medium ? <span className="text-amber-700 dark:text-amber-300 font-semibold">modéré</span>
-                  : <span className="text-red-700 dark:text-red-300 font-semibold">au-dessus ⚠️</span>
+                  : <span className="text-red-700 dark:text-red-300 font-semibold">au-dessus ⚠</span>
                 }
               </p>
             </div>
@@ -23239,7 +23239,7 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
     under:       "Sous le budget mensuel ✓",
     ok:          "Dans le budget mensuel ✓",
     "soft-over": "Légèrement au-dessus (dans la tolérance)",
-    "hard-over": "Au-dessus de la tolérance ⚠️ ",
+    "hard-over": "Au-dessus de la tolérance ⚠ ",
   };
 
   const regenerateEmpty = () => {
@@ -23273,7 +23273,7 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
         <button onClick={() => setCurrentWeek(addDays(currentWeek, -28))}
           className="px-3 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded">← 4 sem.</button>
         <div className="flex-1">
-          <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold text-ink" : "text-xl font-bold text-slate-800 dark:text-slate-100"}>{window.__V3_UI ? "Vue mensuelle" : "🗓️ Vue mensuelle"}</h2>
+          <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold text-ink" : "text-xl font-bold text-slate-800 dark:text-slate-100"}>{window.__V3_UI ? "Vue mensuelle" : "🗓 Vue mensuelle"}</h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
             Du {formatShort(currentWeek)} au {formatShort(addDays(currentWeek, 34))}
             {' · '}{monthFmt.format(addDays(currentWeek, 14))}
@@ -23365,7 +23365,7 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
                     💰 {w.cost.toFixed(2)}€
                   </div>
                   <div className="text-xs text-slate-600 dark:text-slate-300 mb-1">
-                    🍽️ {w.filled} / {slotsPerWeek} repas
+                    🍽 {w.filled} / {slotsPerWeek} repas
                   </div>
                   {w.locks > 0 && (
                     <div className="text-xs text-slate-600 dark:text-slate-300">🔒 {w.locks} verrouillé{w.locks>1?"s":""}</div>
@@ -23422,7 +23422,7 @@ function ExclusionsTextarea({value, onChange}) {
   );
 }
 
-// V2.109.0 (#100) — Saisie des « ❤️ J'aime » d'un membre : puces + champ avec
+// V2.109.0 (#100) — Saisie des « ❤ J'aime » d'un membre : puces + champ avec
 // autocomplétion native (<datalist>) sur les libellés de data-ingredients.
 // Saisie libre acceptée (ex. « potiron » même s'il n'est pas en table).
 function LikesEditor({value, onChange, memberId}) {
@@ -23441,7 +23441,7 @@ function LikesEditor({value, onChange, memberId}) {
       <div className="flex flex-wrap gap-1">
         {value.map(l => (
           <span key={l} className="text-xs px-2 py-1 rounded border bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200 inline-flex items-center gap-1">
-            ❤️ {l}
+            ❤ {l}
             <button onClick={() => onChange(value.filter(x => x !== l))} aria-label={`Retirer ${l}`} className="opacity-60 hover:opacity-100">✕</button>
           </span>
         ))}
@@ -23699,7 +23699,7 @@ function ExclusionFallbackBanner({currentMenu, profile}) {
   return (
     <details className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded-lg p-4 group">
       <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-amber-900 dark:text-amber-100">
-        <span className="text-lg">⚠️</span>
+        <span className="text-lg">⚠</span>
         <span>Tes exclusions ont rendu impossible la génération sans elles cette semaine</span>
         <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 group-open:hidden">▼ Détails</span>
         <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 hidden group-open:inline">▲ Replier</span>
@@ -23708,7 +23708,7 @@ function ExclusionFallbackBanner({currentMenu, profile}) {
         <p>
           Pour {conflicts.length} repas, le pool de recettes éligibles est trop maigre après application
           de tes exclusions (<em>{uniqueIngredients.join(", ")}</em>). L'algo a pioché quand même, mais
-          la ou les recettes contiennent ces ingrédients exclus — elles sont marquées d'un badge <span className="font-mono">⚠️ exclusion</span> sur le planning.
+          la ou les recettes contiennent ces ingrédients exclus — elles sont marquées d'un badge <span className="font-mono">⚠ exclusion</span> sur le planning.
         </p>
         <ul className="list-disc pl-5 text-xs space-y-1">
           {conflicts.slice(0, 6).map(c => (
@@ -23737,8 +23737,8 @@ function ToolIcon({icon, label, onClick, title, pressed, disabled, colors}) {
     <button type="button" onClick={onClick} disabled={disabled} title={title} aria-label={title || label}
       aria-pressed={pressed === undefined ? undefined : !!pressed}
       className="w-[64px] flex flex-col items-center gap-1 group disabled:opacity-50 disabled:cursor-wait">
-      <span className={`w-10 h-10 rounded-[12px] flex items-center justify-center text-xl shadow-sm transition-transform group-active:scale-95 ${colors ? "" : "bg-slate-100 dark:bg-slate-700"} ${pressed ? "ring-2 ring-amber-400" : ""}`}
-        style={colors ? {background: `linear-gradient(145deg, ${c1}, ${c2})`} : undefined}>{icon}</span>
+      <span className={`w-10 h-10 rounded-[12px] flex items-center justify-center text-xl shadow-sm transition-transform group-active:scale-95 ${colors ? "" : "bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-200"} ${pressed ? "ring-2 ring-amber-400" : ""}`}
+        style={colors ? {background: `linear-gradient(145deg, ${c1}, ${c2})`, color: "#b45309"} : undefined}>{icon}</span>
       <span className="text-[11px] leading-tight text-slate-600 dark:text-slate-300 truncate w-full text-center">{label}</span>
     </button>
   );
@@ -23774,7 +23774,7 @@ function BudgetChip({cost, adjustedBudget, budgetTier, budgetAdjust, profile, cu
       <button type="button" onClick={e => toggle("budget", e.currentTarget)} aria-expanded={openKey === "budget"}
         aria-label={`Budget : ${cost.toFixed(2)} €${target ? ` sur ${euros(target)}` : ""}${levelText ? ` — ${levelText}` : ""}`}
         className={`relative w-full sm:w-auto flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-2xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 ${openKey === "budget" ? "ring-2 ring-sky-500" : ""}`}>
-        <span className="w-8 h-8 rounded-[10px] flex items-center justify-center text-lg" style={{background: "linear-gradient(145deg, #dcfce7, #86efac)"}}>💰</span>
+        <span className="w-8 h-8 rounded-[10px] flex items-center justify-center text-lg" style={{background: "linear-gradient(145deg, #dcfce7, #86efac)", color: "#15803d"}}>💰</span>
         <span className="flex-1 flex flex-col items-start">
           <span className="text-sm text-slate-800 dark:text-slate-100 leading-tight">
             <strong>{euros(cost)}</strong>{hasAnyEvent && <span className="text-fuchsia-600 dark:text-fuchsia-400 font-bold">*</span>}
@@ -23824,7 +23824,7 @@ function BudgetChip({cost, adjustedBudget, budgetTier, budgetAdjust, profile, cu
             </div>
           )}
           <p className={`mt-2 text-[11px] italic ${stale ? "text-amber-700 dark:text-amber-400 font-semibold not-italic" : "text-slate-500 dark:text-slate-400"}`}>
-            {stale ? `⚠️ Prix datés de ${ageMonths} mois. ` : ""}Estimation sur les prix médians français (Open Prices, Carrefour Drive, INSEE), Q1 2026.
+            {stale ? `⚠ Prix datés de ${ageMonths} mois. ` : ""}Estimation sur les prix médians français (Open Prices, Carrefour Drive, INSEE), Q1 2026.
           </p>
         </AnchoredBubble>
       )}
@@ -24089,10 +24089,10 @@ function NutritionBanner({currentMenu, profile}) {
   items.sort((a, b) => order[a.level] - order[b.level]);
   // Fond d'icône par repère (dégradé doux, façon icône d'app iOS / macOS).
   const TILE_BG = {
-    macroC: ["#fef9c3", "#fde047"], salt: ["#f1f5f9", "#cbd5e1"], macroF: ["#ecfccb", "#bef264"],
-    eggs: ["#fef3c7", "#fcd34d"], red: ["#fee2e2", "#fca5a5"], charc: ["#fce7f3", "#f9a8d4"],
-    fish: ["#e0f2fe", "#7dd3fc"], fishOily: ["#ccfbf1", "#5eead4"], legume: ["#f5e6d3", "#d6b48c"],
-    addedSugars: ["#fae8ff", "#f0abfc"], macroP: ["#ede9fe", "#c4b5fd"],
+    macroC: ["#fef9c3", "#fde047", "#a16207"], salt: ["#f1f5f9", "#cbd5e1", "#475569"], macroF: ["#ecfccb", "#bef264", "#4d7c0f"],
+    eggs: ["#fef3c7", "#fcd34d", "#b45309"], red: ["#fee2e2", "#fca5a5", "#b91c1c"], charc: ["#fce7f3", "#f9a8d4", "#be185d"],
+    fish: ["#e0f2fe", "#7dd3fc", "#0369a1"], fishOily: ["#ccfbf1", "#5eead4", "#0f766e"], legume: ["#f5e6d3", "#d6b48c", "#78350f"],
+    addedSugars: ["#fae8ff", "#f0abfc", "#a21caf"], macroP: ["#ede9fe", "#c4b5fd", "#6d28d9"],
   };
   const LEVEL = BUBBLE_LEVEL;
   const SHORT = {red: "Viande", addedSugars: "Sucres"}; // nom court sous l'icône (complet dans la bulle)
@@ -24116,14 +24116,14 @@ function NutritionBanner({currentMenu, profile}) {
       <div className="flex flex-wrap gap-x-1 gap-y-3">
         {items.map(it => {
           const [name, value] = split(it.label);
-          const [c1, c2] = TILE_BG[it.key] || ["#f1f5f9", "#cbd5e1"];
+          const [c1, c2, fgc] = TILE_BG[it.key] || ["#f1f5f9", "#cbd5e1", "#475569"];
           const active = openKey === it.key;
           return (
             <button key={it.key} type="button" onClick={e => toggleBubble(it.key, e.currentTarget)}
               aria-label={`${name} : ${value} — ${LEVEL[it.level].txt}`} aria-expanded={active}
               className="w-[74px] flex flex-col items-center gap-1 focus:outline-none group">
               <span className={`relative w-12 h-12 rounded-[14px] flex items-center justify-center text-2xl shadow-sm transition-transform group-active:scale-95 ${active ? "ring-2 ring-offset-2 ring-sky-500 dark:ring-offset-slate-800" : ""}`}
-                style={{background: `linear-gradient(145deg, ${c1}, ${c2})`}}>
+                style={{background: `linear-gradient(145deg, ${c1}, ${c2})`, color: fgc}}>
                 {it.icon}
                 <AlertBadge level={it.level} />
               </span>
@@ -24231,7 +24231,7 @@ function LeftoverSuggestions({state, currentMenu, currentWeek, profile, replaceS
   return (
     <details open className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded-lg p-4 group">
       <summary className="cursor-pointer flex flex-wrap items-center gap-2 font-semibold text-amber-900 dark:text-amber-100">
-        <span className="text-lg">♻️</span>
+        <span className="text-lg">♻</span>
         <span>{suggestions.length} suggestion{suggestions.length > 1 ? "s" : ""} de réutilisation des restes</span>
         <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 group-open:hidden">▼ Voir</span>
         <span className="ml-auto text-xs text-amber-700 dark:text-amber-300 hidden group-open:inline">▲ Replier</span>
@@ -24411,7 +24411,7 @@ function BatchPreparation({currentMenu, profile, currentWeek, onSelectRecipe}) {
         <div className="border-t border-amber-300 dark:border-amber-700 pt-3 text-xs text-amber-800 dark:text-amber-200 space-y-1">
           <p><strong>📦 Conservation :</strong> 3-4 jours au frigo dans des boîtes hermétiques. Étiquette chaque boîte avec le nom de la recette et la date.</p>
           <p><strong>🔥 Réchauffage :</strong> doucement à la poêle (feu doux, couvert) ou micro-ondes 50 % puissance. Évite les chocs thermiques (= goût altéré + bactéries).</p>
-          <p><strong>❄️ Congélation :</strong> les mijotés, soupes et chilis se congèlent bien (3 mois max). Évite les recettes à base de salade verte ou de poisson cru.</p>
+          <p><strong>❄ Congélation :</strong> les mijotés, soupes et chilis se congèlent bien (3 mois max). Évite les recettes à base de salade verte ou de poisson cru.</p>
         </div>
       </div>
     </details>
@@ -24425,11 +24425,11 @@ function PoolDiagnostic({profile, currentWeek}) {
   const {openKey, pos, boxRef, toggle} = useAnchoredBubble();
   const filtersHint = "Pour élargir le choix : retire des allergies ou exclusions, ajoute de l'équipement, ou augmente le temps de préparation maximum dans les réglages du foyer.";
   const meals = [
-    {key: "breakfast", icon: "☀️", name: "Petits-déj", full: "Petits-déjeuners", min: 3, colors: ["#fef9c3", "#fde68a"]},
-    {key: "lunch", icon: "🥗", name: "Déjeuners", full: "Déjeuners", min: 7, colors: ["#dcfce7", "#86efac"], rotation: true},
-    {key: "dinner", icon: "🌙", name: "Dîners", full: "Dîners", min: 7, colors: ["#e0e7ff", "#a5b4fc"], rotation: true},
-    {key: "dessert", icon: "🍰", name: "Desserts", full: "Desserts", min: 5, colors: ["#fce7f3", "#f9a8d4"]},
-    ...(profile.snackEnabled ? [{key: "snack", icon: "🍪", name: "Goûters", full: "Goûters", min: 4, colors: ["#ffedd5", "#fdba74"]}] : []),
+    {key: "breakfast", icon: "☀", name: "Petits-déj", full: "Petits-déjeuners", min: 3, colors: ["#fef9c3", "#fde68a", "#b45309"]},
+    {key: "lunch", icon: "🥗", name: "Déjeuners", full: "Déjeuners", min: 7, colors: ["#dcfce7", "#86efac", "#15803d"], rotation: true},
+    {key: "dinner", icon: "🌙", name: "Dîners", full: "Dîners", min: 7, colors: ["#e0e7ff", "#a5b4fc", "#4338ca"], rotation: true},
+    {key: "dessert", icon: "🍰", name: "Desserts", full: "Desserts", min: 5, colors: ["#fce7f3", "#f9a8d4", "#be185d"]},
+    ...(profile.snackEnabled ? [{key: "snack", icon: "🍪", name: "Goûters", full: "Goûters", min: 4, colors: ["#ffedd5", "#fdba74", "#c2410c"]}] : []),
   ].map(m => {
     const n = pool[m.key];
     const level = n < m.min ? "over" : (m.rotation && n < ROTATION_TARGET_RECENT) ? "warning" : "ok";
@@ -24459,7 +24459,7 @@ function PoolDiagnostic({profile, currentWeek}) {
             aria-label={`${m.full} : ${m.n} recettes — ${BUBBLE_LEVEL[m.level].txt}`} aria-expanded={openKey === m.key}
             className="w-[74px] flex flex-col items-center gap-0.5 focus:outline-none group">
             <span className={`relative w-12 h-12 rounded-[14px] flex items-center justify-center text-2xl shadow-sm transition-transform group-active:scale-95 ${openKey === m.key ? "ring-2 ring-offset-2 ring-sky-500 dark:ring-offset-slate-800" : ""}`}
-              style={{background: `linear-gradient(145deg, ${m.colors[0]}, ${m.colors[1]})`}}>
+              style={{background: `linear-gradient(145deg, ${m.colors[0]}, ${m.colors[1]})`, color: m.colors[2]}}>
               {m.icon}
               <AlertBadge level={m.level} />
             </span>
@@ -24843,7 +24843,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               onChange={e => updateProfile({leftoverSuggestionsEnabled: e.target.checked})}
               className="mt-1" />
             <span>
-              <span className="text-sm font-medium">♻️ Suggestions de recettes utilisant les restes</span>
+              <span className="text-sm font-medium">♻ Suggestions de recettes utilisant les restes</span>
               <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                 Quand certaines recettes du planning produisent des restes typiques (poulet rôti, riz cuit, soupes, ratatouille…), suggère pour le lendemain ou le surlendemain une recette qui les consomme. Affichage en haut du planning, suggestion non-bloquante (tu peux toujours ignorer). Désactivé automatiquement quand le mode batch cooking est actif pour la semaine.
               </span>
@@ -24857,7 +24857,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               onChange={e => updateProfile({shoppingSubgroups: e.target.checked})}
               className="mt-1" />
             <span>
-              <span className="text-sm font-medium">🏷️ Sous-groupes dans la liste de courses</span>
+              <span className="text-sm font-medium">🏷 Sous-groupes dans la liste de courses</span>
               <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                 Au sein de chaque catégorie (légumes, viandes, épicerie…), regroupe les articles par rayon : <em>herbes fraîches</em>, <em>alliacées</em>, <em>légumes-racines</em>, <em>légumes-fruits</em>, <em>poissons gras</em> vs <em>maigres</em>, <em>fromages</em> vs <em>yaourts</em>, <em>féculents secs</em>, etc. Pratique pour faire les courses dans l'ordre des rayons. Désactive pour revenir à une liste plate alphabétique par catégorie.
               </span>
@@ -24960,7 +24960,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
   </>);
   return (
     <div className="space-y-4 max-w-3xl">
-      <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold" : "text-xl font-bold"}>{section === "foyer" ? "Mon foyer" : section === "journal" ? "Mon journal bien-être" : section === "technique" ? "Technique" : window.__V3_UI ? "Paramètres" : "⚙️ Paramètres"}</h2>
+      <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold" : "text-xl font-bold"}>{section === "foyer" ? "Mon foyer" : section === "journal" ? "Mon journal bien-être" : section === "technique" ? "Technique" : window.__V3_UI ? "Paramètres" : "⚙ Paramètres"}</h2>
       {actor.shared && !full && (
         <p className="text-sm border border-sky-300 dark:border-sky-700 bg-sky-50 dark:bg-sky-950 text-sky-900 dark:text-sky-100 rounded p-3">
           🔒 Foyer partagé : {actor.actor ? <>tu es <strong>{actor.actor.name}</strong></> : "personne n'est sélectionné sur cet appareil"}.
@@ -25022,7 +25022,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               {/* S6 — Foyer partagé : rôle (promotion co-admin, adultes seulement) + PIN optionnel */}
               {actor.shared && (
                 <div className="flex flex-wrap gap-2 items-center text-xs text-slate-600 dark:text-slate-300">
-                  <span>{mRole === "admin" ? "👑 Admin" : mRole === "coadmin" ? "🛡️ Co-admin" : "👤 Membre"}</span>
+                  <span>{mRole === "admin" ? "👑 Admin" : mRole === "coadmin" ? "🛡 Co-admin" : "👤 Membre"}</span>
                   {actor.canPromote && mRole !== "admin" && (memberAge(m) >= 18
                     ? <button onClick={() => updateMember(m.id, {role: mRole === "coadmin" ? "member" : "coadmin"})}
                         className="underline text-emerald-700 dark:text-emerald-300">{mRole === "coadmin" ? "Rétrograder en membre" : "Promouvoir co-admin"}</button>
@@ -25061,7 +25061,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               )}
               <details className="text-sm" open={memberAllergies.length > 0}>
                 <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
-                  ⚠️ Allergies / intolérances de {m.name || "ce membre"}
+                  ⚠ Allergies / intolérances de {m.name || "ce membre"}
                   {memberAllergies.length > 0 && <span className="ml-1 text-red-700 dark:text-red-300 font-medium">({memberAllergies.length})</span>}
                 </summary>
                 <div className="mt-2 flex flex-wrap gap-1">
@@ -25072,7 +25072,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
                       <button key={k} disabled={locked} title={locked ? "Réservé à l'admin et aux co-admins du foyer" : undefined}
                         onClick={() => active ? removeMemberAllergy(m.id, k) : tryAddMemberAllergy(m.id, k)}
                         className={`text-xs px-2 py-1 rounded border disabled:cursor-not-allowed ${active ? "bg-red-100 dark:bg-red-900 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600"}`}>
-                        {active ? "⚠️ " : ""}{v}
+                        {active ? "⚠ " : ""}{v}
                       </button>
                     );
                   })}
@@ -25090,7 +25090,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               </details>
               <details className="text-sm" open={(m.likes || []).length > 0}>
                 <summary className="cursor-pointer text-slate-700 dark:text-slate-200">
-                  ❤️ Ce que {m.name || "ce membre"} aime
+                  ❤ Ce que {m.name || "ce membre"} aime
                   {(m.likes || []).length > 0 && <span className="ml-1 text-emerald-700 dark:text-emerald-300 font-medium">({(m.likes || []).length})</span>}
                 </summary>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre adore. Les recettes qui en contiennent sont <strong>favorisées</strong> dans les menus (plus le foyer est nombreux à aimer, plus l'effet est marqué), sans jamais être imposées : au plus ~1 repas sur 3 en profite, pour garder de la variété.</p>
@@ -25112,7 +25112,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
       {/* S6 — Réglages du foyer (allergies communes, structure des menus) : admin / co-admin (INV-3) */}
       <fieldset disabled={!full} title={lockTitle} className={`space-y-4 min-w-0 ${full ? "" : "opacity-70"}`}>
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
-        <h3 className="font-bold text-red-800 dark:text-red-200 mb-3">⚠️ Allergies / intolérances de toute la famille</h3>
+        <h3 className="font-bold text-red-800 dark:text-red-200 mb-3">⚠ Allergies / intolérances de toute la famille</h3>
         <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
           Ces allergies s'appliquent à tous les membres. Pour une allergie qui ne concerne qu'une personne, utilise le bloc « Allergies » sous chaque membre dans la section Famille ci-dessus.
         </p>
@@ -25125,7 +25125,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
                 className={`flex items-center gap-2 px-3 py-2 rounded border ${
                   active ? "bg-red-100 dark:bg-red-900 border-red-400 text-red-800 dark:text-red-200 font-medium" : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600"
                 }`}>
-                {active ? "⚠️ " : ""}{v}
+                {active ? "⚠ " : ""}{v}
               </button>
             );
           })}
@@ -25184,9 +25184,9 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
               onChange={e => updateProfile({includeOutOfSeason: e.target.checked})}
               className="mt-1" />
             <span>
-              <span className="text-sm font-medium">⚠️ Inclure les recettes hors saison</span>
+              <span className="text-sm font-medium">⚠ Inclure les recettes hors saison</span>
               <span className="block text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                Par défaut, le générateur et la bibliothèque ne proposent que les recettes alignées sur la saison de la semaine (par ex. ratatouille uniquement en été). Active cette option si tu veux pouvoir cuisiner hors saison (légumes congelés, importations, envies). Les recettes hors saison s'affichent alors avec un badge ⚠️ saisonnalité pour que tu saches ce que tu choisis.
+                Par défaut, le générateur et la bibliothèque ne proposent que les recettes alignées sur la saison de la semaine (par ex. ratatouille uniquement en été). Active cette option si tu veux pouvoir cuisiner hors saison (légumes congelés, importations, envies). Les recettes hors saison s'affichent alors avec un badge ⚠ saisonnalité pour que tu saches ce que tu choisis.
               </span>
             </span>
           </label>
@@ -25367,7 +25367,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
             </p>
             <button onClick={() => setPurgeOrphansOpen(true)}
               className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded text-sm font-medium">
-              🗑️ Voir et purger ({orphanKeys.length})
+              🗑 Voir et purger ({orphanKeys.length})
             </button>
           </div>
         );
@@ -25381,11 +25381,11 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
         </p>
         <div className="flex flex-wrap gap-2">
           <button onClick={exportData} className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded text-sm font-medium">
-            ⬇️ Exporter mes données
+            ⬇ Exporter mes données
           </button>
           {/* Pattern label+input : plus fiable que ref.click() (notamment iOS Safari). */}
           <label className="bg-sky-600 hover:bg-sky-700 text-white px-4 py-2 rounded text-sm font-medium cursor-pointer inline-flex items-center">
-            ⬆️ Importer depuis un fichier
+            ⬆ Importer depuis un fichier
             {/* Android : le joker « tout type » fait ouvrir le sélecteur photos/caméra de Chrome
                 au lieu des fichiers → types non-média uniquement. iOS garde le joker (validé). */}
             <input type="file" accept={/Android/i.test(navigator.userAgent) ? ".json,application/json,text/plain,application/octet-stream" : "application/json,.json,*/*"} onChange={onImportFile} className="sr-only" />
@@ -25476,7 +25476,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
           sortir de ton appareil, même via un script malveillant.
         </div>
         <div className="bg-amber-50 dark:bg-amber-950 border border-amber-200 dark:border-amber-800 rounded p-3 mb-3 text-xs text-amber-900 dark:text-amber-100">
-          <span className="font-semibold">⚠️ Conseil important</span> — Si tu effaces le stockage du site, la
+          <span className="font-semibold">⚠ Conseil important</span> — Si tu effaces le stockage du site, la
           clé est perdue avec. Sur Safari iOS, l'app peut aussi être nettoyée après ~7 jours sans visite (ITP).
           <strong> Fais un export JSON régulièrement</strong> depuis la section Sauvegarde plus haut — c'est
           ton filet de sécurité en cas de pépin.
@@ -25526,7 +25526,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
       {pendingAllergy && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={cancelPendingAllergy}>
           <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 max-w-md w-full p-5" onClick={e => e.stopPropagation()}>
-            <h3 className="text-lg font-bold text-red-800 dark:text-red-200 mb-3">⚠️ Confirmer une allergie médicale</h3>
+            <h3 className="text-lg font-bold text-red-800 dark:text-red-200 mb-3">⚠ Confirmer une allergie médicale</h3>
             <p className="text-sm text-slate-700 dark:text-slate-200 mb-3">
               Vous allez ajouter <strong>{dataRef.allergenLabel(pendingAllergy.allergenId)}</strong>
               {pendingAllergy.scope === "member"
@@ -25551,10 +25551,10 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
             <div className="text-sm text-slate-700 dark:text-slate-200 space-y-1 mb-4">
               <div>📄 Fichier : <span className="font-mono text-xs break-all">{pendingImport.fileName}</span></div>
               <div>📅 Date d'export : {pendingImport.payload.exportedAt?.slice(0, 19).replace("T", " ") || "?"}</div>
-              <div>🏷️ Version d'origine : {pendingImport.payload.appVersion || "?"}</div>
+              <div>🏷 Version d'origine : {pendingImport.payload.appVersion || "?"}</div>
             </div>
             <div className="bg-amber-50 dark:bg-amber-950 border border-amber-300 dark:border-amber-700 rounded p-3 text-sm text-amber-900 dark:text-amber-100 mb-4">
-              ⚠️ Vos données actuelles (profil, menus, notes) seront <strong>remplacées</strong>. Action irréversible — pensez à exporter d'abord si vous voulez garder l'état actuel.
+              ⚠ Vos données actuelles (profil, menus, notes) seront <strong>remplacées</strong>. Action irréversible — pensez à exporter d'abord si vous voulez garder l'état actuel.
             </div>
             {state._households?.[state._session?.activeHouseholdId]?.syncMeta?.hid && pendingImport.payload.data?.schema === 2 && (
               <div className="bg-sky-50 dark:bg-sky-950 border border-sky-300 dark:border-sky-700 rounded p-3 text-sm text-sky-900 dark:text-sky-100 mb-4">
@@ -25650,7 +25650,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
                 </button>
                 <button onClick={doPurge} disabled={!purgeConfirmed}
                   className="px-4 py-2 bg-red-600 hover:bg-red-700 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed text-white rounded font-medium">
-                  🗑️ Supprimer définitivement
+                  🗑 Supprimer définitivement
                 </button>
               </div>
             </div>
@@ -25692,7 +25692,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
   const mult = totalEquivalents(profile);
   // Construit les lignes à imprimer selon la config (goûter, placement dessert)
   const rows = [];
-  rows.push({key:"breakfast", label:"Petit-déjeuner", icon:"☀️"});
+  rows.push({key:"breakfast", label:"Petit-déjeuner", icon:"☀"});
   rows.push({key:"lunch", label:"Déjeuner", icon:"🥗"});
   if ((profile.dessertTime || "dinner") === "lunch") {
     rows.push({key:"dessert", label:"Dessert", icon:"🍰"});
@@ -25878,7 +25878,7 @@ function PrintShoppingPage({weekStart, menu, profile, pantryChecks, manualItems}
           l'impression : une ligne saisie = un article coché à la main. */}
       {(manualItems || "").split("\n").map(l => l.trim()).filter(Boolean).length > 0 && (
         <div className="mt-2 break-inside-avoid">
-          <h2 className="font-bold text-slate-800 border-b border-slate-400 mb-1">✍️ Mes ajouts</h2>
+          <h2 className="font-bold text-slate-800 border-b border-slate-400 mb-1">✍ Mes ajouts</h2>
           <ul className="text-[9.5pt] columns-2 gap-6">
             {(manualItems || "").split("\n").map(l => l.trim()).filter(Boolean).map((line, i) => (
               <li key={i} className="flex items-baseline gap-2 py-0.5 break-inside-avoid">

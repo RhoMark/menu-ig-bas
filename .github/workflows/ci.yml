@@ -135,6 +135,10 @@ jobs:
       - name: Nutrition records (mauvaise fiche)
         run: node scripts/audit-nutrition-duplicates.mjs --check
 
+      # ── Emojis affichés en icônes au trait (police App Icons, V2.144.0) ──
+      - name: Emoji icons coverage
+        run: python3 scripts/audit-emoji-icons.py
+
       # ── 5. HTML basique ─────────────────────────────────────────────
       - name: HTML basic checks
         run: |

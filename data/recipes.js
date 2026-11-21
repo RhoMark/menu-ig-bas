@@ -25403,7 +25403,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Important : le tartare contient de la viande crue. Achète le bœuf chez un boucher de confiance le jour même. Mange-le tout de suite, ne le réchauffe jamais.",
+        "⚠ Important : le tartare contient de la viande crue. Achète le bœuf chez un boucher de confiance le jour même. Mange-le tout de suite, ne le réchauffe jamais.",
         "Pour les frites : préchauffe le four à 220°C. Lave et brosse la patate douce (pas besoin d'éplucher). Coupe en bâtonnets de 1 cm de section.",
         "Dans un saladier, mélange les bâtonnets avec un tiers de l'huile d'olive, sel et poivre.",
         "Étale-les en une seule couche sur une plaque recouverte de papier cuisson — pas en tas, sinon ils ne grillent pas.",
@@ -27009,7 +27009,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Important : le saumon est cru. Achète-le très frais le jour même chez un poissonnier de confiance, demande-lui une qualité 'sashimi' / 'à manger cru'. Ne réutilise pas du saumon entamé.",
+        "⚠ Important : le saumon est cru. Achète-le très frais le jour même chez un poissonnier de confiance, demande-lui une qualité 'sashimi' / 'à manger cru'. Ne réutilise pas du saumon entamé.",
         "Avec un couteau bien aiguisé, hache le saumon en petits dés de 5 mm (au couteau, pas au mixeur).",
         "Coupe l'avocat en dés de la même taille. Émince finement l'échalote.",
         "Dans un bol, mélange le saumon, l'avocat, l'échalote, le jus de citron, le zeste râpé fin, la sauce soja, l'huile d'olive, l'aneth ciselé, sel et poivre.",
@@ -27664,7 +27664,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Avant tout : nettoie les moules. Mets-les dans un grand bol d'eau froide salée (30 g de gros sel par litre) pendant 20 min — elles vont rejeter le sable. Puis frotte chaque moule à la brosse, arrache la barbe (= filaments qui sortent de la coquille).",
+        "⚠ Avant tout : nettoie les moules. Mets-les dans un grand bol d'eau froide salée (30 g de gros sel par litre) pendant 20 min — elles vont rejeter le sable. Puis frotte chaque moule à la brosse, arrache la barbe (= filaments qui sortent de la coquille).",
         "Élimine les moules cassées ou qui restent ouvertes même après une tape. Une moule fraîche se referme quand on la tape.",
         "Émince finement l'échalote. Hache l'ail très fin.",
         "Porte une grande casserole d'eau salée à ébullition. Plonge les linguini complets, cuis al dente selon le paquet (≈ 10-11 min, 1 min de moins que le temps indiqué).",
@@ -28126,7 +28126,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Important : le thon est cru. Achète-le très frais le jour même chez un poissonnier de confiance, qualité 'sashimi' / 'à manger cru'. Ne réutilise pas du thon entamé.",
+        "⚠ Important : le thon est cru. Achète-le très frais le jour même chez un poissonnier de confiance, qualité 'sashimi' / 'à manger cru'. Ne réutilise pas du thon entamé.",
         "Rince le riz complet. Cuis-le dans 2 fois son volume d'eau salée, 25 min à couvert.",
         "Plonge les edamame surgelés 3 min dans une casserole d'eau bouillante salée. Égoutte et refroidis sous l'eau froide.",
         "Avec un couteau bien aiguisé, coupe le thon en cubes de 1,5 cm.",
@@ -30590,7 +30590,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Important : le saumon est cru. Achète-le très frais le jour même chez un poissonnier de confiance, qualité 'sashimi'.",
+        "⚠ Important : le saumon est cru. Achète-le très frais le jour même chez un poissonnier de confiance, qualité 'sashimi'.",
         "Avec un couteau bien aiguisé, coupe le saumon en très fines tranches (2-3 mm) ou en dés de 8 mm.",
         "Dans un bol, mélange le saumon avec le jus de citron vert, le zeste râpé fin, l'huile de sésame, la sauce soja, le gingembre râpé, le piment d'Espelette. Laisse mariner 20-30 min au frigo (le citron vert va légèrement 'cuire' le poisson — comme un ceviche thaï).",
         "Pendant ce temps, coupe la carotte en julienne (très fines lanières), le concombre en demi-rondelles, la mangue en cubes.",
@@ -40355,7 +40355,7 @@ window.__DATA_RECIPES = {
         "Pose le filet dans un plat à four. Enfourne : 12 min pour saignant (cœur 50°C), 16 min pour à point (cœur 60°C), 20 min pour bien cuit (66°C). Utilise un thermomètre à viande si tu en as un, sinon respecte les temps.",
         "Pendant ce temps, prépare les haricots verts. Plonge-les dans une casserole d'eau bouillante salée, 8 min. Égoutte, plonge dans l'eau glacée 1 min pour stopper la cuisson et garder la couleur vive.",
         "Émince l'échalote. Chauffe l'huile dans une poêle à feu moyen, fais revenir l'échalote 2 min, ajoute les haricots verts, sel, poivre. Réchauffe 3 min en remuant.",
-        "Sors le filet du four. ⚠️ ÉTAPE CRUCIALE : couvre de papier alu et laisse reposer 8-10 min. Pendant ce repos, les jus se répartissent dans la viande (sinon ils s'écoulent à la coupe et la viande sèche).",
+        "Sors le filet du four. ⚠ ÉTAPE CRUCIALE : couvre de papier alu et laisse reposer 8-10 min. Pendant ce repos, les jus se répartissent dans la viande (sinon ils s'écoulent à la coupe et la viande sèche).",
         "Tranche le filet en biais, en tranches d'1,5 cm. Dispose sur l'assiette avec les haricots verts. Le bœuf s'effiloche presque tellement il est tendre."
       ],
       "photo": "assets/recipes/d148.webp"
@@ -40778,7 +40778,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Ce dessert se prépare la VEILLE (pas la matinée même) : les graines de chia ont besoin de 4 h minimum (idéalement une nuit) pour gonfler et donner cette texture pudding.",
+        "⚠ Ce dessert se prépare la VEILLE (pas la matinée même) : les graines de chia ont besoin de 4 h minimum (idéalement une nuit) pour gonfler et donner cette texture pudding.",
         "Dans un bocal ou un bol couvert, verse le lait de coco. Ajoute graines de chia, sirop d'érable, vanille.",
         "Mélange énergiquement à la cuillère pendant 30 sec : les graines doivent bien se répartir (sinon elles se collent en grumeaux au fond).",
         "Couvre, place au frigo 4 h minimum (idéalement une nuit). Remue une fois après 15 min pour casser les grumeaux qui peuvent se former.",
@@ -41046,7 +41046,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Recette qui se prépare la veille : il faut au moins 4 h de congélation après mixage. Pour un sorbet bien onctueux, idéalement préparé 24h avant.",
+        "⚠ Recette qui se prépare la veille : il faut au moins 4 h de congélation après mixage. Pour un sorbet bien onctueux, idéalement préparé 24h avant.",
         "Lave et équeute les fraises. Coupe les grosses en quartiers (taille noisette).",
         "Étale les fraises sur une plaque recouverte de papier sulfurisé en couche unique. Place au congélateur 3 h minimum (les fruits congelés mixés donnent une texture sorbet directement, pas besoin de sorbetière).",
         "Sors les fraises congelées. Place-les dans un blender (ou bol haut + mixeur plongeant). Ajoute jus de citron, miel, eau froide, et la moitié du basilic ciselé (l'autre moitié pour la déco).",
@@ -41120,7 +41120,7 @@ window.__DATA_RECIPES = {
         ]
       ],
       "steps": [
-        "⚠️ Cette recette utilise des œufs crus (les blancs ne cuisent pas) : utilise des œufs très frais (date de ponte récente, marqués sur la coquille). Pas pour femmes enceintes ni enfants <3 ans.",
+        "⚠ Cette recette utilise des œufs crus (les blancs ne cuisent pas) : utilise des œufs très frais (date de ponte récente, marqués sur la coquille). Pas pour femmes enceintes ni enfants <3 ans.",
         "Casse le chocolat en morceaux. Mets-le dans un bol résistant à la chaleur.",
         "Fais fondre au bain-marie : pose le bol sur une casserole d'eau frémissante (pas en ébullition, l'eau ne doit pas toucher le bol). Remue avec une spatule jusqu'à ce que le chocolat soit fondu et lisse.",
         "Hors du feu, ajoute le café fort et le miel. Mélange bien. Le café renforce le goût du chocolat sans le dominer (technique pâtissière classique). Laisse tiédir 5 min (sinon le chocolat cuirait les jaunes).",
