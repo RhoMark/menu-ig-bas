@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.147.1</title>
+<title>Menu IG Bas — V2.148.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.147.1">
+<link rel="stylesheet" href="tailwind.css?v=2.148.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.147.1"></script>
+<script src="data/recipes.js?v=2.148.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -19744,8 +19744,8 @@ function SetupView({state, update, updateProfile, onDone}) {
           <p className="text-slate-700 dark:text-slate-200 text-sm font-medium">Exclusions préférentielles</p>
           <p className="text-slate-500 dark:text-slate-400 text-xs mt-1">Ingrédients simplement évités par goût ou conviction. Moins prioritaires que les allergies.</p>
         </div>
-        <p className="text-sm text-slate-600 dark:text-slate-300">Listez les ingrédients à éviter (un par ligne) :</p>
-        <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
+        <p className="text-sm text-slate-600 dark:text-slate-300">Ajoute les ingrédients à éviter, un par un :</p>
+        <ExclusionsEditor listKey="global" value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
       </div>
     )},
     {title:"Budget & contraintes pratiques", content: (
@@ -23349,40 +23349,31 @@ function MonthView({state, currentWeek, setCurrentWeek, update, onGoToWeek}) {
 
 // Textarea contrôlé pour exclusions : conserve le texte brut (newlines autorisés)
 // et ne nettoie en tableau qu'à chaque changement, sans bloquer la saisie.
-function ExclusionsTextarea({value = [], onChange}) {
-  const [raw, setRaw] = useState(value.join("\n"));
-  // Resynchronise si la prop externe change (ex: reset)
-  useEffect(() => {
-    const cleaned = raw.split("\n").map(s => s.trim()).filter(Boolean);
-    if (JSON.stringify(cleaned) !== JSON.stringify(value)) {
-      setRaw(value.join("\n"));
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [value.join("|")]);
-  return (
-    <>
-      <textarea
-        value={raw}
-        onChange={e => {
-          setRaw(e.target.value);
-          const arr = e.target.value.split("\n").map(s => s.trim()).filter(Boolean);
-          onChange(arr);
-        }}
-        placeholder={"champignons\nolives\nmenthe"}
-        rows={5}
-        className="border rounded px-3 py-2 w-full font-mono text-sm" />
-      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Un ingrédient par ligne — utilisez Entrée pour aller à la ligne.</p>
-    </>
-  );
+// V2.148.0 — Exclusions préférentielles : même saisie que « Ce que … aime »
+// (puces + champ avec suggestions), sans limite de nombre.
+function ExclusionsEditor({value = [], onChange, listKey}) {
+  return <ChipListEditor value={value} onChange={onChange} listKey={`excl-${listKey}`} icon="🚫"
+    chipCls="bg-amber-50 dark:bg-amber-950 border-amber-300 dark:border-amber-700 text-amber-900 dark:text-amber-200"
+    iconCls="text-amber-600 dark:text-amber-400" btnCls="bg-amber-600"
+    placeholder="Ex. champignons, olives, menthe…"
+    hint={`${value.length} ingrédient${value.length > 1 ? "s" : ""} évité${value.length > 1 ? "s" : ""} — tape un ingrédient puis Entrée ou « Ajouter ».`} />;
 }
 
 // V2.109.0 (#100) — Saisie des « ❤ J'aime » d'un membre : puces + champ avec
 // autocomplétion native (<datalist>) sur les libellés de data-ingredients.
 // Saisie libre acceptée (ex. « potiron » même s'il n'est pas en table).
 function LikesEditor({value, onChange, memberId}) {
+  return <ChipListEditor value={value} onChange={onChange} listKey={`likes-${memberId}`} max={LIKES_MAX} icon="❤"
+    chipCls="bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200"
+    iconCls="text-rose-500 dark:text-rose-400" btnCls="bg-emerald-600"
+    placeholder="Ex. saumon, lentilles, potiron…"
+    hint={`${value.length}/${LIKES_MAX} — ces ingrédients sont un peu plus souvent proposés, sans jamais passer devant les allergies, les exclusions ni les repères nutritionnels.`} />;
+}
+
+function ChipListEditor({value = [], onChange, listKey, max, icon, chipCls, iconCls, btnCls, placeholder, hint}) {
   const [draft, setDraft] = useState("");
-  const listId = `likes-dl-${memberId}`;
-  const full = value.length >= LIKES_MAX;
+  const listId = `dl-${listKey}`;
+  const full = max ? value.length >= max : false;
   const add = () => {
     const v = draft.trim();
     if (!v || full) return;
@@ -23394,8 +23385,8 @@ function LikesEditor({value, onChange, memberId}) {
     <div>
       <div className="flex flex-wrap gap-1">
         {value.map(l => (
-          <span key={l} className="text-xs px-2 py-1 rounded border bg-emerald-50 dark:bg-emerald-950 border-emerald-300 dark:border-emerald-700 text-emerald-800 dark:text-emerald-200 inline-flex items-center gap-1">
-            <span className="text-rose-500 dark:text-rose-400">❤</span> {l}
+          <span key={l} className={`text-xs px-2 py-1 rounded border inline-flex items-center gap-1 ${chipCls}`}>
+            <span className={iconCls}>{icon}</span> {l}
             <button onClick={() => onChange(value.filter(x => x !== l))} aria-label={`Retirer ${l}`} className="opacity-60 hover:opacity-100">✕</button>
           </span>
         ))}
@@ -23403,15 +23394,15 @@ function LikesEditor({value, onChange, memberId}) {
       <div className="flex gap-2 mt-2">
         <input value={draft} onChange={e => setDraft(e.target.value)} list={listId} disabled={full}
           onKeyDown={e => { if (e.key === "Enter") { e.preventDefault(); add(); } }}
-          placeholder={full ? `Maximum ${LIKES_MAX} atteint` : "Ex. saumon, lentilles, potiron…"}
+          placeholder={full ? `Maximum ${max} atteint` : placeholder}
           className="border rounded px-3 py-2 flex-1 text-sm" />
         <button onClick={add} disabled={full || !draft.trim()}
-          className="text-sm px-3 py-2 rounded bg-emerald-600 text-white disabled:opacity-40">Ajouter</button>
+          className={`text-sm px-3 py-2 rounded text-white disabled:opacity-40 ${btnCls}`}>Ajouter</button>
       </div>
       <datalist id={listId}>
         {REF.ingredients.map(i => <option key={i.id} value={i.label} />)}
       </datalist>
-      <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{value.length}/{LIKES_MAX} — ces ingrédients sont un peu plus souvent proposés, sans jamais passer devant les allergies, les exclusions ni les repères nutritionnels.</p>
+      {hint && <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{hint}</p>}
     </div>
   );
 }
@@ -25154,7 +25145,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
                 </summary>
                 <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">Ingrédients que ce membre préfère éviter (par goût, pas allergique). Une recette est exclue uniquement si <strong>tous les membres présents</strong> au repas excluent l'ingrédient — sinon elle reste proposée.</p>
                 <fieldset disabled={!canTaste(m.id)} className="mt-2 min-w-0">
-                  <ExclusionsTextarea value={m.exclusions || []} onChange={(arr) => updateMember(m.id, {exclusions: arr})} />
+                  <ExclusionsEditor listKey={m.id} value={m.exclusions || []} onChange={(arr) => updateMember(m.id, {exclusions: arr})} />
                 </fieldset>
               </details>
               <details className="text-sm" open={(m.likes || []).length > 0}>
@@ -25192,7 +25183,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-5">
         <h3 className="font-bold text-amber-800 dark:text-amber-200 mb-3">Exclusions préférentielles</h3>
         {section === "foyer" && <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">Ingrédients évités pour toute la famille, par goût (ce ne sont pas des allergies). Pour un seul membre, utilise ses « Exclusions préférentielles » dans sa fiche ci-dessus.</p>}
-        <ExclusionsTextarea value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
+        <ExclusionsEditor listKey="global" value={p.globalExclusions} onChange={(arr) => updateProfile({globalExclusions: arr})} />
       </div>
       </fieldset>
       {/* Nouvelle interface : le foyer partagé (labo) termine « Mon foyer ». */}
