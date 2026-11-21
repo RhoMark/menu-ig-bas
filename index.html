@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.141.0</title>
+<title>Menu IG Bas — V2.142.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.141.0">
+<link rel="stylesheet" href="tailwind.css?v=2.142.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -496,7 +496,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pourquoi mon budget est systématiquement dépassé ?",
-          "a": "Depuis V2.99.1 (issue #71), si le badge budget est en rouge (« hard-over »), un encadré 💡 « Pourquoi ce dépassement ? » apparaît sous le bandeau et te donne 4 pistes d'action : (1) augmenter le budget si réaliste vu la taille de ton foyer (l'app affiche le coût moyen projeté du catalogue) ; (2) ajouter en ⭐ favoris tes recettes peu chères (boost ×1.3 à la pioche) ; (3) vérifier que tes filtres (équipement, niveau, temps de prep) ne sont pas trop restrictifs — un pool étroit force l'algo à piocher dans des recettes plus chères ; (4) activer 🥬 Paramètres → Privilégier ingrédients locaux (exclut les recettes d'épicerie spécialisée souvent plus chères). **Cause racine documentée** : pour un foyer 4-5 adulte-eq avec budget < 250 € et un catalogue dont la médiane de coût est ~3 €/portion, le pool est fondamentalement trop cher. L'optimiseur post-génération V2.99.1 (50 itérations, costBias jusqu'à ×3, seuil relax 2 %) fait son maximum mais ne crée pas de recettes ex nihilo."
+          "a": "Depuis V2.99.1 (issue #71), si le budget est dépassé au-delà de ta tolérance, la pastille 💰 du planning porte un « ! » rouge : touche-la, la bulle qui s'ouvre explique le dépassement et donne 4 pistes d'action : (1) augmenter le budget si réaliste vu la taille de ton foyer (l'app affiche le coût moyen projeté du catalogue) ; (2) ajouter en ⭐ favoris tes recettes peu chères (boost ×1.3 à la pioche) ; (3) vérifier que tes filtres (équipement, niveau, temps de prep) ne sont pas trop restrictifs — un pool étroit force l'algo à piocher dans des recettes plus chères ; (4) activer 🥬 Paramètres → Privilégier ingrédients locaux (exclut les recettes d'épicerie spécialisée souvent plus chères). **Cause racine documentée** : pour un foyer 4-5 adulte-eq avec budget < 250 € et un catalogue dont la médiane de coût est ~3 €/portion, le pool est fondamentalement trop cher. L'optimiseur post-génération V2.99.1 (50 itérations, costBias jusqu'à ×3, seuil relax 2 %) fait son maximum mais ne crée pas de recettes ex nihilo."
         },
         {
           "q": "Comment éviter les recettes avec des ingrédients introuvables près de chez moi ?",
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.141.0"></script>
+<script src="data/recipes.js?v=2.142.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -17152,7 +17152,7 @@ const TUTORIAL_STEPS = [
     emoji: "🍱",
     title: "Mode batch cooking",
     body: "Active depuis Paramètres pour préparer plusieurs repas en une session le week-end. L'algo privilégie les recettes batch-friendly (préparables à l'avance, conservables 3-4 j).",
-    highlight: "Un badge « 🍱 Batch ON/OFF » sur le planning bascule juste pour la semaine courante. Une page « Préparation [Jour] » apparaît avec to-do séquentielle et estimation du temps total.",
+    highlight: "L'icône 🍱 « Batch » du planning l'active ou le désactive juste pour la semaine courante. Une page « Préparation [Jour] » apparaît avec to-do séquentielle et estimation du temps total.",
   },
   {
     emoji: "♻️📔",
@@ -20049,179 +20049,52 @@ function MenuView({state, currentWeek, setCurrentWeek, currentMenu, isShoppingDa
           currentWeek={currentWeek}
           onSelectRecipe={onSelectRecipe} />
       )}
-      <div className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4 flex flex-wrap items-center gap-3">
-        <div className="flex items-center gap-2">
-          <button onClick={()=>setCurrentWeek(addDays(currentWeek,-7))} className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded hover:bg-slate-200 dark:hover:bg-slate-600">←</button>
-          <div>
-            <p className="font-bold text-slate-800 dark:text-slate-100">Semaine du {formatShort(currentWeek)} au {formatShort(endOfWeek)}</p>
-            <p className="text-xs text-slate-500 dark:text-slate-400">{SEASON_FR[season]} · {state.profile.members.length} personne{state.profile.members.length>1?"s":""}</p>
-          </div>
-          <button onClick={()=>setCurrentWeek(addDays(currentWeek,7))} className="px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded hover:bg-slate-200 dark:hover:bg-slate-600">→</button>
-        </div>
-        {/* V2.47.0 (issue #12) — Toggle batch cooking pour la semaine courante.
-            État effectif = override hebdo > préférence globale du foyer. */}
-        {(() => {
-          const wkActive = currentMenu.batchCookingActive;
-          const isActive = typeof wkActive === "boolean" ? wkActive : !!state.profile.batchCookingEnabled;
-          const target = state.profile.batchCookingTarget ?? 5;
-          const dayLbl = SHOPPING_DAY_LABELS[state.profile.batchCookingDay ?? 2];
-          return (
-            <button onClick={toggleBatchActiveForWeek}
-              className={`px-3 py-2 rounded-md text-xs border transition flex items-center gap-1.5 ${
-                isActive
-                  ? "bg-amber-100 dark:bg-amber-900 border-amber-400 dark:border-amber-600 text-amber-800 dark:text-amber-200 font-semibold"
-                  : "bg-slate-100 dark:bg-slate-700 border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400"
-              }`}
-              title={isActive
-                ? `Mode batch ON cette semaine. Cible : ≥${target}/7 jours batch-friendly. Session prévue ${dayLbl}. Cliquer pour désactiver pour cette semaine.`
-                : "Mode batch OFF cette semaine. Cliquer pour activer (force la pioche dans le sous-pool batch-friendly)."}>
-              <span>🍱</span>
-              <span>Batch {isActive ? "ON" : "OFF"}</span>
-              {isActive && <span className="font-normal opacity-75">· {target}/7</span>}
-            </button>
-          );
-        })()}
-        <div className="flex-1"></div>
-        <div className="flex flex-col items-end">
-          {(() => {
-            const tierColors = {
-              under:       "bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700",
-              ok:          "bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 border-emerald-300 dark:border-emerald-700",
-              "soft-over": "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 border-amber-300 dark:border-amber-700",
-              "hard-over": "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 border-red-300 dark:border-red-700",
-            };
-            const tierLabels = {
-              under:       "Sous le budget ✓",
-              ok:          "Pile dans le budget ✓",
-              "soft-over": "Légèrement au-dessus (dans la tolérance)",
-              "hard-over": "Au-dessus de la tolérance ⚠️ ",
-            };
-            const tierClass = budgetTier ? tierColors[budgetTier] : "bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-600";
-            // V2.61.1 — Affichage : cible ajustée (au prorata des slots
-            // non externalisés) à côté de la cible originale si différente.
-            const hasAdjust = budgetAdjust.ratio < 0.999 && state.profile.budgetWeekly > 0;
-            const adjustedDisplay = adjustedBudget.toFixed(0);
-            // V2.75.0 (#79) — Événements invités cette semaine pour astérisque budget
-            const guestEvents = collectGuestEvents(currentMenu, state.profile);
-            // V2.76.0 (#80) — Événements apéro
-            const aperoEvents = collectAperoEvents(currentMenu, state.profile);
-            const hasGuestEvents = guestEvents.length > 0;
-            const hasAperoEvents = aperoEvents.length > 0;
-            const hasAnyEvent = hasGuestEvents || hasAperoEvents;
-            return (
-              <div className={`px-3 py-2 rounded-md text-sm border ${tierClass}`}>
-                <div>
-                  💰 <strong>{cost.toFixed(2)} €</strong>
-                  {hasAnyEvent && <span className="text-fuchsia-600 dark:text-fuchsia-400 font-bold" title="Coût ajusté pour les invités / apéros">*</span>}
-                  {state.profile.budgetWeekly > 0 && (
-                    <span className="opacity-75"> / {hasAdjust ? `${adjustedDisplay} €` : `${state.profile.budgetWeekly} €`}</span>
-                  )}
-                </div>
-                {/* V2.99.35 / V2.99.36 — Note prix + badge âge auto */}
-                {(() => {
-                  let mostRecent = null;
-                  for (const p of REF.prices) {
-                    if (!p.updatedAt) continue;
-                    const d = new Date((p.updatedAt + (p.updatedAt.length === 7 ? "-01" : "")));
-                    if (!isNaN(d) && (!mostRecent || d > mostRecent)) mostRecent = d;
-                  }
-                  let ageMonths = null;
-                  if (mostRecent) {
-                    const now = new Date();
-                    ageMonths = (now.getFullYear() - mostRecent.getFullYear()) * 12
-                              + (now.getMonth() - mostRecent.getMonth());
-                  }
-                  const stale = ageMonths !== null && ageMonths > 6;
-                  return (
-                    <div className={`text-[10px] italic mt-0.5 ${stale ? "text-amber-700 dark:text-amber-400 font-semibold" : "opacity-70"}`}
-                      title={stale
-                        ? `Prix datés (${ageMonths} mois). Un audit mensuel GitHub Actions ouvre une issue automatique pour proposer la mise à jour.`
-                        : "Coûts calculés sur prix médians français Q1 2026 (sources : Open Prices, Carrefour Drive, INSEE). Date des données : avril 2026."}>
-                      {stale && "⚠️ "}estimé* sur prix Open Prices / Carrefour Drive Q1 2026
-                      {stale && ` — ${ageMonths} mois`}
-                    </div>
-                  );
-                })()}
-                {hasAdjust && (
-                  <div className="text-[10px] opacity-75 mt-0.5" title={`Cible originale : ${state.profile.budgetWeekly} €. ${Math.round((1-budgetAdjust.ratio)*100)}% des slots sont externalisés cette semaine, la cible est réduite proportionnellement.`}>
-                    cible ajustée · {Math.round(budgetAdjust.ratio*100)}% présence
-                  </div>
-                )}
-                {budgetTier && (
-                  <>
-                    <div className="text-xs mt-0.5">{tierLabels[budgetTier]}</div>
-                    <div className="mt-1 h-1.5 w-40 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                      <div className={`h-full ${
-                        budgetTier === "hard-over" ? "bg-red-500" :
-                        budgetTier === "soft-over" ? "bg-amber-500" :
-                        "bg-emerald-500"
-                      }`} style={{width: `${Math.min(100, (cost / adjustedBudget) * 100).toFixed(0)}%`}} />
-                    </div>
-                    {/* V2.99.1 (#71 fix) — Aide contextuelle quand l'optimiseur
-                        n'a pas trouvé de moyen de descendre sous la tolérance.
-                        3 pistes : augmenter le budget, ajouter favoris peu chers,
-                        élargir les filtres trop restrictifs. */}
-                    {budgetTier === "hard-over" && (
-                      <details className="text-[10px] opacity-90 mt-1">
-                        <summary className="cursor-pointer underline">💡 Pourquoi ce dépassement ?</summary>
-                        <div className="mt-1 leading-snug">
-                          Pour un foyer de {totalEquivalents(state.profile).toFixed(1)} adulte-équiv., le catalogue actuel projette en moyenne {Math.round(estimateProjectedCatalogCost(state.profile))} €/semaine. Pour respecter ton budget ({state.profile.budgetWeekly} €) :
-                          <ul className="list-disc ml-4 mt-1">
-                            <li>augmente le budget si réaliste</li>
-                            <li>ajoute en ⭐ favoris des recettes peu chères (boost ×1.3)</li>
-                            <li>vérifie tes filtres (équipement, niveau, temps) — trop restrictifs = pool dominé par recettes chères</li>
-                            <li>active 🥬 Privilégier ingrédients locaux (exclut épicerie spécialisée souvent chère)</li>
-                          </ul>
-                        </div>
-                      </details>
-                    )}
-                  </>
-                )}
-                {/* V2.75.0 (#79) + V2.76.0 (#80) — Détail des événements invités et apéros */}
-                {hasAnyEvent && (
-                  <div className="text-[10px] opacity-75 mt-1 pt-1 border-t border-current/20">
-                    {guestEvents.map((ev, i) => {
-                      const mealInfo = ALL_MEALS.find(m => m.key === ev.meal) || {label: ev.meal};
-                      return (
-                        <div key={`g${i}`}>
-                          * {ev.note ? `${ev.note} ` : ""}({ev.day} {mealInfo.label.toLowerCase()}, +{ev.count} invité{ev.count > 1 ? "s" : ""})
-                        </div>
-                      );
-                    })}
-                    {aperoEvents.map((ev, i) => (
-                      <div key={`a${i}`}>
-                        * 🥂 Apéro {ev.label} {ev.note ? `"${ev.note}" ` : ""}({ev.day} {ev.meal === "lunch" ? "midi" : "soir"}{ev.guestCount > 0 ? `, +${ev.guestCount} invité${ev.guestCount > 1 ? "s" : ""}` : ""})
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            );
-          })()}
-          {budgetTier === "hard-over" && (
-            <div className="text-xs text-red-700 dark:text-red-300 mt-1 max-w-xs text-right">
-              L'optimiseur n'a pas trouvé d'alternative moins chère.
-              Augmente la tolérance ou élargis la base de recettes.
+      {/* V2.142.0 — Barre de la semaine épurée : navigation + budget (bulle au tap),
+          actions principales en boutons, outils secondaires en icônes. */}
+      <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-3 sm:p-4 space-y-3">
+        <div className="flex items-center gap-3 flex-wrap">
+          <div className="flex items-center gap-1 flex-1 min-w-[230px]">
+            <button onClick={()=>setCurrentWeek(addDays(currentWeek,-7))} aria-label="Semaine précédente"
+              className="w-9 h-9 rounded-full text-xl leading-none text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600">‹</button>
+            <div className="px-1 min-w-0">
+              <p className="font-bold text-slate-800 dark:text-slate-100 leading-tight">{formatShort(currentWeek)} – {formatShort(endOfWeek)}</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">{SEASON_FR[season]} · {state.profile.members.length} personne{state.profile.members.length>1?"s":""}</p>
             </div>
-          )}
+            <button onClick={()=>setCurrentWeek(addDays(currentWeek,7))} aria-label="Semaine suivante"
+              className="w-9 h-9 rounded-full text-xl leading-none text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600">›</button>
+          </div>
+          <BudgetChip cost={cost} adjustedBudget={adjustedBudget} budgetTier={budgetTier}
+            budgetAdjust={budgetAdjust} profile={state.profile} currentMenu={currentMenu} />
         </div>
-        <button onClick={() => regenerate({keepLocked:true})}
-          className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-md text-sm font-medium">
-          🔄 Régénérer
-        </button>
-        <button onClick={onPrint}
-          className="bg-slate-700 hover:bg-slate-900 text-white px-4 py-2 rounded-md text-sm font-medium">
-          🖨️ Imprimer
-        </button>
-        <button onClick={onPdf} disabled={pdfBusy}
-          className="bg-rose-600 hover:bg-rose-700 disabled:bg-slate-400 disabled:cursor-wait text-white px-4 py-2 rounded-md text-sm font-medium"
-          title="Télécharger le menu de la semaine en PDF (.pdf)">
-          {pdfBusy ? "⏳ PDF…" : "📄 PDF"}
-        </button>
-        <button onClick={onShopping}
-          className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-md text-sm font-medium">
-          🛒 Liste de courses
-        </button>
+        <div className="flex items-end gap-2 flex-wrap">
+          <button onClick={() => regenerate({keepLocked:true})}
+            className="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full text-sm font-semibold"
+            title="Nouveau menu (les repas verrouillés 🔒 sont gardés)">
+            🔄 Régénérer
+          </button>
+          <button onClick={onShopping}
+            className="bg-amber-500 hover:bg-amber-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
+            🛒 Liste de courses
+          </button>
+          <div className="flex items-end gap-1 ml-auto">
+            {(() => {
+              const wkActive = currentMenu.batchCookingActive;
+              const isActive = typeof wkActive === "boolean" ? wkActive : !!state.profile.batchCookingEnabled;
+              const target = state.profile.batchCookingTarget ?? 5;
+              const dayLbl = SHOPPING_DAY_LABELS[state.profile.batchCookingDay ?? 2];
+              return (
+                <ToolIcon icon="🍱" label={isActive ? `Batch ${target}/7` : "Batch"} onClick={toggleBatchActiveForWeek}
+                  pressed={isActive} colors={isActive ? ["#fef3c7", "#fcd34d"] : null}
+                  title={isActive
+                    ? `Mode batch activé cette semaine : au moins ${target} jours sur 7 avec des plats à préparer à l'avance, session prévue ${dayLbl}. Touche pour le désactiver cette semaine.`
+                    : "Mode batch désactivé cette semaine. Touche pour l'activer : le menu privilégiera les plats à préparer à l'avance."} />
+              );
+            })()}
+            <ToolIcon icon="🖨️" label="Imprimer" onClick={onPrint} title="Imprimer le menu de la semaine" />
+            <ToolIcon icon={pdfBusy ? "⏳" : "📄"} label="PDF" onClick={onPdf} disabled={pdfBusy}
+              title="Télécharger le menu de la semaine en PDF (.pdf)" />
+          </div>
+        </div>
       </div>
 
       {/* V2.69.0 (issue #75) — Bandeau recos nutritionnelles OMS/WCRF/PNNS */}
@@ -23840,29 +23713,185 @@ function ExclusionFallbackBanner({currentMenu, profile}) {
   );
 }
 
-function NutritionBanner({currentMenu, profile}) {
-  // V2.141.0 — Grille d'icônes façon iOS : un tap ouvre une bulle de détail.
-  const [openKey, setOpenKey] = useState(null);
-  const [pos, setPos] = useState(null); // {top, left, width, arrow}
+// V2.142.0 — Petite icône d'outil façon iOS (carré arrondi + nom dessous).
+// pressed = interrupteur activé (aria-pressed), colors = dégradé de fond.
+function ToolIcon({icon, label, onClick, title, pressed, disabled, colors}) {
+  const [c1, c2] = colors || [null, null];
+  return (
+    <button type="button" onClick={onClick} disabled={disabled} title={title} aria-label={title || label}
+      aria-pressed={pressed === undefined ? undefined : !!pressed}
+      className="w-[64px] flex flex-col items-center gap-1 group disabled:opacity-50 disabled:cursor-wait">
+      <span className={`w-10 h-10 rounded-[12px] flex items-center justify-center text-xl shadow-sm transition-transform group-active:scale-95 ${colors ? "" : "bg-slate-100 dark:bg-slate-700"} ${pressed ? "ring-2 ring-amber-400" : ""}`}
+        style={colors ? {background: `linear-gradient(145deg, ${c1}, ${c2})`} : undefined}>{icon}</span>
+      <span className="text-[11px] leading-tight text-slate-600 dark:text-slate-300 truncate w-full text-center">{label}</span>
+    </button>
+  );
+}
+
+// V2.142.0 — Budget de la semaine : une pastille compacte (montant + jauge) ;
+// tout le détail (source des prix, cible ajustée, conseils, invités) dans la bulle.
+function BudgetChip({cost, adjustedBudget, budgetTier, budgetAdjust, profile, currentMenu}) {
+  const {openKey, pos, boxRef, toggle} = useAnchoredBubble();
+  const budget = profile.budgetWeekly > 0 ? profile.budgetWeekly : 0;
+  const hasAdjust = budgetAdjust.ratio < 0.999 && budget > 0;
+  const target = hasAdjust ? adjustedBudget : budget;
+  const level = budgetTier === "hard-over" ? "over" : budgetTier === "soft-over" ? "warning" : budgetTier ? "ok" : null;
+  const levelText = {under: "Sous le budget", ok: "Dans le budget", "soft-over": "Dans la tolérance", "hard-over": "Au-dessus"}[budgetTier];
+  const guestEvents = collectGuestEvents(currentMenu, profile);
+  const aperoEvents = collectAperoEvents(currentMenu, profile);
+  const hasAnyEvent = guestEvents.length > 0 || aperoEvents.length > 0;
+  // Âge des prix (alerte au-delà de 6 mois)
+  let mostRecent = null;
+  for (const p of REF.prices) {
+    if (!p.updatedAt) continue;
+    const d = new Date(p.updatedAt + (p.updatedAt.length === 7 ? "-01" : ""));
+    if (!isNaN(d) && (!mostRecent || d > mostRecent)) mostRecent = d;
+  }
+  const now = new Date();
+  const ageMonths = mostRecent ? (now.getFullYear() - mostRecent.getFullYear()) * 12 + (now.getMonth() - mostRecent.getMonth()) : null;
+  const stale = ageMonths !== null && ageMonths > 6;
+  const pct = target > 0 ? Math.min(100, cost / target * 100) : 0;
+  const barCls = level === "over" ? "bg-red-500" : level === "warning" ? "bg-amber-500" : "bg-emerald-500";
+  const euros = v => `${Math.round(v)} €`;
+  return (
+    <div ref={boxRef} className="relative">
+      <button type="button" onClick={e => toggle("budget", e.currentTarget)} aria-expanded={openKey === "budget"}
+        aria-label={`Budget : ${cost.toFixed(2)} €${target ? ` sur ${euros(target)}` : ""}${levelText ? ` — ${levelText}` : ""}`}
+        className={`relative flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-2xl border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-700/50 hover:bg-slate-100 dark:hover:bg-slate-700 ${openKey === "budget" ? "ring-2 ring-sky-500" : ""}`}>
+        <span className="w-8 h-8 rounded-[10px] flex items-center justify-center text-lg" style={{background: "linear-gradient(145deg, #dcfce7, #86efac)"}}>💰</span>
+        <span className="flex flex-col items-start">
+          <span className="text-sm text-slate-800 dark:text-slate-100 leading-tight">
+            <strong>{euros(cost)}</strong>{hasAnyEvent && <span className="text-fuchsia-600 dark:text-fuchsia-400 font-bold">*</span>}
+            {target > 0 && <span className="text-slate-500 dark:text-slate-400"> / {euros(target)}</span>}
+          </span>
+          {target > 0 && (
+            <span className="mt-1 h-1 w-20 bg-slate-200 dark:bg-slate-600 rounded-full overflow-hidden">
+              <span className={`block h-full ${barCls}`} style={{width: `${pct.toFixed(0)}%`}} />
+            </span>
+          )}
+        </span>
+        <AlertBadge level={level === "ok" ? (stale ? "warning" : null) : level} />
+      </button>
+      {openKey === "budget" && (
+        <AnchoredBubble pos={pos} label="Budget de la semaine">
+          <BubbleHeader icon="💰" title="Budget de la semaine"
+            value={`${cost.toFixed(2)} €${target > 0 ? ` / ${euros(target)}` : ""}`} level={level} levelText={levelText} />
+          {target > 0 && (
+            <div className="mt-2 h-1.5 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div className={`h-full ${barCls}`} style={{width: `${pct.toFixed(0)}%`}} />
+            </div>
+          )}
+          {!budget && <p className="mt-2">Aucun budget défini : fixe-le dans Mon foyer pour que le menu s'y adapte.</p>}
+          {hasAdjust && (
+            <p className="mt-2">Cible ajustée à {Math.round(budgetAdjust.ratio * 100)} % de {budget} € : certains repas sont pris à l'extérieur cette semaine.</p>
+          )}
+          {budgetTier === "hard-over" && (
+            <div className="mt-2 leading-relaxed">
+              <p>Le menu n'a pas trouvé d'alternative moins chère. Pour un foyer de {totalEquivalents(profile).toFixed(1)} adulte-équiv., le catalogue coûte en moyenne {Math.round(estimateProjectedCatalogCost(profile))} €/semaine. Pistes :</p>
+              <ul className="list-disc ml-4 mt-1 space-y-0.5">
+                <li>augmenter le budget ou la tolérance, si c'est réaliste</li>
+                <li>mettre en ⭐ favoris des recettes peu chères (elles sortent plus souvent)</li>
+                <li>vérifier tes filtres (équipement, niveau, temps) : trop stricts, ils laissent surtout des recettes chères</li>
+                <li>activer 🥬 « Privilégier les ingrédients locaux »</li>
+              </ul>
+            </div>
+          )}
+          {hasAnyEvent && (
+            <div className="mt-2 pt-2 border-t border-slate-200 dark:border-slate-700">
+              {guestEvents.map((ev, i) => {
+                const mealInfo = ALL_MEALS.find(m => m.key === ev.meal) || {label: ev.meal};
+                return <div key={`g${i}`}>* {ev.note ? `${ev.note} ` : ""}({ev.day} {mealInfo.label.toLowerCase()}, +{ev.count} invité{ev.count > 1 ? "s" : ""})</div>;
+              })}
+              {aperoEvents.map((ev, i) => (
+                <div key={`a${i}`}>* 🥂 Apéro {ev.label} {ev.note ? `"${ev.note}" ` : ""}({ev.day} {ev.meal === "lunch" ? "midi" : "soir"}{ev.guestCount > 0 ? `, +${ev.guestCount} invité${ev.guestCount > 1 ? "s" : ""}` : ""})</div>
+              ))}
+            </div>
+          )}
+          <p className={`mt-2 text-[11px] italic ${stale ? "text-amber-700 dark:text-amber-400 font-semibold not-italic" : "text-slate-500 dark:text-slate-400"}`}>
+            {stale ? `⚠️ Prix datés de ${ageMonths} mois. ` : ""}Estimation sur les prix médians français (Open Prices, Carrefour Drive, INSEE), Q1 2026.
+          </p>
+        </AnchoredBubble>
+      )}
+    </div>
+  );
+}
+
+// V2.141.0 / V2.142.0 — Bulle de détail ancrée sous un bouton (façon popover iOS).
+// boxRef = conteneur en position relative qui accueille la bulle ; la bulle reste
+// dans l'écran (bornée à la largeur de la fenêtre), la flèche pointe le bouton.
+// Fermeture : tap ailleurs, Échap, redimensionnement, ou re-tap du même bouton.
+function useAnchoredBubble() {
+  const [pos, setPos] = useState(null); // {key, top, left, width, arrow}
   const boxRef = useRef(null);
   useEffect(() => {
-    if (!openKey) return;
-    const onDown = e => { if (boxRef.current && !boxRef.current.contains(e.target)) setOpenKey(null); };
-    const onKey = e => { if (e.key === "Escape") setOpenKey(null); };
+    if (!pos) return;
+    const close = () => setPos(null);
+    const onDown = e => { if (boxRef.current && !boxRef.current.contains(e.target)) close(); };
+    const onKey = e => { if (e.key === "Escape") close(); };
     document.addEventListener("pointerdown", onDown);
     document.addEventListener("keydown", onKey);
-    return () => { document.removeEventListener("pointerdown", onDown); document.removeEventListener("keydown", onKey); };
-  }, [openKey]);
-  const toggleBubble = (key, el) => {
-    if (openKey === key) { setOpenKey(null); return; }
+    window.addEventListener("resize", close);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+      window.removeEventListener("resize", close);
+    };
+  }, [pos]);
+  const toggle = (key, el) => {
+    if (pos?.key === key) { setPos(null); return; }
     const box = boxRef.current;
     if (!box || !el) return;
-    const bw = box.clientWidth, w = Math.min(340, bw - 16);
-    const center = el.offsetLeft + el.offsetWidth / 2;
-    const left = Math.max(8, Math.min(bw - w - 8, center - w / 2));
-    setPos({top: el.offsetTop + el.offsetHeight + 10, left, width: w, arrow: center - left});
-    setOpenKey(key);
+    const b = box.getBoundingClientRect(), a = el.getBoundingClientRect();
+    const vw = document.documentElement.clientWidth || window.innerWidth;
+    const w = Math.min(340, vw - 16);
+    const center = a.left + a.width / 2;
+    const vLeft = Math.max(8, Math.min(vw - w - 8, center - w / 2));
+    setPos({key, top: a.bottom - b.top + 10, left: vLeft - b.left, width: w, arrow: center - vLeft});
   };
+  return {openKey: pos?.key || null, pos, boxRef, toggle};
+}
+
+function AnchoredBubble({pos, label, children}) {
+  if (!pos) return null;
+  return (
+    <div role="dialog" aria-label={label}
+      className="absolute z-30 rounded-2xl bg-white dark:bg-slate-900 shadow-xl border border-slate-200 dark:border-slate-700 p-3 text-xs text-slate-600 dark:text-slate-300 text-left font-normal"
+      style={{top: pos.top, left: pos.left, width: pos.width}}>
+      <span className="absolute -top-[7px] w-3 h-3 rotate-45 bg-white dark:bg-slate-900 border-l border-t border-slate-200 dark:border-slate-700"
+        style={{left: pos.arrow - 6}} />
+      {children}
+    </div>
+  );
+}
+
+// En-tête de bulle : icône, titre, valeur, statut coloré.
+const BUBBLE_LEVEL = {
+  over:    {txt: "Hors repère", pill: "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200", badge: "bg-red-500"},
+  warning: {txt: "À surveiller", pill: "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200", badge: "bg-amber-500"},
+  ok:      {txt: "Dans le repère", pill: "bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200", badge: "bg-emerald-500"},
+};
+function BubbleHeader({icon, title, value, level, levelText}) {
+  return (
+    <div className="flex items-start gap-2">
+      <span className="text-lg leading-none">{icon}</span>
+      <div className="flex-1 min-w-0">
+        <div className="font-semibold text-sm text-slate-800 dark:text-slate-100">{title}</div>
+        {value && <div className="text-slate-700 dark:text-slate-200 mt-0.5">{value}</div>}
+      </div>
+      {level && <span className={`shrink-0 px-2 py-0.5 rounded-full text-[11px] font-medium ${BUBBLE_LEVEL[level].pill}`}>{levelText || BUBBLE_LEVEL[level].txt}</span>}
+    </div>
+  );
+}
+
+// Pastille « ! » façon notification iOS, dans le coin d'une icône.
+function AlertBadge({level}) {
+  if (!level || level === "ok") return null;
+  return <span className={`absolute -top-1 -right-1 w-[18px] h-[18px] rounded-full text-white text-[11px] font-bold leading-[14px] text-center border-2 border-white dark:border-slate-800 ${BUBBLE_LEVEL[level].badge}`}>!</span>;
+}
+
+function NutritionBanner({currentMenu, profile}) {
+  // V2.141.0 — Grille d'icônes façon iOS : un tap ouvre une bulle de détail.
+  const {openKey, pos, boxRef, toggle: toggleBubble} = useAnchoredBubble();
   const {totals, thresholds, totalEq} = computeWeeklyNutritionTotals(currentMenu, profile);
   if (!totalEq || totalEq <= 0) return null;
   // V2.73.1 — Affichage de TOUS les axes (HedgeX, 2026-05-08), même quand
@@ -24049,11 +24078,7 @@ function NutritionBanner({currentMenu, profile}) {
     fish: ["#e0f2fe", "#7dd3fc"], fishOily: ["#ccfbf1", "#5eead4"], legume: ["#f5e6d3", "#d6b48c"],
     addedSugars: ["#fae8ff", "#f0abfc"], macroP: ["#ede9fe", "#c4b5fd"],
   };
-  const LEVEL = {
-    over:    {txt: "Hors repère", pill: "bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200", badge: "bg-red-500"},
-    warning: {txt: "À surveiller", pill: "bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200", badge: "bg-amber-500"},
-    ok:      {txt: "Dans le repère", pill: "bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200", badge: "bg-emerald-500"},
-  };
+  const LEVEL = BUBBLE_LEVEL;
   const SHORT = {red: "Viande", addedSugars: "Sucres"}; // nom court sous l'icône (complet dans la bulle)
   const split = label => { const i = label.indexOf(" : "); return i < 0 ? [label, ""] : [label.slice(0, i), label.slice(i + 3)]; };
   const alerts = items.filter(it => it.level !== "ok").length;
@@ -24080,35 +24105,23 @@ function NutritionBanner({currentMenu, profile}) {
           return (
             <button key={it.key} type="button" onClick={e => toggleBubble(it.key, e.currentTarget)}
               aria-label={`${name} : ${value} — ${LEVEL[it.level].txt}`} aria-expanded={active}
-              className="w-[76px] flex flex-col items-center gap-1 focus:outline-none group">
+              className="w-[74px] flex flex-col items-center gap-1 focus:outline-none group">
               <span className={`relative w-12 h-12 rounded-[14px] flex items-center justify-center text-2xl shadow-sm transition-transform group-active:scale-95 ${active ? "ring-2 ring-offset-2 ring-sky-500 dark:ring-offset-slate-800" : ""}`}
                 style={{background: `linear-gradient(145deg, ${c1}, ${c2})`}}>
                 {it.icon}
-                {it.level !== "ok" && (
-                  <span className={`absolute -top-1 -right-1 w-[18px] h-[18px] rounded-full text-white text-[11px] font-bold leading-[14px] text-center border-2 border-white dark:border-slate-800 ${LEVEL[it.level].badge}`}>!</span>
-                )}
+                <AlertBadge level={it.level} />
               </span>
               <span className="text-[11px] leading-tight text-slate-700 dark:text-slate-200 text-center w-full truncate">{SHORT[it.key] || name}</span>
             </button>
           );
         })}
       </div>
-      {openItem && pos && (
-        <div role="dialog" aria-label={openParts ? openParts[0] : "Sources"}
-          className="absolute z-30 rounded-2xl bg-white dark:bg-slate-900 shadow-xl border border-slate-200 dark:border-slate-700 p-3 text-xs text-slate-600 dark:text-slate-300"
-          style={{top: pos.top, left: pos.left, width: pos.width}}>
-          <span className="absolute -top-[7px] w-3 h-3 rotate-45 bg-white dark:bg-slate-900 border-l border-t border-slate-200 dark:border-slate-700"
-            style={{left: pos.arrow - 6}} />
-          <div className="flex items-start gap-2">
-            <span className="text-lg leading-none">{openItem.icon}</span>
-            <div className="flex-1 min-w-0">
-              <div className="font-semibold text-sm text-slate-800 dark:text-slate-100">{openParts ? openParts[0] : "Sources"}</div>
-              {openParts && <div className="text-slate-700 dark:text-slate-200 mt-0.5">{openParts[1]}</div>}
-            </div>
-            {openParts && <span className={`shrink-0 px-2 py-0.5 rounded-full text-[11px] font-medium ${LEVEL[openItem.level].pill}`}>{LEVEL[openItem.level].txt}</span>}
-          </div>
+      {openItem && (
+        <AnchoredBubble pos={pos} label={openParts ? openParts[0] : "Sources"}>
+          <BubbleHeader icon={openItem.icon} title={openParts ? openParts[0] : "Sources"}
+            value={openParts ? openParts[1] : null} level={openParts ? openItem.level : null} />
           <p className="mt-2 leading-relaxed">{openItem.detail}</p>
-        </div>
+        </AnchoredBubble>
       )}
     </section>
   );
@@ -24827,7 +24840,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
             <li>Choisis ta cible (par ex. 5 jours / 7) : le générateur s'efforcera d'avoir au moins ce nombre de jours avec lunch ET dinner batch-friendly. Les jours restants restent libres pour la variété.</li>
             <li>Choisis le jour où tu prévois ta session de préparation (typiquement samedi ou dimanche, ou le lendemain des courses).</li>
             <li>Régénère le menu de la semaine depuis l'écran Planning : les slots concernés afficheront un 🍱.</li>
-            <li>Sur l'écran Planning, le badge <strong>🍱 Batch ON / OFF</strong> en haut permet de basculer le mode juste pour la semaine courante (override sans toucher à la préférence globale).</li>
+            <li>Sur l'écran Planning, l'icône <strong>🍱 Batch</strong> en haut (entourée quand le mode est actif) permet de basculer le mode juste pour la semaine courante (override sans toucher à la préférence globale).</li>
             <li><em>Bientôt en V2.48.0 :</em> page <strong>Préparation [Jour]</strong> avec to-do séquentielle des étapes regroupées et estimation du temps total.</li>
           </ol>
           <p className="mt-2 italic text-slate-500 dark:text-slate-400">
