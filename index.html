@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.140.7</title>
+<title>Menu IG Bas — V2.140.8</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.140.7">
+<link rel="stylesheet" href="tailwind.css?v=2.140.8">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.140.7"></script>
+<script src="data/recipes.js?v=2.140.8"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -17765,6 +17765,28 @@ function FoyerLabCard({state, update}) {
   const [invite, setInvite] = useState(null); // {qr, code}
   const [msg, setMsg] = useState(null);
   const [join, setJoin] = useState(null); // {step, rawKey, hid, house, envHid}
+  // V2.140.8 — Reprise d'une jonction interrompue (rechargement de la page, appli fermée) :
+  // la clé du foyer est déjà rangée CHIFFRÉE dans le trousseau (householdKeyStore) dès la
+  // demande ; ce marqueur ne contient que des identifiants opaques (hid, deviceId).
+  const JOIN_PENDING_KEY = "menu-ig-bas-join-pending";
+  const pendingJoin = {
+    get() { try { return JSON.parse(localStorage.getItem(JOIN_PENDING_KEY) || "null"); } catch (e) { return null; } },
+    set(v) { try { localStorage.setItem(JOIN_PENDING_KEY, JSON.stringify(v)); } catch (e) { /* stockage indisponible */ } },
+    clear() { try { localStorage.removeItem(JOIN_PENDING_KEY); } catch (e) { /* idem */ } },
+  };
+  const cancelJoin = () => { pendingJoin.clear(); setJoin(null); };
+  useEffect(() => {
+    const p = pendingJoin.get();
+    if (!p?.serverHid || join) return;
+    let alive = true;
+    householdKeyStore.get(p.serverHid).then(rawKey => {
+      if (!alive) return;
+      if (!rawKey) { pendingJoin.clear(); return; }
+      setJoin({step: "pending", rawKey, hid: p.hid || null, serverHid: p.serverHid, deviceId: p.deviceId});
+      say("ok", "Reprise de ta demande pour rejoindre le foyer : dès que l'administrateur l'approuve, choisis « Qui es-tu ? » ci-dessous.");
+    }).catch(() => {});
+    return () => { alive = false; };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const [codeInput, setCodeInput] = useState("");
   const [scanning, setScanning] = useState(false);
   const [labelInput, setLabelInput] = useState(() => guessDeviceLabel());
@@ -17880,6 +17902,7 @@ function FoyerLabCard({state, update}) {
       v2.session = {...v2.session, activeHouseholdId: house.id};
       update(() => projectRuntime(v2));
       requestPersistentStorage();
+      pendingJoin.clear();
       setJoin(null);
       say("ok", `Foyer rejoint : ${house.members.length} membre(s), ${Object.keys(house.menus || {}).length} semaine(s) de menus.`);
     } catch (e) { say("err", "Échec : " + (e.message || e)); }
@@ -17966,6 +17989,21 @@ function FoyerLabCard({state, update}) {
     setDevices({list, max: r.max});
   });
   const approveDevice = id => run(async () => { await homeTransport.approve(meta.hid, id); await loadDevices(); });
+  // V2.140.8 — Effacement du foyer CÔTÉ SERVEUR (RGPD) : appareils, versions et clés
+  // emballées supprimés là-bas ; les données restent sur chaque appareil.
+  const deleteServerHousehold = () => {
+    if (!window.confirm("Supprimer le foyer du serveur ?\n\nTous les appareils arrêteront de se synchroniser. Tes données restent sur chaque appareil, et tu pourras réactiver la synchro plus tard.")) return;
+    run(async () => {
+      await homeTransport.deleteHousehold(meta.hid);
+      update(s => {
+        const u = s._users[uid] || {};
+        const {server, ...dev} = u.device || {};
+        return {_users: {...s._users, [uid]: {...u, device: dev}}};
+      });
+      setDevices(null);
+      say("ok", "Foyer supprimé du serveur. Tes données sont toujours sur cet appareil.");
+    });
+  };
   const setDeviceAdmin = (id, isAdmin) => run(async () => {
     await homeTransport.setAdmin(meta.hid, id, isAdmin);
     await loadDevices(); await refreshAdmins();
@@ -17989,6 +18027,9 @@ function FoyerLabCard({state, update}) {
     const r = await homeTransport.join(secret, await sealLabel(join.rawKey, labelInput));
     if (join.hid && r.hid !== join.hid) throw new Error("Le serveur a répondu pour un autre foyer que le QR scanné.");
     setJoin(j => ({...j, step: "pending", serverHid: r.hid, deviceId: r.deviceId}));
+    // Clé rangée chiffrée tout de suite + marqueur : un rechargement ne perd plus la jonction.
+    await householdKeyStore.put(r.hid, join.rawKey, 0);
+    pendingJoin.set({serverHid: r.hid, deviceId: r.deviceId, hid: join.hid || null, at: Date.now()});
     if (r.approved) await fetchJoinedHousehold(r.hid, r.deviceId);
     else say("ok", "Demande envoyée ✅ Sur l'appareil administrateur : Foyer partagé → « Appareils » → Approuver.");
   });
@@ -18124,6 +18165,7 @@ function FoyerLabCard({state, update}) {
                 <div className="flex flex-wrap gap-2">
                   <button onClick={syncNow} disabled={busy || sync.state === "syncing"} className={btnAlt}>🔄 Synchroniser maintenant</button>
                   <button onClick={loadDevices} disabled={busy} className={btnAlt}>📱 Appareils</button>
+                  {srv.isAdmin && <button onClick={deleteServerHousehold} disabled={busy} className={btnAlt}>🗑️ Supprimer le foyer du serveur</button>}
                 </div>
               </>
             )}
@@ -18210,7 +18252,7 @@ function FoyerLabCard({state, update}) {
               📂 Choisir le fichier foyer
               <input type="file" accept={jsonFileAccept()} onChange={onFoyerFile} className="sr-only" />
             </label>
-            <div><button onClick={() => setJoin(null)} className={btnAlt}>Annuler</button></div>
+            <div><button onClick={cancelJoin} className={btnAlt}>Annuler</button></div>
           </div>
         )}
         {join?.step === "pending" && (
@@ -18218,7 +18260,7 @@ function FoyerLabCard({state, update}) {
             <p className="text-sm text-amber-800 dark:text-amber-200">
               ⏳ Demande envoyée. Sur l'appareil administrateur : 🏠 Foyer partagé → 📱 Appareils → <strong>Approuver</strong>. Cette page se met à jour toute seule.
             </p>
-            <div><button onClick={() => setJoin(null)} className={btnAlt}>Annuler</button></div>
+            <div><button onClick={cancelJoin} className={btnAlt}>Annuler</button></div>
           </div>
         )}
         {join?.step === "who" && (
@@ -18235,7 +18277,7 @@ function FoyerLabCard({state, update}) {
               ))}
               <button onClick={() => confirmJoin(null, "shared")} className={btnAlt}>👨‍👩‍👧 Appareil partagé (famille)</button>
             </div>
-            <div><button onClick={() => setJoin(null)} className={btnAlt}>Annuler</button></div>
+            <div><button onClick={cancelJoin} className={btnAlt}>Annuler</button></div>
           </div>
         )}
       </div>
