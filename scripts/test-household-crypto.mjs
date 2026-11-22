@@ -273,5 +273,49 @@ await check("fusion « Cuisiné » : deux appareils marquent deux repas différe
 });
 
 console.log("━".repeat(28));
+// ── C1.5 — Phrase de secours (BIP-39 français) ──
+await check("secours : liste de 2048 mots, uniques sans accents et par 4 lettres", () => {
+  const plain = w => w.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  assert.equal(hc.RECOVERY_WORDS.length, 2048);
+  assert.equal(new Set(hc.RECOVERY_WORDS.map(plain)).size, 2048);
+  assert.equal(new Set(hc.RECOVERY_WORDS.map(w => plain(w).slice(0, 4))).size, 2048);
+});
+await check("secours : vecteur BIP-39 (entropie nulle → abaisser ×11 + abeille)", async () => {
+  const w = await hc.phraseFromEntropy(new Uint8Array(16));
+  assert.deepEqual(w, [...Array(11).fill("abaisser"), "abeille"]);
+});
+await check("secours : aller-retour, saisie sans accents / en majuscules / 4 lettres / numérotée", async () => {
+  for (let i = 0; i < 20; i++) {
+    const {words, entropy} = await hc.newRecoveryPhrase();
+    assert.equal(words.length, 12);
+    assert.deepEqual(await hc.parseRecoveryPhrase(words.join(" ")), entropy);
+    const sloppy = words.map((w, j) => `${j + 1}. ` + (j % 2 ? w.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toUpperCase() : w.slice(0, 4))).join(", ");
+    assert.deepEqual(await hc.parseRecoveryPhrase(sloppy), entropy);
+  }
+});
+await check("secours : 11 mots, mot inconnu, mots inversés → erreurs claires", async () => {
+  const {words} = await hc.newRecoveryPhrase();
+  await assert.rejects(() => hc.parseRecoveryPhrase(words.slice(0, 11).join(" ")), e => e.code === "PHRASE_COUNT");
+  await assert.rejects(() => hc.parseRecoveryPhrase([...words.slice(0, 11), "zzzz"].join(" ")), e => e.code === "PHRASE_WORD" && /n° 12/.test(e.message));
+  let typo = 0;
+  for (let i = 0; i < 10; i++) {
+    const w = (await hc.newRecoveryPhrase()).words;
+    if (w[0] === w[1]) continue;
+    try { await hc.parseRecoveryPhrase([w[1], w[0], ...w.slice(2)].join(" ")); } catch (e) { if (e.code === "PHRASE_TYPO") typo++; }
+  }
+  assert.ok(typo >= 7, `inversions détectées : ${typo}/10`); // contrôle 4 bits : ~94 % des erreurs détectées
+});
+await check("secours : clés dérivées stables et indépendantes ; emballage lié au foyer et à l'époque", async () => {
+  const {entropy} = await hc.newRecoveryPhrase();
+  const a = await hc.recoveryKeys(entropy), b = await hc.recoveryKeys(entropy);
+  assert.equal(a.rid, b.rid); assert.equal(a.auth, b.auth); assert.deepEqual(a.kek, b.kek);
+  assert.notEqual(a.rid, a.auth);
+  const key = hc.newKey(), hid = hc.newHid();
+  const w = await hc.wrapRecovery(a.kek, key, hid, 2);
+  assert.deepEqual(await hc.unwrapRecovery(a.kek, w, hid, 2), key);
+  await assert.rejects(() => hc.unwrapRecovery(a.kek, w, hid, 1));
+  await assert.rejects(() => hc.unwrapRecovery(a.kek, w, hc.newHid(), 2));
+});
+
 if (process.exitCode) { console.error("❌ householdCrypto : échec"); process.exit(1); }
 console.log(`✅ householdCrypto : ${ok} vérifications OK`);

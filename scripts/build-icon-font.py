@@ -69,7 +69,7 @@ MAP = {
     "🔌": ["plug-zap"], "🌀": ["fan", "wind"],
     "🐱": ["cat"], "🐶": ["dog"], "🐰": ["rabbit"], "🐦": ["bird"], "🐢": ["turtle"],
     "🐿": ["squirrel"], "🐼": ["panda", "squirrel"], "🐌": ["snail"], "👻": ["ghost"], "🎸": ["guitar"],
-    "🎨": ["palette"],
+    "🎨": ["palette"], "🛟": ["life-buoy"],
     "👨": ["user"], "👩": ["user"], "👧": ["user-round"], "👦": ["user-round"],
 }
 

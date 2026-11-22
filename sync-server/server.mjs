@@ -28,6 +28,10 @@
  *   - pour demander à rejoindre, il faut présenter le joinSecret
  *     (dérivé de la clé de foyer → donc avoir scanné le QR)
  *   - rétention : dernière version + 2, purge au-delà de 30 j  — Q-G
+ *   - kit de secours (C1.5, 2026-11-22) : la clé du foyer emballée par une
+ *     clé tirée de la phrase de 12 mots ; le serveur ne garde que cet
+ *     emballage, un identifiant de recherche (rid) et le sha256 du jeton de
+ *     preuve. Sans la phrase, il ne peut ni lire ni déballer.
  *
  * Usage : node --disable-warning=ExperimentalWarning sync-server/server.mjs
  * Env   : MIJOTERIE_SYNC_PORT (8787), MIJOTERIE_SYNC_DB
@@ -85,6 +89,9 @@ function openDb(path) {
       hid TEXT NOT NULL, version INTEGER NOT NULL, envelope TEXT NOT NULL,
       byte_size INTEGER NOT NULL, updated_at INTEGER NOT NULL, by_device TEXT NOT NULL,
       PRIMARY KEY (hid, version));
+    CREATE TABLE IF NOT EXISTS recovery (
+      hid TEXT PRIMARY KEY, rid TEXT NOT NULL UNIQUE, verifier TEXT NOT NULL, epoch INTEGER NOT NULL,
+      wrap TEXT NOT NULL, updated_at INTEGER NOT NULL);
     CREATE TABLE IF NOT EXISTS key_wraps (
       hid TEXT NOT NULL, device_id TEXT NOT NULL, epoch INTEGER NOT NULL, from_device TEXT NOT NULL,
       wrap TEXT NOT NULL, PRIMARY KEY (hid, device_id));
@@ -127,6 +134,13 @@ export function createSyncServer({ dbPath, now = () => Date.now(), origins = [],
       (SELECT MAX(version) FROM blobs b2 WHERE b2.hid = blobs.hid)`),
     countHouseholds: db.prepare("SELECT COUNT(*) AS n FROM households"),
     totalBytes: db.prepare("SELECT COALESCE(SUM(byte_size), 0) AS n FROM blobs"),
+    recovery: db.prepare("SELECT * FROM recovery WHERE hid = ?"),
+    recoveryByRid: db.prepare("SELECT * FROM recovery WHERE rid = ?"),
+    upsertRecovery: db.prepare(`INSERT INTO recovery (hid, rid, verifier, epoch, wrap, updated_at) VALUES (?, ?, ?, ?, ?, ?)
+      ON CONFLICT(hid) DO UPDATE SET rid = excluded.rid, verifier = excluded.verifier, epoch = excluded.epoch,
+      wrap = excluded.wrap, updated_at = excluded.updated_at`),
+    rewrapRecovery: db.prepare("UPDATE recovery SET epoch = ?, wrap = ?, updated_at = ? WHERE hid = ?"),
+    deleteRecovery: db.prepare("DELETE FROM recovery WHERE hid = ?"),
     abandoned: db.prepare(`SELECT hid FROM households WHERE created_at < ?
       AND hid NOT IN (SELECT hid FROM devices WHERE last_seen >= ?)`),
   };
@@ -134,7 +148,7 @@ export function createSyncServer({ dbPath, now = () => Date.now(), origins = [],
   const deleteHousehold = hid => {
     db.exec("BEGIN");
     try {
-      for (const t of ["key_wraps", "blobs", "devices", "households"]) db.prepare(`DELETE FROM ${t} WHERE hid = ?`).run(hid);
+      for (const t of ["recovery", "key_wraps", "blobs", "devices", "households"]) db.prepare(`DELETE FROM ${t} WHERE hid = ?`).run(hid);
       db.exec("COMMIT");
     } catch (e) { db.exec("ROLLBACK"); throw e; }
   };
@@ -237,7 +251,7 @@ export function createSyncServer({ dbPath, now = () => Date.now(), origins = [],
 
     // GET /api/v1/health — surveillance (aucune donnée)
     if (M === "GET" && r.length === 1 && r[0] === "health") return [200, { ok: true }];
-    rateLimit(req, M === "POST" && r.length === 1 && (r[0] === "households" || r[0] === "join"));
+    rateLimit(req, M === "POST" && r.length === 1 && (r[0] === "households" || r[0] === "join" || r[0] === "recover"));
 
     // POST /api/v1/households — le fondateur crée le foyer (devient admin approuvé)
     if (M === "POST" && r.length === 1 && r[0] === "households") {
@@ -274,6 +288,31 @@ export function createSyncServer({ dbPath, now = () => Date.now(), origins = [],
       return [202, { hid: h.hid, deviceId, approved: false, isAdmin: false }];
     }
 
+    // POST /api/v1/recover — kit de secours : tous les appareils perdus. Le nouvel
+    // appareil prouve qu'il a la phrase (jeton auth) → inscrit comme appareil
+    // ADMIN approuvé, reçoit la clé du foyer emballée (qu'il déballe avec la phrase).
+    if (M === "POST" && r.length === 1 && r[0] === "recover") {
+      const b = parseJson(bodyBuf);
+      if (!isB64(b.rid, 40) || !isB64(b.auth, 64) || !isB64(b.pubkey, 200)) bad(400, "FIELDS_INVALID");
+      await verifySig(b.pubkey, req, bodyBuf);
+      const rec = q.recoveryByRid.get(b.rid);
+      const verifier = sha256(Buffer.from(b.auth, "base64url")).toString("hex");
+      if (!rec || !timingSafeEqual(Buffer.from(rec.verifier), Buffer.from(verifier))) bad(403, "RECOVERY_DENIED");
+      const h = q.household.get(rec.hid);
+      if (!h) bad(403, "RECOVERY_DENIED");
+      if (rec.epoch !== h.epoch) bad(409, "RECOVERY_STALE");
+      const deviceId = deviceIdOf(Buffer.from(b.pubkey, "base64url"));
+      const t = now();
+      if (q.device.get(h.hid, deviceId)) { q.approveDevice.run(h.hid, deviceId); q.setAdmin.run(1, h.hid, deviceId); }
+      else {
+        // Appareils perdus encore inscrits : on accepte jusqu'à 2 de plus que la limite,
+        // le temps que le nouvel admin retire les anciens.
+        if (q.countDevices.get(h.hid).n >= MAX_DEVICES + 2) bad(409, "DEVICE_LIMIT");
+        q.insertDevice.run(h.hid, deviceId, b.pubkey, String(b.labelCt || "").slice(0, 4096), 1, 1, t, t, Number(req.headers["x-mij-ts"]), ecdhOrNull(b.ecdhPub));
+      }
+      return [200, { hid: h.hid, deviceId, approved: true, isAdmin: true, epoch: h.epoch, wrap: JSON.parse(rec.wrap) }];
+    }
+
     if (r[0] !== "households" || !isHid(r[1])) bad(404, "NOT_FOUND");
     const hid = r[1];
     const house = q.household.get(hid);
@@ -291,6 +330,38 @@ export function createSyncServer({ dbPath, now = () => Date.now(), origins = [],
       const dev = await authDevice(hid, req, bodyBuf, { requireApproved: false });
       return [200, { deviceId: dev.device_id, approved: !!dev.approved, isAdmin: !!dev.is_admin, epoch: house.epoch, hasEcdh: !!dev.ecdh_pub,
         adminCount: q.countAdmins.get(hid).n }];
+    }
+    // PUT /households/:hid/me/label {labelCt} — libellé CHIFFRÉ de MON appareil (après récupération)
+    if (M === "PUT" && r.length === 4 && r[2] === "me" && r[3] === "label") {
+      const dev = await authDevice(hid, req, bodyBuf, { requireApproved: false });
+      const b = parseJson(bodyBuf);
+      if (typeof b.labelCt !== "string" || b.labelCt.length > 4096) bad(400, "FIELDS_INVALID");
+      q.setLabel.run(b.labelCt, hid, dev.device_id);
+      return [200, { ok: true }];
+    }
+    // Kit de secours — GET : état (appareil approuvé) ; PUT : créer / remplacer (admin) ;
+    // DELETE : désactiver (admin). Le rid n'est jamais renvoyé.
+    if (r.length === 3 && r[2] === "recovery") {
+      if (M === "GET") {
+        await authDevice(hid, req, bodyBuf);
+        const rec = q.recovery.get(hid);
+        return [200, rec ? { configured: true, upToDate: rec.epoch === house.epoch, updatedAt: rec.updated_at } : { configured: false }];
+      }
+      if (M === "PUT") {
+        requireAdmin(await authDevice(hid, req, bodyBuf));
+        const b = parseJson(bodyBuf);
+        if (!isB64(b.rid, 40) || !/^[0-9a-f]{64}$/.test(b.verifier || "") || !isB64(b.wrap?.iv, 64) || !isB64(b.wrap?.ct, 200)) bad(400, "FIELDS_INVALID");
+        if (Number(b.epoch) !== house.epoch) bad(409, "KEY_ROTATED");
+        const other = q.recoveryByRid.get(b.rid);
+        if (other && other.hid !== hid) bad(409, "RID_TAKEN");
+        q.upsertRecovery.run(hid, b.rid, b.verifier, house.epoch, JSON.stringify({ iv: b.wrap.iv, ct: b.wrap.ct }), now());
+        return [200, { ok: true }];
+      }
+      if (M === "DELETE") {
+        requireAdmin(await authDevice(hid, req, bodyBuf));
+        q.deleteRecovery.run(hid);
+        return [200, { ok: true }];
+      }
     }
     // PUT /households/:hid/me/ecdh {ecdhPub} — enregistre la clé ECDH de MON appareil (S5, rotation)
     if (M === "PUT" && r.length === 4 && r[2] === "me" && r[3] === "ecdh") {
@@ -335,6 +406,9 @@ export function createSyncServer({ dbPath, now = () => Date.now(), origins = [],
         for (const l of (Array.isArray(b.labels) ? b.labels : []).slice(0, MAX_DEVICES)) {
           if (typeof l?.labelCt === "string" && l.labelCt.length <= 4096) q.setLabel.run(l.labelCt, hid, String(l.deviceId));
         }
+        // Kit de secours : la nouvelle clé emballée par l'admin avec la clé de la phrase.
+        const rw = b.recoveryWrap;
+        if (rw && isB64(rw.iv, 64) && isB64(rw.ct, 200)) q.rewrapRecovery.run(epoch, JSON.stringify({ iv: rw.iv, ct: rw.ct }), t, hid);
         q.insertBlob.run(hid, current + 1, envText, envText.length, t, dev.device_id);
         q.pruneOld.run(hid, hid, KEEP_VERSIONS);
         db.exec("COMMIT");

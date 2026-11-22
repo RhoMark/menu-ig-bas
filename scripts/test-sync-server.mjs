@@ -240,11 +240,77 @@ await check("C retiré : plus d'accès ; l'ancien QR ne permet plus de rejoindre
   assert.equal((await call(D, "POST", "/api/v1/join", { pubkey: D.pub, joinSecret: s2 })).status, 202);
 });
 
-await check("base serveur aveugle : aucun prénom / allergie / menu / libellé en clair", async () => {
+// ── C1.5 — Kit de secours (phrase de 12 mots) ──
+const phrase = await hc.newRecoveryPhrase();
+const rk = await hc.recoveryKeys(phrase.entropy);
+const recBody = async (rawKey, epoch) => ({ rid: rk.rid, verifier: await hc.joinVerifier(rk.auth), epoch,
+  wrap: await hc.wrapRecovery(rk.kek, rawKey, hid2, epoch) });
+const curVersion = async dev => (await call(dev, "GET", `/api/v1/households/${hid2}/blob`)).body.version;
+await check("secours : B (non admin) ne peut pas créer le kit ; mauvaise époque refusée", async () => {
+  assert.equal((await call(B2, "PUT", `/api/v1/households/${hid2}/recovery`, await recBody(k2, 1))).body.error, "ADMIN_ONLY");
+  assert.equal((await call(A2, "PUT", `/api/v1/households/${hid2}/recovery`, await recBody(k1, 0))).body.error, "KEY_ROTATED");
+});
+await check("secours : A crée le kit → état « configuré, à jour »", async () => {
+  assert.equal((await call(A2, "PUT", `/api/v1/households/${hid2}/recovery`, await recBody(k2, 1))).status, 200);
+  const st = await call(B2, "GET", `/api/v1/households/${hid2}/recovery`);
+  assert.equal(st.body.configured, true); assert.equal(st.body.upToDate, true); assert.equal(st.body.rid, undefined);
+});
+const N = await newDevice();
+await check("secours : mauvaise phrase → 403 RECOVERY_DENIED", async () => {
+  const bad = await hc.recoveryKeys((await hc.newRecoveryPhrase()).entropy);
+  assert.equal((await call(N, "POST", "/api/v1/recover", { rid: rk.rid, auth: bad.auth, pubkey: N.pub })).body.error, "RECOVERY_DENIED");
+  assert.equal((await call(N, "POST", "/api/v1/recover", { rid: bad.rid, auth: bad.auth, pubkey: N.pub })).body.error, "RECOVERY_DENIED");
+});
+await check("secours : tous les appareils perdus → la phrase seule rend le foyer (nouvel appareil admin)", async () => {
+  const ent = await hc.parseRecoveryPhrase(phrase.words.join(" "));
+  const keys = await hc.recoveryKeys(ent);
+  const r = await call(N, "POST", "/api/v1/recover", { rid: keys.rid, auth: keys.auth, pubkey: N.pub });
+  assert.equal(r.status, 200); assert.equal(r.body.hid, hid2); assert.equal(r.body.isAdmin, true);
+  const key = await hc.unwrapRecovery(keys.kek, r.body.wrap, hid2, r.body.epoch);
+  const blob = await call(N, "GET", `/api/v1/households/${hid2}/blob`);
+  assert.deepEqual(await hc.open(blob.body.envelope, key), household);
+  assert.equal((await call(N, "GET", `/api/v1/households/${hid2}/me`)).body.isAdmin, true);
+});
+await check("secours : rotation SANS nouvel emballage → kit périmé (409 RECOVERY_STALE)", async () => {
+  const k3 = hc.newKey();
+  const r = await call(A2, "POST", `/api/v1/households/${hid2}/rotate`, { epoch: 2, joinVerifier: await hc.joinVerifier(await hc.joinSecret(k3)),
+    wraps: [{ deviceId: A2.id, ...(await hc.wrapKey(eA.kp.privateKey, eA.pub, k3, hid2, 2, A2.id)) }],
+    baseVersion: await curVersion(A2), envelope: await hc.seal(household, hid2, k3, 2) });
+  assert.equal(r.status, 200);
+  assert.equal((await call(A2, "GET", `/api/v1/households/${hid2}/recovery`)).body.upToDate, false);
+  const Z = await newDevice();
+  assert.equal((await call(Z, "POST", "/api/v1/recover", { rid: rk.rid, auth: rk.auth, pubkey: Z.pub })).body.error, "RECOVERY_STALE");
+});
+await check("secours : rotation AVEC emballage du kit → la phrase donne la NOUVELLE clé", async () => {
+  const k4 = hc.newKey();
+  const r = await call(A2, "POST", `/api/v1/households/${hid2}/rotate`, { epoch: 3, joinVerifier: await hc.joinVerifier(await hc.joinSecret(k4)),
+    wraps: [{ deviceId: A2.id, ...(await hc.wrapKey(eA.kp.privateKey, eA.pub, k4, hid2, 3, A2.id)) }],
+    recoveryWrap: await hc.wrapRecovery(rk.kek, k4, hid2, 3),
+    baseVersion: await curVersion(A2), envelope: await hc.seal(household, hid2, k4, 3) });
+  assert.equal(r.status, 200);
+  const Z = await newDevice();
+  const rr = await call(Z, "POST", "/api/v1/recover", { rid: rk.rid, auth: rk.auth, pubkey: Z.pub });
+  assert.equal(rr.status, 200); assert.equal(rr.body.epoch, 3);
+  assert.deepEqual(await hc.unwrapRecovery(rk.kek, rr.body.wrap, hid2, 3), k4);
+  await assert.rejects(() => hc.unwrapRecovery(rk.kek, rr.body.wrap, hid2, 2)); // époque liée à l'emballage
+});
+await check("secours : libellé chiffré de l'appareil récupéré enregistrable", async () => {
+  const lc = JSON.stringify({ iv: "aa", ct: "bb" });
+  assert.equal((await call(N, "PUT", `/api/v1/households/${hid2}/me/label`, { labelCt: lc })).status, 200);
+});
+await check("secours : l'admin désactive le kit → la phrase ne marche plus", async () => {
+  assert.equal((await call(A2, "DELETE", `/api/v1/households/${hid2}/recovery`)).status, 200);
+  const Z = await newDevice();
+  assert.equal((await call(Z, "POST", "/api/v1/recover", { rid: rk.rid, auth: rk.auth, pubkey: Z.pub })).body.error, "RECOVERY_DENIED");
+  assert.equal((await call(A2, "PUT", `/api/v1/households/${hid2}/recovery`, await (async () => {
+    const k = (await call(A2, "GET", `/api/v1/households/${hid2}/me`)).body.epoch; return { ...(await recBody(hc.newKey(), k)) }; })())).status, 200);
+});
+
+await check("base serveur aveugle : aucun prénom / allergie / menu / libellé / secret de la phrase en clair", async () => {
   const db = new DatabaseSync(dbPath);
-  const dump = JSON.stringify([...["households", "devices", "blobs"].flatMap(t => db.prepare(`SELECT * FROM ${t}`).all())]);
+  const dump = JSON.stringify([...["households", "devices", "blobs", "recovery"].flatMap(t => db.prepare(`SELECT * FROM ${t}`).all())]);
   db.close();
-  for (const w of ["Zéphyrine", "Barnabé", "peanuts", "d428", "iPhone", "PC de"]) assert.ok(!dump.includes(w), w);
+  for (const w of ["Zéphyrine", "Barnabé", "peanuts", "d428", "iPhone", "PC de", rk.auth, hc.toB64url(rk.kek), ...phrase.words]) assert.ok(!dump.includes(w), w);
 });
 
 server.close();

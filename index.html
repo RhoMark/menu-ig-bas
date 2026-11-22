@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Mijoterie — V2.159.0</title>
+<title>Mijoterie — V2.160.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -83,7 +83,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.159.0">
+<link rel="stylesheet" href="tailwind.css?v=2.160.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -12019,7 +12019,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.159.0"></script>
+<script src="data/recipes.js?v=2.160.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -14496,6 +14496,200 @@ const householdCrypto = (() => {
     return raw;
   }
 
+  // ── Phase 2·C (C1.5) — Kit de secours : phrase de 12 mots ──
+  // Liste officielle BIP-39 française (2048 mots, licence MIT, Pavol Rusnak /
+  // SatoshiLabs ; fichier source sha256 ebc3959a…7e59, ici en NFC). 12 mots = 128 bits aléatoires +
+  // 4 bits de contrôle. Les mots sont uniques sans accents ET par leurs
+  // 4 premières lettres : « abei » ou « abeille » suffisent pour « abeille ».
+  const RECOVERY_WORDS = `
+    abaisser abandon abdiquer abeille abolir aborder aboutir aboyer abrasif abreuver abriter abroger abrupt absence absolu absurde
+    abusif abyssal académie acajou acarien accabler accepter acclamer accolade accroche accuser acerbe achat acheter aciduler acier
+    acompte acquérir acronyme acteur actif actuel adepte adéquat adhésif adjectif adjuger admettre admirer adopter adorer adoucir
+    adresse adroit adulte adverbe aérer aéronef affaire affecter affiche affreux affubler agacer agencer agile agiter agrafer
+    agréable agrume aider aiguille ailier aimable aisance ajouter ajuster alarmer alchimie alerte algèbre algue aliéner aliment
+    alléger alliage allouer allumer alourdir alpaga altesse alvéole amateur ambigu ambre aménager amertume amidon amiral amorcer
+    amour amovible amphibie ampleur amusant analyse anaphore anarchie anatomie ancien anéantir angle angoisse anguleux animal annexer
+    annonce annuel anodin anomalie anonyme anormal antenne antidote anxieux apaiser apéritif aplanir apologie appareil appeler apporter
+    appuyer aquarium aqueduc arbitre arbuste ardeur ardoise argent arlequin armature armement armoire armure arpenter arracher arriver
+    arroser arsenic artériel article aspect asphalte aspirer assaut asservir assiette associer assurer asticot astre astuce atelier
+    atome atrium atroce attaque attentif attirer attraper aubaine auberge audace audible augurer aurore automne autruche avaler
+    avancer avarice avenir averse aveugle aviateur avide avion aviser avoine avouer avril axial axiome badge bafouer
+    bagage baguette baignade balancer balcon baleine balisage bambin bancaire bandage banlieue bannière banquier barbier baril baron
+    barque barrage bassin bastion bataille bateau batterie baudrier bavarder belette bélier belote bénéfice berceau berger berline
+    bermuda besace besogne bétail beurre biberon bicycle bidule bijou bilan bilingue billard binaire biologie biopsie biotype
+    biscuit bison bistouri bitume bizarre blafard blague blanchir blessant blinder blond bloquer blouson bobard bobine boire
+    boiser bolide bonbon bondir bonheur bonifier bonus bordure borne botte boucle boueux bougie boulon bouquin bourse
+    boussole boutique boxeur branche brasier brave brebis brèche breuvage bricoler brigade brillant brioche brique brochure broder
+    bronzer brousse broyeur brume brusque brutal bruyant buffle buisson bulletin bureau burin bustier butiner butoir buvable
+    buvette cabanon cabine cachette cadeau cadre caféine caillou caisson calculer calepin calibre calmer calomnie calvaire camarade
+    caméra camion campagne canal caneton canon cantine canular capable caporal caprice capsule capter capuche carabine carbone
+    caresser caribou carnage carotte carreau carton cascade casier casque cassure causer caution cavalier caverne caviar cédille
+    ceinture céleste cellule cendrier censurer central cercle cérébral cerise cerner cerveau cesser chagrin chaise chaleur chambre
+    chance chapitre charbon chasseur chaton chausson chavirer chemise chenille chéquier chercher cheval chien chiffre chignon chimère
+    chiot chlorure chocolat choisir chose chouette chrome chute cigare cigogne cimenter cinéma cintrer circuler cirer cirque
+    citerne citoyen citron civil clairon clameur claquer classe clavier client cligner climat clivage cloche clonage cloporte
+    cobalt cobra cocasse cocotier coder codifier coffre cogner cohésion coiffer coincer colère colibri colline colmater colonel
+    combat comédie commande compact concert conduire confier congeler connoter consonne contact convexe copain copie corail corbeau
+    cordage corniche corpus correct cortège cosmique costume coton coude coupure courage couteau couvrir coyote crabe crainte
+    cravate crayon créature créditer crémeux creuser crevette cribler crier cristal critère croire croquer crotale crucial cruel
+    crypter cubique cueillir cuillère cuisine cuivre culminer cultiver cumuler cupide curatif curseur cyanure cycle cylindre cynique
+    daigner damier danger danseur dauphin débattre débiter déborder débrider débutant décaler décembre déchirer décider déclarer décorer
+    décrire décupler dédale déductif déesse défensif défiler défrayer dégager dégivrer déglutir dégrafer déjeuner délice déloger demander
+    demeurer démolir dénicher dénouer dentelle dénuder départ dépenser déphaser déplacer déposer déranger dérober désastre descente désert
+    désigner désobéir dessiner destrier détacher détester détourer détresse devancer devenir deviner devoir diable dialogue diamant dicter
+    différer digérer digital digne diluer dimanche diminuer dioxyde directif diriger discuter disposer dissiper distance divertir diviser
+    docile docteur dogme doigt domaine domicile dompter donateur donjon donner dopamine dortoir dorure dosage doseur dossier
+    dotation douanier double douceur douter doyen dragon draper dresser dribbler droiture duperie duplexe durable durcir dynastie
+    éblouir écarter écharpe échelle éclairer éclipse éclore écluse école économie écorce écouter écraser écrémer écrivain écrou
+    écume écureuil édifier éduquer effacer effectif effigie effort effrayer effusion égaliser égarer éjecter élaborer élargir électron
+    élégant éléphant élève éligible élitisme éloge élucider éluder emballer embellir embryon émeraude émission emmener émotion émouvoir
+    empereur employer emporter emprise émulsion encadrer enchère enclave encoche endiguer endosser endroit enduire énergie enfance enfermer
+    enfouir engager engin englober énigme enjamber enjeu enlever ennemi ennuyeux enrichir enrobage enseigne entasser entendre entier
+    entourer entraver énumérer envahir enviable envoyer enzyme éolien épaissir épargne épatant épaule épicerie épidémie épier épilogue
+    épine épisode épitaphe époque épreuve éprouver épuisant équerre équipe ériger érosion erreur éruption escalier espadon espèce
+    espiègle espoir esprit esquiver essayer essence essieu essorer estime estomac estrade étagère étaler étanche étatique éteindre
+    étendoir éternel éthanol éthique ethnie étirer étoffer étoile étonnant étourdir étrange étroit étude euphorie évaluer évasion
+    éventail évidence éviter évolutif évoquer exact exagérer exaucer exceller excitant exclusif excuse exécuter exemple exercer exhaler
+    exhorter exigence exiler exister exotique expédier explorer exposer exprimer exquis extensif extraire exulter fable fabuleux facette
+    facile facture faiblir falaise fameux famille farceur farfelu farine farouche fasciner fatal fatigue faucon fautif faveur
+    favori fébrile féconder fédérer félin femme fémur fendoir féodal fermer féroce ferveur festival feuille feutre février
+    fiasco ficeler fictif fidèle figure filature filetage filière filleul filmer filou filtrer financer finir fiole firme
+    fissure fixer flairer flamme flasque flatteur fléau flèche fleur flexion flocon flore fluctuer fluide fluvial folie
+    fonderie fongible fontaine forcer forgeron formuler fortune fossile foudre fougère fouiller foulure fourmi fragile fraise franchir
+    frapper frayeur frégate freiner frelon frémir frénésie frère friable friction frisson frivole froid fromage frontal frotter
+    fruit fugitif fuite fureur furieux furtif fusion futur gagner galaxie galerie gambader garantir gardien garnir garrigue
+    gazelle gazon géant gélatine gélule gendarme général génie genou gentil géologie géomètre géranium germe gestuel geyser
+    gibier gicler girafe givre glace glaive glisser globe gloire glorieux golfeur gomme gonfler gorge gorille goudron
+    gouffre goulot goupille gourmand goutte graduel graffiti graine grand grappin gratuit gravir grenat griffure griller grimper
+    grogner gronder grotte groupe gruger grutier gruyère guépard guerrier guide guimauve guitare gustatif gymnaste gyrostat habitude
+    hachoir halte hameau hangar hanneton haricot harmonie harpon hasard hélium hématome herbe hérisson hermine héron hésiter
+    heureux hiberner hibou hilarant histoire hiver homard hommage homogène honneur honorer honteux horde horizon horloge hormone
+    horrible houleux housse hublot huileux humain humble humide humour hurler hydromel hygiène hymne hypnose idylle ignorer
+    iguane illicite illusion image imbiber imiter immense immobile immuable impact impérial implorer imposer imprimer imputer incarner
+    incendie incident incliner incolore indexer indice inductif inédit ineptie inexact infini infliger informer infusion ingérer inhaler
+    inhiber injecter injure innocent inoculer inonder inscrire insecte insigne insolite inspirer instinct insulter intact intense intime
+    intrigue intuitif inutile invasion inventer inviter invoquer ironique irradier irréel irriter isoler ivoire ivresse jaguar jaillir
+    jambe janvier jardin jauger jaune javelot jetable jeton jeudi jeunesse joindre joncher jongler joueur jouissif journal
+    jovial joyau joyeux jubiler jugement junior jupon juriste justice juteux juvénile kayak kimono kiosque label labial
+    labourer lacérer lactose lagune laine laisser laitier lambeau lamelle lampe lanceur langage lanterne lapin largeur larme
+    laurier lavabo lavoir lecture légal léger légume lessive lettre levier lexique lézard liasse libérer libre licence
+    licorne liège lièvre ligature ligoter ligue limer limite limonade limpide linéaire lingot lionceau liquide lisière lister
+    lithium litige littoral livreur logique lointain loisir lombric loterie louer lourd loutre louve loyal lubie lucide
+    lucratif lueur lugubre luisant lumière lunaire lundi luron lutter luxueux machine magasin magenta magique maigre maillon
+    maintien mairie maison majorer malaxer maléfice malheur malice mallette mammouth mandater maniable manquant manteau manuel marathon
+    marbre marchand mardi maritime marqueur marron marteler mascotte massif matériel matière matraque maudire maussade mauve maximal
+    méchant méconnu médaille médecin méditer méduse meilleur mélange mélodie membre mémoire menacer mener menhir mensonge mentor
+    mercredi mérite merle messager mesure métal météore méthode métier meuble miauler microbe miette mignon migrer milieu
+    million mimique mince minéral minimal minorer minute miracle miroiter missile mixte mobile moderne moelleux mondial moniteur
+    monnaie monotone monstre montagne monument moqueur morceau morsure mortier moteur motif mouche moufle moulin mousson mouton
+    mouvant multiple munition muraille murène murmure muscle muséum musicien mutation muter mutuel myriade myrtille mystère mythique
+    nageur nappe narquois narrer natation nation nature naufrage nautique navire nébuleux nectar néfaste négation négliger négocier
+    neige nerveux nettoyer neurone neutron neveu niche nickel nitrate niveau noble nocif nocturne noirceur noisette nomade
+    nombreux nommer normatif notable notifier notoire nourrir nouveau novateur novembre novice nuage nuancer nuire nuisible numéro
+    nuptial nuque nutritif obéir objectif obliger obscur observer obstacle obtenir obturer occasion occuper océan octobre octroyer
+    octupler oculaire odeur odorant offenser officier offrir ogive oiseau oisillon olfactif olivier ombrage omettre onctueux onduler
+    onéreux onirique opale opaque opérer opinion opportun opprimer opter optique orageux orange orbite ordonner oreille organe
+    orgueil orifice ornement orque ortie osciller osmose ossature otarie ouragan ourson outil outrager ouvrage ovation oxyde
+    oxygène ozone paisible palace palmarès palourde palper panache panda pangolin paniquer panneau panorama pantalon papaye papier
+    papoter papyrus paradoxe parcelle paresse parfumer parler parole parrain parsemer partager parure parvenir passion pastèque paternel
+    patience patron pavillon pavoiser payer paysage peigne peintre pelage pélican pelle pelouse peluche pendule pénétrer pénible
+    pensif pénurie pépite péplum perdrix perforer période permuter perplexe persil perte peser pétale petit pétrir peuple
+    pharaon phobie phoque photon phrase physique piano pictural pièce pierre pieuvre pilote pinceau pipette piquer pirogue
+    piscine piston pivoter pixel pizza placard plafond plaisir planer plaque plastron plateau pleurer plexus pliage plomb
+    plonger pluie plumage pochette poésie poète pointe poirier poisson poivre polaire policier pollen polygone pommade pompier
+    ponctuel pondérer poney portique position posséder posture potager poteau potion pouce poulain poumon pourpre poussin pouvoir
+    prairie pratique précieux prédire préfixe prélude prénom présence prétexte prévoir primitif prince prison priver problème procéder
+    prodige profond progrès proie projeter prologue promener propre prospère protéger prouesse proverbe prudence pruneau psychose public
+    puceron puiser pulpe pulsar punaise punitif pupitre purifier puzzle pyramide quasar querelle question quiétude quitter quotient
+    racine raconter radieux ragondin raideur raisin ralentir rallonge ramasser rapide rasage ratisser ravager ravin rayonner réactif
+    réagir réaliser réanimer recevoir réciter réclamer récolter recruter reculer recycler rédiger redouter refaire réflexe réformer refrain
+    refuge régalien région réglage régulier réitérer rejeter rejouer relatif relever relief remarque remède remise remonter remplir
+    remuer renard renfort renifler renoncer rentrer renvoi replier reporter reprise reptile requin réserve résineux résoudre respect
+    rester résultat rétablir retenir réticule retomber retracer réunion réussir revanche revivre révolte révulsif richesse rideau rieur
+    rigide rigoler rincer riposter risible risque rituel rival rivière rocheux romance rompre ronce rondin roseau rosier
+    rotatif rotor rotule rouge rouille rouleau routine royaume ruban rubis ruche ruelle rugueux ruiner ruisseau ruser
+    rustique rythme sabler saboter sabre sacoche safari sagesse saisir salade salive salon saluer samedi sanction sanglier
+    sarcasme sardine saturer saugrenu saumon sauter sauvage savant savonner scalpel scandale scélérat scénario sceptre schéma science
+    scinder score scrutin sculpter séance sécable sécher secouer sécréter sédatif séduire seigneur séjour sélectif semaine sembler
+    semence séminal sénateur sensible sentence séparer séquence serein sergent sérieux serrure sérum service sésame sévir sevrage
+    sextuple sidéral siècle siéger siffler sigle signal silence silicium simple sincère sinistre siphon sirop sismique situer
+    skier social socle sodium soigneux soldat soleil solitude soluble sombre sommeil somnoler sonde songeur sonnette sonore
+    sorcier sortir sosie sottise soucieux soudure souffle soulever soupape source soutirer souvenir spacieux spatial spécial sphère
+    spiral stable station sternum stimulus stipuler strict studieux stupeur styliste sublime substrat subtil subvenir succès sucre
+    suffixe suggérer suiveur sulfate superbe supplier surface suricate surmener surprise sursaut survie suspect syllabe symbole symétrie
+    synapse syntaxe système tabac tablier tactile tailler talent talisman talonner tambour tamiser tangible tapis taquiner tarder
+    tarif tartine tasse tatami tatouage taupe taureau taxer témoin temporel tenaille tendre teneur tenir tension terminer
+    terne terrible tétine texte thème théorie thérapie thorax tibia tiède timide tirelire tiroir tissu titane titre
+    tituber toboggan tolérant tomate tonique tonneau toponyme torche tordre tornade torpille torrent torse tortue totem toucher
+    tournage tousser toxine traction trafic tragique trahir train trancher travail trèfle tremper trésor treuil triage tribunal
+    tricoter trilogie triomphe tripler triturer trivial trombone tronc tropical troupeau tuile tulipe tumulte tunnel turbine tuteur
+    tutoyer tuyau tympan typhon typique tyran ubuesque ultime ultrason unanime unifier union unique unitaire univers uranium
+    urbain urticant usage usine usuel usure utile utopie vacarme vaccin vagabond vague vaillant vaincre vaisseau valable
+    valise vallon valve vampire vanille vapeur varier vaseux vassal vaste vecteur vedette végétal véhicule veinard véloce
+    vendredi vénérer venger venimeux ventouse verdure vérin vernir verrou verser vertu veston vétéran vétuste vexant vexer
+    viaduc viande victoire vidange vidéo vignette vigueur vilain village vinaigre violon vipère virement virtuose virus visage
+    viseur vision visqueux visuel vital vitesse viticole vitrine vivace vivipare vocation voguer voile voisin voiture volaille
+    volcan voltiger volume vorace vortex voter vouloir voyage voyelle wagon xénon yacht zèbre zénith zeste zoologie
+  `.trim().split(/\s+/);
+  const plain = w => w.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+  let wordIndex = null; // mot sans accent (et préfixe de 4 lettres) → index
+  function lookupWord(tok) {
+    if (!wordIndex) {
+      wordIndex = new Map();
+      RECOVERY_WORDS.forEach((w, i) => { wordIndex.set(plain(w), i); wordIndex.set(plain(w).slice(0, 4), i); });
+    }
+    const t = plain(tok);
+    if (wordIndex.has(t)) return wordIndex.get(t);
+    return t.length >= 4 && wordIndex.has(t.slice(0, 4)) ? wordIndex.get(t.slice(0, 4)) : -1;
+  }
+  async function phraseFromEntropy(ent) {
+    const cs = new Uint8Array(await crypto.subtle.digest("SHA-256", ent))[0] >> 4; // 4 bits
+    let bits = "";
+    for (const b of ent) bits += b.toString(2).padStart(8, "0");
+    bits += cs.toString(2).padStart(4, "0");
+    return bits.match(/.{11}/g).map(x => RECOVERY_WORDS[parseInt(x, 2)]);
+  }
+  async function newRecoveryPhrase() {
+    const ent = crypto.getRandomValues(new Uint8Array(16));
+    return {words: await phraseFromEntropy(ent), entropy: ent};
+  }
+  // Saisie tolérante : majuscules, accents absents, virgules, numéros
+  // (« 1. abeille »), mot complet ou ses 4 premières lettres.
+  async function parseRecoveryPhrase(str) {
+    const toks = String(str || "").split(/[\s,;.\-–]+/).filter(t => t && !/^\d+$/.test(t));
+    if (toks.length !== 12) throw fail("PHRASE_COUNT", `La phrase de secours compte 12 mots (${toks.length} saisi${toks.length > 1 ? "s" : ""}).`);
+    const idx = toks.map(lookupWord);
+    const badAt = idx.findIndex(i => i < 0);
+    if (badAt >= 0) throw fail("PHRASE_WORD", `Mot n° ${badAt + 1} inconnu : « ${toks[badAt]} ». Vérifie l'orthographe.`);
+    const bits = idx.map(i => i.toString(2).padStart(11, "0")).join("");
+    const ent = new Uint8Array(bits.slice(0, 128).match(/.{8}/g).map(b => parseInt(b, 2)));
+    const cs = new Uint8Array(await crypto.subtle.digest("SHA-256", ent))[0] >> 4;
+    if (cs !== parseInt(bits.slice(128), 2)) throw fail("PHRASE_TYPO", "Les mots sont connus mais la phrase est incorrecte : vérifie l'ordre et chaque mot.");
+    return ent;
+  }
+  // Trois secrets indépendants tirés de la phrase (HKDF à sens unique) :
+  //  rid  : retrouve le foyer sur le serveur (sans connaître son identifiant) ;
+  //  auth : prouve qu'on a la phrase (le serveur n'en garde que le sha256) ;
+  //  kek  : emballe la clé du foyer (jamais envoyée au serveur).
+  async function recoveryKeys(entropy) {
+    const ikm = await crypto.subtle.importKey("raw", entropy, "HKDF", false, ["deriveBits"]);
+    const d = async (info, n) => new Uint8Array(await crypto.subtle.deriveBits({name: "HKDF", hash: "SHA-256",
+      salt: enc.encode("mijoterie-recovery-v1"), info: enc.encode(info)}, ikm, n * 8));
+    return {rid: toB64url(await d("id", 16)), auth: toB64url(await d("auth", 32)), kek: await d("kek", 32)};
+  }
+  const recAad = (hid, epoch) => enc.encode(`mijoterie-recovery|${hid}|${epoch}`);
+  async function wrapRecovery(kek, rawKey, hid, epoch) {
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const ct = new Uint8Array(await crypto.subtle.encrypt({name: "AES-GCM", iv, additionalData: recAad(hid, epoch)}, await importKey(kek), rawKey));
+    return {iv: toB64url(iv), ct: toB64url(ct)};
+  }
+  async function unwrapRecovery(kek, wrap, hid, epoch) {
+    try {
+      return new Uint8Array(await crypto.subtle.decrypt({name: "AES-GCM", iv: fromB64url(wrap.iv), additionalData: recAad(hid, epoch)},
+        await importKey(kek), fromB64url(wrap.ct)));
+    } catch (e) { throw fail("RECOVERY_UNWRAP", "Clé du foyer illisible avec cette phrase."); }
+  }
+
   // ── S4 — aides d'authentification serveur (pures) ──
   const hex = buf => [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
   // joinSecret = HKDF(clé de foyer, "mijoterie-join") : prouve au serveur qu'on
@@ -14684,7 +14878,8 @@ const householdCrypto = (() => {
 
   return {newHid, newKey, seal, open, inviteString, parseInvite, recoveryCode, parseRecoveryCode, toB64url, fromB64url,
     joinSecret, joinVerifier, deviceIdOf, signingString, wrapKey, unwrapKey, mergeHousehold, keepLinkOnImport, same, stable,
-    hashPin, checkPin, guardSecurity};
+    hashPin, checkPin, guardSecurity, newRecoveryPhrase, parseRecoveryPhrase, phraseFromEntropy, recoveryKeys, wrapRecovery, unwrapRecovery,
+    RECOVERY_WORDS};
 })();
 // @@household-crypto:end
 
@@ -17508,6 +17703,7 @@ const deviceKeys = (() => {
 //   me(hid) · listDevices(hid) · approve(hid, id) · remove(hid, id)
 //   pull(hid, sinceVersion) → {version, envelope|unchanged} · push(hid, baseVersion, envelope) → {version}
 //   deleteHousehold(hid) (Phase 2·C, admin : efface le foyer du serveur)
+//   recover(rid, auth) · get/set/deleteRecovery(hid) · setLabel(hid, labelCt) (C1.5, kit de secours)
 function createLocalHomeTransport(base = "/api/v1") {
   let lastTs = 0;
   async function call(method, path, body) {
@@ -17545,6 +17741,12 @@ function createLocalHomeTransport(base = "/api/v1") {
     remove: (hid, id) => call("DELETE", `/households/${hid}/devices/${id}`),
     setAdmin: (hid, id, isAdmin) => call("POST", `/households/${hid}/devices/${id}/admin`, {isAdmin}),
     deleteHousehold: hid => call("DELETE", `/households/${hid}`),
+    // C1.5 — Kit de secours
+    recover: (rid, auth) => withPub("/recover", {rid, auth}),
+    getRecovery: hid => call("GET", `/households/${hid}/recovery`),
+    setRecovery: (hid, body) => call("PUT", `/households/${hid}/recovery`, body),
+    deleteRecovery: hid => call("DELETE", `/households/${hid}/recovery`),
+    setLabel: (hid, labelCt) => call("PUT", `/households/${hid}/me/label`, {labelCt}),
     pull: (hid, since) => call("GET", `/households/${hid}/blob${since ? `?since=${since}` : ""}`),
     push: (hid, baseVersion, envelope) => call("PUT", `/households/${hid}/blob`, {baseVersion, envelope}),
   };
@@ -17570,8 +17772,12 @@ const SYNC_ERRORS = {
   RATE_LIMITED: "Trop de demandes en peu de temps : patiente une minute puis réessaie.",
   CAPACITY: "Le serveur de synchro est plein pour le moment. Tes données restent sur cet appareil ; réessaie plus tard.",
   ORIGIN_DENIED: "Le serveur de synchro refuse cette adresse de l'app. Ouvre l'app depuis son adresse officielle.",
+  // C1.5 — Kit de secours
+  RECOVERY_DENIED: "Cette phrase de secours ne correspond à aucun foyer sur le serveur (ou elle a été remplacée depuis).",
+  RECOVERY_STALE: "Ce kit de secours n'est plus à jour : la clé du foyer a changé depuis. Il faut un appareil du foyer pour créer un nouveau kit.",
 };
-const syncErrorText = e => SYNC_ERRORS[e?.code] || `Erreur serveur maison : ${e?.code || e?.message || e}`;
+const syncErrorText = e => SYNC_ERRORS[e?.code]
+  || (/^(PHRASE_|RECOVERY_UNWRAP)/.test(e?.code || "") ? e.message : `Erreur serveur maison : ${e?.code || e?.message || e}`);
 function guessDeviceLabel() {
   const ua = navigator.userAgent;
   if (/iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1)) return "iPad";
@@ -17746,8 +17952,12 @@ async function rotateHouseholdKey(getState, update) {
   const cur = await homeTransport.pull(hid, 0);
   const house = applyRuntimeToV2(getState()).households[ah];
   const env = await householdCrypto.seal(house, hid, k2, epoch);
+  // C1.5 — Kit de secours : la nouvelle clé est aussi emballée avec la clé de la
+  // phrase (rangée dans le foyer chiffré), sinon la phrase ne servirait plus à rien.
+  const kek = house.syncMeta?.recovery?.kek;
+  const recoveryWrap = kek ? await householdCrypto.wrapRecovery(householdCrypto.fromB64url(kek), k2, hid, epoch) : undefined;
   const res = await homeTransport.rotate(hid, {epoch, joinVerifier: await householdCrypto.joinVerifier(await householdCrypto.joinSecret(k2)),
-    wraps, labels, baseVersion: cur.version || 0, envelope: env});
+    wraps, labels, baseVersion: cur.version || 0, envelope: env, ...(recoveryWrap ? {recoveryWrap} : {})});
   await householdKeyStore.put(hid, k2, epoch);
   syncBaseStore.set(hid, env);
   patchServer(update, uid, {version: res.version, epoch, ecdh: true});
@@ -17978,6 +18188,85 @@ function FoyerLabCard({state, update}) {
       : "Foyer reconnecté, en attente d'approbation par l'appareil administrateur.");
   });
   const syncNow = () => { setMsg(null); homeSyncKick(); };
+
+  // ── C1.5 — Kit de secours (phrase de 12 mots) ──
+  const [recStatus, setRecStatus] = useState(null); // {configured, upToDate, updatedAt}
+  const [kit, setKit] = useState(null); // {step: "show"|"check", words, entropy, ask: [i, j], a: ["", ""]}
+  const [recOpen, setRecOpen] = useState(false);
+  const [recInput, setRecInput] = useState("");
+  const loadRecovery = async () => { try { setRecStatus(await homeTransport.getRecovery(meta.hid)); } catch (e) { /* hors ligne */ } };
+  useEffect(() => { if (srv?.approved && srv.isAdmin && meta?.hid) loadRecovery(); }, [srv?.approved, srv?.isAdmin, meta?.hid]);
+  // Plus de kit visible au bout de 10 min (les mots ouvrent TOUT le foyer).
+  useEffect(() => { if (!kit) return; const t = setTimeout(() => setKit(null), 600000); return () => clearTimeout(t); }, [kit?.words]);
+  const startKit = async () => {
+    const {words, entropy} = await householdCrypto.newRecoveryPhrase();
+    const i = Math.floor(Math.random() * 6), j = 6 + Math.floor(Math.random() * 6);
+    setKit({step: "show", words, entropy, ask: [i, j], a: ["", ""]}); setMsg(null);
+  };
+  const printKit = () => {
+    const f = document.createElement("iframe");
+    f.style.cssText = "position:fixed;width:0;height:0;border:0;right:0;bottom:0";
+    document.body.appendChild(f);
+    const d = f.contentDocument;
+    d.open();
+    d.write(`<!doctype html><meta charset="utf-8"><title>Kit de secours Mijoterie</title>
+<body style="font-family:Georgia,serif;padding:32px;color:#222">
+<h1 style="font-size:22px">Mijoterie — Kit de secours du foyer</h1>
+<p>Imprimé le ${new Date().toLocaleDateString("fr-FR")}. Ces 12 mots permettent de retrouver tout le foyer si tous les appareils sont perdus.</p>
+<ol style="columns:2;font-size:20px;line-height:1.9;font-family:ui-monospace,monospace">${kit.words.map(w => `<li>${w}</li>`).join("")}</ol>
+<p style="margin-top:24px"><b>Range cette feuille en lieu sûr</b> (avec tes papiers importants). Quiconque a ces mots peut ouvrir le foyer : ne la photographie pas, ne l'envoie pas.</p>
+<p>Pour récupérer : Mijoterie → Mon foyer → Foyer partagé → « Récupérer avec la phrase de secours ».</p></body>`);
+    d.close();
+    setTimeout(() => { try { f.contentWindow.focus(); f.contentWindow.print(); } finally { setTimeout(() => f.remove(), 60000); } }, 200);
+  };
+  const activateKit = () => run(async () => {
+    // Vérification : les 2 mots demandés, retapés, doivent redonner la même phrase.
+    const typed = kit.words.map((w, n) => n === kit.ask[0] ? kit.a[0] : n === kit.ask[1] ? kit.a[1] : w).join(" ");
+    let ok = false;
+    try { ok = householdCrypto.same([...await householdCrypto.parseRecoveryPhrase(typed)], [...kit.entropy]); } catch (e) { ok = false; }
+    if (!ok) { say("err", `Ce ne sont pas les mots n° ${kit.ask[0] + 1} et n° ${kit.ask[1] + 1}. Reprends ta feuille.`); return; }
+    const keys = await householdCrypto.recoveryKeys(kit.entropy);
+    const raw = await householdKeyStore.get(meta.hid);
+    const epoch = await householdKeyStore.getEpoch(meta.hid);
+    await homeTransport.setRecovery(meta.hid, {rid: keys.rid, verifier: await householdCrypto.joinVerifier(keys.auth), epoch,
+      wrap: await householdCrypto.wrapRecovery(keys.kek, raw, meta.hid, epoch)});
+    // La clé d'emballage voyage DANS le foyer chiffré : tout appareil admin pourra
+    // ré-emballer la nouvelle clé lors d'une rotation.
+    update(s => ({_households: {...s._households, [ah]: {...s._households[ah],
+      syncMeta: {...(s._households[ah].syncMeta || {}), recovery: {kek: householdCrypto.toB64url(keys.kek), setAt: new Date().toISOString()}}}}}));
+    setKit(null);
+    await loadRecovery();
+    say("ok", "Kit de secours activé ✅ Si tu perds un jour tous tes appareils, ces 12 mots suffiront pour tout retrouver.");
+  });
+  const disableKit = () => {
+    if (!window.confirm("Désactiver le kit de secours ?\n\nLa phrase actuelle ne marchera plus. Sans kit, perdre tous tes appareils = perdre le foyer.")) return;
+    run(async () => {
+      await homeTransport.deleteRecovery(meta.hid);
+      update(s => {
+        const {recovery, ...sm} = s._households[ah].syncMeta || {};
+        return {_households: {...s._households, [ah]: {...s._households[ah], syncMeta: sm}}};
+      });
+      await loadRecovery();
+      say("ok", "Kit de secours désactivé.");
+    });
+  };
+  // Nouvel appareil, tous les autres perdus : la phrase seule rend le foyer.
+  const recoverFoyer = () => run(async () => {
+    const keys = await householdCrypto.recoveryKeys(await householdCrypto.parseRecoveryPhrase(recInput));
+    const r = await homeTransport.recover(keys.rid, keys.auth);
+    const key = await householdCrypto.unwrapRecovery(keys.kek, r.wrap, r.hid, r.epoch);
+    await householdKeyStore.put(r.hid, key, r.epoch);
+    try { await homeTransport.setLabel(r.hid, await sealLabel(key, labelInput)); } catch (e) { /* libellé facultatif */ }
+    const p = await homeTransport.pull(r.hid, 0);
+    if (!p.envelope) throw new Error("Foyer retrouvé, mais aucune donnée n'a été envoyée au serveur.");
+    const house = await householdCrypto.open(p.envelope, key);
+    if (!house || !Array.isArray(house.members) || !house.id) throw new Error("Contenu du foyer invalide.");
+    house.syncMeta = {...(house.syncMeta || {}), hid: r.hid};
+    setRecInput(""); setRecOpen(false);
+    setJoin({step: "who", rawKey: key, hid: r.hid, house, envHid: r.hid, sealedAt: p.envelope.sealedAt, env: p.envelope, epoch: r.epoch,
+      server: {hid: r.hid, deviceId: r.deviceId, isAdmin: true, approved: true, version: p.version, ecdh: true, epoch: r.epoch}});
+    say("ok", "Foyer retrouvé ✅ Choisis qui tu es. Ensuite, dans « 📱 Appareils », retire les appareils perdus (cela change la clé du foyer).");
+  });
   const checkApproval = () => run(async () => {
     const r = await homeTransport.me(meta.hid);
     setServer({approved: !!r.approved, isAdmin: !!r.isAdmin});
@@ -18127,7 +18416,7 @@ function FoyerLabCard({state, update}) {
                 ⚠ Ce QR code et ce code ouvrent TOUTES les données du foyer (allergies, santé). Ne les montre qu'à un appareil de la famille, ne les photographie pas, ne les envoie pas. Masquage automatique dans 2 minutes.
               </p>
               <QrCodeSvg text={invite.qr} />
-              <p className="text-xs text-slate-600 dark:text-slate-300">Code de secours (si la caméra ne marche pas) :</p>
+              <p className="text-xs text-slate-600 dark:text-slate-300">Code d'invitation (si la caméra ne marche pas) :</p>
               <p className="font-mono text-sm break-all text-slate-800 dark:text-slate-100 select-all">{invite.code}</p>
               <button onClick={() => setInvite(null)} className={btnAlt}>Masquer</button>
             </div>
@@ -18173,6 +18462,61 @@ function FoyerLabCard({state, update}) {
                   {srv.isAdmin && <button onClick={deleteServerHousehold} disabled={busy} className={btnAlt}>🗑 Supprimer le foyer du serveur</button>}
                 </div>
               </>
+            )}
+            {srv?.approved && srv.isAdmin && (
+              <div className="border-t border-slate-200 dark:border-slate-700 pt-3 space-y-2">
+                <p className="text-sm font-medium text-slate-700 dark:text-slate-200">🛟 Kit de secours</p>
+                {!kit && recStatus && (!recStatus.configured || !recStatus.upToDate) && (
+                  <p className="text-sm border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950 text-amber-900 dark:text-amber-100 rounded p-3">
+                    {recStatus.configured ? "⚠ Ton kit de secours n'est plus à jour (la clé du foyer a changé). Crée une nouvelle phrase."
+                      : "⚠ Sans kit de secours, si tu perds tous tes appareils en même temps, le foyer est perdu : le serveur ne peut pas le lire. Une phrase de 12 mots, notée sur papier, suffit à tout retrouver."}
+                  </p>
+                )}
+                {!kit && recStatus?.configured && recStatus.upToDate && (
+                  <p className="text-sm text-slate-700 dark:text-slate-200">✅ Kit de secours actif et à jour (le {new Date(recStatus.updatedAt).toLocaleDateString("fr-FR")}). Garde ta feuille de 12 mots en lieu sûr.</p>
+                )}
+                {!kit && (
+                  <div className="flex flex-wrap gap-2">
+                    <button onClick={startKit} disabled={busy} className={recStatus?.configured && recStatus.upToDate ? btnAlt : btnMain}>
+                      {recStatus?.configured ? "🔁 Nouvelle phrase de secours" : "🛟 Créer le kit de secours"}
+                    </button>
+                    {recStatus?.configured && <button onClick={disableKit} disabled={busy} className={btnAlt}>Désactiver</button>}
+                  </div>
+                )}
+                {kit?.step === "show" && (
+                  <div className="border border-amber-300 dark:border-amber-700 bg-amber-50 dark:bg-amber-950 rounded p-3 space-y-3">
+                    <p className="text-sm text-amber-900 dark:text-amber-100">
+                      Note ces <strong>12 mots dans l'ordre</strong>, sur papier ou dans ton gestionnaire de mots de passe (Bitwarden). Ils ouvrent TOUT le foyer : ne les photographie pas, ne les envoie à personne.
+                    </p>
+                    <ol className="grid grid-cols-2 sm:grid-cols-3 gap-x-4 gap-y-1.5 font-mono text-base text-slate-800 dark:text-slate-100">
+                      {kit.words.map((w, n) => <li key={n}><span className="text-slate-500 dark:text-slate-400 text-sm">{n + 1}.</span> {w}</li>)}
+                    </ol>
+                    <div className="flex flex-wrap gap-2">
+                      <button onClick={printKit} className={btnAlt}>🖨 Imprimer</button>
+                      <button onClick={() => setKit(k => ({...k, step: "check"}))} className={btnMain}>J'ai noté les 12 mots →</button>
+                      <button onClick={() => setKit(null)} className={btnAlt}>Annuler</button>
+                    </div>
+                  </div>
+                )}
+                {kit?.step === "check" && (
+                  <div className="border border-slate-200 dark:border-slate-700 rounded p-3 space-y-2">
+                    <p className="text-sm text-slate-700 dark:text-slate-200">Vérification : recopie deux mots depuis ta feuille.</p>
+                    <div className="flex flex-wrap gap-2">
+                      {kit.ask.map((n, x) => (
+                        <label key={n} className="flex items-center gap-2 text-sm text-slate-700 dark:text-slate-200">Mot n° {n + 1}
+                          <input value={kit.a[x]} onChange={e => { const v = e.target.value; setKit(k => ({...k, a: k.a.map((y, z) => z === x ? v : y)})); }}
+                            autoCapitalize="off" autoComplete="off" spellCheck={false}
+                            className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 w-36" />
+                        </label>
+                      ))}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <button onClick={activateKit} disabled={busy || !kit.a[0].trim() || !kit.a[1].trim()} className={btnMain}>🛟 Activer le kit</button>
+                      <button onClick={() => setKit(k => ({...k, step: "show"}))} className={btnAlt}>← Revoir les mots</button>
+                    </div>
+                  </div>
+                )}
+              </div>
             )}
             {devices && (
               <div className="space-y-1">
@@ -18236,11 +18580,31 @@ function FoyerLabCard({state, update}) {
               <button onClick={() => { setScanning(true); setMsg(null); }} className={btnAlt}>📷 Scanner le QR code</button>
             </div>
             <div className="flex flex-wrap gap-2 items-center">
-              <input value={codeInput} onChange={e => setCodeInput(e.target.value)} placeholder="ou saisis le code de secours"
+              <input value={codeInput} onChange={e => setCodeInput(e.target.value)} placeholder="ou saisis le code d'invitation"
                 autoCapitalize="characters" autoComplete="off" spellCheck={false}
                 className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm font-mono flex-1" />
               <button onClick={onCode} disabled={!codeInput.trim()} className={btnAlt}>Valider le code</button>
             </div>
+            {!srv?.approved && <div className="pt-2">
+              {!recOpen ? (
+                <button onClick={() => { setRecOpen(true); setMsg(null); }} className="text-sm text-emerald-700 dark:text-emerald-300 underline">
+                  🛟 Tous tes appareils sont perdus ? Récupérer avec la phrase de secours
+                </button>
+              ) : (
+                <div className="border border-slate-200 dark:border-slate-700 rounded p-3 space-y-2">
+                  <p className="text-sm text-slate-700 dark:text-slate-200">Saisis les <strong>12 mots</strong> de ta phrase de secours, dans l'ordre (les accents et majuscules ne comptent pas ; les 4 premières lettres de chaque mot suffisent).</p>
+                  <textarea value={recInput} onChange={e => setRecInput(e.target.value)} rows={3}
+                    autoCapitalize="off" autoComplete="off" spellCheck={false} placeholder="mot1 mot2 mot3 …"
+                    className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm font-mono w-full" />
+                  <div className="flex flex-wrap gap-2 items-center">
+                    <input value={labelInput} onChange={e => setLabelInput(e.target.value)} placeholder="Nom de cet appareil"
+                      className="border border-slate-300 dark:border-slate-600 dark:bg-slate-900 rounded px-2 py-1.5 text-sm flex-1" />
+                    <button onClick={recoverFoyer} disabled={busy || !recInput.trim()} className={btnMain}>🛟 Récupérer le foyer</button>
+                    <button onClick={() => { setRecOpen(false); setRecInput(""); }} className={btnAlt}>Annuler</button>
+                  </div>
+                </div>
+              )}
+            </div>}
           </>
         )}
         {scanning && <QrScanner onResult={onScan} onCancel={() => setScanning(false)} />}
