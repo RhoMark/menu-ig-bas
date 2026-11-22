@@ -1,4 +1,4 @@
-# Méthodologie des prix — Menu IG Bas
+# Méthodologie des prix — Mijoterie
 
 **Dernière mise à jour : 27 avril 2026 (V2.13.0)**
 

@@ -1,7 +1,7 @@
 # Serveur de synchro maison « La Mijoterie »
 
 Petit serveur **aveugle** qui permet aux appareils d'une famille de partager
-leur foyer Menu IG Bas sur le réseau de la maison, sans aucun cloud.
+leur foyer Mijoterie sur le réseau de la maison, sans aucun cloud.
 
 - **Ne lit rien** : il reçoit un foyer déjà chiffré sur l'appareil (AES-GCM 256,
   clé de foyer partagée par QR code, jamais envoyée au serveur). Il ne stocke

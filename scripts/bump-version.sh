@@ -26,7 +26,7 @@ if [[ "${1:-}" == "--help" || "${1:-}" == "-h" ]]; then
 Usage : $0 [--auto {patch|minor|major}]
 
 Bumpe la version dans :
-  - <title>Menu IG Bas — VX.Y.Z</title>     (index.html)
+  - <title>Mijoterie — VX.Y.Z</title>     (index.html)
   - const CACHE_VERSION = "menu-ig-bas-vX.Y.Z";   (sw.js)
 
 Sans --auto : menu interactif.
@@ -42,7 +42,7 @@ fi
 [[ ! -f "$SW" ]]    && { echo "${R}❌ sw.js introuvable${X}"; exit 1; }
 
 # Extraction version courante
-CURRENT_TITLE=$(grep -oE '<title>Menu IG Bas — V[0-9]+\.[0-9]+\.[0-9]+</title>' "$INDEX" | grep -oE 'V[0-9]+\.[0-9]+\.[0-9]+')
+CURRENT_TITLE=$(grep -oE '<title>Mijoterie — V[0-9]+\.[0-9]+\.[0-9]+</title>' "$INDEX" | grep -oE 'V[0-9]+\.[0-9]+\.[0-9]+')
 CURRENT_CACHE=$(grep -oE 'CACHE_VERSION = "menu-ig-bas-v[0-9]+\.[0-9]+\.[0-9]+"' "$SW" | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+')
 
 if [[ -z "$CURRENT_TITLE" ]]; then
@@ -117,7 +117,7 @@ echo
 echo "${B}Bump $CHOICE → $NEW_VERSION${X}"
 
 # Remplacement index.html
-sed -i "s|<title>Menu IG Bas — V[0-9]\+\.[0-9]\+\.[0-9]\+</title>|<title>Menu IG Bas — $NEW_TITLE</title>|" "$INDEX"
+sed -i "s|<title>Mijoterie — V[0-9]\+\.[0-9]\+\.[0-9]\+</title>|<title>Mijoterie — $NEW_TITLE</title>|" "$INDEX"
 
 # Remplacement sw.js
 sed -i "s|CACHE_VERSION = \"menu-ig-bas-v[0-9]\+\.[0-9]\+\.[0-9]\+\"|CACHE_VERSION = \"menu-ig-bas-$NEW_CACHE\"|" "$SW"
@@ -130,7 +130,7 @@ if [[ $(cat "$INDEX" "$SW" | grep -cE "(recipes\.js|tailwind\.css)\?v=$NEW_VERSI
 fi
 
 # Vérification post-sed
-NEW_TITLE_CHECK=$(grep -oE '<title>Menu IG Bas — V[0-9]+\.[0-9]+\.[0-9]+</title>' "$INDEX" | grep -oE 'V[0-9]+\.[0-9]+\.[0-9]+')
+NEW_TITLE_CHECK=$(grep -oE '<title>Mijoterie — V[0-9]+\.[0-9]+\.[0-9]+</title>' "$INDEX" | grep -oE 'V[0-9]+\.[0-9]+\.[0-9]+')
 NEW_CACHE_CHECK=$(grep -oE 'CACHE_VERSION = "menu-ig-bas-v[0-9]+\.[0-9]+\.[0-9]+"' "$SW" | grep -oE 'v[0-9]+\.[0-9]+\.[0-9]+')
 
 if [[ "$NEW_TITLE_CHECK" != "$NEW_TITLE" ]]; then

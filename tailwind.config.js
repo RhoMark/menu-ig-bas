@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-// Config Tailwind CSS pour Menu IG Bas — build local (V2.87.0, issue #94).
+// Config Tailwind CSS pour Mijoterie — build local (V2.87.0, issue #94).
 // Le CSS compilé est embarqué dans le repo (`tailwind.css`) et servi par
 // GitHub Pages. Plus aucune dépendance CDN runtime.
 

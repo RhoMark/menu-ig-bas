@@ -2,15 +2,16 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.157.0</title>
+<title>Mijoterie — V2.158.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/svg+xml" href="icon-source.svg">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="Menu IG">
-<meta name="theme-color" content="#059669">
+<meta name="apple-mobile-web-app-title" content="Mijoterie">
+<meta name="theme-color" content="#2E5B4E">
 <!-- Service Worker : permet le mode hors-ligne (HTTPS uniquement) -->
 <script>
 if ("serviceWorker" in navigator) {
@@ -82,7 +83,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.157.0">
+<link rel="stylesheet" href="tailwind.css?v=2.158.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -225,7 +226,7 @@ if ("serviceWorker" in navigator) {
 <body class="bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 min-h-screen">
 <div id="root">
   <div style="padding:40px;text-align:center;font-family:sans-serif;">
-    <p>⏳ Chargement de l'application Menu IG Bas…</p>
+    <p>⏳ Chargement de Mijoterie…</p>
     <p style="font-size:12px;color:#888;margin-top:8px;">Si rien ne se passe après quelques secondes, essayez de recharger la page. L'application fonctionne 100% hors-ligne (aucune ressource externe).</p>
   </div>
 </div>
@@ -723,7 +724,7 @@ if ("serviceWorker" in navigator) {
       "qa": [
         {
           "q": "Comment installer l'app sur mon téléphone ?",
-          "a": "iOS (Safari) : ouvre menu-ig-bas dans Safari → bouton Partager → « Sur l'écran d'accueil ». Android (Chrome/Brave) : menu ⋮ → « Installer l'application » ou « Ajouter à l'écran d'accueil ». Desktop (Chrome/Edge/Brave) : icône d'installation 💻 dans la barre d'adresse, ou menu → « Installer Menu IG Bas ». Une fois installée, l'app apparaît comme une vraie app native."
+          "a": "iOS (Safari) : ouvre menu-ig-bas dans Safari → bouton Partager → « Sur l'écran d'accueil ». Android (Chrome/Brave) : menu ⋮ → « Installer l'application » ou « Ajouter à l'écran d'accueil ». Desktop (Chrome/Edge/Brave) : icône d'installation 💻 dans la barre d'adresse, ou menu → « Installer Mijoterie ». Une fois installée, l'app apparaît comme une vraie app native."
         },
         {
           "q": "Pourquoi l'app fonctionne hors connexion ?",
@@ -12014,7 +12015,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.157.0"></script>
+<script src="data/recipes.js?v=2.158.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -17233,7 +17234,7 @@ function ConsentModal({onConsent}) {
   return (
     <div className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center z-50 p-4 overflow-auto">
       <div className="bg-white dark:bg-slate-800 rounded-lg shadow-xl border border-slate-200 dark:border-slate-700 max-w-2xl w-full p-6 my-8">
-        <h2 className="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-2">🥗 Bienvenue sur Menu IG Bas</h2>
+        <h2 className="text-2xl font-bold text-emerald-700 dark:text-emerald-300 mb-2">Bienvenue sur Mijoterie</h2>
         <p className="text-sm text-slate-600 dark:text-slate-300 mb-5">
           Avant de commencer, voici comment cette app fonctionne. Trois choses simples à savoir.
         </p>
@@ -18382,7 +18383,7 @@ function RecoveryView({onResolved}) {
         return;
       }
       if (!v2) {
-        setStatus({type:"error", msg:"Format de fichier non reconnu (besoin d'un export Menu IG Bas, format V2 en clair)"});
+        setStatus({type:"error", msg:"Format de fichier non reconnu (besoin d'un export Mijoterie, format V2 en clair)"});
         return;
       }
       // Re-chiffre avec la nouvelle clé locale (qui sera générée par cryptoStore.encrypt).
@@ -18426,7 +18427,7 @@ function RecoveryView({onResolved}) {
           <div className="border border-emerald-200 dark:border-emerald-800 bg-emerald-50 dark:bg-emerald-950 rounded p-3">
             <div className="font-semibold text-emerald-900 dark:text-emerald-100 mb-2">📥 Restaurer depuis un export JSON</div>
             <p className="text-xs text-slate-600 dark:text-slate-300 mb-3">
-              Si tu as un fichier <code>menu-ig-bas-export-*.json</code> récent, sélectionne-le.
+              Si tu as un fichier <code>mijoterie-export-*.json</code> (ou <code>menu-ig-bas-export-*.json</code>) récent, sélectionne-le.
               Tes données seront re-chiffrées avec une nouvelle clé locale.
             </p>
             <input ref={fileInputRef} type="file" accept=".json,application/json"
@@ -19297,7 +19298,7 @@ function App({initialState}) {
       <footer className={`no-print text-center py-3 text-xs ${window.__V3_UI ? "bg-surface-2 text-muted border-t border-line md:pl-60 mb-[calc(4rem+env(safe-area-inset-bottom))] md:mb-0" : "bg-slate-900 text-slate-400 dark:text-slate-500"}`}>
         {/* S3 — 5 touches rapides sur la version = bascule du labo « Foyer partagé »
             (indispensable sur une app iPhone installée : pas de barre d'adresse pour ?sync=lab). */}
-        <span onClick={labTap}>Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""}</span> — prototype local • Données stockées dans votre navigateur ·{" "}
+        <span onClick={labTap}>Mijoterie {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""}</span> — prototype local • Données stockées dans votre navigateur ·{" "}
         <a href="https://github.com/RhoMark/menu-ig-bas/blob/main/PRIVACY.md"
           target="_blank" rel="noopener noreferrer"
           className={window.__V3_UI ? "underline hover:text-ink" : "underline hover:text-slate-200"}>Confidentialité</a>
@@ -19461,9 +19462,9 @@ function TopBar({view, setView}) {
     <header className="no-print bg-gradient-to-r from-emerald-700 to-teal-600 dark:from-emerald-900 dark:to-teal-900 text-white shadow-lg">
       <div className="container mx-auto px-4 py-4 max-w-7xl flex items-center gap-6">
         <div className="flex items-center gap-3">
-          <span className="text-3xl">🌿</span>
+          <img src="icon-source.svg" alt="" className="w-9 h-9" />
           <div>
-            <h1 className="text-xl font-bold leading-tight">Menu IG Bas</h1>
+            <h1 className="text-xl font-bold leading-tight">Mijoterie</h1>
             <p className="text-xs text-emerald-100">Planification familiale · V1</p>
           </div>
         </div>
@@ -19581,7 +19582,10 @@ function V3Nav({view, setView, state, onTutorial}) {
     </div>
   );
   const wordmark = (
-    <span className="font-title text-2xl font-semibold text-ink tracking-tight">Menu IG Bas</span>
+    <span className="flex items-center gap-2.5">
+      <img src="icon-source.svg" alt="" className="w-8 h-8 flex-shrink-0" />
+      <span className="font-title text-2xl font-semibold text-ink tracking-tight">Mijoterie</span>
+    </span>
   );
   return (
     <>
@@ -24839,7 +24843,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
       const a = document.createElement("a");
       const dateStr = new Date().toISOString().slice(0, 10);
       a.href = url;
-      a.download = `menu-ig-bas-export-${dateStr}.json`;
+      a.download = `mijoterie-export-${dateStr}.json`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -24871,7 +24875,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
       const isV2Plain = data?.schema === 2;
       const isEncryptedV2 = data?.encrypted === true && typeof data?.iv === "string" && typeof data?.ct === "string";
       if (payload?.schema !== "menu-ig-bas-export" || !data || (!isV2Plain && !isEncryptedV2)) {
-        setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Menu IG Bas (V2). Schema détecté : " + (payload?.schema || "absent")});
+        setImportStatus({type: "error", msg: "Ce fichier n'est pas un export Mijoterie (V2). Schema détecté : " + (payload?.schema || "absent")});
         return false;
       }
       if (isEncryptedV2) {
@@ -25625,7 +25629,7 @@ function SettingsView({state, update, updateProfile, section = "all", journal: j
           const url = URL.createObjectURL(blob);
           const a = document.createElement("a");
           a.href = url;
-          a.download = `menu-ig-bas-semaines-orphelines-${new Date().toISOString().slice(0,10)}.json`;
+          a.download = `mijoterie-semaines-orphelines-${new Date().toISOString().slice(0,10)}.json`;
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
@@ -25738,7 +25742,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
       `}</style>
       <div className="flex justify-between items-end mb-3 border-b-2 border-emerald-700 pb-2">
         <div>
-          <h1 className="text-xl font-bold text-emerald-800 dark:text-emerald-200">🌿 Menu IG Bas — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
+          <h1 className="text-xl font-bold text-emerald-800 dark:text-emerald-200">Mijoterie — Semaine du {formatShort(weekStart)} au {formatShort(addDays(weekStart,6))}</h1>
           <p className="text-xs text-slate-600 dark:text-slate-300">{profile.members.length} pers. (≈ {mult.toFixed(1)} adultes équivalents) · {SEASON_FR[getSeason(weekStart)]}</p>
         </div>
         <div className="text-xs text-slate-500 dark:text-slate-400">Imprimé le {new Date().toLocaleDateString("fr-FR")}</div>
@@ -25826,7 +25830,7 @@ function PrintMenuPage({weekStart, menu, profile}) {
       </table>
         );
       })()}
-      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Menu IG Bas {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} · prototype</p>
+      <p className="text-[8pt] text-slate-500 dark:text-slate-400 mt-3 text-center">Mijoterie {(/V\d+\.\d+\.\d+/.exec(document.title)?.[0]) || ""} · prototype</p>
     </div>
   );
 }

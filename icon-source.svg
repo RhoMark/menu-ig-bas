@@ -1,5 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#059669"/>
-  <text x="256" y="335" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="200" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-6">MIG</text>
-  <text x="256" y="430" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="56" font-weight="600" fill="rgba(255,255,255,0.85)" text-anchor="middle" letter-spacing="2">menu</text>
+  <rect width="512" height="512" rx="112" fill="#2E5B4E"/>
+  <g transform="translate(256 270) scale(0.86) translate(-256 -256)">
+    <!-- vapeur -->
+    <path d="M206 128 c-18 -20 18 -36 0 -58" fill="none" stroke="#F6F1E8" stroke-width="16" stroke-linecap="round" opacity="0.75"/>
+    <path d="M306 128 c-18 -20 18 -36 0 -58" fill="none" stroke="#F6F1E8" stroke-width="16" stroke-linecap="round" opacity="0.75"/>
+    <!-- couvercle -->
+    <circle cx="256" cy="166" r="20" fill="#E3916B"/>
+    <path d="M112 246 Q118 176 256 176 Q394 176 400 246 Z" fill="#E3916B"/>
+    <!-- anses -->
+    <rect x="82" y="266" width="52" height="30" rx="15" fill="#F6F1E8"/>
+    <rect x="378" y="266" width="52" height="30" rx="15" fill="#F6F1E8"/>
+    <!-- marmite -->
+    <path d="M122 256 H390 V360 Q390 420 330 420 H182 Q122 420 122 360 Z" fill="#F6F1E8"/>
+    <!-- sourire -->
+    <path d="M222 336 Q256 366 290 336" fill="none" stroke="#2E5B4E" stroke-width="14" stroke-linecap="round"/>
+  </g>
 </svg>

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""audit-catalog.py — audit du catalogue de recettes Menu IG Bas.
+"""audit-catalog.py — audit du catalogue de recettes Mijoterie.
 
 Produit un rapport markdown analysant :
   - Matrice cuisines × types (cellules <5 rouge, <10 orange, ≥15 vert)
@@ -116,7 +116,7 @@ def build_report(recipes):
     today = dt.date.today().isoformat()
 
     lines = []
-    lines.append(f"# Audit catalogue Menu IG Bas — {today}")
+    lines.append(f"# Audit catalogue Mijoterie — {today}")
     lines.append("")
     lines.append(f"**Total** : {total} recettes")
     lines.append("")

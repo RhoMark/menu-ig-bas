@@ -1,8 +1,8 @@
-# Politique de confidentialité — Menu IG Bas
+# Politique de confidentialité — Mijoterie
 
 **Dernière mise à jour : 27 avril 2026 (V2.10.0)**
 
-Cette page décrit comment l'application **Menu IG Bas** gère tes données. Le principe directeur est simple : **rien ne quitte ton appareil**.
+Cette page décrit comment l'application **Mijoterie** gère tes données. Le principe directeur est simple : **rien ne quitte ton appareil**.
 
 ---
 
@@ -10,7 +10,7 @@ Cette page décrit comment l'application **Menu IG Bas** gère tes données. Le 
 
 **Aucune donnée n'est collectée par un serveur, par nous, ou par un tiers.**
 
-L'application Menu IG Bas est une **PWA (Progressive Web App)** qui s'exécute entièrement dans ton navigateur. Il n'y a pas de backend, pas de compte, pas de cloud, pas de système de tracking.
+L'application Mijoterie est une **PWA (Progressive Web App)** qui s'exécute entièrement dans ton navigateur. Il n'y a pas de backend, pas de compte, pas de cloud, pas de système de tracking.
 
 Concrètement :
 - ❌ Aucun analytics (Google Analytics, Plausible, Matomo, etc.)
