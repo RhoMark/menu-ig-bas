@@ -67,6 +67,9 @@ MAP = {
     "🎛": ["heater"], "📟": ["microwave"], "🧃": ["blender", "blend"], "🧁": ["cupcake", "cake"],
     "🍖": ["egg-fried"], "🪵": ["flame-kindling", "flame"], "🥡": ["soup"], "🎚": ["gauge"],
     "🔌": ["plug-zap"], "🌀": ["fan", "wind"],
+    "🐱": ["cat"], "🐶": ["dog"], "🐰": ["rabbit"], "🐦": ["bird"], "🐢": ["turtle"],
+    "🐿": ["squirrel"], "🐼": ["panda", "squirrel"], "🐌": ["snail"], "👻": ["ghost"], "🎸": ["guitar"],
+    "🎨": ["palette"],
     "👨": ["user"], "👩": ["user"], "👧": ["user-round"], "👦": ["user-round"],
 }
 
