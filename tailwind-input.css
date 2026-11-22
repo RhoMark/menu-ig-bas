@@ -140,6 +140,29 @@ html.ui-v3 .v3-filters > button {
 html.ui-v3 .v3-filters > input { flex: 1 1 16rem; min-width: 0; }
 @media (max-width: 640px) { html.ui-v3 .v3-filters > input { flex-basis: 100%; } }
 
+/* V2.157.0 — Curseur double (note de la bibliothèque) : deux range superposés,
+   seules les poignées reçoivent le pointeur. */
+.range-dual { position: relative; height: 1.5rem; }
+.range-dual-track, .range-dual-fill { position: absolute; top: 50%; height: 4px; margin-top: -2px; border-radius: 9999px; }
+.range-dual-track { left: 11px; right: 11px; background: #cbd5e1; }
+.dark .range-dual-track { background: #475569; }
+.range-dual-fill { background: #f59e0b; }
+.range-dual input[type=range] {
+  position: absolute; inset: 0; width: 100%; height: 100%; margin: 0;
+  -webkit-appearance: none; appearance: none; background: transparent; pointer-events: none;
+}
+.range-dual input[type=range]::-webkit-slider-runnable-track { background: transparent; }
+.range-dual input[type=range]::-moz-range-track { background: transparent; }
+.range-dual input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none; pointer-events: auto; cursor: pointer;
+  width: 22px; height: 22px; border-radius: 50%; background: #fff; border: 2px solid #f59e0b;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+}
+.range-dual input[type=range]::-moz-range-thumb {
+  pointer-events: auto; cursor: pointer; width: 18px; height: 18px; border-radius: 50%;
+  background: #fff; border: 2px solid #f59e0b; box-shadow: 0 1px 3px rgb(0 0 0 / 0.25);
+}
+
 /* V2.145.0 — Icône au trait teintée : --ic en clair, --ic-dark en sombre. */
 .ic-tint { color: var(--ic); }
 .dark .ic-tint { color: var(--ic-dark, var(--ic)); }

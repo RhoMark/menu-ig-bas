@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<title>Menu IG Bas — V2.156.0</title>
+<title>Menu IG Bas — V2.157.0</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <!-- PWA : permet l'installation sur l'écran d'accueil iOS / Android -->
 <link rel="manifest" href="manifest.json">
@@ -82,7 +82,7 @@ if ("serviceWorker" in navigator) {
      dépendance CDN runtime. Le fichier tailwind.css est compilé depuis
      tailwind-input.css via la CLI tailwindcss (voir CLAUDE.md pour
      procédure rebuild après changement de classes dans index.html). -->
-<link rel="stylesheet" href="tailwind.css?v=2.156.0">
+<link rel="stylesheet" href="tailwind.css?v=2.157.0">
 <script>
   // V2.16.0 — Mode sombre/clair via classe `dark` sur <html>
   // Configuration Tailwind : mode `class` (toggle manuel) configuré dans
@@ -473,7 +473,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Comment dire à l'app ce que ma famille aime ?",
-          "a": "Depuis V2.109.0, dans Paramètres → Membres, chaque membre a une rubrique « ❤ Ce que … aime » : ajoute jusqu'à 10 ingrédients (saumon, lentilles, potiron…), avec suggestions automatiques. Les recettes qui en contiennent sont favorisées dans les menus, d'autant plus que plusieurs membres les aiment — mais jamais imposées : l'effet est volontairement doux et plafonné pour qu'au plus ~1 repas sur 3 en profite (variété garantie). Les « j'aime » ne passent jamais devant les allergies, les exclusions, les repères nutritionnels (viande rouge ≤ 500 g/pers/sem, œufs…), la charge glycémique ni la saison. « Pomme » ne déclenche pas « pomme de terre » ; « saumon » reconnaît « pavé de saumon » ou « saumon fumé ». Dans la bibliothèque, le bouton « ❤ Ce qu'on aime » filtre ces recettes, et la fiche recette indique qui aime quoi (à l'écran seulement : l'impression et le PDF n'affichent aucun prénom)."
+          "a": "Depuis V2.109.0, dans Paramètres → Membres, chaque membre a une rubrique « ❤ Ce que … aime » : ajoute jusqu'à 10 ingrédients (saumon, lentilles, potiron…), avec suggestions automatiques. Les recettes qui en contiennent sont favorisées dans les menus, d'autant plus que plusieurs membres les aiment — mais jamais imposées : l'effet est volontairement doux et plafonné pour qu'au plus ~1 repas sur 3 en profite (variété garantie). Les « j'aime » ne passent jamais devant les allergies, les exclusions, les repères nutritionnels (viande rouge ≤ 500 g/pers/sem, œufs…), la charge glycémique ni la saison. « Pomme » ne déclenche pas « pomme de terre » ; « saumon » reconnaît « pavé de saumon » ou « saumon fumé ». Dans la bibliothèque, l'icône « ❤ Aime » filtre ces recettes, et la fiche recette indique qui aime quoi (à l'écran seulement : l'impression et le PDF n'affichent aucun prénom)."
         }
       ]
     },
@@ -689,7 +689,7 @@ if ("serviceWorker" in navigator) {
         },
         {
           "q": "Pictogrammes de navigation et vues",
-          "a": "📅 / 🗓 vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %). ⭐ filtre favoris de la bibliothèque. ❤ filtre « Ce qu'on aime » : uniquement les recettes contenant un ingrédient aimé par un membre (visible dès qu'un « J'aime » est renseigné)."
+          "a": "📅 / 🗓 vue mensuelle (5 semaines). 📊 historique des semaines passées. 📖 bibliothèque (catalogue complet des recettes filtré par cuisine / type / saison). 🌍 cuisines préférées du foyer (max 3, boost ×2 à la pioche). 📔 journal bien-être (saisie hebdo énergie/digestion/sommeil + notes). 🌓 thème (cycle auto / clair / sombre). ↘ compensation glycémique (jour J-1 ou J+1 d'un repas festif, seuil CG réduit de 15 %). ⭐ filtre favoris de la bibliothèque. ❤ filtre « Aime » : uniquement les recettes contenant un ingrédient aimé par un membre (visible dès qu'un « J'aime » est renseigné)."
         }
       ]
     },
@@ -12014,7 +12014,7 @@ if ("serviceWorker" in navigator) {
      disponible au démarrage. Lecture/écriture : scripts/recipes_store.py. -->
 <!-- V2.140.2 — ?v= (bumpé par scripts/bump-version.sh) : une page à jour ne doit JAMAIS lire un
      catalogue périmé resté dans le cache de l'ancienne version (SW). -->
-<script src="data/recipes.js?v=2.156.0"></script>
+<script src="data/recipes.js?v=2.157.0"></script>
 <script type="text/babel" data-presets="env,react">
 // ============================================================================
 // MENU IG BAS — V1
@@ -17140,7 +17140,7 @@ const TUTORIAL_STEPS = [
     emoji: "📖",
     title: "Fiche recette & filtres",
     body: "Clique sur un slot pour ouvrir la recette : ingrédients, étapes (style « ado qui cuisine », gestes définis), badges CG/IG, allergènes, kcal, temps. Note tes recettes (1-5★) — les ≤2★ sont exclues. Imprime-la (🖨) ou télécharge-la en PDF (📄).",
-    highlight: "Dis aussi ce que chacun aime (Paramètres → Membres → ❤) : ces recettes reviennent plus souvent. Bibliothèque consultable indépendamment du menu, avec filtres (type, favoris ⭐, « ❤ Ce qu'on aime ») et recherche multi-ingrédients (noix + poire).",
+    highlight: "Dis aussi ce que chacun aime (Paramètres → Membres → ❤) : ces recettes reviennent plus souvent. Bibliothèque consultable indépendamment du menu, avec filtres en icônes (type, saison, favoris ⭐, « ❤ Aime », note) et recherche multi-ingrédients (noix + poire).",
   },
   {
     emoji: "🛒",
@@ -21894,7 +21894,9 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
   // rating : "all" | "rated" | "good" (≥ 4) | "bad" (≤ 2) | "unrated" ;
   // ratingWho : "foyer" (moyenne pondérée des membres ayant noté) ou id de membre.
   const [seasonF, setSeasonF] = useState("all");
-  const [ratingF, setRatingF] = useState("all");
+  // V2.157.0 — Note = curseur double « Pas noté → 5 » : [lo, hi], 0 = pas encore notée.
+  const [ratingRange, setRatingRange] = useState([0, 5]);
+  const ratingActive = ratingRange[0] > 0 || ratingRange[1] < 5;
   const [ratingWho, setRatingWho] = useState("foyer");
   const members = state.profile?.members || [];
   const noteOf = r => {
@@ -21917,65 +21919,49 @@ function LibraryView({state, onSelectRecipe, rateRecipe}) {
       const s = seasonF === "now" ? currentSeason : seasonF;
       if (!(r.seasons || []).includes(s) && !(r.seasons || []).includes("all")) return false;
     }
-    if (ratingF !== "all") {
+    if (ratingActive) {
       const n = noteOf(r);
-      if (ratingF === "unrated" ? n != null : n == null) return false;
-      if (ratingF === "good" && n < 4) return false;
-      if (ratingF === "bad" && n > 2) return false;
+      if (n == null) { if (ratingRange[0] > 0) return false; }
+      else {
+        const k = Math.round(n);
+        if (k < Math.max(1, ratingRange[0]) || k > ratingRange[1]) return false;
+      }
     }
     return true;
   });
   return (
     <div className="space-y-4">
-      <div className={window.__V3_UI ? "flex flex-wrap gap-2 items-center v3-filters" : "bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-4 flex flex-wrap gap-3 items-center"}>
-        <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold text-ink w-full md:w-auto md:mr-auto" : "text-xl font-bold"}>{window.__V3_UI ? "Recettes" : "📖 Bibliothèque de recettes"}</h2>
-        {!window.__V3_UI && <div className="flex-1"></div>}
-        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="🔍 Rechercher (nom, ingrédient — ex : noix + poire)"
-          title="Astuce : cumulez des ingrédients avec « + ». Ex : noix + poire ne montre que les recettes contenant les deux."
-          className="border rounded px-3 py-2 min-w-[16rem]" />
-        {/* V2.62.0 (issue #20) — Filtre favoris */}
-        <button onClick={() => setFavOnly(f => !f)}
-          title={favOnly ? "Désactiver le filtre favoris" : `Afficher uniquement les ${favSet.size} favori${favSet.size > 1 ? "s" : ""}`}
-          className={`border rounded px-3 py-2 text-sm font-medium transition ${
-            favOnly
-              ? "bg-amber-100 dark:bg-amber-900 border-amber-400 dark:border-amber-600 text-amber-800 dark:text-amber-200"
-              : "border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
-          }`}>
-          {favOnly ? "⭐" : "☆"} Favoris {favSet.size > 0 && <span className="opacity-75">({favSet.size})</span>}
-        </button>
-        {hasLikes && (
-          <button onClick={() => setLikedOnly(f => !f)}
-            title={likedOnly ? "Afficher toutes les recettes" : "Uniquement les recettes avec un ingrédient aimé par un membre du foyer"}
-            className={`border rounded px-3 py-2 text-sm font-medium transition ${
-              likedOnly
-                ? "bg-emerald-100 dark:bg-emerald-900 border-emerald-400 dark:border-emerald-600 text-emerald-800 dark:text-emerald-200"
-                : "border-slate-300 dark:border-slate-600 hover:bg-slate-100 dark:hover:bg-slate-700"
-            }`}>
-            <span className="text-rose-500 dark:text-rose-400">❤</span> Ce qu'on aime
-          </button>
-        )}
-        <select value={filter} onChange={e=>setFilter(e.target.value)} className="border rounded px-3 py-2">
-          <option value="all">Tous les types</option>
-          <option value="breakfast">Petits-déjeuners</option>
-          <option value="lunch">Déjeuners</option>
-          <option value="dinner">Dîners</option>
-          <option value="dessert">Desserts</option>
-          <option value="snack">Goûters</option>
-        </select>
-        <select value={seasonF} onChange={e => setSeasonF(e.target.value)} aria-label="Filtrer par saison" className="border rounded px-3 py-2">
-          <option value="all">Toutes saisons</option>
-          <option value="now">De saison ({SEASON_FR[currentSeason]})</option>
-          {["spring", "summer", "autumn", "winter"].map(s => <option key={s} value={s}>{SEASON_FR[s]}</option>)}
-        </select>
-        <select value={ratingF} onChange={e => setRatingF(e.target.value)} aria-label="Filtrer par note" className="border rounded px-3 py-2">
-          <option value="all">Toutes les notes</option>
-          <option value="good">⭐ Bien notées (4-5)</option>
-          <option value="rated">Notées</option>
-          <option value="bad">Mal notées (1-2)</option>
-          <option value="unrated">Pas encore notées</option>
-        </select>
-        {ratingF !== "all" && members.length > 1 && (
-          <select value={ratingWho} onChange={e => setRatingWho(e.target.value)} aria-label="Note de qui" className="border rounded px-3 py-2">
+      {/* V2.157.0 — En-tête épuré : titre + recherche sur une ligne, filtres en icônes
+          (un tap = activer / désactiver), note en curseur « Pas noté → 5 ». */}
+      <div className="flex items-center gap-3 v3-filters">
+        <h2 className={window.__V3_UI ? "font-title text-3xl font-semibold text-ink flex-shrink-0" : "text-xl font-bold flex-shrink-0"}>{window.__V3_UI ? "Recettes" : "📖 Bibliothèque"}</h2>
+        <input value={query} onChange={e=>setQuery(e.target.value)} placeholder="🔍 Rechercher"
+          aria-label="Rechercher une recette" className="border rounded px-3 py-2 flex-1 min-w-0" />
+        <InfoTip title="Rechercher et filtrer" className="flex-shrink-0">
+          <p><strong>Recherche</strong> : nom, ingrédient ou étiquette. Cumule des ingrédients avec « + » : <em>noix + poire</em> ne montre que les recettes contenant les deux.</p>
+          <p className="mt-2"><strong>Icônes</strong> : un tap active le filtre (coche verte), un second tap l'enlève. <strong>Favoris</strong> : tes recettes étoilées. {hasLikes && <><strong>Aime</strong> : recettes avec un ingrédient aimé par un membre. </>}Un seul type de repas et une seule saison à la fois ; « De saison » suit la date du jour (les recettes toute saison sont incluses).</p>
+          <p className="mt-2"><strong>Note</strong> : fais glisser les deux poignées. « Pas noté » à gauche inclut les recettes jamais notées ; 4 à 5 = les mieux notées ; Pas noté à Pas noté = seulement celles à découvrir.{members.length > 1 && " Par défaut c'est la note du foyer ; tu peux choisir celle d'un membre."}</p>
+        </InfoTip>
+      </div>
+      <div className="flex flex-wrap items-start gap-x-4 gap-y-2">
+        <IconToggleTiles compact selected={[filter]} onToggle={(id, active) => setFilter(active ? "all" : id)}
+          items={[{id: "breakfast", label: "Petit-déj", icon: "☕"}, {id: "lunch", label: "Déjeuner", icon: "🥗"},
+            {id: "dinner", label: "Dîner", icon: "🌙"}, {id: "dessert", label: "Dessert", icon: "🍰"},
+            {id: "snack", label: "Goûter", icon: "🍪"}]} />
+        <IconToggleTiles compact selected={[seasonF]} onToggle={(id, active) => setSeasonF(active ? "all" : id)}
+          items={[{id: "now", label: "De saison", icon: "🌿"}, {id: "spring", label: "Printemps", icon: "🌱"},
+            {id: "summer", label: "Été", icon: "☀"}, {id: "autumn", label: "Automne", icon: "🌰"},
+            {id: "winter", label: "Hiver", icon: "❄"}]} />
+      </div>
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+        <IconToggleTiles compact
+          selected={[favOnly && "fav", likedOnly && "liked"].filter(Boolean)}
+          items={[{id: "fav", label: `Favoris${favSet.size ? ` (${favSet.size})` : ""}`, icon: "⭐"},
+            ...(hasLikes ? [{id: "liked", label: "Aime", icon: "❤"}] : [])]}
+          onToggle={id => id === "fav" ? setFavOnly(f => !f) : setLikedOnly(f => !f)} />
+        <RatingRangeSlider value={ratingRange} onChange={setRatingRange} />
+        {ratingActive && members.length > 1 && (
+          <select value={ratingWho} onChange={e => setRatingWho(e.target.value)} aria-label="Note de qui" className="border rounded px-3 py-1.5">
             <option value="foyer">Note du foyer</option>
             {members.map(m => <option key={m.id} value={String(m.id)}>Note de {m.name}</option>)}
           </select>
@@ -23957,6 +23943,41 @@ function EquipmentTiles({selected = [], onToggle}) {
   return <IconToggleTiles items={dataRef.equipment().map(e => ({...e, icon: EQUIPMENT_ICON[e.id] || "🍳"}))}
     selected={selected} onToggle={onToggle} />;
 }
+// V2.157.0 — Curseur double « Pas noté → 5 » (bibliothèque). value = [lo, hi],
+// 0 = pas encore notée. Deux <input range> superposés, seules les poignées
+// captent le doigt (cf. .range-dual dans tailwind-input.css).
+function RatingRangeSlider({value, onChange}) {
+  const [lo, hi] = value;
+  const lab = v => v === 0 ? "Pas noté" : `${v} ★`;
+  const summary = lo === 0 && hi === 5 ? "Toutes" : lo === hi ? (lo === 0 ? "Pas encore notées" : `${lo} ★`) : `${lab(lo)} à ${lab(hi)}`;
+  // Le centre des poignées (22 px) va de 11 px à largeur − 11 px.
+  const pos = v => `calc(11px + ${v} * (100% - 22px) / 5)`;
+  return (
+    <div className="flex items-center gap-3">
+      <span className="flex items-center gap-1.5 font-medium text-slate-700 dark:text-slate-200">
+        <span className="text-lg text-amber-500 dark:text-amber-400" aria-hidden="true">⭐</span>Note
+      </span>
+      <div className="w-52">
+        <div className="range-dual">
+          <div className="range-dual-track" />
+          <div className="range-dual-fill" style={{left: pos(lo), right: `calc(11px + ${5 - hi} * (100% - 22px) / 5)`}} />
+          <input type="range" min="0" max="5" step="1" value={lo} aria-label="Note minimale"
+            onChange={e => onChange([Math.min(Number(e.target.value), hi), hi])} />
+          <input type="range" min="0" max="5" step="1" value={hi} aria-label="Note maximale"
+            onChange={e => onChange([lo, Math.max(Number(e.target.value), lo)])} />
+        </div>
+        <div className="relative h-3 text-[10px] leading-3 text-slate-500 dark:text-slate-400" aria-hidden="true">
+          {[0, 1, 2, 3, 4, 5].map(v => (
+            <span key={v} className={`absolute whitespace-nowrap ${v === 0 ? "" : "-translate-x-1/2"}`}
+              style={{left: v === 0 ? 0 : pos(v)}}>{v === 0 ? "Pas noté" : v}</span>
+          ))}
+        </div>
+      </div>
+      <span className={`whitespace-nowrap font-semibold ${lo === 0 && hi === 5 ? "text-slate-500 dark:text-slate-400" : "text-amber-700 dark:text-amber-300"}`}>{summary}</span>
+    </div>
+  );
+}
+
 // V2.151.0 — Bouton « i » autonome : ouvre une bulle d'explications au tap.
 function InfoTip({title, children, className = ""}) {
   const {openKey, pos, boxRef, toggle} = useAnchoredBubble();
@@ -23980,7 +24001,7 @@ function CuisineTiles({selected, onToggle}) {
 }
 // V2.150.0 — Grille d'icônes à cocher (équipement, cuisines). max = nombre
 // maximal de cases cochées (les autres se grisent une fois le max atteint).
-function IconToggleTiles({items, selected = [], onToggle, max}) {
+function IconToggleTiles({items, selected = [], onToggle, max, compact}) {
   const atMax = max ? selected.length >= max : false;
   return (
     <div className="flex flex-wrap gap-x-1 gap-y-2">
@@ -23991,7 +24012,7 @@ function IconToggleTiles({items, selected = [], onToggle, max}) {
           <button key={id} type="button" aria-pressed={active} aria-label={label} disabled={disabled}
             title={disabled ? `Maximum ${max} : désélectionnes-en une avant d'en ajouter une autre.` : label}
             onClick={() => onToggle(id, active)}
-            className="w-[72px] flex flex-col items-center gap-1 focus:outline-none group disabled:opacity-40 disabled:cursor-not-allowed">
+            className={`${compact ? "w-[62px]" : "w-[72px]"} flex flex-col items-center gap-1 focus:outline-none group disabled:opacity-40 disabled:cursor-not-allowed`}>
             <span className={`relative w-11 h-11 rounded-xl flex items-center justify-center text-[26px] transition-transform group-active:scale-90 ${active
               ? "bg-emerald-100 dark:bg-emerald-900/60 text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-300 dark:ring-emerald-700"
               : "text-slate-400 dark:text-slate-500 group-hover:bg-slate-100 dark:group-hover:bg-white/5"}`}>
