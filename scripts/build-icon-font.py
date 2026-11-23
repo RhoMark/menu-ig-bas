@@ -102,9 +102,18 @@ for gname in glyph_order:
         coords = gl.coordinates
         coords.translate((0, SHIFT))
         gl.recalcBounds(gtab)
+        # V2.161.0 — L'approche gauche (lsb) de hmtx DOIT valoir xMin : la police
+        # Lucide livre lsb = 0 partout, et les moteurs de rendu (FreeType/Firefox,
+        # Safari) recalent alors le dessin contre le bord gauche → les icônes
+        # étroites (bouteille, verre, arbre…) n'étaient plus centrées dans leur case.
+        adv, _ = font["hmtx"].metrics[gname]
+        font["hmtx"].metrics[gname] = (adv, gl.xMin)
 for tbl, a, d in ((font["hhea"], "ascent", "descent"), (font["OS/2"], "sTypoAscender", "sTypoDescender")):
-    setattr(tbl, a, 880); setattr(tbl, d, -120)
-font["OS/2"].usWinAscent, font["OS/2"].usWinDescent = 880, 120
+    # V2.161.0 — 850/-150 (même hauteur totale 1000 qu'avant 880/-120) : le milieu
+    # de la boîte de ligne tombe sur le milieu des icônes (350) → centrage vertical
+    # exact dans les cases (flex items-center), au lieu de 1 px trop bas.
+    setattr(tbl, a, 850); setattr(tbl, d, -150)
+font["OS/2"].usWinAscent, font["OS/2"].usWinDescent = 850, 150
 font["OS/2"].sTypoLineGap = 0; font["hhea"].lineGap = 0
 newmap = {}
 for emo, g in chosen.items():
